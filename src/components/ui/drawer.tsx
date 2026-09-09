@@ -42,7 +42,7 @@ export function Drawer({
 
   const position = {
     right: "inset-y-0 right-0 h-full w-full animate-slide-in-right",
-    left: "inset-y-0 left-0 h-full w-full animate-[slide-in-right_0.45s_var(--ease-soft)_both_reverse]",
+    left: "inset-y-0 left-0 h-full w-full animate-slide-in-left",
     bottom: "inset-x-0 bottom-0 max-h-[90vh] w-full rounded-t-xl animate-slide-up",
   }[side];
 
