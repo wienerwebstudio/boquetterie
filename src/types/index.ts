@@ -326,6 +326,10 @@ export interface LandingPage {
 export interface CartExtra {
   extraId: string;
   quantity: number;
+  /** Display snapshot – prices are re-validated server-side when the order is created. */
+  name: string;
+  price: number;
+  image: string;
 }
 
 export interface CartItem {
@@ -340,6 +344,16 @@ export interface CartItem {
   anonymous?: boolean;
   senderName?: string;
   extras: CartExtra[];
+  /** Display snapshot – prices are re-validated server-side when the order is created. */
+  snapshot: {
+    slug: string;
+    name: string;
+    tagline: string;
+    image: string;
+    sizeLabel: string;
+    unitPrice: number;
+    sameDayCapable: boolean;
+  };
 }
 
 export interface Address {

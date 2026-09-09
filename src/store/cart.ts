@@ -1,7 +1,7 @@
 "use client";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { CartItem, ISODate, SizeId } from "@/types";
+import type { CartExtra, CartItem, ISODate, SizeId } from "@/types";
 
 export interface CartState {
   items: CartItem[];
@@ -11,7 +11,7 @@ export interface CartState {
   updateItem: (id: string, patch: Partial<Omit<CartItem, "id">>) => void;
   removeItem: (id: string) => void;
   setQuantity: (id: string, quantity: number) => void;
-  addExtra: (itemId: string, extraId: string) => void;
+  addExtra: (itemId: string, extra: Omit<CartExtra, "quantity">) => void;
   removeExtra: (itemId: string, extraId: string) => void;
   setExtraQuantity: (itemId: string, extraId: string, quantity: number) => void;
   setDelivery: (itemId: string, delivery: { deliveryDate?: ISODate; postalCode?: string; windowId?: string }) => void;
@@ -42,16 +42,16 @@ export const useCart = create<CartState>()(
             ? get().items.filter((i) => i.id !== id)
             : get().items.map((i) => (i.id === id ? { ...i, quantity } : i)),
         }),
-      addExtra: (itemId, extraId) =>
+      addExtra: (itemId, extra) =>
         set({
           items: get().items.map((i) => {
             if (i.id !== itemId) return i;
-            const existing = i.extras.find((e) => e.extraId === extraId);
+            const existing = i.extras.find((e) => e.extraId === extra.extraId);
             return {
               ...i,
               extras: existing
-                ? i.extras.map((e) => (e.extraId === extraId ? { ...e, quantity: e.quantity + 1 } : e))
-                : [...i.extras, { extraId, quantity: 1 }],
+                ? i.extras.map((e) => (e.extraId === extra.extraId ? { ...e, quantity: e.quantity + 1 } : e))
+                : [...i.extras, { ...extra, quantity: 1 }],
             };
           }),
         }),
