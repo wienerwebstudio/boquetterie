@@ -37,7 +37,7 @@ export default async function AdminOverviewPage() {
         <Stat label="Bestellungen heute" value={ordersToday.length} hint="Eingegangen seit Mitternacht" href="/admin/bestellungen" />
         <Stat label="Offene Bestellungen" value={openOrders.length} hint={`${deliveriesToday.length} Lieferung(en) heute`} href="/admin/bestellungen?status=open" />
         <Stat label="Aktive Produkte" value={products.filter((p) => p.active).length} hint={`${products.length} gesamt`} href="/admin/produkte" />
-        <Stat label="Newsletter-Abonnent:innen" value={subscribers.length} href="/admin/newsletter" />
+        <Stat label="Newsletter" value={subscribers.length} hint="Abonnent:innen" href="/admin/newsletter" />
       </div>
 
       {placeholders > 0 && (

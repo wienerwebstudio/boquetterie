@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useCallback, useId, useMemo, useState, useTransition } from "react";
 import { ArrowDown, ArrowUp, Braces, ExternalLink, ImageOff, Plus, Save, Trash, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +11,7 @@ import { deleteEntity, saveEntity, saveSingleton, type ActionResult } from "@/ap
 import { getPath, setPath, type Json } from "./paths";
 import type { FieldDef, FieldOption, FieldSection } from "./schemas";
 import type { OptionMap } from "./options";
-import { Banner, Card, Field, inputCls } from "./controls";
+import { Banner, Card, Field, inputCls, readonlyCls } from "./controls";
 
 export interface EntityFormProps {
   title: string;
@@ -38,7 +37,6 @@ const spanCls = { third: "md:col-span-2", half: "md:col-span-3", full: "md:col-s
 
 export function EntityForm(props: EntityFormProps) {
   const { title, sections, initial, options, collection, kind, originalId = null, listHref, editHrefBase, storefrontHref, singular, initialMessage } = props;
-  const router = useRouter();
   const { toast } = useUi();
   const [data, setData] = useState<Json>(initial);
   const [jsonMode, setJsonMode] = useState(false);
@@ -97,7 +95,8 @@ export function EntityForm(props: EntityFormProps) {
       }
       setMessage({ tone: "success", text: "Gespeichert. Der Shop zeigt die Änderung sofort." });
       toast({ title: "Gespeichert", description: title });
-      router.refresh();
+      // No router.refresh() needed: revalidatePath() inside the action already
+      // returns the re-rendered tree with this response.
     });
   };
 
@@ -234,7 +233,7 @@ function FieldRenderer({ field, value, onChange, options, compact }: RendererPro
           onChange={(e) => onChange(e.target.value)}
           placeholder={field.placeholder}
           readOnly={field.readonly}
-          className={inputCls}
+          className={cn(inputCls, field.readonly && readonlyCls)}
         />,
       );
     case "textarea":
@@ -246,7 +245,7 @@ function FieldRenderer({ field, value, onChange, options, compact }: RendererPro
           placeholder={field.placeholder}
           readOnly={field.readonly}
           rows={field.rows ?? 4}
-          className={cn(inputCls, "h-auto resize-y py-2 leading-relaxed")}
+          className={cn(inputCls, "h-auto resize-y py-2 leading-relaxed", field.readonly && readonlyCls)}
         />,
       );
     case "lines":
@@ -278,7 +277,7 @@ function FieldRenderer({ field, value, onChange, options, compact }: RendererPro
           min={field.min}
           max={field.max}
           step={field.step ?? "any"}
-          className={inputCls}
+          className={cn(inputCls, field.readonly && readonlyCls)}
         />,
       );
     case "boolean":
@@ -394,7 +393,7 @@ function ImageField({ id, field, value, onChange }: { id: string; field: FieldDe
           onChange={(e) => onChange(e.target.value)}
           placeholder={field.placeholder ?? "/images/…/bild.jpg"}
           readOnly={field.readonly}
-          className={inputCls}
+          className={cn(inputCls, field.readonly && readonlyCls)}
         />
         <p className="mt-1 text-[12px] text-ink-soft">Pfad relativ zu /public. Bilder vorher hochladen (z. B. per FTP oder Git).</p>
       </div>

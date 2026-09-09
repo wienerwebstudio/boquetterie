@@ -33,7 +33,6 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  useEffect(() => { setMega(null); setMenuOpen(false); }, [pathname, setMenuOpen]);
 
   const open = (key: "blumen" | "anlaesse") => { if (closeTimer.current) clearTimeout(closeTimer.current); setMega(key); };
   const scheduleClose = () => { closeTimer.current = setTimeout(() => setMega(null), 120); };
@@ -106,7 +105,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
         onMouseLeave={scheduleClose}
         aria-hidden={!mega}
       >
-        <div className="container-x py-8">
+        <div className="container-x py-8" onClick={() => setMega(null)}>
           {mega === "blumen" && (
             <div className="grid grid-cols-[1fr_1fr_1.4fr] gap-10">
               <div>
@@ -158,7 +157,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
 
       {/* Mobile menu */}
       <Drawer open={menuOpen} onClose={() => setMenuOpen(false)} side="left" width="max-w-[380px]" title={<Logo />} labelledBy="mobile-menu-title">
-        <nav aria-label="Mobile Navigation" className="px-5 py-4">
+        <nav aria-label="Mobile Navigation" className="px-5 py-4" onClick={(e) => { if ((e.target as HTMLElement).closest("a")) setMenuOpen(false); }}>
           <ul className="divide-y divide-line">
             {primaryNav.map((item) => (
               <li key={item.href}>

@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { getSettings } from "@/lib/cms";
-import { SiteShell } from "@/components/layout/site-shell";
 
 const serif = Cormorant_Garamond({
   variable: "--font-serif",
@@ -47,13 +46,10 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default async function RootLayout({ children }: LayoutProps<"/">) {
-  const settings = await getSettings();
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="de-AT" className={`${serif.variable} ${sans.variable} h-full`}>
-      <body className="flex min-h-full flex-col">
-        <SiteShell settings={settings}>{children}</SiteShell>
-      </body>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }
