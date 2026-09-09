@@ -1,0 +1,71 @@
+[
+  {
+    "slug": "ueber-uns",
+    "title": "Floristik für besondere Momente.",
+    "intro": "Boquetterie ist ein Blumenservice aus Wien. Wir binden Sträuße von Hand, erst am Liefertag, und bringen sie dorthin, wo sie gebraucht werden.",
+    "sections": [
+      {"heading": "Wie wir arbeiten", "paragraphs": ["Jeder Strauß entsteht in unserem Studio, gebunden von Florist:innen, die ihr Handwerk gelernt haben. Wir arbeiten mit saisonalen Blumen, kaufen in kleinen Mengen ein und binden erst, wenn der Strauß bestellt ist. So kommt er frisch an – und nicht aus dem Kühlraum.", "Verpackt wird in Seidenpapier und Kraftpapier, gehalten von einem Leinenband. Keine Folie, kein Glitzer, nichts, das vom Strauß ablenkt."], "image": {"src": "/images/editorial/florist.jpg", "alt": "Floristin beim Binden eines Straußes"}},
+      {"heading": "Das Studio", "paragraphs": ["Unser Studio ist ein heller Raum mit Werkbänken aus Eiche und Zinkkübeln voller Blumen. Hier entstehen alle Sträuße, hier werden Karten geschrieben und Extras verpackt."], "image": {"src": "/images/editorial/studio.jpg", "alt": "Blick in das Blumenstudio mit Werkbänken und Blumenkübeln"}},
+      {"heading": "Die Lieferung", "paragraphs": ["Wir liefern in Wien und im Wiener Umland – persönlich und mit Rücksicht auf das, was im Strauß steckt. Blumen sind empfindlich, deshalb transportieren wir sie stehend und in Wasser."], "image": {"src": "/images/editorial/delivery.jpg", "alt": "Ein Strauß wird durch einen Wiener Innenhof getragen"}},
+      {"heading": "Unsere Geschichte", "paragraphs": ["[Platzhalter: Hier kommt die echte Unternehmensgeschichte hin – Gründung, Menschen, Motivation. Bitte im Admin-Bereich ergänzen.]"], "placeholder": true}
+    ],
+    "seo": {"title": "Über uns – Floristik aus Wien", "description": "Boquetterie ist ein Blumenservice aus Wien: von Hand gebunden, erst am Liefertag, persönlich geliefert."}
+  },
+  {
+    "slug": "lieferung",
+    "title": "Lieferung & Versand",
+    "intro": "Wir liefern in Wien und im Wiener Umland. Lieferkosten, Liefertage und Zeitfenster hängen von der Empfängeradresse ab – gib die Postleitzahl ein und du siehst alles auf einen Blick.",
+    "sections": [
+      {"heading": "So läuft die Lieferung ab", "paragraphs": ["Dein Strauß wird am Liefertag gebunden und stehend in Wasser transportiert. Unser Zusteller übergibt ihn persönlich. Ist niemand da, geben wir ihn – wenn du es erlaubst – bei Nachbar:innen ab oder hinterlassen eine Nachricht.", "Zu jeder Bestellung erhältst du eine Bestätigung per E-Mail und einen Link, mit dem du den Status verfolgen kannst."]},
+      {"heading": "Lieferung am selben Tag", "paragraphs": ["In vielen Wiener Bezirken liefern wir noch am selben Tag, wenn die Bestellung vor der angezeigten Uhrzeit eingeht. Ob das für deine Adresse gilt, zeigen wir dir nach Eingabe der Postleitzahl – nur dann, wenn es wirklich verfügbar ist."]},
+      {"heading": "Lieferung an Firmen, Hotels und Krankenhäuser", "paragraphs": ["Gib im Checkout Firmen- oder Hotelnamen sowie Abteilung, Station oder Zimmernummer an. Wir liefern an Rezeption oder Empfang. Bitte beachte, dass manche Einrichtungen keine Blumen auf Stationen erlauben."]}
+    ],
+    "seo": {"title": "Lieferung & Versand – Blumen liefern lassen in Wien", "description": "Liefergebiete, Lieferkosten, Liefertage und Zeitfenster für Blumenlieferungen in Wien und Umgebung."}
+  },
+  {
+    "slug": "kontakt",
+    "title": "Kontakt",
+    "intro": "Fragen zu einer Bestellung, einem Lieferdatum oder einem besonderen Wunsch? Wir sind für dich da.",
+    "sections": [
+      {"heading": "So erreichst du uns", "paragraphs": ["[Platzhalter: E-Mail, Telefon und Öffnungszeiten werden aus den Einstellungen übernommen und müssen dort ergänzt werden.]"], "placeholder": true}
+    ],
+    "seo": {"title": "Kontakt – Boquetterie Wien", "description": "Kontaktiere Boquetterie bei Fragen zu Bestellung, Lieferung oder besonderen Wünschen."}
+  },
+  {
+    "slug": "impressum",
+    "title": "Impressum",
+    "sections": [
+      {"heading": "Angaben gemäß § 5 ECG und § 14 UGB", "paragraphs": ["[Platzhalter – rechtlich erforderliche Angaben bitte ergänzen: Firmenname, Rechtsform, Sitz, Firmenbuchnummer, Firmenbuchgericht, UID-Nummer, Gewerbebehörde, Kammerzugehörigkeit, anwendbare Rechtsvorschriften, Kontaktangaben.]"], "placeholder": true},
+      {"heading": "Streitbeilegung", "paragraphs": ["[Platzhalter – Hinweis zur Online-Streitbeilegung der EU-Kommission und zur Teilnahme an Verbraucherschlichtung ergänzen.]"], "placeholder": true}
+    ],
+    "seo": {"title": "Impressum", "description": "Impressum von Boquetterie."},
+    "placeholder": true
+  },
+  {
+    "slug": "datenschutz",
+    "title": "Datenschutzerklärung",
+    "sections": [
+      {"heading": "Hinweis", "paragraphs": ["[Platzhalter – Die Datenschutzerklärung muss von einer fachkundigen Person erstellt werden. Themen: Verantwortlicher, Zwecke und Rechtsgrundlagen der Verarbeitung, Bestell- und Lieferdaten (inkl. Empfängerdaten), Zahlungsdienstleister, Newsletter, Cookies und Analyse, Speicherdauer, Betroffenenrechte, Beschwerderecht bei der Datenschutzbehörde.]"], "placeholder": true}
+    ],
+    "seo": {"title": "Datenschutz", "description": "Datenschutzerklärung von Boquetterie."},
+    "placeholder": true
+  },
+  {
+    "slug": "agb",
+    "title": "Allgemeine Geschäftsbedingungen",
+    "sections": [
+      {"heading": "Hinweis", "paragraphs": ["[Platzhalter – AGB bitte rechtlich prüfen lassen. Themen: Geltungsbereich, Vertragsabschluss, Preise und Zahlung, Lieferung und Liefergebiete, Ersatzblumen bei saisonaler Nichtverfügbarkeit, Nichtzustellbarkeit, Gewährleistung, Haftung, Gerichtsstand.]"], "placeholder": true}
+    ],
+    "seo": {"title": "AGB", "description": "Allgemeine Geschäftsbedingungen von Boquetterie."},
+    "placeholder": true
+  },
+  {
+    "slug": "widerruf",
+    "title": "Widerrufsbelehrung & rechtliche Hinweise",
+    "sections": [
+      {"heading": "Hinweis", "paragraphs": ["[Platzhalter – Widerrufsbelehrung gemäß FAGG ergänzen. Beachte: Für schnell verderbliche Waren wie Schnittblumen kann das Widerrufsrecht gemäß § 18 Abs 1 Z 4 FAGG ausgeschlossen sein – dies ist rechtlich zu prüfen und transparent zu kommunizieren.]"], "placeholder": true}
+    ],
+    "seo": {"title": "Widerruf & rechtliche Hinweise", "description": "Widerrufsbelehrung und rechtliche Hinweise von Boquetterie."},
+    "placeholder": true
+  }
+]

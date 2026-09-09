@@ -1,0 +1,8 @@
+[
+  {"id": "r1", "name": "Katharina M.", "rating": 5, "text": "Der Strauß kam pünktlich zum Geburtstag meiner Mutter an und sah noch schöner aus als auf dem Foto. Die Karte war handgeschrieben – das hat sie besonders gefreut.", "productSlug": "blush", "verified": true, "date": "2026-05-12", "demo": true},
+  {"id": "r2", "name": "David L.", "rating": 5, "text": "Habe am Vormittag bestellt, am Nachmittag war der Strauß da. Unkompliziert, schnell, elegant verpackt.", "productSlug": "amour", "verified": true, "date": "2026-06-03", "demo": true},
+  {"id": "r3", "name": "Sophie R.", "rating": 5, "text": "Endlich ein Blumenservice, der nicht kitschig ist. Die Farben, das Papier, die Karte – alles stimmig.", "productSlug": "melange", "verified": true, "date": "2026-06-21", "demo": true},
+  {"id": "r4", "name": "Thomas W.", "rating": 4, "text": "Sehr schöner Strauß, hielt über eine Woche. Die Lieferzeit-Auswahl im Checkout ist praktisch.", "productSlug": "toscana", "verified": true, "date": "2026-07-08", "demo": true},
+  {"id": "r5", "name": "Elena K.", "rating": 5, "text": "Für unsere Rezeption bestellen wir jede Woche. Immer frisch, immer anders, immer schön.", "verified": true, "date": "2026-07-30", "demo": true},
+  {"id": "r6", "name": "Markus H.", "rating": 5, "text": "Trauerblumen für eine Kollegin – würdevoll, ruhig, pünktlich. Danke für die einfühlsame Abwicklung.", "productSlug": "stille", "verified": true, "date": "2026-08-14", "demo": true}
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "wien-zentrum", "name": "Wien Zentrum", "region": "Wien",
+    "postalCodes": ["1010-1090"],
+    "fee": 7.9, "freeFrom": 80, "minOrder": 0,
+    "deliveryDays": [1, 2, 3, 4, 5, 6],
+    "cutoff": "14:00", "leadDays": 1,
+    "sameDay": true, "sameDayCutoff": "12:00",
+    "windows": [
+      {"id": "am", "label": "9–13 Uhr", "from": "09:00", "to": "13:00", "surcharge": 0, "active": true},
+      {"id": "pm", "label": "13–18 Uhr", "from": "13:00", "to": "18:00", "surcharge": 0, "active": true},
+      {"id": "eve", "label": "18–21 Uhr", "from": "18:00", "to": "21:00", "surcharge": 4.9, "active": true}
+    ],
+    "active": true
+  },
+  {
+    "id": "wien-innen", "name": "Wien Innenbezirke", "region": "Wien",
+    "postalCodes": ["1100-1200"],
+    "fee": 8.9, "freeFrom": 90, "minOrder": 0,
+    "deliveryDays": [1, 2, 3, 4, 5, 6],
+    "cutoff": "14:00", "leadDays": 1,
+    "sameDay": true, "sameDayCutoff": "11:00",
+    "windows": [
+      {"id": "am", "label": "9–13 Uhr", "from": "09:00", "to": "13:00", "surcharge": 0, "active": true},
+      {"id": "pm", "label": "13–18 Uhr", "from": "13:00", "to": "18:00", "surcharge": 0, "active": true}
+    ],
+    "active": true
+  },
+  {
+    "id": "wien-aussen", "name": "Wien Außenbezirke", "region": "Wien",
+    "postalCodes": ["1210-1230"],
+    "fee": 9.9, "freeFrom": 100, "minOrder": 0,
+    "deliveryDays": [1, 2, 3, 4, 5, 6],
+    "cutoff": "13:00", "leadDays": 1,
+    "sameDay": false, "sameDayCutoff": "11:00",
+    "windows": [
+      {"id": "day", "label": "9–18 Uhr", "from": "09:00", "to": "18:00", "surcharge": 0, "active": true}
+    ],
+    "active": true
+  },
+  {
+    "id": "noe-umland", "name": "Wien Umland (NÖ)", "region": "Niederösterreich",
+    "postalCodes": ["2000-2100", "2201", "2301", "2320-2345", "2380", "2391", "2401", "2500-2504", "3400-3402"],
+    "fee": 14.9, "freeFrom": null, "minOrder": 39,
+    "deliveryDays": [2, 4, 6],
+    "cutoff": "12:00", "leadDays": 1,
+    "sameDay": false, "sameDayCutoff": "10:00",
+    "windows": [
+      {"id": "day", "label": "9–18 Uhr", "from": "09:00", "to": "18:00", "surcharge": 0, "active": true}
+    ],
+    "active": true,
+    "note": "Lieferung im Wiener Umland dienstags, donnerstags und samstags."
+  }
+]
