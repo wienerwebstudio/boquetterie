@@ -69,7 +69,7 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
       <p className="sr-only" aria-live="polite">Bild {index + 1} von {all.length}: {current.alt}</p>
 
       {/* Mobile carousel */}
-      <div className="lg:hidden">
+      <div className="min-w-0 lg:hidden">
         <div
           ref={scroller}
           onScroll={onScroll}

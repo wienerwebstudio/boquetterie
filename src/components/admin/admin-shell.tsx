@@ -36,7 +36,6 @@ function isActive(pathname: string, href: string) {
 export function AdminShell({ children, brandName }: { children: ReactNode; brandName: string }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
@@ -55,6 +54,7 @@ export function AdminShell({ children, brandName }: { children: ReactNode; brand
             <Link
               href={item.href}
               aria-current={active ? "page" : undefined}
+              onClick={() => setOpen(false)}
               className={cn(
                 "flex items-center gap-3 rounded-md px-3 py-2 text-[14px] font-medium transition-colors",
                 active ? "bg-ivory text-forest" : "text-ivory/85 hover:bg-forest-600 hover:text-ivory",

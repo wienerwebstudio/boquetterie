@@ -9,7 +9,7 @@ import { defaultSize } from "@/lib/cart-helpers";
 export function ProductHero({ product, extras, greetingCard }: { product: Product; extras: Extra[]; greetingCard: SiteSettings["greetingCard"] }) {
   const [size, setSize] = useState<ProductSize>(() => defaultSize(product));
   return (
-    <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-14 xl:gap-20">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-14 xl:gap-20">
       <ProductGallery images={product.images} name={product.name} sizeImage={size.image} sizeLabel={size.label} />
       <div className="lg:sticky lg:top-28 lg:self-start">
         <ProductConfigurator product={product} extras={extras} greetingCard={greetingCard} onSizeChange={setSize} />

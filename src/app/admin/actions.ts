@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { readCollection, writeCollection } from "@/lib/cms";
 import { requireAdmin } from "@/lib/admin-session";
 import { slugify } from "@/lib/format";
@@ -183,9 +184,12 @@ function revalidateAll() {
 
 /**
  * Create or update one entity. `originalId` is the id/slug/code the entity had when
- * the form was opened (null when creating) so renaming ids keeps working.
+ * the form was opened (null when creating) so renaming ids keeps working. When the id
+ * changes (create/rename) and `redirectBase` is given, the action redirects to the new
+ * edit URL – a client-side navigation would be cancelled by the re-render of the old URL.
  */
-export async function saveEntity(collection: string, originalId: string | null, input: unknown): Promise<ActionResult> {
+export async function saveEntity(collection: string, originalId: string | null, input: unknown, redirectBase?: string): Promise<ActionResult> {
+  let result: ActionResult;
   try {
     await requireAdmin();
     const schema = schemaByCollection(collection);
@@ -204,19 +208,27 @@ export async function saveEntity(collection: string, originalId: string | null, 
     const prepared = cleanEmpty(prepareEntity(schema, data, isNew, others), schema.removeEmptyObjectsAt);
     const id = String(prepared[schema.idKey] ?? "").trim();
     if (!id) return { ok: false, error: `${schema.singular}: ID/Slug fehlt.` };
-    if (others.some((o) => String(o[schema.idKey]) === id)) return { ok: false, error: `Es gibt bereits ${schema.singular === "Extra" ? "ein" : "eine/n"} ${schema.singular} mit „${id}“.` };
+    if (others.some((o) => String(o[schema.idKey]) === id)) return { ok: false, error: `Es gibt bereits einen Eintrag (${schema.singular}) mit „${id}“.` };
 
     if (isNew) list.push(prepared);
     else list[idx] = prepared;
     await writeCollection(schema.collection, list);
     revalidateAll();
-    return { ok: true, id, data: prepared };
+    result = { ok: true, id, data: prepared };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Speichern fehlgeschlagen." };
   }
+  if (result.ok && result.id && result.id !== originalId && redirectBase && redirectBase.startsWith("/admin")) {
+    redirect(`${redirectBase}/${encodeURIComponent(result.id)}?saved=1`);
+  }
+  return result;
 }
 
-export async function deleteEntity(collection: string, id: string): Promise<ActionResult> {
+/**
+ * Delete one entity. When `redirectTo` is given the action redirects after the
+ * write (a client-side push would be cancelled by the re-render of the deleted page).
+ */
+export async function deleteEntity(collection: string, id: string, redirectTo?: string): Promise<ActionResult> {
   try {
     await requireAdmin();
     const schema = schemaByCollection(collection);
@@ -226,10 +238,11 @@ export async function deleteEntity(collection: string, id: string): Promise<Acti
     if (next.length === list.length) return { ok: false, error: "Eintrag nicht gefunden." };
     await writeCollection(schema.collection, next);
     revalidateAll();
-    return { ok: true };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Löschen fehlgeschlagen." };
   }
+  if (redirectTo && redirectTo.startsWith("/admin")) redirect(redirectTo);
+  return { ok: true };
 }
 
 /** Save a whole singleton document (settings, homepage, subscription). */

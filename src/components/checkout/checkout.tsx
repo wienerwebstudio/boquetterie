@@ -90,7 +90,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
 
   /* ---- Delivery check: the most restrictive product decides about same-day ---- */
   const restrictiveSlug = useMemo(() => items.find((i) => !i.snapshot.sameDayCapable)?.snapshot.slug ?? items[0]?.snapshot.slug, [items]);
-  const { result, loading: checking, error: checkError, check, reset: resetCheck } = useDeliveryCheck(restrictiveSlug);
+  const { result: lastResult, loading: checking, error: checkError, check } = useDeliveryCheck(restrictiveSlug);
   const checkedZip = useRef<string | null>(null);
 
   const runCheck = useCallback((plz: string) => {
@@ -100,15 +100,14 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
 
   const zip = data.recipient.zip;
   useEffect(() => {
-    if (!isValidAustrianPostalCode(zip)) {
-      if (checkedZip.current !== null) { checkedZip.current = null; resetCheck(); }
-      return;
-    }
+    if (!isValidAustrianPostalCode(zip)) { checkedZip.current = null; return; }
     if (checkedZip.current === zip) return;
     const t = setTimeout(() => runCheck(zip), 350);
     return () => clearTimeout(t);
-  }, [zip, runCheck, resetCheck]);
+  }, [zip, runCheck]);
 
+  // Only trust a check result that belongs to the PLZ currently in the form.
+  const result = lastResult && lastResult.postalCode === zip ? lastResult : null;
   const zone = result?.available ? result.zone : null;
   const days = useMemo(() => (result?.available ? result.days : []), [result]);
 

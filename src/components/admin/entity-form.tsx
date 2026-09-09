@@ -30,19 +30,23 @@ export interface EntityFormProps {
   /** Optional storefront preview link. */
   storefrontHref?: string | null;
   singular?: string;
+  /** Message shown on mount (e.g. after a redirect following create/rename). */
+  initialMessage?: string | null;
 }
 
 const spanCls = { third: "md:col-span-2", half: "md:col-span-3", full: "md:col-span-6" } as const;
 
 export function EntityForm(props: EntityFormProps) {
-  const { title, sections, initial, options, collection, kind, originalId = null, listHref, editHrefBase, storefrontHref, singular } = props;
+  const { title, sections, initial, options, collection, kind, originalId = null, listHref, editHrefBase, storefrontHref, singular, initialMessage } = props;
   const router = useRouter();
   const { toast } = useUi();
   const [data, setData] = useState<Json>(initial);
   const [jsonMode, setJsonMode] = useState(false);
   const [jsonText, setJsonText] = useState("");
   const [jsonError, setJsonError] = useState<string | null>(null);
-  const [message, setMessage] = useState<{ tone: "success" | "error"; text: string } | null>(null);
+  const [message, setMessage] = useState<{ tone: "success" | "error"; text: string } | null>(
+    initialMessage ? { tone: "success", text: initialMessage } : null,
+  );
   const [pending, startTransition] = useTransition();
   const isNew = kind === "entity" && originalId === null;
 
@@ -81,7 +85,8 @@ export function EntityForm(props: EntityFormProps) {
     if (!payload) return;
     setMessage(null);
     startTransition(async () => {
-      const res: ActionResult = kind === "entity" ? await saveEntity(collection, originalId, payload) : await saveSingleton(collection, payload);
+      // For create/rename the action redirects to the new edit URL itself.
+      const res: ActionResult = kind === "entity" ? await saveEntity(collection, originalId, payload, editHrefBase) : await saveSingleton(collection, payload);
       if (!res.ok) {
         setMessage({ tone: "error", text: res.error });
         return;
@@ -92,11 +97,7 @@ export function EntityForm(props: EntityFormProps) {
       }
       setMessage({ tone: "success", text: "Gespeichert. Der Shop zeigt die Änderung sofort." });
       toast({ title: "Gespeichert", description: title });
-      if (kind === "entity" && editHrefBase && res.id && res.id !== originalId) {
-        router.replace(`${editHrefBase}/${encodeURIComponent(res.id)}`);
-      } else {
-        router.refresh();
-      }
+      router.refresh();
     });
   };
 
@@ -104,14 +105,9 @@ export function EntityForm(props: EntityFormProps) {
     if (!originalId || !listHref) return;
     if (!window.confirm(`${singular ?? "Eintrag"} „${originalId}“ wirklich löschen? Das kann nicht rückgängig gemacht werden.`)) return;
     startTransition(async () => {
-      const res = await deleteEntity(collection, originalId);
-      if (!res.ok) {
-        setMessage({ tone: "error", text: res.error });
-        return;
-      }
-      toast({ title: "Gelöscht", description: originalId });
-      router.push(listHref);
-      router.refresh();
+      // On success the action redirects to the list itself.
+      const res = await deleteEntity(collection, originalId, listHref);
+      if (!res.ok) setMessage({ tone: "error", text: res.error });
     });
   };
 

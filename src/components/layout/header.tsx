@@ -92,7 +92,9 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
             )}
           </button>
           {settings.headerCta.enabled && (
-            <Button href={settings.headerCta.href} size="sm" className="ml-2 hidden xl:inline-flex">{settings.headerCta.label}</Button>
+            <div className="ml-2 hidden xl:block">
+              <Button href={settings.headerCta.href} size="sm">{settings.headerCta.label}</Button>
+            </div>
           )}
         </div>
       </div>
