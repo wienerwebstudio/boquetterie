@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Boquetterie – Blumenversand Wien
 
-## Getting Started
+Ein moderner, conversion-optimierter Webshop für einen Blumenlieferdienst in Wien und Umgebung.
+Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Zustand · JSON-Content-Store mit Admin-Bereich.
 
-First, run the development server:
+## Schnellstart
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # ADMIN_PASSWORD & ADMIN_SECRET setzen
+npm run dev                   # http://localhost:3000
+npm run build && npm start    # Produktion
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Struktur
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Pfad | Inhalt |
+| --- | --- |
+| `content/*.json` | Alle redaktionell pflegbaren Inhalte: Produkte, Anlässe, Kategorien, Extras, Liefergebiete, Gutscheine, FAQs, Bewertungen, Abo, Einstellungen, Startseite, Seiten, Landingpages |
+| `data/*.json` | Laufzeitdaten (Bestellungen, Newsletter, Kontaktanfragen) – nicht versioniert |
+| `src/app` | Routen (Shop, Produkt, Checkout, Bestellstatus, Admin, Landingpages, Rechtliches) |
+| `src/components` | `ui/` Designsystem · `layout/` Header/Footer · `home/`, `shop/`, `product/`, `cart/`, `checkout/`, `content/`, `admin/` |
+| `src/lib` | `cms.ts` (einzige Dateizugriffs-Schicht), `delivery.ts` (Lieferlogik), `catalog.ts` (Filter/Suche), `pricing.ts`, `orders.ts`, `seo.tsx` |
+| `src/store` | Zustand-Stores: Warenkorb (persistiert), UI, Favoriten, Lieferkontext |
+| `public/images` | Markenbilder (Produkte, Anlässe, Extras, Editorial, Galerie, Hero) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Geschäftslogik
 
-## Learn More
+- **Lieferzonen** (`content/delivery-zones.json`): PLZ-Bereiche, Lieferpreis, Gratis-ab, Mindestbestellwert, Liefertage, Cut-off, Vorlauf, Same-Day + Same-Day-Cut-off, Zeitfenster. Die Engine in `src/lib/delivery.ts` entscheidet anhand von Uhrzeit (Europe/Vienna), PLZ, Produkt und Sperrtagen, welche Tage angeboten werden – nichts ist im Frontend hart codiert.
+- **Preise** werden clientseitig aus Warenkorb-Snapshots angezeigt und serverseitig bei Bestellanlage aus dem Katalog neu berechnet.
+- **Bestellstatus**: eingegangen → bezahlt → in Vorbereitung → wird gebunden → bereit → unterwegs → zugestellt (bzw. nicht zustellbar / storniert). Kund:innen sehen eine Statusseite über Bestellnummer + Token.
+- **Zahlungen**: Provider-Abstraktion in `src/lib/payments.ts`. Aktuell ein `mock`-Provider (Testmodus). Stripe/PayPal/Klarna/EPS sind vorbereitet, aber nicht angebunden. Es werden nur in den Einstellungen aktivierte Methoden angezeigt.
 
-To learn more about Next.js, take a look at the following resources:
+## Administration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`/admin` (Passwortschutz über `ADMIN_PASSWORD`). Details in `docs/ADMIN.md`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Platzhalter
 
-## Deploy on Vercel
+Firmendaten, Rechtstexte (Impressum, Datenschutz, AGB, Widerruf), Unternehmensgeschichte und echte Bewertungen sind als klar gekennzeichnete Platzhalter angelegt und müssen vor dem Launch ergänzt werden. Beispielbewertungen sind mit `demo: true` markiert und werden im Shop entsprechend gekennzeichnet.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Bilder
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Die Markenbilder wurden KI-gestützt in einem einheitlichen Editorial-Stil erzeugt (`scripts/fetch-images.mjs` dokumentiert den Import). Für den Launch sollten sie durch echte Produktfotos im selben Stil ersetzt oder ergänzt werden.
