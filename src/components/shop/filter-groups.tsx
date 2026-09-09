@@ -132,7 +132,7 @@ export function FilterGroups({
               ))}
             </OptionList>
           )}
-          {id === "lieferdatum" && <DeliveryDateFields values={values} onChange={onChange} options={options} hide={hide} />}
+          {id === "lieferdatum" && <DeliveryDateFields key={values.plz ?? "none"} values={values} onChange={onChange} options={options} hide={hide} />}
         </Group>
       ))}
     </div>

@@ -4,6 +4,11 @@ import {
   getReviews, getFaqsByIds, getSubscription,
 } from "@/lib/cms";
 import { JsonLd, organizationLd } from "@/lib/seo";
+import { getDeliveryZones } from "@/lib/cms";
+import { isSameDayPossibleNow } from "@/lib/delivery";
+
+/** Re-render every 5 minutes so the time-based "Heute lieferbar" badge stays honest. */
+export const revalidate = 300;
 import { Hero } from "@/components/home/hero";
 import { TrustBar } from "@/components/home/trust-bar";
 import { OccasionGrid } from "@/components/home/occasion-grid";
@@ -32,11 +37,13 @@ export default async function HomePage() {
   const [settings, home, occasions, categories, extras, reviews, subscription] = await Promise.all([
     getSettings(), getHomepage(), getOccasions(), getCategories(), getExtras(), getReviews(), getSubscription(),
   ]);
-  const [bestsellers, seasonalProducts, faqs] = await Promise.all([
+  const [bestsellers, seasonalProducts, faqs, zones] = await Promise.all([
     getProductsBySlugs(home.bestsellers.productSlugs),
     getProductsBySlugs(home.seasonal.productSlugs),
     getFaqsByIds(home.faq.ids),
+    getDeliveryZones(),
   ]);
+  const sameDayNow = isSameDayPossibleNow(zones, settings);
 
   const pick = <T extends { slug: string }>(slugs: string[], all: T[]) =>
     slugs.map((s) => all.find((x) => x.slug === s)).filter((x): x is T => Boolean(x));
@@ -53,7 +60,7 @@ export default async function HomePage() {
       <Hero hero={home.hero} />
       <TrustBar items={settings.trust} />
       <OccasionGrid content={home.occasions} occasions={homeOccasions} />
-      <Bestsellers content={home.bestsellers} products={bestsellers.slice(0, 8)} />
+      <Bestsellers content={home.bestsellers} products={bestsellers.slice(0, 8)} showSameDay={sameDayNow} />
       <Collections content={home.collections} categories={homeCollections} />
       <HowItWorks content={home.howItWorks} />
       <Seasonal content={home.seasonal} products={seasonalProducts.slice(0, 3)} />

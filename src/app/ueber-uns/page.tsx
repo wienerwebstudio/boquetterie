@@ -73,7 +73,7 @@ export default async function AboutPage() {
                     </div>
                   </Reveal>
                 )}
-                <div className={cn(s.image ? cn("lg:col-span-5", flip ? "lg:order-1 lg:col-start-1" : "lg:order-2 lg:col-start-8") : "lg:col-span-8 lg:col-start-3")}>
+                <div className={s.image ? cn("lg:col-span-5", flip ? "lg:order-1 lg:col-start-1" : "lg:order-2 lg:col-start-8") : "lg:col-span-8 lg:col-start-3"}>
                   <p className="font-serif text-[15px] italic tracking-[0.04em] text-ink-soft">{String(i + 1).padStart(2, "0")}</p>
                   {s.heading && <h2 id={`about-s-${i}`} className="display-2 mt-3 text-balance text-ink">{s.heading}</h2>}
                   <div className="mt-5 flex flex-col gap-4">

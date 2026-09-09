@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SlidersHorizontal } from "lucide-react";
 import { Drawer } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
@@ -12,7 +12,6 @@ export function FilterSheet({ options, hide = [], resultCount }: { options: Filt
   const { params, apply } = useShopParams();
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState<ShopParams>(params);
-  useEffect(() => { if (!open) setDraft(params); }, [params, open]);
 
   const active = countActiveFilters(params, hide);
   const draftActive = countActiveFilters(draft, hide);
@@ -24,7 +23,7 @@ export function FilterSheet({ options, hide = [], resultCount }: { options: Filt
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => { setDraft(params); setOpen(true); }}
         aria-haspopup="dialog"
         className="inline-flex h-11 items-center gap-2 rounded-md border border-line bg-white px-4 text-[13px] font-semibold text-ink transition-colors hover:border-forest"
       >
@@ -37,7 +36,6 @@ export function FilterSheet({ options, hide = [], resultCount }: { options: Filt
         side="bottom"
         title="Filter"
         labelledBy="filter-sheet-title"
-        className="max-h-[92dvh]"
         footer={
           <div className="flex items-center gap-3">
             <button

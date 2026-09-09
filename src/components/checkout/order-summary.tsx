@@ -55,7 +55,7 @@ function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting,
         <div className="flex justify-between gap-4">
           <dt className="text-ink-muted">Grußkarte</dt>
           <dd className="max-w-[60%] text-right text-ink">
-            {cardText ? <span className="line-clamp-2 font-serif italic">„{cardText}"</span> : <span className="text-ink-soft">Noch keine Nachricht</span>}
+            {cardText ? <span className="line-clamp-2 font-serif italic">„{cardText}“</span> : <span className="text-ink-soft">Noch keine Nachricht</span>}
             {cardText && <span className="block text-[12px] text-ink-muted">{greeting.anonymous ? "Ohne Absender" : greeting.senderName.trim() ? `— ${greeting.senderName.trim()}` : ""}</span>}
           </dd>
         </div>

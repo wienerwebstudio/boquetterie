@@ -21,10 +21,11 @@ export function PostalCodeCheck({
   productSlug?: string; onResult?: (r: ReturnType<typeof useDeliveryCheck>["result"]) => void; className?: string;
 }) {
   const ctx = useDeliveryContext();
-  const [plz, setPlz] = useState("");
+  const [plzInput, setPlzInput] = useState<string | null>(null);
+  const plz = plzInput ?? ctx.postalCode;
+  const setPlz = setPlzInput;
   const { result, loading, error, check } = useDeliveryCheck(productSlug);
 
-  useEffect(() => { if (ctx.postalCode && !plz) setPlz(ctx.postalCode); }, [ctx.postalCode, plz]);
   useEffect(() => { if (result) onResult?.(result); }, [result, onResult]);
 
   const submit = async (e: React.FormEvent) => {

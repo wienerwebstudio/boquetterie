@@ -28,12 +28,13 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
   const programmatic = useRef(false);
   const current = all[Math.min(index, all.length - 1)];
 
-  // Switch to the size image when the size changes.
-  useEffect(() => {
-    if (!sizeImage) return;
-    const i = all.findIndex((img) => img.src === sizeImage);
+  // Switch to the size image when the size changes (state adjusted during render, no extra effect).
+  const [seenSizeImage, setSeenSizeImage] = useState(sizeImage);
+  if (sizeImage !== seenSizeImage) {
+    setSeenSizeImage(sizeImage);
+    const i = sizeImage ? all.findIndex((img) => img.src === sizeImage) : -1;
     if (i >= 0) setIndex(i);
-  }, [sizeImage, all]);
+  }
 
   // Keep the mobile carousel in sync with the index.
   useEffect(() => {

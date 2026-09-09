@@ -31,7 +31,7 @@ export function useCartTotals() {
   const setCoupon = useCart((s) => s.setCoupon);
   const zone = useDeliveryContext((s) => s.zone);
 
-  const [coupon, setCouponObj] = useState<Coupon | null>(null);
+  const [couponObj, setCouponObj] = useState<Coupon | null>(null);
   const [couponError, setCouponError] = useState<string | null>(null);
   const [applying, setApplying] = useState(false);
   const latest = useRef(0);
@@ -39,7 +39,7 @@ export function useCartTotals() {
   const subtotal = useMemo(() => computeTotals({ items }).subtotal, [items]);
 
   useEffect(() => {
-    if (!code) { setCouponObj(null); return; }
+    if (!code) return;
     const run = ++latest.current;
     validate(code, subtotal).then((r) => {
       if (run !== latest.current) return;
@@ -61,6 +61,8 @@ export function useCartTotals() {
 
   const remove = useCallback(() => { setCoupon(null); setCouponObj(null); setCouponError(null); }, [setCoupon]);
 
+  // Only trust the resolved coupon while it still matches the stored code.
+  const coupon = code && couponObj?.code === code ? couponObj : null;
   const windowId = items.find((i) => i.windowId)?.windowId;
   const totals = useMemo(() => computeTotals({ items, zone, coupon, windowId }), [items, zone, coupon, windowId]);
 
@@ -75,7 +77,6 @@ let extrasPromise: Promise<Extra[]> | null = null;
 export function useCartExtras() {
   const [extras, setExtras] = useState<Extra[]>(extrasCache ?? []);
   useEffect(() => {
-    if (extrasCache) { setExtras(extrasCache); return; }
     extrasPromise ??= fetch("/api/extras?cart=1")
       .then((r) => r.json() as Promise<{ ok: boolean; extras: Extra[] }>)
       .then((d) => { extrasCache = d.ok ? d.extras : []; return extrasCache; })

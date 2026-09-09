@@ -51,14 +51,15 @@ export function DeliveryCalendar({
 
   const [view, setView] = useState(() => ym(value ?? first));
   const [focused, setFocused] = useState<ISODate>(value ?? first);
-  const [pendingFocus, setPendingFocus] = useState(false);
+  const pendingFocus = useRef(false);
   const refs = useRef(new Map<string, HTMLButtonElement>());
 
+  // Move DOM focus after a keyboard navigation re-rendered the grid.
   useEffect(() => {
-    if (!pendingFocus) return;
+    if (!pendingFocus.current) return;
+    pendingFocus.current = false;
     refs.current.get(focused)?.focus();
-    setPendingFocus(false);
-  }, [pendingFocus, focused]);
+  }, [focused, view]);
 
   const rows = useMemo(() => {
     const cells = monthCells(view);
@@ -72,7 +73,7 @@ export function DeliveryCalendar({
     if (m < minMonth || m > maxMonth) return;
     setView(m);
     setFocused(iso);
-    setPendingFocus(true);
+    pendingFocus.current = true;
   };
   const goMonth = (delta: number, viaKeyboard = false) => {
     const next = shiftMonth(view, delta);
@@ -80,7 +81,7 @@ export function DeliveryCalendar({
     setView(next);
     const firstAvailable = days.find((d) => ym(d.date) === next)?.date ?? `${next}-01`;
     setFocused(firstAvailable);
-    if (viaKeyboard) setPendingFocus(true);
+    if (viaKeyboard) pendingFocus.current = true;
   };
   const select = (iso: ISODate) => { if (available.has(iso)) onChange(iso); };
 

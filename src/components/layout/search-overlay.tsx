@@ -77,11 +77,16 @@ export function SearchOverlay() {
     return () => ctrl.abort();
   }, [open, quick]);
 
+  // Query changes are handled in the event: clear stale results immediately, mark loading.
+  const setQueryValue = useCallback((value: string) => {
+    setQuery(value);
+    if (value.trim().length < 2) { setResults(null); setLoading(false); abortRef.current?.abort(); }
+    else setLoading(true);
+  }, []);
+
   // Debounced live search.
   useEffect(() => {
-    if (!open) return;
-    if (!active) { setResults(null); setLoading(false); abortRef.current?.abort(); return; }
-    setLoading(true);
+    if (!open || !active) return;
     const t = setTimeout(async () => {
       abortRef.current?.abort();
       const ctrl = new AbortController();
@@ -130,7 +135,7 @@ export function SearchOverlay() {
               id="site-search"
               type="search"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => setQueryValue(e.target.value)}
               placeholder="Wonach suchst du?"
               autoComplete="off"
               enterKeyHint="search"
@@ -138,7 +143,7 @@ export function SearchOverlay() {
             />
             {loading && <Loader2 className="size-5 animate-spin text-ink-soft" aria-hidden />}
             {query && !loading && (
-              <button type="button" onClick={() => { setQuery(""); inputRef.current?.focus(); }} aria-label="Eingabe löschen" className="rounded-full p-2 text-ink-soft transition-colors hover:bg-ivory-200 hover:text-ink">
+              <button type="button" onClick={() => { setQueryValue(""); inputRef.current?.focus(); }} aria-label="Eingabe löschen" className="rounded-full p-2 text-ink-soft transition-colors hover:bg-ivory-200 hover:text-ink">
                 <X className="size-4" />
               </button>
             )}
@@ -151,7 +156,7 @@ export function SearchOverlay() {
           </form>
 
           <div className="mt-6 sm:mt-8" aria-live="polite">
-            {!active && quick && <QuickLinks data={quick} onSuggest={(s) => { setQuery(s); inputRef.current?.focus(); }} />}
+            {!active && quick && <QuickLinks data={quick} onSuggest={(s) => { setQueryValue(s); inputRef.current?.focus(); }} />}
             {!active && !quick && <p className="text-[14px] text-ink-soft">Tipp: Suche nach Blumen, Farben oder Anlässen – zum Beispiel „Rosen“ oder „Mama“.</p>}
 
             {active && results && total > 0 && <Results data={results} query={trimmed} />}
@@ -160,7 +165,7 @@ export function SearchOverlay() {
                 <p className="font-serif text-2xl text-ink">Keine Treffer für „{trimmed}“.</p>
                 <p className="mt-2 text-[14px] leading-relaxed text-ink-muted">Versuch es mit einer Blume, einer Farbe oder einem Anlass. Oder schau dich in allen Sträußen um.</p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {(quick?.suggestions ?? []).map((s) => <SuggestionChip key={s} label={s} onClick={() => setQuery(s)} />)}
+                  {(quick?.suggestions ?? []).map((s) => <SuggestionChip key={s} label={s} onClick={() => setQueryValue(s)} />)}
                 </div>
                 <Link href={routes.shop} data-result className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold text-forest">
                   Alle Blumen ansehen <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />

@@ -8,7 +8,10 @@ import { formatPrice, cn } from "@/lib/format";
 import { primaryImage, hoverImage, productBadges, lowestPrice } from "@/lib/catalog";
 import { routes } from "@/lib/urls";
 import { useFavorites } from "@/store/favorites";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const subscribeNoop = () => () => {};
+const useMounted = () => useSyncExternalStore(subscribeNoop, () => true, () => false);
 
 export function ProductCard({ product, priority = false, showSameDay = false, className, sizesAttr = "(min-width: 1280px) 22vw, (min-width: 768px) 45vw, 90vw" }: {
   product: Product; priority?: boolean; showSameDay?: boolean; className?: string; sizesAttr?: string;
@@ -16,10 +19,9 @@ export function ProductCard({ product, priority = false, showSameDay = false, cl
   const main = primaryImage(product);
   const hover = hoverImage(product);
   const badges = productBadges(product);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const fav = useFavorites((s) => s.slugs.includes(product.slug));
   const toggle = useFavorites((s) => s.toggle);
-  useEffect(() => setMounted(true), []);
   const href = routes.product(product.slug);
 
   return (

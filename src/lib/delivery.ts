@@ -159,3 +159,14 @@ export function describeZone(zone: DeliveryZone) {
     cutoff: zone.cutoff,
   };
 }
+
+/**
+ * Is a same-day delivery possible right now in at least one zone (independent of a
+ * specific address)? Used for the "Heute lieferbar" badge on listing pages that
+ * don't know the recipient's PLZ yet.
+ */
+export function isSameDayPossibleNow(zones: DeliveryZone[], settings: Pick<SiteSettings, "blackoutDates" | "sameDayEnabled" | "timezone">, now?: LocalNow) {
+  if (!settings.sameDayEnabled) return false;
+  const local = now ?? getLocalNow(settings.timezone);
+  return zones.some((z) => z.active && z.sameDay && getAvailableDays({ zone: z, settings, now: local, horizonDays: 0 }).some((d) => d.sameDay));
+}

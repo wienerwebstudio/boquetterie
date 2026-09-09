@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { CalendarDays, Check, Clock, Leaf, Lock, Mail, MapPin, Minus, PenLine, Plus, ShoppingBag } from "lucide-react";
-import type { Extra, ISODate, Product, ProductSize, SiteSettings } from "@/types";
+import type { Extra, ISODate, Product, ProductSize, SiteSettings, SizeId } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/ui/star-rating";
 import { GreetingCardPreview } from "@/components/cart/greeting-card-preview";
 import { DeliveryCalendar } from "./calendar";
-import { useDeliveryCheck } from "@/hooks/use-delivery-check";
+import { useDeliveryCheck, type DeliveryCheckResult } from "@/hooks/use-delivery-check";
 import { useDeliveryContext } from "@/store/delivery";
 import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
@@ -30,12 +30,13 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   const openCart = useUi((s) => s.openCart);
   const toast = useUi((s) => s.toast);
   const ctx = useDeliveryContext();
+  const preferredDate = ctx.preferredDate;
   const { result, loading, error, check } = useDeliveryCheck(product.slug);
 
   /* ---------- size ---------- */
   const [sizeId, setSizeId] = useState(() => defaultSize(product).id);
   const size = findSize(product, sizeId);
-  useEffect(() => { onSizeChange?.(size); }, [size, onSizeChange]);
+  const selectSize = (id: SizeId) => { setSizeId(id); onSizeChange?.(findSize(product, id)); };
 
   /* ---------- delivery ---------- */
   const [plz, setPlz] = useState("");
@@ -43,12 +44,23 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   const [calendarOpen, setCalendarOpen] = useState(false);
   const prefilled = useRef(false);
 
+  /** Applies a check result: pre-selects the first (or remembered) delivery day. */
+  const applyResult = useCallback((code: string, r: DeliveryCheckResult | null) => {
+    setPlz(code);
+    if (!r?.available || !r.days.length) { setSelectedDate(null); setCalendarOpen(false); return; }
+    const remembered = preferredDate && r.days.some((d) => d.date === preferredDate) ? preferredDate : null;
+    setSelectedDate(remembered ?? r.days[0].date);
+  }, [preferredDate]);
+  const runCheck = (code: string) => check(code).then((r) => applyResult(code, r));
+
+  // Prefill from the session PLZ context once (after mount, to avoid a hydration mismatch).
   useEffect(() => {
     if (prefilled.current || !ctx.postalCode) return;
     prefilled.current = true;
-    setPlz(ctx.postalCode);
-    if (isValidAustrianPostalCode(ctx.postalCode)) void check(ctx.postalCode);
-  }, [ctx.postalCode, check]);
+    const code = ctx.postalCode;
+    if (!isValidAustrianPostalCode(code)) return;
+    void check(code).then((r) => applyResult(code, r));
+  }, [ctx.postalCode, check, applyResult]);
 
   const days = useMemo(() => result?.days ?? [], [result]);
   const today = result?.now?.date ?? null;
@@ -57,15 +69,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   const canTomorrow = Boolean(tomorrow && days.some((d) => d.date === tomorrow));
   const zone = result?.available ? result.zone : null;
 
-  useEffect(() => {
-    if (!result?.available || !result.days.length) { setSelectedDate(null); setCalendarOpen(false); return; }
-    const preferred = ctx.preferredDate && result.days.some((d) => d.date === ctx.preferredDate) ? ctx.preferredDate : null;
-    setSelectedDate(preferred ?? result.days[0].date);
-    // Only run when a new check result arrives.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [result]);
-
-  const submitPlz = (e: React.FormEvent) => { e.preventDefault(); void check(plz); };
+  const submitPlz = (e: React.FormEvent) => { e.preventDefault(); void runCheck(plz); };
   const chooseDate = (date: ISODate, closeCalendar = true) => {
     setSelectedDate(date);
     ctx.setPreferredDate(date);
@@ -103,7 +107,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
     return () => io.disconnect();
   }, []);
 
-  const addToCart = useCallback(() => {
+  const addToCart = () => {
     if (soldOut) return;
     const item = cartItemFromConfig({
       product, size,
@@ -121,7 +125,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       action: { label: "Ansehen", onClick: openCart },
     });
     openCart();
-  }, [soldOut, product, size, selectedDate, zone, result, ctx.zone, ctx.postalCode, message, anonymous, senderName, chosenExtras, addItem, toast, openCart]);
+  };
 
   const hasRating = Boolean(product.rating && product.rating.count > 0);
 
@@ -161,7 +165,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                   name={`${uid}-size`}
                   value={s.id}
                   checked={checked}
-                  onChange={() => setSizeId(s.id)}
+                  onChange={() => selectSize(s.id)}
                   disabled={out}
                   className="peer sr-only"
                 />
@@ -209,7 +213,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
               className="h-12 w-full rounded-md border border-line bg-white pl-10 pr-3 text-[15px] tracking-[0.08em] text-ink placeholder:tracking-normal placeholder:text-ink-soft focus:border-forest focus:outline-none"
             />
           </div>
-          <Button type="submit" variant="outline" size="md" loading={loading} className="h-12 shrink-0">Prüfen</Button>
+          <Button type="submit" variant="outline" size="md" loading={loading} className="h-12! shrink-0">Prüfen</Button>
         </form>
 
         <div id={`${uid}-plz-status`} aria-live="polite" className="mt-3">
@@ -254,7 +258,6 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                 title="Datum wählen"
                 sub={dateMode === "other" && selectedDate ? formatDateShort(selectedDate) : "Kalender öffnen"}
                 icon={<CalendarDays className="size-3.5" aria-hidden />}
-                ariaExpanded={calendarOpen}
               />
             </div>
             {calendarOpen && today && (
@@ -424,15 +427,14 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   );
 }
 
-function QuickOption({ checked, onClick, title, sub, icon, ariaExpanded }: {
-  checked: boolean; onClick: () => void; title: string; sub: string; icon?: React.ReactNode; ariaExpanded?: boolean;
+function QuickOption({ checked, onClick, title, sub, icon }: {
+  checked: boolean; onClick: () => void; title: string; sub: string; icon?: React.ReactNode;
 }) {
   return (
     <button
       type="button"
       role="radio"
       aria-checked={checked}
-      aria-expanded={ariaExpanded}
       onClick={onClick}
       className={cn(
         "flex min-h-[64px] min-w-0 flex-col justify-center rounded-md border px-3 py-2 text-left transition-all duration-300",
