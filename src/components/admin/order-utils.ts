@@ -41,5 +41,5 @@ export const PAYMENT_LABELS: Record<Order["payment"]["method"], string> = {
   apple_pay: "Apple Pay", google_pay: "Google Pay", card: "Kreditkarte", paypal: "PayPal", klarna: "Klarna", eps: "EPS",
 };
 export const PAYMENT_STATUS_LABELS: Record<Order["payment"]["status"], string> = {
-  pending: "Ausstehend", paid: "Bezahlt", failed: "Fehlgeschlagen",
+  pending: "Ausstehend", paid: "Bezahlt", failed: "Fehlgeschlagen", refunded: "Erstattet",
 };

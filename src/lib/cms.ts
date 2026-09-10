@@ -146,3 +146,26 @@ export async function addNewsletterSubscriber(email: string) {
     await writeJson(DATA_DIR, "newsletter", list);
   }
 }
+
+/* ---------------- Generic runtime data (reminders, sessions, requests …) ---------------- */
+
+/**
+ * Small JSON documents that are NOT editorial content: reminders, auth tokens,
+ * business inquiries, contact messages … Stored under `/data` (git-ignored).
+ * Callers must treat the value as opaque and write back the whole document.
+ */
+export async function readData<T>(name: string, fallback: T): Promise<T> {
+  try {
+    return await readJson<T>(DATA_DIR, name);
+  } catch {
+    return fallback;
+  }
+}
+export async function writeData(name: string, value: unknown) {
+  return writeJson(DATA_DIR, name, value);
+}
+
+export async function getOrdersByEmail(email: string) {
+  const needle = email.trim().toLowerCase();
+  return (await getOrders()).filter((o) => o.customer.email.toLowerCase() === needle);
+}

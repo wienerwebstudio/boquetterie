@@ -403,6 +403,17 @@ export interface Order {
   lines: OrderLine[];
   coupon?: { code: string; discount: number };
   totals: { subtotal: number; extras: number; delivery: number; discount: number; total: number };
-  payment: { method: PaymentMethodConfig["id"]; status: "pending" | "paid" | "failed"; reference?: string };
+  payment: {
+    method: PaymentMethodConfig["id"];
+    status: "pending" | "paid" | "failed" | "refunded";
+    reference?: string;
+    /** Which provider handled the payment (mock, stripe, paypal …). */
+    provider?: string;
+    /** Provider-side id (Stripe PaymentIntent, PayPal order id …). */
+    intentId?: string;
+    paidAt?: string;
+  };
   internalNote?: string;
+  /** Optional link to a customer account (e-mail based). */
+  customerId?: string;
 }
