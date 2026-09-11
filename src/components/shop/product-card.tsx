@@ -61,7 +61,7 @@ export function ProductCard({ product, priority = false, showSameDay = false, cl
           <p className="shrink-0 text-[14px] tabular-nums text-ink"><span className="text-[12px] text-ink-muted">ab </span><span className="font-semibold">{formatPrice(lowestPrice(product))}</span></p>
         </div>
         <p className="line-clamp-1 text-[13.5px] text-ink-muted">{product.tagline}</p>
-        <p className="mt-0.5 text-[12px] tracking-[0.04em] text-ink-soft">{product.sizes.map((s) => s.label).join(" · ")}</p>
+        <p className="mt-0.5 text-[12px] tracking-[0.04em] text-ink-muted">{product.sizes.map((s) => s.label).join(" · ")}</p>
         <Link href={href} className="mt-2 inline-flex h-10 items-center justify-center rounded-md border border-line text-[13px] font-semibold text-forest transition-colors hover:border-forest md:hidden">Auswählen</Link>
       </div>
     </article>

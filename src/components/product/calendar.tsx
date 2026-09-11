@@ -120,7 +120,7 @@ export function DeliveryCalendar({
         <thead>
           <tr>
             {WEEKDAYS.map((w) => (
-              <th key={w.short} scope="col" className="pb-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-soft">
+              <th key={w.short} scope="col" className="pb-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-muted">
                 <abbr title={w.long} className="no-underline">{w.short}</abbr>
               </th>
             ))}
@@ -167,7 +167,7 @@ export function DeliveryCalendar({
       <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-line pt-3 text-[12px] text-ink-muted">
         {hasSameDay && <span className="inline-flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-success" aria-hidden /> Heute lieferbar</span>}
         <span className="inline-flex items-center gap-1.5"><span className="size-3 rounded-full ring-1 ring-inset ring-stone" aria-hidden /> Heute</span>
-        <span className="text-ink-soft">Ausgegraute Tage sind nicht lieferbar.</span>
+        <span>Ausgegraute Tage sind nicht lieferbar.</span>
       </div>
     </div>
   );

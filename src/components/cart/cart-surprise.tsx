@@ -32,7 +32,7 @@ export function CartSurprise({ items, className }: { items: CartItem[]; classNam
           <li key={label} className="flex items-start gap-2.5 text-[13.5px]">
             <Icon className="mt-0.5 size-4 shrink-0 text-forest" strokeWidth={1.5} aria-hidden />
             <span className="w-16 shrink-0 font-semibold text-ink">{label}</span>
-            <span className={cn("min-w-0 flex-1", muted ? "text-ink-soft" : "text-ink")}>{value}</span>
+            <span className={cn("min-w-0 flex-1", muted ? "text-ink-muted" : "text-ink")}>{value}</span>
           </li>
         ))}
       </ul>

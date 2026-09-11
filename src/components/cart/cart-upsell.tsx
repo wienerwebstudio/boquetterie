@@ -25,7 +25,7 @@ export function CartUpsell({ items, extras: provided, max = 4, className }: { it
     <section className={cn("", className)} aria-labelledby="cart-upsell-title">
       <div className="mb-3 flex items-baseline justify-between">
         <h3 id="cart-upsell-title" className="font-serif text-[20px] text-ink">Noch etwas dazu?</h3>
-        <p className="text-[12px] text-ink-soft">Kommt mit dem Strauß</p>
+        <p className="text-[12px] text-ink-muted">Kommt mit dem Strauß</p>
       </div>
       <ul className="-mx-5 flex snap-x gap-3 overflow-x-auto px-5 pb-1 scrollbar-none sm:-mx-6 sm:px-6">
         {list.map((e) => (

@@ -44,3 +44,11 @@ next-env.d.ts
 # runtime data (orders, newsletter) – keep seed files only
 /data/*.json
 !/data/.gitkeep
+
+# admin uploads (local driver) – persisted via volume, not in Git
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+# test output
+/playwright-report/
+/test-results/

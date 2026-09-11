@@ -19,7 +19,7 @@ export function CartTrustRow({ className }: { className?: string }) {
     { icon: Fingerprint, label: "Datenschutz" },
   ];
   return (
-    <ul className={className ?? "flex items-center justify-center gap-4 text-[11.5px] text-ink-soft"}>
+    <ul className={className ?? "flex items-center justify-center gap-4 text-[11.5px] text-ink-muted"}>
       {hints.map(({ icon: Icon, label }) => (
         <li key={label} className="inline-flex items-center gap-1.5"><Icon className="size-3.5" strokeWidth={1.5} aria-hidden />{label}</li>
       ))}
@@ -50,7 +50,7 @@ function DrawerFooter({ onClose }: { onClose: () => void }) {
         <span className="text-[14px] font-semibold text-ink">Gesamt</span>
         <span className="text-right">
           <span className="text-[19px] font-semibold tabular-nums text-ink">{formatPrice(totals.total)}</span>
-          <span className="block text-[11.5px] text-ink-soft">{zone ? "inkl. Lieferung & MwSt." : "inkl. MwSt. · zzgl. Lieferung"}</span>
+          <span className="block text-[11.5px] text-ink-muted">{zone ? "inkl. Lieferung & MwSt." : "inkl. MwSt. · zzgl. Lieferung"}</span>
         </span>
       </div>
       <Link href={routes.checkout} onClick={onClose} className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-md bg-forest px-8 text-base font-semibold tracking-wide text-ivory transition-colors hover:bg-forest-700">

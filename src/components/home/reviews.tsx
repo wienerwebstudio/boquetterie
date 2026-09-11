@@ -10,7 +10,7 @@ export function Reviews({ content, reviews }: { content: HomepageContent["review
   return (
     <Section id="bewertungen">
       <SectionHeading eyebrow="Kundenstimmen" title={content.headline} subtitle={content.subheadline} />
-      <ul className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 scrollbar-none sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
+      <ul tabIndex={0} aria-label="Bewertungen" className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 scrollbar-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
         {reviews.map((r) => (
           <li key={r.id} className="w-[82vw] shrink-0 snap-start sm:w-[54vw] md:w-auto">
             <figure className="flex h-full flex-col rounded-md bg-white p-6 shadow-soft sm:p-7">

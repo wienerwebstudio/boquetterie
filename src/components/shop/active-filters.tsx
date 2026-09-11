@@ -9,7 +9,7 @@ export function ActiveFilters({ options, hide = [] }: { options: FilterOptions; 
   const chips = filterChips(params, options, hide);
   if (!chips.length) return null;
   return (
-    <div className="flex flex-wrap items-center gap-2 animate-fade-in" aria-label="Aktive Filter">
+    <div role="group" className="flex flex-wrap items-center gap-2 animate-fade-in" aria-label="Aktive Filter">
       <ul className="contents">
         {chips.map((chip) => (
           <li key={`${chip.key}-${chip.value}`}>

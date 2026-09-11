@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 import { formatPrice, cn } from "@/lib/format";
 import { useCartTotals } from "./use-cart-totals";
 
-function Row({ label, value, muted, strong }: { label: React.ReactNode; value: React.ReactNode; muted?: boolean; strong?: boolean }) {
+function Row({ label, value, muted, strong, className }: { label: React.ReactNode; value: React.ReactNode; muted?: boolean; strong?: boolean; className?: string }) {
   return (
-    <div className={cn("flex items-baseline justify-between gap-4 text-[14px]", strong ? "text-ink" : "text-ink-muted")}>
+    <div className={cn("flex items-baseline justify-between gap-4 text-[14px]", strong ? "text-ink" : "text-ink-muted", className)}>
       <dt className={cn(strong && "font-semibold")}>{label}</dt>
-      <dd className={cn("tabular-nums", strong ? "text-[17px] font-semibold" : muted ? "text-ink-soft" : "text-ink")}>{value}</dd>
+      <dd className={cn("tabular-nums", strong ? "text-[17px] font-semibold" : muted ? "text-ink-muted" : "text-ink")}>{value}</dd>
     </div>
   );
 }
@@ -36,17 +36,15 @@ export function CartSummary({ className, showTotal = true }: { className?: strin
         <Row label="Sträuße" value={formatPrice(totals.itemsSubtotal)} />
         {totals.extrasSubtotal > 0 && <Row label="Extras" value={formatPrice(totals.extrasSubtotal)} />}
         {zone ? (
-          <Row label={<>Lieferung <span className="text-ink-soft">· {zone.name}</span></>} value={totals.delivery === 0 ? <span className="font-semibold text-success">Gratis</span> : formatPrice(totals.delivery)} />
+          <Row label={<>Lieferung <span className="text-ink-muted">· {zone.name}</span></>} value={totals.delivery === 0 ? <span className="font-semibold text-success">Gratis</span> : formatPrice(totals.delivery)} />
         ) : (
           <Row label="Lieferung" value="wird im Checkout berechnet" muted />
         )}
         {coupon && totals.discount > 0 && (
-          <Row label={<>Rabatt <span className="text-ink-soft">· {coupon.code}</span></>} value={<span className="text-success">− {formatPrice(totals.discount)}</span>} />
+          <Row label={<>Rabatt <span className="text-ink-muted">· {coupon.code}</span></>} value={<span className="text-success">− {formatPrice(totals.discount)}</span>} />
         )}
         {showTotal && (
-          <div className="border-t border-line pt-3">
-            <Row label={<>Gesamt <span className="text-[12px] font-normal text-ink-soft">inkl. MwSt.</span></>} value={formatPrice(totals.total)} strong />
-          </div>
+          <Row className="border-t border-line pt-3" label={<>Gesamt <span className="text-[12px] font-normal text-ink-muted">inkl. MwSt.</span></>} value={formatPrice(totals.total)} strong />
         )}
       </dl>
 

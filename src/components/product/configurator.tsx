@@ -141,7 +141,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           <p className="text-[15px] tabular-nums text-ink">
             <span className="text-[12px] text-ink-muted">ab </span>
             <span className="font-semibold">{formatPrice(lowestPrice(product))}</span>
-            <span className="ml-1.5 text-[12px] text-ink-soft">inkl. MwSt.</span>
+            <span className="ml-1.5 text-[12px] text-ink-muted">inkl. MwSt.</span>
           </p>
           {hasRating && product.rating && <StarRating value={product.rating.value} count={product.rating.count} showValue />}
         </div>
@@ -152,7 +152,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       <fieldset>
         <legend className="mb-3 flex w-full items-baseline justify-between">
           <span className="text-[14px] font-semibold text-ink">Größe wählen</span>
-          <span className="text-[12.5px] text-ink-soft">{size.description ?? size.label}</span>
+          <span className="text-[12.5px] text-ink-muted">{size.description ?? size.label}</span>
         </legend>
         <div className="grid grid-cols-3 gap-2.5">
           {product.sizes.map((s) => {
@@ -181,7 +181,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                   </span>
                   <span>
                     <span className="block text-[15px] font-semibold tabular-nums text-ink">{formatPrice(s.price)}</span>
-                    {s.compareAtPrice && s.compareAtPrice > s.price && <s className="text-[12px] text-ink-soft">{formatPrice(s.compareAtPrice)}</s>}
+                    {s.compareAtPrice && s.compareAtPrice > s.price && <s className="text-[12px] text-ink-muted">{formatPrice(s.compareAtPrice)}</s>}
                     {s.description && <span className="block text-[12px] text-ink-muted">{s.description}</span>}
                     {out && <span className="block text-[11px] text-danger">Ausverkauft</span>}
                   </span>
@@ -306,7 +306,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
             <div>
               <div className="mb-1.5 flex items-baseline justify-between">
                 <label htmlFor={`${uid}-message`} className="text-[13px] font-semibold text-ink">Deine Nachricht</label>
-                <span className={cn("text-[12px] tabular-nums", message.length >= maxChars ? "text-danger" : "text-ink-soft")} aria-hidden>{message.length} / {maxChars}</span>
+                <span className={cn("text-[12px] tabular-nums", message.length >= maxChars ? "text-danger" : "text-ink-muted")} aria-hidden>{message.length} / {maxChars}</span>
               </div>
               <textarea
                 id={`${uid}-message`}
@@ -328,7 +328,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
 
             {!anonymous && (
               <div>
-                <label htmlFor={`${uid}-sender`} className="mb-1.5 block text-[13px] font-semibold text-ink">Dein Name <span className="font-normal text-ink-soft">(optional)</span></label>
+                <label htmlFor={`${uid}-sender`} className="mb-1.5 block text-[13px] font-semibold text-ink">Dein Name <span className="font-normal text-ink-muted">(optional)</span></label>
                 <input
                   id={`${uid}-sender`}
                   value={senderName}
@@ -350,7 +350,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
         <section aria-labelledby={`${uid}-extras`}>
           <div className="mb-3 flex items-baseline justify-between">
             <h2 id={`${uid}-extras`} className="font-serif text-[22px] text-ink">Noch etwas dazu?</h2>
-            <span className="text-[12.5px] text-ink-soft">Wird mit dem Strauß geliefert</span>
+            <span className="text-[12.5px] text-ink-muted">Wird mit dem Strauß geliefert</span>
           </div>
           <ul className="-mx-5 flex snap-x gap-3 overflow-x-auto px-5 pb-1 scrollbar-none sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0">
             {activeExtras.map((e) => {

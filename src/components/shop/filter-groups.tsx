@@ -189,7 +189,7 @@ function CheckOption({ label, hint, checked, onChange }: { label: string; hint?:
         </span>
         <span className="flex flex-col">
           <span className={cn("leading-snug transition-colors", checked && "font-semibold text-forest")}>{label}</span>
-          {hint && <span className="text-[12px] leading-snug text-ink-soft">{hint}</span>}
+          {hint && <span className="text-[12px] leading-snug text-ink-muted">{hint}</span>}
         </span>
       </label>
     </li>
@@ -268,7 +268,7 @@ function DeliveryDateFields({ values, onChange, options, hide }: { values: ShopP
               </button>
             )}
           </div>
-          <p className="text-[12px] leading-snug text-ink-soft">Mit Postleitzahl zeigen wir nur Sträuße, die wir an diesem Tag zu dir liefern können.</p>
+          <p className="text-[12px] leading-snug text-ink-muted">Mit Postleitzahl zeigen wir nur Sträuße, die wir an diesem Tag zu dir liefern können.</p>
         </div>
       )}
     </div>

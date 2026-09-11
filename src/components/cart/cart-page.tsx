@@ -20,7 +20,7 @@ export function CartPageView({ extras }: { extras: Extra[] }) {
 
   if (!hydrated) {
     return (
-      <div className="grid gap-10 lg:grid-cols-12" aria-busy="true" aria-label="Warenkorb wird geladen">
+      <div role="status" className="grid gap-10 lg:grid-cols-12" aria-busy="true" aria-label="Warenkorb wird geladen">
         <div className="space-y-6 lg:col-span-7"><Skeleton className="h-28 w-full" /><Skeleton className="h-28 w-full" /></div>
         <div className="lg:col-span-5"><Skeleton className="h-64 w-full" /></div>
       </div>
@@ -36,7 +36,8 @@ export function CartPageView({ extras }: { extras: Extra[] }) {
   return (
     <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
       <p className="sr-only" aria-live="polite">Warenkorb: {pluralize(count, "Artikel", "Artikel")}</p>
-      <section className="lg:col-span-7" aria-label="Artikel im Warenkorb">
+      <section className="lg:col-span-7" aria-labelledby="cart-items-title">
+        <h2 id="cart-items-title" className="sr-only">Artikel im Warenkorb</h2>
         <ul className="divide-y divide-line border-y border-line">
           {items.map((item) => (
             <li key={item.id} className="py-6"><CartLine item={item} compact={false} /></li>
@@ -56,7 +57,7 @@ export function CartPageView({ extras }: { extras: Extra[] }) {
           <h2 className="font-serif text-2xl text-ink">Zusammenfassung</h2>
           <CartSummary className="mt-5" />
           <Button href={routes.checkout} size="xl" full className="mt-6" icon={<Lock className="size-4" aria-hidden />}>Sicher zur Kasse</Button>
-          <CartTrustRow className="mt-4 flex items-center justify-center gap-4 text-[11.5px] text-ink-soft" />
+          <CartTrustRow className="mt-4 flex items-center justify-center gap-4 text-[11.5px] text-ink-muted" />
         </div>
       </aside>
     </div>

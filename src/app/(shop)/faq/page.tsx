@@ -56,7 +56,7 @@ export default async function FaqPage() {
                     <li key={g.id}>
                       <a href={`#${g.id}`} className="-ml-px block border-l border-transparent py-1.5 pl-4 text-[14px] text-ink-muted transition-colors hover:border-forest hover:text-forest">
                         {g.label}
-                        <span className="ml-1.5 text-[12px] text-ink-soft">{g.items.length}</span>
+                        <span className="ml-1.5 text-[12px] text-ink-muted">{g.items.length}</span>
                       </a>
                     </li>
                   ))}

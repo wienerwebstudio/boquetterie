@@ -73,6 +73,8 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
         <div
           ref={scroller}
           onScroll={onScroll}
+          role="region"
+          tabIndex={0}
           className="-mx-5 flex snap-x snap-mandatory overflow-x-auto scroll-smooth scrollbar-none sm:-mx-8 sm:rounded-md"
           aria-roledescription="Karussell"
           aria-label={`Bilder von ${name}`}

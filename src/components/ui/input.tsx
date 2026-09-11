@@ -21,7 +21,7 @@ export const Input = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputE
     <div className={cn("flex flex-col gap-1.5", className)}>
       {label && (
         <label htmlFor={inputId} className="text-[13px] font-semibold text-ink">
-          {label} {optional && <span className="font-normal text-ink-soft">(optional)</span>}
+          {label} {optional && <span className="font-normal text-ink-muted">(optional)</span>}
         </label>
       )}
       <input
@@ -35,7 +35,7 @@ export const Input = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputE
       {error ? (
         <p id={`${inputId}-error`} role="alert" className="text-[13px] text-danger">{error}</p>
       ) : hint ? (
-        <p id={`${inputId}-hint`} className="text-[13px] text-ink-soft">{hint}</p>
+        <p id={`${inputId}-hint`} className="text-[13px] text-ink-muted">{hint}</p>
       ) : null}
     </div>
   );
@@ -51,7 +51,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaHTMLAttributes<H
     <div className={cn("flex flex-col gap-1.5", className)}>
       {label && (
         <label htmlFor={inputId} className="text-[13px] font-semibold text-ink">
-          {label} {optional && <span className="font-normal text-ink-soft">(optional)</span>}
+          {label} {optional && <span className="font-normal text-ink-muted">(optional)</span>}
         </label>
       )}
       <textarea
@@ -61,7 +61,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaHTMLAttributes<H
         className={cn(fieldBase, "min-h-28 resize-y py-3", error ? "border-danger" : "border-line")}
         {...rest}
       />
-      {error ? <p role="alert" className="text-[13px] text-danger">{error}</p> : hint ? <p className="text-[13px] text-ink-soft">{hint}</p> : null}
+      {error ? <p role="alert" className="text-[13px] text-danger">{error}</p> : hint ? <p className="text-[13px] text-ink-muted">{hint}</p> : null}
     </div>
   );
 });
@@ -81,7 +81,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectHTMLAttributes<HTMLSel
         </select>
         <svg aria-hidden className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-ink-muted" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </div>
-      {error ? <p role="alert" className="text-[13px] text-danger">{error}</p> : hint ? <p className="text-[13px] text-ink-soft">{hint}</p> : null}
+      {error ? <p role="alert" className="text-[13px] text-danger">{error}</p> : hint ? <p className="text-[13px] text-ink-muted">{hint}</p> : null}
     </div>
   );
 });

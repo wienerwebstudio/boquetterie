@@ -22,7 +22,7 @@ export function ProductGrid({ products, showSameDay = false, className, priority
 
 export function ProductGridSkeleton({ count = 8, withToolbar = false }: { count?: number; withToolbar?: boolean }) {
   return (
-    <div className="flex flex-col gap-6" aria-busy="true" aria-label="Sträuße werden geladen">
+    <div role="status" className="flex flex-col gap-6" aria-busy="true" aria-label="Sträuße werden geladen">
       {withToolbar && (
         <div className="flex items-center justify-between">
           <Skeleton className="h-4 w-24" />

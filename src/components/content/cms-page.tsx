@@ -24,7 +24,7 @@ export function PlaceholderBox({ paragraphs, label = "Platzhalter – Inhalt fol
     <div className={cn("max-w-2xl rounded-md border border-dashed border-stone bg-ivory-100/70 p-5 sm:p-6", className)} role="note">
       <p className="eyebrow mb-3 text-warn">{label}</p>
       {paragraphs && paragraphs.length > 0 && (
-        <div className="space-y-3 text-[14px] leading-relaxed text-ink-soft">
+        <div className="space-y-3 text-[14px] leading-relaxed text-ink-muted">
           {paragraphs.map((text, i) => <p key={i}>{text}</p>)}
         </div>
       )}
@@ -87,7 +87,7 @@ export function CmsPage({ page, eyebrow, crumbs, image, children }: { page: CmsP
       <PageHeader eyebrow={eyebrow} title={page.title} intro={page.intro} crumbs={crumbs} image={image} />
       <div className="container-x py-14 sm:py-20 lg:py-24">
         {page.placeholder && (
-          <p className="mb-10 text-[13px] text-ink-soft">
+          <p className="mb-10 text-[13px] text-ink-muted">
             Zuletzt aktualisiert: <span className="rounded-sm border border-dashed border-stone px-1.5 py-0.5">[Datum]</span>
           </p>
         )}

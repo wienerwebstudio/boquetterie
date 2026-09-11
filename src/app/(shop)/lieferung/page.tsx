@@ -67,7 +67,7 @@ export default async function DeliveryPage() {
             ))}
           </ul>
         )}
-        <p className="mt-8 max-w-2xl text-[13px] leading-relaxed text-ink-soft">
+        <p className="mt-8 max-w-2xl text-[13px] leading-relaxed text-ink-muted">
           Alle Preise inkl. USt. Aufpreise für Zeitfenster werden im Checkout ausgewiesen. Ob eine Lieferung am gewünschten Tag möglich ist, hängt vom Bestellzeitpunkt und von unseren Ruhetagen ab.
         </p>
       </section>
@@ -171,7 +171,7 @@ function ZoneCard({ zone, settings, now }: { zone: DeliveryZone; settings: SiteS
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="grid gap-1 py-3">
-      <dt className="text-[12px] font-semibold uppercase tracking-[0.1em] text-ink-soft">{label}</dt>
+      <dt className="text-[12px] font-semibold uppercase tracking-[0.1em] text-ink-muted">{label}</dt>
       <dd className="text-ink">{children}</dd>
     </div>
   );

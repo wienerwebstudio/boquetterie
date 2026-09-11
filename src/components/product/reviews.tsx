@@ -22,7 +22,7 @@ export function ProductReviews({ reviews, productName }: { reviews: Review[]; pr
             <p className="eyebrow mb-3">Stimmen</p>
             <h2 id="reviews-title" className="display-3 text-ink">Bewertungen zu {productName}</h2>
           </div>
-          {hasDemo && <p className="text-[12.5px] text-ink-soft">Beispielbewertungen – echte Bewertungen folgen</p>}
+          {hasDemo && <p className="text-[12.5px] text-ink-muted">Beispielbewertungen – echte Bewertungen folgen</p>}
         </div>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map((r) => (
@@ -32,7 +32,7 @@ export function ProductReviews({ reviews, productName }: { reviews: Review[]; pr
               <p className="mt-5 text-[13px] text-ink-muted">
                 <span className="font-semibold text-ink">{r.name}</span> · {formatMonth(r.date)}
                 {r.verified && !r.demo && <span className="ml-2 text-success">Verifizierter Kauf</span>}
-                {r.demo && <span className="ml-2 text-ink-soft">Beispiel</span>}
+                {r.demo && <span className="ml-2 text-ink-muted">Beispiel</span>}
               </p>
             </li>
           ))}

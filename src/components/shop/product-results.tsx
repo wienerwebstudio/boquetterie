@@ -78,7 +78,10 @@ export async function ProductResults({ params, pathname, fixed = {}, hide = [], 
       <ShopToolbar count={list.length} options={options} hide={hide} />
       {info && <DeliveryInfoLine info={info} params={params} pathname={pathname} />}
       {list.length > 0 ? (
-        <ProductGrid products={list} showSameDay={showSameDay} />
+        <>
+          <h2 className="sr-only">Sträuße</h2>
+          <ProductGrid products={list} showSameDay={showSameDay} />
+        </>
       ) : (
         <EmptyState pathname={pathname} params={params} activeCount={activeCount} occasions={occasions.filter((o) => o.featured).slice(0, 3)} fallback={sortProducts(products, "bestseller").slice(0, 4)} info={info} />
       )}

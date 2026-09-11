@@ -18,7 +18,7 @@ export function CartLine({ item, compact = true, className }: { item: CartItem; 
 
   return (
     <article className={cn("flex gap-4", className)} aria-label={`${snapshot.name}, ${snapshot.sizeLabel}`}>
-      <Link href={href} className={cn("relative shrink-0 overflow-hidden rounded-md bg-ivory-200", compact ? "size-[88px]" : "size-24 sm:size-32")}>
+      <Link href={href} tabIndex={-1} aria-hidden="true" className={cn("relative shrink-0 overflow-hidden rounded-md bg-ivory-200", compact ? "size-[88px]" : "size-24 sm:size-32")}>
         <Image src={snapshot.image} alt="" fill sizes="128px" className="object-cover" />
       </Link>
 

@@ -106,7 +106,7 @@ export function ContactForm({ defaultSubject = "Bestellung", className }: { defa
       )}
 
       <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-sm text-[12px] leading-relaxed text-ink-soft">
+        <p className="max-w-sm text-[12px] leading-relaxed text-ink-muted">
           Mit dem Absenden stimmst du zu, dass wir deine Angaben zur Bearbeitung der Anfrage verwenden. Details in der Datenschutzerklärung.
         </p>
         <Button type="submit" size="lg" loading={status === "sending"} iconRight={<ArrowRight className="size-4" aria-hidden />}>

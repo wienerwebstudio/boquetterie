@@ -58,10 +58,6 @@ Beim Deployment muss das Dateisystem beschreibbar sein (klassischer Node-Server,
 - `src/app/admin/bestellungen/actions.ts` – Statuswechsel und interne Notiz für Bestellungen.
 - `src/app/admin/[collection]/…` – generische Listen-/Bearbeitungsseiten; `einstellungen`, `startseite`, `blumen-abo` – Singleton-Editoren.
 
-## Später auf eine Datenbank umstellen
+## Datenbank statt JSON-Dateien
 
-`src/lib/cms.ts` ist die einzige Stelle, die Dateien liest oder schreibt. Für eine Datenbank:
-
-1. `readCollection`/`writeCollection` (Inhalte) sowie `getOrders`/`saveOrders`/`updateOrder` und die Newsletter-Funktionen in `cms.ts` durch DB-Zugriffe ersetzen (Signaturen beibehalten).
-2. Den Admin-Code nicht anfassen – er kennt nur `readCollection`/`writeCollection` und die typisierten Getter.
-3. Die JSON-Dateien einmalig als Seed importieren.
+Der Shop läuft ohne Konfiguration mit den JSON-Dateien in `content/` und `data/`. Sobald `DATABASE_URL` gesetzt ist, liegen alle Inhalte und Laufzeitdaten in Postgres – der Admin-Code bleibt unverändert, weil er nur die typisierten Getter aus `src/lib/cms.ts` kennt. Einrichtung, Migration und Seed: siehe `docs/DATABASE.md`; Hosting-Optionen: `docs/DEPLOYMENT.md`.
