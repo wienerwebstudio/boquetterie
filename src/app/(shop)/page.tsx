@@ -12,6 +12,7 @@ export const revalidate = 300;
 import { Hero } from "@/components/home/hero";
 import { TrustBar } from "@/components/home/trust-bar";
 import { OccasionGrid } from "@/components/home/occasion-grid";
+import { GiftFinderEntry } from "@/components/home/gift-finder-entry";
 import { Bestsellers } from "@/components/home/bestsellers";
 import { Collections } from "@/components/home/collections";
 import { HowItWorks } from "@/components/home/how-it-works";
@@ -60,6 +61,7 @@ export default async function HomePage() {
       <Hero hero={home.hero} />
       <TrustBar items={settings.trust} />
       <OccasionGrid content={home.occasions} occasions={homeOccasions} />
+      <GiftFinderEntry />
       <Bestsellers content={home.bestsellers} products={bestsellers.slice(0, 8)} showSameDay={sameDayNow} />
       <Collections content={home.collections} categories={homeCollections} />
       <HowItWorks content={home.howItWorks} />

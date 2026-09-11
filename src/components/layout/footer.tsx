@@ -3,9 +3,13 @@ import type { SiteSettings } from "@/types";
 import { Logo } from "@/components/icons/logo";
 import { PaymentMark } from "@/components/icons/payment";
 import { routes } from "@/lib/urls";
+import { ConsentSettingsLink } from "@/components/consent/consent-link";
+import { GIFT_FINDER_PATH } from "@/components/giftfinder/config";
+
+type FooterLink = { label: string; href: string } | { label: string; consent: true };
 
 export function Footer({ settings }: { settings: SiteSettings }) {
-  const cols = [
+  const cols: { title: string; links: FooterLink[] }[] = [
     { title: "Shop", links: [
       { label: "Blumen", href: routes.shop }, { label: "Bestseller", href: routes.category("bestseller") },
       { label: "Rosen", href: routes.category("rosen") }, { label: "Geschenksets", href: routes.extras },
@@ -19,13 +23,17 @@ export function Footer({ settings }: { settings: SiteSettings }) {
     { title: "Service", links: [
       { label: "Lieferung", href: routes.delivery }, { label: "FAQ", href: routes.faq },
       { label: "Kontakt", href: routes.contact }, { label: "Bestellung verfolgen", href: routes.tracking },
+      { label: "Geschenkfinder", href: GIFT_FINDER_PATH }, { label: "Erinnerung", href: "/erinnerung" },
     ] },
     { title: "Unternehmen", links: [
-      { label: "Über uns", href: routes.about }, { label: "Impressum", href: routes.legal.imprint },
+      { label: "Über uns", href: routes.about }, { label: "Firmenkunden", href: "/firmenkunden" },
+      { label: "Impressum", href: routes.legal.imprint },
       { label: "Datenschutz", href: routes.legal.privacy }, { label: "AGB", href: routes.legal.terms },
       { label: "Widerruf", href: routes.legal.withdrawal },
+      { label: "Cookie-Einstellungen", consent: true },
     ] },
   ];
+  const linkCls = "text-[14.5px] text-ink transition-colors hover:text-forest";
   const payments = settings.payments.filter((p) => p.enabled);
   return (
     <footer className="border-t border-line bg-ivory-100">
@@ -48,7 +56,11 @@ export function Footer({ settings }: { settings: SiteSettings }) {
               <p className="eyebrow mb-4">{col.title}</p>
               <ul className="space-y-2.5">
                 {col.links.map((l) => (
-                  <li key={l.href}><Link href={l.href} className="text-[14.5px] text-ink transition-colors hover:text-forest">{l.label}</Link></li>
+                  <li key={l.label}>
+                    {"consent" in l
+                      ? <ConsentSettingsLink className={linkCls}>{l.label}</ConsentSettingsLink>
+                      : <Link href={l.href} className={linkCls}>{l.label}</Link>}
+                  </li>
                 ))}
               </ul>
             </nav>

@@ -6,6 +6,8 @@ import { Footer } from "./footer";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { SearchOverlay } from "@/components/layout/search-overlay";
 import { ToastViewport } from "@/components/ui/toast-viewport";
+import { ConsentBanner } from "@/components/consent/consent-banner";
+import { Analytics } from "@/components/analytics/analytics";
 
 export async function SiteShell({ settings, children }: { settings: SiteSettings; children: React.ReactNode }) {
   const [categories, occasions] = await Promise.all([getCategories(), getOccasions()]);
@@ -26,6 +28,8 @@ export async function SiteShell({ settings, children }: { settings: SiteSettings
       <CartDrawer />
       <SearchOverlay />
       <ToastViewport />
+      <ConsentBanner />
+      <Analytics />
     </>
   );
 }
