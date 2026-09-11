@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getAllProducts, getCategories, getOccasions } from "@/lib/cms";
 import { primaryImage, search, sortProducts } from "@/lib/catalog";
+import { enforceRateLimit } from "@/lib/rate-limit";
 import type { Product } from "@/types";
 
 export const dynamic = "force-dynamic";
@@ -35,6 +36,8 @@ function hit(p: Product): SearchProductHit {
  * (featured occasions, collections, bestsellers) so the overlay is content-driven.
  */
 export async function GET(req: Request) {
+  const limited = enforceRateLimit(req, { scope: "search", limit: 120, windowMs: 60 * 1000 });
+  if (limited) return limited;
   const url = new URL(req.url);
   const q = (url.searchParams.get("q") ?? "").trim().slice(0, 80);
   const limit = Math.min(Math.max(Number(url.searchParams.get("limit")) || 6, 1), 24);

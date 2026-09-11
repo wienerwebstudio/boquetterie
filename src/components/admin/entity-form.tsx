@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useId, useMemo, useState, useTransition } from "react";
-import { ArrowDown, ArrowUp, Braces, ExternalLink, ImageOff, Plus, Save, Trash, X } from "lucide-react";
+import { ArrowDown, ArrowUp, Braces, ExternalLink, Plus, Save, Trash, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useUi } from "@/store/ui";
 import { cn } from "@/lib/format";
@@ -12,6 +11,7 @@ import { getPath, setPath, type Json } from "./paths";
 import type { FieldDef, FieldOption, FieldSection } from "./schemas";
 import type { OptionMap } from "./options";
 import { Banner, Card, Field, inputCls, readonlyCls } from "./controls";
+import { ImageField } from "./image-field";
 
 export interface EntityFormProps {
   title: string;
@@ -320,7 +320,7 @@ function FieldRenderer({ field, value, onChange, options, compact }: RendererPro
         />,
       );
     case "image":
-      return wrap(<ImageField id={id} field={field} value={value} onChange={onChange} />);
+      return wrap(<ImageField id={id} value={value} onChange={onChange} placeholder={field.placeholder} readonly={field.readonly} compact={compact} />);
     case "stringlist":
       return wrap(<StringList field={field} value={value} onChange={onChange} />);
     case "list":
@@ -365,37 +365,6 @@ function MultiSelect({ field, value, onChange, options }: { field: FieldDef; val
             <span className="truncate">{o.label}</span>
           </label>
         ))}
-      </div>
-    </div>
-  );
-}
-
-function ImageField({ id, field, value, onChange }: { id: string; field: FieldDef; value: unknown; onChange: (v: unknown) => void }) {
-  const src = typeof value === "string" ? value.trim() : "";
-  const [broken, setBroken] = useState<string | null>(null);
-  const canPreview = src.startsWith("/") && !src.startsWith("//") && broken !== src;
-  return (
-    <div className="flex items-start gap-3">
-      <div className="relative size-16 shrink-0 overflow-hidden rounded-md border border-line bg-ivory-100">
-        {canPreview ? (
-          <Image src={src} alt="" fill sizes="64px" className="object-cover" unoptimized onError={() => setBroken(src)} />
-        ) : (
-          <div className="flex h-full items-center justify-center text-ink-soft" title={src ? "Bild nicht gefunden" : "Kein Bild"}>
-            <ImageOff className="size-5" aria-hidden />
-          </div>
-        )}
-      </div>
-      <div className="min-w-0 flex-1">
-        <input
-          id={id}
-          type="text"
-          value={src ? (value as string) : ""}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder={field.placeholder ?? "/images/…/bild.jpg"}
-          readOnly={field.readonly}
-          className={cn(inputCls, field.readonly && readonlyCls)}
-        />
-        <p className="mt-1 text-[12px] text-ink-soft">Pfad relativ zu /public. Bilder vorher hochladen (z. B. per FTP oder Git).</p>
       </div>
     </div>
   );

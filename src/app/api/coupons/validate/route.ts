@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getCoupons, getSettings } from "@/lib/cms";
 import { getLocalNow } from "@/lib/delivery";
 import { validateCoupon } from "@/lib/pricing";
+import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +12,8 @@ export const dynamic = "force-dynamic";
  * The final discount is recomputed server-side when the order is created.
  */
 export async function POST(req: Request) {
+  const limited = enforceRateLimit(req, { scope: "coupons-validate", limit: 30, windowMs: 10 * 60 * 1000 });
+  if (limited) return limited;
   let body: { code?: unknown; subtotal?: unknown } = {};
   try {
     body = await req.json();

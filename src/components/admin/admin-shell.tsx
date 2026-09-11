@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   LayoutDashboard, ShoppingBag, Flower2, Layers, Sparkles, Gift, Truck, Ticket, MessageCircleQuestionMark,
-  Star, Repeat, PanelsTopLeft, FileText, Globe, Settings, Mail, Menu, X, LogOut, ExternalLink,
+  Star, MessageSquareText, Repeat, PanelsTopLeft, FileText, Globe, Images, Settings, Mail, BellRing, Menu, X, LogOut, ExternalLink,
 } from "lucide-react";
 import { cn } from "@/lib/format";
 
@@ -20,16 +20,20 @@ const NAV: { href: string; label: string; icon: typeof LayoutDashboard; group?: 
   { href: "/admin/gutscheine", label: "Gutscheine", icon: Ticket },
   { href: "/admin/faq", label: "FAQ", icon: MessageCircleQuestionMark, group: "Inhalte" },
   { href: "/admin/bewertungen", label: "Bewertungen", icon: Star },
+  { href: "/admin/bewertungen/eingereicht", label: "Eingereichte Bewertungen", icon: MessageSquareText },
   { href: "/admin/blumen-abo", label: "Blumen-Abo", icon: Repeat },
   { href: "/admin/startseite", label: "Startseite", icon: PanelsTopLeft },
   { href: "/admin/seiten", label: "Seiten", icon: FileText },
   { href: "/admin/landingpages", label: "Landingpages", icon: Globe },
+  { href: "/admin/medien", label: "Medien", icon: Images },
   { href: "/admin/einstellungen", label: "Einstellungen", icon: Settings, group: "System" },
   { href: "/admin/newsletter", label: "Newsletter", icon: Mail },
+  { href: "/admin/erinnerungen", label: "Erinnerungen", icon: BellRing },
 ];
 
 function isActive(pathname: string, href: string) {
   if (href === "/admin") return pathname === "/admin";
+  if (href === "/admin/bewertungen") return pathname === href || (pathname.startsWith(href + "/") && !pathname.startsWith(href + "/eingereicht"));
   return pathname === href || pathname.startsWith(href + "/");
 }
 

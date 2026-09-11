@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { getSettings, getSubscription } from "@/lib/cms";
+import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -43,6 +44,8 @@ const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice
 
 /** POST /api/subscription-request { name, email, plan, frequency, message? } */
 export async function POST(req: Request) {
+  const limited = enforceRateLimit(req, { scope: "subscription-request", limit: 5, windowMs: 10 * 60 * 1000 });
+  if (limited) return limited;
   const [settings, config] = await Promise.all([getSettings(), getSubscription()]);
   if (!settings.subscriptionEnabled || !config.enabled) {
     return NextResponse.json({ ok: false, message: "Das Blumen-Abo ist derzeit nicht verfügbar." }, { status: 404 });

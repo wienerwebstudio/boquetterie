@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getOrderById } from "@/lib/cms";
 import { isEmail } from "@/lib/order-payload";
+import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -10,6 +11,8 @@ export const dynamic = "force-dynamic";
  * The response is identical for "unknown order" and "wrong e-mail" so nothing leaks.
  */
 export async function POST(req: Request) {
+  const limited = enforceRateLimit(req, { scope: "orders-lookup", limit: 20, windowMs: 10 * 60 * 1000 });
+  if (limited) return limited;
   let body: { orderId?: unknown; email?: unknown } = {};
   try {
     body = await req.json();

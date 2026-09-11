@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDeliveryZones, getSettings, getProductBySlug } from "@/lib/cms";
 import { findZone, getAvailableDays, normalizePostalCode, isValidAustrianPostalCode, getLocalNow, describeZone } from "@/lib/delivery";
+import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +10,8 @@ export const dynamic = "force-dynamic";
  * Returns the zone (if any) and all deliverable days for the next weeks.
  */
 export async function GET(req: Request) {
+  const limited = enforceRateLimit(req, { scope: "delivery-check", limit: 60, windowMs: 60 * 1000 });
+  if (limited) return limited;
   const url = new URL(req.url);
   const plz = normalizePostalCode(url.searchParams.get("plz") ?? "");
   const productSlug = url.searchParams.get("product");

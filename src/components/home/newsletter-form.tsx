@@ -7,6 +7,8 @@ type State = { status: "idle" | "loading" | "success" | "error"; message?: strin
 
 export function NewsletterForm({ placeholder, button, note }: { placeholder: string; button: string; note: string }) {
   const [email, setEmail] = useState("");
+  /** Honeypot – stays empty for humans; the field is hidden and excluded from the tab order. */
+  const [website, setWebsite] = useState("");
   const [state, setState] = useState<State>({ status: "idle" });
   const id = useId();
 
@@ -22,7 +24,7 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: value }),
+        body: JSON.stringify({ email: value, website }),
       });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; message?: string };
       if (!res.ok || !data.ok) {
@@ -48,8 +50,12 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
   }
 
   return (
-    <form onSubmit={submit} noValidate className="flex flex-col gap-3" aria-describedby={`${id}-note`}>
+    <form onSubmit={submit} noValidate className="relative flex flex-col gap-3" aria-describedby={`${id}-note`}>
       <label htmlFor={`${id}-email`} className="sr-only">E-Mail-Adresse</label>
+      <div aria-hidden className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
+        <label htmlFor={`${id}-website`}>Website (bitte leer lassen)</label>
+        <input id={`${id}-website`} type="text" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+      </div>
       <div className="flex flex-col gap-2 sm:flex-row">
         <input
           id={`${id}-email`}

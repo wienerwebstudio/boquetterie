@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -49,6 +50,8 @@ const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice
  * Appends the message to data/contact-messages.json.
  */
 export async function POST(req: Request) {
+  const limited = enforceRateLimit(req, { scope: "contact", limit: 5, windowMs: 10 * 60 * 1000 });
+  if (limited) return limited;
   let body: Record<string, unknown>;
   try {
     body = (await req.json()) as Record<string, unknown>;
