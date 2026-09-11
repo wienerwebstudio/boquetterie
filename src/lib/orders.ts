@@ -1,10 +1,11 @@
 import "server-only";
 import { randomBytes, randomInt } from "node:crypto";
 import type { CartItem, Coupon, DeliveryZone, Extra, Order, OrderLine, OrderStatus, Product, SizeId } from "@/types";
-import { addOrder, getAllProducts, getCoupons, getDeliveryZones, getExtras, getOrderById, getSettings } from "@/lib/cms";
+import type { CreatePaymentResult, PaymentProviderId } from "@/types/payments";
+import { addOrder, getAllProducts, getCoupons, getDeliveryZones, getExtras, getOrderById, getOrders, getSettings, readCollection, updateOrder, writeCollection } from "@/lib/cms";
 import { findZone, getAvailableDays, getLocalNow, normalizePostalCode } from "@/lib/delivery";
 import { computeTotals, validateCoupon } from "@/lib/pricing";
-import { processPayment } from "@/lib/payments";
+import { createPayment, providerForMethod, type PaymentEvent } from "@/lib/payments";
 import { sendOrderConfirmation } from "@/lib/mail";
 import {
   cleanString, isIsoDate, LIMITS, validateCustomerFields, validateDeliveryFields, validateGreetingFields, validateRecipientFields,
@@ -223,18 +224,87 @@ async function generateOrderId() {
   throw new Error("Could not generate a unique order id");
 }
 
+/* ---------------- Stock ---------------- */
+
+type StockLine = Pick<OrderLine, "productId" | "sizeId" | "quantity">;
+
+/**
+ * Stock writes are serialised through one promise chain so two concurrent orders
+ * cannot both pass the availability check with the same units (single process).
+ */
+let stockQueue: Promise<unknown> = Promise.resolve();
+function withStockLock<T>(fn: () => Promise<T>): Promise<T> {
+  const run = stockQueue.then(fn, fn);
+  stockQueue = run.catch(() => undefined);
+  return run;
+}
+
+function applyStockDelta(products: Product[], lines: StockLine[], sign: 1 | -1, check: boolean): { ok: true; changed: boolean } | { ok: false; message: string } {
+  let changed = false;
+  for (const line of lines) {
+    const product = products.find((p) => p.id === line.productId);
+    if (!product) continue;
+    const size = product.sizes.find((s) => s.id === line.sizeId);
+    const delta = sign * line.quantity;
+    if (check && ((product.stock !== null && product.stock + delta < 0) || (size && typeof size.stock === "number" && size.stock + delta < 0))) {
+      return { ok: false, message: `„${product.name}" ist in dieser Menge leider nicht mehr verfügbar.` };
+    }
+    if (product.stock !== null && typeof product.stock === "number") { product.stock = Math.max(0, product.stock + delta); changed = true; }
+    if (size && typeof size.stock === "number") { size.stock = Math.max(0, size.stock + delta); changed = true; }
+  }
+  return { ok: true, changed };
+}
+
+/** Decrements product/size stock (only where tracked). Fails without writing when a line is no longer available. */
+export function reserveStock(lines: StockLine[]): Promise<{ ok: true } | { ok: false; message: string }> {
+  return withStockLock(async () => {
+    const products = structuredClone(await readCollection<Product[]>("products"));
+    const res = applyStockDelta(products, lines, -1, true);
+    if (!res.ok) return res;
+    if (res.changed) await writeCollection("products", products);
+    return { ok: true };
+  });
+}
+
+/** Gives reserved units back (failed / cancelled payment). Never throws – logs instead. */
+export function releaseStock(lines: StockLine[]): Promise<void> {
+  return withStockLock(async () => {
+    try {
+      const products = structuredClone(await readCollection<Product[]>("products"));
+      const res = applyStockDelta(products, lines, 1, false);
+      if (res.ok && res.changed) await writeCollection("products", products);
+    } catch (err) {
+      console.error("[orders] releasing stock failed", err);
+    }
+  });
+}
+
+/* ---------------- Creation ---------------- */
+
+export type CreateOrderOutcome =
+  | { ok: true; order: Order; payment: CreatePaymentResult }
+  | { ok: false; status: number; message: string; errors?: FieldErrors };
+
 /**
  * Builds and persists an order from an already parsed payload.
  * Everything price-relevant is re-resolved from the catalog; the client's
  * snapshots are ignored.
+ *
+ * Sequence: validate → reserve stock → store the order as `received`/payment
+ * `pending` → create the provider payment. Mock pays immediately; Stripe and
+ * PayPal return what the browser needs to finish the payment (client secret /
+ * approve URL) and the order is marked paid by confirm endpoint or webhook.
  */
-export async function createOrderFromPayload(payload: OrderPayload): Promise<CreateOrderResult> {
+export async function createOrderFromPayload(payload: OrderPayload, opts: { siteUrl: string }): Promise<CreateOrderOutcome> {
   const [products, extras, zones, coupons, settings] = await Promise.all([
     getAllProducts(), getExtras(), getDeliveryZones(), getCoupons(), getSettings(),
   ]);
 
   const paymentConfig = settings.payments.find((p) => p.id === payload.payment.method && p.enabled);
-  if (!paymentConfig) return { ok: false, status: 400, message: "Diese Zahlungsart ist derzeit nicht verfügbar.", errors: { "payment.method": "Bitte wähle eine andere Zahlungsart." } };
+  const provider = paymentConfig ? providerForMethod(paymentConfig.id) : null;
+  if (!paymentConfig || !provider) {
+    return { ok: false, status: 400, message: "Diese Zahlungsart ist derzeit nicht verfügbar.", errors: { "payment.method": "Bitte wähle eine andere Zahlungsart." } };
+  }
 
   const resolved = resolveLines(payload.items, products, extras);
   if (!resolved.ok) return { ok: false, status: 409, message: resolved.message, errors: { items: resolved.message } };
@@ -276,40 +346,167 @@ export async function createOrderFromPayload(payload: OrderPayload): Promise<Cre
     return { ok: false, status: 400, message: `Für dieses Liefergebiet gilt ein Mindestbestellwert von ${totals.minOrder.toFixed(2).replace(".", ",")} €.` };
   }
 
-  // Build the order
+  // Reserve stock before anything is persisted – the check inside the lock is authoritative.
+  const orderLines = lines.map((l) => l.line);
+  const reserved = await reserveStock(orderLines);
+  if (!reserved.ok) return { ok: false, status: 409, message: reserved.message, errors: { items: reserved.message } };
+
+  // Build & store the order (payment pending)
   const id = await generateOrderId();
   const token = randomBytes(12).toString("hex"); // 24 hex chars
   const createdAt = new Date().toISOString();
-
-  const payment = await processPayment({ method: paymentConfig.id, amount: totals.total, orderId: id, provider: paymentConfig.provider ?? "mock" });
-  if (payment.status === "failed") {
-    return { ok: false, status: 402, message: payment.message ?? "Die Zahlung konnte nicht durchgeführt werden. Bitte versuch es erneut." };
-  }
-
-  const history: Order["history"] = [{ status: "received", at: createdAt }];
-  let status: OrderStatus = "received";
-  if (payment.status === "paid") {
-    status = "paid";
-    history.push({ status: "paid", at: new Date().toISOString(), note: payment.provider === "mock" ? "Testzahlung (mock)" : payment.reference });
-  }
-
   const order: Order = {
-    id, token, createdAt, status, history,
+    id, token, createdAt, status: "received", history: [{ status: "received", at: createdAt }],
     recipient: { ...payload.recipient, country: "AT" },
     delivery: {
       date: payload.delivery.date, windowId: payload.delivery.windowId, windowLabel, note: payload.delivery.note,
       zoneId: zone.id, zoneName: zone.name, fee: totals.delivery,
     },
     customer: { firstName: payload.customer.firstName, lastName: payload.customer.lastName, email: payload.customer.email, phone: payload.customer.phone },
-    lines: lines.map((l) => l.line),
+    lines: orderLines,
     coupon: coupon && totals.discount > 0 ? { code: coupon.code, discount: totals.discount } : coupon?.type === "free_shipping" ? { code: coupon.code, discount: 0 } : undefined,
     totals: { subtotal: totals.itemsSubtotal, extras: totals.extrasSubtotal, delivery: totals.delivery, discount: totals.discount, total: totals.total },
-    payment: { method: paymentConfig.id, status: payment.status, reference: payment.reference },
+    payment: { method: paymentConfig.id, status: "pending", provider },
   };
 
-  await addOrder(order);
-  // Fire-and-forget: a failing mail stub must never fail the order.
-  sendOrderConfirmation(order).catch((err) => console.error("[mail] confirmation failed", err));
+  try {
+    await addOrder(order);
+  } catch (err) {
+    await releaseStock(orderLines);
+    throw err;
+  }
 
-  return { ok: true, order };
+  // Provider step
+  let payment: CreatePaymentResult;
+  try {
+    payment = await createPayment({ order, siteUrl: opts.siteUrl });
+  } catch (err) {
+    console.error(`[payments] ${provider} createPayment failed for ${id}`, err);
+    payment = { status: "failed", provider, message: "Die Zahlung konnte nicht gestartet werden. Bitte versuch es noch einmal oder wähle eine andere Zahlungsart." };
+  }
+
+  if (payment.status === "failed") {
+    await markOrderPaymentFailed(id, { note: payment.message ?? "Zahlung konnte nicht gestartet werden", intentId: payment.intentId });
+    return { ok: false, status: 402, message: payment.message ?? "Die Zahlung konnte nicht durchgeführt werden. Bitte versuch es erneut." };
+  }
+
+  let stored: Order | null;
+  if (payment.status === "paid") {
+    stored = await markOrderPaid(id, {
+      provider: payment.provider, reference: payment.reference, intentId: payment.intentId,
+      note: payment.provider === "mock" ? "Testzahlung (mock)" : payment.reference,
+    });
+  } else {
+    stored = await updateOrder(id, (o) => ({ ...o, payment: { ...o.payment, provider: payment.provider, intentId: payment.intentId ?? o.payment.intentId, reference: payment.reference ?? o.payment.reference } }));
+  }
+
+  return { ok: true, order: stored ?? order, payment };
+}
+
+/* ---------------- Payment transitions (idempotent) ---------------- */
+
+export interface PaidInfo {
+  provider?: PaymentProviderId | string;
+  reference?: string;
+  intentId?: string;
+  note?: string;
+}
+
+/**
+ * Marks an order as paid. Safe to call repeatedly (confirm endpoint + webhook):
+ * an already paid order is returned unchanged – no duplicate history entry, no
+ * second confirmation mail. Advances `status` to `paid` only from `received`
+ * so an order the staff already moved on is not pulled back.
+ */
+export async function markOrderPaid(id: string, info: PaidInfo): Promise<Order | null> {
+  const before = await getOrderById(id);
+  if (!before) return null;
+  if (before.payment.status === "paid") return before;
+  const wasReleased = before.payment.status === "failed";
+
+  const at = new Date().toISOString();
+  const updated = await updateOrder(id, (o) => {
+    if (o.payment.status === "paid") return o;
+    const alreadyLogged = o.history.some((h) => h.status === "paid");
+    return {
+      ...o,
+      status: o.status === "received" || isNegativeStatus(o.status) ? "paid" : o.status,
+      history: alreadyLogged ? o.history : [...o.history, { status: "paid", at, ...(info.note ? { note: info.note } : {}) }],
+      payment: {
+        ...o.payment,
+        status: "paid",
+        paidAt: at,
+        provider: info.provider ?? o.payment.provider,
+        reference: info.reference ?? o.payment.reference,
+        intentId: info.intentId ?? o.payment.intentId,
+      },
+    };
+  });
+  if (!updated) return null;
+
+  // A payment that arrives after we already gave the units back (late webhook) re-reserves them.
+  if (wasReleased) await reserveStock(updated.lines).catch((err) => console.error("[orders] re-reserving stock failed", err));
+
+  // Fire-and-forget: a failing mail stub must never fail the payment.
+  sendOrderConfirmation(updated).catch((err) => console.error("[mail] confirmation failed", err));
+  return updated;
+}
+
+/** Marks the payment as failed/cancelled and releases the reserved stock (once). Paid orders are never touched. */
+export async function markOrderPaymentFailed(id: string, info: { note?: string; intentId?: string }): Promise<Order | null> {
+  const before = await getOrderById(id);
+  if (!before) return null;
+  if (before.payment.status !== "pending") return before;
+
+  const updated = await updateOrder(id, (o) => {
+    if (o.payment.status !== "pending") return o;
+    return {
+      ...o,
+      history: [...o.history, { status: o.status, at: new Date().toISOString(), note: info.note ?? "Zahlung fehlgeschlagen" }],
+      payment: { ...o.payment, status: "failed", intentId: info.intentId ?? o.payment.intentId },
+    };
+  });
+  if (updated && updated.payment.status === "failed") await releaseStock(updated.lines);
+  return updated;
+}
+
+/** Records a (full or partial) refund reported by the provider. The order status is left to the staff. */
+export async function markOrderRefunded(id: string, info: { note?: string; reference?: string }): Promise<Order | null> {
+  return updateOrder(id, (o) => {
+    if (o.payment.status === "refunded") return o;
+    return {
+      ...o,
+      history: [...o.history, { status: o.status, at: new Date().toISOString(), note: info.note ?? "Zahlung erstattet" }],
+      payment: { ...o.payment, status: "refunded", reference: info.reference ?? o.payment.reference },
+    };
+  });
+}
+
+/** Finds the order a provider event belongs to – by our id (metadata) or by the provider-side id. */
+export async function findOrderForPaymentEvent(event: Pick<PaymentEvent, "orderId" | "intentId">): Promise<Order | null> {
+  if (event.orderId) {
+    const byId = await getOrderById(event.orderId);
+    if (byId) return byId;
+  }
+  if (event.intentId) {
+    return (await getOrders()).find((o) => o.payment.intentId === event.intentId) ?? null;
+  }
+  return null;
+}
+
+/** Applies a normalised webhook event. Returns what happened for logging. */
+export async function applyPaymentEvent(event: PaymentEvent): Promise<{ orderId: string | null; applied: boolean }> {
+  const order = await findOrderForPaymentEvent(event);
+  if (!order) return { orderId: null, applied: false };
+  switch (event.kind) {
+    case "paid":
+      await markOrderPaid(order.id, { reference: event.reference, intentId: event.intentId, note: event.note });
+      return { orderId: order.id, applied: true };
+    case "failed":
+      await markOrderPaymentFailed(order.id, { note: event.note, intentId: event.intentId });
+      return { orderId: order.id, applied: true };
+    case "refunded":
+      await markOrderRefunded(order.id, { note: event.note, reference: event.reference });
+      return { orderId: order.id, applied: true };
+  }
 }

@@ -5,12 +5,13 @@ import { timingSafeEqual } from "node:crypto";
 import { CircleAlert, CircleCheck, Search } from "lucide-react";
 import { getOrderById, getSettings } from "@/lib/cms";
 import { ORDER_STATUS_FLOW, isNegativeStatus, publicOrderView } from "@/lib/orders";
-import { isMockPayment } from "@/lib/payments";
+import { isTestOrder } from "@/lib/payments";
 import { formatDateLong, formatPrice, cn } from "@/lib/format";
 import { routes } from "@/lib/urls";
 import { Button } from "@/components/ui/button";
 import { OrderTimeline } from "@/components/checkout/order-timeline";
 import { GreetingCardPreview } from "@/components/checkout/greeting-card-preview";
+import { OrderPlacedCleanup } from "@/components/checkout/order-placed-cleanup";
 
 export const dynamic = "force-dynamic";
 
@@ -55,15 +56,28 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
   const definitions = settings.orderStatuses;
   const current = definitions.find((d) => d.key === order.status);
   const negative = isNegativeStatus(order.status);
-  const paymentProvider = settings.payments.find((p) => p.id === order.payment.method)?.provider;
-  const testMode = paymentProvider === "mock" || isMockPayment(order.payment.reference);
+  const testMode = isTestOrder(order);
+  const providerName = order.payment.provider === "stripe" ? "Stripe" : order.payment.provider === "paypal" ? "PayPal" : null;
   const greeting = order.lines.find((l) => l.message || l.senderName || l.anonymous);
   const contactEmail = settings.brand.email.startsWith("[") ? null : settings.brand.email;
   const contactPhone = settings.brand.phone.startsWith("[") ? null : settings.brand.phone;
 
-  const paymentLabel = order.payment.status === "paid"
-    ? `Zahlung bestätigt${testMode ? " (Testmodus)" : ""}`
-    : order.payment.status === "pending" ? "Zahlung ausstehend" : "Zahlung fehlgeschlagen";
+  const paymentLabel = {
+    paid: `Zahlung bestätigt${testMode ? " (Testmodus)" : ""}`,
+    pending: "Zahlung ausstehend",
+    failed: "Zahlung fehlgeschlagen",
+    refunded: "Zahlung erstattet",
+  }[order.payment.status] ?? order.payment.status;
+  const paymentTone = order.payment.status === "paid" ? "text-success" : order.payment.status === "pending" ? "text-warn" : order.payment.status === "refunded" ? "text-ink" : "text-danger";
+  const paymentHint = testMode
+    ? "Testmodus: Es wurde kein Betrag abgebucht."
+    : order.payment.status === "pending"
+      ? `Die Zahlung wird noch bestätigt${providerName ? ` – ${providerName} meldet uns das Ergebnis` : ""}. Bis dahin bleibt die Bestellung unverbindlich; lade die Seite in ein paar Minuten neu.`
+      : order.payment.status === "failed"
+        ? "Die Zahlung ist fehlgeschlagen oder wurde abgebrochen. Diese Bestellung wird nicht ausgeführt – bitte bestelle erneut."
+        : order.payment.status === "refunded"
+          ? "Der Betrag wurde erstattet. Je nach Bank kann die Gutschrift einige Tage dauern."
+          : null;
 
   return (
     <div className="container-x py-10 lg:py-16">
@@ -71,11 +85,16 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
       <header className="mx-auto max-w-2xl text-center">
         {isNew ? (
           <>
+            <OrderPlacedCleanup />
             <span className="mx-auto mb-5 flex size-14 items-center justify-center rounded-full bg-forest text-ivory animate-fade-in"><CircleCheck className="size-7" strokeWidth={1.5} aria-hidden /></span>
             <p className="eyebrow mb-3">Bestellung {order.id}</p>
-            <h1 className="display-2 text-balance text-ink animate-fade-up">Danke! Deine Bestellung ist eingegangen.</h1>
+            <h1 className="display-2 text-balance text-ink animate-fade-up">
+              {order.payment.status === "pending" ? "Danke! Deine Bestellung ist eingegangen." : "Danke! Deine Bestellung ist bestätigt."}
+            </h1>
             <p className="mt-4 text-[15px] leading-relaxed text-ink-muted">
-              Wir binden den Strauß frisch am Liefertag. Diese Seite zeigt dir jederzeit den aktuellen Stand – speichere dir den Link.
+              {order.payment.status === "pending"
+                ? "Sobald die Zahlung bestätigt ist, binden wir den Strauß frisch am Liefertag. Diese Seite zeigt dir jederzeit den aktuellen Stand – speichere dir den Link."
+                : "Wir binden den Strauß frisch am Liefertag. Diese Seite zeigt dir jederzeit den aktuellen Stand – speichere dir den Link."}
             </p>
           </>
         ) : (
@@ -104,8 +123,8 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
             <OrderTimeline flow={ORDER_STATUS_FLOW} definitions={definitions} status={order.status} history={order.history} />
           )}
           <dl className="mt-8 grid gap-3 border-t border-line pt-6 text-[14px]">
-            <div className="flex justify-between gap-4"><dt className="text-ink-muted">Zahlung</dt><dd className={cn("text-right font-semibold", order.payment.status === "paid" ? "text-success" : order.payment.status === "pending" ? "text-warn" : "text-danger")}>{paymentLabel}</dd></div>
-            {testMode && <p className="text-[12.5px] text-ink-soft">Testmodus: Es wurde kein Betrag abgebucht.</p>}
+            <div className="flex justify-between gap-4"><dt className="text-ink-muted">Zahlung</dt><dd className={cn("text-right font-semibold", paymentTone)}>{paymentLabel}</dd></div>
+            {paymentHint && <p className="text-[12.5px] leading-relaxed text-ink-soft">{paymentHint}</p>}
           </dl>
         </section>
 

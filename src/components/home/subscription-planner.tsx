@@ -1,12 +1,22 @@
 "use client";
-import { useEffect, useId, useRef, useState } from "react";
-import { Check } from "lucide-react";
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
+import { Check, ArrowRight } from "lucide-react";
 import type { SubscriptionConfig } from "@/types";
 import { Button } from "@/components/ui/button";
 import { Input, Select, Textarea } from "@/components/ui/input";
 import { formatPrice, cn } from "@/lib/format";
+import { usePaymentMethods } from "@/components/checkout/use-payment-methods";
 
 type Status = { kind: "idle" | "loading" | "success" | "error"; message?: string };
+
+const subscribeNoop = () => () => {};
+function readAboSuccess() {
+  try {
+    return new URLSearchParams(window.location.search).get("abo") === "erfolg";
+  } catch {
+    return false;
+  }
+}
 
 function discounted(price: number, discount: number) {
   return Math.round(price * (1 - discount / 100) * 100) / 100;
@@ -28,6 +38,33 @@ export function SubscriptionPlanner({ config }: { config: SubscriptionConfig }) 
   const formRef = useRef<HTMLDivElement>(null);
   const id = useId();
 
+  /* ---- Online checkout (Stripe Checkout, subscription mode) – only when Stripe is configured ---- */
+  const { data: methodsData } = usePaymentMethods();
+  const checkoutAvailable = Boolean(methodsData?.subscriptionCheckout);
+  const [checkout, setCheckout] = useState<Status>({ kind: "idle" });
+  // `/blumen-abo?abo=erfolg` after Stripe Checkout – read client-side so the page itself stays static.
+  const aboSuccess = useSyncExternalStore(subscribeNoop, readAboSuccess, () => false);
+
+  const startCheckout = async () => {
+    if (checkout.kind === "loading") return;
+    setCheckout({ kind: "loading" });
+    try {
+      const res = await fetch("/api/payments/stripe/subscription", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ planId, frequencyId }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; url?: string; message?: string };
+      if (!res.ok || !data.ok || !data.url) {
+        setCheckout({ kind: "error", message: data.message ?? "Der Abo-Abschluss ist gerade nicht möglich. Bitte versuch es später noch einmal." });
+        return;
+      }
+      window.location.assign(data.url);
+    } catch {
+      setCheckout({ kind: "error", message: "Der Abo-Abschluss ist gerade nicht möglich. Bitte versuch es später noch einmal." });
+    }
+  };
+
   const frequency = frequencies.find((f) => f.id === frequencyId) ?? frequencies[0];
   const plan = plans.find((p) => p.id === planId) ?? plans[0];
 
@@ -43,7 +80,7 @@ export function SubscriptionPlanner({ config }: { config: SubscriptionConfig }) 
 
   const choosePlan = (pid: string) => {
     setPlanId(pid);
-    setFormOpen(true);
+    if (!checkoutAvailable) setFormOpen(true);
   };
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -136,7 +173,7 @@ export function SubscriptionPlanner({ config }: { config: SubscriptionConfig }) 
                 </div>
                 <p className="mt-1 text-[12px] text-ink-soft">{frequency?.label ?? ""}{reduced ? ` · ${frequency.discount}% Rabatt` : ""}</p>
                 <Button type="button" onClick={() => choosePlan(p.id)} variant={active ? "primary" : "outline"} size="md" full className="mt-5">
-                  {active && formOpen ? "Ausgewählt" : `${p.name} anfragen`}
+                  {checkoutAvailable ? (active ? "Ausgewählt" : `${p.name} wählen`) : active && formOpen ? "Ausgewählt" : `${p.name} anfragen`}
                 </Button>
               </article>
             </li>
@@ -144,8 +181,37 @@ export function SubscriptionPlanner({ config }: { config: SubscriptionConfig }) 
         })}
       </ul>
 
+      {/* Success after Stripe Checkout */}
+      {aboSuccess && (
+        <div role="status" className="mt-8 flex items-start gap-4 rounded-md bg-white p-6 shadow-soft animate-fade-up sm:p-8">
+          <span className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-success text-ivory"><Check className="size-4" strokeWidth={3} aria-hidden /></span>
+          <div>
+            <p className="font-serif text-[24px] leading-tight text-ink">Danke – dein Blumen-Abo ist abgeschlossen.</p>
+            <p className="mt-2 max-w-md text-[14.5px] leading-relaxed text-ink-muted">Du bekommst eine Bestätigung per E-Mail. Wir melden uns, um Lieferort und Starttermin mit dir abzustimmen.</p>
+          </div>
+        </div>
+      )}
+
       {/* CTA */}
-      {!formOpen && (
+      {checkoutAvailable ? (
+        <div className="mt-8 flex flex-col gap-3">
+          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+            <Button type="button" size="lg" loading={checkout.kind === "loading"} iconRight={<ArrowRight className="size-4" aria-hidden />} onClick={startCheckout}>
+              Abo abschließen
+            </Button>
+            {!formOpen && (
+              <Button type="button" size="lg" variant="ghost" onClick={() => setFormOpen(true)}>Lieber unverbindlich anfragen</Button>
+            )}
+          </div>
+          <p className="text-[13px] text-ink-soft">
+            {plan && frequency ? <>{plan.name}, {frequency.label.toLowerCase()} – {formatPrice(discounted(plan.price, frequency.discount))} pro Lieferung. </> : null}
+            Sichere Zahlung über Stripe, jederzeit kündbar.
+          </p>
+          <div aria-live="polite" className="min-h-[1rem]">
+            {checkout.kind === "error" && <p className="text-[13px] text-danger">{checkout.message}</p>}
+          </div>
+        </div>
+      ) : !formOpen && (
         <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
           <Button type="button" size="lg" onClick={() => setFormOpen(true)}>Anfrage senden</Button>
           <p className="text-[13px] text-ink-soft">Unverbindlich – wir melden uns mit allen Details.</p>

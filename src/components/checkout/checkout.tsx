@@ -3,7 +3,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, Lock, ShoppingBag } from "lucide-react";
-import type { CartItem, Coupon, PaymentMethodConfig } from "@/types";
+import type { CartItem, Coupon } from "@/types";
+import type { OrderCreateResponse } from "@/types/payments";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCart } from "@/store/cart";
@@ -25,13 +26,18 @@ import { StepDelivery } from "./step-delivery";
 import { StepGreeting } from "./step-greeting";
 import { StepCustomer } from "./step-customer";
 import { StepPayment } from "./step-payment";
+import { StripePaymentForm, type StripeSession } from "./stripe-payment";
+import { usePaymentMethods } from "./use-payment-methods";
 
 export interface CheckoutConfig {
-  payments: PaymentMethodConfig[];
   greetingMaxChars: number;
   freeCardIncluded: boolean;
   newsletterEnabled: boolean;
+  /** True when the customer came back from a cancelled/failed provider payment (`?cancelled=1`). */
+  cancelled?: boolean;
 }
+
+const CANCELLED_MESSAGE = "Die Zahlung wurde abgebrochen. Deine Angaben sind noch da – du kannst es gleich noch einmal versuchen oder eine andere Zahlungsart wählen.";
 
 type Scope = "recipient" | "delivery" | "greeting" | "customer" | "payment";
 
@@ -81,12 +87,20 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
   const [errors, setErrors] = useState<FieldErrors>({});
   const [maxReached, setMaxReached] = useState<StepId>(() => data.step);
   const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(() => (config.cancelled ? CANCELLED_MESSAGE : null));
+  const [stripeSession, setStripeSession] = useState<StripeSession | null>(null);
   const [couponState, setCouponState] = useState<{ code: string; coupon: Coupon | null; error?: string } | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const firstRender = useRef(true);
 
   useEffect(() => { saveCheckout(data); }, [data]);
+
+  /* ---- Payment methods: only what is really available (provider configured) ---- */
+  const { data: methodsData, loading: methodsLoading, error: methodsError } = usePaymentMethods();
+  const methods = useMemo(() => methodsData?.methods ?? [], [methodsData]);
+  // A stored method that is no longer offered (e.g. keys removed) is treated as "none selected".
+  const selectedMethod = methods.find((m) => m.id === data.payment.method);
+  const paymentData = useMemo<CheckoutData["payment"]>(() => ({ method: selectedMethod?.id ?? "" }), [selectedMethod]);
 
   /* ---- Delivery check: the most restrictive product decides about same-day ---- */
   const restrictiveSlug = useMemo(() => items.find((i) => !i.snapshot.sameDayCapable)?.snapshot.slug ?? items[0]?.snapshot.slug, [items]);
@@ -204,6 +218,11 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         return;
       }
     }
+    if (methodsLoading || !selectedMethod) {
+      setData({ ...data, step: 5 });
+      setErrors({ method: "Bitte wähle eine Zahlungsart." });
+      return;
+    }
     setSubmitting(true);
     setSubmitError(null);
     try {
@@ -211,7 +230,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify(buildPayload(data, items, couponCode)),
       });
-      const body = (await res.json()) as { ok: boolean; id?: string; token?: string; message?: string; errors?: FieldErrors };
+      const body = (await res.json()) as Partial<OrderCreateResponse> & { message?: string; errors?: FieldErrors };
       if (!res.ok || !body.ok || !body.id || !body.token) {
         // Map server field errors ("recipient.zip") back to the step that owns them.
         const byStep = new Map<StepId, FieldErrors>();
@@ -232,14 +251,35 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         }
         return;
       }
+      const statusUrl = `/bestellung/${encodeURIComponent(body.id)}?token=${encodeURIComponent(body.token)}&neu=1`;
+      const payment = body.payment;
+      if (payment?.provider === "stripe" && payment.clientSecret && methodsData?.stripePublishableKey) {
+        // Order stored (payment pending) – now collect the payment with the Payment Element.
+        setStripeSession({ orderId: body.id, token: body.token, clientSecret: payment.clientSecret, method: selectedMethod.id });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      if (payment?.provider === "paypal" && payment.approveUrl) {
+        // Cart + form state are cleared on the status page after PayPal returns.
+        window.location.assign(payment.approveUrl);
+        return;
+      }
+      // Mock (paid immediately) or anything already settled.
       clearCart();
       clearCheckout();
-      router.push(`/bestellung/${encodeURIComponent(body.id)}?token=${encodeURIComponent(body.token)}&neu=1`);
+      router.push(statusUrl);
     } catch {
       setSubmitError("Die Verbindung wurde unterbrochen. Bitte prüfe deine Internetverbindung und versuch es noch einmal.");
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const finishStripe = () => {
+    if (!stripeSession) return;
+    clearCart();
+    clearCheckout();
+    router.push(`/bestellung/${encodeURIComponent(stripeSession.orderId)}?token=${encodeURIComponent(stripeSession.token)}&neu=1`);
   };
 
   const stepMeta = STEPS.find((s) => s.id === step)!;
@@ -260,12 +300,22 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
             <p role="alert" className="mb-6 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">{submitError}</p>
           )}
 
+          {step === 5 && stripeSession && methodsData?.stripePublishableKey ? (
+            <StripePaymentForm
+              publishableKey={methodsData.stripePublishableKey}
+              session={stripeSession}
+              amount={totals.total}
+              email={data.customer.email}
+              onDone={finishStripe}
+              onCancel={() => { setStripeSession(null); setSubmitError("Die Zahlung wurde nicht abgeschlossen. Du kannst eine andere Zahlungsart wählen und es erneut versuchen."); }}
+            />
+          ) : (
           <form noValidate onSubmit={(e) => { e.preventDefault(); if (step === 5) submit(); else goNext(); }}>
             {step === 1 && <StepRecipient data={data.recipient} set={setScope("recipient")} errors={errors} onBlur={onBlur} zone={zoneStatus} />}
             {step === 2 && <StepDelivery data={data.delivery} set={setScope("delivery")} errors={errors} onBlur={onBlur} days={days} now={result?.now} zone={zone} loading={checking} />}
             {step === 3 && <StepGreeting data={data.greeting} set={setScope("greeting")} errors={errors} onBlur={onBlur} maxChars={config.greetingMaxChars} freeCardIncluded={config.freeCardIncluded} />}
             {step === 4 && <StepCustomer data={data.customer} set={setScope("customer")} errors={errors} onBlur={onBlur} newsletterEnabled={config.newsletterEnabled} />}
-            {step === 5 && <StepPayment data={data.payment} set={setScope("payment")} errors={errors} methods={config.payments} />}
+            {step === 5 && <StepPayment data={paymentData} set={setScope("payment")} errors={errors} methods={methods} loading={methodsLoading} loadError={methodsError} />}
 
             <div className="mt-8 flex flex-col-reverse gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
               {step > 1 ? (
@@ -278,18 +328,19 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
               {step < 5 ? (
                 <Button type="submit" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />} className="sm:min-w-48">Weiter</Button>
               ) : (
-                <Button type="submit" size="xl" loading={submitting} disabled={config.payments.length === 0} className="sm:min-w-64">
-                  Jetzt kaufen · {formatPrice(totals.total)}
+                <Button type="submit" size="xl" loading={submitting} disabled={methodsLoading || methods.length === 0} className="sm:min-w-64">
+                  {selectedMethod?.provider === "paypal" ? "Weiter zu PayPal" : selectedMethod?.provider === "stripe" ? "Weiter zur Zahlung" : "Jetzt kaufen"} · {formatPrice(totals.total)}
                 </Button>
               )}
             </div>
             {step === 5 && (
               <p className="mt-4 text-[12.5px] leading-relaxed text-ink-soft">
-                Mit Klick auf „Jetzt kaufen“ gibst du eine zahlungspflichtige Bestellung auf. Es gelten unsere{" "}
+                Mit Abschluss der Zahlung gibst du eine zahlungspflichtige Bestellung auf. Es gelten unsere{" "}
                 <Link href={routes.legal.terms} className="underline underline-offset-2">AGB</Link> und die <Link href={routes.legal.withdrawal} className="underline underline-offset-2">Widerrufsbelehrung</Link>.
               </p>
             )}
           </form>
+          )}
         </section>
 
         <p className="mt-6 flex items-center gap-2 text-[12.5px] text-ink-soft lg:hidden">

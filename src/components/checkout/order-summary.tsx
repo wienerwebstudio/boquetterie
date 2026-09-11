@@ -77,7 +77,7 @@ function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting,
           <dd className="tabular-nums text-ink">{zone ? (totals.delivery === 0 ? "Gratis" : formatPrice(totals.delivery)) : <span className="text-ink-soft">nach PLZ</span>}</dd>
         </div>
         {zone && totals.missingForFreeDelivery !== null && totals.missingForFreeDelivery > 0 && (
-          <p className="text-[12px] text-ink-soft">Noch {formatPrice(totals.missingForFreeDelivery)} bis zur Gratis-Lieferung.</p>
+          <div className="text-[12px] text-ink-muted"><dt className="sr-only">Hinweis</dt><dd>Noch {formatPrice(totals.missingForFreeDelivery)} bis zur Gratis-Lieferung.</dd></div>
         )}
         {couponCode && (
           <div className="flex justify-between">
@@ -85,12 +85,12 @@ function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting,
             <dd className={cn("tabular-nums", couponError ? "text-danger" : "text-success")}>{couponError ? "ungültig" : totals.discount > 0 ? `– ${formatPrice(totals.discount)}` : "Gratis-Lieferung"}</dd>
           </div>
         )}
-        {couponError && <p className="text-[12px] text-danger">{couponError}</p>}
+        {couponError && <div className="text-[12px] text-danger"><dt className="sr-only">Gutschein-Fehler</dt><dd>{couponError}</dd></div>}
         <div className="mt-1 flex items-baseline justify-between border-t border-line pt-3">
           <dt className="text-[15px] font-semibold text-ink">Gesamt</dt>
           <dd className="font-serif text-[26px] tabular-nums leading-none text-ink">{formatPrice(totals.total)}</dd>
         </div>
-        <p className="text-[11.5px] text-ink-soft">inkl. MwSt.</p>
+        <div className="text-[11.5px] text-ink-muted"><dt className="sr-only">Hinweis</dt><dd>inkl. MwSt.</dd></div>
       </dl>
     </div>
   );
