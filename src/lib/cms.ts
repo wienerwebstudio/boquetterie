@@ -1,6 +1,5 @@
 import "server-only";
-import fs from "node:fs/promises";
-import path from "node:path";
+import { getStore, jsonStore } from "@/lib/store";
 import type {
   Category, CmsPage, Coupon, DeliveryZone, Extra, FAQ, HomepageContent, LandingPage,
   Occasion, Product, Review, SiteSettings, SubscriptionConfig, Order,
@@ -9,45 +8,49 @@ import type {
 /**
  * Content repository.
  *
- * All editable content lives as JSON in `/content` (versioned) and transactional
- * data in `/data` (not versioned). This module is the ONLY place that touches the
- * file system, so the storage can later be swapped for a database without touching
- * pages or components.
+ * All editable content lives as JSON documents in `/content` (versioned) and
+ * transactional data in `/data` (not versioned). This module is the ONLY place
+ * pages, components and actions read or write persisted data. The physical
+ * storage is a `DocumentStore` (`src/lib/store`): JSON files by default, or
+ * Postgres when `DATABASE_URL` is set – see docs/DATABASE.md.
  */
-const CONTENT_DIR = path.join(process.cwd(), "content");
-const DATA_DIR = path.join(process.cwd(), "data");
-
 type Collection =
   | "products" | "occasions" | "categories" | "extras" | "delivery-zones" | "coupons"
   | "faqs" | "reviews" | "subscription" | "settings" | "homepage" | "pages" | "landing-pages";
 
-const cache = new Map<string, { mtimeMs: number; value: unknown }>();
+/**
+ * Reads an editorial document. With the Postgres store a document that is not yet
+ * in the database (fresh deployment) is served from `/content/<name>.json` and
+ * seeded into the database on first read, so no manual import is required.
+ */
+async function readContent<T>(name: string): Promise<T> {
+  const store = getStore();
+  const value = await store.get<T>("content", name);
+  if (value !== null) return value;
 
-async function readJson<T>(dir: string, name: string): Promise<T> {
-  const file = path.join(dir, `${name}.json`);
-  const stat = await fs.stat(file);
-  const hit = cache.get(file);
-  if (hit && hit.mtimeMs === stat.mtimeMs) return hit.value as T;
-  const raw = await fs.readFile(file, "utf8");
-  const value = JSON.parse(raw) as T;
-  cache.set(file, { mtimeMs: stat.mtimeMs, value });
-  return value;
+  if (store.name !== "json") {
+    const seed = await jsonStore.get<T>("content", name);
+    if (seed !== null) {
+      await store.set("content", name, seed).catch((err: unknown) => {
+        console.warn(`[boquetterie] could not seed content "${name}" into ${store.name}:`, err);
+      });
+      return seed;
+    }
+  }
+  throw new Error(`Content document "${name}" not found`);
 }
 
-async function writeJson(dir: string, name: string, value: unknown) {
-  const file = path.join(dir, `${name}.json`);
-  await fs.mkdir(dir, { recursive: true });
-  const tmp = `${file}.tmp`;
-  await fs.writeFile(tmp, JSON.stringify(value, null, 2) + "\n", "utf8");
-  await fs.rename(tmp, file);
-  cache.delete(file);
+/** Reads a runtime document; `fallback` when it does not exist yet. Storage errors propagate. */
+async function readDataDoc<T>(name: string, fallback: T): Promise<T> {
+  const value = await getStore().get<T>("data", name);
+  return value === null ? fallback : value;
 }
 
 export async function readCollection<T>(name: Collection): Promise<T> {
-  return readJson<T>(CONTENT_DIR, name);
+  return readContent<T>(name);
 }
 export async function writeCollection(name: Collection, value: unknown) {
-  return writeJson(CONTENT_DIR, name, value);
+  return getStore().set("content", name, value);
 }
 
 /* ---------------- Typed accessors ---------------- */
@@ -105,14 +108,10 @@ export async function getFaqsByIds(ids: string[]) {
 /* ---------------- Orders & newsletter (runtime data) ---------------- */
 
 export async function getOrders(): Promise<Order[]> {
-  try {
-    return await readJson<Order[]>(DATA_DIR, "orders");
-  } catch {
-    return [];
-  }
+  return readDataDoc<Order[]>("orders", []);
 }
 export async function saveOrders(orders: Order[]) {
-  return writeJson(DATA_DIR, "orders", orders);
+  return getStore().set("data", "orders", orders);
 }
 export async function getOrderById(id: string) {
   return (await getOrders()).find((o) => o.id === id) ?? null;
@@ -133,17 +132,13 @@ export async function updateOrder(id: string, patch: (o: Order) => Order) {
 }
 
 export async function getNewsletterSubscribers(): Promise<{ email: string; createdAt: string }[]> {
-  try {
-    return await readJson(DATA_DIR, "newsletter");
-  } catch {
-    return [];
-  }
+  return readDataDoc<{ email: string; createdAt: string }[]>("newsletter", []);
 }
 export async function addNewsletterSubscriber(email: string) {
   const list = await getNewsletterSubscribers();
   if (!list.some((s) => s.email.toLowerCase() === email.toLowerCase())) {
     list.push({ email, createdAt: new Date().toISOString() });
-    await writeJson(DATA_DIR, "newsletter", list);
+    await getStore().set("data", "newsletter", list);
   }
 }
 
@@ -155,14 +150,10 @@ export async function addNewsletterSubscriber(email: string) {
  * Callers must treat the value as opaque and write back the whole document.
  */
 export async function readData<T>(name: string, fallback: T): Promise<T> {
-  try {
-    return await readJson<T>(DATA_DIR, name);
-  } catch {
-    return fallback;
-  }
+  return readDataDoc<T>(name, fallback);
 }
 export async function writeData(name: string, value: unknown) {
-  return writeJson(DATA_DIR, name, value);
+  return getStore().set("data", name, value);
 }
 
 export async function getOrdersByEmail(email: string) {
