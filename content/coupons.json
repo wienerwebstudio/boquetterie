@@ -1,0 +1,4 @@
+[
+  {"code": "WILLKOMMEN10", "type": "percent", "value": 10, "minOrder": 40, "active": true, "description": "10 % auf die erste Bestellung"},
+  {"code": "FREILIEFERUNG", "type": "free_shipping", "value": 0, "minOrder": 60, "active": false, "description": "Kostenlose Lieferung ab 60 €"}
+]

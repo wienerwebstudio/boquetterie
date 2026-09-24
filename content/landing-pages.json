@@ -1,0 +1,64 @@
+[
+  {
+    "slug": "blumenversand-wien",
+    "title": "Blumenversand Wien",
+    "headline": "Blumen liefern lassen in Wien.",
+    "intro": "Frisch gebundene Sträuße, in ganz Wien geliefert. Wähle deinen Strauß, bestimme das Lieferdatum und schreib ein paar Worte – wir kümmern uns um den Rest.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": {"limit": 8},
+    "sections": [
+      {"heading": "Blumen in Wien verschicken – so geht’s", "paragraphs": ["Strauß auswählen, Größe bestimmen, Lieferdatum im Kalender wählen, Empfängeradresse eingeben, bezahlen. In wenigen Minuten ist die Bestellung erledigt, und du bekommst eine Bestätigung mit Statuslink.", "Wir liefern in alle Wiener Bezirke. Lieferkosten und Zeitfenster hängen vom Bezirk ab und werden nach Eingabe der Postleitzahl angezeigt."]},
+      {"heading": "Frisch gebunden, persönlich geliefert", "paragraphs": ["Jeder Strauß wird am Liefertag von Hand gebunden und stehend in Wasser transportiert. Keine Kartonrolle, kein Paketdienst – ein Zusteller, der die Blumen persönlich übergibt."]}
+    ],
+    "faqIds": ["f-where", "f-today", "f-date", "f-nobody"],
+    "seo": {"title": "Blumenversand Wien – Blumen liefern lassen", "description": "Blumen in Wien liefern lassen: frisch gebundene Sträuße mit Wunschdatum, Zeitfenster und Grußkarte. Bestellen in wenigen Minuten."}
+  },
+  {
+    "slug": "blumenversand-niederoesterreich",
+    "title": "Blumenversand Niederösterreich",
+    "headline": "Blumen ins Wiener Umland liefern lassen.",
+    "intro": "Wir liefern auch in ausgewählte Gemeinden rund um Wien – an festen Liefertagen, frisch gebunden. Gib die Postleitzahl ein, um Liefertage und Kosten zu sehen.",
+    "productFilter": {"limit": 8},
+    "sections": [
+      {"heading": "Liefergebiete in Niederösterreich", "paragraphs": ["Unsere Liefergebiete im Umland werden laufend erweitert. Welche Gemeinden aktuell beliefert werden und an welchen Tagen, zeigt die Lieferprüfung nach Eingabe der Postleitzahl."]}
+    ],
+    "faqIds": ["f-where", "f-date", "f-nobody"],
+    "seo": {"title": "Blumenversand Niederösterreich – Wiener Umland", "description": "Blumen ins Wiener Umland liefern lassen: frisch gebundene Sträuße an festen Liefertagen in ausgewählte Gemeinden Niederösterreichs."}
+  },
+  {
+    "slug": "blumen-zum-geburtstag",
+    "title": "Blumen zum Geburtstag",
+    "headline": "Geburtstagsblumen, die pünktlich klingeln.",
+    "intro": "Bunte, fröhliche oder elegante Sträuße zum Geburtstag – mit Wunschdatum, Grußkarte und kleinen Extras. Geliefert in Wien und Umgebung.",
+    "productFilter": {"occasions": ["geburtstag"], "limit": 8},
+    "sections": [
+      {"heading": "Pünktlich zum Geburtstag", "paragraphs": ["Wähle das Lieferdatum im Kalender – der Strauß wird an genau diesem Tag gebunden und geliefert. In vielen Wiener Bezirken kannst du zusätzlich ein Zeitfenster wählen."]}
+    ],
+    "faqIds": ["f-date", "f-window", "f-card"],
+    "seo": {"title": "Geburtstagsblumen liefern lassen in Wien", "description": "Blumen zum Geburtstag in Wien liefern lassen – frisch gebunden, mit Wunschdatum, Grußkarte und Extras."}
+  },
+  {
+    "slug": "rosen-liefern",
+    "title": "Rosen liefern",
+    "headline": "Rosen liefern lassen in Wien.",
+    "intro": "Gartenrosen mit voller Blüte, in Rot, Rosa oder Weiß. Von Hand gebunden, in Seidenpapier verpackt, persönlich übergeben.",
+    "productFilter": {"category": "rosen", "limit": 8},
+    "sections": [
+      {"heading": "Warum Gartenrosen?", "paragraphs": ["Gartenrosen haben größere, dichtere Blüten als klassische Schnittrosen und öffnen sich in der Vase weiter. Sie duften – und sie halten bei guter Pflege über eine Woche."]}
+    ],
+    "faqIds": ["f-fresh", "f-photo", "f-anon"],
+    "seo": {"title": "Rosen liefern lassen in Wien – frisch gebunden", "description": "Rote, rosa und weiße Rosen in Wien liefern lassen. Gartenrosen frisch gebunden, mit Wunschdatum und Grußkarte."}
+  },
+  {
+    "slug": "blumen-heute-liefern",
+    "title": "Blumen heute liefern",
+    "headline": "Noch heute Freude schenken.",
+    "intro": "In vielen Wiener Bezirken liefern wir am selben Tag, wenn die Bestellung rechtzeitig eingeht. Gib die Postleitzahl ein – wir zeigen dir, ob es heute noch klappt.",
+    "productFilter": {"sameDayOnly": true, "limit": 8},
+    "sections": [
+      {"heading": "So funktioniert die Lieferung am selben Tag", "paragraphs": ["Ob eine Lieferung heute möglich ist, hängt von Uhrzeit, Bezirk und Strauß ab. Wir zeigen „Heute“ nur dann als Option an, wenn wir es auch einhalten können. Die genaue Bestellfrist siehst du nach Eingabe der Postleitzahl."]}
+    ],
+    "faqIds": ["f-today", "f-where", "f-nobody"],
+    "seo": {"title": "Blumen heute liefern lassen in Wien – Same-Day", "description": "Blumen noch heute in Wien liefern lassen: Same-Day-Lieferung in vielen Bezirken, wenn die Bestellung rechtzeitig eingeht."}
+  }
+]

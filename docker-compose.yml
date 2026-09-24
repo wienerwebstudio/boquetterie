@@ -1,0 +1,54 @@
+# Bloomery – web app + Postgres. See docs/DEPLOYMENT.md (Option A).
+#
+#   cp .env.example .env   # set ADMIN_PASSWORD, ADMIN_SECRET, POSTGRES_PASSWORD, NEXT_PUBLIC_SITE_URL
+#   docker compose up -d --build
+#   docker compose exec web node scripts/db-seed.mjs   # optional: import content/data JSON
+#
+# Variables below are substituted from ./.env (or the shell environment).
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgres://${POSTGRES_USER:-bloomery}:${POSTGRES_PASSWORD:-bloomery}@db:5432/${POSTGRES_DB:-bloomery}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?ADMIN_PASSWORD must be set in .env}
+      ADMIN_SECRET: ${ADMIN_SECRET:-}
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+    volumes:
+      # JSON fallback for runtime data (used when DATABASE_URL is removed) and local uploads.
+      # The container runs as uid 1001 – run `chown -R 1001:1001 data public/uploads` on the host once.
+      - ./data:/app/data
+      - ./public/uploads:/app/public/uploads
+      # Optional: persist admin edits when running WITHOUT Postgres (JSON store):
+      # - ./content:/app/content
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-bloomery}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bloomery}
+      POSTGRES_DB: ${POSTGRES_DB:-bloomery}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bloomery} -d ${POSTGRES_DB:-bloomery}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    # Uncomment to reach the database from the host (psql, backups):
+    # ports:
+    #   - "127.0.0.1:5432:5432"
+
+volumes:
+  pgdata:

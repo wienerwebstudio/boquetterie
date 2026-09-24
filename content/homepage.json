@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "eyebrow": "Blumenversand Wien",
+    "headline": "Blumen, die mehr sagen.",
+    "subheadline": "Frisch gebundene Blumen für die Menschen, die dir wichtig sind. Einfach auswählen, Wunschdatum bestimmen und Freude liefern lassen.",
+    "primaryCta": {"label": "Blumen entdecken", "href": "/blumen"},
+    "secondaryCta": {"label": "Nach Anlass wählen", "href": "/anlaesse"},
+    "imageWide": "/images/hero/hero-wide.jpg",
+    "imagePortrait": "/images/hero/hero-portrait.jpg",
+    "imageAlt": "Ein üppiger Strauß in Creme und Rosé wird an einer Wiener Altbautür übergeben",
+    "deliveryCheck": {"title": "Wohin dürfen wir liefern?", "placeholder": "PLZ eingeben", "button": "Lieferung prüfen"}
+  },
+  "occasions": {"headline": "Blumen für jeden Moment", "subheadline": "Manchmal braucht es keinen großen Anlass. Nur die richtige Geste.", "slugs": ["geburtstag", "liebe", "danke", "gute-besserung", "jahrestag", "geburt", "hochzeit", "einfach-so", "trauer"]},
+  "bestsellers": {"headline": "Unsere Lieblingssträuße", "subheadline": "Die Sträuße, die am häufigsten Freude machen.", "productSlugs": ["amour", "blush", "ivory", "solstice", "rose-garden", "petit", "melange", "toscana"]},
+  "collections": {"headline": "Finde deinen perfekten Strauß", "subheadline": "Nach Farbe, Stil oder Budget.", "slugs": ["alle", "rosen", "saisonal", "pastell", "bunt", "elegant-weiss", "premium", "unter-40"]},
+  "howItWorks": {
+    "headline": "Freude schenken war noch nie so einfach.",
+    "steps": [
+      {"title": "Lieblingsstrauß wählen", "text": "Entdecke Blumen für jeden Geschmack und Anlass.", "icon": "flower"},
+      {"title": "Persönlich machen", "text": "Wähle Größe, Grußkarte und kleine Extras.", "icon": "pen"},
+      {"title": "Lieferdatum auswählen", "text": "Bestimme, wann deine Überraschung ankommen soll.", "icon": "calendar"},
+      {"title": "Freude liefern lassen", "text": "Wir kümmern uns um den Rest.", "icon": "truck"}
+    ]
+  },
+  "seasonal": {
+    "eyebrow": "Saisonale Kollektion",
+    "headline": "Was gerade blüht.",
+    "text": "Unsere saisonalen Sträuße wechseln mit dem Jahr. Was heute in den Strauß kommt, stand gestern noch beim Gärtner.",
+    "cta": {"label": "Saisonale Blumen", "href": "/blumen/saisonal"},
+    "image": "/images/products/toscana-1.jpg",
+    "imageAlt": "Wildstrauß in Terrakotta und Apricot",
+    "productSlugs": ["toscana", "sakura", "petit"]
+  },
+  "editorial": {
+    "eyebrow": "Handwerk",
+    "headline": "Von Florist:innen. Nicht vom Fließband.",
+    "text": "Jeder Strauß wird individuell zusammengestellt und mit Liebe zum Detail vorbereitet – erst am Liefertag, damit er so frisch ankommt, wie er gebunden wurde.",
+    "cta": {"label": "Unsere Philosophie", "href": "/ueber-uns"},
+    "image": "/images/editorial/florist.jpg",
+    "imageAlt": "Hände einer Floristin beim Binden eines Straußes"
+  },
+  "extras": {"headline": "Mach deine Überraschung komplett.", "subheadline": "Kleine Extras, die den Moment größer machen."},
+  "subscription": {"headline": "Mehr Blumen im Alltag.", "text": "Frische saisonale Sträuße – wöchentlich, alle zwei Wochen oder monatlich. Für Zuhause, Büro, Empfang oder Gastronomie.", "cta": {"label": "Blumen-Abo entdecken", "href": "/blumen-abo"}},
+  "reviews": {"headline": "Momente, die angekommen sind.", "subheadline": "Was Kund:innen über ihre Bestellung sagen."},
+  "gallery": {
+    "headline": "Blumen für besondere Momente.",
+    "images": [
+      {"src": "/images/gallery/g1.jpg", "alt": "Strauß auf einem Leinentisch im Morgenlicht"},
+      {"src": "/images/gallery/g2.jpg", "alt": "Detailaufnahme roséfarbener Rosen"},
+      {"src": "/images/gallery/g3.jpg", "alt": "Verpackter Strauß auf einer Werkbank"},
+      {"src": "/images/gallery/g4.jpg", "alt": "Weißer Strauß in einem hellen Altbauzimmer"},
+      {"src": "/images/gallery/g5.jpg", "alt": "Strauß wird durch einen Wiener Innenhof getragen"},
+      {"src": "/images/gallery/g6.jpg", "alt": "Bunte Blüten in Nahaufnahme"}
+    ]
+  },
+  "faq": {"headline": "Gut zu wissen", "ids": ["f-where", "f-today", "f-date", "f-nobody", "f-anon", "f-photo"]},
+  "newsletter": {"headline": "Ein bisschen mehr Blumen im Postfach.", "text": "Neuheiten, saisonale Kollektionen und besondere Aktionen.", "placeholder": "Deine E-Mail-Adresse", "button": "Anmelden", "note": "Abmeldung jederzeit möglich. Hinweise zum Datenschutz findest du in der Datenschutzerklärung."}
+}

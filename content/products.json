@@ -1,0 +1,350 @@
+[
+  {
+    "id": "p-amour", "slug": "amour", "name": "Amour",
+    "tagline": "Rote Gartenrosen & Eukalyptus",
+    "shortDescription": "Tiefrote Gartenrosen, samtig und voll, mit ein wenig Eukalyptus. Der Klassiker, wenn Worte nicht reichen.",
+    "description": "Amour ist unser Strauß für die großen Gefühle. Tiefrote Gartenrosen mit dichten, samtigen Blüten werden von Hand mit silbrigem Eukalyptus gebunden – ohne Füllmaterial, ohne Ablenkung. Ein Strauß, der nichts erklären muss.",
+    "flowers": ["Gartenrosen (rot)", "Eukalyptus"],
+    "care": ["Stiele schräg anschneiden und sofort ins Wasser stellen.", "Alle zwei Tage frisches Wasser, Vase gerne kühl aufstellen.", "Direkte Sonne und Obstschalen meiden."],
+    "images": [
+      {"src": "/images/products/amour-1.jpg", "alt": "Amour – Strauß aus roten Gartenrosen mit Eukalyptus", "kind": "front"},
+      {"src": "/images/products/amour-2.jpg", "alt": "Amour – Detailaufnahme der roten Rosenblüten", "kind": "detail"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
+      {"src": "/images/products/amour-3.jpg", "alt": "Amour in einer Wiener Altbauwohnung", "kind": "lifestyle"}
+    ],
+    "category": "rosen", "occasions": ["liebe", "jahrestag", "einfach-so"],
+    "colors": ["rot"], "styles": ["klassisch", "romantisch"], "seasons": ["ganzjaehrig"],
+    "tags": ["rosen", "romantik", "valentinstag", "klassiker"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 44.9, "stems": 9, "description": "9 Rosen"},
+      {"id": "m", "label": "Medium", "price": 64.9, "stems": 15, "description": "15 Rosen", "popular": true},
+      {"id": "l", "label": "Large", "price": 89.9, "stems": 24, "description": "24 Rosen"}
+    ],
+    "basePrice": 44.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
+    "rating": {"value": 4.9, "count": 0},
+    "seo": {"title": "Amour – Rote Rosen liefern lassen in Wien", "description": "Rote Gartenrosen frisch gebunden und in Wien geliefert. Lieferdatum wählen, Grußkarte dazu – Amour von Bloomery."},
+    "sortOrder": 1
+  },
+  {
+    "id": "p-ivory", "slug": "ivory", "name": "Ivory",
+    "tagline": "Weiße Rosen, Lisianthus & Eukalyptus",
+    "shortDescription": "Weiße Avalanche-Rosen und Lisianthus, luftig gebunden mit silbrigem Eukalyptus. Leise, elegant, zeitlos.",
+    "description": "Ivory ist Ruhe in Blütenform. Cremeweiße Avalanche-Rosen, zarter Lisianthus und silbergrüner Eukalyptus ergeben einen Strauß, der in jedem Raum sofort Eleganz erzeugt – ob zur Hochzeit, als Dankeschön oder für Menschen, die es gerne schlicht haben.",
+    "flowers": ["Avalanche-Rosen (weiß)", "Lisianthus (weiß)", "Eukalyptus"],
+    "care": ["Stiele frisch anschneiden.", "Kühl stellen, täglich Wasser prüfen.", "Welke Blüten vorsichtig entfernen."],
+    "images": [
+      {"src": "/images/products/ivory-1.jpg", "alt": "Ivory – Strauß aus weißen Rosen und Lisianthus", "kind": "front"},
+      {"src": "/images/products/ivory-2.jpg", "alt": "Ivory – Detailaufnahme der weißen Blüten", "kind": "detail"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
+      {"src": "/images/products/ivory-3.jpg", "alt": "Ivory auf einem Leinenstuhl in einem hellen Altbauzimmer", "kind": "lifestyle"}
+    ],
+    "category": "elegant-weiss", "occasions": ["hochzeit", "danke", "trauer", "einfach-so"],
+    "colors": ["weiss", "gruen"], "styles": ["elegant", "modern"], "seasons": ["ganzjaehrig"],
+    "tags": ["weiß", "hochzeit", "elegant", "rosen"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 42.9, "description": "ca. 12 Stiele"},
+      {"id": "m", "label": "Medium", "price": 59.9, "description": "ca. 18 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 84.9, "description": "ca. 28 Stiele"}
+    ],
+    "basePrice": 42.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Ivory – Weiße Blumen elegant geliefert", "description": "Weiße Rosen und Lisianthus, frisch gebunden. Elegante Blumen für Hochzeit, Danke oder stille Momente – in Wien geliefert."},
+    "sortOrder": 2
+  },
+  {
+    "id": "p-solstice", "slug": "solstice", "name": "Solstice",
+    "tagline": "Sonnenblumen, Ranunkeln & Craspedia",
+    "shortDescription": "Sonnenblumen, orange Ranunkeln und gelbe Craspedia – ein Strauß wie ein guter Morgen.",
+    "description": "Solstice bringt Licht ins Zimmer. Große Sonnenblumen treffen auf orange Ranunkeln und verspielte Craspedia-Kugeln, gehalten von frischem Grün. Perfekt zum Geburtstag oder für alle, die einen Grund zum Lächeln brauchen.",
+    "flowers": ["Sonnenblumen", "Ranunkeln (orange)", "Craspedia", "Saisonales Grün"],
+    "care": ["Sonnenblumen trinken viel – Wasser täglich nachfüllen.", "Stiele alle zwei Tage neu anschneiden.", "Nicht direkt neben Heizung stellen."],
+    "images": [
+      {"src": "/images/products/solstice-1.jpg", "alt": "Solstice – Strauß mit Sonnenblumen und orangen Ranunkeln", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+    ],
+    "category": "bunt", "occasions": ["geburtstag", "danke", "gute-besserung", "einfach-so"],
+    "colors": ["gelb", "orange"], "styles": ["froehlich", "natuerlich"], "seasons": ["sommer", "herbst"],
+    "tags": ["sonnenblumen", "geburtstag", "bunt", "sommer"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 39.9, "description": "ca. 10 Stiele"},
+      {"id": "m", "label": "Medium", "price": 54.9, "description": "ca. 16 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 74.9, "description": "ca. 24 Stiele"}
+    ],
+    "basePrice": 39.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Solstice – Sonnenblumen zum Geburtstag liefern", "description": "Sonnenblumen und Ranunkeln, frisch gebunden. Fröhliche Geburtstagsblumen mit Wunschdatum in Wien geliefert."},
+    "sortOrder": 3
+  },
+  {
+    "id": "p-blush", "slug": "blush", "name": "Blush",
+    "tagline": "Pfingstrosen, Ranunkeln & Sprayrosen",
+    "shortDescription": "Zarte Pfingstrosen, rosa Ranunkeln und cremige Sprayrosen in weichen Pastelltönen.",
+    "description": "Blush ist unser sanftester Strauß. Pfingstrosen in Puderrosa, feine Ranunkeln und cremefarbene Sprayrosen fügen sich zu einem Strauß, der Zärtlichkeit ausspricht, ohne laut zu werden. Zur Geburt, zum Geburtstag oder einfach, weil jemand an dich denkt.",
+    "flowers": ["Pfingstrosen (rosé)", "Ranunkeln (rosa)", "Sprayrosen (creme)", "Zartes Grün"],
+    "care": ["Pfingstrosen öffnen sich über 2–3 Tage – Geduld lohnt sich.", "Frisches Wasser alle zwei Tage.", "Kühl und hell, aber ohne direkte Sonne stellen."],
+    "images": [
+      {"src": "/images/products/blush-1.jpg", "alt": "Blush – Pastellstrauß mit Pfingstrosen und Ranunkeln", "kind": "front"},
+      {"src": "/images/products/blush-2.jpg", "alt": "Blush – Detailaufnahme der Pfingstrosen", "kind": "detail"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
+      {"src": "/images/products/blush-3.jpg", "alt": "Blush auf einer cremefarbenen Strickdecke", "kind": "lifestyle"}
+    ],
+    "category": "pastell", "occasions": ["geburt", "geburtstag", "liebe", "einfach-so"],
+    "colors": ["rosa", "creme"], "styles": ["romantisch", "natuerlich"], "seasons": ["fruehling", "sommer"],
+    "tags": ["pastell", "pfingstrosen", "geburt", "muttertag", "mama"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 46.9, "description": "ca. 12 Stiele"},
+      {"id": "m", "label": "Medium", "price": 66.9, "description": "ca. 18 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 94.9, "description": "ca. 26 Stiele"}
+    ],
+    "basePrice": 46.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": false, "active": true,
+    "seo": {"title": "Blush – Pastellblumen mit Pfingstrosen liefern", "description": "Pfingstrosen und Ranunkeln in zarten Pastelltönen. Blumen zur Geburt oder zum Geburtstag – frisch gebunden in Wien."},
+    "sortOrder": 4
+  },
+  {
+    "id": "p-pavlova", "slug": "pavlova", "name": "Pavlova",
+    "tagline": "Hortensien, Gartenrosen & Eukalyptus",
+    "shortDescription": "Cremige und roséfarbene Hortensien mit Gartenrosen – üppig, rund und weich wie ein Dessert.",
+    "description": "Pavlova ist Fülle. Große Hortensienköpfe in Creme und Altrosé, dazwischen Gartenrosen und Eukalyptus. Ein großzügiger Strauß, der Danke sagt, ohne viele Worte.",
+    "flowers": ["Hortensien (creme, rosé)", "Gartenrosen", "Eukalyptus"],
+    "care": ["Hortensien lieben Wasser – Vase gut füllen.", "Bei hängenden Köpfen Stiele neu anschneiden und kurz in warmes Wasser stellen.", "Kühl stellen."],
+    "images": [
+      {"src": "/images/products/pavlova-1.jpg", "alt": "Pavlova – Strauß mit Hortensien und Gartenrosen", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
+      {"src": "/images/products/pavlova-3.jpg", "alt": "Pavlova auf einem Schreibtisch neben einer Karte", "kind": "lifestyle"}
+    ],
+    "category": "pastell", "occasions": ["danke", "geburtstag", "jahrestag"],
+    "colors": ["creme", "rosa"], "styles": ["elegant", "romantisch"], "seasons": ["sommer", "herbst"],
+    "tags": ["hortensien", "danke", "üppig"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 49.9, "description": "ca. 10 Stiele"},
+      {"id": "m", "label": "Medium", "price": 69.9, "description": "ca. 16 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 99.9, "description": "ca. 24 Stiele"}
+    ],
+    "basePrice": 49.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Pavlova – Hortensienstrauß liefern lassen", "description": "Üppige Hortensien und Gartenrosen frisch gebunden. Der Dankeschön-Strauß von Bloomery, geliefert in Wien."},
+    "sortOrder": 5
+  },
+  {
+    "id": "p-toscana", "slug": "toscana", "name": "Toscana",
+    "tagline": "Dahlien, Zinnien & Wiesengräser",
+    "shortDescription": "Dahlien, Zinnien und Skabiosen in Terrakotta und Apricot, locker gebunden mit trockenen Gräsern.",
+    "description": "Toscana ist ein Spätsommerabend im Strauß. Warme Terrakotta-Töne, Dahlien, Zinnien und Skabiosen treffen auf getrocknete Gräser und wildes Grün – locker, natürlich, ehrlich. Für alle, die es lieber ungezwungen mögen.",
+    "flowers": ["Dahlien", "Zinnien", "Skabiosen", "Trockengräser", "Wildes Grün"],
+    "care": ["Dahlien täglich frisches Wasser geben.", "Stiele schräg anschneiden.", "Gräser können nach dem Verblühen der Blumen getrocknet behalten werden."],
+    "images": [
+      {"src": "/images/products/toscana-1.jpg", "alt": "Toscana – Wildstrauß in Terrakotta- und Apricot-Tönen", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+    ],
+    "category": "saisonal", "occasions": ["geburtstag", "danke", "einfach-so"],
+    "colors": ["orange", "creme"], "styles": ["natuerlich", "wild"], "seasons": ["sommer", "herbst"],
+    "tags": ["saisonal", "wild", "herbst", "dahlien"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 39.9, "description": "ca. 12 Stiele"},
+      {"id": "m", "label": "Medium", "price": 56.9, "description": "ca. 18 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 79.9, "description": "ca. 26 Stiele"}
+    ],
+    "basePrice": 39.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": true, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Toscana – Saisonaler Wildstrauß in Wien geliefert", "description": "Dahlien, Zinnien und Gräser in warmen Tönen. Der saisonale Wildstrauß von Bloomery, frisch gebunden und in Wien geliefert."},
+    "sortOrder": 6
+  },
+  {
+    "id": "p-noir", "slug": "noir", "name": "Noir",
+    "tagline": "Burgunder-Dahlien, dunkle Ranunkeln & Pflaumenrosen",
+    "shortDescription": "Tiefes Burgund, Pflaume und dunkles Grün. Ein Strauß mit Tiefe – für alle, die Understatement lieben.",
+    "description": "Noir ist unser dunkelster und vielleicht schönster Strauß. Burgunderfarbene Dahlien, dunkle Ranunkeln und Rosen in Pflaume, gebunden mit tiefgrünem Laub. Stark, ruhig, ein bisschen geheimnisvoll. Zum Jahrestag oder als Statement.",
+    "flowers": ["Dahlien (burgund)", "Ranunkeln (dunkelrot)", "Rosen (pflaume)", "Dunkles Laub"],
+    "care": ["Frisches Wasser alle zwei Tage.", "Kühl stellen, Dahlien sind wärmeempfindlich.", "Stiele täglich kontrollieren."],
+    "images": [
+      {"src": "/images/products/noir-1.jpg", "alt": "Noir – Strauß in Burgund und Pflaume", "kind": "front"},
+      {"src": "/images/products/noir-2.jpg", "alt": "Noir – Detailaufnahme der dunklen Dahlien", "kind": "detail"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
+      {"src": "/images/products/noir-3.jpg", "alt": "Noir auf einer Marmorkonsole am Abend", "kind": "lifestyle"}
+    ],
+    "category": "premium", "occasions": ["jahrestag", "liebe", "einfach-so"],
+    "colors": ["burgund", "rot"], "styles": ["elegant", "modern"], "seasons": ["herbst", "winter"],
+    "tags": ["premium", "dunkel", "statement", "jahrestag"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 54.9, "description": "ca. 12 Stiele"},
+      {"id": "m", "label": "Medium", "price": 79.9, "description": "ca. 18 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 119.9, "description": "ca. 28 Stiele"}
+    ],
+    "basePrice": 54.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": true, "sameDayCapable": false, "active": true,
+    "seo": {"title": "Noir – Premium-Blumenstrauß in Burgund", "description": "Dahlien, Ranunkeln und Rosen in Burgund und Pflaume. Der Premium-Strauß Noir – frisch gebunden, in Wien geliefert."},
+    "sortOrder": 7
+  },
+  {
+    "id": "p-lavande", "slug": "lavande", "name": "Lavande",
+    "tagline": "Lavendel, Freesien & weiße Ranunkeln",
+    "shortDescription": "Lavendel, lila Freesien und weiße Ranunkeln – ein Strauß, der beruhigt und gut riecht.",
+    "description": "Lavande ist ein Strauß zum Durchatmen. Duftender Lavendel, fliederfarbene Freesien, Lisianthus und weiße Ranunkeln, gebunden mit Eukalyptus. Sanft, klar und tröstend – ideal zur Genesung oder wenn jemand ein bisschen Ruhe braucht.",
+    "flowers": ["Lavendel", "Freesien (flieder)", "Lisianthus (lila)", "Ranunkeln (weiß)", "Eukalyptus"],
+    "care": ["Freesien öffnen sich nach und nach – nicht zu früh entfernen.", "Frisches Wasser alle zwei Tage.", "Lavendel kann nach dem Verblühen getrocknet werden."],
+    "images": [
+      {"src": "/images/products/lavande-1.jpg", "alt": "Lavande – Strauß mit Lavendel, Freesien und Ranunkeln", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
+      {"src": "/images/products/lavande-3.jpg", "alt": "Lavande in einer Glasvase am Fenster", "kind": "lifestyle"}
+    ],
+    "category": "pastell", "occasions": ["gute-besserung", "danke", "einfach-so"],
+    "colors": ["lila", "weiss"], "styles": ["natuerlich", "romantisch"], "seasons": ["fruehling", "sommer"],
+    "tags": ["lavendel", "gute besserung", "duft", "pastell"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 38.9, "description": "ca. 12 Stiele"},
+      {"id": "m", "label": "Medium", "price": 54.9, "description": "ca. 18 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 76.9, "description": "ca. 26 Stiele"}
+    ],
+    "basePrice": 38.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Lavande – Blumen zur Genesung liefern lassen", "description": "Lavendel, Freesien und Ranunkeln. Ein sanfter Strauß, der gute Besserung wünscht – frisch gebunden und in Wien geliefert."},
+    "sortOrder": 8
+  },
+  {
+    "id": "p-petit", "slug": "petit", "name": "Petit",
+    "tagline": "Kleiner Saisonstrauß",
+    "shortDescription": "Ein kleiner, charmanter Strauß aus saisonalen Blumen – Sprayrosen, Ranunkeln, Kamille und ein Hauch Blau.",
+    "description": "Petit ist unser Strauß für das kleine Zeichen zwischendurch. Saisonale Blüten – cremefarbene Sprayrosen, rosa Ranunkeln, Kamille und ein paar Stiele Rittersporn – kompakt gebunden. Klein im Format, groß in der Wirkung.",
+    "flowers": ["Sprayrosen (creme)", "Ranunkeln (rosa)", "Kamille", "Rittersporn (blau)", "Saisonales Grün"],
+    "care": ["Stiele anschneiden, kleine Vase verwenden.", "Täglich Wasser prüfen.", "Kühl stellen."],
+    "images": [
+      {"src": "/images/products/petit-1.jpg", "alt": "Petit – Kleiner Saisonstrauß mit Sprayrosen und Kamille", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
+      {"src": "/images/products/petit-3.jpg", "alt": "Petit in einer Glasflasche am Küchenfenster", "kind": "lifestyle"}
+    ],
+    "category": "saisonal", "occasions": ["einfach-so", "danke", "geburtstag"],
+    "colors": ["creme", "rosa", "blau"], "styles": ["natuerlich", "froehlich"], "seasons": ["ganzjaehrig"],
+    "tags": ["klein", "unter 40", "einfach so", "saisonal"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 29.9, "description": "ca. 9 Stiele", "popular": true},
+      {"id": "m", "label": "Medium", "price": 39.9, "description": "ca. 14 Stiele"}
+    ],
+    "basePrice": 29.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Petit – Kleiner Blumenstrauß unter 40 € liefern", "description": "Ein kleiner saisonaler Strauß für das Zeichen zwischendurch. Unter 40 €, frisch gebunden und in Wien geliefert."},
+    "sortOrder": 9
+  },
+  {
+    "id": "p-melange", "slug": "melange", "name": "Melange",
+    "tagline": "Karamell-Rosen, Café-au-lait-Dahlien & Gräser",
+    "shortDescription": "Rosen in Karamell, Dahlien in Café au lait und beige Gräser. Warm, ruhig und sehr wienerisch.",
+    "description": "Melange ist unsere Hommage an Wien. Karamellfarbene Gartenrosen, Café-au-lait-Dahlien, cremiger Lisianthus und getrocknete Gräser ergeben einen Strauß in warmen Neutraltönen – zurückhaltend, edel und immer passend.",
+    "flowers": ["Gartenrosen (karamell)", "Dahlien (café au lait)", "Lisianthus (creme)", "Trockengräser"],
+    "care": ["Frisches Wasser alle zwei Tage.", "Stiele schräg anschneiden.", "Gräser trocken halten – nicht ins Wasser."],
+    "images": [
+      {"src": "/images/products/melange-1.jpg", "alt": "Melange – Strauß in warmen Karamell- und Cremetönen", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+    ],
+    "category": "premium", "occasions": ["danke", "geburtstag", "jahrestag", "einfach-so"],
+    "colors": ["creme", "beige"], "styles": ["elegant", "modern"], "seasons": ["herbst", "ganzjaehrig"],
+    "tags": ["neutral", "wien", "premium", "beige"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 49.9, "description": "ca. 12 Stiele"},
+      {"id": "m", "label": "Medium", "price": 72.9, "description": "ca. 18 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 104.9, "description": "ca. 26 Stiele"}
+    ],
+    "basePrice": 49.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": true, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Melange – Blumenstrauß in Karamell und Creme", "description": "Karamell-Rosen und Café-au-lait-Dahlien in warmen Neutraltönen. Melange von Bloomery – frisch gebunden in Wien."},
+    "sortOrder": 10
+  },
+  {
+    "id": "p-sakura", "slug": "sakura", "name": "Sakura",
+    "tagline": "Tulpen, Anemonen & Kirschblütenzweige",
+    "shortDescription": "Rosa Tulpen, weiße Anemonen und ein paar Kirschblütenzweige. Frühling, der an der Tür klingelt.",
+    "description": "Sakura ist der Frühling, frisch gebunden. Weiche rosa Tulpen, weiße Anemonen mit dunkler Mitte und zarte Blütenzweige. Leicht, freundlich, voller Aufbruch – solange die Saison es zulässt.",
+    "flowers": ["Tulpen (rosa)", "Anemonen (weiß)", "Blütenzweige", "Zartes Grün"],
+    "care": ["Tulpen wachsen in der Vase weiter – Stiele bei Bedarf kürzen.", "Wenig Wasser, dafür öfter wechseln.", "Kühl stellen."],
+    "images": [
+      {"src": "/images/products/sakura-1.jpg", "alt": "Sakura – Frühlingsstrauß mit rosa Tulpen und Anemonen", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+    ],
+    "category": "saisonal", "occasions": ["geburtstag", "einfach-so", "danke", "geburt"],
+    "colors": ["rosa", "weiss"], "styles": ["natuerlich", "froehlich"], "seasons": ["fruehling"],
+    "tags": ["frühling", "tulpen", "saisonal", "mama", "muttertag"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 36.9, "description": "ca. 15 Stiele"},
+      {"id": "m", "label": "Medium", "price": 49.9, "description": "ca. 22 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 69.9, "description": "ca. 32 Stiele"}
+    ],
+    "basePrice": 36.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Sakura – Frühlingsstrauß mit Tulpen liefern", "description": "Rosa Tulpen, Anemonen und Blütenzweige. Der saisonale Frühlingsstrauß Sakura – frisch gebunden und in Wien geliefert."},
+    "sortOrder": 11
+  },
+  {
+    "id": "p-stille", "slug": "stille", "name": "Stille",
+    "tagline": "Weiße Lilien, Rosen & Eukalyptus",
+    "shortDescription": "Weiße Lilien, weiße Rosen und Lisianthus mit Eukalyptus. Ein würdevoller Strauß für stille Momente.",
+    "description": "Stille ist unser Strauß für Abschied und Mitgefühl. Weiße Lilien, Rosen und Lisianthus werden ruhig und klar mit Eukalyptus gebunden. Ohne Schleife, ohne Aufwand – nur Anteilnahme.",
+    "flowers": ["Lilien (weiß)", "Rosen (weiß)", "Lisianthus (weiß)", "Eukalyptus"],
+    "care": ["Lilienpollen bei Bedarf vorsichtig entfernen.", "Frisches Wasser alle zwei Tage.", "Kühl stellen."],
+    "images": [
+      {"src": "/images/products/stille-1.jpg", "alt": "Stille – Weißer Strauß mit Lilien und Rosen", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
+      {"src": "/images/products/stille-3.jpg", "alt": "Stille in einer Steinvase auf einer Eichenkommode", "kind": "lifestyle"}
+    ],
+    "category": "elegant-weiss", "occasions": ["trauer", "gute-besserung"],
+    "colors": ["weiss", "gruen"], "styles": ["elegant", "klassisch"], "seasons": ["ganzjaehrig"],
+    "tags": ["trauer", "weiß", "beileid", "lilien"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 44.9, "description": "ca. 10 Stiele"},
+      {"id": "m", "label": "Medium", "price": 64.9, "description": "ca. 16 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 89.9, "description": "ca. 24 Stiele"}
+    ],
+    "basePrice": 44.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Stille – Trauerblumen würdevoll liefern lassen", "description": "Weiße Lilien und Rosen, ruhig gebunden. Trauerblumen mit Anteilnahme – in Wien geliefert."},
+    "sortOrder": 12
+  },
+  {
+    "id": "p-rose-garden", "slug": "rose-garden", "name": "Rose Garden",
+    "tagline": "24 rosa Gartenrosen & Eukalyptus",
+    "shortDescription": "Zartrosa Gartenrosen, großzügig gebunden mit ein wenig Eukalyptus. Romantisch, ohne Kitsch.",
+    "description": "Rose Garden ist der romantische Rosenstrauß für alle, die es lieber weich als laut mögen. Zartrosa Gartenrosen mit voller Blüte, gebunden mit silbrigem Eukalyptus – großzügig, duftend und zeitlos.",
+    "flowers": ["Gartenrosen (rosa)", "Eukalyptus"],
+    "care": ["Stiele schräg anschneiden.", "Frisches Wasser alle zwei Tage.", "Kühl stellen, Zugluft vermeiden."],
+    "images": [
+      {"src": "/images/products/rose-garden-1.jpg", "alt": "Rose Garden – Strauß aus rosa Gartenrosen", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+    ],
+    "category": "rosen", "occasions": ["liebe", "geburtstag", "jahrestag", "danke"],
+    "colors": ["rosa"], "styles": ["romantisch", "klassisch"], "seasons": ["ganzjaehrig"],
+    "tags": ["rosen", "rosa", "romantik", "muttertag", "mama"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 42.9, "stems": 9, "description": "9 Rosen"},
+      {"id": "m", "label": "Medium", "price": 62.9, "stems": 15, "description": "15 Rosen", "popular": true},
+      {"id": "l", "label": "Large", "price": 86.9, "stems": 24, "description": "24 Rosen"}
+    ],
+    "basePrice": 42.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Rose Garden – Rosa Rosen liefern lassen in Wien", "description": "Zartrosa Gartenrosen mit Eukalyptus, frisch gebunden. Rosen in Wien liefern lassen – mit Wunschdatum und Grußkarte."},
+    "sortOrder": 13
+  },
+  {
+    "id": "p-confetti", "slug": "confetti", "name": "Confetti",
+    "tagline": "Pfingstrosen, Ranunkeln, Tulpen & Lisianthus",
+    "shortDescription": "Fuchsia, Orange, Gelb und Lila – ein bunter Strauß, der Freude nicht leise sagt.",
+    "description": "Confetti ist unser lautester Strauß – auf die gute Art. Fuchsiafarbene Pfingstrosen, orange Ranunkeln, gelbe Tulpen und lila Lisianthus, elegant zusammengehalten von frischem Grün. Für Geburtstage, Überraschungen und alle, die Farbe lieben.",
+    "flowers": ["Pfingstrosen (fuchsia)", "Ranunkeln (orange)", "Tulpen (gelb)", "Lisianthus (lila)", "Frisches Grün"],
+    "care": ["Frisches Wasser alle zwei Tage.", "Stiele schräg anschneiden.", "Hell, aber ohne direkte Sonne aufstellen."],
+    "images": [
+      {"src": "/images/products/confetti-1.jpg", "alt": "Confetti – Bunter Strauß mit Pfingstrosen, Ranunkeln und Tulpen", "kind": "front"},
+      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
+      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+    ],
+    "category": "bunt", "occasions": ["geburtstag", "einfach-so", "danke", "gute-besserung"],
+    "colors": ["rosa", "orange", "gelb", "lila"], "styles": ["froehlich", "modern"], "seasons": ["fruehling", "sommer"],
+    "tags": ["bunt", "geburtstag", "überraschung", "farbe"],
+    "sizes": [
+      {"id": "s", "label": "Small", "price": 41.9, "description": "ca. 12 Stiele"},
+      {"id": "m", "label": "Medium", "price": 58.9, "description": "ca. 18 Stiele", "popular": true},
+      {"id": "l", "label": "Large", "price": 82.9, "description": "ca. 26 Stiele"}
+    ],
+    "basePrice": 41.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
+    "seo": {"title": "Confetti – Bunte Geburtstagsblumen liefern", "description": "Ein bunter Strauß mit Pfingstrosen, Ranunkeln und Tulpen. Geburtstagsblumen in Wien – frisch gebunden, mit Wunschdatum geliefert."},
+    "sortOrder": 14
+  }
+]
