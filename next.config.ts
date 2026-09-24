@@ -9,8 +9,13 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  /** Self-contained server bundle for Docker deployments (see Dockerfile). */
-  output: "standalone",
+  /**
+   * Self-contained server bundle, needed only by the Docker image (see Dockerfile),
+   * which starts it with `node server.js`. It is opt-in because `next start` refuses
+   * to serve a standalone build, which breaks the CI test server and every host that
+   * builds the app itself.
+   */
+  ...(process.env.BUILD_STANDALONE === "1" ? { output: "standalone" as const } : {}),
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [360, 640, 828, 1080, 1280, 1600, 1920],

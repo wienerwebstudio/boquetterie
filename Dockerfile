@@ -18,7 +18,7 @@ ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 # DATABASE_URL is intentionally NOT available here: the build prerenders from content/*.json.
-RUN npm run build
+RUN BUILD_STANDALONE=1 npm run build
 
 # ---------- 3. runtime ----------
 FROM node:22-alpine AS runner
