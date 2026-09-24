@@ -13,6 +13,14 @@ import { defineConfig, devices } from "@playwright/test";
 const isCI = Boolean(process.env.CI);
 const baseURL = process.env.PLAYWRIGHT_BASE_URL ?? "http://localhost:3000";
 
+/**
+ * The a11y scans call `test.slow()` because a cold image cache makes the first
+ * hit on an image-heavy page expensive. That only triples the *test* budget –
+ * `navigationTimeout` is capped separately, and on the two-core CI runner the
+ * shop listing needs more than the 30 s the storefront journeys get.
+ */
+const A11Y_NAVIGATION_TIMEOUT = 90_000;
+
 export default defineConfig({
   testDir: "tests/e2e",
   globalTeardown: "./tests/e2e/global-teardown.ts",
@@ -43,12 +51,18 @@ export default defineConfig({
     {
       name: "a11y-desktop",
       testMatch: /.*\.a11y\.ts/,
-      use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 900 } },
+      use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 900 }, navigationTimeout: A11Y_NAVIGATION_TIMEOUT },
     },
     {
       name: "a11y-mobile",
       testMatch: /.*\.a11y\.ts/,
-      use: { ...devices["Desktop Chrome"], viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true },
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 390, height: 844 },
+        isMobile: true,
+        hasTouch: true,
+        navigationTimeout: A11Y_NAVIGATION_TIMEOUT,
+      },
     },
   ],
   webServer: {

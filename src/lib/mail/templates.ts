@@ -16,7 +16,7 @@ export interface MailBrand {
   siteUrl: string; // without trailing slash
   claim?: string;
   email?: string; // only when it is a real address (no "[…]" placeholder)
-  logoUrl?: string; // optional absolute URL, e.g. `${siteUrl}/images/logo.png`
+  logoUrl?: string; // optional absolute URL, e.g. `${siteUrl}/images/brand/logo-horizontal.png`
 }
 
 export interface RenderedMail {

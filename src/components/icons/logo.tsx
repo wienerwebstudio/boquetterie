@@ -20,8 +20,8 @@ export function Logo({
     <Image
       src={stacked ? "/images/brand/logo.png" : "/images/brand/logo-horizontal.png"}
       alt="Bloomery"
-      width={stacked ? 1200 : 2389}
-      height={stacked ? 1202 : 844}
+      width={stacked ? 600 : 719}
+      height={stacked ? 601 : 254}
       priority={priority}
       sizes={stacked ? "120px" : "180px"}
       className={cn("w-auto", stacked ? "h-[72px]" : "h-8 lg:h-9", className)}
