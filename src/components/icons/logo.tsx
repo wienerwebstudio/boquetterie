@@ -1,17 +1,30 @@
+import Image from "next/image";
 import { cn } from "@/lib/format";
 
-/** Wordmark – set in the serif brand face with a small floral mark. */
-export function Logo({ className, light }: { className?: string; light?: boolean }) {
+/**
+ * Bloomery-Logo als Bilddatei unter `public/images/brand/`.
+ * `horizontal` – Zeichen und Schriftzug nebeneinander, für Kopf- und Fußzeile.
+ * `stacked` – die vollständige Marke wie geliefert, für Flächen mit Höhe.
+ */
+export function Logo({
+  className,
+  variant = "horizontal",
+  priority = false,
+}: {
+  className?: string;
+  variant?: "horizontal" | "stacked";
+  priority?: boolean;
+}) {
+  const stacked = variant === "stacked";
   return (
-    <span className={cn("inline-flex items-center gap-2", light ? "text-ivory" : "text-forest", className)}>
-      <svg viewBox="0 0 24 24" className="size-5" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 21c0-5 0-9 0-10" />
-        <path d="M12 11c-2.5 0-5-2-5-5 3 0 5 2 5 5z" />
-        <path d="M12 11c2.5 0 5-2 5-5-3 0-5 2-5 5z" />
-        <path d="M12 8c-1.2-1.4-1.2-3.6 0-5 1.2 1.4 1.2 3.6 0 5z" />
-        <path d="M8 21c1.2-2.4 2.6-3.6 4-4 1.4.4 2.8 1.6 4 4" />
-      </svg>
-      <span className="font-serif text-[26px] font-medium leading-none tracking-[-0.01em]">Bloomery</span>
-    </span>
+    <Image
+      src={stacked ? "/images/brand/logo.png" : "/images/brand/logo-horizontal.png"}
+      alt="Bloomery"
+      width={stacked ? 1200 : 2389}
+      height={stacked ? 1202 : 844}
+      priority={priority}
+      sizes={stacked ? "120px" : "180px"}
+      className={cn("w-auto", stacked ? "h-[72px]" : "h-8 lg:h-9", className)}
+    />
   );
 }

@@ -40,7 +40,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
       <div className="container-x py-14 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
           <div className="max-w-xs">
-            <Logo />
+            <Logo variant="stacked" />
             <p className="mt-4 text-[15px] leading-relaxed text-ink-muted">{settings.brand.claim} Frisch gebunden in Wien, persönlich geliefert.</p>
             <div className="mt-6 flex gap-2">
               {settings.brand.social.instagram && (

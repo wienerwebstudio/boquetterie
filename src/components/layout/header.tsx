@@ -58,7 +58,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
         </div>
 
         <Link href="/" className="shrink-0" aria-label="Bloomery – Startseite">
-          <Logo />
+          <Logo priority />
         </Link>
 
         <nav aria-label="Hauptnavigation" className="hidden lg:block">

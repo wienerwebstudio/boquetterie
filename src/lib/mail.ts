@@ -124,8 +124,7 @@ export function mailBrand(settings: SiteSettings): MailBrand {
     siteUrl: siteUrlOf(settings),
     claim: real(settings.brand.claim),
     email: real(settings.brand.email),
-    // Optional: set to `${siteUrl}/images/logo.png` once a logo file exists under /public.
-    logoUrl: undefined,
+    logoUrl: `${siteUrlOf(settings)}/images/brand/logo-horizontal.png`,
   };
 }
 
