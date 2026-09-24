@@ -26,7 +26,7 @@ Lokal in `.env.local` (nie committen), auf dem Server als Secrets.
 | `PAYPAL_CLIENT_SECRET` | PayPal | Secret der REST-App |
 | `PAYPAL_ENV` | optional | `sandbox` (Standard) oder `live` |
 | `PAYPAL_WEBHOOK_ID` | optional | Webhook-ID aus dem PayPal-Dashboard – aktiviert die Signaturprüfung von `/api/webhooks/paypal`. Ohne ID werden Webhooks in Produktion ignoriert. |
-| `NEXT_PUBLIC_SITE_URL` | empfohlen | Absolute Basis-URL (z. B. `https://boquetterie.at`) für Rücksprung-URLs. Fehlt sie, wird in Entwicklung der Request-Origin, in Produktion `seo.siteUrl` aus den Settings verwendet. |
+| `NEXT_PUBLIC_SITE_URL` | empfohlen | Absolute Basis-URL (z. B. `https://bloomery.at`) für Rücksprung-URLs. Fehlt sie, wird in Entwicklung der Request-Origin, in Produktion `seo.siteUrl` aus den Settings verwendet. |
 
 Alle Secrets bleiben serverseitig (`server-only`-Module unter `src/lib/payments*`).
 Beträge kommen immer aus der serverseitig berechneten Bestellung, nie vom Client.
@@ -80,7 +80,7 @@ Bekannte Grenzen:
    Methoden automatisch im Payment Element (Wallets nur auf unterstützten
    Geräten/Browsern).
 3. **Apple Pay**: Settings → Payment methods → Apple Pay → Domain hinzufügen
-   (`boquetterie.at`). Stripe hostet die Domain-Verifizierungsdatei unter
+   (`bloomery.at`). Stripe hostet die Domain-Verifizierungsdatei unter
    `/.well-known/apple-developer-merchantid-domain-association` automatisch,
    solange Stripe.js von der Domain geladen wird; andernfalls die Datei aus dem
    Dashboard unter `public/.well-known/` ablegen.
@@ -138,7 +138,7 @@ Ohne Stripe bleibt das bisherige Anfrageformular.
    anlegen und dessen `whsec_…` als `STRIPE_WEBHOOK_SECRET` verwenden.
    Zahlungsmethoden und Apple-Pay-Domain im **Live**-Modus erneut aktivieren.
 2. PayPal: Live-App-Credentials, `PAYPAL_ENV=live`, Live-Webhook-ID.
-3. `NEXT_PUBLIC_SITE_URL=https://boquetterie.at` setzen (Rücksprung-URLs).
+3. `NEXT_PUBLIC_SITE_URL=https://bloomery.at` setzen (Rücksprung-URLs).
 4. In `content/settings.json` nur die Zahlungsarten aktivieren, die wirklich
    angeboten werden sollen.
 5. Testbestellung mit kleinem Betrag durchführen und im Admin prüfen:

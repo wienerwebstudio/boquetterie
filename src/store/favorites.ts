@@ -16,6 +16,6 @@ export const useFavorites = create<FavoritesState>()(
         set({ slugs: get().slugs.includes(slug) ? get().slugs.filter((s) => s !== slug) : [...get().slugs, slug] }),
       has: (slug) => get().slugs.includes(slug),
     }),
-    { name: "boquetterie-favorites", storage: createJSONStorage(() => localStorage) },
+    { name: "bloomery-favorites", storage: createJSONStorage(() => localStorage) },
   ),
 );

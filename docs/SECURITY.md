@@ -5,7 +5,7 @@
 ## Admin-Authentifizierung
 
 - Ein Passwort (`ADMIN_PASSWORD`) für den gesamten Admin-Bereich. Login unter `/admin/login`, Endpunkt `POST /api/admin/login`, Vergleich in konstanter Zeit.
-- Erfolgreicher Login setzt das Cookie `bq_admin`: `<ablauf>.<HMAC-SHA256(ADMIN_SECRET, payload)>`, `httpOnly`, `sameSite=lax`, `secure` in Produktion, Laufzeit 12 h.
+- Erfolgreicher Login setzt das Cookie `bl_admin`: `<ablauf>.<HMAC-SHA256(ADMIN_SECRET, payload)>`, `httpOnly`, `sameSite=lax`, `secure` in Produktion, Laufzeit 12 h.
 - `ADMIN_SECRET` signiert das Cookie (Fallback: `ADMIN_PASSWORD`). Änderung des Secrets loggt alle Sitzungen aus.
 - `src/proxy.ts` prüft das Cookie für `/admin/*` und `/api/admin/*` (Web Crypto, Edge-fähig). Nicht angemeldete Aufrufe erhalten `401` (API) bzw. einen Redirect zur Login-Seite.
 - Zusätzlich prüfen alle Server Actions (`requireAdmin()`) und die Upload-Routen (`isAdminAuthenticated()`) die Sitzung selbst – Server Functions sind per direktem POST erreichbar, der Proxy allein reicht nicht.

@@ -8,7 +8,7 @@ import { useConsent } from "@/components/consent/store";
  * `consent.analytics` is true. Supports Plausible and/or GA4, configured purely
  * through public env vars (see docs/ANALYTICS.md):
  *
- *   NEXT_PUBLIC_PLAUSIBLE_DOMAIN   e.g. "boquetterie.at"
+ *   NEXT_PUBLIC_PLAUSIBLE_DOMAIN   e.g. "bloomery.at"
  *   NEXT_PUBLIC_PLAUSIBLE_API      optional data-api endpoint (proxying)
  *   NEXT_PUBLIC_PLAUSIBLE_SRC      optional script URL (proxying / self-hosted)
  *   NEXT_PUBLIC_GA_MEASUREMENT_ID  e.g. "G-XXXXXXXXXX"
@@ -68,7 +68,7 @@ export function Analytics() {
 /* ---------------- Plausible ---------------- */
 
 function loadPlausible(domain: string) {
-  if (document.querySelector('script[data-bq-analytics="plausible"]')) return;
+  if (document.querySelector('script[data-bl-analytics="plausible"]')) return;
   if (!window.plausible) {
     const queue: unknown[] = [];
     const stub = Object.assign((...args: unknown[]) => { queue.push(args); }, { q: queue });
@@ -84,7 +84,7 @@ function loadPlausible(domain: string) {
 }
 
 function unloadPlausible() {
-  document.querySelector('script[data-bq-analytics="plausible"]')?.remove();
+  document.querySelector('script[data-bl-analytics="plausible"]')?.remove();
   try {
     delete window.plausible;
   } catch {
@@ -116,7 +116,7 @@ function loadGa(id: string, marketing: boolean) {
   window.gtag("js", new Date());
   window.gtag("config", id, { anonymize_ip: true, send_page_view: true });
 
-  if (!document.querySelector('script[data-bq-analytics="ga"]')) {
+  if (!document.querySelector('script[data-bl-analytics="ga"]')) {
     const s = document.createElement("script");
     s.async = true;
     s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
@@ -132,7 +132,7 @@ function updateGaConsent(analytics: boolean, marketing: boolean) {
 function disableGa(id: string) {
   updateGaConsent(false, false);
   window[`ga-disable-${id}`] = true;
-  document.querySelector('script[data-bq-analytics="ga"]')?.remove();
+  document.querySelector('script[data-bl-analytics="ga"]')?.remove();
   removeGaCookies();
 }
 

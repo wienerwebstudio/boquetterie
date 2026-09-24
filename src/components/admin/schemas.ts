@@ -718,7 +718,7 @@ export const settingsSchema: SingletonSchema = {
     {
       title: "SEO-Standards",
       fields: [
-        { key: "seo.siteUrl", label: "Website-URL", type: "text", required: true, placeholder: "https://boquetterie.at" },
+        { key: "seo.siteUrl", label: "Website-URL", type: "text", required: true, placeholder: "https://bloomery.at" },
         { key: "seo.defaultTitle", label: "Standard-Titel", type: "text", required: true },
         { key: "seo.defaultDescription", label: "Standard-Beschreibung", type: "textarea", required: true, span: "full", rows: 3 },
       ],

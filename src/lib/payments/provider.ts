@@ -10,7 +10,7 @@ import type { CreatePaymentResult, PaymentProviderId } from "@/types/payments";
 
 export interface PaymentContext {
   order: Order;
-  /** Absolute origin without trailing slash, e.g. "https://boquetterie.at". */
+  /** Absolute origin without trailing slash, e.g. "https://bloomery.at". */
   siteUrl: string;
 }
 

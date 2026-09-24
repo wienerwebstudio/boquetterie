@@ -7,7 +7,7 @@ import type { Customer } from "@/types/auth";
 /**
  * Customer session – read side.
  *
- * `getCurrentCustomer()` verifies the `bq_session` cookie (HMAC, expiry) and
+ * `getCurrentCustomer()` verifies the `bl_session` cookie (HMAC, expiry) and
  * loads the customer row; `requireCustomer()` throws for Server Functions that
  * must never run anonymously (they are reachable via direct POST).
  */

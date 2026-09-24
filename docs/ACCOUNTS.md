@@ -9,13 +9,13 @@ das Konto entsteht beim ersten Login.
 1. `/konto` (ausgeloggt) zeigt die Login-Karte. Das Formular schickt `POST /api/auth/request-link { email }`.
 2. Der Endpoint antwortet **immer** mit `200` und derselben Nachricht (keine Auskunft darüber, ob die
    Adresse bekannt ist), legt einen Token an und verschickt die Mail
-   „Dein Login-Link für Boquetterie“ mit `{siteUrl}/auth/verify?token=…`.
+   „Dein Login-Link für Bloomery“ mit `{siteUrl}/auth/verify?token=…`.
 3. `/auth/verify?token=…` prüft den Token (ohne ihn zu verbrauchen) und zeigt einen Button
    „Jetzt anmelden“. Der Button sendet `POST /api/auth/verify`. Dieser Zwischenschritt ist Absicht:
    Mail-Scanner (Outlook Safe Links & Co.) rufen GET-Links auf und würden einen Einmal-Token sonst
    verbrauchen, bevor die Person klickt.
 4. `POST /api/auth/verify` verbraucht den Token, legt den Kunden in `data/customers.json` an bzw.
-   aktualisiert `lastLoginAt`, setzt das Cookie `bq_session` und leitet auf `/konto?willkommen=1`.
+   aktualisiert `lastLoginAt`, setzt das Cookie `bl_session` und leitet auf `/konto?willkommen=1`.
 5. `/konto` (eingeloggt): Bestellungen (`getOrdersByEmail`), Empfänger:innen (aus den Bestellungen
    abgeleitet), Favoriten (Browser-Store), Profil (Server Function `updateProfileAction`),
    Link zu `/erinnerung`, Abmelden (`POST /api/auth/logout`).
@@ -29,7 +29,7 @@ vorbefüllt (falls vorhanden).
 | --- | --- |
 | Token | 32 Zufallsbytes (hex), nur der `sha256` liegt auf der Platte, 15 Minuten gültig, einmalig; abgelaufene Einträge werden bei jedem Schreiben entfernt |
 | Vergleich | `crypto.timingSafeEqual` – für Token-Hashes und die Cookie-Signatur |
-| Cookie | `bq_session` = `base64url({customerId, exp})` + HMAC-SHA256; `httpOnly`, `SameSite=Lax`, `secure` in Produktion, 30 Tage. Keine E-Mail, kein Profil im Cookie |
+| Cookie | `bl_session` = `base64url({customerId, exp})` + HMAC-SHA256; `httpOnly`, `SameSite=Lax`, `secure` in Produktion, 30 Tage. Keine E-Mail, kein Profil im Cookie |
 | Rate Limits | `request-link`: 5 Anfragen / 10 Minuten pro IP **und** pro E-Mail (`src/lib/rate-limit.ts`, In-Memory) |
 | Enumeration | Gleiche Antwort für bekannte und unbekannte Adressen; Mailversand läuft asynchron |
 | Honeypot | Feld `website` im Login-Formular – gefüllt = still ignoriert |
@@ -79,8 +79,8 @@ Per `curl`:
 ```bash
 curl -s -X POST localhost:3000/api/auth/request-link -H 'content-type: application/json' -d '{"email":"test@example.com"}'
 # Link aus dem Log kopieren, dann:
-curl -s -i -X POST localhost:3000/api/auth/verify -d 'token=<TOKEN>'   # Set-Cookie: bq_session=…
-curl -s localhost:3000/konto -H 'cookie: bq_session=<WERT>' | grep -o 'Hallo[^<]*'
+curl -s -i -X POST localhost:3000/api/auth/verify -d 'token=<TOKEN>'   # Set-Cookie: bl_session=…
+curl -s localhost:3000/konto -H 'cookie: bl_session=<WERT>' | grep -o 'Hallo[^<]*'
 ```
 
 Testdaten danach entfernen: `rm data/auth-tokens.json data/customers.json`.

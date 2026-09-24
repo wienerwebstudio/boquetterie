@@ -1,4 +1,4 @@
-# Boquetterie – Datenspeicher (JSON oder Postgres)
+# Bloomery – Datenspeicher (JSON oder Postgres)
 
 Der Shop speichert Inhalte und Laufzeitdaten als **JSON-Dokumente**. Wo diese Dokumente liegen, entscheidet ausschließlich die Umgebungsvariable `DATABASE_URL`:
 
@@ -26,7 +26,7 @@ Jedes Dokument hat eine Art (`kind`) und einen Namen:
 - `content` – redaktionelle Inhalte (`products`, `settings`, `homepage`, …). Werden vom Admin geschrieben.
 - `data` – Laufzeitdaten (`orders`, `newsletter`, `subscription-requests`, `reminders`, …).
 
-Beim Start loggt der Server einmal, welcher Store aktiv ist: `[boquetterie] datastore: json …` bzw. `… postgres …`.
+Beim Start loggt der Server einmal, welcher Store aktiv ist: `[bloomery] datastore: json …` bzw. `… postgres …`.
 
 ## Postgres-Schema
 
@@ -65,7 +65,7 @@ Für **Laufzeitdaten** gibt es keinen Fallback: Fehlt `data/orders` in der Daten
 
 | Variable | Pflicht | Bedeutung |
 | --- | --- | --- |
-| `DATABASE_URL` | für Postgres | Verbindungs-URL, z. B. `postgres://boquetterie:geheim@db:5432/boquetterie`. Nicht gesetzt = JSON-Store. `?sslmode=require` in der URL wird von postgres.js respektiert. |
+| `DATABASE_URL` | für Postgres | Verbindungs-URL, z. B. `postgres://bloomery:geheim@db:5432/bloomery`. Nicht gesetzt = JSON-Store. `?sslmode=require` in der URL wird von postgres.js respektiert. |
 | `DATABASE_SSL` | nein | `require` erzwingt TLS (Neon, Supabase, Managed-DBs), `disable` schaltet es ab. Ohne Wert entscheidet die URL. |
 | `DATABASE_POOL_MAX` | nein | Max. Verbindungen pro Prozess, Standard `5`. Bei Serverless (Vercel) `1`–`3`. |
 | `DATABASE_PREPARE` | nein | `false` deaktiviert Prepared Statements – nötig hinter Transaction-Poolern (PgBouncer, Supabase-Pooler). Bei `?pgbouncer=true` in der URL passiert das automatisch. |
@@ -104,12 +104,12 @@ Zurück zu JSON: `DATABASE_URL` entfernen. Die Dateien in `content/` und `data/`
 
 ```bash
 # Backup (Docker Compose)
-docker compose exec db pg_dump -U boquetterie -Fc boquetterie > backup-$(date +%F).dump
+docker compose exec db pg_dump -U bloomery -Fc bloomery > backup-$(date +%F).dump
 # Restore
-docker compose exec -T db pg_restore -U boquetterie -d boquetterie --clean --if-exists < backup-2026-01-01.dump
+docker compose exec -T db pg_restore -U bloomery -d bloomery --clean --if-exists < backup-2026-01-01.dump
 
 # Einzelne Dokumente als JSON exportieren (z. B. zurück ins Repo)
-docker compose exec db psql -U boquetterie -d boquetterie -Atc \
+docker compose exec db psql -U bloomery -d bloomery -Atc \
   "select data from documents where kind='content' and name='products'" > content/products.json
 ```
 
@@ -120,5 +120,5 @@ Managed-Anbieter (Neon, Supabase) bieten Point-in-Time-Recovery bzw. tägliche B
 ## Entwicklung
 
 - Standard bleibt der JSON-Store, es ist keine Datenbank nötig.
-- Postgres lokal testen: `docker compose up -d db`, dann `DATABASE_URL=postgres://boquetterie:boquetterie@localhost:5432/boquetterie npm run dev` (Port 5432 in `docker-compose.yml` freigeben).
+- Postgres lokal testen: `docker compose up -d db`, dann `DATABASE_URL=postgres://bloomery:bloomery@localhost:5432/bloomery npm run dev` (Port 5432 in `docker-compose.yml` freigeben).
 - In `src/lib/store/postgres.ts` wird der Client an `globalThis` gehängt, damit Hot Reloading keine neuen Verbindungspools öffnet.

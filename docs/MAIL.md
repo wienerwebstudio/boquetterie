@@ -1,4 +1,4 @@
-# Boquetterie – E-Mail, Erinnerungen & Cron
+# Bloomery – E-Mail, Erinnerungen & Cron
 
 Transaktionale E-Mails (Bestellbestätigung, Statusupdates, Bewertungsanfrage, Anlass-Erinnerungen, Magic-Link) laufen über `src/lib/mail.ts`. Die Vorlagen liegen in `src/lib/mail/templates.ts` (reine Funktionen, liefern `{ subject, html, text }`).
 
@@ -7,7 +7,7 @@ Transaktionale E-Mails (Bestellbestätigung, Statusupdates, Bewertungsanfrage, A
 | Variable | Pflicht | Beschreibung |
 | --- | --- | --- |
 | `RESEND_API_KEY` | für echten Versand | API-Key von [Resend](https://resend.com). Ohne Key werden alle Mails nur ins Server-Log geschrieben (`[mail] (console provider) …`) – praktisch für Entwicklung und Previews. |
-| `MAIL_FROM` | ja (bei Resend) | Absender, z. B. `Boquetterie <hallo@boquetterie.at>`. Die Domain muss bei Resend verifiziert sein (siehe unten). Fallback: `Boquetterie <no-reply@example.com>`. |
+| `MAIL_FROM` | ja (bei Resend) | Absender, z. B. `Bloomery <hallo@bloomery.at>`. Die Domain muss bei Resend verifiziert sein (siehe unten). Fallback: `Bloomery <no-reply@example.com>`. |
 | `MAIL_REPLY_TO` | nein | Reply-To-Adresse, z. B. das Team-Postfach. Antworten von Kund:innen landen dort. |
 | `MAIL_ADMIN` | nein | Interne Adresse, die bei jeder neuen Bestellung eine kompakte Zusammenfassung mit Link in den Admin bekommt. Leer = keine internen Mails. |
 | `CRON_SECRET` | für Cron | Geheimnis, das die Cron-Endpunkte unter `/api/cron/*` schützt. Anfragen müssen `Authorization: Bearer <CRON_SECRET>` senden. Erzeugen z. B. mit `openssl rand -hex 32`. Ohne Wert antworten die Endpunkte mit 503. |
@@ -18,21 +18,21 @@ Beispiel `.env.local`:
 
 ```
 RESEND_API_KEY=re_xxxxxxxxx
-MAIL_FROM="Boquetterie <hallo@boquetterie.at>"
-MAIL_REPLY_TO=hallo@boquetterie.at
-MAIL_ADMIN=bestellungen@boquetterie.at
+MAIL_FROM="Bloomery <hallo@bloomery.at>"
+MAIL_REPLY_TO=hallo@bloomery.at
+MAIL_ADMIN=bestellungen@bloomery.at
 CRON_SECRET=<openssl rand -hex 32>
 ```
 
 ## Domain bei Resend verifizieren (SPF / DKIM)
 
-Damit Mails von `@boquetterie.at` nicht im Spam landen, muss die Domain bei Resend verifiziert werden:
+Damit Mails von `@bloomery.at` nicht im Spam landen, muss die Domain bei Resend verifiziert werden:
 
-1. Resend → **Domains** → **Add Domain** → `boquetterie.at` (Region EU wählen, wenn verfügbar).
+1. Resend → **Domains** → **Add Domain** → `bloomery.at` (Region EU wählen, wenn verfügbar).
 2. Resend zeigt DNS-Einträge an, die beim Domain-Registrar (z. B. World4You, nic.at-Provider) angelegt werden:
-   - **DKIM**: ein `TXT`-Eintrag unter `resend._domainkey.boquetterie.at` (Wert = öffentlicher Schlüssel von Resend). Signiert jede Mail kryptografisch.
-   - **SPF**: ein `TXT`-Eintrag (bei Resend meist auf einer Subdomain wie `send.boquetterie.at`) mit `v=spf1 include:amazonses.com ~all` sowie ein passender `MX`-Eintrag für Bounces. Besteht bereits ein SPF-Eintrag auf der Root-Domain, wird der `include:` dort ergänzt – es darf nur **einen** SPF-Eintrag pro Name geben.
-   - Optional **DMARC**: `TXT` unter `_dmarc.boquetterie.at`, z. B. `v=DMARC1; p=none; rua=mailto:postmaster@boquetterie.at` (erst beobachten, später auf `quarantine` verschärfen).
+   - **DKIM**: ein `TXT`-Eintrag unter `resend._domainkey.bloomery.at` (Wert = öffentlicher Schlüssel von Resend). Signiert jede Mail kryptografisch.
+   - **SPF**: ein `TXT`-Eintrag (bei Resend meist auf einer Subdomain wie `send.bloomery.at`) mit `v=spf1 include:amazonses.com ~all` sowie ein passender `MX`-Eintrag für Bounces. Besteht bereits ein SPF-Eintrag auf der Root-Domain, wird der `include:` dort ergänzt – es darf nur **einen** SPF-Eintrag pro Name geben.
+   - Optional **DMARC**: `TXT` unter `_dmarc.bloomery.at`, z. B. `v=DMARC1; p=none; rua=mailto:postmaster@bloomery.at` (erst beobachten, später auf `quarantine` verschärfen).
 3. Nach dem Eintragen in Resend auf **Verify** klicken. DNS-Änderungen brauchen bis zu 24–48 h, meist geht es in Minuten.
 4. Erst dann `MAIL_FROM` auf die echte Domain setzen. Vorher liefert Resend nur an die eigene Account-Adresse (Sandbox).
 
@@ -64,8 +64,8 @@ Zeiten sind UTC – `0 7` entspricht 9 Uhr MESZ bzw. 8 Uhr MEZ.
 
 ```
 # m h dom mon dow   command
-0  8 * * *   curl -fsS -H "Authorization: Bearer $CRON_SECRET" https://boquetterie.at/api/cron/reminders
-30 8 * * *   curl -fsS -H "Authorization: Bearer $CRON_SECRET" https://boquetterie.at/api/cron/review-requests
+0  8 * * *   curl -fsS -H "Authorization: Bearer $CRON_SECRET" https://bloomery.at/api/cron/reminders
+30 8 * * *   curl -fsS -H "Authorization: Bearer $CRON_SECRET" https://bloomery.at/api/cron/review-requests
 ```
 
 `CRON_SECRET` dabei in der Crontab-Umgebung setzen oder direkt einsetzen. Zum manuellen Testen:

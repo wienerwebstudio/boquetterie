@@ -122,12 +122,12 @@ export const paypalProvider: PaymentProviderAdapter = {
           {
             reference_id: order.id,
             custom_id: order.id,
-            description: `Boquetterie Bestellung ${order.id}`,
+            description: `Bloomery Bestellung ${order.id}`,
             amount: { currency_code: "EUR", value: order.totals.total.toFixed(2) },
           },
         ],
         application_context: {
-          brand_name: "Boquetterie",
+          brand_name: "Bloomery",
           locale: "de-AT",
           shipping_preference: "NO_SHIPPING",
           user_action: "PAY_NOW",

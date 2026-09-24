@@ -24,7 +24,7 @@ export interface AuthTokenRecord {
   expiresAt: string; // ISO datetime
 }
 
-/** What is signed into the `bq_session` cookie – nothing sensitive, only a reference. */
+/** What is signed into the `bl_session` cookie – nothing sensitive, only a reference. */
 export interface SessionPayload {
   customerId: string;
   /** Unix seconds. */

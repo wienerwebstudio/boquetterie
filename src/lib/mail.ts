@@ -14,7 +14,7 @@ import { formatReminderDate } from "@/lib/mail/reminders";
  *   - RESEND_API_KEY set → Resend (HTTP API, no SDK needed)
  *   - otherwise          → console logger (development / previews)
  *
- * MAIL_FROM  – sender, e.g. "Boquetterie <hallo@boquetterie.at>" (must be a verified domain at the provider)
+ * MAIL_FROM  – sender, e.g. "Bloomery <hallo@bloomery.at>" (must be a verified domain at the provider)
  * MAIL_REPLY_TO – optional reply-to address
  * MAIL_ADMIN – optional address that receives internal notifications (new orders, inquiries)
  *
@@ -44,7 +44,7 @@ export function mailProvider(): MailResult["provider"] {
 }
 
 export function mailFrom() {
-  return process.env.MAIL_FROM || "Boquetterie <no-reply@example.com>";
+  return process.env.MAIL_FROM || "Bloomery <no-reply@example.com>";
 }
 
 export function adminMailAddress() {

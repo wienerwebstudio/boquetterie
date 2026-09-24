@@ -1,13 +1,26 @@
 {
   "brand": {
-    "name": "Boquetterie",
+    "name": "Bloomery",
     "claim": "Blumen, die mehr sagen.",
     "legalName": "[Firmenname – bitte ergänzen]",
-    "email": "[E-Mail-Adresse – bitte ergänzen]",
+    "email": "kontakt@bloomery.at",
     "phone": "[Telefonnummer – bitte ergänzen]",
-    "address": {"street": "[Straße & Hausnummer – bitte ergänzen]", "zip": "1010", "city": "Wien", "country": "Österreich"},
-    "openingHours": ["Mo–Fr 9–18 Uhr", "Sa 9–14 Uhr"],
-    "social": {"instagram": "https://instagram.com/", "facebook": "", "pinterest": "", "tiktok": ""}
+    "address": {
+      "street": "[Straße & Hausnummer – bitte ergänzen]",
+      "zip": "1010",
+      "city": "Wien",
+      "country": "Österreich"
+    },
+    "openingHours": [
+      "Mo–Fr 9–18 Uhr",
+      "Sa 9–14 Uhr"
+    ],
+    "social": {
+      "instagram": "https://instagram.com/",
+      "facebook": "",
+      "pinterest": "",
+      "tiktok": ""
+    }
   },
   "announcement": {
     "enabled": true,
@@ -18,41 +31,152 @@
   },
   "timezone": "Europe/Vienna",
   "currency": "EUR",
-  "blackoutDates": ["2026-12-25", "2026-12-26", "2027-01-01"],
+  "blackoutDates": [
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01"
+  ],
   "sameDayEnabled": true,
   "subscriptionEnabled": true,
   "newsletterEnabled": true,
   "favoritesEnabled": true,
-  "headerCta": {"enabled": true, "label": "Blumen senden", "href": "/blumen"},
+  "headerCta": {
+    "enabled": true,
+    "label": "Blumen senden",
+    "href": "/blumen"
+  },
   "payments": [
-    {"id": "apple_pay", "label": "Apple Pay", "enabled": true, "provider": "mock"},
-    {"id": "google_pay", "label": "Google Pay", "enabled": true, "provider": "mock"},
-    {"id": "card", "label": "Kreditkarte", "enabled": true, "provider": "mock"},
-    {"id": "paypal", "label": "PayPal", "enabled": false, "provider": "paypal"},
-    {"id": "klarna", "label": "Klarna", "enabled": false, "provider": "klarna"},
-    {"id": "eps", "label": "EPS", "enabled": false, "provider": "stripe"}
+    {
+      "id": "apple_pay",
+      "label": "Apple Pay",
+      "enabled": true,
+      "provider": "mock"
+    },
+    {
+      "id": "google_pay",
+      "label": "Google Pay",
+      "enabled": true,
+      "provider": "mock"
+    },
+    {
+      "id": "card",
+      "label": "Kreditkarte",
+      "enabled": true,
+      "provider": "mock"
+    },
+    {
+      "id": "paypal",
+      "label": "PayPal",
+      "enabled": false,
+      "provider": "paypal"
+    },
+    {
+      "id": "klarna",
+      "label": "Klarna",
+      "enabled": false,
+      "provider": "klarna"
+    },
+    {
+      "id": "eps",
+      "label": "EPS",
+      "enabled": false,
+      "provider": "stripe"
+    }
   ],
   "orderStatuses": [
-    {"key": "received", "label": "Bestellung eingegangen", "description": "Wir haben deine Bestellung erhalten.", "customerVisible": true, "terminal": false},
-    {"key": "paid", "label": "Zahlung bestätigt", "description": "Die Zahlung ist bei uns eingegangen.", "customerVisible": true, "terminal": false},
-    {"key": "preparing", "label": "In Vorbereitung", "description": "Die Blumen für deinen Strauß werden ausgewählt.", "customerVisible": true, "terminal": false},
-    {"key": "arranging", "label": "Strauß wird gebunden", "description": "Unsere Florist:innen binden deinen Strauß.", "customerVisible": true, "terminal": false},
-    {"key": "ready", "label": "Bereit zur Lieferung", "description": "Der Strauß ist verpackt und wartet auf den Zusteller.", "customerVisible": true, "terminal": false},
-    {"key": "in_transit", "label": "Unterwegs", "description": "Dein Strauß ist auf dem Weg.", "customerVisible": true, "terminal": false},
-    {"key": "delivered", "label": "Zugestellt", "description": "Die Blumen sind angekommen.", "customerVisible": true, "terminal": true},
-    {"key": "undeliverable", "label": "Nicht zustellbar", "description": "Wir konnten nicht zustellen und melden uns bei dir.", "customerVisible": true, "terminal": true},
-    {"key": "cancelled", "label": "Storniert", "description": "Die Bestellung wurde storniert.", "customerVisible": true, "terminal": true}
+    {
+      "key": "received",
+      "label": "Bestellung eingegangen",
+      "description": "Wir haben deine Bestellung erhalten.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "paid",
+      "label": "Zahlung bestätigt",
+      "description": "Die Zahlung ist bei uns eingegangen.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "preparing",
+      "label": "In Vorbereitung",
+      "description": "Die Blumen für deinen Strauß werden ausgewählt.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "arranging",
+      "label": "Strauß wird gebunden",
+      "description": "Unsere Florist:innen binden deinen Strauß.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "ready",
+      "label": "Bereit zur Lieferung",
+      "description": "Der Strauß ist verpackt und wartet auf den Zusteller.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "in_transit",
+      "label": "Unterwegs",
+      "description": "Dein Strauß ist auf dem Weg.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "delivered",
+      "label": "Zugestellt",
+      "description": "Die Blumen sind angekommen.",
+      "customerVisible": true,
+      "terminal": true
+    },
+    {
+      "key": "undeliverable",
+      "label": "Nicht zustellbar",
+      "description": "Wir konnten nicht zustellen und melden uns bei dir.",
+      "customerVisible": true,
+      "terminal": true
+    },
+    {
+      "key": "cancelled",
+      "label": "Storniert",
+      "description": "Die Bestellung wurde storniert.",
+      "customerVisible": true,
+      "terminal": true
+    }
   ],
   "seo": {
-    "siteUrl": "https://boquetterie.at",
-    "defaultTitle": "Boquetterie – Blumen liefern lassen in Wien",
+    "siteUrl": "https://bloomery.at",
+    "defaultTitle": "Bloomery – Blumen liefern lassen in Wien",
     "defaultDescription": "Frisch gebundene Blumen, direkt an die Menschen geliefert, die dir wichtig sind. Wunschdatum wählen, Grußkarte schreiben, Freude schicken – Blumenversand für Wien."
   },
   "trust": [
-    {"icon": "leaf", "title": "Frisch gebunden", "text": "Am Liefertag von Hand gebunden"},
-    {"icon": "truck", "title": "Zuverlässige Lieferung", "text": "In Wien und Umgebung"},
-    {"icon": "calendar", "title": "Wunschdatum wählbar", "text": "Du bestimmst den Tag"},
-    {"icon": "mail", "title": "Persönliche Grußkarte", "text": "Deine Worte, unsere Karte"}
+    {
+      "icon": "leaf",
+      "title": "Frisch gebunden",
+      "text": "Am Liefertag von Hand gebunden"
+    },
+    {
+      "icon": "truck",
+      "title": "Zuverlässige Lieferung",
+      "text": "In Wien und Umgebung"
+    },
+    {
+      "icon": "calendar",
+      "title": "Wunschdatum wählbar",
+      "text": "Du bestimmst den Tag"
+    },
+    {
+      "icon": "mail",
+      "title": "Persönliche Grußkarte",
+      "text": "Deine Worte, unsere Karte"
+    }
   ],
-  "greetingCard": {"maxChars": 200, "freeCardIncluded": true}
+  "greetingCard": {
+    "maxChars": 200,
+    "freeCardIncluded": true
+  }
 }

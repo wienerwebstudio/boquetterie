@@ -1,6 +1,6 @@
 # Analytics & Cookie-Consent
 
-Wie Boquetterie Reichweite misst, ohne die Zustimmung der Besucher:innen zu umgehen.
+Wie Bloomery Reichweite misst, ohne die Zustimmung der Besucher:innen zu umgehen.
 
 ## Consent-Modell
 
@@ -23,7 +23,7 @@ Grundsätze (DSGVO / TKG § 165 Abs 3, keine Dark Patterns):
 
 ### Speicherung
 
-Die Wahl wird als JSON in `localStorage["bq-consent"]` gespeichert und in ein Cookie `bq-consent` (Path=/, SameSite=Lax, 180 Tage, `Secure` bei HTTPS) gespiegelt,
+Die Wahl wird als JSON in `localStorage["bl-consent"]` gespeichert und in ein Cookie `bl-consent` (Path=/, SameSite=Lax, 180 Tage, `Secure` bei HTTPS) gespiegelt,
 damit Server-Komponenten sie später lesen könnten. Format (`src/types/consent.ts`):
 
 ```json
@@ -49,9 +49,9 @@ Es können beide gleichzeitig konfiguriert sein; ohne Variablen passiert nichts.
 
 | Variable                          | Beispiel                         | Wirkung                                                              |
 |-----------------------------------|----------------------------------|----------------------------------------------------------------------|
-| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`    | `boquetterie.at`                 | Lädt Plausible (`data-domain`). Cookielos, Pageviews inkl. SPA-Navigation automatisch. |
-| `NEXT_PUBLIC_PLAUSIBLE_API`       | `https://boquetterie.at/api/event` | Optional: `data-api`, wenn Events über einen eigenen Proxy laufen. |
-| `NEXT_PUBLIC_PLAUSIBLE_SRC`       | `https://boquetterie.at/js/script.js` | Optional: alternative Script-URL (Proxy / Self-Hosting). Standard: `https://plausible.io/js/script.js` |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`    | `bloomery.at`                 | Lädt Plausible (`data-domain`). Cookielos, Pageviews inkl. SPA-Navigation automatisch. |
+| `NEXT_PUBLIC_PLAUSIBLE_API`       | `https://bloomery.at/api/event` | Optional: `data-api`, wenn Events über einen eigenen Proxy laufen. |
+| `NEXT_PUBLIC_PLAUSIBLE_SRC`       | `https://bloomery.at/js/script.js` | Optional: alternative Script-URL (Proxy / Self-Hosting). Standard: `https://plausible.io/js/script.js` |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID`   | `G-XXXXXXXXXX`                   | Lädt gtag.js mit Consent Mode: `default` = alles `denied`, danach `update` gemäß Wahl; `anonymize_ip: true`. |
 
 Diese Variablen gehören in `.env.local` (bzw. in die Umgebung des Hostings). Sie sind `NEXT_PUBLIC_*`, also im Client sichtbar – das ist beabsichtigt.
@@ -102,6 +102,6 @@ Die **Datenschutzerklärung** (`/datenschutz`, Inhalt in `content/pages.json`) m
 
 - Anbieter (Plausible Insights OÜ, Estland bzw. Google Ireland Ltd.), Zweck, Rechtsgrundlage (Art. 6 Abs 1 lit a DSGVO – Einwilligung), Speicherdauer der Cookies, Empfänger/Drittlandübermittlung (bei GA4: USA, Data Privacy Framework / Standardvertragsklauseln).
 - Den Hinweis, dass die Einwilligung jederzeit über „Cookie-Einstellungen“ im Footer widerrufen werden kann.
-- Die Cookie-Tabelle inkl. `bq-consent` (notwendig, 180 Tage) und – falls GA4 aktiv – `_ga`, `_ga_*` (Laufzeit laut Google).
+- Die Cookie-Tabelle inkl. `bl-consent` (notwendig, 180 Tage) und – falls GA4 aktiv – `_ga`, `_ga_*` (Laufzeit laut Google).
 
 Wird ein Tool hinzugefügt oder entfernt, sind Datenschutzerklärung **und** `CONSENT_VERSION` in `src/types/consent.ts` anzupassen.

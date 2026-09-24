@@ -32,7 +32,7 @@ async function readContent<T>(name: string): Promise<T> {
     const seed = await jsonStore.get<T>("content", name);
     if (seed !== null) {
       await store.set("content", name, seed).catch((err: unknown) => {
-        console.warn(`[boquetterie] could not seed content "${name}" into ${store.name}:`, err);
+        console.warn(`[bloomery] could not seed content "${name}" into ${store.name}:`, err);
       });
       return seed;
     }

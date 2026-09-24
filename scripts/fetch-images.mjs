@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
 const map = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
-const root = "/home/user/boquetterie/public/images";
+const root = new URL("../public/images", import.meta.url).pathname;
 for (const { url, out } of map) {
   const dest = path.join(root, out);
   fs.mkdirSync(path.dirname(dest), { recursive: true });

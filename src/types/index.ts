@@ -1,5 +1,5 @@
 /**
- * Boquetterie – shared domain types.
+ * Bloomery – shared domain types.
  * Everything that an administrator can edit lives in `content/*.json`
  * and is typed here. Keep this file the single source of truth.
  */

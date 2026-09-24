@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { ADMIN_COOKIE, getAdminSecret, verifySessionToken } from "@/lib/admin-auth";
 
 /**
- * Protects the admin area and admin API with the signed `bq_admin` cookie.
+ * Protects the admin area and admin API with the signed `bl_admin` cookie.
  * The login page and the login/logout endpoints stay reachable.
  */
 const PUBLIC = new Set(["/admin/login", "/api/admin/login", "/api/admin/logout"]);

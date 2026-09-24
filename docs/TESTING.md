@@ -47,7 +47,7 @@ Chromium, Desktop-Viewport 1280×900 (der Filter-Sheet-Test setzt 390×844). `ba
 | `not-found.spec.ts` | `/produkt/nope` antwortet mit HTTP 404 und der 404-Ansicht |
 | `admin.spec.ts` | `/admin` leitet auf `/admin/login?next=…`, falsches Passwort wird abgewiesen, Login mit `ADMIN_PASSWORD` landet auf „Übersicht“ |
 
-Hilfsfunktionen in `tests/e2e/helpers.ts`: `dismissConsent` (Cookie-Hinweis „Nur notwendige“), `addAmourToCart`, `seedCart` (schreibt den Zustand des Zustand-Stores `boquetterie-cart` vor der ersten Navigation).
+Hilfsfunktionen in `tests/e2e/helpers.ts`: `dismissConsent` (Cookie-Hinweis „Nur notwendige“), `addAmourToCart`, `seedCart` (schreibt den Zustand des Zustand-Stores `bloomery-cart` vor der ersten Navigation).
 
 `tests/e2e/global-teardown.ts` setzt `data/orders.json` nach jedem Lauf auf `[]` zurück (nur beim JSON-Store, nicht bei `DATABASE_URL`).
 

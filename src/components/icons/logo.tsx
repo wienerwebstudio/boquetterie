@@ -11,7 +11,7 @@ export function Logo({ className, light }: { className?: string; light?: boolean
         <path d="M12 8c-1.2-1.4-1.2-3.6 0-5 1.2 1.4 1.2 3.6 0 5z" />
         <path d="M8 21c1.2-2.4 2.6-3.6 4-4 1.4.4 2.8 1.6 4 4" />
       </svg>
-      <span className="font-serif text-[26px] font-medium leading-none tracking-[-0.01em]">Boquetterie</span>
+      <span className="font-serif text-[26px] font-medium leading-none tracking-[-0.01em]">Bloomery</span>
     </span>
   );
 }

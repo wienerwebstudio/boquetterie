@@ -1,4 +1,4 @@
-# Boquetterie – Blumenversand Wien
+# Bloomery – Blumenversand Wien
 
 Next.js 16 (App Router, `src/`), TypeScript, Tailwind v4, Zustand. Language of the UI: German (de-AT).
 

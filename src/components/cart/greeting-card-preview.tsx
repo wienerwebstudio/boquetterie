@@ -38,7 +38,7 @@ export function GreetingCardPreview({
         <p className="relative mt-4 text-[11px] uppercase tracking-[0.16em] text-ink-muted">Ohne Absender</p>
       )}
       <p className={cn("relative text-center font-serif uppercase tracking-[0.32em] text-stone", compact ? "mt-5 text-[11px]" : "mt-8 text-[12px]")}>
-        Boquetterie
+        Bloomery
       </p>
     </div>
   );

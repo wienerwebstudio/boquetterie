@@ -62,7 +62,7 @@ export async function addAmourToCart(page: Page, opts: { message?: string } = {}
   return { dayLabel };
 }
 
-/** A persisted cart entry in the shape of the Zustand `boquetterie-cart` store. */
+/** A persisted cart entry in the shape of the Zustand `bloomery-cart` store. */
 export function cartStorageValue() {
   return JSON.stringify({
     state: {
@@ -90,6 +90,6 @@ export function cartStorageValue() {
 export async function seedCart(page: Page) {
   const value = cartStorageValue();
   await page.addInitScript((v) => {
-    try { window.localStorage.setItem("boquetterie-cart", v); } catch { /* ignore */ }
+    try { window.localStorage.setItem("bloomery-cart", v); } catch { /* ignore */ }
   }, value);
 }

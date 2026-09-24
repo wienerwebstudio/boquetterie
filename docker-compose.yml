@@ -1,4 +1,4 @@
-# Boquetterie – web app + Postgres. See docs/DEPLOYMENT.md (Option A).
+# Bloomery – web app + Postgres. See docs/DEPLOYMENT.md (Option A).
 #
 #   cp .env.example .env   # set ADMIN_PASSWORD, ADMIN_SECRET, POSTGRES_PASSWORD, NEXT_PUBLIC_SITE_URL
 #   docker compose up -d --build
@@ -17,7 +17,7 @@ services:
       - "${WEB_PORT:-3000}:3000"
     environment:
       NODE_ENV: production
-      DATABASE_URL: postgres://${POSTGRES_USER:-boquetterie}:${POSTGRES_PASSWORD:-boquetterie}@db:5432/${POSTGRES_DB:-boquetterie}
+      DATABASE_URL: postgres://${POSTGRES_USER:-bloomery}:${POSTGRES_PASSWORD:-bloomery}@db:5432/${POSTGRES_DB:-bloomery}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?ADMIN_PASSWORD must be set in .env}
       ADMIN_SECRET: ${ADMIN_SECRET:-}
       NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
@@ -36,13 +36,13 @@ services:
     image: postgres:16-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-boquetterie}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-boquetterie}
-      POSTGRES_DB: ${POSTGRES_DB:-boquetterie}
+      POSTGRES_USER: ${POSTGRES_USER:-bloomery}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bloomery}
+      POSTGRES_DB: ${POSTGRES_DB:-bloomery}
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-boquetterie} -d ${POSTGRES_DB:-boquetterie}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bloomery} -d ${POSTGRES_DB:-bloomery}"]
       interval: 5s
       timeout: 5s
       retries: 10

@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-# Boquetterie – Next.js standalone build. See docs/DEPLOYMENT.md.
+# Bloomery – Next.js standalone build. See docs/DEPLOYMENT.md.
 
 # ---------- 1. dependencies ----------
 FROM node:22-alpine AS deps

@@ -15,8 +15,8 @@ export const dynamic = "force-dynamic";
 export default async function AdminLayout({ children }: { children: ReactNode }) {
   const [authed, settings] = await Promise.all([isAdminAuthenticated(), getSettings()]);
   return (
-    <div id="bq-admin" className="font-sans">
-      <style>{`#bq-admin :is(h1, h2, h3) { font-family: var(--font-sans); letter-spacing: -0.01em; font-weight: 600; }`}</style>
+    <div id="bl-admin" className="font-sans">
+      <style>{`#bl-admin :is(h1, h2, h3) { font-family: var(--font-sans); letter-spacing: -0.01em; font-weight: 600; }`}</style>
       {authed ? <AdminShell brandName={settings.brand.name}>{children}</AdminShell> : children}
     </div>
   );

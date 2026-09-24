@@ -23,7 +23,7 @@
     ],
     "basePrice": 44.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
     "rating": {"value": 4.9, "count": 0},
-    "seo": {"title": "Amour – Rote Rosen liefern lassen in Wien", "description": "Rote Gartenrosen frisch gebunden und in Wien geliefert. Lieferdatum wählen, Grußkarte dazu – Amour von Boquetterie."},
+    "seo": {"title": "Amour – Rote Rosen liefern lassen in Wien", "description": "Rote Gartenrosen frisch gebunden und in Wien geliefert. Lieferdatum wählen, Grußkarte dazu – Amour von Bloomery."},
     "sortOrder": 1
   },
   {
@@ -124,7 +124,7 @@
       {"id": "l", "label": "Large", "price": 99.9, "description": "ca. 24 Stiele"}
     ],
     "basePrice": 49.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Pavlova – Hortensienstrauß liefern lassen", "description": "Üppige Hortensien und Gartenrosen frisch gebunden. Der Dankeschön-Strauß von Boquetterie, geliefert in Wien."},
+    "seo": {"title": "Pavlova – Hortensienstrauß liefern lassen", "description": "Üppige Hortensien und Gartenrosen frisch gebunden. Der Dankeschön-Strauß von Bloomery, geliefert in Wien."},
     "sortOrder": 5
   },
   {
@@ -148,7 +148,7 @@
       {"id": "l", "label": "Large", "price": 79.9, "description": "ca. 26 Stiele"}
     ],
     "basePrice": 39.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": true, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Toscana – Saisonaler Wildstrauß in Wien geliefert", "description": "Dahlien, Zinnien und Gräser in warmen Tönen. Der saisonale Wildstrauß von Boquetterie, frisch gebunden und in Wien geliefert."},
+    "seo": {"title": "Toscana – Saisonaler Wildstrauß in Wien geliefert", "description": "Dahlien, Zinnien und Gräser in warmen Tönen. Der saisonale Wildstrauß von Bloomery, frisch gebunden und in Wien geliefert."},
     "sortOrder": 6
   },
   {
@@ -247,7 +247,7 @@
       {"id": "l", "label": "Large", "price": 104.9, "description": "ca. 26 Stiele"}
     ],
     "basePrice": 49.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": true, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Melange – Blumenstrauß in Karamell und Creme", "description": "Karamell-Rosen und Café-au-lait-Dahlien in warmen Neutraltönen. Melange von Boquetterie – frisch gebunden in Wien."},
+    "seo": {"title": "Melange – Blumenstrauß in Karamell und Creme", "description": "Karamell-Rosen und Café-au-lait-Dahlien in warmen Neutraltönen. Melange von Bloomery – frisch gebunden in Wien."},
     "sortOrder": 10
   },
   {

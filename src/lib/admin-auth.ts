@@ -5,10 +5,10 @@
  * `<expiresAt>.<hex HMAC-SHA256(secret, payload(expiresAt))>`. The secret is
  * ADMIN_SECRET (falls back to ADMIN_PASSWORD so a single env var is enough).
  */
-export const ADMIN_COOKIE = "bq_admin";
+export const ADMIN_COOKIE = "bl_admin";
 export const ADMIN_SESSION_SECONDS = 12 * 60 * 60; // 12h
 
-const PAYLOAD_PREFIX = "boquetterie-admin-session:v1:";
+const PAYLOAD_PREFIX = "bloomery-admin-session:v1:";
 
 export function getAdminSecret(): string | null {
   const secret = process.env.ADMIN_SECRET || process.env.ADMIN_PASSWORD;

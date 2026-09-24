@@ -11,10 +11,10 @@ import type { SessionPayload } from "@/types/auth";
  * A separate prefix guarantees that a customer token can never pass as an admin
  * token (and vice versa) even when both share one secret.
  */
-export const SESSION_COOKIE = "bq_session";
+export const SESSION_COOKIE = "bl_session";
 export const SESSION_SECONDS = 30 * 24 * 60 * 60; // 30 days
 
-const PAYLOAD_PREFIX = "boquetterie-customer-session:v1:";
+const PAYLOAD_PREFIX = "bloomery-customer-session:v1:";
 
 export function getAuthSecret(): string | null {
   const secret = process.env.AUTH_SECRET || process.env.ADMIN_SECRET;

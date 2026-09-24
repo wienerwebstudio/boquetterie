@@ -1,4 +1,4 @@
-# Boquetterie – Blumenversand Wien
+# Bloomery – Blumenversand Wien
 
 Ein moderner, conversion-optimierter Webshop für einen Blumenlieferdienst in Wien und Umgebung.
 Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Zustand · Admin-Bereich · Datenspeicher wahlweise JSON-Dateien oder Postgres.

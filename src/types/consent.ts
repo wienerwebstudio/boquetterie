@@ -1,7 +1,7 @@
 /**
  * Cookie consent (DSGVO / TKG § 165 Abs 3).
  *
- * The visitor's choice lives client-side in localStorage (`bq-consent`) and is
+ * The visitor's choice lives client-side in localStorage (`bl-consent`) and is
  * mirrored to a cookie of the same name so that server components could read it
  * later. Managed by `src/components/consent/*`; consumed by
  * `src/components/analytics/*`. Bump `CONSENT_VERSION` whenever the categories
@@ -9,8 +9,8 @@
  */
 
 export const CONSENT_VERSION = 1;
-export const CONSENT_STORAGE_KEY = "bq-consent";
-export const CONSENT_COOKIE_NAME = "bq-consent";
+export const CONSENT_STORAGE_KEY = "bl-consent";
+export const CONSENT_COOKIE_NAME = "bl-consent";
 export const CONSENT_MAX_AGE_DAYS = 180;
 
 export type ConsentCategory = "necessary" | "analytics" | "marketing";

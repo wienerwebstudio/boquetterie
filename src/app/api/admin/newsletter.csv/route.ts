@@ -6,7 +6,7 @@ function csvCell(v: string) {
   return /[;"\n\r]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v;
 }
 
-/** GET /api/admin/newsletter.csv – protected by the proxy (bq_admin cookie). */
+/** GET /api/admin/newsletter.csv – protected by the proxy (bl_admin cookie). */
 export async function GET() {
   const subscribers = await getNewsletterSubscribers();
   const rows = [["email", "createdAt"], ...subscribers.map((s) => [s.email, s.createdAt])];

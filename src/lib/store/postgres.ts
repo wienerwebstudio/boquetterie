@@ -30,7 +30,7 @@ type CacheEntry = { value: unknown; expires: number };
 type Row = { data: unknown };
 
 /** Keep one connection pool per process, also across Next.js dev hot reloads. */
-const g = globalThis as unknown as { __boquetterieSql?: Sql };
+const g = globalThis as unknown as { __bloomerySql?: Sql };
 
 function createClient(url: string): Sql {
   const max = Number(process.env.DATABASE_POOL_MAX ?? "5");
@@ -49,8 +49,8 @@ function createClient(url: string): Sql {
 
 export function getSql(url = process.env.DATABASE_URL): Sql {
   if (!url) throw new Error("DATABASE_URL is not set");
-  if (!g.__boquetterieSql) g.__boquetterieSql = createClient(url);
-  return g.__boquetterieSql;
+  if (!g.__bloomerySql) g.__bloomerySql = createClient(url);
+  return g.__bloomerySql;
 }
 
 export class PostgresStore implements DocumentStore {

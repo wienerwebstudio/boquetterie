@@ -6,7 +6,7 @@ import { TOKEN_TTL_MINUTES } from "@/lib/auth/tokens";
  * The login e-mail. Deliberately self-contained (no dependency on the shared
  * template module): a short branded card, a single button, a plain-text fallback.
  */
-export const MAGIC_LINK_SUBJECT = "Dein Login-Link für Boquetterie";
+export const MAGIC_LINK_SUBJECT = "Dein Login-Link für Bloomery";
 
 const FONT = "'Manrope', 'Helvetica Neue', Helvetica, Arial, sans-serif";
 const SERIF = "'Cormorant Garamond', Georgia, 'Times New Roman', serif";

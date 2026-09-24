@@ -57,7 +57,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
           <IconButton label="Menü öffnen" onClick={() => setMenuOpen(true)}><Menu className="size-5" strokeWidth={1.6} /></IconButton>
         </div>
 
-        <Link href="/" className="shrink-0" aria-label="Boquetterie – Startseite">
+        <Link href="/" className="shrink-0" aria-label="Bloomery – Startseite">
           <Logo />
         </Link>
 

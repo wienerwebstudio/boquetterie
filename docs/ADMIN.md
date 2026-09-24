@@ -1,11 +1,11 @@
-# Boquetterie – Admin-Bereich
+# Bloomery – Admin-Bereich
 
 Der Admin-Bereich liegt unter **`/admin`** und ist für Mitarbeiter:innen ohne Programmierkenntnisse gedacht.
 
 ## Anmelden
 
 1. In `.env.local` (Vorlage: `.env.example`) `ADMIN_PASSWORD` setzen. Optional `ADMIN_SECRET` (langer Zufallswert, signiert das Login-Cookie; ohne ihn wird das Passwort als Secret verwendet).
-2. `/admin/login` aufrufen und das Passwort eingeben. Die Sitzung gilt 12 Stunden (Cookie `bq_admin`, httpOnly, signiert mit HMAC-SHA256).
+2. `/admin/login` aufrufen und das Passwort eingeben. Die Sitzung gilt 12 Stunden (Cookie `bl_admin`, httpOnly, signiert mit HMAC-SHA256).
 3. Abmelden über den Button unten in der Navigation.
 
 Ist `ADMIN_PASSWORD` nicht gesetzt, zeigt die Login-Seite einen Hinweis und verweigert jede Anmeldung. Die Absicherung passiert in `src/proxy.ts` (für `/admin/*` und `/api/admin/*`) **und** zusätzlich in jeder Server Action (`requireAdmin()`).
