@@ -7,6 +7,7 @@ Zwei erprobte Wege: **A) Docker auf einem eigenen Server** (empfohlen: volle Kon
 | Variable | Pflicht | Bedeutung |
 | --- | --- | --- |
 | `ADMIN_PASSWORD` | ja | Passwort für `/admin` |
+| `SITE_PASSWORD` | nein | Sperrt die ganze Seite vor dem Start mit einem Passwort (siehe `SECURITY.md`); leer = öffentlich |
 | `ADMIN_SECRET` | empfohlen | Signiert das Admin-Cookie (`openssl rand -hex 32`) |
 | `NEXT_PUBLIC_SITE_URL` | ja | Öffentliche URL, z. B. `https://bloomery.at` – wird **beim Build** in den Client-Code eingebettet |
 | `DATABASE_URL` | Option B: ja · Option A: empfohlen | Postgres-URL; ohne sie JSON-Dateien (siehe `docs/DATABASE.md`) |

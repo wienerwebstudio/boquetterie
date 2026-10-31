@@ -13,6 +13,10 @@
 
 Was es (noch) nicht gibt: mehrere Benutzer, Rollen, 2FA, Login-Sperre nach Fehlversuchen. Für ein Team mit mehreren Personen ist ein Identity-Provider (z. B. Auth.js mit OAuth) der nächste Schritt.
 
+## Seitensperre vor dem Start (`SITE_PASSWORD`)
+
+Ist `SITE_PASSWORD` gesetzt, fragt `src/proxy.ts` auf jeder Seite per HTTP Basic Auth nach diesem Passwort (Benutzername beliebig). Der Browser merkt es sich bis zum Schließen. Die Antwort trägt `X-Robots-Tag: noindex`, damit Suchmaschinen nichts aufnehmen. Offen bleiben nur `/api/webhooks/*` und `/api/cron/*`, die eigene Geheimnisse prüfen. Zum Start die Variable leeren und neu deployen. Unabhängig vom Hosting-Tarif, Logik in `src/lib/site-lock.ts`.
+
 ## Rate-Limits
 
 `src/lib/rate-limit.ts` – In-Memory-Sliding-Window pro IP (`x-forwarded-for` / `x-real-ip`) und Endpunkt. Überschreitung liefert `429` mit `Retry-After`. Gilt pro Node-Prozess; bei mehreren Instanzen den Store gegen Redis/Upstash tauschen (Signatur bleibt gleich).

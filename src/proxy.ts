@@ -1,14 +1,33 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { ADMIN_COOKIE, getAdminSecret, verifySessionToken } from "@/lib/admin-auth";
+import { isOpenPath, isUnlocked, siteLockPassword } from "@/lib/site-lock";
 
 /**
- * Protects the admin area and admin API with the signed `bl_admin` cookie.
- * The login page and the login/logout endpoints stay reachable.
+ * 1. Optional site lock (SITE_PASSWORD): the whole site asks for a password before launch.
+ * 2. Protects the admin area and admin API with the signed `bl_admin` cookie.
+ *    The login page and the login/logout endpoints stay reachable.
  */
 const PUBLIC = new Set(["/admin/login", "/api/admin/login", "/api/admin/logout"]);
 
 export async function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
+
+  const lock = siteLockPassword();
+  if (lock && !isOpenPath(pathname) && !isUnlocked(request.headers.get("authorization"), lock)) {
+    return new NextResponse("Diese Seite ist noch nicht öffentlich.", {
+      status: 401,
+      headers: {
+        "WWW-Authenticate": 'Basic realm="Bloomery", charset="UTF-8"',
+        "X-Robots-Tag": "noindex, nofollow",
+        "Cache-Control": "no-store",
+      },
+    });
+  }
+
+  if (!pathname.startsWith("/admin") && !pathname.startsWith("/api/admin")) {
+    return NextResponse.next();
+  }
+
   const authed = await verifySessionToken(request.cookies.get(ADMIN_COOKIE)?.value, getAdminSecret());
 
   if (PUBLIC.has(pathname)) {
@@ -32,5 +51,6 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  // Everything except Next's static build output; the admin check above narrows itself.
+  matcher: ["/((?!_next/static|_next/image).*)"],
 };
