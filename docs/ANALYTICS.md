@@ -1,6 +1,6 @@
 # Analytics & Cookie-Consent
 
-Wie Bloomery Reichweite misst, ohne die Zustimmung der Besucher:innen zu umgehen.
+Wie Blumora Reichweite misst, ohne die Zustimmung der Besucher:innen zu umgehen.
 
 ## Consent-Modell
 
@@ -49,9 +49,9 @@ Es können beide gleichzeitig konfiguriert sein; ohne Variablen passiert nichts.
 
 | Variable                          | Beispiel                         | Wirkung                                                              |
 |-----------------------------------|----------------------------------|----------------------------------------------------------------------|
-| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`    | `bloomery.at`                 | Lädt Plausible (`data-domain`). Cookielos, Pageviews inkl. SPA-Navigation automatisch. |
-| `NEXT_PUBLIC_PLAUSIBLE_API`       | `https://bloomery.at/api/event` | Optional: `data-api`, wenn Events über einen eigenen Proxy laufen. |
-| `NEXT_PUBLIC_PLAUSIBLE_SRC`       | `https://bloomery.at/js/script.js` | Optional: alternative Script-URL (Proxy / Self-Hosting). Standard: `https://plausible.io/js/script.js` |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`    | `blumora.at`                 | Lädt Plausible (`data-domain`). Cookielos, Pageviews inkl. SPA-Navigation automatisch. |
+| `NEXT_PUBLIC_PLAUSIBLE_API`       | `https://blumora.at/api/event` | Optional: `data-api`, wenn Events über einen eigenen Proxy laufen. |
+| `NEXT_PUBLIC_PLAUSIBLE_SRC`       | `https://blumora.at/js/script.js` | Optional: alternative Script-URL (Proxy / Self-Hosting). Standard: `https://plausible.io/js/script.js` |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID`   | `G-XXXXXXXXXX`                   | Lädt gtag.js mit Consent Mode: `default` = alles `denied`, danach `update` gemäß Wahl; `anonymize_ip: true`. |
 
 Diese Variablen gehören in `.env.local` (bzw. in die Umgebung des Hostings). Sie sind `NEXT_PUBLIC_*`, also im Client sichtbar – das ist beabsichtigt.

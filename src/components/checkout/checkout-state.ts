@@ -35,7 +35,7 @@ export const EMPTY_CHECKOUT: CheckoutData = {
   payment: { method: "" },
 };
 
-const STORAGE_KEY = "bloomery-checkout";
+const STORAGE_KEY = "blumora-checkout";
 
 export function loadCheckout(): CheckoutData | null {
   try {

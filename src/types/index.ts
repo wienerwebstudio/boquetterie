@@ -1,5 +1,5 @@
 /**
- * Bloomery – shared domain types.
+ * Blumora – shared domain types.
  * Everything that an administrator can edit lives in `content/*.json`
  * and is typed here. Keep this file the single source of truth.
  */
@@ -257,6 +257,8 @@ export interface HomepageContent {
     imageWide: string;
     imagePortrait: string;
     imageAlt: string;
+    /** Optional looping background video (MP4, 16:9, muted). The images stay as poster and reduced-motion fallback. */
+    video?: string;
     deliveryCheck: { title: string; placeholder: string; button: string };
   };
   occasions: { headline: string; subheadline: string; slugs: string[] };

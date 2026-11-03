@@ -25,6 +25,6 @@ export const useDeliveryContext = create<DeliveryState>()(
       setPreferredDate: (preferredDate) => set({ preferredDate }),
       reset: () => set({ postalCode: "", zone: null, checked: false, preferredDate: null }),
     }),
-    { name: "bloomery-delivery", storage: createJSONStorage(() => sessionStorage) },
+    { name: "blumora-delivery", storage: createJSONStorage(() => sessionStorage) },
   ),
 );

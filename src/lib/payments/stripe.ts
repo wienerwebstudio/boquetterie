@@ -30,7 +30,7 @@ let client: Stripe | null = null;
 export function stripeClient(): Stripe {
   const key = process.env.STRIPE_SECRET_KEY;
   if (!key) throw new Error("STRIPE_SECRET_KEY is not set");
-  if (!client) client = new Stripe(key, { appInfo: { name: "Bloomery", url: "https://bloomery.at" } });
+  if (!client) client = new Stripe(key, { appInfo: { name: "Blumora", url: "https://blumora.at" } });
   return client;
 }
 
@@ -67,7 +67,7 @@ export const stripeProvider: PaymentProviderAdapter = {
         automatic_payment_methods: { enabled: true },
         metadata: { orderId: order.id, method: order.payment.method },
         receipt_email: order.customer.email || undefined,
-        description: `Bloomery Bestellung ${order.id}`,
+        description: `Blumora Bestellung ${order.id}`,
       },
       // Idempotent per order: a retried request returns the same intent instead of a duplicate.
       { idempotencyKey: `pi_${order.id}` },

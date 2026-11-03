@@ -9,7 +9,7 @@ das Konto entsteht beim ersten Login.
 1. `/konto` (ausgeloggt) zeigt die Login-Karte. Das Formular schickt `POST /api/auth/request-link { email }`.
 2. Der Endpoint antwortet **immer** mit `200` und derselben Nachricht (keine Auskunft darüber, ob die
    Adresse bekannt ist), legt einen Token an und verschickt die Mail
-   „Dein Login-Link für Bloomery“ mit `{siteUrl}/auth/verify?token=…`.
+   „Dein Login-Link für Blumora“ mit `{siteUrl}/auth/verify?token=…`.
 3. `/auth/verify?token=…` prüft den Token (ohne ihn zu verbrauchen) und zeigt einen Button
    „Jetzt anmelden“. Der Button sendet `POST /api/auth/verify`. Dieser Zwischenschritt ist Absicht:
    Mail-Scanner (Outlook Safe Links & Co.) rufen GET-Links auf und würden einen Einmal-Token sonst

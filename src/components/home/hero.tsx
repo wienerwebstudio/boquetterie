@@ -11,7 +11,8 @@ const PORTRAIT_SIZES = "(min-width: 1440px) 640px, 50vw";
 /**
  * Hero – split layout on desktop (copy + delivery check left, portrait image right),
  * full-bleed wide image on mobile. Uses art direction via <picture> and preloads
- * the matching source so the LCP image is requested from the <head>.
+ * the matching source so the LCP image is requested from the <head>. An optional muted
+ * loop plays over the image; the image is cropped to the video's first frame.
  */
 export function Hero({ hero }: { hero: HomepageContent["hero"] }) {
   const common = { alt: hero.imageAlt };
@@ -44,9 +45,24 @@ export function Hero({ hero }: { hero: HomepageContent["hero"] }) {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover object-[72%_50%]"
                 />
               </picture>
+              {hero.video && (
+                // Decorative ambient loop over the same still; hidden for reduced motion so the image remains.
+                <video
+                  className="absolute inset-0 h-full w-full object-cover object-[72%_50%] motion-reduce:hidden"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-hidden="true"
+                  tabIndex={-1}
+                >
+                  <source src={hero.video} type="video/mp4" />
+                </video>
+              )}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/10 via-transparent to-transparent lg:hidden" aria-hidden />
             </div>
           </div>

@@ -718,7 +718,7 @@ export const settingsSchema: SingletonSchema = {
     {
       title: "SEO-Standards",
       fields: [
-        { key: "seo.siteUrl", label: "Website-URL", type: "text", required: true, placeholder: "https://bloomery.at" },
+        { key: "seo.siteUrl", label: "Website-URL", type: "text", required: true, placeholder: "https://blumora.at" },
         { key: "seo.defaultTitle", label: "Standard-Titel", type: "text", required: true },
         { key: "seo.defaultDescription", label: "Standard-Beschreibung", type: "textarea", required: true, span: "full", rows: 3 },
       ],
@@ -757,6 +757,7 @@ export const homepageSchema: SingletonSchema = {
         { key: "hero.imageWide", label: "Bild (Querformat)", type: "image", required: true },
         { key: "hero.imagePortrait", label: "Bild (Hochformat)", type: "image", required: true },
         { key: "hero.imageAlt", label: "Bild-Alternativtext", type: "text", required: true, span: "full" },
+        { key: "hero.video", label: "Video-Loop (MP4, optional)", type: "text", span: "full", placeholder: "/videos/hero-loop.mp4" },
         { key: "hero.deliveryCheck.title", label: "PLZ-Check – Titel", type: "text", required: true, span: "third" },
         { key: "hero.deliveryCheck.placeholder", label: "PLZ-Check – Platzhalter", type: "text", required: true, span: "third" },
         { key: "hero.deliveryCheck.button", label: "PLZ-Check – Button", type: "text", required: true, span: "third" },

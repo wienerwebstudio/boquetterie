@@ -8,7 +8,7 @@
 export const ADMIN_COOKIE = "bl_admin";
 export const ADMIN_SESSION_SECONDS = 12 * 60 * 60; // 12h
 
-const PAYLOAD_PREFIX = "bloomery-admin-session:v1:";
+const PAYLOAD_PREFIX = "blumora-admin-session:v1:";
 
 export function getAdminSecret(): string | null {
   const secret = process.env.ADMIN_SECRET || process.env.ADMIN_PASSWORD;

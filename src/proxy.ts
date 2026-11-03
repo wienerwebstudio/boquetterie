@@ -17,7 +17,7 @@ export async function proxy(request: NextRequest) {
     return new NextResponse("Diese Seite ist noch nicht öffentlich.", {
       status: 401,
       headers: {
-        "WWW-Authenticate": 'Basic realm="Bloomery", charset="UTF-8"',
+        "WWW-Authenticate": 'Basic realm="Blumora", charset="UTF-8"',
         "X-Robots-Tag": "noindex, nofollow",
         "Cache-Control": "no-store",
       },

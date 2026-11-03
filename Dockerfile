@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-# Bloomery – Next.js standalone build. See docs/DEPLOYMENT.md.
+# Blumora – Next.js standalone build. See docs/DEPLOYMENT.md.
 
 # ---------- 1. dependencies ----------
 FROM node:22-alpine AS deps

@@ -14,7 +14,7 @@ import type { SessionPayload } from "@/types/auth";
 export const SESSION_COOKIE = "bl_session";
 export const SESSION_SECONDS = 30 * 24 * 60 * 60; // 30 days
 
-const PAYLOAD_PREFIX = "bloomery-customer-session:v1:";
+const PAYLOAD_PREFIX = "blumora-customer-session:v1:";
 
 export function getAuthSecret(): string | null {
   const secret = process.env.AUTH_SECRET || process.env.ADMIN_SECRET;

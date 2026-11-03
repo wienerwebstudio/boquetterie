@@ -1,4 +1,4 @@
-# Bloomery – Blumenversand Wien
+# Blumora – Blumenversand Wien
 
 Next.js 16 (App Router, `src/`), TypeScript, Tailwind v4, Zustand. Language of the UI: German (de-AT).
 
@@ -31,4 +31,4 @@ Tone: editorial, calm, lots of whitespace, subtle motion (`animate-fade-up`, `Re
 - Run `npx tsc --noEmit && npx eslint . --max-warnings=0 && npm run test:unit && npx next build` before committing; `npx playwright test` for E2E + a11y (see `docs/TESTING.md`).
 
 ## Externe Dienste
-- **Higgsfield** (KI-Bilder/Videos) darf nur für Bloomery verwendet werden, nie für andere Projekte oder Kunden. Jede Generierung verbraucht Credits des Kontos: vorher Kosten nennen und ausdrückliche Zustimmung einholen.
+- **Higgsfield** (KI-Bilder/Videos) darf nur für Blumora verwendet werden, nie für andere Projekte oder Kunden. Jede Generierung verbraucht Credits des Kontos: vorher Kosten nennen und ausdrückliche Zustimmung einholen.

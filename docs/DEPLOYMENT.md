@@ -1,4 +1,4 @@
-# Bloomery – Deployment
+# Blumora – Deployment
 
 Zwei erprobte Wege: **A) Docker auf einem eigenen Server** (empfohlen: volle Kontrolle, JSON-Fallback und lokale Uploads funktionieren) oder **B) Vercel + gehostetes Postgres**. Der Datenspeicher ist in `docs/DATABASE.md` beschrieben, Uploads in `docs/UPLOADS.md`, Mail/Cron in `docs/MAIL.md`, Zahlungen in `docs/PAYMENTS.md`.
 
@@ -9,7 +9,7 @@ Zwei erprobte Wege: **A) Docker auf einem eigenen Server** (empfohlen: volle Kon
 | `ADMIN_PASSWORD` | ja | Passwort für `/admin` |
 | `SITE_PASSWORD` | nein | Sperrt die ganze Seite vor dem Start mit einem Passwort (siehe `SECURITY.md`); leer = öffentlich |
 | `ADMIN_SECRET` | empfohlen | Signiert das Admin-Cookie (`openssl rand -hex 32`) |
-| `NEXT_PUBLIC_SITE_URL` | ja | Öffentliche URL, z. B. `https://bloomery.at` – wird **beim Build** in den Client-Code eingebettet |
+| `NEXT_PUBLIC_SITE_URL` | ja | Öffentliche URL, z. B. `https://blumora.at` – wird **beim Build** in den Client-Code eingebettet |
 | `DATABASE_URL` | Option B: ja · Option A: empfohlen | Postgres-URL; ohne sie JSON-Dateien (siehe `docs/DATABASE.md`) |
 | `DATABASE_SSL`, `DATABASE_POOL_MAX`, `DATABASE_PREPARE` | nein | Feineinstellungen, siehe `docs/DATABASE.md` |
 | `CRON_SECRET` | für Erinnerungen/Bewertungsanfragen | Schützt `/api/cron/*` (siehe `docs/MAIL.md`) |
@@ -30,7 +30,7 @@ Enthalten: `Dockerfile` (Multi-Stage, Next.js `output: "standalone"`, läuft als
 Ubuntu/Debian mit Docker Engine + Compose-Plugin, DNS-A-Record der Domain auf den Server.
 
 ```bash
-git clone <repo> /srv/bloomery && cd /srv/bloomery
+git clone <repo> /srv/blumora && cd /srv/blumora
 cp .env.example .env
 ```
 
@@ -39,7 +39,7 @@ cp .env.example .env
 ```dotenv
 ADMIN_PASSWORD=<sicheres Passwort>
 ADMIN_SECRET=<openssl rand -hex 32>
-NEXT_PUBLIC_SITE_URL=https://bloomery.at
+NEXT_PUBLIC_SITE_URL=https://blumora.at
 POSTGRES_PASSWORD=<openssl rand -hex 24>
 CRON_SECRET=<openssl rand -hex 32>
 # RESEND_API_KEY=… MAIL_FROM=… (docs/MAIL.md), STRIPE_* (docs/PAYMENTS.md)
@@ -57,7 +57,7 @@ mkdir -p data public/uploads && sudo chown -R 1001:1001 data public/uploads
 
 ```bash
 docker compose up -d --build
-docker compose logs -f web      # erwartet: "[bloomery] datastore: postgres …"
+docker compose logs -f web      # erwartet: "[blumora] datastore: postgres …"
 ```
 
 `DATABASE_URL` zeigt in Compose auf den `db`-Service; die Tabelle wird beim ersten Zugriff angelegt, Inhalte kommen beim ersten Lesen aus `content/*.json` (Fallback). Bestehende Bestellungen/Newsletter aus einem früheren JSON-Betrieb einmalig importieren:
@@ -74,7 +74,7 @@ Ohne Datenbank betreiben: `DATABASE_URL` in `docker-compose.yml` entfernen, Serv
 `/etc/caddy/Caddyfile`:
 
 ```caddyfile
-bloomery.at, www.bloomery.at {
+blumora.at, www.blumora.at {
     encode zstd gzip
     reverse_proxy 127.0.0.1:3000
     request_body {
@@ -88,12 +88,12 @@ bloomery.at, www.bloomery.at {
 ### 4. Updates, Cron, Backups
 
 ```bash
-cd /srv/bloomery && git pull && docker compose up -d --build   # neues Image, DB bleibt
+cd /srv/blumora && git pull && docker compose up -d --build   # neues Image, DB bleibt
 ```
 
 - Cron-Endpunkte (`/api/cron/reminders`, `/api/cron/review-requests`) per Crontab aufrufen – Beispiel in `docs/MAIL.md`.
 - Backups: `pg_dump` des `db`-Containers + `public/uploads` + `data/` – Befehle in `docs/DATABASE.md`.
-- Healthcheck: `curl -I https://bloomery.at/` (200) und `docker compose ps` (db „healthy“).
+- Healthcheck: `curl -I https://blumora.at/` (200) und `docker compose ps` (db „healthy“).
 
 ### Hinweise zum Image
 
@@ -131,4 +131,4 @@ Auf Vercel ist das Dateisystem zur Laufzeit **schreibgeschützt**. Deshalb gilt:
 
 - Inhalte werden ausschließlich über `/admin` (→ Datenbank) gepflegt. `content/*.json` im Repo ist nur noch der Seed für neue Umgebungen; um Repo-Änderungen zu übernehmen: `npm run db:seed -- --force --only content`.
 - Backups über den Anbieter (Neon: Branches/PITR, Supabase: tägliche Backups) plus gelegentlich `pg_dump`.
-- Logs: Vercel → Functions. Beim Kaltstart erscheint `[bloomery] datastore: postgres`.
+- Logs: Vercel → Functions. Beim Kaltstart erscheint `[blumora] datastore: postgres`.

@@ -8,7 +8,7 @@ import { useConsent } from "@/components/consent/store";
  * `consent.analytics` is true. Supports Plausible and/or GA4, configured purely
  * through public env vars (see docs/ANALYTICS.md):
  *
- *   NEXT_PUBLIC_PLAUSIBLE_DOMAIN   e.g. "bloomery.at"
+ *   NEXT_PUBLIC_PLAUSIBLE_DOMAIN   e.g. "blumora.at"
  *   NEXT_PUBLIC_PLAUSIBLE_API      optional data-api endpoint (proxying)
  *   NEXT_PUBLIC_PLAUSIBLE_SRC      optional script URL (proxying / self-hosted)
  *   NEXT_PUBLIC_GA_MEASUREMENT_ID  e.g. "G-XXXXXXXXXX"

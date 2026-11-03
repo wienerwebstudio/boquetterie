@@ -1,4 +1,4 @@
-# Bloomery – Admin-Bereich
+# Blumora – Admin-Bereich
 
 Der Admin-Bereich liegt unter **`/admin`** und ist für Mitarbeiter:innen ohne Programmierkenntnisse gedacht.
 

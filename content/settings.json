@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "Bloomery",
+    "name": "Blumora",
     "claim": "Blumen, die mehr sagen.",
     "legalName": "[Firmenname – bitte ergänzen]",
     "email": "kontakt@bloomery.at",
@@ -150,7 +150,7 @@
   ],
   "seo": {
     "siteUrl": "https://bloomery.at",
-    "defaultTitle": "Bloomery – Blumen liefern lassen in Wien",
+    "defaultTitle": "Blumora – Blumen liefern lassen in Wien",
     "defaultDescription": "Frisch gebundene Blumen, direkt an die Menschen geliefert, die dir wichtig sind. Wunschdatum wählen, Grußkarte schreiben, Freude schicken – Blumenversand für Wien."
   },
   "trust": [
