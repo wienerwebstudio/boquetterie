@@ -72,6 +72,8 @@ export default defineConfig({
     timeout: 180_000,
     env: {
       NEXT_TELEMETRY_DISABLED: "1",
+      // Fixed, orderable catalog so the journeys don't depend on the live assortment.
+      CONTENT_OVERLAY_DIR: "tests/fixtures/content",
       ADMIN_PASSWORD: process.env.ADMIN_PASSWORD ?? "test1234",
       ADMIN_SECRET: process.env.ADMIN_SECRET ?? "devsecret-devsecret",
     },

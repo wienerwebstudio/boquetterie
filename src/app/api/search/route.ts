@@ -11,6 +11,7 @@ export interface SearchProductHit {
   name: string;
   tagline: string;
   basePrice: number;
+  pricePending: boolean;
   sameDayCapable: boolean;
   image: { src: string; alt: string };
 }
@@ -27,7 +28,7 @@ const SUGGESTIONS = ["Mama", "Rosen", "Geburtstag", "Weiß", "Danke", "Pastell",
 
 function hit(p: Product): SearchProductHit {
   const img = primaryImage(p);
-  return { slug: p.slug, name: p.name, tagline: p.tagline, basePrice: p.basePrice, sameDayCapable: p.sameDayCapable, image: { src: img.src, alt: img.alt } };
+  return { slug: p.slug, name: p.name, tagline: p.tagline, basePrice: p.basePrice, pricePending: p.pricePending === true, sameDayCapable: p.sameDayCapable, image: { src: img.src, alt: img.alt } };
 }
 
 /**

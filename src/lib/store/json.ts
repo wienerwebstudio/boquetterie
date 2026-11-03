@@ -13,6 +13,14 @@ const DIRS: Record<StoreKind, string> = {
   data: path.join(process.cwd(), "data"),
 };
 
+/**
+ * Test hook: when CONTENT_OVERLAY_DIR is set, a content document that exists in
+ * that directory is read from there instead of `/content` (e.g. the E2E suite
+ * uses a fixed, orderable catalog from `tests/fixtures/content`). Writes still go
+ * to `/content`. Not meant for production.
+ */
+const OVERLAY = process.env.CONTENT_OVERLAY_DIR ? path.resolve(process.cwd(), process.env.CONTENT_OVERLAY_DIR) : null;
+
 type CacheEntry = { mtimeMs: number; value: unknown };
 
 function isMissing(err: unknown): boolean {
@@ -28,8 +36,15 @@ export class JsonStore implements DocumentStore {
     return path.join(DIRS[kind], `${name}.json`);
   }
 
-  async get<T>(kind: StoreKind, name: string): Promise<T | null> {
+  private async readFile(kind: StoreKind, name: string) {
     const file = this.file(kind, name);
+    if (kind !== "content" || !OVERLAY) return file;
+    const overlay = path.join(OVERLAY, `${name}.json`);
+    return (await fs.stat(overlay).then(() => true, () => false)) ? overlay : file;
+  }
+
+  async get<T>(kind: StoreKind, name: string): Promise<T | null> {
+    const file = await this.readFile(kind, name);
     let mtimeMs: number;
     try {
       mtimeMs = (await fs.stat(file)).mtimeMs;

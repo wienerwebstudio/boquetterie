@@ -5,7 +5,7 @@ import type { HomepageContent, Product } from "@/types";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
-import { primaryImage, lowestPrice } from "@/lib/catalog";
+import { primaryImage, lowestPrice, isPricePending } from "@/lib/catalog";
 import { formatPrice } from "@/lib/format";
 import { routes } from "@/lib/urls";
 
@@ -36,10 +36,14 @@ export function Seasonal({ content, products }: { content: HomepageContent["seas
                         <span className="block font-serif text-[21px] leading-tight text-ink transition-colors group-hover:text-forest">{p.name}</span>
                         <span className="mt-0.5 line-clamp-1 block text-[13.5px] text-ink-muted">{p.tagline}</span>
                       </span>
-                      <span className="shrink-0 text-right">
-                        <span className="block text-[12px] text-ink-muted">ab</span>
-                        <span className="block text-[15px] font-semibold tabular-nums text-ink">{formatPrice(lowestPrice(p))}</span>
-                      </span>
+                      {isPricePending(p) ? (
+                        <span className="shrink-0 text-right text-[13px] text-ink-muted">Preis folgt</span>
+                      ) : (
+                        <span className="shrink-0 text-right">
+                          <span className="block text-[12px] text-ink-muted">ab</span>
+                          <span className="block text-[15px] font-semibold tabular-nums text-ink">{formatPrice(lowestPrice(p))}</span>
+                        </span>
+                      )}
                       <ArrowRight className="hidden size-4 shrink-0 text-ink-soft transition-all duration-300 group-hover:translate-x-1 group-hover:text-forest sm:block" aria-hidden />
                     </Link>
                   </li>

@@ -24,12 +24,12 @@
     ]
   },
   "seasonal": {
-    "eyebrow": "Saisonale Kollektion",
-    "headline": "Was gerade blüht.",
-    "text": "Unsere saisonalen Sträuße wechseln mit dem Jahr. Was heute in den Strauß kommt, stand gestern noch beim Gärtner.",
-    "cta": {"label": "Saisonale Blumen", "href": "/blumen/saisonal"},
-    "image": "/images/products/toscana-1.jpg",
-    "imageAlt": "Wildstrauß in Terrakotta und Apricot",
+    "eyebrow": "Adventszeit",
+    "headline": "Bald brennt die erste Kerze.",
+    "text": "Adventskränze mit Tannengrün, Kerzen und Schmuck – in mehreren Farben und Größen. Dazu Sträuße in warmen Herbsttönen.",
+    "cta": {"label": "Adventskränze", "href": "/blumen/advent"},
+    "image": "/images/products/sortiment/adventskraenze-1.jpg",
+    "imageAlt": "Adventskranz aus Tannengrün mit vier roten Kerzen auf einer Holzkommode",
     "productSlugs": ["toscana", "sakura", "petit"]
   },
   "editorial": {
@@ -46,12 +46,12 @@
   "gallery": {
     "headline": "Blumen für besondere Momente.",
     "images": [
-      {"src": "/images/gallery/g1.jpg", "alt": "Strauß auf einem Leinentisch im Morgenlicht"},
-      {"src": "/images/gallery/g2.jpg", "alt": "Detailaufnahme roséfarbener Rosen"},
-      {"src": "/images/gallery/g3.jpg", "alt": "Verpackter Strauß auf einer Werkbank"},
-      {"src": "/images/gallery/g4.jpg", "alt": "Weißer Strauß in einem hellen Altbauzimmer"},
-      {"src": "/images/gallery/g5.jpg", "alt": "Strauß wird durch einen Wiener Innenhof getragen"},
-      {"src": "/images/gallery/g6.jpg", "alt": "Bunte Blüten in Nahaufnahme"}
+      {"src": "/images/products/sortiment/love-deluxe-1.jpg", "alt": "Bunter Rosenstrauß in Rot, Rosa, Creme und Apricot in einer weißen Vase"},
+      {"src": "/images/products/sortiment/blaueliebe-1.jpg", "alt": "Strauß aus leuchtend blauen Rosen in einer weißen Vase"},
+      {"src": "/images/products/sortiment/pink-harmony-1.jpg", "alt": "Strauß in kräftigen Pinktönen mit Gerbera in einer Vase am Fenster"},
+      {"src": "/images/products/sortiment/sonnenzauber-1.jpg", "alt": "Exotischer Strauß mit Paradiesvogelblumen, Lilien und Gerbera"},
+      {"src": "/images/products/sortiment/blumenbox-herzfoermig-1.jpg", "alt": "Herzförmige rote Blumenbox mit Rosen auf einer Kommode"},
+      {"src": "/images/products/sortiment/rosenglanz-1.jpg", "alt": "Strauß aus Rosen in Pastell und Pink in rosa Manschette"}
     ]
   },
   "faq": {"headline": "Gut zu wissen", "ids": ["f-where", "f-today", "f-date", "f-nobody", "f-anon", "f-photo"]},

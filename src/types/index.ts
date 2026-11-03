@@ -7,11 +7,11 @@
 export type ISODate = string; // "YYYY-MM-DD"
 export type TimeHHMM = string; // "13:00"
 
-export type SizeId = "s" | "m" | "l";
+export type SizeId = "s" | "m" | "l" | "xl" | "xxl";
 
 export interface ProductSize {
   id: SizeId;
-  label: string; // "Small" | "Medium" | "Large"
+  label: string; // "Klein" | "Mittel" | "Groß" | "XL" | "60 cm" …
   price: number; // EUR, gross
   compareAtPrice?: number;
   stems?: number;
@@ -47,6 +47,8 @@ export interface Product {
   tags: string[];
   sizes: ProductSize[];
   basePrice: number; // = lowest size price (denormalised for sorting)
+  /** Prices not fixed yet: the shop shows "Preis folgt" and refuses orders for it. */
+  pricePending?: boolean;
   stock: number | null; // null = unlimited
   deliverable: boolean;
   bestseller: boolean;

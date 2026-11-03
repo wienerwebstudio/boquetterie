@@ -213,6 +213,7 @@ export const productSchema: EntitySchema = {
       fields: [
         { key: "stock", label: "Lagerbestand (leer = unbegrenzt)", type: "number", nullable: true, min: 0, span: "third" },
         { key: "active", label: "Aktiv (im Shop sichtbar)", type: "boolean" },
+        { key: "pricePending", label: "Preis folgt (noch nicht bestellbar)", type: "boolean" },
         { key: "deliverable", label: "Lieferbar", type: "boolean" },
         { key: "sameDayCapable", label: "Same-Day-fähig", type: "boolean" },
         { key: "bestseller", label: "Bestseller", type: "boolean" },
@@ -243,9 +244,9 @@ export const productSchema: EntitySchema = {
     flowers: [], care: [], images: [{ src: "", alt: "", kind: "front" }],
     category: "", occasions: [], colors: [], styles: [], seasons: ["ganzjaehrig"], tags: [],
     sizes: [
-      { id: "s", label: "Small", price: 0 },
-      { id: "m", label: "Medium", price: 0, popular: true },
-      { id: "l", label: "Large", price: 0 },
+      { id: "s", label: "Klein", price: 0 },
+      { id: "m", label: "Mittel", price: 0, popular: true },
+      { id: "l", label: "Groß", price: 0 },
     ],
     basePrice: 0, stock: null, deliverable: true, bestseller: false, isNew: true, sameDayCapable: true, active: false,
     seo: { title: "", description: "" }, sortOrder: 99,

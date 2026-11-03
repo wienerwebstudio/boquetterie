@@ -53,7 +53,7 @@ export function findGifts(products: Product[], query: GiftFinderQuery): GiftFind
   const base = sortProducts(applyFilter(products, { inStockOnly: true }), "bestseller");
 
   const inBudget = budget
-    ? base.filter((p) => p.sizes.some((s) => s.price >= budget.min && (budget.max === null || s.price <= budget.max)))
+    ? base.filter((p) => !p.pricePending && p.sizes.some((s) => s.price >= budget.min && (budget.max === null || s.price <= budget.max)))
     : base;
 
   const scored = inBudget.map((p) => {

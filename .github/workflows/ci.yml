@@ -41,6 +41,7 @@ jobs:
     timeout-minutes: 20
     env:
       CI: "true"
+      CONTENT_OVERLAY_DIR: tests/fixtures/content
       ADMIN_PASSWORD: ci-admin-password
       ADMIN_SECRET: ci-admin-secret-ci-admin-secret
       NEXT_PUBLIC_SITE_URL: http://localhost:3000

@@ -48,7 +48,7 @@ export function publicOrderView(order: Order): PublicOrder {
 export type ParseResult = { ok: true; payload: OrderPayload } | { ok: false; status: number; message: string; errors?: FieldErrors };
 
 const PAYMENT_METHODS = new Set(["apple_pay", "google_pay", "card", "paypal", "klarna", "eps"]);
-const SIZE_IDS = new Set<SizeId>(["s", "m", "l"]);
+const SIZE_IDS = new Set<SizeId>(["s", "m", "l", "xl", "xxl"]);
 
 function asRecord(v: unknown): Record<string, unknown> | null {
   return v && typeof v === "object" && !Array.isArray(v) ? (v as Record<string, unknown>) : null;
@@ -177,12 +177,13 @@ interface ResolvedLine {
   cartItem: CartItem; // for computeTotals
 }
 
-function resolveLines(items: OrderPayloadItem[], products: Product[], extras: Extra[]): { ok: true; lines: ResolvedLine[] } | { ok: false; message: string } {
+export function resolveLines(items: OrderPayloadItem[], products: Product[], extras: Extra[]): { ok: true; lines: ResolvedLine[] } | { ok: false; message: string } {
   const lines: ResolvedLine[] = [];
   for (const it of items) {
     const product = products.find((p) => p.id === it.productId && p.active);
     if (!product) return { ok: false, message: "Ein Artikel in deinem Warenkorb ist nicht mehr verfügbar. Bitte prüfe den Warenkorb." };
     if (!product.deliverable) return { ok: false, message: `„${product.name}" kann derzeit nicht geliefert werden.` };
+    if (product.pricePending) return { ok: false, message: `„${product.name}" ist noch nicht bestellbar – der Preis folgt in Kürze.` };
     const size = product.sizes.find((s) => s.id === it.sizeId);
     if (!size) return { ok: false, message: `Die gewählte Größe von „${product.name}" ist nicht verfügbar.` };
     if ((product.stock !== null && product.stock < it.quantity) || (size.stock !== undefined && size.stock < it.quantity)) {

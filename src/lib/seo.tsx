@@ -39,7 +39,8 @@ export function productLd(product: Product, settings: SiteSettings) {
     image: product.images.map((i) => `${settings.seo.siteUrl}${i.src}`),
     brand: { "@type": "Brand", name: settings.brand.name },
     sku: product.id,
-    offers: {
+    // No offer while the price is pending: a zero price would be wrong structured data.
+    ...(!product.pricePending && { offers: {
       "@type": "AggregateOffer",
       priceCurrency: "EUR",
       lowPrice: Math.min(...prices).toFixed(2),
@@ -47,7 +48,7 @@ export function productLd(product: Product, settings: SiteSettings) {
       offerCount: product.sizes.length,
       availability: product.stock === null || product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       url: `${settings.seo.siteUrl}/produkt/${product.slug}`,
-    },
+    } }),
     ...(product.rating && product.rating.count > 0 && {
       aggregateRating: { "@type": "AggregateRating", ratingValue: product.rating.value, reviewCount: product.rating.count },
     }),

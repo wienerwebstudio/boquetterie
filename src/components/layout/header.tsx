@@ -41,7 +41,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
     { label: "Blumen", href: routes.shop, mega: "blumen" },
     { label: "Anlässe", href: routes.occasions, mega: "anlaesse" },
     { label: "Rosen", href: routes.category("rosen") },
-    { label: "Bestseller", href: routes.category("bestseller") },
+    { label: "Pflanzen", href: routes.category("pflanzen") },
     { label: "Geschenksets", href: routes.extras },
     ...(settings.subscriptionEnabled ? [{ label: "Blumen-Abo", href: routes.subscription }] : []),
     { label: "Lieferung", href: routes.delivery },
@@ -125,12 +125,12 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
                   {settings.subscriptionEnabled && <li><Link href={routes.subscription} className="text-[15px] text-ink hover:text-forest">Blumen-Abo</Link></li>}
                 </ul>
               </div>
-              <Link href={routes.category("bestseller")} className="group relative block aspect-[16/9] overflow-hidden rounded-md bg-ivory-200">
-                <Image src="/images/products/amour-3.jpg" alt="" fill sizes="480px" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+              <Link href={routes.shop} className="group relative block aspect-[16/9] overflow-hidden rounded-md bg-ivory-200">
+                <Image src="/images/products/sortiment/rosenglanz-1.jpg" alt="" fill sizes="480px" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-ivory">
-                  <p className="font-serif text-2xl">Unsere Lieblingssträuße</p>
-                  <p className="inline-flex items-center gap-1 text-[13px] font-semibold">Bestseller entdecken <ArrowRight className="size-3.5" /></p>
+                  <p className="font-serif text-2xl">Unser Sortiment</p>
+                  <p className="inline-flex items-center gap-1 text-[13px] font-semibold">Alle Blumen entdecken <ArrowRight className="size-3.5" /></p>
                 </div>
               </Link>
             </div>

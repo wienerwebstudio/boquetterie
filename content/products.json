@@ -1,350 +1,4472 @@
 [
   {
-    "id": "p-amour", "slug": "amour", "name": "Amour",
-    "tagline": "Rote Gartenrosen & Eukalyptus",
-    "shortDescription": "Tiefrote Gartenrosen, samtig und voll, mit ein wenig Eukalyptus. Der Klassiker, wenn Worte nicht reichen.",
-    "description": "Amour ist unser Strauß für die großen Gefühle. Tiefrote Gartenrosen mit dichten, samtigen Blüten werden von Hand mit silbrigem Eukalyptus gebunden – ohne Füllmaterial, ohne Ablenkung. Ein Strauß, der nichts erklären muss.",
-    "flowers": ["Gartenrosen (rot)", "Eukalyptus"],
-    "care": ["Stiele schräg anschneiden und sofort ins Wasser stellen.", "Alle zwei Tage frisches Wasser, Vase gerne kühl aufstellen.", "Direkte Sonne und Obstschalen meiden."],
+    "id": "p-ros-dream",
+    "slug": "ros-dream",
+    "name": "Rosé Dream",
+    "tagline": "Rosa Rosen, pinke Gerbera & weiße Lilien",
+    "shortDescription": "Ein heller, lockerer Strauß in Rosa und Weiß, der gute Laune in jeden Raum bringt.",
+    "description": "Rosé Dream verbindet rosa Rosen und pinke Gerbera mit weißen Lilien, zartem Schleierkraut und frischem Grün. Locker gebunden und hell in der Wirkung passt er zum Geburtstag, als Dankeschön oder einfach so.",
+    "flowers": [
+      "Rosen",
+      "Gerbera",
+      "Lilien",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Täglich frisches Wasser in die Vase geben.",
+      "Stiele bei Bedarf nachschneiden.",
+      "Welke Blüten regelmäßig entfernen."
+    ],
     "images": [
-      {"src": "/images/products/amour-1.jpg", "alt": "Amour – Strauß aus roten Gartenrosen mit Eukalyptus", "kind": "front"},
-      {"src": "/images/products/amour-2.jpg", "alt": "Amour – Detailaufnahme der roten Rosenblüten", "kind": "detail"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
-      {"src": "/images/products/amour-3.jpg", "alt": "Amour in einer Wiener Altbauwohnung", "kind": "lifestyle"}
+      {
+        "src": "/images/products/sortiment/ros-dream-1.jpg",
+        "alt": "Strauß aus rosa Rosen, pinken Gerbera und weißen Lilien in einer Glasvase auf einer Holzkommode",
+        "kind": "front"
+      }
     ],
-    "category": "rosen", "occasions": ["liebe", "jahrestag", "einfach-so"],
-    "colors": ["rot"], "styles": ["klassisch", "romantisch"], "seasons": ["ganzjaehrig"],
-    "tags": ["rosen", "romantik", "valentinstag", "klassiker"],
+    "category": "pastell",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "einfach-so"
+    ],
+    "colors": [
+      "rosa",
+      "weiss",
+      "gruen"
+    ],
+    "styles": [
+      "froehlich",
+      "natuerlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "gerbera",
+      "lilien",
+      "rosa",
+      "geburtstag",
+      "mama"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 44.9, "stems": 9, "description": "9 Rosen"},
-      {"id": "m", "label": "Medium", "price": 64.9, "stems": 15, "description": "15 Rosen", "popular": true},
-      {"id": "l", "label": "Large", "price": 89.9, "stems": 24, "description": "24 Rosen"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 44.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
-    "rating": {"value": 4.9, "count": 0},
-    "seo": {"title": "Amour – Rote Rosen liefern lassen in Wien", "description": "Rote Gartenrosen frisch gebunden und in Wien geliefert. Lieferdatum wählen, Grußkarte dazu – Amour von Blumora."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Rosé Dream – Strauß in Rosa & Weiß | Blumora",
+      "description": "Rosé Dream: rosa Rosen, pinke Gerbera und weiße Lilien, locker gebunden. Ein heller Strauß für Geburtstag und Dank – Blumenversand in Wien."
+    },
     "sortOrder": 1
   },
   {
-    "id": "p-ivory", "slug": "ivory", "name": "Ivory",
-    "tagline": "Weiße Rosen, Lisianthus & Eukalyptus",
-    "shortDescription": "Weiße Avalanche-Rosen und Lisianthus, luftig gebunden mit silbrigem Eukalyptus. Leise, elegant, zeitlos.",
-    "description": "Ivory ist Ruhe in Blütenform. Cremeweiße Avalanche-Rosen, zarter Lisianthus und silbergrüner Eukalyptus ergeben einen Strauß, der in jedem Raum sofort Eleganz erzeugt – ob zur Hochzeit, als Dankeschön oder für Menschen, die es gerne schlicht haben.",
-    "flowers": ["Avalanche-Rosen (weiß)", "Lisianthus (weiß)", "Eukalyptus"],
-    "care": ["Stiele frisch anschneiden.", "Kühl stellen, täglich Wasser prüfen.", "Welke Blüten vorsichtig entfernen."],
+    "id": "p-gelb-bouquet",
+    "slug": "gelb-bouquet",
+    "name": "Gelb Bouquet",
+    "tagline": "Gelbe Gerbera, Rosen & Schleierkraut",
+    "shortDescription": "Ein sonniger Strauß in Gelb und Weiß, gebunden mit gelber Schleife.",
+    "description": "Leuchtend gelbe Gerbera treffen auf weiße und gelbe Rosen, Schleierkraut und frisches Grün. Gefasst in helle Manschette mit gelber Schleife – ein Strauß zum Geburtstag, als Glückwunsch, Dankeschön oder Genesungsgruß.",
+    "flowers": [
+      "Gerbera",
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Nicht in die pralle Sonne stellen."
+    ],
     "images": [
-      {"src": "/images/products/ivory-1.jpg", "alt": "Ivory – Strauß aus weißen Rosen und Lisianthus", "kind": "front"},
-      {"src": "/images/products/ivory-2.jpg", "alt": "Ivory – Detailaufnahme der weißen Blüten", "kind": "detail"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
-      {"src": "/images/products/ivory-3.jpg", "alt": "Ivory auf einem Leinenstuhl in einem hellen Altbauzimmer", "kind": "lifestyle"}
+      {
+        "src": "/images/products/sortiment/gelb-bouquet-1.jpg",
+        "alt": "Strauß aus gelben Gerbera, weißen und gelben Rosen in heller Manschette mit gelber Schleife",
+        "kind": "front"
+      }
     ],
-    "category": "elegant-weiss", "occasions": ["hochzeit", "danke", "trauer", "einfach-so"],
-    "colors": ["weiss", "gruen"], "styles": ["elegant", "modern"], "seasons": ["ganzjaehrig"],
-    "tags": ["weiß", "hochzeit", "elegant", "rosen"],
+    "category": "bunt",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "gute-besserung",
+      "einfach-so"
+    ],
+    "colors": [
+      "gelb",
+      "weiss",
+      "gruen"
+    ],
+    "styles": [
+      "froehlich",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "gerbera",
+      "rosen",
+      "gelb",
+      "geburtstag",
+      "genesung",
+      "glueckwunsch"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 42.9, "description": "ca. 12 Stiele"},
-      {"id": "m", "label": "Medium", "price": 59.9, "description": "ca. 18 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 84.9, "description": "ca. 28 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 42.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Ivory – Weiße Blumen elegant geliefert", "description": "Weiße Rosen und Lisianthus, frisch gebunden. Elegante Blumen für Hochzeit, Danke oder stille Momente – in Wien geliefert."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Gelb Bouquet – Gerbera & Rosen in Gelb | Blumora",
+      "description": "Gelbe Gerbera, weiße und gelbe Rosen mit Schleierkraut und gelber Schleife. Ein heller Gruß zum Geburtstag oder zur Genesung – Blumenversand in Wien."
+    },
     "sortOrder": 2
   },
   {
-    "id": "p-solstice", "slug": "solstice", "name": "Solstice",
-    "tagline": "Sonnenblumen, Ranunkeln & Craspedia",
-    "shortDescription": "Sonnenblumen, orange Ranunkeln und gelbe Craspedia – ein Strauß wie ein guter Morgen.",
-    "description": "Solstice bringt Licht ins Zimmer. Große Sonnenblumen treffen auf orange Ranunkeln und verspielte Craspedia-Kugeln, gehalten von frischem Grün. Perfekt zum Geburtstag oder für alle, die einen Grund zum Lächeln brauchen.",
-    "flowers": ["Sonnenblumen", "Ranunkeln (orange)", "Craspedia", "Saisonales Grün"],
-    "care": ["Sonnenblumen trinken viel – Wasser täglich nachfüllen.", "Stiele alle zwei Tage neu anschneiden.", "Nicht direkt neben Heizung stellen."],
+    "id": "p-weiss-bouquet",
+    "slug": "weiss-bouquet",
+    "name": "Weiß Bouquet",
+    "tagline": "Helle Rosen, Gerbera & Lilien",
+    "shortDescription": "Ein heller, ruhiger Strauß in Weiß und Creme mit zarten rosa Akzenten.",
+    "description": "Das Weiß Bouquet verbindet helle Rosen, Gerbera und Lilien mit Schleierkraut zu einem schlichten, zeitlosen Strauß. Zarte Akzente in Rosa und Apricot lockern das Bild auf. Passend zum Hochzeits- oder Jahrestag, als Dank oder stilvoller Gruß.",
+    "flowers": [
+      "Rosen",
+      "Gerbera",
+      "Lilien",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Lilien-Pollen bei Bedarf vorsichtig entfernen."
+    ],
     "images": [
-      {"src": "/images/products/solstice-1.jpg", "alt": "Solstice – Strauß mit Sonnenblumen und orangen Ranunkeln", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+      {
+        "src": "/images/products/sortiment/weiss-bouquet-1.jpg",
+        "alt": "Heller Strauß aus cremefarbenen Rosen, rosa Gerbera, Lilien und Schleierkraut in weißer Manschette",
+        "kind": "front"
+      }
     ],
-    "category": "bunt", "occasions": ["geburtstag", "danke", "gute-besserung", "einfach-so"],
-    "colors": ["gelb", "orange"], "styles": ["froehlich", "natuerlich"], "seasons": ["sommer", "herbst"],
-    "tags": ["sonnenblumen", "geburtstag", "bunt", "sommer"],
+    "category": "elegant-weiss",
+    "occasions": [
+      "hochzeit",
+      "jahrestag",
+      "danke",
+      "einfach-so"
+    ],
+    "colors": [
+      "weiss",
+      "creme",
+      "rosa"
+    ],
+    "styles": [
+      "elegant",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "gerbera",
+      "lilien",
+      "weiss",
+      "hochzeitstag",
+      "jahrestag"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 39.9, "description": "ca. 10 Stiele"},
-      {"id": "m", "label": "Medium", "price": 54.9, "description": "ca. 16 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 74.9, "description": "ca. 24 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 39.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Solstice – Sonnenblumen zum Geburtstag liefern", "description": "Sonnenblumen und Ranunkeln, frisch gebunden. Fröhliche Geburtstagsblumen mit Wunschdatum in Wien geliefert."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Weiß Bouquet – Strauß in Weiß & Creme | Blumora",
+      "description": "Helle Rosen, Gerbera und Lilien mit Schleierkraut: ein schlichter Strauß für Jahrestag, Hochzeitstag oder Dank – Blumenversand in Wien."
+    },
     "sortOrder": 3
   },
   {
-    "id": "p-blush", "slug": "blush", "name": "Blush",
-    "tagline": "Pfingstrosen, Ranunkeln & Sprayrosen",
-    "shortDescription": "Zarte Pfingstrosen, rosa Ranunkeln und cremige Sprayrosen in weichen Pastelltönen.",
-    "description": "Blush ist unser sanftester Strauß. Pfingstrosen in Puderrosa, feine Ranunkeln und cremefarbene Sprayrosen fügen sich zu einem Strauß, der Zärtlichkeit ausspricht, ohne laut zu werden. Zur Geburt, zum Geburtstag oder einfach, weil jemand an dich denkt.",
-    "flowers": ["Pfingstrosen (rosé)", "Ranunkeln (rosa)", "Sprayrosen (creme)", "Zartes Grün"],
-    "care": ["Pfingstrosen öffnen sich über 2–3 Tage – Geduld lohnt sich.", "Frisches Wasser alle zwei Tage.", "Kühl und hell, aber ohne direkte Sonne stellen."],
+    "id": "p-blue-bouquet",
+    "slug": "blue-bouquet",
+    "name": "Blue Bouquet",
+    "tagline": "Blaue & weiße Rosen in blauer Manschette",
+    "shortDescription": "Blaue und weiße Rosen in hellblauer Manschette – ein Strauß, der auffällt.",
+    "description": "Das Blue Bouquet kombiniert blaue und weiße Rosen mit Schleierkraut, einer weißen Lilie und frischem Grün. Die hellblaue Manschette nimmt die Farbe der Blüten auf. Ein ungewöhnliches Geschenk zum Geburtstag, Jahrestag oder für Menschen, die das Besondere mögen.",
+    "flowers": [
+      "Rosen",
+      "Lilien",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
     "images": [
-      {"src": "/images/products/blush-1.jpg", "alt": "Blush – Pastellstrauß mit Pfingstrosen und Ranunkeln", "kind": "front"},
-      {"src": "/images/products/blush-2.jpg", "alt": "Blush – Detailaufnahme der Pfingstrosen", "kind": "detail"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
-      {"src": "/images/products/blush-3.jpg", "alt": "Blush auf einer cremefarbenen Strickdecke", "kind": "lifestyle"}
+      {
+        "src": "/images/products/sortiment/blue-bouquet-1.jpg",
+        "alt": "Strauß aus blauen und weißen Rosen mit Schleierkraut in hellblauer Manschette auf einer Holzkommode",
+        "kind": "front"
+      }
     ],
-    "category": "pastell", "occasions": ["geburt", "geburtstag", "liebe", "einfach-so"],
-    "colors": ["rosa", "creme"], "styles": ["romantisch", "natuerlich"], "seasons": ["fruehling", "sommer"],
-    "tags": ["pastell", "pfingstrosen", "geburt", "muttertag", "mama"],
+    "category": "rosen",
+    "occasions": [
+      "geburtstag",
+      "jahrestag",
+      "einfach-so"
+    ],
+    "colors": [
+      "blau",
+      "weiss"
+    ],
+    "styles": [
+      "modern",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "blaue rosen",
+      "blau",
+      "geburtstag",
+      "besonders"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 46.9, "description": "ca. 12 Stiele"},
-      {"id": "m", "label": "Medium", "price": 66.9, "description": "ca. 18 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 94.9, "description": "ca. 26 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 46.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": false, "active": true,
-    "seo": {"title": "Blush – Pastellblumen mit Pfingstrosen liefern", "description": "Pfingstrosen und Ranunkeln in zarten Pastelltönen. Blumen zur Geburt oder zum Geburtstag – frisch gebunden in Wien."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Blue Bouquet – blaue & weiße Rosen | Blumora",
+      "description": "Blaue und weiße Rosen mit Schleierkraut in hellblauer Manschette. Ein ungewöhnlicher Rosenstrauß zum Geburtstag oder Jahrestag – Blumenversand in Wien."
+    },
     "sortOrder": 4
   },
   {
-    "id": "p-pavlova", "slug": "pavlova", "name": "Pavlova",
-    "tagline": "Hortensien, Gartenrosen & Eukalyptus",
-    "shortDescription": "Cremige und roséfarbene Hortensien mit Gartenrosen – üppig, rund und weich wie ein Dessert.",
-    "description": "Pavlova ist Fülle. Große Hortensienköpfe in Creme und Altrosé, dazwischen Gartenrosen und Eukalyptus. Ein großzügiger Strauß, der Danke sagt, ohne viele Worte.",
-    "flowers": ["Hortensien (creme, rosé)", "Gartenrosen", "Eukalyptus"],
-    "care": ["Hortensien lieben Wasser – Vase gut füllen.", "Bei hängenden Köpfen Stiele neu anschneiden und kurz in warmes Wasser stellen.", "Kühl stellen."],
+    "id": "p-farbensinfonie",
+    "slug": "farbensinfonie",
+    "name": "Farbensinfonie",
+    "tagline": "Regenbogenrosen in vielen Farben",
+    "shortDescription": "Ein Strauß aus Regenbogenrosen, bei denen jede Blüte in mehreren Farben leuchtet.",
+    "description": "Farbensinfonie besteht aus Regenbogenrosen: Jede Blüte zeigt mehrere Farben nebeneinander, von Rot und Orange über Gelb und Grün bis Blau und Lila. Dicht gebunden wirkt der Strauß wie ein farbiger Ball. Eine fröhliche Überraschung zum Geburtstag oder für eine Feier.",
+    "flowers": [
+      "Regenbogenrosen"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
     "images": [
-      {"src": "/images/products/pavlova-1.jpg", "alt": "Pavlova – Strauß mit Hortensien und Gartenrosen", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
-      {"src": "/images/products/pavlova-3.jpg", "alt": "Pavlova auf einem Schreibtisch neben einer Karte", "kind": "lifestyle"}
+      {
+        "src": "/images/products/sortiment/farbensinfonie-1.jpg",
+        "alt": "Dichter Strauß aus Regenbogenrosen in einer cremefarbenen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/farbensinfonie-2.jpg",
+        "alt": "Regenbogenrosen in Nahaufnahme, jede Blüte in mehreren Farben",
+        "kind": "detail"
+      }
     ],
-    "category": "pastell", "occasions": ["danke", "geburtstag", "jahrestag"],
-    "colors": ["creme", "rosa"], "styles": ["elegant", "romantisch"], "seasons": ["sommer", "herbst"],
-    "tags": ["hortensien", "danke", "üppig"],
+    "category": "rosen",
+    "occasions": [
+      "geburtstag",
+      "einfach-so"
+    ],
+    "colors": [
+      "rot",
+      "orange",
+      "gelb",
+      "gruen",
+      "blau",
+      "lila"
+    ],
+    "styles": [
+      "froehlich",
+      "modern"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "regenbogenrosen",
+      "bunt",
+      "geburtstag",
+      "party"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 49.9, "description": "ca. 10 Stiele"},
-      {"id": "m", "label": "Medium", "price": 69.9, "description": "ca. 16 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 99.9, "description": "ca. 24 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 49.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Pavlova – Hortensienstrauß liefern lassen", "description": "Üppige Hortensien und Gartenrosen frisch gebunden. Der Dankeschön-Strauß von Blumora, geliefert in Wien."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Farbensinfonie – Regenbogenrosen | Blumora",
+      "description": "Regenbogenrosen, bei denen jede Blüte in mehreren Farben leuchtet. Ein fröhlicher Rosenstrauß zum Geburtstag – Blumenversand in Wien."
+    },
     "sortOrder": 5
   },
   {
-    "id": "p-toscana", "slug": "toscana", "name": "Toscana",
-    "tagline": "Dahlien, Zinnien & Wiesengräser",
-    "shortDescription": "Dahlien, Zinnien und Skabiosen in Terrakotta und Apricot, locker gebunden mit trockenen Gräsern.",
-    "description": "Toscana ist ein Spätsommerabend im Strauß. Warme Terrakotta-Töne, Dahlien, Zinnien und Skabiosen treffen auf getrocknete Gräser und wildes Grün – locker, natürlich, ehrlich. Für alle, die es lieber ungezwungen mögen.",
-    "flowers": ["Dahlien", "Zinnien", "Skabiosen", "Trockengräser", "Wildes Grün"],
-    "care": ["Dahlien täglich frisches Wasser geben.", "Stiele schräg anschneiden.", "Gräser können nach dem Verblühen der Blumen getrocknet behalten werden."],
+    "id": "p-sonnenzauber",
+    "slug": "sonnenzauber",
+    "name": "Sonnenzauber",
+    "tagline": "Strelitzien, Lilien & Gerbera in Orange und Gelb",
+    "shortDescription": "Ein exotischer Strauß in Orange und Gelb mit Paradiesvogelblumen als Blickfang.",
+    "description": "Sonnenzauber verbindet auffällige Paradiesvogelblumen mit weißen Lilien, gelben Gerbera und frischem Grün. Die warmen Orange- und Gelbtöne geben dem Strauß eine lebendige, sommerliche Ausstrahlung.",
+    "flowers": [
+      "Strelitzien (Paradiesvogelblumen)",
+      "Lilien",
+      "Gerbera",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Vase sauber halten und Wasser regelmäßig erneuern.",
+      "Nicht in die pralle Sonne stellen."
+    ],
     "images": [
-      {"src": "/images/products/toscana-1.jpg", "alt": "Toscana – Wildstrauß in Terrakotta- und Apricot-Tönen", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+      {
+        "src": "/images/products/sortiment/sonnenzauber-1.jpg",
+        "alt": "Exotischer Strauß aus Strelitzien, weißen Lilien und gelben Gerbera in Klarsichtfolie",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/sonnenzauber-2.jpg",
+        "alt": "Draufsicht auf Strelitzien, Lilie und gelbe Gerbera des Straußes",
+        "kind": "detail"
+      }
     ],
-    "category": "saisonal", "occasions": ["geburtstag", "danke", "einfach-so"],
-    "colors": ["orange", "creme"], "styles": ["natuerlich", "wild"], "seasons": ["sommer", "herbst"],
-    "tags": ["saisonal", "wild", "herbst", "dahlien"],
+    "category": "bunt",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "einfach-so"
+    ],
+    "colors": [
+      "orange",
+      "gelb",
+      "weiss",
+      "gruen"
+    ],
+    "styles": [
+      "froehlich",
+      "wild"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "strelitzie",
+      "paradiesvogelblume",
+      "gerbera",
+      "lilien",
+      "exotisch",
+      "orange",
+      "gelb"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 39.9, "description": "ca. 12 Stiele"},
-      {"id": "m", "label": "Medium", "price": 56.9, "description": "ca. 18 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 79.9, "description": "ca. 26 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 39.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": true, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Toscana – Saisonaler Wildstrauß in Wien geliefert", "description": "Dahlien, Zinnien und Gräser in warmen Tönen. Der saisonale Wildstrauß von Blumora, frisch gebunden und in Wien geliefert."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Sonnenzauber – Strelitzien & Gerbera | Blumora",
+      "description": "Paradiesvogelblumen, Lilien und gelbe Gerbera in warmem Orange und Gelb. Ein exotischer Strauß als Blickfang – Blumenversand in Wien."
+    },
     "sortOrder": 6
   },
   {
-    "id": "p-noir", "slug": "noir", "name": "Noir",
-    "tagline": "Burgunder-Dahlien, dunkle Ranunkeln & Pflaumenrosen",
-    "shortDescription": "Tiefes Burgund, Pflaume und dunkles Grün. Ein Strauß mit Tiefe – für alle, die Understatement lieben.",
-    "description": "Noir ist unser dunkelster und vielleicht schönster Strauß. Burgunderfarbene Dahlien, dunkle Ranunkeln und Rosen in Pflaume, gebunden mit tiefgrünem Laub. Stark, ruhig, ein bisschen geheimnisvoll. Zum Jahrestag oder als Statement.",
-    "flowers": ["Dahlien (burgund)", "Ranunkeln (dunkelrot)", "Rosen (pflaume)", "Dunkles Laub"],
-    "care": ["Frisches Wasser alle zwei Tage.", "Kühl stellen, Dahlien sind wärmeempfindlich.", "Stiele täglich kontrollieren."],
+    "id": "p-pink-bouquet",
+    "slug": "pink-bouquet",
+    "name": "Pink Bouquet",
+    "tagline": "Blüten in Pink und Rosa mit Gerbera & Lilien",
+    "shortDescription": "Ein runder, verspielter Strauß in Pink und Rosa mit gelben Akzenten.",
+    "description": "Das Pink Bouquet vereint Blüten in Pink und Rosa, darunter Lilien und Gerbera, zu einem runden, verspielten Strauß. Gelbe Gerbera setzen frische Akzente, die rosa Manschette rundet das Bild ab. Schön zum Geburtstag, Jahrestag, Muttertag oder einfach so.",
+    "flowers": [
+      "Lilien",
+      "Gerbera"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Welke Blüten regelmäßig entfernen."
+    ],
     "images": [
-      {"src": "/images/products/noir-1.jpg", "alt": "Noir – Strauß in Burgund und Pflaume", "kind": "front"},
-      {"src": "/images/products/noir-2.jpg", "alt": "Noir – Detailaufnahme der dunklen Dahlien", "kind": "detail"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
-      {"src": "/images/products/noir-3.jpg", "alt": "Noir auf einer Marmorkonsole am Abend", "kind": "lifestyle"}
+      {
+        "src": "/images/products/sortiment/pink-bouquet-1.jpg",
+        "alt": "Runder Strauß in Pink und Rosa mit gelben Gerbera in rosa Manschette",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/pink-bouquet-2.jpg",
+        "alt": "Strauß mit rosa Lilien, gelben Gerbera und pinken Blüten in rosa Manschette mit Schleife",
+        "kind": "detail"
+      }
     ],
-    "category": "premium", "occasions": ["jahrestag", "liebe", "einfach-so"],
-    "colors": ["burgund", "rot"], "styles": ["elegant", "modern"], "seasons": ["herbst", "winter"],
-    "tags": ["premium", "dunkel", "statement", "jahrestag"],
+    "category": "bunt",
+    "occasions": [
+      "geburtstag",
+      "jahrestag",
+      "einfach-so"
+    ],
+    "colors": [
+      "rosa",
+      "gelb",
+      "lila"
+    ],
+    "styles": [
+      "romantisch",
+      "froehlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "pink",
+      "rosa",
+      "gerbera",
+      "lilien",
+      "muttertag",
+      "mama",
+      "geburtstag"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 54.9, "description": "ca. 12 Stiele"},
-      {"id": "m", "label": "Medium", "price": 79.9, "description": "ca. 18 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 119.9, "description": "ca. 28 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 54.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": true, "sameDayCapable": false, "active": true,
-    "seo": {"title": "Noir – Premium-Blumenstrauß in Burgund", "description": "Dahlien, Ranunkeln und Rosen in Burgund und Pflaume. Der Premium-Strauß Noir – frisch gebunden, in Wien geliefert."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Pink Bouquet – Strauß in Pink & Rosa | Blumora",
+      "description": "Ein runder Strauß in Pink und Rosa mit Lilien und Gerbera. Für Geburtstag, Muttertag oder einfach so – Blumenversand in Wien."
+    },
     "sortOrder": 7
   },
   {
-    "id": "p-lavande", "slug": "lavande", "name": "Lavande",
-    "tagline": "Lavendel, Freesien & weiße Ranunkeln",
-    "shortDescription": "Lavendel, lila Freesien und weiße Ranunkeln – ein Strauß, der beruhigt und gut riecht.",
-    "description": "Lavande ist ein Strauß zum Durchatmen. Duftender Lavendel, fliederfarbene Freesien, Lisianthus und weiße Ranunkeln, gebunden mit Eukalyptus. Sanft, klar und tröstend – ideal zur Genesung oder wenn jemand ein bisschen Ruhe braucht.",
-    "flowers": ["Lavendel", "Freesien (flieder)", "Lisianthus (lila)", "Ranunkeln (weiß)", "Eukalyptus"],
-    "care": ["Freesien öffnen sich nach und nach – nicht zu früh entfernen.", "Frisches Wasser alle zwei Tage.", "Lavendel kann nach dem Verblühen getrocknet werden."],
+    "id": "p-orange-bouquet",
+    "slug": "orange-bouquet",
+    "name": "Orange Bouquet",
+    "tagline": "Rosen in Orange und Apricot",
+    "shortDescription": "Rosen in Orange und Apricot – ein warmer Strauß wie ein Sonnenuntergang.",
+    "description": "Das Orange Bouquet besteht aus Rosen in Orange und Apricot, ergänzt mit zartem Grün und in helle Manschette gefasst. Warm und fröhlich in der Wirkung, passt er zum Geburtstag, als Dankeschön oder um jemandem den Tag zu erhellen.",
+    "flowers": [
+      "Rosen"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
     "images": [
-      {"src": "/images/products/lavande-1.jpg", "alt": "Lavande – Strauß mit Lavendel, Freesien und Ranunkeln", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
-      {"src": "/images/products/lavande-3.jpg", "alt": "Lavande in einer Glasvase am Fenster", "kind": "lifestyle"}
+      {
+        "src": "/images/products/sortiment/orange-bouquet-1.jpg",
+        "alt": "Strauß aus orangen und apricotfarbenen Rosen in heller Manschette auf einer Holzkommode",
+        "kind": "front"
+      }
     ],
-    "category": "pastell", "occasions": ["gute-besserung", "danke", "einfach-so"],
-    "colors": ["lila", "weiss"], "styles": ["natuerlich", "romantisch"], "seasons": ["fruehling", "sommer"],
-    "tags": ["lavendel", "gute besserung", "duft", "pastell"],
+    "category": "rosen",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "einfach-so"
+    ],
+    "colors": [
+      "orange",
+      "gruen"
+    ],
+    "styles": [
+      "froehlich",
+      "natuerlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "orange",
+      "apricot",
+      "geburtstag",
+      "danke"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 38.9, "description": "ca. 12 Stiele"},
-      {"id": "m", "label": "Medium", "price": 54.9, "description": "ca. 18 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 76.9, "description": "ca. 26 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 38.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Lavande – Blumen zur Genesung liefern lassen", "description": "Lavendel, Freesien und Ranunkeln. Ein sanfter Strauß, der gute Besserung wünscht – frisch gebunden und in Wien geliefert."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Orange Bouquet – Rosen in Orange | Blumora",
+      "description": "Rosen in Orange und Apricot, in helle Manschette gefasst. Ein warmer Rosenstrauß zum Geburtstag oder als Dank – Blumenversand in Wien."
+    },
     "sortOrder": 8
   },
   {
-    "id": "p-petit", "slug": "petit", "name": "Petit",
-    "tagline": "Kleiner Saisonstrauß",
-    "shortDescription": "Ein kleiner, charmanter Strauß aus saisonalen Blumen – Sprayrosen, Ranunkeln, Kamille und ein Hauch Blau.",
-    "description": "Petit ist unser Strauß für das kleine Zeichen zwischendurch. Saisonale Blüten – cremefarbene Sprayrosen, rosa Ranunkeln, Kamille und ein paar Stiele Rittersporn – kompakt gebunden. Klein im Format, groß in der Wirkung.",
-    "flowers": ["Sprayrosen (creme)", "Ranunkeln (rosa)", "Kamille", "Rittersporn (blau)", "Saisonales Grün"],
-    "care": ["Stiele anschneiden, kleine Vase verwenden.", "Täglich Wasser prüfen.", "Kühl stellen."],
+    "id": "p-red-rose-bouquet",
+    "slug": "red-rose-bouquet",
+    "name": "Red Rose Bouquet",
+    "tagline": "Tiefrote Rosen in dunkler Manschette",
+    "shortDescription": "Ein üppiger Strauß aus tiefroten Rosen mit roter Satinschleife.",
+    "description": "Das Red Rose Bouquet ist ein dicht gebundener Strauß aus tiefroten Rosen in dunkler Manschette, gehalten von einer roten Satinschleife. Die klassische Liebeserklärung zu Valentinstag, Jahrestag oder einem Antrag.",
+    "flowers": [
+      "Rosen"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
     "images": [
-      {"src": "/images/products/petit-1.jpg", "alt": "Petit – Kleiner Saisonstrauß mit Sprayrosen und Kamille", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
-      {"src": "/images/products/petit-3.jpg", "alt": "Petit in einer Glasflasche am Küchenfenster", "kind": "lifestyle"}
+      {
+        "src": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+        "alt": "Strauß aus tiefroten Rosen in dunkelgrauer Manschette mit roter Satinschleife",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/red-rose-bouquet-2.jpg",
+        "alt": "Liegender Strauß aus roten Rosen in schwarz-weißer Manschette neben Kerzen",
+        "kind": "detail"
+      }
     ],
-    "category": "saisonal", "occasions": ["einfach-so", "danke", "geburtstag"],
-    "colors": ["creme", "rosa", "blau"], "styles": ["natuerlich", "froehlich"], "seasons": ["ganzjaehrig"],
-    "tags": ["klein", "unter 40", "einfach so", "saisonal"],
+    "category": "rosen",
+    "occasions": [
+      "liebe",
+      "jahrestag"
+    ],
+    "colors": [
+      "rot"
+    ],
+    "styles": [
+      "klassisch",
+      "romantisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rote rosen",
+      "valentinstag",
+      "liebe",
+      "antrag",
+      "romantik"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 29.9, "description": "ca. 9 Stiele", "popular": true},
-      {"id": "m", "label": "Medium", "price": 39.9, "description": "ca. 14 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 29.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Petit – Kleiner Blumenstrauß unter 40 € liefern", "description": "Ein kleiner saisonaler Strauß für das Zeichen zwischendurch. Unter 40 €, frisch gebunden und in Wien geliefert."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Red Rose Bouquet – rote Rosen | Blumora",
+      "description": "Tiefrote Rosen in dunkler Manschette mit roter Satinschleife. Der klassische Rosenstrauß für Valentinstag und Jahrestag – Blumenversand in Wien."
+    },
     "sortOrder": 9
   },
   {
-    "id": "p-melange", "slug": "melange", "name": "Melange",
-    "tagline": "Karamell-Rosen, Café-au-lait-Dahlien & Gräser",
-    "shortDescription": "Rosen in Karamell, Dahlien in Café au lait und beige Gräser. Warm, ruhig und sehr wienerisch.",
-    "description": "Melange ist unsere Hommage an Wien. Karamellfarbene Gartenrosen, Café-au-lait-Dahlien, cremiger Lisianthus und getrocknete Gräser ergeben einen Strauß in warmen Neutraltönen – zurückhaltend, edel und immer passend.",
-    "flowers": ["Gartenrosen (karamell)", "Dahlien (café au lait)", "Lisianthus (creme)", "Trockengräser"],
-    "care": ["Frisches Wasser alle zwei Tage.", "Stiele schräg anschneiden.", "Gräser trocken halten – nicht ins Wasser."],
+    "id": "p-rosa-bouquet",
+    "slug": "rosa-bouquet",
+    "name": "Rosa Bouquet",
+    "tagline": "Rosen und Gerbera in Rosa, Pastell & Flieder",
+    "shortDescription": "Ein sanfter, romantischer Strauß in Rosa und Pastell.",
+    "description": "Das Rosa Bouquet verbindet Rosen in Rosa und Pastell mit Gerbera und fliederfarbenen Blüten. In weiße Manschette mit rosa Schleife gefasst, wirkt er leicht und liebevoll. Schön zum Geburtstag, Muttertag, zur Geburt oder als Gruß.",
+    "flowers": [
+      "Rosen",
+      "Gerbera"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
     "images": [
-      {"src": "/images/products/melange-1.jpg", "alt": "Melange – Strauß in warmen Karamell- und Cremetönen", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+      {
+        "src": "/images/products/sortiment/rosa-bouquet-1.jpg",
+        "alt": "Strauß aus rosa Rosen, Gerbera und fliederfarbenen Blüten in weißer Manschette mit rosa Schleife",
+        "kind": "front"
+      }
     ],
-    "category": "premium", "occasions": ["danke", "geburtstag", "jahrestag", "einfach-so"],
-    "colors": ["creme", "beige"], "styles": ["elegant", "modern"], "seasons": ["herbst", "ganzjaehrig"],
-    "tags": ["neutral", "wien", "premium", "beige"],
+    "category": "pastell",
+    "occasions": [
+      "geburtstag",
+      "geburt",
+      "einfach-so"
+    ],
+    "colors": [
+      "rosa",
+      "lila",
+      "weiss"
+    ],
+    "styles": [
+      "romantisch",
+      "natuerlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rosa",
+      "pastell",
+      "muttertag",
+      "mama",
+      "geburt",
+      "baby"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 49.9, "description": "ca. 12 Stiele"},
-      {"id": "m", "label": "Medium", "price": 72.9, "description": "ca. 18 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 104.9, "description": "ca. 26 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 49.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": true, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Melange – Blumenstrauß in Karamell und Creme", "description": "Karamell-Rosen und Café-au-lait-Dahlien in warmen Neutraltönen. Melange von Blumora – frisch gebunden in Wien."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Rosa Bouquet – Rosen in Rosa & Pastell | Blumora",
+      "description": "Rosen und Gerbera in Rosa, Pastell und Flieder, in weiße Manschette gefasst. Für Geburtstag, Muttertag oder Geburt – Blumenversand in Wien."
+    },
     "sortOrder": 10
   },
   {
-    "id": "p-sakura", "slug": "sakura", "name": "Sakura",
-    "tagline": "Tulpen, Anemonen & Kirschblütenzweige",
-    "shortDescription": "Rosa Tulpen, weiße Anemonen und ein paar Kirschblütenzweige. Frühling, der an der Tür klingelt.",
-    "description": "Sakura ist der Frühling, frisch gebunden. Weiche rosa Tulpen, weiße Anemonen mit dunkler Mitte und zarte Blütenzweige. Leicht, freundlich, voller Aufbruch – solange die Saison es zulässt.",
-    "flowers": ["Tulpen (rosa)", "Anemonen (weiß)", "Blütenzweige", "Zartes Grün"],
-    "care": ["Tulpen wachsen in der Vase weiter – Stiele bei Bedarf kürzen.", "Wenig Wasser, dafür öfter wechseln.", "Kühl stellen."],
+    "id": "p-blackroses",
+    "slug": "blackroses",
+    "name": "Blackroses",
+    "tagline": "Schwarze Rosen in dunkler Manschette",
+    "shortDescription": "Schwarze Rosen in dunkler Manschette – geheimnisvoll und außergewöhnlich.",
+    "description": "Blackroses ist ein Strauß aus schwarzen Rosen, gefasst in eine dunkle, transparente Manschette. Ein ungewöhnliches Statement für Menschen, die das Besondere schätzen, etwa zum Geburtstag oder Jahrestag.",
+    "flowers": [
+      "Rosen"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
     "images": [
-      {"src": "/images/products/sakura-1.jpg", "alt": "Sakura – Frühlingsstrauß mit rosa Tulpen und Anemonen", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+      {
+        "src": "/images/products/sortiment/blackroses-1.jpg",
+        "alt": "Strauß aus schwarzen Rosen in schwarzer Manschette in einer Glasvase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/blackroses-2.jpg",
+        "alt": "Schwarze Rosen ohne Manschette in einer Glasvase vor einem Fenster",
+        "kind": "detail"
+      }
     ],
-    "category": "saisonal", "occasions": ["geburtstag", "einfach-so", "danke", "geburt"],
-    "colors": ["rosa", "weiss"], "styles": ["natuerlich", "froehlich"], "seasons": ["fruehling"],
-    "tags": ["frühling", "tulpen", "saisonal", "mama", "muttertag"],
+    "category": "rosen",
+    "occasions": [
+      "geburtstag",
+      "jahrestag",
+      "einfach-so"
+    ],
+    "colors": [
+      "schwarz"
+    ],
+    "styles": [
+      "modern",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "schwarze rosen",
+      "schwarz",
+      "besonders",
+      "statement"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 36.9, "description": "ca. 15 Stiele"},
-      {"id": "m", "label": "Medium", "price": 49.9, "description": "ca. 22 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 69.9, "description": "ca. 32 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 36.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Sakura – Frühlingsstrauß mit Tulpen liefern", "description": "Rosa Tulpen, Anemonen und Blütenzweige. Der saisonale Frühlingsstrauß Sakura – frisch gebunden und in Wien geliefert."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Blackroses – schwarze Rosen | Blumora",
+      "description": "Schwarze Rosen in dunkler Manschette: ein ungewöhnlicher Rosenstrauß für Menschen, die das Besondere mögen – Blumenversand in Wien."
+    },
     "sortOrder": 11
   },
   {
-    "id": "p-stille", "slug": "stille", "name": "Stille",
-    "tagline": "Weiße Lilien, Rosen & Eukalyptus",
-    "shortDescription": "Weiße Lilien, weiße Rosen und Lisianthus mit Eukalyptus. Ein würdevoller Strauß für stille Momente.",
-    "description": "Stille ist unser Strauß für Abschied und Mitgefühl. Weiße Lilien, Rosen und Lisianthus werden ruhig und klar mit Eukalyptus gebunden. Ohne Schleife, ohne Aufwand – nur Anteilnahme.",
-    "flowers": ["Lilien (weiß)", "Rosen (weiß)", "Lisianthus (weiß)", "Eukalyptus"],
-    "care": ["Lilienpollen bei Bedarf vorsichtig entfernen.", "Frisches Wasser alle zwei Tage.", "Kühl stellen."],
+    "id": "p-blaueliebe",
+    "slug": "blaueliebe",
+    "name": "Blaue Liebe",
+    "tagline": "Blaue Rosen mit Schleierkraut",
+    "shortDescription": "Leuchtend blaue Rosen mit Schleierkraut – selten und ein echter Blickfang.",
+    "description": "Blaue Liebe ist ein Strauß aus leuchtend blauen Rosen, aufgelockert mit feinem Schleierkraut und gefasst in eine blaue Manschette. Ein besonderes Geschenk zum Geburtstag, Jahrestag oder als Zeichen tiefer Verbundenheit.",
+    "flowers": [
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
     "images": [
-      {"src": "/images/products/stille-1.jpg", "alt": "Stille – Weißer Strauß mit Lilien und Rosen", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"},
-      {"src": "/images/products/stille-3.jpg", "alt": "Stille in einer Steinvase auf einer Eichenkommode", "kind": "lifestyle"}
+      {
+        "src": "/images/products/sortiment/blaueliebe-1.jpg",
+        "alt": "Strauß aus blauen Rosen mit Schleierkraut in blauer Manschette in einer weißen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/blaueliebe-2.jpg",
+        "alt": "Blaue Rosen mit Schleierkraut in blauer Manschette, frontal",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/blaueliebe-3.jpg",
+        "alt": "Liegender Strauß aus blauen Rosen in blauer Manschette auf einer Holzkommode",
+        "kind": "detail"
+      }
     ],
-    "category": "elegant-weiss", "occasions": ["trauer", "gute-besserung"],
-    "colors": ["weiss", "gruen"], "styles": ["elegant", "klassisch"], "seasons": ["ganzjaehrig"],
-    "tags": ["trauer", "weiß", "beileid", "lilien"],
+    "category": "rosen",
+    "occasions": [
+      "geburtstag",
+      "jahrestag",
+      "liebe"
+    ],
+    "colors": [
+      "blau",
+      "weiss"
+    ],
+    "styles": [
+      "modern",
+      "romantisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "blaue rosen",
+      "blau",
+      "besonders",
+      "liebe"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 44.9, "description": "ca. 10 Stiele"},
-      {"id": "m", "label": "Medium", "price": 64.9, "description": "ca. 16 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 89.9, "description": "ca. 24 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 44.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Stille – Trauerblumen würdevoll liefern lassen", "description": "Weiße Lilien und Rosen, ruhig gebunden. Trauerblumen mit Anteilnahme – in Wien geliefert."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Blaue Liebe – blaue Rosen | Blumora",
+      "description": "Leuchtend blaue Rosen mit Schleierkraut in blauer Manschette. Ein seltener Rosenstrauß für besondere Menschen – Blumenversand in Wien."
+    },
     "sortOrder": 12
   },
   {
-    "id": "p-rose-garden", "slug": "rose-garden", "name": "Rose Garden",
-    "tagline": "24 rosa Gartenrosen & Eukalyptus",
-    "shortDescription": "Zartrosa Gartenrosen, großzügig gebunden mit ein wenig Eukalyptus. Romantisch, ohne Kitsch.",
-    "description": "Rose Garden ist der romantische Rosenstrauß für alle, die es lieber weich als laut mögen. Zartrosa Gartenrosen mit voller Blüte, gebunden mit silbrigem Eukalyptus – großzügig, duftend und zeitlos.",
-    "flowers": ["Gartenrosen (rosa)", "Eukalyptus"],
-    "care": ["Stiele schräg anschneiden.", "Frisches Wasser alle zwei Tage.", "Kühl stellen, Zugluft vermeiden."],
+    "id": "p-rosalie",
+    "slug": "rosalie",
+    "name": "Rosalie",
+    "tagline": "Rosa Rosen mit Schleierkraut",
+    "shortDescription": "Rosa Rosen in zarter Manschette – liebevoll und elegant.",
+    "description": "Rosalie ist ein Strauß aus rosa Rosen, aufgelockert mit Schleierkraut und gefasst in eine zartrosa Manschette. Feminin und ruhig in der Wirkung, passt er zum Muttertag, Geburtstag, Jahrestag oder als Dankeschön.",
+    "flowers": [
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
     "images": [
-      {"src": "/images/products/rose-garden-1.jpg", "alt": "Rose Garden – Strauß aus rosa Gartenrosen", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+      {
+        "src": "/images/products/sortiment/rosalie-1.jpg",
+        "alt": "Strauß aus rosa Rosen mit Schleierkraut in zartrosa Manschette in einer weißen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/rosalie-2.jpg",
+        "alt": "Rosalie in rosa Manschette in einer schlichten weißen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/rosalie-3.jpg",
+        "alt": "Rosa Rosen mit Schleierkraut in einer gerippten weißen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/rosalie-4.jpg",
+        "alt": "Rosalie liegend, Draufsicht auf die rosa Rosen und das Schleierkraut",
+        "kind": "detail"
+      }
     ],
-    "category": "rosen", "occasions": ["liebe", "geburtstag", "jahrestag", "danke"],
-    "colors": ["rosa"], "styles": ["romantisch", "klassisch"], "seasons": ["ganzjaehrig"],
-    "tags": ["rosen", "rosa", "romantik", "muttertag", "mama"],
+    "category": "rosen",
+    "occasions": [
+      "geburtstag",
+      "jahrestag",
+      "danke",
+      "liebe"
+    ],
+    "colors": [
+      "rosa",
+      "weiss"
+    ],
+    "styles": [
+      "romantisch",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rosa rosen",
+      "muttertag",
+      "mama",
+      "danke"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 42.9, "stems": 9, "description": "9 Rosen"},
-      {"id": "m", "label": "Medium", "price": 62.9, "stems": 15, "description": "15 Rosen", "popular": true},
-      {"id": "l", "label": "Large", "price": 86.9, "stems": 24, "description": "24 Rosen"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
     ],
-    "basePrice": 42.9, "stock": null, "deliverable": true, "bestseller": true, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Rose Garden – Rosa Rosen liefern lassen in Wien", "description": "Zartrosa Gartenrosen mit Eukalyptus, frisch gebunden. Rosen in Wien liefern lassen – mit Wunschdatum und Grußkarte."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Rosalie – rosa Rosen mit Schleierkraut | Blumora",
+      "description": "Rosa Rosen mit Schleierkraut in zartrosa Manschette. Für Muttertag, Geburtstag oder als Dankeschön – Blumenversand in Wien."
+    },
     "sortOrder": 13
   },
   {
-    "id": "p-confetti", "slug": "confetti", "name": "Confetti",
-    "tagline": "Pfingstrosen, Ranunkeln, Tulpen & Lisianthus",
-    "shortDescription": "Fuchsia, Orange, Gelb und Lila – ein bunter Strauß, der Freude nicht leise sagt.",
-    "description": "Confetti ist unser lautester Strauß – auf die gute Art. Fuchsiafarbene Pfingstrosen, orange Ranunkeln, gelbe Tulpen und lila Lisianthus, elegant zusammengehalten von frischem Grün. Für Geburtstage, Überraschungen und alle, die Farbe lieben.",
-    "flowers": ["Pfingstrosen (fuchsia)", "Ranunkeln (orange)", "Tulpen (gelb)", "Lisianthus (lila)", "Frisches Grün"],
-    "care": ["Frisches Wasser alle zwei Tage.", "Stiele schräg anschneiden.", "Hell, aber ohne direkte Sonne aufstellen."],
+    "id": "p-rot-und-weiss-mix",
+    "slug": "rot-und-weiss-mix",
+    "name": "Rot & Weiß Mix",
+    "tagline": "Rote und weiße Rosen",
+    "shortDescription": "Rote und weiße Rosen in einem festlichen Strauß.",
+    "description": "Der Rot & Weiß Mix vereint rote und weiße Rosen in weißer Manschette, je nach Größe mit Schleierkraut aufgelockert. Leidenschaft trifft Zärtlichkeit: ein Strauß zu Valentinstag, Jahrestag, Hochzeitstag oder als elegantes Geschenk.",
+    "flowers": [
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
     "images": [
-      {"src": "/images/products/confetti-1.jpg", "alt": "Confetti – Bunter Strauß mit Pfingstrosen, Ranunkeln und Tulpen", "kind": "front"},
-      {"src": "/images/products/size-guide.jpg", "alt": "Größenvergleich Small, Medium und Large", "kind": "size"},
-      {"src": "/images/products/packaging.jpg", "alt": "Verpackung in Seidenpapier und Kraftpapier mit Leinenband", "kind": "packaging"}
+      {
+        "src": "/images/products/sortiment/rot-und-weiss-mix-1.jpg",
+        "alt": "Strauß aus roten und weißen Rosen mit Schleierkraut in weißer Manschette, daneben Rosenblätter",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/rot-und-weiss-mix-2.jpg",
+        "alt": "Rote und weiße Rosen dicht gebunden in weißer Manschette",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/rot-und-weiss-mix-3.jpg",
+        "alt": "Rot-weißer Rosenstrauß in weißer Manschette auf einer Holzkommode",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/rot-und-weiss-mix-4.jpg",
+        "alt": "Liegender Strauß aus roten und weißen Rosen, Draufsicht",
+        "kind": "detail"
+      }
     ],
-    "category": "bunt", "occasions": ["geburtstag", "einfach-so", "danke", "gute-besserung"],
-    "colors": ["rosa", "orange", "gelb", "lila"], "styles": ["froehlich", "modern"], "seasons": ["fruehling", "sommer"],
-    "tags": ["bunt", "geburtstag", "überraschung", "farbe"],
+    "category": "rosen",
+    "occasions": [
+      "liebe",
+      "jahrestag",
+      "hochzeit",
+      "einfach-so"
+    ],
+    "colors": [
+      "rot",
+      "weiss"
+    ],
+    "styles": [
+      "klassisch",
+      "romantisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rote rosen",
+      "weisse rosen",
+      "valentinstag",
+      "jahrestag",
+      "hochzeitstag"
+    ],
     "sizes": [
-      {"id": "s", "label": "Small", "price": 41.9, "description": "ca. 12 Stiele"},
-      {"id": "m", "label": "Medium", "price": 58.9, "description": "ca. 18 Stiele", "popular": true},
-      {"id": "l", "label": "Large", "price": 82.9, "description": "ca. 26 Stiele"}
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
+      },
+      {
+        "id": "xxl",
+        "label": "XXL",
+        "price": 0
+      }
     ],
-    "basePrice": 41.9, "stock": null, "deliverable": true, "bestseller": false, "isNew": false, "sameDayCapable": true, "active": true,
-    "seo": {"title": "Confetti – Bunte Geburtstagsblumen liefern", "description": "Ein bunter Strauß mit Pfingstrosen, Ranunkeln und Tulpen. Geburtstagsblumen in Wien – frisch gebunden, mit Wunschdatum geliefert."},
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Rot & Weiß Mix – rote und weiße Rosen | Blumora",
+      "description": "Rote und weiße Rosen in festlicher Manschette. Für Valentinstag, Jahrestag oder Hochzeitstag, in fünf Größen – Blumenversand in Wien."
+    },
     "sortOrder": 14
+  },
+  {
+    "id": "p-tulpenstrauss",
+    "slug": "tulpenstrauss",
+    "name": "Tulpenstrauß",
+    "tagline": "Tulpen in einer Farbe oder gemischt",
+    "shortDescription": "Ein schlichter Strauß aus Tulpen, einfarbig oder bunt gemischt.",
+    "description": "Tulpen bringen mit ihren klaren Farben und ihrer schlanken Form Frühlingsstimmung ins Haus. Der Strauß wird ganz aus Tulpen gebunden, wahlweise in einer Farbe oder als bunter Mix. Erhältlich in Rot, Gelb, Lila, Rosa, Orange, Weiß und Mix.",
+    "flowers": [
+      "Tulpen"
+    ],
+    "care": [
+      "Stiele gerade anschneiden und in kaltes Wasser stellen.",
+      "Wenig Wasser genügt, dafür regelmäßig nachfüllen.",
+      "Tulpen wachsen in der Vase weiter, bei Bedarf nachschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/tulpenstrauss-1.jpg",
+        "alt": "Strauß aus gelben Tulpen in einer Glasvase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/tulpenstrauss-2.jpg",
+        "alt": "Lila Tulpen in Kraftpapier in einer Glasvase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/tulpenstrauss-3.jpg",
+        "alt": "Rote Tulpen in einer beigen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/tulpenstrauss-4.jpg",
+        "alt": "Orange Tulpen in einer Glasvase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/tulpenstrauss-5.jpg",
+        "alt": "Rosa Tulpen in einer Glasvase auf einem Leinentuch",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/tulpenstrauss-6.jpg",
+        "alt": "Bunter Tulpenmix in Rot, Gelb, Rosa, Orange und Lila in einer beigen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/tulpenstrauss-7.jpg",
+        "alt": "Weiße Tulpen in einer weißen Vase",
+        "kind": "detail"
+      }
+    ],
+    "category": "saisonal",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "einfach-so"
+    ],
+    "colors": [
+      "rot",
+      "gelb",
+      "lila",
+      "rosa",
+      "orange",
+      "weiss"
+    ],
+    "styles": [
+      "natuerlich",
+      "klassisch"
+    ],
+    "seasons": [
+      "fruehling"
+    ],
+    "tags": [
+      "tulpen",
+      "fruehling",
+      "saisonal",
+      "bunt",
+      "danke"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Tulpenstrauß – Tulpen in vielen Farben | Blumora",
+      "description": "Ein Strauß aus Tulpen in Rot, Gelb, Lila, Rosa, Orange, Weiß oder gemischt. Frühlingsstimmung für zuhause – Blumenversand in Wien."
+    },
+    "sortOrder": 15
+  },
+  {
+    "id": "p-red-passion",
+    "slug": "red-passion",
+    "name": "Red Passion",
+    "tagline": "Rote Rosen mit Schleierkraut",
+    "shortDescription": "Ein ausdrucksstarker Rosenstrauß in tiefem Rot für große Gefühle.",
+    "description": "Red Passion vereint rote Rosen zu einem dichten, runden Strauß, umrahmt von Schleierkraut und einer dunklen Manschette. In fünf Größen erhältlich – für romantische Gesten und Momente, die in Erinnerung bleiben sollen.",
+    "flowers": [
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Stiele frisch anschneiden.",
+      "Täglich frisches Wasser geben.",
+      "Vor direkter Sonne schützen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/red-passion-1.jpg",
+        "alt": "Liegender Strauß aus dunkelroten Rosen mit Schleierkraut in schwarz-goldener Manschette",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/red-passion-2.jpg",
+        "alt": "Großer Strauß aus roten Rosen mit Schleierkraut in dunkler Manschette in einer weißen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/red-passion-3.jpg",
+        "alt": "Sehr großer, runder Strauß aus roten Rosen mit Schleierkranz in dunkler Manschette",
+        "kind": "detail"
+      }
+    ],
+    "category": "rosen",
+    "occasions": [
+      "liebe",
+      "jahrestag"
+    ],
+    "colors": [
+      "rot",
+      "weiss"
+    ],
+    "styles": [
+      "romantisch",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rote rosen",
+      "valentinstag",
+      "liebe",
+      "antrag",
+      "premium"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
+      },
+      {
+        "id": "xxl",
+        "label": "XXL",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Red Passion – roter Rosenstrauß | Blumora",
+      "description": "Rote Rosen mit Schleierkraut in dunkler Manschette, in fünf Größen. Ein Rosenstrauß für große Gefühle – Blumenversand in Wien."
+    },
+    "sortOrder": 16
+  },
+  {
+    "id": "p-klassiker-der-liebe",
+    "slug": "klassiker-der-liebe",
+    "name": "Klassiker der Liebe",
+    "tagline": "Dicht gebundene rote Rosen",
+    "shortDescription": "Dicht gebundene rote Rosen in dunkler Manschette – zeitlos und voller Gefühl.",
+    "description": "Klassiker der Liebe besteht aus roten Rosen, dicht zu einer runden Form gebunden und in dunkle Manschette mit schwarzer Schleife gefasst. Der Rosenstrauß für Valentinstag, Jahrestag, Antrag oder jede Liebeserklärung.",
+    "flowers": [
+      "Rosen"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+        "alt": "Runder Strauß aus dicht gebundenen roten Rosen in schwarzer Manschette mit Schleife",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/klassiker-der-liebe-2.jpg",
+        "alt": "Rote Rosen in Kugelform in dunkler Manschette, frontal",
+        "kind": "detail"
+      }
+    ],
+    "category": "rosen",
+    "occasions": [
+      "liebe",
+      "jahrestag"
+    ],
+    "colors": [
+      "rot",
+      "schwarz"
+    ],
+    "styles": [
+      "klassisch",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rote rosen",
+      "valentinstag",
+      "antrag",
+      "liebe"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
+      },
+      {
+        "id": "xxl",
+        "label": "XXL",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Klassiker der Liebe – rote Rosen | Blumora",
+      "description": "Dicht gebundene rote Rosen in dunkler Manschette. Der klassische Rosenstrauß für Valentinstag, Jahrestag oder Antrag – Blumenversand in Wien."
+    },
+    "sortOrder": 17
+  },
+  {
+    "id": "p-koenigin-der-herzen",
+    "slug": "koenigin-der-herzen",
+    "name": "Königin der Herzen",
+    "tagline": "Rote Rosen mit Schleierkraut, 13 bis 100 Stück",
+    "shortDescription": "Ein üppiger Rosenstrauß, wählbar von 13 bis 100 Rosen.",
+    "description": "Königin der Herzen verbindet rote Rosen mit feinem Schleierkraut in einer dunklen, transparenten Manschette. Wähle die Anzahl der Rosen von 13 bis 100 – von der kleinen Geste bis zum großen Auftritt.",
+    "flowers": [
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Kühl aufstellen.",
+      "Verwelkte Blüten rechtzeitig entfernen.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/koenigin-der-herzen-1.jpg",
+        "alt": "Strauß aus roten Rosen mit Schleierkraut in dunkler Manschette in einer weißen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/koenigin-der-herzen-2.jpg",
+        "alt": "Großer Strauß aus roten Rosen und Schleierkraut in schwarzer Manschette",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/koenigin-der-herzen-3.jpg",
+        "alt": "Rote Rosen mit Schleierkraut in dunkler Manschette in einem schwarzen Topf",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/koenigin-der-herzen-4.jpg",
+        "alt": "Draufsicht auf rote Rosen mit Schleierkraut in sternförmiger dunkler Manschette",
+        "kind": "detail"
+      }
+    ],
+    "category": "rosen",
+    "occasions": [
+      "liebe",
+      "jahrestag",
+      "geburtstag"
+    ],
+    "colors": [
+      "rot",
+      "weiss"
+    ],
+    "styles": [
+      "romantisch",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rote rosen",
+      "valentinstag",
+      "liebe",
+      "antrag",
+      "100 rosen",
+      "premium"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "13 Rosen",
+        "price": 0,
+        "stems": 13
+      },
+      {
+        "id": "m",
+        "label": "23 Rosen",
+        "price": 0,
+        "stems": 23
+      },
+      {
+        "id": "l",
+        "label": "41 Rosen",
+        "price": 0,
+        "stems": 41
+      },
+      {
+        "id": "xl",
+        "label": "51 Rosen",
+        "price": 0,
+        "stems": 51
+      },
+      {
+        "id": "xxl",
+        "label": "100 Rosen",
+        "price": 0,
+        "stems": 100
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Königin der Herzen – 13 bis 100 Rosen | Blumora",
+      "description": "Rote Rosen mit Schleierkraut, wählbar von 13 bis 100 Stück. Ein üppiger Rosenstrauß für große Momente – Blumenversand in Wien."
+    },
+    "sortOrder": 18
+  },
+  {
+    "id": "p-herbstzauber",
+    "slug": "herbstzauber",
+    "name": "Herbstzauber",
+    "tagline": "Gerbera, Rosen & Lilien in warmen Tönen",
+    "shortDescription": "Ein warmer Strauß in Orange, Rosa und Gelb.",
+    "description": "Herbstzauber verbindet Gerbera, Rosen und Lilien in Orange-, Rosa- und Gelbtönen mit frischem Grün. Locker gebunden bringt er warme Farben ins Haus, gerade wenn die Tage kürzer werden.",
+    "flowers": [
+      "Gerbera",
+      "Rosen",
+      "Lilien"
+    ],
+    "care": [
+      "Nicht neben Obst aufstellen.",
+      "Regelmäßig Wasser nachfüllen.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/herbstzauber-1.jpg",
+        "alt": "Strauß aus orangen Gerbera, Rosen in Apricot und Rosa und Lilien in einer Glasvase",
+        "kind": "front"
+      }
+    ],
+    "category": "saisonal",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "einfach-so"
+    ],
+    "colors": [
+      "orange",
+      "rosa",
+      "gelb"
+    ],
+    "styles": [
+      "natuerlich",
+      "froehlich"
+    ],
+    "seasons": [
+      "herbst"
+    ],
+    "tags": [
+      "herbst",
+      "gerbera",
+      "rosen",
+      "lilien",
+      "saisonal",
+      "orange"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Herbstzauber – Strauß in warmen Tönen | Blumora",
+      "description": "Gerbera, Rosen und Lilien in Orange, Rosa und Gelb. Ein warmer Herbststrauß für Geburtstag oder Dank – Blumenversand in Wien."
+    },
+    "sortOrder": 19
+  },
+  {
+    "id": "p-bluetenfreude",
+    "slug": "bluetenfreude",
+    "name": "Blütenfreude",
+    "tagline": "Rote Rosen, Gerbera & grüne Akzente",
+    "shortDescription": "Ein lebendiger Strauß in Rot und Orange mit frischen grünen Akzenten.",
+    "description": "Blütenfreude verbindet rote Rosen und Gerbera in Rot und Orange mit grünen Pompon-Blüten und Eukalyptus-Grün. Kräftig in den Farben und doch rund in der Form – schön zum Geburtstag, als Dankeschön oder einfach so.",
+    "flowers": [
+      "Rosen",
+      "Gerbera"
+    ],
+    "care": [
+      "Täglich frisches Wasser in die Vase geben.",
+      "Stiele bei Bedarf nachschneiden.",
+      "Welke Blüten regelmäßig entfernen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/bluetenfreude-1.jpg",
+        "alt": "Strauß aus roten Rosen, roten und orangen Gerbera und grünen Pompon-Blüten in einer Glasvase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/bluetenfreude-2.jpg",
+        "alt": "Blütenfreude in einer weißen Vase auf einer Holzkommode",
+        "kind": "detail"
+      }
+    ],
+    "category": "bunt",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "einfach-so"
+    ],
+    "colors": [
+      "rot",
+      "orange",
+      "gruen"
+    ],
+    "styles": [
+      "froehlich",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "gerbera",
+      "rot",
+      "geburtstag",
+      "danke"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Blütenfreude – Rosen & Gerbera in Rot | Blumora",
+      "description": "Rote Rosen, Gerbera in Rot und Orange und frische grüne Akzente. Ein lebendiger Strauß zum Geburtstag – Blumenversand in Wien."
+    },
+    "sortOrder": 20
+  },
+  {
+    "id": "p-zartrosa-zauber",
+    "slug": "zartrosa-zauber",
+    "name": "Zartrosa Zauber",
+    "tagline": "Rosa Rosen, Lilien & Schleierkraut",
+    "shortDescription": "Sanfte Rosatöne mit Lilien – ruhig, harmonisch und fein.",
+    "description": "Zartrosa Zauber verbindet rosa Rosen mit rosa Lilien und Schleierkraut in einer rosa Manschette. Der Strauß wirkt ruhig und harmonisch, mit einer feinen, romantischen Note.",
+    "flowers": [
+      "Rosen",
+      "Lilien",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Blätter, die ins Wasser reichen, entfernen.",
+      "Kühl aufstellen.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/zartrosa-zauber-1.jpg",
+        "alt": "Strauß aus rosa Rosen, rosa Lilien und Schleierkraut in rosa Manschette in einer weißen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/zartrosa-zauber-2.jpg",
+        "alt": "Zartrosa Zauber in rosa Manschette mit großer Schleife",
+        "kind": "detail"
+      }
+    ],
+    "category": "pastell",
+    "occasions": [
+      "geburtstag",
+      "liebe",
+      "geburt",
+      "einfach-so"
+    ],
+    "colors": [
+      "rosa",
+      "weiss"
+    ],
+    "styles": [
+      "romantisch",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "lilien",
+      "rosa",
+      "romantik",
+      "mama"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Zartrosa Zauber – Rosen & Lilien in Rosa | Blumora",
+      "description": "Rosa Rosen, rosa Lilien und Schleierkraut in zarter Manschette. Ein ruhiger, romantischer Strauß – Blumenversand in Wien."
+    },
+    "sortOrder": 21
+  },
+  {
+    "id": "p-strahlender-tag",
+    "slug": "strahlender-tag",
+    "name": "Strahlender Tag",
+    "tagline": "Gerbera, Lilien & Rosen in Orange und Gelb",
+    "shortDescription": "Leuchtendes Orange und Gelb für gute Nachrichten und sonnige Anlässe.",
+    "description": "Strahlender Tag verbindet orange Gerbera und Lilien mit gelben Rosen, hellen Nelken und Schleierkraut. Die kräftigen Farben bringen positive Energie – ein Strauß für Glückwünsche, Erfolge und sonnige Anlässe.",
+    "flowers": [
+      "Gerbera",
+      "Lilien",
+      "Rosen",
+      "Nelken",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Vor Zugluft schützen.",
+      "Wasser regelmäßig wechseln.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/strahlender-tag-1.jpg",
+        "alt": "Strauß aus orangen Gerbera, gelben Rosen und Schleierkraut in weiß-goldener Manschette",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/strahlender-tag-2.jpg",
+        "alt": "Orange Gerbera, Lilien und gelbe Rose in einer weißen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/strahlender-tag-3.jpg",
+        "alt": "Runder Strauß aus orangen Gerbera und Lilien, gelben Rosen und hellen Nelken in einer Glasvase",
+        "kind": "detail"
+      }
+    ],
+    "category": "bunt",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "gute-besserung",
+      "einfach-so"
+    ],
+    "colors": [
+      "orange",
+      "gelb",
+      "creme"
+    ],
+    "styles": [
+      "froehlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "gerbera",
+      "lilien",
+      "rosen",
+      "orange",
+      "gelb",
+      "glueckwunsch",
+      "genesung"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Strahlender Tag – Strauß in Orange & Gelb | Blumora",
+      "description": "Orange Gerbera und Lilien mit gelben Rosen und Schleierkraut. Ein fröhlicher Strauß für Glückwünsche – Blumenversand in Wien."
+    },
+    "sortOrder": 22
+  },
+  {
+    "id": "p-rosentraum",
+    "slug": "rosentraum",
+    "name": "Rosentraum",
+    "tagline": "Rosen in Rosa, Creme & Apricot",
+    "shortDescription": "Ein harmonischer Rosenstrauß zwischen klassischer Schönheit und modernem Stil.",
+    "description": "Rosentraum verbindet Rosen in Rosa, Creme und Apricot mit violetten Blüten, Beerenzweigen und frischem Grün. Gefasst in eine altrosa Manschette wirkt der Strauß üppig und zugleich modern.",
+    "flowers": [
+      "Rosen"
+    ],
+    "care": [
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Vase sauber halten.",
+      "Wasser regelmäßig erneuern."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/rosentraum-1.jpg",
+        "alt": "Gebundener Strauß aus Rosen in Rosa, Creme und Apricot in altrosa Manschette",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/rosentraum-2.jpg",
+        "alt": "Rosentraum in altrosa Manschette in einer weißen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/rosentraum-3.jpg",
+        "alt": "Draufsicht auf Rosen, violette Blüten und Beerenzweige des Straußes",
+        "kind": "detail"
+      }
+    ],
+    "category": "rosen",
+    "occasions": [
+      "geburtstag",
+      "jahrestag",
+      "danke",
+      "einfach-so"
+    ],
+    "colors": [
+      "rosa",
+      "creme",
+      "orange",
+      "lila"
+    ],
+    "styles": [
+      "romantisch",
+      "modern"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rosa",
+      "gemischt",
+      "geburtstag",
+      "mama"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Rosentraum – Rosen in Rosa & Creme | Blumora",
+      "description": "Rosen in Rosa, Creme und Apricot mit violetten Akzenten in altrosa Manschette. Ein harmonischer Rosenstrauß – Blumenversand in Wien."
+    },
+    "sortOrder": 23
+  },
+  {
+    "id": "p-rosenkuss",
+    "slug": "rosenkuss",
+    "name": "Rosenkuss",
+    "tagline": "Weiße Rosen mit Schleierkraut",
+    "shortDescription": "Weiße Rosen mit Schleierkraut – zart, romantisch und hell.",
+    "description": "Rosenkuss besteht aus weißen bis cremefarbenen Rosen, aufgelockert mit feinem Schleierkraut und gefasst in eine weiße Manschette. Ein Strauß für Zuneigung, Nähe und kleine Liebesbotschaften.",
+    "flowers": [
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Nicht zu warm aufstellen.",
+      "Wasserstand täglich prüfen.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/rosenkuss-1.jpg",
+        "alt": "Strauß aus weißen Rosen mit Schleierkraut in weißer Manschette in einer weißen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/rosenkuss-2.jpg",
+        "alt": "Großer Strauß aus weißen Rosen in weißer Manschette in einer weißen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/rosenkuss-3.jpg",
+        "alt": "Liegender Strauß aus weißen Rosen mit Schleierkraut auf einer Holzkommode",
+        "kind": "detail"
+      }
+    ],
+    "category": "elegant-weiss",
+    "occasions": [
+      "liebe",
+      "jahrestag",
+      "hochzeit",
+      "einfach-so"
+    ],
+    "colors": [
+      "weiss",
+      "creme"
+    ],
+    "styles": [
+      "romantisch",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "weisse rosen",
+      "weiss",
+      "romantik",
+      "hochzeit"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Rosenkuss – weiße Rosen | Blumora",
+      "description": "Weiße Rosen mit Schleierkraut in weißer Manschette. Ein zarter, romantischer Rosenstrauß – Blumenversand in Wien."
+    },
+    "sortOrder": 24
+  },
+  {
+    "id": "p-rosenglanz",
+    "slug": "rosenglanz",
+    "name": "Rosenglanz",
+    "tagline": "Rosen in Pastell, Pink & Bordeaux",
+    "shortDescription": "Rosen in Pastell und Pink, elegant zusammengestellt.",
+    "description": "Rosenglanz vereint Rosen in Pastellrosa, Creme, Pink und Bordeaux mit Schleierkraut in einer rosa Manschette. Zeitlos in der Ausstrahlung, in fünf Größen erhältlich.",
+    "flowers": [
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Stiele frisch anschneiden.",
+      "Direkte Sonne vermeiden.",
+      "Blumenwasser regelmäßig wechseln."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/rosenglanz-1.jpg",
+        "alt": "Strauß aus Rosen in Pastellrosa, Pink und Bordeaux in rosa Manschette in einer Glasvase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/rosenglanz-2.jpg",
+        "alt": "Runder Rosenstrauß mit Schleierkraut in rosa Manschette, frontal",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/rosenglanz-3.jpg",
+        "alt": "Liegender Strauß aus pastellfarbenen und pinken Rosen auf einer Holzkommode",
+        "kind": "detail"
+      }
+    ],
+    "category": "rosen",
+    "occasions": [
+      "liebe",
+      "geburtstag",
+      "jahrestag"
+    ],
+    "colors": [
+      "rosa",
+      "creme",
+      "burgund"
+    ],
+    "styles": [
+      "elegant",
+      "romantisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rosa",
+      "pink",
+      "pastell",
+      "liebe"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
+      },
+      {
+        "id": "xxl",
+        "label": "XXL",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Rosenglanz – Rosen in Pastell & Pink | Blumora",
+      "description": "Rosen in Pastellrosa, Pink und Bordeaux mit Schleierkraut, in fünf Größen. Ein eleganter Rosenstrauß – Blumenversand in Wien."
+    },
+    "sortOrder": 25
+  },
+  {
+    "id": "p-pure-liebe",
+    "slug": "pure-liebe",
+    "name": "Pure Liebe",
+    "tagline": "Rosa Rosen, Gerbera, Lilien & Nelken",
+    "shortDescription": "Ein ausdrucksstarker Strauß in Rosa und Pink, der ohne Worte spricht.",
+    "description": "Pure Liebe verbindet rosa Rosen mit pinker Gerbera, rosa Lilien, Nelken und Schleierkraut. Intensiv in den Rosa- und Pinktönen, mit hellen Akzenten aufgelockert – ein Strauß voller Gefühl.",
+    "flowers": [
+      "Rosen",
+      "Gerbera",
+      "Lilien",
+      "Nelken",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Regelmäßig frisches Wasser geben.",
+      "Vase sauber halten.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/pure-liebe-1.jpg",
+        "alt": "Strauß aus rosa Rosen, pinker Gerbera und rosa Lilien in einer beigen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/pure-liebe-2.jpg",
+        "alt": "Pure Liebe mit Lilien, Gerbera und Nelken in einer beigen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/pure-liebe-3.jpg",
+        "alt": "Runder Strauß aus rosa Rosen, Gerbera, Nelken und Schleierkraut in einer Glasvase",
+        "kind": "detail"
+      }
+    ],
+    "category": "pastell",
+    "occasions": [
+      "liebe",
+      "geburtstag",
+      "jahrestag"
+    ],
+    "colors": [
+      "rosa",
+      "weiss"
+    ],
+    "styles": [
+      "romantisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "gerbera",
+      "lilien",
+      "rosa",
+      "liebe",
+      "mama"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Pure Liebe – Strauß in Rosa & Pink | Blumora",
+      "description": "Rosa Rosen, pinke Gerbera, Lilien und Nelken mit Schleierkraut. Ein Strauß voller Gefühl – Blumenversand in Wien."
+    },
+    "sortOrder": 26
+  },
+  {
+    "id": "p-pink-harmony",
+    "slug": "pink-harmony",
+    "name": "Pink Harmony",
+    "tagline": "Pinke Gerbera, Rosen & violette Akzente",
+    "shortDescription": "Kräftige Pinktöne zu einem frischen, modernen Strauß kombiniert.",
+    "description": "Pink Harmony verbindet pinke Gerbera und Rosen mit weißen und fliederfarbenen Blüten, violetten Akzenten und Schleierkraut. Lebendig und frisch, mit viel Charme.",
+    "flowers": [
+      "Gerbera",
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Kühl aufstellen.",
+      "Verwelkte Blüten entfernen.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/pink-harmony-1.jpg",
+        "alt": "Strauß aus pinken Gerbera, Rosen und fliederfarbenen Blüten in einer beigen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/pink-harmony-2.jpg",
+        "alt": "Runder Strauß mit pinken Gerbera, Rosen und violetten Akzenten",
+        "kind": "detail"
+      }
+    ],
+    "category": "bunt",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "einfach-so"
+    ],
+    "colors": [
+      "rosa",
+      "lila",
+      "weiss"
+    ],
+    "styles": [
+      "modern",
+      "froehlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "gerbera",
+      "rosen",
+      "pink",
+      "rosa",
+      "geburtstag"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Pink Harmony – Gerbera & Rosen in Pink | Blumora",
+      "description": "Pinke Gerbera und Rosen mit fliederfarbenen und violetten Akzenten. Ein frischer, moderner Strauß – Blumenversand in Wien."
+    },
+    "sortOrder": 27
+  },
+  {
+    "id": "p-love-deluxe",
+    "slug": "love-deluxe",
+    "name": "Love Deluxe",
+    "tagline": "Bunter Rosenstrauß in Rosa, Gelb, Apricot & Lila",
+    "shortDescription": "Ein großzügiger, bunter Rosenstrauß für besondere Anlässe.",
+    "description": "Love Deluxe ist ein Rosenstrauß in vielen Farben: Rosa, Creme, Apricot, Gelb und Lila, gefasst in eine rosa Manschette. Für besondere Anlässe und große Gesten, in fünf Größen erhältlich.",
+    "flowers": [
+      "Rosen"
+    ],
+    "care": [
+      "Stiele nachschneiden.",
+      "Blumenwasser täglich wechseln.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/love-deluxe-1.jpg",
+        "alt": "Bunter Rosenstrauß in Rosa, Gelb, Apricot und Lila in rosa Manschette in einer weißen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/love-deluxe-2.jpg",
+        "alt": "Großer bunter Rosenstrauß in rosa Manschette, frontal",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/love-deluxe-3.jpg",
+        "alt": "Liegender bunter Rosenstrauß in rosa Manschette auf einer Holzkommode",
+        "kind": "detail"
+      }
+    ],
+    "category": "premium",
+    "occasions": [
+      "liebe",
+      "geburtstag",
+      "jahrestag"
+    ],
+    "colors": [
+      "rosa",
+      "creme",
+      "orange",
+      "gelb",
+      "lila"
+    ],
+    "styles": [
+      "romantisch",
+      "froehlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "bunt",
+      "premium",
+      "liebe",
+      "geburtstag"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
+      },
+      {
+        "id": "xxl",
+        "label": "XXL",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Love Deluxe – bunter Rosenstrauß | Blumora",
+      "description": "Rosen in Rosa, Creme, Apricot, Gelb und Lila in rosa Manschette, in fünf Größen. Für große Gesten – Blumenversand in Wien."
+    },
+    "sortOrder": 28
+  },
+  {
+    "id": "p-liebeserklaerung",
+    "slug": "liebeserklaerung",
+    "name": "Liebeserklärung",
+    "tagline": "Rote & grüne Rosen mit Lilien",
+    "shortDescription": "Ein emotionaler Strauß in Rot, um „Ich liebe dich“ zu sagen.",
+    "description": "Liebeserklärung verbindet rote Rosen mit hellgrünen Rosen, weißen Lilien, roten Akzentblüten und Schleierkraut. Kräftig und doch frisch in der Wirkung – ein Strauß, der Gefühle sichtbar macht.",
+    "flowers": [
+      "Rosen",
+      "Lilien",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Vor Hitze schützen.",
+      "Wasser regelmäßig erneuern.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/liebeserklaerung-1.jpg",
+        "alt": "Strauß aus roten und hellgrünen Rosen mit Lilien und Schleierkraut in einer Glasvase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/liebeserklaerung-2.jpg",
+        "alt": "Liebeserklärung in einer weißen Vase auf einer Holzkommode",
+        "kind": "detail"
+      }
+    ],
+    "category": "rosen",
+    "occasions": [
+      "liebe",
+      "jahrestag"
+    ],
+    "colors": [
+      "rot",
+      "gruen",
+      "weiss"
+    ],
+    "styles": [
+      "romantisch",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "rote rosen",
+      "lilien",
+      "liebe",
+      "valentinstag"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Liebeserklärung – rote Rosen & Lilien | Blumora",
+      "description": "Rote und hellgrüne Rosen mit Lilien und Schleierkraut. Ein Strauß, um „Ich liebe dich“ zu sagen – Blumenversand in Wien."
+    },
+    "sortOrder": 29
+  },
+  {
+    "id": "p-klassische-schoenheit",
+    "slug": "klassische-schoenheit",
+    "name": "Klassische Schönheit",
+    "tagline": "Rosen & Gerbera in Rosa mit Orange-Akzenten",
+    "shortDescription": "Elegant und ausgewogen – ein Strauß mit stilvoller Zurückhaltung.",
+    "description": "Klassische Schönheit verbindet Rosen in Altrosa und Weiß mit pinker Gerbera, kleinen orangen Blüten und Schleierkraut. Gefasst in eine dunkle Manschette mit goldenem Rand wirkt der Strauß ausgewogen und zeitlos.",
+    "flowers": [
+      "Rosen",
+      "Gerbera",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Nicht direkt neben die Heizung stellen.",
+      "Stiele vor dem Einstellen schräg anschneiden.",
+      "Blumenwasser regelmäßig wechseln."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/klassische-schoenheit-1.jpg",
+        "alt": "Strauß aus altrosa Rosen und pinker Gerbera in dunkler Manschette mit goldenem Rand",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/klassische-schoenheit-2.jpg",
+        "alt": "Klassische Schönheit in einer weißen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/klassische-schoenheit-3.jpg",
+        "alt": "Draufsicht auf Rosen, Gerbera und Schleierkraut in dunkler Manschette",
+        "kind": "detail"
+      }
+    ],
+    "category": "bunt",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "jahrestag"
+    ],
+    "colors": [
+      "rosa",
+      "weiss",
+      "orange"
+    ],
+    "styles": [
+      "elegant",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "gerbera",
+      "rosa",
+      "elegant",
+      "geburtstag"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Klassische Schönheit – Rosen & Gerbera | Blumora",
+      "description": "Rosen in Altrosa und Weiß mit pinker Gerbera in dunkler Manschette. Ein ausgewogener, zeitloser Strauß – Blumenversand in Wien."
+    },
+    "sortOrder": 30
+  },
+  {
+    "id": "p-herzklopfen",
+    "slug": "herzklopfen",
+    "name": "Herzklopfen",
+    "tagline": "Rosa Rosen & pinke Gerbera",
+    "shortDescription": "Verspielt und lebendig: rosa Rosen treffen auf pinke Gerbera.",
+    "description": "Herzklopfen verbindet zartrosa Rosen mit pinker Gerbera, kleinen weiß-grünen Blüten und feinem lila Beiwerk. Rund gebunden und voller Farbe – ein Strauß mit viel Gefühl.",
+    "flowers": [
+      "Rosen",
+      "Gerbera"
+    ],
+    "care": [
+      "Täglich frisches Wasser geben.",
+      "Stiele schräg anschneiden.",
+      "Kühl und ohne direkte Sonne aufstellen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/herzklopfen-1.jpg",
+        "alt": "Runder Strauß aus zartrosa Rosen und pinker Gerbera in einer weißen Vase",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/herzklopfen-2.jpg",
+        "alt": "Herzklopfen in einer weißen Vase, seitlich",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/herzklopfen-3.jpg",
+        "alt": "Strauß aus rosa Rosen und pinker Gerbera in einer Glasvase",
+        "kind": "detail"
+      }
+    ],
+    "category": "pastell",
+    "occasions": [
+      "liebe",
+      "geburtstag",
+      "einfach-so"
+    ],
+    "colors": [
+      "rosa",
+      "weiss",
+      "gruen"
+    ],
+    "styles": [
+      "romantisch",
+      "froehlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "gerbera",
+      "rosa",
+      "pink",
+      "liebe"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Herzklopfen – rosa Rosen & Gerbera | Blumora",
+      "description": "Zartrosa Rosen und pinke Gerbera, rund gebunden. Ein verspielter Strauß voller Gefühl – Blumenversand in Wien."
+    },
+    "sortOrder": 31
+  },
+  {
+    "id": "p-froehlicher-bluetenmix",
+    "slug": "froehlicher-bluetenmix",
+    "name": "Fröhlicher Blütenmix",
+    "tagline": "Bunter Mix mit Rosen & Gerbera",
+    "shortDescription": "Ein bunter Strauß, der Lebensfreude ausstrahlt.",
+    "description": "Der Fröhliche Blütenmix verbindet rote Rosen, Gerbera in Gelb, Rosa und Rot und weitere Blüten in Gelb, Orange und Violett. Gefasst in eine rote Manschette – ideal, um ein Lächeln zu verschenken.",
+    "flowers": [
+      "Rosen",
+      "Gerbera"
+    ],
+    "care": [
+      "Kühl aufstellen.",
+      "Wasser regelmäßig wechseln.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/froehlicher-bluetenmix-1.jpg",
+        "alt": "Bunter Strauß mit Gerbera und Rosen in roter Manschette auf einer Holzkommode",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/froehlicher-bluetenmix-2.jpg",
+        "alt": "Fröhlicher Blütenmix in roter Manschette in einer weißen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/froehlicher-bluetenmix-3.jpg",
+        "alt": "Draufsicht auf rote Rosen, gelbe und rosa Gerbera in roter Manschette",
+        "kind": "detail"
+      }
+    ],
+    "category": "bunt",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "gute-besserung",
+      "einfach-so"
+    ],
+    "colors": [
+      "rot",
+      "gelb",
+      "rosa",
+      "orange",
+      "lila"
+    ],
+    "styles": [
+      "froehlich",
+      "wild"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "bunt",
+      "gerbera",
+      "rosen",
+      "geburtstag",
+      "laecheln"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Fröhlicher Blütenmix – bunter Strauß | Blumora",
+      "description": "Rote Rosen und Gerbera in Gelb, Rosa und Rot in roter Manschette. Ein bunter Strauß voller Lebensfreude – Blumenversand in Wien."
+    },
+    "sortOrder": 32
+  },
+  {
+    "id": "p-farbtaenzer",
+    "slug": "farbtaenzer",
+    "name": "Farbtänzer",
+    "tagline": "Rosen & Gerbera in Pink mit lila Akzenten",
+    "shortDescription": "Ein lebendiger Mix in Pink, Apricot und Lila.",
+    "description": "Farbtänzer verbindet Rosen und Sprayrosen in Pink und Apricot mit rosa Gerbera, lila Blüten und hellen Beeren. Dicht und lebendig gebunden – modern und ausdrucksstark.",
+    "flowers": [
+      "Rosen",
+      "Gerbera"
+    ],
+    "care": [
+      "Blätter, die ins Wasser reichen, entfernen.",
+      "Vase sauber halten.",
+      "Stiele vor dem Einstellen schräg anschneiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/farbtaenzer-1.jpg",
+        "alt": "Liegender Strauß in Pink und Lila in zartrosa Manschette",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/farbtaenzer-2.jpg",
+        "alt": "Runder Strauß aus pinken Rosen, Gerbera und lila Blüten in einer cremefarbenen Vase",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/farbtaenzer-3.jpg",
+        "alt": "Farbtänzer in einer gerippten Vase, frontal",
+        "kind": "detail"
+      }
+    ],
+    "category": "bunt",
+    "occasions": [
+      "geburtstag",
+      "einfach-so",
+      "danke"
+    ],
+    "colors": [
+      "rosa",
+      "lila",
+      "orange"
+    ],
+    "styles": [
+      "modern",
+      "froehlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "rosen",
+      "gerbera",
+      "pink",
+      "lila",
+      "geburtstag"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Farbtänzer – Strauß in Pink & Lila | Blumora",
+      "description": "Rosen und Gerbera in Pink und Apricot mit lila Akzenten. Ein lebendiger, moderner Strauß – Blumenversand in Wien."
+    },
+    "sortOrder": 33
+  },
+  {
+    "id": "p-blumenbox-herzfoermig",
+    "slug": "blumenbox-herzfoermig",
+    "name": "Blumenbox Herzförmig",
+    "tagline": "Rosen in einer roten Herzbox",
+    "shortDescription": "Rosen in einer herzförmigen Box – eine Liebeserklärung zum Hinstellen.",
+    "description": "In der roten, herzförmigen Box sind Rosen in Rot, Rosa und Weiß mit weiteren Blüten und Schleierkraut arrangiert. Ein Geschenk für Jahrestag, Valentinstag oder als liebevolle Überraschung.",
+    "flowers": [
+      "Rosen",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Rosen leicht befeuchten.",
+      "Kühl aufstellen.",
+      "Vor direkter Sonne schützen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/blumenbox-herzfoermig-1.jpg",
+        "alt": "Rote herzförmige Blumenbox mit Rosen in Rot, Rosa und Weiß und Schleierkraut",
+        "kind": "front"
+      }
+    ],
+    "category": "blumenboxen",
+    "occasions": [
+      "liebe",
+      "jahrestag",
+      "einfach-so"
+    ],
+    "colors": [
+      "rot",
+      "rosa",
+      "weiss"
+    ],
+    "styles": [
+      "romantisch",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "blumenbox",
+      "rosen",
+      "herz",
+      "valentinstag",
+      "liebe"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Blumenbox Herzförmig – Rosen in Herzbox | Blumora",
+      "description": "Rosen in Rot, Rosa und Weiß in einer roten Herzbox. Für Jahrestag und Valentinstag – Blumenversand in Wien."
+    },
+    "sortOrder": 34
+  },
+  {
+    "id": "p-blumenbox-standard",
+    "slug": "blumenbox-standard",
+    "name": "Blumenbox Standard",
+    "tagline": "Rote Rosen in runder Box",
+    "shortDescription": "Klassische Rosen in einer runden Box – schlicht und ausdrucksstark.",
+    "description": "Die Blumenbox Standard füllt eine runde Box mit dicht gesetzten Rosen. Minimalistisch und zeitlos, passt sie zum Geburtstag, als Dankeschön oder zu besonderen Momenten. Erhältlich in Rot und Weiß.",
+    "flowers": [
+      "Rosen"
+    ],
+    "care": [
+      "Rosen regelmäßig leicht gießen.",
+      "Kühl aufstellen.",
+      "Vor direkter Sonne schützen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/blumenbox-standard-1.jpg",
+        "alt": "Rote Rosen in einer runden weißen Box mit rosa und goldenem Rand",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/blumenbox-standard-2.jpg",
+        "alt": "Zwei rote samtige Rundboxen mit roten Rosen auf einem weißen Sockel",
+        "kind": "detail"
+      }
+    ],
+    "category": "blumenboxen",
+    "occasions": [
+      "geburtstag",
+      "danke",
+      "liebe",
+      "einfach-so"
+    ],
+    "colors": [
+      "rot",
+      "weiss"
+    ],
+    "styles": [
+      "modern",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "blumenbox",
+      "rosen",
+      "rote rosen",
+      "geschenk",
+      "danke"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Blumenbox Standard – Rosen in der Box | Blumora",
+      "description": "Dicht gesetzte Rosen in einer runden Box, erhältlich in Rot und Weiß. Ein schlichtes Geschenk – Blumenversand in Wien."
+    },
+    "sortOrder": 35
+  },
+  {
+    "id": "p-rosa-anthurien-im-topf",
+    "slug": "rosa-anthurien-im-topf",
+    "name": "Rosa Anthurien im Topf",
+    "tagline": "Anthurie mit rosa Blüten",
+    "shortDescription": "Eine Anthurie mit zartrosa Blüten – elegant und unaufdringlich.",
+    "description": "Die rosa Anthurie bringt mit ihren zarten Blüten und dem glänzend grünen Laub Farbe in den Raum, ohne laut zu wirken. Sie passt in Wohnräume ebenso wie ins Büro.",
+    "flowers": [
+      "Anthurie"
+    ],
+    "care": [
+      "Hell aufstellen, ohne direkte Sonne.",
+      "Regelmäßig gießen, Staunässe vermeiden.",
+      "Gelegentlich die Blätter mit Wasser besprühen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg",
+        "alt": "Rosa Anthurie in einem altrosa Keramiktopf auf einer Holzkommode",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg",
+        "alt": "Anthurie mit rosa Blüten in einem mauvefarbenen Topf neben Kerzen",
+        "kind": "detail"
+      }
+    ],
+    "category": "pflanzen",
+    "occasions": [
+      "danke",
+      "einfach-so",
+      "geburtstag",
+      "gute-besserung"
+    ],
+    "colors": [
+      "rosa",
+      "gruen"
+    ],
+    "styles": [
+      "elegant",
+      "modern"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "pflanze",
+      "zimmerpflanze",
+      "anthurie",
+      "rosa",
+      "buero"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Rosa Anthurie im Topf – Zimmerpflanze | Blumora",
+      "description": "Anthurie mit zartrosa Blüten und glänzendem Laub. Eine elegante Zimmerpflanze als Geschenk – Blumenversand in Wien."
+    },
+    "sortOrder": 36
+  },
+  {
+    "id": "p-rote-anthurien-im-topf",
+    "slug": "rote-anthurien-im-topf",
+    "name": "Rote Anthurien im Topf",
+    "tagline": "Anthurie mit roten Blüten",
+    "shortDescription": "Eine Anthurie mit leuchtend roten Blüten und moderner Ausstrahlung.",
+    "description": "Rote Anthurien setzen mit ihren glänzenden Blüten kräftige Farbakzente. Als dekorative Zimmerpflanze oder Geschenk bleibt sie bei guter Pflege lange schön.",
+    "flowers": [
+      "Anthurie"
+    ],
+    "care": [
+      "Heller Standort ohne direkte Sonne.",
+      "Erde gleichmäßig feucht halten.",
+      "Staunässe vermeiden."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/rote-anthurien-im-topf-1.jpg",
+        "alt": "Rote Anthurie in einem roten Keramiktopf auf einer Holzkommode",
+        "kind": "front"
+      }
+    ],
+    "category": "pflanzen",
+    "occasions": [
+      "danke",
+      "einfach-so",
+      "geburtstag",
+      "gute-besserung"
+    ],
+    "colors": [
+      "rot",
+      "gruen"
+    ],
+    "styles": [
+      "modern",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "pflanze",
+      "zimmerpflanze",
+      "anthurie",
+      "rot"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Rote Anthurie im Topf – Zimmerpflanze | Blumora",
+      "description": "Anthurie mit leuchtend roten Blüten im Topf. Eine dekorative Zimmerpflanze als Geschenk – Blumenversand in Wien."
+    },
+    "sortOrder": 37
+  },
+  {
+    "id": "p-xxl-rote-anthurien-im-topf",
+    "slug": "xxl-rote-anthurien-im-topf",
+    "name": "XXL Rote Anthurien im Topf",
+    "tagline": "Große Anthurie mit roten Blüten",
+    "shortDescription": "Eine große, üppige Anthurie mit vielen roten Blüten.",
+    "description": "Diese rote Anthurie ist über 80 cm groß und trägt zahlreiche rote Blüten über dichtem, glänzendem Laub. Ein ausdrucksvoller Blickfang für Wohnraum oder Büro.",
+    "flowers": [
+      "Anthurie"
+    ],
+    "care": [
+      "Hell aufstellen, ohne direkte Sonne.",
+      "Regelmäßig gießen, Staunässe vermeiden.",
+      "Staub gelegentlich von den Blättern wischen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg",
+        "alt": "Große Anthurie mit vielen roten Blüten in einem roten Topf neben Kerzen",
+        "kind": "front"
+      }
+    ],
+    "category": "pflanzen",
+    "occasions": [
+      "danke",
+      "einfach-so",
+      "geburtstag",
+      "gute-besserung"
+    ],
+    "colors": [
+      "rot",
+      "gruen"
+    ],
+    "styles": [
+      "modern",
+      "elegant"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "pflanze",
+      "zimmerpflanze",
+      "anthurie",
+      "rot",
+      "xxl",
+      "gross"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "XXL Rote Anthurie im Topf | Blumora",
+      "description": "Große Anthurie mit zahlreichen roten Blüten im Topf. Ein Blickfang für Wohnraum oder Büro – Blumenversand in Wien."
+    },
+    "sortOrder": 38
+  },
+  {
+    "id": "p-bromelie-im-topf",
+    "slug": "bromelie-im-topf",
+    "name": "Bromelie im Topf",
+    "tagline": "Bromelie mit roter Blüte",
+    "shortDescription": "Eine Bromelie mit kräftig roter Blüte und tropischem Flair.",
+    "description": "Die Bromelie setzt mit ihrer roten Blütenrosette und dem schlanken grünen Laub lebendige Akzente. Eine dekorative Zimmerpflanze für Wohn- oder Arbeitsräume und ein besonderes Geschenk.",
+    "flowers": [
+      "Bromelie"
+    ],
+    "care": [
+      "Hell aufstellen, ohne direkte Sonne.",
+      "Wasser regelmäßig in den Blatttrichter geben.",
+      "Erde nur leicht feucht halten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/bromelie-im-topf-1.jpg",
+        "alt": "Bromelie mit roter Blüte in einem roten Topf auf einer Holzkommode",
+        "kind": "front"
+      }
+    ],
+    "category": "pflanzen",
+    "occasions": [
+      "danke",
+      "einfach-so",
+      "geburtstag",
+      "gute-besserung"
+    ],
+    "colors": [
+      "rot",
+      "gruen"
+    ],
+    "styles": [
+      "modern",
+      "natuerlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "pflanze",
+      "zimmerpflanze",
+      "bromelie",
+      "exotisch",
+      "rot"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Bromelie im Topf – Zimmerpflanze | Blumora",
+      "description": "Bromelie mit roter Blüte im Topf: tropisches Flair für Wohnraum oder Büro – Blumenversand in Wien."
+    },
+    "sortOrder": 39
+  },
+  {
+    "id": "p-gummibaum-im-topf",
+    "slug": "gummibaum-im-topf",
+    "name": "Gummibaum im Topf",
+    "tagline": "Gummibaum mit dunkelgrünem Laub",
+    "shortDescription": "Ein pflegeleichter Gummibaum mit glänzenden, dunkelgrünen Blättern.",
+    "description": "Der Gummibaum wirkt mit seinen großen, glänzenden Blättern modern und ruhig. Er ist pflegeleicht und passt gut in Wohn- und Büroräume.",
+    "flowers": [
+      "Gummibaum"
+    ],
+    "care": [
+      "Heller bis halbschattiger Standort.",
+      "Sparsam gießen, er kommt mit wenig Wasser aus.",
+      "Blätter gelegentlich abstauben."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/gummibaum-im-topf-1.jpg",
+        "alt": "Gummibaum mit dunkelgrünen Blättern in einem roten Topf auf einer Holzkommode",
+        "kind": "front"
+      }
+    ],
+    "category": "pflanzen",
+    "occasions": [
+      "danke",
+      "einfach-so",
+      "geburtstag"
+    ],
+    "colors": [
+      "gruen"
+    ],
+    "styles": [
+      "modern",
+      "natuerlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "pflanze",
+      "zimmerpflanze",
+      "gummibaum",
+      "gruen",
+      "pflegeleicht",
+      "buero"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Gummibaum im Topf – pflegeleichte Pflanze | Blumora",
+      "description": "Gummibaum mit glänzenden, dunkelgrünen Blättern. Eine pflegeleichte Zimmerpflanze für Wohnung und Büro – Blumenversand in Wien."
+    },
+    "sortOrder": 40
+  },
+  {
+    "id": "p-weisse-orchidee-im-topf",
+    "slug": "weisse-orchidee-im-topf",
+    "name": "Weiße Orchidee im Topf",
+    "tagline": "Orchidee im Topf, in mehreren Farben",
+    "shortDescription": "Eine Orchidee im Topf – ruhig, edel und zeitlos.",
+    "description": "Die Orchidee steht für Eleganz und Ruhe. Mit ihren feinen Blütenrispen ist sie eine stilvolle Wahl für Wohnräume, Büros oder als Geschenk. Erhältlich in Lila, Rosa, Gelb, Weiß und Blau.",
+    "flowers": [
+      "Orchidee"
+    ],
+    "care": [
+      "Hell aufstellen, ohne direkte Sonne.",
+      "Sparsam gießen, Staunässe vermeiden.",
+      "Verblühte Rispen erst entfernen, wenn sie vertrocknet sind."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg",
+        "alt": "Weiße Orchidee mit pinkem Blütenschlund in einem cremefarbenen Keramiktopf",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg",
+        "alt": "Orchidee mit zartrosa Blüten in einem cremefarbenen Keramiktopf",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg",
+        "alt": "Gelbe Orchidee in einem cremefarbenen Keramiktopf",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg",
+        "alt": "Orchidee mit violetten Blüten in einem pinken Topf",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg",
+        "alt": "Orchidee mit blauen Blüten in einem grauen Topf neben Kerzen",
+        "kind": "detail"
+      }
+    ],
+    "category": "pflanzen",
+    "occasions": [
+      "danke",
+      "einfach-so",
+      "geburtstag",
+      "gute-besserung"
+    ],
+    "colors": [
+      "weiss",
+      "rosa",
+      "gelb",
+      "lila",
+      "blau"
+    ],
+    "styles": [
+      "elegant",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "pflanze",
+      "zimmerpflanze",
+      "orchidee",
+      "weiss",
+      "buero"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Orchidee im Topf – in fünf Farben | Blumora",
+      "description": "Orchidee im Topf in Weiß, Rosa, Gelb, Lila oder Blau. Eine elegante Zimmerpflanze als Geschenk – Blumenversand in Wien."
+    },
+    "sortOrder": 41
+  },
+  {
+    "id": "p-trauerbukett-rot",
+    "slug": "trauerbukett-rot",
+    "name": "Trauerbukett Rot",
+    "tagline": "Rote Rosen, Gerbera & Nelken mit Tannengrün",
+    "shortDescription": "Ein Trauerbukett in Rot als Zeichen von Liebe und Verbundenheit.",
+    "description": "Das Trauerbukett in Rot verbindet rote Rosen, Gerbera und Nelken mit gelben Rosen, Schleierkraut und Tannengrün. Eine würdevolle Geste des Gedenkens, die starke Gefühle still ausdrückt. Die Zusammenstellung kann je nach Saison leicht variieren.",
+    "flowers": [
+      "Rosen",
+      "Gerbera",
+      "Nelken",
+      "Schleierkraut"
+    ],
+    "care": [
+      "Kühl aufstellen, nicht in direkte Sonne oder neben die Heizung.",
+      "Bei Gestecken die Steckmasse feucht halten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerbukett-rot-1.jpg",
+        "alt": "Trauerbukett mit roten Rosen, Gerbera und Nelken, gelben Rosen und Tannengrün auf einem Steinsockel",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "rot",
+      "gelb"
+    ],
+    "styles": [
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerbukett",
+      "beerdigung",
+      "begraebnis",
+      "rot"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "60 cm",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "80 cm",
+        "price": 0
+      },
+      {
+        "id": "l",
+        "label": "100 cm",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerbukett Rot – Rosen & Gerbera | Blumora",
+      "description": "Trauerbukett in Rot mit Rosen, Gerbera und Nelken auf Tannengrün, in drei Größen. Ein würdevoller Abschiedsgruß – Blumenversand in Wien."
+    },
+    "sortOrder": 42
+  },
+  {
+    "id": "p-trauerbukett-rosa",
+    "slug": "trauerbukett-rosa",
+    "name": "Trauerbukett Rosa",
+    "tagline": "Rosa Rosen & violette Blüten",
+    "shortDescription": "Ein Trauerbukett in zarten Rosatönen mit tröstender Ausstrahlung.",
+    "description": "Rosa Rosen, violette und rosa Blüten und Tannengrün geben diesem Trauerbukett eine sanfte, tröstende Wirkung. Es steht für Dankbarkeit, Nähe und liebevolle Erinnerung – passend für einen stillen, persönlichen Abschied.",
+    "flowers": [
+      "Rosen"
+    ],
+    "care": [
+      "Kühl aufstellen, nicht in direkte Sonne oder neben die Heizung.",
+      "Bei Gestecken die Steckmasse feucht halten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerbukett-rosa-1.jpg",
+        "alt": "Trauerbukett mit rosa Rosen und violetten Blüten auf Tannengrün, mit weißer Schleife, auf einem Steinsockel",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "rosa",
+      "lila"
+    ],
+    "styles": [
+      "romantisch",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerbukett",
+      "beerdigung",
+      "begraebnis",
+      "rosa"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "60 cm",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "80 cm",
+        "price": 0
+      },
+      {
+        "id": "l",
+        "label": "100 cm",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerbukett Rosa – zarte Rosatöne | Blumora",
+      "description": "Trauerbukett in zarten Rosatönen mit rosa Rosen auf Tannengrün, in drei Größen. Für einen stillen Abschied – Blumenversand in Wien."
+    },
+    "sortOrder": 43
+  },
+  {
+    "id": "p-trauerbukett-pastell",
+    "slug": "trauerbukett-pastell",
+    "name": "Trauerbukett Pastell",
+    "tagline": "Lilien, Rosen & blaue Blüten in Pastell",
+    "shortDescription": "Ein ruhiges Trauerbukett in feinen Pastelltönen.",
+    "description": "Das Trauerbukett in Pastell verbindet rosa Lilien und Rosen mit hellblauen, fliederfarbenen und weißen Blüten. Die feinen Farbabstufungen vermitteln Trost und Anteilnahme. Die Blumen können saisonal variieren.",
+    "flowers": [
+      "Lilien",
+      "Rosen"
+    ],
+    "care": [
+      "Kühl aufstellen, nicht in direkte Sonne oder neben die Heizung.",
+      "Bei Gestecken die Steckmasse feucht halten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerbukett-pastell-1.jpg",
+        "alt": "Trauerbukett in Pastell mit rosa Lilien, Rosen und hellblauen Blüten, mit schwarzer Schleife, auf einem Steinsockel",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "rosa",
+      "blau",
+      "lila",
+      "weiss"
+    ],
+    "styles": [
+      "elegant",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerbukett",
+      "beerdigung",
+      "begraebnis",
+      "pastell"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "60 cm",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "80 cm",
+        "price": 0
+      },
+      {
+        "id": "l",
+        "label": "100 cm",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerbukett Pastell – ruhige Farbtöne | Blumora",
+      "description": "Trauerbukett in Pastell mit Lilien, Rosen und hellblauen Blüten, in drei Größen. Dezent und stilvoll – Blumenversand in Wien."
+    },
+    "sortOrder": 44
+  },
+  {
+    "id": "p-trauerbukett-orange",
+    "slug": "trauerbukett-orange",
+    "name": "Trauerbukett Orange",
+    "tagline": "Rosen, Gerbera & Nelken in Orange und Gelb",
+    "shortDescription": "Ein Trauerbukett in warmen Orangetönen, das Wertschätzung ausdrückt.",
+    "description": "Rosen, Gerbera und Nelken in Orange, Gelb und Apricot verbinden sich mit Tannengrün zu einem warmen Trauerbukett. Es steht für Dankbarkeit und das Gedenken an ein erfülltes Leben und eignet sich für Aufbahrung oder Gedenkfeier.",
+    "flowers": [
+      "Rosen",
+      "Gerbera",
+      "Nelken"
+    ],
+    "care": [
+      "Kühl aufstellen, nicht in direkte Sonne oder neben die Heizung.",
+      "Bei Gestecken die Steckmasse feucht halten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerbukett-orange-1.jpg",
+        "alt": "Trauerbukett mit Rosen, Gerbera und Nelken in Orange und Gelb auf Tannengrün, auf einem Steinsockel",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "orange",
+      "gelb",
+      "rosa"
+    ],
+    "styles": [
+      "klassisch",
+      "natuerlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerbukett",
+      "beerdigung",
+      "begraebnis",
+      "orange"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "60 cm",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "80 cm",
+        "price": 0
+      },
+      {
+        "id": "l",
+        "label": "100 cm",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerbukett Orange – warme Töne | Blumora",
+      "description": "Trauerbukett in Orange und Gelb mit Rosen, Gerbera und Nelken, in drei Größen. Für Aufbahrung und Gedenkfeier – Blumenversand in Wien."
+    },
+    "sortOrder": 45
+  },
+  {
+    "id": "p-trauerbukett-weiss",
+    "slug": "trauerbukett-weiss",
+    "name": "Trauerbukett Weiß",
+    "tagline": "Weiße Lilien & Chrysanthemen",
+    "shortDescription": "Ein klassisches Trauerbukett in Weiß – schlicht und würdevoll.",
+    "description": "Weiße Lilien, Chrysanthemen und kleine weiße Blüten auf Tannengrün machen dieses Trauerbukett schlicht und zeitlos. Weiß steht für Frieden und Abschied – passend für formelle Trauerfeiern oder als stilles Zeichen der Anteilnahme.",
+    "flowers": [
+      "Lilien",
+      "Chrysanthemen"
+    ],
+    "care": [
+      "Kühl aufstellen, nicht in direkte Sonne oder neben die Heizung.",
+      "Bei Gestecken die Steckmasse feucht halten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerbukett-weiss-1.jpg",
+        "alt": "Trauerbukett aus weißen Lilien, Chrysanthemen und kleinen weißen Blüten auf Tannengrün, auf einem Steinsockel",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "weiss",
+      "gruen"
+    ],
+    "styles": [
+      "elegant",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerbukett",
+      "beerdigung",
+      "begraebnis",
+      "weiss"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "60 cm",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "80 cm",
+        "price": 0
+      },
+      {
+        "id": "l",
+        "label": "100 cm",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerbukett Weiß – Lilien & Chrysanthemen | Blumora",
+      "description": "Klassisches Trauerbukett in Weiß mit Lilien und Chrysanthemen, in drei Größen. Schlicht und würdevoll – Blumenversand in Wien."
+    },
+    "sortOrder": 46
+  },
+  {
+    "id": "p-trauerbukett-gelb",
+    "slug": "trauerbukett-gelb",
+    "name": "Trauerbukett Gelb",
+    "tagline": "Sonnenblumen, gelbe Rosen & Nelken",
+    "shortDescription": "Ein Trauerbukett in Gelb für Erinnerung, Hoffnung und Dankbarkeit.",
+    "description": "Sonnenblumen, gelbe Rosen und apricotfarbene Nelken auf Tannengrün machen dieses Trauerbukett hell und warm. Es passt zu Abschieden, bei denen das Leben im Mittelpunkt steht. Die Blumen sind saisonabhängig.",
+    "flowers": [
+      "Sonnenblumen",
+      "Rosen",
+      "Nelken"
+    ],
+    "care": [
+      "Kühl aufstellen, nicht in direkte Sonne oder neben die Heizung.",
+      "Bei Gestecken die Steckmasse feucht halten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerbukett-gelb-1.jpg",
+        "alt": "Trauerbukett mit Sonnenblumen, gelben Rosen und apricotfarbenen Nelken auf Tannengrün, auf einem Steinsockel",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "gelb",
+      "orange"
+    ],
+    "styles": [
+      "natuerlich",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerbukett",
+      "beerdigung",
+      "begraebnis",
+      "gelb",
+      "sonnenblumen"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "60 cm",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "80 cm",
+        "price": 0
+      },
+      {
+        "id": "l",
+        "label": "100 cm",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerbukett Gelb – Sonnenblumen & Rosen | Blumora",
+      "description": "Trauerbukett in Gelb mit Sonnenblumen, Rosen und Nelken, in drei Größen. Ein heller Abschiedsgruß – Blumenversand in Wien."
+    },
+    "sortOrder": 47
+  },
+  {
+    "id": "p-trauerkranz-bunt",
+    "slug": "trauerkranz-bunt",
+    "name": "Trauerkranz Bunt",
+    "tagline": "Gerbera, Rosen & Blüten in bunten Farben",
+    "shortDescription": "Ein bunter Trauerkranz für den Abschied von einem lebensfrohen Menschen.",
+    "description": "Der bunte Trauerkranz verbindet Gerbera, Rosen und weitere Blüten in Gelb, Orange, Rosa und Weiß auf grünem Grund. Ein würdevoller und zugleich farbenfroher Abschiedsgruß, von Hand gebunden. Für Wünsche zur Gestaltung melde dich gerne bei uns.",
+    "flowers": [
+      "Gerbera",
+      "Rosen"
+    ],
+    "care": [
+      "Kühl und schattig aufstellen.",
+      "Steckmasse bei Bedarf leicht befeuchten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerkranz-bunt-1.jpg",
+        "alt": "Bunter Trauerkranz mit Gerbera, Lilien und weißen Blüten, mit schwarzer Schleife, auf einer Holzstaffelei",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "gelb",
+      "orange",
+      "rosa",
+      "weiss"
+    ],
+    "styles": [
+      "froehlich",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerkranz",
+      "kranz",
+      "beerdigung",
+      "begraebnis",
+      "bunt"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerkranz Bunt – farbenfroher Abschied | Blumora",
+      "description": "Bunter Trauerkranz mit Gerbera und Rosen, von Hand gebunden. Ein farbenfroher Abschiedsgruß – Blumenversand in Wien."
+    },
+    "sortOrder": 48
+  },
+  {
+    "id": "p-trauerkranz-pink",
+    "slug": "trauerkranz-pink",
+    "name": "Trauerkranz Pink",
+    "tagline": "Gerbera & Rosen in Pink und Rot",
+    "shortDescription": "Ein Trauerkranz in Pink und Rot als liebevoller Abschiedsgruß.",
+    "description": "Der Trauerkranz in Pink und Rot verbindet pinke Gerbera, Rosen und weitere Blüten mit hellen Akzenten und frischem Grün. Ausdruck von Liebe und Erinnerung, von Hand gebunden. Für Wünsche zur Gestaltung melde dich gerne bei uns.",
+    "flowers": [
+      "Gerbera",
+      "Rosen"
+    ],
+    "care": [
+      "Kühl und schattig aufstellen.",
+      "Steckmasse bei Bedarf leicht befeuchten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerkranz-pink-1.jpg",
+        "alt": "Trauerkranz mit pinken Gerbera, Rosen und roten Blüten, mit bordeauxfarbener Schleife, auf einer Holzstaffelei",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "rosa",
+      "rot",
+      "weiss"
+    ],
+    "styles": [
+      "romantisch",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerkranz",
+      "kranz",
+      "beerdigung",
+      "begraebnis",
+      "pink",
+      "rot"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerkranz Pink – Pink & Rot | Blumora",
+      "description": "Trauerkranz in Pink und Rot mit Gerbera und Rosen, von Hand gebunden. Ein liebevoller Abschiedsgruß – Blumenversand in Wien."
+    },
+    "sortOrder": 49
+  },
+  {
+    "id": "p-trauerkranz-rot-gelb",
+    "slug": "trauerkranz-rot-gelb",
+    "name": "Trauerkranz Rot-Gelb",
+    "tagline": "Rote und gelbe Gerbera",
+    "shortDescription": "Ein leuchtender Trauerkranz in Rot und Gelb.",
+    "description": "Rote und gelbe Gerbera, dicht auf grünem Grund gesteckt, machen diesen Trauerkranz zu einem leuchtenden Abschiedsgruß voller Wärme, Dankbarkeit und schöner Erinnerungen. Von Hand gebunden. Für Wünsche zur Gestaltung melde dich gerne bei uns.",
+    "flowers": [
+      "Gerbera"
+    ],
+    "care": [
+      "Kühl und schattig aufstellen.",
+      "Steckmasse bei Bedarf leicht befeuchten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg",
+        "alt": "Trauerkranz aus roten und gelben Gerbera mit silbergrauer Schleife auf einer Holzstaffelei",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "rot",
+      "gelb"
+    ],
+    "styles": [
+      "klassisch",
+      "froehlich"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerkranz",
+      "kranz",
+      "beerdigung",
+      "begraebnis",
+      "rot",
+      "gelb"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerkranz Rot-Gelb – Gerbera | Blumora",
+      "description": "Trauerkranz aus roten und gelben Gerbera, von Hand gebunden. Ein warmer, leuchtender Abschiedsgruß – Blumenversand in Wien."
+    },
+    "sortOrder": 50
+  },
+  {
+    "id": "p-trauerkranz-rot",
+    "slug": "trauerkranz-rot",
+    "name": "Trauerkranz Rot",
+    "tagline": "Rote Gerbera & Rosen",
+    "shortDescription": "Ein klassischer Trauerkranz in Rot für Liebe, die bleibt.",
+    "description": "Der Trauerkranz in Rot verbindet rote Gerbera und Rosen auf Tannengrün. Ein klassischer, würdevoller Abschiedsgruß für Liebe, die über den Abschied hinaus bleibt. Von Hand gebunden. Für Wünsche zur Gestaltung melde dich gerne bei uns.",
+    "flowers": [
+      "Gerbera",
+      "Rosen"
+    ],
+    "care": [
+      "Kühl und schattig aufstellen.",
+      "Steckmasse bei Bedarf leicht befeuchten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerkranz-rot-1.jpg",
+        "alt": "Trauerkranz aus roten Gerbera und Rosen auf Tannengrün mit schwarzer Schleife auf einer Holzstaffelei",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "rot"
+    ],
+    "styles": [
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerkranz",
+      "kranz",
+      "beerdigung",
+      "begraebnis",
+      "rot"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerkranz Rot – Gerbera & Rosen | Blumora",
+      "description": "Trauerkranz in Rot mit Gerbera und Rosen auf Tannengrün, von Hand gebunden. Ein klassischer Abschiedsgruß – Blumenversand in Wien."
+    },
+    "sortOrder": 51
+  },
+  {
+    "id": "p-trauerkranz-weiss",
+    "slug": "trauerkranz-weiss",
+    "name": "Trauerkranz Weiß",
+    "tagline": "Weiße Rosen, Gerbera & Nelken",
+    "shortDescription": "Ein schlichter Trauerkranz in Weiß für stille Anteilnahme.",
+    "description": "Weiße Rosen, Gerbera und Nelken mit hellgrünen Akzenten und Grün bilden diesen schlichten Kranz. Weiß steht für Frieden und stille Anteilnahme. Von Hand gebunden. Für Wünsche zur Gestaltung melde dich gerne bei uns.",
+    "flowers": [
+      "Rosen",
+      "Gerbera",
+      "Nelken"
+    ],
+    "care": [
+      "Kühl und schattig aufstellen.",
+      "Steckmasse bei Bedarf leicht befeuchten."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+        "alt": "Ringförmiger Trauerkranz aus weißen Rosen, Gerbera und Nelken mit weißer Schleife auf einer Holzstaffelei",
+        "kind": "front"
+      }
+    ],
+    "category": "trauer",
+    "occasions": [
+      "trauer"
+    ],
+    "colors": [
+      "weiss",
+      "gruen"
+    ],
+    "styles": [
+      "elegant",
+      "klassisch"
+    ],
+    "seasons": [
+      "ganzjaehrig"
+    ],
+    "tags": [
+      "trauer",
+      "trauerkranz",
+      "kranz",
+      "beerdigung",
+      "begraebnis",
+      "weiss"
+    ],
+    "sizes": [
+      {
+        "id": "m",
+        "label": "Standard",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Trauerkranz Weiß – schlicht & würdevoll | Blumora",
+      "description": "Trauerkranz in Weiß mit Rosen, Gerbera und Nelken, von Hand gebunden. Ein schlichter Abschiedsgruß – Blumenversand in Wien."
+    },
+    "sortOrder": 52
+  },
+  {
+    "id": "p-adventskraenze",
+    "slug": "adventskraenze",
+    "name": "Adventskränze",
+    "tagline": "Tannengrün mit vier Kerzen, in sieben Farben",
+    "shortDescription": "Ein handgebundener Adventskranz aus Tannengrün mit vier Kerzen.",
+    "description": "Der Adventskranz wird aus duftendem Tannengrün von Hand gebunden und mit vier Kerzen, Schleifen, Kugeln, Zapfen und weiteren Details geschmückt. Erhältlich in Rot, Grau, Lila, Gold, Beige, Weinrot und Rosa.",
+    "flowers": [],
+    "care": [
+      "Kerzen nie unbeaufsichtigt brennen lassen.",
+      "Kühl aufstellen, nicht direkt neben die Heizung.",
+      "Das Tannengrün gelegentlich leicht mit Wasser besprühen."
+    ],
+    "images": [
+      {
+        "src": "/images/products/sortiment/adventskraenze-1.jpg",
+        "alt": "Adventskranz aus Tannengrün mit vier roten Kerzen, roten Schleifen, Kugeln und Zapfen",
+        "kind": "front"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-2.jpg",
+        "alt": "Adventskranz mit vier hellgrauen Kerzen, cremefarbenen Schleifen und Orangenscheiben",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-3.jpg",
+        "alt": "Adventskranz mit lila und rosa Kerzen, violetten Schleifen und Engelfigur",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-4.jpg",
+        "alt": "Adventskranz mit vier goldenen Kerzen, goldenen Schleifen, Zimtstangen und Zapfen",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-5.jpg",
+        "alt": "Adventskranz mit vier rosa Kerzen, bordeauxfarbenen Schleifen und Engelfigur",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-6.jpg",
+        "alt": "Adventskranz mit vier weinroten Kerzen, Kugeln und weinroten Schleifen",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-7.jpg",
+        "alt": "Adventskranz in Weinrot mit glitzernden Kerzen und roten Kugeln, seitlich",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-8.jpg",
+        "alt": "Adventskranz mit vier dunkelgrauen Kerzen, cremefarbenen Schleifen und roten Kugeln",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-9.jpg",
+        "alt": "Adventskranz in Gold mit goldenen Kerzen und Schleifen, seitlich",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-10.jpg",
+        "alt": "Adventskranz in Rosa mit rosa Kerzen und bordeauxfarbenen Schleifen, seitlich",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-11.jpg",
+        "alt": "Adventskranz in Lila mit violetten Schleifen und Orangenscheibe, Draufsicht",
+        "kind": "detail"
+      },
+      {
+        "src": "/images/products/sortiment/adventskraenze-12.jpg",
+        "alt": "Adventskranz mit hellgrauen Kerzen und cremefarbenen Schleifen, seitlich",
+        "kind": "detail"
+      }
+    ],
+    "category": "advent",
+    "occasions": [
+      "einfach-so"
+    ],
+    "colors": [
+      "rot",
+      "lila",
+      "rosa",
+      "beige",
+      "burgund",
+      "gruen"
+    ],
+    "styles": [
+      "klassisch",
+      "natuerlich"
+    ],
+    "seasons": [
+      "winter"
+    ],
+    "tags": [
+      "advent",
+      "adventskranz",
+      "weihnachten",
+      "kerzen",
+      "tannengruen"
+    ],
+    "sizes": [
+      {
+        "id": "s",
+        "label": "Klein",
+        "price": 0
+      },
+      {
+        "id": "m",
+        "label": "Mittel",
+        "price": 0,
+        "popular": true
+      },
+      {
+        "id": "l",
+        "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
+      }
+    ],
+    "basePrice": 0,
+    "pricePending": true,
+    "stock": null,
+    "deliverable": true,
+    "bestseller": false,
+    "isNew": false,
+    "sameDayCapable": false,
+    "active": true,
+    "seo": {
+      "title": "Adventskranz – handgebunden mit Kerzen | Blumora",
+      "description": "Handgebundener Adventskranz aus Tannengrün mit vier Kerzen, in sieben Farben und vier Größen – Blumenversand in Wien."
+    },
+    "sortOrder": 53
   }
 ]

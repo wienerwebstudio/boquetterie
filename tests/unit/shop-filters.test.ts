@@ -25,7 +25,7 @@ describe("parseShopParams", () => {
   });
 
   it("drops unknown values and keeps the rest", () => {
-    const p = parseShopParams({ farbe: "rot,neon,rosa", blume: "orchideen", groesse: "xl,m", sort: "random", preis: "1-2", datum: "12.09.2026", plz: "abc", sameday: "true" });
+    const p = parseShopParams({ farbe: "rot,neon,rosa", blume: "orchideen", groesse: "xxxl,m", sort: "random", preis: "1-2", datum: "12.09.2026", plz: "abc", sameday: "true" });
     expect(p.farbe).toEqual(["rot", "rosa"]);
     expect(p.blume).toEqual([]);
     expect(p.groesse).toEqual(["m"]);

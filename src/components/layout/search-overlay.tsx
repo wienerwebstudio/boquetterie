@@ -202,7 +202,11 @@ function ProductHit({ p, compact }: { p: SearchResponse["products"][number]; com
       <div className="min-w-0">
         <p className="font-serif text-[19px] leading-tight text-ink group-hover:text-forest">{p.name}</p>
         <p className="line-clamp-1 text-[13px] text-ink-muted">{p.tagline}</p>
-        <p className="mt-0.5 text-[13px] tabular-nums text-ink"><span className="text-ink-muted">ab </span>{formatPrice(p.basePrice)}</p>
+        {p.pricePending ? (
+          <p className="mt-0.5 text-[13px] text-ink-muted">Preis folgt</p>
+        ) : (
+          <p className="mt-0.5 text-[13px] tabular-nums text-ink"><span className="text-ink-muted">ab </span>{formatPrice(p.basePrice)}</p>
+        )}
       </div>
     </Link>
   );

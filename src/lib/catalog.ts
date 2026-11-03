@@ -36,9 +36,11 @@ export const SEASON_OPTIONS = [
 ];
 
 export const SIZE_OPTIONS = [
-  { value: "s", label: "Small" },
-  { value: "m", label: "Medium" },
-  { value: "l", label: "Large" },
+  { value: "s", label: "Klein" },
+  { value: "m", label: "Mittel" },
+  { value: "l", label: "Groß" },
+  { value: "xl", label: "XL" },
+  { value: "xxl", label: "XXL" },
 ];
 
 export const SORT_OPTIONS = [
@@ -98,12 +100,17 @@ export function productFlowerFamilies(p: Product) {
   return Array.from(new Set(p.flowers.map(flowerFamily).filter((f): f is string => Boolean(f))));
 }
 
+/** True while a product's prices are not fixed yet: shown with "Preis folgt", not orderable. */
+export function isPricePending(p: Pick<Product, "pricePending">) {
+  return p.pricePending === true;
+}
+
 export function matchesCategory(p: Product, category: Category) {
   if (category.slug === "alle") return true;
   const r = category.rule ?? {};
   if (p.category === category.slug) return true;
   if (r.categorySlugs?.includes(p.category)) return true;
-  if (r.maxPrice !== undefined && p.basePrice <= r.maxPrice) return true;
+  if (r.maxPrice !== undefined && !isPricePending(p) && p.basePrice <= r.maxPrice) return true;
   if (r.bestseller && p.bestseller) return true;
   if (r.isNew && p.isNew) return true;
   if (r.tags?.some((t) => p.tags.includes(t))) return true;
@@ -124,6 +131,7 @@ export function applyFilter(products: Product[], f: ProductFilter, categories: C
     if (!some(f.seasons, p.seasons)) return false;
     if (!some(f.sizes, p.sizes.map((s) => s.id))) return false;
     if (!some(f.flowers, productFlowerFamilies(p))) return false;
+    if ((f.minPrice !== undefined || f.maxPrice !== undefined) && isPricePending(p)) return false;
     if (f.minPrice !== undefined && p.basePrice < f.minPrice) return false;
     if (f.maxPrice !== undefined && p.basePrice > f.maxPrice) return false;
     if (f.sameDayOnly && !p.sameDayCapable) return false;
@@ -136,8 +144,9 @@ export function applyFilter(products: Product[], f: ProductFilter, categories: C
 export function sortProducts(products: Product[], sort: SortValue) {
   const arr = [...products];
   switch (sort) {
-    case "price-asc": return arr.sort((a, b) => a.basePrice - b.basePrice);
-    case "price-desc": return arr.sort((a, b) => b.basePrice - a.basePrice);
+    // Products without a price yet go last in both directions.
+    case "price-asc": return arr.sort((a, b) => Number(isPricePending(a)) - Number(isPricePending(b)) || a.basePrice - b.basePrice);
+    case "price-desc": return arr.sort((a, b) => Number(isPricePending(a)) - Number(isPricePending(b)) || b.basePrice - a.basePrice);
     case "new": return arr.sort((a, b) => Number(b.isNew) - Number(a.isNew) || (a.sortOrder ?? 0) - (b.sortOrder ?? 0));
     case "bestseller": return arr.sort((a, b) => Number(b.bestseller) - Number(a.bestseller) || (a.sortOrder ?? 0) - (b.sortOrder ?? 0));
     default: return arr.sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0));

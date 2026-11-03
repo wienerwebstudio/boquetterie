@@ -35,7 +35,7 @@ Stand: 94 Tests, alle grün.
 
 ## E2E-Tests (`tests/e2e/*.spec.ts`)
 
-Chromium, Desktop-Viewport 1280×900 (der Filter-Sheet-Test setzt 390×844). `baseURL` ist `http://localhost:3000`; mit `PLAYWRIGHT_BASE_URL` lässt sich ein anderer Server angeben. Lokal wird ein bereits laufender Dev-Server wiederverwendet (`reuseExistingServer`), sonst startet Playwright `npm run dev`. In CI wird vorher gebaut und `npm run start` verwendet.
+Chromium, Desktop-Viewport 1280×900 (der Filter-Sheet-Test setzt 390×844). Die Journeys laufen gegen einen festen, bestellbaren Testkatalog: `CONTENT_OVERLAY_DIR=tests/fixtures/content` (gesetzt in `playwright.config.ts` und im CI-Job) lässt den JSON-Store `products.json` und `homepage.json` aus diesem Ordner lesen statt aus `content/`. So bleiben die Tests unabhängig vom Live-Sortiment (das z. B. noch auf „Preis folgt“ stehen kann). Die Unit-Tests nutzen denselben Produktkatalog. `baseURL` ist `http://localhost:3000`; mit `PLAYWRIGHT_BASE_URL` lässt sich ein anderer Server angeben. Lokal wird ein bereits laufender Dev-Server wiederverwendet (`reuseExistingServer`), sonst startet Playwright `npm run dev`. In CI wird vorher gebaut und `npm run start` verwendet.
 
 | Spec | Was geprüft wird |
 | --- | --- |

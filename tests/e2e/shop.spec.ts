@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { gotoPage } from "./helpers";
 
-/** Products that carry the colour "rosa" in content/products.json. */
+/** Products that carry the colour "rosa" in the E2E catalog (tests/fixtures/content/products.json). */
 const ROSA = ["Blush", "Pavlova", "Petit", "Sakura", "Rose Garden", "Confetti"];
 
 test.describe("Shop-Listing", () => {

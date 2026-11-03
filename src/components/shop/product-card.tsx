@@ -5,7 +5,7 @@ import { Heart } from "lucide-react";
 import type { Product } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { formatPrice, cn } from "@/lib/format";
-import { primaryImage, hoverImage, productBadges, lowestPrice } from "@/lib/catalog";
+import { primaryImage, hoverImage, productBadges, lowestPrice, isPricePending } from "@/lib/catalog";
 import { routes } from "@/lib/urls";
 import { useFavorites } from "@/store/favorites";
 import { useSyncExternalStore } from "react";
@@ -58,10 +58,14 @@ export function ProductCard({ product, priority = false, showSameDay = false, cl
       <div className="mt-3.5 flex flex-col gap-1">
         <div className="flex items-baseline justify-between gap-3">
           <h3 className="font-serif text-[22px] leading-tight text-ink"><Link href={href}>{product.name}</Link></h3>
-          <p className="shrink-0 text-[14px] tabular-nums text-ink"><span className="text-[12px] text-ink-muted">ab </span><span className="font-semibold">{formatPrice(lowestPrice(product))}</span></p>
+          {isPricePending(product) ? (
+            <p className="shrink-0 text-[13px] text-ink-muted">Preis folgt</p>
+          ) : (
+            <p className="shrink-0 text-[14px] tabular-nums text-ink"><span className="text-[12px] text-ink-muted">ab </span><span className="font-semibold">{formatPrice(lowestPrice(product))}</span></p>
+          )}
         </div>
         <p className="line-clamp-1 text-[13.5px] text-ink-muted">{product.tagline}</p>
-        <p className="mt-0.5 text-[12px] tracking-[0.04em] text-ink-muted">{product.sizes.map((s) => s.label).join(" · ")}</p>
+        {product.sizes.length > 1 && <p className="mt-0.5 text-[12px] tracking-[0.04em] text-ink-muted">{product.sizes.map((s) => s.label).join(" · ")}</p>}
         <Link href={href} className="mt-2 inline-flex h-10 items-center justify-center rounded-md border border-line text-[13px] font-semibold text-forest transition-colors hover:border-forest md:hidden">Auswählen</Link>
       </div>
     </article>
