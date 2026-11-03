@@ -12,7 +12,7 @@
     "deliveryCheck": {"title": "Wohin dürfen wir liefern?", "placeholder": "PLZ eingeben", "button": "Lieferung prüfen"}
   },
   "occasions": {"headline": "Blumen für jeden Moment", "subheadline": "Manchmal braucht es keinen großen Anlass. Nur die richtige Geste.", "slugs": ["geburtstag", "liebe", "danke", "gute-besserung", "jahrestag", "geburt", "hochzeit", "einfach-so", "trauer"]},
-  "bestsellers": {"headline": "Unsere Lieblingssträuße", "subheadline": "Die Sträuße, die am häufigsten Freude machen.", "productSlugs": ["amour", "blush", "ivory", "solstice", "rose-garden", "petit", "melange", "toscana"]},
+  "bestsellers": {"headline": "Unsere Lieblingssträuße", "subheadline": "Eine Auswahl aus unserem Sortiment.", "productSlugs": ["red-passion", "rosenglanz", "love-deluxe", "zartrosa-zauber", "rot-und-weiss-mix", "blaueliebe", "froehlicher-bluetenmix", "weiss-bouquet"]},
   "collections": {"headline": "Finde deinen perfekten Strauß", "subheadline": "Nach Farbe, Stil oder Budget.", "slugs": ["alle", "rosen", "saisonal", "pastell", "bunt", "elegant-weiss", "premium", "unter-40"]},
   "howItWorks": {
     "headline": "Freude schenken war noch nie so einfach.",
@@ -30,7 +30,7 @@
     "cta": {"label": "Adventskränze", "href": "/blumen/advent"},
     "image": "/images/products/sortiment/adventskraenze-1.jpg",
     "imageAlt": "Adventskranz aus Tannengrün mit vier roten Kerzen auf einer Holzkommode",
-    "productSlugs": ["toscana", "sakura", "petit"]
+    "productSlugs": ["adventskraenze", "herbstzauber", "sonnenzauber"]
   },
   "editorial": {
     "eyebrow": "Handwerk",

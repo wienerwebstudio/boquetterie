@@ -1,7 +1,7 @@
 [
   {
-    "id": "p-ros-dream",
-    "slug": "ros-dream",
+    "id": "p-rose-dream",
+    "slug": "rose-dream",
     "name": "Rosé Dream",
     "tagline": "Rosa Rosen, pinke Gerbera & weiße Lilien",
     "shortDescription": "Ein heller, lockerer Strauß in Rosa und Weiß, der gute Laune in jeden Raum bringt.",
@@ -19,7 +19,7 @@
     ],
     "images": [
       {
-        "src": "/images/products/sortiment/ros-dream-1.jpg",
+        "src": "/images/products/sortiment/rose-dream-1.jpg",
         "alt": "Strauß aus rosa Rosen, pinken Gerbera und weißen Lilien in einer Glasvase auf einer Holzkommode",
         "kind": "front"
       }
@@ -65,6 +65,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -148,6 +153,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -233,6 +243,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -312,6 +327,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -398,6 +418,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -489,6 +514,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -576,6 +606,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -653,6 +688,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -736,6 +776,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -818,6 +863,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -899,6 +949,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -988,6 +1043,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -1083,6 +1143,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -1674,6 +1739,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -1758,6 +1828,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -1844,6 +1919,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -1940,6 +2020,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -2031,6 +2116,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -2120,6 +2210,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -2313,6 +2408,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -2398,6 +2498,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -2585,6 +2690,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -2676,6 +2786,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -2765,6 +2880,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
@@ -2859,6 +2979,11 @@
         "id": "l",
         "label": "Groß",
         "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 0
       }
     ],
     "basePrice": 0,
@@ -2948,6 +3073,11 @@
       {
         "id": "l",
         "label": "Groß",
+        "price": 0
+      },
+      {
+        "id": "xl",
+        "label": "XL",
         "price": 0
       }
     ],
