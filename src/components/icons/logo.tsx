@@ -2,9 +2,9 @@ import Image from "next/image";
 import { cn } from "@/lib/format";
 
 /**
- * Blumora-Logo als Bilddatei unter `public/images/brand/`.
- * `horizontal` – Zeichen und Schriftzug nebeneinander, für Kopf- und Fußzeile.
- * `stacked` – die vollständige Marke wie geliefert, für Flächen mit Höhe.
+ * Blumora-Schriftzug (das „o“ ist eine Rose) als Bilddatei unter `public/images/brand/`.
+ * `horizontal` – Kopfzeile und Menü. `stacked` – größer, für die Fußzeile.
+ * Das Rosenzeichen allein liegt als `logo-mark.png` daneben (Icons, Social Media).
  */
 export function Logo({
   className,
@@ -18,13 +18,13 @@ export function Logo({
   const stacked = variant === "stacked";
   return (
     <Image
-      src={stacked ? "/images/brand/logo.png" : "/images/brand/logo-horizontal.png"}
+      src="/images/brand/logo-horizontal.png"
       alt="Blumora"
-      width={stacked ? 600 : 719}
-      height={stacked ? 601 : 254}
+      width={1200}
+      height={247}
       priority={priority}
-      sizes={stacked ? "120px" : "180px"}
-      className={cn("w-auto", stacked ? "h-[72px]" : "h-8 lg:h-9", className)}
+      sizes={stacked ? "200px" : "180px"}
+      className={cn("w-auto", stacked ? "h-10" : "h-7 lg:h-8", className)}
     />
   );
 }
