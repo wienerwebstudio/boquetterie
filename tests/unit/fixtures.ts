@@ -1,13 +1,13 @@
 /**
- * Shared fixtures for the unit suite. Admin content (zones, categories,
+ * Shared fixtures for the unit suite. Admin content (categories,
  * occasions) is loaded from `content/` so the tests exercise the data the shop
- * ships with; products come from the fixed, priced test catalog in
+ * ships with; products and delivery zones come from the fixed test data in
  * `tests/fixtures/content/` (the live catalog may still be "Preis folgt").
  * Synthetic objects are built via the factories.
  */
 import type { CartItem, Category, Coupon, DeliveryZone, Occasion, Product, SiteSettings } from "@/types";
 import type { LocalNow } from "@/lib/delivery";
-import zonesJson from "../../content/delivery-zones.json";
+import zonesJson from "../fixtures/content/delivery-zones.json";
 import productsJson from "../fixtures/content/products.json";
 import categoriesJson from "../../content/categories.json";
 import occasionsJson from "../../content/occasions.json";

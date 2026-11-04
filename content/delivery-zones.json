@@ -7,9 +7,9 @@
     "cutoff": "14:00", "leadDays": 1,
     "sameDay": true, "sameDayCutoff": "12:00",
     "windows": [
-      {"id": "am", "label": "9–13 Uhr", "from": "09:00", "to": "13:00", "surcharge": 0, "active": true},
-      {"id": "pm", "label": "13–18 Uhr", "from": "13:00", "to": "18:00", "surcharge": 0, "active": true},
-      {"id": "eve", "label": "18–21 Uhr", "from": "18:00", "to": "21:00", "surcharge": 4.9, "active": true}
+      {"id": "am", "label": "9–12 Uhr", "from": "09:00", "to": "12:00", "surcharge": 0, "active": true},
+      {"id": "pm", "label": "12–17 Uhr", "from": "12:00", "to": "17:00", "surcharge": 0, "active": true},
+      {"id": "eve", "label": "17–22 Uhr", "from": "17:00", "to": "22:00", "surcharge": 0, "active": true}
     ],
     "active": true
   },
@@ -21,8 +21,9 @@
     "cutoff": "14:00", "leadDays": 1,
     "sameDay": true, "sameDayCutoff": "11:00",
     "windows": [
-      {"id": "am", "label": "9–13 Uhr", "from": "09:00", "to": "13:00", "surcharge": 0, "active": true},
-      {"id": "pm", "label": "13–18 Uhr", "from": "13:00", "to": "18:00", "surcharge": 0, "active": true}
+      {"id": "am", "label": "9–12 Uhr", "from": "09:00", "to": "12:00", "surcharge": 0, "active": true},
+      {"id": "pm", "label": "12–17 Uhr", "from": "12:00", "to": "17:00", "surcharge": 0, "active": true},
+      {"id": "eve", "label": "17–22 Uhr", "from": "17:00", "to": "22:00", "surcharge": 0, "active": true}
     ],
     "active": true
   },
@@ -34,7 +35,9 @@
     "cutoff": "13:00", "leadDays": 1,
     "sameDay": false, "sameDayCutoff": "11:00",
     "windows": [
-      {"id": "day", "label": "9–18 Uhr", "from": "09:00", "to": "18:00", "surcharge": 0, "active": true}
+      {"id": "am", "label": "9–12 Uhr", "from": "09:00", "to": "12:00", "surcharge": 0, "active": true},
+      {"id": "pm", "label": "12–17 Uhr", "from": "12:00", "to": "17:00", "surcharge": 0, "active": true},
+      {"id": "eve", "label": "17–22 Uhr", "from": "17:00", "to": "22:00", "surcharge": 0, "active": true}
     ],
     "active": true
   },
