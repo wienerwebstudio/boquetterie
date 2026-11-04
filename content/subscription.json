@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "headline": "Mehr Blumen im Alltag.",
+  "intro": "Frische Blumen im Rhythmus, der zu dir passt – für Zuhause, das Büro, den Empfang oder die Gastronomie. Jede Lieferung ist ein neuer saisonaler Strauß, gebunden von unseren Florist:innen.",
+  "plans": [
+    {"id": "small", "name": "Small", "price": 34.9, "description": "Ein kleiner saisonaler Strauß – ideal für Schreibtisch oder Küche.", "stems": "ca. 10–12 Stiele"},
+    {"id": "medium", "name": "Medium", "price": 49.9, "description": "Der Klassiker für Wohnzimmer, Empfang oder Meetingraum.", "stems": "ca. 16–20 Stiele", "popular": true},
+    {"id": "large", "name": "Large", "price": 74.9, "description": "Großzügig und präsent – für Lobby, Hotel oder Restaurant.", "stems": "ca. 26–30 Stiele"}
+  ],
+  "frequencies": [
+    {"id": "weekly", "label": "Wöchentlich", "discount": 10},
+    {"id": "biweekly", "label": "Alle zwei Wochen", "discount": 5},
+    {"id": "monthly", "label": "Monatlich", "discount": 0}
+  ],
+  "audiences": ["Zuhause", "Büro", "Empfang", "Gastronomie", "Unternehmen"],
+  "image": "/images/editorial/studio.jpg"
+}
