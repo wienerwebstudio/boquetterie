@@ -7,6 +7,7 @@ Next.js 16 (App Router, `src/`), TypeScript, Tailwind v4, Zustand. Language of t
 - `data/*.json` – runtime data (orders, newsletter, customers, reminders, …). Git-ignored.
 - `src/lib/cms.ts` – the ONLY data-access layer (server only). It reads/writes through `src/lib/store/` (`json` files by default, `postgres` when `DATABASE_URL` is set). Never touch the filesystem elsewhere.
 - `src/lib/payments.ts` + `src/lib/payments/*` – provider abstraction (mock / stripe / paypal, chosen by env vars). Amounts always come from the server-side order. `src/lib/orders.ts` owns order creation, stock reservation and payment state transitions.
+- `src/lib/courier/*` – RiderX courier booking after payment (pickup at window start, geocoding, webhook `/api/webhooks/riderx`); env-activated, see `docs/COURIER.md`.
 - `src/lib/mail.ts` + `src/lib/mail/*` – mail provider (resend / console), templates, reminders, review requests, cron helpers.
 - `src/lib/auth/*` – customer magic-link sessions; `src/lib/admin-session.ts` – admin cookie. `src/lib/rate-limit.ts` – in-memory limiter used by every public API route.
 - `src/lib/uploads.ts` – admin image uploads (local or S3), processed with sharp.

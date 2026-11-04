@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { Button } from "@/components/ui/button";
 import type { OrderStatus, OrderStatusDefinition } from "@/types";
-import { saveInternalNote, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
+import { bookCourierAction, cancelCourierAction, saveInternalNote, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
 import { Banner, Field, inputCls } from "./controls";
 import { cn } from "@/lib/format";
 
@@ -37,5 +37,31 @@ export function InternalNoteForm({ orderId, note }: { orderId: string; note?: st
       <textarea name="internalNote" defaultValue={note ?? ""} rows={4} className={cn(inputCls, "h-auto resize-y py-2")} placeholder="Nur für das Team sichtbar." aria-label="Interne Notiz" />
       <Button type="submit" size="sm" variant="outline" loading={pending}>Notiz speichern</Button>
     </form>
+  );
+}
+
+/** Book / cancel the RiderX rider. Shown only when RiderX is configured. */
+export function CourierForm({ orderId, canBook, canCancel }: { orderId: string; canBook: boolean; canCancel: boolean }) {
+  const [bookState, book, booking] = useActionState<OrderActionState, FormData>(bookCourierAction, null);
+  const [cancelState, cancel, cancelling] = useActionState<OrderActionState, FormData>(cancelCourierAction, null);
+  const state = cancelState ?? bookState;
+  return (
+    <div className="space-y-3">
+      {state && <Banner tone={state.ok ? "success" : "error"}>{state.message}</Banner>}
+      <div className="flex flex-wrap gap-2">
+        {canBook && (
+          <form action={book}>
+            <input type="hidden" name="id" value={orderId} />
+            <Button type="submit" size="sm" loading={booking}>Fahrer buchen</Button>
+          </form>
+        )}
+        {canCancel && (
+          <form action={cancel} onSubmit={(e) => { if (!confirm("RiderX-Fahrer wirklich stornieren?")) e.preventDefault(); }}>
+            <input type="hidden" name="id" value={orderId} />
+            <Button type="submit" size="sm" variant="outline" loading={cancelling}>Fahrer stornieren</Button>
+          </form>
+        )}
+      </div>
+    </div>
   );
 }

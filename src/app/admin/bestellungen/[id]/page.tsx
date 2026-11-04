@@ -4,7 +4,9 @@ import { getOrderById, getSettings } from "@/lib/cms";
 import { formatDateLong, formatDateTime, formatPrice } from "@/lib/format";
 import { Card, PageHeader } from "@/components/admin/controls";
 import { StatusBadge } from "@/components/admin/status-badge";
-import { InternalNoteForm, OrderStatusForm } from "@/components/admin/order-forms";
+import { CourierForm, InternalNoteForm, OrderStatusForm } from "@/components/admin/order-forms";
+import { courierEnabled } from "@/lib/courier";
+import { RIDERX_STATUS_LABELS } from "@/lib/courier/riderx-core";
 import { PAYMENT_LABELS, PAYMENT_STATUS_LABELS, customerName, recipientName, statusLabel } from "@/components/admin/order-utils";
 
 export const dynamic = "force-dynamic";
@@ -119,6 +121,21 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
           <Card title="Status ändern">
             <OrderStatusForm orderId={order.id} current={order.status} statuses={settings.orderStatuses} />
           </Card>
+          {courierEnabled() && (
+            <Card title="Kurier (RiderX)" description="Kostenlos stornierbar bis 30 Min. vor der Abholung.">
+              <dl className="mb-4 text-[14px]">
+                <Row label="Status">{order.courier ? (order.courier.status === "failed" ? "Nicht gebucht" : order.courier.status === "booking" ? "Wird gebucht …" : RIDERX_STATUS_LABELS[order.courier.status] ?? order.courier.status) : "Noch nicht gebucht"}</Row>
+                {order.courier?.deliveryId && <Row label="RiderX-Nr.">#{order.courier.deliveryId}</Row>}
+                {order.courier?.pickupAt && <Row label="Abholung">{formatDateTime(order.courier.pickupAt)}</Row>}
+                {order.courier?.error && <Row label="Fehler"><span className="text-burgundy">{order.courier.error}</span></Row>}
+              </dl>
+              <CourierForm
+                orderId={order.id}
+                canBook={order.payment.status === "paid" && order.status !== "cancelled" && (!order.courier || ["failed", "cancel"].includes(order.courier.status))}
+                canCancel={Boolean(order.courier?.deliveryId) && !["cancel", "failed", "pickup", "late_pickup", "completed", "late_completed"].includes(order.courier?.status ?? "")}
+              />
+            </Card>
+          )}
           <Card title="Interne Notiz" description="Nur für das Team sichtbar.">
             <InternalNoteForm orderId={order.id} note={order.internalNote} />
           </Card>

@@ -387,6 +387,18 @@ export interface OrderLine {
   senderName?: string;
 }
 
+export interface OrderCourier {
+  provider: "riderx";
+  /** "booking" while the request runs, then RiderX's status ("created", "accepted", "pickup", "completed", "cancel" …) or "failed". */
+  status: string;
+  deliveryId?: number;
+  /** Planned pickup (ISO with offset). */
+  pickupAt?: string;
+  bookedAt?: string;
+  updatedAt: string;
+  error?: string;
+}
+
 export interface Order {
   id: string; // BQ-XXXXXX
   token: string; // tracking token
@@ -398,6 +410,9 @@ export interface Order {
     date: ISODate;
     windowId?: string;
     windowLabel?: string;
+    /** Window times ("HH:MM") at order time – the courier pickup is planned from them. */
+    windowFrom?: string;
+    windowTo?: string;
     note?: string;
     zoneId: string;
     zoneName: string;
@@ -418,6 +433,8 @@ export interface Order {
     paidAt?: string;
   };
   internalNote?: string;
+  /** Courier booking (RiderX), set once the order is paid and a rider was booked. */
+  courier?: OrderCourier;
   /** Optional link to a customer account (e-mail based). */
   customerId?: string;
 }

@@ -1,4 +1,6 @@
 import "server-only";
+import { after } from "next/server";
+import { bookCourierSafely } from "@/lib/courier";
 import { randomBytes, randomInt } from "node:crypto";
 import type { CartItem, Coupon, DeliveryZone, Extra, Order, OrderLine, OrderStatus, Product, SizeId } from "@/types";
 import type { CreatePaymentResult, PaymentProviderId } from "@/types/payments";
@@ -326,10 +328,14 @@ export async function createOrderFromPayload(payload: OrderPayload, opts: { site
     return { ok: false, status: 400, message: "Das gewählte Lieferdatum ist nicht mehr verfügbar. Bitte wähle ein anderes Datum.", errors: { "delivery.date": "Dieses Datum ist nicht mehr verfügbar." } };
   }
   let windowLabel: string | undefined;
+  let windowFrom: string | undefined;
+  let windowTo: string | undefined;
   if (payload.delivery.windowId) {
     const win = day.windows.find((w) => w.id === payload.delivery.windowId);
     if (!win) return { ok: false, status: 400, message: "Das gewählte Zeitfenster ist an diesem Tag nicht verfügbar.", errors: { "delivery.windowId": "Bitte wähle ein anderes Zeitfenster." } };
     windowLabel = win.label;
+    windowFrom = win.from;
+    windowTo = win.to;
   }
 
   // Coupon
@@ -360,7 +366,7 @@ export async function createOrderFromPayload(payload: OrderPayload, opts: { site
     id, token, createdAt, status: "received", history: [{ status: "received", at: createdAt }],
     recipient: { ...payload.recipient, country: "AT" },
     delivery: {
-      date: payload.delivery.date, windowId: payload.delivery.windowId, windowLabel, note: payload.delivery.note,
+      date: payload.delivery.date, windowId: payload.delivery.windowId, windowLabel, windowFrom, windowTo, note: payload.delivery.note,
       zoneId: zone.id, zoneName: zone.name, fee: totals.delivery,
     },
     customer: { firstName: payload.customer.firstName, lastName: payload.customer.lastName, email: payload.customer.email, phone: payload.customer.phone },
@@ -450,6 +456,14 @@ export async function markOrderPaid(id: string, info: PaidInfo): Promise<Order |
 
   // Fire-and-forget: a failing mail stub must never fail the payment.
   sendOrderConfirmation(updated).catch((err) => console.error("[mail] confirmation failed", err));
+  // Book the rider (RiderX, if configured) after the response, so a slow courier or
+  // geocoder never delays the customer's payment confirmation. Outside a request
+  // (scripts, tests) `after` is unavailable – then book inline. Never throws.
+  try {
+    after(() => bookCourierSafely(updated.id));
+  } catch {
+    await bookCourierSafely(updated.id);
+  }
   return updated;
 }
 

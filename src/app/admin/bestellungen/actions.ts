@@ -5,6 +5,7 @@ import { getSettings, updateOrder } from "@/lib/cms";
 import { requireAdmin } from "@/lib/admin-session";
 import { sendOrderStatusUpdate } from "@/lib/mail";
 import { releaseStock } from "@/lib/orders";
+import { bookCourier, cancelCourier } from "@/lib/courier";
 import type { OrderStatus } from "@/types";
 
 export type OrderActionState = { ok: boolean; message: string } | null;
@@ -42,6 +43,12 @@ export async function updateOrderStatus(_prev: OrderActionState, formData: FormD
     if (status === "cancelled" && prev.status !== "cancelled" && updated.payment.status !== "failed") {
       await releaseStock(updated.lines);
     }
+    // …and a booked rider is called off.
+    let courierNote = "";
+    if (status === "cancelled" && updated.courier?.deliveryId && !["cancel", "failed"].includes(updated.courier.status)) {
+      const c = await cancelCourier(id);
+      courierNote = c.ok ? " Fahrer wurde storniert." : ` Fahrer konnte nicht storniert werden: ${c.message}`;
+    }
     revalidateOrder(id);
 
     // Customer notification – only for real changes to a customer-visible status.
@@ -58,7 +65,7 @@ export async function updateOrderStatus(_prev: OrderActionState, formData: FormD
         mailNote = " Die E-Mail an die Kund:in konnte nicht gesendet werden.";
       }
     }
-    return { ok: true, message: `Status auf „${def.label}“ gesetzt.${mailNote}` };
+    return { ok: true, message: `Status auf „${def.label}“ gesetzt.${mailNote}${courierNote}` };
   } catch (e) {
     return { ok: false, message: e instanceof Error ? e.message : "Fehler beim Speichern." };
   }
@@ -81,5 +88,31 @@ export async function saveInternalNote(_prev: OrderActionState, formData: FormDa
     return { ok: true, message: "Interne Notiz gespeichert." };
   } catch (e) {
     return { ok: false, message: e instanceof Error ? e.message : "Fehler beim Speichern." };
+  }
+}
+
+/** Book (or re-book after a failure/cancellation) a RiderX rider for this order. */
+export async function bookCourierAction(_prev: OrderActionState, formData: FormData): Promise<OrderActionState> {
+  try {
+    await requireAdmin();
+    const id = String(formData.get("id") ?? "");
+    const result = await bookCourier(id, { manual: true });
+    revalidateOrder(id);
+    return result;
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Buchung fehlgeschlagen." };
+  }
+}
+
+/** Cancel the RiderX delivery (free until 30 min before a planned pickup). */
+export async function cancelCourierAction(_prev: OrderActionState, formData: FormData): Promise<OrderActionState> {
+  try {
+    await requireAdmin();
+    const id = String(formData.get("id") ?? "");
+    const result = await cancelCourier(id);
+    revalidateOrder(id);
+    return result;
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Stornierung fehlgeschlagen." };
   }
 }
