@@ -20,7 +20,9 @@ Storno bei RiderX: geplante Abholungen kostenlos bis 30 Min. vorher, „sofort�
 
 ## Webhook
 
-In der RiderX Developer Console (Profil → Developer Console → Add Webhook) als URL `https://<domain>/api/webhooks/riderx` eintragen. Die Route ist auch bei aktivem `SITE_PASSWORD` erreichbar. Signatur: `X-Service-Signature` = HMAC-SHA256(Partner-Secret, roher Body); weil RiderX die Kodierung noch nicht festgelegt hat, werden Hex und Base64 akzeptiert. Andere Events (z. B. `chat.message_created`) werden mit 200 bestätigt und ignoriert.
+In der RiderX Developer Console (Profil → Developer Console → Add Webhook) als URL `https://<domain>/api/webhooks/riderx` eintragen. Die Route ist auch bei aktivem `SITE_PASSWORD` erreichbar.
+
+Signatur (von RiderX im Nov. 2026 bestätigt): Header `X-Service-Signature: t=<Unix-Zeitstempel>,v1=<Signatur>`, wobei `v1` = HMAC-SHA256 mit dem **Signing Secret des Webhooks** (nicht dem Client Secret) über `"<t>.<roher Body>"`, hex in Kleinbuchstaben. Der Body wird vor jedem JSON-Parsing roh geprüft, der Vergleich läuft in konstanter Zeit, Zeitstempel älter oder neuer als 5 Minuten werden abgelehnt (401, Grund im Log). Jeder Webhook hat ein eigenes Secret: wird er neu angelegt oder das Secret rotiert, muss `RIDERX_WEBHOOK_SECRET` mitgeändert werden – für einen Wechsel ohne Lücke darf es kurz zwei Secrets kommagetrennt enthalten (`altes,neues`). Andere Events (z. B. `chat.message_created`) werden mit 200 bestätigt und ignoriert.
 
 ## Umgebungsvariablen
 
@@ -31,7 +33,7 @@ In der RiderX Developer Console (Profil → Developer Console → Add Webhook) a
 | `RIDERX_PICKUP_STREET`, `RIDERX_PICKUP_HOUSE_NUMBER`, `RIDERX_PICKUP_ZIP` | ja | Abholadresse beim Partnerfloristen |
 | `RIDERX_PICKUP_CITY`, `RIDERX_PICKUP_NAME`, `RIDERX_PICKUP_PHONE`, `RIDERX_PICKUP_EXTRA` | – | Ort (Standard Wien), Name/Telefon für den Fahrer, Zusatz (z. B. „Hintereingang“) |
 | `RIDERX_PICKUP_LAT`, `RIDERX_PICKUP_LNG` | – | feste Koordinaten der Abholadresse statt Adresssuche |
-| `RIDERX_WEBHOOK_SECRET` | für Webhooks | Partner-Secret für die Signaturprüfung |
+| `RIDERX_WEBHOOK_SECRET` | für Webhooks | Signing Secret des Webhooks aus der Developer Console (beim Rotieren kurz `alt,neu`) |
 | `RIDERX_PACKAGE_ID` | – | Pakettyp, Standard `2` (Auto, 90×60×60 cm, 25 kg) |
 | `RIDERX_ABSENT_INSTRUCTIONS` | – | Empfänger nicht da: `drop_by_neighbour` (Standard), `drop_by_door` oder `destroy` |
 | `RIDERX_PREP_MINUTES` | – | Vorlaufzeit für den Floristen, Standard 60 |

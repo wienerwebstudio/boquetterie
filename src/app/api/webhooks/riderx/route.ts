@@ -7,8 +7,9 @@ export const dynamic = "force-dynamic";
 
 /**
  * POST /api/webhooks/riderx
- * RiderX delivery events. `X-Service-Signature` is verified (HMAC-SHA256 of the
- * raw body with RIDERX_WEBHOOK_SECRET) before anything is read. Verified events
+ * RiderX delivery events. `X-Service-Signature` (`t=<ts>,v1=<hex>`) is checked
+ * against the webhook's signing secret (RIDERX_WEBHOOK_SECRET) over the RAW body
+ * before anything is parsed; events older than 5 minutes are refused. Verified events
  * are always answered with 200 – also unknown ones like `chat.message_created` –
  * so RiderX does not retry them.
  */
@@ -18,7 +19,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, message: "RiderX webhooks are not configured." }, { status: 404 });
   }
   const raw = await req.text();
-  if (!verifyRiderxSignature(raw, req.headers.get("x-service-signature"), secret)) {
+  const check = verifyRiderxSignature(raw, req.headers.get("x-service-signature"), secret);
+  if (!check.ok) {
+    console.warn(`[webhooks/riderx] rejected: ${check.reason}`);
     return NextResponse.json({ ok: false, message: "Invalid signature." }, { status: 401 });
   }
   let evt: RiderxWebhookEvent;

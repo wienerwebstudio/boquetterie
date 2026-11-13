@@ -87,17 +87,43 @@ describe("RiderX payload", () => {
 
 describe("RiderX webhook", () => {
   const body = JSON.stringify({ event: "delivery.updated", delivery: { id: 731, status: "pickup" } });
-  const mac = createHmac("sha256", "geheim").update(body).digest();
+  const now = new Date("2026-11-13T10:00:00Z");
+  const t = String(Math.floor(now.getTime() / 1000));
+  const sign = (secret: string, ts = t, raw = body) => createHmac("sha256", secret).update(`${ts}.${raw}`).digest("hex");
+  const header = (v1: string, ts = t) => `t=${ts},v1=${v1}`;
 
-  it("accepts hex and base64 signatures, rejects anything else", () => {
-    expect(verifyRiderxSignature(body, mac.toString("hex"), "geheim")).toBe(true);
-    expect(verifyRiderxSignature(body, mac.toString("hex").toUpperCase(), "geheim")).toBe(true);
-    expect(verifyRiderxSignature(body, mac.toString("base64"), "geheim")).toBe(true);
-    expect(verifyRiderxSignature(body, `sha256=${mac.toString("hex")}`, "geheim")).toBe(true);
-    expect(verifyRiderxSignature(body, mac.toString("hex"), "falsch")).toBe(false);
-    expect(verifyRiderxSignature(`${body} `, mac.toString("hex"), "geheim")).toBe(false);
-    expect(verifyRiderxSignature(body, null, "geheim")).toBe(false);
-    expect(verifyRiderxSignature(body, "", "geheim")).toBe(false);
+  it("accepts t=…,v1=<hex> signed over \"<t>.<raw body>\" with the webhook secret", () => {
+    expect(verifyRiderxSignature(body, header(sign("whsec_a")), "whsec_a", now)).toEqual({ ok: true });
+    expect(verifyRiderxSignature(body, ` t=${t} , v1=${sign("whsec_a")} `, "whsec_a", now)).toEqual({ ok: true });
+  });
+
+  it("supports secret rotation and several v1 values", () => {
+    expect(verifyRiderxSignature(body, header(sign("whsec_new")), "whsec_old, whsec_new", now)).toEqual({ ok: true });
+    expect(verifyRiderxSignature(body, `t=${t},v1=${sign("whsec_x")},v1=${sign("whsec_a")}`, "whsec_a", now)).toEqual({ ok: true });
+  });
+
+  it("rejects wrong secrets, changed bodies, the old body-only scheme and other encodings", () => {
+    expect(verifyRiderxSignature(body, header(sign("falsch")), "whsec_a", now)).toEqual({ ok: false, reason: "mismatch" });
+    expect(verifyRiderxSignature(`${body} `, header(sign("whsec_a")), "whsec_a", now)).toEqual({ ok: false, reason: "mismatch" });
+    const bodyOnly = createHmac("sha256", "whsec_a").update(body).digest("hex");
+    expect(verifyRiderxSignature(body, header(bodyOnly), "whsec_a", now).ok).toBe(false);
+    const base64 = createHmac("sha256", "whsec_a").update(`${t}.${body}`).digest("base64");
+    expect(verifyRiderxSignature(body, header(base64), "whsec_a", now).ok).toBe(false);
+    expect(verifyRiderxSignature(body, header(sign("whsec_a").toUpperCase()), "whsec_a", now).ok).toBe(false);
+    expect(verifyRiderxSignature(body, header(sign("whsec_a"), String(Number(t) + 1)), "whsec_a", now)).toEqual({ ok: false, reason: "mismatch" });
+  });
+
+  it("rejects missing, malformed and stale headers", () => {
+    expect(verifyRiderxSignature(body, null, "whsec_a", now)).toEqual({ ok: false, reason: "missing" });
+    expect(verifyRiderxSignature(body, header(sign("whsec_a")), "", now)).toEqual({ ok: false, reason: "missing" });
+    expect(verifyRiderxSignature(body, sign("whsec_a"), "whsec_a", now)).toEqual({ ok: false, reason: "malformed" });
+    expect(verifyRiderxSignature(body, `t=abc,v1=${sign("whsec_a")}`, "whsec_a", now)).toEqual({ ok: false, reason: "malformed" });
+    const old = String(Number(t) - 301);
+    expect(verifyRiderxSignature(body, header(sign("whsec_a", old), old), "whsec_a", now)).toEqual({ ok: false, reason: "expired" });
+    const future = String(Number(t) + 301);
+    expect(verifyRiderxSignature(body, header(sign("whsec_a", future), future), "whsec_a", now)).toEqual({ ok: false, reason: "expired" });
+    const recent = String(Number(t) - 299);
+    expect(verifyRiderxSignature(body, header(sign("whsec_a", recent), recent), "whsec_a", now)).toEqual({ ok: true });
   });
 
   it("maps RiderX statuses onto the order flow, forward only", () => {

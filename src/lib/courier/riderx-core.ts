@@ -224,17 +224,46 @@ export function buildDeliveryRequest(order: Order, opts: {
 
 /* ---------------- Webhook ---------------- */
 
+/** Webhooks whose timestamp is further than this from now are rejected (replay protection). */
+export const RIDERX_WEBHOOK_TOLERANCE_SECONDS = 5 * 60;
+
+export type SignatureCheck = { ok: true } | { ok: false; reason: "missing" | "malformed" | "expired" | "mismatch" };
+
 /**
- * `X-Service-Signature` = HMAC-SHA256(partner secret, raw body). RiderX has not
- * yet documented the encoding, so hex and base64 are both accepted.
+ * RiderX signs each webhook with that webhook's own signing secret (Developer
+ * Console → Webhook), confirmed by RiderX in Nov 2026:
+ *
+ *   X-Service-Signature: t=<unix timestamp>,v1=<hex>
+ *   v1 = lowercase hex HMAC-SHA256(signing secret, "<t>.<raw body>")
+ *
+ * `secrets` may hold several comma-separated secrets so a rotation can overlap.
+ * Several `v1` entries are accepted as well. Comparison is constant-time.
  */
-export function verifyRiderxSignature(rawBody: string, header: string | null, secret: string): boolean {
-  if (!header || !secret) return false;
-  const given = header.trim().replace(/^sha256=/i, "");
-  const digest = createHmac("sha256", secret).update(rawBody, "utf8").digest();
-  const candidates = [Buffer.from(digest.toString("hex")), Buffer.from(digest.toString("base64")), Buffer.from(digest.toString("base64url"))];
-  const g = Buffer.from(given.length === 64 ? given.toLowerCase() : given);
-  return candidates.some((c) => c.length === g.length && timingSafeEqual(c, g));
+export function verifyRiderxSignature(rawBody: string, header: string | null, secrets: string, now: Date = new Date()): SignatureCheck {
+  const keys = secrets.split(",").map((s) => s.trim()).filter(Boolean);
+  if (!header || !keys.length) return { ok: false, reason: "missing" };
+
+  let timestamp: string | null = null;
+  const signatures: string[] = [];
+  for (const part of header.split(",")) {
+    const i = part.indexOf("=");
+    if (i < 0) continue;
+    const key = part.slice(0, i).trim();
+    const value = part.slice(i + 1).trim();
+    if (key === "t") timestamp = value;
+    else if (key === "v1") signatures.push(value);
+  }
+  if (!timestamp || !/^\d{9,13}$/.test(timestamp) || !signatures.length) return { ok: false, reason: "malformed" };
+
+  const seconds = timestamp.length > 11 ? Number(timestamp) / 1000 : Number(timestamp); // tolerate milliseconds
+  if (Math.abs(now.getTime() / 1000 - seconds) > RIDERX_WEBHOOK_TOLERANCE_SECONDS) return { ok: false, reason: "expired" };
+
+  const given = signatures.filter((s) => /^[0-9a-f]{64}$/.test(s)).map((s) => Buffer.from(s, "hex"));
+  for (const key of keys) {
+    const expected = createHmac("sha256", key).update(`${timestamp}.${rawBody}`, "utf8").digest();
+    if (given.some((g) => timingSafeEqual(g, expected))) return { ok: true };
+  }
+  return { ok: false, reason: "mismatch" };
 }
 
 export type RiderxStatus =
