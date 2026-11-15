@@ -15,6 +15,7 @@ import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
 import { addDays, isValidAustrianPostalCode, normalizePostalCode } from "@/lib/delivery";
 import { lowestPrice } from "@/lib/catalog";
+import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
 import { cartItemFromConfig, defaultSize, findSize, isSoldOut } from "@/lib/cart-helpers";
 import { formatDateShort, formatPrice, cn } from "@/lib/format";
 import { routes } from "@/lib/urls";
@@ -27,6 +28,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
 }) {
   const uid = useId();
   const addItem = useCart((s) => s.addItem);
+  const paused = ordersPaused();
   const openCart = useUi((s) => s.openCart);
   const toast = useUi((s) => s.toast);
   const ctx = useDeliveryContext();
@@ -108,6 +110,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   }, []);
 
   const addToCart = () => {
+    if (paused) return;
     if (soldOut) return;
     const item = cartItemFromConfig({
       product, size,
@@ -397,8 +400,9 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           ))}
           <div className="flex justify-between border-t border-line pt-2 text-[15px] font-semibold text-ink"><dt>Gesamt</dt><dd className="tabular-nums">{formatPrice(total)}</dd></div>
         </dl>
-        <Button type="button" size="xl" full onClick={addToCart} disabled={soldOut} icon={<ShoppingBag className="size-4" aria-hidden />}>
-          {soldOut ? "Derzeit nicht verfügbar" : "In den Warenkorb"}
+        {paused && <p className="mb-3 rounded-md border border-line bg-ivory-100 px-4 py-3 text-[14px] leading-relaxed text-ink-muted" role="status">{ORDERS_PAUSED_MESSAGE}</p>}
+        <Button type="button" size="xl" full onClick={addToCart} disabled={soldOut || paused} icon={<ShoppingBag className="size-4" aria-hidden />}>
+          {paused ? "Bald bestellbar" : soldOut ? "Derzeit nicht verfügbar" : "In den Warenkorb"}
         </Button>
         <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[12px] text-ink-muted">
           <li className="inline-flex items-center gap-1.5"><Leaf className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Frisch gebunden</li>
@@ -420,7 +424,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
             <p className="truncate font-serif text-[18px] leading-tight text-ink">{product.name} · {size.label}</p>
             <p className="text-[13px] tabular-nums text-ink-muted">{formatPrice(total)}</p>
           </div>
-          <Button type="button" size="lg" onClick={addToCart} disabled={soldOut} tabIndex={ctaVisible ? -1 : 0}>In den Warenkorb</Button>
+          <Button type="button" size="lg" onClick={addToCart} disabled={soldOut || paused} tabIndex={ctaVisible ? -1 : 0}>{paused ? "Bald bestellbar" : "In den Warenkorb"}</Button>
         </div>
       </div>
     </div>

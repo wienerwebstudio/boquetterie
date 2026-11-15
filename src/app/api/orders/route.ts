@@ -3,6 +3,7 @@ import { getSettings } from "@/lib/cms";
 import { createOrderFromPayload, parseOrderPayload } from "@/lib/orders";
 import { resolveSiteUrl } from "@/lib/payments";
 import { enforceRateLimit } from "@/lib/rate-limit";
+import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
 import type { OrderCreateResponse } from "@/types/payments";
 
 export const dynamic = "force-dynamic";
@@ -23,6 +24,7 @@ export const dynamic = "force-dynamic";
 export async function POST(req: Request) {
   const limited = enforceRateLimit(req, { scope: "orders", limit: 10, windowMs: 10 * 60 * 1000 });
   if (limited) return limited;
+  if (ordersPaused()) return NextResponse.json({ ok: false, message: ORDERS_PAUSED_MESSAGE }, { status: 503 });
 
   let body: unknown;
   try {

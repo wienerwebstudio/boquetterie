@@ -132,3 +132,7 @@ Auf Vercel ist das Dateisystem zur Laufzeit **schreibgeschützt**. Deshalb gilt:
 - Inhalte werden ausschließlich über `/admin` (→ Datenbank) gepflegt. `content/*.json` im Repo ist nur noch der Seed für neue Umgebungen; um Repo-Änderungen zu übernehmen: `npm run db:seed -- --force --only content`.
 - Backups über den Anbieter (Neon: Branches/PITR, Supabase: tägliche Backups) plus gelegentlich `pg_dump`.
 - Logs: Vercel → Functions. Beim Kaltstart erscheint `[blumora] datastore: postgres`.
+
+## Öffentliche Vorschau ohne Bestellungen
+
+`NEXT_PUBLIC_ORDERS_PAUSED=true` macht den Shop sichtbar, sperrt aber das Bestellen: Produktseite zeigt „Bald bestellbar“, die Kasse einen Hinweis, `POST /api/orders` antwortet mit 503. Gedacht für die Zeit, bevor Stripe/PayPal, Datenbank (`DATABASE_URL`) und Mail (`RESEND_API_KEY`) eingerichtet sind – sonst liefe die Kasse im Mock-Modus (Bestellungen ohne Zahlung). Build-Variable: nach dem Ändern neu deployen.
