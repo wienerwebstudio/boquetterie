@@ -79,7 +79,7 @@
       "title": "Rosé Dream – Strauß in Rosa & Weiß",
       "description": "Rosé Dream: rosa Rosen, pinke Gerbera und weiße Lilien, locker gebunden. Ein heller Strauß für Geburtstag und Dank – Blumenversand in Wien."
     },
-    "sortOrder": 1
+    "sortOrder": 8
   },
   {
     "id": "p-gelb-bouquet",
@@ -161,7 +161,7 @@
       "title": "Gelb Bouquet – Gerbera & Rosen in Gelb",
       "description": "Gelbe Gerbera, weiße und gelbe Rosen mit Schleierkraut und gelber Schleife. Ein heller Gruß zum Geburtstag oder zur Genesung – Blumenversand in Wien."
     },
-    "sortOrder": 2
+    "sortOrder": 9
   },
   {
     "id": "p-weiss-bouquet",
@@ -244,7 +244,7 @@
       "title": "Weiß Bouquet – Strauß in Weiß & Creme",
       "description": "Helle Rosen, Gerbera und Lilien mit Schleierkraut: ein schlichter Strauß für Jahrestag, Hochzeitstag oder Dank – Blumenversand in Wien."
     },
-    "sortOrder": 3
+    "sortOrder": 10
   },
   {
     "id": "p-blue-bouquet",
@@ -323,7 +323,7 @@
       "title": "Blue Bouquet – blaue & weiße Rosen",
       "description": "Blaue und weiße Rosen mit Schleierkraut in hellblauer Manschette. Ein ungewöhnlicher Rosenstrauß zum Geburtstag oder Jahrestag – Blumenversand in Wien."
     },
-    "sortOrder": 4
+    "sortOrder": 11
   },
   {
     "id": "p-farbensinfonie",
@@ -413,7 +413,7 @@
       "title": "Farbensinfonie – Regenbogenrosen",
       "description": "Regenbogenrosen, bei denen jede Blüte in mehreren Farben leuchtet. Ein fröhlicher Rosenstrauß zum Geburtstag – Blumenversand in Wien."
     },
-    "sortOrder": 5
+    "sortOrder": 12
   },
   {
     "id": "p-sonnenzauber",
@@ -502,7 +502,7 @@
       "title": "Sonnenzauber – Strelitzien & Gerbera",
       "description": "Paradiesvogelblumen, Lilien und gelbe Gerbera in warmem Orange und Gelb. Ein exotischer Strauß als Blickfang – Blumenversand in Wien."
     },
-    "sortOrder": 6
+    "sortOrder": 13
   },
   {
     "id": "p-pink-bouquet",
@@ -588,7 +588,7 @@
       "title": "Pink Bouquet – Strauß in Pink & Rosa",
       "description": "Ein runder Strauß in Pink und Rosa mit Lilien und Gerbera. Für Geburtstag, Muttertag oder einfach so – Blumenversand in Wien."
     },
-    "sortOrder": 7
+    "sortOrder": 14
   },
   {
     "id": "p-orange-bouquet",
@@ -670,7 +670,7 @@
       "title": "Orange Bouquet – Rosen in Orange",
       "description": "Rosen in Orange und Apricot, in helle Manschette gefasst. Ein warmer Rosenstrauß zum Geburtstag oder als Dank – Blumenversand in Wien."
     },
-    "sortOrder": 8
+    "sortOrder": 15
   },
   {
     "id": "p-red-rose-bouquet",
@@ -756,7 +756,7 @@
       "title": "Red Rose Bouquet – rote Rosen",
       "description": "Tiefrote Rosen in dunkler Manschette mit roter Satinschleife. Der klassische Rosenstrauß für Valentinstag und Jahrestag – Blumenversand in Wien."
     },
-    "sortOrder": 9
+    "sortOrder": 1
   },
   {
     "id": "p-rosa-bouquet",
@@ -837,7 +837,7 @@
       "title": "Rosa Bouquet – Rosen in Rosa & Pastell",
       "description": "Rosen und Gerbera in Rosa, Pastell und Flieder, in weiße Manschette gefasst. Für Geburtstag, Muttertag oder Geburt – Blumenversand in Wien."
     },
-    "sortOrder": 10
+    "sortOrder": 16
   },
   {
     "id": "p-blackroses",
@@ -923,7 +923,7 @@
       "title": "Blackroses – schwarze Rosen",
       "description": "Schwarze Rosen in dunkler Manschette: ein ungewöhnlicher Rosenstrauß für Menschen, die das Besondere mögen – Blumenversand in Wien."
     },
-    "sortOrder": 11
+    "sortOrder": 17
   },
   {
     "id": "p-blaueliebe",
@@ -1016,7 +1016,7 @@
       "title": "Blaue Liebe – blaue Rosen",
       "description": "Leuchtend blaue Rosen mit Schleierkraut in blauer Manschette. Ein seltener Rosenstrauß für besondere Menschen – Blumenversand in Wien."
     },
-    "sortOrder": 12
+    "sortOrder": 2
   },
   {
     "id": "p-rosalie",
@@ -1115,7 +1115,7 @@
       "title": "Rosalie – rosa Rosen mit Schleierkraut",
       "description": "Rosa Rosen mit Schleierkraut in zartrosa Manschette. Für Muttertag, Geburtstag oder als Dankeschön – Blumenversand in Wien."
     },
-    "sortOrder": 13
+    "sortOrder": 3
   },
   {
     "id": "p-rot-und-weiss-mix",
@@ -1215,7 +1215,7 @@
       "title": "Rot & Weiß Mix – rote und weiße Rosen",
       "description": "Rote und weiße Rosen in festlicher Manschette. Für Valentinstag, Jahrestag oder Hochzeitstag, in vier Größen – Blumenversand in Wien."
     },
-    "sortOrder": 14
+    "sortOrder": 4
   },
   {
     "id": "p-tulpenstrauss",
@@ -1315,7 +1315,7 @@
       "title": "Tulpenstrauß – Tulpen in vielen Farben",
       "description": "Ein Strauß aus Tulpen in Rot, Gelb, Lila, Rosa, Orange, Weiß oder gemischt. Frühlingsstimmung für zuhause – Blumenversand in Wien."
     },
-    "sortOrder": 15
+    "sortOrder": 18
   },
   {
     "id": "p-red-passion",
@@ -1408,7 +1408,7 @@
       "title": "Red Passion – roter Rosenstrauß",
       "description": "Rote Rosen mit Schleierkraut in dunkler Manschette, in vier Größen. Ein Rosenstrauß für große Gefühle – Blumenversand in Wien."
     },
-    "sortOrder": 16
+    "sortOrder": 5
   },
   {
     "id": "p-klassiker-der-liebe",
@@ -1494,7 +1494,7 @@
       "title": "Klassiker der Liebe – rote Rosen",
       "description": "Dicht gebundene rote Rosen in dunkler Manschette. Der klassische Rosenstrauß für Valentinstag, Jahrestag oder Antrag – Blumenversand in Wien."
     },
-    "sortOrder": 17
+    "sortOrder": 6
   },
   {
     "id": "p-koenigin-der-herzen",
@@ -1593,7 +1593,7 @@
       "title": "Königin der Herzen – üppiger Rosenstrauß",
       "description": "Rote Rosen mit Schleierkraut, in vier Größen. Ein üppiger Rosenstrauß für große Momente – Blumenversand in Wien."
     },
-    "sortOrder": 18
+    "sortOrder": 7
   },
   {
     "id": "p-herbstzauber",
