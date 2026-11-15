@@ -21,8 +21,16 @@ export async function dismissConsent(page: Page) {
   }
 }
 
+/**
+ * Navigates without making the full `load` event a hard requirement: on a cold
+ * image cache (2-core CI runner) optimising every eager image can take longer
+ * than the navigation timeout, although the document itself is long there.
+ * We wait for the DOM, give `load` a bounded chance and move on – the tests
+ * assert on concrete elements afterwards anyway.
+ */
 export async function gotoPage(page: Page, url: string) {
-  await page.goto(url);
+  await page.goto(url, { waitUntil: "domcontentloaded" });
+  await page.waitForLoadState("load", { timeout: 20_000 }).catch(() => undefined);
   await dismissConsent(page);
 }
 

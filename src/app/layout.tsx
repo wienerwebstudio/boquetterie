@@ -1,21 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { getSettings } from "@/lib/cms";
 
-const serif = Cormorant_Garamond({
+// Self-hosted variable fonts (SIL OFL, see src/fonts/LICENSE-*): no request to
+// Google at build or run time, one file per style instead of one per weight.
+const serif = localFont({
   variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
   display: "swap",
+  src: [
+    { path: "../fonts/cormorant-garamond-latin-wght-normal.woff2", weight: "300 700", style: "normal" },
+    { path: "../fonts/cormorant-garamond-latin-wght-italic.woff2", weight: "300 700", style: "italic" },
+  ],
+  fallback: ["Georgia", "serif"],
 });
 
-const sans = Manrope({
+const sans = localFont({
   variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
+  src: [{ path: "../fonts/manrope-latin-wght-normal.woff2", weight: "200 800", style: "normal" }],
+  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
 });
 
 export async function generateMetadata(): Promise<Metadata> {

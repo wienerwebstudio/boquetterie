@@ -37,7 +37,7 @@
     "2027-01-01"
   ],
   "sameDayEnabled": true,
-  "subscriptionEnabled": true,
+  "subscriptionEnabled": false,
   "newsletterEnabled": true,
   "favoritesEnabled": true,
   "headerCta": {
