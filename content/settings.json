@@ -2,12 +2,12 @@
   "brand": {
     "name": "Blumora",
     "claim": "Blumen, die mehr sagen.",
-    "legalName": "[Firmenname – bitte ergänzen]",
-    "email": "kontakt@bloomery.at",
-    "phone": "[Telefonnummer – bitte ergänzen]",
+    "legalName": "Tunahan Ceylan",
+    "email": "office@blumora.at",
+    "phone": "+43 660 6795870",
     "address": {
-      "street": "[Straße & Hausnummer – bitte ergänzen]",
-      "zip": "1010",
+      "street": "Am Langen Felde 51/18",
+      "zip": "1220",
       "city": "Wien",
       "country": "Österreich"
     },
@@ -148,7 +148,7 @@
     }
   ],
   "seo": {
-    "siteUrl": "https://bloomery.at",
+    "siteUrl": "https://blumora.at",
     "defaultTitle": "Blumora – Blumen liefern lassen in Wien",
     "defaultDescription": "Frisch gebundene Blumen, direkt an die Menschen geliefert, die dir wichtig sind. Wunschdatum wählen, Grußkarte schreiben, Freude schicken – Blumenversand für Wien."
   },

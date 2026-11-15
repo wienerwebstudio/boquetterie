@@ -55,9 +55,10 @@ export default async function ContactPage() {
                   </Detail>
                 )}
                 {!isPlaceholder(address.street) && (
-                  <Detail icon={<MapPin className="size-4" aria-hidden />} label="Adresse">
+                  <Detail icon={<MapPin className="size-4" aria-hidden />} label="Firmensitz">
                     <Value value={address.street} />
                     <span className="block text-ink">{address.zip} {address.city}, {address.country}</span>
+                    <span className="mt-1 block text-[13px] text-ink-muted">Kein Ladengeschäft – wir liefern per Kurier.</span>
                   </Detail>
                 )}
                 {brand.openingHours.length > 0 && (

@@ -148,6 +148,12 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - **Chargebacks:** `charge.dispute.created` schickt eine Admin-Mail mit Antwortfrist.
 - `docs/PAYMENTS.md`: eingeschränkter Schlüssel (`rk_…`) mit Mindestrechten für Live, Webhook-Events, Stripe-Tax-Umstieg.
 
+### Zyklus 5 – Impressum und Umzug auf blumora.at (2026-11-15)
+- **Impressum** mit den Angaben der Inhaber (Betreiber, Anschrift, Kontakt, Online-Streitbeilegung, Urheberrecht, Haftung; Text von fairesRecht.at inkl. Quellenangabe). Die Seite ist jetzt indexierbar. Leere Felder (UID, Gewerbebehörde, Mitgliedschaften, Berufsbezeichnung) sind weggelassen – **Gewerbebehörde und WKO-Mitgliedschaft sind bei einem Gewerbe Pflicht und müssen nachgetragen werden.**
+- Links in Admin-Texten (URLs, E-Mail, Telefon, `[Text](URL)`) werden klickbar (`InlineText` in `src/components/content/prose.tsx`).
+- Kontaktdaten in den Einstellungen: office@blumora.at, Telefon, Firmensitz (Kontaktseite: „Kein Ladengeschäft“).
+- **Domain:** HTTPS-Zertifikat für blumora.at durch die Inhaber in Netlify erneuert. `siteUrl` und `NEXT_PUBLIC_SITE_URL` auf https://blumora.at; bloomery.at leitet dauerhaft (308) auf blumora.at weiter, `/api/*` bleibt auf der alten Domain für Webhooks erreichbar.
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
@@ -198,7 +204,9 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 
 ## 8. Offene Geschäftsfragen (können nicht ohne Inhaber entschieden werden)
 
-- **Marke/Domain:** „BLOOMERY“ ist als EU-Wortmarke eingetragen (u. a. Blumen, Online-Blumenhandel, Lieferung). Empfehlung: `blumora.at` in Netlify als Hauptdomain hinterlegen und `bloomery.at` nur weiterleiten oder aufgeben; vorher anwaltlich prüfen lassen (auch österreichisches Register für „Blumora“).
+- ~~Marke/Domain~~ erledigt: Hauptdomain ist jetzt blumora.at (Zyklus 5). Österreichisches Register für „Blumora“ noch prüfen.
+- **Impressum:** Gewerbebehörde, WKO-Mitgliedschaft, ggf. UID und Berufsbezeichnung nachtragen.
+- (alt) **Marke/Domain:** „BLOOMERY“ ist als EU-Wortmarke eingetragen (u. a. Blumen, Online-Blumenhandel, Lieferung). Empfehlung: `blumora.at` in Netlify als Hauptdomain hinterlegen und `bloomery.at` nur weiterleiten oder aufgeben; vorher anwaltlich prüfen lassen (auch österreichisches Register für „Blumora“).
 - Firmendaten, Impressum, AGB, Datenschutzerklärung, Widerrufsbelehrung – von einer Fachperson freigeben lassen.
 - „inkl. MwSt.“ auf der Produktseite: Die Kalkulation rechnet ohne USt (Kleinunternehmer?).
 - Same-Day und Liefertage Mo–Sa: vom Floristen bestätigen lassen; danach im Admin wieder einschaltbar.

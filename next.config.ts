@@ -53,6 +53,15 @@ const nextConfig: NextConfig = {
      */
     BUILD_TRUSTED_IP_HEADER: process.env.NETLIFY === "true" ? "x-nf-client-connection-ip" : "",
   },
+  // The shop moved from bloomery.at to blumora.at. Pages redirect permanently; /api stays
+  // reachable on the old host so webhooks registered with the old URL keep working.
+  async redirects() {
+    const oldHost = [{ type: "host" as const, value: "(?:www\\.)?bloomery\\.at" }];
+    return [
+      { source: "/", has: oldHost, destination: "https://blumora.at/", permanent: true },
+      { source: "/:path((?!api/).+)", has: oldHost, destination: "https://blumora.at/:path", permanent: true },
+    ];
+  },
   async headers() {
     return [
       { source: "/(.*)", headers: securityHeaders },

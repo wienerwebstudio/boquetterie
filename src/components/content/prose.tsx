@@ -23,13 +23,46 @@ export function Prose({ children, className, as: Tag = "div" }: { children: Reac
   );
 }
 
-/** Renders a list of plain-text paragraphs inside a Prose block. */
+/** Renders a list of plain-text paragraphs inside a Prose block. Links are recognised, see `InlineText`. */
 export function Paragraphs({ items, className }: { items: string[]; className?: string }) {
   return (
     <Prose className={className}>
       {items.map((text, i) => (
-        <p key={i}>{text}</p>
+        <p key={i}><InlineText text={text} /></p>
       ))}
     </Prose>
   );
+}
+
+/**
+ * Plain admin text with clickable links – no HTML is ever interpreted:
+ * `[Label](https://…)`, bare `https://…` / `www.…` URLs, e-mail addresses and
+ * phone numbers after "Telefon:" become links. External links open in a new tab.
+ */
+const TOKEN = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|(https?:\/\/[^\s)]+|www\.[^\s)]+)|([\w.+-]+@[\w-]+(?:\.[\w-]+)+)|(\+\d[\d ]{6,}\d)/g;
+
+export function InlineText({ text }: { text: string }) {
+  const parts: React.ReactNode[] = [];
+  let last = 0;
+  for (const m of text.matchAll(TOKEN)) {
+    const index = m.index ?? 0;
+    if (index > last) parts.push(text.slice(last, index));
+    const [whole, label, labelUrl, url, email, phone] = m;
+    if (label && labelUrl) parts.push(<ExternalLink key={index} href={labelUrl}>{label}</ExternalLink>);
+    else if (url) {
+      // Keep a trailing full stop or comma outside the link.
+      const clean = url.replace(/[.,;:]+$/, "");
+      parts.push(<ExternalLink key={index} href={clean.startsWith("http") ? clean : `https://${clean}`}>{clean}</ExternalLink>);
+      if (clean.length < url.length) parts.push(url.slice(clean.length));
+    } else if (email) parts.push(<a key={index} href={`mailto:${email}`}>{email}</a>);
+    else if (phone) parts.push(<a key={index} href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>);
+    else parts.push(whole);
+    last = index + whole.length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return <>{parts}</>;
+}
+
+function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return <a href={href} target="_blank" rel="noopener">{children}</a>;
 }
