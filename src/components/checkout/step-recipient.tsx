@@ -37,7 +37,7 @@ export function StepRecipient({ data, set, errors, onBlur, zone }: {
     ? undefined
     : zone.available && zone.zoneName
       ? undefined
-      : "Wir liefern in Wien und im Wiener Umland.";
+      : "Wir liefern in alle 23 Wiener Bezirke.";
 
   return (
     <div className="flex flex-col gap-5">

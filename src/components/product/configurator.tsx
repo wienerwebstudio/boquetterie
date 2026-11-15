@@ -154,7 +154,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           <span className="text-[14px] font-semibold text-ink">Größe wählen</span>
           <span className="text-[12.5px] text-ink-muted">{size.description ?? size.label}</span>
         </legend>
-        <div className="grid grid-cols-3 gap-2.5">
+        <div className={cn("grid gap-2.5", product.sizes.length === 4 ? "grid-cols-2" : "grid-cols-3")}>
           {product.sizes.map((s) => {
             const checked = s.id === sizeId;
             const out = isSoldOut(product, s);
@@ -236,7 +236,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                 Wir liefern an diese Adresse.
               </p>
               <p className="mt-1 pl-7 text-[13px] text-ink-muted">
-                {zone.name} · Lieferung {formatPrice(zone.fee)}{zone.freeFrom !== null && <> · gratis ab {formatPrice(zone.freeFrom)}</>}
+                {zone.name} · Lieferung {zone.fee === 0 ? "gratis" : formatPrice(zone.fee)}{zone.fee > 0 && zone.freeFrom !== null && <> · gratis ab {formatPrice(zone.freeFrom)}</>}
                 {zone.note && <span className="block">{zone.note}</span>}
               </p>
             </div>

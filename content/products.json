@@ -54,27 +54,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -142,27 +136,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 45.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -231,27 +219,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 45.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -316,27 +298,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 45.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -407,27 +383,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -502,27 +485,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 50.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 69.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -594,27 +571,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 45.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -677,27 +648,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -764,27 +742,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -851,27 +836,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 45.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -938,27 +917,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1032,27 +1018,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1132,27 +1125,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1233,32 +1233,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
-      },
-      {
-        "id": "xxl",
-        "label": "XXL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1267,7 +1269,7 @@
     "active": true,
     "seo": {
       "title": "Rot & Weiß Mix – rote und weiße Rosen | Blumora",
-      "description": "Rote und weiße Rosen in festlicher Manschette. Für Valentinstag, Jahrestag oder Hochzeitstag, in fünf Größen – Blumenversand in Wien."
+      "description": "Rote und weiße Rosen in festlicher Manschette. Für Valentinstag, Jahrestag oder Hochzeitstag, in vier Größen – Blumenversand in Wien."
     },
     "sortOrder": 14
   },
@@ -1355,11 +1357,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 36.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1378,7 +1379,7 @@
     "name": "Red Passion",
     "tagline": "Rote Rosen mit Schleierkraut",
     "shortDescription": "Ein ausdrucksstarker Rosenstrauß in tiefem Rot für große Gefühle.",
-    "description": "Red Passion vereint rote Rosen zu einem dichten, runden Strauß, umrahmt von Schleierkraut und einer dunklen Manschette. In fünf Größen erhältlich – für romantische Gesten und Momente, die in Erinnerung bleiben sollen.",
+    "description": "Red Passion vereint rote Rosen zu einem dichten, runden Strauß, umrahmt von Schleierkraut und einer dunklen Manschette. In vier Größen erhältlich – für romantische Gesten und Momente, die in Erinnerung bleiben sollen.",
     "flowers": [
       "Rosen",
       "Schleierkraut"
@@ -1433,32 +1434,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
-      },
-      {
-        "id": "xxl",
-        "label": "XXL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1467,7 +1470,7 @@
     "active": true,
     "seo": {
       "title": "Red Passion – roter Rosenstrauß | Blumora",
-      "description": "Rote Rosen mit Schleierkraut in dunkler Manschette, in fünf Größen. Ein Rosenstrauß für große Gefühle – Blumenversand in Wien."
+      "description": "Rote Rosen mit Schleierkraut in dunkler Manschette, in vier Größen. Ein Rosenstrauß für große Gefühle – Blumenversand in Wien."
     },
     "sortOrder": 16
   },
@@ -1525,32 +1528,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
-      },
-      {
-        "id": "xxl",
-        "label": "XXL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1567,9 +1572,9 @@
     "id": "p-koenigin-der-herzen",
     "slug": "koenigin-der-herzen",
     "name": "Königin der Herzen",
-    "tagline": "Rote Rosen mit Schleierkraut, 13 bis 100 Stück",
-    "shortDescription": "Ein üppiger Rosenstrauß, wählbar von 13 bis 100 Rosen.",
-    "description": "Königin der Herzen verbindet rote Rosen mit feinem Schleierkraut in einer dunklen, transparenten Manschette. Wähle die Anzahl der Rosen von 13 bis 100 – von der kleinen Geste bis zum großen Auftritt.",
+    "tagline": "Rote Rosen mit Schleierkraut, 9 bis 41 Stück",
+    "shortDescription": "Ein üppiger Rosenstrauß, wählbar von 9 bis 41 Rosen.",
+    "description": "Königin der Herzen verbindet rote Rosen mit feinem Schleierkraut in einer dunklen, transparenten Manschette. Wähle die Anzahl der Rosen von 9 bis 41 – von der kleinen Geste bis zum großen Auftritt.",
     "flowers": [
       "Rosen",
       "Schleierkraut"
@@ -1624,43 +1629,40 @@
       "valentinstag",
       "liebe",
       "antrag",
-      "100 rosen",
       "premium"
     ],
     "sizes": [
       {
         "id": "s",
-        "label": "13 Rosen",
-        "price": 0,
-        "stems": 13
+        "label": "Klein",
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
-        "label": "23 Rosen",
-        "price": 0,
-        "stems": 23
+        "label": "Mittel",
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
+        "popular": true
       },
       {
         "id": "l",
-        "label": "41 Rosen",
-        "price": 0,
-        "stems": 41
+        "label": "Groß",
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
-        "label": "51 Rosen",
-        "price": 0,
-        "stems": 51
-      },
-      {
-        "id": "xxl",
-        "label": "100 Rosen",
-        "price": 0,
-        "stems": 100
+        "label": "XL",
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1668,8 +1670,8 @@
     "sameDayCapable": false,
     "active": true,
     "seo": {
-      "title": "Königin der Herzen – 13 bis 100 Rosen | Blumora",
-      "description": "Rote Rosen mit Schleierkraut, wählbar von 13 bis 100 Stück. Ein üppiger Rosenstrauß für große Momente – Blumenversand in Wien."
+      "title": "Königin der Herzen – 9 bis 41 Rosen | Blumora",
+      "description": "Rote Rosen mit Schleierkraut, wählbar von 9 bis 41 Stück. Ein üppiger Rosenstrauß für große Momente – Blumenversand in Wien."
     },
     "sortOrder": 18
   },
@@ -1727,27 +1729,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1817,27 +1813,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -1908,27 +1898,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2008,27 +1992,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2104,27 +2082,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2199,27 +2171,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2238,7 +2217,7 @@
     "name": "Rosenglanz",
     "tagline": "Rosen in Pastell, Pink & Bordeaux",
     "shortDescription": "Rosen in Pastell und Pink, elegant zusammengestellt.",
-    "description": "Rosenglanz vereint Rosen in Pastellrosa, Creme, Pink und Bordeaux mit Schleierkraut in einer rosa Manschette. Zeitlos in der Ausstrahlung, in fünf Größen erhältlich.",
+    "description": "Rosenglanz vereint Rosen in Pastellrosa, Creme, Pink und Bordeaux mit Schleierkraut in einer rosa Manschette. Zeitlos in der Ausstrahlung, in vier Größen erhältlich.",
     "flowers": [
       "Rosen",
       "Schleierkraut"
@@ -2294,32 +2273,34 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 48.9,
+        "stems": 9,
+        "description": "9 Rosen"
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 65.9,
+        "stems": 15,
+        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 93.9,
+        "stems": 25,
+        "description": "25 Rosen"
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
-      },
-      {
-        "id": "xxl",
-        "label": "XXL",
-        "price": 0
+        "price": 127.9,
+        "stems": 41,
+        "description": "41 Rosen"
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2328,7 +2309,7 @@
     "active": true,
     "seo": {
       "title": "Rosenglanz – Rosen in Pastell & Pink | Blumora",
-      "description": "Rosen in Pastellrosa, Pink und Bordeaux mit Schleierkraut, in fünf Größen. Ein eleganter Rosenstrauß – Blumenversand in Wien."
+      "description": "Rosen in Pastellrosa, Pink und Bordeaux mit Schleierkraut, in vier Größen. Ein eleganter Rosenstrauß – Blumenversand in Wien."
     },
     "sortOrder": 25
   },
@@ -2396,27 +2377,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2487,27 +2462,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2583,32 +2552,31 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 50.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 69.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
+        "price": 84.9
       },
       {
         "id": "xxl",
         "label": "XXL",
-        "price": 0
+        "price": 132.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2678,27 +2646,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2774,27 +2736,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2869,27 +2825,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2967,27 +2917,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3062,27 +3006,21 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 36.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 46.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
-      },
-      {
-        "id": "xl",
-        "label": "XL",
-        "price": 0
+        "price": 60.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3147,11 +3085,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 69.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 69.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3220,11 +3157,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 88.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 88.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3293,11 +3229,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 40.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 40.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3360,11 +3295,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 40.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 40.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3429,11 +3363,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 108.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 108.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3497,11 +3430,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 36.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 36.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3564,11 +3496,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 38.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 38.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3655,11 +3586,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 40.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 40.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3721,21 +3651,21 @@
       {
         "id": "s",
         "label": "60 cm",
-        "price": 0
+        "price": 88.9
       },
       {
         "id": "m",
         "label": "80 cm",
-        "price": 0
+        "price": 108.9,
+        "popular": true
       },
       {
         "id": "l",
         "label": "100 cm",
-        "price": 0
+        "price": 127.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 88.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3795,21 +3725,21 @@
       {
         "id": "s",
         "label": "60 cm",
-        "price": 0
+        "price": 88.9
       },
       {
         "id": "m",
         "label": "80 cm",
-        "price": 0
+        "price": 108.9,
+        "popular": true
       },
       {
         "id": "l",
         "label": "100 cm",
-        "price": 0
+        "price": 127.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 88.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3872,21 +3802,21 @@
       {
         "id": "s",
         "label": "60 cm",
-        "price": 0
+        "price": 88.9
       },
       {
         "id": "m",
         "label": "80 cm",
-        "price": 0
+        "price": 108.9,
+        "popular": true
       },
       {
         "id": "l",
         "label": "100 cm",
-        "price": 0
+        "price": 127.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 88.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -3949,21 +3879,21 @@
       {
         "id": "s",
         "label": "60 cm",
-        "price": 0
+        "price": 88.9
       },
       {
         "id": "m",
         "label": "80 cm",
-        "price": 0
+        "price": 108.9,
+        "popular": true
       },
       {
         "id": "l",
         "label": "100 cm",
-        "price": 0
+        "price": 127.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 88.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -4024,21 +3954,21 @@
       {
         "id": "s",
         "label": "60 cm",
-        "price": 0
+        "price": 88.9
       },
       {
         "id": "m",
         "label": "80 cm",
-        "price": 0
+        "price": 108.9,
+        "popular": true
       },
       {
         "id": "l",
         "label": "100 cm",
-        "price": 0
+        "price": 127.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 88.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -4101,21 +4031,21 @@
       {
         "id": "s",
         "label": "60 cm",
-        "price": 0
+        "price": 88.9
       },
       {
         "id": "m",
         "label": "80 cm",
-        "price": 0
+        "price": 108.9,
+        "popular": true
       },
       {
         "id": "l",
         "label": "100 cm",
-        "price": 0
+        "price": 127.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 88.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -4179,11 +4109,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 165.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 165.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -4247,11 +4176,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 165.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 165.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -4313,11 +4241,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 165.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 165.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -4377,11 +4304,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 165.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 165.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -4444,11 +4370,10 @@
       {
         "id": "m",
         "label": "Standard",
-        "price": 0
+        "price": 165.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 165.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -4566,27 +4491,26 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 0
+        "price": 50.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 0,
+        "price": 69.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 0
+        "price": 88.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 0
+        "price": 108.9
       }
     ],
-    "basePrice": 0,
-    "pricePending": true,
+    "basePrice": 50.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,

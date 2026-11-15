@@ -14,7 +14,7 @@ export function organizationLd(settings: SiteSettings) {
     name: settings.brand.name,
     url: settings.seo.siteUrl,
     image: `${settings.seo.siteUrl}/images/hero/hero-wide.jpg`,
-    areaServed: ["Wien", "Niederösterreich"],
+    areaServed: ["Wien"],
     ...(hasAddress && {
       address: {
         "@type": "PostalAddress",

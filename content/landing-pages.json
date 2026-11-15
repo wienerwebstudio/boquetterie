@@ -14,22 +14,10 @@
     "seo": {"title": "Blumenversand Wien – Blumen liefern lassen", "description": "Blumen in Wien liefern lassen: frisch gebundene Sträuße mit Wunschdatum, Zeitfenster und Grußkarte. Bestellen in wenigen Minuten."}
   },
   {
-    "slug": "blumenversand-niederoesterreich",
-    "title": "Blumenversand Niederösterreich",
-    "headline": "Blumen ins Wiener Umland liefern lassen.",
-    "intro": "Wir liefern auch in ausgewählte Gemeinden rund um Wien – an festen Liefertagen, frisch gebunden. Gib die Postleitzahl ein, um Liefertage und Kosten zu sehen.",
-    "productFilter": {"limit": 8},
-    "sections": [
-      {"heading": "Liefergebiete in Niederösterreich", "paragraphs": ["Unsere Liefergebiete im Umland werden laufend erweitert. Welche Gemeinden aktuell beliefert werden und an welchen Tagen, zeigt die Lieferprüfung nach Eingabe der Postleitzahl."]}
-    ],
-    "faqIds": ["f-where", "f-date", "f-nobody"],
-    "seo": {"title": "Blumenversand Niederösterreich – Wiener Umland", "description": "Blumen ins Wiener Umland liefern lassen: frisch gebundene Sträuße an festen Liefertagen in ausgewählte Gemeinden Niederösterreichs."}
-  },
-  {
     "slug": "blumen-zum-geburtstag",
     "title": "Blumen zum Geburtstag",
     "headline": "Geburtstagsblumen, die pünktlich klingeln.",
-    "intro": "Bunte, fröhliche oder elegante Sträuße zum Geburtstag – mit Wunschdatum, Grußkarte und kleinen Extras. Geliefert in Wien und Umgebung.",
+    "intro": "Bunte, fröhliche oder elegante Sträuße zum Geburtstag – mit Wunschdatum, Grußkarte und kleinen Extras. Geliefert in ganz Wien.",
     "productFilter": {"occasions": ["geburtstag"], "limit": 8},
     "sections": [
       {"heading": "Pünktlich zum Geburtstag", "paragraphs": ["Wähle das Lieferdatum im Kalender – der Strauß wird an genau diesem Tag gebunden und geliefert. In vielen Wiener Bezirken kannst du zusätzlich ein Zeitfenster wählen."]}

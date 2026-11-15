@@ -71,7 +71,7 @@ export function PostalCodeCheck({
                 <span className="inline-flex items-center gap-1 font-semibold text-forest"><Clock className="size-3.5" /> Heute lieferbar (bis {result.zone.sameDayCutoff} Uhr bestellen)</span>
               )}
               {!result.sameDayToday && firstDay && <span>Nächste Lieferung: <strong className="text-ink">{formatDateShort(firstDay.date)}</strong></span>}
-              <span>Lieferung {result.zone.freeFrom !== null ? `${formatPrice(result.zone.fee)} · gratis ab ${formatPrice(result.zone.freeFrom)}` : formatPrice(result.zone.fee)}</span>
+              <span>Lieferung {result.zone.fee === 0 ? "gratis" : result.zone.freeFrom !== null ? `${formatPrice(result.zone.fee)} · gratis ab ${formatPrice(result.zone.freeFrom)}` : formatPrice(result.zone.fee)}</span>
             </div>
             {isHero && (
               <Link href={`${routes.shop}?plz=${result.postalCode}`} className="group mt-3 inline-flex items-center gap-2 text-sm font-semibold text-forest">

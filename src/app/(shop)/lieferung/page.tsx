@@ -131,8 +131,8 @@ function ZoneCard({ zone, settings, now }: { zone: DeliveryZone; settings: SiteS
 
       <dl className="mt-5 divide-y divide-line border-y border-line text-[14px]">
         <Row label="Lieferkosten">
-          {formatPrice(info.fee)}
-          {info.freeFrom !== null && <span className="text-ink-muted"> · gratis ab {formatPrice(info.freeFrom)}</span>}
+          {info.fee === 0 ? "Gratis" : formatPrice(info.fee)}
+          {info.fee > 0 && info.freeFrom !== null && <span className="text-ink-muted"> · gratis ab {formatPrice(info.freeFrom)}</span>}
         </Row>
         {zone.minOrder > 0 && <Row label="Mindestbestellwert">{formatPrice(zone.minOrder)}</Row>}
         <Row label="Liefertage">{info.days || "–"}</Row>
