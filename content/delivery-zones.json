@@ -16,7 +16,7 @@
   {
     "id": "wien-mitte", "name": "Wien Zone 2", "region": "Wien",
     "postalCodes": ["1010", "1030", "1040", "1050", "1060", "1080", "1090", "1120", "1130", "1140", "1170", "1180", "1200", "1230"],
-    "fee": 4.9, "freeFrom": null, "minOrder": 0,
+    "fee": 3.99, "freeFrom": null, "minOrder": 0,
     "deliveryDays": [1, 2, 3, 4, 5, 6],
     "cutoff": "14:00", "leadDays": 1,
     "sameDay": true, "sameDayCutoff": "12:00",
@@ -30,7 +30,7 @@
   {
     "id": "wien-fern", "name": "Wien Zone 3", "region": "Wien",
     "postalCodes": ["1020", "1100", "1110", "1190", "1210", "1220"],
-    "fee": 9, "freeFrom": null, "minOrder": 0,
+    "fee": 7.99, "freeFrom": null, "minOrder": 0,
     "deliveryDays": [1, 2, 3, 4, 5, 6],
     "cutoff": "14:00", "leadDays": 1,
     "sameDay": true, "sameDayCutoff": "12:00",
