@@ -298,21 +298,26 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 36.9
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 45.9,
+        "price": 65.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 60.9
+        "price": 93.9
+      },
+      {
+        "id": "xl",
+        "label": "XL",
+        "price": 127.9
       }
     ],
-    "basePrice": 36.9,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
@@ -2456,31 +2461,26 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 36.9
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
-        "price": 50.9,
+        "price": 65.9,
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 69.9
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 84.9
-      },
-      {
-        "id": "xxl",
-        "label": "XXL",
-        "price": 132.9
+        "price": 127.9
       }
     ],
-    "basePrice": 36.9,
+    "basePrice": 48.9,
     "stock": null,
     "deliverable": true,
     "bestseller": false,
