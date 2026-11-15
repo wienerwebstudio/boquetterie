@@ -314,6 +314,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
               session={stripeSession}
               amount={totals.total}
               email={data.customer.email}
+              name={`${data.customer.firstName} ${data.customer.lastName}`.trim()}
               onDone={finishStripe}
               onCancel={() => { setStripeSession(null); setSubmitError("Die Zahlung wurde nicht abgeschlossen. Du kannst eine andere Zahlungsart wählen und es erneut versuchen."); }}
             />

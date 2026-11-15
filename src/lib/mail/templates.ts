@@ -1,5 +1,6 @@
 import type { Order, OrderStatusDefinition } from "@/types";
 import { formatDateLong, formatPrice } from "@/lib/format";
+import { VAT_TEXT } from "@/lib/vat";
 
 /**
  * Transactional e-mail templates.
@@ -85,10 +86,10 @@ function renderBlockHtml(b: Block): string {
       if (t.extras > 0) rows.push(["Extras", formatPrice(t.extras), false]);
       rows.push(["Lieferung", t.delivery > 0 ? formatPrice(t.delivery) : "kostenlos", false]);
       if (t.discount > 0) rows.push([`Gutschein${b.order.coupon ? ` ${b.order.coupon.code}` : ""}`, `– ${formatPrice(t.discount)}`, false]);
-      rows.push(["Gesamt (inkl. USt.)", formatPrice(t.total), true]);
+      rows.push([VAT_TEXT.total, formatPrice(t.total), true]);
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px;">${rows
         .map(([k, v, strong]) => `<tr><td style="padding:6px 0;font-family:${FONT};font-size:${strong ? 15 : 14}px;color:${strong ? C.ink : C.muted};${strong ? "font-weight:600;border-top:1px solid " + C.line + ";padding-top:12px;" : ""}">${escapeHtml(k)}</td><td align="right" style="padding:6px 0;font-family:${FONT};font-size:${strong ? 15 : 14}px;color:${C.ink};${strong ? "font-weight:600;border-top:1px solid " + C.line + ";padding-top:12px;" : ""}white-space:nowrap;">${escapeHtml(v)}</td></tr>`)
-        .join("")}</table>`;
+        .join("")}<tr><td colspan="2" style="padding:8px 0 0;font-family:${FONT};font-size:12px;color:${C.muted};">${escapeHtml(VAT_TEXT.note)}</td></tr></table>`;
     }
     case "quote":
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px;"><tr><td style="padding:18px 20px;background:${C.bg};border:1px solid ${C.line};border-radius:6px;font-family:${SERIF};font-size:17px;line-height:1.55;color:${C.ink};font-style:italic;">${escapeHtml(b.text).replace(/\n/g, "<br>")}${b.by ? `<br><span style="font-family:${FONT};font-style:normal;font-size:13px;color:${C.muted};">– ${escapeHtml(b.by)}</span>` : ""}</td></tr></table>`;
@@ -123,7 +124,8 @@ function renderBlockText(b: Block): string {
       if (t.extras > 0) lines.push(`Extras: ${formatPrice(t.extras)}`);
       lines.push(`Lieferung: ${t.delivery > 0 ? formatPrice(t.delivery) : "kostenlos"}`);
       if (t.discount > 0) lines.push(`Gutschein${b.order.coupon ? ` ${b.order.coupon.code}` : ""}: – ${formatPrice(t.discount)}`);
-      lines.push(`Gesamt (inkl. USt.): ${formatPrice(t.total)}`);
+      lines.push(`${VAT_TEXT.total}: ${formatPrice(t.total)}`);
+      lines.push(VAT_TEXT.note);
       return lines.join("\n");
     }
     case "quote":

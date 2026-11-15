@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import type { CartItem, DeliveryZone } from "@/types";
 import type { CartTotals } from "@/lib/pricing";
 import { cn, formatDateShort, formatPrice } from "@/lib/format";
+import { VAT_TEXT } from "@/lib/vat";
 
 export interface SummaryProps {
   items: CartItem[];
@@ -90,7 +91,7 @@ function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting,
           <dt className="text-[15px] font-semibold text-ink">Gesamt</dt>
           <dd className="font-serif text-[26px] tabular-nums leading-none text-ink">{formatPrice(totals.total)}</dd>
         </div>
-        <div className="text-[11.5px] text-ink-muted"><dt className="sr-only">Hinweis</dt><dd>inkl. MwSt.</dd></div>
+        <div className="text-[11.5px] text-ink-muted"><dt className="sr-only">Hinweis</dt><dd>{VAT_TEXT.note}</dd></div>
       </dl>
     </div>
   );

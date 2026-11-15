@@ -49,11 +49,13 @@ export interface StripeSession {
   method: PaymentMethodId;
 }
 
-export function StripePaymentForm({ publishableKey, session, amount, email, onDone, onCancel }: {
+export function StripePaymentForm({ publishableKey, session, amount, email, name, onDone, onCancel }: {
   publishableKey: string;
   session: StripeSession;
   amount: number;
   email: string;
+  /** Orderer's name from step 4 – prefilled in the Payment Element. */
+  name?: string;
   /** Called once Stripe reports success (or "processing") and the server has been informed. */
   onDone: (status: PaymentConfirmResponse["status"]) => void;
   onCancel: () => void;
@@ -62,13 +64,13 @@ export function StripePaymentForm({ publishableKey, session, amount, email, onDo
   const options: StripeElementsOptions = useMemo(() => ({ clientSecret: session.clientSecret, locale: "de", appearance }), [session.clientSecret]);
   return (
     <Elements stripe={stripePromise} options={options}>
-      <StripeForm session={session} amount={amount} email={email} onDone={onDone} onCancel={onCancel} />
+      <StripeForm session={session} amount={amount} email={email} name={name} onDone={onDone} onCancel={onCancel} />
     </Elements>
   );
 }
 
-function StripeForm({ session, amount, email, onDone, onCancel }: {
-  session: StripeSession; amount: number; email: string;
+function StripeForm({ session, amount, email, name, onDone, onCancel }: {
+  session: StripeSession; amount: number; email: string; name?: string;
   onDone: (status: PaymentConfirmResponse["status"]) => void; onCancel: () => void;
 }) {
   const stripe = useStripe();
@@ -115,7 +117,15 @@ function StripeForm({ session, amount, email, onDone, onCancel }: {
       <div className="min-h-40">
         {!ready && <div className="flex flex-col gap-3" aria-hidden><Skeleton className="h-11 w-full" /><Skeleton className="h-11 w-full" /><Skeleton className="h-11 w-2/3" /></div>}
         <div className={ready ? "" : "sr-only"}>
-          <PaymentElement options={{ layout: "tabs", paymentMethodOrder: PM_ORDER[session.method] }} onReady={() => setReady(true)} />
+          <PaymentElement
+            options={{
+              layout: "tabs",
+              paymentMethodOrder: PM_ORDER[session.method],
+              // Customers are in Austria: without this, Stripe guesses the country from the IP (a VPN shows a US ZIP field).
+              defaultValues: { billingDetails: { email: email || undefined, name: name || undefined, address: { country: "AT" } } },
+            }}
+            onReady={() => setReady(true)}
+          />
         </div>
       </div>
       {error && <p role="alert" className="rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">{error}</p>}

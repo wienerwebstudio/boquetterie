@@ -140,6 +140,14 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - Dokumentiert in `docs/DEPLOYMENT.md` („Was ohne Datenbank und Mail-Anbieter passiert“).
 - **Gutschein WILLKOMMEN10 (10 % ab 40 €) und Newsletter wieder aktiv** – auf Wunsch der Inhaber. Die Newsletter-API antwortet ohne Datenspeicher mit 503 („Anmeldung in Kürze möglich“), statt Adressen zu verlieren.
 
+### Zyklus 4 – Stripe (2026-11-15)
+- **Integrationsplan** mit Stripes Planer (`stripe tools plan`, abgeschlossen): Payment Intents + Payment Element mit eigenem Checkout – entspricht der bestehenden Integration. Grundsätze laut Plan: Link und dynamische Zahlungsarten an.
+- **SDKs aktualisiert:** `stripe` 23.1 (API-Version 2026-10-28.endive), `@stripe/stripe-js` 10.3, `@stripe/react-stripe-js` 7.1.
+- **Kleinunternehmer:** Laut Inhabern keine Umsatzsteuer. „inkl. MwSt./USt.“ an neun Stellen ersetzt durch „Endpreis“ bzw. den Hinweis nach § 6 Abs. 1 Z 27 UStG (`src/lib/vat.ts`, Footer, Warenkorb, Checkout, Bestellseite, Mails). **Wortlaut vom Steuerberater bestätigen lassen.** Stripe Tax bleibt aus, bis die Umsatzgrenze überschritten wird (Anleitung in `docs/PAYMENTS.md`).
+- **Payment Element** mit Österreich, Name und E-Mail vorbelegt (vorher riet Stripe das Land aus der IP und verlangte z. B. eine US-Postleitzahl).
+- **Chargebacks:** `charge.dispute.created` schickt eine Admin-Mail mit Antwortfrist.
+- `docs/PAYMENTS.md`: eingeschränkter Schlüssel (`rk_…`) mit Mindestrechten für Live, Webhook-Events, Stripe-Tax-Umstieg.
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
@@ -158,6 +166,8 @@ Nur tatsächlich ausgeführte Läufe.
 | 2026-11-15 (Z3) | Playwright E2E + axe im CI-Modus | 29/29 |
 | 2026-11-15 (Z3) | Checkout-Durchlauf lokal bei 390 px bis zum Zahlungsschritt (Mock), Fehlerzustände Schritt 1 und 4 | läuft durch, Screenshots gesichtet |
 | 2026-11-15 (Z3) | Newsletter-API (Speichern, 503 ohne Speicher, Honeypot), Gutschein-Prüfung WILLKOMMEN10 (gilt ab 40 €) | Unit 175/175, lokal per API geprüft; E2E 29/29 |
+| 2026-11-15 (Z4) | Echte Stripe-Testzahlung lokal (Testkarte 4242, Webhook über `stripe listen`): Bestellung bezahlt; Erstattung → `refunded`; Chargeback → Admin-Alarm; alle Webhooks 200 | bestanden |
+| 2026-11-15 (Z4) | `tsc`, `eslint`, Unit 175/175, E2E 29/29 | grün |
 | 2026-11-15 (Z3) | Formular-Rückfall per simuliertem 503, Erinnerungs-/Konto-Hinweis im Produktionsbuild | wie erwartet |
 | 2026-11-15 (Z2) | Sichtprüfung per Screenshot (Start, Produktseite, Lieferung, Über uns; 390–1440 px) | abgeschnittene Inhalte behoben |
 

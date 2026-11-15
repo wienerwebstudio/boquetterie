@@ -4,6 +4,7 @@ import { Tag, X, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { formatPrice, cn } from "@/lib/format";
 import { useCartTotals } from "./use-cart-totals";
+import { VAT_TEXT } from "@/lib/vat";
 
 function Row({ label, value, muted, strong, className }: { label: React.ReactNode; value: React.ReactNode; muted?: boolean; strong?: boolean; className?: string }) {
   return (
@@ -44,7 +45,7 @@ export function CartSummary({ className, showTotal = true }: { className?: strin
           <Row label={<>Rabatt <span className="text-ink-muted">· {coupon.code}</span></>} value={<span className="text-success">− {formatPrice(totals.discount)}</span>} />
         )}
         {showTotal && (
-          <Row className="border-t border-line pt-3" label={<>Gesamt <span className="text-[12px] font-normal text-ink-muted">inkl. MwSt.</span></>} value={formatPrice(totals.total)} strong />
+          <Row className="border-t border-line pt-3" label={<>Gesamt <span className="text-[12px] font-normal text-ink-muted">{VAT_TEXT.short}</span></>} value={formatPrice(totals.total)} strong />
         )}
       </dl>
 

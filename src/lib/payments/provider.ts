@@ -37,6 +37,8 @@ export interface WebhookResult {
   type: string;
   /** `null` when the event is not relevant for the shop. */
   event: PaymentEvent | null;
+  /** Something the shop owner must act on that does not change the order state (e.g. a dispute). */
+  alert?: { subject: string; text: string };
 }
 
 export class WebhookVerificationError extends Error {

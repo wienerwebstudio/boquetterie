@@ -6,6 +6,7 @@ import { routes } from "@/lib/urls";
 import { ordersPaused } from "@/lib/orders-paused";
 import { ConsentSettingsLink } from "@/components/consent/consent-link";
 import { GIFT_FINDER_PATH } from "@/components/giftfinder/config";
+import { VAT_TEXT } from "@/lib/vat";
 
 type FooterLink = { label: string; href: string } | { label: string; consent: true };
 
@@ -73,7 +74,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
             {payments.map((p) => <PaymentMark key={p.id} id={p.id} />)}
             {payments.length > 0 && <span className="ml-2 text-[12px] text-ink-soft">Sichere Zahlung · SSL-verschlüsselt</span>}
           </div>
-          <p className="text-[12px] text-ink-soft">© {new Date().getFullYear()} {settings.brand.name}. {settings.brand.address.city}, {settings.brand.address.country}.</p>
+          <p className="text-[12px] text-ink-soft">© {new Date().getFullYear()} {settings.brand.name}. {settings.brand.address.city}, {settings.brand.address.country}. {VAT_TEXT.note}</p>
         </div>
       </div>
     </footer>

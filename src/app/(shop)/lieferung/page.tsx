@@ -14,6 +14,7 @@ import { PostalCodeCheck } from "@/components/shop/postal-code-check";
 import { Accordion } from "@/components/ui/accordion";
 import { SectionHeading } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
+import { VAT_TEXT } from "@/lib/vat";
 
 const SLUG = "lieferung";
 const FAQ_CATEGORY = "lieferung";
@@ -99,7 +100,7 @@ export default async function DeliveryPage() {
           </ul>
         )}
         <p className="mt-8 max-w-2xl text-[13px] leading-relaxed text-ink-muted">
-          Alle Preise inkl. USt. Ob eine Lieferung am gewünschten Tag möglich ist, hängt vom Bestellzeitpunkt ab. An einzelnen Tagen liefern wir nicht – der Kalender auf der Produktseite und im Checkout zeigt alle verfügbaren Liefertage.
+          {VAT_TEXT.note} Ob eine Lieferung am gewünschten Tag möglich ist, hängt vom Bestellzeitpunkt ab. An einzelnen Tagen liefern wir nicht – der Kalender auf der Produktseite und im Checkout zeigt alle verfügbaren Liefertage.
         </p>
       </section>
 

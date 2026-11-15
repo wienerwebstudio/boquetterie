@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { OrderTimeline } from "@/components/checkout/order-timeline";
 import { GreetingCardPreview } from "@/components/checkout/greeting-card-preview";
 import { OrderPlacedCleanup } from "@/components/checkout/order-placed-cleanup";
+import { VAT_TEXT } from "@/lib/vat";
 
 export const dynamic = "force-dynamic";
 
@@ -192,7 +193,7 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
               <dt className="text-[15px] font-semibold text-ink">Gesamt</dt>
               <dd className="font-serif text-[26px] tabular-nums leading-none text-ink">{formatPrice(order.totals.total)}</dd>
             </div>
-            <p className="text-[11.5px] text-ink-soft">inkl. MwSt.</p>
+            <p className="text-[11.5px] text-ink-soft">{VAT_TEXT.note}</p>
           </dl>
         </section>
 

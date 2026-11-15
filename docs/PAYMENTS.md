@@ -74,11 +74,18 @@ Bekannte Grenzen:
 ## Stripe einrichten
 
 1. Dashboard → Developers → API keys: `STRIPE_SECRET_KEY` und `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` setzen.
+   **Für Live statt des Secret Keys (`sk_…`) einen eingeschränkten Schlüssel (`rk_…`) verwenden**
+   mit diesen Rechten: *PaymentIntents* – Schreiben, *Charges* – Lesen,
+   *Checkout Sessions* – Schreiben (nur fürs Blumen-Abo), alles andere *Keine*.
+   Schlüssel nur in den Netlify-Umgebungsvariablen speichern, nie im Code.
 2. **Zahlungsmethoden** (Settings → Payment methods): *Cards*, *EPS*, *Klarna*,
    *Apple Pay* und *Google Pay* aktivieren. Da der PaymentIntent
    `automatic_payment_methods` nutzt, erscheinen alle im Dashboard aktivierten
    Methoden automatisch im Payment Element (Wallets nur auf unterstützten
-   Geräten/Browsern).
+   Geräten/Browsern). **Link** eingeschaltet lassen (schnellere Wiederholungskäufe).
+   Methoden ohne Bezug zu Österreich (z. B. MB WAY) im Dashboard ausschalten.
+   Niemals `payment_method_types` im Code setzen – ab API-Version 2026-10-28 lehnt
+   Stripe den Parameter ab.
 3. **Apple Pay**: Settings → Payment methods → Apple Pay → Domain hinzufügen
    (`blumora.at`). Stripe hostet die Domain-Verifizierungsdatei unter
    `/.well-known/apple-developer-merchantid-domain-association` automatisch,
@@ -86,13 +93,33 @@ Bekannte Grenzen:
    Dashboard unter `public/.well-known/` ablegen.
 4. **Webhook** (Developers → Webhooks → Add endpoint):
    URL `https://<domain>/api/webhooks/stripe`, Events
-   `payment_intent.succeeded`, `payment_intent.payment_failed`, `charge.refunded`.
-   Signing Secret als `STRIPE_WEBHOOK_SECRET` setzen.
+   `payment_intent.succeeded`, `payment_intent.payment_failed`, `charge.refunded`,
+   `charge.dispute.created`. Signing Secret als `STRIPE_WEBHOOK_SECRET` setzen.
+   Ein Zahlungsstreit (Chargeback) ändert die Bestellung nicht, sondern schickt eine
+   Mail mit Antwortfrist an `MAIL_ADMIN` – beantwortet wird im Stripe-Dashboard.
+
+### Umsatzsteuer / Stripe Tax
+
+Blumora ist Kleinunternehmer (§ 6 Abs. 1 Z 27 UStG) und verrechnet keine
+Umsatzsteuer. Stripe Tax ist deshalb **nicht** aktiv, und die Seite zeigt
+„Endpreis“ statt „inkl. MwSt.“ (`src/lib/vat.ts`). Wird die Umsatzgrenze
+überschritten:
+
+1. Im Dashboard (Tax → Registrations) die österreichische Registrierung anlegen.
+2. Produktsteuercodes festlegen (Schnittblumen und Pflanzen voraussichtlich
+   ermäßigter Satz, Zubehör Normalsatz – mit dem Steuerberater klären).
+3. Steuer für den eigenen Checkout über die Tax Calculation API berechnen und
+   den Betrag in den PaymentIntent übernehmen; Preise bleiben Endpreise
+   (`tax_behavior: inclusive`).
+4. `SMALL_BUSINESS` in `src/lib/vat.ts` auf `false` setzen.
+
+Ohne aktive Registrierung berechnet Stripe Tax keine Steuer, auch wenn es
+eingeschaltet ist.
 
 ### Lokal testen
 
 ```bash
-stripe login
+stripe login        # oder: export STRIPE_API_KEY=sk_test_…
 stripe listen --forward-to localhost:3000/api/webhooks/stripe
 # → gibt ein whsec_… aus: als STRIPE_WEBHOOK_SECRET in .env.local eintragen, Dev-Server neu starten
 stripe trigger payment_intent.succeeded   # optional: Test-Event
@@ -106,6 +133,10 @@ Testkarten (Testmodus, beliebiges Ablaufdatum in der Zukunft, beliebige CVC):
 | `4000 0025 0000 3155` | 3-D Secure Authentifizierung nötig |
 | `4000 0000 0000 9995` | Abgelehnt (insufficient funds) |
 | `4000 0000 0000 0002` | Abgelehnt (generic decline) |
+
+Zahlungsstreit testen: einen PaymentIntent mit `pm_card_createDispute` bestätigen
+(`stripe trigger charge.dispute.created` funktioniert mit API-Version
+2026-10-28 nicht mehr, weil die Fixture `payment_method_types` verwendet).
 
 EPS und Klarna zeigen im Testmodus eine Stripe-Simulationsseite, auf der man
 „Authorize“ oder „Fail“ wählen kann – der Rücksprung landet auf `/checkout/rueckkehr`.
@@ -134,7 +165,7 @@ Ohne Stripe bleibt das bisherige Anfrageformular.
 
 ## Live gehen
 
-1. Stripe: Live-Schlüssel (`sk_live_…`, `pk_live_…`) setzen, Live-Webhook-Endpoint
+1. Stripe: Live-Schlüssel (`rk_live_…` eingeschränkt, `pk_live_…`) setzen, Live-Webhook-Endpoint
    anlegen und dessen `whsec_…` als `STRIPE_WEBHOOK_SECRET` verwenden.
    Zahlungsmethoden und Apple-Pay-Domain im **Live**-Modus erneut aktivieren.
 2. PayPal: Live-App-Credentials, `PAYPAL_ENV=live`, Live-Webhook-ID.

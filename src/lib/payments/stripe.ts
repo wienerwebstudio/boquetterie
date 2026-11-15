@@ -117,6 +117,19 @@ export const stripeProvider: PaymentProviderAdapter = {
         const full = charge.amount_refunded >= charge.amount;
         return { type: event.type, event: { kind: "refunded", orderId: charge.metadata?.orderId, intentId, reference: charge.id, note: full ? "Zahlung per Stripe erstattet" : `Teilerstattung per Stripe (${(charge.amount_refunded / 100).toFixed(2)} €)` } };
       }
+      case "charge.dispute.created": {
+        // A chargeback: the money is held until the dispute is answered in the Dashboard (deadline in `evidence_details.due_by`).
+        const dispute = event.data.object;
+        const due = dispute.evidence_details?.due_by ? new Date(dispute.evidence_details.due_by * 1000).toISOString().slice(0, 10) : "siehe Dashboard";
+        return {
+          type: event.type,
+          event: null,
+          alert: {
+            subject: `Zahlungsstreit (Chargeback) über ${(dispute.amount / 100).toFixed(2)} €`,
+            text: `Stripe meldet einen Zahlungsstreit (${dispute.reason}) zur Zahlung ${typeof dispute.payment_intent === "string" ? dispute.payment_intent : dispute.payment_intent?.id ?? dispute.charge}. Antwort mit Nachweisen im Stripe-Dashboard bis ${due}.`,
+          },
+        };
+      }
       default:
         return { type: event.type, event: null };
     }

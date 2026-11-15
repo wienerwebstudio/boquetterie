@@ -20,6 +20,7 @@ import { cartItemFromConfig, defaultSize, findSize, isSoldOut } from "@/lib/cart
 import { formatDateShort, formatPrice, cn } from "@/lib/format";
 import { routes } from "@/lib/urls";
 import { onRadioGroupKeyDown } from "@/lib/roving-radio";
+import { VAT_TEXT } from "@/lib/vat";
 
 export function ProductConfigurator({ product, extras, greetingCard, onSizeChange }: {
   product: Product;
@@ -147,7 +148,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           <p className="text-[15px] tabular-nums text-ink">
             <span className="text-[12px] text-ink-muted">ab </span>
             <span className="font-semibold">{formatPrice(lowestPrice(product))}</span>
-            <span className="ml-1.5 text-[12px] text-ink-muted">inkl. MwSt.</span>
+            <span className="ml-1.5 text-[12px] text-ink-muted">{VAT_TEXT.short}</span>
           </p>
           {hasRating && product.rating && <StarRating value={product.rating.value} count={product.rating.count} showValue />}
         </div>
