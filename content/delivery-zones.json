@@ -1,7 +1,7 @@
 [
   {
-    "id": "wien-zentrum", "name": "Wien Zentrum", "region": "Wien",
-    "postalCodes": ["1010-1090"],
+    "id": "wien-nah", "name": "Wien Zone 1", "region": "Wien",
+    "postalCodes": ["1070", "1150", "1160"],
     "fee": 0, "freeFrom": null, "minOrder": 0,
     "deliveryDays": [1, 2, 3, 4, 5, 6],
     "cutoff": "14:00", "leadDays": 1,
@@ -14,12 +14,12 @@
     "active": true
   },
   {
-    "id": "wien-innen", "name": "Wien Innenbezirke", "region": "Wien",
-    "postalCodes": ["1100-1200"],
-    "fee": 0, "freeFrom": null, "minOrder": 0,
+    "id": "wien-mitte", "name": "Wien Zone 2", "region": "Wien",
+    "postalCodes": ["1010", "1030", "1040", "1050", "1060", "1080", "1090", "1120", "1130", "1140", "1170", "1180", "1200", "1230"],
+    "fee": 4.9, "freeFrom": null, "minOrder": 0,
     "deliveryDays": [1, 2, 3, 4, 5, 6],
     "cutoff": "14:00", "leadDays": 1,
-    "sameDay": true, "sameDayCutoff": "11:00",
+    "sameDay": true, "sameDayCutoff": "12:00",
     "windows": [
       {"id": "am", "label": "9–12 Uhr", "from": "09:00", "to": "12:00", "surcharge": 0, "active": true},
       {"id": "pm", "label": "12–17 Uhr", "from": "12:00", "to": "17:00", "surcharge": 0, "active": true},
@@ -28,12 +28,12 @@
     "active": true
   },
   {
-    "id": "wien-aussen", "name": "Wien Außenbezirke", "region": "Wien",
-    "postalCodes": ["1210-1230"],
-    "fee": 0, "freeFrom": null, "minOrder": 0,
+    "id": "wien-fern", "name": "Wien Zone 3", "region": "Wien",
+    "postalCodes": ["1020", "1100", "1110", "1190", "1210", "1220"],
+    "fee": 9, "freeFrom": null, "minOrder": 0,
     "deliveryDays": [1, 2, 3, 4, 5, 6],
-    "cutoff": "13:00", "leadDays": 1,
-    "sameDay": false, "sameDayCutoff": "11:00",
+    "cutoff": "14:00", "leadDays": 1,
+    "sameDay": true, "sameDayCutoff": "12:00",
     "windows": [
       {"id": "am", "label": "9–12 Uhr", "from": "09:00", "to": "12:00", "surcharge": 0, "active": true},
       {"id": "pm", "label": "12–17 Uhr", "from": "12:00", "to": "17:00", "surcharge": 0, "active": true},
