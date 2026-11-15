@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { addNewsletterSubscriber, getSettings } from "@/lib/cms";
+import { addNewsletterSubscriber, canPersistData, getSettings } from "@/lib/cms";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
@@ -35,6 +35,15 @@ export async function POST(req: Request) {
   if (!email || email.length > 254 || /[\s<>"'`,;]/.test(email) || !EMAIL_RE.test(email)) {
     return NextResponse.json({ ok: false, message: "Bitte gib eine gültige E-Mail-Adresse ein." }, { status: 400 });
   }
-  await addNewsletterSubscriber(email);
+  // Without a persistent store (serverless filesystem, no DATABASE_URL) the address would be lost.
+  const unavailable = () =>
+    NextResponse.json({ ok: false, code: "unavailable", message: "Die Anmeldung ist in Kürze möglich. Schau gern bald wieder vorbei." }, { status: 503 });
+  if (!(await canPersistData())) return unavailable();
+  try {
+    await addNewsletterSubscriber(email);
+  } catch (err) {
+    console.error("[newsletter] could not store subscriber", err);
+    return unavailable();
+  }
   return NextResponse.json({ ok: true });
 }

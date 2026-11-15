@@ -11,6 +11,8 @@ const cms = vi.hoisted(() => ({
   writeData: vi.fn(),
   getSettings: vi.fn(),
   getSubscription: vi.fn(),
+  addNewsletterSubscriber: vi.fn(),
+  canPersistData: vi.fn(),
 }));
 const mail = vi.hoisted(() => ({ sendMail: vi.fn(), adminMailAddress: vi.fn() }));
 
@@ -31,6 +33,7 @@ import { POST as contact } from "@/app/api/contact/route";
 import { GET as getOrder } from "@/app/api/orders/[id]/route";
 import { POST as lookup } from "@/app/api/orders/lookup/route";
 import { POST as subscriptionRequest } from "@/app/api/subscription-request/route";
+import { POST as newsletter } from "@/app/api/newsletter/route";
 import { ADMIN_COOKIE, verifySessionToken } from "@/lib/admin-auth";
 import { rateLimitInternals } from "@/lib/rate-limit";
 
@@ -46,6 +49,8 @@ beforeEach(() => {
   cms.writeData.mockResolvedValue(undefined);
   cms.getSettings.mockResolvedValue({ subscriptionEnabled: true });
   cms.getSubscription.mockResolvedValue({ enabled: true, plans: [{ id: "m", name: "Medium" }], frequencies: [{ id: "weekly", label: "Wöchentlich" }] });
+  cms.canPersistData.mockResolvedValue(true);
+  cms.addNewsletterSubscriber.mockResolvedValue(undefined);
   mail.adminMailAddress.mockReturnValue("team@example.com");
   mail.sendMail.mockResolvedValue({ sent: true, provider: "console" });
   vi.stubEnv("ADMIN_PASSWORD", "ci-admin-password");
@@ -248,5 +253,34 @@ describe("POST /api/subscription-request", () => {
   it("rejects an unknown plan", async () => {
     expect((await subscriptionRequest(json("/api/subscription-request", { ...valid, plan: "xxl" }))).status).toBe(400);
     expect(cms.writeData).not.toHaveBeenCalled();
+  });
+});
+
+describe("POST /api/newsletter", () => {
+  beforeEach(() => cms.getSettings.mockResolvedValue({ newsletterEnabled: true }));
+
+  it("stores a valid, normalised address", async () => {
+    const res = await newsletter(json("/api/newsletter", { email: "  Anna@Example.com ", website: "" }));
+    expect(await res.json()).toEqual({ ok: true });
+    expect(cms.addNewsletterSubscriber).toHaveBeenCalledWith("anna@example.com");
+  });
+
+  it("answers 503 instead of losing the address when nothing can be stored", async () => {
+    vi.spyOn(console, "error").mockImplementation(() => undefined);
+    cms.canPersistData.mockResolvedValueOnce(false);
+    const res = await newsletter(json("/api/newsletter", { email: "anna@example.com" }));
+    expect(res.status).toBe(503);
+    expect((await res.json()).code).toBe("unavailable");
+    expect(cms.addNewsletterSubscriber).not.toHaveBeenCalled();
+
+    cms.addNewsletterSubscriber.mockRejectedValueOnce(new Error("read-only file system"));
+    expect((await newsletter(json("/api/newsletter", { email: "anna@example.com" }))).status).toBe(503);
+  });
+
+  it("is off when disabled in the settings and ignores honeypot submissions", async () => {
+    cms.getSettings.mockResolvedValueOnce({ newsletterEnabled: false });
+    expect((await newsletter(json("/api/newsletter", { email: "anna@example.com" }))).status).toBe(404);
+    expect(await (await newsletter(json("/api/newsletter", { email: "anna@example.com", website: "x" }))).json()).toEqual({ ok: true });
+    expect(cms.addNewsletterSubscriber).not.toHaveBeenCalled();
   });
 });

@@ -37,7 +37,7 @@
   ],
   "sameDayEnabled": false,
   "subscriptionEnabled": false,
-  "newsletterEnabled": false,
+  "newsletterEnabled": true,
   "favoritesEnabled": true,
   "headerCta": {
     "enabled": true,

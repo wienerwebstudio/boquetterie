@@ -74,7 +74,7 @@ Nach vielen abgebrochenen Bildanfragen (schnelle Seitenwechsel bei kaltem Cache)
 | P1 | CI instabil (Fonts, a11y-Timeout) | behoben (Zyklus 1), Ursache siehe 2.8 |
 | P1 | Erfundene Bewertungen, falsche Studio-/Zustell-/Verpackungsaussagen, Abo mit erfundenen Preisen | behoben (Zyklus 1) |
 | P1 | Same-Day-Versprechen ohne Bestätigung (Navigation, FAQ, Landingpage, Filter) | entfernt (Zyklus 2), `sameDayEnabled=false` |
-| P1 | Gutschein WILLKOMMEN10 und Newsletter-Rabatt ohne Grundlage | deaktiviert (Zyklus 2) |
+| P1 | Gutschein WILLKOMMEN10 und Newsletter ohne Grundlage | in Zyklus 2 deaktiviert; **von den Inhabern bestätigt, seit Zyklus 3 wieder aktiv** |
 | P1 | Abgeschnittene Inhalte auf Handys (Hero, Produktkarte, Lieferseite) | behoben (Zyklus 2) |
 | P1 | Unbekannte URLs lieferten 200 statt 404; leere Kategorien und Platzhalterseiten im Index | behoben (Zyklus 2) |
 | P1 | Admin-Login ohne wirksames Limit, Standardpasswort in Produktion möglich | behoben (Zyklus 2) |
@@ -138,6 +138,7 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - **Tippflächen** unter 24 px vergrößert (Abschnittslinks, Brotkrumen, Footer).
 - **Build:** Turbopack-Warnung beseitigt (Test-Overlay wird nicht mehr getract); Favicon von 66 KB auf 8,6 KB.
 - Dokumentiert in `docs/DEPLOYMENT.md` („Was ohne Datenbank und Mail-Anbieter passiert“).
+- **Gutschein WILLKOMMEN10 (10 % ab 40 €) und Newsletter wieder aktiv** – auf Wunsch der Inhaber. Die Newsletter-API antwortet ohne Datenspeicher mit 503 („Anmeldung in Kürze möglich“), statt Adressen zu verlieren.
 
 ## 5. Testergebnisse
 
@@ -156,6 +157,7 @@ Nur tatsächlich ausgeführte Läufe.
 | 2026-11-15 (Z3) | `tsc`, `eslint`, Unit | grün, 172/172 |
 | 2026-11-15 (Z3) | Playwright E2E + axe im CI-Modus | 29/29 |
 | 2026-11-15 (Z3) | Checkout-Durchlauf lokal bei 390 px bis zum Zahlungsschritt (Mock), Fehlerzustände Schritt 1 und 4 | läuft durch, Screenshots gesichtet |
+| 2026-11-15 (Z3) | Newsletter-API (Speichern, 503 ohne Speicher, Honeypot), Gutschein-Prüfung WILLKOMMEN10 (gilt ab 40 €) | Unit 175/175, lokal per API geprüft; E2E 29/29 |
 | 2026-11-15 (Z3) | Formular-Rückfall per simuliertem 503, Erinnerungs-/Konto-Hinweis im Produktionsbuild | wie erwartet |
 | 2026-11-15 (Z2) | Sichtprüfung per Screenshot (Start, Produktseite, Lieferung, Über uns; 390–1440 px) | abgeschnittene Inhalte behoben |
 
@@ -179,7 +181,7 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Listing-Seiten und `/lieferung` werden je Anfrage gerendert (TTFB live 0,2–0,6 s); Umstellung auf Revalidierung offen, Nutzen begrenzt.
 - Hero-Video (1,1 MB) lädt auch mobil – nach `load`, nicht bei „Daten sparen“/2G/3G. Kleinere Mobilfassung wäre sinnvoll (bräuchte neue Kodierung).
 - Bestellspeicher im JSON-Store ist ein Dokument (Race); Postgres (`DATABASE_URL`) vor Go-live aktivieren.
-- Newsletter ohne Double-Opt-in (abgeschaltet, bis es umgesetzt ist).
+- Newsletter ohne Double-Opt-in. Vor dem ersten Versand nachrüsten (Bestätigungsmail über Resend) – sonst ist die Einwilligung nach TKG/DSGVO schwer nachweisbar.
 - Cormorant-Italic wird auf jeder Seite vorgeladen (P3).
 - GitHub-Actions laufen noch auf Node 20 (`actions/checkout@v4` usw.).
 - Lokaler Bildoptimierer kann hängen (2.8) – nur Test-/Selbsthosting-Thema.
@@ -201,5 +203,5 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 2. Sobald die Inhaber Datenbank (`DATABASE_URL`), Resend (`RESEND_API_KEY`, `MAIL_FROM`, `MAIL_ADMIN`) und `AUTH_SECRET` bei Netlify eintragen: Kontaktformular, Erinnerung und Konto live gegenprüfen.
 3. Mega-Menü (Spalten, Bilder), Footer-Abstand unter der mobilen Kaufleiste, Tablet-Layout der Produktseite.
 4. Listing-Seiten cachen; mobile Fassung des Hero-Videos.
-5. Newsletter-Double-Opt-in, falls der Newsletter wieder eingeschaltet werden soll.
+5. Newsletter-Double-Opt-in umsetzen, sobald Resend eingerichtet ist (vor dem ersten Versand).
 6. Rechtstexte und Firmendaten einpflegen, sobald geliefert (Abschnitt 8).
