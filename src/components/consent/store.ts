@@ -2,6 +2,7 @@
 import { create } from "zustand";
 import type { ConsentChoice, ConsentState } from "@/types/consent";
 import { createConsent, persistConsent, readStoredConsent } from "./storage";
+import { consentToolsConfigured } from "./config";
 
 export type ConsentView = "choice" | "settings";
 
@@ -38,7 +39,7 @@ export const useConsent = create<ConsentStore>((set, get) => {
     hydrate: () => {
       if (get().hydrated) return;
       const consent = readStoredConsent();
-      set({ consent, hydrated: true, isOpen: consent === null, view: "choice" });
+      set({ consent, hydrated: true, isOpen: consent === null && consentToolsConfigured, view: "choice" });
     },
     open: () => set({ isOpen: true, view: "settings" }),
     close: () => {

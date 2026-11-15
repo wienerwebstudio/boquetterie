@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import { getCategories, getCategoryBySlug, getSettings } from "@/lib/cms";
 import { routes } from "@/lib/urls";
+import { hasQueryParams, pageMetadata } from "@/lib/metadata";
 import { ShopPage } from "@/components/shop/shop-page";
 import type { RawSearchParams } from "@/components/shop/shop-listing";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const category = await getCategoryBySlug("alle");
-  return {
+export async function generateMetadata({ searchParams }: { searchParams: Promise<RawSearchParams> }): Promise<Metadata> {
+  const [category, sp] = await Promise.all([getCategoryBySlug("alle"), searchParams]);
+  return pageMetadata({
     title: category?.seo.title ?? "Blumen online bestellen",
     description: category?.seo.description,
-    alternates: { canonical: routes.shop },
-  };
+    path: routes.shop,
+    // Filtered/sorted variants point to the base listing and stay out of the index.
+    noindex: hasQueryParams(sp),
+  });
 }
 
 export default async function ShopIndexPage({ searchParams }: { searchParams: Promise<RawSearchParams> }) {

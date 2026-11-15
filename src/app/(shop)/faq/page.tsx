@@ -8,6 +8,7 @@ import { breadcrumbLd, faqLd, JsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/content/page-header";
 import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { pageMetadata } from "@/lib/metadata";
 
 const TITLE = "Häufige Fragen";
 const INTRO = "Antworten zu Lieferung, Bestellung und Bezahlung sowie zur Pflege deiner Blumen. Falls etwas fehlt: Wir sind nur eine Nachricht entfernt.";
@@ -20,11 +21,13 @@ const GROUPS: { id: string; label: string }[] = [
 ];
 const OTHER = { id: "weitere", label: "Weitere Fragen" };
 
-export const metadata: Metadata = {
-  title: `${TITLE} – Lieferung, Bestellung & Pflege`,
-  description: "Antworten auf häufige Fragen zu Blumenlieferung in Wien, Lieferzeiten, Zahlung, Grußkarten und Pflege der Blumen.",
-  alternates: { canonical: routes.faq },
-};
+export function generateMetadata(): Promise<Metadata> {
+  return pageMetadata({
+    title: `${TITLE} – Lieferung, Bestellung & Pflege`,
+    description: "Antworten auf häufige Fragen zu Blumenlieferung in Wien, Lieferzeiten, Zahlung, Grußkarten und Pflege der Blumen.",
+    path: routes.faq,
+  });
+}
 
 function groupFaqs(faqs: FAQ[]) {
   const known = new Set(GROUPS.map((g) => g.id));

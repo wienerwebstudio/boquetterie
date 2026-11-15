@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 import type { Product } from "@/types";
 import { ProductCardSkeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/format";
+import { onRadioGroupKeyDown, rovingTabIndex } from "@/lib/roving-radio";
 import { events, track } from "@/components/analytics/track";
 import { BUDGET_OPTIONS, FOR_OPTIONS, budgetOption, forOption, giftFinderUrl } from "./config";
 import { isComplete, type CompleteGiftFinderQuery, type GiftFinderQuery, type GiftFinderResult } from "./scoring";
@@ -42,6 +43,8 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
   const abortRef = useRef<AbortController | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const scrollOnResult = useRef(false);
+  const groupRef = useRef<HTMLDivElement>(null);
+  const focusNextStep = useRef(false);
   const complete = isComplete(query);
 
   // Keep the URL in sync – replaceState is integrated with the App Router, no server round-trip.
@@ -76,10 +79,19 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
     }
   }, []);
 
+  // After a choice the next question replaces the current one – take the focus along.
+  useEffect(() => {
+    if (!focusNextStep.current) return;
+    focusNextStep.current = false;
+    groupRef.current?.querySelector<HTMLElement>('[role="radio"][tabindex="0"]')?.focus({ preventScroll: true });
+  }, [activeStep]);
+
   const select = (step: Step, value: string) => {
     const next = { ...query, [step]: value } as GiftFinderQuery;
+    const nextStep = nextOpenStep(next);
+    focusNextStep.current = nextStep !== null && nextStep !== activeStep;
     setQuery(next);
-    setActiveStep(nextOpenStep(next));
+    setActiveStep(nextStep);
     if (isComplete(next)) {
       scrollOnResult.current = true;
       void fetchResults(next);
@@ -152,8 +164,9 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
         <section key={active.key} aria-labelledby="gf-step-title" className="mt-10 animate-fade-up sm:mt-12">
           <p className="eyebrow mb-3">Schritt {active.index} von 03</p>
           <h2 id="gf-step-title" className="display-3 text-ink">{active.question}</h2>
-          <div role="radiogroup" aria-labelledby="gf-step-title" className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {optionsFor(active.key).map((o) => {
+          {/* Choosing an option moves on to the next question, so the arrow keys only move the focus; Space/Enter choose. */}
+          <div ref={groupRef} role="radiogroup" aria-labelledby="gf-step-title" onKeyDown={(e) => onRadioGroupKeyDown(e, { select: false })} className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {optionsFor(active.key).map((o, i) => {
               const selected = query[active.key] === o.value;
               return (
                 <button
@@ -161,6 +174,7 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
                   type="button"
                   role="radio"
                   aria-checked={selected}
+                  tabIndex={rovingTabIndex(selected, i, Boolean(query[active.key]))}
                   onClick={() => select(active.key, o.value)}
                   className={cn(
                     "group flex items-center justify-between gap-4 rounded-md border px-5 py-4 text-left transition-all duration-300 ease-[var(--ease-soft)] hover:border-forest",

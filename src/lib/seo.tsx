@@ -1,4 +1,5 @@
 import type { FAQ, Product, SiteSettings } from "@/types";
+import { ordersPaused } from "@/lib/orders-paused";
 
 /** JSON-LD helpers. Only emit data that actually exists in the content. */
 
@@ -10,7 +11,8 @@ export function organizationLd(settings: SiteSettings) {
   const hasAddress = !settings.brand.address.street.startsWith("[");
   return {
     "@context": "https://schema.org",
-    "@type": "Florist",
+    // An online shop without a walk-in store: "Florist" (a LocalBusiness) would imply premises.
+    "@type": "OnlineStore",
     name: settings.brand.name,
     url: settings.seo.siteUrl,
     image: `${settings.seo.siteUrl}/images/hero/hero-wide.jpg`,
@@ -46,7 +48,7 @@ export function productLd(product: Product, settings: SiteSettings) {
       lowPrice: Math.min(...prices).toFixed(2),
       highPrice: Math.max(...prices).toFixed(2),
       offerCount: product.sizes.length,
-      availability: product.stock === null || product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      availability: !ordersPaused() && (product.stock === null || product.stock > 0) ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       url: `${settings.seo.siteUrl}/produkt/${product.slug}`,
     } }),
     ...(product.rating && product.rating.count > 0 && {

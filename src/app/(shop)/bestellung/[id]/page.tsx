@@ -148,7 +148,7 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
             </div>
             {order.delivery.note && (
               <div>
-                <dt className="eyebrow mb-1">Hinweis für den Zusteller</dt>
+                <dt className="eyebrow mb-1">Hinweis für die Zustellung</dt>
                 <dd className="text-ink-muted">{order.delivery.note}</dd>
               </div>
             )}

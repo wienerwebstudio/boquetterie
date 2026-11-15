@@ -12,10 +12,12 @@ export type RawSearchParams = Record<string, string | string[] | undefined>;
  * Listing layout shared by /blumen, /blumen/[category] and /anlaesse/[slug]:
  * sticky filter rail on desktop, toolbar + sheet on mobile, streamed product grid.
  */
-export async function ShopListing({ searchParams, pathname, fixed = {}, hide = [] }: {
+export async function ShopListing({ searchParams, pathname, fixed = {}, hide: hideProp = [] }: {
   searchParams: RawSearchParams; pathname: string; fixed?: FixedFilter; hide?: FilterKey[];
 }) {
   const [occasions, settings] = await Promise.all([getOccasions(), getSettings()]);
+  // No "Heute lieferbar" filter while same-day delivery is switched off.
+  const hide: FilterKey[] = settings.sameDayEnabled || hideProp.includes("sameday") ? hideProp : [...hideProp, "sameday"];
   const params = parseShopParams(searchParams);
   const today = getLocalNow(settings.timezone).date;
   const options: FilterOptions = {

@@ -90,7 +90,7 @@ export function StepDelivery({ data, set, errors, onBlur, days, now, zone, loadi
                   value={inPills ? "" : data.date}
                   onChange={(e) => chooseDate(e.target.value)}
                   onBlur={() => onBlur("date")}
-                  className="h-12 w-full max-w-xs rounded-md border border-line bg-white/70 px-4 text-[15px] text-ink focus:border-forest focus:bg-white focus:outline-none"
+                  className="h-12 w-full max-w-xs rounded-md border border-line-strong bg-white/70 px-4 text-[15px] text-ink focus:border-forest focus:bg-white focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
                 />
                 <p className="text-[12.5px] text-ink-soft">
                   Liefertage: {zone.deliveryDays.map((d) => ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"][d]).join(", ")} · bis {formatDateShort(days[days.length - 1]?.date ?? "")}
@@ -135,7 +135,7 @@ export function StepDelivery({ data, set, errors, onBlur, days, now, zone, loadi
       </fieldset>
 
       <Textarea
-        id={id("note")} label="Hinweis für den Zusteller" optional
+        id={id("note")} label="Hinweis für die Zustellung" optional
         placeholder="Bei Nachbar Top 4 abgeben, falls niemand öffnet."
         value={data.note} onChange={(e) => set({ note: e.target.value })} onBlur={() => onBlur("note")} error={errors.note}
         maxLength={300} rows={3} className="[&_textarea]:min-h-24"

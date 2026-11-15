@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -31,12 +32,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { slug } = await params;
   const page = await getLandingPageBySlug(slug);
   if (!page) return {};
-  return {
-    title: page.seo.title,
-    description: page.seo.description,
-    alternates: { canonical: `/${page.slug}` },
-    ...(page.image && { openGraph: { images: [{ url: page.image }] } }),
-  };
+  return pageMetadata({
+    title: page.seo.title, description: page.seo.description, path: `/${page.slug}`,
+    ...(page.image && { image: { url: page.image } }),
+  });
 }
 
 export default async function LandingPage({ params }: { params: Params }) {
@@ -63,10 +62,10 @@ export default async function LandingPage({ params }: { params: Params }) {
       {/* Hero */}
       <section className="container-x pt-6 sm:pt-8">
         <Breadcrumbs items={[{ label: page.title }]} />
-        <div className={cn("mt-6 grid items-center gap-8 sm:mt-8", page.image && "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16")}>
+        <div className={cn("mt-6 grid grid-cols-1 items-center gap-8 sm:mt-8", page.image && "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16")}>
           <div className={cn("order-2 lg:order-1", !page.image && "max-w-3xl")}>
             <p className="eyebrow mb-3">{page.title}</p>
-            <h1 className="display-1 text-balance text-ink animate-fade-up">{page.headline}</h1>
+            <h1 className="display-1 hyphens-auto text-balance break-words text-ink animate-fade-up">{page.headline}</h1>
             <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-muted sm:text-lg">{page.intro}</p>
             <div className="mt-8 max-w-md">
               <PostalCodeCheck variant="inline" title="Wohin dürfen wir liefern?" />

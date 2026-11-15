@@ -3,50 +3,42 @@
     "slug": "blumenversand-wien",
     "title": "Blumenversand Wien",
     "headline": "Blumen liefern lassen in Wien.",
-    "intro": "Frisch gebundene Sträuße, in ganz Wien geliefert. Wähle deinen Strauß, bestimme das Lieferdatum und schreib ein paar Worte – wir kümmern uns um den Rest.",
+    "intro": "Von Hand gebundene Sträuße, geliefert in alle 23 Wiener Bezirke. Wähle deinen Strauß, bestimme das Lieferdatum und schreib ein paar Worte für die Karte.",
     "image": "/images/hero/hero-wide.jpg",
     "productFilter": {"limit": 8},
     "sections": [
-      {"heading": "Blumen in Wien verschicken – so geht’s", "paragraphs": ["Strauß auswählen, Größe bestimmen, Lieferdatum im Kalender wählen, Empfängeradresse eingeben, bezahlen. In wenigen Minuten ist die Bestellung erledigt, und du bekommst eine Bestätigung mit Statuslink.", "Wir liefern in alle Wiener Bezirke. Lieferkosten und Zeitfenster hängen vom Bezirk ab und werden nach Eingabe der Postleitzahl angezeigt."]},
-      {"heading": "Frisch gebunden, persönlich geliefert", "paragraphs": ["Jeder Strauß wird am Liefertag von Hand gebunden und stehend in Wasser transportiert. Keine Kartonrolle, kein Paketdienst – ein Zusteller, der die Blumen persönlich übergibt."]}
+      {"heading": "Blumen in Wien verschicken – so geht’s", "paragraphs": ["Strauß auswählen, Größe bestimmen, Lieferdatum im Kalender wählen, Empfängeradresse eingeben, bezahlen. Danach bekommst du eine Bestätigung per E-Mail mit einem Link zum Status deiner Bestellung.", "Wir liefern in alle 23 Wiener Bezirke, derzeit von Montag bis Samstag. Die Liefergebühr hängt vom Bezirk ab: gratis, 3,99 € oder 7,99 €. Welche Stufe für deine Adresse gilt, siehst du nach Eingabe der Postleitzahl. Als Zeitfenster stehen 9–12, 12–17 und 17–22 Uhr zur Wahl."]},
+      {"heading": "Von Hand gebunden, direkt geliefert", "paragraphs": ["Jeder Strauß wird für deine Bestellung von Hand gebunden – von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Ein Kurier holt ihn dort ab und fährt ohne Zwischenstopp zur Empfängeradresse."]}
     ],
-    "faqIds": ["f-where", "f-today", "f-date", "f-nobody"],
-    "seo": {"title": "Blumenversand Wien – Blumen liefern lassen", "description": "Blumen in Wien liefern lassen: frisch gebundene Sträuße mit Wunschdatum, Zeitfenster und Grußkarte. Bestellen in wenigen Minuten."}
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {"title": "Blumenversand Wien – Blumen liefern lassen", "description": "Blumen in Wien liefern lassen: von Hand gebundene Sträuße mit Wunschdatum, Zeitfenster und Grußkarte. Lieferung in alle 23 Bezirke."}
   },
   {
     "slug": "blumen-zum-geburtstag",
-    "title": "Blumen zum Geburtstag",
-    "headline": "Geburtstagsblumen, die pünktlich klingeln.",
-    "intro": "Bunte, fröhliche oder elegante Sträuße zum Geburtstag – mit Wunschdatum, Grußkarte und kleinen Extras. Geliefert in ganz Wien.",
+    "title": "Geburtstagsblumen liefern",
+    "headline": "Geburtstagsblumen in Wien liefern lassen – so geht’s.",
+    "intro": "Du wählst Strauß und Tag und schreibst die Karte. Ein Kurier bringt die Blumen im gewünschten Zeitfenster zum Geburtstagskind. Hier steht, wie die Lieferung in Wien abläuft und was sie kostet.",
     "productFilter": {"occasions": ["geburtstag"], "limit": 8},
     "sections": [
-      {"heading": "Pünktlich zum Geburtstag", "paragraphs": ["Wähle das Lieferdatum im Kalender – der Strauß wird an genau diesem Tag gebunden und geliefert. In vielen Wiener Bezirken kannst du zusätzlich ein Zeitfenster wählen."]}
+      {"heading": "Lieferung am Geburtstag", "paragraphs": ["Wähle das Lieferdatum im Kalender und eines von drei Zeitfenstern: 9–12, 12–17 oder 17–22 Uhr. Geliefert wird derzeit von Montag bis Samstag. Fällt der Geburtstag auf einen Sonntag, kannst du den Samstag davor wählen."]},
+      {"heading": "Karte und Lieferkosten", "paragraphs": ["Zu jedem Strauß gehört eine Grußkarte mit deinem Text. Die Liefergebühr hängt vom Bezirk ab – gratis, 3,99 € oder 7,99 € – und wird nach Eingabe der Postleitzahl angezeigt."]},
+      {"heading": "Wenn das Geburtstagskind nicht zu Hause ist", "paragraphs": ["Ist niemand da, wird der Strauß nach Möglichkeit bei Nachbar:innen abgegeben. Du bekommst eine E-Mail, sobald der Strauß unterwegs ist, und eine weitere, wenn er zugestellt wurde."]}
     ],
-    "faqIds": ["f-date", "f-window", "f-card"],
-    "seo": {"title": "Geburtstagsblumen liefern lassen in Wien", "description": "Blumen zum Geburtstag in Wien liefern lassen – frisch gebunden, mit Wunschdatum, Grußkarte und Extras."}
+    "faqIds": ["f-date", "f-window", "f-card", "f-nobody"],
+    "seo": {"title": "Geburtstagsblumen verschicken in Wien – Ablauf, Zeitfenster und Kosten", "description": "So lässt du Blumen zum Geburtstag in Wien liefern: Wunschdatum wählen, Zeitfenster bestimmen, Grußkarte schreiben. Mit Lieferkosten nach Bezirk."}
   },
   {
     "slug": "rosen-liefern",
     "title": "Rosen liefern",
-    "headline": "Rosen liefern lassen in Wien.",
-    "intro": "Gartenrosen mit voller Blüte, in Rot, Rosa oder Weiß. Von Hand gebunden, in Seidenpapier verpackt, persönlich übergeben.",
+    "headline": "Rosen liefern lassen in Wien – so läuft es ab.",
+    "intro": "Rosen in Rot, Rosa oder Weiß, von Hand gebunden und per Kurier zugestellt. Hier liest du, wie Bestellung und Lieferung in Wien ablaufen. Eine Auswahl an Rosensträußen findest du gleich darunter.",
     "productFilter": {"category": "rosen", "limit": 8},
     "sections": [
-      {"heading": "Warum Gartenrosen?", "paragraphs": ["Gartenrosen haben größere, dichtere Blüten als klassische Schnittrosen und öffnen sich in der Vase weiter. Sie duften – und sie halten bei guter Pflege über eine Woche."]}
+      {"heading": "So kommen die Rosen an", "paragraphs": ["Dein Strauß wird für deine Bestellung von Hand gebunden – von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Ein Kurier holt ihn dort ab und fährt direkt zur Empfängeradresse, ohne Zwischenstopp."]},
+      {"heading": "Größe, Tag und Zeitfenster", "paragraphs": ["Die meisten Rosensträuße gibt es in den Größen Klein, Mittel, Groß und XL. Das Lieferdatum wählst du im Kalender, dazu eines von drei Zeitfenstern: 9–12, 12–17 oder 17–22 Uhr. Geliefert wird derzeit von Montag bis Samstag."]},
+      {"heading": "Was die Lieferung kostet", "paragraphs": ["Wir liefern in alle 23 Wiener Bezirke. Je nach Bezirk ist die Lieferung gratis oder kostet 3,99 € bzw. 7,99 €. Den Betrag für deine Adresse siehst du nach Eingabe der Postleitzahl. Eine Grußkarte mit deinem Text ist dabei."]}
     ],
-    "faqIds": ["f-fresh", "f-photo", "f-anon"],
-    "seo": {"title": "Rosen liefern lassen in Wien – frisch gebunden", "description": "Rote, rosa und weiße Rosen in Wien liefern lassen. Gartenrosen frisch gebunden, mit Wunschdatum und Grußkarte."}
-  },
-  {
-    "slug": "blumen-heute-liefern",
-    "title": "Blumen heute liefern",
-    "headline": "Noch heute Freude schenken.",
-    "intro": "In vielen Wiener Bezirken liefern wir am selben Tag, wenn die Bestellung rechtzeitig eingeht. Gib die Postleitzahl ein – wir zeigen dir, ob es heute noch klappt.",
-    "productFilter": {"sameDayOnly": true, "limit": 8},
-    "sections": [
-      {"heading": "So funktioniert die Lieferung am selben Tag", "paragraphs": ["Ob eine Lieferung heute möglich ist, hängt von Uhrzeit, Bezirk und Strauß ab. Wir zeigen „Heute“ nur dann als Option an, wenn wir es auch einhalten können. Die genaue Bestellfrist siehst du nach Eingabe der Postleitzahl."]}
-    ],
-    "faqIds": ["f-today", "f-where", "f-nobody"],
-    "seo": {"title": "Blumen heute liefern lassen in Wien – Same-Day", "description": "Blumen noch heute in Wien liefern lassen: Same-Day-Lieferung in vielen Bezirken, wenn die Bestellung rechtzeitig eingeht."}
+    "faqIds": ["f-where", "f-window", "f-nobody", "f-anon"],
+    "seo": {"title": "Rosen liefern lassen in Wien – Ablauf, Zeitfenster und Kosten", "description": "Rosen in Wien liefern lassen: So laufen Bestellung und Kurierlieferung ab – mit Wunschdatum, drei Zeitfenstern, Lieferkosten nach Bezirk und Grußkarte."}
   }
 ]

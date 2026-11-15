@@ -64,7 +64,7 @@ function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting,
           <dd className="text-right text-ink">
             {deliveryDate ? formatDateShort(deliveryDate) : <span className="text-ink-soft">Datum folgt</span>}
             {windowLabel && <span className="block text-[12px] text-ink-muted">{windowLabel}</span>}
-            {zone && <span className="block text-[12px] text-ink-muted">{zone.name}</span>}
+            {zone && <span className="block text-[12px] text-ink-muted">{zone.region}</span>}
           </dd>
         </div>
       </dl>

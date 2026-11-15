@@ -1,17 +1,11 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Heart } from "lucide-react";
 import type { Product } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { formatPrice, cn } from "@/lib/format";
 import { primaryImage, hoverImage, productBadges, lowestPrice, isPricePending } from "@/lib/catalog";
 import { routes } from "@/lib/urls";
-import { useFavorites } from "@/store/favorites";
-import { useSyncExternalStore } from "react";
-
-const subscribeNoop = () => () => {};
-const useMounted = () => useSyncExternalStore(subscribeNoop, () => true, () => false);
+import { FavoriteButton } from "./favorite-button";
 
 export function ProductCard({ product, priority = false, showSameDay = false, className, sizesAttr = "(min-width: 1280px) 22vw, (min-width: 768px) 45vw, 90vw" }: {
   product: Product; priority?: boolean; showSameDay?: boolean; className?: string; sizesAttr?: string;
@@ -19,9 +13,6 @@ export function ProductCard({ product, priority = false, showSameDay = false, cl
   const main = primaryImage(product);
   const hover = hoverImage(product);
   const badges = productBadges(product);
-  const mounted = useMounted();
-  const fav = useFavorites((s) => s.slugs.includes(product.slug));
-  const toggle = useFavorites((s) => s.toggle);
   const href = routes.product(product.slug);
 
   return (
@@ -42,22 +33,15 @@ export function ProductCard({ product, priority = false, showSameDay = false, cl
           ))}
           {showSameDay && product.sameDayCapable && <Badge tone="success">Heute lieferbar</Badge>}
         </div>
-        <button
-          type="button"
-          onClick={() => toggle(product.slug)}
-          aria-pressed={mounted && fav}
-          aria-label={mounted && fav ? `${product.name} aus Favoriten entfernen` : `${product.name} zu Favoriten hinzufügen`}
-          className="absolute right-3 top-3 inline-flex size-9 items-center justify-center rounded-full bg-white/85 text-ink shadow-soft backdrop-blur transition-all hover:scale-105 hover:text-burgundy"
-        >
-          <Heart className={cn("size-4 transition-colors", mounted && fav && "fill-burgundy text-burgundy")} strokeWidth={1.6} />
-        </button>
+        <FavoriteButton slug={product.slug} name={product.name} className="absolute right-3 top-3" />
         <div className="absolute inset-x-3 bottom-3 hidden translate-y-2 opacity-0 transition-all duration-300 ease-[var(--ease-soft)] group-hover:translate-y-0 group-hover:opacity-100 md:block">
           <Link href={href} className="flex h-11 items-center justify-center rounded-md bg-ivory/95 text-sm font-semibold text-forest shadow-soft backdrop-blur hover:bg-white">Auswählen</Link>
         </div>
       </div>
       <div className="mt-3.5 flex flex-col gap-1">
-        <div className="flex items-baseline justify-between gap-3">
-          <h3 className="font-serif text-[22px] leading-tight text-ink"><Link href={href}>{product.name}</Link></h3>
+        {/* Name above price on narrow cards (two-column phone grid): side by side a long name pushed the price out of the card. */}
+        <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+          <h3 className="min-w-0 break-words font-serif text-[20px] leading-tight text-ink sm:text-[22px]"><Link href={href}>{product.name}</Link></h3>
           {isPricePending(product) ? (
             <p className="shrink-0 text-[13px] text-ink-muted">Preis folgt</p>
           ) : (

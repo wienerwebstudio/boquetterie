@@ -1,52 +1,55 @@
 import type { Metadata } from "next";
-import { Building2, CalendarDays, Gift, Hotel, MessagesSquare, Presentation, Receipt, Repeat, type LucideProps } from "lucide-react";
+import { Building2, CalendarDays, Gift, type LucideProps } from "lucide-react";
 import { getSettings } from "@/lib/cms";
 import { routes } from "@/lib/urls";
 import { breadcrumbLd, JsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/content/page-header";
 import { BusinessInquiryForm } from "./business-inquiry-form";
+import { pageMetadata } from "@/lib/metadata";
 
 const PATH = "/firmenkunden";
 const TITLE = "Firmenkunden";
 
-export const metadata: Metadata = {
-  title: "Blumen für Firmenkunden – Büro, Empfang und Gastronomie",
-  description: "Frische Blumen für Empfang, Meetingräume, Hotels und Events in Wien – regelmäßig oder einmalig, auf Wunsch mit Sammelrechnung und persönlicher Betreuung.",
-  alternates: { canonical: PATH },
-};
+export function generateMetadata(): Promise<Metadata> {
+  return pageMetadata({
+    title: "Blumen für Firmen in Wien – auf Anfrage",
+    description: "Blumen für Büro und Empfang, Geschenke für Kund:innen und Mitarbeiter:innen oder Blumen für Veranstaltungen in Wien: Schick uns deine Anfrage über das Formular.",
+    path: PATH,
+  });
+}
 
 type Icon = React.ComponentType<LucideProps>;
 
-const VALUES: { icon: Icon; title: string; text: string }[] = [
+/** What companies can ask for. Nothing here is a standing offer – everything is clarified per inquiry. */
+const REQUESTS: { icon: Icon; title: string; text: string }[] = [
   {
-    icon: Repeat,
-    title: "Regelmäßige Lieferung",
-    text: "Wöchentlich, alle zwei Wochen oder monatlich – du legst den Rhythmus fest, wir bringen frische Sträuße an deinen Standort. Umfang und Takt besprechen wir gemeinsam und passen sie an, wenn sich dein Bedarf ändert.",
+    icon: Building2,
+    title: "Blumen für Büro und Empfang",
+    text: "Regelmäßig frische Blumen für Empfang, Büro oder Besprechungsraum. Ob und in welchem Rhythmus das an deinem Standort möglich ist, klären wir auf Anfrage.",
   },
   {
-    icon: Receipt,
-    title: "Sammelrechnung",
-    text: "Auf Wunsch fassen wir alle Lieferungen eines Monats in einer Rechnung zusammen – mit Kostenstelle oder Bestellnummer, wenn deine Buchhaltung das braucht.",
+    icon: Gift,
+    title: "Geschenke für Kund:innen und Mitarbeiter:innen",
+    text: "Sträuße zu Jubiläen, Geburtstagen oder als Danke – für eine Person oder für mehrere Adressen in Wien. Zu jedem Strauß gehört eine Grußkarte mit deinem Text.",
   },
   {
-    icon: MessagesSquare,
-    title: "Persönliche Betreuung",
-    text: "Du hast eine Ansprechperson, die deine Räume, deinen Stil und dein Budget kennt – und die du direkt erreichst, wenn kurzfristig etwas gebraucht wird.",
+    icon: CalendarDays,
+    title: "Blumen für Veranstaltungen",
+    text: "Für Eröffnungen, Feiern oder Konferenzen in Wien. Nenn uns Termin, Ort und ungefähren Umfang – wir melden uns, ob und wie wir das umsetzen können.",
   },
 ];
 
-const USE_CASES: { icon: Icon; title: string; text: string }[] = [
-  { icon: Building2, title: "Empfang", text: "Der erste Eindruck, wenn Gäste und Kund:innen ankommen." },
-  { icon: Presentation, title: "Meetingräume", text: "Frische Akzente für Räume, in denen entschieden wird." },
-  { icon: Hotel, title: "Hotels", text: "Lobby, Tische, Zimmer – abgestimmt auf dein Haus und deine Gäste." },
-  { icon: CalendarDays, title: "Events", text: "Für Eröffnungen, Feiern und Konferenzen – einmalig und passend zum Anlass." },
-  { icon: Gift, title: "Mitarbeiter:innen-Geschenke", text: "Zu Jubiläen, Geburtstagen oder einfach als Danke – auf Wunsch mit persönlicher Karte." },
+const GOOD_TO_KNOW: { title: string; text: string }[] = [
+  { title: "Lieferung in Wien", text: "Wir liefern in alle 23 Wiener Bezirke, derzeit von Montag bis Samstag." },
+  { title: "Von Hand gebunden", text: "Die Sträuße bindet eine Wiener Floristik, mit der wir fest zusammenarbeiten – jeweils für die einzelne Bestellung." },
+  { title: "Direkt per Kurier", text: "Ein Kurier holt die Blumen in der Floristik ab und fährt ohne Zwischenstopp zur Empfängeradresse." },
+  { title: "Einzelne Sträuße", text: "Einen einzelnen Strauß an eine Firmenadresse bestellst du direkt im Shop. Den Firmennamen gibst du im Checkout an." },
 ];
 
 const NEXT_STEPS = [
-  { title: "Anfrage schicken", text: "Erzähl uns kurz, worum es geht: Standort, Räume, gewünschter Rhythmus." },
-  { title: "Gespräch", text: "Wir melden uns per E-Mail oder Telefon und klären offene Fragen." },
-  { title: "Angebot", text: "Du bekommst ein Angebot, das zu deinen Räumen und deinem Budget passt." },
+  { title: "Anfrage schicken", text: "Erzähl uns kurz, worum es geht: Standort, Anlass, gewünschter Umfang oder Rhythmus." },
+  { title: "Rückmeldung", text: "Wir melden uns per E-Mail und klären offene Fragen." },
+  { title: "Angebot", text: "Wenn wir deine Anfrage umsetzen können, bekommst du ein Angebot von uns." },
 ];
 
 /** Settings values that still need to be filled in start with "[" (see settings.json). */
@@ -60,22 +63,21 @@ export default async function BusinessPage() {
     <article>
       <PageHeader
         eyebrow={TITLE}
-        title="Blumen für Büro, Empfang und Gastronomie."
-        intro="Frische Blumen für Räume, in denen Menschen ankommen, arbeiten und feiern. Regelmäßig oder einmalig – wir stimmen Auswahl, Rhythmus und Abrechnung auf dein Unternehmen ab."
+        title="Blumen für dein Unternehmen in Wien."
+        intro="Blumen für Büro und Empfang, Geschenke für Kund:innen und Mitarbeiter:innen oder Blumen für eine Veranstaltung: Schreib uns, was du brauchst. Wir prüfen deine Anfrage und melden uns bei dir."
         crumbs={[{ label: TITLE }]}
         size="lg"
-        image={{ src: "/images/editorial/studio.jpg", alt: "Frisch gebundene Sträuße im Atelier, bereit für die Auslieferung" }}
       />
 
-      {/* Value blocks */}
+      {/* What can be requested */}
       <section aria-labelledby="business-values-heading" className="container-x py-16 sm:py-20 lg:py-24">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
-            <p className="eyebrow mb-3">Was wir anbieten</p>
-            <h2 id="business-values-heading" className="display-2 max-w-md text-balance text-ink">So einfach wie eine Bestellung. Nur regelmäßig.</h2>
+            <p className="eyebrow mb-3">Auf Anfrage</p>
+            <h2 id="business-values-heading" className="display-2 max-w-md text-balance text-ink">Was du bei uns anfragen kannst.</h2>
           </div>
           <ul className="grid gap-8 sm:grid-cols-3 lg:col-span-8 lg:gap-6">
-            {VALUES.map((v) => (
+            {REQUESTS.map((v) => (
               <li key={v.title} className="border-t border-line pt-6 lg:pt-7">
                 <span className="inline-flex size-10 items-center justify-center rounded-full bg-ivory-100 text-forest">
                   <v.icon className="size-[18px]" strokeWidth={1.4} aria-hidden />
@@ -88,21 +90,18 @@ export default async function BusinessPage() {
         </div>
       </section>
 
-      {/* Use cases */}
-      <section aria-labelledby="business-usecases-heading" className="border-y border-line bg-ivory-100/70">
+      {/* How we work */}
+      <section aria-labelledby="business-facts-heading" className="border-y border-line bg-ivory-100/70">
         <div className="container-x py-16 sm:py-20 lg:py-24">
           <div className="mb-10 max-w-2xl sm:mb-14">
-            <p className="eyebrow mb-3">Einsatzorte</p>
-            <h2 id="business-usecases-heading" className="display-2 text-balance text-ink">Wo Blumen den Unterschied machen.</h2>
+            <p className="eyebrow mb-3">Gut zu wissen</p>
+            <h2 id="business-facts-heading" className="display-2 text-balance text-ink">So arbeiten wir.</h2>
           </div>
-          <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
-            {USE_CASES.map((u) => (
-              <li key={u.title} className="flex flex-col">
-                <span className="inline-flex size-10 items-center justify-center rounded-full bg-white text-forest shadow-soft">
-                  <u.icon className="size-[18px]" strokeWidth={1.4} aria-hidden />
-                </span>
-                <h3 className="mt-5 font-serif text-[22px] leading-tight text-ink">{u.title}</h3>
-                <p className="mt-2 text-[13.5px] leading-relaxed text-ink-muted">{u.text}</p>
+          <ul className="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            {GOOD_TO_KNOW.map((g) => (
+              <li key={g.title} className="border-t border-line pt-5">
+                <h3 className="font-serif text-[22px] leading-tight text-ink">{g.title}</h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-ink-muted">{g.text}</p>
               </li>
             ))}
           </ul>
@@ -114,8 +113,8 @@ export default async function BusinessPage() {
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-20">
           <div className="space-y-12">
             <div>
-              <p className="eyebrow mb-3">So geht es weiter</p>
-              <h2 className="display-3 text-ink">Drei Schritte bis zum ersten Strauß</h2>
+              <p className="eyebrow mb-3">Ablauf</p>
+              <h2 className="display-3 text-ink">So geht es weiter</h2>
               <ol className="mt-8 divide-y divide-line border-y border-line">
                 {NEXT_STEPS.map((s, i) => (
                   <li key={s.title} className="grid grid-cols-[auto_1fr] gap-x-5 py-5">
@@ -142,8 +141,8 @@ export default async function BusinessPage() {
 
           <div id="anfrage" className="scroll-mt-24 rounded-md border border-line bg-white/70 p-6 shadow-soft sm:p-10">
             <p className="eyebrow mb-3">Anfrage</p>
-            <h2 id="business-form-heading" className="display-3 text-ink">Erzähl uns von deinen Räumen</h2>
-            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">Je konkreter, desto schneller können wir ein passendes Angebot machen.</p>
+            <h2 id="business-form-heading" className="display-3 text-ink">Erzähl uns, was du brauchst</h2>
+            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">Je konkreter deine Angaben, desto besser können wir deine Anfrage einschätzen.</p>
             <BusinessInquiryForm className="mt-8" />
           </div>
         </div>

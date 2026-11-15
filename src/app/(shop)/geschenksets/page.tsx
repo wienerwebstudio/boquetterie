@@ -9,31 +9,35 @@ import { ProductCard } from "@/components/shop/product-card";
 import { formatPrice } from "@/lib/format";
 import { routes } from "@/lib/urls";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Geschenksets & Extras",
-  description: "Kleine Extras, die den Moment größer machen: Premium-Grußkarte, Vase, Pralinen, Duftkerze und mehr – zu jedem Strauß hinzufügbar.",
-  alternates: { canonical: routes.extras },
-};
+export function generateMetadata(): Promise<Metadata> {
+  return pageMetadata({
+    title: "Extras zum Strauß",
+    description: "Kleine Extras, die du zu deinem Strauß hinzufügen kannst. Sie werden gemeinsam mit den Blumen in Wien geliefert.",
+    path: routes.extras,
+  });
+}
 
 export default async function ExtrasPage() {
   const [settings, extras, products] = await Promise.all([getSettings(), getExtras(), getAllProducts()]);
+  // Admin-curated picks (the `bestseller` flag is an editorial recommendation, not a sales ranking).
   const suggestions = products.filter((p) => p.bestseller).slice(0, 3);
 
   return (
     <>
-      <JsonLd data={breadcrumbLd([{ name: "Geschenksets & Extras", url: routes.extras }], settings)} />
+      <JsonLd data={breadcrumbLd([{ name: "Extras zum Strauß", url: routes.extras }], settings)} />
 
       <section className="container-x pt-6 sm:pt-8">
-        <Breadcrumbs items={[{ label: "Geschenksets & Extras" }]} />
+        <Breadcrumbs items={[{ label: "Extras zum Strauß" }]} />
         <div className="grid gap-6 py-10 sm:py-14 lg:grid-cols-12 lg:gap-12 lg:py-16">
           <div className="lg:col-span-7">
-            <p className="eyebrow mb-4">Geschenksets & Extras</p>
+            <p className="eyebrow mb-4">Extras zum Strauß</p>
             <h1 className="display-1 max-w-[14ch] text-balance text-ink">Mach deine Überraschung komplett.</h1>
           </div>
           <div className="lg:col-span-5 lg:self-end">
             <p className="max-w-md text-pretty text-[16px] leading-relaxed text-ink-muted sm:text-[17px]">
-              Kleine Extras, die den Moment größer machen. Jedes Extra wird zusammen mit deinem Strauß verpackt und geliefert.
+              Kleine Extras, die du zu deinem Strauß hinzufügen kannst. Jedes Extra wird zusammen mit deinem Strauß geliefert.
             </p>
             <p className="mt-4 inline-flex items-start gap-2 rounded-md bg-ivory-100 px-4 py-3 text-[13.5px] leading-snug text-ink-muted">
               <Info className="mt-0.5 size-4 shrink-0 text-forest" aria-hidden />
@@ -79,10 +83,10 @@ export default async function ExtrasPage() {
             <div className="mb-10 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
               <div className="max-w-2xl">
                 <p className="eyebrow mb-3">Passend dazu</p>
-                <h2 id="suggestions-title" className="display-2 text-balance text-ink">Sträuße, zu denen Extras besonders gut passen.</h2>
+                <h2 id="suggestions-title" className="display-2 text-balance text-ink">Zuerst der Strauß, dann das Extra.</h2>
               </div>
-              <Link href={routes.category("bestseller")} className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-forest">
-                Alle Bestseller
+              <Link href={routes.shop} className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-forest">
+                Alle Sträuße
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
               </Link>
             </div>

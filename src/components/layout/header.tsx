@@ -42,7 +42,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
     { label: "Anlässe", href: routes.occasions, mega: "anlaesse" },
     { label: "Rosen", href: routes.category("rosen") },
     { label: "Pflanzen", href: routes.category("pflanzen") },
-    { label: "Geschenksets", href: routes.extras },
+    { label: "Extras", href: routes.extras },
     ...(settings.subscriptionEnabled ? [{ label: "Blumen-Abo", href: routes.subscription }] : []),
     { label: "Lieferung", href: routes.delivery },
     { label: "Über uns", href: routes.about },
@@ -69,7 +69,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
                   href={item.href}
                   aria-expanded={item.mega ? mega === item.mega : undefined}
                   onFocus={() => item.mega && open(item.mega)}
-                  className={cn("inline-flex h-10 items-center gap-1 rounded-md px-3 text-[13.5px] font-medium tracking-[0.01em] text-ink transition-colors hover:text-forest", isActive(item.href) && "text-forest")}
+                  className={cn("inline-flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-3 text-[13.5px] font-medium tracking-[0.01em] text-ink transition-colors hover:text-forest", isActive(item.href) && "text-forest")}
                 >
                   {item.label}
                   {item.mega && <ChevronDown className={cn("size-3.5 text-ink-soft transition-transform duration-300", mega === item.mega && "rotate-180")} aria-hidden />}
@@ -119,9 +119,8 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
               <div>
                 <p className="eyebrow mb-4">Schnell zu</p>
                 <ul className="space-y-2.5">
-                  <li><Link href={`${routes.shop}?sort=new`} className="text-[15px] text-ink hover:text-forest">Neu im Sortiment</Link></li>
-                  <li><Link href={`${routes.shop}?sameday=1`} className="text-[15px] text-ink hover:text-forest">Heute lieferbar</Link></li>
-                  <li><Link href={routes.extras} className="text-[15px] text-ink hover:text-forest">Geschenksets & Extras</Link></li>
+                  {settings.sameDayEnabled && <li><Link href={`${routes.shop}?sameday=1`} className="text-[15px] text-ink hover:text-forest">Heute lieferbar</Link></li>}
+                  <li><Link href={routes.extras} className="text-[15px] text-ink hover:text-forest">Extras zum Strauß</Link></li>
                   {settings.subscriptionEnabled && <li><Link href={routes.subscription} className="text-[15px] text-ink hover:text-forest">Blumen-Abo</Link></li>}
                 </ul>
               </div>

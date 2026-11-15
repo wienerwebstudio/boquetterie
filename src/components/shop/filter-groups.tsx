@@ -222,7 +222,7 @@ function DeliveryDateFields({ values, onChange, options, hide }: { values: ShopP
     if (/^[1-9]\d{3}$/.test(clean)) { if (clean !== values.plz) onChange({ ...values, plz: clean }); }
     else if (!clean && values.plz) onChange({ ...values, plz: null });
   };
-  const fieldCls = "h-11 w-full rounded-md border border-line bg-white px-3 text-[14px] text-ink placeholder:text-ink-soft focus:border-forest focus:outline-none";
+  const fieldCls = "h-11 w-full rounded-md border border-line-strong bg-white px-3 text-[14px] text-ink placeholder:text-ink-soft focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest";
   return (
     <div className="flex flex-col gap-3">
       {!hide.includes("plz") && (

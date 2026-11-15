@@ -19,6 +19,7 @@ import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
 import { cartItemFromConfig, defaultSize, findSize, isSoldOut } from "@/lib/cart-helpers";
 import { formatDateShort, formatPrice, cn } from "@/lib/format";
 import { routes } from "@/lib/urls";
+import { onRadioGroupKeyDown } from "@/lib/roving-radio";
 
 export function ProductConfigurator({ product, extras, greetingCard, onSizeChange }: {
   product: Product;
@@ -69,6 +70,8 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   const tomorrow = today ? addDays(today, 1) : null;
   const canToday = Boolean(result?.available && result.sameDayToday && today);
   const canTomorrow = Boolean(tomorrow && days.some((d) => d.date === tomorrow));
+  const lineLabel = product.sizes.length > 1 ? `${product.name} · ${size.label}` : product.name;
+  const dateOptionCount = 1 + (canToday ? 1 : 0) + (canTomorrow ? 1 : 0);
   const zone = result?.available ? result.zone : null;
 
   const submitPlz = (e: React.FormEvent) => { e.preventDefault(); void runCheck(plz); };
@@ -79,6 +82,12 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   };
   const dateMode: "today" | "tomorrow" | "other" | null =
     !selectedDate ? null : selectedDate === today ? "today" : selectedDate === tomorrow ? "tomorrow" : "other";
+  // Roving tabindex: the checked date option is the tab stop, otherwise the first one shown.
+  const dateTabStop: "today" | "tomorrow" | "other" =
+    dateMode === "today" && canToday ? "today"
+    : dateMode === "tomorrow" && canTomorrow ? "tomorrow"
+    : dateMode === "other" || calendarOpen ? "other"
+    : canToday ? "today" : canTomorrow ? "tomorrow" : "other";
 
   /* ---------- greeting card ---------- */
   const [cardOpen, setCardOpen] = useState(false);
@@ -152,6 +161,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       </header>
 
       {/* ---------- Size ---------- */}
+      {product.sizes.length > 1 && (
       <fieldset>
         <legend className="mb-3 flex w-full items-baseline justify-between">
           <span className="text-[14px] font-semibold text-ink">Größe wählen</span>
@@ -180,7 +190,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                 >
                   <span className="flex items-start justify-between gap-1">
                     <span className="text-[14px] font-semibold text-ink">{s.label}</span>
-                    {s.popular && <Badge tone="rose" className="px-1.5 py-0.5 text-[9.5px]">Beliebt</Badge>}
+                    {s.popular && <Badge tone="rose" className="px-1.5 py-0.5 text-[9.5px]">Empfohlen</Badge>}
                   </span>
                   <span>
                     <span className="block text-[15px] font-semibold tabular-nums text-ink">{formatPrice(s.price)}</span>
@@ -194,6 +204,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           })}
         </div>
       </fieldset>
+      )}
 
       {/* ---------- Delivery ---------- */}
       <section aria-labelledby={`${uid}-delivery`} className="rounded-md border border-line bg-white/50 p-4 sm:p-5">
@@ -213,7 +224,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
               onChange={(e) => setPlz(normalizePostalCode(e.target.value))}
               placeholder="PLZ des Empfängers"
               aria-describedby={`${uid}-plz-status`}
-              className="h-12 w-full rounded-md border border-line bg-white pl-10 pr-3 text-[15px] tracking-[0.08em] text-ink placeholder:tracking-normal placeholder:text-ink-soft focus:border-forest focus:outline-none"
+              className="h-12 w-full rounded-md border border-line-strong bg-white pl-10 pr-3 text-[15px] tracking-[0.08em] text-ink placeholder:tracking-normal placeholder:text-ink-soft focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
             />
           </div>
           <Button type="submit" variant="outline" size="md" loading={loading} className="h-12! shrink-0">Prüfen</Button>
@@ -229,7 +240,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           {result && !result.available && (
             <div className="text-[13px] text-ink-muted">
               <p className="font-semibold text-ink">Leider liefern wir an {result.postalCode} noch nicht.</p>
-              <p className="mt-1">Alle aktuellen Gebiete findest du unter <Link href={routes.delivery} className="text-forest underline underline-offset-2">Lieferung & Versand</Link>. Bestellen ist trotzdem möglich – das Lieferdatum wählst du im Checkout.</p>
+              <p className="mt-1">Alle aktuellen Gebiete findest du unter <Link href={routes.delivery} className="text-forest underline underline-offset-2">Lieferung & Versand</Link>. Für eine andere Empfängeradresse einfach eine neue PLZ eingeben.</p>
             </div>
           )}
           {zone && (
@@ -239,7 +250,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                 Wir liefern an diese Adresse.
               </p>
               <p className="mt-1 pl-7 text-[13px] text-ink-muted">
-                {zone.name} · Lieferung {zone.fee === 0 ? "gratis" : formatPrice(zone.fee)}{zone.fee > 0 && zone.freeFrom !== null && <> · gratis ab {formatPrice(zone.freeFrom)}</>}
+                Lieferung nach {plz} {zone.region}: {zone.fee === 0 ? "gratis" : formatPrice(zone.fee)}{zone.fee > 0 && zone.freeFrom !== null && <> · gratis ab {formatPrice(zone.freeFrom)}</>}
                 {zone.note && <span className="block">{zone.note}</span>}
               </p>
             </div>
@@ -248,14 +259,16 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
 
         {zone && days.length > 0 && (
           <div className="mt-4">
-            <div role="radiogroup" aria-label="Lieferdatum" className="grid grid-cols-3 gap-2">
+            {/* "Datum wählen" toggles the calendar, so the arrow keys only move the focus; Space/Enter choose. */}
+            <div role="radiogroup" aria-label="Lieferdatum" onKeyDown={(e) => onRadioGroupKeyDown(e, { select: false })} className={cn("grid gap-2", dateOptionCount === 3 ? "grid-cols-3" : dateOptionCount === 2 ? "grid-cols-2" : "grid-cols-1 sm:max-w-[240px]")}>
               {canToday && today && (
-                <QuickOption checked={dateMode === "today"} onClick={() => chooseDate(today)} title="Heute" sub={`bis ${zone.sameDayCutoff} Uhr bestellen`} icon={<Clock className="size-3.5" aria-hidden />} />
+                <QuickOption tabIndex={dateTabStop === "today" ? 0 : -1} checked={dateMode === "today"} onClick={() => chooseDate(today)} title="Heute" sub={`bis ${zone.sameDayCutoff} Uhr bestellen`} icon={<Clock className="size-3.5" aria-hidden />} />
               )}
               {canTomorrow && tomorrow && (
-                <QuickOption checked={dateMode === "tomorrow"} onClick={() => chooseDate(tomorrow)} title="Morgen" sub={formatDateShort(tomorrow)} />
+                <QuickOption tabIndex={dateTabStop === "tomorrow" ? 0 : -1} checked={dateMode === "tomorrow"} onClick={() => chooseDate(tomorrow)} title="Morgen" sub={formatDateShort(tomorrow)} />
               )}
               <QuickOption
+                tabIndex={dateTabStop === "other" ? 0 : -1}
                 checked={dateMode === "other" || calendarOpen}
                 onClick={() => setCalendarOpen((o) => !o)}
                 title="Datum wählen"
@@ -319,14 +332,14 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                 rows={3}
                 placeholder="Alles Liebe zum Geburtstag …"
                 aria-describedby={`${uid}-message-hint`}
-                className="w-full resize-y rounded-md border border-line bg-white/70 px-4 py-3 text-[15px] text-ink placeholder:text-ink-soft focus:border-forest focus:bg-white focus:outline-none"
+                className="w-full resize-y rounded-md border border-line-strong bg-white/70 px-4 py-3 text-[15px] text-ink placeholder:text-ink-soft focus:border-forest focus:bg-white focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
               />
               <p id={`${uid}-message-hint`} className="sr-only">Maximal {maxChars} Zeichen.</p>
             </div>
 
-            <div role="radiogroup" aria-label="Absender" className="grid grid-cols-2 gap-2">
-              <Segment checked={!anonymous} onClick={() => setAnonymous(false)}>Absender anzeigen</Segment>
-              <Segment checked={anonymous} onClick={() => setAnonymous(true)}>Ohne Namen senden</Segment>
+            <div role="radiogroup" aria-label="Absender" onKeyDown={onRadioGroupKeyDown} className="grid grid-cols-2 gap-2">
+              <Segment tabIndex={anonymous ? -1 : 0} checked={!anonymous} onClick={() => setAnonymous(false)}>Absender anzeigen</Segment>
+              <Segment tabIndex={anonymous ? 0 : -1} checked={anonymous} onClick={() => setAnonymous(true)}>Ohne Namen senden</Segment>
             </div>
 
             {!anonymous && (
@@ -338,7 +351,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                   onChange={(e) => setSenderName(e.target.value.slice(0, 60))}
                   autoComplete="name"
                   placeholder="z. B. Anna"
-                  className="h-12 w-full rounded-md border border-line bg-white/70 px-4 text-[15px] text-ink placeholder:text-ink-soft focus:border-forest focus:bg-white focus:outline-none"
+                  className="h-12 w-full rounded-md border border-line-strong bg-white/70 px-4 text-[15px] text-ink placeholder:text-ink-soft focus:border-forest focus:bg-white focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
                 />
               </div>
             )}
@@ -353,7 +366,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
         <section aria-labelledby={`${uid}-extras`}>
           <div className="mb-3 flex items-baseline justify-between">
             <h2 id={`${uid}-extras`} className="font-serif text-[22px] text-ink">Noch etwas dazu?</h2>
-            <span className="text-[12.5px] text-ink-muted">Wird mit dem Strauß geliefert</span>
+            <span className="text-[12.5px] text-ink-muted">Wird gemeinsam geliefert</span>
           </div>
           <ul className="-mx-5 flex snap-x gap-3 overflow-x-auto px-5 pb-1 scrollbar-none sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0">
             {activeExtras.map((e) => {
@@ -394,7 +407,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       {/* ---------- CTA ---------- */}
       <div ref={ctaRef} className="border-t border-line pt-6">
         <dl className="mb-4 space-y-1 text-[13.5px] text-ink-muted">
-          <div className="flex justify-between"><dt>{product.name} · {size.label}</dt><dd className="tabular-nums text-ink">{formatPrice(size.price)}</dd></div>
+          <div className="flex justify-between"><dt>{lineLabel}</dt><dd className="tabular-nums text-ink">{formatPrice(size.price)}</dd></div>
           {chosenExtras.map((e) => (
             <div key={e.extra.id} className="flex justify-between"><dt>{e.quantity > 1 && `${e.quantity} × `}{e.extra.name}</dt><dd className="tabular-nums text-ink">{formatPrice(e.extra.price * e.quantity)}</dd></div>
           ))}
@@ -405,7 +418,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           {paused ? "Bald bestellbar" : soldOut ? "Derzeit nicht verfügbar" : "In den Warenkorb"}
         </Button>
         <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[12px] text-ink-muted">
-          <li className="inline-flex items-center gap-1.5"><Leaf className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Frisch gebunden</li>
+          {product.category !== "pflanzen" && <li className="inline-flex items-center gap-1.5"><Leaf className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Frisch gebunden</li>}
           <li className="inline-flex items-center gap-1.5"><Mail className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Grußkarte inklusive</li>
           <li className="inline-flex items-center gap-1.5"><Lock className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Sichere Zahlung</li>
         </ul>
@@ -421,7 +434,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       >
         <div className="flex items-center gap-3">
           <div className="min-w-0 flex-1">
-            <p className="truncate font-serif text-[18px] leading-tight text-ink">{product.name} · {size.label}</p>
+            <p className="truncate font-serif text-[18px] leading-tight text-ink">{lineLabel}</p>
             <p className="text-[13px] tabular-nums text-ink-muted">{formatPrice(total)}</p>
           </div>
           <Button type="button" size="lg" onClick={addToCart} disabled={soldOut || paused} tabIndex={ctaVisible ? -1 : 0}>{paused ? "Bald bestellbar" : "In den Warenkorb"}</Button>
@@ -431,14 +444,15 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   );
 }
 
-function QuickOption({ checked, onClick, title, sub, icon }: {
-  checked: boolean; onClick: () => void; title: string; sub: string; icon?: React.ReactNode;
+function QuickOption({ checked, onClick, title, sub, icon, tabIndex }: {
+  checked: boolean; onClick: () => void; title: string; sub: string; icon?: React.ReactNode; tabIndex?: number;
 }) {
   return (
     <button
       type="button"
       role="radio"
       aria-checked={checked}
+      tabIndex={tabIndex}
       onClick={onClick}
       className={cn(
         "flex min-h-[64px] min-w-0 flex-col justify-center rounded-md border px-3 py-2 text-left transition-all duration-300",
@@ -451,12 +465,13 @@ function QuickOption({ checked, onClick, title, sub, icon }: {
   );
 }
 
-function Segment({ checked, onClick, children }: { checked: boolean; onClick: () => void; children: React.ReactNode }) {
+function Segment({ checked, onClick, children, tabIndex }: { checked: boolean; onClick: () => void; children: React.ReactNode; tabIndex?: number }) {
   return (
     <button
       type="button"
       role="radio"
       aria-checked={checked}
+      tabIndex={tabIndex}
       onClick={onClick}
       className={cn(
         "h-11 rounded-md border text-[13.5px] font-semibold transition-all duration-300",

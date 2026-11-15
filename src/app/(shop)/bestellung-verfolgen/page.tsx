@@ -4,12 +4,15 @@ import { getSettings } from "@/lib/cms";
 import { routes } from "@/lib/urls";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { TrackingForm } from "@/components/checkout/tracking-form";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Bestellung verfolgen",
-  description: "Sendungsverfolgung: Status deiner Blumenbestellung mit Bestellnummer und E-Mail-Adresse abrufen.",
-  alternates: { canonical: routes.tracking },
-};
+export function generateMetadata(): Promise<Metadata> {
+  return pageMetadata({
+    title: "Bestellung verfolgen",
+    description: "Sendungsverfolgung: Status deiner Blumenbestellung mit Bestellnummer und E-Mail-Adresse abrufen.",
+    path: routes.tracking,
+  });
+}
 
 type Props = { searchParams: Promise<Record<string, string | string[] | undefined>> };
 

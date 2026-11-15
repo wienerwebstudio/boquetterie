@@ -4,10 +4,10 @@ import { getProductBySlug } from "@/lib/cms";
 type Props = { children: React.ReactNode; params: Promise<{ slug: string }> };
 
 /**
- * Resolves the product *before* the page's loading boundary. The page itself
- * streams behind `loading.tsx`, so a `notFound()` thrown there arrives after the
- * shell was flushed and the response keeps status 200. Throwing here – outside the
- * Suspense boundary – yields a real 404 for unknown slugs (SEO, monitoring, tests).
+ * Resolves the product before the page renders, so unknown slugs get a real 404
+ * status (SEO, monitoring, tests). The page has no `loading.tsx` on purpose: it is
+ * prerendered, and a loading boundary would ship a skeleton plus hidden content
+ * that a script has to swap in – slower for the largest image.
  */
 export default async function ProductLayout({ children, params }: Props) {
   const { slug } = await params;

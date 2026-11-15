@@ -11,12 +11,9 @@
       "city": "Wien",
       "country": "Österreich"
     },
-    "openingHours": [
-      "Mo–Fr 9–18 Uhr",
-      "Sa 9–14 Uhr"
-    ],
+    "openingHours": [],
     "social": {
-      "instagram": "https://instagram.com/",
+      "instagram": "",
       "facebook": "",
       "pinterest": "",
       "tiktok": ""
@@ -25,7 +22,7 @@
   "announcement": {
     "enabled": true,
     "messages": [
-      "Heute Freude schenken – frische Blumen direkt geliefert.",
+      "Blumen liefern lassen in ganz Wien – frisch gebunden, direkt per Kurier.",
       "Wunschdatum wählbar · Persönliche Grußkarte inklusive"
     ]
   },
@@ -36,9 +33,9 @@
     "2026-12-26",
     "2027-01-01"
   ],
-  "sameDayEnabled": true,
+  "sameDayEnabled": false,
   "subscriptionEnabled": false,
-  "newsletterEnabled": true,
+  "newsletterEnabled": false,
   "favoritesEnabled": true,
   "headerCta": {
     "enabled": true,
@@ -108,14 +105,14 @@
     {
       "key": "arranging",
       "label": "Strauß wird gebunden",
-      "description": "Unsere Florist:innen binden deinen Strauß.",
+      "description": "Dein Strauß wird von Hand gebunden.",
       "customerVisible": true,
       "terminal": false
     },
     {
       "key": "ready",
       "label": "Bereit zur Lieferung",
-      "description": "Der Strauß ist verpackt und wartet auf den Zusteller.",
+      "description": "Der Strauß ist fertig und wird vom Kurier abgeholt.",
       "customerVisible": true,
       "terminal": false
     },
@@ -157,11 +154,11 @@
     {
       "icon": "leaf",
       "title": "Frisch gebunden",
-      "text": "Am Liefertag von Hand gebunden"
+      "text": "Für deine Bestellung von Hand gebunden"
     },
     {
       "icon": "truck",
-      "title": "Zuverlässige Lieferung",
+      "title": "Lieferung per Kurier",
       "text": "In alle 23 Wiener Bezirke"
     },
     {

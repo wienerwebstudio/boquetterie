@@ -4,10 +4,11 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ArrowRight, Clock, Loader2, Search, Sparkles, X } from "lucide-react";
+import { ArrowRight, Loader2, Search, X } from "lucide-react";
 import { useUi } from "@/store/ui";
 import { routes } from "@/lib/urls";
 import { formatPrice, cn } from "@/lib/format";
+import { useFocusTrap } from "@/lib/use-focus-trap";
 import type { SearchResponse } from "@/app/api/search/route";
 
 const DEBOUNCE_MS = 150;
@@ -29,7 +30,6 @@ export function SearchOverlay() {
   const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
-  const lastActive = useRef<Element | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
   const trimmed = query.trim();
@@ -38,33 +38,25 @@ export function SearchOverlay() {
   // Close on navigation.
   useEffect(() => { closeSearch(); }, [pathname, closeSearch]);
 
-  // Open/close side effects: focus, scroll lock, Escape.
+  // Focus trap, Escape, focus return, inert background and scroll lock.
+  useFocusTrap(panelRef, { active: open, onEscape: closeSearch, initialFocus: inputRef });
+
+  // Arrow keys walk through the results.
   useEffect(() => {
     if (!open) return;
-    lastActive.current = document.activeElement;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const t = setTimeout(() => inputRef.current?.focus(), 30);
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") { e.preventDefault(); closeSearch(); }
-      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
-        const items = Array.from(panelRef.current?.querySelectorAll<HTMLElement>("[data-result]") ?? []);
-        if (!items.length) return;
-        const idx = items.indexOf(document.activeElement as HTMLElement);
-        e.preventDefault();
-        if (e.key === "ArrowDown") (idx < 0 ? items[0] : items[Math.min(idx + 1, items.length - 1)]).focus();
-        else if (idx <= 0) inputRef.current?.focus();
-        else items[idx - 1].focus();
-      }
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+      const items = Array.from(panelRef.current?.querySelectorAll<HTMLElement>("[data-result]") ?? []);
+      if (!items.length) return;
+      const idx = items.indexOf(document.activeElement as HTMLElement);
+      e.preventDefault();
+      if (e.key === "ArrowDown") (idx < 0 ? items[0] : items[Math.min(idx + 1, items.length - 1)]).focus();
+      else if (idx <= 0) inputRef.current?.focus();
+      else items[idx - 1].focus();
     };
     document.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = prev;
-      document.removeEventListener("keydown", onKey);
-      clearTimeout(t);
-      (lastActive.current as HTMLElement | null)?.focus?.();
-    };
-  }, [open, closeSearch]);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   // Quick links for the empty state – fetched once.
   useEffect(() => {
@@ -127,7 +119,7 @@ export function SearchOverlay() {
         className="absolute inset-x-0 top-0 max-h-[100dvh] overflow-y-auto overscroll-contain bg-ivory shadow-lift animate-fade-in sm:max-h-[88dvh] sm:rounded-b-xl"
       >
         <div className="container-x pb-8 pt-4 sm:pb-12 sm:pt-6">
-          <form onSubmit={submit} role="search" className="flex items-center gap-3 border-b border-line pb-3 sm:gap-4 sm:pb-4">
+          <form onSubmit={submit} role="search" className="flex items-center gap-3 border-b border-line pb-3 transition-[border-color,box-shadow] has-[input:focus-visible]:border-forest has-[input:focus-visible]:shadow-[0_1px_0_0_var(--color-forest)] sm:gap-4 sm:pb-4">
             <label htmlFor="site-search" className="sr-only">Suchbegriff</label>
             <Search className="size-5 shrink-0 text-forest sm:size-6" strokeWidth={1.6} aria-hidden />
             <input
@@ -139,19 +131,19 @@ export function SearchOverlay() {
               placeholder="Wonach suchst du?"
               autoComplete="off"
               enterKeyHint="search"
-              className="min-w-0 flex-1 bg-transparent font-serif text-[26px] text-ink placeholder:text-ink-soft focus:outline-none sm:text-4xl [&::-webkit-search-cancel-button]:hidden"
+              className="min-w-0 flex-1 bg-transparent font-serif text-[26px] text-ink placeholder:text-ink-soft focus-visible:outline-none sm:text-4xl [&::-webkit-search-cancel-button]:hidden"
             />
             {loading && <Loader2 className="size-5 animate-spin text-ink-soft" aria-hidden />}
             {query && !loading && (
               <button type="button" onClick={() => { setQueryValue(""); inputRef.current?.focus(); }} aria-label="Eingabe löschen" className="rounded-full p-2 text-ink-soft transition-colors hover:bg-ivory-200 hover:text-ink">
-                <X className="size-4" />
+                <X className="size-4" aria-hidden />
               </button>
             )}
             <button type="button" onClick={closeSearch} className="hidden h-9 items-center gap-2 rounded-md border border-line px-3 text-[12px] font-semibold text-ink-muted transition-colors hover:border-forest hover:text-forest sm:inline-flex">
               Schließen <kbd className="rounded-xs bg-ivory-200 px-1.5 py-0.5 font-sans text-[10px] tracking-wider">ESC</kbd>
             </button>
             <button type="button" onClick={closeSearch} aria-label="Suche schließen" className="rounded-full p-2 text-ink transition-colors hover:bg-ivory-200 sm:hidden">
-              <X className="size-5" />
+              <X className="size-5" aria-hidden />
             </button>
           </form>
 
@@ -216,7 +208,7 @@ function QuickLinks({ data, onSuggest }: { data: SearchResponse; onSuggest: (s: 
   return (
     <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
       <div>
-        <SectionTitle>Beliebte Anlässe</SectionTitle>
+        <SectionTitle>Anlässe</SectionTitle>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-3">
           {data.occasions.map((o) => (
             <li key={o.slug}>
@@ -235,18 +227,23 @@ function QuickLinks({ data, onSuggest }: { data: SearchResponse; onSuggest: (s: 
           <SectionTitle>Schnell zu</SectionTitle>
           <ul className="flex flex-col gap-1">
             <li>
-              <Link href={`${routes.shop}?sameday=1`} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
-                <Clock className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Heute lieferbar
+              <Link href={routes.shop} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
+                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Alle Blumen
               </Link>
             </li>
             <li>
-              <Link href={routes.category("bestseller")} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
-                <Sparkles className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Bestseller
+              <Link href={routes.category("rosen")} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
+                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Rosen
               </Link>
             </li>
             <li>
-              <Link href={`${routes.shop}?sort=new`} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
-                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Neu im Sortiment
+              <Link href={routes.category("blumenboxen")} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
+                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Blumenboxen
+              </Link>
+            </li>
+            <li>
+              <Link href={routes.category("pflanzen")} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
+                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Pflanzen
               </Link>
             </li>
           </ul>
@@ -261,7 +258,7 @@ function QuickLinks({ data, onSuggest }: { data: SearchResponse; onSuggest: (s: 
         )}
       </div>
       <div>
-        <SectionTitle>Bestseller</SectionTitle>
+        <SectionTitle>Aus dem Sortiment</SectionTitle>
         <ul className="flex flex-col gap-1">
           {data.products.map((p) => <li key={p.slug}><ProductHit p={p} compact /></li>)}
         </ul>

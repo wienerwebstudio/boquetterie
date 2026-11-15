@@ -17,7 +17,7 @@ export function SortSelect() {
           value={params.sort}
           onChange={(e) => update({ sort: e.target.value as SortValue })}
           aria-label="Sortieren"
-          className="h-11 appearance-none rounded-md border border-line bg-white pl-4 pr-9 text-[13px] font-semibold text-ink transition-colors hover:border-forest focus:border-forest focus:outline-none"
+          className="h-11 appearance-none rounded-md border border-line-strong bg-white pl-4 pr-9 text-[13px] font-semibold text-ink transition-colors hover:border-forest focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
         >
           {SORT_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
         </select>

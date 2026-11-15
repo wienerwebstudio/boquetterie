@@ -44,7 +44,7 @@ export function CartLine({ item, compact = true, className }: { item: CartItem; 
           <p className="mt-1.5 flex items-center gap-1.5 text-[13px] text-ink-muted">
             <MessageSquare className="size-3.5 shrink-0 text-forest" aria-hidden />
             <span className="truncate font-serif italic text-[14.5px] text-ink">„{truncateMessage(item.message, compact ? 34 : 60)}“</span>
-            {item.anonymous && <span className="shrink-0 rounded-sm bg-sand px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-ink-muted">Ohne Absender</span>}
+            {item.anonymous && <span className="shrink-0 rounded-sm bg-sand px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-ink">Ohne Absender</span>}
           </p>
         )}
 

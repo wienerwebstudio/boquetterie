@@ -11,7 +11,7 @@ import { ActiveFilters } from "./active-filters";
 export function ShopToolbar({ count, options, hide = [] }: { count: number; options: FilterOptions; hide?: FilterKey[] }) {
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-[13px] text-ink-muted" aria-live="polite">
           <span className="font-semibold text-ink tabular-nums">{resultLabel(count)}</span>
         </p>

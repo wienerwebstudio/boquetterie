@@ -69,7 +69,7 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
           placeholder={placeholder}
           aria-invalid={state.status === "error" || undefined}
           aria-describedby={state.status === "error" ? `${id}-error` : undefined}
-          className="h-12 min-w-0 flex-1 rounded-md border border-line bg-white px-4 text-[15px] text-ink placeholder:text-ink-soft transition-colors focus:border-forest focus:outline-none"
+          className="h-12 w-full min-w-0 flex-none rounded-md sm:w-auto sm:flex-1 border border-line-strong bg-white px-4 text-[15px] text-ink placeholder:text-ink-soft transition-colors focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
         />
         <Button type="submit" size="lg" loading={state.status === "loading"} className="shrink-0">{button}</Button>
       </div>

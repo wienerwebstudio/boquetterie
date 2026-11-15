@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
-import fs from "node:fs/promises";
-import path from "node:path";
+import { readData, writeData } from "@/lib/cms";
+import { adminMailAddress, escapeHtml, sendMail } from "@/lib/mail";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
+
+/** Runtime document `contact-messages` (data/contact-messages.json, or Postgres when DATABASE_URL is set). */
+const DATA_FILE = "contact-messages";
 
 const SUBJECTS = ["Bestellung", "Lieferung", "Firmenkunden", "Sonstiges"] as const;
 type Subject = (typeof SUBJECTS)[number];
@@ -20,41 +23,22 @@ interface ContactMessage {
   read: boolean;
 }
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const FILE = path.join(DATA_DIR, "contact-messages.json");
-
-async function readMessages(): Promise<ContactMessage[]> {
-  try {
-    const raw = await fs.readFile(FILE, "utf8");
-    const parsed = JSON.parse(raw) as unknown;
-    return Array.isArray(parsed) ? (parsed as ContactMessage[]) : [];
-  } catch {
-    return [];
-  }
-}
-
-async function appendMessage(msg: ContactMessage) {
-  await fs.mkdir(DATA_DIR, { recursive: true });
-  const list = await readMessages();
-  list.push(msg);
-  const tmp = `${FILE}.tmp`;
-  await fs.writeFile(tmp, JSON.stringify(list, null, 2) + "\n", "utf8");
-  await fs.rename(tmp, FILE);
-}
-
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
 /**
  * POST /api/contact
  * Body: { name, email, subject, orderId?, message }
- * Appends the message to data/contact-messages.json.
+ * Stores the message through the datastore (document `contact-messages`) and notifies
+ * MAIL_ADMIN (if set). A failing mail never fails the request.
  */
 export async function POST(req: Request) {
   const limited = enforceRateLimit(req, { scope: "contact", limit: 5, windowMs: 10 * 60 * 1000 });
   if (limited) return limited;
   let body: Record<string, unknown>;
   try {
-    body = (await req.json()) as Record<string, unknown>;
+    const parsed: unknown = await req.json();
+    if (typeof parsed !== "object" || parsed === null) throw new Error("invalid");
+    body = parsed as Record<string, unknown>;
   } catch {
     return NextResponse.json({ ok: false, message: "Ungültige Anfrage." }, { status: 400 });
   }
@@ -93,10 +77,43 @@ export async function POST(req: Request) {
   };
 
   try {
-    await appendMessage(entry);
-  } catch {
+    const stored = await readData<unknown>(DATA_FILE, []);
+    const list = Array.isArray(stored) ? (stored as ContactMessage[]) : [];
+    list.push(entry);
+    await writeData(DATA_FILE, list);
+  } catch (err) {
+    console.error("[contact] could not store message", err);
     return NextResponse.json({ ok: false, message: "Die Nachricht konnte nicht gespeichert werden." }, { status: 500 });
   }
 
+  try {
+    await notifyAdmin(entry);
+  } catch (err) {
+    console.error("[contact] admin notification failed", err);
+  }
+
   return NextResponse.json({ ok: true });
+}
+
+async function notifyAdmin(entry: ContactMessage) {
+  const to = adminMailAddress();
+  if (!to) return;
+  const row = (label: string, value: string) => `<tr><td style="padding:4px 12px 4px 0;color:#6b6862;vertical-align:top">${label}</td><td style="padding:4px 0">${escapeHtml(value)}</td></tr>`;
+  const html = `
+    <p>Neue Kontaktanfrage <strong>${entry.id}</strong></p>
+    <table style="border-collapse:collapse;font-size:14px">
+      ${row("Name", entry.name)}
+      ${row("E-Mail", entry.email)}
+      ${row("Thema", entry.subject)}
+      ${row("Bestellnummer", entry.orderId ?? "–")}
+    </table>
+    <p style="white-space:pre-wrap">${escapeHtml(entry.message)}</p>
+  `;
+  await sendMail({
+    to,
+    subject: `Kontaktanfrage (${entry.subject}) von ${entry.name.replace(/\s+/g, " ")}`,
+    html,
+    replyTo: entry.email,
+    tags: { type: "contact_message" },
+  });
 }

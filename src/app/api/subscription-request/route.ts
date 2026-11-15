@@ -1,14 +1,12 @@
 import { NextResponse } from "next/server";
-import fs from "node:fs/promises";
-import path from "node:path";
-import { getSettings, getSubscription } from "@/lib/cms";
+import { getSettings, getSubscription, readData, writeData } from "@/lib/cms";
+import { adminMailAddress, escapeHtml, sendMail } from "@/lib/mail";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
-/** Runtime data dir – consistent with src/lib/cms.ts (data/*.json, git-ignored). */
-const DATA_DIR = path.join(process.cwd(), "data");
-const FILE = path.join(DATA_DIR, "subscription-requests.json");
+/** Runtime document `subscription-requests` (data/subscription-requests.json, or Postgres when DATABASE_URL is set). */
+const DATA_FILE = "subscription-requests";
 
 interface SubscriptionRequest {
   id: string;
@@ -20,29 +18,14 @@ interface SubscriptionRequest {
   message: string;
 }
 
-async function readRequests(): Promise<SubscriptionRequest[]> {
-  try {
-    const raw = await fs.readFile(FILE, "utf8");
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as SubscriptionRequest[]) : [];
-  } catch {
-    return [];
-  }
-}
-
-async function appendRequest(entry: SubscriptionRequest) {
-  const list = await readRequests();
-  list.unshift(entry);
-  await fs.mkdir(DATA_DIR, { recursive: true });
-  const tmp = `${FILE}.tmp`;
-  await fs.writeFile(tmp, JSON.stringify(list, null, 2) + "\n", "utf8");
-  await fs.rename(tmp, FILE);
-}
-
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
-/** POST /api/subscription-request { name, email, plan, frequency, message? } */
+/**
+ * POST /api/subscription-request { name, email, plan, frequency, message?, website? (honeypot) }
+ * Stores the request through the datastore (document `subscription-requests`, newest first)
+ * and notifies MAIL_ADMIN (if set). A failing mail never fails the request.
+ */
 export async function POST(req: Request) {
   const limited = enforceRateLimit(req, { scope: "subscription-request", limit: 5, windowMs: 10 * 60 * 1000 });
   if (limited) return limited;
@@ -59,6 +42,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, message: "Ungültige Anfrage." }, { status: 400 });
   }
 
+  // Honeypot: bots fill the hidden field – pretend success without storing anything.
+  if (typeof body.website === "string" && body.website.trim() !== "") {
+    return NextResponse.json({ ok: true });
+  }
+
   const name = str(body.name, 120);
   const email = str(body.email, 254);
   const plan = str(body.plan, 40);
@@ -67,14 +55,55 @@ export async function POST(req: Request) {
 
   if (name.length < 2) return NextResponse.json({ ok: false, message: "Bitte gib deinen Namen ein." }, { status: 400 });
   if (!EMAIL_RE.test(email)) return NextResponse.json({ ok: false, message: "Bitte gib eine gültige E-Mail-Adresse ein." }, { status: 400 });
-  if (!config.plans.some((p) => p.id === plan)) return NextResponse.json({ ok: false, message: "Bitte wähle ein Abo." }, { status: 400 });
-  if (!config.frequencies.some((f) => f.id === frequency)) return NextResponse.json({ ok: false, message: "Bitte wähle einen Rhythmus." }, { status: 400 });
+  const chosenPlan = config.plans.find((p) => p.id === plan);
+  const chosenFrequency = config.frequencies.find((f) => f.id === frequency);
+  if (!chosenPlan) return NextResponse.json({ ok: false, message: "Bitte wähle ein Abo." }, { status: 400 });
+  if (!chosenFrequency) return NextResponse.json({ ok: false, message: "Bitte wähle einen Rhythmus." }, { status: 400 });
 
   const entry: SubscriptionRequest = {
     id: `SUB-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`,
     createdAt: new Date().toISOString(),
     name, email, plan, frequency, message,
   };
-  await appendRequest(entry);
+
+  try {
+    const stored = await readData<unknown>(DATA_FILE, []);
+    const list = Array.isArray(stored) ? (stored as SubscriptionRequest[]) : [];
+    list.unshift(entry);
+    await writeData(DATA_FILE, list);
+  } catch (err) {
+    console.error("[subscription-request] could not store request", err);
+    return NextResponse.json({ ok: false, message: "Die Anfrage konnte nicht gespeichert werden. Bitte versuch es noch einmal." }, { status: 500 });
+  }
+
+  try {
+    await notifyAdmin(entry, chosenPlan.name, chosenFrequency.label);
+  } catch (err) {
+    console.error("[subscription-request] admin notification failed", err);
+  }
+
   return NextResponse.json({ ok: true, id: entry.id });
+}
+
+async function notifyAdmin(entry: SubscriptionRequest, planName: string, frequencyLabel: string) {
+  const to = adminMailAddress();
+  if (!to) return;
+  const row = (label: string, value: string) => `<tr><td style="padding:4px 12px 4px 0;color:#6b6862;vertical-align:top">${label}</td><td style="padding:4px 0">${escapeHtml(value)}</td></tr>`;
+  const html = `
+    <p>Neue Abo-Anfrage <strong>${entry.id}</strong></p>
+    <table style="border-collapse:collapse;font-size:14px">
+      ${row("Name", entry.name)}
+      ${row("E-Mail", entry.email)}
+      ${row("Abo", planName)}
+      ${row("Rhythmus", frequencyLabel)}
+    </table>
+    ${entry.message ? `<p style="white-space:pre-wrap">${escapeHtml(entry.message)}</p>` : ""}
+  `;
+  await sendMail({
+    to,
+    subject: `Abo-Anfrage von ${entry.name.replace(/\s+/g, " ")}`,
+    html,
+    replyTo: entry.email,
+    tags: { type: "subscription_request" },
+  });
 }

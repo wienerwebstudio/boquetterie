@@ -104,7 +104,7 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
           error={errors.message}
           className="sm:col-span-2"
           required
-          placeholder="Wie viele Standorte, welche Räume, welcher Rhythmus – und was dir sonst noch wichtig ist."
+          placeholder="Worum geht es, für wann und in welchem Umfang – und was dir sonst noch wichtig ist."
           hint={`${form.message.length}/${LIMITS.message} Zeichen`}
         />
         <div className="sm:col-span-2">

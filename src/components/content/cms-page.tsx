@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { pageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import type { CmsPage as CmsPageType, RichSection } from "@/types";
 import { cn, slugify } from "@/lib/format";
@@ -8,26 +9,31 @@ import type { Crumb } from "@/components/ui/breadcrumbs";
 
 /* ---------------- Metadata helper ---------------- */
 
-export function cmsMetadata(page: CmsPageType | null, fallbackTitle: string, canonical: string): Metadata {
-  return {
+/** A page that still consists of operator placeholders must not be indexed. */
+export function isPlaceholderPage(page: CmsPageType | null) {
+  return Boolean(page && (page.placeholder || (page.sections.length > 0 && page.sections.every((s) => s.placeholder))));
+}
+
+export function cmsMetadata(page: CmsPageType | null, fallbackTitle: string, canonical: string): Promise<Metadata> {
+  return pageMetadata({
     title: page?.seo.title ?? fallbackTitle,
     description: page?.seo.description,
-    alternates: { canonical },
-  };
+    path: canonical,
+    noindex: isPlaceholderPage(page),
+  });
 }
 
 /* ---------------- Placeholder box ---------------- */
 
-/** Clearly marked box for content that still has to be supplied by the operator. */
-export function PlaceholderBox({ paragraphs, label = "Platzhalter – Inhalt folgt", className }: { paragraphs?: string[]; label?: string; className?: string }) {
+/**
+ * Public stand-in for content the operator still has to supply. The placeholder
+ * paragraphs in the content are internal to-do notes (shown in the admin), so
+ * visitors only get a neutral notice – never the note itself.
+ */
+export function PlaceholderBox({ label = "Dieser Abschnitt wird gerade fertiggestellt.", className }: { paragraphs?: string[]; label?: string; className?: string }) {
   return (
-    <div className={cn("max-w-2xl rounded-md border border-dashed border-stone bg-ivory-100/70 p-5 sm:p-6", className)} role="note">
-      <p className="eyebrow mb-3 text-warn">{label}</p>
-      {paragraphs && paragraphs.length > 0 && (
-        <div className="space-y-3 text-[14px] leading-relaxed text-ink-muted">
-          {paragraphs.map((text, i) => <p key={i}>{text}</p>)}
-        </div>
-      )}
+    <div className={cn("max-w-2xl rounded-md border border-line bg-ivory-100/70 p-5 sm:p-6", className)} role="note">
+      <p className="text-[14px] leading-relaxed text-ink-muted">{label}</p>
     </div>
   );
 }
@@ -86,11 +92,6 @@ export function CmsPage({ page, eyebrow, crumbs, image, children }: { page: CmsP
     <article>
       <PageHeader eyebrow={eyebrow} title={page.title} intro={page.intro} crumbs={crumbs} image={image} />
       <div className="container-x py-14 sm:py-20 lg:py-24">
-        {page.placeholder && (
-          <p className="mb-10 text-[13px] text-ink-muted">
-            Zuletzt aktualisiert: <span className="rounded-sm border border-dashed border-stone px-1.5 py-0.5">[Datum]</span>
-          </p>
-        )}
         <RichSections sections={page.sections} />
         {children}
       </div>

@@ -47,6 +47,8 @@ hasAnalyticsConsent();        // imperativ, z. B. in Helfern
 `src/components/analytics/analytics.tsx` lädt Tools ausschließlich, wenn `consent.analytics === true`.
 Es können beide gleichzeitig konfiguriert sein; ohne Variablen passiert nichts.
 
+Ist **kein** Tool konfiguriert, öffnet sich das Consent-Sheet beim ersten Besuch nicht (`src/components/consent/config.ts`): Der Shop setzt dann nur technisch notwendigen Speicher, für den keine Einwilligung nötig ist. Über „Cookie-Einstellungen“ im Footer bleibt es erreichbar. Sobald eine der Variablen gesetzt ist, erscheint es wieder automatisch.
+
 | Variable                          | Beispiel                         | Wirkung                                                              |
 |-----------------------------------|----------------------------------|----------------------------------------------------------------------|
 | `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`    | `blumora.at`                 | Lädt Plausible (`data-domain`). Cookielos, Pageviews inkl. SPA-Navigation automatisch. |

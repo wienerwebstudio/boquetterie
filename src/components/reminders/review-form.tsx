@@ -4,6 +4,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input, Textarea } from "@/components/ui/input";
 import { cn } from "@/lib/format";
+import { onRadioGroupKeyDown, rovingTabIndex } from "@/lib/roving-radio";
 
 interface FormState { name: string; rating: number; text: string; website: string }
 type Errors = Partial<Record<keyof FormState, string>>;
@@ -79,7 +80,15 @@ export function ReviewForm({ orderId, token, defaultName, className }: { orderId
       <div className="grid gap-5">
         <div className="flex flex-col gap-1.5">
           <span id="rating-label" className="text-[13px] font-semibold text-ink">Deine Bewertung</span>
-          <div role="radiogroup" aria-labelledby="rating-label" className="flex items-center gap-3">
+          <div
+            role="radiogroup"
+            aria-labelledby="rating-label"
+            aria-required="true"
+            aria-invalid={Boolean(errors.rating) || undefined}
+            aria-describedby={errors.rating ? "rating-error" : undefined}
+            onKeyDown={onRadioGroupKeyDown}
+            className="flex items-center gap-3"
+          >
             <div className="flex gap-1" onMouseLeave={() => setHover(0)}>
               {[1, 2, 3, 4, 5].map((n) => (
                 <button
@@ -87,6 +96,7 @@ export function ReviewForm({ orderId, token, defaultName, className }: { orderId
                   type="button"
                   role="radio"
                   aria-checked={form.rating === n}
+                  tabIndex={rovingTabIndex(form.rating === n, n - 1, form.rating > 0)}
                   aria-label={`${n} von 5 Sternen – ${RATING_LABELS[n]}`}
                   onClick={() => set("rating", n)}
                   onMouseEnter={() => setHover(n)}
@@ -102,7 +112,7 @@ export function ReviewForm({ orderId, token, defaultName, className }: { orderId
             </div>
             <span className={cn("text-[14px]", shown ? "text-ink" : "text-ink-soft")}>{shown ? RATING_LABELS[shown] : "Sterne wählen"}</span>
           </div>
-          {errors.rating && <p role="alert" className="text-[13px] text-danger">{errors.rating}</p>}
+          {errors.rating && <p id="rating-error" role="alert" className="text-[13px] text-danger">{errors.rating}</p>}
         </div>
 
         <Input label="Dein Name" name="name" autoComplete="name" maxLength={60} value={form.name} onChange={(e) => set("name", e.target.value)} error={errors.name} hint="So erscheint er im Shop – z. B. „Anna M.“" required />

@@ -7,15 +7,19 @@ import { routes } from "@/lib/urls";
 
 /** Below-the-fold product information. Server component; the accordion itself is interactive. */
 export function ProductDetails({ product }: { product: Product }) {
+  // The note card shows the product's own detail photo when there is one; otherwise it stands on its own.
+  const detailImage = product.images.find((img, i) => i > 0 && img.kind === "detail");
+  const isPlant = product.category === "pflanzen";
+  const isBouquet = !isPlant && product.category !== "blumenboxen" && product.category !== "advent" && !/kranz|box/i.test(product.name);
   const items: AccordionItem[] = [
     {
       id: "beschreibung",
       title: "Beschreibung",
       content: <p className="text-pretty">{product.description}</p>,
     },
-    {
+    ...(product.flowers.length === 0 ? [] : [{
       id: "blumen",
-      title: "Blumen im Strauß",
+      title: isPlant ? "Pflanze" : "Enthaltene Blumen",
       content: (
         <ul className="grid gap-1.5 sm:grid-cols-2">
           {product.flowers.map((f) => (
@@ -23,7 +27,7 @@ export function ProductDetails({ product }: { product: Product }) {
           ))}
         </ul>
       ),
-    },
+    }]),
     {
       id: "pflege",
       title: "Pflegehinweise",
@@ -37,11 +41,11 @@ export function ProductDetails({ product }: { product: Product }) {
     },
     {
       id: "lieferung",
-      title: "Lieferung & Verpackung",
+      title: "Lieferung",
       content: (
         <div className="space-y-3">
-          <p>Dein Strauß wird am Liefertag frisch gebunden, in Seidenpapier und Kraftpapier eingeschlagen und aufrecht in Wasser transportiert – so kommt er genauso an, wie er unsere Werkstatt verlassen hat.</p>
-          <p>Die Liefergebühr richtet sich nach dem Liefergebiet und wird nach Eingabe der Postleitzahl angezeigt. Alle Gebiete, Zeitfenster und Bestellschlusszeiten findest du unter <Link href={routes.delivery} className="text-forest underline underline-offset-2">Lieferung & Versand</Link>.</p>
+          <p>Deine Blumen kommen von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Sträuße werden dort für deine Bestellung von Hand gebunden. Ein Kurier holt sie ab und fährt ohne Zwischenstopp zur Empfängeradresse.</p>
+          <p>Wir liefern in alle 23 Wiener Bezirke. Die Liefergebühr richtet sich nach dem Bezirk und wird nach Eingabe der Postleitzahl angezeigt. Liefergebiete, Zeitfenster und Bestellfristen findest du unter <Link href={routes.delivery} className="text-forest underline underline-offset-2">Lieferung & Versand</Link>.</p>
         </div>
       ),
     },
@@ -57,13 +61,17 @@ export function ProductDetails({ product }: { product: Product }) {
         </div>
         <aside className="lg:col-span-5 lg:pt-16">
           <div className="overflow-hidden rounded-lg border border-line bg-white/50">
-            <div className="relative aspect-[16/10] bg-ivory-200">
-              <Image src="/images/products/packaging.jpg" alt="Verpackung in Seidenpapier und Kraftpapier mit Leinenband" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
-            </div>
+            {detailImage && (
+              <div className="relative aspect-[16/10] bg-ivory-200">
+                <Image src={detailImage.src} alt={detailImage.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+              </div>
+            )}
             <div className="p-6 sm:p-7">
-              <p className="flex items-center gap-2 font-serif text-[22px] text-ink"><Info className="size-4 text-forest" strokeWidth={1.6} aria-hidden /> Sieht der Strauß genau so aus?</p>
+              <p className="flex items-center gap-2 font-serif text-[22px] text-ink"><Info className="size-4 text-forest" strokeWidth={1.6} aria-hidden /> {isPlant ? "Sieht die Pflanze genau so aus?" : isBouquet ? "Sieht der Strauß genau so aus?" : "Sieht es genau so aus wie am Foto?"}</p>
               <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
-                Fast. Blumen sind Naturprodukte: Je nach Saison und Tagesfrische kann eine Sorte oder Farbnuance variieren. Unsere Florist:innen halten dabei immer Stil, Farbwelt und Wert des Straußes ein – damit er so ankommt, wie du ihn dir vorgestellt hast.
+                {isPlant
+                  ? "Fast. Pflanzen sind Naturprodukte: Wuchs, Größe und Blüte können vom Foto abweichen. Auch der Übertopf kann je nach Verfügbarkeit anders aussehen."
+                  : "Fast. Blumen sind Naturprodukte: Je nach Saison kann eine Sorte oder Farbnuance abweichen. Unsere Partnerfloristik achtet darauf, dass Stil und Farbwelt erhalten bleiben."}
               </p>
             </div>
           </div>

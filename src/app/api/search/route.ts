@@ -24,7 +24,7 @@ export interface SearchResponse {
   suggestions?: string[];
 }
 
-const SUGGESTIONS = ["Mama", "Rosen", "Geburtstag", "Weiß", "Danke", "Pastell", "Heute"];
+const SUGGESTIONS = ["Mama", "Rosen", "Geburtstag", "Weiß", "Danke", "Pastell", "Pflanzen"];
 
 function hit(p: Product): SearchProductHit {
   const img = primaryImage(p);

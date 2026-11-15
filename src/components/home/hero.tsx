@@ -1,8 +1,10 @@
 import { getImageProps } from "next/image";
+import { Check } from "lucide-react";
 import type { HomepageContent } from "@/types";
 import { Button } from "@/components/ui/button";
 import { PostalCodeCheck } from "@/components/shop/postal-code-check";
 import { HeroPreload } from "./hero-preload";
+import { HeroVideo } from "./hero-video";
 
 const DESKTOP = "(min-width: 1024px)";
 const MOBILE = "(max-width: 1023px)";
@@ -14,7 +16,8 @@ const PORTRAIT_SIZES = "(min-width: 1440px) 640px, 50vw";
  * the matching source so the LCP image is requested from the <head>. An optional muted
  * loop plays over the image; the image is cropped to the video's first frame.
  */
-export function Hero({ hero }: { hero: HomepageContent["hero"] }) {
+/** `facts` – short, verifiable selling points (price anchor, delivery area …) computed by the page. */
+export function Hero({ hero, facts = [] }: { hero: HomepageContent["hero"]; facts?: string[] }) {
   const common = { alt: hero.imageAlt };
   const {
     props: { srcSet: portraitSet },
@@ -32,7 +35,7 @@ export function Hero({ hero }: { hero: HomepageContent["hero"] }) {
         ]}
       />
       <div className="container-x">
-        <div className="grid items-center gap-8 pb-12 lg:grid-cols-12 lg:gap-12 lg:py-14 xl:gap-16 xl:py-20">
+        <div className="grid grid-cols-1 items-center gap-8 pb-12 lg:grid-cols-12 lg:gap-12 lg:py-14 xl:gap-16 xl:py-20">
           {/* Image */}
           <div className="order-1 -mx-5 sm:-mx-8 lg:order-2 lg:col-span-6 lg:mx-0 xl:col-span-6">
             <div className="relative aspect-[4/3] overflow-hidden bg-ivory-200 sm:aspect-[16/10] lg:aspect-[4/5] lg:rounded-md">
@@ -48,21 +51,7 @@ export function Hero({ hero }: { hero: HomepageContent["hero"] }) {
                   className="absolute inset-0 h-full w-full object-cover object-[72%_50%]"
                 />
               </picture>
-              {hero.video && (
-                // Decorative ambient loop over the same still; hidden for reduced motion so the image remains.
-                <video
-                  className="absolute inset-0 h-full w-full object-cover object-[72%_50%] motion-reduce:hidden"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-hidden="true"
-                  tabIndex={-1}
-                >
-                  <source src={hero.video} type="video/mp4" />
-                </video>
-              )}
+              {hero.video && <HeroVideo src={hero.video} className="absolute inset-0 h-full w-full object-cover object-[72%_50%]" />}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/10 via-transparent to-transparent lg:hidden" aria-hidden />
             </div>
           </div>
@@ -76,6 +65,16 @@ export function Hero({ hero }: { hero: HomepageContent["hero"] }) {
             <p className="mt-5 max-w-lg text-pretty text-[15.5px] leading-relaxed text-ink-muted sm:text-[17px] animate-fade-up [animation-delay:160ms]">
               {hero.subheadline}
             </p>
+            {facts.length > 0 && (
+              <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[14px] text-ink animate-fade-up [animation-delay:200ms]">
+                {facts.map((fact) => (
+                  <li key={fact} className="inline-flex items-center gap-2">
+                    <Check className="size-4 shrink-0 text-forest" strokeWidth={2} aria-hidden />
+                    {fact}
+                  </li>
+                ))}
+              </ul>
+            )}
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center animate-fade-up [animation-delay:240ms]">
               <Button href={hero.primaryCta.href} size="lg">{hero.primaryCta.label}</Button>
               <Button href={hero.secondaryCta.href} size="lg" variant="outline">{hero.secondaryCta.label}</Button>

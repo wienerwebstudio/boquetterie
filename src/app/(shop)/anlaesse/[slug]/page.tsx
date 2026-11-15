@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { hasQueryParams, pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -17,28 +18,27 @@ export async function generateStaticParams() {
   return occasions.map((o) => ({ slug: o.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: { params: Params; searchParams: Promise<Record<string, string | string[] | undefined>> }): Promise<Metadata> {
   const { slug } = await params;
   const occasion = await getOccasionBySlug(slug);
   if (!occasion) return {};
-  return {
-    title: occasion.seo.title,
-    description: occasion.seo.description,
-    alternates: { canonical: routes.occasion(occasion.slug) },
-    openGraph: { images: [{ url: occasion.image, alt: occasion.imageAlt }] },
-  };
+  return pageMetadata({
+    title: occasion.seo.title, description: occasion.seo.description, path: routes.occasion(occasion.slug),
+    image: { url: occasion.image, alt: occasion.imageAlt },
+    noindex: hasQueryParams(await searchParams),
+  });
 }
 
-/** Three FAQs that fit the occasion best – trauer/gute-besserung lean on delivery reliability, gifts on card & date. */
+/** Three FAQs that fit the occasion best – trauer/gute-besserung lean on delivery questions, gifts on card & date. */
 const FAQ_IDS: Record<string, string[]> = {
   trauer: ["f-where", "f-nobody", "f-anon"],
-  "gute-besserung": ["f-today", "f-card", "f-business"],
+  "gute-besserung": ["f-window", "f-card", "f-business"],
   hochzeit: ["f-date", "f-window", "f-business"],
-  liebe: ["f-anon", "f-card", "f-today"],
+  liebe: ["f-anon", "f-card", "f-window"],
   jahrestag: ["f-date", "f-window", "f-card"],
   geburt: ["f-business", "f-card", "f-date"],
 };
-const DEFAULT_FAQS = ["f-date", "f-card", "f-today"];
+const DEFAULT_FAQS = ["f-date", "f-card", "f-window"];
 
 export default async function OccasionPage({ params, searchParams }: { params: Params; searchParams: Promise<RawSearchParams> }) {
   const { slug } = await params;

@@ -8,18 +8,20 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { routes } from "@/lib/urls";
 import { cn } from "@/lib/format";
+import { pageMetadata } from "@/lib/metadata";
 
 const SLUG = "ueber-uns";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getPageBySlug(SLUG);
   if (!page) return {};
-  return {
+  const image = page.sections.find((s) => s.image)?.image;
+  return pageMetadata({
     title: page.seo.title,
     description: page.seo.description,
-    alternates: { canonical: routes.about },
-    openGraph: { title: page.seo.title, description: page.seo.description, images: [{ url: "/images/editorial/florist.jpg" }] },
-  };
+    path: routes.about,
+    image: image && { url: image.src, alt: image.alt },
+  });
 }
 
 export default async function AboutPage() {

@@ -48,18 +48,23 @@ export default async function ContactPage() {
                 <Detail icon={<Mail className="size-4" aria-hidden />} label="E-Mail">
                   <Value value={brand.email} href={isPlaceholder(brand.email) ? undefined : `mailto:${brand.email}`} />
                 </Detail>
-                <Detail icon={<Phone className="size-4" aria-hidden />} label="Telefon">
-                  <Value value={brand.phone} href={isPlaceholder(brand.phone) ? undefined : `tel:${brand.phone.replace(/[^\d+]/g, "")}`} />
-                </Detail>
-                <Detail icon={<MapPin className="size-4" aria-hidden />} label="Adresse">
-                  <Value value={address.street} />
-                  <span className="block text-ink">{address.zip} {address.city}, {address.country}</span>
-                </Detail>
-                <Detail icon={<Clock className="size-4" aria-hidden />} label="Erreichbar">
-                  {brand.openingHours.length > 0
-                    ? brand.openingHours.map((h, i) => <Value key={i} value={h} />)
-                    : <span className="text-ink-soft">–</span>}
-                </Detail>
+                {/* Rows without real data (operator placeholders, empty lists) are left out entirely. */}
+                {!isPlaceholder(brand.phone) && (
+                  <Detail icon={<Phone className="size-4" aria-hidden />} label="Telefon">
+                    <Value value={brand.phone} href={`tel:${brand.phone.replace(/[^\d+]/g, "")}`} />
+                  </Detail>
+                )}
+                {!isPlaceholder(address.street) && (
+                  <Detail icon={<MapPin className="size-4" aria-hidden />} label="Adresse">
+                    <Value value={address.street} />
+                    <span className="block text-ink">{address.zip} {address.city}, {address.country}</span>
+                  </Detail>
+                )}
+                {brand.openingHours.length > 0 && (
+                  <Detail icon={<Clock className="size-4" aria-hidden />} label="Erreichbar">
+                    {brand.openingHours.map((h, i) => <Value key={i} value={h} />)}
+                  </Detail>
+                )}
               </address>
             </section>
 

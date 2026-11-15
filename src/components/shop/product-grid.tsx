@@ -3,7 +3,7 @@ import { ProductCard } from "@/components/shop/product-card";
 import { ProductCardSkeleton, Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/format";
 
-const gridCls = "grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 xl:grid-cols-4";
+const gridCls = "grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 md:grid-cols-3 xl:grid-cols-4";
 
 /** 2 columns on mobile & tablet, 3 on laptop, 4 on desktop. Cards have no borders – whitespace does the work. */
 export function ProductGrid({ products, showSameDay = false, className, priorityCount = 4 }: {

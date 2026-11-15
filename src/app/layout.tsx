@@ -35,12 +35,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: "de_AT",
       siteName: settings.brand.name,
-      title: settings.seo.defaultTitle,
-      description: settings.seo.defaultDescription,
       images: [{ url: "/images/hero/hero-wide.jpg", width: 1600, height: 900 }],
     },
+    twitter: { card: "summary_large_image" },
     robots: { index: true, follow: true },
-    alternates: { canonical: "/" },
+    // No canonical here: it would declare the home page canonical for every route
+    // that doesn't set its own (search, cart, account, 404 …).
   };
 }
 

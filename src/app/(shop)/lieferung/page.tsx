@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Check, Minus } from "lucide-react";
+import { Check, Clock, DoorOpen, Euro, type LucideProps } from "lucide-react";
 import type { DeliveryZone, SiteSettings } from "@/types";
 import { getDeliveryZones, getFaqs, getPageBySlug, getSettings } from "@/lib/cms";
 import { describeSameDayCutoff, describeZone, getAvailableDays, getLocalNow } from "@/lib/delivery";
@@ -32,30 +32,61 @@ export default async function DeliveryPage() {
   const deliveryFaqs = faqs.filter((f) => f.category === FAQ_CATEGORY);
   const now = getLocalNow(settings.timezone);
 
+  // Everything in the summary below is derived from the active zones – no hard-coded districts or prices.
+  const feeLevels = [...new Set(zones.map((z) => z.fee))].sort((a, b) => a - b).map((fee) => (fee === 0 ? "gratis" : formatPrice(fee)));
+  const hasFreeThreshold = zones.some((z) => z.fee > 0 && z.freeFrom !== null);
+  const windowLabels = [...new Set(zones.flatMap((z) => z.windows.filter((w) => w.active).map((w) => w.label)))];
+  const deliveryDays = WEEKDAYS.filter((d) => zones.some((z) => z.deliveryDays.includes(d.index))).map((d) => d.label);
+
   return (
     <article>
       <PageHeader eyebrow="Service" title={page.title} intro={page.intro} crumbs={[{ label: page.title }]} />
 
       {/* PLZ check band */}
       <section aria-labelledby="plz-check-heading" className="container-x mt-10 sm:mt-14">
-        <div className="grid overflow-hidden rounded-md bg-ivory-100 lg:grid-cols-[1.1fr_1fr]">
-          <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-14">
+        <div className="grid grid-cols-1 overflow-hidden rounded-md bg-ivory-100 lg:grid-cols-[1.1fr_1fr]">
+          <div className="flex min-w-0 flex-col justify-center p-6 sm:p-10 lg:p-14">
             <p className="eyebrow mb-3">Lieferprüfung</p>
             <h2 id="plz-check-heading" className="display-3 text-ink">Wohin sollen die Blumen?</h2>
             <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
-              Postleitzahl der Empfängeradresse eingeben – wir zeigen dir Liefertage, Lieferkosten und ob eine Lieferung heute möglich ist.
+              Postleitzahl der Empfängeradresse eingeben – wir zeigen dir Liefertage und Lieferkosten für diesen Bezirk.
             </p>
             <PostalCodeCheck variant="inline" title="Postleitzahl der Empfängeradresse" className="mt-7 max-w-md" />
           </div>
           <div className="relative min-h-[240px] lg:min-h-0">
-            <Image src="/images/editorial/delivery.jpg" alt="Ein Strauß wird durch einen Wiener Innenhof getragen" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src="/images/products/sortiment/farbtaenzer-2.jpg" alt="Strauß Farbtänzer in einer Vase" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
           </div>
         </div>
       </section>
 
+      {/* Summary: fees, windows, nobody home */}
+      {zones.length > 0 && (
+        <section aria-labelledby="delivery-summary-heading" className="container-x pt-16 sm:pt-20 lg:pt-24">
+          <h2 id="delivery-summary-heading" className="sr-only">Das Wichtigste zur Lieferung</h2>
+          <ul className="grid gap-8 md:grid-cols-3 md:gap-6">
+            <SummaryItem icon={Euro} title="Lieferkosten nach Bezirk">
+              {feeLevels.length > 1
+                ? <>Die Liefergebühr hängt vom Bezirk der Empfängeradresse ab: {joinOr(feeLevels)}.</>
+                : <>Die Lieferung {feeLevels[0] === "gratis" ? "ist gratis" : `kostet ${feeLevels[0]}`}.</>}
+              {!hasFreeThreshold && feeLevels.length > 1 && <> Die Gebühr gilt unabhängig vom Bestellwert.</>}
+              {feeLevels.length > 1 && <> Welche Stufe für welche Postleitzahl gilt, siehst du unten.</>}
+            </SummaryItem>
+            {windowLabels.length > 0 && (
+              <SummaryItem icon={Clock} title={windowLabels.length === 3 ? "Drei Zeitfenster" : "Zeitfenster"}>
+                Im Checkout wählst du, wann geliefert wird: {joinOr(windowLabels)}.
+                {deliveryDays.length > 0 && <> Liefertage sind derzeit {deliveryDays.join(", ")}.</>}
+              </SummaryItem>
+            )}
+            <SummaryItem icon={DoorOpen} title="Wenn niemand zu Hause ist">
+              Der Kurier bringt den Strauß an die Empfängeradresse. Ist niemand da, wird er nach Möglichkeit bei Nachbar:innen abgegeben. Du bekommst eine E-Mail, sobald der Strauß unterwegs ist, und eine weitere nach der Zustellung.
+            </SummaryItem>
+          </ul>
+        </section>
+      )}
+
       {/* Zones */}
       <section aria-label="Liefergebiete" className="container-x py-16 sm:py-20 lg:py-24">
-        <SectionHeading eyebrow="Liefergebiete" title="Unsere Liefergebiete im Überblick" subtitle="Lieferkosten, Liefertage und Zeitfenster je Gebiet. Ab welchem Bestellwert die Lieferung gratis ist, siehst du ebenfalls hier." />
+        <SectionHeading eyebrow="Liefergebiete" title="Liefergebiete und Preisstufen" subtitle="Welche Postleitzahl in welcher Preisstufe liegt – mit Liefertagen, Bestellfrist und Zeitfenstern je Gebiet." />
         {zones.length === 0 ? (
           <p className="text-[15px] text-ink-muted">Derzeit sind keine Liefergebiete hinterlegt.</p>
         ) : (
@@ -68,7 +99,7 @@ export default async function DeliveryPage() {
           </ul>
         )}
         <p className="mt-8 max-w-2xl text-[13px] leading-relaxed text-ink-muted">
-          Alle Preise inkl. USt. Aufpreise für Zeitfenster werden im Checkout ausgewiesen. Ob eine Lieferung am gewünschten Tag möglich ist, hängt vom Bestellzeitpunkt und von unseren Ruhetagen ab.
+          Alle Preise inkl. USt. Ob eine Lieferung am gewünschten Tag möglich ist, hängt vom Bestellzeitpunkt ab. An einzelnen Tagen liefern wir nicht – der Kalender auf der Produktseite und im Checkout zeigt alle verfügbaren Liefertage.
         </p>
       </section>
 
@@ -136,13 +167,11 @@ function ZoneCard({ zone, settings, now }: { zone: DeliveryZone; settings: SiteS
         </Row>
         {zone.minOrder > 0 && <Row label="Mindestbestellwert">{formatPrice(zone.minOrder)}</Row>}
         <Row label="Liefertage">{info.days || "–"}</Row>
-        <Row label="Lieferung am selben Tag">
-          {sameDay ? (
+        {sameDay && (
+          <Row label="Lieferung am selben Tag">
             <span className="inline-flex items-center gap-1.5 text-success"><Check className="size-3.5" strokeWidth={2.5} aria-hidden /> Ja · {describeSameDayCutoff(zone)}</span>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 text-ink-muted"><Minus className="size-3.5" aria-hidden /> Nein</span>
-          )}
-        </Row>
+          </Row>
+        )}
         <Row label={zone.leadDays <= 1 ? "Lieferung am nächsten Liefertag" : `Vorlaufzeit ${zone.leadDays} Tage`}>Bestellung bis {info.cutoff} Uhr</Row>
         {windows.length > 0 && (
           <Row label="Zeitfenster">
@@ -157,7 +186,7 @@ function ZoneCard({ zone, settings, now }: { zone: DeliveryZone; settings: SiteS
           </Row>
         )}
         {next && (
-          <Row label="Nächste Lieferung">
+          <Row label="Nächster möglicher Liefertag">
             <span className="font-semibold text-forest">{next.sameDay ? "Heute" : formatDateShort(next.date)}</span>
           </Row>
         )}
@@ -175,6 +204,29 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
       <dd className="text-ink">{children}</dd>
     </div>
   );
+}
+
+function SummaryItem({ icon: Icon, title, children }: { icon: React.ComponentType<LucideProps>; title: string; children: React.ReactNode }) {
+  return (
+    <li className="border-t border-line pt-6">
+      <span className="inline-flex size-10 items-center justify-center rounded-full bg-ivory-100 text-forest">
+        <Icon className="size-[18px]" strokeWidth={1.4} aria-hidden />
+      </span>
+      <h3 className="mt-5 font-serif text-[24px] leading-tight text-ink">{title}</h3>
+      <p className="mt-2 text-[14.5px] leading-relaxed text-ink-muted">{children}</p>
+    </li>
+  );
+}
+
+/** Monday first, matching `DeliveryZone.deliveryDays` (0 = Sunday). */
+const WEEKDAYS = [
+  { index: 1, label: "Mo" }, { index: 2, label: "Di" }, { index: 3, label: "Mi" }, { index: 4, label: "Do" },
+  { index: 5, label: "Fr" }, { index: 6, label: "Sa" }, { index: 0, label: "So" },
+];
+
+/** ["a", "b", "c"] -> "a, b oder c" */
+function joinOr(items: string[]) {
+  return items.length <= 1 ? (items[0] ?? "") : `${items.slice(0, -1).join(", ")} oder ${items[items.length - 1]}`;
 }
 
 /** "1010-1090" -> "1010–1090" */

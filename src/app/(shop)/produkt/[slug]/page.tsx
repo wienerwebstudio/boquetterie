@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { notFound } from "next/navigation";
 import { getAllProducts, getCategories, getExtras, getProductBySlug, getReviews, getSettings } from "@/lib/cms";
 import { primaryImage } from "@/lib/catalog";
@@ -22,17 +23,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const product = await getProductBySlug(slug);
   if (!product) return { title: "Produkt nicht gefunden" };
   const image = primaryImage(product);
-  return {
-    title: product.seo.title,
-    description: product.seo.description,
-    alternates: { canonical: routes.product(product.slug) },
-    openGraph: {
-      type: "website",
-      title: product.seo.title,
-      description: product.seo.description,
-      images: [{ url: image.src, alt: image.alt }],
-    },
-  };
+  return pageMetadata({
+    title: product.seo.title, description: product.seo.description, path: routes.product(product.slug),
+    image: { url: image.src, alt: image.alt },
+  });
 }
 
 export default async function ProductPage({ params }: Params) {

@@ -237,7 +237,7 @@ export function orderConfirmation(input: { order: Order; brand: MailBrand; track
     headline: "Danke für deine Bestellung.",
     blocks: [
       { type: "p", text: `Hallo ${order.customer.firstName},` },
-      { type: "p", text: `wir haben deine Bestellung ${order.id} erhalten. Der Strauß wird am Liefertag frisch gebunden und an deinem Wunschtag zugestellt.` },
+      { type: "p", text: `wir haben deine Bestellung ${order.id} erhalten. Der Strauß wird für deine Bestellung von Hand gebunden und am gewählten Liefertag per Kurier zugestellt.` },
       { type: "button", label: "Bestellung ansehen", url: trackingUrl },
       { type: "h", text: "Lieferung" },
       { type: "kv", rows: [["Termin", deliveryLine(order)], ["Empfänger:in", recipientLines(order)], ...(order.delivery.note ? [["Hinweis", order.delivery.note] as [string, string]] : [])] },
@@ -256,9 +256,9 @@ const STATUS_COPY: Partial<Record<Order["status"], { headline: string; text: str
   received: { headline: "Deine Bestellung ist eingegangen.", text: "Wir haben alles erhalten und kümmern uns darum." },
   paid: { headline: "Zahlung bestätigt.", text: "Deine Zahlung ist bei uns eingegangen. Danke." },
   preparing: { headline: "Wir bereiten deinen Strauß vor.", text: "Die Blumen für deine Bestellung werden gerade ausgewählt." },
-  arranging: { headline: "Dein Strauß wird gebunden.", text: "Unsere Florist:innen binden gerade deinen Strauß." },
-  ready: { headline: "Bereit zur Lieferung.", text: "Der Strauß ist verpackt und wartet auf die Zustellung." },
-  in_transit: { headline: "Dein Strauß ist unterwegs.", text: "Die Blumen sind auf dem Weg zur Empfängeradresse." },
+  arranging: { headline: "Dein Strauß wird gebunden.", text: "Dein Strauß wird gerade von Hand gebunden." },
+  ready: { headline: "Bereit zur Lieferung.", text: "Der Strauß ist fertig. Ein Kurier holt ihn ab und bringt ihn zur Empfängeradresse." },
+  in_transit: { headline: "Dein Strauß ist unterwegs.", text: "Ein Kurier ist mit den Blumen auf dem Weg zur Empfängeradresse." },
   delivered: { headline: "Zugestellt.", text: "Die Blumen sind angekommen. Wir hoffen, sie machen Freude." },
   undeliverable: { headline: "Wir konnten leider nicht zustellen.", text: "Bei der Zustellung hat es nicht geklappt. Wir melden uns so bald wie möglich bei dir, um einen neuen Versuch abzustimmen." },
   cancelled: { headline: "Deine Bestellung wurde storniert.", text: "Die Bestellung ist storniert. Falls du dazu Fragen hast oder das nicht deine Absicht war, antworte einfach auf diese E-Mail." },
@@ -328,7 +328,7 @@ export function reviewRequest(input: { order: Order; brand: MailBrand; reviewUrl
     headline: "Wie hat es gefallen?",
     blocks: [
       { type: "p", text: `Hallo ${order.customer.firstName},` },
-      { type: "p", text: `vor ein paar Tagen haben wir ${first ? `„${first.productName}“` : "deinen Strauß"} zugestellt. Wir würden gern wissen, wie er angekommen ist – und was wir besser machen können.` },
+      { type: "p", text: `vor ein paar Tagen wurde ${first ? `„${first.productName}“` : "dein Strauß"} zugestellt. Wir würden gern wissen, wie die Blumen angekommen sind – und was wir besser machen können.` },
       { type: "button", label: "Bewertung schreiben", url: reviewUrl },
       { type: "p", text: "Das dauert nur einen Moment. Deine Bewertung wird von uns gelesen und erst danach im Shop veröffentlicht.", muted: true },
     ],
@@ -360,10 +360,10 @@ export function occasionReminder(input: { brand: MailBrand; occasionLabel: strin
   return layout({
     brand,
     subject: `${what} ist ${inDays}`,
-    preheader: `Am ${dateLabel}. Noch genug Zeit für Blumen.`,
+    preheader: `Am ${dateLabel}. Eine kleine Erinnerung.`,
     headline: `${what} ist ${inDays}.`,
     blocks: [
-      { type: "p", text: `Kleine Erinnerung: Am ${dateLabel} ist ${what}. Wenn du Blumen schicken möchtest, ist jetzt ein guter Moment – du wählst das Wunschdatum, wir binden frisch am Liefertag.` },
+      { type: "p", text: `Kleine Erinnerung: Am ${dateLabel} ist ${what}. Wenn du Blumen schicken möchtest, ist jetzt ein guter Moment. Du wählst das Wunschdatum, der Strauß wird für deine Bestellung von Hand gebunden.` },
       ...(occasionUrl ? [{ type: "button", label: `Blumen zu ${occasionLabel}`, url: occasionUrl } as Block, { type: "link", label: "Alle Sträuße ansehen", url: shopUrl } as Block] : [{ type: "button", label: "Sträuße ansehen", url: shopUrl } as Block]),
     ],
     footerNotes: ["Du erhältst diese E-Mail, weil du auf unserer Website eine Erinnerung angelegt hast.", `Erinnerung löschen: ${unsubscribeUrl}`],

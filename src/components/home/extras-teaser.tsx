@@ -9,8 +9,8 @@ export function ExtrasTeaser({ content, extras }: { content: HomepageContent["ex
   if (!extras.length) return null;
   return (
     <Section id="extras" tone="ivory-100" className="py-14 sm:py-16 lg:py-24">
-      <SectionHeading eyebrow="Geschenksets & Extras" title={content.headline} subtitle={content.subheadline} link={{ label: "Alle Extras", href: routes.extras }} />
-      <ul className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 scrollbar-none sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-6 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0">
+      <SectionHeading eyebrow="Extras" title={content.headline} subtitle={content.subheadline} link={{ label: "Alle Extras", href: routes.extras }} />
+      <ul className="-mx-5 flex snap-x snap-mandatory scroll-pl-5 sm:scroll-pl-8 gap-4 overflow-x-auto px-5 pb-2 scrollbar-none sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-6 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0">
         {extras.map((x) => (
           <li key={x.id} className="w-[46vw] shrink-0 snap-start sm:w-[30vw] lg:w-auto">
             <Link href={routes.extras} className="group block">

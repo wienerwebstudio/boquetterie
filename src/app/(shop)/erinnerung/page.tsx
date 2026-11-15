@@ -4,12 +4,15 @@ import { getOccasions, getSettings } from "@/lib/cms";
 import { breadcrumbLd, JsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/content/page-header";
 import { ReminderForm } from "@/components/reminders/reminder-form";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Anlass-Erinnerung – nie wieder einen Anlass vergessen",
-  description: "Geburtstag, Jahrestag, Muttertag: Wir erinnern dich rechtzeitig per E-Mail, damit die Blumen pünktlich ankommen. Kostenlos, jederzeit löschbar.",
-  alternates: { canonical: "/erinnerung" },
-};
+export function generateMetadata(): Promise<Metadata> {
+  return pageMetadata({
+    title: "Anlass-Erinnerung – nie wieder einen Anlass vergessen",
+    description: "Geburtstag, Jahrestag, Muttertag: Wir erinnern dich rechtzeitig per E-Mail, damit die Blumen pünktlich ankommen. Kostenlos, jederzeit löschbar.",
+    path: "/erinnerung",
+  });
+}
 
 const STATUS_NOTES: Record<string, { tone: "success" | "info" | "error"; title: string; text: string }> = {
   bestaetigt: { tone: "success", title: "Erinnerung bestätigt.", text: "Wir melden uns rechtzeitig per E-Mail. Du kannst die Erinnerung jederzeit über den Link in der E-Mail löschen." },

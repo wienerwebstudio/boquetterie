@@ -5,14 +5,17 @@ import { PageHeader } from "@/components/content/page-header";
 import { GiftFinder } from "@/components/giftfinder/gift-finder";
 import { GIFT_FINDER_PATH } from "@/components/giftfinder/config";
 import { findGifts, isComplete, parseGiftFinderQuery } from "@/components/giftfinder/scoring";
+import { pageMetadata } from "@/lib/metadata";
 
 const TITLE = "Geschenk-Finder";
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: "Für wen? Zu welchem Anlass? Welches Budget? Drei Antworten – und wir zeigen dir passende Sträuße, frisch gebunden in Wien.",
-  alternates: { canonical: GIFT_FINDER_PATH },
-};
+export function generateMetadata(): Promise<Metadata> {
+  return pageMetadata({
+    title: TITLE,
+    description: "Für wen? Zu welchem Anlass? Welches Budget? Drei Antworten – und wir zeigen dir passende Sträuße, frisch gebunden in Wien.",
+    path: GIFT_FINDER_PATH,
+  });
+}
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 

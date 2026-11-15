@@ -1,12 +1,28 @@
 import type { NextConfig } from "next";
 
+/**
+ * Deliberately only the directives that cannot break rendering: no script-src/style-src/
+ * connect-src yet (Stripe.js, PayPal, analytics and next/image need a tested allowlist first –
+ * see docs/SECURITY.md). `form-action 'self'` is enough: every `<form>` posts to this origin,
+ * PayPal and Stripe Checkout are reached by a script navigation, not by a form.
+ */
+const contentSecurityPolicy = [
+  "frame-ancestors 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+].join("; ");
+
 const securityHeaders = [
+  { key: "Content-Security-Policy", value: contentSecurityPolicy },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
   { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains" },
 ];
+
+const staticAssetCacheControl = "public, max-age=86400, stale-while-revalidate=604800";
 
 const nextConfig: NextConfig = {
   /**
@@ -29,8 +45,24 @@ const nextConfig: NextConfig = {
   typedRoutes: false,
   reactStrictMode: true,
   poweredByHeader: false,
+  env: {
+    /**
+     * Read by src/lib/rate-limit.ts. `NETLIFY=true` only exists during the build on Netlify,
+     * so the fact is baked into the bundle here: only there may `x-nf-client-connection-ip`
+     * be trusted as the client address (elsewhere a client could simply send that header).
+     */
+    BUILD_TRUSTED_IP_HEADER: process.env.NETLIFY === "true" ? "x-nf-client-connection-ip" : "",
+  },
   async headers() {
-    return [{ source: "/(.*)", headers: securityHeaders }];
+    return [
+      { source: "/(.*)", headers: securityHeaders },
+      // Files in /public keep their name when their content changes, so no `immutable`:
+      // one day fresh, then served stale for up to a week while the browser revalidates.
+      ...["/images/:path*", "/videos/:path*"].map((source) => ({
+        source,
+        headers: [{ key: "Cache-Control", value: staticAssetCacheControl }],
+      })),
+    ];
   },
 };
 

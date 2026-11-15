@@ -9,19 +9,21 @@
   --color-sand-200: #d9cdbb;
   --color-stone: #c6b9a6;
   --color-line: #e5ded3;
+  /* Boundaries of form controls (WCAG 1.4.11): >= 3:1 on white, ivory, ivory-100 and ivory-200. */
+  --color-line-strong: #8d8376;
   --color-forest: #1f3a2d;
   --color-forest-600: #2a4c3b;
   --color-forest-700: #182e24;
   --color-forest-800: #12241b;
-  --color-moss: #5f6f5a;
+  --color-moss: #5d6c58;
   --color-rose: #b8767f;
   --color-rose-100: #f3e6e5;
   --color-burgundy: #6d2f3b;
   --color-ink: #23231f;
   --color-ink-muted: #6b6862;
-  --color-ink-soft: #6f6b64;
+  --color-ink-soft: #6b6761;
   --color-success: #2f6b4f;
-  --color-warn: #a4652b;
+  --color-warn: #9a5f28;
   --color-danger: #a23b3b;
 
   /* ---- Typography ---- */

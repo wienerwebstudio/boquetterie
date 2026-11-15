@@ -5,6 +5,7 @@ import type { SubscriptionConfig } from "@/types";
 import { Button } from "@/components/ui/button";
 import { Input, Select, Textarea } from "@/components/ui/input";
 import { formatPrice, cn } from "@/lib/format";
+import { onRadioGroupKeyDown, rovingTabIndex } from "@/lib/roving-radio";
 import { usePaymentMethods } from "@/components/checkout/use-payment-methods";
 
 type Status = { kind: "idle" | "loading" | "success" | "error"; message?: string };
@@ -119,8 +120,8 @@ export function SubscriptionPlanner({ config }: { config: SubscriptionConfig }) 
       {frequencies.length > 0 && (
         <fieldset className="mb-8 sm:mb-10">
           <legend className="eyebrow mb-4">Rhythmus wählen</legend>
-          <div role="radiogroup" aria-label="Lieferrhythmus" className="inline-flex max-w-full flex-wrap gap-2 rounded-md bg-ivory-100 p-1.5">
-            {frequencies.map((f) => {
+          <div role="radiogroup" aria-label="Lieferrhythmus" onKeyDown={onRadioGroupKeyDown} className="inline-flex max-w-full flex-wrap gap-2 rounded-md bg-ivory-100 p-1.5">
+            {frequencies.map((f, i) => {
               const active = f.id === frequency?.id;
               return (
                 <button
@@ -128,6 +129,7 @@ export function SubscriptionPlanner({ config }: { config: SubscriptionConfig }) 
                   type="button"
                   role="radio"
                   aria-checked={active}
+                  tabIndex={rovingTabIndex(active, i, Boolean(frequency))}
                   onClick={() => setFrequencyId(f.id)}
                   className={cn(
                     "inline-flex h-10 items-center gap-2 rounded-[6px] px-4 text-[14px] font-semibold transition-all duration-300 ease-[var(--ease-soft)]",

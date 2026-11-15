@@ -53,7 +53,7 @@ export function PostalCodeCheck({
             onChange={(e) => setPlz(normalizePostalCode(e.target.value))}
             placeholder={placeholder}
             aria-describedby={`plz-${variant}-status`}
-            className="h-12 min-w-0 flex-1 rounded-md border border-line bg-white px-4 text-[15px] tracking-[0.08em] text-ink placeholder:tracking-normal placeholder:text-ink-soft focus:border-forest focus:outline-none"
+            className="h-12 min-w-0 flex-1 rounded-md border border-line-strong bg-white px-4 text-[15px] tracking-[0.08em] text-ink placeholder:tracking-normal placeholder:text-ink-soft focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
           />
           <Button type="submit" loading={loading} size="md" className="shrink-0">{button}</Button>
         </div>
@@ -64,7 +64,7 @@ export function PostalCodeCheck({
           <div className="animate-fade-up">
             <p className="flex items-center gap-2 text-sm font-semibold text-success">
               <span className="inline-flex size-5 items-center justify-center rounded-full bg-success text-ivory"><Check className="size-3" strokeWidth={3} /></span>
-              Lieferung verfügbar · {result.zone.name}
+              Lieferung verfügbar · {result.postalCode} {result.zone.region}
             </p>
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-ink-muted">
               {result.sameDayToday && (

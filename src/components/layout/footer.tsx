@@ -3,6 +3,7 @@ import type { SiteSettings } from "@/types";
 import { Logo } from "@/components/icons/logo";
 import { PaymentMark } from "@/components/icons/payment";
 import { routes } from "@/lib/urls";
+import { ordersPaused } from "@/lib/orders-paused";
 import { ConsentSettingsLink } from "@/components/consent/consent-link";
 import { GIFT_FINDER_PATH } from "@/components/giftfinder/config";
 
@@ -11,8 +12,8 @@ type FooterLink = { label: string; href: string } | { label: string; consent: tr
 export function Footer({ settings }: { settings: SiteSettings }) {
   const cols: { title: string; links: FooterLink[] }[] = [
     { title: "Shop", links: [
-      { label: "Blumen", href: routes.shop }, { label: "Bestseller", href: routes.category("bestseller") },
-      { label: "Rosen", href: routes.category("rosen") }, { label: "Geschenksets", href: routes.extras },
+      { label: "Blumen", href: routes.shop }, { label: "Pflanzen", href: routes.category("pflanzen") },
+      { label: "Rosen", href: routes.category("rosen") }, { label: "Extras", href: routes.extras },
       ...(settings.subscriptionEnabled ? [{ label: "Blumen-Abo", href: routes.subscription }] : []),
     ] },
     { title: "Anlässe", links: [
@@ -34,14 +35,15 @@ export function Footer({ settings }: { settings: SiteSettings }) {
     ] },
   ];
   const linkCls = "text-[14.5px] text-ink transition-colors hover:text-forest";
-  const payments = settings.payments.filter((p) => p.enabled);
+  // No payment marks while ordering is paused – nothing can be paid yet.
+  const payments = ordersPaused() ? [] : settings.payments.filter((p) => p.enabled);
   return (
     <footer className="border-t border-line bg-ivory-100">
       <div className="container-x py-14 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
           <div className="max-w-xs">
             <Logo variant="stacked" />
-            <p className="mt-4 text-[15px] leading-relaxed text-ink-muted">{settings.brand.claim} Frisch gebunden in Wien, persönlich geliefert.</p>
+            <p className="mt-4 text-[15px] leading-relaxed text-ink-muted">{settings.brand.claim} Frisch gebunden in Wien, per Kurier geliefert.</p>
             <div className="mt-6 flex gap-2">
               {settings.brand.social.instagram && (
                 <a href={settings.brand.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex size-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-forest hover:text-forest"><svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.3" cy="6.7" r="0.8" fill="currentColor"/></svg></a>
@@ -69,7 +71,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         <div className="mt-14 flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-2">
             {payments.map((p) => <PaymentMark key={p.id} id={p.id} />)}
-            <span className="ml-2 text-[12px] text-ink-soft">Sichere Zahlung · SSL-verschlüsselt</span>
+            {payments.length > 0 && <span className="ml-2 text-[12px] text-ink-soft">Sichere Zahlung · SSL-verschlüsselt</span>}
           </div>
           <p className="text-[12px] text-ink-soft">© {new Date().getFullYear()} {settings.brand.name}. {settings.brand.address.city}, {settings.brand.address.country}.</p>
         </div>

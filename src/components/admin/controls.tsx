@@ -5,7 +5,7 @@ import { cn } from "@/lib/format";
 /** Compact, utilitarian form controls for the admin (sans-serif, dense). */
 
 export const inputCls =
-  "w-full rounded-md border border-line bg-white px-3 text-[14px] text-ink placeholder:text-ink-soft transition-colors focus:border-forest focus:outline-none disabled:bg-ivory-100 disabled:text-ink-muted h-10";
+  "w-full rounded-md border border-line-strong bg-white px-3 text-[14px] text-ink placeholder:text-ink-soft transition-colors focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest disabled:bg-ivory-100 disabled:text-ink-muted h-10";
 /** Extra classes for read-only inputs (`read-only:` would also match <select>). */
 export const readonlyCls = "bg-ivory-100 text-ink-muted";
 

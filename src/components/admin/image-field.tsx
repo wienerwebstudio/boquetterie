@@ -182,7 +182,7 @@ export function MediaPicker({ open, onClose, onSelect }: { open: boolean; onClos
                   <button
                     type="button"
                     onClick={() => { onSelect(item.url); onClose(); }}
-                    className="group block w-full overflow-hidden rounded-md border border-line text-left transition-colors hover:border-forest focus:border-forest focus:outline-none"
+                    className="group block w-full overflow-hidden rounded-md border border-line text-left transition-colors hover:border-forest focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
                     title={item.url}
                   >
                     <Thumb src={item.url} className="aspect-square w-full" />

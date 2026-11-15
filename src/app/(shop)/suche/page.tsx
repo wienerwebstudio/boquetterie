@@ -9,7 +9,7 @@ import { resultLabel } from "@/lib/shop-filters";
 import { ProductGrid } from "@/components/shop/product-grid";
 import { Button } from "@/components/ui/button";
 
-const SUGGESTIONS = ["Rosen", "Mama", "Geburtstag", "Weiß", "Danke", "Pastell", "Heute"];
+const SUGGESTIONS = ["Rosen", "Mama", "Geburtstag", "Weiß", "Danke", "Pastell", "Pflanzen"];
 
 export async function generateMetadata({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }): Promise<Metadata> {
   const q = readQuery((await searchParams).q);
@@ -30,7 +30,8 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
   const result = q.length >= 2 ? search(q, products, occasions, categories, 48) : { products: [], occasions: [], categories: [] };
   const total = result.products.length + result.occasions.length + result.categories.length;
   const featured = occasions.filter((o) => o.featured).slice(0, 4);
-  const bestsellers = sortProducts(products.filter((p) => p.bestseller), "bestseller").slice(0, 4);
+  // Flagged bestsellers first; without any (new shop) simply the first recommended products.
+  const bestsellers = sortProducts(products.filter((p) => p.active), "bestseller").slice(0, 4);
 
   return (
     <div className="container-x pb-20 pt-8 sm:pt-12 lg:pb-28">
@@ -50,7 +51,7 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
               defaultValue={q}
               placeholder="Blume, Farbe oder Anlass"
               autoComplete="off"
-              className="h-12 w-full rounded-md border border-line bg-white pl-11 pr-4 text-[15px] text-ink placeholder:text-ink-soft focus:border-forest focus:outline-none"
+              className="h-12 w-full rounded-md border border-line-strong bg-white pl-11 pr-4 text-[15px] text-ink placeholder:text-ink-soft focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
             />
           </div>
           <Button type="submit" size="md">Suchen</Button>
@@ -102,7 +103,7 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
           </div>
           <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
             <div>
-              <p className="eyebrow mb-4">Beliebte Anlässe</p>
+              <p className="eyebrow mb-4">Anlässe</p>
               <ul className="grid grid-cols-2 gap-4">
                 {featured.map((o) => (
                   <li key={o.slug}>
@@ -118,9 +119,9 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
             </div>
             <div>
               <div className="mb-4 flex items-baseline justify-between">
-                <p className="eyebrow">Bestseller</p>
-                <Link href={routes.category("bestseller")} className="group inline-flex items-center gap-1.5 text-[13px] font-semibold text-forest">
-                  Alle Bestseller <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
+                <p className="eyebrow">Aus dem Sortiment</p>
+                <Link href={routes.shop} className="group inline-flex items-center gap-1.5 text-[13px] font-semibold text-forest">
+                  Alle Blumen <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
                 </Link>
               </div>
               <ProductGrid products={bestsellers} className="lg:grid-cols-2 xl:grid-cols-2" priorityCount={0} />

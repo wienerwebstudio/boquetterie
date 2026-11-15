@@ -7,16 +7,17 @@ import { Button } from "@/components/ui/button";
 import { TrustIcon } from "@/components/icons/trust-icon";
 import { SubscriptionPlanner } from "@/components/home/subscription-planner";
 import { routes } from "@/lib/urls";
+import { pageMetadata } from "@/lib/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
   const [settings, config] = await Promise.all([getSettings(), getSubscription()]);
   const enabled = settings.subscriptionEnabled && config.enabled;
-  return {
+  return pageMetadata({
     title: enabled ? `Blumen-Abo – ${config.headline}` : "Blumen-Abo",
     description: enabled ? config.intro : "Das Blumen-Abo ist derzeit nicht verfügbar.",
-    alternates: { canonical: routes.subscription },
-    robots: enabled ? undefined : { index: false, follow: true },
-  };
+    path: routes.subscription,
+    noindex: !enabled,
+  });
 }
 
 const STEPS = [

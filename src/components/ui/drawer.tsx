@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useId, useRef } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "@/lib/format";
+import { useFocusTrap } from "@/lib/use-focus-trap";
 
 export function Drawer({
   open, onClose, title, children, side = "right", footer, width = "max-w-[480px]", className, labelledBy,
@@ -11,32 +12,11 @@ export function Drawer({
   side?: "right" | "left" | "bottom"; footer?: React.ReactNode; width?: string; className?: string; labelledBy?: string;
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
-  const lastActive = useRef<Element | null>(null);
+  const autoId = useId();
+  const titleId = labelledBy ?? autoId;
 
-  useEffect(() => {
-    if (!open) return;
-    lastActive.current = document.activeElement;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "Tab" && panelRef.current) {
-        const focusables = panelRef.current.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),input,textarea,select,[tabindex]:not([tabindex="-1"])');
-        if (!focusables.length) return;
-        const first = focusables[0], last = focusables[focusables.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-      }
-    };
-    document.addEventListener("keydown", onKey);
-    const t = setTimeout(() => panelRef.current?.querySelector<HTMLElement>("[data-autofocus],button,a,input")?.focus(), 50);
-    return () => {
-      document.body.style.overflow = prev;
-      document.removeEventListener("keydown", onKey);
-      clearTimeout(t);
-      (lastActive.current as HTMLElement | null)?.focus?.();
-    };
-  }, [open, onClose]);
+  // Focus trap, Escape, focus return, inert background and scroll lock.
+  useFocusTrap(panelRef, { active: open, onEscape: onClose });
 
   if (typeof document === "undefined" || !open) return null;
 
@@ -53,14 +33,14 @@ export function Drawer({
         ref={panelRef}
         role="dialog"
         aria-modal="true"
-        aria-labelledby={labelledBy}
+        aria-labelledby={titleId}
         className={cn("absolute flex flex-col bg-ivory shadow-drawer", position, side !== "bottom" && width, className)}
       >
         {(title || true) && (
           <div className="flex items-center justify-between border-b border-line px-5 py-4 sm:px-6">
-            <div className="font-serif text-2xl text-ink" id={labelledBy}>{title}</div>
-            <button onClick={onClose} aria-label="Schließen" className="-mr-2 rounded-full p-2 text-ink-muted transition-colors hover:bg-ivory-200 hover:text-ink">
-              <X className="size-5" />
+            <div className="font-serif text-2xl text-ink" id={titleId}>{title}</div>
+            <button type="button" onClick={onClose} aria-label="Schließen" className="-mr-2 rounded-full p-2 text-ink-muted transition-colors hover:bg-ivory-200 hover:text-ink">
+              <X className="size-5" aria-hidden />
             </button>
           </div>
         )}

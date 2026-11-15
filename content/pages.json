@@ -4,8 +4,8 @@
     "title": "Blumen für besondere Momente.",
     "intro": "Blumora ist ein Online-Blumenversand aus Wien. Jeder Strauß wird in einer Wiener Floristik von Hand gebunden und per Kurier direkt zugestellt.",
     "sections": [
-      {"heading": "Wie wir arbeiten", "paragraphs": ["Blumora ist ein Wiener Online-Blumenversand. Du wählst deinen Strauß bei uns aus – gebunden wird er von einer Floristik in Wien, mit der wir fest zusammenarbeiten. Dort entsteht jeder Strauß von Hand und für deine Bestellung.", "Zu jedem Strauß gehört auf Wunsch eine Grußkarte mit deinem Text."], "image": {"src": "/images/editorial/florist.jpg", "alt": "Floristin beim Binden eines Straußes"}},
-      {"heading": "Die Lieferung", "paragraphs": ["Ein Kurier holt deinen Strauß direkt in der Floristik ab und bringt ihn ohne Zwischenstopp zur Empfängeradresse. Wir liefern in alle 23 Wiener Bezirke – im Zeitfenster deiner Wahl: vormittags, nachmittags oder abends bis 22 Uhr."], "image": {"src": "/images/editorial/delivery.jpg", "alt": "Ein Strauß wird durch einen Wiener Innenhof getragen"}}
+      {"heading": "Wie wir arbeiten", "paragraphs": ["Blumora ist ein Wiener Online-Blumenversand. Du wählst deinen Strauß bei uns aus – gebunden wird er von einer Floristik in Wien, mit der wir fest zusammenarbeiten. Dort entsteht jeder Strauß von Hand und für deine Bestellung.", "Zu jedem Strauß gehört auf Wunsch eine Grußkarte mit deinem Text."], "image": {"src": "/images/products/sortiment/herbstzauber-1.jpg", "alt": "Strauß Herbstzauber in einer Glasvase"}},
+      {"heading": "Die Lieferung", "paragraphs": ["Ein Kurier holt deinen Strauß direkt in der Floristik ab und bringt ihn ohne Zwischenstopp zur Empfängeradresse. Wir liefern in alle 23 Wiener Bezirke – im Zeitfenster deiner Wahl: vormittags, nachmittags oder abends bis 22 Uhr."], "image": {"src": "/images/products/sortiment/pure-liebe-3.jpg", "alt": "Strauß Pure Liebe in einer Glasvase"}}
     ],
     "seo": {"title": "Über uns – Blumenversand aus Wien", "description": "Blumora ist ein Online-Blumenversand aus Wien: Sträuße von Hand gebunden und per Kurier in alle 23 Bezirke geliefert."}
   },
@@ -15,7 +15,6 @@
     "intro": "Wir liefern in alle 23 Wiener Bezirke. Lieferkosten (gratis, 3,99 € oder 7,99 €), Liefertage und Zeitfenster hängen von der Empfängeradresse ab – gib die Postleitzahl ein und du siehst alles auf einen Blick.",
     "sections": [
       {"heading": "So läuft die Lieferung ab", "paragraphs": ["Dein Strauß wird für deine Bestellung frisch gebunden. Ein Kurier holt ihn direkt in der Floristik ab und bringt ihn ohne Zwischenstopp zur Empfängeradresse – im Zeitfenster, das du gewählt hast. Ist niemand da, wird der Strauß nach Möglichkeit bei Nachbar:innen abgegeben.", "Zu jeder Bestellung erhältst du eine Bestätigung per E-Mail und einen Link, mit dem du den Status verfolgen kannst."]},
-      {"heading": "Lieferung am selben Tag", "paragraphs": ["In vielen Wiener Bezirken liefern wir noch am selben Tag, wenn die Bestellung vor der angezeigten Uhrzeit eingeht. Ob das für deine Adresse gilt, zeigen wir dir nach Eingabe der Postleitzahl – nur dann, wenn es wirklich verfügbar ist."]},
       {"heading": "Lieferung an Firmen, Hotels und Krankenhäuser", "paragraphs": ["Gib im Checkout Firmen- oder Hotelnamen sowie Abteilung, Station oder Zimmernummer an. Wir liefern an Rezeption oder Empfang. Bitte beachte, dass manche Einrichtungen keine Blumen auf Stationen erlauben."]}
     ],
     "seo": {"title": "Lieferung & Versand – Blumen liefern lassen in Wien", "description": "Liefergebiete, Lieferkosten, Liefertage und Zeitfenster für Blumenlieferungen in Wien."}

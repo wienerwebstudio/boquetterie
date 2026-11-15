@@ -36,7 +36,7 @@ export function CartSummary({ className, showTotal = true }: { className?: strin
         <Row label="Sträuße" value={formatPrice(totals.itemsSubtotal)} />
         {totals.extrasSubtotal > 0 && <Row label="Extras" value={formatPrice(totals.extrasSubtotal)} />}
         {zone ? (
-          <Row label={<>Lieferung <span className="text-ink-muted">· {zone.name}</span></>} value={totals.delivery === 0 ? <span className="font-semibold text-success">Gratis</span> : formatPrice(totals.delivery)} />
+          <Row label={<>Lieferung <span className="text-ink-muted">· {zone.region}</span></>} value={totals.delivery === 0 ? <span className="font-semibold text-success">Gratis</span> : formatPrice(totals.delivery)} />
         ) : (
           <Row label="Lieferung" value="wird im Checkout berechnet" muted />
         )}
@@ -55,7 +55,7 @@ export function CartSummary({ className, showTotal = true }: { className?: strin
       )}
       {zone && totals.belowMinOrder && (
         <p className="rounded-md bg-ivory-100 px-3 py-2 text-[13px] text-ink-muted">
-          Für {zone.name} gilt ein Mindestbestellwert von <span className="font-semibold text-ink">{formatPrice(totals.minOrder)}</span>.
+          Für diese Adresse gilt ein Mindestbestellwert von <span className="font-semibold text-ink">{formatPrice(totals.minOrder)}</span>.
         </p>
       )}
 
@@ -84,7 +84,7 @@ export function CartSummary({ className, showTotal = true }: { className?: strin
                 autoFocus
                 aria-describedby={couponError ? `${inputId}-error` : undefined}
                 aria-invalid={couponError ? true : undefined}
-                className={cn("h-11 min-w-0 flex-1 rounded-md border bg-white px-3 text-[14px] uppercase tracking-[0.08em] text-ink placeholder:normal-case placeholder:tracking-normal placeholder:text-ink-soft focus:border-forest focus:outline-none", couponError ? "border-danger" : "border-line")}
+                className={cn("h-11 min-w-0 flex-1 rounded-md border bg-white px-3 text-[14px] uppercase tracking-[0.08em] text-ink placeholder:normal-case placeholder:tracking-normal placeholder:text-ink-soft focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest", couponError ? "border-danger" : "border-line-strong")}
               />
               <Button type="submit" variant="outline" size="md" loading={applying}>Einlösen</Button>
             </div>

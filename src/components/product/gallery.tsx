@@ -81,7 +81,7 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
         >
           {all.map((img, i) => (
             <div key={img.src} className="relative aspect-[4/5] w-full shrink-0 snap-center bg-ivory-200" role="group" aria-roledescription="Bild" aria-label={`${i + 1} von ${all.length}`}>
-              <Image src={img.src} alt={img.alt} fill priority={i === 0} sizes="100vw" className="object-cover" />
+              <Image src={img.src} alt={img.alt} fill priority={i === 0} sizes="(min-width: 1440px) 780px, (min-width: 1024px) 55vw, 100vw" className="object-cover" />
             </div>
           ))}
         </div>

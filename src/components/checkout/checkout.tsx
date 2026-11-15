@@ -1,4 +1,5 @@
 "use client";
+import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -26,7 +27,14 @@ import { StepDelivery } from "./step-delivery";
 import { StepGreeting } from "./step-greeting";
 import { StepCustomer } from "./step-customer";
 import { StepPayment } from "./step-payment";
-import { StripePaymentForm, type StripeSession } from "./stripe-payment";
+import type { StripeSession } from "./stripe-payment";
+
+// Stripe.js (and its script from js.stripe.com) is only needed once a Stripe payment
+// actually starts – keep it out of the checkout bundle until then.
+const StripePaymentForm = dynamic(() => import("./stripe-payment").then((m) => m.StripePaymentForm), {
+  ssr: false,
+  loading: () => <p className="py-10 text-center text-[14px] text-ink-muted" role="status">Zahlung wird geladen …</p>,
+});
 import { usePaymentMethods } from "./use-payment-methods";
 
 export interface CheckoutConfig {

@@ -50,7 +50,7 @@ export async function ProductResults({ params, pathname, fixed = {}, hide = [], 
       list = list.filter((p) => getAvailableDays({ zone, settings, now, product: p }).some((d) => d.date === datum));
       const dayOk = zoneDays.some((d) => d.date === datum);
       if (dayOk) {
-        info = { tone: "ok", icon: "calendar", text: `Lieferung nach ${params.plz} (${zone.name}) am ${formatDateLong(datum)} möglich.${datum === now.date ? ` Bestellung bis ${zone.sameDayCutoff} Uhr.` : ""}` };
+        info = { tone: "ok", icon: "calendar", text: `Lieferung nach ${params.plz} am ${formatDateLong(datum)} möglich.${datum === now.date ? ` Bestellung bis ${zone.sameDayCutoff} Uhr.` : ""}` };
       } else {
         const next = zoneDays.find((d) => d.date > datum) ?? zoneDays[0];
         info = { tone: "warn", icon: "calendar", text: `Am ${formatDateShort(datum)} liefern wir nach ${params.plz} leider nicht.`, nextDate: next?.date };
@@ -60,7 +60,7 @@ export async function ProductResults({ params, pathname, fixed = {}, hide = [], 
       const tail = sameDayToday
         ? `Heute lieferbar bei Bestellung bis ${zone.sameDayCutoff} Uhr.`
         : first ? `Nächste Lieferung ${formatDateShort(first.date)}.` : "";
-      info = { tone: "ok", icon: "pin", text: `Lieferung nach ${params.plz} · ${zone.name}. ${tail}`.trim() };
+      info = { tone: "ok", icon: "pin", text: `Lieferung nach ${params.plz} ${zone.region}. ${tail}`.trim() };
     }
   } else if (params.plz) {
     if (datum) list = list.filter((p) => roughlyDeliverableOn(p, datum, now.date));
@@ -136,7 +136,7 @@ function EmptyState({ pathname, params, activeCount, occasions, fallback, info }
             </Button>
           )}
           {activeCount > 0 && <Button href={pathname} variant={info?.nextDate ? "outline" : "primary"} size="md">Filter zurücksetzen</Button>}
-          <Button href={routes.category("bestseller")} variant="outline" size="md">Bestseller ansehen</Button>
+          <Button href={routes.shop} variant="outline" size="md">Alle Blumen ansehen</Button>
         </div>
         {occasions.length > 0 && (
           <ul className="mt-6 flex flex-wrap gap-2">

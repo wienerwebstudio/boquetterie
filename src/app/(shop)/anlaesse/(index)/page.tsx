@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -9,11 +10,13 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 
-export const metadata: Metadata = {
-  title: "Blumen für jeden Anlass – Geburtstag, Liebe, Danke & mehr",
-  description: "Blumen zum Geburtstag, zur Geburt, zum Danke sagen oder einfach so: Finde den passenden Strauß für jeden Moment – frisch gebunden und in Wien geliefert.",
-  alternates: { canonical: routes.occasions },
-};
+export function generateMetadata(): Promise<Metadata> {
+  return pageMetadata({
+    title: "Blumen für jeden Anlass – Geburtstag, Liebe, Danke & mehr",
+    description: "Blumen zum Geburtstag, zur Geburt, zum Danke sagen oder einfach so: Finde den passenden Strauß für jeden Moment – frisch gebunden und in Wien geliefert.",
+    path: routes.occasions,
+  });
+}
 
 export default async function OccasionsPage() {
   const [occasions, settings] = await Promise.all([getOccasions(), getSettings()]);
