@@ -66,11 +66,20 @@ Für **Laufzeitdaten** gibt es keinen Fallback: Fehlt `data/orders` in der Daten
 | Variable | Pflicht | Bedeutung |
 | --- | --- | --- |
 | `DATABASE_URL` | für Postgres | Verbindungs-URL, z. B. `postgres://blumora:geheim@db:5432/blumora`. Nicht gesetzt = JSON-Store. `?sslmode=require` in der URL wird von postgres.js respektiert. |
+| `DATABASE_DRIVER` | nein | Treiber erzwingen: `neon` (HTTP-Treiber `@neondatabase/serverless`) oder `postgres` (postgres.js). Ohne Wert: Neon-Hosts (`*.neon.tech`) nutzen den HTTP-Treiber, alle anderen postgres.js. |
 | `DATABASE_SSL` | nein | `require` erzwingt TLS (Neon, Supabase, Managed-DBs), `disable` schaltet es ab. Ohne Wert entscheidet die URL. |
 | `DATABASE_POOL_MAX` | nein | Max. Verbindungen pro Prozess, Standard `5`. Bei Serverless (Vercel) `1`–`3`. |
 | `DATABASE_PREPARE` | nein | `false` deaktiviert Prepared Statements – nötig hinter Transaction-Poolern (PgBouncer, Supabase-Pooler). Bei `?pgbouncer=true` in der URL passiert das automatisch. |
 
 Die Scripts lesen `DATABASE_URL` aus der Umgebung, sonst aus `.env.local`, dann `.env`.
+
+### Neon (Hosting auf Netlify)
+
+Für Neon wird automatisch der HTTP-Treiber `@neondatabase/serverless` verwendet – Neons Empfehlung für Serverless-Funktionen wie auf Netlify: kein TCP/TLS-Aufbau pro Aufruf, kein Pool, der warm gehalten werden muss. Der Store braucht nur Einzelabfragen (Tabelle anlegen, lesen, upsert), Transaktionen sind nicht nötig. Bei Netlify die **gepoolte** Verbindungs-URL (Hostname mit `-pooler`) als `DATABASE_URL` eintragen; `npm run db:migrate|db:seed` lokal mit der direkten URL ausführen (`DATABASE_URL_UNPOOLED` aus `neon env pull`).
+
+Das Projekt ist mit Neon verknüpft (`neon.ts`, lokale Verknüpfung in `.neon`, nicht im Repo). `neon env pull` schreibt `DATABASE_URL` und `DATABASE_URL_UNPOOLED` in `.env.local`.
+
+Dokumente werden als JSON-Text gesendet und in Postgres umgewandelt (`$3::text::jsonb`) – bei einem als `jsonb` typisierten Parameter würden die Treiber selbst serialisieren (postgres.js doppelt, Neon/pg Arrays als Postgres-Array).
 
 ## Migration & Seed
 
