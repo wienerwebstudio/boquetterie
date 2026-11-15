@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { readData, writeData } from "@/lib/cms";
+import { deliverInquiry, inquiryUnavailable } from "@/lib/inquiries";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import { adminMailAddress, escapeHtml, sendMail } from "@/lib/mail";
 import { BUSINESS_NEEDS, validateBusinessInquiry, type BusinessInquiry } from "./schema";
@@ -43,28 +43,15 @@ export async function POST(req: Request) {
     ...data,
   };
 
-  try {
-    const stored = await readData<unknown>(DATA_FILE, []);
-    const list = Array.isArray(stored) ? (stored as BusinessInquiry[]) : [];
-    list.push(entry);
-    await writeData(DATA_FILE, list);
-  } catch (err) {
-    console.error("[business-inquiry] could not store inquiry", err);
-    return NextResponse.json({ ok: false, message: "Die Anfrage konnte nicht gespeichert werden. Bitte versuch es noch einmal." }, { status: 500 });
-  }
-
-  try {
-    await notifyAdmin(entry);
-  } catch (err) {
-    console.error("[business-inquiry] admin notification failed", err);
-  }
+  const { stored, mailed } = await deliverInquiry({ scope: "business-inquiry", dataFile: DATA_FILE, entry, notify: () => notifyAdmin(entry) });
+  if (!stored && !mailed) return inquiryUnavailable();
 
   return NextResponse.json({ ok: true, id: entry.id });
 }
 
-async function notifyAdmin(entry: BusinessInquiry) {
+async function notifyAdmin(entry: BusinessInquiry): Promise<boolean> {
   const to = adminMailAddress();
-  if (!to) return;
+  if (!to) return false;
   const need = BUSINESS_NEEDS.find((n) => n.value === entry.need)?.label ?? entry.need;
   const row = (label: string, value: string) => `<tr><td style="padding:4px 12px 4px 0;color:#6b6862;vertical-align:top">${label}</td><td style="padding:4px 0">${escapeHtml(value)}</td></tr>`;
   const html = `
@@ -79,11 +66,12 @@ async function notifyAdmin(entry: BusinessInquiry) {
     </table>
     <p style="white-space:pre-wrap">${escapeHtml(entry.message)}</p>
   `;
-  await sendMail({
+  const result = await sendMail({
     to,
     subject: `Firmenkunden-Anfrage von ${entry.company}`,
     html,
     replyTo: entry.email,
     tags: { type: "business_inquiry" },
   });
+  return result.sent;
 }

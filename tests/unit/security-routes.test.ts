@@ -189,12 +189,30 @@ describe("POST /api/contact", () => {
     expect(mail.sendMail).toHaveBeenCalledWith(expect.objectContaining({ to: "team@example.com", replyTo: valid.email }));
   });
 
-  it("still succeeds when the mail fails, and reports a storage failure", async () => {
+  it("succeeds when only one of store and mail works", async () => {
     vi.spyOn(console, "error").mockImplementation(() => undefined);
+    // Mail down, store fine.
     mail.sendMail.mockRejectedValueOnce(new Error("smtp down"));
     expect((await contact(json("/api/contact", valid))).status).toBe(200);
+    // Read-only filesystem (serverless without DATABASE_URL), mail delivered.
     cms.writeData.mockRejectedValueOnce(new Error("read-only file system"));
-    expect((await contact(json("/api/contact", valid))).status).toBe(500);
+    expect((await contact(json("/api/contact", valid))).status).toBe(200);
+  });
+
+  it("answers 503 with the public address when the message could neither be stored nor mailed", async () => {
+    vi.spyOn(console, "error").mockImplementation(() => undefined);
+    cms.getSettings.mockResolvedValue({ brand: { email: "kontakt@example.com" } });
+    cms.writeData.mockRejectedValue(new Error("read-only file system"));
+    mail.sendMail.mockResolvedValue({ sent: false, provider: "console" });
+    const res = await contact(json("/api/contact", valid));
+    expect(res.status).toBe(503);
+    expect(await res.json()).toMatchObject({ ok: false, code: "unavailable", email: "kontakt@example.com" });
+
+    // A placeholder address is never offered as a fallback.
+    cms.getSettings.mockResolvedValue({ brand: { email: "[E-Mail – bitte ergänzen]" } });
+    const body = await (await contact(json("/api/contact", valid))).json();
+    expect(body.code).toBe("unavailable");
+    expect(body.email).toBeUndefined();
   });
 
   it("drops honeypot submissions and rejects invalid ones without storing", async () => {

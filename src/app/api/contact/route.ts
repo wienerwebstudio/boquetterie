@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { readData, writeData } from "@/lib/cms";
+import { deliverInquiry, inquiryUnavailable } from "@/lib/inquiries";
 import { adminMailAddress, escapeHtml, sendMail } from "@/lib/mail";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
@@ -29,7 +29,8 @@ const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice
  * POST /api/contact
  * Body: { name, email, subject, orderId?, message }
  * Stores the message through the datastore (document `contact-messages`) and notifies
- * MAIL_ADMIN (if set). A failing mail never fails the request.
+ * MAIL_ADMIN (if set). One of the two is enough; when neither works the answer is a
+ * 503 with the public contact address (see src/lib/inquiries.ts).
  */
 export async function POST(req: Request) {
   const limited = enforceRateLimit(req, { scope: "contact", limit: 5, windowMs: 10 * 60 * 1000 });
@@ -76,28 +77,15 @@ export async function POST(req: Request) {
     read: false,
   };
 
-  try {
-    const stored = await readData<unknown>(DATA_FILE, []);
-    const list = Array.isArray(stored) ? (stored as ContactMessage[]) : [];
-    list.push(entry);
-    await writeData(DATA_FILE, list);
-  } catch (err) {
-    console.error("[contact] could not store message", err);
-    return NextResponse.json({ ok: false, message: "Die Nachricht konnte nicht gespeichert werden." }, { status: 500 });
-  }
-
-  try {
-    await notifyAdmin(entry);
-  } catch (err) {
-    console.error("[contact] admin notification failed", err);
-  }
+  const { stored, mailed } = await deliverInquiry({ scope: "contact", dataFile: DATA_FILE, entry, notify: () => notifyAdmin(entry) });
+  if (!stored && !mailed) return inquiryUnavailable();
 
   return NextResponse.json({ ok: true });
 }
 
-async function notifyAdmin(entry: ContactMessage) {
+async function notifyAdmin(entry: ContactMessage): Promise<boolean> {
   const to = adminMailAddress();
-  if (!to) return;
+  if (!to) return false;
   const row = (label: string, value: string) => `<tr><td style="padding:4px 12px 4px 0;color:#6b6862;vertical-align:top">${label}</td><td style="padding:4px 0">${escapeHtml(value)}</td></tr>`;
   const html = `
     <p>Neue Kontaktanfrage <strong>${entry.id}</strong></p>
@@ -109,11 +97,12 @@ async function notifyAdmin(entry: ContactMessage) {
     </table>
     <p style="white-space:pre-wrap">${escapeHtml(entry.message)}</p>
   `;
-  await sendMail({
+  const result = await sendMail({
     to,
     subject: `Kontaktanfrage (${entry.subject}) von ${entry.name.replace(/\s+/g, " ")}`,
     html,
     replyTo: entry.email,
     tags: { type: "contact_message" },
   });
+  return result.sent;
 }

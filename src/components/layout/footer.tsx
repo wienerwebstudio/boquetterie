@@ -34,7 +34,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
       { label: "Cookie-Einstellungen", consent: true },
     ] },
   ];
-  const linkCls = "text-[14.5px] text-ink transition-colors hover:text-forest";
+  const linkCls = "inline-flex min-h-7 items-center text-left text-[14.5px] text-ink transition-colors hover:text-forest";
   // No payment marks while ordering is paused – nothing can be paid yet.
   const payments = ordersPaused() ? [] : settings.payments.filter((p) => p.enabled);
   return (

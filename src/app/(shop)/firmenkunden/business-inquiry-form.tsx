@@ -5,6 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox, Input, Select, Textarea } from "@/components/ui/input";
 import { routes } from "@/lib/urls";
+import { MailFallback } from "@/components/content/mail-fallback";
 import { events, track } from "@/components/analytics/track";
 import { BUSINESS_NEEDS, LIMITS, validateBusinessInquiry, type BusinessInquiryErrors, type BusinessNeed } from "@/app/api/business-inquiry/schema";
 
@@ -26,6 +27,8 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
   const [form, setForm] = useState<FormState>(INITIAL);
   const [errors, setErrors] = useState<BusinessInquiryErrors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
+  /** Set when the server could neither store nor mail the inquiry (503 `unavailable`). */
+  const [fallbackEmail, setFallbackEmail] = useState<string | null>(null);
 
   const set = <K extends keyof FormState>(key: K) => (e: { target: { value: string } }) => {
     setForm((f) => ({ ...f, [key]: e.target.value }));
@@ -49,9 +52,10 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const data = (await res.json().catch(() => null)) as { ok?: boolean; errors?: BusinessInquiryErrors } | null;
+      const data = (await res.json().catch(() => null)) as { ok?: boolean; errors?: BusinessInquiryErrors; code?: string; email?: string } | null;
       if (!res.ok || !data?.ok) {
         if (data?.errors) setErrors(data.errors);
+        setFallbackEmail(data?.code === "unavailable" && data.email ? data.email : null);
         setStatus("failed");
         return;
       }
@@ -131,7 +135,22 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
         </div>
       </div>
 
-      {status === "failed" && (
+      {status === "failed" && fallbackEmail && (
+        <MailFallback
+          className="mt-5"
+          email={fallbackEmail}
+          subject={`Firmenanfrage: ${form.company.trim()}`}
+          body={[
+            form.message.trim(), "",
+            `Firma: ${form.company.trim()}`,
+            `Ansprechperson: ${form.contact.trim()}`,
+            form.phone.trim() ? `Telefon: ${form.phone.trim()}` : "",
+            `Standort / PLZ: ${form.location.trim()}`,
+            `Bedarf: ${BUSINESS_NEEDS.find((n) => n.value === form.need)?.label ?? form.need}`,
+          ].filter((l, i) => i < 2 || l).join("\n")}
+        />
+      )}
+      {status === "failed" && !fallbackEmail && (
         <p role="alert" className="mt-5 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-danger">
           Die Anfrage konnte nicht gesendet werden. Bitte versuch es noch einmal oder schreib uns direkt per E-Mail.
         </p>

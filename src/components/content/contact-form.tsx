@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input, Select, Textarea } from "@/components/ui/input";
+import { MailFallback } from "./mail-fallback";
 
 export const CONTACT_SUBJECTS = ["Bestellung", "Lieferung", "Firmenkunden", "Sonstiges"] as const;
 export type ContactSubject = (typeof CONTACT_SUBJECTS)[number];
@@ -27,6 +28,8 @@ export function ContactForm({ defaultSubject = "Bestellung", className }: { defa
   const [form, setForm] = useState<FormState>({ name: "", email: "", subject: defaultSubject, orderId: "", message: "", website: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
+  /** Set when the server could neither store nor mail the message (503 `unavailable`). */
+  const [fallbackEmail, setFallbackEmail] = useState<string | null>(null);
 
   const set = <K extends keyof FormState>(key: K) => (e: { target: { value: string } }) => {
     setForm((f) => ({ ...f, [key]: e.target.value }));
@@ -51,9 +54,10 @@ export function ContactForm({ defaultSubject = "Bestellung", className }: { defa
           message: form.message.trim(), website: form.website,
         }),
       });
-      const data = (await res.json().catch(() => null)) as { ok?: boolean; errors?: Errors } | null;
+      const data = (await res.json().catch(() => null)) as { ok?: boolean; errors?: Errors; code?: string; email?: string } | null;
       if (!res.ok || !data?.ok) {
         if (data?.errors) setErrors(data.errors);
+        setFallbackEmail(data?.code === "unavailable" && data.email ? data.email : null);
         setStatus("failed");
         return;
       }
@@ -99,7 +103,15 @@ export function ContactForm({ defaultSubject = "Bestellung", className }: { defa
         </div>
       </div>
 
-      {status === "failed" && (
+      {status === "failed" && fallbackEmail && (
+        <MailFallback
+          className="mt-5"
+          email={fallbackEmail}
+          subject={`Kontaktanfrage: ${form.subject}`}
+          body={[form.message.trim(), "", `Name: ${form.name.trim()}`, showOrderId && form.orderId.trim() ? `Bestellnummer: ${form.orderId.trim()}` : ""].filter((l, i) => i < 2 || l).join("\n")}
+        />
+      )}
+      {status === "failed" && !fallbackEmail && (
         <p role="alert" className="mt-5 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-danger">
           Die Nachricht konnte nicht gesendet werden. Bitte versuch es noch einmal oder schreib uns direkt per E-Mail.
         </p>

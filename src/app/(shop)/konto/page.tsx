@@ -12,6 +12,7 @@ import { OrdersList } from "@/components/account/orders-list";
 import { deriveRecipients, RecipientsList } from "@/components/account/recipients-list";
 import { ProfileForm } from "@/components/account/profile-form";
 import { updateProfileAction } from "./actions";
+import { getCapabilities } from "@/lib/capabilities";
 
 export const dynamic = "force-dynamic";
 
@@ -49,8 +50,9 @@ export default async function AccountPage({ searchParams }: Props) {
 
   /* ---------------- Logged out ---------------- */
   if (!customer) {
-    const notice = !isAuthConfigured()
-      ? "Der Login ist auf diesem System noch nicht eingerichtet (AUTH_SECRET fehlt). Bestellen und Bestellung verfolgen funktionieren weiterhin ohne Konto."
+    const loginAvailable = isAuthConfigured() && (await getCapabilities()).accountLogin;
+    const notice = !loginAvailable
+      ? "Der Login wird gerade eingerichtet und ist in Kürze verfügbar. Zum Bestellen brauchst du kein Konto."
       : sp.abgemeldet === "1" ? "Du bist abgemeldet. Bis zum nächsten Mal." : undefined;
     return (
       <div className="pb-16 lg:pb-24">
@@ -61,7 +63,7 @@ export default async function AccountPage({ searchParams }: Props) {
           intro="Ein Konto brauchst du zum Bestellen nicht. Wenn du eines möchtest: Es gibt kein Passwort – du bekommst bei jedem Login einen Link per E-Mail."
         />
         <div className="container-x mt-10 grid gap-4 lg:mt-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-6">
-          <LoginCard notice={notice} />
+          <LoginCard notice={notice} unavailable={!loginAvailable} />
           <div className="grid content-start gap-4">
             <Link href={routes.tracking} className="group flex items-start gap-4 rounded-lg border border-line bg-white/60 p-6 transition-colors hover:border-forest">
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-ivory-200 text-forest"><Package className="size-5" strokeWidth={1.5} aria-hidden /></span>

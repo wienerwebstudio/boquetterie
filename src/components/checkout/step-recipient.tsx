@@ -41,12 +41,12 @@ export function StepRecipient({ data, set, errors, onBlur, zone }: {
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-3 sm:gap-5">
         <Input id={id("firstName")} label="Vorname" autoComplete="off" value={data.firstName} onChange={(e) => set({ firstName: e.target.value })} onBlur={() => onBlur("firstName")} error={errors.firstName} />
         <Input id={id("lastName")} label="Nachname" autoComplete="off" value={data.lastName} onChange={(e) => set({ lastName: e.target.value })} onBlur={() => onBlur("lastName")} error={errors.lastName} />
       </div>
       <Input id={id("company")} label="Firma / Hotel" optional autoComplete="organization" value={data.company} onChange={(e) => set({ company: e.target.value })} onBlur={() => onBlur("company")} error={errors.company} hint="Hilfreich bei Zustellung an Büro, Rezeption oder Station." />
-      <div className="grid gap-5 sm:grid-cols-[1fr_120px]">
+      <div className="grid grid-cols-[minmax(0,1fr)_104px] gap-3 sm:grid-cols-[1fr_120px] sm:gap-5">
         <Input id={id("street")} label="Straße" autoComplete="address-line1" value={data.street} onChange={(e) => set({ street: e.target.value })} onBlur={() => onBlur("street")} error={errors.street} />
         <Input id={id("houseNumber")} label="Hausnummer" inputMode="text" value={data.houseNumber} onChange={(e) => set({ houseNumber: e.target.value })} onBlur={() => onBlur("houseNumber")} error={errors.houseNumber} />
       </div>
@@ -68,7 +68,7 @@ export function StepRecipient({ data, set, errors, onBlur, zone }: {
         {zone.available && zone.zoneName && !errors.zip && (
           <p className="flex items-center gap-2 font-semibold text-success animate-fade-in">
             <span className="inline-flex size-4 items-center justify-center rounded-full bg-success text-ivory"><Check className="size-2.5" strokeWidth={3} /></span>
-            Lieferung möglich · {zone.zoneName}
+            Lieferung möglich · {data.zip} {data.city}
           </p>
         )}
         {zone.available === false && (

@@ -135,7 +135,6 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
             <div>
               <dt className="eyebrow mb-1">Liefertermin</dt>
               <dd className="text-ink">{formatDateLong(order.delivery.date)}{order.delivery.windowLabel ? `, ${order.delivery.windowLabel}` : ""}</dd>
-              <dd className="text-[13px] text-ink-muted">{order.delivery.zoneName}</dd>
             </div>
             <div>
               <dt className="eyebrow mb-1">Empfänger</dt>

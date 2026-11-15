@@ -14,7 +14,7 @@ export function FaqTeaser({ content, faqs }: { content: HomepageContent["faq"]; 
           <p className="eyebrow mb-3">FAQ</p>
           <h2 className="display-2 text-balance text-ink">{content.headline}</h2>
           <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-ink-muted">Antworten auf die häufigsten Fragen zu Lieferung, Bestellung und Blumen.</p>
-          <Link href={routes.faq} className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-forest">
+          <Link href={routes.faq} className="group mt-4 inline-flex min-h-9 items-center gap-2 text-sm font-semibold text-forest">
             Alle Fragen & Antworten
             <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
           </Link>

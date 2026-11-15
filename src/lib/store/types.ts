@@ -21,4 +21,6 @@ export interface DocumentStore {
   get<T>(kind: StoreKind, name: string): Promise<T | null>;
   /** Creates or replaces the whole document. */
   set(kind: StoreKind, name: string, value: unknown): Promise<void>;
+  /** Whether runtime data can be written at all (false e.g. on a read-only serverless filesystem). */
+  canWriteData(): Promise<boolean>;
 }

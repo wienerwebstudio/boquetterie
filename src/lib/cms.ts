@@ -155,6 +155,10 @@ export async function readData<T>(name: string, fallback: T): Promise<T> {
 export async function writeData(name: string, value: unknown) {
   return getStore().set("data", name, value);
 }
+/** False when the datastore cannot persist runtime data (JSON store on a read-only filesystem). */
+export function canPersistData(): Promise<boolean> {
+  return getStore().canWriteData();
+}
 
 export async function getOrdersByEmail(email: string) {
   const needle = email.trim().toLowerCase();

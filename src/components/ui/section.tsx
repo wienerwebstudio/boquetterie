@@ -31,7 +31,7 @@ export function SectionHeading({
         {subtitle && <p className={cn("mt-4 max-w-xl text-[15px] leading-relaxed sm:text-base", light ? "text-sand" : "text-ink-muted", align === "center" && "mx-auto")}>{subtitle}</p>}
       </div>
       {link && (
-        <Link href={link.href} className={cn("group inline-flex shrink-0 items-center gap-2 text-sm font-semibold", light ? "text-ivory" : "text-forest")}>
+        <Link href={link.href} className={cn("group inline-flex min-h-9 shrink-0 items-center gap-2 text-sm font-semibold", light ? "text-ivory" : "text-forest")}>
           {link.label}
           <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
         </Link>

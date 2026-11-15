@@ -4,6 +4,7 @@ import { clientKey, rateLimit } from "@/lib/rate-limit";
 import { isAuthConfigured } from "@/lib/auth/session";
 import { createLoginToken, normalizeEmail } from "@/lib/auth/tokens";
 import { sendMagicLinkMail } from "@/lib/auth/mail";
+import { getCapabilities } from "@/lib/capabilities";
 
 export const dynamic = "force-dynamic";
 
@@ -45,7 +46,7 @@ export async function POST(req: Request) {
   const perEmail = rateLimit(email, { scope: "auth-link-email", limit: LIMIT, windowMs: WINDOW_MS });
   if (!perEmail.ok) return tooMany(perEmail.retryAfterSeconds);
 
-  if (!isAuthConfigured()) {
+  if (!isAuthConfigured() || !(await getCapabilities()).accountLogin) {
     return NextResponse.json({ ok: false, message: "Die Anmeldung ist derzeit nicht verfügbar. Bitte versuch es später noch einmal." }, { status: 503 });
   }
 

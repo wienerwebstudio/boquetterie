@@ -22,8 +22,10 @@
   "announcement": {
     "enabled": true,
     "messages": [
-      "Blumen liefern lassen in ganz Wien – frisch gebunden, direkt per Kurier.",
-      "Wunschdatum wählbar · Persönliche Grußkarte inklusive"
+      "Blumenlieferung in ganz Wien",
+      "Frisch gebunden, per Kurier geliefert",
+      "Wunschdatum wählbar",
+      "Grußkarte inklusive"
     ]
   },
   "timezone": "Europe/Vienna",

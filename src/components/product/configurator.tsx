@@ -31,7 +31,6 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   const addItem = useCart((s) => s.addItem);
   const paused = ordersPaused();
   const openCart = useUi((s) => s.openCart);
-  const toast = useUi((s) => s.toast);
   const ctx = useDeliveryContext();
   const preferredDate = ctx.preferredDate;
   const { result, loading, error, check } = useDeliveryCheck(product.slug);
@@ -130,12 +129,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
     });
     addItem(item);
     setAnnounce(`${product.name} (${size.label}) wurde in den Warenkorb gelegt.`);
-    toast({
-      title: "Zum Warenkorb hinzugefügt",
-      description: `${product.name} · ${size.label}`,
-      image: item.snapshot.image,
-      action: { label: "Ansehen", onClick: openCart },
-    });
+    // The drawer that opens is the confirmation – a toast on top of it would only cover its buttons.
     openCart();
   };
 

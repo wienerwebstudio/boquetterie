@@ -59,6 +59,10 @@ export class PostgresStore implements DocumentStore {
   private pending = new Map<string, Promise<unknown>>();
   private schemaReady: Promise<void> | null = null;
 
+  canWriteData(): Promise<boolean> {
+    return Promise.resolve(true);
+  }
+
   constructor(private readonly url = process.env.DATABASE_URL) {
     if (!this.url) throw new Error("PostgresStore requires DATABASE_URL");
   }

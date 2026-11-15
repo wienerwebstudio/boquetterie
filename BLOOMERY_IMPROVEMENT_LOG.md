@@ -81,6 +81,7 @@ Nach vielen abgebrochenen Bildanfragen (schnelle Seitenwechsel bei kaltem Cache)
 | P1 | Impressum, AGB, Datenschutz, Widerruf nur Platzhalter | **offen – braucht Firmendaten und geprüfte Rechtstexte**; Seiten sind `noindex` |
 | P1 | Domain `bloomery.at` kollidiert mit EU-Marke „BLOOMERY“ | **offen – Entscheidung der Inhaber** (2.5) |
 | P2 | Tastatur-/Screenreader-Mängel (Akkordeon, Dialog-Fokus, Laufband, Kontraste, Fokusringe) | behoben (Zyklus 2) |
+| P1 | Kontakt-/Firmenformular auf Live-Seite ohne Zustellweg; Erinnerung und Login versprachen Mails, die nie kämen | behoben (Zyklus 3) – endgültig erst mit Datenbank + Resend |
 | P2 | Listing-Seiten werden je Anfrage gerendert (`/blumen`, Kategorien, `/lieferung`) | offen |
 | P2 | Bestellspeicher als ein Dokument (Race bei gleichzeitigen Bestellungen im JSON-Store) | offen – vor Go-live Postgres aktivieren |
 | P3 | Newsletter ohne Double-Opt-in (derzeit abgeschaltet), Cormorant-Italic-Preload, Mega-Menü-Spalten | offen |
@@ -128,6 +129,16 @@ Nach vielen abgebrochenen Bildanfragen (schnelle Seitenwechsel bei kaltem Cache)
 - Sichtbare Fokusringe und kontrastreichere Feldrahmen (`line-strong`); Textfarben `ink-soft`, `moss`, `warn` auf ≥ 4,5:1 angehoben.
 - Pfeiltasten in allen Radiogruppen (`src/lib/roving-radio.ts`).
 
+### Zyklus 3 – Ehrliche Funktionen ohne Infrastruktur, Checkout (2026-11-15)
+Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es ist weder Datenbank noch Mail-Anbieter eingerichtet. Kontakt- und Firmenanfragen endeten deshalb in einer Fehlermeldung, Erinnerungen und Login-Links wären nie angekommen.
+- **Anfragen** (`src/lib/inquiries.ts`): gelten als zugestellt, wenn sie gespeichert **oder** gemailt wurden. Geht beides nicht, antwortet die API mit 503 und das Formular bietet einen E-Mail-Link mit dem bereits getippten Text an.
+- **Anlass-Erinnerung und Kundenkonto** (`src/lib/capabilities.ts`): zeigen „in Kürze verfügbar“ statt eines Formulars, solange Speicher und Mailversand fehlen; die Erinnerungsseite ist dann `noindex`. Interner Hinweis „AUTH_SECRET fehlt“ nicht mehr öffentlich sichtbar.
+- **Checkout:** schlanker Footer (nur Kontakt und Rechtliches), Zonenname entfernt, Vor-/Nachname und Straße/Hausnummer nebeneinander auf Handys, kein Toast mehr über dem Warenkorb-Drawer.
+- **Laufband oben:** vier kurze Aussagen statt zwei abgeschnittener Sätze.
+- **Tippflächen** unter 24 px vergrößert (Abschnittslinks, Brotkrumen, Footer).
+- **Build:** Turbopack-Warnung beseitigt (Test-Overlay wird nicht mehr getract); Favicon von 66 KB auf 8,6 KB.
+- Dokumentiert in `docs/DEPLOYMENT.md` („Was ohne Datenbank und Mail-Anbieter passiert“).
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
@@ -140,6 +151,12 @@ Nur tatsächlich ausgeführte Läufe.
 | 2026-11-15 (Z2) | `next build` (Produktionsinhalte) | grün, 104 statische Seiten; 1 bekannte Turbopack-Warnung (Abschnitt 7) |
 | 2026-11-15 (Z2) | Playwright E2E + axe lokal im CI-Modus (Build mit Test-Katalog) | 29/29 |
 | 2026-11-15 (Z2) | Overflow-Scan, 19 Seiten × 320/390/768 px | keine horizontale Überbreite |
+| 2026-11-15 (Z2) | Live nach Deploy: 404 für unbekannte Kategorie/Anlass, `noindex` auf Impressum und leerer Kategorie, Sitemap 87 URLs, `POST /api/orders` → 503, CSP-Header | wie erwartet |
+| 2026-11-15 (Z2) | Lighthouse mobil live (3 Seiten) | Perf 91 / 96 / 91, A11y / BP / SEO je 100 |
+| 2026-11-15 (Z3) | `tsc`, `eslint`, Unit | grün, 172/172 |
+| 2026-11-15 (Z3) | Playwright E2E + axe im CI-Modus | 29/29 |
+| 2026-11-15 (Z3) | Checkout-Durchlauf lokal bei 390 px bis zum Zahlungsschritt (Mock), Fehlerzustände Schritt 1 und 4 | läuft durch, Screenshots gesichtet |
+| 2026-11-15 (Z3) | Formular-Rückfall per simuliertem 503, Erinnerungs-/Konto-Hinweis im Produktionsbuild | wie erwartet |
 | 2026-11-15 (Z2) | Sichtprüfung per Screenshot (Start, Produktseite, Lieferung, Über uns; 390–1440 px) | abgeschnittene Inhalte behoben |
 
 Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand über Resend (keine Zugangsdaten bei Netlify).
@@ -149,17 +166,18 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 | Messung | Vorher | Nachher |
 | --- | --- | --- |
 | Font-Dateien (Build) | über Google, je Schnitt | 3 lokale Dateien, 102 KB gesamt |
-| CI-Erfolgsquote | 9/14 Läufe | wird beobachtet |
-| Lighthouse mobil `/` | Perf 81, LCP 2,7 s, TBT 590 ms, 2 342 KiB | nach dem Deploy von Zyklus 2 zu messen |
-| Lighthouse mobil `/blumen` | Perf 73, LCP 3,4 s, TBT 770 ms | nach dem Deploy zu messen |
-| Lighthouse mobil `/produkt/red-passion` | Perf 82, LCP 3,1 s, TBT 480 ms | nach dem Deploy zu messen |
+| CI-Erfolgsquote | 9/14 Läufe | Zyklus 1 und 2 beide grün |
+| Favicon (`icon.png`) | 66 KB (512 px) | 8,6 KB (96 px) |
+| Lighthouse mobil `/` | Perf 81, LCP 2,7 s, TBT 590 ms, 2 342 KiB | Perf **91**, LCP 3,1 s, TBT 100 ms, 2 300 KiB (davon 1 093 KiB Hero-Video, lädt nach `load`) |
+| Lighthouse mobil `/blumen` | Perf 73, LCP 3,4 s, TBT 770 ms | Perf **96**, LCP 2,6 s, TBT 50 ms |
+| Lighthouse mobil `/produkt/red-passion` | Perf 82, LCP 3,1 s, TBT 480 ms | Perf **91**, LCP 3,4 s, TBT 130 ms |
 | Seiten mit horizontaler Überbreite (Scan) | 4 | 0 |
 | Cookie-Sheet beim ersten Besuch (Handy) | verdeckt 50–83 % | erscheint nicht (kein Tracking konfiguriert) |
 
 ## 7. Offene technische Probleme
 
-- Turbopack-Warnung: `CONTENT_OVERLAY_DIR` in `src/lib/store/json.ts` führt dazu, dass das ganze Projekt in die Server-Funktion getract wird (größeres Deploy).
-- Listing-Seiten und `/lieferung` werden je Anfrage gerendert; Umstellung auf Revalidierung offen.
+- Listing-Seiten und `/lieferung` werden je Anfrage gerendert (TTFB live 0,2–0,6 s); Umstellung auf Revalidierung offen, Nutzen begrenzt.
+- Hero-Video (1,1 MB) lädt auch mobil – nach `load`, nicht bei „Daten sparen“/2G/3G. Kleinere Mobilfassung wäre sinnvoll (bräuchte neue Kodierung).
 - Bestellspeicher im JSON-Store ist ein Dokument (Race); Postgres (`DATABASE_URL`) vor Go-live aktivieren.
 - Newsletter ohne Double-Opt-in (abgeschaltet, bis es umgesetzt ist).
 - Cormorant-Italic wird auf jeder Seite vorgeladen (P3).
@@ -179,8 +197,9 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 
 ## 9. Nächste konkrete Schritte
 
-1. CI und Live-Deploy von Zyklus 2 prüfen, Lighthouse nachmessen (Abschnitt 6 ergänzen).
-2. Listing-Seiten cachen (Revalidierung), Turbopack-Warnung beseitigen.
-3. Checkout-Durchlauf mit Mock-Zahlung auf 320–430 px sichten (Formulare, Fehlertexte, Zusammenfassung).
-4. Mega-Menü, Footer-Abstand unter der mobilen Kaufleiste, Tap-Flächen < 44 px.
+1. CI und Live-Deploy von Zyklus 3 prüfen.
+2. Sobald die Inhaber Datenbank (`DATABASE_URL`), Resend (`RESEND_API_KEY`, `MAIL_FROM`, `MAIL_ADMIN`) und `AUTH_SECRET` bei Netlify eintragen: Kontaktformular, Erinnerung und Konto live gegenprüfen.
+3. Mega-Menü (Spalten, Bilder), Footer-Abstand unter der mobilen Kaufleiste, Tablet-Layout der Produktseite.
+4. Listing-Seiten cachen; mobile Fassung des Hero-Videos.
 5. Newsletter-Double-Opt-in, falls der Newsletter wieder eingeschaltet werden soll.
+6. Rechtstexte und Firmendaten einpflegen, sobald geliefert (Abschnitt 8).

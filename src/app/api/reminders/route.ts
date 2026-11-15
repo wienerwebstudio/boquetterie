@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { Reminder } from "@/types/reminders";
 import { getOccasions } from "@/lib/cms";
 import { enforceRateLimit } from "@/lib/rate-limit";
+import { getCapabilities } from "@/lib/capabilities";
 import { sendReminderConfirmation } from "@/lib/mail";
 import { getReminders, newReminderId, newToken, parseReminderInput, pruneUnconfirmed, saveReminders } from "@/lib/mail/reminders";
 
@@ -27,6 +28,11 @@ export async function POST(req: Request) {
 
   // Honeypot – bots fill the hidden field; pretend success without storing anything.
   if (typeof body.website === "string" && body.website.trim() !== "") return NextResponse.json({ ok: true });
+
+  // Without a persistent store and real mail delivery a reminder could never be confirmed or sent.
+  if (!(await getCapabilities()).reminders) {
+    return NextResponse.json({ ok: false, message: "Die Anlass-Erinnerung ist in Kürze verfügbar." }, { status: 503 });
+  }
 
   const parsed = parseReminderInput(body, await getOccasions());
   if (!parsed.ok) return NextResponse.json({ ok: false, errors: parsed.errors }, { status: 422 });

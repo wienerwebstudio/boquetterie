@@ -136,3 +136,16 @@ Auf Vercel ist das Dateisystem zur Laufzeit **schreibgeschützt**. Deshalb gilt:
 ## Öffentliche Vorschau ohne Bestellungen
 
 `NEXT_PUBLIC_ORDERS_PAUSED=true` macht den Shop sichtbar, sperrt aber das Bestellen: Produktseite zeigt „Bald bestellbar“, die Kasse einen Hinweis, `POST /api/orders` antwortet mit 503. Gedacht für die Zeit, bevor Stripe/PayPal, Datenbank (`DATABASE_URL`) und Mail (`RESEND_API_KEY`) eingerichtet sind – sonst liefe die Kasse im Mock-Modus (Bestellungen ohne Zahlung). Build-Variable: nach dem Ändern neu deployen.
+
+## Was ohne Datenbank und Mail-Anbieter passiert
+
+Auf Serverless-Hosting (Netlify, Vercel) ist das Dateisystem zur Laufzeit schreibgeschützt. Ohne `DATABASE_URL` kann der Shop dort keine Laufzeitdaten speichern, ohne `RESEND_API_KEY` verschickt er keine Mails. Der Shop zeigt das ehrlich an, statt Daten zu verlieren:
+
+| Funktion | Braucht | Verhalten, wenn es fehlt |
+| --- | --- | --- |
+| Kontaktformular, Firmenanfrage, Abo-Anfrage | Datenbank **oder** Mail (`RESEND_API_KEY` + `MAIL_ADMIN`) | API antwortet mit 503 `unavailable`; das Formular bietet einen E-Mail-Link mit dem fertigen Text an (`src/lib/inquiries.ts`, `src/components/content/mail-fallback.tsx`) |
+| Anlass-Erinnerung | Datenbank **und** Mail | Seite zeigt „startet in Kürze“ statt des Formulars und ist `noindex`; API 503 |
+| Kundenkonto (Login-Link) | Datenbank **und** Mail (+ `AUTH_SECRET`) | Seite zeigt einen Hinweis statt des Formulars; API 503 |
+| Bestellungen | Datenbank, Zahlungsanbieter, Mail | bis dahin `NEXT_PUBLIC_ORDERS_PAUSED=true` lassen |
+
+Die Prüfung steht in `src/lib/capabilities.ts` und läuft zur Laufzeit (beim Build wäre das Dateisystem beschreibbar). In der Entwicklung (`next dev`) zählt die Konsolen-Mail als Zustellung, damit alle Abläufe lokal testbar bleiben.

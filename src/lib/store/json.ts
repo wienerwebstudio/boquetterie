@@ -19,7 +19,7 @@ const DIRS: Record<StoreKind, string> = {
  * uses a fixed, orderable catalog from `tests/fixtures/content`). Writes still go
  * to `/content`. Not meant for production.
  */
-const OVERLAY = process.env.CONTENT_OVERLAY_DIR ? path.resolve(process.cwd(), process.env.CONTENT_OVERLAY_DIR) : null;
+const OVERLAY = process.env.CONTENT_OVERLAY_DIR ? path.resolve(/* turbopackIgnore: true */ process.cwd(), process.env.CONTENT_OVERLAY_DIR) : null;
 
 type CacheEntry = { mtimeMs: number; value: unknown };
 
@@ -58,6 +58,24 @@ export class JsonStore implements DocumentStore {
     const value = JSON.parse(raw) as T;
     this.cache.set(file, { mtimeMs, value });
     return value;
+  }
+
+  private writable: Promise<boolean> | null = null;
+
+  /** Probes the data directory once per process – serverless bundles are read-only outside /tmp. */
+  canWriteData(): Promise<boolean> {
+    this.writable ??= (async () => {
+      const probe = path.join(DIRS.data, `.write-probe-${process.pid}`);
+      try {
+        await fs.mkdir(DIRS.data, { recursive: true });
+        await fs.writeFile(probe, "");
+        await fs.rm(probe, { force: true });
+        return true;
+      } catch {
+        return false;
+      }
+    })();
+    return this.writable;
   }
 
   async set(kind: StoreKind, name: string, value: unknown): Promise<void> {

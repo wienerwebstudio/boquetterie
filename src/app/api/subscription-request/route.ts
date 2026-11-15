@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getSettings, getSubscription, readData, writeData } from "@/lib/cms";
+import { getSettings, getSubscription } from "@/lib/cms";
+import { deliverInquiry, inquiryUnavailable } from "@/lib/inquiries";
 import { adminMailAddress, escapeHtml, sendMail } from "@/lib/mail";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
@@ -66,28 +67,18 @@ export async function POST(req: Request) {
     name, email, plan, frequency, message,
   };
 
-  try {
-    const stored = await readData<unknown>(DATA_FILE, []);
-    const list = Array.isArray(stored) ? (stored as SubscriptionRequest[]) : [];
-    list.unshift(entry);
-    await writeData(DATA_FILE, list);
-  } catch (err) {
-    console.error("[subscription-request] could not store request", err);
-    return NextResponse.json({ ok: false, message: "Die Anfrage konnte nicht gespeichert werden. Bitte versuch es noch einmal." }, { status: 500 });
-  }
-
-  try {
-    await notifyAdmin(entry, chosenPlan.name, chosenFrequency.label);
-  } catch (err) {
-    console.error("[subscription-request] admin notification failed", err);
-  }
+  const { stored, mailed } = await deliverInquiry({
+    scope: "subscription-request", dataFile: DATA_FILE, entry, prepend: true,
+    notify: () => notifyAdmin(entry, chosenPlan.name, chosenFrequency.label),
+  });
+  if (!stored && !mailed) return inquiryUnavailable();
 
   return NextResponse.json({ ok: true, id: entry.id });
 }
 
-async function notifyAdmin(entry: SubscriptionRequest, planName: string, frequencyLabel: string) {
+async function notifyAdmin(entry: SubscriptionRequest, planName: string, frequencyLabel: string): Promise<boolean> {
   const to = adminMailAddress();
-  if (!to) return;
+  if (!to) return false;
   const row = (label: string, value: string) => `<tr><td style="padding:4px 12px 4px 0;color:#6b6862;vertical-align:top">${label}</td><td style="padding:4px 0">${escapeHtml(value)}</td></tr>`;
   const html = `
     <p>Neue Abo-Anfrage <strong>${entry.id}</strong></p>
@@ -99,11 +90,12 @@ async function notifyAdmin(entry: SubscriptionRequest, planName: string, frequen
     </table>
     ${entry.message ? `<p style="white-space:pre-wrap">${escapeHtml(entry.message)}</p>` : ""}
   `;
-  await sendMail({
+  const result = await sendMail({
     to,
     subject: `Abo-Anfrage von ${entry.name.replace(/\s+/g, " ")}`,
     html,
     replyTo: entry.email,
     tags: { type: "subscription_request" },
   });
+  return result.sent;
 }

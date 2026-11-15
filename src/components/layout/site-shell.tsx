@@ -3,6 +3,7 @@ import { getCategories, getOccasions } from "@/lib/cms";
 import { AnnouncementBar } from "./announcement-bar";
 import { Header } from "./header";
 import { Footer } from "./footer";
+import { FooterSlot } from "./footer-slot";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { SearchOverlay } from "@/components/layout/search-overlay";
 import { ToastViewport } from "@/components/ui/toast-viewport";
@@ -24,7 +25,9 @@ export async function SiteShell({ settings, children }: { settings: SiteSettings
       )}
       <Header settings={settings} categories={navCategories} occasions={navOccasions} />
       <main id="main" className="flex-1">{children}</main>
-      <Footer settings={settings} />
+      <FooterSlot brandName={settings.brand.name}>
+        <Footer settings={settings} />
+      </FooterSlot>
       <CartDrawer />
       <SearchOverlay />
       <ToastViewport />

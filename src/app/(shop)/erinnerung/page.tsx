@@ -5,9 +5,14 @@ import { breadcrumbLd, JsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/content/page-header";
 import { ReminderForm } from "@/components/reminders/reminder-form";
 import { pageMetadata } from "@/lib/metadata";
+import { getCapabilities } from "@/lib/capabilities";
+import { Button } from "@/components/ui/button";
+import { routes } from "@/lib/urls";
 
-export function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
+  const { reminders } = await getCapabilities();
   return pageMetadata({
+    noindex: !reminders,
     title: "Anlass-Erinnerung – nie wieder einen Anlass vergessen",
     description: "Geburtstag, Jahrestag, Muttertag: Wir erinnern dich rechtzeitig per E-Mail, damit die Blumen pünktlich ankommen. Kostenlos, jederzeit löschbar.",
     path: "/erinnerung",
@@ -29,7 +34,7 @@ const STEPS = [
 ];
 
 export default async function ReminderPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
-  const [sp, occasions, settings] = await Promise.all([searchParams, getOccasions(), getSettings()]);
+  const [sp, occasions, settings, capabilities] = await Promise.all([searchParams, getOccasions(), getSettings(), getCapabilities()]);
   const note = typeof sp.status === "string" ? STATUS_NOTES[sp.status] : undefined;
   const options = occasions.map((o) => ({ slug: o.slug, name: o.name }));
 
@@ -82,10 +87,22 @@ export default async function ReminderPage({ searchParams }: { searchParams: Pro
           <section aria-labelledby="reminder-form-heading" className="rounded-md border border-line bg-white/70 p-6 shadow-soft sm:p-10">
             <p className="eyebrow mb-3">Erinnerung</p>
             <h2 id="reminder-form-heading" className="display-3 text-ink">Woran sollen wir dich erinnern?</h2>
-            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
-              Kostenlos und ohne Konto. Wir schreiben dir nur zu diesem Anlass – sonst nichts.
-            </p>
-            <ReminderForm occasions={options} className="mt-8" />
+            {capabilities.reminders ? (
+              <>
+                <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
+                  Kostenlos und ohne Konto. Wir schreiben dir nur zu diesem Anlass – sonst nichts.
+                </p>
+                <ReminderForm occasions={options} className="mt-8" />
+              </>
+            ) : (
+              <div role="note" className="mt-6 rounded-md border border-line-strong bg-ivory-100 px-5 py-5">
+                <p className="font-semibold text-ink">Die Anlass-Erinnerung startet in Kürze.</p>
+                <p className="mt-1.5 max-w-md text-[14.5px] leading-relaxed text-ink-muted">
+                  Wir richten den E-Mail-Versand gerade ein. Bis dahin nehmen wir hier keine Daten entgegen – schau gern bald wieder vorbei.
+                </p>
+                <Button href={routes.shop} variant="outline" className="mt-5">Blumen ansehen</Button>
+              </div>
+            )}
           </section>
         </div>
       </div>

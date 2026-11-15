@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 /** Magic-link request. Never reveals whether an address is known. */
-export function LoginCard({ notice }: { notice?: string }) {
+export function LoginCard({ notice, unavailable = false }: { notice?: string; /** Login cannot work yet (no mail delivery / datastore) – show the notice instead of the form. */ unavailable?: boolean }) {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [error, setError] = useState<string | undefined>();
@@ -60,10 +60,13 @@ export function LoginCard({ notice }: { notice?: string }) {
     <div className="rounded-lg border border-line bg-white/60 p-6 sm:p-8">
       <span className="flex size-11 items-center justify-center rounded-full bg-ivory-200 text-forest"><Sparkles className="size-5" strokeWidth={1.5} aria-hidden /></span>
       <h2 className="mt-5 font-serif text-[26px] leading-tight text-ink">Anmelden ohne Passwort</h2>
-      <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
-        Gib deine E-Mail-Adresse ein – wir schicken dir einen Link, mit dem du direkt angemeldet bist. Kein Passwort, nichts zu merken.
-      </p>
+      {!unavailable && (
+        <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
+          Gib deine E-Mail-Adresse ein – wir schicken dir einen Link, mit dem du direkt angemeldet bist. Kein Passwort, nichts zu merken.
+        </p>
+      )}
       {notice && <p role="status" className="mt-4 rounded-md bg-ivory-100 px-4 py-3 text-[13.5px] text-ink-muted">{notice}</p>}
+      {!unavailable && (
       <form onSubmit={submit} noValidate className="mt-6" aria-label="Login-Link anfordern">
         <Input
           label="E-Mail-Adresse" name="email" type="email" autoComplete="email" inputMode="email" required
@@ -81,9 +84,12 @@ export function LoginCard({ notice }: { notice?: string }) {
           Login-Link senden
         </Button>
       </form>
-      <p className="mt-4 text-[12.5px] leading-relaxed text-ink-soft">
-        Beim ersten Login legen wir dein Konto automatisch an. Bestellen kannst du weiterhin auch ohne Konto.
-      </p>
+      )}
+      {!unavailable && (
+        <p className="mt-4 text-[12.5px] leading-relaxed text-ink-soft">
+          Beim ersten Login legen wir dein Konto automatisch an. Bestellen kannst du weiterhin auch ohne Konto.
+        </p>
+      )}
     </div>
   );
 }
