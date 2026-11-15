@@ -83,3 +83,13 @@ describe.each([
     expect(selects.map((c) => c.params[0])).toEqual(["data", "data"]);
   });
 });
+
+describe("schema creation", () => {
+  it("treats a racing CREATE TABLE as success but surfaces other errors", async () => {
+    const { isConcurrentCreate } = await import("@/lib/store/postgres");
+    expect(isConcurrentCreate({ code: "23505" })).toBe(true);
+    expect(isConcurrentCreate({ code: "42P07" })).toBe(true);
+    expect(isConcurrentCreate({ code: "28P01" })).toBe(false);
+    expect(isConcurrentCreate(new Error("boom"))).toBe(false);
+  });
+});

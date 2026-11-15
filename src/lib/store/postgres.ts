@@ -91,6 +91,12 @@ export function getDb(url = process.env.DATABASE_URL): Db {
   return g.__blumoraDb.db;
 }
 
+/** 23505 unique_violation on pg_type / 42P07 duplicate_table – raised by racing `create table if not exists`. */
+export function isConcurrentCreate(err: unknown): boolean {
+  const code = (err as { code?: unknown })?.code;
+  return code === "23505" || code === "42P07";
+}
+
 export class PostgresStore implements DocumentStore {
   readonly name = "postgres" as const;
   private cache = new Map<string, CacheEntry>();
@@ -116,6 +122,9 @@ export class PostgresStore implements DocumentStore {
         .query(DOCUMENTS_DDL)
         .then(() => undefined)
         .catch((err) => {
+          // Several processes (build workers, cold-started functions) may create the table at the
+          // same moment; Postgres then reports a duplicate even with `if not exists`. The table exists.
+          if (isConcurrentCreate(err)) return;
           this.schemaReady = null; // retry on the next call
           throw err;
         });
