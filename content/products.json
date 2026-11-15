@@ -383,31 +383,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -648,31 +640,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -742,31 +726,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -917,31 +893,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -1018,31 +986,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -1125,31 +1085,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -1233,31 +1185,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -1434,31 +1378,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -1528,31 +1464,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -1572,9 +1500,9 @@
     "id": "p-koenigin-der-herzen",
     "slug": "koenigin-der-herzen",
     "name": "Königin der Herzen",
-    "tagline": "Rote Rosen mit Schleierkraut, 9 bis 41 Stück",
-    "shortDescription": "Ein üppiger Rosenstrauß, wählbar von 9 bis 41 Rosen.",
-    "description": "Königin der Herzen verbindet rote Rosen mit feinem Schleierkraut in einer dunklen, transparenten Manschette. Wähle die Anzahl der Rosen von 9 bis 41 – von der kleinen Geste bis zum großen Auftritt.",
+    "tagline": "Rote Rosen mit Schleierkraut",
+    "shortDescription": "Ein üppiger Rosenstrauß in vier Größen.",
+    "description": "Königin der Herzen verbindet rote Rosen mit feinem Schleierkraut in einer dunklen, transparenten Manschette. In vier Größen erhältlich – von der kleinen Geste bis zum großen Auftritt.",
     "flowers": [
       "Rosen",
       "Schleierkraut"
@@ -1635,31 +1563,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -1670,8 +1590,8 @@
     "sameDayCapable": false,
     "active": true,
     "seo": {
-      "title": "Königin der Herzen – 9 bis 41 Rosen | Blumora",
-      "description": "Rote Rosen mit Schleierkraut, wählbar von 9 bis 41 Stück. Ein üppiger Rosenstrauß für große Momente – Blumenversand in Wien."
+      "title": "Königin der Herzen – üppiger Rosenstrauß | Blumora",
+      "description": "Rote Rosen mit Schleierkraut, in vier Größen. Ein üppiger Rosenstrauß für große Momente – Blumenversand in Wien."
     },
     "sortOrder": 18
   },
@@ -2171,31 +2091,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
@@ -2273,31 +2185,23 @@
       {
         "id": "s",
         "label": "Klein",
-        "price": 48.9,
-        "stems": 9,
-        "description": "9 Rosen"
+        "price": 48.9
       },
       {
         "id": "m",
         "label": "Mittel",
         "price": 65.9,
-        "stems": 15,
-        "description": "15 Rosen",
         "popular": true
       },
       {
         "id": "l",
         "label": "Groß",
-        "price": 93.9,
-        "stems": 25,
-        "description": "25 Rosen"
+        "price": 93.9
       },
       {
         "id": "xl",
         "label": "XL",
-        "price": 127.9,
-        "stems": 41,
-        "description": "41 Rosen"
+        "price": 127.9
       }
     ],
     "basePrice": 48.9,
