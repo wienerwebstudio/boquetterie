@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { Button } from "@/components/ui/button";
 import type { OrderStatus, OrderStatusDefinition } from "@/types";
-import { bookCourierAction, cancelCourierAction, saveInternalNote, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
+import { bookCourierAction, cancelCourierAction, resendOrderMailsAction, saveInternalNote, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
 import { Banner, Field, inputCls } from "./controls";
 import { cn } from "@/lib/format";
 
@@ -63,5 +63,33 @@ export function CourierForm({ orderId, canBook, canCancel }: { orderId: string; 
         )}
       </div>
     </div>
+  );
+}
+
+/** Send the order mails of a paid order again (to the real recipients). */
+export function ResendMailsForm({ orderId, customerEmail }: { orderId: string; customerEmail: string }) {
+  const [state, action, pending] = useActionState<OrderActionState, FormData>(resendOrderMailsAction, null);
+  return (
+    <form
+      action={action}
+      className="space-y-3"
+      onSubmit={(e) => {
+        const which = (e.currentTarget.elements.namedItem("which") as HTMLSelectElement | null)?.value;
+        const text = which === "partner" ? "Auftrag jetzt an den Partner senden?" : which === "customer" ? `Bestellbestätigung jetzt an ${customerEmail} senden?` : which === "internal" ? "Bestelleingang jetzt an euch senden?" : `Alle drei Mails jetzt senden (Partner, ${customerEmail}, Bestelleingang)?`;
+        if (!confirm(text)) e.preventDefault();
+      }}
+    >
+      <input type="hidden" name="id" value={orderId} />
+      {state && <Banner tone={state.ok ? "success" : "error"}>{state.message}</Banner>}
+      <Field label="Welche Mail?" htmlFor="resend-which">
+        <select id="resend-which" name="which" defaultValue="all" className={cn(inputCls, "appearance-none")}>
+          <option value="all">Alle (Partner, Kund:in, Bestelleingang)</option>
+          <option value="partner">Partner-Auftrag</option>
+          <option value="customer">Kundenbestellung</option>
+          <option value="internal">Bestelleingang</option>
+        </select>
+      </Field>
+      <Button type="submit" size="sm" variant="outline" loading={pending}>Mails erneut senden</Button>
+    </form>
   );
 }

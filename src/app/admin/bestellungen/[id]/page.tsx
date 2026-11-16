@@ -4,7 +4,7 @@ import { getOrderById, getSettings } from "@/lib/cms";
 import { formatDateLong, formatDateTime, formatPrice } from "@/lib/format";
 import { Banner, Card, PageHeader } from "@/components/admin/controls";
 import { StatusBadge } from "@/components/admin/status-badge";
-import { CourierForm, InternalNoteForm, OrderStatusForm } from "@/components/admin/order-forms";
+import { CourierForm, InternalNoteForm, OrderStatusForm, ResendMailsForm } from "@/components/admin/order-forms";
 import { courierEnabled } from "@/lib/courier";
 import { RIDERX_STATUS_LABELS } from "@/lib/courier/riderx-core";
 import { PAYMENT_LABELS, PAYMENT_STATUS_LABELS, customerName, recipientName, statusLabel, isUnpaidOrder } from "@/components/admin/order-utils";
@@ -139,6 +139,11 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                 canBook={order.payment.status === "paid" && order.status !== "cancelled" && (!order.courier || ["failed", "cancel"].includes(order.courier.status))}
                 canCancel={Boolean(order.courier?.deliveryId) && !["cancel", "failed", "pickup", "late_pickup", "completed", "late_completed"].includes(order.courier?.status ?? "")}
               />
+            </Card>
+          )}
+          {order.payment.status === "paid" && (
+            <Card title="Mails erneut senden" description="Falls eine Mail nicht angekommen ist – geht an die echten Empfänger.">
+              <ResendMailsForm orderId={order.id} customerEmail={order.customer.email} />
             </Card>
           )}
           <Card title="Interne Notiz" description="Nur für das Team sichtbar.">

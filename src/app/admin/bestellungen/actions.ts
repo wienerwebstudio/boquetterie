@@ -3,7 +3,8 @@
 import { revalidatePath } from "next/cache";
 import { getSettings, updateOrder } from "@/lib/cms";
 import { requireAdmin } from "@/lib/admin-session";
-import { sendOrderStatusUpdate } from "@/lib/mail";
+import { ORDER_MAIL_LABELS, sendOrderMails, sendOrderStatusUpdate, type OrderMailKind } from "@/lib/mail";
+import { attachFloristBudgets, getFloristBudgets } from "@/lib/florist-budget";
 import { releaseStock } from "@/lib/orders";
 import { bookCourier, cancelCourier } from "@/lib/courier";
 import type { OrderStatus } from "@/types";
@@ -114,5 +115,54 @@ export async function cancelCourierAction(_prev: OrderActionState, formData: For
     return result;
   } catch (e) {
     return { ok: false, message: e instanceof Error ? e.message : "Stornierung fehlgeschlagen." };
+  }
+}
+
+/**
+ * Send the order mails of a PAID order again – to the real recipients (customer,
+ * MAIL_ADMIN, MAIL_FLORIST). For when a mail never arrived. Logged in the history.
+ */
+export async function resendOrderMailsAction(_prev: OrderActionState, formData: FormData): Promise<OrderActionState> {
+  try {
+    await requireAdmin();
+    const id = String(formData.get("id") ?? "");
+    const which = String(formData.get("which") ?? "");
+    const kinds: OrderMailKind[] | null =
+      which === "all" ? ["partner", "customer", "internal"] : which === "partner" || which === "customer" || which === "internal" ? [which] : null;
+    if (!kinds) return { ok: false, message: "Bitte auswählen, welche Mail gesendet werden soll." };
+
+    const { getOrderById } = await import("@/lib/cms");
+    let order = await getOrderById(id);
+    if (!order) return { ok: false, message: "Bestellung nicht gefunden." };
+    if (order.payment.status !== "paid") return { ok: false, message: "Die Bestellung ist nicht bezahlt – es werden keine Mails gesendet." };
+
+    // Orders from before the budget list carry no budget yet: fill it in, so the
+    // florist's slip shows "Max. Budget" (and keep it on the order from now on).
+    if (kinds.includes("partner") && order.lines.every((l) => l.floristBudget === undefined)) {
+      const budgets = await getFloristBudgets();
+      order = (await updateOrder(id, (o) => ({ ...o, lines: attachFloristBudgets(o.lines, budgets) }))) ?? order;
+    }
+
+    const results = await sendOrderMails(order, kinds);
+    const sent = results.filter((r) => r.result?.sent);
+    const skipped = results.filter((r) => !r.result);
+    const failed = results.filter((r) => r.result && !r.result.sent);
+    const label = (r: (typeof results)[number]) => `${ORDER_MAIL_LABELS[r.kind]} an ${r.to.join(", ")}`;
+
+    if (sent.length) {
+      await updateOrder(id, (o) => ({
+        ...o,
+        history: [...o.history, { status: o.status, at: new Date().toISOString(), note: `Mail erneut gesendet: ${sent.map((r) => ORDER_MAIL_LABELS[r.kind]).join(", ")}` }],
+      }));
+      revalidateOrder(id);
+    }
+    const parts = [
+      sent.length ? `Gesendet: ${sent.map(label).join("; ")}.` : "",
+      failed.length ? `Nicht gesendet: ${failed.map((r) => `${ORDER_MAIL_LABELS[r.kind]} (${r.result?.provider === "console" ? "kein Mail-Provider" : r.result?.error ?? "Fehler"})`).join("; ")}.` : "",
+      skipped.length ? `Übersprungen (keine Adresse hinterlegt): ${skipped.map((r) => ORDER_MAIL_LABELS[r.kind]).join(", ")}.` : "",
+    ].filter(Boolean);
+    return { ok: failed.length === 0 && sent.length > 0, message: parts.join(" ") };
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Senden fehlgeschlagen." };
   }
 }

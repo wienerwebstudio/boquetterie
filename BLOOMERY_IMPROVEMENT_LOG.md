@@ -198,6 +198,8 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 ### Go-Live (2026-11-16)
 - Erste echte Bestellung 18:05 Uhr: angelegt (201), per Stripe bezahlt, Bestätigung und Webhook je 200 (Netlify-Logs). Eine frühere Bestellung um 17:30 Uhr wurde nicht bezahlt.
 - Dody bekam keine Mail, weil `MAIL_REDIRECT_TO` noch alle Mails an die Testadresse umleitete. Variable auf Wunsch der Inhaber gelöscht; ab dem nächsten Deploy gehen Auftrag, Kundenbestätigung und interne Mail an die echten Empfänger.
+- Admin: unbezahlte Bestellungen zählen nicht mehr als „offen“ (Filter „Nicht bezahlt“, Warnhinweis auf der Detailseite).
+- Admin: „Mails erneut senden“ auf der Bestellseite (nur bezahlte Bestellungen; Alle, Partner, Kund:in oder Bestelleingang; an die echten Empfänger, mit Rückfrage, Eintrag im Verlauf). Fehlt einer älteren Bestellung das Budget, wird es dabei aus der Budgetliste ergänzt.
 
 ## 5. Testergebnisse
 

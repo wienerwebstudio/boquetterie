@@ -203,28 +203,48 @@ function send(to: string | string[], mail: RenderedMail, type: string): Promise<
 
 /* ---------------- Order mails ---------------- */
 
+/** The three mails of a paid order. */
+export type OrderMailKind = "customer" | "internal" | "partner";
+export const ORDER_MAIL_LABELS: Record<OrderMailKind, string> = { customer: "Kundenbestellung", internal: "Bestelleingang", partner: "Partner-Auftrag" };
+
 /**
- * Mails for a paid order: confirmation to the customer, internal notification to
- * MAIL_ADMIN and the order slip to the florist (MAIL_FLORIST), each only if set.
- * All three are awaited together, so a serverless function does not end while one
- * is still in flight; one failing never stops the others. Resolves with the
- * customer mail's result.
+ * Sends the chosen order mails for real: confirmation to the customer, internal
+ * notification to MAIL_ADMIN and the order slip to the florist (MAIL_FLORIST).
+ * A mail without a configured recipient is skipped (result `null`). All are awaited
+ * together, one failing never stops the others.
  */
-export async function sendOrderConfirmation(order: Order): Promise<MailResult> {
+export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind[] = ["customer", "internal", "partner"]): Promise<{ kind: OrderMailKind; to: string[]; result: MailResult | null }[]> {
   const settings = await getSettings();
   const brand = mailBrand(settings);
-  const trackingUrl = orderTrackingUrl(order, brand.siteUrl);
   const admin = adminMailAddress();
-  const florist = floristMailAddresses();
+  const recipients: Record<OrderMailKind, string[]> = {
+    customer: [order.customer.email],
+    internal: admin ? [admin] : [],
+    partner: floristMailAddresses(),
+  };
+  const render: Record<OrderMailKind, () => RenderedMail> = {
+    customer: () => templates.orderConfirmation({ order, brand, trackingUrl: orderTrackingUrl(order, brand.siteUrl) }),
+    internal: () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}` }),
+    partner: () => templates.floristOrder({ order, brand }),
+  };
+  const types: Record<OrderMailKind, string> = { customer: "order_confirmation", internal: "admin_new_order", partner: "florist_order" };
+  const settled = await Promise.allSettled(
+    kinds.map((kind) => (recipients[kind].length ? send(recipients[kind].length === 1 ? recipients[kind][0] : recipients[kind], render[kind](), types[kind]) : Promise.resolve(null))),
+  );
+  return kinds.map((kind, i) => {
+    const r = settled[i];
+    if (r.status === "rejected") {
+      console.error(`[mail] ${kind} order mail failed`, r.reason);
+      return { kind, to: recipients[kind], result: { sent: false, provider: mailProvider(), error: String(r.reason) } };
+    }
+    return { kind, to: recipients[kind], result: r.value };
+  });
+}
 
-  const [customer, ...internal] = await Promise.allSettled([
-    send(order.customer.email, templates.orderConfirmation({ order, brand, trackingUrl }), "order_confirmation"),
-    admin ? send(admin, templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}` }), "admin_new_order") : null,
-    florist.length ? send(florist, templates.floristOrder({ order, brand }), "florist_order") : null,
-  ]);
-  for (const r of internal) if (r.status === "rejected") console.error("[mail] internal order mail failed", r.reason);
-  if (customer.status === "rejected") return { sent: false, provider: mailProvider(), error: String(customer.reason) };
-  return customer.value;
+/** Mails for a paid order (all three). Resolves with the customer mail's result. */
+export async function sendOrderConfirmation(order: Order): Promise<MailResult> {
+  const results = await sendOrderMails(order);
+  return results.find((r) => r.kind === "customer")?.result ?? { sent: false, provider: mailProvider(), error: "no customer mail" };
 }
 
 /**

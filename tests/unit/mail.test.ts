@@ -201,6 +201,44 @@ describe("admin test mails", () => {
   });
 });
 
+describe("resending the mails of a real order", () => {
+  beforeEach(() => { vi.resetModules(); delete (globalThis as { __blumoraSmtp?: unknown }).__blumoraSmtp; sendMail.mockClear(); });
+  afterEach(() => vi.unstubAllEnvs());
+
+  it("sends only the chosen mails, to the real recipients", async () => {
+    vi.stubEnv("RESEND_API_KEY", ""); vi.stubEnv("SMTP_HOST", "mail.example.at"); vi.stubEnv("MAIL_REDIRECT_TO", "");
+    vi.stubEnv("MAIL_FLORIST", "florist@example.at, office@florist.at"); vi.stubEnv("MAIL_ADMIN", "office@example.at");
+    const cms = await import("@/lib/cms");
+    vi.mocked(cms.getSettings).mockResolvedValue({ brand: { name: "Blumora" }, seo: { siteUrl: "https://blumora.at" } } as never);
+    const mail = await import("@/lib/mail");
+
+    const partner = await mail.sendOrderMails(order, ["partner"]);
+    expect(partner.map((r) => [r.kind, r.result?.sent])).toEqual([["partner", true]]);
+    expect(sendMail).toHaveBeenCalledTimes(1);
+    const slip = (sendMail.mock.calls[0] as unknown as [{ to: string[]; subject: string }])[0];
+    expect(slip.to).toEqual(["florist@example.at", "office@florist.at"]);
+    expect(slip.subject).toContain("BQ-ABC123");
+    expect(slip.subject).not.toContain("[Beispiel]");
+
+    sendMail.mockClear();
+    const all = await mail.sendOrderMails(order);
+    expect(all.map((r) => r.kind)).toEqual(["customer", "internal", "partner"]);
+    const to = sendMail.mock.calls.map((c) => (c as unknown as [{ to: string[] }])[0].to.join(","));
+    expect(to).toEqual(["paul@example.at", "office@example.at", "florist@example.at,office@florist.at"]);
+  });
+
+  it("skips a mail without a configured address", async () => {
+    vi.stubEnv("RESEND_API_KEY", ""); vi.stubEnv("SMTP_HOST", "mail.example.at"); vi.stubEnv("MAIL_REDIRECT_TO", "");
+    vi.stubEnv("MAIL_FLORIST", ""); vi.stubEnv("MAIL_ADMIN", "");
+    const cms = await import("@/lib/cms");
+    vi.mocked(cms.getSettings).mockResolvedValue({ brand: { name: "Blumora" }, seo: { siteUrl: "https://blumora.at" } } as never);
+    const mail = await import("@/lib/mail");
+    const res = await mail.sendOrderMails(order, ["partner", "internal"]);
+    expect(res.map((r) => r.result)).toEqual([null, null]);
+    expect(sendMail).not.toHaveBeenCalled();
+  });
+});
+
 describe("size names for the florist", () => {
   it("uses S/M/L/XL for standard sizes and the label otherwise", async () => {
     const { sizeShort } = await import("@/lib/mail/templates");
