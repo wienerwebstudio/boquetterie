@@ -356,7 +356,7 @@ export function floristOrder(input: { order: Order; brand: MailBrand }): Rendere
         ],
       },
     ],
-    footerNotes: ["Auftrag von Blumora. Bei Fragen bitte an office@blumora.at antworten."],
+    footerNotes: ["Auftrag von Blumora – bitte auf diese Mail antworten, wenn etwas nicht passt."],
   });
 }
 
