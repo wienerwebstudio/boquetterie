@@ -14,6 +14,7 @@ Transaktionale E-Mails (Bestellbestätigung, Statusupdates, Bewertungsanfrage, A
 | `MAIL_FROM` | ja (bei Resend) | Absender, z. B. `Blumora <hallo@blumora.at>`. Die Domain muss bei Resend verifiziert sein (siehe unten). Fallback: `Blumora <no-reply@example.com>`. |
 | `MAIL_REPLY_TO` | nein | Reply-To-Adresse, z. B. das Team-Postfach. Antworten von Kund:innen landen dort. |
 | `MAIL_ADMIN` | nein | Interne Adresse, die bei jeder neuen Bestellung eine kompakte Zusammenfassung mit Link in den Admin bekommt. Leer = keine internen Mails. |
+| `MAIL_REDIRECT_TO` | nein | **Test-Schalter:** Ist eine Adresse gesetzt, gehen *alle* Mails (Kund:innen, intern, Floristik) nur an diese Adresse; der Betreff nennt die eigentlichen Empfänger (`[TEST an …]`). Für den Livebetrieb löschen. |
 | `MAIL_FLORIST` | nein | Adresse(n) der Partnerfloristik, mit Komma getrennt. Bekommen pro bezahlter Bestellung einen **Auftragszettel**: Strauß, Größe, Extras, Kartentext, Abholzeit – ohne Preise und ohne Kontaktdaten von Kund:in oder Empfänger:in. |
 | `CRON_SECRET` | für Cron | Geheimnis, das die Cron-Endpunkte unter `/api/cron/*` schützt. Anfragen müssen `Authorization: Bearer <CRON_SECRET>` senden. Erzeugen z. B. mit `openssl rand -hex 32`. Ohne Wert antworten die Endpunkte mit 503. |
 

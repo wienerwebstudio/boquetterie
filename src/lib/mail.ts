@@ -21,6 +21,8 @@ import { formatReminderDate } from "@/lib/mail/reminders";
  * MAIL_REPLY_TO – optional reply-to address
  * MAIL_ADMIN – optional address that receives internal notifications (new orders, inquiries)
  * MAIL_FLORIST – optional, comma-separated: the partner florist's order slip (no customer contact data)
+ * MAIL_REDIRECT_TO – test switch: when set, EVERY mail goes only to this address; the subject
+ *   names the original recipients. Remove it to go live.
  *
  * Templates (pure, testable) live in `src/lib/mail/templates.ts`; this file wires
  * them to settings and the provider. All `send*` helpers resolve to a MailResult
@@ -97,9 +99,18 @@ function htmlToText(html: string) {
     .trim();
 }
 
+/** Applies MAIL_REDIRECT_TO: one fixed test recipient, the real ones named in the subject. */
+export function applyRedirect(to: string[], subject: string): { to: string[]; subject: string } {
+  const redirect = process.env.MAIL_REDIRECT_TO?.trim();
+  if (!redirect) return { to, subject };
+  return { to: [redirect], subject: `[TEST an ${to.join(", ")}] ${subject}` };
+}
+
 export async function sendMail(msg: MailMessage): Promise<MailResult> {
   const text = msg.text ?? htmlToText(msg.html);
-  const to = Array.isArray(msg.to) ? msg.to : [msg.to];
+  const routed = applyRedirect(Array.isArray(msg.to) ? msg.to : [msg.to], msg.subject);
+  const to = routed.to;
+  msg = { ...msg, subject: routed.subject };
   const provider = mailProvider();
 
   if (provider === "console") {

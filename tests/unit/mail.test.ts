@@ -92,3 +92,22 @@ describe("mail provider", () => {
     expect(floristMailAddresses()).toEqual(["Karim@example.com", "office@florist.at"]);
   });
 });
+
+describe("MAIL_REDIRECT_TO (test mode)", () => {
+  beforeEach(() => { vi.resetModules(); delete (globalThis as { __blumoraSmtp?: unknown }).__blumoraSmtp; sendMail.mockClear(); });
+  afterEach(() => vi.unstubAllEnvs());
+
+  it("sends every mail only to the test address and names the real recipients", async () => {
+    vi.stubEnv("RESEND_API_KEY", ""); vi.stubEnv("SMTP_HOST", "mail.example.at");
+    vi.stubEnv("MAIL_REDIRECT_TO", "test@example.com");
+    const mail = await import("@/lib/mail");
+    await mail.sendMail({ to: ["Karim@example.com", "office@florist.at"], subject: "Auftrag BQ-1", html: "<p>x</p>" });
+    expect(sendMail).toHaveBeenCalledWith(expect.objectContaining({ to: ["test@example.com"], subject: "[TEST an Karim@example.com, office@florist.at] Auftrag BQ-1" }));
+  });
+
+  it("changes nothing when unset", async () => {
+    vi.stubEnv("MAIL_REDIRECT_TO", "");
+    const { applyRedirect } = await import("@/lib/mail");
+    expect(applyRedirect(["kunde@example.at"], "Hallo")).toEqual({ to: ["kunde@example.at"], subject: "Hallo" });
+  });
+});
