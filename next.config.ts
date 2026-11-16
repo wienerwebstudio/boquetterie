@@ -42,6 +42,13 @@ const nextConfig: NextConfig = {
       : [],
   },
   serverExternalPackages: ["postgres", "sharp"],
+  experimental: {
+    // Turbopack's persistent build cache stores a copy of the whole build environment,
+    // secrets included (e.g. SMTP_PASS). Netlify's secret scan then fails the deploy, and
+    // the free plan cannot limit a secret to runtime only. Without this cache no secret is
+    // written to disk during the build; builds are slightly slower.
+    turbopackFileSystemCacheForBuild: false,
+  },
   typedRoutes: false,
   reactStrictMode: true,
   poweredByHeader: false,
