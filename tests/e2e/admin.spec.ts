@@ -35,5 +35,11 @@ test.describe("Admin", () => {
     // Session cookie set – a direct visit no longer redirects.
     await page.goto("/admin/bestellungen");
     await expect(page).toHaveURL(/\/admin\/bestellungen$/);
+
+    // Test mails: a recipient can be typed in; without a mail provider the admin is told so.
+    await page.goto("/admin");
+    await page.getByLabel(/Empfänger/).fill("test-empfaenger@example.com");
+    await page.getByRole("button", { name: "Test-Mails senden" }).click();
+    await expect(page.getByRole("status").filter({ hasText: /Kein Mailversand eingerichtet|gesendet/ })).toBeVisible();
   });
 });

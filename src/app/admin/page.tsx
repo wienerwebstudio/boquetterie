@@ -91,7 +91,7 @@ export default async function AdminOverviewPage() {
           </ul>
         </Card>
         <Card title="E-Mails testen">
-          <TestMailButton />
+          <TestMailButton defaultRecipient={process.env.MAIL_REDIRECT_TO?.trim() || process.env.MAIL_ADMIN?.trim() || ""} />
         </Card>
         </div>
       </div>

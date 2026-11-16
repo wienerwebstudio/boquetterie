@@ -37,6 +37,11 @@ export interface MailMessage {
   text?: string;
   replyTo?: string;
   tags?: Record<string, string>;
+  /**
+   * Ignore MAIL_REDIRECT_TO for this one message. Only for the admin's "[Beispiel]" test
+   * mails to an address the admin typed in – they contain no real customer data.
+   */
+  bypassRedirect?: boolean;
 }
 
 export interface MailResult {
@@ -109,7 +114,8 @@ export function applyRedirect(to: string[], subject: string): { to: string[]; su
 
 export async function sendMail(msg: MailMessage): Promise<MailResult> {
   const text = msg.text ?? htmlToText(msg.html);
-  const routed = applyRedirect(Array.isArray(msg.to) ? msg.to : [msg.to], msg.subject);
+  const recipients = Array.isArray(msg.to) ? msg.to : [msg.to];
+  const routed = msg.bypassRedirect ? { to: recipients, subject: msg.subject } : applyRedirect(recipients, msg.subject);
   const to = routed.to;
   msg = { ...msg, subject: routed.subject };
   const provider = mailProvider();
@@ -348,12 +354,13 @@ async function liveSampleOrder(settings: SiteSettings): Promise<Order> {
 }
 
 /**
- * Sends the three order mails for `sampleOrder()` to ONE address – the test
- * recipient (MAIL_REDIRECT_TO) or else MAIL_ADMIN – never to customers or the
- * florist. Subjects start with "[Beispiel]".
+ * Sends the three order mails for `sampleOrder()` to ONE address – the one the admin
+ * entered, else the test recipient (MAIL_REDIRECT_TO), else MAIL_ADMIN – never to
+ * customers or the florist automatically. Subjects start with "[Beispiel]".
  */
-export async function sendTestOrderMails(): Promise<{ to: string | null; provider: MailResult["provider"]; results: { mail: string; result: MailResult }[] }> {
-  const to = process.env.MAIL_REDIRECT_TO?.trim() || adminMailAddress();
+export async function sendTestOrderMails(recipient?: string): Promise<{ to: string | null; provider: MailResult["provider"]; results: { mail: string; result: MailResult }[] }> {
+  const chosen = recipient?.trim() || undefined;
+  const to = chosen || process.env.MAIL_REDIRECT_TO?.trim() || adminMailAddress();
   const provider = mailProvider();
   if (!to) return { to: null, provider, results: [] };
   const settings = await getSettings();
@@ -366,7 +373,7 @@ export async function sendTestOrderMails(): Promise<{ to: string | null; provide
   ];
   const results = [];
   for (const [mail, m] of rendered) {
-    results.push({ mail, result: await sendMail({ to, subject: `[Beispiel] ${m.subject}`, html: m.html, text: m.text, tags: { type: "test" } }) });
+    results.push({ mail, result: await sendMail({ to, subject: `[Beispiel] ${m.subject}`, html: m.html, text: m.text, tags: { type: "test" }, bypassRedirect: Boolean(chosen) }) });
   }
   return { to, provider, results };
 }

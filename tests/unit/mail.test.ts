@@ -175,6 +175,22 @@ describe("admin test mails", () => {
     expect(recipients.every((m) => m.to.length === 1 && m.to[0] === "test@example.com")).toBe(true);
     expect(recipients.every((m) => m.subject.includes("[Beispiel]"))).toBe(true);
   });
+
+  it("sends to the address the admin typed in – past the test redirect, only for these sample mails", async () => {
+    vi.stubEnv("RESEND_API_KEY", ""); vi.stubEnv("SMTP_HOST", "mail.example.at");
+    vi.stubEnv("MAIL_REDIRECT_TO", "test@example.com"); vi.stubEnv("MAIL_ADMIN", "office@example.at");
+    const cms = await import("@/lib/cms");
+    vi.mocked(cms.getSettings).mockResolvedValue({ brand: { name: "Blumora" }, seo: { siteUrl: "https://blumora.at" } } as never);
+    const mail = await import("@/lib/mail");
+    const res = await mail.sendTestOrderMails("karim@example.at");
+    expect(res.to).toBe("karim@example.at");
+    const sentTo = sendMail.mock.calls.map((c) => (c as unknown as [{ to: string[]; subject: string }])[0]);
+    expect(sentTo.every((m) => m.to.length === 1 && m.to[0] === "karim@example.at" && m.subject.startsWith("[Beispiel]"))).toBe(true);
+
+    sendMail.mockClear();
+    await mail.sendMail({ to: "kunde@example.at", subject: "Echte Mail", html: "<p>x</p>" });
+    expect(sendMail).toHaveBeenCalledWith(expect.objectContaining({ to: ["test@example.com"] }));
+  });
 });
 
 describe("size names for the florist", () => {

@@ -267,10 +267,14 @@ export async function saveSingleton(collection: string, input: unknown): Promise
 
 /* ---------------- test mails ---------------- */
 
-export async function sendTestMailsAction(): Promise<{ ok: boolean; message: string }> {
+export async function sendTestMailsAction(recipient?: string): Promise<{ ok: boolean; message: string }> {
   await requireAdmin();
+  const chosen = typeof recipient === "string" ? recipient.trim() : "";
+  if (chosen && (chosen.length > 200 || !/^[^\s@,;]+@[^\s@,;]+\.[^\s@,;]{2,}$/.test(chosen))) {
+    return { ok: false, message: "Bitte gib genau eine gültige E-Mail-Adresse ein." };
+  }
   const { sendTestOrderMails } = await import("@/lib/mail");
-  const { to, provider, results } = await sendTestOrderMails();
+  const { to, provider, results } = await sendTestOrderMails(chosen || undefined);
   if (!to) return { ok: false, message: "Keine Empfängeradresse: MAIL_REDIRECT_TO oder MAIL_ADMIN setzen." };
   if (provider === "console") return { ok: false, message: "Kein Mailversand eingerichtet (SMTP_HOST oder RESEND_API_KEY fehlt) – die Mails stehen nur im Server-Log." };
   const failed = results.filter((r) => !r.result.sent);
