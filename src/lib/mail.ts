@@ -291,3 +291,47 @@ export async function sendMagicLink(input: { to: string; url: string; validMinut
 }
 
 export { escapeHtml } from "@/lib/mail/templates";
+
+/* ---------------- Test mails (admin) ---------------- */
+
+/** A clearly fictitious paid order for previewing the order mails. */
+export function sampleOrder(product?: { name: string; sizeLabel: string; price: number; image?: string }): Order {
+  const p = product ?? { name: "Red Passion", sizeLabel: "Mittel", price: 65.9 };
+  const date = new Date(Date.now() + 2 * 86_400_000).toISOString().slice(0, 10);
+  return {
+    id: "BQ-BEISPIEL", token: "beispiel", createdAt: new Date().toISOString(), status: "paid", history: [],
+    recipient: { firstName: "Anna", lastName: "Beispiel", company: "", street: "Neubaugasse", houseNumber: "12", addition: "Top 4", zip: "1070", city: "Wien", country: "AT", phone: "+43 660 0000000" },
+    delivery: { date, windowId: "am", windowLabel: "9–12 Uhr", windowFrom: "09:00", windowTo: "12:00", zoneId: "beispiel", zoneName: "Beispielzone", fee: 0, note: "Beispielbestellung – nicht ausliefern" },
+    customer: { firstName: "Max", lastName: "Beispiel", email: "kunde@beispiel.invalid", phone: "+43 660 0000000" },
+    lines: [{
+      productId: "beispiel", productName: p.name, sizeId: "m", sizeLabel: p.sizeLabel, quantity: 1, unitPrice: p.price, image: p.image ?? "",
+      extras: [{ extraId: "beispiel", name: "Teddy", quantity: 1, unitPrice: 19.9 }], message: "Alles Liebe – das ist nur eine Test-Mail.", senderName: "Blumora",
+    }],
+    totals: { subtotal: p.price, extras: 19.9, delivery: 0, discount: 0, total: Math.round((p.price + 19.9) * 100) / 100 },
+    payment: { method: "card", status: "paid", provider: "beispiel" },
+  };
+}
+
+/**
+ * Sends the three order mails for `sampleOrder()` to ONE address – the test
+ * recipient (MAIL_REDIRECT_TO) or else MAIL_ADMIN – never to customers or the
+ * florist. Subjects start with "[Beispiel]".
+ */
+export async function sendTestOrderMails(): Promise<{ to: string | null; provider: MailResult["provider"]; results: { mail: string; result: MailResult }[] }> {
+  const to = process.env.MAIL_REDIRECT_TO?.trim() || adminMailAddress();
+  const provider = mailProvider();
+  if (!to) return { to: null, provider, results: [] };
+  const settings = await getSettings();
+  const brand = mailBrand(settings);
+  const order = sampleOrder();
+  const rendered: [string, RenderedMail][] = [
+    ["Bestellbestätigung (Kund:in)", templates.orderConfirmation({ order, brand, trackingUrl: `${brand.siteUrl}/bestellung-verfolgen` })],
+    ["Neue Bestellung (intern)", templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen` })],
+    ["Auftragszettel (Floristik)", templates.floristOrder({ order, brand })],
+  ];
+  const results = [];
+  for (const [mail, m] of rendered) {
+    results.push({ mail, result: await sendMail({ to, subject: `[Beispiel] ${m.subject}`, html: m.html, text: m.text, tags: { type: "test" } }) });
+  }
+  return { to, provider, results };
+}

@@ -264,3 +264,16 @@ export async function saveSingleton(collection: string, input: unknown): Promise
     return { ok: false, error: e instanceof Error ? e.message : "Speichern fehlgeschlagen." };
   }
 }
+
+/* ---------------- test mails ---------------- */
+
+export async function sendTestMailsAction(): Promise<{ ok: boolean; message: string }> {
+  await requireAdmin();
+  const { sendTestOrderMails } = await import("@/lib/mail");
+  const { to, provider, results } = await sendTestOrderMails();
+  if (!to) return { ok: false, message: "Keine Empfängeradresse: MAIL_REDIRECT_TO oder MAIL_ADMIN setzen." };
+  if (provider === "console") return { ok: false, message: "Kein Mailversand eingerichtet (SMTP_HOST oder RESEND_API_KEY fehlt) – die Mails stehen nur im Server-Log." };
+  const failed = results.filter((r) => !r.result.sent);
+  if (failed.length) return { ok: false, message: `Nicht gesendet: ${failed.map((f) => `${f.mail} (${f.result.error ?? "Fehler"})`).join("; ")}` };
+  return { ok: true, message: `3 Beispiel-Mails an ${to} gesendet (über ${provider === "smtp" ? "SMTP" : "Resend"}).` };
+}

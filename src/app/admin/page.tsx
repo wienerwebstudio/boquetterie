@@ -5,6 +5,7 @@ import { getLocalNow } from "@/lib/delivery";
 import { formatDateShort, formatDateTime, formatPrice } from "@/lib/format";
 import { Card, EmptyState, PageHeader, Stat, Table, Td, Th } from "@/components/admin/controls";
 import { StatusBadge } from "@/components/admin/status-badge";
+import { TestMailButton } from "@/components/admin/test-mail-button";
 import { customerName, isOpenOrder, localDateOf, statusLabel } from "@/components/admin/order-utils";
 
 export const dynamic = "force-dynamic";
@@ -77,6 +78,7 @@ export default async function AdminOverviewPage() {
           )}
         </div>
 
+        <div className="grid content-start gap-6">
         <Card title="Schnellzugriff">
           <ul className="space-y-1">
             {QUICK_LINKS.map((l) => (
@@ -88,6 +90,10 @@ export default async function AdminOverviewPage() {
             ))}
           </ul>
         </Card>
+        <Card title="E-Mails testen">
+          <TestMailButton />
+        </Card>
+        </div>
       </div>
     </>
   );

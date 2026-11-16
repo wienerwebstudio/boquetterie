@@ -111,3 +111,22 @@ describe("MAIL_REDIRECT_TO (test mode)", () => {
     expect(applyRedirect(["kunde@example.at"], "Hallo")).toEqual({ to: ["kunde@example.at"], subject: "Hallo" });
   });
 });
+
+describe("admin test mails", () => {
+  beforeEach(() => { vi.resetModules(); delete (globalThis as { __blumoraSmtp?: unknown }).__blumoraSmtp; sendMail.mockClear(); });
+  afterEach(() => vi.unstubAllEnvs());
+
+  it("sends the three order mails of a sample order only to the test address", async () => {
+    vi.stubEnv("RESEND_API_KEY", ""); vi.stubEnv("SMTP_HOST", "mail.example.at");
+    vi.stubEnv("MAIL_REDIRECT_TO", "test@example.com"); vi.stubEnv("MAIL_FLORIST", "florist@example.at"); vi.stubEnv("MAIL_ADMIN", "office@example.at");
+    const cms = await import("@/lib/cms");
+    vi.mocked(cms.getSettings).mockResolvedValue({ brand: { name: "Blumora", claim: "Blumen, die mehr sagen.", email: "office@blumora.at" }, seo: { siteUrl: "https://blumora.at" } } as never);
+    const { sendTestOrderMails } = await import("@/lib/mail");
+    const res = await sendTestOrderMails();
+    expect(res.to).toBe("test@example.com");
+    expect(res.results.map((r) => r.result.sent)).toEqual([true, true, true]);
+    const recipients = sendMail.mock.calls.map((c) => (c as unknown as [{ to: string[]; subject: string }])[0]);
+    expect(recipients.every((m) => m.to.length === 1 && m.to[0] === "test@example.com")).toBe(true);
+    expect(recipients.every((m) => m.subject.includes("[Beispiel]"))).toBe(true);
+  });
+});
