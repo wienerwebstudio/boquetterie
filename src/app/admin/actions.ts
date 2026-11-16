@@ -267,19 +267,22 @@ export async function saveSingleton(collection: string, input: unknown): Promise
 
 /* ---------------- test mails ---------------- */
 
-export async function sendTestMailsAction(recipient?: string): Promise<{ ok: boolean; message: string }> {
+export async function sendTestMailsAction(recipient?: string, kind: string = "all"): Promise<{ ok: boolean; message: string }> {
   await requireAdmin();
   const chosen = typeof recipient === "string" ? recipient.trim() : "";
   if (chosen && (chosen.length > 200 || !/^[^\s@,;]+@[^\s@,;]+\.[^\s@,;]{2,}$/.test(chosen))) {
     return { ok: false, message: "Bitte gib genau eine gültige E-Mail-Adresse ein." };
   }
+  const which = (["all", "partner", "customer", "internal"] as const).find((k) => k === kind);
+  if (!which) return { ok: false, message: "Unbekannte Auswahl." };
   const { sendTestOrderMails } = await import("@/lib/mail");
-  const { to, provider, results } = await sendTestOrderMails(chosen || undefined);
+  const { to, provider, results } = await sendTestOrderMails(chosen || undefined, which);
   if (!to) return { ok: false, message: "Keine Empfängeradresse: MAIL_REDIRECT_TO oder MAIL_ADMIN setzen." };
   if (provider === "console") return { ok: false, message: "Kein Mailversand eingerichtet (SMTP_HOST oder RESEND_API_KEY fehlt) – die Mails stehen nur im Server-Log." };
   const failed = results.filter((r) => !r.result.sent);
   if (failed.length) return { ok: false, message: `Nicht gesendet: ${failed.map((f) => `${f.mail} (${f.result.error ?? "Fehler"})`).join("; ")}` };
-  return { ok: true, message: `3 Beispiel-Mails an ${to} gesendet (über ${provider === "smtp" ? "SMTP" : "Resend"}).` };
+  const what = results.length === 1 ? `Beispiel-Mail „${results[0].mail}“` : `${results.length} Beispiel-Mails (${results.map((r) => r.mail).join(", ")})`;
+  return { ok: true, message: `${what} an ${to} gesendet (über ${provider === "smtp" ? "SMTP" : "Resend"}).` };
 }
 
 /* ---------------- florist budgets ---------------- */

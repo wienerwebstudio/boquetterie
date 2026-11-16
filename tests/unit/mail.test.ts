@@ -188,6 +188,14 @@ describe("admin test mails", () => {
     expect(sentTo.every((m) => m.to.length === 1 && m.to[0] === "karim@example.at" && m.subject.startsWith("[Beispiel]"))).toBe(true);
 
     sendMail.mockClear();
+    const partnerOnly = await mail.sendTestOrderMails("karim@example.at", "partner");
+    expect(partnerOnly.results.map((r) => r.mail)).toEqual(["Partner-Auftrag"]);
+    expect(sendMail).toHaveBeenCalledTimes(1);
+    expect((sendMail.mock.calls[0] as unknown as [{ subject: string }])[0].subject).toMatch(/^\[Beispiel\] Auftrag /);
+    expect((await mail.sendTestOrderMails(undefined, "customer")).results.map((r) => r.mail)).toEqual(["Kundenbestellung"]);
+    expect((await mail.sendTestOrderMails(undefined, "internal")).results.map((r) => r.mail)).toEqual(["Bestelleingang"]);
+
+    sendMail.mockClear();
     await mail.sendMail({ to: "kunde@example.at", subject: "Echte Mail", html: "<p>x</p>" });
     expect(sendMail).toHaveBeenCalledWith(expect.objectContaining({ to: ["test@example.com"] }));
   });

@@ -38,6 +38,7 @@ test.describe("Admin", () => {
 
     // Test mails: a recipient can be typed in; without a mail provider the admin is told so.
     await page.goto("/admin");
+    await page.getByLabel("Welche Mail?").selectOption("partner");
     await page.getByLabel(/Empfänger/).fill("test-empfaenger@example.com");
     await page.getByRole("button", { name: "Test-Mails senden" }).click();
     await expect(page.getByRole("status").filter({ hasText: /Kein Mailversand eingerichtet|gesendet/ })).toBeVisible();

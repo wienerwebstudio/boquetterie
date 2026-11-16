@@ -358,7 +358,10 @@ async function liveSampleOrder(settings: SiteSettings): Promise<Order> {
  * entered, else the test recipient (MAIL_REDIRECT_TO), else MAIL_ADMIN – never to
  * customers or the florist automatically. Subjects start with "[Beispiel]".
  */
-export async function sendTestOrderMails(recipient?: string): Promise<{ to: string | null; provider: MailResult["provider"]; results: { mail: string; result: MailResult }[] }> {
+/** Which sample mails to send: all three, or only the partner's order slip, the customer's confirmation or the internal "new order" mail. */
+export type TestMailKind = "all" | "partner" | "customer" | "internal";
+
+export async function sendTestOrderMails(recipient?: string, kind: TestMailKind = "all"): Promise<{ to: string | null; provider: MailResult["provider"]; results: { mail: string; result: MailResult }[] }> {
   const chosen = recipient?.trim() || undefined;
   const to = chosen || process.env.MAIL_REDIRECT_TO?.trim() || adminMailAddress();
   const provider = mailProvider();
@@ -366,11 +369,12 @@ export async function sendTestOrderMails(recipient?: string): Promise<{ to: stri
   const settings = await getSettings();
   const brand = mailBrand(settings);
   const order = await liveSampleOrder(settings);
-  const rendered: [string, RenderedMail][] = [
-    ["Bestellbestätigung (Kund:in)", templates.orderConfirmation({ order, brand, trackingUrl: `${brand.siteUrl}/bestellung-verfolgen` })],
-    ["Neue Bestellung (intern)", templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen` })],
-    ["Auftragszettel (Floristik)", templates.floristOrder({ order, brand })],
+  const all: [TestMailKind, string, () => RenderedMail][] = [
+    ["customer", "Kundenbestellung", () => templates.orderConfirmation({ order, brand, trackingUrl: `${brand.siteUrl}/bestellung-verfolgen` })],
+    ["internal", "Bestelleingang", () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen` })],
+    ["partner", "Partner-Auftrag", () => templates.floristOrder({ order, brand })],
   ];
+  const rendered: [string, RenderedMail][] = all.filter(([k]) => kind === "all" || k === kind).map(([, label, render]) => [label, render()]);
   const results = [];
   for (const [mail, m] of rendered) {
     results.push({ mail, result: await sendMail({ to, subject: `[Beispiel] ${m.subject}`, html: m.html, text: m.text, tags: { type: "test" }, bypassRedirect: Boolean(chosen) }) });
