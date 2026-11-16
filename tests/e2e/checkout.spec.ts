@@ -41,9 +41,10 @@ test.describe("Checkout @slow", () => {
     await expect(page.getByText(/^Lieferung am/)).toBeVisible();
     await page.getByRole("button", { name: "Weiter" }).click();
 
-    /* ---- Schritt 3: Grußkarte ---- */
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Deine Worte auf der Karte");
-    await page.getByLabel("Deine Nachricht").fill("Viel Freude mit den Blumen!");
+    /* ---- Schritt 3: Grußkarte (noch nicht im Angebot) ---- */
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Grußkarten kommen bald");
+    await expect(page.getByText("Kommt bald!")).toBeVisible();
+    await expect(page.getByLabel("Deine Nachricht")).toHaveCount(0);
     await page.getByRole("button", { name: "Weiter" }).click();
 
     /* ---- Schritt 4: Besteller ---- */
@@ -74,7 +75,7 @@ test.describe("Checkout @slow", () => {
     /* ---- Bestellseite ---- */
     await expect(page).toHaveURL(/\/bestellung\/BQ-[A-Z0-9]+\?token=/, { timeout: 30_000 });
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Danke");
-    await expect(page.getByText("Viel Freude mit den Blumen!")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Grußkarte" })).toHaveCount(0);
     await expect(page.getByRole("button", { name: /Warenkorb, 0 Artikel/ })).toBeVisible();
   });
 });

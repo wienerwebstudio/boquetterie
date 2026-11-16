@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { getExtras } from "@/lib/cms";
+import { getExtras, getSettings } from "@/lib/cms";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { CartPageView } from "@/components/cart/cart-page";
 
 export const metadata: Metadata = {
   title: "Warenkorb",
-  description: "Deine ausgewählten Sträuße, Extras und Grußkarte – bereit für die Lieferung in Wien.",
+  description: "Deine ausgewählten Sträuße und Extras – bereit für die Lieferung in Wien.",
   robots: { index: false, follow: true },
 };
 
 export default async function CartPage() {
-  const extras = (await getExtras()).filter((e) => e.showInCart);
+  const [allExtras, settings] = await Promise.all([getExtras(), getSettings()]);
+  const extras = allExtras.filter((e) => e.showInCart);
   return (
     <div className="container-x pb-20 pt-5 sm:pt-8 lg:pb-28">
       <Breadcrumbs items={[{ label: "Warenkorb" }]} />
@@ -18,7 +19,7 @@ export default async function CartPage() {
         <p className="eyebrow mb-3">Fast geschafft</p>
         <h1 className="display-2 text-ink">Warenkorb</h1>
       </header>
-      <CartPageView extras={extras} />
+      <CartPageView extras={extras} cardsEnabled={settings.greetingCard?.enabled === true} />
     </div>
   );
 }

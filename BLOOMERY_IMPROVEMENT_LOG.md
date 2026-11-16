@@ -165,6 +165,12 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - **Admin-Anmeldung (Fehler live):** Auf Netlify sieht eine API-Route die interne Deploy-Adresse statt blumora.at. Die Weiterleitung nach dem Login zeigte deshalb auf eine fremde Adresse, die der Browser wegen `form-action 'self'` blockierte – nach „Anmelden“ passierte sichtbar nichts. Alle Weiterleitungen aus API-Routen (Admin-Login/-Logout, Kunden-Login/-Logout, Erinnerung bestätigen/abmelden) sind jetzt relativ (`redirectLocal`).
 - **Anmeldeseite:** klare Meldungen für falsches Passwort (mit verbleibenden Versuchen), Sperre nach 5 Versuchen (mit Wartezeit statt Textseite), „Wird geprüft …“ beim Absenden, Hinweis nach 12 s ohne Antwort, Passwort-anzeigen-Schalter; Leerzeichen um ein eingefügtes Passwort werden ignoriert.
 
+### Zyklus 8 – Mails mit Fotos, Floristen-Budget, Grußkarten „Kommt bald!“ (2026-11-16)
+- **Mails:** Bestellbestätigung und Auftragszettel zeigen das Produktfoto (über den Bild-Dienst, ~25 KB). Der Auftragszettel nennt pro Strauß und Extra das Einkaufsbudget netto und die Summe; fehlt ein Wert, steht „nicht hinterlegt“ statt einer Schätzung.
+- **Floristen-Budget:** Werte aus „Blumora_Preiskalkulation.xlsx“ (Spalte „Einkauf Dody (netto)“), 146 Größen + Teddy und Duftkerze; alle Verkaufspreise der Tabelle stimmen mit dem Shop überein. Love Deluxe und Blue Bouquet kosten inzwischen wie die Rosensträuße → Rosen-Budgets übernommen (Inhaber bestätigen lassen). Gespeichert in der Datenbank, nicht im (öffentlichen) Repository; Admin-Seite zum Pflegen und Importieren. Kundenansichten entfernen das Budget.
+- **Grußkarten:** Schalter `greetingCard.enabled` (fehlt = aus). Produktseite, Warenkorb und Checkout zeigen „Kommt bald!“, der Server verwirft Kartentexte, Mails enthalten keine Karte. Alle Texte, die eine Karte versprachen, sind angepasst.
+- **Inhalts-Migrationen:** Seit Neon werden Inhalte aus `/content` nur noch für fehlende Dokumente übernommen. `src/lib/content-migrations.ts` überträgt gezielte Textänderungen einmalig in die Datenbank (Admin-Änderungen bleiben unberührt).
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
@@ -190,6 +196,8 @@ Nur tatsächlich ausgeführte Läufe.
 | 2026-11-16 (Z7) | Netlify-Deploy mit `SMTP_PASS` nach Abschalten des Turbopack-Caches: Secret-Scan 8.761 Dateien | 0 Treffer, live |
 | 2026-11-16 (Z7) | Live: `POST /api/admin/login` mit falschem Passwort → Weiterleitung auf `…netlify.app` (Fehler nachgestellt) | behoben, siehe Zyklus 7 |
 | 2026-11-16 (Z7) | `tsc`, `eslint`, Unit 194/194, `next build`, Playwright E2E + axe 30/30 | grün |
+| 2026-11-16 (Z8) | `tsc`, `eslint`, Unit 205/205, `next build`, Playwright E2E + axe 30/30 | grün |
+| 2026-11-16 (Z8) | Mail-Vorschau (Kunde, Floristik) gerendert, Fotos laden vom Live-Bild-Dienst | gesichtet |
 | 2026-11-15 (Z2) | Sichtprüfung per Screenshot (Start, Produktseite, Lieferung, Über uns; 390–1440 px) | abgeschnittene Inhalte behoben |
 
 Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand über Resend (keine Zugangsdaten bei Netlify).

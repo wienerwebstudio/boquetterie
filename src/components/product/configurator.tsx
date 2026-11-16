@@ -95,6 +95,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   const [anonymous, setAnonymous] = useState(false);
   const [senderName, setSenderName] = useState("");
   const maxChars = greetingCard.maxChars;
+  const cardsEnabled = greetingCard.enabled === true;
 
   /* ---------- extras ---------- */
   const [extraQty, setExtraQty] = useState<Record<string, number>>({});
@@ -125,7 +126,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       product, size,
       deliveryDate: selectedDate,
       postalCode: zone ? result?.postalCode : ctx.zone ? ctx.postalCode : undefined,
-      message, anonymous, senderName,
+      ...(cardsEnabled ? { message, anonymous, senderName } : { message: "", anonymous: false, senderName: "" }),
       extras: chosenExtras,
     });
     addItem(item);
@@ -294,6 +295,18 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       </section>
 
       {/* ---------- Greeting card ---------- */}
+      {!cardsEnabled ? (
+        <section aria-labelledby={`${uid}-card`} className="flex items-center justify-between gap-3 rounded-md border border-dashed border-line bg-white/30 px-4 py-3.5">
+          <span className="flex items-center gap-3">
+            <span className="grid size-9 place-items-center rounded-full bg-ivory-100 text-ink-soft"><PenLine className="size-4" strokeWidth={1.6} aria-hidden /></span>
+            <span>
+              <span id={`${uid}-card`} className="block text-[14px] font-semibold text-ink-muted">Persönliche Grußkarte</span>
+              <span className="block text-[12.5px] text-ink-muted">Dein Strauß wird vorerst ohne Karte geliefert.</span>
+            </span>
+          </span>
+          <Badge tone="rose" className="shrink-0">Kommt bald!</Badge>
+        </section>
+      ) : (
       <section aria-labelledby={`${uid}-card`}>
         <button
           type="button"
@@ -355,6 +368,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           </div>
         )}
       </section>
+      )}
 
       {/* ---------- Extras ---------- */}
       {activeExtras.length > 0 && (
@@ -414,7 +428,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
         </Button>
         <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[12px] text-ink-muted">
           {product.category !== "pflanzen" && <li className="inline-flex items-center gap-1.5"><Leaf className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Frisch gebunden</li>}
-          <li className="inline-flex items-center gap-1.5"><Mail className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Grußkarte inklusive</li>
+          {cardsEnabled && greetingCard.freeCardIncluded && <li className="inline-flex items-center gap-1.5"><Mail className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Grußkarte inklusive</li>}
           <li className="inline-flex items-center gap-1.5"><Lock className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Sichere Zahlung</li>
         </ul>
       </div>

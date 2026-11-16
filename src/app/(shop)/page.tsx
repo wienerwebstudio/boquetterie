@@ -48,7 +48,7 @@ export default async function HomePage() {
   const heroFacts = [
     ...(priced.length ? [`Sträuße ab ${formatPrice(Math.min(...priced.map((p) => p.basePrice)))}`] : []),
     ...(activeZones.length && activeZones.every((z) => z.region === "Wien") ? ["Lieferung in ganz Wien"] : []),
-    ...(settings.greetingCard.freeCardIncluded ? ["Grußkarte inklusive"] : []),
+    ...(settings.greetingCard.enabled === true && settings.greetingCard.freeCardIncluded ? ["Grußkarte inklusive"] : []),
   ];
   const sameDayNow = isSameDayPossibleNow(zones, settings);
 

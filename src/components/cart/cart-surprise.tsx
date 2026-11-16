@@ -5,7 +5,7 @@ import { cn } from "@/lib/format";
 import { truncateMessage } from "@/lib/cart-helpers";
 
 /** "Deine Überraschung" – what the recipient will unwrap: bouquet, card, extras. */
-export function CartSurprise({ items, className }: { items: CartItem[]; className?: string }) {
+export function CartSurprise({ items, className, cardsEnabled = false }: { items: CartItem[]; className?: string; cardsEnabled?: boolean }) {
   if (!items.length) return null;
   const bouquets = items.map((i) => `${i.snapshot.name} (${i.snapshot.sizeLabel})${i.quantity > 1 ? ` × ${i.quantity}` : ""}`);
   const withMessage = items.find((i) => i.message);
@@ -18,8 +18,10 @@ export function CartSurprise({ items, className }: { items: CartItem[]; classNam
     {
       icon: MessageSquare,
       label: "+ Karte",
-      value: withMessage?.message ? `„${truncateMessage(withMessage.message, 44)}“` : "Grußkarte inklusive – Nachricht jederzeit ergänzbar",
-      muted: !withMessage,
+      value: !cardsEnabled
+        ? "Grußkarten kommen bald"
+        : withMessage?.message ? `„${truncateMessage(withMessage.message, 44)}“` : "Grußkarte inklusive – Nachricht jederzeit ergänzbar",
+      muted: !cardsEnabled || !withMessage,
     },
     { icon: Gift, label: "+ Extras", value: extrasList.length ? extrasList.join(", ") : "Noch keine Extras", muted: !extrasList.length },
   ];

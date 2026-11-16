@@ -1,5 +1,6 @@
 "use client";
 import { Input, Textarea } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/format";
 import type { FieldErrors } from "@/lib/order-payload";
 import { ChoiceTile } from "./choice-tile";
@@ -8,14 +9,27 @@ import { fieldId, type CheckoutData } from "./checkout-state";
 
 type Greeting = CheckoutData["greeting"];
 
-export function StepGreeting({ data, set, errors, onBlur, maxChars, freeCardIncluded }: {
+export function StepGreeting({ data, set, errors, onBlur, maxChars, freeCardIncluded, enabled = true }: {
   data: Greeting;
   set: (patch: Partial<Greeting>) => void;
   errors: FieldErrors;
   onBlur: (field: keyof Greeting) => void;
   maxChars: number;
   freeCardIncluded: boolean;
+  /** Off: greeting cards are not offered yet – the step only says so. */
+  enabled?: boolean;
 }) {
+  if (!enabled) {
+    return (
+      <div className="flex flex-col items-start gap-4 rounded-md border border-dashed border-line bg-white/40 p-5 sm:p-6">
+        <Badge tone="rose">Kommt bald!</Badge>
+        <p className="max-w-prose text-[15px] leading-relaxed text-ink">
+          Grußkarten mit deiner persönlichen Nachricht bieten wir in Kürze an. Dein Strauß wird diesmal ohne Karte geliefert.
+        </p>
+        <p className="text-[13px] text-ink-muted">Weiter geht es mit deinen Kontaktdaten.</p>
+      </div>
+    );
+  }
   const id = (f: keyof Greeting) => fieldId(3, f);
   const remaining = maxChars - data.message.length;
   return (

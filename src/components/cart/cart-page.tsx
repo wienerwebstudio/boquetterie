@@ -14,7 +14,7 @@ import { CartSummary } from "./cart-summary";
 import { CartEmpty, CartTrustRow } from "./cart-drawer";
 
 /** Full-page cart. Lines left, sticky summary right. */
-export function CartPageView({ extras }: { extras: Extra[] }) {
+export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]; cardsEnabled?: boolean }) {
   const hydrated = useCart((s) => s.hydrated);
   const items = useCart((s) => s.items);
 
@@ -28,7 +28,7 @@ export function CartPageView({ extras }: { extras: Extra[] }) {
   }
 
   if (!items.length) {
-    return <div className="mx-auto max-w-md rounded-lg border border-line bg-white/50"><CartEmpty /></div>;
+    return <div className="mx-auto max-w-md rounded-lg border border-line bg-white/50"><CartEmpty cardsEnabled={cardsEnabled} /></div>;
   }
 
   const count = cartCount(items);
@@ -47,7 +47,7 @@ export function CartPageView({ extras }: { extras: Extra[] }) {
           <ArrowLeft className="size-4" aria-hidden /> Weiter einkaufen
         </Link>
         <div className="mt-10 space-y-8">
-          <CartSurprise items={items} />
+          <CartSurprise items={items} cardsEnabled={cardsEnabled} />
           <CartUpsell items={items} extras={extras} />
         </div>
       </section>

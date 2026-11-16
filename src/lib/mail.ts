@@ -2,7 +2,8 @@ import "server-only";
 import nodemailer, { type Transporter } from "nodemailer";
 import type { Order, SiteSettings } from "@/types";
 import type { Reminder } from "@/types/reminders";
-import { getOccasions, getSettings } from "@/lib/cms";
+import { getAllProducts, getExtras, getOccasions, getSettings } from "@/lib/cms";
+import { getFloristBudgets } from "@/lib/florist-budget";
 import * as templates from "@/lib/mail/templates";
 import type { MailBrand, RenderedMail } from "@/lib/mail/templates";
 import { formatReminderDate } from "@/lib/mail/reminders";
@@ -295,21 +296,55 @@ export { escapeHtml } from "@/lib/mail/templates";
 /* ---------------- Test mails (admin) ---------------- */
 
 /** A clearly fictitious paid order for previewing the order mails. */
-export function sampleOrder(product?: { name: string; sizeLabel: string; price: number; image?: string }): Order {
-  const p = product ?? { name: "Red Passion", sizeLabel: "Mittel", price: 65.9 };
+export interface SampleOrderInput {
+  product?: { id: string; name: string; sizeId: string; sizeLabel: string; price: number; image?: string; floristBudget?: number };
+  extra?: { id: string; name: string; price: number; floristBudget?: number } | null;
+  /** Adds a greeting card – only when cards are on offer. */
+  withCard?: boolean;
+}
+
+export function sampleOrder(input: SampleOrderInput = {}): Order {
+  const p = input.product ?? { id: "beispiel", name: "Red Rose Bouquet", sizeId: "m", sizeLabel: "Mittel", price: 65.9 };
+  const x = input.extra === undefined ? { id: "beispiel", name: "Teddy", price: 19.9 } : input.extra;
   const date = new Date(Date.now() + 2 * 86_400_000).toISOString().slice(0, 10);
+  const extrasTotal = x ? x.price : 0;
   return {
     id: "BQ-BEISPIEL", token: "beispiel", createdAt: new Date().toISOString(), status: "paid", history: [],
     recipient: { firstName: "Anna", lastName: "Beispiel", company: "", street: "Neubaugasse", houseNumber: "12", addition: "Top 4", zip: "1070", city: "Wien", country: "AT", phone: "+43 660 0000000" },
     delivery: { date, windowId: "am", windowLabel: "9–12 Uhr", windowFrom: "09:00", windowTo: "12:00", zoneId: "beispiel", zoneName: "Beispielzone", fee: 0, note: "Beispielbestellung – nicht ausliefern" },
     customer: { firstName: "Max", lastName: "Beispiel", email: "kunde@beispiel.invalid", phone: "+43 660 0000000" },
     lines: [{
-      productId: "beispiel", productName: p.name, sizeId: "m", sizeLabel: p.sizeLabel, quantity: 1, unitPrice: p.price, image: p.image ?? "",
-      extras: [{ extraId: "beispiel", name: "Teddy", quantity: 1, unitPrice: 19.9 }], message: "Alles Liebe – das ist nur eine Test-Mail.", senderName: "Blumora",
+      productId: p.id, productName: p.name, sizeId: p.sizeId as Order["lines"][number]["sizeId"], sizeLabel: p.sizeLabel, quantity: 1, unitPrice: p.price, image: p.image ?? "",
+      floristBudget: p.floristBudget,
+      extras: x ? [{ extraId: x.id, name: x.name, quantity: 1, unitPrice: x.price, floristBudget: x.floristBudget }] : [],
+      ...(input.withCard ? { message: "Alles Liebe – das ist nur eine Test-Mail.", senderName: "Blumora" } : {}),
     }],
-    totals: { subtotal: p.price, extras: 19.9, delivery: 0, discount: 0, total: Math.round((p.price + 19.9) * 100) / 100 },
+    totals: { subtotal: p.price, extras: extrasTotal, delivery: 0, discount: 0, total: Math.round((p.price + extrasTotal) * 100) / 100 },
     payment: { method: "card", status: "paid", provider: "beispiel" },
   };
+}
+
+/** Sample order from the live catalogue (Red Rose Bouquet, Mittel + Teddy) with the stored florist budgets. */
+async function liveSampleOrder(settings: SiteSettings): Promise<Order> {
+  try {
+    const [products, extras, budgets] = await Promise.all([getAllProducts(), getExtras(), getFloristBudgets()]);
+    const product = products.find((pr) => pr.id === "p-red-rose-bouquet") ?? products.find((pr) => pr.active);
+    const size = product?.sizes.find((sz) => sz.id === "m") ?? product?.sizes[0];
+    const extra = extras.find((e) => e.id === "x-teddy" && e.active) ?? null;
+    if (!product || !size) return sampleOrder({ withCard: settings.greetingCard?.enabled === true });
+    return sampleOrder({
+      product: {
+        id: product.id, name: product.name, sizeId: size.id, sizeLabel: size.label, price: size.price,
+        image: (product.images.find((im) => im.kind === "front") ?? product.images[0])?.src,
+        floristBudget: budgets.products[product.id]?.[size.id],
+      },
+      extra: extra ? { id: extra.id, name: extra.name, price: extra.price, floristBudget: budgets.extras[extra.id] } : null,
+      withCard: settings.greetingCard?.enabled === true,
+    });
+  } catch (err) {
+    console.warn("[mail] sample order from the catalogue failed – using the built-in example", err);
+    return sampleOrder({ withCard: settings.greetingCard?.enabled === true });
+  }
 }
 
 /**
@@ -323,7 +358,7 @@ export async function sendTestOrderMails(): Promise<{ to: string | null; provide
   if (!to) return { to: null, provider, results: [] };
   const settings = await getSettings();
   const brand = mailBrand(settings);
-  const order = sampleOrder();
+  const order = await liveSampleOrder(settings);
   const rendered: [string, RenderedMail][] = [
     ["Bestellbestätigung (Kund:in)", templates.orderConfirmation({ order, brand, trackingUrl: `${brand.siteUrl}/bestellung-verfolgen` })],
     ["Neue Bestellung (intern)", templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen` })],

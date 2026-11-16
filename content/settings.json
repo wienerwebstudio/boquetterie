@@ -24,8 +24,7 @@
     "messages": [
       "Blumenlieferung in ganz Wien",
       "Frisch gebunden, per Kurier geliefert",
-      "Wunschdatum wählbar",
-      "Grußkarte inklusive"
+      "Wunschdatum wählbar"
     ]
   },
   "timezone": "Europe/Vienna",
@@ -150,7 +149,7 @@
   "seo": {
     "siteUrl": "https://blumora.at",
     "defaultTitle": "Blumora – Blumen liefern lassen in Wien",
-    "defaultDescription": "Frisch gebundene Blumen, direkt an die Menschen geliefert, die dir wichtig sind. Wunschdatum wählen, Grußkarte schreiben, Freude schicken – Blumenversand für Wien."
+    "defaultDescription": "Frisch gebundene Blumen, direkt an die Menschen geliefert, die dir wichtig sind. Wunschdatum wählen, Freude schicken – Blumenversand für Wien."
   },
   "trust": [
     {
@@ -170,11 +169,12 @@
     },
     {
       "icon": "mail",
-      "title": "Persönliche Grußkarte",
-      "text": "Deine Worte, unsere Karte"
+      "title": "Grußkarten",
+      "text": "Kommen bald"
     }
   ],
   "greetingCard": {
+    "enabled": false,
     "maxChars": 200,
     "freeCardIncluded": true
   }

@@ -53,11 +53,31 @@ type Block =
   | { type: "button"; label: string; url: string }
   | { type: "link"; label: string; url: string }
   | { type: "kv"; rows: [string, string][] }
-  | { type: "items"; order: Order }
+  | { type: "items"; order: Order; siteUrl: string }
+  | { type: "floristItems"; order: Order; siteUrl: string }
   | { type: "totals"; order: Order }
   | { type: "quote"; text: string; by?: string }
   | { type: "alert"; text: string }
   | { type: "hr" };
+
+/**
+ * Absolute URL of a product photo for e-mails, scaled down by the site's image
+ * service (JPEG for clients without WebP support, ~25 KB instead of ~270 KB).
+ * `width` must be one of next.config's image sizes.
+ */
+export function mailImageUrl(siteUrl: string, src: string, width: 160 | 480 = 160) {
+  if (!src) return "";
+  if (/^https?:\/\//.test(src)) return src;
+  return `${siteUrl}/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=75`;
+}
+
+const imgCell = (src: string, alt: string, w: number, h: number) =>
+  src
+    ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" width="${w}" height="${h}" style="display:block;width:${w}px;height:${h}px;border:0;border-radius:4px;background:${C.ivory200};object-fit:cover;">`
+    : "";
+
+const budgetText = (amount: number | undefined, quantity = 1) =>
+  amount === undefined ? "nicht hinterlegt – bitte bei Blumora nachfragen" : `${formatPrice(amount * quantity)} netto${quantity > 1 ? ` (${quantity} × ${formatPrice(amount)})` : ""}`;
 
 function renderBlockHtml(b: Block): string {
   switch (b.type) {
@@ -77,9 +97,20 @@ function renderBlockHtml(b: Block): string {
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 8px;border-top:1px solid ${C.line};">${b.order.lines
         .map((l) => {
           const extras = l.extras.map((e) => `+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)} (${escapeHtml(formatPrice(e.unitPrice * e.quantity))})`).join("<br>");
-          return `<tr><td style="padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};vertical-align:top;"><strong style="font-weight:600;">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</strong><br><span style="color:${C.muted};font-size:13px;">Größe ${escapeHtml(l.sizeLabel)}</span>${extras ? `<br><span style="color:${C.muted};font-size:13px;">${extras}</span>` : ""}</td><td align="right" style="padding:12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;color:${C.ink};vertical-align:top;white-space:nowrap;">${escapeHtml(formatPrice(l.unitPrice * l.quantity))}</td></tr>`;
+          const img = imgCell(mailImageUrl(b.siteUrl, l.image), l.productName, 64, 80);
+          return `<tr>${img ? `<td width="76" style="width:76px;padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};vertical-align:top;">${img}</td>` : ""}<td style="padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};vertical-align:top;"><strong style="font-weight:600;">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</strong><br><span style="color:${C.muted};font-size:13px;">Größe ${escapeHtml(l.sizeLabel)}</span>${extras ? `<br><span style="color:${C.muted};font-size:13px;">${extras}</span>` : ""}</td><td align="right" style="padding:12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;color:${C.ink};vertical-align:top;white-space:nowrap;">${escapeHtml(formatPrice(l.unitPrice * l.quantity))}</td></tr>`;
         })
         .join("")}</table>`;
+    case "floristItems":
+      return b.order.lines
+        .map((l) => {
+          const img = imgCell(mailImageUrl(b.siteUrl, l.image, 480), l.productName, 160, 200);
+          const extras = l.extras
+            .map((e) => `<tr><td style="padding:4px 0 0;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};">+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)}<br><span style="font-size:13px;color:${C.muted};">Budget: ${escapeHtml(budgetText(e.floristBudget, e.quantity * l.quantity))}</span></td></tr>`)
+            .join("");
+          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border:1px solid ${C.line};border-radius:8px;"><tr>${img ? `<td width="176" style="width:176px;padding:16px 0 16px 16px;vertical-align:top;">${img}</td>` : ""}<td style="padding:16px;vertical-align:top;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:${SERIF};font-size:20px;line-height:1.3;color:${C.ink};">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</td></tr><tr><td style="padding:2px 0 10px;font-family:${FONT};font-size:14px;color:${C.muted};">Größe ${escapeHtml(l.sizeLabel)}</td></tr><tr><td style="padding:10px 12px;background:${C.bg};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Budget Einkauf</span><br><strong style="font-size:17px;font-weight:600;">${escapeHtml(budgetText(l.floristBudget, l.quantity))}</strong></td></tr>${extras}</table></td></tr></table>`;
+        })
+        .join("");
     case "totals": {
       const t = b.order.totals;
       const rows: [string, string, boolean][] = [["Blumen", formatPrice(t.subtotal), false]];
@@ -116,6 +147,13 @@ function renderBlockText(b: Block): string {
         .map((l) => {
           const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} (${formatPrice(e.unitPrice * e.quantity)})`).join("\n");
           return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${l.sizeLabel} – ${formatPrice(l.unitPrice * l.quantity)}${extras ? `\n${extras}` : ""}`;
+        })
+        .join("\n");
+    case "floristItems":
+      return b.order.lines
+        .map((l) => {
+          const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} – Budget ${budgetText(e.floristBudget, e.quantity * l.quantity)}`).join("\n");
+          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${l.sizeLabel}\n  Budget Einkauf: ${budgetText(l.floristBudget, l.quantity)}\n  Foto: ${mailImageUrl(b.siteUrl, l.image, 480)}${extras ? `\n${extras}` : ""}`;
         })
         .join("\n");
     case "totals": {
@@ -244,7 +282,7 @@ export function orderConfirmation(input: { order: Order; brand: MailBrand; track
       { type: "h", text: "Lieferung" },
       { type: "kv", rows: [["Termin", deliveryLine(order)], ["Empfänger:in", recipientLines(order)], ...(order.delivery.note ? [["Hinweis", order.delivery.note] as [string, string]] : [])] },
       { type: "h", text: "Deine Blumen" },
-      { type: "items", order },
+      { type: "items", order, siteUrl: brand.siteUrl },
       { type: "totals", order },
       ...greetingBlocks(order),
       { type: "hr" },
@@ -321,29 +359,30 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
 }
 
 /**
- * Order slip for the partner florist: what to bind and when it is collected.
- * Deliberately without prices and without the customer's or recipient's contact
- * data – the courier delivers, the florist only prepares (data minimisation).
+ * Order slip for the partner florist: what to bind, the photo of the bouquet, the
+ * net purchase budget per item (from the admin's "Floristen-Budget") and when it is
+ * collected. Without the customer's prices and without the customer's or recipient's
+ * contact data – the courier delivers, the florist only prepares (data minimisation).
  */
 export function floristOrder(input: { order: Order; brand: MailBrand }): RenderedMail {
   const { order, brand } = input;
-  const items = order.lines
-    .map((l) => {
-      const extras = l.extras.length ? `\n  + ${l.extras.map((e) => `${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name}`).join(", ")}` : "";
-      return `${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName} – ${l.sizeLabel}${extras}`;
-    })
-    .join("\n");
+  const first = order.lines[0];
   const card = order.lines.find((l) => l.message || l.senderName || l.anonymous);
   const cardText = card
     ? [card.message || "(ohne Text)", card.anonymous ? "Absender: anonym – keinen Namen auf die Karte" : card.senderName ? `Absender: ${card.senderName}` : ""].filter(Boolean).join("\n")
-    : "Keine Grußkarte";
+    : null;
+  const budgets = order.lines.flatMap((l) => [
+    l.floristBudget === undefined ? null : l.floristBudget * l.quantity,
+    ...l.extras.map((e) => (e.floristBudget === undefined ? null : e.floristBudget * e.quantity * l.quantity)),
+  ]);
+  const total = budgets.every((b): b is number => b !== null) ? budgets.reduce((a, b) => a + b, 0) : null;
   const ready = order.delivery.windowFrom
     ? `${formatDateLong(order.delivery.date)}, bis ${order.delivery.windowFrom} Uhr (Abholung durch den Kurier)`
     : `${formatDateLong(order.delivery.date)} (Uhrzeit folgt)`;
   return layout({
     brand,
     subject: `Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${order.delivery.windowFrom ? ` ${order.delivery.windowFrom} Uhr` : ""}`,
-    preheader: items.split("\n")[0],
+    preheader: first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – ${first.sizeLabel}` : undefined,
     headline: `Neuer Auftrag ${order.id}`,
     blocks: [
       {
@@ -351,10 +390,11 @@ export function floristOrder(input: { order: Order; brand: MailBrand }): Rendere
         rows: [
           ["Fertig zur Abholung", ready],
           ["Lieferfenster", deliveryLine(order)],
-          ["Strauß", items],
-          ["Grußkarte", cardText],
+          ...(total !== null && budgets.length > 1 ? [["Budget gesamt", `${formatPrice(total)} netto`] as [string, string]] : []),
+          ...(cardText ? [["Grußkarte", cardText] as [string, string]] : []),
         ],
       },
+      { type: "floristItems", order, siteUrl: brand.siteUrl },
     ],
     footerNotes: ["Auftrag von Blumora – bitte auf diese Mail antworten, wenn etwas nicht passt."],
   });

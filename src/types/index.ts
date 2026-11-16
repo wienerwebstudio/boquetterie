@@ -244,7 +244,11 @@ export interface SiteSettings {
     defaultDescription: string;
   };
   trust: { icon: string; title: string; text: string }[];
-  greetingCard: { maxChars: number; freeCardIncluded: boolean };
+  /**
+   * `enabled` switches greeting cards on. Missing counts as off: settings stored
+   * before the switch existed keep cards disabled until someone turns them on.
+   */
+  greetingCard: { enabled?: boolean; maxChars: number; freeCardIncluded: boolean };
 }
 
 /* ---------------- Homepage & CMS pages ---------------- */
@@ -381,7 +385,9 @@ export interface OrderLine {
   quantity: number;
   unitPrice: number;
   image: string;
-  extras: { extraId: string; name: string; quantity: number; unitPrice: number }[];
+  extras: { extraId: string; name: string; quantity: number; unitPrice: number; floristBudget?: number }[];
+  /** Net purchase budget of the partner florist per unit, snapshot at order time. Internal – stripped from every public view. */
+  floristBudget?: number;
   message?: string;
   anonymous?: boolean;
   senderName?: string;

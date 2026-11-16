@@ -3,7 +3,7 @@
     "slug": "blumenversand-wien",
     "title": "Blumenversand Wien",
     "headline": "Blumen liefern lassen in Wien.",
-    "intro": "Von Hand gebundene Sträuße, geliefert in alle 23 Wiener Bezirke. Wähle deinen Strauß, bestimme das Lieferdatum und schreib ein paar Worte für die Karte.",
+    "intro": "Von Hand gebundene Sträuße, geliefert in alle 23 Wiener Bezirke. Wähle deinen Strauß und bestimme das Lieferdatum.",
     "image": "/images/hero/hero-wide.jpg",
     "productFilter": {"limit": 8},
     "sections": [
@@ -11,21 +11,21 @@
       {"heading": "Von Hand gebunden, direkt geliefert", "paragraphs": ["Jeder Strauß wird für deine Bestellung von Hand gebunden – von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Ein Kurier holt ihn dort ab und fährt ohne Zwischenstopp zur Empfängeradresse."]}
     ],
     "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
-    "seo": {"title": "Blumenversand Wien – Blumen liefern lassen", "description": "Blumen in Wien liefern lassen: von Hand gebundene Sträuße mit Wunschdatum, Zeitfenster und Grußkarte. Lieferung in alle 23 Bezirke."}
+    "seo": {"title": "Blumenversand Wien – Blumen liefern lassen", "description": "Blumen in Wien liefern lassen: von Hand gebundene Sträuße mit Wunschdatum und Zeitfenster. Lieferung in alle 23 Bezirke."}
   },
   {
     "slug": "blumen-zum-geburtstag",
     "title": "Geburtstagsblumen liefern",
     "headline": "Geburtstagsblumen in Wien liefern lassen – so geht’s.",
-    "intro": "Du wählst Strauß und Tag und schreibst die Karte. Ein Kurier bringt die Blumen im gewünschten Zeitfenster zum Geburtstagskind. Hier steht, wie die Lieferung in Wien abläuft und was sie kostet.",
+    "intro": "Du wählst Strauß und Tag. Ein Kurier bringt die Blumen im gewünschten Zeitfenster zum Geburtstagskind. Hier steht, wie die Lieferung in Wien abläuft und was sie kostet.",
     "productFilter": {"occasions": ["geburtstag"], "limit": 8},
     "sections": [
       {"heading": "Lieferung am Geburtstag", "paragraphs": ["Wähle das Lieferdatum im Kalender und eines von drei Zeitfenstern: 9–12, 12–17 oder 17–22 Uhr. Geliefert wird derzeit von Montag bis Samstag. Fällt der Geburtstag auf einen Sonntag, kannst du den Samstag davor wählen."]},
-      {"heading": "Karte und Lieferkosten", "paragraphs": ["Zu jedem Strauß gehört eine Grußkarte mit deinem Text. Die Liefergebühr hängt vom Bezirk ab – gratis, 3,99 € oder 7,99 € – und wird nach Eingabe der Postleitzahl angezeigt."]},
+      {"heading": "Lieferkosten", "paragraphs": ["Die Liefergebühr hängt vom Bezirk ab – gratis, 3,99 € oder 7,99 € – und wird nach Eingabe der Postleitzahl angezeigt."]},
       {"heading": "Wenn das Geburtstagskind nicht zu Hause ist", "paragraphs": ["Ist niemand da, wird der Strauß nach Möglichkeit bei Nachbar:innen abgegeben. Du bekommst eine E-Mail, sobald der Strauß unterwegs ist, und eine weitere, wenn er zugestellt wurde."]}
     ],
     "faqIds": ["f-date", "f-window", "f-card", "f-nobody"],
-    "seo": {"title": "Geburtstagsblumen verschicken in Wien – Ablauf, Zeitfenster und Kosten", "description": "So lässt du Blumen zum Geburtstag in Wien liefern: Wunschdatum wählen, Zeitfenster bestimmen, Grußkarte schreiben. Mit Lieferkosten nach Bezirk."}
+    "seo": {"title": "Geburtstagsblumen verschicken in Wien – Ablauf, Zeitfenster und Kosten", "description": "So lässt du Blumen zum Geburtstag in Wien liefern: Wunschdatum wählen, Zeitfenster bestimmen. Mit Lieferkosten nach Bezirk."}
   },
   {
     "slug": "rosen-liefern",
@@ -36,9 +36,9 @@
     "sections": [
       {"heading": "So kommen die Rosen an", "paragraphs": ["Dein Strauß wird für deine Bestellung von Hand gebunden – von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Ein Kurier holt ihn dort ab und fährt direkt zur Empfängeradresse, ohne Zwischenstopp."]},
       {"heading": "Größe, Tag und Zeitfenster", "paragraphs": ["Die meisten Rosensträuße gibt es in den Größen Klein, Mittel, Groß und XL. Das Lieferdatum wählst du im Kalender, dazu eines von drei Zeitfenstern: 9–12, 12–17 oder 17–22 Uhr. Geliefert wird derzeit von Montag bis Samstag."]},
-      {"heading": "Was die Lieferung kostet", "paragraphs": ["Wir liefern in alle 23 Wiener Bezirke. Je nach Bezirk ist die Lieferung gratis oder kostet 3,99 € bzw. 7,99 €. Den Betrag für deine Adresse siehst du nach Eingabe der Postleitzahl. Eine Grußkarte mit deinem Text ist dabei."]}
+      {"heading": "Was die Lieferung kostet", "paragraphs": ["Wir liefern in alle 23 Wiener Bezirke. Je nach Bezirk ist die Lieferung gratis oder kostet 3,99 € bzw. 7,99 €. Den Betrag für deine Adresse siehst du nach Eingabe der Postleitzahl."]}
     ],
     "faqIds": ["f-where", "f-window", "f-nobody", "f-anon"],
-    "seo": {"title": "Rosen liefern lassen in Wien – Ablauf, Zeitfenster und Kosten", "description": "Rosen in Wien liefern lassen: So laufen Bestellung und Kurierlieferung ab – mit Wunschdatum, drei Zeitfenstern, Lieferkosten nach Bezirk und Grußkarte."}
+    "seo": {"title": "Rosen liefern lassen in Wien – Ablauf, Zeitfenster und Kosten", "description": "Rosen in Wien liefern lassen: So laufen Bestellung und Kurierlieferung ab – mit Wunschdatum, drei Zeitfenstern und Lieferkosten nach Bezirk."}
   }
 ]

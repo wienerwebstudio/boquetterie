@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   LayoutDashboard, ShoppingBag, Flower2, Layers, Sparkles, Gift, Truck, Ticket, MessageCircleQuestionMark,
-  Star, MessageSquareText, Repeat, PanelsTopLeft, FileText, Globe, Images, Settings, Mail, BellRing, Menu, X, LogOut, ExternalLink,
+  Star, MessageSquareText, Repeat, PanelsTopLeft, FileText, Globe, Images, Settings, Mail, BellRing, Menu, X, LogOut, ExternalLink, Wallet,
 } from "lucide-react";
 import { cn } from "@/lib/format";
 
@@ -16,6 +16,7 @@ const NAV: { href: string; label: string; icon: typeof LayoutDashboard; group?: 
   { href: "/admin/kategorien", label: "Kategorien", icon: Layers },
   { href: "/admin/anlaesse", label: "Anlässe", icon: Sparkles },
   { href: "/admin/extras", label: "Extras", icon: Gift },
+  { href: "/admin/floristen-budget", label: "Floristen-Budget", icon: Wallet },
   { href: "/admin/liefergebiete", label: "Liefergebiete", icon: Truck, group: "Verkauf" },
   { href: "/admin/gutscheine", label: "Gutscheine", icon: Ticket },
   { href: "/admin/faq", label: "FAQ", icon: MessageCircleQuestionMark, group: "Inhalte" },

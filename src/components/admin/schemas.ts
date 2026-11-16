@@ -674,6 +674,7 @@ export const settingsSchema: SingletonSchema = {
         { key: "headerCta.enabled", label: "Button im Header anzeigen", type: "boolean", span: "third" },
         { key: "headerCta.label", label: "Header-Button – Text", type: "text", required: true, span: "third" },
         { key: "headerCta.href", label: "Header-Button – Link", type: "text", required: true, span: "third" },
+        { key: "greetingCard.enabled", label: "Grußkarten anbieten (aus = „Kommt bald!“)", type: "boolean", span: "third" },
         { key: "greetingCard.maxChars", label: "Grußkarte – max. Zeichen", type: "number", required: true, min: 20, span: "third" },
         { key: "greetingCard.freeCardIncluded", label: "Gratis-Karte inklusive", type: "boolean", span: "third" },
         { key: "timezone", label: "Zeitzone", type: "text", required: true, span: "third", hint: "z. B. Europe/Vienna" },

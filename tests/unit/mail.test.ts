@@ -5,9 +5,10 @@ vi.mock("server-only", () => ({}));
 const sendMail = vi.hoisted(() => vi.fn(async () => ({ messageId: "<test@smtp>" })));
 const createTransport = vi.hoisted(() => vi.fn(() => ({ sendMail })));
 vi.mock("nodemailer", () => ({ default: { createTransport } }));
-vi.mock("@/lib/cms", () => ({ getSettings: vi.fn(), getOccasions: vi.fn() }));
+vi.mock("@/lib/cms", () => ({ getSettings: vi.fn(), getOccasions: vi.fn(), getAllProducts: vi.fn(async () => []), getExtras: vi.fn(async () => []), readData: vi.fn(async () => null), writeData: vi.fn() }));
 
-import { floristOrder } from "@/lib/mail/templates";
+import { floristOrder, orderConfirmation } from "@/lib/mail/templates";
+import { formatPrice } from "@/lib/format";
 
 const order: Order = {
   id: "BQ-ABC123", token: "tok", createdAt: "2026-11-04T10:00:00.000Z", status: "paid", history: [],
@@ -24,26 +25,59 @@ const order: Order = {
 const brand = { name: "Blumora", siteUrl: "https://blumora.at", email: "office@blumora.at" };
 
 describe("florist order slip", () => {
-  it("lists what to bind, the card and the pickup time", () => {
-    const mail = floristOrder({ order, brand });
+  const budgeted: Order = {
+    ...order,
+    lines: [{ ...order.lines[0], image: "/images/products/sortiment/rosalie-1.jpg", floristBudget: 41.5, extras: [{ ...order.lines[0].extras[0], floristBudget: 12.5 }] }],
+  };
+
+  it("lists what to bind, the photo, the card and the pickup time", () => {
+    const mail = floristOrder({ order: budgeted, brand });
     expect(mail.subject).toContain("BQ-ABC123");
     expect(mail.subject).toContain("09:00");
-    for (const text of ["Rosalie – Mittel", "Teddy", "Alles Liebe zum Geburtstag!", "Absender: Paul", "bis 09:00 Uhr", "9–12 Uhr"]) {
+    for (const text of ["Rosalie, Größe Mittel", "Teddy", "Alles Liebe zum Geburtstag!", "Absender: Paul", "bis 09:00 Uhr", "9–12 Uhr"]) {
       expect(mail.text).toContain(text);
     }
+    expect(mail.html).toContain('src="https://blumora.at/_next/image?url=%2Fimages%2Fproducts%2Fsortiment%2Frosalie-1.jpg&amp;w=480&amp;q=75"');
   });
 
-  it("contains no prices and no contact data of customer or recipient", () => {
+  it("names the net purchase budget per item and in total", () => {
+    const mail = floristOrder({ order: budgeted, brand });
+    expect(mail.text).toContain(`Budget Einkauf: ${formatPrice(41.5)} netto`);
+    expect(mail.text).toContain(`Teddy – Budget ${formatPrice(12.5)} netto`);
+    expect(mail.text).toContain(`Budget gesamt: ${formatPrice(54)} netto`);
+    const two = floristOrder({ order: { ...budgeted, lines: [{ ...budgeted.lines[0], quantity: 2, extras: [] }] }, brand });
+    expect(two.text).toContain(`${formatPrice(83)} netto (2 × ${formatPrice(41.5)})`);
+  });
+
+  it("says when no budget is stored instead of inventing one", () => {
     const mail = floristOrder({ order, brand });
-    for (const secret of ["paul@example.at", "+43 660 1112223", "0664 1234567", "Mariahilfer", "Huber", "Maier", "65,90", "85,80", "€"]) {
+    expect(mail.text).toContain("Budget Einkauf: nicht hinterlegt");
+    expect(mail.text).not.toContain("Budget gesamt");
+  });
+
+  it("contains no customer prices and no contact data of customer or recipient", () => {
+    const mail = floristOrder({ order: budgeted, brand });
+    for (const secret of ["paul@example.at", "+43 660 1112223", "0664 1234567", "Mariahilfer", "Huber", "Maier", "65,90", "85,80", "19,90"]) {
       expect(mail.html).not.toContain(secret);
       expect(mail.text).not.toContain(secret);
     }
   });
 
-  it("marks anonymous cards", () => {
+  it("marks anonymous cards and leaves the card row out when there is none", () => {
     const anon = { ...order, lines: [{ ...order.lines[0], senderName: undefined, anonymous: true }] };
     expect(floristOrder({ order: anon, brand }).text).toContain("anonym");
+    const none = { ...order, lines: [{ ...order.lines[0], message: undefined, senderName: undefined }] };
+    expect(floristOrder({ order: none, brand }).text).not.toContain("Grußkarte");
+  });
+});
+
+describe("customer confirmation", () => {
+  it("shows the product photo and no greeting card when the order has none", () => {
+    const none = { ...order, lines: [{ ...order.lines[0], image: "/images/products/sortiment/rosalie-1.jpg", message: undefined, senderName: undefined }] };
+    const mail = orderConfirmation({ order: none, brand, trackingUrl: "https://blumora.at/bestellung/BQ-ABC123?token=t" });
+    expect(mail.html).toContain("_next/image?url=%2Fimages%2Fproducts%2Fsortiment%2Frosalie-1.jpg&amp;w=160");
+    expect(mail.text).not.toContain("Grußkarte");
+    expect(mail.html).not.toContain("Grußkarte");
   });
 });
 

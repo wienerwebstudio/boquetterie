@@ -197,16 +197,14 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
           </dl>
         </section>
 
-        {/* Greeting */}
-        <section aria-labelledby="card-title" className="rounded-lg border border-line bg-white/60 p-6 sm:p-8">
-          <h2 id="card-title" className="mb-6 font-serif text-2xl text-ink">Grußkarte</h2>
-          {greeting?.message || greeting?.senderName ? (
+        {/* Greeting – only for orders that carry a card */}
+        {(greeting?.message || greeting?.senderName) && (
+          <section aria-labelledby="card-title" className="rounded-lg border border-line bg-white/60 p-6 sm:p-8">
+            <h2 id="card-title" className="mb-6 font-serif text-2xl text-ink">Grußkarte</h2>
             <GreetingCardPreview message={greeting.message ?? ""} senderName={greeting.senderName} anonymous={greeting.anonymous} compact />
-          ) : (
-            <p className="text-[14px] text-ink-muted">Ohne Grußkarte.</p>
-          )}
-          <p className="mt-6 text-[13px] leading-relaxed text-ink-muted">Der Empfänger sieht keinen Preis und keine Rechnung – nur deine Worte.</p>
-        </section>
+            <p className="mt-6 text-[13px] leading-relaxed text-ink-muted">Der Empfänger sieht keinen Preis und keine Rechnung – nur deine Worte.</p>
+          </section>
+        )}
       </div>
 
       {/* Contact hint */}

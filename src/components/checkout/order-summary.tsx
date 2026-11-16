@@ -14,12 +14,13 @@ export interface SummaryProps {
   deliveryDate?: string;
   windowLabel?: string;
   greeting: { message: string; anonymous: boolean; senderName: string };
+  cardsEnabled?: boolean;
   couponCode: string | null;
   couponError?: string;
 }
 
-function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting, couponCode, couponError }: SummaryProps) {
-  const cardText = greeting.message.trim();
+function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting, cardsEnabled = false, couponCode, couponError }: SummaryProps) {
+  const cardText = cardsEnabled ? greeting.message.trim() : "";
   return (
     <div className="flex flex-col gap-5">
       <ul className="flex flex-col divide-y divide-line">
@@ -56,7 +57,7 @@ function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting,
         <div className="flex justify-between gap-4">
           <dt className="text-ink-muted">Grußkarte</dt>
           <dd className="max-w-[60%] text-right text-ink">
-            {cardText ? <span className="line-clamp-2 font-serif italic">„{cardText}“</span> : <span className="text-ink-soft">Noch keine Nachricht</span>}
+            {!cardsEnabled ? <span className="text-ink-soft">Kommt bald</span> : cardText ? <span className="line-clamp-2 font-serif italic">„{cardText}“</span> : <span className="text-ink-soft">Noch keine Nachricht</span>}
             {cardText && <span className="block text-[12px] text-ink-muted">{greeting.anonymous ? "Ohne Absender" : greeting.senderName.trim() ? `— ${greeting.senderName.trim()}` : ""}</span>}
           </dd>
         </div>

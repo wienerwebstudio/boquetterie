@@ -39,8 +39,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, message: parsed.message, errors: parsed.errors ?? {} }, { status: parsed.status });
   }
 
+  // Greeting cards not on offer: drop any card text (e.g. from a cart saved before they were switched off).
+  const payload = settings.greetingCard.enabled === true
+    ? parsed.payload
+    : { ...parsed.payload, items: parsed.payload.items.map((i) => ({ ...i, message: undefined, anonymous: undefined, senderName: undefined })) };
+
   try {
-    const result = await createOrderFromPayload(parsed.payload, { siteUrl: resolveSiteUrl(req, settings) });
+    const result = await createOrderFromPayload(payload, { siteUrl: resolveSiteUrl(req, settings) });
     if (!result.ok) {
       return NextResponse.json({ ok: false, message: result.message, errors: result.errors ?? {} }, { status: result.status });
     }

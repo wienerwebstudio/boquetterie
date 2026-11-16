@@ -277,3 +277,24 @@ export async function sendTestMailsAction(): Promise<{ ok: boolean; message: str
   if (failed.length) return { ok: false, message: `Nicht gesendet: ${failed.map((f) => `${f.mail} (${f.result.error ?? "Fehler"})`).join("; ")}` };
   return { ok: true, message: `3 Beispiel-Mails an ${to} gesendet (über ${provider === "smtp" ? "SMTP" : "Resend"}).` };
 }
+
+/* ---------------- florist budgets ---------------- */
+
+export async function saveFloristBudgetsAction(input: unknown): Promise<{ ok: boolean; message: string }> {
+  await requireAdmin();
+  const [{ getAllProducts, getExtras, canPersistData }, { parseFloristBudgets, saveFloristBudgets }] = await Promise.all([
+    import("@/lib/cms"),
+    import("@/lib/florist-budget"),
+  ]);
+  if (!(await canPersistData())) return { ok: false, message: "Kein Speicher verfügbar – ohne Datenbank kann das Budget nicht gespeichert werden." };
+  const [products, extras] = await Promise.all([getAllProducts(true), getExtras()]);
+  const parsed = parseFloristBudgets(input, products, extras);
+  if (!parsed.ok) return { ok: false, message: parsed.message };
+  await saveFloristBudgets(parsed.budgets);
+  revalidatePath("/admin/floristen-budget");
+  const count = Object.values(parsed.budgets.products).reduce((n, sizes) => n + Object.keys(sizes).length, 0) + Object.keys(parsed.budgets.extras).length;
+  return {
+    ok: true,
+    message: `${count} Budgets gespeichert.${parsed.skipped.length ? ` Übersprungen (unbekannt oder ungültig): ${parsed.skipped.join(", ")}.` : ""}`,
+  };
+}

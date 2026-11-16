@@ -28,7 +28,7 @@ export async function SiteShell({ settings, children }: { settings: SiteSettings
       <FooterSlot brandName={settings.brand.name}>
         <Footer settings={settings} />
       </FooterSlot>
-      <CartDrawer />
+      <CartDrawer cardsEnabled={settings.greetingCard?.enabled === true} />
       <SearchOverlay />
       <ToastViewport />
       <ConsentBanner />

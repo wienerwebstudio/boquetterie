@@ -38,6 +38,8 @@ const StripePaymentForm = dynamic(() => import("./stripe-payment").then((m) => m
 import { usePaymentMethods } from "./use-payment-methods";
 
 export interface CheckoutConfig {
+  /** Greeting cards on offer; off = step 3 only says they are coming soon. */
+  cardsEnabled: boolean;
   greetingMaxChars: number;
   freeCardIncluded: boolean;
   newsletterEnabled: boolean;
@@ -177,6 +179,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
 
   const validate = useCallback((s: StepId, d: CheckoutData): FieldErrors => {
     const day = days.find((x) => x.date === d.delivery.date);
+    if (s === 3 && !config.cardsEnabled) return {};
     const e = validateStep(s, d, {
       zoneAvailable: result ? result.available : null,
       greetingMaxChars: config.greetingMaxChars,
@@ -189,7 +192,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
       if (!checking) runCheck(d.recipient.zip);
     }
     return e;
-  }, [days, result, checking, runCheck, config.greetingMaxChars]);
+  }, [days, result, checking, runCheck, config.greetingMaxChars, config.cardsEnabled]);
 
   const onBlur = (field: string) => {
     const all = validate(step, data);
@@ -236,7 +239,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     try {
       const res = await fetch("/api/orders", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(buildPayload(data, items, couponCode)),
+        body: JSON.stringify(buildPayload(config.cardsEnabled ? data : { ...data, greeting: EMPTY_CHECKOUT.greeting }, items, couponCode)),
       });
       const body = (await res.json()) as Partial<OrderCreateResponse> & { message?: string; errors?: FieldErrors };
       if (!res.ok || !body.ok || !body.id || !body.token) {
@@ -291,7 +294,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
   };
 
   const stepMeta = STEPS.find((s) => s.id === step)!;
-  const summaryProps = { items, totals, zone, deliveryDate: data.delivery.date || undefined, windowLabel, greeting: data.greeting, couponCode, couponError };
+  const summaryProps = { items, totals, zone, deliveryDate: data.delivery.date || undefined, windowLabel, greeting: data.greeting, cardsEnabled: config.cardsEnabled, couponCode, couponError };
   const zoneStatus = { loading: checking, available: result ? result.available : null, zoneName: result?.zone?.name, error: checkError };
 
   return (
@@ -302,7 +305,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
 
         <section aria-labelledby="checkout-step-title" className="rounded-lg border border-line bg-white/60 p-5 sm:p-8">
           <p className="eyebrow mb-2">Schritt {step} · {stepMeta.label}</p>
-          <h1 id="checkout-step-title" ref={headingRef} tabIndex={-1} className="display-3 mb-6 text-ink outline-none">{stepMeta.title}</h1>
+          <h1 id="checkout-step-title" ref={headingRef} tabIndex={-1} className="display-3 mb-6 text-ink outline-none">{step === 3 && !config.cardsEnabled ? "Grußkarten kommen bald" : stepMeta.title}</h1>
 
           {submitError && (
             <p role="alert" className="mb-6 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">{submitError}</p>
@@ -322,7 +325,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
           <form noValidate onSubmit={(e) => { e.preventDefault(); if (step === 5) submit(); else goNext(); }}>
             {step === 1 && <StepRecipient data={data.recipient} set={setScope("recipient")} errors={errors} onBlur={onBlur} zone={zoneStatus} />}
             {step === 2 && <StepDelivery data={data.delivery} set={setScope("delivery")} errors={errors} onBlur={onBlur} days={days} now={result?.now} zone={zone} loading={checking} />}
-            {step === 3 && <StepGreeting data={data.greeting} set={setScope("greeting")} errors={errors} onBlur={onBlur} maxChars={config.greetingMaxChars} freeCardIncluded={config.freeCardIncluded} />}
+            {step === 3 && <StepGreeting data={data.greeting} set={setScope("greeting")} errors={errors} onBlur={onBlur} maxChars={config.greetingMaxChars} freeCardIncluded={config.freeCardIncluded} enabled={config.cardsEnabled} />}
             {step === 4 && <StepCustomer data={data.customer} set={setScope("customer")} errors={errors} onBlur={onBlur} newsletterEnabled={config.newsletterEnabled} />}
             {step === 5 && <StepPayment data={paymentData} set={setScope("payment")} errors={errors} methods={methods} loading={methodsLoading} loadError={methodsError} />}
 

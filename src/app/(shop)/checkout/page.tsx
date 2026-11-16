@@ -28,6 +28,7 @@ export default async function CheckoutPage({ searchParams }: Props) {
   return (
     <Checkout
       config={{
+        cardsEnabled: settings.greetingCard.enabled === true,
         greetingMaxChars: settings.greetingCard.maxChars,
         freeCardIncluded: settings.greetingCard.freeCardIncluded,
         newsletterEnabled: settings.newsletterEnabled,

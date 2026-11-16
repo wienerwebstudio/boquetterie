@@ -30,7 +30,7 @@ const REQUESTS: { icon: Icon; title: string; text: string }[] = [
   {
     icon: Gift,
     title: "Geschenke für Kund:innen und Mitarbeiter:innen",
-    text: "Sträuße zu Jubiläen, Geburtstagen oder als Danke – für eine Person oder für mehrere Adressen in Wien. Zu jedem Strauß gehört eine Grußkarte mit deinem Text.",
+    text: "Sträuße zu Jubiläen, Geburtstagen oder als Danke – für eine Person oder für mehrere Adressen in Wien.",
   },
   {
     icon: CalendarDays,

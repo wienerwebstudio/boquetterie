@@ -15,7 +15,7 @@ Transaktionale E-Mails (Bestellbestätigung, Statusupdates, Bewertungsanfrage, A
 | `MAIL_REPLY_TO` | nein | Reply-To-Adresse, z. B. das Team-Postfach. Antworten von Kund:innen landen dort. |
 | `MAIL_ADMIN` | nein | Interne Adresse, die bei jeder neuen Bestellung eine kompakte Zusammenfassung mit Link in den Admin bekommt. Leer = keine internen Mails. |
 | `MAIL_REDIRECT_TO` | nein | **Test-Schalter:** Ist eine Adresse gesetzt, gehen *alle* Mails (Kund:innen, intern, Floristik) nur an diese Adresse; der Betreff nennt die eigentlichen Empfänger (`[TEST an …]`). Für den Livebetrieb löschen. |
-| `MAIL_FLORIST` | nein | Adresse(n) der Partnerfloristik, mit Komma getrennt. Bekommen pro bezahlter Bestellung einen **Auftragszettel**: Strauß, Größe, Extras, Kartentext, Abholzeit – ohne Preise und ohne Kontaktdaten von Kund:in oder Empfänger:in. |
+| `MAIL_FLORIST` | nein | Adresse(n) der Partnerfloristik, mit Komma getrennt. Bekommen pro bezahlter Bestellung einen **Auftragszettel**: Foto, Strauß, Größe, Extras, Einkaufsbudget (netto, aus Admin → Floristen-Budget), Kartentext (falls Grußkarten aktiv), Abholzeit – ohne Verkaufspreise und ohne Kontaktdaten von Kund:in oder Empfänger:in. |
 | `CRON_SECRET` | für Cron | Geheimnis, das die Cron-Endpunkte unter `/api/cron/*` schützt. Anfragen müssen `Authorization: Bearer <CRON_SECRET>` senden. Erzeugen z. B. mit `openssl rand -hex 32`. Ohne Wert antworten die Endpunkte mit 503. |
 
 Die öffentliche URL (für Links in Mails) kommt **nicht** aus einer Env-Variable, sondern aus `content/settings.json` → `seo.siteUrl` (im Admin unter Einstellungen → SEO). Markenname, Claim und Kontakt-Mail stammen ebenfalls aus den Einstellungen; Platzhalter-Werte (`[…]`) werden nie in Mails ausgegeben.
@@ -89,7 +89,7 @@ Alle Mails teilen sich ein schlichtes Layout: Elfenbein-Hintergrund (`#faf7f2`),
 | Mail | Auslöser | Empfänger | Inhalt |
 | --- | --- | --- | --- |
 | **Bestellbestätigung** | Bestellung angelegt (`sendOrderConfirmation`) | Kund:in | Bestellnummer, Liefertermin + Zeitfenster, Empfängeradresse, Positionen mit Größe und Extras, Summen (Blumen, Extras, Lieferung, Gutschein, Gesamt), Grußkarten-Vorschau, Button zur Statusseite (`/bestellung/{id}?token=…`). |
-| **Auftragszettel (Floristik)** | gleichzeitig mit der Bestätigung | `MAIL_FLORIST` | Was zu binden ist und bis wann (Beginn des Lieferfensters = Abholung durch den Kurier). Keine Preise, keine Kundendaten. |
+| **Auftragszettel (Floristik)** | gleichzeitig mit der Bestätigung | `MAIL_FLORIST` | Was zu binden ist (mit Produktfoto), mit welchem Einkaufsbudget (netto) und bis wann (Beginn des Lieferfensters = Abholung durch den Kurier). Keine Verkaufspreise, keine Kundendaten. Fehlt ein Budget, steht „nicht hinterlegt“. |
 | **Neue Bestellung (intern)** | gleichzeitig mit der Bestätigung | `MAIL_ADMIN` | Kompakte Zusammenfassung (Lieferung, Empfänger:in mit Telefon, Kund:in, Positionen, Grußkarte, Zahlung, Gesamt) und Button zu `/admin/bestellungen/{id}`. Betreff enthält Nummer, Betrag und Liefertag. |
 | **Statusupdate** | Statuswechsel im Admin auf einen Status mit `customerVisible: true` (`sendOrderStatusUpdate`) | Kund:in | Headline und Text pro Status (Zahlung bestätigt, In Vorbereitung, Strauß wird gebunden, Bereit, Unterwegs, Zugestellt). *Nicht zustellbar* und *Storniert* bekommen einen hervorgehobenen Hinweis, die Notiz zum Statuswechsel (bei „Nicht zustellbar“) und die Kontaktadresse. Immer mit Link zur Statusseite. Interne Notizen lösen nie eine Mail aus; ein „Wechsel“ auf denselben Status auch nicht. |
 | **Bewertungsanfrage** | Cron `review-requests`, 2–30 Tage nach Zustellung, einmalig | Kund:in | Kurze Bitte um Bewertung mit Button zu `/bewertung?order={id}&token={tracking-token}`. Die Bewertung landet als „pending“ in `data/review-submissions.json` und wird im Admin unter *Eingereichte Bewertungen* geprüft – nichts wird automatisch veröffentlicht. |
@@ -113,3 +113,11 @@ Alle drei Dateien werden über `readData`/`writeData` aus `src/lib/cms.ts` geles
 - Bestätigungs- und Lösch-Links tragen ein zufälliges Token (32 Hex-Zeichen); Bewertungslinks verwenden das Tracking-Token der Bestellung. Der Vergleich ist zeitkonstant.
 - Der Rate-Limiter ist In-Memory (pro Prozess). Bei mehreren Instanzen/Serverless siehe Hinweis in `src/lib/rate-limit.ts`.
 - Mails werden nach dem Speichern verschickt; ein Fehler beim Versand bricht weder Bestellung noch Statuswechsel ab (Log: `[mail] …`). Der Admin sieht in der Erfolgsmeldung, ob die Kund:in informiert wurde.
+
+## Produktfotos in Mails
+
+Bestellbestätigung und Auftragszettel zeigen das Foto des Straußes. Die Bilder kommen über den Bild-Dienst der Seite (`/_next/image?url=…&w=160|480`), also verkleinert und als JPEG für Mailprogramme ohne WebP. Voraussetzung: `NEXT_PUBLIC_SITE_URL` zeigt auf die öffentlich erreichbare Domain.
+
+## Floristen-Budget
+
+Das Einkaufsbudget je Größe und Extra liegt im Laufzeit-Dokument `florist-budgets` (Datenbank), nicht im Repository. Pflege und Import (JSON: `{ "products": { "<productId>": { "<sizeId>": 44.8 } }, "extras": { "<extraId>": 16 } }`) unter **Admin → Floristen-Budget**. Beim Bestellen wird der aktuelle Wert in die Bestellposition kopiert; Kundenansichten (`publicOrderView`) entfernen ihn.

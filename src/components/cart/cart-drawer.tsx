@@ -28,13 +28,13 @@ export function CartTrustRow({ className }: { className?: string }) {
   );
 }
 
-export function CartEmpty({ onClose }: { onClose?: () => void }) {
+export function CartEmpty({ onClose, cardsEnabled = false }: { onClose?: () => void; cardsEnabled?: boolean }) {
   return (
     <div className="flex h-full flex-col items-center justify-center px-6 py-16 text-center">
       <p className="eyebrow">Dein Warenkorb</p>
       <p className="mt-3 font-serif text-3xl text-ink">Noch ganz leer.</p>
       <p className="mt-3 max-w-xs text-[14px] leading-relaxed text-ink-muted">
-        Frisch gebundene Sträuße, Wunschdatum und eine persönliche Karte – alles wartet nur auf dich.
+        {cardsEnabled ? "Frisch gebundene Sträuße, Wunschdatum und eine persönliche Karte – alles wartet nur auf dich." : "Frisch gebundene Sträuße und dein Wunschdatum – alles wartet nur auf dich."}
       </p>
       <Link href={routes.shop} onClick={onClose} className="mt-8 inline-flex h-13 items-center justify-center gap-2 rounded-md bg-forest px-7 text-[15px] font-semibold tracking-wide text-ivory transition-colors hover:bg-forest-700">
         Blumen entdecken <ArrowRight className="size-4" aria-hidden />
@@ -62,7 +62,7 @@ function DrawerFooter({ onClose }: { onClose: () => void }) {
   );
 }
 
-export function CartDrawer() {
+export function CartDrawer({ cardsEnabled = false }: { cardsEnabled?: boolean }) {
   const cartOpen = useUi((s) => s.cartOpen);
   const closeCart = useUi((s) => s.closeCart);
   const hydrated = useCart((s) => s.hydrated);
@@ -80,7 +80,7 @@ export function CartDrawer() {
     >
       <p className="sr-only" aria-live="polite">Warenkorb: {pluralize(count, "Artikel", "Artikel")}</p>
       {items.length === 0 ? (
-        <CartEmpty onClose={closeCart} />
+        <CartEmpty onClose={closeCart} cardsEnabled={cardsEnabled} />
       ) : (
         <div className="space-y-7 px-5 py-5 sm:px-6">
           <ul className="divide-y divide-line">
@@ -88,7 +88,7 @@ export function CartDrawer() {
               <li key={item.id} className="py-5 first:pt-0"><CartLine item={item} /></li>
             ))}
           </ul>
-          <CartSurprise items={items} />
+          <CartSurprise items={items} cardsEnabled={cardsEnabled} />
           <CartUpsell items={items} />
           <div className="border-t border-line pt-5">
             <CartSummary showTotal={false} />

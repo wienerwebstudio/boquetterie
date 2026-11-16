@@ -4,7 +4,7 @@
     "title": "Blumen für besondere Momente.",
     "intro": "Blumora ist ein Online-Blumenversand aus Wien. Jeder Strauß wird in einer Wiener Floristik von Hand gebunden und per Kurier direkt zugestellt.",
     "sections": [
-      {"heading": "Wie wir arbeiten", "paragraphs": ["Blumora ist ein Wiener Online-Blumenversand. Du wählst deinen Strauß bei uns aus – gebunden wird er von einer Floristik in Wien, mit der wir fest zusammenarbeiten. Dort entsteht jeder Strauß von Hand und für deine Bestellung.", "Zu jedem Strauß gehört auf Wunsch eine Grußkarte mit deinem Text."], "image": {"src": "/images/products/sortiment/herbstzauber-1.jpg", "alt": "Strauß Herbstzauber in einer Glasvase"}},
+      {"heading": "Wie wir arbeiten", "paragraphs": ["Blumora ist ein Wiener Online-Blumenversand. Du wählst deinen Strauß bei uns aus – gebunden wird er von einer Floristik in Wien, mit der wir fest zusammenarbeiten. Dort entsteht jeder Strauß von Hand und für deine Bestellung.", "Grußkarten mit deinem Text kommen bald."], "image": {"src": "/images/products/sortiment/herbstzauber-1.jpg", "alt": "Strauß Herbstzauber in einer Glasvase"}},
       {"heading": "Die Lieferung", "paragraphs": ["Ein Kurier holt deinen Strauß direkt in der Floristik ab und bringt ihn ohne Zwischenstopp zur Empfängeradresse. Wir liefern in alle 23 Wiener Bezirke – im Zeitfenster deiner Wahl: vormittags, nachmittags oder abends bis 22 Uhr."], "image": {"src": "/images/products/sortiment/pure-liebe-3.jpg", "alt": "Strauß Pure Liebe in einer Glasvase"}}
     ],
     "seo": {"title": "Über uns – Blumenversand aus Wien", "description": "Blumora ist ein Online-Blumenversand aus Wien: Sträuße von Hand gebunden und per Kurier in alle 23 Bezirke geliefert."}

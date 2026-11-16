@@ -9,6 +9,7 @@ import { findZone, getAvailableDays, getLocalNow, normalizePostalCode } from "@/
 import { computeTotals, validateCoupon } from "@/lib/pricing";
 import { createPayment, providerForMethod, type PaymentEvent } from "@/lib/payments";
 import { sendOrderConfirmation } from "@/lib/mail";
+import { attachFloristBudgets, EMPTY_BUDGETS, getFloristBudgets } from "@/lib/florist-budget";
 import {
   cleanString, isIsoDate, LIMITS, validateCustomerFields, validateDeliveryFields, validateGreetingFields, validateRecipientFields,
   type FieldErrors, type OrderPayload, type OrderPayloadItem,
@@ -38,11 +39,20 @@ export function isNegativeStatus(status: OrderStatus) {
 
 export type PublicOrder = Omit<Order, "internalNote" | "token">;
 
-/** Strips fields that must never leave the server (the token is only ever sent once, on creation). */
+/**
+ * Strips fields that must never leave the server: the token (only ever sent once,
+ * on creation), the internal note and the florist's purchase budgets.
+ */
 export function publicOrderView(order: Order): PublicOrder {
   const { internalNote: _internalNote, token: _token, ...rest } = order;
   void _internalNote; void _token;
-  return rest;
+  return {
+    ...rest,
+    lines: rest.lines.map(({ floristBudget: _budget, ...line }) => {
+      void _budget;
+      return { ...line, extras: line.extras.map(({ floristBudget: _b, ...e }) => { void _b; return e; }) };
+    }),
+  };
 }
 
 /* ---------------- Payload parsing ---------------- */
@@ -354,7 +364,10 @@ export async function createOrderFromPayload(payload: OrderPayload, opts: { site
   }
 
   // Reserve stock before anything is persisted – the check inside the lock is authoritative.
-  const orderLines = lines.map((l) => l.line);
+  const orderLines = attachFloristBudgets(lines.map((l) => l.line), await getFloristBudgets().catch((err: unknown) => {
+    console.error("[orders] florist budgets unavailable – order slip goes out without budget", err);
+    return EMPTY_BUDGETS;
+  }));
   const reserved = await reserveStock(orderLines);
   if (!reserved.ok) return { ok: false, status: 409, message: reserved.message, errors: { items: reserved.message } };
 

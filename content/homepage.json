@@ -18,7 +18,7 @@
     "headline": "Freude schenken war noch nie so einfach.",
     "steps": [
       {"title": "Lieblingsstrauß wählen", "text": "Entdecke Blumen für jeden Geschmack und Anlass.", "icon": "flower"},
-      {"title": "Persönlich machen", "text": "Wähle Größe, Grußkarte und kleine Extras.", "icon": "pen"},
+      {"title": "Persönlich machen", "text": "Wähle Größe und kleine Extras.", "icon": "pen"},
       {"title": "Lieferdatum auswählen", "text": "Bestimme, wann deine Überraschung ankommen soll.", "icon": "calendar"},
       {"title": "Freude liefern lassen", "text": "Wir kümmern uns um den Rest.", "icon": "truck"}
     ]

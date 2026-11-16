@@ -1,5 +1,6 @@
 import "server-only";
-import { getStore, jsonStore } from "@/lib/store";
+import { getStore, jsonStore, type DocumentStore } from "@/lib/store";
+import { runContentMigrations } from "@/lib/content-migrations";
 import type {
   Category, CmsPage, Coupon, DeliveryZone, Extra, FAQ, HomepageContent, LandingPage,
   Occasion, Product, Review, SiteSettings, SubscriptionConfig, Order,
@@ -23,8 +24,21 @@ type Collection =
  * in the database (fresh deployment) is served from `/content/<name>.json` and
  * seeded into the database on first read, so no manual import is required.
  */
+const g = globalThis as unknown as { __blumoraContentMigrations?: Promise<void> };
+
+/** Runs pending content migrations once per process before the first content read (see content-migrations.ts). */
+function contentMigrations(store: DocumentStore) {
+  if (store.name === "json") return Promise.resolve();
+  g.__blumoraContentMigrations ??= runContentMigrations(store).catch((err: unknown) => {
+    console.warn("[blumora] content migrations failed – retrying on the next request:", err);
+    g.__blumoraContentMigrations = undefined;
+  });
+  return g.__blumoraContentMigrations;
+}
+
 async function readContent<T>(name: string): Promise<T> {
   const store = getStore();
+  await contentMigrations(store);
   const value = await store.get<T>("content", name);
   if (value !== null) return value;
 
