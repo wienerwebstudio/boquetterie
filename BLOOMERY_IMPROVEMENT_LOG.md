@@ -195,6 +195,10 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - Checkout-Übersicht zeigt nur lieferbare Daten (halb eingetippte Daten wie „0026-11-16“ erschienen dort als „Di., 16. Nov.“).
 - Admin: Test-Mails einzeln wählbar (Alle, Partner, Kundenbestellung, Bestelleingang).
 
+### Go-Live (2026-11-16)
+- Erste echte Bestellung 18:05 Uhr: angelegt (201), per Stripe bezahlt, Bestätigung und Webhook je 200 (Netlify-Logs). Eine frühere Bestellung um 17:30 Uhr wurde nicht bezahlt.
+- Dody bekam keine Mail, weil `MAIL_REDIRECT_TO` noch alle Mails an die Testadresse umleitete. Variable auf Wunsch der Inhaber gelöscht; ab dem nächsten Deploy gehen Auftrag, Kundenbestätigung und interne Mail an die echten Empfänger.
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
