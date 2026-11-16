@@ -11,7 +11,8 @@ const cms = vi.hoisted(() => ({
   writeData: vi.fn(),
   getSettings: vi.fn(),
   getSubscription: vi.fn(),
-  addNewsletterSubscriber: vi.fn(),
+  getNewsletterSubscribers: vi.fn(),
+  saveNewsletterSubscribers: vi.fn(),
   canPersistData: vi.fn(),
 }));
 const mail = vi.hoisted(() => ({ sendMail: vi.fn(), adminMailAddress: vi.fn(), mailBrand: vi.fn(() => ({ name: "Blumora", siteUrl: "https://blumora.at" })) }));
@@ -35,6 +36,8 @@ import { POST as lookup } from "@/app/api/orders/lookup/route";
 import { POST as subscriptionRequest } from "@/app/api/subscription-request/route";
 import { POST as newsletter } from "@/app/api/newsletter/route";
 import { POST as withdraw } from "@/app/api/withdrawals/route";
+import { POST as confirmNl } from "@/app/api/newsletter/confirm/route";
+import { POST as unsubscribeNl } from "@/app/api/newsletter/unsubscribe/route";
 import { ADMIN_COOKIE, verifySessionToken } from "@/lib/admin-auth";
 import { rateLimitInternals } from "@/lib/rate-limit";
 import { redirectLocal } from "@/lib/http";
@@ -52,7 +55,8 @@ beforeEach(() => {
   cms.getSettings.mockResolvedValue({ subscriptionEnabled: true });
   cms.getSubscription.mockResolvedValue({ enabled: true, plans: [{ id: "m", name: "Medium" }], frequencies: [{ id: "weekly", label: "Wöchentlich" }] });
   cms.canPersistData.mockResolvedValue(true);
-  cms.addNewsletterSubscriber.mockResolvedValue(undefined);
+  cms.getNewsletterSubscribers.mockResolvedValue([]);
+  cms.saveNewsletterSubscribers.mockResolvedValue(undefined);
   mail.adminMailAddress.mockReturnValue("team@example.com");
   mail.sendMail.mockResolvedValue({ sent: true, provider: "console" });
   vi.stubEnv("ADMIN_PASSWORD", "ci-admin-password");
@@ -273,32 +277,68 @@ describe("POST /api/subscription-request", () => {
   });
 });
 
-describe("POST /api/newsletter", () => {
+describe("POST /api/newsletter (double opt-in)", () => {
   beforeEach(() => cms.getSettings.mockResolvedValue({ newsletterEnabled: true }));
 
-  it("stores a valid, normalised address", async () => {
+  it("stores a normalised address as pending and mails the confirmation link", async () => {
     const res = await newsletter(json("/api/newsletter", { email: "  Anna@Example.com ", website: "" }));
     expect(await res.json()).toEqual({ ok: true });
-    expect(cms.addNewsletterSubscriber).toHaveBeenCalledWith("anna@example.com");
+    const [list] = cms.saveNewsletterSubscribers.mock.calls[0];
+    expect(list).toEqual([expect.objectContaining({ email: "anna@example.com", status: "pending", source: "website" })]);
+    const sent = mail.sendMail.mock.calls[0][0] as { to: string; html: string };
+    expect(sent.to).toBe("anna@example.com");
+    expect(sent.html).toContain(`/newsletter/bestaetigen?id=${list[0].id}&amp;token=${list[0].token}`);
   });
 
-  it("answers 503 instead of losing the address when nothing can be stored", async () => {
+  it("answers the same for an address that is already confirmed – without a mail", async () => {
+    cms.getNewsletterSubscribers.mockResolvedValue([{ id: "NL-1", email: "anna@example.com", createdAt: "2026-11-01T00:00:00Z", status: "confirmed", token: "t" }]);
+    expect(await (await newsletter(json("/api/newsletter", { email: "anna@example.com" }))).json()).toEqual({ ok: true });
+    expect(mail.sendMail).not.toHaveBeenCalled();
+    expect(cms.saveNewsletterSubscribers).not.toHaveBeenCalled();
+  });
+
+  it("answers 503 when the address cannot be stored or the confirmation mail cannot be sent", async () => {
     vi.spyOn(console, "error").mockImplementation(() => undefined);
-    cms.canPersistData.mockResolvedValueOnce(false);
+    cms.saveNewsletterSubscribers.mockRejectedValueOnce(new Error("read-only file system"));
     const res = await newsletter(json("/api/newsletter", { email: "anna@example.com" }));
     expect(res.status).toBe(503);
     expect((await res.json()).code).toBe("unavailable");
-    expect(cms.addNewsletterSubscriber).not.toHaveBeenCalled();
-
-    cms.addNewsletterSubscriber.mockRejectedValueOnce(new Error("read-only file system"));
-    expect((await newsletter(json("/api/newsletter", { email: "anna@example.com" }))).status).toBe(503);
+    mail.sendMail.mockResolvedValueOnce({ sent: false, provider: "smtp" });
+    expect((await newsletter(json("/api/newsletter", { email: "berta@example.com" }))).status).toBe(503);
   });
 
   it("is off when disabled in the settings and ignores honeypot submissions", async () => {
     cms.getSettings.mockResolvedValueOnce({ newsletterEnabled: false });
     expect((await newsletter(json("/api/newsletter", { email: "anna@example.com" }))).status).toBe(404);
     expect(await (await newsletter(json("/api/newsletter", { email: "anna@example.com", website: "x" }))).json()).toEqual({ ok: true });
-    expect(cms.addNewsletterSubscriber).not.toHaveBeenCalled();
+    expect(cms.saveNewsletterSubscribers).not.toHaveBeenCalled();
+  });
+});
+
+describe("newsletter confirmation and unsubscribe", () => {
+  const pending = { id: "NL-ABC", email: "anna@example.com", createdAt: "2026-11-16T10:00:00Z", status: "pending", token: "a".repeat(36) };
+  const form = (path: string, fields: Record<string, string>) => {
+    const fd = new FormData();
+    for (const [k, v] of Object.entries(fields)) fd.set(k, v);
+    return new Request(`${ORIGIN}${path}`, { method: "POST", body: fd, headers: { "x-forwarded-for": "203.0.113.7" } });
+  };
+
+  it("confirms only with the right token and stays on the site", async () => {
+    cms.getNewsletterSubscribers.mockResolvedValue([pending]);
+    const wrong = await confirmNl(form("/api/newsletter/confirm", { id: "NL-ABC", token: "b".repeat(36) }));
+    expect(wrong.headers.get("location")).toBe("/newsletter/bestaetigen?status=invalid");
+    expect(cms.saveNewsletterSubscribers).not.toHaveBeenCalled();
+    const ok = await confirmNl(form("/api/newsletter/confirm", { id: "NL-ABC", token: pending.token }));
+    expect(ok.status).toBe(303);
+    expect(ok.headers.get("location")).toBe("/newsletter/bestaetigen?status=confirmed");
+    expect(cms.saveNewsletterSubscribers.mock.calls[0][0][0]).toMatchObject({ status: "confirmed", confirmedAt: expect.any(String) });
+  });
+
+  it("removes the address on unsubscribe", async () => {
+    cms.getNewsletterSubscribers.mockResolvedValue([pending, { email: "other@example.com", createdAt: "x" }]);
+    const res = await unsubscribeNl(form("/api/newsletter/unsubscribe", { id: "NL-ABC", token: pending.token }));
+    expect(res.headers.get("location")).toBe("/newsletter/abmelden?status=removed");
+    expect(cms.saveNewsletterSubscribers.mock.calls[0][0]).toEqual([{ email: "other@example.com", createdAt: "x" }]);
   });
 });
 

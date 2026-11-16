@@ -185,6 +185,11 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - **Budget-Korrektur (Inhaber):** Der Floristik wird der Listenpreis „Einkauf Dody (Liste)“ als **Max. Budget** genannt (z. B. Red Rose Bouquet S 38,00 €); den 20 %-Nachlass rechnet Dody separat ab, er erscheint nirgends in der Mail. Startwerte neu verschlüsselt (gleicher Schlüssel).
 - **Mail:** Größe als S/M/L/XL, „Max. Budget“ ohne „netto“, kurzer Hinweis „Bitte so binden wie auf dem Foto“, Extras mit Foto unter „Dazu“.
 
+### Zyklus 12 – Test-Mail-Empfänger, Newsletter-Double-Opt-in (2026-11-16)
+- **Admin:** Empfänger der „[Beispiel]“-Mails frei wählbar (nur diese Mails umgehen MAIL_REDIRECT_TO).
+- **Newsletter:** Double-Opt-in mit Bestätigungsseite (Knopf statt Link), Abmeldeseite, Status im Admin, CSV nur bestätigte Adressen. Die Newsletter-Checkbox in der Kasse wurde bisher nirgends verarbeitet – sie startet jetzt die Bestätigung.
+- **Live-Stand:** Bestellsperre wurde von den Inhabern aufgehoben; Stripe live.
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
@@ -215,6 +220,7 @@ Nur tatsächlich ausgeführte Läufe.
 | 2026-11-16 (Z9) | Live vor Deploy: `/api/payments/methods` → Anbieter „mock“, Webhook → 404 „not configured“ (Stripe-Variablen erst nach letztem Deploy gesetzt) | Befund |
 | 2026-11-16 (Z9) | `tsc`, `eslint`, Unit 208/208, `next build`, Playwright E2E + axe 30/30 | grün |
 | 2026-11-16 (Z10) | `tsc`, `eslint`, Unit 215/215, `next build`, Playwright E2E + axe 38/38 (neu: Rechtsseiten, Widerrufsfunktion) | grün |
+| 2026-11-16 (Z12) | `tsc`, `eslint`, Unit 221/221, `next build`, Playwright E2E + axe 40/40 (inkl. Newsletter-Seiten, Admin-Test-Mail-Feld) | grün |
 | 2026-11-15 (Z2) | Sichtprüfung per Screenshot (Start, Produktseite, Lieferung, Über uns; 390–1440 px) | abgeschnittene Inhalte behoben |
 
 Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand über Resend (keine Zugangsdaten bei Netlify).

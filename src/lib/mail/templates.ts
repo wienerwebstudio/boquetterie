@@ -449,6 +449,24 @@ export function withdrawalReceipt(input: { brand: MailBrand; id: string; receive
   });
 }
 
+/** Double opt-in: the link leads to a page where a button confirms the newsletter sign-up. */
+export function newsletterConfirmation(input: { brand: MailBrand; confirm: string; unsubscribe: string }): RenderedMail {
+  const { brand } = input;
+  return layout({
+    brand,
+    subject: `Bitte bestätige deine Anmeldung zum ${brand.name}-Newsletter`,
+    preheader: "Ein Klick, dann bist du dabei.",
+    headline: "Fast geschafft.",
+    blocks: [
+      { type: "p", text: `Du – oder jemand mit deiner E-Mail-Adresse – möchtest den Newsletter von ${brand.name} bekommen. Bitte bestätige das mit einem Klick:` },
+      { type: "button", label: "Anmeldung bestätigen", url: input.confirm },
+      { type: "p", text: "Ohne Bestätigung schicken wir dir keinen Newsletter. Warst du das nicht, kannst du diese E-Mail einfach ignorieren.", muted: true },
+      { type: "link", label: "Adresse wieder löschen", url: input.unsubscribe },
+    ],
+    footerNotes: ["Du erhältst diese E-Mail, weil deine Adresse für unseren Newsletter angemeldet wurde."],
+  });
+}
+
 export function reviewRequest(input: { order: Order; brand: MailBrand; reviewUrl: string }): RenderedMail {
   const { order, brand, reviewUrl } = input;
   const first = order.lines[0];

@@ -444,3 +444,24 @@ export interface Order {
   /** Optional link to a customer account (e-mail based). */
   customerId?: string;
 }
+
+/* ---------------- Newsletter ---------------- */
+
+/**
+ * One newsletter address (runtime document `newsletter`). Only `confirmed` entries may
+ * receive newsletters (double opt-in). Entries without `status` were collected before
+ * the double opt-in existed and count as not confirmed.
+ */
+export interface NewsletterSubscriber {
+  id?: string;
+  email: string;
+  createdAt: string;
+  status?: "pending" | "confirmed";
+  /** Random token for the confirmation and unsubscribe links. */
+  token?: string;
+  /** Last time a confirmation mail was sent (resend throttle). */
+  requestedAt?: string;
+  confirmedAt?: string;
+  /** Where the sign-up came from: "website" or "checkout". */
+  source?: string;
+}

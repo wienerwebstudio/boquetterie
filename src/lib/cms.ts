@@ -3,7 +3,7 @@ import { getStore, jsonStore, type DocumentStore } from "@/lib/store";
 import { runContentMigrations } from "@/lib/content-migrations";
 import type {
   Category, CmsPage, Coupon, DeliveryZone, Extra, FAQ, HomepageContent, LandingPage,
-  Occasion, Product, Review, SiteSettings, SubscriptionConfig, Order,
+  Occasion, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber,
 } from "@/types";
 
 /**
@@ -145,15 +145,11 @@ export async function updateOrder(id: string, patch: (o: Order) => Order) {
   return orders[idx];
 }
 
-export async function getNewsletterSubscribers(): Promise<{ email: string; createdAt: string }[]> {
-  return readDataDoc<{ email: string; createdAt: string }[]>("newsletter", []);
+export async function getNewsletterSubscribers(): Promise<NewsletterSubscriber[]> {
+  return readDataDoc<NewsletterSubscriber[]>("newsletter", []);
 }
-export async function addNewsletterSubscriber(email: string) {
-  const list = await getNewsletterSubscribers();
-  if (!list.some((s) => s.email.toLowerCase() === email.toLowerCase())) {
-    list.push({ email, createdAt: new Date().toISOString() });
-    await getStore().set("data", "newsletter", list);
-  }
+export async function saveNewsletterSubscribers(list: NewsletterSubscriber[]) {
+  await getStore().set("data", "newsletter", list);
 }
 
 /* ---------------- Generic runtime data (reminders, sessions, requests …) ---------------- */

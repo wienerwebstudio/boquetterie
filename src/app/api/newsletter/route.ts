@@ -1,12 +1,17 @@
 import { NextResponse } from "next/server";
-import { addNewsletterSubscriber, canPersistData, getSettings } from "@/lib/cms";
+import { getSettings } from "@/lib/cms";
+import { requestNewsletterSignup } from "@/lib/newsletter";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-/** POST /api/newsletter { email, website?: "" } – `website` is a honeypot and must be empty. */
+/**
+ * POST /api/newsletter { email, website?: "" } – `website` is a honeypot and must be empty.
+ * Starts the double opt-in: the address is stored as pending and gets a confirmation mail.
+ * The answer is the same for new, pending and already confirmed addresses.
+ */
 export async function POST(req: Request) {
   const limited = enforceRateLimit(req, { scope: "newsletter", limit: 5, windowMs: 10 * 60 * 1000 });
   if (limited) return limited;
@@ -35,15 +40,10 @@ export async function POST(req: Request) {
   if (!email || email.length > 254 || /[\s<>"'`,;]/.test(email) || !EMAIL_RE.test(email)) {
     return NextResponse.json({ ok: false, message: "Bitte gib eine gültige E-Mail-Adresse ein." }, { status: 400 });
   }
-  // Without a persistent store (serverless filesystem, no DATABASE_URL) the address would be lost.
-  const unavailable = () =>
-    NextResponse.json({ ok: false, code: "unavailable", message: "Die Anmeldung ist in Kürze möglich. Schau gern bald wieder vorbei." }, { status: 503 });
-  if (!(await canPersistData())) return unavailable();
-  try {
-    await addNewsletterSubscriber(email);
-  } catch (err) {
-    console.error("[newsletter] could not store subscriber", err);
-    return unavailable();
+
+  const result = await requestNewsletterSignup(email, "website");
+  if (!result.ok) {
+    return NextResponse.json({ ok: false, code: "unavailable", message: "Die Anmeldung ist gerade nicht möglich. Bitte versuch es später noch einmal." }, { status: 503 });
   }
   return NextResponse.json({ ok: true });
 }

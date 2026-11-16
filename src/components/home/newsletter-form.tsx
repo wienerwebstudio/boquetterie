@@ -42,8 +42,8 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
       <div role="status" className="flex items-start gap-3 rounded-md bg-white p-5 shadow-soft animate-fade-up">
         <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-success text-ivory"><Check className="size-3.5" strokeWidth={3} aria-hidden /></span>
         <div>
-          <p className="text-[15px] font-semibold text-ink">Danke – du bist dabei.</p>
-          <p className="mt-1 text-[13.5px] text-ink-muted">Wir melden uns, wenn es etwas Schönes zu erzählen gibt.</p>
+          <p className="text-[15px] font-semibold text-ink">Fast geschafft – bitte bestätige deine Anmeldung.</p>
+          <p className="mt-1 text-[13.5px] text-ink-muted">Wir haben dir eine E-Mail mit einem Bestätigungslink geschickt. Erst danach bekommst du unseren Newsletter.</p>
         </div>
       </div>
     );

@@ -121,3 +121,7 @@ Bestellbestätigung und Auftragszettel zeigen das Foto des Straußes. Die Bilder
 ## Floristen-Budget
 
 Das Max. Budget je Größe und Extra liegt im Laufzeit-Dokument `florist-budgets` (Datenbank). Solange dort nichts gespeichert ist, gelten die Startwerte aus der Preiskalkulation (Spalte „Einkauf Dody (Liste)“) – verschlüsselt in `src/lib/florist-budget-default.ts`, Schlüssel ist das Netlify-Secret `FLORIST_BUDGET_KEY` (ohne Schlüssel: keine Startwerte). Pflege und Import (JSON: `{ "products": { "<productId>": { "<sizeId>": 12.5 } }, "extras": { "<extraId>": 3 } }`) unter **Admin → Floristen-Budget**. Beim Bestellen wird der aktuelle Wert in die Bestellposition kopiert; Kundenansichten (`publicOrderView`) entfernen ihn.
+
+## Newsletter (Double-Opt-in)
+
+Anmeldung über das Formular oder die Checkbox in der Kasse speichert die Adresse als „wartet auf Bestätigung“ und schickt eine Bestätigungsmail. Der Link führt auf `/newsletter/bestaetigen`, erst der Knopf dort (POST – Mail-Scanner öffnen nur Links) bestätigt. Abmelden: `/newsletter/abmelden?id=…&token=…` (in jeden Newsletter einbauen). Newsletter nur an bestätigte Adressen; der CSV-Export im Admin enthält nur diese. Ohne Mailversand antwortet die Anmeldung mit 503, statt eine Adresse ohne Bestätigungsmöglichkeit zu sammeln.

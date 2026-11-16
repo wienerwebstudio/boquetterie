@@ -1,7 +1,8 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { getSettings } from "@/lib/cms";
 import { createOrderFromPayload, parseOrderPayload } from "@/lib/orders";
 import { resolveSiteUrl } from "@/lib/payments";
+import { requestNewsletterSignup } from "@/lib/newsletter";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
 import type { OrderCreateResponse } from "@/types/payments";
@@ -48,6 +49,11 @@ export async function POST(req: Request) {
     const result = await createOrderFromPayload(payload, { siteUrl: resolveSiteUrl(req, settings) });
     if (!result.ok) {
       return NextResponse.json({ ok: false, message: result.message, errors: result.errors ?? {} }, { status: result.status });
+    }
+    // Newsletter tick box in the checkout: starts the double opt-in (confirmation mail), nothing more.
+    if (payload.customer.newsletter && settings.newsletterEnabled) {
+      const signup = () => requestNewsletterSignup(payload.customer.email, "checkout").then(() => undefined, (err: unknown) => console.error("[newsletter] checkout sign-up failed", err));
+      try { after(signup); } catch { void signup(); }
     }
     const res: OrderCreateResponse = {
       ok: true,
