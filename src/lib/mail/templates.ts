@@ -76,8 +76,14 @@ const imgCell = (src: string, alt: string, w: number, h: number) =>
     ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" width="${w}" height="${h}" style="display:block;width:${w}px;height:${h}px;border:0;border-radius:4px;background:${C.ivory200};object-fit:cover;">`
     : "";
 
+/** Max. budget the florist binds for (their list price); the discount is settled separately and never shown. */
 const budgetText = (amount: number | undefined, quantity = 1) =>
-  amount === undefined ? "nicht hinterlegt – bitte bei Blumora nachfragen" : `${formatPrice(amount * quantity)} netto${quantity > 1 ? ` (${quantity} × ${formatPrice(amount)})` : ""}`;
+  amount === undefined ? "nicht hinterlegt – bitte bei Blumora nachfragen" : `${formatPrice(amount * quantity)}${quantity > 1 ? ` (${quantity} × ${formatPrice(amount)})` : ""}`;
+
+/** "S", "M", "L", "XL" for the standard sizes (as the florist knows them), else the label ("60 cm", "Standard"). */
+export function sizeShort(sizeId: string, sizeLabel: string) {
+  return ["Klein", "Mittel", "Groß", "XL", "XXL"].includes(sizeLabel) ? sizeId.toUpperCase() : sizeLabel;
+}
 
 function renderBlockHtml(b: Block): string {
   switch (b.type) {
@@ -114,13 +120,13 @@ function renderBlockHtml(b: Block): string {
           const extras = l.extras
             .map((e) => {
               const thumb = imgCell(mailImageUrl(b.siteUrl, e.image ?? "", 160), e.name, 64, 80);
-              return `<tr>${thumb ? `<td width="76" style="width:76px;padding:12px 12px 0 0;vertical-align:middle;">${thumb}</td>` : ""}<td style="padding:12px 0 0;font-family:${FONT};font-size:15px;line-height:1.5;color:${C.ink};vertical-align:middle;"><strong style="font-weight:600;">+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)}</strong><br><span style="font-size:14px;color:${C.muted};">Budget: ${escapeHtml(budgetText(e.floristBudget, e.quantity))}</span></td></tr>`;
+              return `<tr>${thumb ? `<td width="76" style="width:76px;padding:12px 12px 0 0;vertical-align:middle;">${thumb}</td>` : ""}<td style="padding:12px 0 0;font-family:${FONT};font-size:15px;line-height:1.5;color:${C.ink};vertical-align:middle;"><strong style="font-weight:600;">+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)}</strong><br><span style="font-size:14px;color:${C.muted};">Max. Budget: ${escapeHtml(budgetText(e.floristBudget, e.quantity))}</span></td></tr>`;
             })
             .join("");
           const extrasRow = extras
             ? `<tr><td colspan="2" style="padding:0 16px 16px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid ${C.line};"><tr><td colspan="2" style="padding:12px 0 0;font-family:${FONT};font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Dazu</td></tr>${extras}</table></td></tr>`
             : "";
-          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border:1px solid ${C.line};border-radius:8px;"><tr>${img ? `<td width="176" style="width:176px;padding:16px 0 16px 16px;vertical-align:top;">${img}</td>` : ""}<td style="padding:16px;vertical-align:top;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:${SERIF};font-size:20px;line-height:1.3;color:${C.ink};">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</td></tr><tr><td style="padding:2px 0 10px;font-family:${FONT};font-size:14px;color:${C.muted};">Größe ${escapeHtml(l.sizeLabel)}</td></tr><tr><td style="padding:10px 12px;background:${C.bg};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Budget Einkauf</span><br><strong style="font-size:17px;font-weight:600;">${escapeHtml(budgetText(l.floristBudget, l.quantity))}</strong></td></tr></table></td></tr>${extrasRow}</table>`;
+          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border:1px solid ${C.line};border-radius:8px;"><tr>${img ? `<td width="176" style="width:176px;padding:16px 0 16px 16px;vertical-align:top;">${img}</td>` : ""}<td style="padding:16px;vertical-align:top;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:${SERIF};font-size:20px;line-height:1.3;color:${C.ink};">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</td></tr><tr><td style="padding:2px 0 10px;font-family:${FONT};font-size:15px;color:${C.ink};">Größe <strong style="font-weight:600;">${escapeHtml(sizeShort(l.sizeId, l.sizeLabel))}</strong></td></tr><tr><td style="padding:10px 12px;background:${C.bg};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Max. Budget</span><br><strong style="font-size:19px;font-weight:600;">${escapeHtml(budgetText(l.floristBudget, l.quantity))}</strong></td></tr></table></td></tr>${extrasRow}</table>`;
         })
         .join("");
     case "totals": {
@@ -164,8 +170,8 @@ function renderBlockText(b: Block): string {
     case "floristItems":
       return b.order.lines
         .map((l) => {
-          const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} – Budget ${budgetText(e.floristBudget, e.quantity)}${e.image ? `\n     Foto: ${mailImageUrl(b.siteUrl, e.image, 160)}` : ""}`).join("\n");
-          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${l.sizeLabel}\n  Budget Einkauf: ${budgetText(l.floristBudget, l.quantity)}\n  Foto: ${mailImageUrl(b.siteUrl, l.image, 480)}${extras ? `\n${extras}` : ""}`;
+          const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} – Max. Budget ${budgetText(e.floristBudget, e.quantity)}${e.image ? `\n     Foto: ${mailImageUrl(b.siteUrl, e.image, 160)}` : ""}`).join("\n");
+          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${sizeShort(l.sizeId, l.sizeLabel)}\n  Max. Budget: ${budgetText(l.floristBudget, l.quantity)}\n  Foto: ${mailImageUrl(b.siteUrl, l.image, 480)}${extras ? `\n${extras}` : ""}`;
         })
         .join("\n");
     case "totals": {
@@ -372,8 +378,8 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
 
 /**
  * Order slip for the partner florist: what to bind, the photo of the bouquet, the
- * net purchase budget per item (from the admin's "Floristen-Budget") and when it is
- * collected. Without the customer's prices and without the customer's or recipient's
+ * max. budget per item – their list price, from the admin's "Floristen-Budget"; the
+ * discount is settled separately – and when it is collected. Without the customer's prices and without the customer's or recipient's
  * contact data – the courier delivers, the florist only prepares (data minimisation).
  */
 export function floristOrder(input: { order: Order; brand: MailBrand }): RenderedMail {
@@ -394,15 +400,16 @@ export function floristOrder(input: { order: Order; brand: MailBrand }): Rendere
   return layout({
     brand,
     subject: `Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${order.delivery.windowFrom ? ` ${order.delivery.windowFrom} Uhr` : ""}`,
-    preheader: first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – ${first.sizeLabel}` : undefined,
+    preheader: first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – Größe ${sizeShort(first.sizeId, first.sizeLabel)}` : undefined,
     headline: `Neuer Auftrag ${order.id}`,
     blocks: [
+      { type: "p", text: "Bitte so binden wie auf dem Foto. Das Max. Budget ist der Betrag, für den ihr den Strauß bindet." },
       {
         type: "kv",
         rows: [
           ["Fertig zur Abholung", ready],
           ["Lieferfenster", deliveryLine(order)],
-          ...(total !== null && budgets.length > 1 ? [["Budget gesamt", `${formatPrice(total)} netto`] as [string, string]] : []),
+          ...(total !== null && budgets.length > 1 ? [["Max. Budget gesamt", formatPrice(total)] as [string, string]] : []),
           ...(cardText ? [["Grußkarte", cardText] as [string, string]] : []),
         ],
       },

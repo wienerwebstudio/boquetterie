@@ -324,12 +324,12 @@ export function sampleOrder(input: SampleOrderInput = {}): Order {
   };
 }
 
-/** Sample order from the live catalogue (Red Rose Bouquet, Mittel + Teddy) with the stored florist budgets. */
+/** Sample order from the live catalogue (Red Rose Bouquet S + Teddy) with the stored florist budgets. */
 async function liveSampleOrder(settings: SiteSettings): Promise<Order> {
   try {
     const [products, extras, budgets] = await Promise.all([getAllProducts(), getExtras(), getFloristBudgets()]);
     const product = products.find((pr) => pr.id === "p-red-rose-bouquet") ?? products.find((pr) => pr.active);
-    const size = product?.sizes.find((sz) => sz.id === "m") ?? product?.sizes[0];
+    const size = product?.sizes.find((sz) => sz.id === "s") ?? product?.sizes[0];
     const extra = extras.find((e) => e.id === "x-teddy" && e.active) ?? null;
     if (!product || !size) return sampleOrder({ withCard: settings.greetingCard?.enabled === true });
     return sampleOrder({

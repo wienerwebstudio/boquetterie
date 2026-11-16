@@ -34,35 +34,37 @@ describe("florist order slip", () => {
     const mail = floristOrder({ order: budgeted, brand });
     expect(mail.subject).toContain("BQ-ABC123");
     expect(mail.subject).toContain("09:00");
-    for (const text of ["Rosalie, Größe Mittel", "Teddy", "Alles Liebe zum Geburtstag!", "Absender: Paul", "bis 09:00 Uhr", "9–12 Uhr"]) {
+    for (const text of ["Rosalie, Größe M", "Teddy", "Alles Liebe zum Geburtstag!", "Absender: Paul", "bis 09:00 Uhr", "9–12 Uhr"]) {
       expect(mail.text).toContain(text);
     }
     expect(mail.html).toContain('src="https://blumora.at/_next/image?url=%2Fimages%2Fproducts%2Fsortiment%2Frosalie-1.jpg&amp;w=480&amp;q=75"');
   });
 
-  it("names the net purchase budget per item and in total", () => {
+  it("names the max. budget per item and in total, without the word netto or any discount", () => {
     const mail = floristOrder({ order: budgeted, brand });
-    expect(mail.text).toContain(`Budget Einkauf: ${formatPrice(41.5)} netto`);
-    expect(mail.text).toContain(`Teddy – Budget ${formatPrice(12.5)} netto`);
-    expect(mail.text).toContain(`Budget gesamt: ${formatPrice(54)} netto`);
+    expect(mail.text).toContain(`Max. Budget: ${formatPrice(41.5)}`);
+    expect(mail.text).toContain(`Teddy – Max. Budget ${formatPrice(12.5)}`);
+    expect(mail.text).toContain(`Max. Budget gesamt: ${formatPrice(54)}`);
     const two = floristOrder({ order: { ...budgeted, lines: [{ ...budgeted.lines[0], quantity: 2, extras: [] }] }, brand });
-    expect(two.text).toContain(`${formatPrice(83)} netto (2 × ${formatPrice(41.5)})`);
+    expect(two.text).toContain(`${formatPrice(83)} (2 × ${formatPrice(41.5)})`);
+    expect(mail.text).not.toMatch(/netto|Nachlass/);
+    expect(mail.text).toContain("Bitte so binden wie auf dem Foto.");
   });
 
   it("shows the extras' photos and counts extras per line, like the price", () => {
     const withTeddy: Order = { ...budgeted, lines: [{ ...budgeted.lines[0], quantity: 2, extras: [{ ...budgeted.lines[0].extras[0], image: "/images/products/sortiment/teddybaer-klein-3.jpg" }] }] };
     const mail = floristOrder({ order: withTeddy, brand });
     expect(mail.html).toContain("url=%2Fimages%2Fproducts%2Fsortiment%2Fteddybaer-klein-3.jpg");
-    expect(mail.text).toContain(`Teddy – Budget ${formatPrice(12.5)} netto`);
-    expect(mail.text).toContain(`Budget gesamt: ${formatPrice(2 * 41.5 + 12.5)} netto`);
+    expect(mail.text).toContain(`Teddy – Max. Budget ${formatPrice(12.5)}`);
+    expect(mail.text).toContain(`Max. Budget gesamt: ${formatPrice(2 * 41.5 + 12.5)}`);
     const confirmation = orderConfirmation({ order: withTeddy, brand, trackingUrl: "https://blumora.at/x" });
     expect(confirmation.html).toContain("url=%2Fimages%2Fproducts%2Fsortiment%2Fteddybaer-klein-3.jpg&amp;w=160");
   });
 
   it("says when no budget is stored instead of inventing one", () => {
     const mail = floristOrder({ order, brand });
-    expect(mail.text).toContain("Budget Einkauf: nicht hinterlegt");
-    expect(mail.text).not.toContain("Budget gesamt");
+    expect(mail.text).toContain("Max. Budget: nicht hinterlegt");
+    expect(mail.text).not.toContain("Max. Budget gesamt");
   });
 
   it("contains no customer prices and no contact data of customer or recipient", () => {
@@ -172,5 +174,15 @@ describe("admin test mails", () => {
     const recipients = sendMail.mock.calls.map((c) => (c as unknown as [{ to: string[]; subject: string }])[0]);
     expect(recipients.every((m) => m.to.length === 1 && m.to[0] === "test@example.com")).toBe(true);
     expect(recipients.every((m) => m.subject.includes("[Beispiel]"))).toBe(true);
+  });
+});
+
+describe("size names for the florist", () => {
+  it("uses S/M/L/XL for standard sizes and the label otherwise", async () => {
+    const { sizeShort } = await import("@/lib/mail/templates");
+    expect(sizeShort("s", "Klein")).toBe("S");
+    expect(sizeShort("xl", "XL")).toBe("XL");
+    expect(sizeShort("m", "Standard")).toBe("Standard");
+    expect(sizeShort("s", "60 cm")).toBe("60 cm");
   });
 });

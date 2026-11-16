@@ -181,6 +181,10 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - **Widerrufsfunktion „Vertrag widerrufen“** (`/vertrag-widerrufen`, `POST /api/withdrawals`): Name, E-Mail, Bestellnummer, optional Waren → „Widerruf bestätigen“; Eingangsbestätigung mit Datum/Uhrzeit per Mail und auf der Seite, Kopie an MAIL_ADMIN, Speicherung in `withdrawals`. Links im Footer, auf der Widerrufsseite und der Bestellseite.
 - **Checkout:** Hinweis „kein Widerrufsrecht für Schnittblumen (§ 18 Abs. 1 Z 4 FAGG)“ und AGB-Verweis jetzt auch direkt beim Stripe-Button „Jetzt bezahlen“.
 
+### Zyklus 11 – Floristen-Auftrag vereinfacht (2026-11-16)
+- **Budget-Korrektur (Inhaber):** Der Floristik wird der Listenpreis „Einkauf Dody (Liste)“ als **Max. Budget** genannt (z. B. Red Rose Bouquet S 38,00 €); den 20 %-Nachlass rechnet Dody separat ab, er erscheint nirgends in der Mail. Startwerte neu verschlüsselt (gleicher Schlüssel).
+- **Mail:** Größe als S/M/L/XL, „Max. Budget“ ohne „netto“, kurzer Hinweis „Bitte so binden wie auf dem Foto“, Extras mit Foto unter „Dazu“.
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.

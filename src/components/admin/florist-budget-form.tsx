@@ -82,7 +82,7 @@ export function FloristBudgetForm({ rows }: { rows: BudgetRow[] }) {
 
       <Table>
         <thead>
-          <tr><Th>Produkt</Th><Th>Größe</Th><Th className="text-right">Verkaufspreis</Th><Th className="w-44">Budget netto (€)</Th></tr>
+          <tr><Th>Produkt</Th><Th>Größe</Th><Th className="text-right">Verkaufspreis</Th><Th className="w-44">Max. Budget (€)</Th></tr>
         </thead>
         <tbody>
           {rows.map((r, i) => {
