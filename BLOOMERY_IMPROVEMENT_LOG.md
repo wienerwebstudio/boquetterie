@@ -154,6 +154,11 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - Kontaktdaten in den Einstellungen: office@blumora.at, Telefon, Firmensitz (Kontaktseite: „Kein Ladengeschäft“).
 - **Domain:** HTTPS-Zertifikat für blumora.at durch die Inhaber in Netlify erneuert. `siteUrl` und `NEXT_PUBLIC_SITE_URL` auf https://blumora.at; bloomery.at leitet dauerhaft (308) auf blumora.at weiter, `/api/*` bleibt auf der alten Domain für Webhooks erreichbar.
 
+### Zyklus 6 – Neon und Live-Betrieb (2026-11-16)
+- **Datenbank:** Neon-Projekt `bitter-truth-13396825` (Region US-Ost/Ohio, von den Inhabern so bestätigt – liegt nahe an Netlifys Funktionsregion). `DATABASE_URL` (gepoolt) ist bei Netlify als Secret hinterlegt. Der Shop nutzt dafür den HTTP-Treiber `@neondatabase/serverless`.
+- **Kurier:** RiderX-Live-API-Zugang ist bei RiderX angefragt. Bis dahin werden Fahrer manuell im Kundenportal bestellt; `RIDERX_AUTO_BOOK=false`, Live-Server und Abholadresse sind bei Netlify gesetzt.
+- **Impressum:** Gewerbebehörde und WKO-Mitgliedschaft vorerst zurückgestellt (Inhaber).
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
