@@ -98,6 +98,15 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
       products: (doc) => mapList(doc, (p) => setFields(p, { sameDayCapable: true })),
     },
   },
+  {
+    // Inhaber: Same-Day-Bestellschluss doch 18:30 Uhr.
+    id: "2026-11-16-same-day-until-1830",
+    replace: { faqs: [["Ja – bestellst du bis 19:00 Uhr,", "Ja – bestellst du bis 18:30 Uhr,"]] },
+    transform: {
+      "delivery-zones": (doc) =>
+        mapList(doc, (z) => (typeof z.id === "string" && z.id.startsWith("wien-") && z.sameDayCutoff === "19:00" ? setFields(z, { sameDayCutoff: "18:30" }) : z)),
+    },
+  },
 ];
 
 type Obj = Record<string, unknown>;
@@ -198,11 +207,12 @@ export function migrateDocument<T>(migration: ContentMigration, name: string, do
 const APPLIED_DOC = "content-migrations";
 
 /** Runs every migration that is not recorded as applied yet. Safe to run concurrently (idempotent steps). */
-export async function runContentMigrations(store: DocumentStore, migrations = CONTENT_MIGRATIONS, repo: DocumentStore = jsonStore) {
-  if (store.name === "json") return;
+/** Returns the ids it applied (empty when nothing was pending). */
+export async function runContentMigrations(store: DocumentStore, migrations = CONTENT_MIGRATIONS, repo: DocumentStore = jsonStore): Promise<string[]> {
+  if (store.name === "json") return [];
   const applied = (await store.get<string[]>("data", APPLIED_DOC)) ?? [];
   const pending = migrations.filter((m) => !applied.includes(m.id));
-  if (!pending.length) return;
+  if (!pending.length) return [];
   for (const m of pending) {
     const names = new Set([...Object.keys(m.replace ?? {}), ...Object.keys(m.removeValues ?? {}), ...Object.keys(m.transform ?? {})]);
     for (const name of names) {
@@ -222,4 +232,5 @@ export async function runContentMigrations(store: DocumentStore, migrations = CO
     await store.set("data", APPLIED_DOC, applied);
     console.info(`[blumora] content migration applied: ${m.id}`);
   }
+  return pending.map((m) => m.id);
 }

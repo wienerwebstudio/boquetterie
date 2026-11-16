@@ -29,10 +29,15 @@ const g = globalThis as unknown as { __blumoraContentMigrations?: Promise<void> 
 /** Runs pending content migrations once per process before the first content read (see content-migrations.ts). */
 function contentMigrations(store: DocumentStore) {
   if (store.name === "json") return Promise.resolve();
-  g.__blumoraContentMigrations ??= runContentMigrations(store).catch((err: unknown) => {
-    console.warn("[blumora] content migrations failed – retrying on the next request:", err);
-    g.__blumoraContentMigrations = undefined;
-  });
+  g.__blumoraContentMigrations ??= runContentMigrations(store)
+    .then((applied) => {
+      // Pages rendered before the change (static pages, CDN cache) must not keep the old text.
+      if (applied.length) void import("next/cache").then((m) => m.revalidatePath("/", "layout")).catch(() => undefined);
+    })
+    .catch((err: unknown) => {
+      console.warn("[blumora] content migrations failed – retrying on the next request:", err);
+      g.__blumoraContentMigrations = undefined;
+    });
   return g.__blumoraContentMigrations;
 }
 

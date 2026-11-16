@@ -62,13 +62,13 @@ describe("runContentMigrations", () => {
     expect(store.writes).toEqual([]);
   });
 
-  it("leaves no promised greeting card in the repository content", () => {
+  it("the repository content already equals the result of all migrations, applied in order", () => {
     const dir = path.join(process.cwd(), "content");
-    for (const m of CONTENT_MIGRATIONS) {
-      for (const name of new Set([...Object.keys(m.replace ?? {}), ...Object.keys(m.removeValues ?? {}), ...Object.keys(m.transform ?? {})])) {
-        const doc = JSON.parse(fs.readFileSync(path.join(dir, `${name}.json`), "utf8"));
-        expect(migrateDocument(m, name, doc), `content/${name}.json is not migrated`).toBe(doc);
-      }
+    const names = new Set(CONTENT_MIGRATIONS.flatMap((m) => [...Object.keys(m.replace ?? {}), ...Object.keys(m.removeValues ?? {}), ...Object.keys(m.transform ?? {})]));
+    for (const name of names) {
+      const doc = JSON.parse(fs.readFileSync(path.join(dir, `${name}.json`), "utf8"));
+      const migrated = CONTENT_MIGRATIONS.reduce((d, m) => migrateDocument(m, name, d), doc);
+      expect(migrated, `content/${name}.json is not migrated`).toEqual(doc);
     }
   });
 });
@@ -99,7 +99,7 @@ describe("legal pages from the repository", () => {
   });
 });
 
-describe("same-day until 19:00", () => {
+describe("same-day until 18:30", () => {
   it("switches same-day on for the Vienna zones and every product, keeps other zones", async () => {
     const store = memoryStore({
       settings: { sameDayEnabled: false, brand: { name: "Blumora" } },
@@ -112,7 +112,7 @@ describe("same-day until 19:00", () => {
     await runContentMigrations(store, CONTENT_MIGRATIONS, memoryStore({}));
     expect(store.docs.get("content/settings")).toEqual({ sameDayEnabled: true, brand: { name: "Blumora" } });
     expect(store.docs.get("content/delivery-zones")).toEqual([
-      { id: "wien-nah", sameDay: true, sameDayCutoff: "19:00", cutoff: "23:59" },
+      { id: "wien-nah", sameDay: true, sameDayCutoff: "18:30", cutoff: "23:59" },
       { id: "noe-umland", sameDay: false, sameDayCutoff: "10:00", cutoff: "12:00" },
     ]);
     expect(store.docs.get("content/products")).toEqual([{ id: "p-1", sameDayCapable: true }, { id: "p-2", sameDayCapable: true }]);

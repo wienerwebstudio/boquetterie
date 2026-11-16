@@ -213,20 +213,20 @@ describe("date helpers", () => {
   });
 });
 
-describe("live configuration: same-day until 19:00, no cut-off for later days", () => {
-  const zone: DeliveryZone = { ...wienZentrum, sameDay: true, sameDayCutoff: "19:00", cutoff: "23:59", leadDays: 1, deliveryDays: [1, 2, 3, 4, 5, 6] };
+describe("live configuration: same-day until 18:30, no cut-off for later days", () => {
+  const zone: DeliveryZone = { ...wienZentrum, sameDay: true, sameDayCutoff: "18:30", cutoff: "23:59", leadDays: 1, deliveryDays: [1, 2, 3, 4, 5, 6] };
   const live = { ...settings, sameDayEnabled: true };
 
-  it("delivers today until 19:00 – in the windows that are still at least an hour away", () => {
-    const evening = getAvailableDays({ zone, settings: live, now: at(MON, "18:30") });
+  it("delivers today until 18:30 – in the windows that are still at least an hour away", () => {
+    const evening = getAvailableDays({ zone, settings: live, now: at(MON, "18:29") });
     expect(evening[0]).toMatchObject({ date: MON, sameDay: true });
     expect(evening[0].windows.length).toBeGreaterThan(0);
-    expect(evening[0].windows.every((w) => w.to > "19:30")).toBe(true);
+    expect(evening[0].windows.every((w) => w.to > "19:29")).toBe(true);
     expect(dates(evening)[1]).toBe(addDays(MON, 1));
   });
 
-  it("after 19:00 the next delivery day is tomorrow – also late at night", () => {
-    expect(getAvailableDays({ zone, settings: live, now: at(MON, "19:00") })[0]).toMatchObject({ date: addDays(MON, 1), sameDay: false });
+  it("from 18:30 the next delivery day is tomorrow – also late at night", () => {
+    expect(getAvailableDays({ zone, settings: live, now: at(MON, "18:30") })[0]).toMatchObject({ date: addDays(MON, 1), sameDay: false });
     expect(getAvailableDays({ zone, settings: live, now: at(MON, "23:30") })[0].date).toBe(addDays(MON, 1));
   });
 });
