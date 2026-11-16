@@ -232,6 +232,8 @@ export interface SiteSettings {
   currency: "EUR";
   blackoutDates: ISODate[];
   sameDayEnabled: boolean;
+  /** Weekdays (0 = Sunday) on which the team delivers itself – no rider is booked automatically. Empty/missing = always the courier. */
+  selfDeliveryDays?: number[];
   subscriptionEnabled: boolean;
   newsletterEnabled: boolean;
   favoritesEnabled: boolean;

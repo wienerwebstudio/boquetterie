@@ -170,3 +170,8 @@ export function isSameDayPossibleNow(zones: DeliveryZone[], settings: Pick<SiteS
   const local = now ?? getLocalNow(settings.timezone);
   return zones.some((z) => z.active && z.sameDay && getAvailableDays({ zone: z, settings, now: local, horizonDays: 0 }).some((d) => d.sameDay));
 }
+
+/** True when the team delivers this order itself (weekday ticked under "Selbst ausliefern"), so no rider is booked automatically. */
+export function isSelfDeliveryDay(settings: Pick<SiteSettings, "selfDeliveryDays">, date: ISODate) {
+  return (settings.selfDeliveryDays ?? []).includes(weekdayOf(date));
+}

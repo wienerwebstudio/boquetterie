@@ -2,6 +2,8 @@
 
 Nach einer bestätigten Zahlung bucht der Shop automatisch einen RiderX-Fahrer, der den Strauß beim Partnerfloristen abholt und zustellt. Ohne RiderX-Zugang (`RIDERX_*` leer) passiert nichts – Bestellungen werden wie bisher von Hand organisiert.
 
+**Selbst ausliefern (optional):** Unter Admin → Einstellungen → „Zustellung“ lassen sich Wochentage ankreuzen, an denen das Team selbst liefert (z. B. Samstag und Sonntag). Für Bestellungen mit Liefertag an einem dieser Tage wird kein Fahrer automatisch gebucht; im Admin steht „Selbst ausliefern“, die Floristik liest „Abholung durch Blumora“, die interne Mail nennt es ebenfalls. Von Hand buchen geht trotzdem. Nichts angekreuzt = immer Fahrer.
+
 Code: `src/lib/courier/riderx-core.ts` (reine Logik, getestet in `tests/unit/riderx.test.ts`) und `src/lib/courier/index.ts` (HTTP, Bestellung, Webhook). Webhook-Route: `src/app/api/webhooks/riderx/route.ts`.
 
 ## Ablauf

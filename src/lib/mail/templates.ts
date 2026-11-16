@@ -347,7 +347,7 @@ export function orderStatusUpdate(input: { order: Order; status: OrderStatusDefi
   });
 }
 
-export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl: string }): RenderedMail {
+export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl: string; selfDelivery?: boolean }): RenderedMail {
   const { order, brand, adminUrl } = input;
   const items = order.lines.map((l) => `${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName} (${l.sizeLabel})${l.extras.length ? ` + ${l.extras.map((e) => e.name).join(", ")}` : ""}`).join("\n");
   const greeting = order.lines.find((l) => l.message);
@@ -362,6 +362,7 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
         type: "kv",
         rows: [
           ["Lieferung", `${deliveryLine(order)}\n${order.delivery.zoneName}`],
+          ...(input.selfDelivery ? [["Zustellung", "Selbst ausliefern – es wird kein Fahrer gebucht. Strauß bei der Floristik abholen."] as [string, string]] : []),
           ["Empfänger:in", `${recipientLines(order)}\n${order.recipient.phone}`],
           ["Kund:in", `${order.customer.firstName} ${order.customer.lastName}\n${order.customer.email}\n${order.customer.phone}`],
           ["Positionen", items],
@@ -382,7 +383,7 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
  * discount is settled separately – and when it is collected. Without the customer's prices and without the customer's or recipient's
  * contact data – the courier delivers, the florist only prepares (data minimisation).
  */
-export function floristOrder(input: { order: Order; brand: MailBrand }): RenderedMail {
+export function floristOrder(input: { order: Order; brand: MailBrand; selfDelivery?: boolean }): RenderedMail {
   const { order, brand } = input;
   const first = order.lines[0];
   const card = order.lines.find((l) => l.message || l.senderName || l.anonymous);
@@ -395,7 +396,7 @@ export function floristOrder(input: { order: Order; brand: MailBrand }): Rendere
   ]);
   const total = budgets.every((b): b is number => b !== null) ? budgets.reduce((a, b) => a + b, 0) : null;
   const ready = order.delivery.windowFrom
-    ? `${formatDateLong(order.delivery.date)}, bis ${order.delivery.windowFrom} Uhr (Abholung durch den Kurier)`
+    ? `${formatDateLong(order.delivery.date)}, bis ${order.delivery.windowFrom} Uhr (Abholung durch ${input.selfDelivery ? brand.name : "den Kurier"})`
     : `${formatDateLong(order.delivery.date)} (Uhrzeit folgt)`;
   return layout({
     brand,

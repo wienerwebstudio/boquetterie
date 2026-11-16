@@ -681,6 +681,11 @@ export const settingsSchema: SingletonSchema = {
       ],
     },
     {
+      title: "Zustellung",
+      description: "Optional: An den angekreuzten Tagen liefert ihr selbst – es wird kein RiderX-Fahrer automatisch gebucht (von Hand geht es trotzdem). Nichts angekreuzt = immer Fahrer.",
+      fields: [{ key: "selfDeliveryDays", label: "Selbst ausliefern an", type: "multiselect", options: WEEKDAY_OPTIONS, valueType: "number", span: "full" }],
+    },
+    {
       title: "Sperrtage",
       description: "An diesen Tagen wird nicht geliefert (Feiertage, Urlaub).",
       fields: [{ key: "blackoutDates", label: "Sperrtage", type: "stringlist", itemType: "date", span: "full" }],

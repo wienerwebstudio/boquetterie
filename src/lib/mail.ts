@@ -5,6 +5,7 @@ import type { Reminder } from "@/types/reminders";
 import { getAllProducts, getExtras, getOccasions, getSettings } from "@/lib/cms";
 import { getFloristBudgets } from "@/lib/florist-budget";
 import * as templates from "@/lib/mail/templates";
+import { isSelfDeliveryDay } from "@/lib/delivery";
 import type { MailBrand, RenderedMail } from "@/lib/mail/templates";
 import { formatReminderDate } from "@/lib/mail/reminders";
 
@@ -216,6 +217,7 @@ export const ORDER_MAIL_LABELS: Record<OrderMailKind, string> = { customer: "Kun
 export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind[] = ["customer", "internal", "partner"]): Promise<{ kind: OrderMailKind; to: string[]; result: MailResult | null }[]> {
   const settings = await getSettings();
   const brand = mailBrand(settings);
+  const selfDelivery = isSelfDeliveryDay(settings, order.delivery.date);
   const admin = adminMailAddress();
   const recipients: Record<OrderMailKind, string[]> = {
     customer: [order.customer.email],
@@ -224,8 +226,8 @@ export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind
   };
   const render: Record<OrderMailKind, () => RenderedMail> = {
     customer: () => templates.orderConfirmation({ order, brand, trackingUrl: orderTrackingUrl(order, brand.siteUrl) }),
-    internal: () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}` }),
-    partner: () => templates.floristOrder({ order, brand }),
+    internal: () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}`, selfDelivery }),
+    partner: () => templates.floristOrder({ order, brand, selfDelivery }),
   };
   const types: Record<OrderMailKind, string> = { customer: "order_confirmation", internal: "admin_new_order", partner: "florist_order" };
   const settled = await Promise.allSettled(

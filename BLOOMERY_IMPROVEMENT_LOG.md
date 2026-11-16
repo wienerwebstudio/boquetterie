@@ -200,6 +200,7 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - Dody bekam keine Mail, weil `MAIL_REDIRECT_TO` noch alle Mails an die Testadresse umleitete. Variable auf Wunsch der Inhaber gelöscht; ab dem nächsten Deploy gehen Auftrag, Kundenbestätigung und interne Mail an die echten Empfänger.
 - Admin: unbezahlte Bestellungen zählen nicht mehr als „offen“ (Filter „Nicht bezahlt“, Warnhinweis auf der Detailseite).
 - Admin: „Mails erneut senden“ auf der Bestellseite (nur bezahlte Bestellungen; Alle, Partner, Kund:in oder Bestelleingang; an die echten Empfänger, mit Rückfrage, Eintrag im Verlauf). Fehlt einer älteren Bestellung das Budget, wird es dabei aus der Budgetliste ergänzt.
+- Optional „Selbst ausliefern“ an gewählten Wochentagen (Einstellungen → Zustellung): kein automatischer Fahrer, Hinweis in Admin, Partner- und interner Mail. Standard: nichts angekreuzt, also immer Fahrer.
 
 ## 5. Testergebnisse
 

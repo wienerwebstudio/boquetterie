@@ -2,6 +2,7 @@ import "server-only";
 import { getOrderById, getOrders, getSettings, updateOrder } from "@/lib/cms";
 import { sendOrderStatusUpdate } from "@/lib/mail";
 import type { Order, OrderCourier } from "@/types";
+import { isSelfDeliveryDay } from "@/lib/delivery";
 import {
   RIDERX_STATUS_LABELS, buildDeliveryRequest, isViennaPostalCode, mapRiderxStatus, pickNominatim, pickViennaAddress, planPickup, shouldApplyStatus,
   type Coordinates, type RiderxDeliveryRequest, type RiderxPickupAddress,
@@ -169,6 +170,12 @@ export async function bookCourier(orderId: string, opts: { manual?: boolean } = 
   const cfg = riderxConfig();
   if (!cfg) return { ok: false, message: "RiderX ist nicht eingerichtet (RIDERX_* fehlt)." };
   if (!opts.manual && !cfg.autoBook) return { ok: false, message: "Automatische Buchung ist ausgeschaltet." };
+  if (!opts.manual) {
+    const [settings, current] = await Promise.all([getSettings(), getOrderById(orderId)]);
+    if (current && isSelfDeliveryDay(settings, current.delivery.date)) {
+      return { ok: false, message: "Selbst ausliefern – an diesem Tag wird kein Fahrer automatisch gebucht." };
+    }
+  }
 
   // Claim the order first so a parallel call does not book a second rider.
   let claimed = false;

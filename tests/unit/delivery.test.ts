@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  addDays, findZone, getAvailableDays, getLocalNow, isSameDayAvailable, isSameDayPossibleNow,
+  addDays, findZone, isSelfDeliveryDay, getAvailableDays, getLocalNow, isSameDayAvailable, isSameDayPossibleNow,
   isValidAustrianPostalCode, normalizePostalCode, quoteDelivery, toMinutes, weekdayOf, zoneContains,
 } from "@/lib/delivery";
 import type { DeliveryZone } from "@/types";
@@ -228,5 +228,18 @@ describe("live configuration: same-day until 18:30, no cut-off for later days", 
   it("from 18:30 the next delivery day is tomorrow – also late at night", () => {
     expect(getAvailableDays({ zone, settings: live, now: at(MON, "18:30") })[0]).toMatchObject({ date: addDays(MON, 1), sameDay: false });
     expect(getAvailableDays({ zone, settings: live, now: at(MON, "23:30") })[0].date).toBe(addDays(MON, 1));
+  });
+});
+
+describe("self delivery days (optional)", () => {
+  it("books the courier every day unless days are ticked", () => {
+    expect(isSelfDeliveryDay({}, SAT)).toBe(false);
+    expect(isSelfDeliveryDay({ selfDeliveryDays: [] }, SUN)).toBe(false);
+  });
+  it("only the ticked weekdays are delivered by the team", () => {
+    const weekend = { selfDeliveryDays: [6, 0] };
+    expect(isSelfDeliveryDay(weekend, SAT)).toBe(true);
+    expect(isSelfDeliveryDay(weekend, SUN)).toBe(true);
+    expect(isSelfDeliveryDay(weekend, MON)).toBe(false);
   });
 });

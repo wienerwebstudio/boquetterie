@@ -83,6 +83,16 @@ describe("florist order slip", () => {
   });
 });
 
+describe("self delivery", () => {
+  it("tells the florist who collects and flags it in the internal mail", async () => {
+    expect(floristOrder({ order, brand }).text).toContain("Abholung durch den Kurier");
+    expect(floristOrder({ order, brand, selfDelivery: true }).text).toContain("Abholung durch Blumora");
+    const { adminNewOrder } = await import("@/lib/mail/templates");
+    expect(adminNewOrder({ order, brand, adminUrl: "https://blumora.at/admin", selfDelivery: true }).text).toContain("Selbst ausliefern");
+    expect(adminNewOrder({ order, brand, adminUrl: "https://blumora.at/admin" }).text).not.toContain("Selbst ausliefern");
+  });
+});
+
 describe("customer confirmation", () => {
   it("shows the product photo and no greeting card when the order has none", () => {
     const none = { ...order, lines: [{ ...order.lines[0], image: "/images/products/sortiment/rosalie-1.jpg", message: undefined, senderName: undefined }] };
