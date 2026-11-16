@@ -65,7 +65,7 @@ describe("runContentMigrations", () => {
   it("leaves no promised greeting card in the repository content", () => {
     const dir = path.join(process.cwd(), "content");
     for (const m of CONTENT_MIGRATIONS) {
-      for (const name of new Set([...Object.keys(m.replace ?? {}), ...Object.keys(m.removeValues ?? {})])) {
+      for (const name of new Set([...Object.keys(m.replace ?? {}), ...Object.keys(m.removeValues ?? {}), ...Object.keys(m.transform ?? {})])) {
         const doc = JSON.parse(fs.readFileSync(path.join(dir, `${name}.json`), "utf8"));
         expect(migrateDocument(m, name, doc), `content/${name}.json is not migrated`).toBe(doc);
       }
@@ -96,5 +96,25 @@ describe("legal pages from the repository", () => {
       expect(page.placeholder).toBeUndefined();
       expect(JSON.stringify(page)).not.toMatch(/Platzhalter|\[Hier |\[Tatsächlich|ergänzen\.\]/);
     }
+  });
+});
+
+describe("same-day until 19:00", () => {
+  it("switches same-day on for the Vienna zones and every product, keeps other zones", async () => {
+    const store = memoryStore({
+      settings: { sameDayEnabled: false, brand: { name: "Blumora" } },
+      "delivery-zones": [
+        { id: "wien-nah", sameDay: true, sameDayCutoff: "12:00", cutoff: "14:00" },
+        { id: "noe-umland", sameDay: false, sameDayCutoff: "10:00", cutoff: "12:00" },
+      ],
+      products: [{ id: "p-1", sameDayCapable: false }, { id: "p-2" }],
+    });
+    await runContentMigrations(store, CONTENT_MIGRATIONS, memoryStore({}));
+    expect(store.docs.get("content/settings")).toEqual({ sameDayEnabled: true, brand: { name: "Blumora" } });
+    expect(store.docs.get("content/delivery-zones")).toEqual([
+      { id: "wien-nah", sameDay: true, sameDayCutoff: "19:00", cutoff: "23:59" },
+      { id: "noe-umland", sameDay: false, sameDayCutoff: "10:00", cutoff: "12:00" },
+    ]);
+    expect(store.docs.get("content/products")).toEqual([{ id: "p-1", sameDayCapable: true }, { id: "p-2", sameDayCapable: true }]);
   });
 });

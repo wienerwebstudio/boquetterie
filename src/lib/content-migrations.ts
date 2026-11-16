@@ -23,6 +23,8 @@ export interface ContentMigration {
    * stored page is still a placeholder (`placeholder: true`) or missing, never over real text.
    */
   pagesFromRepo?: string[];
+  /** Document name → function that returns the changed document (same object when nothing changed). */
+  transform?: Record<string, (doc: unknown) => unknown>;
 }
 
 export const CONTENT_MIGRATIONS: ContentMigration[] = [
@@ -80,7 +82,45 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-16-legal-texts",
     pagesFromRepo: ["agb", "datenschutz", "widerruf"],
   },
+  {
+    // Inhaber: Same-Day in ganz Wien bis 19:00 Uhr, für alle Sträuße; Folgetage ohne Bestellschluss.
+    id: "2026-11-16-same-day-until-19",
+    replace: {
+      faqs: [[
+        "Derzeit liefern wir frühestens am nächsten Liefertag. Den frühesten Termin für deine Adresse siehst du, sobald du die Postleitzahl eingibst.",
+        "Ja – bestellst du bis 19:00 Uhr, liefern wir noch am selben Tag (Montag bis Samstag) in ganz Wien. Den frühesten Termin für deine Adresse siehst du, sobald du die Postleitzahl eingibst.",
+      ]],
+    },
+    transform: {
+      settings: (doc) => setFields(doc, { sameDayEnabled: true }),
+      "delivery-zones": (doc) =>
+        mapList(doc, (z) => (typeof z.id === "string" && z.id.startsWith("wien-") ? setFields(z, { sameDay: true, sameDayCutoff: "19:00", cutoff: "23:59" }) : z)),
+      products: (doc) => mapList(doc, (p) => setFields(p, { sameDayCapable: true })),
+    },
+  },
 ];
+
+type Obj = Record<string, unknown>;
+
+/** Sets fields on an object; same object when every field already has that value. */
+export function setFields<T>(doc: T, fields: Obj): T {
+  if (!doc || typeof doc !== "object" || Array.isArray(doc)) return doc;
+  const o = doc as Obj;
+  return Object.entries(fields).every(([k, v]) => o[k] === v) ? doc : ({ ...o, ...fields } as T);
+}
+
+/** Maps a list of objects; same list when no item changed. */
+export function mapList<T>(doc: T, fn: (item: Obj) => Obj): T {
+  if (!Array.isArray(doc)) return doc;
+  let changed = false;
+  const next = doc.map((item) => {
+    if (!item || typeof item !== "object") return item;
+    const r = fn(item as Obj);
+    if (r !== item) changed = true;
+    return r;
+  });
+  return (changed ? next : doc) as T;
+}
 
 type PageDoc = { slug: string; placeholder?: boolean }[];
 
@@ -150,6 +190,8 @@ export function migrateDocument<T>(migration: ContentMigration, name: string, do
   const pairs = migration.replace?.[name];
   if (pairs) next = replaceTextDeep(next, pairs);
   for (const { path, values } of migration.removeValues?.[name] ?? []) next = removeValuesAt(next, path, values);
+  const transform = migration.transform?.[name];
+  if (transform) next = transform(next) as T;
   return next;
 }
 
@@ -162,7 +204,7 @@ export async function runContentMigrations(store: DocumentStore, migrations = CO
   const pending = migrations.filter((m) => !applied.includes(m.id));
   if (!pending.length) return;
   for (const m of pending) {
-    const names = new Set([...Object.keys(m.replace ?? {}), ...Object.keys(m.removeValues ?? {})]);
+    const names = new Set([...Object.keys(m.replace ?? {}), ...Object.keys(m.removeValues ?? {}), ...Object.keys(m.transform ?? {})]);
     for (const name of names) {
       const doc = await store.get<unknown>("content", name);
       if (doc === null) continue; // not seeded yet – it will be seeded from the already updated repository file

@@ -190,6 +190,11 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - **Newsletter:** Double-Opt-in mit Bestätigungsseite (Knopf statt Link), Abmeldeseite, Status im Admin, CSV nur bestätigte Adressen. Die Newsletter-Checkbox in der Kasse wurde bisher nirgends verarbeitet – sie startet jetzt die Bestätigung.
 - **Live-Stand:** Bestellsperre wurde von den Inhabern aufgehoben; Stripe live.
 
+### Zyklus 13 – Same-Day bis 19:00 (2026-11-16)
+- **Inhaber-Entscheidung:** Same-Day in allen Wien-Zonen bis 19:00 Uhr, für alle Sträuße; Bestellungen für Folgetage ohne Bestellschluss (23:59). FAQ „Kann ich heute noch …“ entsprechend. Umgesetzt im Repo und per Inhalts-Migration in der Datenbank. (Dodys Website nennt keine Öffnungszeiten; Vorgabe der Inhaber übernommen.)
+- Checkout-Übersicht zeigt nur lieferbare Daten (halb eingetippte Daten wie „0026-11-16“ erschienen dort als „Di., 16. Nov.“).
+- Admin: Test-Mails einzeln wählbar (Alle, Partner, Kundenbestellung, Bestelleingang).
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
@@ -255,7 +260,7 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - (alt) **Marke/Domain:** „BLOOMERY“ ist als EU-Wortmarke eingetragen (u. a. Blumen, Online-Blumenhandel, Lieferung). Empfehlung: `blumora.at` in Netlify als Hauptdomain hinterlegen und `bloomery.at` nur weiterleiten oder aufgeben; vorher anwaltlich prüfen lassen (auch österreichisches Register für „Blumora“).
 - Firmendaten, Impressum, AGB, Datenschutzerklärung, Widerrufsbelehrung – von einer Fachperson freigeben lassen.
 - „inkl. MwSt.“ auf der Produktseite: Die Kalkulation rechnet ohne USt (Kleinunternehmer?).
-- Same-Day und Liefertage Mo–Sa: vom Floristen bestätigen lassen; danach im Admin wieder einschaltbar.
+- ~~Same-Day~~ erledigt: bis 19:00 Uhr laut Inhabern (Zyklus 13).
 - Vase, Übertopf und Trauerschleifen auf den Fotos: im Preis enthalten?
 - Gibt es das Postfach `kontakt@bloomery.at`? Telefonnummer und Instagram-Konto?
 - Stripe, Datenbank, Mail, RiderX-Live-Zugang und Webhook bei Netlify eintragen; danach Bestellsperre aufheben.

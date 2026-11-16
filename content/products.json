@@ -73,7 +73,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Rosé Dream – Strauß in Rosa & Weiß",
@@ -155,7 +155,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Gelb Bouquet – Gerbera & Rosen in Gelb",
@@ -238,7 +238,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Weiß Bouquet – Strauß in Weiß & Creme",
@@ -322,7 +322,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Blue Bouquet – blaue & weiße Rosen",
@@ -412,7 +412,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Farbensinfonie – Regenbogenrosen",
@@ -501,7 +501,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Sonnenzauber – Strelitzien & Gerbera",
@@ -587,7 +587,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Pink Bouquet – Strauß in Pink & Rosa",
@@ -669,7 +669,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Orange Bouquet – Rosen in Orange",
@@ -755,7 +755,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Red Rose Bouquet – rote Rosen",
@@ -836,7 +836,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Rosa Bouquet – Rosen in Rosa & Pastell",
@@ -922,7 +922,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Blackroses – schwarze Rosen",
@@ -1015,7 +1015,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Blaue Liebe – blaue Rosen",
@@ -1114,7 +1114,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Rosalie – rosa Rosen mit Schleierkraut",
@@ -1214,7 +1214,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Rot & Weiß Mix – rote und weiße Rosen",
@@ -1314,7 +1314,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Tulpenstrauß – Tulpen in vielen Farben",
@@ -1407,7 +1407,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Red Passion – roter Rosenstrauß",
@@ -1493,7 +1493,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Klassiker der Liebe – rote Rosen",
@@ -1592,7 +1592,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Königin der Herzen – üppiger Rosenstrauß",
@@ -1673,7 +1673,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Herbstzauber – Strauß in warmen Tönen",
@@ -1757,7 +1757,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Blütenfreude – Rosen & Gerbera in Rot",
@@ -1842,7 +1842,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Zartrosa Zauber – Rosen & Lilien in Rosa",
@@ -1936,7 +1936,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Strahlender Tag – Strauß in Orange & Gelb",
@@ -2026,7 +2026,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Rosentraum – Rosen in Rosa & Creme",
@@ -2120,7 +2120,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Rosenkuss – weiße Rosen",
@@ -2214,7 +2214,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Rosenglanz – Rosen in Pastell & Pink",
@@ -2305,7 +2305,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Pure Liebe – Strauß in Rosa & Pink",
@@ -2390,7 +2390,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Pink Harmony – Gerbera & Rosen in Pink",
@@ -2485,7 +2485,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Love Deluxe – bunter Rosenstrauß",
@@ -2569,7 +2569,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Liebeserklärung – rote Rosen & Lilien",
@@ -2659,7 +2659,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Klassische Schönheit – Rosen & Gerbera",
@@ -2748,7 +2748,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Herzklopfen – rosa Rosen & Gerbera",
@@ -2840,7 +2840,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Fröhlicher Blütenmix – bunter Strauß",
@@ -2929,7 +2929,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Farbtänzer – Strauß in Pink & Lila",
@@ -2997,7 +2997,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Blumenbox Herzförmig – Rosen in Herzbox",
@@ -3069,7 +3069,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Blumenbox Standard – Rosen in der Box",
@@ -3141,7 +3141,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Rosa Anthurie im Topf – Zimmerpflanze",
@@ -3207,7 +3207,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Rote Anthurie im Topf – Zimmerpflanze",
@@ -3275,7 +3275,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "XXL Rote Anthurie im Topf",
@@ -3342,7 +3342,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Bromelie im Topf – Zimmerpflanze",
@@ -3408,7 +3408,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Gummibaum im Topf – pflegeleichte Pflanze",
@@ -3498,7 +3498,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Orchidee im Topf – in fünf Farben",
@@ -3574,7 +3574,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerbukett Rot – Rosen & Gerbera",
@@ -3648,7 +3648,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerbukett Rosa – zarte Rosatöne",
@@ -3725,7 +3725,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerbukett Pastell – ruhige Farbtöne",
@@ -3802,7 +3802,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerbukett Orange – warme Töne",
@@ -3877,7 +3877,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerbukett Weiß – Lilien & Chrysanthemen",
@@ -3954,7 +3954,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerbukett Gelb – Sonnenblumen & Rosen",
@@ -4021,7 +4021,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerkranz Bunt – farbenfroher Abschied",
@@ -4088,7 +4088,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerkranz Pink – Pink & Rot",
@@ -4153,7 +4153,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerkranz Rot-Gelb – Gerbera",
@@ -4216,7 +4216,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerkranz Rot – Gerbera & Rosen",
@@ -4282,7 +4282,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Trauerkranz Weiß – schlicht & würdevoll",
@@ -4419,7 +4419,7 @@
     "deliverable": true,
     "bestseller": false,
     "isNew": false,
-    "sameDayCapable": false,
+    "sameDayCapable": true,
     "active": true,
     "seo": {
       "title": "Adventskranz – handgebunden mit Kerzen",

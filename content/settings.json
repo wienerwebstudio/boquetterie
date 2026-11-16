@@ -34,7 +34,7 @@
     "2026-12-26",
     "2027-01-01"
   ],
-  "sameDayEnabled": false,
+  "sameDayEnabled": true,
   "subscriptionEnabled": false,
   "newsletterEnabled": true,
   "favoritesEnabled": true,
