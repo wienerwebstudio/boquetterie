@@ -60,7 +60,12 @@ test.describe("Checkout @slow", () => {
     const stripeElement = page.locator("iframe[name^='__privateStripeFrame'], [data-stripe-element], .StripeElement");
     const mockCard = page.getByRole("radio", { name: /Kreditkarte/ });
     if (await mockCard.count()) {
-      await mockCard.check({ force: true });
+      // The method list re-renders once /api/payments/methods has loaded; a click in that
+      // window is lost. Click the visible tile until the radio really is selected.
+      await expect(async () => {
+        await page.locator("label", { hasText: "Kreditkarte" }).click();
+        await expect(mockCard).toBeChecked({ timeout: 1_000 });
+      }).toPass({ timeout: 15_000 });
     } else if (await stripeElement.count()) {
       test.info().annotations.push({ type: "note", description: "Stripe element present – payment step not asserted" });
     }
