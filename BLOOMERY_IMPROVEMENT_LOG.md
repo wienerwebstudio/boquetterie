@@ -159,6 +159,12 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - **Kurier:** RiderX-Live-API-Zugang ist bei RiderX angefragt. Bis dahin werden Fahrer manuell im Kundenportal bestellt; `RIDERX_AUTO_BOOK=false`, Live-Server und Abholadresse sind bei Netlify gesetzt.
 - **Impressum:** Gewerbebehörde und WKO-Mitgliedschaft vorerst zurückgestellt (Inhaber).
 
+### Zyklus 7 – Mailversand, Floristen-Auftrag, Admin-Anmeldung (2026-11-16)
+- **Mail:** SMTP über das eigene Postfach office@blumora.at (`SMTP_*`, Passwort als Secret). Pro bezahlter Bestellung geht ein Auftragszettel ohne Preise und Kundendaten an `MAIL_FLORIST`. `MAIL_REDIRECT_TO` leitet bis zum Start alle Mails an eine Testadresse um. Im Admin gibt es „Test-Mails senden“ mit einer Beispielbestellung.
+- **Deploy:** Turbopacks Build-Dateicache speicherte die Build-Umgebung samt `SMTP_PASS`; Netlifys Secret-Scan brach den Deploy ab. Der Cache ist jetzt aus (`turbopackFileSystemCacheForBuild: false`), der Scan bleibt aktiv und meldet 0 Treffer.
+- **Admin-Anmeldung (Fehler live):** Auf Netlify sieht eine API-Route die interne Deploy-Adresse statt blumora.at. Die Weiterleitung nach dem Login zeigte deshalb auf eine fremde Adresse, die der Browser wegen `form-action 'self'` blockierte – nach „Anmelden“ passierte sichtbar nichts. Alle Weiterleitungen aus API-Routen (Admin-Login/-Logout, Kunden-Login/-Logout, Erinnerung bestätigen/abmelden) sind jetzt relativ (`redirectLocal`).
+- **Anmeldeseite:** klare Meldungen für falsches Passwort (mit verbleibenden Versuchen), Sperre nach 5 Versuchen (mit Wartezeit statt Textseite), „Wird geprüft …“ beim Absenden, Hinweis nach 12 s ohne Antwort, Passwort-anzeigen-Schalter; Leerzeichen um ein eingefügtes Passwort werden ignoriert.
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
@@ -180,6 +186,10 @@ Nur tatsächlich ausgeführte Läufe.
 | 2026-11-15 (Z4) | Echte Stripe-Testzahlung lokal (Testkarte 4242, Webhook über `stripe listen`): Bestellung bezahlt; Erstattung → `refunded`; Chargeback → Admin-Alarm; alle Webhooks 200 | bestanden |
 | 2026-11-15 (Z4) | `tsc`, `eslint`, Unit 175/175, E2E 29/29 | grün |
 | 2026-11-15 (Z3) | Formular-Rückfall per simuliertem 503, Erinnerungs-/Konto-Hinweis im Produktionsbuild | wie erwartet |
+| 2026-11-16 (Z7) | Lokaler SMTP-Empfänger: Kunde, Admin und beide Floristen-Adressen erhalten ihre Mail | bestanden |
+| 2026-11-16 (Z7) | Netlify-Deploy mit `SMTP_PASS` nach Abschalten des Turbopack-Caches: Secret-Scan 8.761 Dateien | 0 Treffer, live |
+| 2026-11-16 (Z7) | Live: `POST /api/admin/login` mit falschem Passwort → Weiterleitung auf `…netlify.app` (Fehler nachgestellt) | behoben, siehe Zyklus 7 |
+| 2026-11-16 (Z7) | `tsc`, `eslint`, Unit 194/194, `next build`, Playwright E2E + axe 30/30 | grün |
 | 2026-11-15 (Z2) | Sichtprüfung per Screenshot (Start, Produktseite, Lieferung, Über uns; 390–1440 px) | abgeschnittene Inhalte behoben |
 
 Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand über Resend (keine Zugangsdaten bei Netlify).

@@ -1,6 +1,6 @@
 import { Lock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Banner, Field, inputCls } from "@/components/admin/controls";
+import { Banner } from "@/components/admin/controls";
+import { AdminLoginForm } from "@/components/admin/login-form";
 import { isAdminConfigured, safeAdminRedirect } from "@/lib/admin-auth";
 
 export const dynamic = "force-dynamic";
@@ -10,6 +10,12 @@ export default async function AdminLoginPage({ searchParams }: { searchParams: P
   const error = typeof sp.error === "string" ? sp.error : null;
   const next = safeAdminRedirect(typeof sp.next === "string" ? sp.next : null);
   const configured = isAdminConfigured();
+  const count = (key: string) => {
+    const n = Number(typeof sp[key] === "string" ? sp[key] : NaN);
+    return Number.isInteger(n) && n >= 0 && n <= 60 ? n : null;
+  };
+  const attemptsLeft = count("versuche");
+  const waitMinutes = count("minuten");
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-ivory px-4 py-12 font-sans">
@@ -27,16 +33,23 @@ export default async function AdminLoginPage({ searchParams }: { searchParams: P
             <strong>ADMIN_PASSWORD ist nicht konfiguriert.</strong> Bitte die Umgebungsvariable <code>ADMIN_PASSWORD</code> (und idealerweise <code>ADMIN_SECRET</code>) setzen – siehe <code>.env.example</code>. Solange sie fehlt, ist keine Anmeldung möglich.
           </Banner>
         )}
-        {error === "invalid" && <Banner tone="error" className="mb-4">Das Passwort ist nicht korrekt.</Banner>}
+        {error === "invalid" && (
+          <Banner tone="error" className="mb-4">
+            <strong>Das Passwort ist nicht korrekt.</strong> Bitte auf Groß- und Kleinschreibung achten.
+            {attemptsLeft !== null && (attemptsLeft > 0
+              ? ` Noch ${attemptsLeft} ${attemptsLeft === 1 ? "Versuch" : "Versuche"}, danach ist die Anmeldung für bis zu 10 Minuten gesperrt.`
+              : " Das war der letzte Versuch – die Anmeldung ist jetzt für bis zu 10 Minuten gesperrt.")}
+          </Banner>
+        )}
+        {error === "locked" && (
+          <Banner tone="error" className="mb-4">
+            <strong>Zu viele Anmeldeversuche.</strong> Aus Sicherheitsgründen ist die Anmeldung vorübergehend gesperrt
+            {waitMinutes ? ` – bitte in ${waitMinutes} ${waitMinutes === 1 ? "Minute" : "Minuten"} noch einmal versuchen.` : ". Bitte in einigen Minuten noch einmal versuchen."}
+          </Banner>
+        )}
         {error === "config" && configured && <Banner tone="error" className="mb-4">Die Anmeldung ist serverseitig nicht konfiguriert.</Banner>}
 
-        <form method="post" action="/api/admin/login" className="space-y-4 rounded-lg border border-line bg-white p-6">
-          <input type="hidden" name="next" value={next} />
-          <Field label="Passwort" htmlFor="password" required>
-            <input id="password" name="password" type="password" autoComplete="current-password" required autoFocus disabled={!configured} className={inputCls} />
-          </Field>
-          <Button type="submit" full disabled={!configured}>Anmelden</Button>
-        </form>
+        <AdminLoginForm next={next} disabled={!configured} />
         <p className="mt-4 text-center text-[12px] text-ink-soft">Die Sitzung bleibt 12 Stunden aktiv.</p>
       </div>
     </div>

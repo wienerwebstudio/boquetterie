@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import { getReminders, saveReminders, tokenMatches } from "@/lib/mail/reminders";
+import { redirectLocal } from "@/lib/http";
 
 export const dynamic = "force-dynamic";
 
@@ -11,7 +11,7 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const id = url.searchParams.get("id") ?? "";
   const token = url.searchParams.get("token") ?? "";
-  const back = (status: string) => NextResponse.redirect(new URL(`/erinnerung?status=${status}`, url.origin), 303);
+  const back = (status: string) => redirectLocal(`/erinnerung?status=${status}`);
 
   try {
     const list = await getReminders();

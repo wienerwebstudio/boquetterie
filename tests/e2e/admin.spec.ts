@@ -10,16 +10,25 @@ test.describe("Admin", () => {
 
   test("falsches Passwort wird abgelehnt", async ({ page }) => {
     await page.goto("/admin/login");
-    await page.getByLabel(/Passwort/).fill("definitely-wrong");
+    await page.locator("input#password").fill("definitely-wrong");
     await page.getByRole("button", { name: "Anmelden" }).click();
     await expect(page).toHaveURL(/\/admin\/login\?error=invalid/);
     await expect(page.getByText("Das Passwort ist nicht korrekt.")).toBeVisible();
+    await expect(page.getByRole("alert").filter({ hasText: "Das Passwort ist nicht korrekt." })).toContainText(/Noch \d Versuche?/);
+  });
+
+  test("Passwort lässt sich zum Prüfen anzeigen", async ({ page }) => {
+    await page.goto("/admin/login");
+    const input = page.locator("input#password");
+    await expect(input).toHaveAttribute("type", "password");
+    await page.getByRole("button", { name: "Passwort anzeigen" }).click();
+    await expect(input).toHaveAttribute("type", "text");
   });
 
   test("Login mit ADMIN_PASSWORD erreicht das Dashboard", async ({ page }) => {
     await page.goto("/admin");
     await expect(page).toHaveURL(/\/admin\/login/);
-    await page.getByLabel(/Passwort/).fill(ADMIN_PASSWORD);
+    await page.locator("input#password").fill(ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Anmelden" }).click();
     await expect(page).toHaveURL(/\/admin$/);
     await expect(page.getByRole("heading", { level: 1, name: "Übersicht" })).toBeVisible();

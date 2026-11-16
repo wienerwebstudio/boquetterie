@@ -36,6 +36,7 @@ import { POST as subscriptionRequest } from "@/app/api/subscription-request/rout
 import { POST as newsletter } from "@/app/api/newsletter/route";
 import { ADMIN_COOKIE, verifySessionToken } from "@/lib/admin-auth";
 import { rateLimitInternals } from "@/lib/rate-limit";
+import { redirectLocal } from "@/lib/http";
 
 const ORIGIN = "http://localhost:3000";
 const json = (path: string, body: unknown, ip = "203.0.113.7") =>
@@ -63,41 +64,48 @@ afterEach(() => {
 });
 
 describe("POST /api/admin/login", () => {
+  // On Netlify the handler sees the internal deploy host, not the visitor's domain.
+  const DEPLOY_HOST = "https://6afb040eefece49bcb5b324d--boquetterie-preview.netlify.app";
   const attempt = (password: string, ip = "203.0.113.7") => {
     const form = new FormData();
     form.set("password", password);
     form.set("next", "/admin/bestellungen");
-    return login(new NextRequest(`${ORIGIN}/api/admin/login`, { method: "POST", body: form, headers: { "x-forwarded-for": ip } }));
+    return login(new NextRequest(`${DEPLOY_HOST}/api/admin/login`, { method: "POST", body: form, headers: { "x-forwarded-for": ip } }));
   };
 
-  it("sets a valid session cookie for the right password", async () => {
+  it("sets a valid session cookie for the right password and stays on the visitor's domain", async () => {
     const res = await attempt("ci-admin-password");
     expect(res.status).toBe(303);
-    expect(res.headers.get("location")).toBe(`${ORIGIN}/admin/bestellungen`);
+    expect(res.headers.get("location")).toBe("/admin/bestellungen");
     const cookie = res.cookies.get(ADMIN_COOKIE);
     expect(cookie?.httpOnly).toBe(true);
     expect(await verifySessionToken(cookie?.value, "ci-admin-secret-ci-admin-secret")).toBe(true);
   });
 
-  it("answers every wrong input the same way and sets no cookie", async () => {
+  it("ignores whitespace around a pasted password", async () => {
+    expect((await attempt("  ci-admin-password\n")).cookies.get(ADMIN_COOKIE)).toBeDefined();
+  });
+
+  it("answers every wrong input the same way, names the attempts left and sets no cookie", async () => {
     const locations = new Set<string | null>();
-    for (const pw of ["", "x", "ci-admin-passwore", "ci-admin-password-and-more"]) {
-      const res = await attempt(pw);
+    for (const [i, pw] of ["", "x", "ci-admin-passwore", "ci-admin-password-and-more"].entries()) {
+      const res = await attempt(pw, `198.51.100.${10 + i}`);
       expect(res.status).toBe(303);
       expect(res.cookies.get(ADMIN_COOKIE)).toBeUndefined();
       locations.add(res.headers.get("location"));
     }
-    expect([...locations]).toEqual([`${ORIGIN}/admin/login?error=invalid&next=%2Fadmin%2Fbestellungen`]);
+    expect([...locations]).toEqual(["/admin/login?error=invalid&versuche=4&next=%2Fadmin%2Fbestellungen"]);
+    expect((await attempt("x", "198.51.100.10")).headers.get("location")).toContain("versuche=3");
   });
 
   it("locks an IP after five attempts – even for the right password – but not other IPs", async () => {
     for (let i = 0; i < 5; i++) expect((await attempt("wrong")).status).toBe(303);
     const blocked = await attempt("ci-admin-password");
-    expect(blocked.status).toBe(429);
+    expect(blocked.status).toBe(303);
+    expect(blocked.headers.get("location")).toMatch(/^\/admin\/login\?error=locked&minuten=(10|[1-9])&next=/);
     expect(Number(blocked.headers.get("retry-after"))).toBeGreaterThan(0);
     expect(blocked.cookies.get(ADMIN_COOKIE)).toBeUndefined();
-    expect(await blocked.text()).toMatch(/Zu viele Anmeldeversuche/);
-    expect((await attempt("ci-admin-password", "198.51.100.1")).status).toBe(303);
+    expect((await attempt("ci-admin-password", "198.51.100.1")).cookies.get(ADMIN_COOKIE)).toBeDefined();
   });
 
   it("a successful login clears the counter", async () => {
@@ -118,11 +126,19 @@ describe("POST /api/admin/login", () => {
 });
 
 describe("/api/admin/logout", () => {
-  it("is POST only and clears the cookie", async () => {
+  it("is POST only, clears the cookie and stays on the visitor's domain", async () => {
     expect(Object.keys(logoutRoute).filter((k) => /^(GET|HEAD|PUT|PATCH|DELETE)$/.test(k))).toEqual([]);
-    const res = await logoutRoute.POST(new NextRequest(`${ORIGIN}/api/admin/logout`, { method: "POST" }));
+    const res = await logoutRoute.POST();
     expect(res.status).toBe(303);
+    expect(res.headers.get("location")).toBe("/admin/login");
     expect(res.cookies.get(ADMIN_COOKIE)?.value).toBe("");
+  });
+});
+
+describe("redirectLocal", () => {
+  it("only accepts paths on this site", () => {
+    expect(redirectLocal("/konto?abgemeldet=1").headers.get("location")).toBe("/konto?abgemeldet=1");
+    for (const bad of ["https://evil.test", "//evil.test", "/\\evil.test", "konto"]) expect(() => redirectLocal(bad)).toThrow();
   });
 });
 

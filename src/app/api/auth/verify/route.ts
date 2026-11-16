@@ -1,4 +1,5 @@
-import { NextResponse, type NextRequest } from "next/server";
+import type { NextRequest } from "next/server";
+import { redirectLocal } from "@/lib/http";
 import { createSessionValue, getAuthSecret, SESSION_COOKIE, sessionCookieOptions } from "@/lib/auth/session";
 import { consumeLoginToken } from "@/lib/auth/tokens";
 import { upsertCustomerOnLogin } from "@/lib/auth/customers";
@@ -19,9 +20,7 @@ export async function POST(req: NextRequest) {
   const token = String(form?.get("token") ?? "");
 
   const fail = (status: "invalid" | "expired" | "disabled") => {
-    const url = new URL("/auth/verify", req.url);
-    url.searchParams.set("status", status);
-    return NextResponse.redirect(url, { status: 303 });
+    return redirectLocal(`/auth/verify?status=${status}`);
   };
 
   const secret = getAuthSecret();
@@ -31,7 +30,7 @@ export async function POST(req: NextRequest) {
   if (result.status !== "valid") return fail(result.status);
 
   const customer = await upsertCustomerOnLogin(result.email);
-  const res = NextResponse.redirect(new URL(`${routes.account}?willkommen=1`, req.url), { status: 303 });
+  const res = redirectLocal(`${routes.account}?willkommen=1`);
   res.cookies.set(SESSION_COOKIE, createSessionValue(secret, customer.id), sessionCookieOptions());
   return res;
 }
