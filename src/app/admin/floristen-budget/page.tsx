@@ -24,7 +24,7 @@ export default async function FloristBudgetPage() {
     <>
       <PageHeader
         title="Floristen-Budget"
-        description={`Einkaufsbudget (netto) je Größe und Extra – steht im Auftrag an die Floristik, nie beim Kunden. ${budgets.updatedAt ? `Zuletzt gespeichert: ${formatDateTime(budgets.updatedAt)}.` : "Noch nichts gespeichert."}`}
+        description={`Einkaufsbudget (netto) je Größe und Extra – steht im Auftrag an die Floristik, nie beim Kunden. ${budgets.updatedAt ? `Zuletzt gespeichert: ${formatDateTime(budgets.updatedAt)}.` : "Es gelten die Startwerte aus der Preiskalkulation (hier änderbar)."}`}
       />
       <FloristBudgetForm rows={rows} />
     </>

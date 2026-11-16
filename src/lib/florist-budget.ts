@@ -1,13 +1,14 @@
 import "server-only";
 import { readData, writeData } from "@/lib/cms";
 import type { Extra, OrderLine, Product } from "@/types";
+import { defaultFloristBudgets } from "@/lib/florist-budget-default";
 
 /**
  * What the partner florist may spend per product size and per extra (purchase price, net).
  *
- * Kept as the runtime document `florist-budgets` – in the database, never in the
- * repository (which may be public) and never in anything a customer can see.
- * Edited and imported in the admin under "Floristen-Budget".
+ * Kept as the runtime document `florist-budgets` in the database once saved in the
+ * admin ("Floristen-Budget"); until then the encrypted starting values apply. Never
+ * in plain text in this (public) repository and never in anything a customer can see.
  */
 export interface FloristBudgets {
   updatedAt?: string;
@@ -19,12 +20,15 @@ export interface FloristBudgets {
 
 export const EMPTY_BUDGETS: FloristBudgets = { products: {}, extras: {} };
 const DOC = "florist-budgets";
-/** Upper bound against typos (a wreath costs 128 € net; nothing is near 10 000 €). */
+/** Upper bound against typos – no single item comes anywhere near it. */
 const MAX_BUDGET = 10_000;
 
+/** Saved budgets, else the encrypted starting values (see florist-budget-default.ts), else none. */
 export async function getFloristBudgets(): Promise<FloristBudgets> {
   const doc = await readData<FloristBudgets | null>(DOC, null);
-  return doc ? { updatedAt: doc.updatedAt, products: doc.products ?? {}, extras: doc.extras ?? {} } : EMPTY_BUDGETS;
+  if (doc) return { updatedAt: doc.updatedAt, products: doc.products ?? {}, extras: doc.extras ?? {} };
+  const defaults = defaultFloristBudgets() as Partial<FloristBudgets> | null;
+  return defaults ? { products: defaults.products ?? {}, extras: defaults.extras ?? {} } : EMPTY_BUDGETS;
 }
 
 export async function saveFloristBudgets(budgets: FloristBudgets) {

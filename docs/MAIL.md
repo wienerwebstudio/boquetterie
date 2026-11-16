@@ -120,4 +120,4 @@ Bestellbestätigung und Auftragszettel zeigen das Foto des Straußes. Die Bilder
 
 ## Floristen-Budget
 
-Das Einkaufsbudget je Größe und Extra liegt im Laufzeit-Dokument `florist-budgets` (Datenbank), nicht im Repository. Pflege und Import (JSON: `{ "products": { "<productId>": { "<sizeId>": 44.8 } }, "extras": { "<extraId>": 16 } }`) unter **Admin → Floristen-Budget**. Beim Bestellen wird der aktuelle Wert in die Bestellposition kopiert; Kundenansichten (`publicOrderView`) entfernen ihn.
+Das Einkaufsbudget je Größe und Extra liegt im Laufzeit-Dokument `florist-budgets` (Datenbank). Solange dort nichts gespeichert ist, gelten die Startwerte aus der Preiskalkulation – verschlüsselt in `src/lib/florist-budget-default.ts`, Schlüssel ist das Netlify-Secret `FLORIST_BUDGET_KEY` (ohne Schlüssel: keine Startwerte). Pflege und Import (JSON: `{ "products": { "<productId>": { "<sizeId>": 12.5 } }, "extras": { "<extraId>": 3 } }`) unter **Admin → Floristen-Budget**. Beim Bestellen wird der aktuelle Wert in die Bestellposition kopiert; Kundenansichten (`publicOrderView`) entfernen ihn.

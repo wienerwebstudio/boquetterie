@@ -46,3 +46,19 @@ describe("florist budgets", () => {
     expect(view).not.toContain("intern");
   });
 });
+
+describe("encrypted starting budgets", () => {
+  it("decrypts only with the right key", async () => {
+    const { createCipheriv, randomBytes } = await import("node:crypto");
+    const { decryptBudgetBlob } = await import("@/lib/florist-budget-default");
+    const key = randomBytes(32);
+    const iv = randomBytes(12);
+    const c = createCipheriv("aes-256-gcm", key, iv);
+    const data = Buffer.concat([c.update(JSON.stringify({ products: { p: { m: 1 } }, extras: {} })), c.final()]);
+    const blob = [iv, c.getAuthTag(), data].map((b) => b.toString("base64")).join(".");
+    expect(decryptBudgetBlob(blob, key.toString("base64"))).toEqual({ products: { p: { m: 1 } }, extras: {} });
+    expect(decryptBudgetBlob(blob, randomBytes(32).toString("base64"))).toBeNull();
+    expect(decryptBudgetBlob(blob, undefined)).toBeNull();
+    expect(decryptBudgetBlob("kaputt", key.toString("base64"))).toBeNull();
+  });
+});
