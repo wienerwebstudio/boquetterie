@@ -349,6 +349,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
               <p className="mt-4 text-[12.5px] leading-relaxed text-ink-soft">
                 Mit Abschluss der Zahlung gibst du eine zahlungspflichtige Bestellung auf. Es gelten unsere{" "}
                 <Link href={routes.legal.terms} className="underline underline-offset-2">AGB</Link> und die <Link href={routes.legal.withdrawal} className="underline underline-offset-2">Widerrufsbelehrung</Link>.
+                {" "}Für frische Schnittblumen und Blumensträuße besteht kein Widerrufsrecht (§ 18 Abs. 1 Z 4 FAGG).
               </p>
             )}
           </form>

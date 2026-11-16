@@ -19,6 +19,6 @@ export const routes = {
   cart: "/warenkorb",
   checkout: "/checkout",
   search: "/suche",
-  legal: { imprint: "/impressum", privacy: "/datenschutz", terms: "/agb", withdrawal: "/widerruf" },
+  legal: { imprint: "/impressum", privacy: "/datenschutz", terms: "/agb", withdrawal: "/widerruf", withdrawalForm: "/vertrag-widerrufen" },
   admin: "/admin",
 } as const;

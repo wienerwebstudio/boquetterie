@@ -15,6 +15,8 @@ const PAGES: { path: string; name: string; withCart?: boolean; prepare?: (page: 
   { path: "/checkout", name: "Checkout Schritt 1", withCart: true },
   { path: "/faq", name: "FAQ" },
   { path: "/lieferung", name: "Lieferung" },
+  { path: "/widerruf", name: "Widerrufsbelehrung" },
+  { path: "/vertrag-widerrufen", name: "Vertrag widerrufen" },
   { path: "/anlaesse/geburtstag", name: "Anlass Geburtstag" },
 ];
 

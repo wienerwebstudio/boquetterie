@@ -9,7 +9,7 @@ export function Prose({ children, className, as: Tag = "div" }: { children: Reac
     <Tag
       className={cn(
         "max-w-2xl text-[15px] leading-relaxed text-ink-muted sm:text-base",
-        "[&_p+p]:mt-4 [&_p]:text-pretty",
+        "[&_p+p]:mt-4 [&_ul+p]:mt-4 [&_p]:text-pretty",
         "[&_h2]:mt-10 [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:leading-snug [&_h2]:text-ink [&_h2+p]:mt-3 sm:[&_h2]:text-3xl",
         "[&_h3]:mt-8 [&_h3]:font-sans [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-ink [&_h3+p]:mt-2",
         "[&_ul]:mt-4 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5 [&_ol]:mt-4 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_ol]:pl-5",
@@ -23,13 +23,40 @@ export function Prose({ children, className, as: Tag = "div" }: { children: Reac
   );
 }
 
+const BULLET = /^[•-] /;
+
+/**
+ * One paragraph of admin text: line breaks are kept (addresses), and lines that
+ * start with "• " (or "- ") become a bullet list after the paragraph's lead-in.
+ */
+export function ParagraphBlock({ text }: { text: string }) {
+  const lines = text.split("\n");
+  const firstBullet = lines.findIndex((l) => BULLET.test(l));
+  const lead = (firstBullet === -1 ? lines : lines.slice(0, firstBullet)).filter((l) => l.trim());
+  const bullets = firstBullet === -1 ? [] : lines.slice(firstBullet).filter((l) => l.trim()).map((l) => l.replace(BULLET, ""));
+  return (
+    <>
+      {lead.length > 0 && (
+        <p>
+          {lead.map((l, i) => (
+            <span key={i}>{i > 0 && <br />}<InlineText text={l} /></span>
+          ))}
+        </p>
+      )}
+      {bullets.length > 0 && (
+        <ul>
+          {bullets.map((l, i) => <li key={i}><InlineText text={l} /></li>)}
+        </ul>
+      )}
+    </>
+  );
+}
+
 /** Renders a list of plain-text paragraphs inside a Prose block. Links are recognised, see `InlineText`. */
 export function Paragraphs({ items, className }: { items: string[]; className?: string }) {
   return (
     <Prose className={className}>
-      {items.map((text, i) => (
-        <p key={i}><InlineText text={text} /></p>
-      ))}
+      {items.map((text, i) => <ParagraphBlock key={i} text={text} />)}
     </Prose>
   );
 }

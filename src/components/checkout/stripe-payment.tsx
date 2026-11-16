@@ -4,7 +4,9 @@ import { Elements, PaymentElement, useElements, useStripe } from "@stripe/react-
 import { loadStripe, type Appearance, type Stripe, type StripeElementsOptions } from "@stripe/stripe-js";
 import { ArrowLeft, Lock } from "lucide-react";
 import type { PaymentMethodId, PaymentConfirmResponse } from "@/types/payments";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { routes } from "@/lib/urls";
 import { Skeleton } from "@/components/ui/skeleton";
 import { formatPrice } from "@/lib/format";
 
@@ -137,6 +139,11 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
           Jetzt bezahlen · {formatPrice(amount)}
         </Button>
       </div>
+      <p className="text-[12.5px] leading-relaxed text-ink-soft">
+        Mit „Jetzt bezahlen“ gibst du eine zahlungspflichtige Bestellung auf. Es gelten unsere{" "}
+        <Link href={routes.legal.terms} className="underline underline-offset-2">AGB</Link> und die{" "}
+        <Link href={routes.legal.withdrawal} className="underline underline-offset-2">Widerrufsbelehrung</Link>. Für frische Schnittblumen und Blumensträuße besteht kein Widerrufsrecht (§ 18 Abs. 1 Z 4 FAGG).
+      </p>
       <p className="flex items-start gap-2 text-[12.5px] text-ink-soft">
         <Lock className="mt-0.5 size-3.5 shrink-0 text-forest" aria-hidden />
         Die Zahlung wird sicher über Stripe abgewickelt. Zahlungsdaten werden nicht bei uns gespeichert.

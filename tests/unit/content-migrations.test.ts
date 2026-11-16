@@ -1,7 +1,8 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+vi.mock("server-only", () => ({}));
 import fs from "node:fs";
 import path from "node:path";
-import { CONTENT_MIGRATIONS, migrateDocument, removeValuesAt, replaceTextDeep, runContentMigrations } from "@/lib/content-migrations";
+import { CONTENT_MIGRATIONS, migrateDocument, removeValuesAt, replacePlaceholderPages, replaceTextDeep, runContentMigrations } from "@/lib/content-migrations";
 import type { DocumentStore, StoreKind } from "@/lib/store";
 
 function memoryStore(content: Record<string, unknown>): DocumentStore & { docs: Map<string, unknown>; writes: string[] } {
@@ -68,6 +69,32 @@ describe("runContentMigrations", () => {
         const doc = JSON.parse(fs.readFileSync(path.join(dir, `${name}.json`), "utf8"));
         expect(migrateDocument(m, name, doc), `content/${name}.json is not migrated`).toBe(doc);
       }
+    }
+  });
+});
+
+describe("legal pages from the repository", () => {
+  const repo = [{ slug: "agb", title: "AGB neu" }, { slug: "widerruf", title: "Widerruf neu" }, { slug: "datenschutz", title: "DS neu" }];
+
+  it("replaces placeholders and adds missing pages, but never real text", () => {
+    const stored = [{ slug: "agb", title: "Platzhalter", placeholder: true }, { slug: "datenschutz", title: "Vom Admin geschrieben" }];
+    const next = replacePlaceholderPages(stored, repo, ["agb", "datenschutz", "widerruf"]);
+    expect(next).toEqual([{ slug: "agb", title: "AGB neu" }, { slug: "datenschutz", title: "Vom Admin geschrieben" }, { slug: "widerruf", title: "Widerruf neu" }]);
+    expect(replacePlaceholderPages(next, repo, ["agb"])).toBe(next);
+  });
+
+  it("runs as part of the migrations against the stored pages", async () => {
+    const store = memoryStore({ pages: [{ slug: "agb", title: "Platzhalter", placeholder: true }] });
+    await runContentMigrations(store, CONTENT_MIGRATIONS, memoryStore({ pages: repo }));
+    expect(store.docs.get("content/pages")).toEqual([{ slug: "agb", title: "AGB neu" }, { slug: "datenschutz", title: "DS neu" }, { slug: "widerruf", title: "Widerruf neu" }]);
+  });
+
+  it("ships real legal texts, not placeholders, in the repository", () => {
+    const pages = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content", "pages.json"), "utf8")) as { slug: string; placeholder?: boolean; sections: { paragraphs: string[] }[] }[];
+    for (const slug of ["agb", "datenschutz", "widerruf"]) {
+      const page = pages.find((p) => p.slug === slug)!;
+      expect(page.placeholder).toBeUndefined();
+      expect(JSON.stringify(page)).not.toMatch(/Platzhalter|\[Hier |\[Tatsächlich|ergänzen\.\]/);
     }
   });
 });

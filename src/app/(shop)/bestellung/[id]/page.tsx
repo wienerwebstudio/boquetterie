@@ -216,7 +216,10 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
           {contactPhone && <>{contactEmail ? " oder ruf an unter" : " Ruf uns an unter"} <a href={`tel:${contactPhone.replace(/\s/g, "")}`} className="text-forest underline underline-offset-2">{contactPhone}</a></>}
           {!contactEmail && !contactPhone && <> Alle Kontaktmöglichkeiten findest du auf der <Link href={routes.contact} className="text-forest underline underline-offset-2">Kontaktseite</Link></>}.
         </p>
-        <p className="mt-4"><Link href={routes.shop} className="font-semibold text-forest">Weiter stöbern</Link></p>
+        <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          <Link href={routes.shop} className="font-semibold text-forest">Weiter stöbern</Link>
+          <Link href={routes.legal.withdrawalForm} className="text-forest underline underline-offset-2">Vertrag hier widerrufen</Link>
+        </p>
       </div>
     </div>
   );

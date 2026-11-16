@@ -32,6 +32,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
       { label: "Impressum", href: routes.legal.imprint },
       { label: "Datenschutz", href: routes.legal.privacy }, { label: "AGB", href: routes.legal.terms },
       { label: "Widerruf", href: routes.legal.withdrawal },
+      { label: "Vertrag widerrufen", href: routes.legal.withdrawalForm },
       { label: "Cookie-Einstellungen", consent: true },
     ] },
   ];

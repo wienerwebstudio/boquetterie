@@ -41,3 +41,8 @@ export function slugify(input: string) {
 export function cn(...classes: (string | false | null | undefined)[]) {
   return classes.filter(Boolean).join(" ");
 }
+
+/** "16.11.2026, 14:05 Uhr" in Vienna time – for acknowledgements that must name the exact moment. */
+export function viennaDateTime(date: Date) {
+  return `${new Intl.DateTimeFormat("de-AT", { timeZone: "Europe/Vienna", day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(date)} Uhr`;
+}

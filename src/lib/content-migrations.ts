@@ -1,4 +1,4 @@
-import type { DocumentStore } from "@/lib/store";
+import { jsonStore, type DocumentStore } from "@/lib/store";
 
 /**
  * One-off, targeted changes to editorial content that already lives in the database.
@@ -18,6 +18,11 @@ export interface ContentMigration {
   replace?: Record<string, [from: string, to: string][]>;
   /** Document name → dotted path of a string list → values to drop from it. */
   removeValues?: Record<string, { path: string; values: string[] }[]>;
+  /**
+   * Pages (by slug) to copy from the repository's `content/pages.json` – only where the
+   * stored page is still a placeholder (`placeholder: true`) or missing, never over real text.
+   */
+  pagesFromRepo?: string[];
 }
 
 export const CONTENT_MIGRATIONS: ContentMigration[] = [
@@ -70,7 +75,27 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     },
     removeValues: { settings: [{ path: "announcement.messages", values: ["Grußkarte inklusive"] }] },
   },
+  {
+    // AGB, Datenschutzerklärung und Widerrufsbelehrung der Inhaber ersetzen die Platzhalter.
+    id: "2026-11-16-legal-texts",
+    pagesFromRepo: ["agb", "datenschutz", "widerruf"],
+  },
 ];
+
+type PageDoc = { slug: string; placeholder?: boolean }[];
+
+/** Replaces placeholder (or missing) pages with the repository version. Same object when nothing changed. */
+export function replacePlaceholderPages(stored: PageDoc, repo: PageDoc, slugs: string[]): PageDoc {
+  let next = stored;
+  for (const slug of slugs) {
+    const fresh = repo.find((p) => p.slug === slug);
+    if (!fresh) continue;
+    const i = next.findIndex((p) => p.slug === slug);
+    if (i === -1) next = [...next, fresh];
+    else if (next[i].placeholder) next = next.map((p, j) => (j === i ? fresh : p));
+  }
+  return next;
+}
 
 /** Replaces the passages in every string of `value` (deep). Returns the same object when nothing changed. */
 export function replaceTextDeep<T>(value: T, pairs: [string, string][]): T {
@@ -131,7 +156,7 @@ export function migrateDocument<T>(migration: ContentMigration, name: string, do
 const APPLIED_DOC = "content-migrations";
 
 /** Runs every migration that is not recorded as applied yet. Safe to run concurrently (idempotent steps). */
-export async function runContentMigrations(store: DocumentStore, migrations = CONTENT_MIGRATIONS) {
+export async function runContentMigrations(store: DocumentStore, migrations = CONTENT_MIGRATIONS, repo: DocumentStore = jsonStore) {
   if (store.name === "json") return;
   const applied = (await store.get<string[]>("data", APPLIED_DOC)) ?? [];
   const pending = migrations.filter((m) => !applied.includes(m.id));
@@ -143,6 +168,13 @@ export async function runContentMigrations(store: DocumentStore, migrations = CO
       if (doc === null) continue; // not seeded yet – it will be seeded from the already updated repository file
       const next = migrateDocument(m, name, doc);
       if (next !== doc) await store.set("content", name, next);
+    }
+    if (m.pagesFromRepo?.length) {
+      const [stored, fromRepo] = await Promise.all([store.get<PageDoc>("content", "pages"), repo.get<PageDoc>("content", "pages")]);
+      if (stored && fromRepo) {
+        const next = replacePlaceholderPages(stored, fromRepo, m.pagesFromRepo);
+        if (next !== stored) await store.set("content", "pages", next);
+      }
     }
     applied.push(m.id);
     await store.set("data", APPLIED_DOC, applied);

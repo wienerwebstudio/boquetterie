@@ -400,6 +400,36 @@ export function floristOrder(input: { order: Order; brand: MailBrand }): Rendere
   });
 }
 
+/**
+ * Acknowledgement of a withdrawal sent through the website's withdrawal function
+ * ("Vertrag widerrufen"): repeats what was received and when, on a durable medium.
+ */
+export function withdrawalReceipt(input: { brand: MailBrand; id: string; receivedAt: string; name: string; orderId: string; items?: string }): RenderedMail {
+  const { brand } = input;
+  return layout({
+    brand,
+    subject: `Eingangsbestätigung deines Widerrufs – Bestellung ${input.orderId}`,
+    preheader: `Wir haben deinen Widerruf am ${input.receivedAt} erhalten.`,
+    headline: "Dein Widerruf ist eingegangen.",
+    blocks: [
+      { type: "p", text: `Hallo ${input.name},` },
+      { type: "p", text: "wir bestätigen den Eingang deiner Widerrufserklärung, die du über die Funktion „Vertrag widerrufen“ auf unserer Website abgegeben hast:" },
+      {
+        type: "kv",
+        rows: [
+          ["Eingegangen am", input.receivedAt],
+          ["Bestellnummer", input.orderId],
+          ["Widerrufen", input.items?.trim() || "alle widerrufbaren Waren dieser Bestellung"],
+          ["Vorgangsnummer", input.id],
+        ],
+      },
+      { type: "p", text: "Für frische Schnittblumen und andere schnell verderbliche Waren besteht nach § 18 Abs. 1 Z 4 FAGG kein Widerrufsrecht. Wir prüfen deine Erklärung und melden uns zur Rückabwicklung per E-Mail." },
+      { type: "link", label: "Widerrufsbelehrung ansehen", url: `${brand.siteUrl}/widerruf` },
+    ],
+    footerNotes: ["Diese E-Mail bestätigt nur den Eingang deiner Erklärung."],
+  });
+}
+
 export function reviewRequest(input: { order: Order; brand: MailBrand; reviewUrl: string }): RenderedMail {
   const { order, brand, reviewUrl } = input;
   const first = order.lines[0];

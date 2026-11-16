@@ -14,7 +14,7 @@ const cms = vi.hoisted(() => ({
   addNewsletterSubscriber: vi.fn(),
   canPersistData: vi.fn(),
 }));
-const mail = vi.hoisted(() => ({ sendMail: vi.fn(), adminMailAddress: vi.fn() }));
+const mail = vi.hoisted(() => ({ sendMail: vi.fn(), adminMailAddress: vi.fn(), mailBrand: vi.fn(() => ({ name: "Blumora", siteUrl: "https://blumora.at" })) }));
 
 vi.mock("@/lib/cms", () => cms);
 vi.mock("@/lib/mail", () => ({ ...mail, escapeHtml: (s: string) => s }));
@@ -34,6 +34,7 @@ import { GET as getOrder } from "@/app/api/orders/[id]/route";
 import { POST as lookup } from "@/app/api/orders/lookup/route";
 import { POST as subscriptionRequest } from "@/app/api/subscription-request/route";
 import { POST as newsletter } from "@/app/api/newsletter/route";
+import { POST as withdraw } from "@/app/api/withdrawals/route";
 import { ADMIN_COOKIE, verifySessionToken } from "@/lib/admin-auth";
 import { rateLimitInternals } from "@/lib/rate-limit";
 import { redirectLocal } from "@/lib/http";
@@ -298,5 +299,45 @@ describe("POST /api/newsletter", () => {
     expect((await newsletter(json("/api/newsletter", { email: "anna@example.com" }))).status).toBe(404);
     expect(await (await newsletter(json("/api/newsletter", { email: "anna@example.com", website: "x" }))).json()).toEqual({ ok: true });
     expect(cms.addNewsletterSubscriber).not.toHaveBeenCalled();
+  });
+});
+
+describe("POST /api/withdrawals (Vertrag widerrufen)", () => {
+  const valid = { name: "Anna Muster", email: "anna@example.com", orderId: "bq-7k2m9q", items: "den Teddy" };
+  const sent = () => mail.sendMail.mock.calls.map((c) => c[0] as { to: string; subject: string; text?: string; html: string });
+
+  it("confirms receipt with date and time to the customer, notifies the admin and stores the declaration", async () => {
+    const res = await withdraw(json("/api/withdrawals", valid));
+    const body = await res.json();
+    expect(res.status).toBe(200);
+    expect(body).toMatchObject({ ok: true, confirmationSent: true });
+    expect(body.receivedAt).toMatch(/^\d{2}\.\d{2}\.\d{4}, \d{2}:\d{2} Uhr$/);
+    const [toCustomer, toAdmin] = sent();
+    expect(toCustomer.to).toBe("anna@example.com");
+    expect(toCustomer.subject).toContain("BQ-7K2M9Q");
+    expect(toCustomer.text).toContain(body.receivedAt);
+    expect(toCustomer.text).toContain("den Teddy");
+    expect(toAdmin.to).toBe("team@example.com");
+    expect(toAdmin.html).toContain("ja, E-Mail passt");
+    const [name, list] = cms.writeData.mock.calls[0];
+    expect(name).toBe("withdrawals");
+    expect(list[0]).toMatchObject({ orderId: "BQ-7K2M9Q", orderMatched: true, confirmationSent: true });
+  });
+
+  it("accepts a declaration for an unknown order without telling the visitor (no enumeration)", async () => {
+    const known = await (await withdraw(json("/api/withdrawals", valid))).json();
+    const unknown = await (await withdraw(json("/api/withdrawals", { ...valid, orderId: "BQ-NOPE00" }, "198.51.100.9"))).json();
+    expect(Object.keys(unknown).sort()).toEqual(Object.keys(known).sort());
+    expect(unknown.ok).toBe(true);
+    expect(sent().at(-1)?.html).toContain("nein – Nummer oder E-Mail passen nicht zusammen");
+  });
+
+  it("rejects incomplete declarations and rate-limits", async () => {
+    const res = await withdraw(json("/api/withdrawals", { name: "A", email: "x", orderId: "" }));
+    expect(res.status).toBe(422);
+    expect(Object.keys((await res.json()).errors).sort()).toEqual(["email", "name", "orderId"]);
+    for (let i = 0; i < 4; i++) await withdraw(json("/api/withdrawals", valid, "192.0.2.50"));
+    expect((await withdraw(json("/api/withdrawals", valid, "192.0.2.50"))).status).toBe(200);
+    expect((await withdraw(json("/api/withdrawals", valid, "192.0.2.50"))).status).toBe(429);
   });
 });

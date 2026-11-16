@@ -13,5 +13,5 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
   const page = await getPageBySlug(SLUG);
   if (!page) notFound();
-  return <CmsPage page={page} eyebrow="Rechtliches" crumbs={[{ label: page.title }]} />;
+  return <CmsPage page={page} eyebrow="Rechtliches" crumbs={[{ label: page.title }]} dense />;
 }

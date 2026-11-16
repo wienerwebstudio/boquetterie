@@ -176,6 +176,11 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - **Code-Abgleich:** nur `paymentIntents.create/retrieve` und Webhook-Signaturprüfung über den Raw Body – passt zum eingeschränkten Schlüssel. Einzige Ausnahme: das Blumen-Abo nutzt Checkout Sessions (derzeit aus).
 - **Sicherheitslücke geschlossen:** Ohne Stripe-Schlüssel fiel ein Produktions-Build auf den Test-Anbieter zurück, der Bestellungen sofort als bezahlt markiert. Jetzt bietet er dann keine Zahlungsart an (`PAYMENTS_ALLOW_MOCK=true` nur für die E2E-Tests).
 
+### Zyklus 10 – Rechtstexte und Widerrufsfunktion (2026-11-16)
+- **AGB, Datenschutzerklärung, Widerrufsbelehrung** der Inhaber eingebaut (Stand 16.11.2026). Gegen den Shop geprüft: Liefertage Mo–Sa, drei Zeitfenster und 23 Bezirke stimmen. Platzhalter der Datenschutzerklärung mit belegbaren Angaben gefüllt (Stripe, Netlify und Neon mit DPF laut deren Datenschutzseiten, tatsächliche Cookies/Speicher, keine Analyse-Dienste, eigener Mailversand); ergänzt um Kundenkonto und Bewertungen. Migration ersetzt in der Datenbank nur Seiten, die noch Platzhalter sind.
+- **Widerrufsfunktion „Vertrag widerrufen“** (`/vertrag-widerrufen`, `POST /api/withdrawals`): Name, E-Mail, Bestellnummer, optional Waren → „Widerruf bestätigen“; Eingangsbestätigung mit Datum/Uhrzeit per Mail und auf der Seite, Kopie an MAIL_ADMIN, Speicherung in `withdrawals`. Links im Footer, auf der Widerrufsseite und der Bestellseite.
+- **Checkout:** Hinweis „kein Widerrufsrecht für Schnittblumen (§ 18 Abs. 1 Z 4 FAGG)“ und AGB-Verweis jetzt auch direkt beim Stripe-Button „Jetzt bezahlen“.
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
@@ -205,6 +210,7 @@ Nur tatsächlich ausgeführte Läufe.
 | 2026-11-16 (Z8) | Mail-Vorschau (Kunde, Floristik) gerendert, Fotos laden vom Live-Bild-Dienst | gesichtet |
 | 2026-11-16 (Z9) | Live vor Deploy: `/api/payments/methods` → Anbieter „mock“, Webhook → 404 „not configured“ (Stripe-Variablen erst nach letztem Deploy gesetzt) | Befund |
 | 2026-11-16 (Z9) | `tsc`, `eslint`, Unit 208/208, `next build`, Playwright E2E + axe 30/30 | grün |
+| 2026-11-16 (Z10) | `tsc`, `eslint`, Unit 215/215, `next build`, Playwright E2E + axe 38/38 (neu: Rechtsseiten, Widerrufsfunktion) | grün |
 | 2026-11-15 (Z2) | Sichtprüfung per Screenshot (Start, Produktseite, Lieferung, Über uns; 390–1440 px) | abgeschnittene Inhalte behoben |
 
 Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand über Resend (keine Zugangsdaten bei Netlify).

@@ -40,7 +40,7 @@ export function PlaceholderBox({ label = "Dieser Abschnitt wird gerade fertigges
 
 /* ---------------- Sections ---------------- */
 
-export function RichSectionBlock({ section, index, headingLevel = 2 }: { section: RichSection; index: number; headingLevel?: 2 | 3 }) {
+export function RichSectionBlock({ section, index, headingLevel = 2, dense = false }: { section: RichSection; index: number; headingLevel?: 2 | 3; dense?: boolean }) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   const headingId = section.heading ? `s-${index}-${slugify(section.heading)}` : undefined;
 
@@ -70,29 +70,31 @@ export function RichSectionBlock({ section, index, headingLevel = 2 }: { section
 
   return (
     <section aria-labelledby={headingId} className="scroll-mt-28">
-      {section.heading && <Heading id={headingId} className="display-3 mb-5 max-w-2xl text-ink">{section.heading}</Heading>}
+      {section.heading && <Heading id={headingId} className={cn(dense ? "mb-3 max-w-2xl font-serif text-[22px] leading-snug text-ink sm:text-2xl" : "display-3 mb-5 max-w-2xl text-ink")}>{section.heading}</Heading>}
       <Paragraphs items={section.paragraphs} />
     </section>
   );
 }
 
-export function RichSections({ sections, className, headingLevel }: { sections: RichSection[]; className?: string; headingLevel?: 2 | 3 }) {
+export function RichSections({ sections, className, headingLevel, dense = false }: { sections: RichSection[]; className?: string; headingLevel?: 2 | 3; dense?: boolean }) {
   if (sections.length === 0) return null;
   return (
-    <div className={cn("space-y-16 sm:space-y-20 lg:space-y-24", className)}>
-      {sections.map((section, i) => <RichSectionBlock key={i} section={section} index={i} headingLevel={headingLevel} />)}
+    <div className={cn(dense ? "space-y-10 sm:space-y-12" : "space-y-16 sm:space-y-20 lg:space-y-24", className)}>
+      {sections.map((section, i) => <RichSectionBlock key={i} section={section} index={i} headingLevel={headingLevel} dense={dense} />)}
     </div>
   );
 }
 
 /* ---------------- Full page ---------------- */
 
-export function CmsPage({ page, eyebrow, crumbs, image, children }: { page: CmsPageType; eyebrow?: string; crumbs?: Crumb[]; image?: { src: string; alt: string }; children?: React.ReactNode }) {
+/** `dense`: tighter spacing and smaller headings for long legal texts. `before` renders above the sections. */
+export function CmsPage({ page, eyebrow, crumbs, image, children, before, dense = false }: { page: CmsPageType; eyebrow?: string; crumbs?: Crumb[]; image?: { src: string; alt: string }; children?: React.ReactNode; before?: React.ReactNode; dense?: boolean }) {
   return (
     <article>
       <PageHeader eyebrow={eyebrow} title={page.title} intro={page.intro} crumbs={crumbs} image={image} />
       <div className="container-x py-14 sm:py-20 lg:py-24">
-        <RichSections sections={page.sections} />
+        {before}
+        <RichSections sections={page.sections} dense={dense} />
         {children}
       </div>
     </article>
