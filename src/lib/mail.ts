@@ -298,7 +298,7 @@ export { escapeHtml } from "@/lib/mail/templates";
 /** A clearly fictitious paid order for previewing the order mails. */
 export interface SampleOrderInput {
   product?: { id: string; name: string; sizeId: string; sizeLabel: string; price: number; image?: string; floristBudget?: number };
-  extra?: { id: string; name: string; price: number; floristBudget?: number } | null;
+  extra?: { id: string; name: string; price: number; image?: string; floristBudget?: number } | null;
   /** Adds a greeting card – only when cards are on offer. */
   withCard?: boolean;
 }
@@ -316,7 +316,7 @@ export function sampleOrder(input: SampleOrderInput = {}): Order {
     lines: [{
       productId: p.id, productName: p.name, sizeId: p.sizeId as Order["lines"][number]["sizeId"], sizeLabel: p.sizeLabel, quantity: 1, unitPrice: p.price, image: p.image ?? "",
       floristBudget: p.floristBudget,
-      extras: x ? [{ extraId: x.id, name: x.name, quantity: 1, unitPrice: x.price, floristBudget: x.floristBudget }] : [],
+      extras: x ? [{ extraId: x.id, name: x.name, quantity: 1, unitPrice: x.price, image: x.image, floristBudget: x.floristBudget }] : [],
       ...(input.withCard ? { message: "Alles Liebe – das ist nur eine Test-Mail.", senderName: "Blumora" } : {}),
     }],
     totals: { subtotal: p.price, extras: extrasTotal, delivery: 0, discount: 0, total: Math.round((p.price + extrasTotal) * 100) / 100 },
@@ -338,7 +338,7 @@ async function liveSampleOrder(settings: SiteSettings): Promise<Order> {
         image: (product.images.find((im) => im.kind === "front") ?? product.images[0])?.src,
         floristBudget: budgets.products[product.id]?.[size.id],
       },
-      extra: extra ? { id: extra.id, name: extra.name, price: extra.price, floristBudget: budgets.extras[extra.id] } : null,
+      extra: extra ? { id: extra.id, name: extra.name, price: extra.price, image: extra.image, floristBudget: budgets.extras[extra.id] } : null,
       withCard: settings.greetingCard?.enabled === true,
     });
   } catch (err) {

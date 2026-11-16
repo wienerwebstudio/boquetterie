@@ -96,9 +96,15 @@ function renderBlockHtml(b: Block): string {
     case "items":
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 8px;border-top:1px solid ${C.line};">${b.order.lines
         .map((l) => {
-          const extras = l.extras.map((e) => `+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)} (${escapeHtml(formatPrice(e.unitPrice * e.quantity))})`).join("<br>");
+          const extras = l.extras
+            .map((e) => {
+              const thumb = imgCell(mailImageUrl(b.siteUrl, e.image ?? ""), e.name, 32, 40);
+              const label = `+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)} (${escapeHtml(formatPrice(e.unitPrice * e.quantity))})`;
+              return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;"><tr>${thumb ? `<td width="40" style="width:40px;padding-right:8px;vertical-align:middle;">${thumb}</td>` : ""}<td style="font-family:${FONT};font-size:13px;color:${C.muted};vertical-align:middle;">${label}</td></tr></table>`;
+            })
+            .join("");
           const img = imgCell(mailImageUrl(b.siteUrl, l.image), l.productName, 64, 80);
-          return `<tr>${img ? `<td width="76" style="width:76px;padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};vertical-align:top;">${img}</td>` : ""}<td style="padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};vertical-align:top;"><strong style="font-weight:600;">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</strong><br><span style="color:${C.muted};font-size:13px;">Größe ${escapeHtml(l.sizeLabel)}</span>${extras ? `<br><span style="color:${C.muted};font-size:13px;">${extras}</span>` : ""}</td><td align="right" style="padding:12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;color:${C.ink};vertical-align:top;white-space:nowrap;">${escapeHtml(formatPrice(l.unitPrice * l.quantity))}</td></tr>`;
+          return `<tr>${img ? `<td width="76" style="width:76px;padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};vertical-align:top;">${img}</td>` : ""}<td style="padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};vertical-align:top;"><strong style="font-weight:600;">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</strong><br><span style="color:${C.muted};font-size:13px;">Größe ${escapeHtml(l.sizeLabel)}</span>${extras}</td><td align="right" style="padding:12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;color:${C.ink};vertical-align:top;white-space:nowrap;">${escapeHtml(formatPrice(l.unitPrice * l.quantity))}</td></tr>`;
         })
         .join("")}</table>`;
     case "floristItems":
@@ -106,9 +112,15 @@ function renderBlockHtml(b: Block): string {
         .map((l) => {
           const img = imgCell(mailImageUrl(b.siteUrl, l.image, 480), l.productName, 160, 200);
           const extras = l.extras
-            .map((e) => `<tr><td style="padding:4px 0 0;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};">+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)}<br><span style="font-size:13px;color:${C.muted};">Budget: ${escapeHtml(budgetText(e.floristBudget, e.quantity * l.quantity))}</span></td></tr>`)
+            .map((e) => {
+              const thumb = imgCell(mailImageUrl(b.siteUrl, e.image ?? "", 160), e.name, 64, 80);
+              return `<tr>${thumb ? `<td width="76" style="width:76px;padding:12px 12px 0 0;vertical-align:middle;">${thumb}</td>` : ""}<td style="padding:12px 0 0;font-family:${FONT};font-size:15px;line-height:1.5;color:${C.ink};vertical-align:middle;"><strong style="font-weight:600;">+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)}</strong><br><span style="font-size:14px;color:${C.muted};">Budget: ${escapeHtml(budgetText(e.floristBudget, e.quantity))}</span></td></tr>`;
+            })
             .join("");
-          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border:1px solid ${C.line};border-radius:8px;"><tr>${img ? `<td width="176" style="width:176px;padding:16px 0 16px 16px;vertical-align:top;">${img}</td>` : ""}<td style="padding:16px;vertical-align:top;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:${SERIF};font-size:20px;line-height:1.3;color:${C.ink};">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</td></tr><tr><td style="padding:2px 0 10px;font-family:${FONT};font-size:14px;color:${C.muted};">Größe ${escapeHtml(l.sizeLabel)}</td></tr><tr><td style="padding:10px 12px;background:${C.bg};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Budget Einkauf</span><br><strong style="font-size:17px;font-weight:600;">${escapeHtml(budgetText(l.floristBudget, l.quantity))}</strong></td></tr>${extras}</table></td></tr></table>`;
+          const extrasRow = extras
+            ? `<tr><td colspan="2" style="padding:0 16px 16px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid ${C.line};"><tr><td colspan="2" style="padding:12px 0 0;font-family:${FONT};font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Dazu</td></tr>${extras}</table></td></tr>`
+            : "";
+          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border:1px solid ${C.line};border-radius:8px;"><tr>${img ? `<td width="176" style="width:176px;padding:16px 0 16px 16px;vertical-align:top;">${img}</td>` : ""}<td style="padding:16px;vertical-align:top;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:${SERIF};font-size:20px;line-height:1.3;color:${C.ink};">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</td></tr><tr><td style="padding:2px 0 10px;font-family:${FONT};font-size:14px;color:${C.muted};">Größe ${escapeHtml(l.sizeLabel)}</td></tr><tr><td style="padding:10px 12px;background:${C.bg};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Budget Einkauf</span><br><strong style="font-size:17px;font-weight:600;">${escapeHtml(budgetText(l.floristBudget, l.quantity))}</strong></td></tr></table></td></tr>${extrasRow}</table>`;
         })
         .join("");
     case "totals": {
@@ -152,7 +164,7 @@ function renderBlockText(b: Block): string {
     case "floristItems":
       return b.order.lines
         .map((l) => {
-          const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} – Budget ${budgetText(e.floristBudget, e.quantity * l.quantity)}`).join("\n");
+          const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} – Budget ${budgetText(e.floristBudget, e.quantity)}${e.image ? `\n     Foto: ${mailImageUrl(b.siteUrl, e.image, 160)}` : ""}`).join("\n");
           return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${l.sizeLabel}\n  Budget Einkauf: ${budgetText(l.floristBudget, l.quantity)}\n  Foto: ${mailImageUrl(b.siteUrl, l.image, 480)}${extras ? `\n${extras}` : ""}`;
         })
         .join("\n");
@@ -373,7 +385,7 @@ export function floristOrder(input: { order: Order; brand: MailBrand }): Rendere
     : null;
   const budgets = order.lines.flatMap((l) => [
     l.floristBudget === undefined ? null : l.floristBudget * l.quantity,
-    ...l.extras.map((e) => (e.floristBudget === undefined ? null : e.floristBudget * e.quantity * l.quantity)),
+    ...l.extras.map((e) => (e.floristBudget === undefined ? null : e.floristBudget * e.quantity)),
   ]);
   const total = budgets.every((b): b is number => b !== null) ? budgets.reduce((a, b) => a + b, 0) : null;
   const ready = order.delivery.windowFrom

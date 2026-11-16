@@ -205,7 +205,7 @@ export function resolveLines(items: OrderPayloadItem[], products: Product[], ext
     for (const ex of it.extras) {
       const extra = extras.find((e) => e.id === ex.extraId && e.active);
       if (!extra) return { ok: false, message: "Ein Extra in deinem Warenkorb ist nicht mehr verfügbar." };
-      lineExtras.push({ extraId: extra.id, name: extra.name, quantity: ex.quantity, unitPrice: extra.price });
+      lineExtras.push({ extraId: extra.id, name: extra.name, quantity: ex.quantity, unitPrice: extra.price, ...(extra.image && { image: extra.image }) });
     }
     const image = (product.images.find((i) => i.kind === "front") ?? product.images[0])?.src ?? "";
     lines.push({
@@ -217,7 +217,7 @@ export function resolveLines(items: OrderPayloadItem[], products: Product[], ext
       },
       cartItem: {
         id: `${product.id}-${size.id}`, productId: product.id, sizeId: size.id, quantity: it.quantity,
-        extras: lineExtras.map((e) => ({ extraId: e.extraId, quantity: e.quantity, name: e.name, price: e.unitPrice, image: "" })),
+        extras: lineExtras.map((e) => ({ extraId: e.extraId, quantity: e.quantity, name: e.name, price: e.unitPrice, image: e.image ?? "" })),
         snapshot: { slug: product.slug, name: product.name, tagline: product.tagline, image, sizeLabel: size.label, unitPrice: size.price, sameDayCapable: product.sameDayCapable },
       },
     });

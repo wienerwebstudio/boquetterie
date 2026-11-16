@@ -385,7 +385,7 @@ export interface OrderLine {
   quantity: number;
   unitPrice: number;
   image: string;
-  extras: { extraId: string; name: string; quantity: number; unitPrice: number; floristBudget?: number }[];
+  extras: { extraId: string; name: string; quantity: number; unitPrice: number; image?: string; floristBudget?: number }[];
   /** Net purchase budget of the partner florist per unit, snapshot at order time. Internal – stripped from every public view. */
   floristBudget?: number;
   message?: string;

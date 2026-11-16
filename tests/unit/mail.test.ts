@@ -49,6 +49,16 @@ describe("florist order slip", () => {
     expect(two.text).toContain(`${formatPrice(83)} netto (2 × ${formatPrice(41.5)})`);
   });
 
+  it("shows the extras' photos and counts extras per line, like the price", () => {
+    const withTeddy: Order = { ...budgeted, lines: [{ ...budgeted.lines[0], quantity: 2, extras: [{ ...budgeted.lines[0].extras[0], image: "/images/products/sortiment/teddybaer-klein-3.jpg" }] }] };
+    const mail = floristOrder({ order: withTeddy, brand });
+    expect(mail.html).toContain("url=%2Fimages%2Fproducts%2Fsortiment%2Fteddybaer-klein-3.jpg");
+    expect(mail.text).toContain(`Teddy – Budget ${formatPrice(12.5)} netto`);
+    expect(mail.text).toContain(`Budget gesamt: ${formatPrice(2 * 41.5 + 12.5)} netto`);
+    const confirmation = orderConfirmation({ order: withTeddy, brand, trackingUrl: "https://blumora.at/x" });
+    expect(confirmation.html).toContain("url=%2Fimages%2Fproducts%2Fsortiment%2Fteddybaer-klein-3.jpg&amp;w=160");
+  });
+
   it("says when no budget is stored instead of inventing one", () => {
     const mail = floristOrder({ order, brand });
     expect(mail.text).toContain("Budget Einkauf: nicht hinterlegt");
