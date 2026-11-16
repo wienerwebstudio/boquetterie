@@ -4,7 +4,7 @@ import { formatDateShort, formatDateTime, formatPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { EmptyState, PageHeader, Table, Td, Th, inputCls } from "@/components/admin/controls";
 import { StatusBadge } from "@/components/admin/status-badge";
-import { customerName, isOpenOrder, recipientName, statusLabel } from "@/components/admin/order-utils";
+import { customerName, isOpenOrder, isUnpaidOrder, recipientName, statusLabel } from "@/components/admin/order-utils";
 import { cn } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
@@ -18,6 +18,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
   const filtered = orders
     .filter((o) => {
       if (status === "open") return isOpenOrder(o, settings);
+      if (status === "unpaid") return isUnpaidOrder(o);
       if (status && o.status !== status) return false;
       return true;
     })
@@ -32,7 +33,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
 
   return (
     <>
-      <PageHeader title="Bestellungen" description={`${orders.length} Bestellungen gesamt, ${orders.filter((o) => isOpenOrder(o, settings)).length} offen.`} />
+      <PageHeader title="Bestellungen" description={`${orders.length} Bestellungen gesamt, ${orders.filter((o) => isOpenOrder(o, settings)).length} offen (bezahlt), ${orders.filter(isUnpaidOrder).length} nicht bezahlt – für nicht bezahlte Bestellungen nichts binden lassen.`} />
 
       <form method="get" className="mb-4 flex flex-wrap items-end gap-3 rounded-lg border border-line bg-white p-4">
         <div className="flex min-w-[200px] flex-1 flex-col gap-1.5">
@@ -43,7 +44,8 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
           <label htmlFor="status" className="text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-muted">Status</label>
           <select id="status" name="status" defaultValue={status} className={cn(inputCls, "min-w-[200px] appearance-none")}>
             <option value="">Alle</option>
-            <option value="open">Alle offenen</option>
+            <option value="open">Alle offenen (bezahlt)</option>
+            <option value="unpaid">Nicht bezahlt</option>
             {settings.orderStatuses.map((s) => (
               <option key={s.key} value={s.key}>{s.label}</option>
             ))}
@@ -64,13 +66,13 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
           </thead>
           <tbody>
             {filtered.map((o) => (
-              <tr key={o.id} className="hover:bg-ivory-100/60">
+              <tr key={o.id} className={cn("hover:bg-ivory-100/60", isUnpaidOrder(o) && "opacity-60")}>
                 <Td><Link href={`/admin/bestellungen/${o.id}`} className="font-semibold text-forest underline-offset-4 hover:underline">{o.id}</Link></Td>
                 <Td className="whitespace-nowrap text-ink-muted">{formatDateTime(o.createdAt)}</Td>
                 <Td>{customerName(o)}<div className="text-[12px] text-ink-soft">{o.customer.email}</div></Td>
                 <Td>{recipientName(o)}<div className="text-[12px] text-ink-soft">{o.recipient.zip} {o.recipient.city}</div></Td>
                 <Td className="whitespace-nowrap">{formatDateShort(o.delivery.date)}{o.delivery.windowLabel ? <div className="text-[12px] text-ink-soft">{o.delivery.windowLabel}</div> : null}</Td>
-                <Td className="whitespace-nowrap text-[13px]">{o.payment.status === "paid" ? "Bezahlt" : o.payment.status === "failed" ? "Fehlgeschlagen" : "Ausstehend"}</Td>
+                <Td className="whitespace-nowrap text-[13px]">{o.payment.status === "paid" ? "Bezahlt" : o.payment.status === "refunded" ? "Erstattet" : <span className="font-semibold text-danger">Nicht bezahlt</span>}</Td>
                 <Td><StatusBadge status={o.status} label={statusLabel(settings, o.status)} /></Td>
                 <Td className="whitespace-nowrap text-right font-semibold">{formatPrice(o.totals.total)}</Td>
               </tr>

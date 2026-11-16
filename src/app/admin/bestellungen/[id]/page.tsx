@@ -2,12 +2,12 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getOrderById, getSettings } from "@/lib/cms";
 import { formatDateLong, formatDateTime, formatPrice } from "@/lib/format";
-import { Card, PageHeader } from "@/components/admin/controls";
+import { Banner, Card, PageHeader } from "@/components/admin/controls";
 import { StatusBadge } from "@/components/admin/status-badge";
 import { CourierForm, InternalNoteForm, OrderStatusForm } from "@/components/admin/order-forms";
 import { courierEnabled } from "@/lib/courier";
 import { RIDERX_STATUS_LABELS } from "@/lib/courier/riderx-core";
-import { PAYMENT_LABELS, PAYMENT_STATUS_LABELS, customerName, recipientName, statusLabel } from "@/components/admin/order-utils";
+import { PAYMENT_LABELS, PAYMENT_STATUS_LABELS, customerName, recipientName, statusLabel, isUnpaidOrder } from "@/components/admin/order-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -36,6 +36,11 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
         description={`Eingegangen am ${formatDateTime(order.createdAt)} · Tracking-Token ${order.token}`}
       />
 
+      {isUnpaidOrder(order) && (
+        <Banner tone="error" className="mb-5">
+          <strong>Nicht bezahlt.</strong> Die Zahlung wurde abgebrochen oder nicht abgeschlossen – für diese Bestellung nichts binden und keinen Fahrer buchen. Kund:in und Floristik haben keine Mail bekommen.
+        </Banner>
+      )}
       <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
         <div className="space-y-5">
           <Card title="Positionen">

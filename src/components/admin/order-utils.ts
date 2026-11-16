@@ -16,9 +16,19 @@ export function statusLabel(settings: Pick<SiteSettings, "orderStatuses">, statu
   return settings.orderStatuses.find((s) => s.key === status)?.label ?? status;
 }
 
+/**
+ * An order that still needs work: paid and not in a final status. Unpaid orders
+ * (payment cancelled or never finished) are not open – nothing may be bound for them.
+ */
 export function isOpenOrder(order: Order, settings: Pick<SiteSettings, "orderStatuses">) {
+  if (order.payment.status !== "paid") return false;
   const def = settings.orderStatuses.find((s) => s.key === order.status);
   return def ? !def.terminal : true;
+}
+
+/** Created, but the payment never went through (cancelled in the payment step, failed or still pending). */
+export function isUnpaidOrder(order: Order) {
+  return order.payment.status === "pending" || order.payment.status === "failed";
 }
 
 /** "YYYY-MM-DD" of an ISO datetime in the shop timezone. */
