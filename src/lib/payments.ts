@@ -1,7 +1,7 @@
 import "server-only";
 import type { Order, SiteSettings } from "@/types";
 import type { CreatePaymentResult, PaymentMethodId, PaymentProviderId, PublicPaymentMethod } from "@/types/payments";
-import { mockProvider, MOCK_REFERENCE_PREFIX, isMockReference } from "@/lib/payments/mock";
+import { mockProvider, MOCK_REFERENCE_PREFIX, isMockReference, mockPaymentsAllowed } from "@/lib/payments/mock";
 import { stripeProvider, stripeConfigured, stripePublishableKey } from "@/lib/payments/stripe";
 import { paypalProvider, paypalConfigured } from "@/lib/payments/paypal";
 import type { PaymentProviderAdapter, VerifyResult, WebhookResult } from "@/lib/payments/provider";
@@ -16,10 +16,10 @@ export { stripeConfigured, stripePublishableKey, paypalConfigured, MOCK_REFERENC
  * Providers are activated purely by environment variables (see docs/PAYMENTS.md):
  *   - stripe → STRIPE_SECRET_KEY + NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
  *   - paypal → PAYPAL_CLIENT_ID + PAYPAL_CLIENT_SECRET (+ PAYPAL_ENV)
- *   - mock   → always available; the automatic fallback when Stripe is not configured
+ *   - mock   → fallback when Stripe is not configured – in production only with PAYMENTS_ALLOW_MOCK=true
  *
  * Method → provider mapping:
- *   card / apple_pay / google_pay / eps / klarna → stripe (fallback: mock)
+ *   card / apple_pay / google_pay / eps / klarna → stripe (fallback: mock where allowed, else unavailable)
  *   paypal                                       → paypal (no fallback – hidden when unconfigured)
  *
  * The shop never talks to a provider directly – everything goes through
@@ -38,7 +38,7 @@ const STRIPE_METHODS: ReadonlySet<PaymentMethodId> = new Set(["card", "apple_pay
 /** Resolves which provider would handle a method right now; `null` = method unavailable. */
 export function providerForMethod(method: PaymentMethodId): PaymentProviderId | null {
   if (method === "paypal") return paypalConfigured() ? "paypal" : null;
-  if (STRIPE_METHODS.has(method)) return stripeConfigured() ? "stripe" : "mock";
+  if (STRIPE_METHODS.has(method)) return stripeConfigured() ? "stripe" : mockPaymentsAllowed() ? "mock" : null;
   return null;
 }
 

@@ -12,15 +12,28 @@ import type { PaymentProviderAdapter, VerifyResult, WebhookResult } from "./prov
 
 export const MOCK_REFERENCE_PREFIX = "mock_";
 
+/**
+ * The mock provider marks orders as paid without any money moving, so a production
+ * build only uses it when explicitly allowed (`PAYMENTS_ALLOW_MOCK=true`, e.g. the
+ * E2E suite). Otherwise a missing Stripe key means "no payment method", never
+ * "free flowers".
+ */
+export function mockPaymentsAllowed() {
+  return process.env.NODE_ENV !== "production" || process.env.PAYMENTS_ALLOW_MOCK === "true";
+}
+
 export function isMockReference(reference?: string) {
   return Boolean(reference && reference.startsWith(MOCK_REFERENCE_PREFIX));
 }
 
 export const mockProvider: PaymentProviderAdapter = {
   id: "mock",
-  isConfigured: () => true,
+  isConfigured: mockPaymentsAllowed,
 
   async createPayment({ order }): Promise<CreatePaymentResult> {
+    if (!mockPaymentsAllowed()) {
+      return { status: "failed", provider: "mock", message: "Die Zahlung ist gerade nicht möglich. Bitte versuch es später noch einmal." };
+    }
     // Simulate a short round-trip so loading states are visible in development.
     await new Promise((r) => setTimeout(r, 250));
     return {

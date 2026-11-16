@@ -171,6 +171,11 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - **Grußkarten:** Schalter `greetingCard.enabled` (fehlt = aus). Produktseite, Warenkorb und Checkout zeigen „Kommt bald!“, der Server verwirft Kartentexte, Mails enthalten keine Karte. Alle Texte, die eine Karte versprachen, sind angepasst.
 - **Inhalts-Migrationen:** Seit Neon werden Inhalte aus `/content` nur noch für fehlende Dokumente übernommen. `src/lib/content-migrations.ts` überträgt gezielte Textänderungen einmalig in die Datenbank (Admin-Änderungen bleiben unberührt).
 
+### Zyklus 9 – Stripe live vorbereitet (2026-11-16)
+- **Inhaber-Setup (Browser-Assistent):** Live-Modus, Zahlungsmethoden Karten, Apple Pay, Google Pay, Amazon Pay, Link, EPS, Klarna; Domain blumora.at verifiziert; Webhook mit den vier Events (API 2026-10-28); eingeschränkter Schlüssel (PaymentIntents schreiben, Charges lesen). Kontoverifizierung bei Stripe noch offen.
+- **Code-Abgleich:** nur `paymentIntents.create/retrieve` und Webhook-Signaturprüfung über den Raw Body – passt zum eingeschränkten Schlüssel. Einzige Ausnahme: das Blumen-Abo nutzt Checkout Sessions (derzeit aus).
+- **Sicherheitslücke geschlossen:** Ohne Stripe-Schlüssel fiel ein Produktions-Build auf den Test-Anbieter zurück, der Bestellungen sofort als bezahlt markiert. Jetzt bietet er dann keine Zahlungsart an (`PAYMENTS_ALLOW_MOCK=true` nur für die E2E-Tests).
+
 ## 5. Testergebnisse
 
 Nur tatsächlich ausgeführte Läufe.
@@ -198,6 +203,8 @@ Nur tatsächlich ausgeführte Läufe.
 | 2026-11-16 (Z7) | `tsc`, `eslint`, Unit 194/194, `next build`, Playwright E2E + axe 30/30 | grün |
 | 2026-11-16 (Z8) | `tsc`, `eslint`, Unit 205/205, `next build`, Playwright E2E + axe 30/30 | grün |
 | 2026-11-16 (Z8) | Mail-Vorschau (Kunde, Floristik) gerendert, Fotos laden vom Live-Bild-Dienst | gesichtet |
+| 2026-11-16 (Z9) | Live vor Deploy: `/api/payments/methods` → Anbieter „mock“, Webhook → 404 „not configured“ (Stripe-Variablen erst nach letztem Deploy gesetzt) | Befund |
+| 2026-11-16 (Z9) | `tsc`, `eslint`, Unit 208/208, `next build`, Playwright E2E + axe 30/30 | grün |
 | 2026-11-15 (Z2) | Sichtprüfung per Screenshot (Start, Produktseite, Lieferung, Über uns; 390–1440 px) | abgeschnittene Inhalte behoben |
 
 Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand über Resend (keine Zugangsdaten bei Netlify).

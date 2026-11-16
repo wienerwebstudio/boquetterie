@@ -36,7 +36,7 @@ Beträge kommen immer aus der serverseitig berechneten Bestellung, nie vom Clien
 1. `POST /api/orders` validiert alles, **reserviert Lagerbestand**, speichert die
    Bestellung mit `status: received`, `payment.status: pending` und startet die
    Zahlung beim Provider. Antwort: `{ id, token, payment: { provider, clientSecret?, approveUrl? } }`.
-2. **Mock** – sofort `paid`, History-Eintrag „Testzahlung (mock)“.
+2. **Mock** – sofort `paid`, History-Eintrag „Testzahlung (mock)“. Nur in Entwicklung oder mit `PAYMENTS_ALLOW_MOCK=true` (E2E-Tests); ein Produktions-Build ohne Stripe-Schlüssel bietet Karte/Apple Pay/Google Pay gar nicht an, statt Bestellungen ohne Zahlung als bezahlt zu markieren.
 3. **Stripe** – PaymentIntent (`automatic_payment_methods`, Metadata `orderId`,
    `receipt_email`). Der Browser bestätigt mit dem Payment Element
    (`stripe.confirmPayment`, `redirect: "if_required"`). Danach ruft der Client
