@@ -7,12 +7,19 @@ Transaktionale E-Mails (Bestellbestätigung, Statusupdates, Bewertungsanfrage, A
 | Variable | Pflicht | Beschreibung |
 | --- | --- | --- |
 | `RESEND_API_KEY` | für echten Versand | API-Key von [Resend](https://resend.com). Ohne Key werden alle Mails nur ins Server-Log geschrieben (`[mail] (console provider) …`) – praktisch für Entwicklung und Previews. |
+| `SMTP_HOST` | Alternative zu Resend | SMTP-Server des eigenen Postfachs (z. B. internex). Wird genutzt, wenn **kein** `RESEND_API_KEY` gesetzt ist. |
+| `SMTP_PORT` | nein | Standard `587` (STARTTLS). Bei `465` wird automatisch direkt verschlüsselt. |
+| `SMTP_SECURE` | nein | `true`/`false` erzwingt die direkte TLS-Verbindung; ohne Wert entscheidet der Port. |
+| `SMTP_USER`, `SMTP_PASS` | bei SMTP | Anmeldung am Postfach (meist die volle Adresse und das Postfach-Passwort). **`SMTP_PASS` bei Netlify als Secret.** |
 | `MAIL_FROM` | ja (bei Resend) | Absender, z. B. `Blumora <hallo@blumora.at>`. Die Domain muss bei Resend verifiziert sein (siehe unten). Fallback: `Blumora <no-reply@example.com>`. |
 | `MAIL_REPLY_TO` | nein | Reply-To-Adresse, z. B. das Team-Postfach. Antworten von Kund:innen landen dort. |
 | `MAIL_ADMIN` | nein | Interne Adresse, die bei jeder neuen Bestellung eine kompakte Zusammenfassung mit Link in den Admin bekommt. Leer = keine internen Mails. |
+| `MAIL_FLORIST` | nein | Adresse(n) der Partnerfloristik, mit Komma getrennt. Bekommen pro bezahlter Bestellung einen **Auftragszettel**: Strauß, Größe, Extras, Kartentext, Abholzeit – ohne Preise und ohne Kontaktdaten von Kund:in oder Empfänger:in. |
 | `CRON_SECRET` | für Cron | Geheimnis, das die Cron-Endpunkte unter `/api/cron/*` schützt. Anfragen müssen `Authorization: Bearer <CRON_SECRET>` senden. Erzeugen z. B. mit `openssl rand -hex 32`. Ohne Wert antworten die Endpunkte mit 503. |
 
 Die öffentliche URL (für Links in Mails) kommt **nicht** aus einer Env-Variable, sondern aus `content/settings.json` → `seo.siteUrl` (im Admin unter Einstellungen → SEO). Markenname, Claim und Kontakt-Mail stammen ebenfalls aus den Einstellungen; Platzhalter-Werte (`[…]`) werden nie in Mails ausgegeben.
+
+Bei SMTP muss `MAIL_FROM` die Adresse des Postfachs sein (z. B. `Blumora <office@blumora.at>`), sonst lehnen viele Server den Versand ab. Die Mails werden nach der Antwort an den Kunden verschickt (`after()`), zusammen mit der Kurierbuchung – eine langsame Mail verzögert die Zahlung nie und wird auf Netlify nicht abgeschnitten.
 
 Beispiel `.env.local`:
 
@@ -81,6 +88,7 @@ Alle Mails teilen sich ein schlichtes Layout: Elfenbein-Hintergrund (`#faf7f2`),
 | Mail | Auslöser | Empfänger | Inhalt |
 | --- | --- | --- | --- |
 | **Bestellbestätigung** | Bestellung angelegt (`sendOrderConfirmation`) | Kund:in | Bestellnummer, Liefertermin + Zeitfenster, Empfängeradresse, Positionen mit Größe und Extras, Summen (Blumen, Extras, Lieferung, Gutschein, Gesamt), Grußkarten-Vorschau, Button zur Statusseite (`/bestellung/{id}?token=…`). |
+| **Auftragszettel (Floristik)** | gleichzeitig mit der Bestätigung | `MAIL_FLORIST` | Was zu binden ist und bis wann (Beginn des Lieferfensters = Abholung durch den Kurier). Keine Preise, keine Kundendaten. |
 | **Neue Bestellung (intern)** | gleichzeitig mit der Bestätigung | `MAIL_ADMIN` | Kompakte Zusammenfassung (Lieferung, Empfänger:in mit Telefon, Kund:in, Positionen, Grußkarte, Zahlung, Gesamt) und Button zu `/admin/bestellungen/{id}`. Betreff enthält Nummer, Betrag und Liefertag. |
 | **Statusupdate** | Statuswechsel im Admin auf einen Status mit `customerVisible: true` (`sendOrderStatusUpdate`) | Kund:in | Headline und Text pro Status (Zahlung bestätigt, In Vorbereitung, Strauß wird gebunden, Bereit, Unterwegs, Zugestellt). *Nicht zustellbar* und *Storniert* bekommen einen hervorgehobenen Hinweis, die Notiz zum Statuswechsel (bei „Nicht zustellbar“) und die Kontaktadresse. Immer mit Link zur Statusseite. Interne Notizen lösen nie eine Mail aus; ein „Wechsel“ auf denselben Status auch nicht. |
 | **Bewertungsanfrage** | Cron `review-requests`, 2–30 Tage nach Zustellung, einmalig | Kund:in | Kurze Bitte um Bewertung mit Button zu `/bewertung?order={id}&token={tracking-token}`. Die Bewertung landet als „pending“ in `data/review-submissions.json` und wird im Admin unter *Eingereichte Bewertungen* geprüft – nichts wird automatisch veröffentlicht. |

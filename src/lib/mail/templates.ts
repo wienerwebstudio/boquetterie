@@ -320,6 +320,46 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
   });
 }
 
+/**
+ * Order slip for the partner florist: what to bind and when it is collected.
+ * Deliberately without prices and without the customer's or recipient's contact
+ * data – the courier delivers, the florist only prepares (data minimisation).
+ */
+export function floristOrder(input: { order: Order; brand: MailBrand }): RenderedMail {
+  const { order, brand } = input;
+  const items = order.lines
+    .map((l) => {
+      const extras = l.extras.length ? `\n  + ${l.extras.map((e) => `${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name}`).join(", ")}` : "";
+      return `${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName} – ${l.sizeLabel}${extras}`;
+    })
+    .join("\n");
+  const card = order.lines.find((l) => l.message || l.senderName || l.anonymous);
+  const cardText = card
+    ? [card.message || "(ohne Text)", card.anonymous ? "Absender: anonym – keinen Namen auf die Karte" : card.senderName ? `Absender: ${card.senderName}` : ""].filter(Boolean).join("\n")
+    : "Keine Grußkarte";
+  const ready = order.delivery.windowFrom
+    ? `${formatDateLong(order.delivery.date)}, bis ${order.delivery.windowFrom} Uhr (Abholung durch den Kurier)`
+    : `${formatDateLong(order.delivery.date)} (Uhrzeit folgt)`;
+  return layout({
+    brand,
+    subject: `Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${order.delivery.windowFrom ? ` ${order.delivery.windowFrom} Uhr` : ""}`,
+    preheader: items.split("\n")[0],
+    headline: `Neuer Auftrag ${order.id}`,
+    blocks: [
+      {
+        type: "kv",
+        rows: [
+          ["Fertig zur Abholung", ready],
+          ["Lieferfenster", deliveryLine(order)],
+          ["Strauß", items],
+          ["Grußkarte", cardText],
+        ],
+      },
+    ],
+    footerNotes: ["Auftrag von Blumora. Bei Fragen bitte an office@blumora.at antworten."],
+  });
+}
+
 export function reviewRequest(input: { order: Order; brand: MailBrand; reviewUrl: string }): RenderedMail {
   const { order, brand, reviewUrl } = input;
   const first = order.lines[0];

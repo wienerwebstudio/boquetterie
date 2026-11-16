@@ -1,4 +1,5 @@
 import "server-only";
+import nodemailer, { type Transporter } from "nodemailer";
 import type { Order, SiteSettings } from "@/types";
 import type { Reminder } from "@/types/reminders";
 import { getOccasions, getSettings } from "@/lib/cms";
@@ -12,11 +13,14 @@ import { formatReminderDate } from "@/lib/mail/reminders";
  * `sendMail()` is the single low-level entry point. Providers are selected by
  * environment:
  *   - RESEND_API_KEY set → Resend (HTTP API, no SDK needed)
+ *   - SMTP_HOST set      → SMTP via nodemailer, e.g. the shop's own mailbox
+ *                          (SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_SECURE – see docs/MAIL.md)
  *   - otherwise          → console logger (development / previews)
  *
- * MAIL_FROM  – sender, e.g. "Blumora <hallo@blumora.at>" (must be a verified domain at the provider)
+ * MAIL_FROM  – sender, e.g. "Blumora <office@blumora.at>" (verified domain at Resend, or the SMTP mailbox itself)
  * MAIL_REPLY_TO – optional reply-to address
  * MAIL_ADMIN – optional address that receives internal notifications (new orders, inquiries)
+ * MAIL_FLORIST – optional, comma-separated: the partner florist's order slip (no customer contact data)
  *
  * Templates (pure, testable) live in `src/lib/mail/templates.ts`; this file wires
  * them to settings and the provider. All `send*` helpers resolve to a MailResult
@@ -34,13 +38,15 @@ export interface MailMessage {
 
 export interface MailResult {
   sent: boolean;
-  provider: "resend" | "console";
+  provider: "resend" | "smtp" | "console";
   id?: string;
   error?: string;
 }
 
 export function mailProvider(): MailResult["provider"] {
-  return process.env.RESEND_API_KEY ? "resend" : "console";
+  if (process.env.RESEND_API_KEY) return "resend";
+  if (process.env.SMTP_HOST) return "smtp";
+  return "console";
 }
 
 export function mailFrom() {
@@ -49,6 +55,34 @@ export function mailFrom() {
 
 export function adminMailAddress() {
   return process.env.MAIL_ADMIN || null;
+}
+
+/** MAIL_FLORIST as a list ("a@x.at, b@y.at"); empty when unset. */
+export function floristMailAddresses(): string[] {
+  return (process.env.MAIL_FLORIST ?? "")
+    .split(/[,;\s]+/)
+    .map((a) => a.trim())
+    .filter((a) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a));
+}
+
+/** One SMTP connection setup per process. Port 465 = implicit TLS, otherwise STARTTLS. */
+const g = globalThis as unknown as { __blumoraSmtp?: Transporter };
+function smtpTransport(): Transporter {
+  if (!g.__blumoraSmtp) {
+    const port = Number(process.env.SMTP_PORT || 587);
+    const secure = process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : port === 465;
+    g.__blumoraSmtp = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port,
+      secure,
+      auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS ?? "" } : undefined,
+      // Serverless functions are short-lived: fail fast instead of hanging the function.
+      connectionTimeout: 10_000,
+      greetingTimeout: 10_000,
+      socketTimeout: 20_000,
+    });
+  }
+  return g.__blumoraSmtp;
 }
 
 function htmlToText(html: string) {
@@ -73,6 +107,23 @@ export async function sendMail(msg: MailMessage): Promise<MailResult> {
       console.info(`[mail] (console provider) To: ${to.join(", ")}\n[mail] Subject: ${msg.subject}\n${text.split("\n").map((l) => `[mail] ${l}`).join("\n")}`);
     }
     return { sent: false, provider };
+  }
+
+  if (provider === "smtp") {
+    try {
+      const info = await smtpTransport().sendMail({
+        from: mailFrom(),
+        to,
+        subject: msg.subject,
+        html: msg.html,
+        text,
+        replyTo: msg.replyTo ?? process.env.MAIL_REPLY_TO ?? undefined,
+      });
+      return { sent: true, provider, id: info.messageId };
+    } catch (err) {
+      console.error("[mail] smtp failed", err);
+      return { sent: false, provider, error: String(err) };
+    }
   }
 
   try {
@@ -134,19 +185,28 @@ function send(to: string | string[], mail: RenderedMail, type: string): Promise<
 
 /* ---------------- Order mails ---------------- */
 
-/** Order confirmation to the customer + internal notification to MAIL_ADMIN (if set). */
+/**
+ * Mails for a paid order: confirmation to the customer, internal notification to
+ * MAIL_ADMIN and the order slip to the florist (MAIL_FLORIST), each only if set.
+ * All three are awaited together, so a serverless function does not end while one
+ * is still in flight; one failing never stops the others. Resolves with the
+ * customer mail's result.
+ */
 export async function sendOrderConfirmation(order: Order): Promise<MailResult> {
   const settings = await getSettings();
   const brand = mailBrand(settings);
   const trackingUrl = orderTrackingUrl(order, brand.siteUrl);
-
   const admin = adminMailAddress();
-  if (admin) {
-    const adminUrl = `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}`;
-    send(admin, templates.adminNewOrder({ order, brand, adminUrl }), "admin_new_order").catch((err) => console.error("[mail] admin notification failed", err));
-  }
+  const florist = floristMailAddresses();
 
-  return send(order.customer.email, templates.orderConfirmation({ order, brand, trackingUrl }), "order_confirmation");
+  const [customer, ...internal] = await Promise.allSettled([
+    send(order.customer.email, templates.orderConfirmation({ order, brand, trackingUrl }), "order_confirmation"),
+    admin ? send(admin, templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}` }), "admin_new_order") : null,
+    florist.length ? send(florist, templates.floristOrder({ order, brand }), "florist_order") : null,
+  ]);
+  for (const r of internal) if (r.status === "rejected") console.error("[mail] internal order mail failed", r.reason);
+  if (customer.status === "rejected") return { sent: false, provider: mailProvider(), error: String(customer.reason) };
+  return customer.value;
 }
 
 /**

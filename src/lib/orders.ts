@@ -454,15 +454,19 @@ export async function markOrderPaid(id: string, info: PaidInfo): Promise<Order |
   // A payment that arrives after we already gave the units back (late webhook) re-reserves them.
   if (wasReleased) await reserveStock(updated.lines).catch((err) => console.error("[orders] re-reserving stock failed", err));
 
-  // Fire-and-forget: a failing mail stub must never fail the payment.
-  sendOrderConfirmation(updated).catch((err) => console.error("[mail] confirmation failed", err));
-  // Book the rider (RiderX, if configured) after the response, so a slow courier or
-  // geocoder never delays the customer's payment confirmation. Outside a request
-  // (scripts, tests) `after` is unavailable – then book inline. Never throws.
-  try {
-    after(() => bookCourierSafely(updated.id));
-  } catch {
+  // Mails (customer, team, florist) and the rider booking (RiderX, if configured) run
+  // after the response, so a slow mail server, courier or geocoder never delays the
+  // payment confirmation – and `after` keeps a serverless function alive until they
+  // are done (a plain fire-and-forget promise can be cut off). Outside a request
+  // (scripts, tests) `after` is unavailable – then run inline. Never throws.
+  const followUp = async () => {
+    await sendOrderConfirmation(updated).catch((err) => console.error("[mail] confirmation failed", err));
     await bookCourierSafely(updated.id);
+  };
+  try {
+    after(followUp);
+  } catch {
+    await followUp();
   }
   return updated;
 }

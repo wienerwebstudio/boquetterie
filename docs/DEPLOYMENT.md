@@ -143,7 +143,7 @@ Auf Serverless-Hosting (Netlify, Vercel) ist das Dateisystem zur Laufzeit schrei
 
 | Funktion | Braucht | Verhalten, wenn es fehlt |
 | --- | --- | --- |
-| Kontaktformular, Firmenanfrage, Abo-Anfrage | Datenbank **oder** Mail (`RESEND_API_KEY` + `MAIL_ADMIN`) | API antwortet mit 503 `unavailable`; das Formular bietet einen E-Mail-Link mit dem fertigen Text an (`src/lib/inquiries.ts`, `src/components/content/mail-fallback.tsx`) |
+| Kontaktformular, Firmenanfrage, Abo-Anfrage | Datenbank **oder** Mail (Resend oder SMTP + `MAIL_ADMIN`) | API antwortet mit 503 `unavailable`; das Formular bietet einen E-Mail-Link mit dem fertigen Text an (`src/lib/inquiries.ts`, `src/components/content/mail-fallback.tsx`) |
 | Newsletter-Anmeldung | Datenbank | API antwortet mit 503, das Formular zeigt „Die Anmeldung ist in Kürze möglich“ |
 | Anlass-Erinnerung | Datenbank **und** Mail | Seite zeigt „startet in Kürze“ statt des Formulars und ist `noindex`; API 503 |
 | Kundenkonto (Login-Link) | Datenbank **und** Mail (+ `AUTH_SECRET`) | Seite zeigt einen Hinweis statt des Formulars; API 503 |

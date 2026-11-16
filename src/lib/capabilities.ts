@@ -14,7 +14,7 @@ import { mailProvider } from "@/lib/mail";
 export interface Capabilities {
   /** Runtime data survives (Postgres, or a writable /data directory). */
   persist: boolean;
-  /** Mails are really delivered. The console provider only counts outside production builds. */
+  /** Mails are really delivered (Resend or SMTP). The console provider only counts outside production builds. */
   mail: boolean;
   /** Occasion reminders: stored, confirmed by mail, sent by cron. */
   reminders: boolean;
@@ -24,6 +24,6 @@ export interface Capabilities {
 
 export async function getCapabilities(): Promise<Capabilities> {
   const persist = await canPersistData();
-  const mail = mailProvider() === "resend" || process.env.NODE_ENV !== "production";
+  const mail = mailProvider() !== "console" || process.env.NODE_ENV !== "production";
   return { persist, mail, reminders: persist && mail, accountLogin: persist && mail };
 }
