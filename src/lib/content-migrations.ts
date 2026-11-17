@@ -177,7 +177,34 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
       },
     },
   },
+  {
+    // Advent wreaths: lilac and beige re-shot flat on the sideboard (were tilted / seen from above);
+    // drop the wreath hanging over the edge and the two tilted duplicates.
+    id: "2026-11-17-advent-photos",
+    transform: { products: (doc) => mapList(doc, (p) => (p.id === "p-adventskraenze" ? withReplacedImages(p, ADVENT_PHOTO_SWAP, ADVENT_PHOTO_DROP) : p)) },
+  },
 ];
+
+const ADVENT_PHOTO_SWAP: Record<string, string> = {
+  "/images/products/sortiment/adventskraenze-3.jpg": "/images/products/sortiment/adventskraenze-lila.jpg",
+  "/images/products/sortiment/adventskraenze-2.jpg": "/images/products/sortiment/adventskraenze-beige.jpg",
+};
+const ADVENT_PHOTO_DROP = ["7", "11", "12"].map((n) => `/images/products/sortiment/adventskraenze-${n}.jpg`);
+
+/** Swaps photo paths in images and colour options and removes dropped photos; edited alts stay. */
+function withReplacedImages(product: Obj, swap: Record<string, string>, drop: string[]): Obj {
+  let changed = false;
+  const fix = (src: unknown) => (typeof src === "string" && swap[src] ? ((changed = true), swap[src]) : src);
+  const images = Array.isArray(product.images)
+    ? (product.images as Obj[])
+        .filter((i) => (drop.includes(String(i.src)) ? ((changed = true), false) : true))
+        .map((i) => (typeof i.src === "string" && swap[i.src] ? { ...i, src: fix(i.src) } : i))
+    : product.images;
+  const colorOptions = Array.isArray(product.colorOptions)
+    ? (product.colorOptions as Obj[]).map((c) => (typeof c.image === "string" && swap[c.image] ? { ...c, image: fix(c.image) } : c))
+    : product.colorOptions;
+  return changed ? { ...product, images, colorOptions } : product;
+}
 
 const HERO_MORE_FLOWERS = {
   imageWide: "/images/hero/hero-blumen-wide.jpg",

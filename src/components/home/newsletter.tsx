@@ -3,7 +3,7 @@ import { NewsletterForm } from "./newsletter-form";
 
 export function Newsletter({ content }: { content: HomepageContent["newsletter"] }) {
   return (
-    <section id="newsletter" aria-labelledby="newsletter-title" className="border-t border-line bg-ivory py-16 sm:py-20 lg:py-24">
+    <section id="newsletter" aria-labelledby="newsletter-title" className="bg-blush py-16 sm:py-20 lg:py-24">
       <div className="container-x">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-14">
           <div className="lg:col-span-6">

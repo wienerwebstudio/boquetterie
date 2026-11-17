@@ -10,7 +10,7 @@ import { routes } from "@/lib/urls";
 export function Collections({ content, categories }: { content: HomepageContent["collections"]; categories: Category[] }) {
   if (!categories.length) return null;
   return (
-    <section aria-labelledby="collections-title" className="border-y border-line bg-ivory-100/60 py-14 sm:py-16 lg:py-20">
+    <section aria-labelledby="collections-title" className="bg-sage py-14 sm:py-16 lg:py-20">
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow mb-3">Kollektionen</p>
@@ -22,7 +22,7 @@ export function Collections({ content, categories }: { content: HomepageContent[
             <li key={c.slug}>
               <Link
                 href={routes.category(c.slug)}
-                className="group inline-flex items-center gap-3 rounded-full border border-line bg-white py-1.5 pl-1.5 pr-4 text-[14px] font-medium text-ink shadow-[0_1px_0_rgba(35,35,31,0.02)] transition-all duration-300 ease-[var(--ease-soft)] hover:border-forest hover:text-forest sm:pr-5 sm:text-[14.5px]"
+                className="group inline-flex items-center gap-3 rounded-full border border-sage-700/15 bg-white py-1.5 pl-1.5 pr-4 text-[14px] font-medium text-ink shadow-[0_1px_0_rgba(35,35,31,0.02)] transition-all duration-300 ease-[var(--ease-soft)] hover:border-forest hover:text-forest sm:pr-5 sm:text-[14.5px]"
               >
                 <span className="relative size-9 overflow-hidden rounded-full bg-ivory-200 sm:size-10">
                   {c.image ? (

@@ -16,7 +16,7 @@ const CHIPS = [
  */
 export function GiftFinderEntry() {
   return (
-    <section aria-labelledby="gift-finder-entry-title" className="mb-16 border-y border-line bg-ivory-100/70 sm:mb-20 lg:mb-28">
+    <section aria-labelledby="gift-finder-entry-title" className="bg-peach">
       <div className="container-x py-10 sm:py-12">
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
@@ -30,9 +30,9 @@ export function GiftFinderEntry() {
                 <li key={c.index}>
                   <Link
                     href={GIFT_FINDER_PATH}
-                    className="inline-flex h-11 items-center gap-2.5 rounded-full border border-line bg-white/70 pl-4 pr-5 text-[14px] text-ink transition-colors duration-300 hover:border-forest hover:text-forest"
+                    className="inline-flex h-11 items-center gap-2.5 rounded-full border border-peach-700/15 bg-white pl-4 pr-5 text-[14px] text-ink transition-colors duration-300 hover:border-forest hover:text-forest"
                   >
-                    <span className="font-serif text-[13px] italic text-ink-soft" aria-hidden>{c.index}</span>
+                    <span className="font-serif text-[13px] italic text-peach-700" aria-hidden>{c.index}</span>
                     {c.label}
                   </Link>
                 </li>

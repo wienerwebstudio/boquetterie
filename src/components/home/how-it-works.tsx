@@ -1,6 +1,8 @@
 import type { HomepageContent } from "@/types";
 import { Section } from "@/components/ui/section";
 import { TrustIcon } from "@/components/icons/trust-icon";
+import { accentChip } from "@/lib/accents";
+import { cn } from "@/lib/format";
 
 export function HowItWorks({ content }: { content: HomepageContent["howItWorks"] }) {
   return (
@@ -16,7 +18,7 @@ export function HowItWorks({ content }: { content: HomepageContent["howItWorks"]
             <li key={s.title} className="relative flex gap-4 border-t border-line py-4 sm:block sm:py-0 sm:pt-6 lg:pt-7">
               <div className="flex shrink-0 items-start justify-between pt-1 sm:items-center sm:pt-0">
                 <span className="font-serif text-[15px] italic tracking-[0.04em] text-ink-soft">{String(i + 1).padStart(2, "0")}</span>
-                <span className="hidden size-10 items-center justify-center rounded-full bg-ivory-100 text-forest sm:inline-flex">
+                <span className={cn("hidden size-10 items-center justify-center rounded-full sm:inline-flex", accentChip(i))}>
                   <TrustIcon name={s.icon} className="size-[18px]" />
                 </span>
               </div>

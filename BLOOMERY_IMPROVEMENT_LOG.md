@@ -208,6 +208,8 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - Größen-Fotos für alle 12 Rosensträuße (S bis XXXL): 49 KI-Bilder (Higgsfield, Nano Banana 2.1) plus 14 vorhandene Fotos; jedes Bild nachgezählt, nie mehr Rosen als geliefert. Für Blaue Liebe M, Rot & Weiß Mix L und Rosenkuss XL vorerst das Foto der nächstkleineren Größe (KI traf die Zahl nicht). Migration `2026-11-17-rose-size-photos`. Verbrauch ca. 144 Credits.
 - Galerie bleibt in der gewählten Größe: Bei Rosensträußen zeigt die Produktseite nur noch das Foto der gewählten Größe und eine daraus geschnittene Nahaufnahme (`ProductSize.detailImage`, `<foto>-nah.jpg`, im Admin pflegbar; Migration `2026-11-17-rose-size-closeups`). Wischen springt nicht mehr zu größeren Sträußen.
 - Startseite (Feedback „mehr Blumen“, „wirkt wie Kleidung bestellen“): neues Startbild mit mehreren üppigen Sträußen statt einer Vase im leeren Raum (Higgsfield, 2 Bilder, ca. 4 Credits). Der alte Video-Loop zeigte den alten Strauß und entfällt (Migration `2026-11-17-hero-more-flowers`, nur wenn im Admin kein anderes Bild gewählt ist). Open-Graph-Bild ebenfalls neu.
+- Adventskränze: Lila und Beige gerade und flach auf der Kommode neu erzeugt (vorher schräg von oben, ca. 4 Credits); Foto mit über die Kante hängendem Kranz und zwei schräge Doppelbilder entfernt (Migration `2026-11-17-advent-photos`).
+- Mehr Farbe (Feedback „alles eintönig“): neue Farbfelder Blush, Peach, Salbei, Lavendel (`globals.css`, `src/lib/accents.ts`). Farbige Icon-Kreise in Trust-Leiste und „So funktioniert es“, Geschenk-Finder auf Peach, Kollektionen auf Salbei, Adventszeit als weinroter Block, Newsletter auf Blush, Eyebrows in Rosé. Kontraste per axe geprüft (E2E grün).
 
 ## 5. Testergebnisse
 

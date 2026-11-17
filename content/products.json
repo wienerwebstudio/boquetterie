@@ -4683,12 +4683,12 @@
         "kind": "front"
       },
       {
-        "src": "/images/products/sortiment/adventskraenze-2.jpg",
+        "src": "/images/products/sortiment/adventskraenze-beige.jpg",
         "alt": "Adventskranz mit vier hellgrauen Kerzen, cremefarbenen Schleifen und Orangenscheiben",
         "kind": "detail"
       },
       {
-        "src": "/images/products/sortiment/adventskraenze-3.jpg",
+        "src": "/images/products/sortiment/adventskraenze-lila.jpg",
         "alt": "Adventskranz mit lila und rosa Kerzen, violetten Schleifen und Engelfigur",
         "kind": "detail"
       },
@@ -4708,11 +4708,6 @@
         "kind": "detail"
       },
       {
-        "src": "/images/products/sortiment/adventskraenze-7.jpg",
-        "alt": "Adventskranz in Weinrot mit glitzernden Kerzen und roten Kugeln, seitlich",
-        "kind": "detail"
-      },
-      {
         "src": "/images/products/sortiment/adventskraenze-8.jpg",
         "alt": "Adventskranz mit vier dunkelgrauen Kerzen, cremefarbenen Schleifen und roten Kugeln",
         "kind": "detail"
@@ -4725,16 +4720,6 @@
       {
         "src": "/images/products/sortiment/adventskraenze-10.jpg",
         "alt": "Adventskranz in Rosa mit rosa Kerzen und bordeauxfarbenen Schleifen, seitlich",
-        "kind": "detail"
-      },
-      {
-        "src": "/images/products/sortiment/adventskraenze-11.jpg",
-        "alt": "Adventskranz in Lila mit violetten Schleifen und Orangenscheibe, Draufsicht",
-        "kind": "detail"
-      },
-      {
-        "src": "/images/products/sortiment/adventskraenze-12.jpg",
-        "alt": "Adventskranz mit hellgrauen Kerzen und cremefarbenen Schleifen, seitlich",
         "kind": "detail"
       }
     ],
@@ -4813,7 +4798,7 @@
       {
         "id": "lila",
         "label": "Lila",
-        "image": "/images/products/sortiment/adventskraenze-3.jpg"
+        "image": "/images/products/sortiment/adventskraenze-lila.jpg"
       },
       {
         "id": "gold",
@@ -4823,7 +4808,7 @@
       {
         "id": "beige",
         "label": "Beige",
-        "image": "/images/products/sortiment/adventskraenze-2.jpg"
+        "image": "/images/products/sortiment/adventskraenze-beige.jpg"
       },
       {
         "id": "weinrot",

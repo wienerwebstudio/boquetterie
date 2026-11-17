@@ -19,6 +19,17 @@
   --color-rose: #b8767f;
   --color-rose-100: #f3e6e5;
   --color-burgundy: #6d2f3b;
+  --color-burgundy-800: #4f1f2a;
+  --color-rose-700: #8f4553;
+  /* Soft colour fields for sections and icon chips – florals, not beige-on-beige. */
+  --color-blush: #f7e4e1;
+  --color-blush-200: #efcdc8;
+  --color-peach: #fbe8da;
+  --color-peach-700: #8a4b1f;
+  --color-sage: #e4ebe0;
+  --color-sage-700: #3d5a40;
+  --color-lavender: #ece6f2;
+  --color-lavender-700: #5a4778;
   --color-ink: #23231f;
   --color-ink-muted: #6b6862;
   --color-ink-soft: #6b6761;
@@ -139,7 +150,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--color-moss);
+  color: var(--color-rose-700);
 }
 
 @utility display-1 {

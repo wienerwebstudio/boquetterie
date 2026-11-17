@@ -2,11 +2,12 @@ import { cn } from "@/lib/format";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-export function Section({ className, children, id, tone = "ivory" }: { className?: string; children: React.ReactNode; id?: string; tone?: "ivory" | "ivory-100" | "forest" | "sand" | "white" }) {
+export function Section({ className, children, id, tone = "ivory" }: { className?: string; children: React.ReactNode; id?: string; tone?: "ivory" | "ivory-100" | "forest" | "wine" | "sand" | "white" }) {
   const tones = {
     ivory: "bg-ivory",
     "ivory-100": "bg-ivory-100",
     forest: "bg-forest text-ivory",
+    wine: "bg-burgundy text-ivory",
     sand: "bg-sand/50",
     white: "bg-white",
   };
