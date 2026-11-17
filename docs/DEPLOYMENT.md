@@ -12,6 +12,7 @@ Zwei erprobte Wege: **A) Docker auf einem eigenen Server** (empfohlen: volle Kon
 | `NEXT_PUBLIC_SITE_URL` | ja | Öffentliche URL, z. B. `https://blumora.at` – wird **beim Build** in den Client-Code eingebettet |
 | `DATABASE_URL` | Option B: ja · Option A: empfohlen | Postgres-URL; ohne sie JSON-Dateien (siehe `docs/DATABASE.md`) |
 | `DATABASE_SSL`, `DATABASE_POOL_MAX`, `DATABASE_PREPARE` | nein | Feineinstellungen, siehe `docs/DATABASE.md` |
+| `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION` | nein | Bestätigt die Domain in Google Search Console bzw. Bing Webmaster Tools per Meta-Tag (nur den `content`-Wert eintragen). Alternativ per DNS-Eintrag beim Domain-Anbieter |
 | `CRON_SECRET` | für Erinnerungen/Bewertungsanfragen | Schützt `/api/cron/*` (siehe `docs/MAIL.md`) |
 | `RESEND_API_KEY`, `MAIL_FROM`, `MAIL_ADMIN`, `MAIL_REPLY_TO` | für E-Mail | siehe `docs/MAIL.md` |
 | `AUTH_SECRET` | für Kundenkonten | siehe `docs/ACCOUNTS.md` |

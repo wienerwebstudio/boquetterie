@@ -195,6 +195,18 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-no-zoom-second-photos",
     transform: { products: (doc) => mapList(doc, (p) => (ROSE_BOUQUET_IDS.includes(String(p.id)) ? withoutZoomPhotos(p) : p)) },
   },
+  {
+    // Rose bouquets have six sizes since XXL/XXXL – texts and search snippets still said "vier Größen".
+    id: "2026-11-17-rose-texts-six-sizes",
+    transform: {
+      products: (doc) => mapList(doc, (p) => {
+        if (!ROSE_BOUQUET_IDS.includes(String(p.id))) return p;
+        const json = JSON.stringify(p);
+        const next = json.replaceAll("vier Größen", "sechs Größen");
+        return next === json ? p : (JSON.parse(next) as Obj);
+      }),
+    },
+  },
 ];
 
 const DROPPED_SECOND_PHOTOS = ["xl", "xxl", "xxxl"].map((id) => `/images/products/sortiment/red-passion-size-${id}-wien.jpg`);

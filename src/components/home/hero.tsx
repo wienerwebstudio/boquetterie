@@ -58,10 +58,11 @@ export function Hero({ hero, facts = [] }: { hero: HomepageContent["hero"]; fact
 
           {/* Copy */}
           <div className="order-2 lg:order-1 lg:col-span-6 lg:pr-6 xl:col-span-6 xl:pr-10">
-            <p className="eyebrow animate-fade-up">{hero.eyebrow}</p>
-            <h1 id="hero-title" className="display-1 mt-4 max-w-[12ch] text-balance text-ink animate-fade-up [animation-delay:80ms]">
+            {/* The search phrase ("Blumenversand Wien") is the h1; the brand line stays the big visual headline. */}
+            <h1 id="hero-title" className="eyebrow animate-fade-up">{hero.eyebrow}</h1>
+            <p className="display-1 mt-4 max-w-[12ch] text-balance text-ink animate-fade-up [animation-delay:80ms]">
               {hero.headline}
-            </h1>
+            </p>
             <p className="mt-5 max-w-lg text-pretty text-[15.5px] leading-relaxed text-ink-muted sm:text-[17px] animate-fade-up [animation-delay:160ms]">
               {hero.subheadline}
             </p>

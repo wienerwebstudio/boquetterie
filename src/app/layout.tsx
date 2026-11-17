@@ -39,6 +39,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: { card: "summary_large_image" },
     robots: { index: true, follow: true },
+    // Search Console / Bing Webmaster Tools ownership check via meta tag (env-activated).
+    verification: {
+      ...(process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : {}),
+      ...(process.env.BING_SITE_VERIFICATION ? { other: { "msvalidate.01": process.env.BING_SITE_VERIFICATION } } : {}),
+    },
     // No canonical here: it would declare the home page canonical for every route
     // that doesn't set its own (search, cart, account, 404 …).
   };

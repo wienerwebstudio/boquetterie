@@ -4,7 +4,8 @@ import { PLZ_NOT_SERVED, PLZ_SERVED, gotoPage } from "./helpers";
 test.describe("Startseite", () => {
   test("rendert die Headline und die Lieferprüfung", async ({ page }) => {
     await gotoPage(page, "/");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Blumen, die mehr sagen.");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Blumenversand Wien");
+    await expect(page.getByText("Blumen, die mehr sagen.", { exact: true })).toBeVisible();
     await expect(page.getByRole("form", { name: "Lieferprüfung" })).toBeVisible();
   });
 
