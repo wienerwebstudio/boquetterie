@@ -189,7 +189,29 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-red-passion-wien-photos",
     transform: { products: (doc) => mapList(doc, (p) => (p.id === "p-red-passion" ? withSecondPhotos(p, RED_PASSION_WIEN) : p)) },
   },
+  {
+    // No cropped "close-up" as second photo (it is only a zoom), and no second photo that shows clearly
+    // fewer roses than the size delivers (Red Passion XL–XXXL). Second photos chosen in the admin stay.
+    id: "2026-11-17-no-zoom-second-photos",
+    transform: { products: (doc) => mapList(doc, (p) => (ROSE_BOUQUET_IDS.includes(String(p.id)) ? withoutZoomPhotos(p) : p)) },
+  },
 ];
+
+const DROPPED_SECOND_PHOTOS = ["xl", "xxl", "xxxl"].map((id) => `/images/products/sortiment/red-passion-size-${id}-wien.jpg`);
+
+function withoutZoomPhotos(product: Obj): Obj {
+  if (!Array.isArray(product.sizes)) return product;
+  let changed = false;
+  const sizes = (product.sizes as Obj[]).map((s) => {
+    const photo = typeof s.detailImage === "string" ? s.detailImage : "";
+    if (!photo.endsWith("-nah.jpg") && !DROPPED_SECOND_PHOTOS.includes(photo)) return s;
+    changed = true;
+    const { detailImage: _photo, detailAlt: _alt, ...rest } = s;
+    void _photo; void _alt;
+    return rest;
+  });
+  return changed ? { ...product, sizes } : product;
+}
 
 const RED_PASSION_WIEN: Record<string, { image: string; alt: string }> = Object.fromEntries(
   ([

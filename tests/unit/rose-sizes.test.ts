@@ -48,12 +48,13 @@ describe("rose bouquets XXL / XXXL", () => {
     expect(keepAdminPhoto[0].sizes.map((s) => s.image)).toEqual(["/x.jpg", "/images/products/sortiment/red-rose-bouquet-size-m.jpg"]);
   });
 
-  it("every rose size photo has a close-up next to it; admin uploads are left alone", () => {
+  it("no zoomed crop as second photo; the close-up migration leaves admin uploads alone", () => {
     const products = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/products.json"), "utf8")) as Product[];
     for (const p of products.filter((x) => ROSE_BOUQUET_IDS.includes(x.id))) for (const s of p.sizes) {
-      if (p.id === "p-red-passion") expect(s.detailImage, `${p.id}/${s.id}`).toBe(`/images/products/sortiment/red-passion-size-${s.id}-wien.jpg`);
-      else expect(s.detailImage, `${p.id}/${s.id}`).toBe(s.image!.replace(/\.jpg$/, "-nah.jpg"));
-      expect(fs.existsSync(path.join(process.cwd(), "public", s.detailImage!)), s.detailImage).toBe(true);
+      // No zoomed crop as second photo; only Red Passion S–L have a real second photo (Vienna street).
+      const expected = p.id === "p-red-passion" && ["s", "m", "l"].includes(s.id) ? `/images/products/sortiment/red-passion-size-${s.id}-wien.jpg` : undefined;
+      expect(s.detailImage, `${p.id}/${s.id}`).toBe(expected);
+      if (s.detailImage) expect(fs.existsSync(path.join(process.cwd(), "public", s.detailImage)), s.detailImage).toBe(true);
     }
     const out = migrateDocument(CONTENT_MIGRATIONS.find((m) => m.id === "2026-11-17-rose-size-closeups")!, "products", [
       { id: "p-red-passion", sizes: [{ id: "s", image: "/images/products/sortiment/red-passion-size-s.jpg" }, { id: "m", image: "/uploads/eigenes.jpg" }, { id: "l" }] },
@@ -70,6 +71,20 @@ describe("rose bouquets XXL / XXXL", () => {
     expect(out[0].sizes[0].detailImage).toBe("/images/products/sortiment/red-passion-size-s-wien.jpg");
     expect(out[0].sizes[0].detailAlt).toContain("Wiener Straße");
     expect(out[0].sizes[1].detailImage).toBe("/uploads/eigenes.jpg");
+  });
+
+  it("drops zoom crops and the too-sparse Red Passion XL–XXXL photos, keeps admin choices", () => {
+    const out = migrateDocument(CONTENT_MIGRATIONS.find((m) => m.id === "2026-11-17-no-zoom-second-photos")!, "products", [
+      { id: "p-red-passion", sizes: [
+        { id: "s", detailImage: "/images/products/sortiment/red-passion-size-s-wien.jpg", detailAlt: "x" },
+        { id: "xl", detailImage: "/images/products/sortiment/red-passion-size-xl-wien.jpg", detailAlt: "x" },
+        { id: "xxl", detailImage: "/uploads/eigenes.jpg" },
+      ] },
+      { id: "p-rosenglanz", sizes: [{ id: "s", detailImage: "/images/products/sortiment/rosenglanz-size-s-nah.jpg" }] },
+    ]) as Product[];
+    expect(out[0].sizes.map((s) => s.detailImage)).toEqual(["/images/products/sortiment/red-passion-size-s-wien.jpg", undefined, "/uploads/eigenes.jpg"]);
+    expect(out[0].sizes[1].detailAlt).toBeUndefined();
+    expect(out[1].sizes[0].detailImage).toBeUndefined();
   });
 
   it("accepts XXXL in an order", () => {
