@@ -105,31 +105,31 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
         onMouseLeave={scheduleClose}
         aria-hidden={!mega}
       >
-        <div className="container-x py-8" onClick={() => setMega(null)}>
+        <div className={cn("container-x", mega === "blumen" ? "py-6" : "py-8")} onClick={() => setMega(null)}>
           {mega === "blumen" && (
-            <div className="grid grid-cols-[1fr_1fr_1.4fr] gap-10">
+            <div className="grid grid-cols-[minmax(0,1.6fr)_minmax(0,0.9fr)_minmax(0,1.1fr)] items-start gap-10">
               <div>
-                <p className="eyebrow mb-4">Kollektionen</p>
-                <ul className="space-y-2.5">
+                <p className="eyebrow mb-3">Kollektionen</p>
+                <ul className="grid grid-cols-2 gap-x-8 gap-y-1.5">
                   {categories.map((c) => (
-                    <li key={c.slug}><Link href={routes.category(c.slug)} className="text-[15px] text-ink hover:text-forest">{c.name}</Link></li>
+                    <li key={c.slug}><Link href={routes.category(c.slug)} className="text-[14px] leading-6 text-ink hover:text-forest">{c.name}</Link></li>
                   ))}
                 </ul>
               </div>
               <div>
-                <p className="eyebrow mb-4">Schnell zu</p>
-                <ul className="space-y-2.5">
-                  {settings.sameDayEnabled && <li><Link href={`${routes.shop}?sameday=1`} className="text-[15px] text-ink hover:text-forest">Heute lieferbar</Link></li>}
-                  <li><Link href={routes.extras} className="text-[15px] text-ink hover:text-forest">Extras zum Strauß</Link></li>
-                  {settings.subscriptionEnabled && <li><Link href={routes.subscription} className="text-[15px] text-ink hover:text-forest">Blumen-Abo</Link></li>}
+                <p className="eyebrow mb-3">Schnell zu</p>
+                <ul className="space-y-1.5">
+                  {settings.sameDayEnabled && <li><Link href={`${routes.shop}?sameday=1`} className="text-[14px] leading-6 text-ink hover:text-forest">Heute lieferbar</Link></li>}
+                  <li><Link href={routes.extras} className="text-[14px] leading-6 text-ink hover:text-forest">Extras zum Strauß</Link></li>
+                  {settings.subscriptionEnabled && <li><Link href={routes.subscription} className="text-[14px] leading-6 text-ink hover:text-forest">Blumen-Abo</Link></li>}
                 </ul>
               </div>
-              <Link href={routes.shop} className="group relative block aspect-[16/9] overflow-hidden rounded-md bg-ivory-200">
-                <Image src="/images/products/sortiment/rosenglanz-1.jpg" alt="" fill sizes="480px" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+              <Link href={routes.shop} className="group relative block aspect-[16/9] max-h-[220px] w-full overflow-hidden rounded-md bg-ivory-200">
+                <Image src="/images/products/sortiment/rosenglanz-1.jpg" alt="" fill sizes="400px" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-ivory">
-                  <p className="font-serif text-2xl">Unser Sortiment</p>
-                  <p className="inline-flex items-center gap-1 text-[13px] font-semibold">Alle Blumen entdecken <ArrowRight className="size-3.5" /></p>
+                <div className="absolute bottom-3 left-4 text-ivory">
+                  <p className="font-serif text-xl">Unser Sortiment</p>
+                  <p className="inline-flex items-center gap-1 text-[12.5px] font-semibold">Alle Blumen entdecken <ArrowRight className="size-3.5" /></p>
                 </div>
               </Link>
             </div>
