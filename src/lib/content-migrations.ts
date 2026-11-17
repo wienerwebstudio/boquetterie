@@ -281,6 +281,24 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-rose-wien-photos-3",
     transform: { products: (doc) => mapList(doc, (p) => (p.id === "p-rosenkuss" ? withSecondPhotos(p, roseWienPhotos("p-rosenkuss")) : p)) },
   },
+  {
+    // New homepage hero (Vienna street with tram) and editorial photos: delivery at a Viennese door
+    // (homepage "Handwerk"), bouquet at an Altbau window with St. Stephen's (Über uns).
+    id: "2026-11-17-hero-wien-tram",
+    replace: {
+      homepage: [
+        ["/images/hero/hero-blumen-wide.jpg", "/images/hero/hero-wien-tram-wide.jpg"],
+        ["/images/hero/hero-blumen-portrait.jpg", "/images/hero/hero-wien-tram-portrait.jpg"],
+        ["Üppige Sträuße auf einer Eichenkommode in einem hellen Wiener Altbau: rosa und apricotfarbene Rosen mit Ranunkeln, rote Rosen in Seidenpapier, Tulpen und weiße Hortensien", "Eine Frau im Kamelmantel trägt einen großen Strauß aus Rosen, Ranunkeln, Dahlien und Tulpen über eine Wiener Kopfsteinpflasterstraße, dahinter fährt eine Straßenbahn"],
+        ["/images/products/sortiment/rosenglanz-2.jpg", "/images/editorial/kurier-uebergabe-haustuer.jpg"],
+        ["Strauß aus Rosen in Pastell und Pink mit Schleierkraut in rosa Manschette", "Ein Kurier übergibt an einer Wiener Altbautür einen bunten Strauß aus Rosen, Dahlien und Ranunkeln"],
+      ],
+      pages: [
+        ["/images/products/sortiment/herbstzauber-1.jpg", "/images/editorial/strauss-fenster-stephansdom.jpg"],
+        ["Strauß Herbstzauber in einer Glasvase", "Strauß aus Rosen, Dahlien, Hortensien und Tulpen auf dem Fensterbrett eines Wiener Altbaus, dahinter der Stephansdom im Abendlicht"],
+      ],
+    },
+  },
 ];
 
 /** Appends the pages whose slug is not in the stored list yet; same list when nothing is missing. */

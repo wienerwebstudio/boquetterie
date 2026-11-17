@@ -15,7 +15,7 @@ export function organizationLd(settings: SiteSettings) {
     "@type": "OnlineStore",
     name: settings.brand.name,
     url: settings.seo.siteUrl,
-    image: `${settings.seo.siteUrl}/images/hero/hero-blumen-og.jpg`,
+    image: `${settings.seo.siteUrl}/images/hero/hero-wien-tram-og.jpg`,
     areaServed: ["Wien"],
     ...(hasAddress && {
       address: {

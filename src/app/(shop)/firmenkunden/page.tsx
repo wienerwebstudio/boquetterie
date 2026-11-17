@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Building2, CalendarDays, Gift, type LucideProps } from "lucide-react";
 import { getSettings } from "@/lib/cms";
 import { routes } from "@/lib/urls";
@@ -89,6 +90,19 @@ export default async function BusinessPage() {
           </ul>
         </div>
       </section>
+
+      {/* Mood image */}
+      <div className="container-x pb-16 sm:pb-20 lg:pb-24">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-ivory-200 sm:aspect-[3/2] lg:aspect-[21/9]">
+          <Image
+            src="/images/editorial/strauss-wiener-kaffeehaus.jpg"
+            alt="Strauß aus Pfingstrosen, Rosen und Dahlien auf einem Marmortisch in einem Wiener Kaffeehaus"
+            fill
+            sizes="(min-width: 1440px) 1320px, 100vw"
+            className="object-cover object-[60%_55%]"
+          />
+        </div>
+      </div>
 
       {/* How we work */}
       <section aria-labelledby="business-facts-heading" className="border-y border-line bg-ivory-100/70">

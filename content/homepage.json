@@ -5,9 +5,9 @@
     "subheadline": "Frisch gebundene Blumen für die Menschen, die dir wichtig sind. Einfach auswählen, Wunschdatum bestimmen und Freude liefern lassen.",
     "primaryCta": {"label": "Blumen entdecken", "href": "/blumen"},
     "secondaryCta": {"label": "Nach Anlass wählen", "href": "/anlaesse"},
-    "imageWide": "/images/hero/hero-blumen-wide.jpg",
-    "imagePortrait": "/images/hero/hero-blumen-portrait.jpg",
-    "imageAlt": "Üppige Sträuße auf einer Eichenkommode in einem hellen Wiener Altbau: rosa und apricotfarbene Rosen mit Ranunkeln, rote Rosen in Seidenpapier, Tulpen und weiße Hortensien",
+    "imageWide": "/images/hero/hero-wien-tram-wide.jpg",
+    "imagePortrait": "/images/hero/hero-wien-tram-portrait.jpg",
+    "imageAlt": "Eine Frau im Kamelmantel trägt einen großen Strauß aus Rosen, Ranunkeln, Dahlien und Tulpen über eine Wiener Kopfsteinpflasterstraße, dahinter fährt eine Straßenbahn",
     "deliveryCheck": {"title": "Wohin dürfen wir liefern?", "placeholder": "PLZ eingeben", "button": "Lieferung prüfen"}
   },
   "occasions": {"headline": "Blumen für jeden Moment", "subheadline": "Manchmal braucht es keinen großen Anlass. Nur die richtige Geste.", "slugs": ["geburtstag", "liebe", "danke", "gute-besserung", "jahrestag", "geburt", "hochzeit", "einfach-so", "trauer"]},
@@ -36,8 +36,8 @@
     "headline": "Von Florist:innen. Nicht vom Fließband.",
     "text": "Jeder Strauß wird von einer Wiener Floristik für deine Bestellung von Hand gebunden und per Kurier direkt zugestellt – ohne Umweg über ein Lager.",
     "cta": {"label": "So arbeiten wir", "href": "/ueber-uns"},
-    "image": "/images/products/sortiment/rosenglanz-2.jpg",
-    "imageAlt": "Strauß aus Rosen in Pastell und Pink mit Schleierkraut in rosa Manschette"
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "imageAlt": "Ein Kurier übergibt an einer Wiener Altbautür einen bunten Strauß aus Rosen, Dahlien und Ranunkeln"
   },
   "extras": {"headline": "Mach deine Überraschung komplett.", "subheadline": "Kleine Extras, die den Moment größer machen."},
   "subscription": {"headline": "Mehr Blumen im Alltag.", "text": "Frische saisonale Sträuße – wöchentlich, alle zwei Wochen oder monatlich. Für Zuhause, Büro, Empfang oder Gastronomie.", "cta": {"label": "Blumen-Abo entdecken", "href": "/blumen-abo"}},
