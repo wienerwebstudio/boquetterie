@@ -256,5 +256,7 @@ describe("size names for the florist", () => {
     expect(sizeShort("xl", "XL")).toBe("XL");
     expect(sizeShort("m", "Standard")).toBe("Standard");
     expect(sizeShort("s", "60 cm")).toBe("60 cm");
+    expect(sizeShort("xxl", "XXL", 61)).toBe("XXL · 61 Stiele");
+    expect(sizeShort("xxxl", "XXXL", 99)).toBe("XXXL · 99 Stiele");
   });
 });

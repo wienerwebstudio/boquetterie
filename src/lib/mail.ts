@@ -325,7 +325,7 @@ export { escapeHtml } from "@/lib/mail/templates";
 
 /** A clearly fictitious paid order for previewing the order mails. */
 export interface SampleOrderInput {
-  product?: { id: string; name: string; sizeId: string; sizeLabel: string; price: number; image?: string; floristBudget?: number };
+  product?: { id: string; name: string; sizeId: string; sizeLabel: string; stems?: number; price: number; image?: string; floristBudget?: number };
   extra?: { id: string; name: string; price: number; image?: string; floristBudget?: number } | null;
   /** Adds a greeting card – only when cards are on offer. */
   withCard?: boolean;
@@ -342,7 +342,7 @@ export function sampleOrder(input: SampleOrderInput = {}): Order {
     delivery: { date, windowId: "am", windowLabel: "9–12 Uhr", windowFrom: "09:00", windowTo: "12:00", zoneId: "beispiel", zoneName: "Beispielzone", fee: 0, note: "Beispielbestellung – nicht ausliefern" },
     customer: { firstName: "Max", lastName: "Beispiel", email: "kunde@beispiel.invalid", phone: "+43 660 0000000" },
     lines: [{
-      productId: p.id, productName: p.name, sizeId: p.sizeId as Order["lines"][number]["sizeId"], sizeLabel: p.sizeLabel, quantity: 1, unitPrice: p.price, image: p.image ?? "",
+      productId: p.id, productName: p.name, sizeId: p.sizeId as Order["lines"][number]["sizeId"], sizeLabel: p.sizeLabel, ...(p.stems ? { stems: p.stems } : {}), quantity: 1, unitPrice: p.price, image: p.image ?? "",
       floristBudget: p.floristBudget,
       extras: x ? [{ extraId: x.id, name: x.name, quantity: 1, unitPrice: x.price, image: x.image, floristBudget: x.floristBudget }] : [],
       ...(input.withCard ? { message: "Alles Liebe – das ist nur eine Test-Mail.", senderName: "Blumora" } : {}),
@@ -362,7 +362,7 @@ async function liveSampleOrder(settings: SiteSettings): Promise<Order> {
     if (!product || !size) return sampleOrder({ withCard: settings.greetingCard?.enabled === true });
     return sampleOrder({
       product: {
-        id: product.id, name: product.name, sizeId: size.id, sizeLabel: size.label, price: size.price,
+        id: product.id, name: product.name, sizeId: size.id, sizeLabel: size.label, stems: size.stems, price: size.price,
         image: (product.images.find((im) => im.kind === "front") ?? product.images[0])?.src,
         floristBudget: budgets.products[product.id]?.[size.id],
       },

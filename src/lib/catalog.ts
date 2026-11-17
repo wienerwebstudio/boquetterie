@@ -41,6 +41,7 @@ export const SIZE_OPTIONS = [
   { value: "l", label: "Groß" },
   { value: "xl", label: "XL" },
   { value: "xxl", label: "XXL" },
+  { value: "xxxl", label: "XXXL" },
 ];
 
 export const SORT_OPTIONS = [

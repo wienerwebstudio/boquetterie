@@ -23,12 +23,27 @@ const DOC = "florist-budgets";
 /** Upper bound against typos – no single item comes anywhere near it. */
 const MAX_BUDGET = 10_000;
 
-/** Saved budgets, else the encrypted starting values (see florist-budget-default.ts), else none. */
+/**
+ * Saved budgets, completed by the encrypted starting values (see florist-budget-default.ts)
+ * for every product size or extra the saved document has no value for – e.g. a size added
+ * after the budgets were last saved. Saved values always win.
+ */
 export async function getFloristBudgets(): Promise<FloristBudgets> {
   const doc = await readData<FloristBudgets | null>(DOC, null);
-  if (doc) return { updatedAt: doc.updatedAt, products: doc.products ?? {}, extras: doc.extras ?? {} };
   const defaults = defaultFloristBudgets() as Partial<FloristBudgets> | null;
-  return defaults ? { products: defaults.products ?? {}, extras: defaults.extras ?? {} } : EMPTY_BUDGETS;
+  return mergeBudgets(doc, defaults);
+}
+
+export function mergeBudgets(saved: Partial<FloristBudgets> | null, defaults: Partial<FloristBudgets> | null): FloristBudgets {
+  if (!saved && !defaults) return EMPTY_BUDGETS;
+  const products: FloristBudgets["products"] = {};
+  for (const [id, sizes] of Object.entries(defaults?.products ?? {})) products[id] = { ...sizes };
+  for (const [id, sizes] of Object.entries(saved?.products ?? {})) products[id] = { ...(products[id] ?? {}), ...sizes };
+  return {
+    ...(saved?.updatedAt ? { updatedAt: saved.updatedAt } : {}),
+    products,
+    extras: { ...(defaults?.extras ?? {}), ...(saved?.extras ?? {}) },
+  };
 }
 
 export async function saveFloristBudgets(budgets: FloristBudgets) {

@@ -107,7 +107,45 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
         mapList(doc, (z) => (typeof z.id === "string" && z.id.startsWith("wien-") && z.sameDayCutoff === "19:00" ? setFields(z, { sameDayCutoff: "18:30" }) : z)),
     },
   },
+  {
+    // Rose bouquets are priced per rose (owners' price calculation): S 9 · M 15 · L 25 · XL 41,
+    // now also XXL 61 and XXXL 99. Other products keep their sizes.
+    id: "2026-11-17-rose-sizes-xxl-xxxl",
+    transform: { products: (doc) => mapList(doc, (p) => (ROSE_BOUQUET_IDS.includes(String(p.id)) ? withRoseSizes(p) : p)) },
+  },
 ];
+
+/** Products whose sizes are a fixed number of roses. */
+export const ROSE_BOUQUET_IDS = [
+  "p-red-rose-bouquet", "p-blackroses", "p-blaueliebe", "p-rot-und-weiss-mix", "p-orange-bouquet", "p-farbensinfonie",
+  "p-rosalie", "p-red-passion", "p-klassiker-der-liebe", "p-koenigin-der-herzen", "p-rosenkuss", "p-rosenglanz",
+];
+export const ROSE_SIZES: { id: string; label: string; price: number; stems: number }[] = [
+  { id: "s", label: "Klein", price: 48.9, stems: 9 },
+  { id: "m", label: "Mittel", price: 65.9, stems: 15 },
+  { id: "l", label: "Groß", price: 93.9, stems: 25 },
+  { id: "xl", label: "XL", price: 127.9, stems: 41 },
+  { id: "xxl", label: "XXL", price: 175.9, stems: 61 },
+  { id: "xxxl", label: "XXXL", price: 250.9, stems: 99 },
+];
+
+/** Adds the missing rose sizes and the rose count of existing ones; prices of existing sizes stay as edited. */
+function withRoseSizes(product: Obj): Obj {
+  if (!Array.isArray(product.sizes)) return product;
+  let changed = false;
+  const sizes = (product.sizes as Obj[]).map((s) => {
+    const def = ROSE_SIZES.find((r) => r.id === s.id);
+    if (!def || s.stems !== undefined) return s;
+    changed = true;
+    return { ...s, stems: def.stems };
+  });
+  for (const def of ROSE_SIZES) {
+    if (sizes.some((s) => s.id === def.id)) continue;
+    changed = true;
+    sizes.push({ ...def });
+  }
+  return changed ? { ...product, sizes } : product;
+}
 
 type Obj = Record<string, unknown>;
 

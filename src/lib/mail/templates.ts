@@ -81,8 +81,10 @@ const budgetText = (amount: number | undefined, quantity = 1) =>
   amount === undefined ? "nicht hinterlegt – bitte bei Blumora nachfragen" : `${formatPrice(amount * quantity)}${quantity > 1 ? ` (${quantity} × ${formatPrice(amount)})` : ""}`;
 
 /** "S", "M", "L", "XL" for the standard sizes (as the florist knows them), else the label ("60 cm", "Standard"). */
-export function sizeShort(sizeId: string, sizeLabel: string) {
-  return ["Klein", "Mittel", "Groß", "XL", "XXL"].includes(sizeLabel) ? sizeId.toUpperCase() : sizeLabel;
+export function sizeShort(sizeId: string, sizeLabel: string, stems?: number) {
+  const size = ["Klein", "Mittel", "Groß", "XL", "XXL", "XXXL"].includes(sizeLabel) ? sizeId.toUpperCase() : sizeLabel;
+  // Our sizes differ from the florist's own (their XL is 51 roses, ours 41) – the count settles it.
+  return stems ? `${size} · ${stems} Stiele` : size;
 }
 
 function renderBlockHtml(b: Block): string {
@@ -126,7 +128,7 @@ function renderBlockHtml(b: Block): string {
           const extrasRow = extras
             ? `<tr><td colspan="2" style="padding:0 16px 16px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid ${C.line};"><tr><td colspan="2" style="padding:12px 0 0;font-family:${FONT};font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Dazu</td></tr>${extras}</table></td></tr>`
             : "";
-          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border:1px solid ${C.line};border-radius:8px;"><tr>${img ? `<td width="176" style="width:176px;padding:16px 0 16px 16px;vertical-align:top;">${img}</td>` : ""}<td style="padding:16px;vertical-align:top;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:${SERIF};font-size:20px;line-height:1.3;color:${C.ink};">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</td></tr><tr><td style="padding:2px 0 10px;font-family:${FONT};font-size:15px;color:${C.ink};">Größe <strong style="font-weight:600;">${escapeHtml(sizeShort(l.sizeId, l.sizeLabel))}</strong></td></tr><tr><td style="padding:10px 12px;background:${C.bg};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Max. Budget</span><br><strong style="font-size:19px;font-weight:600;">${escapeHtml(budgetText(l.floristBudget, l.quantity))}</strong></td></tr></table></td></tr>${extrasRow}</table>`;
+          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border:1px solid ${C.line};border-radius:8px;"><tr>${img ? `<td width="176" style="width:176px;padding:16px 0 16px 16px;vertical-align:top;">${img}</td>` : ""}<td style="padding:16px;vertical-align:top;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:${SERIF};font-size:20px;line-height:1.3;color:${C.ink};">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</td></tr><tr><td style="padding:2px 0 10px;font-family:${FONT};font-size:15px;color:${C.ink};">Größe <strong style="font-weight:600;">${escapeHtml(sizeShort(l.sizeId, l.sizeLabel, l.stems))}</strong></td></tr><tr><td style="padding:10px 12px;background:${C.bg};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Max. Budget</span><br><strong style="font-size:19px;font-weight:600;">${escapeHtml(budgetText(l.floristBudget, l.quantity))}</strong></td></tr></table></td></tr>${extrasRow}</table>`;
         })
         .join("");
     case "totals": {
@@ -171,7 +173,7 @@ function renderBlockText(b: Block): string {
       return b.order.lines
         .map((l) => {
           const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} – Max. Budget ${budgetText(e.floristBudget, e.quantity)}${e.image ? `\n     Foto: ${mailImageUrl(b.siteUrl, e.image, 160)}` : ""}`).join("\n");
-          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${sizeShort(l.sizeId, l.sizeLabel)}\n  Max. Budget: ${budgetText(l.floristBudget, l.quantity)}\n  Foto: ${mailImageUrl(b.siteUrl, l.image, 480)}${extras ? `\n${extras}` : ""}`;
+          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${sizeShort(l.sizeId, l.sizeLabel, l.stems)}\n  Max. Budget: ${budgetText(l.floristBudget, l.quantity)}\n  Foto: ${mailImageUrl(b.siteUrl, l.image, 480)}${extras ? `\n${extras}` : ""}`;
         })
         .join("\n");
     case "totals": {
@@ -401,7 +403,7 @@ export function floristOrder(input: { order: Order; brand: MailBrand; selfDelive
   return layout({
     brand,
     subject: `Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${order.delivery.windowFrom ? ` ${order.delivery.windowFrom} Uhr` : ""}`,
-    preheader: first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – Größe ${sizeShort(first.sizeId, first.sizeLabel)}` : undefined,
+    preheader: first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – Größe ${sizeShort(first.sizeId, first.sizeLabel, first.stems)}` : undefined,
     headline: `Neuer Auftrag ${order.id}`,
     blocks: [
       { type: "p", text: "Bitte so binden wie auf dem Foto. Das Max. Budget ist der Betrag, für den ihr den Strauß bindet." },

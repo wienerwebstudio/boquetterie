@@ -7,7 +7,7 @@
 export type ISODate = string; // "YYYY-MM-DD"
 export type TimeHHMM = string; // "13:00"
 
-export type SizeId = "s" | "m" | "l" | "xl" | "xxl";
+export type SizeId = "s" | "m" | "l" | "xl" | "xxl" | "xxxl";
 
 export interface ProductSize {
   id: SizeId;
@@ -384,6 +384,8 @@ export interface OrderLine {
   productName: string;
   sizeId: SizeId;
   sizeLabel: string;
+  /** Number of stems of the chosen size (rose bouquets: roses), snapshot at order time. */
+  stems?: number;
   quantity: number;
   unitPrice: number;
   image: string;

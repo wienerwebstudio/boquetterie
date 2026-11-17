@@ -163,7 +163,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           <span className="text-[14px] font-semibold text-ink">Größe wählen</span>
           <span className="text-[12.5px] text-ink-muted">{size.description ?? size.label}</span>
         </legend>
-        <div className={cn("grid gap-2.5", product.sizes.length === 4 ? "grid-cols-2" : "grid-cols-3")}>
+        <div className={cn("grid gap-2.5", product.sizes.length === 4 ? "grid-cols-2" : product.sizes.length > 4 ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-3")}>
           {product.sizes.map((s) => {
             const checked = s.id === sizeId;
             const out = isSoldOut(product, s);
@@ -184,7 +184,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                     checked ? "border-forest bg-white shadow-soft" : "border-line hover:border-stone",
                   )}
                 >
-                  <span className="flex items-start justify-between gap-1">
+                  <span className="flex flex-wrap items-start justify-between gap-1">
                     <span className="text-[14px] font-semibold text-ink">{s.label}</span>
                     {s.popular && <Badge tone="rose" className="px-1.5 py-0.5 text-[9.5px]">Empfohlen</Badge>}
                   </span>

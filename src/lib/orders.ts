@@ -60,7 +60,7 @@ export function publicOrderView(order: Order): PublicOrder {
 export type ParseResult = { ok: true; payload: OrderPayload } | { ok: false; status: number; message: string; errors?: FieldErrors };
 
 const PAYMENT_METHODS = new Set(["apple_pay", "google_pay", "card", "paypal", "klarna", "eps"]);
-const SIZE_IDS = new Set<SizeId>(["s", "m", "l", "xl", "xxl"]);
+const SIZE_IDS = new Set<SizeId>(["s", "m", "l", "xl", "xxl", "xxxl"]);
 
 function asRecord(v: unknown): Record<string, unknown> | null {
   return v && typeof v === "object" && !Array.isArray(v) ? (v as Record<string, unknown>) : null;
@@ -85,7 +85,7 @@ export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: numb
     const it = asRecord(raw);
     if (!it) return { ok: false, status: 400, message: "Ungültiger Artikel im Warenkorb." };
     const productId = cleanString(it.productId, 60);
-    const sizeId = cleanString(it.sizeId, 2) as SizeId | undefined;
+    const sizeId = cleanString(it.sizeId, 4) as SizeId | undefined;
     const quantity = asInt(it.quantity, 1, 20);
     if (!productId || !sizeId || !SIZE_IDS.has(sizeId) || quantity === null) {
       return { ok: false, status: 400, message: "Ungültiger Artikel im Warenkorb." };
@@ -211,7 +211,7 @@ export function resolveLines(items: OrderPayloadItem[], products: Product[], ext
     lines.push({
       product,
       line: {
-        productId: product.id, productName: product.name, sizeId: size.id, sizeLabel: size.label,
+        productId: product.id, productName: product.name, sizeId: size.id, sizeLabel: size.label, ...(size.stems ? { stems: size.stems } : {}),
         quantity: it.quantity, unitPrice: size.price, image, extras: lineExtras,
         message: it.message, anonymous: it.anonymous, senderName: it.senderName,
       },
