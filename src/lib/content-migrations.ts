@@ -276,6 +276,11 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-rose-wien-photos-2",
     transform: { products: (doc) => mapList(doc, (p) => (ROSE_WIEN_PHOTOS[String(p.id)] ? withSecondPhotos(p, roseWienPhotos(String(p.id))) : p)) },
   },
+  {
+    // Rosenkuss M (last missing S/M/L Vienna photo).
+    id: "2026-11-17-rose-wien-photos-3",
+    transform: { products: (doc) => mapList(doc, (p) => (p.id === "p-rosenkuss" ? withSecondPhotos(p, roseWienPhotos("p-rosenkuss")) : p)) },
+  },
 ];
 
 /** Appends the pages whose slug is not in the stored list yet; same list when nothing is missing. */
@@ -327,7 +332,7 @@ export const ROSE_WIEN_PHOTOS: Record<string, { name: string; slug: string; size
   "p-red-rose-bouquet": { name: "Red Rose Bouquet", slug: "red-rose-bouquet", sizes: ["s", "m", "l"] },
   "p-klassiker-der-liebe": { name: "Klassiker der Liebe", slug: "klassiker-der-liebe", sizes: ["s", "m", "l"] },
   "p-koenigin-der-herzen": { name: "Königin der Herzen", slug: "koenigin-der-herzen", sizes: ["s", "m", "l"] },
-  "p-rosenkuss": { name: "Rosenkuss", slug: "rosenkuss", sizes: ["s", "l"] },
+  "p-rosenkuss": { name: "Rosenkuss", slug: "rosenkuss", sizes: ["s", "m", "l"] },
   "p-rosenglanz": { name: "Rosenglanz", slug: "rosenglanz", sizes: ["s", "m", "l"] },
 };
 

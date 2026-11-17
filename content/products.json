@@ -2425,7 +2425,9 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/rosenkuss-size-m.jpg"
+        "image": "/images/products/sortiment/rosenkuss-size-m.jpg",
+        "detailImage": "/images/products/sortiment/rosenkuss-size-m-wien.jpg",
+        "detailAlt": "Rosenkuss Mittel in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "l",
