@@ -153,7 +153,26 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
       "delivery-zones": (doc) => mapList(doc, (z) => (String(z.id).startsWith("wien-") && hasDefaultWindows(z.windows) ? { ...z, windows: HOURLY_WINDOWS } : z)),
     },
   },
+  {
+    // One photo per size for the other eleven rose bouquets – never more roses than the size delivers.
+    id: "2026-11-17-rose-size-photos",
+    transform: { products: (doc) => mapList(doc, (p) => (ROSE_SIZE_PHOTOS[String(p.id)] ? withSizeImages(p, ROSE_SIZE_PHOTOS[String(p.id)]) : p)) },
+  },
 ];
+
+const ROSE_SIZE_PHOTOS: Record<string, Record<string, string>> = {
+  "p-blackroses": { s: "/images/products/sortiment/blackroses-size-s.jpg", m: "/images/products/sortiment/blackroses-size-m.jpg", l: "/images/products/sortiment/blackroses-1.jpg", xl: "/images/products/sortiment/blackroses-size-xl.jpg", xxl: "/images/products/sortiment/blackroses-size-xxl.jpg", xxxl: "/images/products/sortiment/blackroses-size-xxxl.jpg" },
+  "p-blaueliebe": { s: "/images/products/sortiment/blaueliebe-size-s.jpg", m: "/images/products/sortiment/blaueliebe-size-s.jpg", l: "/images/products/sortiment/blaueliebe-1.jpg", xl: "/images/products/sortiment/blaueliebe-size-xl.jpg", xxl: "/images/products/sortiment/blaueliebe-size-xxl.jpg", xxxl: "/images/products/sortiment/blaueliebe-size-xxxl.jpg" },
+  "p-rot-und-weiss-mix": { s: "/images/products/sortiment/rot-und-weiss-mix-size-s.jpg", m: "/images/products/sortiment/rot-und-weiss-mix-size-m.jpg", l: "/images/products/sortiment/rot-und-weiss-mix-size-m.jpg", xl: "/images/products/sortiment/rot-und-weiss-mix-1.jpg", xxl: "/images/products/sortiment/rot-und-weiss-mix-4.jpg", xxxl: "/images/products/sortiment/rot-und-weiss-mix-size-xxxl.jpg" },
+  "p-orange-bouquet": { s: "/images/products/sortiment/orange-bouquet-size-s.jpg", m: "/images/products/sortiment/orange-bouquet-size-m.jpg", l: "/images/products/sortiment/orange-bouquet-size-l.jpg", xl: "/images/products/sortiment/orange-bouquet-1.jpg", xxl: "/images/products/sortiment/orange-bouquet-size-xxl.jpg", xxxl: "/images/products/sortiment/orange-bouquet-size-xxxl.jpg" },
+  "p-farbensinfonie": { s: "/images/products/sortiment/farbensinfonie-size-s.jpg", m: "/images/products/sortiment/farbensinfonie-size-m.jpg", l: "/images/products/sortiment/farbensinfonie-1.jpg", xl: "/images/products/sortiment/farbensinfonie-size-xl.jpg", xxl: "/images/products/sortiment/farbensinfonie-size-xxl.jpg", xxxl: "/images/products/sortiment/farbensinfonie-size-xxxl.jpg" },
+  "p-rosalie": { s: "/images/products/sortiment/rosalie-size-s.jpg", m: "/images/products/sortiment/rosalie-1.jpg", l: "/images/products/sortiment/rosalie-size-l.jpg", xl: "/images/products/sortiment/rosalie-size-xl.jpg", xxl: "/images/products/sortiment/rosalie-size-xxl.jpg", xxxl: "/images/products/sortiment/rosalie-size-xxxl.jpg" },
+  "p-red-passion": { s: "/images/products/sortiment/red-passion-size-s.jpg", m: "/images/products/sortiment/red-passion-size-m.jpg", l: "/images/products/sortiment/red-passion-size-l.jpg", xl: "/images/products/sortiment/red-passion-1.jpg", xxl: "/images/products/sortiment/red-passion-size-xxl.jpg", xxxl: "/images/products/sortiment/red-passion-3.jpg" },
+  "p-klassiker-der-liebe": { s: "/images/products/sortiment/klassiker-der-liebe-size-s.jpg", m: "/images/products/sortiment/klassiker-der-liebe-size-m.jpg", l: "/images/products/sortiment/klassiker-der-liebe-size-l.jpg", xl: "/images/products/sortiment/klassiker-der-liebe-size-xl.jpg", xxl: "/images/products/sortiment/klassiker-der-liebe-size-xxl.jpg", xxxl: "/images/products/sortiment/klassiker-der-liebe-2.jpg" },
+  "p-koenigin-der-herzen": { s: "/images/products/sortiment/koenigin-der-herzen-size-s.jpg", m: "/images/products/sortiment/koenigin-der-herzen-size-m.jpg", l: "/images/products/sortiment/koenigin-der-herzen-1.jpg", xl: "/images/products/sortiment/koenigin-der-herzen-size-xl.jpg", xxl: "/images/products/sortiment/koenigin-der-herzen-size-xxl.jpg", xxxl: "/images/products/sortiment/koenigin-der-herzen-size-xxxl.jpg" },
+  "p-rosenkuss": { s: "/images/products/sortiment/rosenkuss-size-s.jpg", m: "/images/products/sortiment/rosenkuss-size-m.jpg", l: "/images/products/sortiment/rosenkuss-size-l.jpg", xl: "/images/products/sortiment/rosenkuss-size-l.jpg", xxl: "/images/products/sortiment/rosenkuss-3.jpg", xxxl: "/images/products/sortiment/rosenkuss-size-xxxl.jpg" },
+  "p-rosenglanz": { s: "/images/products/sortiment/rosenglanz-size-s.jpg", m: "/images/products/sortiment/rosenglanz-size-m.jpg", l: "/images/products/sortiment/rosenglanz-size-l.jpg", xl: "/images/products/sortiment/rosenglanz-size-xl.jpg", xxl: "/images/products/sortiment/rosenglanz-1.jpg", xxxl: "/images/products/sortiment/rosenglanz-size-xxxl.jpg" },
+};
 
 const HOURLY_WINDOWS = Array.from({ length: 13 }, (_, i) => {
   const from = 9 + i;
