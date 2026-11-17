@@ -134,7 +134,37 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-color-options",
     transform: { products: (doc) => mapList(doc, (p) => (COLOR_OPTIONS[String(p.id)] && !p.colorOptions ? { ...p, colorOptions: COLOR_OPTIONS[String(p.id)] } : p)) },
   },
+  {
+    // "EPS" means nothing to many customers – it is the online bank transfer.
+    id: "2026-11-17-eps-label",
+    transform: {
+      settings: (doc) => {
+        if (!doc || typeof doc !== "object" || !Array.isArray((doc as Obj).payments)) return doc;
+        const payments = mapList((doc as Obj).payments, (m) => (m.id === "eps" && m.label === "EPS" ? setFields(m, { label: "Online-Überweisung (eps)" }) : m));
+        return payments === (doc as Obj).payments ? doc : { ...(doc as Obj), payments };
+      },
+    },
+  },
+  {
+    // Vienna: one-hour delivery windows from 9 to 22 instead of 9–12 / 12–17 / 17–22
+    // (only zones still on exactly those three default windows).
+    id: "2026-11-17-hourly-windows",
+    transform: {
+      "delivery-zones": (doc) => mapList(doc, (z) => (String(z.id).startsWith("wien-") && hasDefaultWindows(z.windows) ? { ...z, windows: HOURLY_WINDOWS } : z)),
+    },
+  },
 ];
+
+const HOURLY_WINDOWS = Array.from({ length: 13 }, (_, i) => {
+  const from = 9 + i;
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return { id: `h${pad(from)}`, label: `${from}–${from + 1} Uhr`, from: `${pad(from)}:00`, to: `${pad(from + 1)}:00`, surcharge: 0, active: true };
+});
+
+function hasDefaultWindows(windows: unknown) {
+  if (!Array.isArray(windows) || windows.length !== 3) return false;
+  return windows.map((w: Obj) => `${w.from}-${w.to}`).join(",") === "09:00-12:00,12:00-17:00,17:00-22:00";
+}
 
 const COLOR_OPTIONS: Record<string, { id: string; label: string; image: string }[]> = {
   "p-tulpenstrauss": [

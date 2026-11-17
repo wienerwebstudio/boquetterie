@@ -296,7 +296,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
   const stepMeta = STEPS.find((s) => s.id === step)!;
   // Only a deliverable day reaches the summary – not a half-typed date like "0026-11-16".
   const summaryDate = days.some((d) => d.date === data.delivery.date) ? data.delivery.date : undefined;
-  const summaryProps = { items, totals, zone, deliveryDate: summaryDate, windowLabel, greeting: data.greeting, cardsEnabled: config.cardsEnabled, couponCode, couponError };
+  const summaryProps = { items, totals, zone, deliveryDate: summaryDate, windowLabel, greeting: data.greeting, cardsEnabled: config.cardsEnabled, couponCode, couponError, recipient: data.recipient };
   const zoneStatus = { loading: checking, available: result ? result.available : null, zoneName: result?.zone?.name, error: checkError };
 
   return (

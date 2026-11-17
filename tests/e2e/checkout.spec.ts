@@ -52,7 +52,7 @@ test.describe("Checkout @slow", () => {
     await page.getByLabel("Vorname").fill("Paul");
     await page.getByLabel("Nachname").fill("Maier");
     await page.getByLabel("E-Mail-Adresse").fill("paul.maier@example.com");
-    await page.getByLabel("Telefon", { exact: true }).fill("0664 7654321");
+    await page.getByRole("textbox", { name: "Telefon", exact: true }).fill("0664 7654321");
     await page.getByRole("checkbox", { name: /AGB/ }).check();
     await page.getByRole("button", { name: "Weiter" }).click();
 

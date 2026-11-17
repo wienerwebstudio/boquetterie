@@ -385,7 +385,7 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
  * discount is settled separately – and when it is collected. Without the customer's prices and without the customer's or recipient's
  * contact data – the courier delivers, the florist only prepares (data minimisation).
  */
-export function floristOrder(input: { order: Order; brand: MailBrand; selfDelivery?: boolean }): RenderedMail {
+export function floristOrder(input: { order: Order; brand: MailBrand; selfDelivery?: boolean; readyBy?: string | null }): RenderedMail {
   const { order, brand } = input;
   const first = order.lines[0];
   const card = order.lines.find((l) => l.message || l.senderName || l.anonymous);
@@ -397,12 +397,13 @@ export function floristOrder(input: { order: Order; brand: MailBrand; selfDelive
     ...l.extras.map((e) => (e.floristBudget === undefined ? null : e.floristBudget * e.quantity)),
   ]);
   const total = budgets.every((b): b is number => b !== null) ? budgets.reduce((a, b) => a + b, 0) : null;
-  const ready = order.delivery.windowFrom
-    ? `${formatDateLong(order.delivery.date)}, bis ${order.delivery.windowFrom} Uhr (Abholung durch ${input.selfDelivery ? brand.name : "den Kurier"})`
+  const readyBy = input.readyBy ?? order.delivery.windowFrom;
+  const ready = readyBy
+    ? `${formatDateLong(order.delivery.date)}, bis ${readyBy} Uhr (Abholung durch ${input.selfDelivery ? brand.name : "den Kurier"})`
     : `${formatDateLong(order.delivery.date)} (Uhrzeit folgt)`;
   return layout({
     brand,
-    subject: `Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${order.delivery.windowFrom ? ` ${order.delivery.windowFrom} Uhr` : ""}`,
+    subject: `Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${readyBy ? ` ${readyBy} Uhr` : ""}`,
     preheader: first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – Größe ${sizeShort(first.sizeId, first.sizeLabel, first.stems)}` : undefined,
     headline: `Neuer Auftrag ${order.id}`,
     blocks: [

@@ -32,6 +32,23 @@ export function toMinutes(hhmm: string) {
   return h * 60 + (m || 0);
 }
 
+/** Time the florist needs to bind a bouquet. */
+export const FLORIST_PREP_MINUTES = 60;
+
+/**
+ * By when ("HH:MM") the florist must have the order ready: the start of the delivery
+ * window – unless that is too soon (an order for an already running window), then
+ * `prep` minutes from now, rounded up to the next quarter hour.
+ */
+export function floristReadyTime(delivery: { date: ISODate; windowFrom?: string }, now: LocalNow, prep = FLORIST_PREP_MINUTES): string | null {
+  if (!delivery.windowFrom) return null;
+  const from = toMinutes(delivery.windowFrom);
+  if (now.date !== delivery.date) return delivery.windowFrom;
+  const earliest = Math.ceil((now.minutes + prep) / 15) * 15;
+  if (earliest <= from) return delivery.windowFrom;
+  return `${String(Math.floor(earliest / 60)).padStart(2, "0")}:${String(earliest % 60).padStart(2, "0")}`;
+}
+
 /** A same-day window must still have this long left: binding (~1 h) plus the ride. */
 export const SAME_DAY_MIN_MINUTES = 120;
 

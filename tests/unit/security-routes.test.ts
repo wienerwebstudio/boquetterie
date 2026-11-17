@@ -381,3 +381,17 @@ describe("POST /api/withdrawals (Vertrag widerrufen)", () => {
     expect((await withdraw(json("/api/withdrawals", valid, "192.0.2.50"))).status).toBe(429);
   });
 });
+
+describe("newsletter tick box in the checkout", () => {
+  it("subscribes right away – no confirmation mail – and records the order as consent", async () => {
+    cms.getNewsletterSubscribers.mockResolvedValue([]);
+    cms.saveNewsletterSubscribers.mockClear();
+    mail.sendMail.mockClear();
+    const { subscribeFromCheckout } = await import("@/lib/newsletter");
+    await subscribeFromCheckout(" Anna@Example.com ", "BQ-7K2M9Q", new Date("2026-11-17T18:00:00Z"));
+    const [list] = cms.saveNewsletterSubscribers.mock.calls[0] as [Record<string, unknown>[]];
+    expect(list[0]).toMatchObject({ email: "anna@example.com", status: "confirmed", source: "checkout", orderId: "BQ-7K2M9Q", confirmedAt: "2026-11-17T18:00:00.000Z" });
+    expect(typeof list[0].token).toBe("string"); // for the unsubscribe link
+    expect(mail.sendMail).not.toHaveBeenCalled();
+  });
+});

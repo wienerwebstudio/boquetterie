@@ -76,7 +76,7 @@
     },
     {
       "id": "eps",
-      "label": "EPS",
+      "label": "Online-Überweisung (eps)",
       "enabled": true,
       "provider": "stripe"
     }

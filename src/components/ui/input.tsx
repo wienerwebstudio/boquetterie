@@ -31,7 +31,7 @@ export const Input = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputE
     <div className={cn("flex flex-col gap-1.5", className)}>
       {label && (
         <label htmlFor={inputId} className="text-[13px] font-semibold text-ink">
-          {label} {optional && <span className="font-normal text-ink-muted">(optional)</span>}
+          {label}{rest.required && <span className="text-burgundy" aria-hidden> *</span>} {optional && <span className="font-normal text-ink-muted">(optional)</span>}
         </label>
       )}
       <input
@@ -61,7 +61,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaHTMLAttributes<H
     <div className={cn("flex flex-col gap-1.5", className)}>
       {label && (
         <label htmlFor={inputId} className="text-[13px] font-semibold text-ink">
-          {label} {optional && <span className="font-normal text-ink-muted">(optional)</span>}
+          {label}{rest.required && <span className="text-burgundy" aria-hidden> *</span>} {optional && <span className="font-normal text-ink-muted">(optional)</span>}
         </label>
       )}
       <textarea

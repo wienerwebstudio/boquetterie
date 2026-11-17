@@ -1,17 +1,41 @@
+import { Landmark } from "lucide-react";
+import { siAmericanexpress, siApplepay, siGooglepay, siKlarna, siMastercard, siPaypal, siVisa, type SimpleIcon } from "simple-icons";
 import type { PaymentMethodConfig } from "@/types";
 import { cn } from "@/lib/format";
 
-/** Neutral, brand-agnostic payment method marks (text-based to avoid trademark misuse). */
-export function PaymentMark({ id, className }: { id: PaymentMethodConfig["id"]; className?: string }) {
-  const label: Record<PaymentMethodConfig["id"], string> = {
-    apple_pay: "Apple Pay", google_pay: "Google Pay", card: "Karte", paypal: "PayPal", klarna: "Klarna", eps: "EPS",
-  };
+/** Brand mark from simple-icons (CC0 path data), used only to show an accepted payment method. */
+function Brand({ icon, color, className }: { icon: SimpleIcon; color?: string; className?: string }) {
   return (
-    <span className={cn("inline-flex h-7 items-center rounded-sm border border-line bg-white px-2 text-[11px] font-semibold tracking-wide text-ink-muted", className)}>
-      {id === "card" ? (
-        <svg viewBox="0 0 24 16" className="mr-1 h-3.5 w-5" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.3"><rect x="1" y="1.5" width="22" height="13" rx="2" /><path d="M1 6h22" /></svg>
-      ) : null}
-      {label[id]}
-    </span>
+    <svg viewBox="0 0 24 24" role="img" aria-label={icon.title} className={cn("h-5 w-auto", className)}>
+      <path d={icon.path} fill={color ?? `#${icon.hex}`} />
+    </svg>
   );
+}
+
+const box = "inline-flex h-8 items-center gap-1.5 rounded-md border border-line bg-white px-2";
+
+/** Payment method marks for the checkout: the brands customers look for. */
+export function PaymentMark({ id, className }: { id: PaymentMethodConfig["id"]; className?: string }) {
+  switch (id) {
+    case "card":
+      return (
+        <span className={cn(box, className)}>
+          <Brand icon={siVisa} className="h-5" />
+          <Brand icon={siMastercard} className="h-5" />
+          <Brand icon={siAmericanexpress} className="h-5" />
+        </span>
+      );
+    case "apple_pay":
+      return <span className={cn(box, "border-black bg-black", className)}><Brand icon={siApplepay} color="#ffffff" className="h-6" /></span>;
+    case "google_pay":
+      return <span className={cn(box, className)}><Brand icon={siGooglepay} className="h-6" /></span>;
+    case "klarna":
+      return <span className={cn(box, "border-[#FFB3C7] bg-[#FFB3C7]", className)}><Brand icon={siKlarna} color="#0b051d" className="h-4" /><span className="text-[12px] font-bold text-[#0b051d]">Klarna</span></span>;
+    case "paypal":
+      return <span className={cn(box, className)}><Brand icon={siPaypal} className="h-5" /></span>;
+    case "eps":
+      return <span className={cn(box, className)}><Landmark className="size-4 text-burgundy" aria-hidden /><span className="text-[12px] font-bold tracking-wide text-burgundy">eps</span></span>;
+    default:
+      return null;
+  }
 }

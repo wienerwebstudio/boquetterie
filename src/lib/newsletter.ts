@@ -76,6 +76,28 @@ export async function requestNewsletterSignup(email: string, source: "website" |
   return { ok: true, mailed: true };
 }
 
+/**
+ * Tick box in the checkout (owners' decision): the customer is subscribed right away,
+ * without a confirmation mail. Consent is documented with time, source and order number.
+ */
+export async function subscribeFromCheckout(email: string, orderId: string, now = new Date()): Promise<{ ok: boolean }> {
+  const address = email.trim().toLowerCase();
+  const list = await getNewsletterSubscribers();
+  const existing = list.find((s) => s.email.toLowerCase() === address);
+  if (existing && isConfirmed(existing)) return { ok: true };
+  const entry: NewsletterSubscriber = {
+    ...(existing ?? { email: address, createdAt: now.toISOString() }),
+    id: existing?.id ?? newId(),
+    token: existing?.token ?? newToken(),
+    status: "confirmed",
+    confirmedAt: now.toISOString(),
+    source: "checkout",
+    orderId,
+  };
+  await saveNewsletterSubscribers(existing ? list.map((s) => (s === existing ? entry : s)) : [...list, entry]);
+  return { ok: true };
+}
+
 export type ConfirmResult = "confirmed" | "already" | "invalid";
 
 export async function confirmNewsletter(id: string, token: string, now = new Date()): Promise<ConfirmResult> {

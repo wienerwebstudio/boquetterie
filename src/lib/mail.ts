@@ -5,7 +5,7 @@ import type { Reminder } from "@/types/reminders";
 import { getAllProducts, getExtras, getOccasions, getSettings } from "@/lib/cms";
 import { getFloristBudgets } from "@/lib/florist-budget";
 import * as templates from "@/lib/mail/templates";
-import { isSelfDeliveryDay } from "@/lib/delivery";
+import { floristReadyTime, getLocalNow, isSelfDeliveryDay } from "@/lib/delivery";
 import type { MailBrand, RenderedMail } from "@/lib/mail/templates";
 import { formatReminderDate } from "@/lib/mail/reminders";
 
@@ -227,7 +227,7 @@ export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind
   const render: Record<OrderMailKind, () => RenderedMail> = {
     customer: () => templates.orderConfirmation({ order, brand, trackingUrl: orderTrackingUrl(order, brand.siteUrl) }),
     internal: () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}`, selfDelivery }),
-    partner: () => templates.floristOrder({ order, brand, selfDelivery }),
+    partner: () => templates.floristOrder({ order, brand, selfDelivery, readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)) }),
   };
   const types: Record<OrderMailKind, string> = { customer: "order_confirmation", internal: "admin_new_order", partner: "florist_order" };
   const settled = await Promise.allSettled(

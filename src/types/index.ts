@@ -485,4 +485,6 @@ export interface NewsletterSubscriber {
   confirmedAt?: string;
   /** Where the sign-up came from: "website" or "checkout". */
   source?: string;
+  /** Order in whose checkout the customer ticked the box (consent record). */
+  orderId?: string;
 }

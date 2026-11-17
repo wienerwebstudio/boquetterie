@@ -1,5 +1,5 @@
 "use client";
-import { Check } from "lucide-react";
+import { Check, ChevronLeft } from "lucide-react";
 import { cn } from "@/lib/format";
 import { STEPS, type StepId } from "./checkout-state";
 
@@ -7,14 +7,38 @@ export function CheckoutProgress({ current, maxReached, onNavigate }: { current:
   const currentStep = STEPS.find((s) => s.id === current)!;
   return (
     <nav aria-label="Bestellschritte" className="mb-8">
-      {/* Mobile: compact */}
+      {/* Mobile: compact – every reached step can be tapped, plus a back button */}
       <div className="lg:hidden">
-        <p className="text-[13px] font-semibold text-ink">
-          <span className="text-ink-muted">Schritt {current} von {STEPS.length}</span> · {currentStep.label}
-        </p>
-        <div className="mt-2 h-1 w-full overflow-hidden rounded-full bg-ivory-200" aria-hidden>
-          <div className="h-full rounded-full bg-forest transition-[width] duration-500 ease-[var(--ease-soft)]" style={{ width: `${(current / STEPS.length) * 100}%` }} />
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-[13px] font-semibold text-ink">
+            <span className="text-ink-muted">Schritt {current} von {STEPS.length}</span> · {currentStep.label}
+          </p>
+          {current > 1 && (
+            <button type="button" onClick={() => onNavigate((current - 1) as StepId)} className="inline-flex h-9 shrink-0 items-center gap-1 rounded-md px-2 text-[13px] font-semibold text-forest">
+              <ChevronLeft className="size-4" aria-hidden /> Zurück
+            </button>
+          )}
         </div>
+        <ol className="mt-2 grid gap-1.5" style={{ gridTemplateColumns: `repeat(${STEPS.length}, minmax(0, 1fr))` }}>
+          {STEPS.map((s) => {
+            const active = s.id === current;
+            const reachable = s.id <= maxReached && !active;
+            return (
+              <li key={s.id}>
+                <button
+                  type="button"
+                  onClick={() => reachable && onNavigate(s.id)}
+                  disabled={!reachable}
+                  aria-current={active ? "step" : undefined}
+                  aria-label={`Schritt ${s.id}: ${s.label}`}
+                  className="flex h-6 w-full items-center disabled:cursor-default"
+                >
+                  <span className={cn("h-1 w-full rounded-full", s.id <= current ? "bg-forest" : s.id <= maxReached ? "bg-forest/40" : "bg-ivory-200")} aria-hidden />
+                </button>
+              </li>
+            );
+          })}
+        </ol>
       </div>
 
       {/* Desktop: labels */}

@@ -112,12 +112,18 @@ export function StepDelivery({ data, set, errors, onBlur, days, now, zone, loadi
       </fieldset>
 
       <fieldset>
-        <legend className="mb-3 text-[13px] font-semibold text-ink">Lieferzeitfenster</legend>
+        <legend className="mb-3 text-[13px] font-semibold text-ink">Lieferzeitfenster {windows.length > 4 && <span className="font-normal text-ink-muted">· Zustellung innerhalb der gewählten Stunde</span>}</legend>
         {!selectedDay ? (
           <p className="text-[13px] text-ink-muted">Wähle zuerst ein Lieferdatum.</p>
         ) : (
-          <div id={id("windowId")} role="radiogroup" aria-label="Lieferzeitfenster" aria-invalid={Boolean(errors.windowId) || undefined} className="flex flex-col gap-2">
-            {windows.length === 0 ? (
+          <div id={id("windowId")} role="radiogroup" aria-label="Lieferzeitfenster" aria-invalid={Boolean(errors.windowId) || undefined} className={windows.length > 4 ? "grid grid-cols-3 gap-2 sm:grid-cols-4" : "flex flex-col gap-2"}>
+            {windows.length > 4 ? (
+              windows.map((w) => (
+                <ChoicePill key={w.id} name="delivery-window" value={w.id} checked={data.windowId === w.id} onChange={(v) => set({ windowId: v })} sub={w.surcharge > 0 ? `+ ${formatPrice(w.surcharge)}` : undefined}>
+                  {w.label.replace(/ Uhr$/, "")}
+                </ChoicePill>
+              ))
+            ) : windows.length === 0 ? (
               <ChoiceTile name="delivery-window" value="" checked onChange={() => set({ windowId: "" })} title="Kein bestimmtes Zeitfenster" description="Wir liefern im Laufe des Tages." />
             ) : (
               windows.map((w) => (
@@ -129,7 +135,7 @@ export function StepDelivery({ data, set, errors, onBlur, days, now, zone, loadi
                 />
               ))
             )}
-            {errors.windowId && <p role="alert" className="text-[13px] text-danger">{errors.windowId}</p>}
+            {errors.windowId && <p role="alert" className="col-span-full text-[13px] text-danger">{errors.windowId}</p>}
           </div>
         )}
       </fieldset>

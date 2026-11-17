@@ -17,13 +17,13 @@ export function StepCustomer({ data, set, errors, onBlur, newsletterEnabled }: {
   const id = (f: keyof Customer) => fieldId(4, f);
   return (
     <div className="flex flex-col gap-5">
-      <p className="-mt-2 text-[14px] text-ink-muted">Die Bestellbestätigung und der Link zur Sendungsverfolgung gehen an dich – nicht an den Empfänger.</p>
+      <p className="-mt-2 text-[14px] text-ink-muted">Die Bestellbestätigung und der Link zur Sendungsverfolgung gehen an dich – nicht an den Empfänger. Felder mit <span className="text-burgundy">*</span> sind Pflichtfelder.</p>
       <div className="grid gap-5 sm:grid-cols-2">
-        <Input id={id("firstName")} label="Vorname" autoComplete="given-name" value={data.firstName} onChange={(e) => set({ firstName: e.target.value })} onBlur={() => onBlur("firstName")} error={errors.firstName} />
-        <Input id={id("lastName")} label="Nachname" autoComplete="family-name" value={data.lastName} onChange={(e) => set({ lastName: e.target.value })} onBlur={() => onBlur("lastName")} error={errors.lastName} />
+        <Input required id={id("firstName")} label="Vorname" autoComplete="given-name" value={data.firstName} onChange={(e) => set({ firstName: e.target.value })} onBlur={() => onBlur("firstName")} error={errors.firstName} />
+        <Input required id={id("lastName")} label="Nachname" autoComplete="family-name" value={data.lastName} onChange={(e) => set({ lastName: e.target.value })} onBlur={() => onBlur("lastName")} error={errors.lastName} />
       </div>
-      <Input id={id("email")} label="E-Mail-Adresse" type="email" inputMode="email" autoComplete="email" value={data.email} onChange={(e) => set({ email: e.target.value })} onBlur={() => onBlur("email")} error={errors.email} hint="Für Bestellbestätigung und Sendungsverfolgung." />
-      <Input id={id("phone")} label="Telefon" type="tel" inputMode="tel" autoComplete="tel" value={data.phone} onChange={(e) => set({ phone: e.target.value })} onBlur={() => onBlur("phone")} error={errors.phone} hint="Falls wir Rückfragen zu deiner Bestellung haben." />
+      <Input required id={id("email")} label="E-Mail-Adresse" type="email" inputMode="email" autoComplete="email" value={data.email} onChange={(e) => set({ email: e.target.value })} onBlur={() => onBlur("email")} error={errors.email} hint="Für Bestellbestätigung und Sendungsverfolgung." />
+      <Input required id={id("phone")} label="Telefon" type="tel" inputMode="tel" autoComplete="tel" value={data.phone} onChange={(e) => set({ phone: e.target.value })} onBlur={() => onBlur("phone")} error={errors.phone} hint="Falls wir Rückfragen zu deiner Bestellung haben." />
 
       <div className="mt-2 flex flex-col gap-4 border-t border-line pt-5">
         <div className="flex flex-col gap-1.5">

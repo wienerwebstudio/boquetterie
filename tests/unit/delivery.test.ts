@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  addDays, findZone, isSelfDeliveryDay, getAvailableDays, getLocalNow, isSameDayAvailable, isSameDayPossibleNow,
+  addDays, findZone, floristReadyTime, isSelfDeliveryDay, getAvailableDays, getLocalNow, isSameDayAvailable, isSameDayPossibleNow,
   isValidAustrianPostalCode, normalizePostalCode, quoteDelivery, toMinutes, weekdayOf, zoneContains,
 } from "@/lib/delivery";
 import type { DeliveryZone } from "@/types";
@@ -242,5 +242,16 @@ describe("self delivery days (optional)", () => {
     expect(isSelfDeliveryDay(weekend, SAT)).toBe(true);
     expect(isSelfDeliveryDay(weekend, SUN)).toBe(true);
     expect(isSelfDeliveryDay(weekend, MON)).toBe(false);
+  });
+});
+
+describe("florist ready time", () => {
+  it("is the window start – or prep time from now for a window that is already running", () => {
+    const d = { date: THU, windowFrom: "17:00" };
+    expect(floristReadyTime(d, at(THU, "10:00"))).toBe("17:00");
+    expect(floristReadyTime(d, at(THU, "18:26"))).toBe("19:30"); // 18:26 + 60 min → 19:26 → 19:30
+    expect(floristReadyTime(d, at(THU, "15:45"))).toBe("17:00");
+    expect(floristReadyTime(d, at(MON, "18:00"))).toBe("17:00"); // another day
+    expect(floristReadyTime({ date: THU }, at(THU, "10:00"))).toBeNull();
   });
 });

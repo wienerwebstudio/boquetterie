@@ -15,8 +15,8 @@ const DESCRIPTIONS: Record<PaymentMethodConfig["id"], string> = {
   google_pay: "Verfügbarkeit wird beim Bezahlen geprüft.",
   card: "Visa, Mastercard, American Express.",
   paypal: "Du wirst zu PayPal weitergeleitet.",
-  klarna: "Rechnung oder Ratenkauf über Klarna.",
-  eps: "Online-Überweisung mit deiner österreichischen Bank.",
+  klarna: "Mit Klarna bezahlen – je nach Klarna-Prüfung sofort, später oder in Raten.",
+  eps: "Online-Überweisung direkt aus deinem Online-Banking (alle österreichischen Banken), sofort bestätigt.",
 };
 
 export function StepPayment({ data, set, errors, methods, loading, loadError }: {

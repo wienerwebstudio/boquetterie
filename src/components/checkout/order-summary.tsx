@@ -17,9 +17,13 @@ export interface SummaryProps {
   cardsEnabled?: boolean;
   couponCode: string | null;
   couponError?: string;
+  /** Where the bouquet goes – shown once the recipient step is filled in. */
+  recipient?: { firstName: string; lastName: string; company?: string; street: string; houseNumber: string; addition?: string; zip: string; city: string };
 }
 
-function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting, cardsEnabled = false, couponCode, couponError }: SummaryProps) {
+function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting, cardsEnabled = false, couponCode, couponError, recipient }: SummaryProps) {
+  const r = recipient;
+  const hasAddress = Boolean(r && r.street.trim() && r.zip.trim());
   const cardText = cardsEnabled ? greeting.message.trim() : "";
   return (
     <div className="flex flex-col gap-5">
@@ -69,6 +73,17 @@ function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting,
             {zone && <span className="block text-[12px] text-ink-muted">{zone.region}</span>}
           </dd>
         </div>
+        {hasAddress && r && (
+          <div className="flex justify-between gap-4">
+            <dt className="text-ink-muted">Lieferadresse</dt>
+            <dd className="text-right text-ink">
+              {[r.firstName, r.lastName].filter((x) => x.trim()).join(" ")}
+              {r.company?.trim() && <span className="block text-[12px] text-ink-muted">{r.company}</span>}
+              <span className="block text-[12px] text-ink-muted">{r.street} {r.houseNumber}{r.addition?.trim() ? `/${r.addition}` : ""}</span>
+              <span className="block text-[12px] text-ink-muted">{r.zip} {r.city}</span>
+            </dd>
+          </div>
+        )}
       </dl>
 
       <dl className="flex flex-col gap-2 border-t border-line pt-4 text-[14px]">
