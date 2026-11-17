@@ -11,16 +11,16 @@ const KIND_LABEL: Record<ProductImage["kind"], string> = {
 
 /**
  * Product gallery. Desktop: thumbnail rail + large 4:5 image. Mobile: snap-scroll carousel with dots.
- * If the selected size carries its own image it is appended and shown.
+ * If the selected size carries its own image, it comes first and is shown – the photo of
+ * the size the customer is buying (never a bigger bouquet) is what they see first.
  */
 export function ProductGallery({ images, name, sizeImage, sizeLabel, className }: {
   images: ProductImage[]; name: string; sizeImage?: string; sizeLabel?: string; className?: string;
 }) {
   const all = useMemo<ProductImage[]>(() => {
-    if (sizeImage && !images.some((i) => i.src === sizeImage)) {
-      return [...images, { src: sizeImage, alt: `${name} – Größe ${sizeLabel ?? ""}`.trim(), kind: "size" }];
-    }
-    return images;
+    if (!sizeImage) return images;
+    const own = images.find((i) => i.src === sizeImage) ?? { src: sizeImage, alt: `${name} – Größe ${sizeLabel ?? ""}`.trim(), kind: "size" as const };
+    return [own, ...images.filter((i) => i.src !== sizeImage)];
   }, [images, sizeImage, sizeLabel, name]);
 
   const [index, setIndex] = useState(0);
@@ -32,8 +32,7 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
   const [seenSizeImage, setSeenSizeImage] = useState(sizeImage);
   if (sizeImage !== seenSizeImage) {
     setSeenSizeImage(sizeImage);
-    const i = sizeImage ? all.findIndex((img) => img.src === sizeImage) : -1;
-    if (i >= 0) setIndex(i);
+    setIndex(0);
   }
 
   // Keep the mobile carousel in sync with the index.

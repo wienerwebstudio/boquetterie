@@ -207,7 +207,8 @@ export function resolveLines(items: OrderPayloadItem[], products: Product[], ext
       if (!extra) return { ok: false, message: "Ein Extra in deinem Warenkorb ist nicht mehr verfügbar." };
       lineExtras.push({ extraId: extra.id, name: extra.name, quantity: ex.quantity, unitPrice: extra.price, ...(extra.image && { image: extra.image }) });
     }
-    const image = (product.images.find((i) => i.kind === "front") ?? product.images[0])?.src ?? "";
+    // The photo of the chosen size if there is one – the florist binds "wie auf dem Foto".
+    const image = size.image || ((product.images.find((i) => i.kind === "front") ?? product.images[0])?.src ?? "");
     lines.push({
       product,
       line: {

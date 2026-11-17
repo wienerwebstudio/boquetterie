@@ -363,7 +363,7 @@ async function liveSampleOrder(settings: SiteSettings): Promise<Order> {
     return sampleOrder({
       product: {
         id: product.id, name: product.name, sizeId: size.id, sizeLabel: size.label, stems: size.stems, price: size.price,
-        image: (product.images.find((im) => im.kind === "front") ?? product.images[0])?.src,
+        image: size.image || (product.images.find((im) => im.kind === "front") ?? product.images[0])?.src,
         floristBudget: budgets.products[product.id]?.[size.id],
       },
       extra: extra ? { id: extra.id, name: extra.name, price: extra.price, image: extra.image, floristBudget: budgets.extras[extra.id] } : null,
