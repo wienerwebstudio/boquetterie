@@ -59,6 +59,11 @@ const nextConfig: NextConfig = {
      * be trusted as the client address (elsewhere a client could simply send that header).
      */
     BUILD_TRUSTED_IP_HEADER: process.env.NETLIFY === "true" ? "x-nf-client-connection-ip" : "",
+    /**
+     * Read by src/lib/uploads.ts for the same reason: on Netlify the filesystem is read-only,
+     * so uploads (admin images, review photos) go to Netlify Blobs unless S3 is configured.
+     */
+    BUILD_ON_NETLIFY: process.env.NETLIFY === "true" ? "1" : "",
   },
   // The shop moved from bloomery.at to blumora.at. Pages redirect permanently; /api stays
   // reachable on the old host so webhooks registered with the old URL keep working.

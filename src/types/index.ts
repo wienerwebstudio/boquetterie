@@ -176,6 +176,14 @@ export interface Review {
   date: ISODate;
   /** Demo reviews are shown with a clear label until real reviews exist. */
   demo: boolean;
+  /** Customer photos accepted by an admin (only shown for real, verified reviews). */
+  photos?: ReviewPhoto[];
+}
+
+export interface ReviewPhoto {
+  src: string;
+  /** e.g. "Kundenfoto zu Red Passion" */
+  alt: string;
 }
 
 export interface SubscriptionPlan {

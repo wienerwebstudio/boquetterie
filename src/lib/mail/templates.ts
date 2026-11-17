@@ -481,7 +481,8 @@ export function reviewRequest(input: { order: Order; brand: MailBrand; reviewUrl
     headline: "Wie hat es gefallen?",
     blocks: [
       { type: "p", text: `Hallo ${order.customer.firstName},` },
-      { type: "p", text: `vor ein paar Tagen wurde ${first ? `„${first.productName}“` : "dein Strauß"} zugestellt. Wir würden gern wissen, wie die Blumen angekommen sind – und was wir besser machen können.` },
+      { type: "p", text: `vor Kurzem wurde ${first ? `„${first.productName}“` : "dein Strauß"} zugestellt. Wir würden gern wissen, wie die Blumen angekommen sind – und was wir besser machen können.` },
+      { type: "p", text: "Ein Foto vom Strauß freut uns besonders – du kannst bis zu drei Bilder mitschicken." },
       { type: "button", label: "Bewertung schreiben", url: reviewUrl },
       { type: "p", text: "Das dauert nur einen Moment. Deine Bewertung wird von uns gelesen und erst danach im Shop veröffentlicht.", muted: true },
     ],

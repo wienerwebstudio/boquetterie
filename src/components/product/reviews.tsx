@@ -1,5 +1,7 @@
 import type { Review } from "@/types";
 import { StarRating } from "@/components/ui/star-rating";
+import { ReviewPhotos } from "@/components/reviews/review-photos";
+import { publicReviewPhotos } from "@/lib/review-submission";
 
 const monthYear = new Intl.DateTimeFormat("de-AT", { month: "long", year: "numeric", timeZone: "UTC" });
 function formatMonth(iso: string) {
@@ -29,6 +31,7 @@ export function ProductReviews({ reviews, productName }: { reviews: Review[]; pr
             <li key={r.id} className="flex flex-col rounded-md border border-line bg-white/70 p-6">
               <StarRating value={r.rating} />
               <p className="mt-4 flex-1 font-serif text-[19px] leading-snug text-ink">„{r.text}“</p>
+              <ReviewPhotos photos={publicReviewPhotos(r)} author={r.name} className="mt-4" />
               <p className="mt-5 text-[13px] text-ink-muted">
                 <span className="font-semibold text-ink">{r.name}</span> · {formatMonth(r.date)}
                 {r.verified && !r.demo && <span className="ml-2 text-success">Verifizierter Kauf</span>}

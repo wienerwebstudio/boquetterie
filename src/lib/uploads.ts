@@ -4,17 +4,23 @@ import path from "node:path";
 import crypto from "node:crypto";
 import sharp, { type Metadata } from "sharp";
 import { slugify } from "@/lib/format";
+import { MAX_REVIEW_PHOTO_BYTES } from "@/lib/review-submission";
 
 /**
- * Upload storage for admin images (product photos, hero images, …).
+ * Upload storage for admin images (product photos, hero images, …) and customer
+ * review photos.
  *
- * Two drivers, selected by environment:
- *  - `local` (default): files land in `public/uploads/<yyyy>/<mm>/<slug>-<hash>.<ext>`
- *    and are served by Next as `/uploads/…`. Persist the folder via a Docker volume.
+ * Three drivers, selected by environment (`getUploadDriver`):
  *  - `s3`: any S3-compatible bucket (AWS S3, Cloudflare R2, MinIO, Hetzner, …) when
  *    S3_BUCKET + S3_REGION + S3_ACCESS_KEY_ID + S3_SECRET_ACCESS_KEY are set.
  *    Optional: S3_ENDPOINT (R2/MinIO), S3_PREFIX (default "uploads"),
  *    S3_PUBLIC_URL or UPLOADS_PUBLIC_HOST for the public base URL.
+ *  - `netlify`: Netlify Blobs (site-wide store "media") when the app runs on Netlify
+ *    and S3 is not configured. Served by the route `/media/<key>`.
+ *  - `local` (default elsewhere): files land in `public/uploads/<yyyy>/<mm>/<slug>-<hash>.<ext>`
+ *    and are served by Next as `/uploads/…`. Persist the folder via a Docker volume.
+ *    Review photos are served through `/media/<key>` instead, because `next start`
+ *    only serves files that were in `public/` when the server started.
  *
  * Every upload is sniffed and re-encoded with sharp – we never store the bytes a
  * browser sent us. EXIF (incl. GPS) is dropped in the process.
@@ -27,7 +33,18 @@ const JPEG_QUALITY = 82;
 const ALLOWED_FORMATS = new Set(["jpeg", "png", "webp", "avif"]);
 /** Keys look like `2026/09/rosen-bouquet-1a2b3c4d.jpg` – nothing else is accepted. */
 const KEY_RE = /^\d{4}\/\d{2}\/[a-z0-9-]{1,80}-[a-f0-9]{8}\.(jpg|png)$/;
+/** Customer review photos: `reviews/2026/11/red-passion-1a2b3c4d.jpg` (kept out of the admin media library). */
+const REVIEW_KEY_RE = /^reviews\/\d{4}\/\d{2}\/[a-z0-9-]{1,80}-[a-f0-9]{8}\.jpg$/;
 const STATIC_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif", ".svg"]);
+
+/* Review photos (customer uploads on /bewertung); count and byte limits live in review-submission.ts. */
+export const REVIEW_PHOTO_MAX_SIDE_PX = 1600;
+const REVIEW_PHOTO_QUALITY = 80;
+const REVIEW_PHOTO_FORMATS = new Set(["jpeg", "png", "webp"]);
+
+/** Name of the site-wide Netlify Blobs store. */
+export const BLOB_STORE_NAME = "media";
+const IMMUTABLE_CACHE = "public, max-age=31536000, immutable";
 
 export interface SaveUploadInput { buffer: Buffer; filename: string; mime?: string }
 export interface SaveUploadResult { url: string; key: string; width: number; height: number; bytes: number }
@@ -45,11 +62,36 @@ export class UploadError extends Error {
 
 /* ---------------- driver selection ---------------- */
 
-export type UploadDriver = "local" | "s3";
+export type UploadDriver = "local" | "s3" | "netlify";
 
-export function getUploadDriver(): UploadDriver {
+function s3Configured() {
   const { S3_BUCKET, S3_REGION, S3_ACCESS_KEY_ID, S3_SECRET_ACCESS_KEY } = process.env;
-  return S3_BUCKET && S3_REGION && S3_ACCESS_KEY_ID && S3_SECRET_ACCESS_KEY ? "s3" : "local";
+  return Boolean(S3_BUCKET && S3_REGION && S3_ACCESS_KEY_ID && S3_SECRET_ACCESS_KEY);
+}
+
+/**
+ * True when the app runs on Netlify:
+ *  - the Blobs context Netlify provides to functions (`NETLIFY_BLOBS_CONTEXT` / `globalThis.netlifyBlobsContext`), or
+ *  - `BUILD_ON_NETLIFY`, baked in by next.config.ts because `NETLIFY=true` only exists during the build, or
+ *  - `NETLIFY=true` itself (build time, `netlify dev`).
+ */
+export function isNetlifyRuntime(): boolean {
+  const g = globalThis as { netlifyBlobsContext?: unknown };
+  return Boolean(g.netlifyBlobsContext || process.env.NETLIFY_BLOBS_CONTEXT)
+    || process.env.BUILD_ON_NETLIFY === "1"
+    || process.env.NETLIFY === "true";
+}
+
+/**
+ * S3 when configured (unchanged), else Netlify Blobs on Netlify (where the filesystem
+ * is read-only), else the local filesystem. `UPLOADS_DRIVER=local|netlify` forces one
+ * of the latter two (e.g. `netlify` for `netlify dev`, `local` to opt out).
+ */
+export function getUploadDriver(): UploadDriver {
+  if (s3Configured()) return "s3";
+  const forced = process.env.UPLOADS_DRIVER?.trim().toLowerCase();
+  if (forced === "local" || forced === "netlify") return forced;
+  return isNetlifyRuntime() ? "netlify" : "local";
 }
 
 const LOCAL_ROOT = path.join(process.cwd(), "public", "uploads");
@@ -85,49 +127,185 @@ function objectKey(key: string) {
   return prefix ? `${prefix}/${key}` : key;
 }
 
-function publicUrl(key: string) {
-  if (getUploadDriver() === "local") return `/uploads/${key}`;
-  return `${s3Config().publicBase}/${objectKey(key)}`;
+/**
+ * Public URL of a stored key. Local admin uploads keep their `/uploads/…` URL;
+ * Netlify Blobs and local review photos go through the `/media/…` route.
+ */
+export function publicUrl(key: string) {
+  const driver = getUploadDriver();
+  if (driver === "s3") return `${s3Config().publicBase}/${objectKey(key)}`;
+  if (driver === "local" && !key.startsWith("reviews/")) return `/uploads/${key}`;
+  return `/media/${key}`;
+}
+
+/* ---------------- Netlify Blobs ---------------- */
+
+interface BlobMeta { contentType?: string; bytes?: number; uploadedAt?: string }
+
+async function blobStore() {
+  const { getStore } = await import("@netlify/blobs");
+  return getStore({ name: BLOB_STORE_NAME });
+}
+
+/* ---------------- storage primitives (all drivers) ---------------- */
+
+async function putObject(key: string, data: Buffer, contentType: string) {
+  const driver = getUploadDriver();
+  if (driver === "s3") {
+    const { PutObjectCommand } = await import("@aws-sdk/client-s3");
+    const client = await s3Client();
+    await client.send(new PutObjectCommand({ Bucket: s3Config().bucket, Key: objectKey(key), Body: data, ContentType: contentType, CacheControl: IMMUTABLE_CACHE }));
+    return;
+  }
+  if (driver === "netlify") {
+    const store = await blobStore();
+    const metadata: BlobMeta = { contentType, bytes: data.length, uploadedAt: new Date().toISOString() };
+    await store.set(key, new Blob([new Uint8Array(data)], { type: contentType }), { metadata: { ...metadata } });
+    return;
+  }
+  const target = path.join(LOCAL_ROOT, key);
+  await fs.mkdir(path.dirname(target), { recursive: true });
+  await fs.writeFile(target, data);
+}
+
+async function deleteObject(key: string) {
+  const driver = getUploadDriver();
+  if (driver === "s3") {
+    const { DeleteObjectCommand } = await import("@aws-sdk/client-s3");
+    const client = await s3Client();
+    await client.send(new DeleteObjectCommand({ Bucket: s3Config().bucket, Key: objectKey(key) }));
+    return;
+  }
+  if (driver === "netlify") {
+    const store = await blobStore();
+    if ((await store.getMetadata(key)) === null) throw new UploadError(404, "Datei nicht gefunden.");
+    await store.delete(key);
+    return;
+  }
+  const target = path.resolve(LOCAL_ROOT, key);
+  if (!target.startsWith(LOCAL_ROOT + path.sep)) throw new UploadError(400, "Ungültiger Dateischlüssel.");
+  try {
+    await fs.unlink(target);
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") throw new UploadError(404, "Datei nicht gefunden.");
+    throw e;
+  }
+}
+
+/** Keys the `/media/<key>` route may serve: admin uploads and review photos. */
+export function isServableMediaKey(key: string) {
+  return KEY_RE.test(key) || REVIEW_KEY_RE.test(key);
+}
+
+export function isValidReviewPhotoKey(key: string) {
+  return REVIEW_KEY_RE.test(key);
+}
+
+export interface StoredMedia { data: Uint8Array; contentType: string }
+
+const contentTypeOf = (key: string) => (key.endsWith(".png") ? "image/png" : "image/jpeg");
+
+/**
+ * Reads one stored file for the `/media/<key>` route. On Netlify the Blobs store is
+ * asked (whatever the driver is now, so `/media` URLs stay valid should S3 be added
+ * later); elsewhere `public/uploads`. S3 objects are served by the bucket itself.
+ */
+export async function readStoredMedia(key: string): Promise<StoredMedia | null> {
+  if (!isServableMediaKey(key)) return null;
+  if (isNetlifyRuntime() || getUploadDriver() === "netlify") {
+    const store = await blobStore();
+    const entry = await store.getWithMetadata(key, { type: "arrayBuffer" });
+    if (entry === null) return null;
+    const meta = entry.metadata as BlobMeta;
+    return { data: new Uint8Array(entry.data), contentType: meta.contentType || contentTypeOf(key) };
+  }
+  const target = path.resolve(LOCAL_ROOT, key);
+  if (!target.startsWith(LOCAL_ROOT + path.sep)) return null;
+  try {
+    return { data: new Uint8Array(await fs.readFile(target)), contentType: contentTypeOf(key) };
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") return null;
+    throw e;
+  }
 }
 
 /* ---------------- image processing ---------------- */
 
 interface Processed { data: Buffer; ext: "jpg" | "png"; mime: string; width: number; height: number }
 
+interface ProcessOptions {
+  maxSide: number;
+  quality: number;
+  formats: ReadonlySet<string>;
+  /** Transparent PNGs stay PNG (admin uploads); otherwise everything becomes JPEG. */
+  keepTransparentPng: boolean;
+  unsupportedMessage: string;
+}
+
+const ADMIN_PROCESS: ProcessOptions = {
+  maxSide: MAX_SIDE_PX,
+  quality: JPEG_QUALITY,
+  formats: ALLOWED_FORMATS,
+  keepTransparentPng: true,
+  unsupportedMessage: "Die Datei ist kein unterstütztes Bild (JPEG, PNG, WebP oder AVIF).",
+};
+
+const REVIEW_PROCESS: ProcessOptions = {
+  maxSide: REVIEW_PHOTO_MAX_SIDE_PX,
+  quality: REVIEW_PHOTO_QUALITY,
+  formats: REVIEW_PHOTO_FORMATS,
+  keepTransparentPng: false,
+  unsupportedMessage: "Bitte nur Fotos als JPEG, PNG oder WebP hochladen.",
+};
+
+export const HEIC_MESSAGE = "HEIC-Fotos können wir leider nicht lesen. Bitte das Foto als JPEG auswählen – am iPhone passiert das beim Hochladen aus der Fotomediathek meist automatisch.";
+
+/** HEIC/HEIF from iPhones (HEVC-compressed) – the prebuilt sharp/libvips we ship cannot decode it. */
+function looksLikeHeic(buffer: Buffer) {
+  if (buffer.length < 12 || buffer.toString("latin1", 4, 8) !== "ftyp") return false;
+  return ["heic", "heix", "hevc", "hevx", "heim", "heis", "mif1", "msf1"].includes(buffer.toString("latin1", 8, 12));
+}
+
 /**
- * Sniff, auto-rotate, downscale to MAX_SIDE_PX and re-encode. Transparent PNGs stay
- * PNG, everything else becomes a progressive JPEG. next/image creates the
- * responsive variants at request time, so nothing else is generated here.
+ * Sniff, auto-rotate, downscale and re-encode. Admin uploads: transparent PNGs stay
+ * PNG, everything else becomes a progressive JPEG. Review photos: always JPEG.
+ * next/image creates the responsive variants at request time, so nothing else is
+ * generated here. sharp writes no metadata (EXIF, GPS) unless asked to.
  */
-async function processImage(buffer: Buffer): Promise<Processed> {
+async function processImage(buffer: Buffer, opts: ProcessOptions = ADMIN_PROCESS): Promise<Processed> {
   let meta: Metadata;
   try {
     meta = await sharp(buffer, { limitInputPixels: 80_000_000 }).metadata();
   } catch {
-    throw new UploadError(415, "Die Datei ist kein unterstütztes Bild (JPEG, PNG, WebP oder AVIF).");
+    throw new UploadError(415, looksLikeHeic(buffer) ? HEIC_MESSAGE : opts.unsupportedMessage);
   }
-  if (!meta.format || !ALLOWED_FORMATS.has(meta.format)) {
-    throw new UploadError(415, "Die Datei ist kein unterstütztes Bild (JPEG, PNG, WebP oder AVIF).");
+  if (!meta.format || !opts.formats.has(meta.format)) {
+    throw new UploadError(415, meta.format === "heif" && meta.compression === "hevc" ? HEIC_MESSAGE : opts.unsupportedMessage);
   }
-  const keepPng = meta.format === "png" && meta.hasAlpha === true;
-  const pipeline = sharp(buffer, { limitInputPixels: 80_000_000 })
-    .rotate()
-    .resize({ width: MAX_SIDE_PX, height: MAX_SIDE_PX, fit: "inside", withoutEnlargement: true });
-  const encoded = keepPng
-    ? pipeline.png({ compressionLevel: 9, adaptiveFiltering: true })
-    : pipeline.flatten({ background: "#ffffff" }).jpeg({ quality: JPEG_QUALITY, progressive: true, mozjpeg: true });
-  const { data, info } = await encoded.toBuffer({ resolveWithObject: true });
-  return { data, ext: keepPng ? "png" : "jpg", mime: keepPng ? "image/png" : "image/jpeg", width: info.width, height: info.height };
+  const keepPng = opts.keepTransparentPng && meta.format === "png" && meta.hasAlpha === true;
+  try {
+    const pipeline = sharp(buffer, { limitInputPixels: 80_000_000 })
+      .rotate()
+      .resize({ width: opts.maxSide, height: opts.maxSide, fit: "inside", withoutEnlargement: true });
+    const encoded = keepPng
+      ? pipeline.png({ compressionLevel: 9, adaptiveFiltering: true })
+      : pipeline.flatten({ background: "#ffffff" }).jpeg({ quality: opts.quality, progressive: true, mozjpeg: true });
+    const { data, info } = await encoded.toBuffer({ resolveWithObject: true });
+    return { data, ext: keepPng ? "png" : "jpg", mime: keepPng ? "image/png" : "image/jpeg", width: info.width, height: info.height };
+  } catch {
+    // Header parsed, but the pixel data is broken or truncated.
+    throw new UploadError(415, opts.unsupportedMessage);
+  }
 }
 
-function buildKey(filename: string, processed: Processed) {
+function buildKey(filename: string, processed: Processed, folder = "") {
   const base = path.basename(filename || "bild", path.extname(filename || ""));
   const slug = (slugify(base) || "bild").slice(0, 60).replace(/-+$/, "") || "bild";
   const hash = crypto.createHash("sha1").update(processed.data).digest("hex").slice(0, 8);
   const now = new Date();
   const yyyy = String(now.getUTCFullYear());
   const mm = String(now.getUTCMonth() + 1).padStart(2, "0");
-  return `${yyyy}/${mm}/${slug}-${hash}.${processed.ext}`;
+  return `${folder}${yyyy}/${mm}/${slug}-${hash}.${processed.ext}`;
 }
 
 export function isValidUploadKey(key: string) {
@@ -141,30 +319,52 @@ export async function saveUpload({ buffer, filename }: SaveUploadInput): Promise
   if (buffer.length > MAX_UPLOAD_BYTES) throw new UploadError(413, "Die Datei ist zu groß (maximal 15 MB).");
   const processed = await processImage(buffer);
   const key = buildKey(filename, processed);
-
-  if (getUploadDriver() === "s3") {
-    const { PutObjectCommand } = await import("@aws-sdk/client-s3");
-    const client = await s3Client();
-    await client.send(new PutObjectCommand({
-      Bucket: s3Config().bucket,
-      Key: objectKey(key),
-      Body: processed.data,
-      ContentType: processed.mime,
-      CacheControl: "public, max-age=31536000, immutable",
-    }));
-  } else {
-    const target = path.join(LOCAL_ROOT, key);
-    await fs.mkdir(path.dirname(target), { recursive: true });
-    await fs.writeFile(target, processed.data);
-  }
-
+  await putObject(key, processed.data, processed.mime);
   return { url: publicUrl(key), key, width: processed.width, height: processed.height, bytes: processed.data.length };
 }
 
-/** All uploads, newest first. */
+/** Size check for one customer photo before anything is decoded. Returns an error message or null. */
+export function reviewPhotoSizeError(size: number): string | null {
+  if (size <= 0) return "Ein Foto ist leer.";
+  if (size > MAX_REVIEW_PHOTO_BYTES) return "Ein Foto ist zu groß (maximal 10 MB pro Foto).";
+  return null;
+}
+
+/**
+ * Decodes a customer photo by its bytes (JPEG, PNG or WebP), rotates it upright,
+ * drops EXIF/GPS, scales it to at most 1600 px and encodes JPEG q80.
+ */
+export async function processReviewPhoto(buffer: Buffer): Promise<{ data: Buffer; width: number; height: number }> {
+  const sizeError = reviewPhotoSizeError(buffer.length);
+  if (sizeError) throw new UploadError(buffer.length ? 413 : 400, sizeError);
+  const p = await processImage(buffer, REVIEW_PROCESS);
+  return { data: p.data, width: p.width, height: p.height };
+}
+
+/** Stores an already processed review photo; `label` names the file (e.g. the product slug). */
+export async function storeReviewPhoto(photo: { data: Buffer; width: number; height: number }, label: string): Promise<SaveUploadResult> {
+  const processed: Processed = { data: photo.data, ext: "jpg", mime: "image/jpeg", width: photo.width, height: photo.height };
+  const key = buildKey(label || "kundenfoto", processed, "reviews/");
+  await putObject(key, processed.data, processed.mime);
+  return { url: publicUrl(key), key, width: photo.width, height: photo.height, bytes: photo.data.length };
+}
+
+/** Removes a review photo (rejected review, or a photo the admin did not approve). Missing files are ignored. */
+export async function deleteReviewPhoto(key: string): Promise<void> {
+  if (!isValidReviewPhotoKey(key)) throw new UploadError(400, "Ungültiger Dateischlüssel.");
+  try {
+    await deleteObject(key);
+  } catch (e) {
+    if (e instanceof UploadError && e.status === 404) return;
+    throw e;
+  }
+}
+
+/** All admin uploads, newest first (review photos are not listed). */
 export async function listUploads(): Promise<UploadItem[]> {
   const items: UploadItem[] = [];
-  if (getUploadDriver() === "s3") {
+  const driver = getUploadDriver();
+  if (driver === "s3") {
     const { ListObjectsV2Command } = await import("@aws-sdk/client-s3");
     const client = await s3Client();
     const { bucket, prefix } = s3Config();
@@ -179,6 +379,17 @@ export async function listUploads(): Promise<UploadItem[]> {
       }
       token = res.IsTruncated ? res.NextContinuationToken : undefined;
     } while (token && items.length < 5000);
+  } else if (driver === "netlify") {
+    const store = await blobStore();
+    const { blobs } = await store.list();
+    const keys = blobs.map((b) => b.key).filter(isValidUploadKey).slice(0, 2000);
+    for (let i = 0; i < keys.length; i += 20) {
+      const batch = await Promise.all(keys.slice(i, i + 20).map(async (key) => ({ key, meta: await store.getMetadata(key) })));
+      for (const { key, meta } of batch) {
+        const m = (meta?.metadata ?? {}) as BlobMeta;
+        items.push({ key, url: publicUrl(key), bytes: Number(m.bytes) || 0, modifiedAt: typeof m.uploadedAt === "string" ? m.uploadedAt : "" });
+      }
+    }
   } else {
     for (const rel of await walk(LOCAL_ROOT)) {
       const key = rel.split(path.sep).join("/");
@@ -192,20 +403,7 @@ export async function listUploads(): Promise<UploadItem[]> {
 
 export async function deleteUpload(key: string): Promise<void> {
   if (!isValidUploadKey(key)) throw new UploadError(400, "Ungültiger Dateischlüssel.");
-  if (getUploadDriver() === "s3") {
-    const { DeleteObjectCommand } = await import("@aws-sdk/client-s3");
-    const client = await s3Client();
-    await client.send(new DeleteObjectCommand({ Bucket: s3Config().bucket, Key: objectKey(key) }));
-    return;
-  }
-  const target = path.resolve(LOCAL_ROOT, key);
-  if (!target.startsWith(LOCAL_ROOT + path.sep)) throw new UploadError(400, "Ungültiger Dateischlüssel.");
-  try {
-    await fs.unlink(target);
-  } catch (e) {
-    if ((e as NodeJS.ErrnoException).code === "ENOENT") throw new UploadError(404, "Datei nicht gefunden.");
-    throw e;
-  }
+  await deleteObject(key);
 }
 
 /** Static assets shipped with the repo under public/images (read-only, for the media picker). */

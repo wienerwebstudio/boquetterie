@@ -16,7 +16,7 @@ Transaktionale E-Mails (Bestellbestätigung, Statusupdates, Bewertungsanfrage, A
 | `MAIL_ADMIN` | nein | Interne Adresse, die bei jeder neuen Bestellung eine kompakte Zusammenfassung mit Link in den Admin bekommt. Leer = keine internen Mails. |
 | `MAIL_REDIRECT_TO` | nein | **Test-Schalter:** Ist eine Adresse gesetzt, gehen *alle* Mails (Kund:innen, intern, Floristik) nur an diese Adresse; der Betreff nennt die eigentlichen Empfänger (`[TEST an …]`). Für den Livebetrieb löschen. |
 | `MAIL_FLORIST` | nein | Adresse(n) der Partnerfloristik, mit Komma getrennt. Bekommen pro bezahlter Bestellung einen **Auftragszettel**: Foto, Strauß, Größe, Extras, Max. Budget (Listenpreis der Floristik, aus Admin → Floristen-Budget), Kartentext (falls Grußkarten aktiv), Abholzeit – ohne Verkaufspreise und ohne Kontaktdaten von Kund:in oder Empfänger:in. |
-| `CRON_SECRET` | für Cron | Geheimnis, das die Cron-Endpunkte unter `/api/cron/*` schützt. Anfragen müssen `Authorization: Bearer <CRON_SECRET>` senden. Erzeugen z. B. mit `openssl rand -hex 32`. Ohne Wert antworten die Endpunkte mit 503. |
+| `CRON_SECRET` | für Cron | Geheimnis, das die Cron-Endpunkte unter `/api/cron/*` schützt. Anfragen müssen `Authorization: Bearer <CRON_SECRET>` senden. Erzeugen z. B. mit `openssl rand -hex 32`. Ohne Wert antworten die Endpunkte mit 503, und die Netlify-Zeitpläne (siehe unten) rufen nichts auf – dann gehen **weder Bewertungsanfragen noch Anlass-Erinnerungen automatisch** raus. **Auf Netlify muss der Wert von den Inhabern selbst angelegt werden** (Scope „Functions“, siehe Abschnitt Netlify). |
 
 Die öffentliche URL (für Links in Mails) kommt **nicht** aus einer Env-Variable, sondern aus `content/settings.json` → `seo.siteUrl` (im Admin unter Einstellungen → SEO). Markenname, Claim und Kontakt-Mail stammen ebenfalls aus den Einstellungen; Platzhalter-Werte (`[…]`) werden nie in Mails ausgegeben.
 
@@ -51,7 +51,27 @@ Beide Endpunkte akzeptieren `GET` und `POST`, brauchen `Authorization: Bearer $C
 | Endpunkt | Was passiert | Empfohlen |
 | --- | --- | --- |
 | `/api/cron/reminders` | Verschickt bestätigte Anlass-Erinnerungen, deren Sendefenster (Anlass − Vorlauftage) heute (Europe/Vienna) erreicht ist. Jährliche Erinnerungen bekommen `lastSentYear`, einmalige werden nach dem Versand gelöscht. Unbestätigte Einträge älter als 30 Tage werden entfernt. | 1× täglich am Vormittag |
-| `/api/cron/review-requests` | Verschickt „Wie war der Strauß?“ einmalig für Bestellungen mit Status *Zugestellt*, 2–30 Tage nach der Zustellung (Zeitpunkt aus dem Bestellverlauf). Versendete Bestellungen stehen in `data/review-requests.json`. | 1× täglich |
+| `/api/cron/review-requests` | Verschickt „Wie war der Strauß?“ einmalig für Bestellungen mit Status *Zugestellt*, **ab 1 Tag** und bis 30 Tage nach der Zustellung (Zeitpunkt = letzter Wechsel auf *Zugestellt* im Bestellverlauf). Bestellungen mit Eintrag in `data/review-requests.json` (automatisch oder von Hand gesendet, oder schon bewertet) werden übersprungen. | 1× täglich |
+
+### Netlify (Scheduled Functions) – Live-Betrieb
+
+Auf Netlify gibt es keinen Server-Cron. Deshalb liegen im Repo zwei [Scheduled Functions](https://docs.netlify.com/build/functions/scheduled-functions/), die Netlify beim Deploy automatisch erkennt (Ordner `netlify/functions/`, keine `netlify.toml` nötig):
+
+| Function | Zeitplan (UTC) | Ruft auf |
+| --- | --- | --- |
+| `netlify/functions/cron-reminders.mts` | `0 7 * * *` (09:00 Sommerzeit / 08:00 Winterzeit) | `POST /api/cron/reminders` |
+| `netlify/functions/cron-review-requests.mts` | `30 7 * * *` (09:30 / 08:30) | `POST /api/cron/review-requests` |
+
+Jede Function ruft den Endpunkt auf der veröffentlichten Adresse auf (`context.site.url`, also die Hauptdomain, z. B. `https://blumora.at`; Fallback `URL`, dann `NEXT_PUBLIC_SITE_URL`) und schickt `Authorization: Bearer $CRON_SECRET`. Die gemeinsame Logik steht in `netlify/lib/cron-trigger.ts`.
+
+**Einmalig von den Inhabern einzurichten:**
+
+1. Einen zufälligen Wert erzeugen, z. B. `openssl rand -hex 32` (oder ein Passwort-Manager, mind. 32 Zeichen).
+2. Netlify → Projekt *boquetterie-preview* → **Project configuration → Environment variables → Add a variable**: Key `CRON_SECRET`, Wert einfügen, als **Secret** markieren, Scopes mindestens **Functions** (für die Endpunkte und die Scheduled Functions), Deploy-Kontext *Production*.
+3. Neu deployen (Deploys → *Trigger deploy*). Umgebungsvariablen wirken erst ab dem nächsten Deploy.
+4. Prüfen: Netlify → **Logs → Functions** → `cron-review-requests` → *Run now*. Im Log steht danach z. B. `[cron] /api/cron/review-requests: 200 {"ok":true,"window":"1-30d","due":0,"sent":0,"failed":0}`.
+
+Fehlt `CRON_SECRET`, schreiben die Functions nur `[cron] …: CRON_SECRET ist nicht gesetzt – nichts aufgerufen …` ins Log und tun nichts. Scheduled Functions laufen nur auf dem veröffentlichten Produktions-Deploy (nicht in Deploy-Previews) und höchstens 30 Sekunden; die eigentliche Arbeit macht der aufgerufene Endpunkt.
 
 ### Vercel Cron
 
@@ -92,7 +112,7 @@ Alle Mails teilen sich ein schlichtes Layout: Elfenbein-Hintergrund (`#faf7f2`),
 | **Auftragszettel (Floristik)** | gleichzeitig mit der Bestätigung | `MAIL_FLORIST` | Was zu binden ist (mit Produktfoto), mit welchem Max. Budget (Listenpreis der Floristik, ohne Nachlass) und bis wann (Beginn des Lieferfensters = Abholung durch den Kurier). Keine Verkaufspreise, keine Kundendaten. Fehlt ein Budget, steht „nicht hinterlegt“. |
 | **Neue Bestellung (intern)** | gleichzeitig mit der Bestätigung | `MAIL_ADMIN` | Kompakte Zusammenfassung (Lieferung, Empfänger:in mit Telefon, Kund:in, Positionen, Grußkarte, Zahlung, Gesamt) und Button zu `/admin/bestellungen/{id}`. Betreff enthält Nummer, Betrag und Liefertag. |
 | **Statusupdate** | Statuswechsel im Admin auf einen Status mit `customerVisible: true` (`sendOrderStatusUpdate`) | Kund:in | Headline und Text pro Status (Zahlung bestätigt, In Vorbereitung, Strauß wird gebunden, Bereit, Unterwegs, Zugestellt). *Nicht zustellbar* und *Storniert* bekommen einen hervorgehobenen Hinweis, die Notiz zum Statuswechsel (bei „Nicht zustellbar“) und die Kontaktadresse. Immer mit Link zur Statusseite. Interne Notizen lösen nie eine Mail aus; ein „Wechsel“ auf denselben Status auch nicht. |
-| **Bewertungsanfrage** | Cron `review-requests`, 2–30 Tage nach Zustellung, einmalig | Kund:in | Kurze Bitte um Bewertung mit Button zu `/bewertung?order={id}&token={tracking-token}`. Die Bewertung landet als „pending“ in `data/review-submissions.json` und wird im Admin unter *Eingereichte Bewertungen* geprüft – nichts wird automatisch veröffentlicht. |
+| **Bewertungsanfrage** | Cron `review-requests`, 1–30 Tage nach Zustellung, einmalig – oder von Hand im Admin (Bestellung → Karte „Bewertungsanfrage“, bzw. Häkchen „Bewertungsanfrage gleich mitschicken“ beim Statuswechsel auf *Zugestellt*) | Kund:in | Kurze Bitte um Bewertung, Hinweis, dass Fotos vom Strauß willkommen sind, Button zu `/bewertung?order={id}&token={tracking-token}`. Die Bewertung (Text, Sterne, bis zu 3 Fotos, Einwilligung) landet als „pending“ in `data/review-submissions.json` und wird im Admin unter *Eingereichte Bewertungen* geprüft – nichts wird automatisch veröffentlicht. |
 | **Erinnerung bestätigen** | Formular unter `/erinnerung` (`POST /api/reminders`) | Nutzer:in | Double-Opt-in: Anlass, Datum, Vorlauf und Button „Erinnerung bestätigen“ (`/api/reminders/confirm?id&token`). Ohne Klick wird nie erinnert. |
 | **Anlass-Erinnerung** | Cron `reminders`, 3/7/14 Tage vor dem Anlass | Nutzer:in | „{Anlass} von {Name} ist in 7 Tagen.“ mit Button zur passenden Anlass-Seite (`/anlaesse/{slug}`), Link zu `/blumen` und Lösch-Link (`/api/reminders/unsubscribe?id&token`). |
 | **Magic-Link** | Kund:innen-Login (`templates.magicLink({ url, brandName })`, `sendMagicLink`) | Nutzer:in | Button „Jetzt anmelden“, Hinweis auf Gültigkeit (Standard 15 Minuten) und Einmal-Nutzung. |
@@ -102,14 +122,33 @@ Alle Mails teilen sich ein schlichtes Layout: Elfenbein-Hintergrund (`#faf7f2`),
 | Datei | Inhalt |
 | --- | --- |
 | `data/reminders.json` | Anlass-Erinnerungen (`id`, `email`, `occasionSlug`, `occasionLabel`, `personName`, `day`, `month`, `yearly`, `leadDays`, `confirmed`, `unsubscribeToken`, `lastSentYear`). Admin: `/admin/erinnerungen`. |
-| `data/review-requests.json` | Pro Bestellung: wann die Bewertungsanfrage gesendet wurde (`sentAt`) und ob bereits bewertet wurde (`submittedAt`). |
-| `data/review-submissions.json` | Eingereichte Bewertungen mit Status `pending`. Admin: `/admin/bewertungen/eingereicht` → „Übernehmen“ schreibt sie nach `content/reviews.json` (`demo: false`, `verified: true`). |
+| `data/review-requests.json` | Pro Bestellung ein Eintrag: wann die (letzte) Bewertungsanfrage gesendet wurde (`sentAt`), von wem (`sentBy`: `cron` oder `admin`), wie oft (`sendCount`), ob bereits bewertet wurde (`submittedAt`) und die Einwilligung zur Veröffentlichung (`consent`: `{ at, text }` – Zeitpunkt und genauer Wortlaut). Die Einwilligung bleibt hier, auch wenn die Einreichung übernommen oder verworfen wird. |
+| `data/review-submissions.json` | Eingereichte Bewertungen mit Status `pending`, inkl. Fotos (`photos`: `{ key, url, width, height }`) und Einwilligung. Admin: `/admin/bewertungen/eingereicht` → „Übernehmen“ schreibt sie nach `content/reviews.json` (`demo: false`, `verified: true`), mit den angehakten Fotos (`photos: [{ src, alt }]`, Alt-Text „Kundenfoto zu {Produkt}“); nicht angehakte Fotos und die Fotos verworfener Bewertungen werden gelöscht. |
 
 Alle drei Dateien werden über `readData`/`writeData` aus `src/lib/cms.ts` gelesen und geschrieben und folgen damit derselben Storage-Abstraktion wie Bestellungen.
 
+## Bewertungsanfrage von Hand
+
+Auf der Bestellseite im Admin (`/admin/bestellungen/{id}`) zeigt die Karte **Bewertungsanfrage**, wann die Bestellung zugestellt wurde, wann (und ob automatisch oder manuell) die Anfrage zuletzt gesendet wurde und ob die Kund:in schon bewertet hat. „Bewertungsanfrage jetzt senden“ fragt nach Bestätigung und:
+
+- geht nur bei hinterlegter E-Mail-Adresse, nicht bei stornierten oder schon bewerteten Bestellungen;
+- warnt (erlaubt aber), wenn die Bestellung noch nicht *Zugestellt* ist – das Formular nimmt Bewertungen erst nach der Zustellung an;
+- trägt `sentAt` in `data/review-requests.json` ein (der Cron schickt danach nichts mehr) und schreibt eine Notiz in den Bestellverlauf;
+- ein zweiter Klick innerhalb von 10 Minuten sendet nicht noch einmal (Doppelklick-Schutz); später ist ein bewusstes erneutes Senden möglich.
+
+Beim Statuswechsel auf *Zugestellt* gibt es dafür zusätzlich das Häkchen **„Bewertungsanfrage gleich mitschicken“** (nur sichtbar, solange noch keine Anfrage gesendet und nicht bewertet wurde).
+
+## Fotos in Bewertungen
+
+Das Formular unter `/bewertung` nimmt bis zu **3 Fotos** (JPEG, PNG, WebP, je max. 10 MB) mit Vorschau und Entfernen-Knopf an. Der Browser verkleinert sie vor dem Senden (max. 1600 px, damit drei Fotos in eine Anfrage passen – Netlify Functions nehmen höchstens ca. 6 MB pro Anfrage an). Der Server (`POST /api/reviews`, multipart) prüft zuerst das Rate-Limit, dann Felder, Einwilligung und Bestell-Token, erkennt das Format an den Bytes (`sharp`), dreht das Bild nach EXIF, entfernt alle Metadaten (EXIF, GPS), verkleinert auf max. 1600 px und speichert JPEG mit Qualität 80 – Details und Speicherorte in `docs/UPLOADS.md`. HEIC-Dateien kann das mitgelieferte `sharp` nicht dekodieren (nur AVIF aus der HEIF-Familie); iOS wandelt Fotos bei diesem Formular selbst in JPEG um, sonst gibt es eine verständliche Fehlermeldung.
+
+Pflicht ist das Häkchen *„Ich bin einverstanden, dass Blumora meine Bewertung mit Vornamen und die hochgeladenen Fotos auf blumora.at zeigt.“* – gespeichert mit Zeitpunkt und Wortlaut (siehe Datendateien).
+
+Im Shop erscheinen Fotos nur bei übernommenen, echten Bewertungen (`demo: false`, `verified: true`) als kleine Vorschaubilder unter dem Text (Produktseite und Startseite); ein Klick öffnet das Foto groß in einem Dialog. Die Produktgalerie bleibt unverändert.
+
 ## Schutz & Grenzen
 
-- `POST /api/reminders` und `POST /api/reviews` sind pro IP auf 5 Anfragen pro Stunde begrenzt (`enforceRateLimit`) und haben ein Honeypot-Feld.
+- `POST /api/reminders` und `POST /api/reviews` sind pro IP auf 5 Anfragen pro Stunde begrenzt (`enforceRateLimit`, vor dem Lesen des Bodys) und haben ein Honeypot-Feld. `POST /api/reviews` lehnt Anfragen über 30,5 MB (`Content-Length`) ab, bevor etwas gelesen wird.
 - Bestätigungs- und Lösch-Links tragen ein zufälliges Token (32 Hex-Zeichen); Bewertungslinks verwenden das Tracking-Token der Bestellung. Der Vergleich ist zeitkonstant.
 - Der Rate-Limiter ist In-Memory (pro Prozess). Bei mehreren Instanzen/Serverless siehe Hinweis in `src/lib/rate-limit.ts`.
 - Mails werden nach dem Speichern verschickt; ein Fehler beim Versand bricht weder Bestellung noch Statuswechsel ab (Log: `[mail] …`). Der Admin sieht in der Erfolgsmeldung, ob die Kund:in informiert wurde.
