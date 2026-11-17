@@ -6,7 +6,7 @@ vi.mock("@/lib/mail", () => ({ sendOrderConfirmation: vi.fn() }));
 
 import fs from "node:fs";
 import path from "node:path";
-import { CONTENT_MIGRATIONS, ROSE_BOUQUET_IDS, migrateDocument } from "@/lib/content-migrations";
+import { CONTENT_MIGRATIONS, ROSE_BOUQUET_IDS, ROSE_WIEN_PHOTOS, migrateDocument, roseWienPhotos } from "@/lib/content-migrations";
 import { mergeBudgets } from "@/lib/florist-budget";
 import { parseOrderPayload } from "@/lib/orders";
 import type { Product } from "@/types";
@@ -51,8 +51,10 @@ describe("rose bouquets XXL / XXXL", () => {
   it("no zoomed crop as second photo; the close-up migration leaves admin uploads alone", () => {
     const products = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/products.json"), "utf8")) as Product[];
     for (const p of products.filter((x) => ROSE_BOUQUET_IDS.includes(x.id))) for (const s of p.sizes) {
-      // No zoomed crop as second photo; only Red Passion S–L have a real second photo (Vienna street).
-      const expected = p.id === "p-red-passion" && ["s", "m", "l"].includes(s.id) ? `/images/products/sortiment/red-passion-size-${s.id}-wien.jpg` : undefined;
+      // No zoomed crop as second photo; a real second photo (Vienna street) only where its rose count fits the size.
+      const expected = p.id === "p-red-passion" && ["s", "m", "l"].includes(s.id)
+        ? `/images/products/sortiment/red-passion-size-${s.id}-wien.jpg`
+        : roseWienPhotos(p.id)[s.id]?.image;
       expect(s.detailImage, `${p.id}/${s.id}`).toBe(expected);
       if (s.detailImage) expect(fs.existsSync(path.join(process.cwd(), "public", s.detailImage)), s.detailImage).toBe(true);
     }
@@ -71,6 +73,19 @@ describe("rose bouquets XXL / XXXL", () => {
     expect(out[0].sizes[0].detailImage).toBe("/images/products/sortiment/red-passion-size-s-wien.jpg");
     expect(out[0].sizes[0].detailAlt).toContain("Wiener Straße");
     expect(out[0].sizes[1].detailImage).toBe("/uploads/eigenes.jpg");
+  });
+
+  it("the other rose bouquets get their Vienna photo only for the listed sizes, admin choices stay", () => {
+    const out = migrateDocument(CONTENT_MIGRATIONS.find((m) => m.id === "2026-11-17-rose-wien-photos")!, "products", [
+      { id: "p-rosalie", sizes: [{ id: "s" }, { id: "m", detailImage: "/uploads/eigenes.jpg" }, { id: "xl" }] },
+      { id: "p-love-deluxe", sizes: [{ id: "s" }] },
+    ]) as Product[];
+    expect(out[0].sizes[0].detailImage).toBe("/images/products/sortiment/rosalie-size-s-wien.jpg");
+    expect(out[0].sizes[0].detailAlt).toBe("Rosalie Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn");
+    expect(out[0].sizes[1].detailImage).toBe("/uploads/eigenes.jpg");
+    expect(out[0].sizes[2].detailImage).toBeUndefined();
+    expect(out[1].sizes[0].detailImage).toBeUndefined();
+    for (const id of Object.keys(ROSE_WIEN_PHOTOS)) expect(ROSE_BOUQUET_IDS).toContain(id);
   });
 
   it("drops zoom crops and the too-sparse Red Passion XL–XXXL photos, keeps admin choices", () => {

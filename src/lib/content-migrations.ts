@@ -257,6 +257,20 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-occasion-seo-no-card",
     replace: { occasions: [["frisch gebunden, mit persönlicher Nachricht.", "frisch gebunden, mit Wunschdatum."]] },
   },
+  {
+    // Datenschutz: section 13 now covers customer photos in reviews (request mail, consent, storage),
+    // section 16 names Netlify Blobs. Only when section 13 still has the old wording.
+    id: "2026-11-17-privacy-review-photos",
+    replace: {
+      pages: [["• Datenbank (Bestellungen, Kundenkonten, Anmeldungen):", "• Speicher für Bilder, auch Fotos aus Bewertungen: Netlify Blobs (Netlify, Inc., siehe oben), Region USA-Ost\n• Datenbank (Bestellungen, Kundenkonten, Anmeldungen, Bewertungen):"]],
+    },
+    transform: { pages: (doc) => mapList(doc, (p) => (p.slug === "datenschutz" ? withPrivacyReviewPhotos(p) : p)) },
+  },
+  {
+    // Vienna street photo as second photo for the other rose bouquets (sizes whose photo matches the rose count).
+    id: "2026-11-17-rose-wien-photos",
+    transform: { products: (doc) => mapList(doc, (p) => (ROSE_WIEN_PHOTOS[String(p.id)] ? withSecondPhotos(p, roseWienPhotos(String(p.id))) : p)) },
+  },
 ];
 
 /** Appends the pages whose slug is not in the stored list yet; same list when nothing is missing. */
@@ -293,6 +307,35 @@ const RED_PASSION_WIEN: Record<string, { image: string; alt: string }> = Object.
     ["xxxl", "Ein Mann trägt Red Passion XXXL auf der Schulter durch eine Wiener Straße mit Straßenbahn"],
   ] as const).map(([id, alt]) => [id, { image: `/images/products/sortiment/red-passion-size-${id}-wien.jpg`, alt }]),
 );
+
+/**
+ * Vienna street photo per rose bouquet and size (bouquet held in a hand, tram behind). Only sizes whose
+ * photo shows a rose count within the size's range (never more than delivered, at most a few fewer).
+ */
+export const ROSE_WIEN_PHOTOS: Record<string, { name: string; slug: string; sizes: ("s" | "m" | "l")[] }> = {
+  "p-blackroses": { name: "Blackroses", slug: "blackroses", sizes: ["s"] },
+  "p-blaueliebe": { name: "Blaue Liebe", slug: "blaueliebe", sizes: ["s"] },
+  "p-rot-und-weiss-mix": { name: "Rot & Weiß Mix", slug: "rot-und-weiss-mix", sizes: ["s", "l"] },
+  "p-orange-bouquet": { name: "Orange Bouquet", slug: "orange-bouquet", sizes: ["s"] },
+  "p-farbensinfonie": { name: "Farbensinfonie", slug: "farbensinfonie", sizes: ["s", "m", "l"] },
+  "p-rosalie": { name: "Rosalie", slug: "rosalie", sizes: ["s", "m", "l"] },
+  "p-red-rose-bouquet": { name: "Red Rose Bouquet", slug: "red-rose-bouquet", sizes: ["s"] },
+  "p-klassiker-der-liebe": { name: "Klassiker der Liebe", slug: "klassiker-der-liebe", sizes: ["s"] },
+  "p-koenigin-der-herzen": { name: "Königin der Herzen", slug: "koenigin-der-herzen", sizes: ["s", "m"] },
+  "p-rosenkuss": { name: "Rosenkuss", slug: "rosenkuss", sizes: ["s"] },
+  "p-rosenglanz": { name: "Rosenglanz", slug: "rosenglanz", sizes: ["s"] },
+};
+
+const SIZE_LABEL = { s: "Klein", m: "Mittel", l: "Groß" } as const;
+
+export function roseWienPhotos(productId: string): Record<string, { image: string; alt: string }> {
+  const entry = ROSE_WIEN_PHOTOS[productId];
+  if (!entry) return {};
+  return Object.fromEntries(entry.sizes.map((id) => [id, {
+    image: `/images/products/sortiment/${entry.slug}-size-${id}-wien.jpg`,
+    alt: `${entry.name} ${SIZE_LABEL[id]} in der Hand, dahinter eine Wiener Straße mit Straßenbahn`,
+  }]));
+}
 
 /** Second photo per size; replaces our cropped close-up, keeps a second photo chosen in the admin. */
 function withSecondPhotos(product: Obj, photos: Record<string, { image: string; alt: string }>): Obj {
@@ -450,6 +493,20 @@ function withRoseSizes(product: Obj): Obj {
 }
 
 type Obj = Record<string, unknown>;
+
+const PRIVACY_REVIEWS_OLD = ["Nach einer Zustellung können Sie die gelieferten Blumen über einen Link aus Ihrer Bestellung bewerten. Dabei verarbeiten wir die Bestellnummer, die Bewertung, den Text und den angegebenen Namen.", "Bewertungen werden erst nach Prüfung und nur mit dem von Ihnen angegebenen Namen veröffentlicht. Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO, die Sie jederzeit unter office@blumora.at widerrufen können."];
+const PRIVACY_REVIEWS_NEW: Obj = {"heading": "13. Bewertungen und Kundenfotos", "paragraphs": ["Nach einer Zustellung senden wir Ihnen einmalig eine E-Mail mit der Bitte um eine Bewertung. Rechtsgrundlage ist unser berechtigtes Interesse an Rückmeldungen zu unseren Leistungen (Art. 6 Abs. 1 lit. f DSGVO). Sie können dem jederzeit unter office@blumora.at widersprechen.", "Wenn Sie über den Link aus Ihrer Bestellung eine Bewertung abgeben, verarbeiten wir die Bestellnummer (zur Prüfung, dass die Bewertung zu einer tatsächlichen Bestellung gehört), die Sternebewertung, den Text, den angegebenen Namen sowie bis zu drei Fotos, die Sie freiwillig hochladen.", "Vor dem Speichern entfernen wir aus den Fotos Standort- und Kameradaten und verkleinern sie. Bitte laden Sie nur Fotos hoch, auf denen keine anderen Personen zu erkennen sind.", "Bewertung, Name und die von uns freigegebenen Fotos veröffentlichen wir auf blumora.at erst nach Prüfung und nur mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die Einwilligung speichern wir mit Zeitpunkt und Wortlaut. Fotos, die wir nicht freigeben, werden gelöscht.", "Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft unter office@blumora.at widerrufen; Bewertung und Fotos werden dann entfernt.", "Die Fotos speichern wir bei Netlify (Netlify Blobs), die übrigen Angaben in unserer Datenbank bei Neon (siehe Abschnitte 16 und 17)."]};
+
+function withPrivacyReviewPhotos(page: Obj): Obj {
+  if (!Array.isArray(page.sections)) return page;
+  let changed = false;
+  const sections = (page.sections as Obj[]).map((sec) => {
+    if (sec.heading !== "13. Bewertungen" || JSON.stringify(sec.paragraphs) !== JSON.stringify(PRIVACY_REVIEWS_OLD)) return sec;
+    changed = true;
+    return { ...sec, ...structuredClone(PRIVACY_REVIEWS_NEW) };
+  });
+  return changed ? { ...page, sections } : page;
+}
 
 /** Sets fields on an object; same object when every field already has that value. */
 export function setFields<T>(doc: T, fields: Obj): T {

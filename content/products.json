@@ -390,7 +390,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/farbensinfonie-size-s.jpg"
+        "image": "/images/products/sortiment/farbensinfonie-size-s.jpg",
+        "detailImage": "/images/products/sortiment/farbensinfonie-size-s-wien.jpg",
+        "detailAlt": "Farbensinfonie Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -398,14 +400,18 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/farbensinfonie-size-m.jpg"
+        "image": "/images/products/sortiment/farbensinfonie-size-m.jpg",
+        "detailImage": "/images/products/sortiment/farbensinfonie-size-m-wien.jpg",
+        "detailAlt": "Farbensinfonie Mittel in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/farbensinfonie-1.jpg"
+        "image": "/images/products/sortiment/farbensinfonie-1.jpg",
+        "detailImage": "/images/products/sortiment/farbensinfonie-size-l-wien.jpg",
+        "detailAlt": "Farbensinfonie Groß in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "xl",
@@ -669,7 +675,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/orange-bouquet-size-s.jpg"
+        "image": "/images/products/sortiment/orange-bouquet-size-s.jpg",
+        "detailImage": "/images/products/sortiment/orange-bouquet-size-s-wien.jpg",
+        "detailAlt": "Orange Bouquet Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -777,7 +785,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/red-rose-bouquet-size-s.jpg"
+        "image": "/images/products/sortiment/red-rose-bouquet-size-s.jpg",
+        "detailImage": "/images/products/sortiment/red-rose-bouquet-size-s-wien.jpg",
+        "detailAlt": "Red Rose Bouquet Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -966,7 +976,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/blackroses-size-s.jpg"
+        "image": "/images/products/sortiment/blackroses-size-s.jpg",
+        "detailImage": "/images/products/sortiment/blackroses-size-s-wien.jpg",
+        "detailAlt": "Blackroses Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -1081,7 +1093,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/blaueliebe-size-s.jpg"
+        "image": "/images/products/sortiment/blaueliebe-size-s.jpg",
+        "detailImage": "/images/products/sortiment/blaueliebe-size-s-wien.jpg",
+        "detailAlt": "Blaue Liebe Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -1202,7 +1216,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/rosalie-size-s.jpg"
+        "image": "/images/products/sortiment/rosalie-size-s.jpg",
+        "detailImage": "/images/products/sortiment/rosalie-size-s-wien.jpg",
+        "detailAlt": "Rosalie Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -1210,14 +1226,18 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/rosalie-1.jpg"
+        "image": "/images/products/sortiment/rosalie-1.jpg",
+        "detailImage": "/images/products/sortiment/rosalie-size-m-wien.jpg",
+        "detailAlt": "Rosalie Mittel in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/rosalie-size-l.jpg"
+        "image": "/images/products/sortiment/rosalie-size-l.jpg",
+        "detailImage": "/images/products/sortiment/rosalie-size-l-wien.jpg",
+        "detailAlt": "Rosalie Groß in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "xl",
@@ -1324,7 +1344,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/rot-und-weiss-mix-size-s.jpg"
+        "image": "/images/products/sortiment/rot-und-weiss-mix-size-s.jpg",
+        "detailImage": "/images/products/sortiment/rot-und-weiss-mix-size-s-wien.jpg",
+        "detailAlt": "Rot & Weiß Mix Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -1339,7 +1361,9 @@
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/rot-und-weiss-mix-size-m.jpg"
+        "image": "/images/products/sortiment/rot-und-weiss-mix-size-m.jpg",
+        "detailImage": "/images/products/sortiment/rot-und-weiss-mix-size-l-wien.jpg",
+        "detailAlt": "Rot & Weiß Mix Groß in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "xl",
@@ -1690,7 +1714,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/klassiker-der-liebe-size-s.jpg"
+        "image": "/images/products/sortiment/klassiker-der-liebe-size-s.jpg",
+        "detailImage": "/images/products/sortiment/klassiker-der-liebe-size-s-wien.jpg",
+        "detailAlt": "Klassiker der Liebe Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -1811,7 +1837,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/koenigin-der-herzen-size-s.jpg"
+        "image": "/images/products/sortiment/koenigin-der-herzen-size-s.jpg",
+        "detailImage": "/images/products/sortiment/koenigin-der-herzen-size-s-wien.jpg",
+        "detailAlt": "Königin der Herzen Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -1819,7 +1847,9 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/koenigin-der-herzen-size-m.jpg"
+        "image": "/images/products/sortiment/koenigin-der-herzen-size-m.jpg",
+        "detailImage": "/images/products/sortiment/koenigin-der-herzen-size-m-wien.jpg",
+        "detailAlt": "Königin der Herzen Mittel in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "l",
@@ -2361,7 +2391,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/rosenkuss-size-s.jpg"
+        "image": "/images/products/sortiment/rosenkuss-size-s.jpg",
+        "detailImage": "/images/products/sortiment/rosenkuss-size-s-wien.jpg",
+        "detailAlt": "Rosenkuss Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -2477,7 +2509,9 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/rosenglanz-size-s.jpg"
+        "image": "/images/products/sortiment/rosenglanz-size-s.jpg",
+        "detailImage": "/images/products/sortiment/rosenglanz-size-s-wien.jpg",
+        "detailAlt": "Rosenglanz Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
