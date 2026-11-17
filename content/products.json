@@ -1619,7 +1619,8 @@
         "price": 48.9,
         "stems": 9,
         "image": "/images/products/sortiment/red-passion-size-s.jpg",
-        "detailImage": "/images/products/sortiment/red-passion-size-s-nah.jpg"
+        "detailImage": "/images/products/sortiment/red-passion-size-s-wien.jpg",
+        "detailAlt": "Red Passion Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "m",
@@ -1628,7 +1629,8 @@
         "popular": true,
         "stems": 15,
         "image": "/images/products/sortiment/red-passion-size-m.jpg",
-        "detailImage": "/images/products/sortiment/red-passion-size-m-nah.jpg"
+        "detailImage": "/images/products/sortiment/red-passion-size-m-wien.jpg",
+        "detailAlt": "Red Passion Mittel in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "l",
@@ -1636,7 +1638,8 @@
         "price": 93.9,
         "stems": 25,
         "image": "/images/products/sortiment/red-passion-size-l.jpg",
-        "detailImage": "/images/products/sortiment/red-passion-size-l-nah.jpg"
+        "detailImage": "/images/products/sortiment/red-passion-size-l-wien.jpg",
+        "detailAlt": "Red Passion Groß in der Hand, dahinter eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "xl",
@@ -1644,7 +1647,8 @@
         "price": 127.9,
         "stems": 41,
         "image": "/images/products/sortiment/red-passion-1.jpg",
-        "detailImage": "/images/products/sortiment/red-passion-1-nah.jpg"
+        "detailImage": "/images/products/sortiment/red-passion-size-xl-wien.jpg",
+        "detailAlt": "Ein Mann trägt Red Passion XL auf der Schulter durch eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "xxl",
@@ -1652,7 +1656,8 @@
         "price": 175.9,
         "stems": 61,
         "image": "/images/products/sortiment/red-passion-size-xxl.jpg",
-        "detailImage": "/images/products/sortiment/red-passion-size-xxl-nah.jpg"
+        "detailImage": "/images/products/sortiment/red-passion-size-xxl-wien.jpg",
+        "detailAlt": "Ein Mann trägt Red Passion XXL auf der Schulter durch eine Wiener Straße mit Straßenbahn"
       },
       {
         "id": "xxxl",
@@ -1660,7 +1665,8 @@
         "price": 250.9,
         "stems": 99,
         "image": "/images/products/sortiment/red-passion-3.jpg",
-        "detailImage": "/images/products/sortiment/red-passion-3-nah.jpg"
+        "detailImage": "/images/products/sortiment/red-passion-size-xxxl-wien.jpg",
+        "detailAlt": "Ein Mann trägt Red Passion XXXL auf der Schulter durch eine Wiener Straße mit Straßenbahn"
       }
     ],
     "basePrice": 48.9,

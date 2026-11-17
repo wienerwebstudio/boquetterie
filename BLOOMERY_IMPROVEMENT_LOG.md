@@ -210,6 +210,7 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - Startseite (Feedback „mehr Blumen“, „wirkt wie Kleidung bestellen“): neues Startbild mit mehreren üppigen Sträußen statt einer Vase im leeren Raum (Higgsfield, 2 Bilder, ca. 4 Credits). Der alte Video-Loop zeigte den alten Strauß und entfällt (Migration `2026-11-17-hero-more-flowers`, nur wenn im Admin kein anderes Bild gewählt ist). Open-Graph-Bild ebenfalls neu.
 - Adventskränze: Lila und Beige gerade und flach auf der Kommode neu erzeugt (vorher schräg von oben, ca. 4 Credits); Foto mit über die Kante hängendem Kranz und zwei schräge Doppelbilder entfernt (Migration `2026-11-17-advent-photos`).
 - Mehr Farbe (Feedback „alles eintönig“): neue Farbfelder Blush, Peach, Salbei, Lavendel (`globals.css`, `src/lib/accents.ts`). Farbige Icon-Kreise in Trust-Leiste und „So funktioniert es“, Geschenk-Finder auf Peach, Kollektionen auf Salbei, Adventszeit als weinroter Block, Newsletter auf Blush, Eyebrows in Rosé. Kontraste per axe geprüft (E2E grün).
+- Red Passion: zweites Foto je Größe als Wien-Straßenszene mit Bim statt Zoom (Klein bis Groß in der Hand, XL bis XXXL von einem Mann auf der Schulter getragen). `ProductSize.detailAlt` für die Bildbeschreibung. Rosen nachgezählt: S 8/9, M 12/15, L ca. 21/25, XL ca. 33/41, XXL ca. 37/61, XXXL ca. 50–60/99 (erster XXXL-Versuch mit ca. 100 Rosen verworfen). Ca. 18 Credits inkl. Muster. Migration `2026-11-17-red-passion-wien-photos`.
 
 ## 5. Testergebnisse
 

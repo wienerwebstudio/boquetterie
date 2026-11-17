@@ -17,9 +17,9 @@ export function ProductHero({ product, extras, greetingCard }: { product: Produc
       ? {
           images: [
             { src: size.image, alt: `${product.name} in Größe ${size.label}`, kind: "size" },
-            ...(size.detailImage ? [{ src: size.detailImage, alt: `${product.name} in Größe ${size.label}, Nahaufnahme`, kind: "detail" as const }] : []),
+            ...(size.detailImage ? [{ src: size.detailImage, alt: size.detailAlt || `${product.name} in Größe ${size.label}, Nahaufnahme`, kind: "detail" as const }] : []),
           ],
-          labels: [`Größe ${size.label}`, `Größe ${size.label} · Nahaufnahme`],
+          labels: [`Größe ${size.label}`, size.detailAlt ? `Größe ${size.label}` : `Größe ${size.label} · Nahaufnahme`],
           only: true,
         }
       : null;

@@ -183,7 +183,38 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-advent-photos",
     transform: { products: (doc) => mapList(doc, (p) => (p.id === "p-adventskraenze" ? withReplacedImages(p, ADVENT_PHOTO_SWAP, ADVENT_PHOTO_DROP) : p)) },
   },
+  {
+    // Red Passion: a real second photo per size in a Vienna street instead of the cropped close-up
+    // (small sizes held in a hand, large ones carried on a man's shoulder) – never more roses than delivered.
+    id: "2026-11-17-red-passion-wien-photos",
+    transform: { products: (doc) => mapList(doc, (p) => (p.id === "p-red-passion" ? withSecondPhotos(p, RED_PASSION_WIEN) : p)) },
+  },
 ];
+
+const RED_PASSION_WIEN: Record<string, { image: string; alt: string }> = Object.fromEntries(
+  ([
+    ["s", "Red Passion Klein in der Hand, dahinter eine Wiener Straße mit Straßenbahn"],
+    ["m", "Red Passion Mittel in der Hand, dahinter eine Wiener Straße mit Straßenbahn"],
+    ["l", "Red Passion Groß in der Hand, dahinter eine Wiener Straße mit Straßenbahn"],
+    ["xl", "Ein Mann trägt Red Passion XL auf der Schulter durch eine Wiener Straße mit Straßenbahn"],
+    ["xxl", "Ein Mann trägt Red Passion XXL auf der Schulter durch eine Wiener Straße mit Straßenbahn"],
+    ["xxxl", "Ein Mann trägt Red Passion XXXL auf der Schulter durch eine Wiener Straße mit Straßenbahn"],
+  ] as const).map(([id, alt]) => [id, { image: `/images/products/sortiment/red-passion-size-${id}-wien.jpg`, alt }]),
+);
+
+/** Second photo per size; replaces our cropped close-up, keeps a second photo chosen in the admin. */
+function withSecondPhotos(product: Obj, photos: Record<string, { image: string; alt: string }>): Obj {
+  if (!Array.isArray(product.sizes)) return product;
+  let changed = false;
+  const sizes = (product.sizes as Obj[]).map((s) => {
+    const photo = photos[String(s.id)];
+    const ours = !s.detailImage || (typeof s.detailImage === "string" && s.detailImage.endsWith("-nah.jpg"));
+    if (!photo || !ours || s.detailImage === photo.image) return s;
+    changed = true;
+    return { ...s, detailImage: photo.image, detailAlt: photo.alt };
+  });
+  return changed ? { ...product, sizes } : product;
+}
 
 const ADVENT_PHOTO_SWAP: Record<string, string> = {
   "/images/products/sortiment/adventskraenze-3.jpg": "/images/products/sortiment/adventskraenze-lila.jpg",
