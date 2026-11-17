@@ -40,7 +40,7 @@ const REQUESTS: { icon: Icon; title: string; text: string }[] = [
 ];
 
 const GOOD_TO_KNOW: { title: string; text: string }[] = [
-  { title: "Lieferung in Wien", text: "Wir liefern in alle 23 Wiener Bezirke, derzeit von Montag bis Samstag." },
+  { title: "Lieferung in Wien", text: "Wir liefern in alle 23 Wiener Bezirke, von Montag bis Sonntag." },
   { title: "Von Hand gebunden", text: "Die Sträuße bindet eine Wiener Floristik, mit der wir fest zusammenarbeiten – jeweils für die einzelne Bestellung." },
   { title: "Direkt per Kurier", text: "Ein Kurier holt die Blumen in der Floristik ab und fährt ohne Zwischenstopp zur Empfängeradresse." },
   { title: "Einzelne Sträuße", text: "Einen einzelnen Strauß an eine Firmenadresse bestellst du direkt im Shop. Den Firmennamen gibst du im Checkout an." },

@@ -335,6 +335,10 @@ export interface LandingPage {
   productFilter: {
     occasions?: string[];
     category?: string;
+    /** Colour slugs – a product matches when it has at least one of them. */
+    colors?: string[];
+    /** Season slugs – a product matches when it has at least one of them (e.g. "herbst", "ganzjaehrig"). */
+    seasons?: string[];
     sameDayOnly?: boolean;
     limit?: number;
   };

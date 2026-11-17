@@ -14,6 +14,8 @@ import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { PostalCodeCheck } from "@/components/shop/postal-code-check";
+import { ParagraphBlock } from "@/components/content/prose";
+import { relatedLandingPages } from "@/lib/landing-links";
 import { ProductGrid } from "@/components/shop/product-grid";
 
 type Params = Promise<{ slug: string }>;
@@ -43,14 +45,18 @@ export default async function LandingPage({ params }: { params: Params }) {
   const page = await getLandingPageBySlug(slug);
   if (!page) notFound();
 
-  const [settings, products, categories, faqs] = await Promise.all([getSettings(), getAllProducts(), getCategories(), getFaqsByIds(page.faqIds)]);
+  const [settings, products, categories, faqs, landingPages] = await Promise.all([
+    getSettings(), getAllProducts(), getCategories(), getFaqsByIds(page.faqIds), getLandingPages(),
+  ]);
+  const related = relatedLandingPages(landingPages, page.slug);
   const f = page.productFilter;
   const list = sortProducts(
-    applyFilter(products, { occasions: f.occasions, category: f.category, sameDayOnly: f.sameDayOnly }, categories),
+    applyFilter(products, { occasions: f.occasions, category: f.category, colors: f.colors, seasons: f.seasons, sameDayOnly: f.sameDayOnly }, categories),
     f.sameDayOnly ? "bestseller" : "recommended",
   ).slice(0, f.limit ?? 8);
 
   const shopHref = f.category ? routes.category(f.category)
+    : f.colors?.length ? `${routes.shop}?farbe=${f.colors.join(",")}${f.occasions?.length ? `&anlass=${f.occasions.join(",")}` : ""}`
     : f.occasions?.length === 1 ? routes.occasion(f.occasions[0])
     : f.sameDayOnly ? `${routes.shop}?sameday=1` : routes.shop;
 
@@ -109,8 +115,8 @@ export default async function LandingPage({ params }: { params: Params }) {
               <Reveal key={i} as="div" className={cn("grid gap-6", s.image && "md:grid-cols-2 md:items-center md:gap-12")}>
                 <div className={cn(s.image && i % 2 === 1 && "md:order-2")}>
                   {s.heading && <h2 className="display-3 text-balance text-ink">{s.heading}</h2>}
-                  <div className="mt-4 flex flex-col gap-4 text-[15px] leading-relaxed text-ink-muted sm:text-base">
-                    {s.paragraphs.map((p, j) => <p key={j}>{p}</p>)}
+                  <div className="mt-4 flex flex-col gap-4 text-[15px] leading-relaxed text-ink-muted sm:text-base [&_a]:text-forest [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-forest-700 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
+                    {s.paragraphs.map((p, j) => <ParagraphBlock key={j} text={p} />)}
                   </div>
                   {s.placeholder && <p className="mt-3 text-[12px] italic text-warn">[Inhalt folgt]</p>}
                 </div>
@@ -139,6 +145,26 @@ export default async function LandingPage({ params }: { params: Params }) {
             <Accordion items={faqs.map((q) => ({ id: q.id, title: q.question, content: <p>{q.answer}</p> }))} />
           </div>
         </section>
+      )}
+
+      {/* Internal links: every landing page is reachable from its neighbours. */}
+      {related.length > 0 && (
+        <nav className="container-x mt-20 lg:mt-28" aria-labelledby="landing-related">
+          <div className="border-t border-line pt-10 sm:pt-12">
+            <p className="eyebrow mb-3">Mehr entdecken</p>
+            <h2 id="landing-related" className="display-3 text-balance text-ink">Weitere Anlässe & Themen</h2>
+            <ul className="mt-8 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
+              {related.map((r) => (
+                <li key={r.slug} className="border-b border-line">
+                  <Link href={`/${r.slug}`} className="group flex min-h-12 items-center justify-between gap-3 py-3 text-[15px] text-ink transition-colors hover:text-forest">
+                    <span>{r.title}</span>
+                    <ArrowRight className="size-4 shrink-0 text-ink-soft transition-transform group-hover:translate-x-1 group-hover:text-forest" aria-hidden />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
       )}
 
       {/* Closing CTA */}

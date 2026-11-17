@@ -7,7 +7,7 @@
     "image": "/images/hero/hero-wide.jpg",
     "productFilter": {"limit": 8},
     "sections": [
-      {"heading": "Blumen in Wien verschicken – so geht’s", "paragraphs": ["Strauß auswählen, Größe bestimmen, Lieferdatum im Kalender wählen, Empfängeradresse eingeben, bezahlen. Danach bekommst du eine Bestätigung per E-Mail mit einem Link zum Status deiner Bestellung.", "Wir liefern in alle 23 Wiener Bezirke, derzeit von Montag bis Samstag. Die Liefergebühr hängt vom Bezirk ab: gratis, 3,99 € oder 7,99 €. Welche Stufe für deine Adresse gilt, siehst du nach Eingabe der Postleitzahl. Als Zeitfenster stehen 9–12, 12–17 und 17–22 Uhr zur Wahl."]},
+      {"heading": "Blumen in Wien verschicken – so geht’s", "paragraphs": ["Strauß auswählen, Größe bestimmen, Lieferdatum im Kalender wählen, Empfängeradresse eingeben, bezahlen. Danach bekommst du eine Bestätigung per E-Mail mit einem Link zum Status deiner Bestellung.", "Wir liefern in alle 23 Wiener Bezirke, von Montag bis Sonntag. Die Liefergebühr hängt vom Bezirk ab: gratis, 3,99 € oder 7,99 €. Welche Stufe für deine Adresse gilt, siehst du nach Eingabe der Postleitzahl. Zur Wahl stehen einstündige Zeitfenster zwischen 9 und 22 Uhr."]},
       {"heading": "Von Hand gebunden, direkt geliefert", "paragraphs": ["Jeder Strauß wird für deine Bestellung von Hand gebunden – von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Ein Kurier holt ihn dort ab und fährt ohne Zwischenstopp zur Empfängeradresse."]}
     ],
     "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
@@ -20,7 +20,7 @@
     "intro": "Du wählst Strauß und Tag. Ein Kurier bringt die Blumen im gewünschten Zeitfenster zum Geburtstagskind. Hier steht, wie die Lieferung in Wien abläuft und was sie kostet.",
     "productFilter": {"occasions": ["geburtstag"], "limit": 8},
     "sections": [
-      {"heading": "Lieferung am Geburtstag", "paragraphs": ["Wähle das Lieferdatum im Kalender und eines von drei Zeitfenstern: 9–12, 12–17 oder 17–22 Uhr. Geliefert wird derzeit von Montag bis Samstag. Fällt der Geburtstag auf einen Sonntag, kannst du den Samstag davor wählen."]},
+      {"heading": "Lieferung am Geburtstag", "paragraphs": ["Wähle das Lieferdatum im Kalender und ein einstündiges Zeitfenster zwischen 9 und 22 Uhr. Geliefert wird von Montag bis Sonntag – auch an einem Geburtstag am Wochenende kann der Strauß am Tag selbst ankommen."]},
       {"heading": "Lieferkosten", "paragraphs": ["Die Liefergebühr hängt vom Bezirk ab – gratis, 3,99 € oder 7,99 € – und wird nach Eingabe der Postleitzahl angezeigt."]},
       {"heading": "Wenn das Geburtstagskind nicht zu Hause ist", "paragraphs": ["Ist niemand da, wird der Strauß nach Möglichkeit bei Nachbar:innen abgegeben. Du bekommst eine E-Mail, sobald der Strauß unterwegs ist, und eine weitere, wenn er zugestellt wurde."]}
     ],
@@ -35,10 +35,574 @@
     "productFilter": {"category": "rosen", "limit": 8},
     "sections": [
       {"heading": "So kommen die Rosen an", "paragraphs": ["Dein Strauß wird für deine Bestellung von Hand gebunden – von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Ein Kurier holt ihn dort ab und fährt direkt zur Empfängeradresse, ohne Zwischenstopp."]},
-      {"heading": "Größe, Tag und Zeitfenster", "paragraphs": ["Die meisten Rosensträuße gibt es in den Größen Klein, Mittel, Groß und XL. Das Lieferdatum wählst du im Kalender, dazu eines von drei Zeitfenstern: 9–12, 12–17 oder 17–22 Uhr. Geliefert wird derzeit von Montag bis Samstag."]},
+      {"heading": "Größe, Tag und Zeitfenster", "paragraphs": ["Die meisten Rosensträuße gibt es in sechs Größen, von Klein mit 9 bis XXXL mit 99 Rosen. Das Lieferdatum wählst du im Kalender, dazu ein einstündiges Zeitfenster zwischen 9 und 22 Uhr. Geliefert wird von Montag bis Sonntag."]},
       {"heading": "Was die Lieferung kostet", "paragraphs": ["Wir liefern in alle 23 Wiener Bezirke. Je nach Bezirk ist die Lieferung gratis oder kostet 3,99 € bzw. 7,99 €. Den Betrag für deine Adresse siehst du nach Eingabe der Postleitzahl."]}
     ],
     "faqIds": ["f-where", "f-window", "f-nobody", "f-anon"],
-    "seo": {"title": "Rosen liefern lassen in Wien – Ablauf, Zeitfenster und Kosten", "description": "Rosen in Wien liefern lassen: So laufen Bestellung und Kurierlieferung ab – mit Wunschdatum, drei Zeitfenstern und Lieferkosten nach Bezirk."}
+    "seo": {"title": "Rosen liefern lassen in Wien – Ablauf, Zeitfenster und Kosten", "description": "Rosen in Wien liefern lassen: So laufen Bestellung und Kurierlieferung ab – mit Wunschdatum, stündlichen Zeitfenstern und Lieferkosten nach Bezirk."}
+  },
+  {
+    "slug": "valentinstag-blumen-wien",
+    "title": "Blumen zum Valentinstag",
+    "headline": "Valentinstag in Wien: Blumen, die ankommen.",
+    "intro": "Rote Rosen, zarte Rosatöne oder etwas Unerwartetes – von Hand gebunden und zum 14. Februar per Kurier zugestellt. Hier findest du Sträuße und alles Wichtige zur Lieferung in Wien.",
+    "image": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+    "productFilter": {"occasions": ["liebe"], "limit": 8},
+    "sections": [
+      {"heading": "Rot, Rosa oder ganz anders", "paragraphs": ["Rote Rosen sind der Klassiker und sagen ohne Umweg, was gemeint ist. Wer es leiser mag, greift zu Rosa und Creme; blaue oder schwarze Rosen sind etwas für Menschen, die das Besondere lieben.", "Viele unserer Rosensträuße gibt es in sechs Größen – von Klein mit 9 Rosen bis XXXL mit 99 Rosen. Für den ersten gemeinsamen Valentinstag reicht oft ein kleiner Strauß; für ein großes Versprechen darf es mehr sein."]},
+      {"heading": "Früh bestellen, Zeitfenster wählen", "paragraphs": ["Rund um den Valentinstag werden besonders viele Blumen verschickt. Bestell am besten einige Tage vorher – dann hast du bei den Zeitfenstern noch die volle Auswahl. 2027 fällt der 14. Februar auf einen Sonntag; wir liefern in Wien auch sonntags.", "Du wählst ein Zeitfenster von einer Stunde zwischen 9 und 22 Uhr. Soll der Strauß zum Frühstück da sein oder erst zum Abendessen? Beides geht, solange das Fenster noch frei ist."]},
+      {"heading": "Überraschung ohne Namen", "paragraphs": ["Du möchtest, dass niemand weiß, von wem die Rosen sind? Am Strauß steht kein Absender, und die Rechnung geht nur an dich. Mehr dazu unter [Blumen anonym verschicken](/blumen-anonym-verschicken)."]}
+    ],
+    "faqIds": ["f-window", "f-date", "f-anon", "f-nobody"],
+    "seo": {"title": "Blumen zum Valentinstag in Wien liefern", "description": "Rosen und Sträuße zum Valentinstag in Wien liefern lassen: von Hand gebunden, mit Wunschdatum und stündlichem Zeitfenster von 9 bis 22 Uhr."}
+  },
+  {
+    "slug": "galentinstag",
+    "title": "Blumen zum Galentinstag",
+    "headline": "Galentinstag: Blumen für deine Freundinnen.",
+    "intro": "Am 13. Februar, einen Tag vor dem Valentinstag, feiern Freundinnen sich selbst. Ein Strauß ist ein schöner Gruß an die Frau, die immer für dich da ist.",
+    "image": "/images/products/sortiment/pink-harmony-1.jpg",
+    "productFilter": {"occasions": ["einfach-so", "geburtstag"], "colors": ["rosa"], "seasons": ["ganzjaehrig", "fruehling"], "limit": 8},
+    "sections": [
+      {"heading": "Was ist der Galentinstag?", "paragraphs": ["Der Name stammt aus einer amerikanischen Fernsehserie und verbindet „Gals“ mit dem Valentinstag. Gemeint ist ein Tag für Freundschaft unter Frauen: ein gemeinsames Frühstück, ein Abend zu zweit – oder eben Blumen vor der Tür."]},
+      {"heading": "Fröhlich statt romantisch", "paragraphs": ["Rote Rosen gehören dem 14. Februar. Für den Galentinstag passen Pink, Rosa und bunte Mischungen besser: Sträuße mit Gerbera, Rosen und Lilien, die gute Laune machen und nicht nach Liebeserklärung aussehen."]},
+      {"heading": "Lieferung am 13. Februar", "paragraphs": ["2027 fällt der Galentinstag auf einen Samstag. Wähle das Datum im Kalender und ein Zeitfenster am Vormittag, damit das Wochenende gleich gut beginnt.", "Wohnt deine Freundin in einem anderen Bezirk als du? Wir liefern in alle 23 Wiener Bezirke; die Liefergebühr für ihre Adresse siehst du nach Eingabe der Postleitzahl."]}
+    ],
+    "faqIds": ["f-date", "f-window", "f-where"],
+    "seo": {"title": "Blumen zum Galentinstag in Wien", "description": "Galentinstag am 13. Februar: fröhliche Sträuße in Pink und Rosa für deine Freundinnen, von Hand gebunden und in ganz Wien geliefert."}
+  },
+  {
+    "slug": "weltfrauentag-blumen",
+    "title": "Blumen zum Weltfrauentag",
+    "headline": "Blumen zum Weltfrauentag am 8. März.",
+    "intro": "Ein Dank an die Frauen, die dich prägen – Kollegin, Mutter, Freundin oder Mentorin. Sträuße zum Internationalen Frauentag, von Hand gebunden und in Wien geliefert.",
+    "image": "/images/products/sortiment/tulpenstrauss-2.jpg",
+    "productFilter": {"occasions": ["danke", "geburtstag", "einfach-so"], "colors": ["lila"], "seasons": ["ganzjaehrig", "fruehling"], "limit": 8},
+    "sections": [
+      {"heading": "Warum Blumen am 8. März", "paragraphs": ["Der Internationale Frauentag erinnert an den Einsatz für Gleichberechtigung – und ist für viele ein Anlass, Danke zu sagen. Blumen ersetzen keine Anerkennung, aber sie sind eine schöne Geste dazu."]},
+      {"heading": "Farben mit Bedeutung", "paragraphs": ["Lila gilt seit Langem als Farbe der Frauenbewegung. Sträuße mit lila und fliederfarbenen Blüten passen deshalb besonders gut. Wer es frühlingshaft mag, wählt einen [Tulpenstrauß](/produkt/tulpenstrauss) – die Farbe suchst du beim Bestellen selbst aus."]},
+      {"heading": "Für mehrere Kolleginnen", "paragraphs": ["Jeder Strauß wird einzeln an seine Adresse geliefert, auch an eine Firmenadresse. Für größere Mengen oder viele Lieferadressen schreib uns über die Seite für [Firmenkunden](/firmenkunden).", "2027 fällt der 8. März auf einen Montag. Bestellst du ein paar Tage vorher, hast du freie Wahl beim Zeitfenster."]}
+    ],
+    "faqIds": ["f-date", "f-business", "f-window"],
+    "seo": {"title": "Blumen zum Weltfrauentag in Wien", "description": "Blumen zum Internationalen Frauentag am 8. März: Sträuße in Lila und Frühlingsfarben, von Hand gebunden und in alle Wiener Bezirke geliefert."}
+  },
+  {
+    "slug": "ostern-blumen",
+    "title": "Blumen zu Ostern",
+    "headline": "Frühlingsblumen zu Ostern.",
+    "intro": "Tulpen, helle Farben und frisches Grün: Mit einem Strauß zu Ostern holst du den Frühling ins Haus – oder schickst ihn zu jemandem, den du über die Feiertage nicht siehst.",
+    "image": "/images/products/sortiment/tulpenstrauss-6.jpg",
+    "productFilter": {"category": "bunt", "limit": 8},
+    "sections": [
+      {"heading": "Was zu Ostern passt", "paragraphs": ["Gelb, Orange und zartes Rosa wirken nach dem langen Winter besonders frisch. Unseren [Tulpenstrauß](/produkt/tulpenstrauss) gibt es in sieben Farbvarianten, von Weiß bis zum bunten Mix. Wer mehr Fülle mag, wählt einen gemischten Strauß mit Gerbera und Rosen."]},
+      {"heading": "Lieferung rund um die Feiertage", "paragraphs": ["2027 ist Ostersonntag am 28. März. Wir liefern in Wien auch sonntags; ob ein Tag rund um die Feiertage verfügbar ist, zeigt dir der Kalender – Tage ohne Lieferung sind ausgegraut.", "Kommt die Familie zum Osterfrühstück zusammen, lohnt sich ein Zeitfenster am Vormittag. Bestell rechtzeitig, damit dein Wunschfenster noch frei ist."]},
+      {"heading": "Als Mitbringsel", "paragraphs": ["Du bist selbst eingeladen? Lass den Strauß am Vortag zu dir nach Hause liefern und bring ihn frisch mit. Tulpen brauchen nur wenig Wasser, das du aber regelmäßig nachfüllen solltest – und sie wachsen in der Vase weiter."]}
+    ],
+    "faqIds": ["f-date", "f-fresh", "f-photo"],
+    "seo": {"title": "Blumen zu Ostern liefern lassen – Wien", "description": "Tulpen und Frühlingssträuße zu Ostern in Wien liefern lassen: von Hand gebunden, auch sonntags. Termin im Kalender wählen."}
+  },
+  {
+    "slug": "muttertag-blumen-wien",
+    "title": "Blumen zum Muttertag",
+    "headline": "Muttertag in Wien: Danke sagen mit Blumen.",
+    "intro": "Am zweiten Sonntag im Mai ist Muttertag. Ein Strauß in sanften Farben, von Hand gebunden und direkt zu ihr geliefert – auch wenn du an diesem Tag nicht selbst vorbeikommen kannst.",
+    "image": "/images/products/sortiment/rosalie-1.jpg",
+    "productFilter": {"category": "pastell", "limit": 8},
+    "sections": [
+      {"heading": "Der Termin", "paragraphs": ["In Österreich ist Muttertag immer am zweiten Sonntag im Mai – 2027 also am 9. Mai. Wir liefern in Wien auch an Sonntagen, der Strauß kann also am Tag selbst ankommen.", "Rund um den Muttertag ist viel los. Bestell ein paar Tage vorher, dann hast du freie Wahl beim Zeitfenster. Die kostenlose [Anlass-Erinnerung](/erinnerung) meldet sich rechtzeitig per E-Mail, damit du den Termin nicht verpasst."]},
+      {"heading": "Welche Blumen für Mama", "paragraphs": ["Zarte Rosatöne, Creme und Flieder wirken liebevoll, ohne laut zu sein. Rosen mit Lilien und Gerbera ergeben einen vollen Strauß; reine Rosensträuße wie [Rosalie](/produkt/rosalie) gibt es in sechs Größen.", "Mag sie es lieber dauerhaft, ist eine Orchidee im Topf eine schöne Alternative. Ideen für alle anderen Tage im Jahr findest du unter [Blumen für Mama](/blumen-fuer-mama)."]}
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody"],
+    "seo": {"title": "Blumen zum Muttertag in Wien liefern", "description": "Muttertag in Österreich: 2. Sonntag im Mai. Sträuße in sanften Farben, von Hand gebunden und in Wien auch am Sonntag geliefert."}
+  },
+  {
+    "slug": "vatertag-blumen",
+    "title": "Blumen zum Vatertag",
+    "headline": "Blumen zum Vatertag? Unbedingt.",
+    "intro": "Väter bekommen selten Blumen – umso größer ist die Überraschung. Klare Farben, kräftige Formen oder eine Pflanze, die lange bleibt: Ideen für den Vatertag in Wien.",
+    "image": "/images/products/sortiment/sonnenzauber-1.jpg",
+    "productFilter": {"category": "bunt", "limit": 8},
+    "sections": [
+      {"heading": "Der Termin in Österreich", "paragraphs": ["Der Vatertag ist in Österreich am zweiten Sonntag im Juni, 2027 also am 13. Juni. Da wir in Wien auch sonntags liefern, kann der Strauß direkt am Vatertag ankommen – etwa zum Mittagessen mit der Familie."]},
+      {"heading": "Was Vätern gefällt", "paragraphs": ["Gelb, Orange und Weiß wirken frisch und unkompliziert. Strelitzien, auch Paradiesvogelblumen genannt, haben eine markante Form und passen gut zu Menschen, die mit klassischen Sträußen wenig anfangen können.", "Lieber etwas Dauerhaftes? Ein [Gummibaum im Topf](/produkt/gummibaum-im-topf) ist pflegeleicht und passt in Wohnung und Büro. Weitere Ideen findest du unter [Blumen für Männer](/blumen-fuer-maenner)."]}
+    ],
+    "faqIds": ["f-date", "f-window", "f-fresh"],
+    "seo": {"title": "Blumen zum Vatertag liefern – Wien", "description": "Vatertag in Österreich: 2. Sonntag im Juni. Sträuße in klaren Farben oder Pflanzen für Papa – in Wien auch am Sonntag geliefert."}
+  },
+  {
+    "slug": "tag-der-pflege-blumen",
+    "title": "Blumen zum Tag der Pflege",
+    "headline": "Danke an die, die pflegen.",
+    "intro": "Am 12. Mai ist Internationaler Tag der Pflege. Ein guter Anlass, Pflegekräften, pflegenden Angehörigen oder der Heimhilfe in deiner Familie mit Blumen zu danken.",
+    "image": "/images/products/sortiment/gelb-bouquet-1.jpg",
+    "productFilter": {"occasions": ["danke"], "seasons": ["ganzjaehrig", "fruehling"], "limit": 8},
+    "sections": [
+      {"heading": "Wem du danken kannst", "paragraphs": ["Pflege passiert nicht nur im Spital. Oft sind es Angehörige, Nachbar:innen oder die mobile Pflege, die jeden Tag da sind. Ein Strauß nach Hause ist eine persönliche Art, das zu würdigen."]},
+      {"heading": "Vorher kurz nachfragen", "paragraphs": ["Ob Blumen auf einer Station oder in einer Pflegeeinrichtung erlaubt sind, ist sehr unterschiedlich. Frag am besten vorher, ob ein Strauß angenommen werden darf – oder lass ihn an eine Privatadresse liefern.", "Soll der Strauß an eine Einrichtung gehen, gib im Checkout ihren Namen und die Abteilung an. Zugestellt wird dann an den Empfang."]},
+      {"heading": "Der passende Zeitpunkt", "paragraphs": ["2027 fällt der 12. Mai auf einen Mittwoch. Du wählst Datum und ein einstündiges Zeitfenster zwischen 9 und 22 Uhr – so kommt der Strauß nach Hause, wenn die Schicht vorbei ist."]}
+    ],
+    "faqIds": ["f-business", "f-nobody", "f-window"],
+    "seo": {"title": "Blumen zum Tag der Pflege – Wien", "description": "Tag der Pflege am 12. Mai: Danke sagen mit Blumen an Pflegekräfte und pflegende Angehörige. Von Hand gebunden, in ganz Wien geliefert."}
+  },
+  {
+    "slug": "blumen-zum-schulschluss",
+    "title": "Blumen zum Schulschluss",
+    "headline": "Zum Schulschluss: Danke an Lehrerin und Lehrer.",
+    "intro": "Ein Schuljahr voller Geduld, Hausübungen und Elternabende – zum Schulschluss sagen viele Familien mit Blumen Danke. So klappt es in Wien ohne Stress.",
+    "image": "/images/products/sortiment/strahlender-tag-1.jpg",
+    "productFilter": {"occasions": ["danke"], "colors": ["gelb", "orange"], "seasons": ["ganzjaehrig"], "limit": 8},
+    "sections": [
+      {"heading": "Gemeinsam oder einzeln", "paragraphs": ["Oft legt die ganze Klasse zusammen und schenkt einen großen Strauß von allen – dann darf es eine größere Größe sein. Einzelne Familien wählen eher einen kleineren Strauß oder eine Pflanze."]},
+      {"heading": "Nach Hause liefern, in der Schule überreichen", "paragraphs": ["Am letzten Schultag ist in der Schule viel los, und nicht jede Schule nimmt Lieferungen an. Am einfachsten ist es, den Strauß zu dir nach Hause liefern zu lassen und ihn persönlich mitzugeben – für die Kinder ein schöner Moment.", "Wähle dafür den Tag vor dem letzten Schultag und ein Zeitfenster am Nachmittag oder Abend, wenn ihr sicher zu Hause seid. Über Nacht in frischem Wasser bleibt der Strauß schön."]},
+      {"heading": "Sommerfarben", "paragraphs": ["Gelb, Orange und Pink passen zum Beginn der Ferien. Wer Danke mit kleinem Budget sagen will, findet eine Auswahl unter [Sträuße unter 40 €](/guenstige-blumen-wien)."]}
+    ],
+    "faqIds": ["f-date", "f-window", "f-fresh"],
+    "seo": {"title": "Blumen zum Schulschluss – Wien", "description": "Danke an Lehrerin und Lehrer zum Schulschluss: fröhliche Sträuße, nach Hause geliefert und vom Kind überreicht. Lieferung in ganz Wien."}
+  },
+  {
+    "slug": "danke-kindergarten",
+    "title": "Danke an den Kindergarten",
+    "headline": "Danke an das Team im Kindergarten.",
+    "intro": "Wenn das Kindergartenjahr endet oder dein Kind in die Schule wechselt, ist Zeit für ein Dankeschön. Blumen sind eine Geste, über die sich die ganze Gruppe freut.",
+    "image": "/images/products/sortiment/froehlicher-bluetenmix-1.jpg",
+    "productFilter": {"category": "unter-40", "occasions": ["danke"], "seasons": ["ganzjaehrig"], "limit": 8},
+    "sections": [
+      {"heading": "Ein Strauß für alle", "paragraphs": ["Mit einer Gruppe arbeiten meist mehrere Menschen: Pädagog:innen, Assistent:innen, oft auch Sprachförderung oder Praktikant:innen. Ein bunter Strauß für den Gruppenraum erreicht alle auf einmal.", "Sprich dich mit anderen Eltern ab – gemeinsam ist auch eine größere Größe gut machbar."]},
+      {"heading": "Die Kinder überreichen", "paragraphs": ["Lass die Blumen zu dir nach Hause liefern, dann können die Kinder sie selbst übergeben. Ein selbst gemaltes Bild dazu sagt mehr als jeder gedruckte Text."]},
+      {"heading": "Kurz vor den Ferien", "paragraphs": ["Ein Strauß braucht eine Vase und jemanden, der Wasser nachfüllt. Schließt der Kindergarten bald für den Sommer, ist eine Pflanze oft die bessere Wahl: Ein Gummibaum etwa kommt mit wenig Wasser aus."]}
+    ],
+    "faqIds": ["f-date", "f-nobody", "f-fresh"],
+    "seo": {"title": "Danke an den Kindergarten – Blumen Wien", "description": "Blumen als Dankeschön für Kindergartenpädagog:innen: bunte Sträuße und Pflanzen, nach Hause geliefert und von den Kindern überreicht."}
+  },
+  {
+    "slug": "tag-der-freundschaft",
+    "title": "Blumen zum Tag der Freundschaft",
+    "headline": "Tag der Freundschaft: Blumen für Menschen, die bleiben.",
+    "intro": "Am 30. Juli ist Internationaler Tag der Freundschaft. Ein Anlass, der niemandem etwas abverlangt – und gerade deshalb gut zu einem Strauß ohne großen Grund passt.",
+    "image": "/images/products/sortiment/farbtaenzer-1.jpg",
+    "productFilter": {"occasions": ["einfach-so"], "seasons": ["ganzjaehrig"], "limit": 8},
+    "sections": [
+      {"heading": "Ohne große Worte", "paragraphs": ["Freundschaften leben von kleinen Zeichen. Ein Strauß am 30. Juli sagt: Ich denk an dich, auch wenn wir uns zu selten sehen. 2027 fällt der Tag auf einen Freitag – ein schöner Auftakt fürs Wochenende."]},
+      {"heading": "Farben für den Hochsommer", "paragraphs": ["Ende Juli passen leuchtende Farben: Orange, Gelb, Pink. Bunte Sträuße mit Gerbera und Rosen wirken unbeschwert. Für die Freundin, die schon alles hat, sind blaue Rosen eine echte Überraschung."]},
+      {"heading": "Bei Hitze gut versorgt", "paragraphs": ["Im Sommer hält ein Strauß länger, wenn er kühl und ohne direkte Sonne steht und das Wasser regelmäßig gewechselt wird. Ist niemand zu Hause, wird er nach Möglichkeit bei Nachbar:innen abgegeben – im Checkout kannst du dafür einen Hinweis hinterlegen."]}
+    ],
+    "faqIds": ["f-fresh", "f-nobody", "f-anon"],
+    "seo": {"title": "Blumen zum Tag der Freundschaft – Wien", "description": "Tag der Freundschaft am 30. Juli: Sträuße ohne großen Anlass für Freundinnen und Freunde, von Hand gebunden und in ganz Wien geliefert."}
+  },
+  {
+    "slug": "herbststraeusse",
+    "title": "Herbststräuße",
+    "headline": "Herbststräuße in warmen Farben.",
+    "intro": "Wenn die Tage kürzer werden, wirken Orange, Apricot und Gelb besonders warm. Herbstliche Sträuße, von Hand gebunden und in alle Wiener Bezirke geliefert.",
+    "image": "/images/products/sortiment/herbstzauber-1.jpg",
+    "productFilter": {"occasions": ["geburtstag", "danke", "einfach-so"], "colors": ["orange"], "seasons": ["herbst", "ganzjaehrig"], "limit": 8},
+    "sections": [
+      {"heading": "Die Farben des Herbstes", "paragraphs": ["Unser [Herbstzauber](/produkt/herbstzauber) verbindet Gerbera, Rosen und Lilien in Orange-, Rosa- und Gelbtönen mit frischem Grün. Auch Sträuße mit apricotfarbenen Rosen oder Strelitzien passen in die Zeit, in der draußen das Laub fällt."]},
+      {"heading": "Für jeden Anlass im Herbst", "paragraphs": ["Ob Geburtstag im Oktober, ein Danke an die Nachbarin oder einfach ein grauer Novembertag: Warme Farben heben die Stimmung. Kränze und Buketts für einen Trauerfall findest du unter [Trauer](/anlaesse/trauer)."]},
+      {"heading": "Pflege in der Heizsaison", "paragraphs": ["Stell den Strauß nicht direkt neben die Heizung und nicht neben Obst – beides lässt Blüten schneller welken. Schneide die Stiele vor dem Einstellen schräg an und füll regelmäßig Wasser nach."]}
+    ],
+    "faqIds": ["f-fresh", "f-photo", "f-date"],
+    "seo": {"title": "Herbststräuße liefern lassen in Wien", "description": "Herbststräuße in Orange, Apricot und Gelb: Gerbera, Rosen und Lilien, von Hand gebunden und in alle 23 Wiener Bezirke geliefert."}
+  },
+  {
+    "slug": "adventskranz-liefern-wien",
+    "title": "Adventskranz liefern",
+    "headline": "Adventskranz in Wien liefern lassen.",
+    "intro": "Von Hand gebunden aus Tannengrün, mit vier Kerzen und Schmuck in der Farbe deiner Wahl – geliefert in alle 23 Wiener Bezirke. 2026 ist der erste Advent am 29. November.",
+    "image": "/images/products/sortiment/adventskraenze-1.jpg",
+    "productFilter": {"category": "advent", "limit": 8},
+    "sections": [
+      {"heading": "Sieben Farben, vier Größen", "paragraphs": ["Den [Adventskranz](/produkt/adventskraenze) gibt es in Rot, Grau, Lila, Gold, Beige, Weinrot und Rosa – Kerzen, Schleifen, Kugeln und Zapfen sind darauf abgestimmt. Dazu wählst du die Größe: Klein, Mittel, Groß oder XL.", "Rot und Gold wirken klassisch, Grau und Beige ruhig und modern, Lila, Rosa und Weinrot setzen einen eigenen Akzent."]},
+      {"heading": "Rechtzeitig zum ersten Advent", "paragraphs": ["Damit die erste Kerze am 29. November brennen kann, lass den Kranz ein paar Tage vorher liefern. Wir liefern in Wien auch am Wochenende – vor dem ersten Advent sind die Zeitfenster aber schnell gefragt, eine frühe Bestellung lohnt sich."]},
+      {"heading": "Damit er lange schön bleibt", "paragraphs": ["Stell den Kranz kühl und nicht direkt neben die Heizung, und besprüh das Tannengrün gelegentlich leicht mit Wasser. Kerzen nie unbeaufsichtigt brennen lassen."]}
+    ],
+    "faqIds": ["f-date", "f-where", "f-photo"],
+    "seo": {"title": "Adventskranz liefern lassen in Wien", "description": "Handgebundener Adventskranz aus Tannengrün mit vier Kerzen, in sieben Farben und vier Größen – geliefert in alle 23 Wiener Bezirke."}
+  },
+  {
+    "slug": "nikolo-blumen",
+    "title": "Blumen zum Nikolo",
+    "headline": "Ein kleiner Gruß zum Nikolo.",
+    "intro": "Am 6. Dezember kommt der Nikolo – und nicht nur Kinder freuen sich über eine Kleinigkeit. Ein Strauß ist ein netter Gruß in der Adventzeit, für Nachbarin, Kollegin oder Großeltern.",
+    "image": "/images/products/sortiment/bluetenfreude-1.jpg",
+    "productFilter": {"category": "unter-40", "seasons": ["winter", "ganzjaehrig"], "limit": 8},
+    "sections": [
+      {"heading": "Klein, aber herzlich", "paragraphs": ["Zum Nikolo muss es nichts Großes sein. Ein Strauß in der kleinsten Größe oder eine Pflanze sind eine Geste, die in der Adventzeit gut ankommt. Die Auswahl oben gibt es jeweils ab höchstens 40 €."]},
+      {"heading": "Rot und Weiß", "paragraphs": ["Die Farben des Nikolo sind Rot und Weiß. Ein Strauß mit roten Rosen und Gerbera passt dazu ebenso wie eine Bromelie mit roter Blüte im Topf. Für die Adventsonntage gibt es unsere [Adventskränze](/adventskranz-liefern-wien)."]},
+      {"heading": "Lieferung zum 6. Dezember", "paragraphs": ["2026 fällt der Nikolotag auf einen Sonntag. Wir liefern in Wien auch sonntags – oder du lässt den Gruß schon am Samstag, dem Krampustag, ankommen."]}
+    ],
+    "faqIds": ["f-date", "f-anon", "f-window"],
+    "seo": {"title": "Blumen zum Nikolo in Wien", "description": "Ein kleiner Gruß zum Nikolo am 6. Dezember: Sträuße und Pflanzen ab höchstens 40 €, von Hand gebunden und in Wien auch sonntags geliefert."}
+  },
+  {
+    "slug": "blumen-zu-weihnachten",
+    "title": "Blumen zu Weihnachten",
+    "headline": "Blumen zu Weihnachten liefern lassen.",
+    "intro": "Rote Rosen, eine blühende Pflanze oder ein Adventskranz: weihnachtliche Grüße, von Hand gebunden und in Wien geliefert – für alle, die du über die Feiertage nicht besuchen kannst.",
+    "image": "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg",
+    "productFilter": {"occasions": ["liebe", "jahrestag", "danke", "geburtstag", "einfach-so"], "colors": ["rot"], "seasons": ["winter", "ganzjaehrig"], "limit": 8},
+    "sections": [
+      {"heading": "Rot, Weiß und Grün", "paragraphs": ["Rot ist die Farbe der Weihnachtszeit: rote Rosen, rote Anthurien oder eine Bromelie mit roter Blüte. Weiße Rosen und Orchideen wirken dagegen still und festlich.", "Pflanzen im Topf haben über die Feiertage einen Vorteil – sie bleiben weit über Weihnachten hinaus schön."]},
+      {"heading": "Liefertermine rund um den 24. Dezember", "paragraphs": ["Der 24. Dezember fällt 2026 auf einen Donnerstag. Welche Tage rund um die Feiertage für die Lieferung frei sind, siehst du im Kalender: Tage ohne Lieferung sind ausgegraut.", "In der Woche vor Weihnachten ist viel los. Bestell früh, dann bekommst du das Zeitfenster, das zu eurem Tag passt – stündlich zwischen 9 und 22 Uhr."]},
+      {"heading": "Für die, die weit weg sind", "paragraphs": ["Wenn du Weihnachten nicht in Wien verbringst, lass den Gruß zu Eltern, Großeltern oder Freund:innen liefern. Gib im Checkout einen Hinweis für die Zustellung an – etwa wenn die Klingel schwer zu finden ist."]}
+    ],
+    "faqIds": ["f-date", "f-nobody", "f-change"],
+    "seo": {"title": "Blumen zu Weihnachten liefern – Wien", "description": "Rote Rosen, Pflanzen und Adventskränze zu Weihnachten in Wien liefern lassen. Liefertage rund um die Feiertage siehst du im Kalender."}
+  },
+  {
+    "slug": "weihnachtsfeier-blumen",
+    "title": "Blumen für die Weihnachtsfeier",
+    "headline": "Blumen für die Weihnachtsfeier im Team.",
+    "intro": "Ein Strauß für den Tisch, eine Pflanze als Dank an die Teamleitung oder Blumen für die Person, die alles organisiert hat: Ideen für die Weihnachtsfeier in Wien.",
+    "image": "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg",
+    "productFilter": {"category": "pflanzen", "limit": 8},
+    "sections": [
+      {"heading": "Für den Tisch oder als Dank", "paragraphs": ["Bei der Feier selbst sorgt ein großer Strauß auf dem Buffet- oder Empfangstisch für Stimmung. Wer der Organisatorin danken will, schenkt ihr einen Strauß zum Mitnehmen – oder eine Orchidee, die danach im Büro weiterblüht."]},
+      {"heading": "Lieferung ins Büro", "paragraphs": ["Wir liefern auch an Firmenadressen. Gib im Checkout den Firmennamen und, wenn bekannt, die Abteilung an – zugestellt wird an den Empfang. Wähle ein Zeitfenster, in dem sicher jemand da ist; Feiern am Abend lassen sich mit Fenstern bis 22 Uhr gut planen."]},
+      {"heading": "Mehrere Sträuße oder Pflanzen", "paragraphs": ["Für mehrere Standorte, viele Geschenke auf einmal oder regelmäßige Lieferungen schick uns eine Anfrage über die Seite für [Firmenkunden](/firmenkunden). Wir melden uns, ob und wie wir das umsetzen können."]}
+    ],
+    "faqIds": ["f-business", "f-window", "f-date"],
+    "seo": {"title": "Blumen für die Weihnachtsfeier – Wien", "description": "Blumen und Pflanzen für die Weihnachtsfeier im Büro: an die Firmenadresse geliefert, Zeitfenster bis 22 Uhr. Größere Mengen auf Anfrage."}
+  },
+  {
+    "slug": "silvester-neujahr-blumen",
+    "title": "Blumen zu Silvester & Neujahr",
+    "headline": "Mit Blumen ins neue Jahr.",
+    "intro": "Ein Strauß für die Gastgeber der Silvesterfeier oder ein Gruß zum Jahresbeginn: Blumen sind ein schöner Wunsch für ein gutes neues Jahr.",
+    "image": "/images/products/sortiment/love-deluxe-1.jpg",
+    "productFilter": {"occasions": ["einfach-so", "danke", "geburtstag"], "colors": ["gelb"], "seasons": ["winter", "ganzjaehrig"], "limit": 8},
+    "sections": [
+      {"heading": "Für die Gastgeber", "paragraphs": ["Wer zu einer Silvesterfeier eingeladen ist, bringt gern etwas mit. Lass den Strauß am 31. Dezember direkt zu den Gastgebern liefern – 2026 ist das ein Donnerstag – oder vorher zu dir nach Hause, um ihn selbst mitzubringen."]},
+      {"heading": "Farben für einen guten Anfang", "paragraphs": ["Gelb und Weiß wirken hell und zuversichtlich, bunte Sträuße fröhlich. Ein heller Strauß ist auch nach der Feier noch ein schöner Blickfang in den ersten Tagen des Jahres."]},
+      {"heading": "Rund um Neujahr", "paragraphs": ["Ob am 1. Jänner geliefert wird, siehst du im Kalender – Tage ohne Lieferung sind ausgegraut. Oft ist ein Gruß ein paar Tage später ohnehin schöner: wenn die Feiertage vorbei sind und der Alltag wieder beginnt."]}
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody"],
+    "seo": {"title": "Blumen zu Silvester & Neujahr – Wien", "description": "Blumen für die Silvesterfeier oder als Gruß zum neuen Jahr: helle Sträuße, von Hand gebunden und in Wien geliefert. Termine im Kalender."}
+  },
+  {
+    "slug": "blumen-fuer-mama",
+    "title": "Blumen für Mama",
+    "headline": "Blumen für Mama – nicht nur am Muttertag.",
+    "intro": "Zum Geburtstag, als Danke oder einfach so: ein Strauß für deine Mutter, von Hand gebunden und direkt zu ihr nach Hause geliefert – in ganz Wien.",
+    "image": "/images/products/sortiment/rose-dream-1.jpg",
+    "productFilter": {"occasions": ["geburtstag", "danke", "einfach-so"], "colors": ["rosa"], "limit": 8},
+    "sections": [
+      {"heading": "Was ihr gefällt", "paragraphs": ["Niemand kennt ihren Geschmack so gut wie du. Liebt sie Rosa und Creme, Sonnengelb oder klare weiße Blüten? Im Shop kannst du nach Farben filtern, und viele Sträuße gibt es in mehreren Größen.", "Hat sie wenig Platz oder ist viel unterwegs, ist eine Orchidee im Topf eine Alternative, die nur sparsam gegossen werden will."]},
+      {"heading": "Einfach so ist der schönste Anlass", "paragraphs": ["Blumen ohne Anlass kommen oft am besten an, weil niemand damit rechnet. Wähle einen ganz normalen Dienstag oder ein Wochenende, an dem ihr euch nicht seht."]},
+      {"heading": "Gut zu wissen", "paragraphs": ["Ist deine Mutter tagsüber unterwegs, wähle ein Zeitfenster am Abend – wir liefern stündlich zwischen 9 und 22 Uhr. Für den Muttertag selbst findest du alles Wichtige unter [Blumen zum Muttertag](/muttertag-blumen-wien)."]}
+    ],
+    "faqIds": ["f-window", "f-nobody", "f-date"],
+    "seo": {"title": "Blumen für Mama liefern lassen – Wien", "description": "Blumen für deine Mutter zum Geburtstag, als Danke oder einfach so: von Hand gebunden und in ganz Wien geliefert, Zeitfenster bis 22 Uhr."}
+  },
+  {
+    "slug": "blumen-fuer-oma",
+    "title": "Blumen für Oma",
+    "headline": "Blumen für Oma – ein Gruß, der bleibt.",
+    "intro": "Großeltern freuen sich über Besuch – und über Blumen, wenn der Besuch einmal nicht klappt. Sträuße und Pflanzen für Oma, geliefert in alle 23 Wiener Bezirke.",
+    "image": "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg",
+    "productFilter": {"occasions": ["geburtstag", "danke"], "colors": ["rosa", "lila"], "seasons": ["ganzjaehrig"], "limit": 8},
+    "sections": [
+      {"heading": "Klassisch und leicht zu versorgen", "paragraphs": ["Viele Großmütter schätzen klassische Sträuße mit Rosen und Lilien. Eine Alternative sind [Pflanzen](/blumen/pflanzen), die nicht jeden Tag frisches Wasser brauchen: Eine Orchidee oder Anthurie im Topf kommt mit wenig Pflege aus."]},
+      {"heading": "Die Übergabe", "paragraphs": ["Der Kurier übergibt die Blumen persönlich. Braucht deine Großmutter etwas länger bis zur Tür oder ist die Klingel schwer zu finden, hinterleg im Checkout einen Hinweis für die Zustellung."]},
+      {"heading": "Zum Geburtstag oder einfach so", "paragraphs": ["Wähle eine Zeit, zu der sie sicher zu Hause ist – Zeitfenster gibt es stündlich zwischen 9 und 22 Uhr. Damit du ihren Geburtstag nicht vergisst, schreibt dir die [Anlass-Erinnerung](/erinnerung) rechtzeitig vorher."]}
+    ],
+    "faqIds": ["f-nobody", "f-window", "f-fresh"],
+    "seo": {"title": "Blumen für Oma liefern lassen – Wien", "description": "Blumen und Pflanzen für Oma: klassische Sträuße oder pflegeleichte Topfpflanzen, persönlich übergeben in allen 23 Wiener Bezirken."}
+  },
+  {
+    "slug": "blumen-fuer-die-freundin",
+    "title": "Blumen für die Freundin",
+    "headline": "Blumen für deine Freundin.",
+    "intro": "Zum Jahrestag, nach einem Streit, vor dem ersten Date oder ohne jeden Grund: Ein Strauß sagt, was sich manchmal schwer sagen lässt. Geliefert in ganz Wien.",
+    "image": "/images/products/sortiment/rosenglanz-1.jpg",
+    "productFilter": {"category": "rosen", "limit": 8},
+    "sections": [
+      {"heading": "Ganz am Anfang", "paragraphs": ["Am Anfang einer Beziehung darf es leicht sein: ein kleiner Strauß in Rosa oder ein bunter Mix. Ein riesiger Strauß roter Rosen kann in den ersten Wochen schnell zu viel wirken."]},
+      {"heading": "Wenn es ernst ist", "paragraphs": ["Rote Rosen bleiben das klarste Zeichen. Viele Rosensträuße gibt es in sechs Größen, von 9 bis 99 Rosen. Für den 14. Februar findest du alles Wichtige unter [Blumen zum Valentinstag](/valentinstag-blumen-wien)."]},
+      {"heading": "Die Überraschung planen", "paragraphs": ["Du kennst ihren Tag: Wann ist sie zu Hause, wann im Büro? Wähle ein Zeitfenster, das passt – oder lass den Strauß an ihre Arbeitsadresse liefern und gib im Checkout den Firmennamen an."]}
+    ],
+    "faqIds": ["f-window", "f-anon", "f-business"],
+    "seo": {"title": "Blumen für die Freundin – Lieferung Wien", "description": "Blumen für deine Freundin: vom kleinen Strauß fürs erste Date bis zu 99 roten Rosen. Von Hand gebunden und in ganz Wien geliefert."}
+  },
+  {
+    "slug": "blumen-fuer-die-ehefrau",
+    "title": "Blumen für die Ehefrau",
+    "headline": "Blumen für deine Frau.",
+    "intro": "Nach Jahren zusammen sagen Blumen oft mehr als jedes Geschenk: Ich sehe dich noch immer. Sträuße zum Hochzeitstag, zum Geburtstag oder für einen ganz gewöhnlichen Mittwoch.",
+    "image": "/images/products/sortiment/koenigin-der-herzen-1.jpg",
+    "productFilter": {"occasions": ["jahrestag"], "limit": 8},
+    "sections": [
+      {"heading": "Zum Hochzeitstag", "paragraphs": ["Rote und weiße Rosen passen zum Hochzeitstag. Bei Rosensträußen mit fester Rosenanzahl kannst du die Größe auch symbolisch wählen – Groß mit 25 Rosen etwa zur Silberhochzeit."]},
+      {"heading": "Ihr Lieblingsstrauß", "paragraphs": ["Achte darauf, was sie selbst kauft oder auf Fotos mag. Hat sie schon oft rote Rosen bekommen, ist eine andere Farbe eine Überraschung – Pastell, Weiß oder ein bunter Mix."]},
+      {"heading": "Ohne Anlass", "paragraphs": ["Der schönste Strauß ist manchmal der, mit dem sie nicht rechnet. Lass ihn am Abend liefern, wenn ihr beide zu Hause seid – Zeitfenster gibt es bis 22 Uhr. Mehr dazu unter [Blumen am Abend liefern](/blumen-am-abend-liefern)."]}
+    ],
+    "faqIds": ["f-window", "f-date", "f-photo"],
+    "seo": {"title": "Blumen für die Ehefrau liefern – Wien", "description": "Blumen für deine Frau zum Hochzeitstag, Geburtstag oder einfach so: Rosen in sechs Größen und mehr, in Wien geliefert bis 22 Uhr."}
+  },
+  {
+    "slug": "blumen-fuer-maenner",
+    "title": "Blumen für Männer",
+    "headline": "Blumen für Männer – warum eigentlich nicht?",
+    "intro": "Männer bekommen selten Blumen, freuen sich aber oft genauso darüber. Ideen für Partner, Vater, Bruder oder Freund – geliefert in ganz Wien.",
+    "image": "/images/products/sortiment/gummibaum-im-topf-1.jpg",
+    "productFilter": {"category": "pflanzen", "limit": 8},
+    "sections": [
+      {"heading": "Klare Formen, kräftige Farben", "paragraphs": ["Sträuße mit wenigen, deutlichen Farben wirken klar und modern: tiefes Rot, Blau, Orange oder Weiß. Blaue und schwarze Rosen sind eine Überraschung – zum Beispiel [Blaue Liebe](/produkt/blaueliebe) oder [Blackroses](/produkt/blackroses)."]},
+      {"heading": "Pflanzen statt Schnittblumen", "paragraphs": ["Eine Pflanze ist für viele die leichtere Wahl: Sie steht im Büro oder in der Wohnung und wächst weiter. Ein Gummibaum ist pflegeleicht, eine Anthurie bringt Farbe in den Raum."]},
+      {"heading": "Für Vater, Bruder und Freund", "paragraphs": ["Zum Vatertag am zweiten Sonntag im Juni findest du Ideen unter [Blumen zum Vatertag](/vatertag-blumen). Zum Geburtstag passen auch exotische Sträuße mit Strelitzien."]}
+    ],
+    "faqIds": ["f-date", "f-business", "f-fresh"],
+    "seo": {"title": "Blumen für Männer verschicken – Wien", "description": "Blumen für Männer: Pflanzen, blaue und schwarze Rosen oder Sträuße in klaren Farben. Von Hand gebunden und in ganz Wien geliefert."}
+  },
+  {
+    "slug": "blumen-fuer-die-beste-freundin",
+    "title": "Blumen für die beste Freundin",
+    "headline": "Für deine beste Freundin.",
+    "intro": "Sie war bei jedem Umzug dabei, bei jeder Trennung und jeder Feier. Ein Strauß für die beste Freundin – zum Geburtstag, nach einer Prüfung oder einfach, weil es sie gibt.",
+    "image": "/images/products/sortiment/pink-bouquet-1.jpg",
+    "productFilter": {"category": "bunt", "limit": 8},
+    "sections": [
+      {"heading": "Ihr Stil, nicht deiner", "paragraphs": ["Du weißt, ob sie zarte Pastelltöne liebt oder es knallbunt mag. Fröhliche Sträuße mit Gerbera passen zu Menschen mit viel Energie, ruhige Töne zu jemandem, der es gern schlicht hat."]},
+      {"heading": "Anlässe, die nur ihr kennt", "paragraphs": ["Bestandene Prüfung, neuer Job, die erste eigene Wohnung, ein harter Tag: Für die beste Freundin gibt es mehr Anlässe, als im Kalender stehen. Und am 13. Februar ist [Galentinstag](/galentinstag)."]},
+      {"heading": "Zustellung", "paragraphs": ["Wir liefern in alle 23 Wiener Bezirke, an jedem Tag der Woche. Ist sie nicht da, wird der Strauß nach Möglichkeit bei Nachbar:innen abgegeben, und du bekommst per E-Mail Bescheid zum Status deiner Bestellung."]}
+    ],
+    "faqIds": ["f-nobody", "f-anon", "f-where"],
+    "seo": {"title": "Blumen für die beste Freundin – Wien", "description": "Blumen für deine beste Freundin: fröhliche Sträuße zum Geburtstag, nach der Prüfung oder einfach so – in ganz Wien geliefert, auch am Wochenende."}
+  },
+  {
+    "slug": "blumen-fuer-die-schwester",
+    "title": "Blumen für die Schwester",
+    "headline": "Blumen für deine Schwester.",
+    "intro": "Geschwister sagen einander selten, was sie sich bedeuten. Ein Strauß zum Geburtstag, zur Geburt ihres Kindes oder nach einem großen Schritt macht es leichter.",
+    "image": "/images/products/sortiment/blue-bouquet-1.jpg",
+    "productFilter": {"occasions": ["geburtstag"], "limit": 8},
+    "sections": [
+      {"heading": "Bei großen Momenten dabei", "paragraphs": ["Hochzeit, Geburt, Umzug, Abschluss: Bei großen Momenten im Leben deiner Schwester ist ein Strauß ein Zeichen, dass du an sie denkst – auch wenn du selbst nicht in Wien wohnst. Zarte Sträuße zur Geburt findest du unter [Geburt](/anlaesse/geburt)."]},
+      {"heading": "Zum Geburtstag", "paragraphs": ["Zum Geburtstag passt ihr Lieblingsfarbton. Viele Sträuße gibt es in Klein, Mittel und Groß, viele Rosensträuße in sechs Größen. Alles zur Lieferung am Geburtstag liest du unter [Geburtstagsblumen liefern](/blumen-zum-geburtstag)."]}
+    ],
+    "faqIds": ["f-date", "f-where", "f-nobody"],
+    "seo": {"title": "Blumen für die Schwester – Lieferung Wien", "description": "Blumen für deine Schwester zum Geburtstag, zur Geburt oder nach einem großen Schritt: von Hand gebunden und in ganz Wien geliefert."}
+  },
+  {
+    "slug": "blumen-fuer-kollegen",
+    "title": "Blumen für Kolleginnen und Kollegen",
+    "headline": "Blumen für Kolleginnen und Kollegen.",
+    "intro": "Zum Geburtstag, zum Abschied, zur Genesung oder als Danke für ein gemeinsames Projekt: Blumen sind im Büro ein Geschenk, das alle sehen.",
+    "image": "/images/products/sortiment/orange-bouquet-1.jpg",
+    "productFilter": {"occasions": ["danke", "gute-besserung"], "limit": 8},
+    "sections": [
+      {"heading": "Gemeinsam schenken", "paragraphs": ["Legt das Team zusammen, darf es ein größerer Strauß sein. Eine Person bestellt und bezahlt, die Rechnung geht an sie – so lässt sich der Betrag danach leicht aufteilen."]},
+      {"heading": "Ins Büro oder nach Hause?", "paragraphs": ["Für ein Danke im Büro lass den Strauß an die Firmenadresse liefern; im Checkout gibst du Firmenname und Abteilung an, zugestellt wird an den Empfang. Ist die Kollegin krank oder in Karenz, ist ihre Privatadresse die bessere Wahl."]},
+      {"heading": "Abschied und Ruhestand", "paragraphs": ["Zum Abschied passt ein Strauß, der mit nach Hause darf, oder eine Pflanze als Erinnerung. Sollen viele Mitarbeitende auf einmal beschenkt werden, sieh dir [Mitarbeitergeschenke mit Blumen](/mitarbeitergeschenke-blumen) an."]}
+    ],
+    "faqIds": ["f-business", "f-nobody", "f-payment"],
+    "seo": {"title": "Blumen für Kollegen ins Büro – Wien", "description": "Blumen für Kolleginnen und Kollegen zum Geburtstag, Abschied oder als Danke: ins Büro oder nach Hause geliefert, in ganz Wien."}
+  },
+  {
+    "slug": "blumen-fuer-den-chef",
+    "title": "Blumen für die Chefin oder den Chef",
+    "headline": "Blumen für die Chefin oder den Chef.",
+    "intro": "Zum runden Geburtstag, zum Firmenjubiläum oder als Dank zum Abschied: Blumen für Vorgesetzte sollen wertig wirken, aber nicht übertrieben.",
+    "image": "/images/products/sortiment/weiss-bouquet-1.jpg",
+    "productFilter": {"category": "rosen", "occasions": ["danke"], "limit": 8},
+    "sections": [
+      {"heading": "Elegant statt verspielt", "paragraphs": ["Weiß, Creme und ruhige Rosatöne wirken professionell. Ein Strauß in mittlerer Größe ist meist richtig – ein sehr großer Strauß kann im Büro schnell zu viel werden."]},
+      {"heading": "Eine Pflanze fürs Büro", "paragraphs": ["Eine Orchidee oder ein Gummibaum im Topf bleibt lange im Büro stehen und erinnert an den Anlass. Beide brauchen nur wenig Wasser."]},
+      {"heading": "Im Namen des Teams", "paragraphs": ["Schenkt das Team gemeinsam, bestellt eine Person und gibt die Firmenadresse mit Abteilung an. Für regelmäßige Blumen oder größere Mengen gibt es die Seite für [Firmenkunden](/firmenkunden)."]}
+    ],
+    "faqIds": ["f-business", "f-window", "f-photo"],
+    "seo": {"title": "Blumen für die Chefin oder den Chef – Wien", "description": "Blumen für Vorgesetzte zum Geburtstag, Jubiläum oder Abschied: elegante Sträuße und Pflanzen, an die Firmenadresse in Wien geliefert."}
+  },
+  {
+    "slug": "blumen-fuer-die-lehrerin",
+    "title": "Blumen für die Lehrerin",
+    "headline": "Blumen für die Lehrerin oder den Lehrer.",
+    "intro": "Ob Volksschule, Gymnasium oder Musikschule: Lehrerinnen und Lehrer begleiten Kinder oft über Jahre. Blumen sind ein Dank, der von Herzen kommt.",
+    "image": "/images/products/sortiment/rosentraum-1.jpg",
+    "productFilter": {"category": "unter-40", "limit": 8},
+    "sections": [
+      {"heading": "Wann Danke sagen", "paragraphs": ["Zum Schulschluss, beim Wechsel in eine neue Schule, nach der Matura oder einfach, weil ein Jahr gut gelaufen ist. Tipps für den letzten Schultag liest du unter [Blumen zum Schulschluss](/blumen-zum-schulschluss)."]},
+      {"heading": "Lieber bescheiden", "paragraphs": ["Ein Geschenk an Lehrkräfte darf bescheiden sein. Ein Strauß in kleiner Größe oder eine Pflanze wirkt persönlich, ohne zu viel zu sein. Die Auswahl oben gibt es jeweils ab höchstens 40 €."]},
+      {"heading": "Vom Kind überreicht", "paragraphs": ["Nicht jede Schule kann Lieferungen entgegennehmen. Lass den Strauß deshalb am Vortag zu dir nach Hause liefern, dann kann dein Kind ihn am nächsten Morgen selbst überreichen."]}
+    ],
+    "faqIds": ["f-date", "f-fresh", "f-nobody"],
+    "seo": {"title": "Blumen für die Lehrerin – Wien", "description": "Danke an Lehrerin oder Lehrer: kleine Sträuße und Pflanzen ab höchstens 40 €, nach Hause geliefert und vom Kind überreicht. Wien."}
+  },
+  {
+    "slug": "blumen-fuer-aerzte-und-praxisteam",
+    "title": "Blumen für Ärztin, Arzt & Praxisteam",
+    "headline": "Danke an Ärztin, Arzt und Praxisteam.",
+    "intro": "Nach einer gelungenen Behandlung, einer langen Begleitung oder einer schwierigen Zeit: Mit Blumen kannst du dich bei der ganzen Ordination bedanken.",
+    "image": "/images/products/sortiment/klassische-schoenheit-1.jpg",
+    "productFilter": {"occasions": ["danke"], "colors": ["weiss", "creme"], "limit": 8},
+    "sections": [
+      {"heading": "Für das ganze Team", "paragraphs": ["In einer Praxis arbeiten viele mit: Ärztinnen und Ärzte, Ordinationsassistenz, Empfang. Ein Strauß am Empfang sehen alle – und alle dürfen sich angesprochen fühlen."]},
+      {"heading": "Während der Ordinationszeiten liefern", "paragraphs": ["Wähle ein Zeitfenster, in dem die Ordination geöffnet ist, und gib im Checkout den Namen der Praxis an. Außerhalb der Ordinationszeiten nimmt dort niemand die Blumen entgegen – prüf die Zeiten deshalb vorher."]},
+      {"heading": "Rücksicht im Wartezimmer", "paragraphs": ["Stark duftende Blumen sind in Wartezimmern nicht immer ideal. Ein Strauß ohne Lilien oder eine Pflanze im Topf ist hier oft die rücksichtsvollere Wahl."]}
+    ],
+    "faqIds": ["f-business", "f-window", "f-change"],
+    "seo": {"title": "Blumen für Ärzte & Praxisteam – Wien", "description": "Danke an Ärztin, Arzt und Praxisteam: Sträuße und Pflanzen für den Empfang, geliefert während der Ordinationszeiten in ganz Wien."}
+  },
+  {
+    "slug": "blumen-fuer-die-nachbarin",
+    "title": "Blumen für die Nachbarin",
+    "headline": "Danke an die Nachbarin.",
+    "intro": "Sie hat Pakete angenommen, die Katze gefüttert oder die Pflanzen gegossen. Ein kleiner Strauß ist ein nettes Danke – geliefert direkt vor ihre Tür in Wien.",
+    "image": "/images/products/sortiment/sonnenzauber-1.jpg",
+    "productFilter": {"occasions": ["danke"], "colors": ["gelb", "orange", "rosa"], "limit": 8},
+    "sections": [
+      {"heading": "Kleine Gesten", "paragraphs": ["Unter Nachbarn zählt die Geste mehr als die Größe. Ein kleiner, fröhlicher Strauß in Gelb, Orange oder Rosa passt fast immer."]},
+      {"heading": "Noch unterwegs?", "paragraphs": ["Du bist noch im Urlaub und willst dich trotzdem bedanken? Bestell den Strauß einfach von unterwegs – Datum und Zeitfenster wählst du selbst, damit er ankommt, wenn sie zu Hause ist."]},
+      {"heading": "Neu im Haus", "paragraphs": ["Auch zum Einzug neuer Nachbar:innen ist ein Strauß ein freundlicher Anfang. Und falls du selbst einmal nicht zu Hause bist: Der Kurier gibt Blumen nach Möglichkeit bei Nachbar:innen ab – gut, wenn man sich kennt."]}
+    ],
+    "faqIds": ["f-nobody", "f-date", "f-where"],
+    "seo": {"title": "Blumen für die Nachbarin – Danke in Wien", "description": "Danke sagen an die Nachbarin: kleine, fröhliche Sträuße, auch von unterwegs bestellt und in alle 23 Wiener Bezirke geliefert."}
+  },
+  {
+    "slug": "mitarbeitergeschenke-blumen",
+    "title": "Mitarbeitergeschenke mit Blumen",
+    "headline": "Blumen als Geschenk für Mitarbeitende.",
+    "intro": "Zum Dienstjubiläum, zum Geburtstag, nach einem großen Projekt oder zum Abschied: Blumen zeigen Wertschätzung, die man sieht. So klappt es in Wien.",
+    "image": "/images/products/sortiment/blumenbox-standard-1.jpg",
+    "productFilter": {"occasions": ["danke", "geburtstag"], "limit": 8},
+    "sections": [
+      {"heading": "Einzelne Anlässe", "paragraphs": ["Einen einzelnen Strauß bestellst du direkt im Shop. Gib im Checkout den Firmennamen an – oder die Privatadresse, wenn der Strauß nach Hause gehen soll, etwa zum Geburtstag am freien Tag."]},
+      {"heading": "Viele Geschenke auf einmal", "paragraphs": ["Du möchtest mehrere Mitarbeitende beschenken, an verschiedene Adressen in Wien, oder regelmäßig zu Jubiläen? Schick uns eine Anfrage über die Seite für [Firmenkunden](/firmenkunden). Wir prüfen sie, melden uns per E-Mail und schicken dir ein Angebot, wenn wir sie umsetzen können."]},
+      {"heading": "Was gut ankommt", "paragraphs": ["Ein Strauß in mittlerer Größe passt zu den meisten Anlässen. Pflanzen eignen sich für Menschen, die viel Zeit im Büro verbringen. Ideen für Geschenke im Team findest du auch unter [Blumen für Kollegen](/blumen-fuer-kollegen)."]}
+    ],
+    "faqIds": ["f-business", "f-payment", "f-date"],
+    "seo": {"title": "Mitarbeitergeschenke mit Blumen – Wien", "description": "Blumen für Mitarbeitende zu Jubiläum, Geburtstag oder Abschied. Einzelne Sträuße direkt im Shop, größere Mengen auf Anfrage – in Wien."}
+  },
+  {
+    "slug": "kundengeschenke-blumen",
+    "title": "Kundengeschenke mit Blumen",
+    "headline": "Blumen als Geschenk für Kundinnen und Kunden.",
+    "intro": "Zum Vertragsabschluss, zum Firmenjubiläum eines Kunden oder einfach als Dank für die Zusammenarbeit: Ein Strauß bleibt in Erinnerung.",
+    "image": "/images/products/sortiment/rosenkuss-1.jpg",
+    "productFilter": {"occasions": ["danke", "jahrestag", "einfach-so"], "colors": ["weiss", "creme"], "limit": 8},
+    "sections": [
+      {"heading": "Ein Geschenk, das nicht in der Schublade landet", "paragraphs": ["Werbegeschenke gibt es viele. Ein Strauß wird ausgepackt, aufgestellt und gesehen – im Büro oder zu Hause. Kennst du den Geschmack nicht, ist eine ruhige, elegante Farbe wie Weiß oder Creme die sichere Wahl."]},
+      {"heading": "Zustellung an Firmen", "paragraphs": ["Gib im Checkout Firmenname, die Person, für die der Strauß ist, und – wenn bekannt – die Abteilung an. Zugestellt wird an den Empfang. Plane ein Zeitfenster zu den Bürozeiten; wir liefern stündlich zwischen 9 und 22 Uhr."]},
+      {"heading": "Mehrere Empfänger", "paragraphs": ["Für mehrere Kund:innen auf einmal, etwa zum Jahresende, schick uns eine Anfrage über die Seite für [Firmenkunden](/firmenkunden)."]}
+    ],
+    "faqIds": ["f-business", "f-payment", "f-change"],
+    "seo": {"title": "Kundengeschenke mit Blumen – Wien", "description": "Blumen als Kundengeschenk zum Abschluss, Jubiläum oder Jahresende: elegante Sträuße, an Firmenadressen in Wien geliefert."}
+  },
+  {
+    "slug": "blumen-ins-buero-liefern",
+    "title": "Blumen ins Büro liefern",
+    "headline": "Blumen ins Büro liefern lassen.",
+    "intro": "Für die Kollegin am Empfang, den Besprechungsraum oder einen Gruß an jemanden, der viel arbeitet: So kommen Blumen in Wien ins Büro.",
+    "image": "/images/products/sortiment/rote-anthurien-im-topf-1.jpg",
+    "productFilter": {"category": "pflanzen", "limit": 8},
+    "sections": [
+      {"heading": "So läuft die Zustellung", "paragraphs": ["Gib im Checkout den Firmennamen und, wenn bekannt, Abteilung oder Zimmernummer an. Zugestellt wird an den Empfang. Bei großen Gebäuden hilft ein Hinweis für den Kurier, etwa zu einem Eingang im Hof."]},
+      {"heading": "Die richtige Uhrzeit", "paragraphs": ["Wähle ein Zeitfenster, in dem das Büro besetzt ist – am besten am Vormittag oder frühen Nachmittag. Wir liefern stündlich zwischen 9 und 22 Uhr, doch am Abend sind viele Büros schon leer."]},
+      {"heading": "Regelmäßig frische Blumen", "paragraphs": ["Du möchtest Blumen für Empfang oder Besprechungsraum in einem festen Rhythmus? Ob und wie das an deinem Standort möglich ist, klären wir auf Anfrage über die Seite für [Firmenkunden](/firmenkunden)."]}
+    ],
+    "faqIds": ["f-business", "f-nobody", "f-window"],
+    "seo": {"title": "Blumen ins Büro liefern lassen – Wien", "description": "Blumen und Pflanzen ins Büro: Zustellung an den Empfang in ganz Wien, stündliche Zeitfenster. Regelmäßige Lieferungen auf Anfrage."}
+  },
+  {
+    "slug": "blumen-zur-eroeffnung",
+    "title": "Blumen zur Eröffnung",
+    "headline": "Blumen zur Eröffnung von Geschäft, Lokal oder Praxis.",
+    "intro": "Ein neues Geschäft, ein Restaurant oder eine Praxis öffnet: Ein Strauß oder eine Pflanze ist ein Glückwunsch, den Gäste und Kundschaft gleich sehen.",
+    "image": "/images/products/sortiment/bromelie-im-topf-1.jpg",
+    "productFilter": {"occasions": ["einfach-so", "danke", "geburtstag"], "colors": ["gelb", "orange"], "seasons": ["ganzjaehrig"], "limit": 8},
+    "sections": [
+      {"heading": "Pflanze oder Strauß", "paragraphs": ["Eine große Pflanze bleibt im Geschäft stehen und wächst mit – ein schönes Bild für einen Neuanfang, etwa die [XXL Rote Anthurie im Topf](/produkt/xxl-rote-anthurien-im-topf). Ein üppiger Strauß wirkt am Eröffnungstag festlich, hält aber kürzer."]},
+      {"heading": "Am Eröffnungstag liefern", "paragraphs": ["Lass die Blumen kurz vor der Eröffnung liefern, wenn schon jemand vor Ort ist. Gib im Checkout den Namen des Geschäfts an und, falls es mehrere Eingänge gibt, einen Hinweis für den Kurier."]},
+      {"heading": "Für deine eigene Eröffnung", "paragraphs": ["Du eröffnest selbst und brauchst Blumen für mehrere Tische oder den Eingang? Schreib uns über die Seite für [Firmenkunden](/firmenkunden) – wir sagen dir, ob und wie wir das umsetzen können."]}
+    ],
+    "faqIds": ["f-business", "f-date", "f-window"],
+    "seo": {"title": "Blumen zur Eröffnung liefern – Wien", "description": "Glückwunsch zur Eröffnung von Geschäft, Lokal oder Praxis: Pflanzen und Sträuße, am Eröffnungstag in Wien geliefert."}
+  },
+  {
+    "slug": "blumen-heute-liefern-wien",
+    "title": "Blumen heute liefern",
+    "headline": "Blumen heute noch liefern lassen in Wien.",
+    "intro": "Vergessen, kurzfristig eingeladen oder spontan verliebt? In Wien ist eine Lieferung am selben Tag möglich, solange für die Adresse noch ein Zeitfenster frei ist.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": {"sameDayOnly": true, "limit": 8},
+    "sections": [
+      {"heading": "Bis wann du bestellen kannst", "paragraphs": ["Bestellst du von Montag bis Samstag bis 18:30 Uhr oder am Sonntag bis 17:45 Uhr, kann der Strauß noch am selben Tag kommen – solange für die Adresse ein Zeitfenster frei ist. Je später du bestellst, desto weniger Fenster bleiben übrig.", "Welche Fenster heute noch gehen, siehst du, sobald du die Postleitzahl eingibst, und noch einmal im Checkout. Versprechen können wir die Lieferung am selben Tag nicht – aber du siehst vor dem Bezahlen, was möglich ist."]},
+      {"heading": "Auch heute von Hand gebunden", "paragraphs": ["Jeder Strauß wird für deine Bestellung gebunden, auch kurzfristig. Ein Kurier holt ihn in der Floristik ab und fährt direkt zur Empfängeradresse.", "Ist heute kein Fenster mehr frei, wähl den nächsten Tag – wir liefern an allen sieben Tagen der Woche."]}
+    ],
+    "faqIds": ["f-today", "f-where", "f-window"],
+    "seo": {"title": "Blumen heute liefern lassen in Wien", "description": "Blumen am selben Tag in Wien: möglich, solange ein Zeitfenster frei ist. Mo–Sa bis 18:30 Uhr, So bis 17:45 Uhr bestellen."}
+  },
+  {
+    "slug": "blumen-am-abend-liefern",
+    "title": "Blumen am Abend liefern",
+    "headline": "Blumen am Abend liefern lassen.",
+    "intro": "Wenn sie nach Hause kommt, sind die Blumen schon da: In Wien wählst du stündliche Zeitfenster bis 22 Uhr.",
+    "image": "/images/products/sortiment/red-passion-1.jpg",
+    "productFilter": {"occasions": ["jahrestag", "geburtstag"], "colors": ["rosa", "creme"], "limit": 8},
+    "sections": [
+      {"heading": "Zeitfenster bis 22 Uhr", "paragraphs": ["Du wählst ein Zeitfenster von einer Stunde; das letzte reicht von 21 bis 22 Uhr. So erreicht der Strauß auch Menschen, die tagsüber arbeiten – statt vor einer verschlossenen Tür zu stehen."]},
+      {"heading": "Wann der Abend die bessere Wahl ist", "paragraphs": ["Zum Jahrestag vor dem gemeinsamen Abendessen, zum Geburtstag nach der Arbeit oder als Gruß zum Feierabend: Am Abend ist die Chance größer, dass jemand zu Hause ist und den Strauß selbst entgegennimmt.", "Noch am selben Abend? Das ist möglich, wenn du Montag bis Samstag bis 18:30 Uhr oder sonntags bis 17:45 Uhr bestellst und noch ein Fenster frei ist. Mehr dazu unter [Blumen heute liefern](/blumen-heute-liefern-wien)."]}
+    ],
+    "faqIds": ["f-window", "f-nobody", "f-today"],
+    "seo": {"title": "Blumen am Abend liefern lassen – Wien", "description": "Blumen am Abend in Wien liefern lassen: stündliche Zeitfenster bis 22 Uhr, damit der Strauß ankommt, wenn jemand zu Hause ist."}
+  },
+  {
+    "slug": "blumen-anonym-verschicken",
+    "title": "Blumen anonym verschicken",
+    "headline": "Blumen anonym verschicken.",
+    "intro": "Ein heimlicher Verehrer, ein stiller Dank oder ein Gruß ohne Erwartungen: In Wien kannst du Blumen schicken, ohne dass dein Name dabeisteht.",
+    "image": "/images/editorial/delivery.jpg",
+    "productFilter": {"category": "pastell", "limit": 8},
+    "sections": [
+      {"heading": "So bleibt dein Name geheim", "paragraphs": ["Am Strauß steht kein Absender. Die Rechnung und die E-Mails zu deiner Bestellung gehen nur an dich, nicht an die Person, die die Blumen bekommt.", "Grußkarten mit persönlicher Nachricht kommen bald. Bis dahin wird jeder Strauß ohne Karte geliefert – bei einem anonymen Gruß ist das ohnehin der Sinn. Schreib deinen Namen auch nicht in den Hinweis für die Zustellung, denn den liest der Kurier."]},
+      {"heading": "Vorher kurz überlegen", "paragraphs": ["Ein anonymer Strauß soll Freude machen, nicht verunsichern. Überleg, ob sich die Person über das Rätsel freut – oder ob sie lieber wüsste, von wem er ist. Bei einer neuen Bekanntschaft ist ein kleiner Strauß in Rosa oft die sanftere Wahl als rote Rosen."]},
+      {"heading": "Was wir für die Lieferung brauchen", "paragraphs": ["Für die Zustellung brauchen wir Name und Adresse der Empfängerin oder des Empfängers. Wähle ein Zeitfenster, in dem sie wahrscheinlich zu Hause ist – stündlich zwischen 9 und 22 Uhr."]}
+    ],
+    "faqIds": ["f-anon", "f-card", "f-nobody"],
+    "seo": {"title": "Blumen anonym verschicken in Wien", "description": "Blumen anonym verschicken in Wien: kein Absender am Strauß, Rechnung und E-Mails nur an dich. Von Hand gebunden, per Kurier geliefert."}
+  },
+  {
+    "slug": "blumen-am-wochenende-liefern",
+    "title": "Blumen am Wochenende liefern",
+    "headline": "Blumen am Samstag und Sonntag liefern lassen.",
+    "intro": "Am Wochenende sind die meisten Menschen zu Hause – die beste Zeit für einen Strauß. In Wien liefern wir auch samstags und sonntags.",
+    "image": "/images/hero/hero-blumen-wide.jpg",
+    "productFilter": {"limit": 8},
+    "sections": [
+      {"heading": "Samstag und Sonntag", "paragraphs": ["Im Kalender kannst du jeden Tag der Woche wählen, auch Samstag und Sonntag. Zeitfenster gibt es stündlich zwischen 9 und 22 Uhr – für einen Strauß zum Wochenendfrühstück, zum Sonntagsbesuch bei den Eltern oder zum Abendessen.", "Auch am Wochenende ist eine Lieferung am selben Tag möglich, solange ein Fenster frei ist: samstags bei Bestellung bis 18:30 Uhr, sonntags bis 17:45 Uhr."]},
+      {"heading": "Feste, die auf einen Sonntag fallen", "paragraphs": ["Muttertag, Vatertag und Ostersonntag sind immer Sonntage, und auch der Valentinstag fällt 2027 auf einen Sonntag. Weil wir sonntags liefern, kann der Strauß am Tag selbst ankommen. An solchen Tagen ist viel los – bestell früh, damit dein Zeitfenster frei ist.", "Ob an einzelnen Feiertagen geliefert wird, zeigt dir der Kalender: Tage ohne Lieferung sind ausgegraut."]}
+    ],
+    "faqIds": ["f-date", "f-window", "f-today"],
+    "seo": {"title": "Blumen am Wochenende liefern – Wien", "description": "Blumen am Samstag und Sonntag in Wien liefern lassen: stündliche Zeitfenster von 9 bis 22 Uhr, am selben Tag möglich, solange ein Fenster frei ist."}
+  },
+  {
+    "slug": "gratis-blumenlieferung-wien",
+    "title": "Gratis Blumenlieferung",
+    "headline": "Gratis Blumenlieferung in Wien – wo sie gilt.",
+    "intro": "In drei Wiener Bezirken liefern wir ohne Liefergebühr. Überall sonst in Wien kostet die Lieferung 3,99 € oder 7,99 €. Hier steht, was für welche Adresse gilt.",
+    "image": "/images/products/sortiment/rosa-bouquet-1.jpg",
+    "productFilter": {"category": "elegant-weiss", "limit": 8},
+    "sections": [
+      {"heading": "Ohne Liefergebühr", "paragraphs": ["Gratis liefern wir in den 7. Bezirk Neubau (1070), den 15. Bezirk Rudolfsheim-Fünfhaus (1150) und den 16. Bezirk Ottakring (1160). Es zählt die Adresse der Person, die die Blumen bekommt – nicht deine eigene."]},
+      {"heading": "Alle anderen Bezirke", "paragraphs": ["In den übrigen 20 Bezirken kostet die Lieferung je nach Bezirk 3,99 € oder 7,99 €. Den genauen Betrag siehst du, sobald du die Postleitzahl eingibst – noch bevor du bezahlst."]},
+      {"heading": "Alles andere bleibt gleich", "paragraphs": ["Ob gratis oder nicht: Jeder Strauß wird von Hand gebunden, und du wählst Datum und ein stündliches Zeitfenster zwischen 9 und 22 Uhr. Geliefert wird an allen sieben Tagen der Woche."]}
+    ],
+    "faqIds": ["f-where", "f-window", "f-payment"],
+    "seo": {"title": "Gratis Blumenlieferung in Wien – Bezirke", "description": "Kostenlose Blumenlieferung in Wien 1070, 1150 und 1160. In allen anderen Bezirken 3,99 € oder 7,99 € – angezeigt nach Eingabe der PLZ."}
+  },
+  {
+    "slug": "guenstige-blumen-wien",
+    "title": "Günstige Blumen",
+    "headline": "Günstige Blumen in Wien – Sträuße unter 40 €.",
+    "intro": "Ein schöner Strauß muss nicht teuer sein. Hier findest du Sträuße und Pflanzen ab höchstens 40 € – von Hand gebunden wie alle anderen.",
+    "image": "/images/products/sortiment/zartrosa-zauber-1.jpg",
+    "productFilter": {"category": "unter-40", "limit": 8},
+    "sections": [
+      {"heading": "Was „unter 40 €“ heißt", "paragraphs": ["In dieser Auswahl kostet die kleinste Größe höchstens 40 €. Viele Sträuße gibt es zusätzlich in Mittel und Groß – dann steigt der Preis mit der Größe. Den Preis jeder Größe siehst du auf der Produktseite."]},
+      {"heading": "Liefergebühr mitdenken", "paragraphs": ["Zum Strauß kommt je nach Bezirk eine Liefergebühr: gratis in 1070, 1150 und 1160, sonst 3,99 € oder 7,99 €. Mehr dazu unter [Gratis Blumenlieferung](/gratis-blumenlieferung-wien)."]},
+      {"heading": "Klein, aber genauso frisch", "paragraphs": ["Auch der kleinste Strauß wird für deine Bestellung gebunden und per Kurier direkt zugestellt. Für ein Danke, einen Gruß an die Nachbarin oder als Mitbringsel ist eine kleine Größe oft genau richtig."]}
+    ],
+    "faqIds": ["f-where", "f-photo", "f-payment"],
+    "seo": {"title": "Günstige Blumen in Wien – unter 40 €", "description": "Günstige Blumen in Wien: Sträuße und Pflanzen ab höchstens 40 €, von Hand gebunden. Liefergebühr je nach Bezirk gratis, 3,99 € oder 7,99 €."}
   }
 ]

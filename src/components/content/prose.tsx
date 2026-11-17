@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cn } from "@/lib/format";
 
 /**
@@ -63,10 +64,11 @@ export function Paragraphs({ items, className }: { items: string[]; className?: 
 
 /**
  * Plain admin text with clickable links – no HTML is ever interpreted:
- * `[Label](https://…)`, bare `https://…` / `www.…` URLs, e-mail addresses and
- * phone numbers after "Telefon:" become links. External links open in a new tab.
+ * `[Label](https://…)`, `[Label](/pfad)` for pages of the shop, bare `https://…` / `www.…`
+ * URLs, e-mail addresses and phone numbers after "Telefon:" become links. External links
+ * open in a new tab, shop pages in the same tab.
  */
-const TOKEN = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|(https?:\/\/[^\s)]+|www\.[^\s)]+)|([\w.+-]+@[\w-]+(?:\.[\w-]+)+)|(\+\d[\d ]{6,}\d)/g;
+const TOKEN = /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/(?!\/)[^\s)]*)\)|(https?:\/\/[^\s)]+|www\.[^\s)]+)|([\w.+-]+@[\w-]+(?:\.[\w-]+)+)|(\+\d[\d ]{6,}\d)/g;
 
 export function InlineText({ text }: { text: string }) {
   const parts: React.ReactNode[] = [];
@@ -75,7 +77,8 @@ export function InlineText({ text }: { text: string }) {
     const index = m.index ?? 0;
     if (index > last) parts.push(text.slice(last, index));
     const [whole, label, labelUrl, url, email, phone] = m;
-    if (label && labelUrl) parts.push(<ExternalLink key={index} href={labelUrl}>{label}</ExternalLink>);
+    if (label && labelUrl?.startsWith("/")) parts.push(<Link key={index} href={labelUrl}>{label}</Link>);
+    else if (label && labelUrl) parts.push(<ExternalLink key={index} href={labelUrl}>{label}</ExternalLink>);
     else if (url) {
       // Keep a trailing full stop or comma outside the link.
       const clean = url.replace(/[.,;:]+$/, "");

@@ -294,3 +294,4 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 5. Newsletter-Double-Opt-in umsetzen, sobald Resend eingerichtet ist (vor dem ersten Versand).
 6. Rechtstexte und Firmendaten einpflegen, sobald geliefert (Abschnitt 8).
 - Sonntagslieferung (Wunsch der Inhaber): Wien liefert Mo–So. Same-Day-Bestellschluss Mo–Sa 18:30, sonntags 17:45 (neues Feld `sameDayCutoffSunday`, im Admin pflegbar). FAQ und AGB §(3)/(4) an Sonntag und Stundenfenster angepasst (Migration `2026-11-17-sunday-delivery`). Favicon `/favicon.ico` ergänzt.
+- SEO-Landingpages Welle 1: 38 neue Seiten (Feste/Termine, Für wen, Firmenkunden, Lieferung & Preis) mit eigenem Text, passenden Produkten, FAQ und Block „Weitere Anlässe & Themen“; Migration `2026-11-17-landing-pages-wave1` (nur fehlende Slugs). Alte Texte (drei Zeitfenster, Mo–Sa, vier Größen, „persönliche Nachricht“) korrigiert. Sitemap jetzt 130 URLs.
