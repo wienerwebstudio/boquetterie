@@ -39,6 +39,7 @@ Ist `ADMIN_PASSWORD` nicht gesetzt, zeigt die Login-Seite einen Hinweis und verw
 - **JSON-Modus** (Schalter oben rechts): Rohdaten direkt bearbeiten – für Power-User. Ungültiges JSON wird abgewiesen.
 - Nach dem Speichern wird der Shop sofort aktualisiert (`revalidatePath("/", "layout")`).
 - Der Preis „ab“ eines Produkts wird automatisch aus der günstigsten Größe berechnet.
+- **Landingpages:** Die Produktauswahl kombiniert Anlässe, Kategorie, Farben und Saisons (bei Farben/Saisons genügt eine Übereinstimmung). In Absatztexten wird `[Linktext](/pfad)` zu einem Link auf eine Shop-Seite, z. B. `[Firmenkunden](/firmenkunden)`. Unter jeder Landingpage stehen automatisch Links zu acht weiteren Landingpages („Weitere Anlässe & Themen“); die Gruppen dafür stehen in `src/lib/landing-links.ts`, neue Seiten ohne Gruppe laufen unter „weitere“.
 
 ## Wo liegen die Daten?
 

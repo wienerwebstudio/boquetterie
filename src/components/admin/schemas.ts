@@ -577,6 +577,8 @@ export const landingPageSchema: EntitySchema = {
       fields: [
         { key: "productFilter.occasions", label: "Anlässe", type: "multiselect", optionsFrom: "occasions", span: "full" },
         { key: "productFilter.category", label: "Kategorie", type: "select", optionsFrom: "categories" },
+        { key: "productFilter.colors", label: "Farben (mindestens eine muss zutreffen)", type: "multiselect", options: asOptions(COLOR_OPTIONS), span: "full" },
+        { key: "productFilter.seasons", label: "Saisons (mindestens eine muss zutreffen)", type: "multiselect", options: asOptions(SEASON_OPTIONS), span: "full" },
         { key: "productFilter.limit", label: "Maximale Anzahl", type: "number", min: 1, span: "third" },
         { key: "productFilter.sameDayOnly", label: "Nur Same-Day-fähige Produkte", type: "boolean", span: "third" },
       ],

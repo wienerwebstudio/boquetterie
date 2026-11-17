@@ -1,4 +1,5 @@
 import { jsonStore, type DocumentStore } from "@/lib/store";
+import { LANDING_PAGES_WAVE1 } from "@/lib/landing-pages-wave1";
 
 /**
  * One-off, targeted changes to editorial content that already lives in the database.
@@ -207,7 +208,36 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
       }),
     },
   },
+  {
+    // 38 new SEO landing pages (only slugs that are missing – pages edited in the admin stay),
+    // plus the texts of the existing pages: hourly windows 9–22 Uhr, delivery Monday to Sunday,
+    // six rose sizes.
+    id: "2026-11-17-landing-pages-wave1",
+    replace: {
+      "landing-pages": [
+        ["Als Zeitfenster stehen 9–12, 12–17 und 17–22 Uhr zur Wahl.", "Zur Wahl stehen einstündige Zeitfenster zwischen 9 und 22 Uhr."],
+        ["eines von drei Zeitfenstern: 9–12, 12–17 oder 17–22 Uhr", "ein einstündiges Zeitfenster zwischen 9 und 22 Uhr"],
+        ["mit Wunschdatum, drei Zeitfenstern und Lieferkosten nach Bezirk.", "mit Wunschdatum, stündlichen Zeitfenstern und Lieferkosten nach Bezirk."],
+        [
+          "Geliefert wird derzeit von Montag bis Samstag. Fällt der Geburtstag auf einen Sonntag, kannst du den Samstag davor wählen.",
+          "Geliefert wird von Montag bis Sonntag – auch an einem Geburtstag am Wochenende kann der Strauß am Tag selbst ankommen.",
+        ],
+        ["Geliefert wird derzeit von Montag bis Samstag.", "Geliefert wird von Montag bis Sonntag."],
+        ["derzeit von Montag bis Samstag", "von Montag bis Sonntag"],
+        ["Die meisten Rosensträuße gibt es in den Größen Klein, Mittel, Groß und XL.", "Die meisten Rosensträuße gibt es in sechs Größen, von Klein mit 9 bis XXXL mit 99 Rosen."],
+      ],
+    },
+    transform: { "landing-pages": (doc) => appendMissingBySlug(doc, LANDING_PAGES_WAVE1) },
+  },
 ];
+
+/** Appends the pages whose slug is not in the stored list yet; same list when nothing is missing. */
+export function appendMissingBySlug<T>(doc: T, pages: { slug: string }[]): T {
+  if (!Array.isArray(doc)) return doc;
+  const have = new Set(doc.map((p) => (p && typeof p === "object" ? (p as Obj).slug : undefined)));
+  const missing = pages.filter((p) => !have.has(p.slug));
+  return (missing.length ? [...doc, ...missing.map((p) => structuredClone(p))] : doc) as T;
+}
 
 const DROPPED_SECOND_PHOTOS = ["xl", "xxl", "xxxl"].map((id) => `/images/products/sortiment/red-passion-size-${id}-wien.jpg`);
 
