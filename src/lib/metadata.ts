@@ -2,7 +2,7 @@ import "server-only";
 import type { Metadata } from "next";
 import { getSettings } from "@/lib/cms";
 
-const DEFAULT_OG_IMAGE = { url: "/images/hero/hero-wide.jpg", width: 1600, height: 900 };
+const DEFAULT_OG_IMAGE = { url: "/images/hero/hero-blumen-og.jpg", width: 1600, height: 900 };
 
 export interface PageMetaInput {
   /** Page title without the brand – the root layout's template appends it. */

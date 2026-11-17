@@ -202,6 +202,7 @@ export const productSchema: EntitySchema = {
             { key: "stock", label: "Lager (leer = unbegrenzt)", type: "number", min: 0, span: "third" },
             { key: "description", label: "Beschreibung", type: "text", placeholder: "ca. 15 Stiele" },
             { key: "image", label: "Größen-Bild (optional)", type: "image" },
+            { key: "detailImage", label: "Nahaufnahme dieser Größe (optional, zweites Bild)", type: "image" },
             { key: "popular", label: "Empfohlene Größe (Badge „Empfohlen“)", type: "boolean", span: "full" },
           ],
         },

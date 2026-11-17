@@ -5,10 +5,9 @@
     "subheadline": "Frisch gebundene Blumen für die Menschen, die dir wichtig sind. Einfach auswählen, Wunschdatum bestimmen und Freude liefern lassen.",
     "primaryCta": {"label": "Blumen entdecken", "href": "/blumen"},
     "secondaryCta": {"label": "Nach Anlass wählen", "href": "/anlaesse"},
-    "imageWide": "/images/hero/hero-wide.jpg",
-    "imagePortrait": "/images/hero/hero-portrait.jpg",
-    "imageAlt": "Ein Strauß aus rosa Rosen, Gerbera und Lilien in einer weißen Vase auf einer Eichenkommode in einem hellen Wiener Altbau",
-    "video": "/videos/hero-loop.mp4",
+    "imageWide": "/images/hero/hero-blumen-wide.jpg",
+    "imagePortrait": "/images/hero/hero-blumen-portrait.jpg",
+    "imageAlt": "Üppige Sträuße auf einer Eichenkommode in einem hellen Wiener Altbau: rosa und apricotfarbene Rosen mit Ranunkeln, rote Rosen in Seidenpapier, Tulpen und weiße Hortensien",
     "deliveryCheck": {"title": "Wohin dürfen wir liefern?", "placeholder": "PLZ eingeben", "button": "Lieferung prüfen"}
   },
   "occasions": {"headline": "Blumen für jeden Moment", "subheadline": "Manchmal braucht es keinen großen Anlass. Nur die richtige Geste.", "slugs": ["geburtstag", "liebe", "danke", "gute-besserung", "jahrestag", "geburt", "hochzeit", "einfach-so", "trauer"]},

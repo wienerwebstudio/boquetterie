@@ -18,6 +18,7 @@ export interface ProductSize {
   description?: string; // "ca. 15 Stiele"
   popular?: boolean;
   image?: string; // optional size-specific image path
+  detailImage?: string; // optional close-up of that same size photo (shown second in the gallery)
   stock?: number; // undefined = unlimited
 }
 

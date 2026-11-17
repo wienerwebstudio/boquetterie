@@ -35,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: "de_AT",
       siteName: settings.brand.name,
-      images: [{ url: "/images/hero/hero-wide.jpg", width: 1600, height: 900 }],
+      images: [{ url: "/images/hero/hero-blumen-og.jpg", width: 1600, height: 900 }],
     },
     twitter: { card: "summary_large_image" },
     robots: { index: true, follow: true },

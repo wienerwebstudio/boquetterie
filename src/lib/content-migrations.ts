@@ -158,7 +158,32 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-rose-size-photos",
     transform: { products: (doc) => mapList(doc, (p) => (ROSE_SIZE_PHOTOS[String(p.id)] ? withSizeImages(p, ROSE_SIZE_PHOTOS[String(p.id)]) : p)) },
   },
+  {
+    // A close-up per size photo, so swiping through the gallery stays within the chosen size.
+    id: "2026-11-17-rose-size-closeups",
+    transform: { products: (doc) => mapList(doc, (p) => (ROSE_BOUQUET_IDS.includes(String(p.id)) ? withSizeCloseUps(p) : p)) },
+  },
+  {
+    // Feedback: "mehr Blumen" on the start page – a fuller florist scene instead of one vase in an empty room.
+    // The old loop showed the old bouquet, so it goes with it. Only if the admin has not chosen another image.
+    id: "2026-11-17-hero-more-flowers",
+    transform: {
+      homepage: (doc) => {
+        const hero = doc && typeof doc === "object" ? ((doc as Obj).hero as Obj | undefined) : undefined;
+        if (!hero || hero.imageWide !== "/images/hero/hero-wide.jpg") return doc;
+        const { video: _video, ...rest } = hero;
+        void _video;
+        return { ...(doc as Obj), hero: { ...rest, ...HERO_MORE_FLOWERS } };
+      },
+    },
+  },
 ];
+
+const HERO_MORE_FLOWERS = {
+  imageWide: "/images/hero/hero-blumen-wide.jpg",
+  imagePortrait: "/images/hero/hero-blumen-portrait.jpg",
+  imageAlt: "Üppige Sträuße auf einer Eichenkommode in einem hellen Wiener Altbau: rosa und apricotfarbene Rosen mit Ranunkeln, rote Rosen in Seidenpapier, Tulpen und weiße Hortensien",
+};
 
 const ROSE_SIZE_PHOTOS: Record<string, Record<string, string>> = {
   "p-blackroses": { s: "/images/products/sortiment/blackroses-size-s.jpg", m: "/images/products/sortiment/blackroses-size-m.jpg", l: "/images/products/sortiment/blackroses-1.jpg", xl: "/images/products/sortiment/blackroses-size-xl.jpg", xxl: "/images/products/sortiment/blackroses-size-xxl.jpg", xxxl: "/images/products/sortiment/blackroses-size-xxxl.jpg" },
@@ -224,6 +249,20 @@ function withSizeImages(product: Obj, images: Record<string, string>): Obj {
     if (!image || s.image) return s;
     changed = true;
     return { ...s, image };
+  });
+  return changed ? { ...product, sizes } : product;
+}
+
+/** Our own size photos (not admin uploads) have a cropped close-up next to them: `<name>-nah.jpg`. */
+const OWN_SIZE_PHOTO = /^\/images\/products\/sortiment\/[a-z0-9-]+\.jpg$/;
+
+function withSizeCloseUps(product: Obj): Obj {
+  if (!Array.isArray(product.sizes)) return product;
+  let changed = false;
+  const sizes = (product.sizes as Obj[]).map((s) => {
+    if (s.detailImage || typeof s.image !== "string" || !OWN_SIZE_PHOTO.test(s.image)) return s;
+    changed = true;
+    return { ...s, detailImage: s.image.replace(/\.jpg$/, "-nah.jpg") };
   });
   return changed ? { ...product, sizes } : product;
 }

@@ -48,6 +48,20 @@ describe("rose bouquets XXL / XXXL", () => {
     expect(keepAdminPhoto[0].sizes.map((s) => s.image)).toEqual(["/x.jpg", "/images/products/sortiment/red-rose-bouquet-size-m.jpg"]);
   });
 
+  it("every rose size photo has a close-up next to it; admin uploads are left alone", () => {
+    const products = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/products.json"), "utf8")) as Product[];
+    for (const p of products.filter((x) => ROSE_BOUQUET_IDS.includes(x.id))) for (const s of p.sizes) {
+      expect(s.detailImage, `${p.id}/${s.id}`).toBe(s.image!.replace(/\.jpg$/, "-nah.jpg"));
+      expect(fs.existsSync(path.join(process.cwd(), "public", s.detailImage!)), s.detailImage).toBe(true);
+    }
+    const out = migrateDocument(CONTENT_MIGRATIONS.find((m) => m.id === "2026-11-17-rose-size-closeups")!, "products", [
+      { id: "p-red-passion", sizes: [{ id: "s", image: "/images/products/sortiment/red-passion-size-s.jpg" }, { id: "m", image: "/uploads/eigenes.jpg" }, { id: "l" }] },
+      { id: "p-love-deluxe", sizes: [{ id: "s", image: "/images/products/sortiment/love-deluxe-1.jpg" }] },
+    ]) as Product[];
+    expect(out[0].sizes.map((s) => s.detailImage)).toEqual(["/images/products/sortiment/red-passion-size-s-nah.jpg", undefined, undefined]);
+    expect(out[1].sizes[0].detailImage).toBeUndefined();
+  });
+
   it("accepts XXXL in an order", () => {
     const item = { productId: "p-red-passion", sizeId: "xxxl", quantity: 1, extras: [] };
     const res = parseOrderPayload({ items: [item] }, { greetingMaxChars: 200 });

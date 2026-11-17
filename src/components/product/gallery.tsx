@@ -9,30 +9,37 @@ const KIND_LABEL: Record<ProductImage["kind"], string> = {
   front: "Vorderansicht", detail: "Detail", size: "Größenvergleich", packaging: "Verpackung", lifestyle: "Ambiente",
 };
 
+/** Photos of the chosen option. `only`: the gallery shows nothing else (a size), otherwise they come first (a colour). */
+export interface GalleryFocus { images: ProductImage[]; labels: string[]; only: boolean }
+
 /**
  * Product gallery. Desktop: thumbnail rail + large 4:5 image. Mobile: snap-scroll carousel with dots.
- * If the selected size carries its own image, it comes first and is shown – the photo of
- * the size the customer is buying (never a bigger bouquet) is what they see first.
+ * With a size photo the gallery shows only that size (photo + close-up): swiping never jumps to a
+ * bigger bouquet than the one the customer is buying.
  */
-export function ProductGallery({ images, name, sizeImage, sizeLabel, className }: {
-  images: ProductImage[]; name: string; sizeImage?: string; sizeLabel?: string; className?: string;
+export function ProductGallery({ images, name, focus, className }: {
+  images: ProductImage[]; name: string; focus?: GalleryFocus | null; className?: string;
 }) {
   const all = useMemo<ProductImage[]>(() => {
-    if (!sizeImage) return images;
-    const own = images.find((i) => i.src === sizeImage) ?? { src: sizeImage, alt: `${name} – ${sizeLabel ?? ""}`.trim(), kind: "size" as const };
-    return [own, ...images.filter((i) => i.src !== sizeImage)];
-  }, [images, sizeImage, sizeLabel, name]);
+    if (!focus?.images.length) return images;
+    const own = focus.images.filter((img, i, list) => list.findIndex((o) => o.src === img.src) === i);
+    return focus.only ? own : [...own, ...images.filter((i) => !own.some((o) => o.src === i.src))];
+  }, [images, focus]);
 
-  const labelOf = (img: ProductImage) => (sizeImage && img.src === sizeImage && sizeLabel ? sizeLabel : KIND_LABEL[img.kind]);
+  const labelOf = (img: ProductImage) => {
+    const i = focus?.images.findIndex((o) => o.src === img.src) ?? -1;
+    return i >= 0 && focus?.labels[i] ? focus.labels[i] : KIND_LABEL[img.kind];
+  };
+  const focusKey = focus?.images.map((i) => i.src).join("|") ?? "";
   const [index, setIndex] = useState(0);
   const scroller = useRef<HTMLDivElement>(null);
   const programmatic = useRef(false);
   const current = all[Math.min(index, all.length - 1)];
 
-  // Switch to the size image when the size changes (state adjusted during render, no extra effect).
-  const [seenSizeImage, setSeenSizeImage] = useState(sizeImage);
-  if (sizeImage !== seenSizeImage) {
-    setSeenSizeImage(sizeImage);
+  // Back to the first photo when the chosen size/colour changes (state adjusted during render, no extra effect).
+  const [seenFocus, setSeenFocus] = useState(focusKey);
+  if (focusKey !== seenFocus) {
+    setSeenFocus(focusKey);
     setIndex(0);
   }
 
@@ -71,6 +78,7 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
       {/* Mobile carousel */}
       <div className="min-w-0 lg:hidden">
         <div
+          key={focusKey}
           ref={scroller}
           onScroll={onScroll}
           role="region"

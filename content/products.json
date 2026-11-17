@@ -390,7 +390,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/farbensinfonie-size-s.jpg"
+        "image": "/images/products/sortiment/farbensinfonie-size-s.jpg",
+        "detailImage": "/images/products/sortiment/farbensinfonie-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -398,35 +399,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/farbensinfonie-size-m.jpg"
+        "image": "/images/products/sortiment/farbensinfonie-size-m.jpg",
+        "detailImage": "/images/products/sortiment/farbensinfonie-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/farbensinfonie-1.jpg"
+        "image": "/images/products/sortiment/farbensinfonie-1.jpg",
+        "detailImage": "/images/products/sortiment/farbensinfonie-1-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/farbensinfonie-size-xl.jpg"
+        "image": "/images/products/sortiment/farbensinfonie-size-xl.jpg",
+        "detailImage": "/images/products/sortiment/farbensinfonie-size-xl-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/farbensinfonie-size-xxl.jpg"
+        "image": "/images/products/sortiment/farbensinfonie-size-xxl.jpg",
+        "detailImage": "/images/products/sortiment/farbensinfonie-size-xxl-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/farbensinfonie-size-xxxl.jpg"
+        "image": "/images/products/sortiment/farbensinfonie-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/farbensinfonie-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -669,7 +675,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/orange-bouquet-size-s.jpg"
+        "image": "/images/products/sortiment/orange-bouquet-size-s.jpg",
+        "detailImage": "/images/products/sortiment/orange-bouquet-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -677,35 +684,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/orange-bouquet-size-m.jpg"
+        "image": "/images/products/sortiment/orange-bouquet-size-m.jpg",
+        "detailImage": "/images/products/sortiment/orange-bouquet-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/orange-bouquet-size-l.jpg"
+        "image": "/images/products/sortiment/orange-bouquet-size-l.jpg",
+        "detailImage": "/images/products/sortiment/orange-bouquet-size-l-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/orange-bouquet-1.jpg"
+        "image": "/images/products/sortiment/orange-bouquet-1.jpg",
+        "detailImage": "/images/products/sortiment/orange-bouquet-1-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/orange-bouquet-size-xxl.jpg"
+        "image": "/images/products/sortiment/orange-bouquet-size-xxl.jpg",
+        "detailImage": "/images/products/sortiment/orange-bouquet-size-xxl-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/orange-bouquet-size-xxxl.jpg"
+        "image": "/images/products/sortiment/orange-bouquet-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/orange-bouquet-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -777,7 +789,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/red-rose-bouquet-size-s.jpg"
+        "image": "/images/products/sortiment/red-rose-bouquet-size-s.jpg",
+        "detailImage": "/images/products/sortiment/red-rose-bouquet-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -785,35 +798,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/red-rose-bouquet-size-m.jpg"
+        "image": "/images/products/sortiment/red-rose-bouquet-size-m.jpg",
+        "detailImage": "/images/products/sortiment/red-rose-bouquet-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/red-rose-bouquet-size-l.jpg"
+        "image": "/images/products/sortiment/red-rose-bouquet-size-l.jpg",
+        "detailImage": "/images/products/sortiment/red-rose-bouquet-size-l-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/red-rose-bouquet-size-xl.jpg"
+        "image": "/images/products/sortiment/red-rose-bouquet-size-xl.jpg",
+        "detailImage": "/images/products/sortiment/red-rose-bouquet-size-xl-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/red-rose-bouquet-2.jpg"
+        "image": "/images/products/sortiment/red-rose-bouquet-2.jpg",
+        "detailImage": "/images/products/sortiment/red-rose-bouquet-2-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/red-rose-bouquet-size-xxxl.jpg"
+        "image": "/images/products/sortiment/red-rose-bouquet-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/red-rose-bouquet-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -966,7 +984,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/blackroses-size-s.jpg"
+        "image": "/images/products/sortiment/blackroses-size-s.jpg",
+        "detailImage": "/images/products/sortiment/blackroses-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -974,35 +993,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/blackroses-size-m.jpg"
+        "image": "/images/products/sortiment/blackroses-size-m.jpg",
+        "detailImage": "/images/products/sortiment/blackroses-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/blackroses-1.jpg"
+        "image": "/images/products/sortiment/blackroses-1.jpg",
+        "detailImage": "/images/products/sortiment/blackroses-1-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/blackroses-size-xl.jpg"
+        "image": "/images/products/sortiment/blackroses-size-xl.jpg",
+        "detailImage": "/images/products/sortiment/blackroses-size-xl-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/blackroses-size-xxl.jpg"
+        "image": "/images/products/sortiment/blackroses-size-xxl.jpg",
+        "detailImage": "/images/products/sortiment/blackroses-size-xxl-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/blackroses-size-xxxl.jpg"
+        "image": "/images/products/sortiment/blackroses-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/blackroses-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -1081,7 +1105,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/blaueliebe-size-s.jpg"
+        "image": "/images/products/sortiment/blaueliebe-size-s.jpg",
+        "detailImage": "/images/products/sortiment/blaueliebe-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -1089,35 +1114,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/blaueliebe-size-s.jpg"
+        "image": "/images/products/sortiment/blaueliebe-size-s.jpg",
+        "detailImage": "/images/products/sortiment/blaueliebe-size-s-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/blaueliebe-1.jpg"
+        "image": "/images/products/sortiment/blaueliebe-1.jpg",
+        "detailImage": "/images/products/sortiment/blaueliebe-1-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/blaueliebe-size-xl.jpg"
+        "image": "/images/products/sortiment/blaueliebe-size-xl.jpg",
+        "detailImage": "/images/products/sortiment/blaueliebe-size-xl-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/blaueliebe-size-xxl.jpg"
+        "image": "/images/products/sortiment/blaueliebe-size-xxl.jpg",
+        "detailImage": "/images/products/sortiment/blaueliebe-size-xxl-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/blaueliebe-size-xxxl.jpg"
+        "image": "/images/products/sortiment/blaueliebe-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/blaueliebe-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -1202,7 +1232,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/rosalie-size-s.jpg"
+        "image": "/images/products/sortiment/rosalie-size-s.jpg",
+        "detailImage": "/images/products/sortiment/rosalie-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -1210,35 +1241,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/rosalie-1.jpg"
+        "image": "/images/products/sortiment/rosalie-1.jpg",
+        "detailImage": "/images/products/sortiment/rosalie-1-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/rosalie-size-l.jpg"
+        "image": "/images/products/sortiment/rosalie-size-l.jpg",
+        "detailImage": "/images/products/sortiment/rosalie-size-l-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/rosalie-size-xl.jpg"
+        "image": "/images/products/sortiment/rosalie-size-xl.jpg",
+        "detailImage": "/images/products/sortiment/rosalie-size-xl-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/rosalie-size-xxl.jpg"
+        "image": "/images/products/sortiment/rosalie-size-xxl.jpg",
+        "detailImage": "/images/products/sortiment/rosalie-size-xxl-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/rosalie-size-xxxl.jpg"
+        "image": "/images/products/sortiment/rosalie-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/rosalie-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -1324,7 +1360,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/rot-und-weiss-mix-size-s.jpg"
+        "image": "/images/products/sortiment/rot-und-weiss-mix-size-s.jpg",
+        "detailImage": "/images/products/sortiment/rot-und-weiss-mix-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -1332,35 +1369,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/rot-und-weiss-mix-size-m.jpg"
+        "image": "/images/products/sortiment/rot-und-weiss-mix-size-m.jpg",
+        "detailImage": "/images/products/sortiment/rot-und-weiss-mix-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/rot-und-weiss-mix-size-m.jpg"
+        "image": "/images/products/sortiment/rot-und-weiss-mix-size-m.jpg",
+        "detailImage": "/images/products/sortiment/rot-und-weiss-mix-size-m-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/rot-und-weiss-mix-1.jpg"
+        "image": "/images/products/sortiment/rot-und-weiss-mix-1.jpg",
+        "detailImage": "/images/products/sortiment/rot-und-weiss-mix-1-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/rot-und-weiss-mix-4.jpg"
+        "image": "/images/products/sortiment/rot-und-weiss-mix-4.jpg",
+        "detailImage": "/images/products/sortiment/rot-und-weiss-mix-4-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/rot-und-weiss-mix-size-xxxl.jpg"
+        "image": "/images/products/sortiment/rot-und-weiss-mix-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/rot-und-weiss-mix-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -1576,7 +1618,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/red-passion-size-s.jpg"
+        "image": "/images/products/sortiment/red-passion-size-s.jpg",
+        "detailImage": "/images/products/sortiment/red-passion-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -1584,35 +1627,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/red-passion-size-m.jpg"
+        "image": "/images/products/sortiment/red-passion-size-m.jpg",
+        "detailImage": "/images/products/sortiment/red-passion-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/red-passion-size-l.jpg"
+        "image": "/images/products/sortiment/red-passion-size-l.jpg",
+        "detailImage": "/images/products/sortiment/red-passion-size-l-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/red-passion-1.jpg"
+        "image": "/images/products/sortiment/red-passion-1.jpg",
+        "detailImage": "/images/products/sortiment/red-passion-1-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/red-passion-size-xxl.jpg"
+        "image": "/images/products/sortiment/red-passion-size-xxl.jpg",
+        "detailImage": "/images/products/sortiment/red-passion-size-xxl-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/red-passion-3.jpg"
+        "image": "/images/products/sortiment/red-passion-3.jpg",
+        "detailImage": "/images/products/sortiment/red-passion-3-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -1684,7 +1732,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/klassiker-der-liebe-size-s.jpg"
+        "image": "/images/products/sortiment/klassiker-der-liebe-size-s.jpg",
+        "detailImage": "/images/products/sortiment/klassiker-der-liebe-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -1692,35 +1741,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/klassiker-der-liebe-size-m.jpg"
+        "image": "/images/products/sortiment/klassiker-der-liebe-size-m.jpg",
+        "detailImage": "/images/products/sortiment/klassiker-der-liebe-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/klassiker-der-liebe-size-l.jpg"
+        "image": "/images/products/sortiment/klassiker-der-liebe-size-l.jpg",
+        "detailImage": "/images/products/sortiment/klassiker-der-liebe-size-l-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/klassiker-der-liebe-size-xl.jpg"
+        "image": "/images/products/sortiment/klassiker-der-liebe-size-xl.jpg",
+        "detailImage": "/images/products/sortiment/klassiker-der-liebe-size-xl-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/klassiker-der-liebe-size-xxl.jpg"
+        "image": "/images/products/sortiment/klassiker-der-liebe-size-xxl.jpg",
+        "detailImage": "/images/products/sortiment/klassiker-der-liebe-size-xxl-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/klassiker-der-liebe-2.jpg"
+        "image": "/images/products/sortiment/klassiker-der-liebe-2.jpg",
+        "detailImage": "/images/products/sortiment/klassiker-der-liebe-2-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -1805,7 +1859,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/koenigin-der-herzen-size-s.jpg"
+        "image": "/images/products/sortiment/koenigin-der-herzen-size-s.jpg",
+        "detailImage": "/images/products/sortiment/koenigin-der-herzen-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -1813,35 +1868,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/koenigin-der-herzen-size-m.jpg"
+        "image": "/images/products/sortiment/koenigin-der-herzen-size-m.jpg",
+        "detailImage": "/images/products/sortiment/koenigin-der-herzen-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/koenigin-der-herzen-1.jpg"
+        "image": "/images/products/sortiment/koenigin-der-herzen-1.jpg",
+        "detailImage": "/images/products/sortiment/koenigin-der-herzen-1-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/koenigin-der-herzen-size-xl.jpg"
+        "image": "/images/products/sortiment/koenigin-der-herzen-size-xl.jpg",
+        "detailImage": "/images/products/sortiment/koenigin-der-herzen-size-xl-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/koenigin-der-herzen-size-xxl.jpg"
+        "image": "/images/products/sortiment/koenigin-der-herzen-size-xxl.jpg",
+        "detailImage": "/images/products/sortiment/koenigin-der-herzen-size-xxl-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/koenigin-der-herzen-size-xxxl.jpg"
+        "image": "/images/products/sortiment/koenigin-der-herzen-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/koenigin-der-herzen-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -2355,7 +2415,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/rosenkuss-size-s.jpg"
+        "image": "/images/products/sortiment/rosenkuss-size-s.jpg",
+        "detailImage": "/images/products/sortiment/rosenkuss-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -2363,35 +2424,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/rosenkuss-size-m.jpg"
+        "image": "/images/products/sortiment/rosenkuss-size-m.jpg",
+        "detailImage": "/images/products/sortiment/rosenkuss-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/rosenkuss-size-l.jpg"
+        "image": "/images/products/sortiment/rosenkuss-size-l.jpg",
+        "detailImage": "/images/products/sortiment/rosenkuss-size-l-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/rosenkuss-size-l.jpg"
+        "image": "/images/products/sortiment/rosenkuss-size-l.jpg",
+        "detailImage": "/images/products/sortiment/rosenkuss-size-l-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/rosenkuss-3.jpg"
+        "image": "/images/products/sortiment/rosenkuss-3.jpg",
+        "detailImage": "/images/products/sortiment/rosenkuss-3-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/rosenkuss-size-xxxl.jpg"
+        "image": "/images/products/sortiment/rosenkuss-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/rosenkuss-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
@@ -2471,7 +2537,8 @@
         "label": "Klein",
         "price": 48.9,
         "stems": 9,
-        "image": "/images/products/sortiment/rosenglanz-size-s.jpg"
+        "image": "/images/products/sortiment/rosenglanz-size-s.jpg",
+        "detailImage": "/images/products/sortiment/rosenglanz-size-s-nah.jpg"
       },
       {
         "id": "m",
@@ -2479,35 +2546,40 @@
         "price": 65.9,
         "popular": true,
         "stems": 15,
-        "image": "/images/products/sortiment/rosenglanz-size-m.jpg"
+        "image": "/images/products/sortiment/rosenglanz-size-m.jpg",
+        "detailImage": "/images/products/sortiment/rosenglanz-size-m-nah.jpg"
       },
       {
         "id": "l",
         "label": "Groß",
         "price": 93.9,
         "stems": 25,
-        "image": "/images/products/sortiment/rosenglanz-size-l.jpg"
+        "image": "/images/products/sortiment/rosenglanz-size-l.jpg",
+        "detailImage": "/images/products/sortiment/rosenglanz-size-l-nah.jpg"
       },
       {
         "id": "xl",
         "label": "XL",
         "price": 127.9,
         "stems": 41,
-        "image": "/images/products/sortiment/rosenglanz-size-xl.jpg"
+        "image": "/images/products/sortiment/rosenglanz-size-xl.jpg",
+        "detailImage": "/images/products/sortiment/rosenglanz-size-xl-nah.jpg"
       },
       {
         "id": "xxl",
         "label": "XXL",
         "price": 175.9,
         "stems": 61,
-        "image": "/images/products/sortiment/rosenglanz-1.jpg"
+        "image": "/images/products/sortiment/rosenglanz-1.jpg",
+        "detailImage": "/images/products/sortiment/rosenglanz-1-nah.jpg"
       },
       {
         "id": "xxxl",
         "label": "XXXL",
         "price": 250.9,
         "stems": 99,
-        "image": "/images/products/sortiment/rosenglanz-size-xxxl.jpg"
+        "image": "/images/products/sortiment/rosenglanz-size-xxxl.jpg",
+        "detailImage": "/images/products/sortiment/rosenglanz-size-xxxl-nah.jpg"
       }
     ],
     "basePrice": 48.9,
