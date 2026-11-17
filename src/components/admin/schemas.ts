@@ -416,6 +416,7 @@ export const deliveryZoneSchema: EntitySchema = {
         { key: "leadDays", label: "Vorlauf in Tagen", type: "number", required: true, min: 0, span: "third", hint: "1 = Bestellung heute, Lieferung morgen." },
         { key: "sameDay", label: "Lieferung am selben Tag möglich", type: "boolean", span: "third" },
         { key: "sameDayCutoff", label: "Same-Day-Bestellschluss", type: "time", required: true, span: "third" },
+        { key: "sameDayCutoffSunday", label: "Same-Day-Bestellschluss am Sonntag (leer = wie oben)", type: "time", span: "third" },
       ],
     },
     {

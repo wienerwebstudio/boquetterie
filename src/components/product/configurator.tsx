@@ -13,7 +13,7 @@ import { useDeliveryCheck, type DeliveryCheckResult } from "@/hooks/use-delivery
 import { useDeliveryContext } from "@/store/delivery";
 import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
-import { addDays, isValidAustrianPostalCode, normalizePostalCode } from "@/lib/delivery";
+import { addDays, isValidAustrianPostalCode, normalizePostalCode, sameDayCutoffOn } from "@/lib/delivery";
 import { lowestPrice } from "@/lib/catalog";
 import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
 import { cartItemFromConfig, defaultSize, findSize, FLORIST_NOTE_MAX, isSoldOut } from "@/lib/cart-helpers";
@@ -301,7 +301,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
             {/* "Datum wählen" toggles the calendar, so the arrow keys only move the focus; Space/Enter choose. */}
             <div role="radiogroup" aria-label="Lieferdatum" onKeyDown={(e) => onRadioGroupKeyDown(e, { select: false })} className={cn("grid gap-2", dateOptionCount === 3 ? "grid-cols-3" : dateOptionCount === 2 ? "grid-cols-2" : "grid-cols-1 sm:max-w-[240px]")}>
               {canToday && today && (
-                <QuickOption tabIndex={dateTabStop === "today" ? 0 : -1} checked={dateMode === "today"} onClick={() => chooseDate(today)} title="Heute" sub={`bis ${zone.sameDayCutoff} Uhr bestellen`} icon={<Clock className="size-3.5" aria-hidden />} />
+                <QuickOption tabIndex={dateTabStop === "today" ? 0 : -1} checked={dateMode === "today"} onClick={() => chooseDate(today)} title="Heute" sub={`bis ${sameDayCutoffOn(zone, today)} Uhr bestellen`} icon={<Clock className="size-3.5" aria-hidden />} />
               )}
               {canTomorrow && tomorrow && (
                 <QuickOption tabIndex={dateTabStop === "tomorrow" ? 0 : -1} checked={dateMode === "tomorrow"} onClick={() => chooseDate(tomorrow)} title="Morgen" sub={formatDateShort(tomorrow)} />

@@ -12,6 +12,7 @@
     "freeFrom": null,
     "minOrder": 0,
     "deliveryDays": [
+      0,
       1,
       2,
       3,
@@ -23,6 +24,7 @@
     "leadDays": 1,
     "sameDay": true,
     "sameDayCutoff": "18:30",
+    "sameDayCutoffSunday": "17:45",
     "windows": [
       {
         "id": "h09",
@@ -155,6 +157,7 @@
     "freeFrom": null,
     "minOrder": 0,
     "deliveryDays": [
+      0,
       1,
       2,
       3,
@@ -166,6 +169,7 @@
     "leadDays": 1,
     "sameDay": true,
     "sameDayCutoff": "18:30",
+    "sameDayCutoffSunday": "17:45",
     "windows": [
       {
         "id": "h09",
@@ -290,6 +294,7 @@
     "freeFrom": null,
     "minOrder": 0,
     "deliveryDays": [
+      0,
       1,
       2,
       3,
@@ -301,6 +306,7 @@
     "leadDays": 1,
     "sameDay": true,
     "sameDayCutoff": "18:30",
+    "sameDayCutoffSunday": "17:45",
     "windows": [
       {
         "id": "h09",

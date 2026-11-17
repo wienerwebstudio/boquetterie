@@ -3,7 +3,7 @@ import { ArrowRight, CalendarDays, Info, MapPin } from "lucide-react";
 import type { Occasion, Product } from "@/types";
 import { getAllProducts, getCategories, getDeliveryZones, getOccasions, getSettings } from "@/lib/cms";
 import { applyFilter, sortProducts } from "@/lib/catalog";
-import { findZone, getAvailableDays, getLocalNow } from "@/lib/delivery";
+import { findZone, getAvailableDays, getLocalNow, sameDayCutoffOn } from "@/lib/delivery";
 import { formatDateLong, formatDateShort, cn } from "@/lib/format";
 import { routes } from "@/lib/urls";
 import { countActiveFilters, roughlyDeliverableOn, shopHref, toProductFilter, type FilterKey, type FilterOptions, type ShopParams } from "@/lib/shop-filters";
@@ -50,7 +50,7 @@ export async function ProductResults({ params, pathname, fixed = {}, hide = [], 
       list = list.filter((p) => getAvailableDays({ zone, settings, now, product: p }).some((d) => d.date === datum));
       const dayOk = zoneDays.some((d) => d.date === datum);
       if (dayOk) {
-        info = { tone: "ok", icon: "calendar", text: `Lieferung nach ${params.plz} am ${formatDateLong(datum)} möglich.${datum === now.date ? ` Bestellung bis ${zone.sameDayCutoff} Uhr.` : ""}` };
+        info = { tone: "ok", icon: "calendar", text: `Lieferung nach ${params.plz} am ${formatDateLong(datum)} möglich.${datum === now.date ? ` Bestellung bis ${sameDayCutoffOn(zone, now.date)} Uhr.` : ""}` };
       } else {
         const next = zoneDays.find((d) => d.date > datum) ?? zoneDays[0];
         info = { tone: "warn", icon: "calendar", text: `Am ${formatDateShort(datum)} liefern wir nach ${params.plz} leider nicht.`, nextDate: next?.date };
@@ -58,7 +58,7 @@ export async function ProductResults({ params, pathname, fixed = {}, hide = [], 
     } else {
       const first = zoneDays[0];
       const tail = sameDayToday
-        ? `Heute lieferbar bei Bestellung bis ${zone.sameDayCutoff} Uhr.`
+        ? `Heute lieferbar bei Bestellung bis ${sameDayCutoffOn(zone, now.date)} Uhr.`
         : first ? `Nächste Lieferung ${formatDateShort(first.date)}.` : "";
       info = { tone: "ok", icon: "pin", text: `Lieferung nach ${params.plz} ${zone.region}. ${tail}`.trim() };
     }

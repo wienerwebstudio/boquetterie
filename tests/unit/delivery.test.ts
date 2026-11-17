@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  addDays, findZone, floristReadyTime, isSelfDeliveryDay, getAvailableDays, getLocalNow, isSameDayAvailable, isSameDayPossibleNow,
+  addDays, describeSameDayCutoff, sameDayCutoffOn, findZone, floristReadyTime, isSelfDeliveryDay, getAvailableDays, getLocalNow, isSameDayAvailable, isSameDayPossibleNow,
   isValidAustrianPostalCode, normalizePostalCode, quoteDelivery, toMinutes, weekdayOf, zoneContains,
 } from "@/lib/delivery";
 import type { DeliveryZone } from "@/types";
@@ -229,6 +229,29 @@ describe("live configuration: same-day until 18:30, no cut-off for later days", 
   it("from 18:30 the next delivery day is tomorrow – also late at night", () => {
     expect(getAvailableDays({ zone, settings: live, now: at(MON, "18:30") })[0]).toMatchObject({ date: addDays(MON, 1), sameDay: false });
     expect(getAvailableDays({ zone, settings: live, now: at(MON, "23:30") })[0].date).toBe(addDays(MON, 1));
+  });
+});
+
+describe("Sunday delivery: same-day until 17:45 on Sundays, 18:30 Mon–Sat", () => {
+  const zone: DeliveryZone = { ...wienZentrum, sameDay: true, sameDayCutoff: "18:30", sameDayCutoffSunday: "17:45", cutoff: "23:59", leadDays: 1, deliveryDays: [0, 1, 2, 3, 4, 5, 6] };
+  const live = { ...settings, sameDayEnabled: true };
+
+  it("Sunday is a delivery day and same-day closes at 17:45", () => {
+    expect(getAvailableDays({ zone, settings: live, now: at(SUN, "17:44") })[0]).toMatchObject({ date: SUN, sameDay: true });
+    expect(getAvailableDays({ zone, settings: live, now: at(SUN, "17:45") })[0]).toMatchObject({ date: addDays(SUN, 1), sameDay: false });
+  });
+
+  it("Saturday keeps 18:30, and Sunday is offered as the next day", () => {
+    expect(getAvailableDays({ zone, settings: live, now: at(SAT, "18:00") })[0]).toMatchObject({ date: SAT, sameDay: true });
+    expect(getAvailableDays({ zone, settings: live, now: at(SAT, "18:30") })[0]).toMatchObject({ date: SUN, sameDay: false });
+  });
+
+  it("cutoff helpers name the right time", () => {
+    expect(sameDayCutoffOn(zone, SUN)).toBe("17:45");
+    expect(sameDayCutoffOn(zone, MON)).toBe("18:30");
+    expect(sameDayCutoffOn({ sameDayCutoff: "18:30" }, SUN)).toBe("18:30");
+    expect(describeSameDayCutoff(zone)).toBe("Bestellung bis 18:30 Uhr, sonntags bis 17:45 Uhr");
+    expect(describeSameDayCutoff(zone, SUN)).toBe("Bestellung bis 17:45 Uhr");
   });
 });
 

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useDeliveryCheck } from "@/hooks/use-delivery-check";
 import { useDeliveryContext } from "@/store/delivery";
 import { formatDateShort, formatPrice, cn } from "@/lib/format";
-import { normalizePostalCode } from "@/lib/delivery";
+import { normalizePostalCode, sameDayCutoffOn } from "@/lib/delivery";
 import Link from "next/link";
 import { routes } from "@/lib/urls";
 
@@ -68,7 +68,7 @@ export function PostalCodeCheck({
             </p>
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-ink-muted">
               {result.sameDayToday && (
-                <span className="inline-flex items-center gap-1 font-semibold text-forest"><Clock className="size-3.5" /> Heute lieferbar (bis {result.zone.sameDayCutoff} Uhr bestellen)</span>
+                <span className="inline-flex items-center gap-1 font-semibold text-forest"><Clock className="size-3.5" /> Heute lieferbar (bis {result.now?.date ? sameDayCutoffOn(result.zone, result.now.date) : result.zone.sameDayCutoff} Uhr bestellen)</span>
               )}
               {!result.sameDayToday && firstDay && <span>Nächste Lieferung: <strong className="text-ink">{formatDateShort(firstDay.date)}</strong></span>}
               <span>Lieferung {result.zone.fee === 0 ? "gratis" : result.zone.freeFrom !== null ? `${formatPrice(result.zone.fee)} · gratis ab ${formatPrice(result.zone.freeFrom)}` : formatPrice(result.zone.fee)}</span>

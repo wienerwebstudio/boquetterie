@@ -207,6 +207,29 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
       }),
     },
   },
+  {
+    // Vienna now delivers on Sundays too; same-day order cutoff Mon–Sat 18:30, Sunday 17:45.
+    id: "2026-11-17-sunday-delivery",
+    replace: {
+      faqs: [
+        ["Ja – bestellst du bis 18:30 Uhr, liefern wir noch am selben Tag (Montag bis Samstag) in ganz Wien. Den frühesten Termin für deine Adresse siehst du, sobald du die Postleitzahl eingibst.", "Ja – bestellst du Montag bis Samstag bis 18:30 Uhr oder sonntags bis 17:45 Uhr, liefern wir noch am selben Tag in ganz Wien, solange ein Zeitfenster frei ist. Den frühesten Termin für deine Adresse siehst du, sobald du die Postleitzahl eingibst."],
+        ["Ja. Im Checkout wählst du eines von drei Zeitfenstern: 9–12 Uhr, 12–17 Uhr oder 17–22 Uhr.", "Ja. In Wien wählst du im Checkout ein einstündiges Zeitfenster zwischen 9 und 22 Uhr – an allen sieben Tagen der Woche."],
+      ],
+      pages: [
+        ["(3) Die regulären Liefertage sind Montag bis Samstag, soweit für die jeweilige Lieferadresse und das gewünschte Datum verfügbar.", "(3) Die regulären Liefertage sind Montag bis Sonntag, soweit für die jeweilige Lieferadresse und das gewünschte Datum verfügbar."],
+        ["(4) Abhängig von der Lieferadresse können im Bestellprozess folgende Lieferzeitfenster angeboten werden:\n• 09:00 bis 12:00 Uhr\n• 12:00 bis 17:00 Uhr\n• 17:00 bis 22:00 Uhr", "(4) Abhängig von der Lieferadresse werden im Bestellprozess Lieferzeitfenster angeboten, in Wien derzeit einstündige Zeitfenster zwischen 09:00 und 22:00 Uhr."],
+      ],
+    },
+    transform: {
+      "delivery-zones": (doc) =>
+        mapList(doc, (z) => {
+          if (typeof z.id !== "string" || !z.id.startsWith("wien-") || !Array.isArray(z.deliveryDays)) return z;
+          const days = z.deliveryDays as number[];
+          const next = days.includes(0) ? z : { ...z, deliveryDays: [0, ...days] };
+          return next.sameDayCutoffSunday ? next : { ...next, sameDayCutoffSunday: "17:45" };
+        }),
+    },
+  },
 ];
 
 const DROPPED_SECOND_PHOTOS = ["xl", "xxl", "xxxl"].map((id) => `/images/products/sortiment/red-passion-size-${id}-wien.jpg`);

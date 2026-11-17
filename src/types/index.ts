@@ -142,6 +142,8 @@ export interface DeliveryZone {
   leadDays: number;
   sameDay: boolean;
   sameDayCutoff: TimeHHMM;
+  /** Optional earlier same-day cutoff on Sundays (e.g. "17:45"); empty = sameDayCutoff. */
+  sameDayCutoffSunday?: TimeHHMM;
   windows: DeliveryWindow[];
   active: boolean;
   note?: string;

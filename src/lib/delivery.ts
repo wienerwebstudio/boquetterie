@@ -5,7 +5,7 @@
  * available day, fees, windows) derive from the admin-editable zone config and
  * settings; nothing here is hard-coded to a specific district.
  */
-import type { DeliveryZone, DeliveryWindow, ISODate, Product, SiteSettings } from "@/types";
+import type { DeliveryZone, DeliveryWindow, ISODate, Product, SiteSettings, TimeHHMM } from "@/types";
 
 export interface LocalNow {
   date: ISODate;
@@ -122,7 +122,7 @@ export function getAvailableDays(opts: AvailabilityOptions): DeliveryDay[] {
 
   const sameDayAllowed =
     settings.sameDayEnabled && zone.sameDay && (product?.sameDayCapable ?? true) &&
-    now.minutes < toMinutes(zone.sameDayCutoff) && isDeliveryDay(now.date);
+    now.minutes < toMinutes(sameDayCutoffOn(zone, now.date)) && isDeliveryDay(now.date);
 
   if (sameDayAllowed) {
     days.push({
@@ -162,8 +162,16 @@ export function quoteDelivery(zone: DeliveryZone, subtotal: number, windowId?: s
   };
 }
 
-export function describeSameDayCutoff(zone: DeliveryZone) {
-  return `Bestellung bis ${zone.sameDayCutoff} Uhr`;
+/** Same-day order cutoff for a given date – Sundays may close earlier (sameDayCutoffSunday). */
+export function sameDayCutoffOn(zone: Pick<DeliveryZone, "sameDayCutoff" | "sameDayCutoffSunday">, date: ISODate): TimeHHMM {
+  return weekdayOf(date) === 0 && zone.sameDayCutoffSunday ? zone.sameDayCutoffSunday : zone.sameDayCutoff;
+}
+
+export function describeSameDayCutoff(zone: DeliveryZone, date?: ISODate) {
+  if (date) return `Bestellung bis ${sameDayCutoffOn(zone, date)} Uhr`;
+  const sunday = zone.sameDayCutoffSunday && zone.sameDayCutoffSunday !== zone.sameDayCutoff && zone.deliveryDays.includes(0)
+    ? `, sonntags bis ${zone.sameDayCutoffSunday} Uhr` : "";
+  return `Bestellung bis ${zone.sameDayCutoff} Uhr${sunday}`;
 }
 
 /** Human readable summary of a zone for delivery pages and the PLZ check. */
@@ -176,6 +184,7 @@ export function describeZone(zone: DeliveryZone) {
     freeFrom: zone.freeFrom,
     sameDay: zone.sameDay,
     sameDayCutoff: zone.sameDayCutoff,
+    sameDayCutoffSunday: zone.sameDayCutoffSunday,
     cutoff: zone.cutoff,
   };
 }
