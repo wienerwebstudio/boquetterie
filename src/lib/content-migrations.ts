@@ -113,7 +113,34 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-rose-sizes-xxl-xxxl",
     transform: { products: (doc) => mapList(doc, (p) => (ROSE_BOUQUET_IDS.includes(String(p.id)) ? withRoseSizes(p) : p)) },
   },
+  {
+    // One photo per size – never more roses on the photo than the size delivers.
+    id: "2026-11-17-red-rose-size-photos",
+    transform: { products: (doc) => mapList(doc, (p) => (p.id === "p-red-rose-bouquet" ? withSizeImages(p, RED_ROSE_SIZE_IMAGES) : p)) },
+  },
 ];
+
+const RED_ROSE_SIZE_IMAGES: Record<string, string> = {
+  s: "/images/products/sortiment/red-rose-bouquet-size-s.jpg",
+  m: "/images/products/sortiment/red-rose-bouquet-size-m.jpg",
+  l: "/images/products/sortiment/red-rose-bouquet-size-l.jpg",
+  xl: "/images/products/sortiment/red-rose-bouquet-size-xl.jpg",
+  xxl: "/images/products/sortiment/red-rose-bouquet-2.jpg",
+  xxxl: "/images/products/sortiment/red-rose-bouquet-size-xxxl.jpg",
+};
+
+/** Sets the photo of each size that has none yet (a photo chosen in the admin stays). */
+function withSizeImages(product: Obj, images: Record<string, string>): Obj {
+  if (!Array.isArray(product.sizes)) return product;
+  let changed = false;
+  const sizes = (product.sizes as Obj[]).map((s) => {
+    const image = images[String(s.id)];
+    if (!image || s.image) return s;
+    changed = true;
+    return { ...s, image };
+  });
+  return changed ? { ...product, sizes } : product;
+}
 
 /** Products whose sizes are a fixed number of roses. */
 export const ROSE_BOUQUET_IDS = [

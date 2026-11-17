@@ -36,6 +36,18 @@ describe("rose bouquets XXL / XXXL", () => {
     expect(products.filter((p) => p.sizes.some((s) => s.id === "xxxl")).length).toBe(12);
   });
 
+  it("every size photo in the repository exists, and Red Rose Bouquet has one per size", () => {
+    const products = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/products.json"), "utf8")) as Product[];
+    for (const p of products) for (const s of p.sizes) {
+      if (s.image) expect(fs.existsSync(path.join(process.cwd(), "public", s.image)), `${p.id}/${s.id}: ${s.image}`).toBe(true);
+    }
+    const rrb = products.find((p) => p.id === "p-red-rose-bouquet")!;
+    expect(rrb.sizes.every((s) => Boolean(s.image))).toBe(true);
+    const keepAdminPhoto = migrateDocument(CONTENT_MIGRATIONS.find((m) => m.id === "2026-11-17-red-rose-size-photos")!, "products",
+      [{ id: "p-red-rose-bouquet", sizes: [{ id: "s", image: "/x.jpg" }, { id: "m" }] }]) as Product[];
+    expect(keepAdminPhoto[0].sizes.map((s) => s.image)).toEqual(["/x.jpg", "/images/products/sortiment/red-rose-bouquet-size-m.jpg"]);
+  });
+
   it("accepts XXXL in an order", () => {
     const item = { productId: "p-red-passion", sizeId: "xxxl", quantity: 1, extras: [] };
     const res = parseOrderPayload({ items: [item] }, { greetingMaxChars: 200 });

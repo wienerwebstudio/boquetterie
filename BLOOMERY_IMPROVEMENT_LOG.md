@@ -202,6 +202,7 @@ Anlass: Auf Netlify ist das Dateisystem zur Laufzeit schreibgeschützt und es is
 - Admin: „Mails erneut senden“ auf der Bestellseite (nur bezahlte Bestellungen; Alle, Partner, Kund:in oder Bestelleingang; an die echten Empfänger, mit Rückfrage, Eintrag im Verlauf). Fehlt einer älteren Bestellung das Budget, wird es dabei aus der Budgetliste ergänzt.
 - Optional „Selbst ausliefern“ an gewählten Wochentagen (Einstellungen → Zustellung): kein automatischer Fahrer, Hinweis in Admin, Partner- und interner Mail. Standard: nichts angekreuzt, also immer Fahrer.
 - Rosensträuße (12 Produkte mit fester Rosenzahl): neue Größen XXL (61 Rosen, 175,90 €) und XXXL (99 Rosen, 250,90 €) laut Preiskalkulation; Rosenzahl je Größe als „Stiele“ hinterlegt und in der Partner-Mail angezeigt („XXL · 61 Stiele“), weil Dodys eigene Größen anders zählen. Budgets 170,41 € / 247,96 € verschlüsselt; gespeicherte Budgets werden um neue Größen aus den Startwerten ergänzt. DB-Migration `2026-11-17-rose-sizes-xxl-xxxl`. Größenauswahl bei 5+ Größen auf dem Handy zweispaltig.
+- Regel der Inhaber: Auf dem Foto dürfen weniger Rosen sein als geliefert, nie mehr. Red Rose Bouquet hat jetzt ein Foto pro Größe (S 9, M 13, L 18, XL 32, XXL ~45–50 vorhandenes Foto, XXXL ~57 Rosen sichtbar; KI-Bilder mit Higgsfield, nachgezählt). Die Galerie zeigt zuerst das Foto der gewählten Größe („Größe Klein“), Bestellung und Partner-Mail verwenden es ebenfalls. DB-Migration `2026-11-17-red-rose-size-photos`.
 
 ## 5. Testergebnisse
 

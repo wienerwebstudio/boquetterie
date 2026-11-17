@@ -23,6 +23,7 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
     return [own, ...images.filter((i) => i.src !== sizeImage)];
   }, [images, sizeImage, sizeLabel, name]);
 
+  const labelOf = (img: ProductImage) => (sizeImage && img.src === sizeImage && sizeLabel ? `Größe ${sizeLabel}` : KIND_LABEL[img.kind]);
   const [index, setIndex] = useState(0);
   const scroller = useRef<HTMLDivElement>(null);
   const programmatic = useRef(false);
@@ -91,7 +92,7 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
               type="button"
               role="tab"
               aria-selected={i === index}
-              aria-label={`${KIND_LABEL[img.kind]} anzeigen`}
+              aria-label={`${labelOf(img)} anzeigen`}
               onClick={() => setIndex(i)}
               className="grid size-8 place-items-center"
             >
@@ -112,7 +113,7 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
               ref={(el) => { thumbRefs.current[i] = el; }}
               tabIndex={i === index ? 0 : -1}
               aria-selected={i === index}
-              aria-label={`${KIND_LABEL[img.kind]}: ${img.alt}`}
+              aria-label={`${labelOf(img)}: ${img.alt}`}
               onClick={() => setIndex(i)}
               onKeyDown={(e) => onThumbKey(e, i)}
               className={cn(
@@ -135,7 +136,7 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
             className="object-cover animate-fade-in"
           />
           <span className="pointer-events-none absolute left-4 top-4 rounded-sm bg-ivory/85 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted backdrop-blur">
-            {KIND_LABEL[current.kind]}
+            {labelOf(current)}
           </span>
           {all.length > 1 && (
             <>
