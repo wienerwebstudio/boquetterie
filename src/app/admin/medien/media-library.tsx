@@ -10,7 +10,7 @@ import { ACCEPT, deleteMedia, Dropzone, fetchMedia, formatBytes, Thumb, uploadIm
 
 type UploadState = { name: string; status: "uploading" | "done" | "error"; message?: string };
 
-export function MediaLibrary({ initialItems, driver }: { initialItems: MediaItem[]; driver: "local" | "s3" }) {
+export function MediaLibrary({ initialItems, driver }: { initialItems: MediaItem[]; driver: "local" | "s3" | "netlify" }) {
   const { toast } = useUi();
   const [items, setItems] = useState<MediaItem[]>(initialItems);
   const [queue, setQueue] = useState<UploadState[]>([]);
@@ -117,7 +117,7 @@ export function MediaLibrary({ initialItems, driver }: { initialItems: MediaItem
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-[13px] text-ink-muted">
-          {items.length} {items.length === 1 ? "Datei" : "Dateien"} · Speicher: {driver === "s3" ? "S3-kompatibler Bucket" : "lokal (public/uploads)"}
+          {items.length} {items.length === 1 ? "Datei" : "Dateien"} · Speicher: {driver === "s3" ? "S3-kompatibler Bucket" : driver === "netlify" ? "Netlify Blobs" : "lokal (public/uploads)"}
         </p>
         <button type="button" onClick={refresh} disabled={refreshing} className="inline-flex h-8 items-center gap-1.5 rounded-md border border-line bg-white px-3 text-[12.5px] font-semibold text-ink hover:border-forest disabled:opacity-50">
           <RefreshCw className={cn("size-3.5", refreshing && "animate-spin")} aria-hidden /> Aktualisieren

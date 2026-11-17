@@ -13,7 +13,8 @@ Zwei erprobte Wege: **A) Docker auf einem eigenen Server** (empfohlen: volle Kon
 | `DATABASE_URL` | Option B: ja · Option A: empfohlen | Postgres-URL; ohne sie JSON-Dateien (siehe `docs/DATABASE.md`) |
 | `DATABASE_SSL`, `DATABASE_POOL_MAX`, `DATABASE_PREPARE` | nein | Feineinstellungen, siehe `docs/DATABASE.md` |
 | `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION` | nein | Bestätigt die Domain in Google Search Console bzw. Bing Webmaster Tools per Meta-Tag (nur den `content`-Wert eintragen). Alternativ per DNS-Eintrag beim Domain-Anbieter |
-| `CRON_SECRET` | für Erinnerungen/Bewertungsanfragen | Schützt `/api/cron/*` (siehe `docs/MAIL.md`) |
+| `CRON_SECRET` | für Erinnerungen/Bewertungsanfragen | Schützt `/api/cron/*` (siehe `docs/MAIL.md`). **Auf Netlify Pflicht**, sonst gehen keine Bewertungsanfragen und Anlass-Erinnerungen automatisch raus – siehe Option C |
+| `UPLOADS_DRIVER` | nein | `local` oder `netlify` erzwingt den Upload-Speicher; leer = automatisch (S3 → Netlify Blobs auf Netlify → lokal), siehe `docs/UPLOADS.md` |
 | `RESEND_API_KEY`, `MAIL_FROM`, `MAIL_ADMIN`, `MAIL_REPLY_TO` | für E-Mail | siehe `docs/MAIL.md` |
 | `AUTH_SECRET` | für Kundenkonten | siehe `docs/ACCOUNTS.md` |
 | `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `PAYPAL_*` | für echte Zahlungen | siehe `docs/PAYMENTS.md` |
@@ -133,6 +134,21 @@ Auf Vercel ist das Dateisystem zur Laufzeit **schreibgeschützt**. Deshalb gilt:
 - Inhalte werden ausschließlich über `/admin` (→ Datenbank) gepflegt. `content/*.json` im Repo ist nur noch der Seed für neue Umgebungen; um Repo-Änderungen zu übernehmen: `npm run db:seed -- --force --only content`.
 - Backups über den Anbieter (Neon: Branches/PITR, Supabase: tägliche Backups) plus gelegentlich `pg_dump`.
 - Logs: Vercel → Functions. Beim Kaltstart erscheint `[blumora] datastore: postgres`.
+
+## Option C – Netlify (Live-Betrieb von blumora.at)
+
+Der Shop läuft auf Netlify (Projekt `boquetterie-preview`); jeder Push auf den Branch deployt live. Netlify erkennt Next.js selbst (OpenNext-Adapter, keine `netlify.toml` nötig). Wie bei Vercel ist das Dateisystem zur Laufzeit schreibgeschützt:
+
+- **Datenbank**: `DATABASE_URL` (Neon) ist Pflicht, siehe Option B.
+- **Bild-Uploads** (Admin-Bilder und Kundenfotos aus Bewertungen) landen automatisch in **Netlify Blobs** (Store `media`, ausgeliefert über `/media/…`), solange keine `S3_*`-Variablen gesetzt sind. Keine weitere Einrichtung nötig – Details in `docs/UPLOADS.md`.
+- **Zeitgesteuerte Aufgaben** (Bewertungsanfragen 1–30 Tage nach Zustellung, Anlass-Erinnerungen): zwei Scheduled Functions in `netlify/functions/` rufen täglich `/api/cron/review-requests` und `/api/cron/reminders` auf. Sie brauchen die Umgebungsvariable **`CRON_SECRET`**:
+
+  | Variable | Wo | Wert |
+  | --- | --- | --- |
+  | `CRON_SECRET` | Netlify → Project configuration → Environment variables, als Secret, Scope **Functions**, Kontext Production | Selbst erzeugter Zufallswert, z. B. `openssl rand -hex 32`. Den Wert legen die Inhaber selbst an – er steht nirgends im Repo. |
+
+  Danach neu deployen und unter Logs → Functions → `cron-review-requests` mit *Run now* testen (Ablauf und erwartete Log-Zeile in `docs/MAIL.md` → „Netlify“). Ohne `CRON_SECRET` loggen die Functions einen Hinweis und tun nichts; Bewertungsanfragen lassen sich dann nur von Hand im Admin senden.
+- Scheduled Functions laufen nur auf dem veröffentlichten Produktions-Deploy, nicht in Deploy-Previews.
 
 ## Öffentliche Vorschau ohne Bestellungen
 

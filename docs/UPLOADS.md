@@ -29,12 +29,29 @@ Alle Routen liegen unter `/api/admin/*` und sind durch den Proxy (`src/proxy.ts`
 
 ## Treiber
 
-Der Treiber wird beim Start automatisch gewählt: Sind alle vier `S3_*`-Pflichtvariablen gesetzt, wird S3 verwendet, sonst das lokale Dateisystem.
+Der Treiber wird automatisch gewählt (`getUploadDriver()` in `src/lib/uploads.ts`):
 
-### `local` (Standard)
+1. Sind alle vier `S3_*`-Pflichtvariablen gesetzt → **S3** (unverändert, auch auf Netlify).
+2. Sonst `UPLOADS_DRIVER=local` bzw. `UPLOADS_DRIVER=netlify`, falls gesetzt (zum Erzwingen, z. B. `netlify` unter `netlify dev`).
+3. Sonst, wenn die App auf Netlify läuft → **Netlify Blobs**. Erkannt am Blobs-Kontext, den Netlify Functions mitgibt (`NETLIFY_BLOBS_CONTEXT` bzw. `globalThis.netlifyBlobsContext`), oder an `BUILD_ON_NETLIFY=1`, das `next.config.ts` beim Build einbettet (`NETLIFY=true` gibt es nur während des Builds).
+4. Sonst → **lokales Dateisystem**.
+
+| Variable | Pflicht | Bedeutung |
+| --- | --- | --- |
+| `UPLOADS_DRIVER` | nein | `local` oder `netlify` erzwingt den Treiber (S3 wird nur über `S3_*` gewählt). Leer = automatisch. |
+
+### `netlify` (Netlify Blobs)
+
+- Speicherort: site-weiter Blob-Store **`media`** (Paket `@netlify/blobs`); Netlify stellt Zugangsdaten automatisch bereit – keine Variablen nötig. Ansicht im Netlify-UI unter *Data & Storage → Blobs*.
+- Schlüssel wie beim lokalen Treiber (`2026/11/rosen-1a2b3c4d.jpg`, Kundenfotos `reviews/2026/11/…`), Metadaten `{ contentType, bytes, uploadedAt }`.
+- Auslieferung über die Route **`/media/<schlüssel>`** (`src/app/media/[...key]/route.ts`) mit richtigem `Content-Type` und `Cache-Control: public, max-age=31536000, immutable` (die Namen enthalten einen Inhalts-Hash). `next/image` lädt diese Pfade wie jedes lokale Bild (auf Netlify über das Image CDN); die CSP schränkt `img-src` nicht ein. Die Route liest auf Netlify immer aus dem Blob-Store – `/media`-Adressen bleiben also gültig, auch wenn später S3 dazukommt.
+- Bestehende Adressen bleiben gültig: `/uploads/…` (lokal) und S3-URLs werden nicht umgeschrieben.
+- Der Store ist für alle Deploys gemeinsam (Produktion und Previews sehen dieselben Dateien).
+
+### `local` (Standard außerhalb von Netlify)
 
 - Speicherort: `public/uploads/<jahr>/<monat>/…`
-- Auslieferung: Next serviert `public/` statisch → `/uploads/…`
+- Auslieferung: Next serviert `public/` statisch → `/uploads/…`. Achtung: `next start` kennt nur Dateien, die beim Start in `public/` lagen – neue Admin-Uploads erscheinen dort erst nach einem Neustart. Kundenfotos laufen deshalb über `/media/reviews/…` (liest direkt aus `public/uploads/reviews/`).
 - `public/uploads/` ist in `.gitignore` (nur `.gitkeep` ist versioniert).
 
 Geeignet für einen einzelnen Node-Server oder Docker-Container mit persistentem Volume.
@@ -58,6 +75,17 @@ Der Bucket (bzw. das Prefix) muss öffentlich lesbar sein oder hinter einem CDN 
 
 Die vollständigen Objekt-Schlüssel lauten `<S3_PREFIX>/<jahr>/<monat>/<name>`; die Medienbibliothek listet nur Objekte, die diesem Muster entsprechen.
 
+## Kundenfotos aus Bewertungen
+
+`POST /api/reviews` (öffentlich, multipart) nimmt bis zu 3 Fotos pro Bewertung an – Ablauf und Einwilligung in `docs/MAIL.md` → „Fotos in Bewertungen“. Verarbeitung (`processReviewPhoto` / `storeReviewPhoto`):
+
+- Rate-Limit zuerst (5 / Stunde pro IP), dann Felder, Einwilligung und Bestell-Token – erst danach werden Bilder dekodiert.
+- Format an den Bytes erkannt: JPEG, PNG, WebP. HEIC (iPhone) kann das mitgelieferte `sharp` nicht lesen (die vorkompilierte libvips enthält nur den AVIF-Decoder der HEIF-Familie) → 415 mit Hinweis. iOS wandelt Fotos für das Formular (`accept="image/jpeg,image/png,image/webp"`) normalerweise selbst in JPEG um.
+- Max. 10 MB pro Foto (vor dem Dekodieren geprüft), Anfrage gesamt max. 30,5 MB. Der Browser verkleinert vorher auf 1600 px, damit drei Fotos unter Netlifys Grenze von ca. 6 MB pro Anfrage bleiben.
+- Automatisch gedreht (EXIF-Orientierung), alle Metadaten (EXIF, GPS) entfernt, max. 1600 px, JPEG Qualität 80 (Transparenz → weißer Hintergrund).
+- Schlüssel `reviews/<jahr>/<monat>/<produkt-slug>-<hash>.jpg`, URL `/media/reviews/…` (lokal und Netlify) bzw. die S3-URL. Die Bestellnummer steht nicht im Namen.
+- Kundenfotos erscheinen nicht in der Medienbibliothek. Verworfene Bewertungen und nicht freigegebene Fotos werden beim Übernehmen/Verwerfen gelöscht.
+
 ## Grenzen
 
 | | Wert |
@@ -69,6 +97,8 @@ Die vollständigen Objekt-Schlüssel lauten `<S3_PREFIX>/<jahr>/<monat>/<name>`;
 | Ausgabeformate | JPEG, PNG (nur bei Transparenz) |
 | Rate-Limit Upload | 60 / 10 min pro IP |
 | Rate-Limit Liste/Löschen | 120 / min pro IP |
+| Kundenfotos | max. 3 pro Bewertung, je 10 MB, 1600 px, JPEG q80 |
+| Rate-Limit `/media/…` | 600 / min pro IP |
 
 ## Docker / Persistenz
 

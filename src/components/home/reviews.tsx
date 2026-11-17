@@ -3,6 +3,8 @@ import type { HomepageContent, Review } from "@/types";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { StarRating } from "@/components/ui/star-rating";
 import { formatDateShort } from "@/lib/format";
+import { ReviewPhotos } from "@/components/reviews/review-photos";
+import { publicReviewPhotos } from "@/lib/review-submission";
 
 export function Reviews({ content, reviews }: { content: HomepageContent["reviews"]; reviews: Review[] }) {
   if (!reviews.length) return null;
@@ -18,6 +20,7 @@ export function Reviews({ content, reviews }: { content: HomepageContent["review
               <blockquote className="mt-4 flex-1">
                 <p className="font-serif text-[20px] leading-snug text-ink sm:text-[21px]">„{r.text}“</p>
               </blockquote>
+              <ReviewPhotos photos={publicReviewPhotos(r)} author={r.name} className="mt-4" />
               <figcaption className="mt-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-line pt-4">
                 <div>
                   <p className="text-[14px] font-semibold text-ink">{r.name}</p>

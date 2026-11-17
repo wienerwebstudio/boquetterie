@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { getOrderById, getSettings } from "@/lib/cms";
 import { formatDateLong, formatDateTime, formatPrice } from "@/lib/format";
 import { Banner, Card, PageHeader } from "@/components/admin/controls";
 import { StatusBadge } from "@/components/admin/status-badge";
-import { CourierForm, InternalNoteForm, OrderStatusForm, ResendMailsForm } from "@/components/admin/order-forms";
+import { CourierForm, InternalNoteForm, OrderStatusForm, ResendMailsForm, ReviewRequestForm } from "@/components/admin/order-forms";
+import { deliveredAt, getReviewRequestStatus, MAX_DAYS_AFTER_DELIVERY, MIN_DAYS_AFTER_DELIVERY } from "@/lib/mail/review-requests";
 import { courierEnabled } from "@/lib/courier";
 import { isSelfDeliveryDay } from "@/lib/delivery";
 import { RIDERX_STATUS_LABELS } from "@/lib/courier/riderx-core";
@@ -25,6 +27,9 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
   const { id } = await params;
   const [order, settings] = await Promise.all([getOrderById(decodeURIComponent(id)), getSettings()]);
   if (!order) notFound();
+  const review = await getReviewRequestStatus(order.id);
+  const deliveredOn = order.status === "delivered" ? deliveredAt(order) : null;
+  const cronActive = Boolean(process.env.CRON_SECRET);
 
   const r = order.recipient;
   const selfDelivery = isSelfDeliveryDay(settings, order.delivery.date);
@@ -130,7 +135,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
 
         <div className="space-y-5">
           <Card title="Status ändern">
-            <OrderStatusForm orderId={order.id} current={order.status} statuses={settings.orderStatuses} />
+            <OrderStatusForm orderId={order.id} current={order.status} statuses={settings.orderStatuses} canRequestReview={Boolean(order.customer.email) && !review.sentAt && !review.submittedAt} />
           </Card>
           {courierEnabled() && (
             <Card title="Kurier (RiderX)" description={selfDelivery ? "Selbst ausliefern – an diesem Tag wird kein Fahrer automatisch gebucht. Bei Bedarf hier von Hand buchen." : "Kostenlos stornierbar bis 30 Min. vor der Abholung."}>
@@ -152,6 +157,40 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               <ResendMailsForm orderId={order.id} customerEmail={order.customer.email} />
             </Card>
           )}
+          <Card title="Bewertungsanfrage" description={`Mail „Wie war der Strauß?“ mit Link zum Bewertungsformular. Automatisch einmalig ${MIN_DAYS_AFTER_DELIVERY}–${MAX_DAYS_AFTER_DELIVERY} Tage nach der Zustellung.`}>
+            <dl className="mb-4 text-[14px]">
+              <Row label="Zugestellt">{deliveredOn ? formatDateTime(deliveredOn) : <span className="text-burgundy">Noch nicht</span>}</Row>
+              <Row label="Gesendet">
+                {review.sentAt
+                  ? `${formatDateTime(review.sentAt)} (${review.sentBy === "admin" ? "manuell" : review.sentBy === "cron" ? "automatisch" : "gesendet"}${review.sendCount > 1 ? `, ${review.sendCount}×` : ""})`
+                  : "Noch nicht"}
+              </Row>
+              <Row label="Bewertet">
+                {review.submittedAt
+                  ? <>Ja, am {formatDateTime(review.submittedAt)}{review.pendingSubmissionId && <> · <Link href="/admin/bewertungen/eingereicht" className="text-forest underline-offset-4 hover:underline">wartet auf Freigabe</Link></>}</>
+                  : "Noch nicht"}
+              </Row>
+            </dl>
+            {!cronActive && (
+              <p className="mb-4 rounded-md border border-line bg-ivory-100 px-3 py-2 text-[13px] text-ink-muted">
+                Automatischer Versand ist nicht aktiv: <code>CRON_SECRET</code> fehlt in den Umgebungsvariablen (siehe docs/MAIL.md).
+              </p>
+            )}
+            {!order.customer.email ? (
+              <p className="text-[13px] text-ink-muted">Keine E-Mail-Adresse hinterlegt – keine Anfrage möglich.</p>
+            ) : order.status === "cancelled" ? (
+              <p className="text-[13px] text-ink-muted">Storniert – keine Anfrage.</p>
+            ) : review.submittedAt ? (
+              <p className="text-[13px] text-ink-muted">Bereits bewertet – keine weitere Anfrage nötig.</p>
+            ) : (
+              <>
+                {order.status !== "delivered" && (
+                  <Banner tone="warn" className="mb-3">Noch nicht als „Zugestellt“ markiert. Die Kund:in kann erst bewerten, sobald der Status „Zugestellt“ ist.</Banner>
+                )}
+                <ReviewRequestForm orderId={order.id} customerEmail={order.customer.email} delivered={order.status === "delivered"} lastSentLabel={review.sentAt ? formatDateTime(review.sentAt) : null} />
+              </>
+            )}
+          </Card>
           <Card title="Interne Notiz" description="Nur für das Team sichtbar.">
             <InternalNoteForm orderId={order.id} note={order.internalNote} />
           </Card>

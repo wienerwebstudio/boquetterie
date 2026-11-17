@@ -7,7 +7,9 @@ import { ORDER_MAIL_LABELS, sendOrderMails, sendOrderStatusUpdate, type OrderMai
 import { attachFloristBudgets, getFloristBudgets } from "@/lib/florist-budget";
 import { releaseStock } from "@/lib/orders";
 import { bookCourier, cancelCourier } from "@/lib/courier";
-import type { OrderStatus } from "@/types";
+import { sendManualReviewRequest } from "@/lib/mail/review-requests";
+import { formatDateTime } from "@/lib/format";
+import type { Order, OrderStatus } from "@/types";
 
 export type OrderActionState = { ok: boolean; message: string } | null;
 
@@ -66,9 +68,52 @@ export async function updateOrderStatus(_prev: OrderActionState, formData: FormD
         mailNote = " Die E-Mail an die Kund:in konnte nicht gesendet werden.";
       }
     }
-    return { ok: true, message: `Status auf „${def.label}“ gesetzt.${mailNote}${courierNote}` };
+    // Optional: send the review request right away (checkbox next to "Zugestellt").
+    let reviewNote = "";
+    if (status === "delivered" && formData.get("sendReviewRequest") === "on") {
+      const r = await sendReviewRequestAndLog(updated);
+      reviewNote = ` ${r.message}`;
+    }
+    return { ok: true, message: `Status auf „${def.label}“ gesetzt.${mailNote}${courierNote}${reviewNote}` };
   } catch (e) {
     return { ok: false, message: e instanceof Error ? e.message : "Fehler beim Speichern." };
+  }
+}
+
+/**
+ * Sends the review request mail for one order and notes it in the order history.
+ * The request is recorded in data/review-requests.json (sentAt), so the daily
+ * cron does not send it a second time.
+ */
+async function sendReviewRequestAndLog(order: Order): Promise<{ ok: boolean; message: string }> {
+  try {
+    const r = await sendManualReviewRequest(order);
+    if (!r.ok) return { ok: false, message: `Bewertungsanfrage nicht gesendet: ${r.message}` };
+    await updateOrder(order.id, (o) => ({
+      ...o,
+      history: [...o.history, { status: o.status, at: r.sentAt, note: r.result.sent ? `Bewertungsanfrage an ${o.customer.email} gesendet (manuell)` : "Bewertungsanfrage nur ins Server-Log geschrieben (kein Mail-Provider)" }],
+    }));
+    revalidateOrder(order.id);
+    const where = r.result.sent ? `an ${order.customer.email} gesendet` : "nur ins Server-Log geschrieben (kein Mail-Provider konfiguriert)";
+    const hint = r.notDelivered ? " Hinweis: Die Bestellung ist noch nicht „Zugestellt“ – der Link funktioniert erst nach der Zustellung." : "";
+    return { ok: r.result.sent, message: `Bewertungsanfrage ${where} (${formatDateTime(r.sentAt)}).${hint}` };
+  } catch (err) {
+    console.error("[mail] review request failed", order.id, err);
+    return { ok: false, message: "Bewertungsanfrage nicht gesendet: unerwarteter Fehler." };
+  }
+}
+
+/** "Bewertungsanfrage jetzt senden" on the order detail page. */
+export async function sendReviewRequestAction(_prev: OrderActionState, formData: FormData): Promise<OrderActionState> {
+  try {
+    await requireAdmin();
+    const id = String(formData.get("id") ?? "");
+    const { getOrderById } = await import("@/lib/cms");
+    const order = await getOrderById(id);
+    if (!order) return { ok: false, message: "Bestellung nicht gefunden." };
+    return await sendReviewRequestAndLog(order);
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Senden fehlgeschlagen." };
   }
 }
 

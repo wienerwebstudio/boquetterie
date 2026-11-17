@@ -32,10 +32,37 @@ export interface Reminder {
 /** One entry per order that already received a review request. */
 export interface ReviewRequestRecord {
   orderId: string;
-  /** When the review request mail was sent (empty when the customer reviewed without one). */
+  /** When the (latest) review request mail was sent (empty when the customer reviewed without one). */
   sentAt?: string; // ISO datetime
+  /** Who sent the latest request: the daily cron or an admin by hand. */
+  sentBy?: "cron" | "admin";
+  /** How many request mails went out for this order (manual resends count). */
+  sendCount?: number;
   /** Set once a review for this order was submitted – blocks a second submission. */
   submittedAt?: string;
+  /**
+   * Consent to publishing the review (first name) and the uploaded photos, as given
+   * in the review form. Kept here because the submission itself is removed once the
+   * admin accepts or discards it.
+   */
+  consent?: ReviewConsent;
+}
+
+export interface ReviewConsent {
+  /** ISO datetime the customer ticked the box (= time of the submission). */
+  at: string;
+  /** The exact wording the customer agreed to. */
+  text: string;
+}
+
+/** A customer photo attached to a pending submission (already re-encoded, EXIF-free). */
+export interface ReviewSubmissionPhoto {
+  /** Storage key, e.g. `reviews/2026/11/bq-7k2m9q-1a2b3c4d.jpg` – needed to delete it again. */
+  key: string;
+  /** URL the photo is served at (`/media/…` or the S3/CDN URL). */
+  url: string;
+  width: number;
+  height: number;
 }
 
 export interface ReviewSubmission {
@@ -46,5 +73,8 @@ export interface ReviewSubmission {
   name: string;
   rating: 1 | 2 | 3 | 4 | 5;
   text: string;
+  /** Up to three photos; only shown on the site if an admin accepts them. */
+  photos?: ReviewSubmissionPhoto[];
+  consent?: ReviewConsent;
   status: "pending";
 }

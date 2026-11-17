@@ -1,20 +1,21 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { OrderStatus, OrderStatusDefinition } from "@/types";
-import { bookCourierAction, cancelCourierAction, resendOrderMailsAction, saveInternalNote, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
+import { bookCourierAction, cancelCourierAction, resendOrderMailsAction, saveInternalNote, sendReviewRequestAction, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
 import { Banner, Field, inputCls } from "./controls";
 import { cn } from "@/lib/format";
 
-export function OrderStatusForm({ orderId, current, statuses }: { orderId: string; current: OrderStatus; statuses: OrderStatusDefinition[] }) {
+export function OrderStatusForm({ orderId, current, statuses, canRequestReview = false }: { orderId: string; current: OrderStatus; statuses: OrderStatusDefinition[]; canRequestReview?: boolean }) {
   const [state, action, pending] = useActionState<OrderActionState, FormData>(updateOrderStatus, null);
+  const [selected, setSelected] = useState<string>(current);
   return (
     <form action={action} className="space-y-4">
       <input type="hidden" name="id" value={orderId} />
       {state && <Banner tone={state.ok ? "success" : "error"}>{state.message}</Banner>}
       <Field label="Neuer Status" htmlFor="status">
-        <select id="status" name="status" defaultValue={current} className={cn(inputCls, "appearance-none")}>
+        <select id="status" name="status" defaultValue={current} onChange={(e) => setSelected(e.target.value)} className={cn(inputCls, "appearance-none")}>
           {statuses.map((s) => (
             <option key={s.key} value={s.key}>{s.label}{s.terminal ? " (Endstatus)" : ""}</option>
           ))}
@@ -23,6 +24,12 @@ export function OrderStatusForm({ orderId, current, statuses }: { orderId: strin
       <Field label="Notiz zum Statuswechsel" htmlFor="note" hint="Optional – wird im Verlauf gespeichert.">
         <textarea id="note" name="note" rows={2} className={cn(inputCls, "h-auto resize-y py-2")} placeholder="z. B. Zusteller: Max, Übergabe an Nachbarin" />
       </Field>
+      {canRequestReview && selected === "delivered" && (
+        <label className="flex items-start gap-2.5 text-[14px] text-ink">
+          <input type="checkbox" name="sendReviewRequest" className="mt-0.5 size-4 shrink-0 accent-forest" />
+          <span>Bewertungsanfrage gleich mitschicken<span className="block text-[12.5px] text-ink-muted">Sonst geht sie automatisch ab dem Tag nach der Zustellung raus.</span></span>
+        </label>
+      )}
       <Button type="submit" size="sm" loading={pending}>Status speichern</Button>
     </form>
   );
@@ -90,6 +97,27 @@ export function ResendMailsForm({ orderId, customerEmail }: { orderId: string; c
         </select>
       </Field>
       <Button type="submit" size="sm" variant="outline" loading={pending}>Mails erneut senden</Button>
+    </form>
+  );
+}
+
+/** "Bewertungsanfrage jetzt senden" – manual review request (with confirm dialog). */
+export function ReviewRequestForm({ orderId, customerEmail, delivered, lastSentLabel }: { orderId: string; customerEmail: string; delivered: boolean; lastSentLabel?: string | null }) {
+  const [state, action, pending] = useActionState<OrderActionState, FormData>(sendReviewRequestAction, null);
+  return (
+    <form
+      action={action}
+      className="space-y-3"
+      onSubmit={(e) => {
+        const lines = [`Bewertungsanfrage jetzt an ${customerEmail} senden?`];
+        if (lastSentLabel) lines.push(`Sie wurde bereits am ${lastSentLabel} gesendet.`);
+        if (!delivered) lines.push("Achtung: Die Bestellung ist noch nicht „Zugestellt“ – der Bewertungslink funktioniert erst nach der Zustellung.");
+        if (!confirm(lines.join("\n\n"))) e.preventDefault();
+      }}
+    >
+      <input type="hidden" name="id" value={orderId} />
+      {state && <Banner tone={state.ok ? "success" : "error"}>{state.message}</Banner>}
+      <Button type="submit" size="sm" variant="outline" loading={pending}>Bewertungsanfrage jetzt senden</Button>
     </form>
   );
 }

@@ -541,6 +541,19 @@ export const reviewSchema: EntitySchema = {
         { key: "id", label: "ID", type: "text", hint: "Leer lassen → wird automatisch vergeben.", placeholder: "wird automatisch vergeben" },
       ],
     },
+    {
+      title: "Kundenfotos",
+      description: "Fotos aus eingereichten Bewertungen (nur bei echten, verifizierten Bewertungen im Shop sichtbar). Entfernen nimmt das Foto aus dem Shop.",
+      fields: [
+        {
+          key: "photos", label: "Fotos", type: "list", itemLabel: "Foto", span: "full",
+          fields: [
+            { key: "src", label: "Bildpfad", type: "image", required: true },
+            { key: "alt", label: "Alternativtext", type: "text", required: true, placeholder: "Kundenfoto zu Red Passion" },
+          ],
+        },
+      ],
+    },
   ],
   columns: [
     { key: "name", label: "Name" },

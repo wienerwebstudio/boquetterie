@@ -53,6 +53,8 @@ IPv6-Adressen werden auf ihr /64-Präfix gekürzt (ein Anschluss verfügt über 
 | `GET /api/extras` | 120 | 1 min |
 | `POST /api/admin/upload` | 60 | 10 min |
 | `GET/DELETE /api/admin/uploads` | 120 | 1 min |
+| `POST /api/reviews` (Bewertung, bis 3 Fotos) | 5 | 60 min |
+| `GET /media/…` (Bilder aus Netlify Blobs / Kundenfotos) | 600 | 1 min |
 
 `POST /api/orders` (Bestellung anlegen) hat ein eigenes Limit in seiner Route.
 
@@ -67,7 +69,7 @@ Kontakt-, Newsletter- und Firmenkunden-Formular enthalten ein unsichtbares Feld 
 
 ## Uploads
 
-Siehe `docs/UPLOADS.md`. Kurz: nur für Admins, Format wird an den Bytes erkannt (nicht am MIME-Type), jede Datei wird durch `sharp` neu kodiert (kein SVG, kein eingebettetes Skript, keine EXIF/GPS-Daten), Dateinamen werden generiert, Löschen akzeptiert nur Schlüssel im festen Muster `jjjj/mm/name-hash.(jpg|png)` (kein Path-Traversal).
+Siehe `docs/UPLOADS.md`. Kurz: Admin-Uploads nur für Admins; Kundenfotos (`POST /api/reviews`) nur mit gültigem Bestell-Token einer zugestellten Bestellung und nie ohne Freigabe sichtbar. Format wird an den Bytes erkannt (nicht am MIME-Type), jede Datei wird durch `sharp` neu kodiert (kein SVG, kein eingebettetes Skript, keine EXIF/GPS-Daten), Dateinamen werden generiert, Löschen akzeptiert nur Schlüssel im festen Muster `jjjj/mm/name-hash.(jpg|png)` (kein Path-Traversal).
 
 ## Security-Header (`next.config.ts`)
 
