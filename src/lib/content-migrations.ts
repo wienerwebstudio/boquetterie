@@ -271,6 +271,11 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-rose-wien-photos",
     transform: { products: (doc) => mapList(doc, (p) => (ROSE_WIEN_PHOTOS[String(p.id)] ? withSecondPhotos(p, roseWienPhotos(String(p.id))) : p)) },
   },
+  {
+    // Second round of Vienna photos (more M/L sizes after counting); same rule, adds only missing ones.
+    id: "2026-11-17-rose-wien-photos-2",
+    transform: { products: (doc) => mapList(doc, (p) => (ROSE_WIEN_PHOTOS[String(p.id)] ? withSecondPhotos(p, roseWienPhotos(String(p.id))) : p)) },
+  },
 ];
 
 /** Appends the pages whose slug is not in the stored list yet; same list when nothing is missing. */
@@ -313,17 +318,17 @@ const RED_PASSION_WIEN: Record<string, { image: string; alt: string }> = Object.
  * photo shows a rose count within the size's range (never more than delivered, at most a few fewer).
  */
 export const ROSE_WIEN_PHOTOS: Record<string, { name: string; slug: string; sizes: ("s" | "m" | "l")[] }> = {
-  "p-blackroses": { name: "Blackroses", slug: "blackroses", sizes: ["s"] },
-  "p-blaueliebe": { name: "Blaue Liebe", slug: "blaueliebe", sizes: ["s"] },
-  "p-rot-und-weiss-mix": { name: "Rot & Weiß Mix", slug: "rot-und-weiss-mix", sizes: ["s", "l"] },
-  "p-orange-bouquet": { name: "Orange Bouquet", slug: "orange-bouquet", sizes: ["s"] },
+  "p-blackroses": { name: "Blackroses", slug: "blackroses", sizes: ["s", "m", "l"] },
+  "p-blaueliebe": { name: "Blaue Liebe", slug: "blaueliebe", sizes: ["s", "m", "l"] },
+  "p-rot-und-weiss-mix": { name: "Rot & Weiß Mix", slug: "rot-und-weiss-mix", sizes: ["s", "m", "l"] },
+  "p-orange-bouquet": { name: "Orange Bouquet", slug: "orange-bouquet", sizes: ["s", "m", "l"] },
   "p-farbensinfonie": { name: "Farbensinfonie", slug: "farbensinfonie", sizes: ["s", "m", "l"] },
   "p-rosalie": { name: "Rosalie", slug: "rosalie", sizes: ["s", "m", "l"] },
-  "p-red-rose-bouquet": { name: "Red Rose Bouquet", slug: "red-rose-bouquet", sizes: ["s"] },
-  "p-klassiker-der-liebe": { name: "Klassiker der Liebe", slug: "klassiker-der-liebe", sizes: ["s"] },
-  "p-koenigin-der-herzen": { name: "Königin der Herzen", slug: "koenigin-der-herzen", sizes: ["s", "m"] },
-  "p-rosenkuss": { name: "Rosenkuss", slug: "rosenkuss", sizes: ["s"] },
-  "p-rosenglanz": { name: "Rosenglanz", slug: "rosenglanz", sizes: ["s"] },
+  "p-red-rose-bouquet": { name: "Red Rose Bouquet", slug: "red-rose-bouquet", sizes: ["s", "m", "l"] },
+  "p-klassiker-der-liebe": { name: "Klassiker der Liebe", slug: "klassiker-der-liebe", sizes: ["s", "m", "l"] },
+  "p-koenigin-der-herzen": { name: "Königin der Herzen", slug: "koenigin-der-herzen", sizes: ["s", "m", "l"] },
+  "p-rosenkuss": { name: "Rosenkuss", slug: "rosenkuss", sizes: ["s", "l"] },
+  "p-rosenglanz": { name: "Rosenglanz", slug: "rosenglanz", sizes: ["s", "m", "l"] },
 };
 
 const SIZE_LABEL = { s: "Klein", m: "Mittel", l: "Groß" } as const;
