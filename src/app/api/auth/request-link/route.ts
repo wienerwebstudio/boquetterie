@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { getSettings } from "@/lib/cms";
 import { clientKey, rateLimit } from "@/lib/rate-limit";
 import { isAuthConfigured } from "@/lib/auth/session";
@@ -54,8 +54,12 @@ export async function POST(req: Request) {
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || settings.seo.siteUrl).replace(/\/$/, "");
   const token = await createLoginToken(email);
   const url = `${siteUrl}/auth/verify?token=${token}`;
-  // A failing mail provider must not leak into the response (it would reveal timing/state to a caller).
-  sendMagicLinkMail({ to: email, url, brandName: settings.brand.name, siteUrl }).catch((err) => console.error("[auth] magic link mail failed", err));
+  // Sent after the response (no timing leak), but the serverless function stays alive until the
+  // mail is out – a fire-and-forget promise is dropped when the function freezes.
+  const send = () => sendMagicLinkMail({ to: email, url, brandName: settings.brand.name, siteUrl })
+    .then((r) => { if (!r.sent) console.error("[auth] magic link mail not sent", r.error ?? r.provider); })
+    .catch((err) => console.error("[auth] magic link mail failed", err));
+  try { after(send); } catch { await send(); }
 
   return NextResponse.json({ ok: true, message: SENT_MESSAGE });
 }

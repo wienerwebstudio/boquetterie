@@ -118,7 +118,44 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-17-red-rose-size-photos",
     transform: { products: (doc) => mapList(doc, (p) => (p.id === "p-red-rose-bouquet" ? withSizeImages(p, RED_ROSE_SIZE_IMAGES) : p)) },
   },
+  {
+    // Klarna and EPS are active in Stripe, but were switched off in the shop settings.
+    id: "2026-11-17-klarna-eps-via-stripe",
+    transform: {
+      settings: (doc) => {
+        if (!doc || typeof doc !== "object" || !Array.isArray((doc as Obj).payments)) return doc;
+        const payments = mapList((doc as Obj).payments, (m) => (m.id === "klarna" || m.id === "eps" ? setFields(m, { enabled: true, provider: "stripe" }) : m));
+        return payments === (doc as Obj).payments ? doc : { ...(doc as Obj), payments };
+      },
+    },
+  },
+  {
+    // Tulips and Advent wreaths come in several colours – the customer has to pick one.
+    id: "2026-11-17-color-options",
+    transform: { products: (doc) => mapList(doc, (p) => (COLOR_OPTIONS[String(p.id)] && !p.colorOptions ? { ...p, colorOptions: COLOR_OPTIONS[String(p.id)] } : p)) },
+  },
 ];
+
+const COLOR_OPTIONS: Record<string, { id: string; label: string; image: string }[]> = {
+  "p-tulpenstrauss": [
+    { id: "rot", label: "Rot", image: "/images/products/sortiment/tulpenstrauss-3.jpg" },
+    { id: "gelb", label: "Gelb", image: "/images/products/sortiment/tulpenstrauss-1.jpg" },
+    { id: "lila", label: "Lila", image: "/images/products/sortiment/tulpenstrauss-2.jpg" },
+    { id: "rosa", label: "Rosa", image: "/images/products/sortiment/tulpenstrauss-5.jpg" },
+    { id: "orange", label: "Orange", image: "/images/products/sortiment/tulpenstrauss-4.jpg" },
+    { id: "weiss", label: "Weiß", image: "/images/products/sortiment/tulpenstrauss-7.jpg" },
+    { id: "mix", label: "Bunter Mix", image: "/images/products/sortiment/tulpenstrauss-6.jpg" },
+  ],
+  "p-adventskraenze": [
+    { id: "rot", label: "Rot", image: "/images/products/sortiment/adventskraenze-1.jpg" },
+    { id: "grau", label: "Grau", image: "/images/products/sortiment/adventskraenze-8.jpg" },
+    { id: "lila", label: "Lila", image: "/images/products/sortiment/adventskraenze-3.jpg" },
+    { id: "gold", label: "Gold", image: "/images/products/sortiment/adventskraenze-4.jpg" },
+    { id: "beige", label: "Beige", image: "/images/products/sortiment/adventskraenze-2.jpg" },
+    { id: "weinrot", label: "Weinrot", image: "/images/products/sortiment/adventskraenze-6.jpg" },
+    { id: "rosa", label: "Rosa", image: "/images/products/sortiment/adventskraenze-5.jpg" },
+  ],
+};
 
 const RED_ROSE_SIZE_IMAGES: Record<string, string> = {
   s: "/images/products/sortiment/red-rose-bouquet-size-s.jpg",

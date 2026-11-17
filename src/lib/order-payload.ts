@@ -13,6 +13,8 @@ export interface OrderPayloadItem {
   message?: string;
   anonymous?: boolean;
   senderName?: string;
+  colorId?: string;
+  floristNote?: string;
 }
 
 export interface OrderPayloadRecipient {

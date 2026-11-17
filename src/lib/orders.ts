@@ -108,8 +108,12 @@ export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: numb
     };
     const gErr = validateGreetingFields(greeting, opts.greetingMaxChars);
     if (Object.keys(gErr).length) return { ok: false, status: 400, message: "Bitte prüfe die Grußkarte.", errors: gErr };
+    const colorId = cleanString(it.colorId, 40);
+    const floristNote = typeof it.floristNote === "string" ? it.floristNote.replace(/\r\n/g, "\n").trim().slice(0, 300) || undefined : undefined;
     items.push({
       productId, sizeId, quantity, extras,
+      ...(colorId && { colorId }),
+      ...(floristNote && { floristNote }),
       message: greeting.message || undefined,
       anonymous: greeting.anonymous,
       senderName: greeting.anonymous ? undefined : greeting.senderName,
@@ -207,14 +211,20 @@ export function resolveLines(items: OrderPayloadItem[], products: Product[], ext
       if (!extra) return { ok: false, message: "Ein Extra in deinem Warenkorb ist nicht mehr verfügbar." };
       lineExtras.push({ extraId: extra.id, name: extra.name, quantity: ex.quantity, unitPrice: extra.price, ...(extra.image && { image: extra.image }) });
     }
-    // The photo of the chosen size if there is one – the florist binds "wie auf dem Foto".
-    const image = size.image || ((product.images.find((i) => i.kind === "front") ?? product.images[0])?.src ?? "");
+    // Products with colours need one chosen – the florist must know which.
+    const colors = product.colorOptions ?? [];
+    const color = colors.length ? colors.find((c) => c.id === it.colorId) : undefined;
+    if (colors.length && !color) return { ok: false, message: `Bitte wähle eine Farbe für „${product.name}".` };
+    // The photo of the chosen colour/size if there is one – the florist binds "wie auf dem Foto".
+    const image = color?.image || size.image || ((product.images.find((i) => i.kind === "front") ?? product.images[0])?.src ?? "");
     lines.push({
       product,
       line: {
         productId: product.id, productName: product.name, sizeId: size.id, sizeLabel: size.label, ...(size.stems ? { stems: size.stems } : {}),
         quantity: it.quantity, unitPrice: size.price, image, extras: lineExtras,
         message: it.message, anonymous: it.anonymous, senderName: it.senderName,
+        ...(color && { color: color.label }),
+        ...(it.floristNote && { floristNote: it.floristNote }),
       },
       cartItem: {
         id: `${product.id}-${size.id}`, productId: product.id, sizeId: size.id, quantity: it.quantity,

@@ -2,16 +2,17 @@
  * Cart helpers – build cart items from a product configuration.
  * Pure & isomorphic; the display snapshot is re-validated server-side on order creation.
  */
-import type { CartExtra, CartItem, Extra, ISODate, Product, ProductSize, SizeId } from "@/types";
+import type { CartExtra, CartItem, Extra, ISODate, Product, ProductColorOption, ProductSize, SizeId } from "@/types";
 import { primaryImage } from "@/lib/catalog";
 
-export function makeCartSnapshot(product: Product, size: ProductSize): CartItem["snapshot"] {
+export function makeCartSnapshot(product: Product, size: ProductSize, color?: ProductColorOption | null): CartItem["snapshot"] {
   return {
     slug: product.slug,
     name: product.name,
     tagline: product.tagline,
-    image: size.image ?? primaryImage(product).src,
+    image: color?.image || size.image || primaryImage(product).src,
     sizeLabel: size.label,
+    ...(color && { colorLabel: color.label }),
     unitPrice: size.price,
     sameDayCapable: product.sameDayCapable,
   };
@@ -39,12 +40,18 @@ export interface CartItemConfig {
   senderName?: string;
   /** Extras with their chosen quantity. Entries with quantity <= 0 are dropped. */
   extras?: { extra: Extra; quantity: number }[];
+  color?: ProductColorOption | null;
+  floristNote?: string;
 }
+
+/** Max length of the wish to the florist. */
+export const FLORIST_NOTE_MAX = 300;
 
 /** Builds the payload for `useCart().addItem`. Empty optional fields are omitted. */
 export function cartItemFromConfig(cfg: CartItemConfig): Omit<CartItem, "id"> {
   const message = cfg.message?.trim();
   const senderName = cfg.senderName?.trim();
+  const floristNote = cfg.floristNote?.trim().slice(0, FLORIST_NOTE_MAX);
   const extras = (cfg.extras ?? [])
     .filter((e) => e.quantity > 0)
     .map((e) => extraToCartExtra(e.extra, e.quantity));
@@ -58,8 +65,10 @@ export function cartItemFromConfig(cfg: CartItemConfig): Omit<CartItem, "id"> {
     ...(message && { message }),
     ...(message && { anonymous: Boolean(cfg.anonymous) }),
     ...(message && !cfg.anonymous && senderName && { senderName }),
+    ...(cfg.color && { colorId: cfg.color.id }),
+    ...(floristNote && { floristNote }),
     extras,
-    snapshot: makeCartSnapshot(cfg.product, cfg.size),
+    snapshot: makeCartSnapshot(cfg.product, cfg.size, cfg.color),
   };
 }
 

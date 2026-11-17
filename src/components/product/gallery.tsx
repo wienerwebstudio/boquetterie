@@ -19,11 +19,11 @@ export function ProductGallery({ images, name, sizeImage, sizeLabel, className }
 }) {
   const all = useMemo<ProductImage[]>(() => {
     if (!sizeImage) return images;
-    const own = images.find((i) => i.src === sizeImage) ?? { src: sizeImage, alt: `${name} – Größe ${sizeLabel ?? ""}`.trim(), kind: "size" as const };
+    const own = images.find((i) => i.src === sizeImage) ?? { src: sizeImage, alt: `${name} – ${sizeLabel ?? ""}`.trim(), kind: "size" as const };
     return [own, ...images.filter((i) => i.src !== sizeImage)];
   }, [images, sizeImage, sizeLabel, name]);
 
-  const labelOf = (img: ProductImage) => (sizeImage && img.src === sizeImage && sizeLabel ? `Größe ${sizeLabel}` : KIND_LABEL[img.kind]);
+  const labelOf = (img: ProductImage) => (sizeImage && img.src === sizeImage && sizeLabel ? sizeLabel : KIND_LABEL[img.kind]);
   const [index, setIndex] = useState(0);
   const scroller = useRef<HTMLDivElement>(null);
   const programmatic = useRef(false);

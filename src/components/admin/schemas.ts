@@ -205,6 +205,14 @@ export const productSchema: EntitySchema = {
             { key: "popular", label: "Empfohlene Größe (Badge „Empfohlen“)", type: "boolean", span: "full" },
           ],
         },
+        {
+          key: "colorOptions", label: "Farben zur Auswahl (Pflichtauswahl im Shop, leer = keine)", type: "list", itemLabel: "Farbe", span: "full",
+          fields: [
+            { key: "id", label: "ID", type: "text", required: true, span: "third", placeholder: "rot" },
+            { key: "label", label: "Bezeichnung", type: "text", required: true, span: "third", placeholder: "Rot" },
+            { key: "image", label: "Foto dieser Farbe (optional)", type: "image" },
+          ],
+        },
         { key: "basePrice", label: "Preis ab (€) – automatisch", type: "number", readonly: true, span: "third" },
       ],
     },

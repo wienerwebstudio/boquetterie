@@ -26,7 +26,8 @@ export function CartLine({ item, compact = true, className }: { item: CartItem; 
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
             <h3 className="font-serif text-[20px] leading-tight text-ink"><Link href={href} className="hover:text-forest">{snapshot.name}</Link></h3>
-            <p className="mt-0.5 text-[13px] text-ink-muted">{snapshot.sizeLabel} · {snapshot.tagline}</p>
+            <p className="mt-0.5 text-[13px] text-ink-muted">{snapshot.sizeLabel}{snapshot.colorLabel ? ` · Farbe ${snapshot.colorLabel}` : ""} · {snapshot.tagline}</p>
+            {item.floristNote && <p className="mt-1 line-clamp-2 text-[12.5px] text-ink-muted">Wunsch: {item.floristNote}</p>}
           </div>
           <p className="shrink-0 text-[15px] font-semibold tabular-nums text-ink">{formatPrice(snapshot.unitPrice * item.quantity)}</p>
         </div>

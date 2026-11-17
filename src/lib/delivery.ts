@@ -32,6 +32,9 @@ export function toMinutes(hhmm: string) {
   return h * 60 + (m || 0);
 }
 
+/** A same-day window must still have this long left: binding (~1 h) plus the ride. */
+export const SAME_DAY_MIN_MINUTES = 120;
+
 export function addDays(iso: ISODate, days: number): ISODate {
   const [y, m, d] = iso.split("-").map(Number);
   const dt = new Date(Date.UTC(y, m - 1, d + days, 12));
@@ -108,7 +111,7 @@ export function getAvailableDays(opts: AvailabilityOptions): DeliveryDay[] {
     days.push({
       date: now.date,
       sameDay: true,
-      windows: activeWindows.filter((w) => toMinutes(w.to) > now.minutes + 60),
+      windows: activeWindows.filter((w) => toMinutes(w.to) >= now.minutes + SAME_DAY_MIN_MINUTES),
     });
   }
 

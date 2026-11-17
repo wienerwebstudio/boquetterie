@@ -1438,7 +1438,44 @@
       "title": "Tulpenstrauß – Tulpen in vielen Farben",
       "description": "Ein Strauß aus Tulpen in Rot, Gelb, Lila, Rosa, Orange, Weiß oder gemischt. Frühlingsstimmung für zuhause – Blumenversand in Wien."
     },
-    "sortOrder": 18
+    "sortOrder": 18,
+    "colorOptions": [
+      {
+        "id": "rot",
+        "label": "Rot",
+        "image": "/images/products/sortiment/tulpenstrauss-3.jpg"
+      },
+      {
+        "id": "gelb",
+        "label": "Gelb",
+        "image": "/images/products/sortiment/tulpenstrauss-1.jpg"
+      },
+      {
+        "id": "lila",
+        "label": "Lila",
+        "image": "/images/products/sortiment/tulpenstrauss-2.jpg"
+      },
+      {
+        "id": "rosa",
+        "label": "Rosa",
+        "image": "/images/products/sortiment/tulpenstrauss-5.jpg"
+      },
+      {
+        "id": "orange",
+        "label": "Orange",
+        "image": "/images/products/sortiment/tulpenstrauss-4.jpg"
+      },
+      {
+        "id": "weiss",
+        "label": "Weiß",
+        "image": "/images/products/sortiment/tulpenstrauss-7.jpg"
+      },
+      {
+        "id": "mix",
+        "label": "Bunter Mix",
+        "image": "/images/products/sortiment/tulpenstrauss-6.jpg"
+      }
+    ]
   },
   {
     "id": "p-red-passion",
@@ -4623,6 +4660,43 @@
       "title": "Adventskranz – handgebunden mit Kerzen",
       "description": "Handgebundener Adventskranz aus Tannengrün mit vier Kerzen, in sieben Farben und vier Größen – Blumenversand in Wien."
     },
-    "sortOrder": 53
+    "sortOrder": 53,
+    "colorOptions": [
+      {
+        "id": "rot",
+        "label": "Rot",
+        "image": "/images/products/sortiment/adventskraenze-1.jpg"
+      },
+      {
+        "id": "grau",
+        "label": "Grau",
+        "image": "/images/products/sortiment/adventskraenze-8.jpg"
+      },
+      {
+        "id": "lila",
+        "label": "Lila",
+        "image": "/images/products/sortiment/adventskraenze-3.jpg"
+      },
+      {
+        "id": "gold",
+        "label": "Gold",
+        "image": "/images/products/sortiment/adventskraenze-4.jpg"
+      },
+      {
+        "id": "beige",
+        "label": "Beige",
+        "image": "/images/products/sortiment/adventskraenze-2.jpg"
+      },
+      {
+        "id": "weinrot",
+        "label": "Weinrot",
+        "image": "/images/products/sortiment/adventskraenze-6.jpg"
+      },
+      {
+        "id": "rosa",
+        "label": "Rosa",
+        "image": "/images/products/sortiment/adventskraenze-5.jpg"
+      }
+    ]
   }
 ]

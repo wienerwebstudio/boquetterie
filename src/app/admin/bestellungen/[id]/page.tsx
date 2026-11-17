@@ -54,7 +54,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                   </div>
                   <div className="min-w-0 flex-1 text-[14px]">
                     <div className="flex items-start justify-between gap-3">
-                      <p className="font-semibold">{line.quantity} × {line.productName} <span className="font-normal text-ink-muted">({line.sizeLabel})</span></p>
+                      <p className="font-semibold">{line.quantity} × {line.productName} <span className="font-normal text-ink-muted">({line.sizeLabel}{line.stems ? ` · ${line.stems} Stiele` : ""}{line.color ? ` · Farbe ${line.color}` : ""})</span></p>
                       <p className="whitespace-nowrap font-semibold">{formatPrice(line.unitPrice * line.quantity)}</p>
                     </div>
                     {line.extras.length > 0 && (
@@ -63,6 +63,9 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                           <li key={x.extraId}>+ {x.quantity} × {x.name} ({formatPrice(x.unitPrice * x.quantity)})</li>
                         ))}
                       </ul>
+                    )}
+                    {line.floristNote && (
+                      <p className="mt-2 rounded-md border-l-2 border-forest bg-ivory-100 px-3 py-2 text-[13px] text-ink"><span className="font-semibold">Wunsch an die Floristik:</span> {line.floristNote}</p>
                     )}
                     {line.message && (
                       <blockquote className="mt-2 rounded-md bg-ivory-100 px-3 py-2 text-[13px] italic text-ink">

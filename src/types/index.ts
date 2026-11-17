@@ -21,6 +21,12 @@ export interface ProductSize {
   stock?: number; // undefined = unlimited
 }
 
+export interface ProductColorOption {
+  id: string;
+  label: string; // "Rot", "Bunter Mix"
+  image?: string; // photo of this colour
+}
+
 export interface ProductImage {
   src: string;
   alt: string;
@@ -46,6 +52,8 @@ export interface Product {
   seasons: string[]; // "fruehling" | "sommer" | "herbst" | "winter" | "ganzjaehrig"
   tags: string[];
   sizes: ProductSize[];
+  /** Colours the customer must choose from (e.g. tulips, Advent wreaths). Missing/empty = no choice. */
+  colorOptions?: ProductColorOption[];
   basePrice: number; // = lowest size price (denormalised for sorting)
   /** Prices not fixed yet: the shop shows "Preis folgt" and refuses orders for it. */
   pricePending?: boolean;
@@ -353,6 +361,10 @@ export interface CartItem {
   message?: string;
   anonymous?: boolean;
   senderName?: string;
+  /** Chosen colour (ProductColorOption.id), required when the product offers colours. */
+  colorId?: string;
+  /** Wish to the florist ("eine Farbe tauschen …") – depends on availability. */
+  floristNote?: string;
   extras: CartExtra[];
   /** Display snapshot – prices are re-validated server-side when the order is created. */
   snapshot: {
@@ -361,6 +373,7 @@ export interface CartItem {
     tagline: string;
     image: string;
     sizeLabel: string;
+    colorLabel?: string;
     unitPrice: number;
     sameDayCapable: boolean;
   };
@@ -386,6 +399,10 @@ export interface OrderLine {
   sizeLabel: string;
   /** Number of stems of the chosen size (rose bouquets: roses), snapshot at order time. */
   stems?: number;
+  /** Chosen colour, e.g. "Rot". */
+  color?: string;
+  /** Customer's wish to the florist. */
+  floristNote?: string;
   quantity: number;
   unitPrice: number;
   image: string;

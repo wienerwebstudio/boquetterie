@@ -159,6 +159,8 @@ export function buildPayload(data: CheckoutData, items: CartItem[], couponCode: 
   return {
     items: items.map((i) => ({
       productId: i.productId, sizeId: i.sizeId, quantity: i.quantity,
+      ...(i.colorId && { colorId: i.colorId }),
+      ...(i.floristNote && { floristNote: i.floristNote }),
       extras: i.extras.map((e) => ({ extraId: e.extraId, quantity: e.quantity })),
       ...greeting,
     })),

@@ -71,13 +71,13 @@
     {
       "id": "klarna",
       "label": "Klarna",
-      "enabled": false,
-      "provider": "klarna"
+      "enabled": true,
+      "provider": "stripe"
     },
     {
       "id": "eps",
       "label": "EPS",
-      "enabled": false,
+      "enabled": true,
       "provider": "stripe"
     }
   ],

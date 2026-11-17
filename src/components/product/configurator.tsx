@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { CalendarDays, Check, Clock, Leaf, Lock, Mail, MapPin, Minus, PenLine, Plus, ShoppingBag } from "lucide-react";
-import type { Extra, ISODate, Product, ProductSize, SiteSettings, SizeId } from "@/types";
+import type { Extra, ISODate, Product, ProductColorOption, ProductSize, SiteSettings, SizeId } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/ui/star-rating";
@@ -16,17 +16,18 @@ import { useUi } from "@/store/ui";
 import { addDays, isValidAustrianPostalCode, normalizePostalCode } from "@/lib/delivery";
 import { lowestPrice } from "@/lib/catalog";
 import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
-import { cartItemFromConfig, defaultSize, findSize, isSoldOut } from "@/lib/cart-helpers";
+import { cartItemFromConfig, defaultSize, findSize, FLORIST_NOTE_MAX, isSoldOut } from "@/lib/cart-helpers";
 import { formatDateShort, formatPrice, cn } from "@/lib/format";
 import { routes } from "@/lib/urls";
 import { onRadioGroupKeyDown } from "@/lib/roving-radio";
 import { VAT_TEXT } from "@/lib/vat";
 
-export function ProductConfigurator({ product, extras, greetingCard, onSizeChange }: {
+export function ProductConfigurator({ product, extras, greetingCard, onSizeChange, onColorChange }: {
   product: Product;
   extras: Extra[];
   greetingCard: SiteSettings["greetingCard"];
   onSizeChange?: (size: ProductSize) => void;
+  onColorChange?: (color: ProductColorOption | null) => void;
 }) {
   const uid = useId();
   const addItem = useCart((s) => s.addItem);
@@ -40,6 +41,17 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   const [sizeId, setSizeId] = useState(() => defaultSize(product).id);
   const size = findSize(product, sizeId);
   const selectSize = (id: SizeId) => { setSizeId(id); onSizeChange?.(findSize(product, id)); };
+
+  /* ---------- colour (required when offered) ---------- */
+  const colors = product.colorOptions ?? [];
+  const [colorId, setColorId] = useState<string | null>(null);
+  const color = colors.find((c) => c.id === colorId) ?? null;
+  const [colorError, setColorError] = useState(false);
+  const colorRef = useRef<HTMLFieldSetElement>(null);
+  const selectColor = (c: ProductColorOption) => { setColorId(c.id); setColorError(false); onColorChange?.(c); };
+
+  /* ---------- wish to the florist ---------- */
+  const [floristNote, setFloristNote] = useState("");
 
   /* ---------- delivery ---------- */
   const [plz, setPlz] = useState("");
@@ -122,15 +134,21 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   const addToCart = () => {
     if (paused) return;
     if (soldOut) return;
+    if (colors.length && !color) {
+      setColorError(true);
+      colorRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+      colorRef.current?.querySelector<HTMLInputElement>("input")?.focus({ preventScroll: true });
+      return;
+    }
     const item = cartItemFromConfig({
-      product, size,
+      product, size, color, floristNote,
       deliveryDate: selectedDate,
       postalCode: zone ? result?.postalCode : ctx.zone ? ctx.postalCode : undefined,
       ...(cardsEnabled ? { message, anonymous, senderName } : { message: "", anonymous: false, senderName: "" }),
       extras: chosenExtras,
     });
     addItem(item);
-    setAnnounce(`${product.name} (${size.label}) wurde in den Warenkorb gelegt.`);
+    setAnnounce(`${product.name} (${size.label}${color ? `, ${color.label}` : ""}) wurde in den Warenkorb gelegt.`);
     // The drawer that opens is the confirmation – a toast on top of it would only cover its buttons.
     openCart();
   };
@@ -199,6 +217,31 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
             );
           })}
         </div>
+      </fieldset>
+      )}
+
+      {/* ---------- Colour ---------- */}
+      {colors.length > 0 && (
+      <fieldset ref={colorRef} aria-describedby={colorError ? `${uid}-color-error` : undefined}>
+        <legend className="mb-3 flex w-full items-baseline justify-between">
+          <span className="text-[14px] font-semibold text-ink">Farbe wählen <span className="font-normal text-ink-muted">(Pflicht)</span></span>
+          <span className="text-[12.5px] text-ink-muted">{color?.label ?? "Noch nicht gewählt"}</span>
+        </legend>
+        <div className="flex flex-wrap gap-2">
+          {colors.map((c) => {
+            const checked = c.id === colorId;
+            return (
+              <label key={c.id} className="relative cursor-pointer">
+                <input type="radio" name={`${uid}-color`} value={c.id} checked={checked} onChange={() => selectColor(c)} className="peer sr-only" />
+                <span className={cn(
+                  "inline-flex h-10 items-center rounded-full border px-4 text-[14px] transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-forest peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-ivory",
+                  checked ? "border-forest bg-forest text-ivory" : "border-line bg-white/60 text-ink hover:border-stone",
+                )}>{c.label}</span>
+              </label>
+            );
+          })}
+        </div>
+        {colorError && <p id={`${uid}-color-error`} role="alert" className="mt-2 text-[13px] text-danger">Bitte wähle eine Farbe.</p>}
       </fieldset>
       )}
 
@@ -412,6 +455,27 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           </ul>
         </section>
       )}
+
+      {/* ---------- Wish to the florist ---------- */}
+      <details className="group rounded-md border border-line bg-white/50 px-4 py-3 sm:px-5" open={floristNote.length > 0 || undefined}>
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[14px] font-semibold text-ink">
+          <span className="flex items-start gap-2"><PenLine className="mt-0.5 size-4 shrink-0 text-forest" aria-hidden /><span>Wünsche an unsere Florist:innen <span className="font-normal text-ink-muted">(optional)</span></span></span>
+          <Plus className="size-4 text-ink-muted transition-transform group-open:rotate-45" aria-hidden />
+        </summary>
+        <label htmlFor={`${uid}-florist-note`} className="mt-3 block text-[13px] leading-relaxed text-ink-muted">
+          Kleine Änderungen am Strauß, z. B. „statt gelber bitte weiße Rosen“. Wir setzen sie um, wenn die Blumen verfügbar sind. Hinweise für die Lieferung gibst du im Checkout an.
+        </label>
+        <textarea
+          id={`${uid}-florist-note`}
+          rows={3}
+          maxLength={FLORIST_NOTE_MAX}
+          value={floristNote}
+          onChange={(e) => setFloristNote(e.target.value)}
+          className="mt-2 w-full resize-y rounded-md border border-line bg-white px-3 py-2 text-[14px] text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20"
+          placeholder="Dein Wunsch an die Floristik"
+        />
+        <p className="mt-1 text-right text-[12px] text-ink-soft">{floristNote.length}/{FLORIST_NOTE_MAX}</p>
+      </details>
 
       {/* ---------- CTA ---------- */}
       <div ref={ctaRef} className="border-t border-line pt-6">

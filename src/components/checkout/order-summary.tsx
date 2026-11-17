@@ -37,7 +37,7 @@ function SummaryBody({ items, totals, zone, deliveryDate, windowLabel, greeting,
                 <p className="truncate font-serif text-[19px] leading-tight text-ink">{item.snapshot.name}</p>
                 <p className="shrink-0 text-[14px] font-semibold tabular-nums text-ink">{formatPrice(item.snapshot.unitPrice * item.quantity)}</p>
               </div>
-              <p className="mt-0.5 text-[12.5px] text-ink-muted">{item.snapshot.sizeLabel}{item.quantity > 1 ? ` · ${item.quantity}×` : ""}</p>
+              <p className="mt-0.5 text-[12.5px] text-ink-muted">{item.snapshot.sizeLabel}{item.snapshot.colorLabel ? ` · ${item.snapshot.colorLabel}` : ""}{item.quantity > 1 ? ` · ${item.quantity}×` : ""}</p>
               {item.extras.length > 0 && (
                 <ul className="mt-2 flex flex-col gap-1">
                   {item.extras.map((e) => (

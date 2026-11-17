@@ -15,13 +15,14 @@ describe("delivery engine – same-day", () => {
     expect(days[1]).toMatchObject({ date: FRI, sameDay: false });
   });
 
-  it("only keeps same-day windows that end at least an hour from now", () => {
+  it("only keeps same-day windows that still have two hours left (binding + ride)", () => {
     const early = getAvailableDays({ zone: wienZentrum, settings, now: at(THU, "10:00") });
     expect(early[0].windows.map((w) => w.id)).toEqual(["am", "pm", "eve"]);
 
-    // 11:59 + 60 min = 12:59 → the 9–13 window (ends 13:00) is still just possible.
-    const late = getAvailableDays({ zone: wienZentrum, settings, now: at(THU, "11:59") });
-    expect(late[0].windows.map((w) => w.id)).toEqual(["am", "pm", "eve"]);
+    // 11:00 + 120 min = 13:00 → the 9–13 window (ends 13:00) is still just possible …
+    expect(getAvailableDays({ zone: wienZentrum, settings, now: at(THU, "11:00") })[0].windows.map((w) => w.id)).toEqual(["am", "pm", "eve"]);
+    // … at 11:01 it is gone – an already running window is never offered with less than two hours left.
+    expect(getAvailableDays({ zone: wienZentrum, settings, now: at(THU, "11:01") })[0].windows.map((w) => w.id)).toEqual(["pm", "eve"]);
   });
 
   it("drops same-day once the same-day cutoff has passed (but stays before the day cutoff)", () => {
