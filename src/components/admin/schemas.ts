@@ -658,6 +658,9 @@ export const partnerSchema: EntitySchema = {
         { key: "contactName", label: "Ansprechperson", type: "text" },
         { key: "phone", label: "Telefon", type: "text" },
         { key: "address", label: "Adresse (Abholung)", type: "textarea", rows: 2, span: "full" },
+        { key: "openFrom", label: "Geöffnet von", type: "time", span: "third", hint: "Erinnerungen zählen nur offene Minuten." },
+        { key: "openTo", label: "Geöffnet bis", type: "time", span: "third" },
+        { key: "openDays", label: "Offen an", type: "multiselect", options: WEEKDAY_OPTIONS, valueType: "number", span: "full", hint: "Leer = jeden Tag." },
         { key: "note", label: "Interne Notiz", type: "textarea", rows: 2, span: "full" },
         { key: "active", label: "Aktiv (in Bestellungen auswählbar)", type: "boolean", span: "third" },
         { key: "sortOrder", label: "Reihenfolge", type: "number", min: 0, span: "third" },
@@ -670,7 +673,7 @@ export const partnerSchema: EntitySchema = {
     { key: "phone", label: "Telefon" },
     { key: "active", label: "Aktiv", type: "boolean" },
   ],
-  template: { id: "", name: "", emails: [], useEnvMail: false, contactName: "", phone: "", address: "", note: "", active: true, sortOrder: 10 },
+  template: { id: "", name: "", emails: [], useEnvMail: false, contactName: "", phone: "", address: "", openFrom: "08:00", openTo: "18:00", openDays: [1, 2, 3, 4, 5, 6], note: "", active: true, sortOrder: 10 },
 };
 
 export const ENTITY_SCHEMAS: EntitySchema[] = [

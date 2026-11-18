@@ -7,6 +7,9 @@
     "contactName": "",
     "phone": "",
     "address": "",
+    "openFrom": "07:30",
+    "openTo": "19:30",
+    "openDays": [0, 1, 2, 3, 4, 5, 6],
     "note": "Solange hier keine E-Mail eingetragen ist, gehen Aufträge an die Adresse(n) aus MAIL_FLORIST (Netlify).",
     "active": true,
     "sortOrder": 1

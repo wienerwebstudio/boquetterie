@@ -395,7 +395,7 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
  * discount is settled separately – and when it is collected. Without the customer's prices and without the customer's or recipient's
  * contact data – the courier delivers, the florist only prepares (data minimisation).
  */
-export function floristOrder(input: { order: Order; brand: MailBrand; selfDelivery?: boolean; readyBy?: string | null; confirmUrl?: string }): RenderedMail {
+export function floristOrder(input: { order: Order; brand: MailBrand; selfDelivery?: boolean; readyBy?: string | null; confirmUrl?: string; reminder?: number }): RenderedMail {
   const { order, brand } = input;
   const first = order.lines[0];
   const card = order.lines.find((l) => l.message || l.senderName || l.anonymous);
@@ -413,10 +413,11 @@ export function floristOrder(input: { order: Order; brand: MailBrand; selfDelive
     : `${formatDateLong(order.delivery.date)} (Uhrzeit folgt)`;
   return layout({
     brand,
-    subject: `Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${readyBy ? ` ${readyBy} Uhr` : ""}`,
+    subject: `${input.reminder ? `Erinnerung ${input.reminder}: bitte bestätigen – ` : ""}Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${readyBy ? ` ${readyBy} Uhr` : ""}`,
     preheader: first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – Größe ${sizeShort(first.sizeId, first.sizeLabel, first.stems)}` : undefined,
     headline: `Neuer Auftrag ${order.id}`,
     blocks: [
+      ...(input.reminder ? [{ type: "alert", text: `Erinnerung ${input.reminder}: Wir haben für diesen Auftrag noch keine Bestätigung von euch. Bitte kurz auf „Auftrag bestätigen“ klicken – oder antwortet auf diese Mail, falls ihr ihn nicht übernehmen könnt.` } as Block] : []),
       { type: "p", text: "Bitte so binden wie auf dem Foto. Das Max. Budget ist der Betrag, für den ihr den Strauß bindet." },
       ...(input.confirmUrl
         ? [
@@ -446,6 +447,29 @@ function partnerBudgetTotal(order: Order): number | null {
     ...l.extras.map((e) => (e.floristBudget === undefined ? null : e.floristBudget * e.quantity)),
   ]);
   return budgets.length && budgets.every((b): b is number => b !== null) ? budgets.reduce((a, b) => a + b, 0) : null;
+}
+
+/** Internal notice: a partner has not confirmed – reminder `n` went out (or failed). */
+export function partnerReminderNotice(input: { order: Order; brand: MailBrand; partnerName: string; phone?: string; n: number; last: boolean; partnerMailSent: boolean; adminUrl: string }): RenderedMail {
+  const { order, brand, partnerName, n } = input;
+  const call = input.phone ? `Telefon ${partnerName}: ${input.phone}` : `Für ${partnerName} ist keine Telefonnummer hinterlegt (Admin → Partner).`;
+  return layout({
+    brand,
+    subject: `Erinnerung ${n}: ${partnerName} hat ${order.id} noch nicht bestätigt`,
+    preheader: `${order.id} für ${formatDateLong(order.delivery.date)} – noch keine Bestätigung von ${partnerName}.`,
+    headline: `${order.id}: noch nicht bestätigt`,
+    blocks: [
+      {
+        type: "alert",
+        text: input.last
+          ? `${partnerName} hat auch nach der ${n}. Erinnerung nicht bestätigt. Es gehen keine weiteren automatischen Erinnerungen raus – bitte jetzt anrufen.`
+          : `${partnerName} hat den Auftrag noch nicht bestätigt. ${input.partnerMailSent ? `Erinnerung ${n} ging gerade an ${partnerName}.` : `Die Erinnerung an ${partnerName} konnte NICHT gesendet werden.`}`,
+      },
+      { type: "kv", rows: [["Partner", partnerName], ["Anrufen", call], ["Liefertermin", deliveryLine(order)]] },
+      { type: "button", label: "Bestellung im Admin öffnen", url: input.adminUrl },
+    ],
+    footerNotes: ["Interne Benachrichtigung (MAIL_ADMIN)."],
+  });
 }
 
 /** Internal notice: the partner confirmed the order slip. */

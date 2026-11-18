@@ -271,7 +271,7 @@ export async function sendOrderConfirmation(order: Order): Promise<MailResult> {
 }
 
 /** Order slip to one partner florist (assignment in the admin). */
-export async function sendPartnerOrder(order: Order, partner: Partner, confirmToken?: string): Promise<{ to: string[]; result: MailResult | null }> {
+export async function sendPartnerOrder(order: Order, partner: Partner, confirmToken?: string, reminder?: number): Promise<{ to: string[]; result: MailResult | null }> {
   const to = partnerMailAddresses(partner);
   if (!to.length) return { to, result: null };
   const settings = await getSettings();
@@ -280,6 +280,7 @@ export async function sendPartnerOrder(order: Order, partner: Partner, confirmTo
     order, brand, selfDelivery: isSelfDeliveryDay(settings, order.delivery.date),
     readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)),
     confirmUrl: confirmToken ? `${brand.siteUrl}/partner-auftrag?order=${encodeURIComponent(order.id)}&token=${confirmToken}` : undefined,
+    reminder,
   });
   return { to, result: await send(to.length === 1 ? to[0] : to, mail, "florist_order") };
 }
@@ -293,6 +294,20 @@ export async function sendPartnerConfirmedNotice(order: Order, partnerName: stri
     return await send(admin, templates.partnerConfirmed({ order, brand, partnerName, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}` }), "partner_confirmed");
   } catch (err) {
     console.error("[mail] partner confirmation notice failed", err);
+    return null;
+  }
+}
+
+/** Tells the team (MAIL_ADMIN) that a partner has not confirmed yet. Never throws. */
+export async function sendPartnerReminderNotice(order: Order, partner: Partner, n: number, last: boolean, partnerMailSent: boolean): Promise<MailResult | null> {
+  const admin = adminMailAddress();
+  if (!admin) return null;
+  try {
+    const brand = mailBrand(await getSettings());
+    const adminUrl = `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}`;
+    return await send(admin, templates.partnerReminderNotice({ order, brand, partnerName: partner.name, phone: partner.phone, n, last, partnerMailSent, adminUrl }), "partner_reminder");
+  } catch (err) {
+    console.error("[mail] partner reminder notice failed", err);
     return null;
   }
 }

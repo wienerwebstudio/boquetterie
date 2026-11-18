@@ -277,6 +277,13 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     transform: { products: (doc) => mapList(doc, (p) => (ROSE_WIEN_PHOTOS[String(p.id)] ? withSecondPhotos(p, roseWienPhotos(String(p.id))) : p)) },
   },
   {
+    // Blumen Dody's opening hours (07:30–19:30) – partner reminders only count open minutes.
+    id: "2026-11-18-partner-dody-hours",
+    transform: {
+      partners: (doc) => mapList(doc, (p) => (p.id === "blumen-dody" && !p.openFrom && !p.openTo ? { ...p, openFrom: "07:30", openTo: "19:30", openDays: [0, 1, 2, 3, 4, 5, 6] } : p)),
+    },
+  },
+  {
     // Owners' request: Emre Ünsal's review (submitted 17 Nov) is shown with 16 Nov 2026.
     id: "2026-11-18-review-date-emre",
     transform: { reviews: (doc) => mapList(doc, (r) => (r.name === "Emre Ünsal" && r.date === "2026-11-17" ? { ...r, date: "2026-11-16" } : r)) },

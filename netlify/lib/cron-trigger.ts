@@ -2,7 +2,7 @@
  * Shared by the Netlify scheduled functions in netlify/functions/: calls one of the
  * shop's cron endpoints (`/api/cron/*`) on the published site with
  * `Authorization: Bearer $CRON_SECRET`. The endpoint does the work; this only
- * triggers it once a day. See docs/MAIL.md → "Netlify".
+ * triggers it on schedule. See docs/MAIL.md → "Netlify".
  *
  * Kept free of Netlify-specific imports so the unit tests can call it directly.
  */
@@ -38,7 +38,7 @@ export function cronBaseUrl(context: CronContext | undefined, env: Env): string 
 }
 
 export async function triggerCron(
-  path: "/api/cron/review-requests" | "/api/cron/reminders",
+  path: "/api/cron/review-requests" | "/api/cron/reminders" | "/api/cron/partner-reminders",
   context: CronContext | undefined,
   { env = process.env as Env, fetchImpl = fetch as Fetch, log = console }: { env?: Env; fetchImpl?: Fetch; log?: Pick<Console, "log" | "error"> } = {},
 ): Promise<CronTriggerResult> {

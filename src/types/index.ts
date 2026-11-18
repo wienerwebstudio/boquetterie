@@ -498,6 +498,11 @@ export interface Partner {
   phone?: string;
   address?: string;
   note?: string;
+  /** Opening hours (local time, "HH:MM") – reminders only count open minutes. */
+  openFrom?: string;
+  openTo?: string;
+  /** Open weekdays (0 = Sunday). Empty/missing = every day. */
+  openDays?: number[];
   active: boolean;
   sortOrder: number;
 }
@@ -516,6 +521,8 @@ export interface OrderPartner {
   confirmToken?: string;
   /** When the partner confirmed the order slip. */
   confirmedAt?: string;
+  /** Reminder mails sent for this slip (ISO times), see partner-reminders.ts. */
+  reminders?: string[];
 }
 
 /* ---------------- Newsletter ---------------- */
