@@ -118,3 +118,16 @@ describe("same-day until 18:30", () => {
     expect(store.docs.get("content/products")).toEqual([{ id: "p-1", sameDayCapable: true }, { id: "p-2", sameDayCapable: true }]);
   });
 });
+
+describe("review date fix", () => {
+  it("moves only Emre Ünsal's review from 17 to 16 Nov", async () => {
+    const { CONTENT_MIGRATIONS, migrateDocument } = await import("@/lib/content-migrations");
+    const m = CONTENT_MIGRATIONS.find((x) => x.id === "2026-11-18-review-date-emre")!;
+    const out = migrateDocument(m, "reviews", [
+      { id: "a", name: "Emre Ünsal", date: "2026-11-17" },
+      { id: "b", name: "Andere", date: "2026-11-17" },
+      { id: "c", name: "Emre Ünsal", date: "2026-11-20" },
+    ]) as { date: string }[];
+    expect(out.map((r) => r.date)).toEqual(["2026-11-16", "2026-11-17", "2026-11-20"]);
+  });
+});

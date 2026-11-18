@@ -277,6 +277,11 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     transform: { products: (doc) => mapList(doc, (p) => (ROSE_WIEN_PHOTOS[String(p.id)] ? withSecondPhotos(p, roseWienPhotos(String(p.id))) : p)) },
   },
   {
+    // Owners' request: Emre Ünsal's review (submitted 17 Nov) is shown with 16 Nov 2026.
+    id: "2026-11-18-review-date-emre",
+    transform: { reviews: (doc) => mapList(doc, (r) => (r.name === "Emre Ünsal" && r.date === "2026-11-17" ? { ...r, date: "2026-11-16" } : r)) },
+  },
+  {
     // Rosenkuss M (last missing S/M/L Vienna photo).
     id: "2026-11-17-rose-wien-photos-3",
     transform: { products: (doc) => mapList(doc, (p) => (p.id === "p-rosenkuss" ? withSecondPhotos(p, roseWienPhotos("p-rosenkuss")) : p)) },
