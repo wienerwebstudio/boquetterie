@@ -40,13 +40,16 @@ export function stripeClient(): Stripe {
  * 5 minutes. Null when it cannot be read – callers then keep their own list.
  */
 const AVAILABILITY_TTL_MS = 5 * 60_000;
-let availabilityCache: { at: number; value: Record<string, boolean> } | null = null;
+let availabilityCache: { at: number; value: Record<string, boolean> | null } | null = null;
 export async function stripeMethodAvailability(): Promise<Record<string, boolean> | null> {
   if (availabilityCache && Date.now() - availabilityCache.at < AVAILABILITY_TTL_MS) return availabilityCache.value;
   try {
     const list = await stripeClient().paymentMethodConfigurations.list({ limit: 20 });
     const cfg = list.data.find((c) => c.is_default && c.active) ?? list.data.find((c) => c.active);
-    if (!cfg) return null;
+    if (!cfg) {
+      availabilityCache = { at: Date.now(), value: null };
+      return null;
+    }
     const value: Record<string, boolean> = {};
     for (const type of ["card", "apple_pay", "google_pay", "klarna", "eps", "paypal", "amazon_pay"]) {
       const entry = (cfg as unknown as Record<string, { available?: boolean } | undefined>)[type];
@@ -55,7 +58,9 @@ export async function stripeMethodAvailability(): Promise<Record<string, boolean
     availabilityCache = { at: Date.now(), value };
     return value;
   } catch (err) {
+    // e.g. a restricted key without "Payment Method Configurations: Read" – show everything, retry in 5 min.
     console.warn("[stripe] payment method availability unavailable", err instanceof Error ? err.message : err);
+    availabilityCache = { at: Date.now(), value: null };
     return null;
   }
 }
