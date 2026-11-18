@@ -467,7 +467,7 @@ async function liveSampleOrder(settings: SiteSettings): Promise<Order> {
  * customers or the florist automatically. Subjects start with "[Beispiel]".
  */
 /** Which sample mails to send: all three, or only the partner's order slip, the customer's confirmation or the internal "new order" mail. */
-export type TestMailKind = "all" | "partner" | "customer" | "internal";
+export type TestMailKind = "all" | "partner" | "customer" | "internal" | "review";
 
 export async function sendTestOrderMails(recipient?: string, kind: TestMailKind = "all"): Promise<{ to: string | null; provider: MailResult["provider"]; results: { mail: string; result: MailResult }[] }> {
   const chosen = recipient?.trim() || undefined;
@@ -481,8 +481,10 @@ export async function sendTestOrderMails(recipient?: string, kind: TestMailKind 
     ["customer", "Kundenbestellung", () => templates.orderConfirmation({ order, brand, trackingUrl: `${brand.siteUrl}/bestellung-verfolgen` })],
     ["internal", "Bestelleingang", () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen` })],
     ["partner", "Partner-Auftrag", () => templates.floristOrder({ order, brand })],
+    // Links in the sample lead to "Link nicht gültig" – the sample order is not stored.
+    ["review", "Bewertungsanfrage", () => templates.reviewRequest({ order, brand, reviewUrl: reviewUrl(order, brand.siteUrl) })],
   ];
-  const rendered: [string, RenderedMail][] = all.filter(([k]) => kind === "all" || k === kind).map(([, label, render]) => [label, render()]);
+  const rendered: [string, RenderedMail][] = all.filter(([k]) => (kind === "all" ? k !== "review" : k === kind)).map(([, label, render]) => [label, render()]);
   const results = [];
   for (const [mail, m] of rendered) {
     results.push({ mail, result: await sendMail({ to, subject: `[Beispiel] ${m.subject}`, html: m.html, text: m.text, tags: { type: "test" }, bypassRedirect: Boolean(chosen) }) });

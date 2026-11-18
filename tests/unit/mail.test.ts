@@ -208,6 +208,8 @@ describe("admin test mails", () => {
     expect((sendMail.mock.calls[0] as unknown as [{ subject: string }])[0].subject).toMatch(/^\[Beispiel\] Auftrag /);
     expect((await mail.sendTestOrderMails(undefined, "customer")).results.map((r) => r.mail)).toEqual(["Kundenbestellung"]);
     expect((await mail.sendTestOrderMails(undefined, "internal")).results.map((r) => r.mail)).toEqual(["Bestelleingang"]);
+    const review = await mail.sendTestOrderMails(undefined, "review");
+    expect(review.results.map((r) => r.mail)).toEqual(["Bewertungsanfrage"]);
 
     sendMail.mockClear();
     await mail.sendMail({ to: "kunde@example.at", subject: "Echte Mail", html: "<p>x</p>" });

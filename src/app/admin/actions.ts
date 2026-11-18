@@ -282,7 +282,7 @@ export async function sendTestMailsAction(recipient?: string, kind: string = "al
   if (chosen && (chosen.length > 200 || !/^[^\s@,;]+@[^\s@,;]+\.[^\s@,;]{2,}$/.test(chosen))) {
     return { ok: false, message: "Bitte gib genau eine gültige E-Mail-Adresse ein." };
   }
-  const which = (["all", "partner", "customer", "internal"] as const).find((k) => k === kind);
+  const which = (["all", "partner", "customer", "internal", "review"] as const).find((k) => k === kind);
   if (!which) return { ok: false, message: "Unbekannte Auswahl." };
   const { sendTestOrderMails } = await import("@/lib/mail");
   const { to, provider, results } = await sendTestOrderMails(chosen || undefined, which);

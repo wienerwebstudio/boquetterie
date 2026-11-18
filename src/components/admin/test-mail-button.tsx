@@ -11,7 +11,7 @@ import { inputCls } from "@/components/admin/controls";
 export function TestMailButton({ defaultRecipient = "" }: { defaultRecipient?: string }) {
   const [pending, start] = useTransition();
   const [to, setTo] = useState("");
-  const [kind, setKind] = useState<"all" | "partner" | "customer" | "internal">("all");
+  const [kind, setKind] = useState<"all" | "partner" | "customer" | "internal" | "review">("all");
   const [result, setResult] = useState<{ ok: boolean; message: string } | null>(null);
   return (
     <form
@@ -35,6 +35,7 @@ export function TestMailButton({ defaultRecipient = "" }: { defaultRecipient?: s
         <option value="partner">Partner – Auftrag an die Floristik</option>
         <option value="customer">Kundenbestellung – Bestätigung an Kund:in</option>
         <option value="internal">Bestelleingang – interne Mail an uns</option>
+        <option value="review">Bewertungsanfrage – „Wie war der Strauß?“</option>
       </select>
       <label htmlFor="test-mail-to" className="mt-3 block text-[13px] font-semibold text-ink">
         Empfänger <span className="font-normal text-ink-muted">(optional)</span>
