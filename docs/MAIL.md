@@ -144,7 +144,7 @@ Beim Statuswechsel auf *Zugestellt* gibt es dafür zusätzlich das Häkchen **�
 
 ## „Wie hast du uns gefunden?“
 
-Die Bewertungsmail fragt zusätzlich, wie die Kundin uns gefunden hat (Google-Suche, Google Maps, Instagram, TikTok, Facebook, Empfehlung, Schon einmal bestellt, Sonstiges). Jede Antwort ist ein Link auf `/bewertung?…&quelle=<id>#gefunden` – die Antwort ist dort vorausgewählt, gespeichert wird erst per Klick („Nur diese Antwort senden“ oder mit der Bewertung). So beantworten Mail-Scanner nichts von selbst. Gespeichert in `order.foundVia` (`POST /api/reviews/found-via` bzw. Feld `found_via` in `POST /api/reviews`), sichtbar in der Bestellung („Gefunden über“) und als Auswertung auf der Admin-Startseite („Wie Kund:innen uns finden“). Ist schon geantwortet, fragt weder Mail noch Formular erneut.
+Nur im Bewertungsformular (`/bewertung`), nicht in der Mail und nirgends öffentlich: optionale Auswahl (Google-Suche, Google Maps, Instagram, TikTok, Facebook, Empfehlung, Schon einmal bestellt, Sonstiges + Freitext). Wird mit der Bewertung gesendet (`found_via`, `found_via_other` in `POST /api/reviews`) und in `order.foundVia` gespeichert. Sichtbar in der Bestellung („Gefunden über“) und als Auswertung auf der Admin-Startseite („Wie Kund:innen uns finden“).
 
 ## Fotos in Bewertungen
 

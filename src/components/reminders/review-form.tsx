@@ -7,7 +7,7 @@ import { Checkbox, Input, Textarea } from "@/components/ui/input";
 import { cn } from "@/lib/format";
 import { onRadioGroupKeyDown, rovingTabIndex } from "@/lib/roving-radio";
 import { routes } from "@/lib/urls";
-import { FOUND_VIA_OPTIONS, isFoundViaSource, type FoundViaSource } from "@/lib/found-via";
+import { FOUND_VIA_OPTIONS, type FoundViaSource } from "@/lib/found-via";
 import { CLIENT_PHOTO_BUDGET_BYTES, MAX_REVIEW_PHOTO_BYTES, MAX_REVIEW_PHOTOS, REVIEW_CONSENT_TEXT, REVIEW_PHOTO_ACCEPT } from "@/lib/review-submission";
 
 interface FormState { name: string; rating: number; text: string; website: string; consent: boolean }
@@ -54,33 +54,12 @@ async function shrink(file: File): Promise<Blob> {
   }
 }
 
-/** "Wie hast du uns gefunden?" – optional; can be sent on its own without a review. */
-function FoundViaQuestion({ orderId, token, source, other, onSource, onOther, sent, onSent }: {
-  orderId: string; token: string; source: FoundViaSource | ""; other: string;
-  onSource: (s: FoundViaSource) => void; onOther: (v: string) => void; sent: boolean; onSent: () => void;
+/** "Wie hast du uns gefunden?" – optional, sent with the review; only for the team. */
+function FoundViaQuestion({ source, other, onSource, onOther }: {
+  source: FoundViaSource | ""; other: string; onSource: (s: FoundViaSource) => void; onOther: (v: string) => void;
 }) {
-  const [state, setState] = useState<"idle" | "sending" | "failed">("idle");
-  const sendOnly = async () => {
-    if (!source) return;
-    setState("sending");
-    try {
-      const res = await fetch("/api/reviews/found-via", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ order: orderId, token, source, other }) });
-      if (!res.ok) throw new Error(String(res.status));
-      setState("idle");
-      onSent();
-    } catch {
-      setState("failed");
-    }
-  };
-  if (sent) {
-    return (
-      <p id="gefunden" role="status" className="flex items-center gap-2 rounded-md border border-line bg-ivory-200/60 px-4 py-3 text-[14px] text-ink">
-        <Check className="size-4 text-forest" strokeWidth={2.5} aria-hidden /> Danke, das hilft uns sehr.
-      </p>
-    );
-  }
   return (
-    <div id="gefunden" className="flex scroll-mt-28 flex-col gap-2 rounded-md border border-line p-4 sm:p-5" role="group" aria-labelledby="found-via-label">
+    <div className="flex flex-col gap-2" role="group" aria-labelledby="found-via-label">
       <span id="found-via-label" className="text-[13px] font-semibold text-ink">Wie hast du uns gefunden? <span className="font-normal text-ink-muted">(optional)</span></span>
       <div role="radiogroup" aria-labelledby="found-via-label" onKeyDown={onRadioGroupKeyDown} className="mt-1 flex flex-wrap gap-2">
         {FOUND_VIA_OPTIONS.map((o, i) => (
@@ -103,21 +82,13 @@ function FoundViaQuestion({ orderId, token, source, other, onSource, onOther, se
       {source === "sonstiges" && (
         <Input label="Wo genau?" name="found_via_other" maxLength={80} value={other} onChange={(e) => onOther(e.target.value)} className="mt-1" />
       )}
-      {source && (
-        <div className="mt-1 flex flex-wrap items-center gap-3">
-          <Button type="button" variant="outline" size="sm" loading={state === "sending"} onClick={() => void sendOnly()}>Nur diese Antwort senden</Button>
-          <span className="text-[12px] text-ink-soft">Oder unten zusammen mit der Bewertung.</span>
-        </div>
-      )}
-      {state === "failed" && <p role="alert" className="text-[13px] text-danger">Das hat nicht geklappt. Bitte versuch es noch einmal.</p>}
     </div>
   );
 }
 
-export function ReviewForm({ orderId, token, defaultName, className, initialSource, askFoundVia = true }: { orderId: string; token: string; defaultName?: string; className?: string; initialSource?: string; askFoundVia?: boolean }) {
-  const [source, setSource] = useState<FoundViaSource | "">(isFoundViaSource(initialSource) ? initialSource : "");
+export function ReviewForm({ orderId, token, defaultName, className, askFoundVia = true }: { orderId: string; token: string; defaultName?: string; className?: string; askFoundVia?: boolean }) {
+  const [source, setSource] = useState<FoundViaSource | "">("");
   const [sourceOther, setSourceOther] = useState("");
-  const [sourceSent, setSourceSent] = useState(false);
   const [form, setForm] = useState<FormState>({ name: defaultName ?? "", rating: 0, text: "", website: "", consent: false });
   const [hover, setHover] = useState(0);
   const [errors, setErrors] = useState<Errors>({});
@@ -194,7 +165,7 @@ export function ReviewForm({ orderId, token, defaultName, className, initialSour
       body.set("text", form.text.trim());
       body.set("consent", form.consent ? "true" : "false");
       body.set("website", form.website);
-      if (askFoundVia && source && !sourceSent) {
+      if (askFoundVia && source) {
         body.set("found_via", source);
         if (source === "sonstiges" && sourceOther.trim()) body.set("found_via_other", sourceOther.trim());
       }
@@ -317,7 +288,7 @@ export function ReviewForm({ orderId, token, defaultName, className, initialSour
         </div>
 
         {askFoundVia && (
-          <FoundViaQuestion orderId={orderId} token={token} source={source} other={sourceOther} onSource={setSource} onOther={setSourceOther} sent={sourceSent} onSent={() => setSourceSent(true)} />
+          <FoundViaQuestion source={source} other={sourceOther} onSource={setSource} onOther={setSourceOther} />
         )}
 
         <div className="flex flex-col gap-1.5">

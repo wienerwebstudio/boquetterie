@@ -41,7 +41,6 @@ export default async function ReviewPage({ searchParams }: { searchParams: Promi
   if (order.status !== "delivered") {
     return <Notice title="Noch ein wenig Geduld" text="Eine Bewertung ist möglich, sobald die Blumen zugestellt wurden." cta={{ label: "Bestellung ansehen", href: `/bestellung/${encodeURIComponent(order.id)}?token=${encodeURIComponent(order.token)}` }} />;
   }
-  const quelle = typeof sp.quelle === "string" ? sp.quelle : undefined;
   if (await hasSubmittedReview(order.id)) {
     return <Notice title="Danke, das haben wir schon." text="Für diese Bestellung wurde bereits eine Bewertung abgegeben. Wir lesen sie persönlich und geben sie dann frei." cta={{ label: "Zu den Sträußen", href: routes.shop }} />;
   }
@@ -60,7 +59,7 @@ export default async function ReviewPage({ searchParams }: { searchParams: Promi
         <section aria-labelledby="review-heading" className="mx-auto max-w-2xl rounded-md border border-line bg-white/70 p-6 shadow-soft sm:p-10">
           <p className="eyebrow mb-3">Deine Meinung</p>
           <h2 id="review-heading" className="display-3 text-ink">Ehrlich ist am besten</h2>
-          <ReviewForm orderId={order.id} token={order.token} defaultName={defaultName} initialSource={quelle} askFoundVia={!order.foundVia} className="mt-8" />
+          <ReviewForm orderId={order.id} token={order.token} defaultName={defaultName} askFoundVia={!order.foundVia} className="mt-8" />
         </section>
       </div>
     </article>

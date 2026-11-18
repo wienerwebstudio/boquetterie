@@ -16,6 +16,7 @@ const docs = vi.hoisted(() => new Map<string, unknown>());
 vi.mock("@/lib/cms", () => ({
   getOrderById: vi.fn(async (id: string) => (id === "BQ-7K2M9Q" ? structuredClone(ORDER) : null)),
   getOrders: vi.fn(async () => [ORDER]),
+  updateOrder: vi.fn(async (_id: string, fn: (o: unknown) => unknown) => void docs.set("order-patch", fn(structuredClone(ORDER)))),
   getAllProducts: vi.fn(async () => [{ id: "p-red", slug: "red-passion", name: "Red Passion" }]),
   readData: vi.fn(async (name: string, fallback: unknown) => structuredClone(docs.has(name) ? docs.get(name) : fallback)),
   writeData: vi.fn(async (name: string, value: unknown) => void docs.set(name, structuredClone(value))),
@@ -96,6 +97,12 @@ describe("POST /api/reviews", () => {
     const res = await POST(multipart(VALID));
     expect(res.status).toBe(201);
     expect((docs.get("review-submissions") as ReviewSubmission[])[0].photos).toBeUndefined();
+  });
+
+  it("stores the answer to „Wie hast du uns gefunden?“ on the order", async () => {
+    const res = await POST(multipart({ ...VALID, found_via: "sonstiges", found_via_other: "Flyer im Café" }));
+    expect(res.status).toBe(201);
+    expect((docs.get("order-patch") as { foundVia?: unknown }).foundVia).toMatchObject({ source: "sonstiges", other: "Flyer im Café" });
   });
 
   it("refuses more than three photos and stores nothing", async () => {

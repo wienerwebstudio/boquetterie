@@ -1,5 +1,4 @@
 import type { Order, OrderStatusDefinition } from "@/types";
-import { FOUND_VIA_OPTIONS } from "@/lib/found-via";
 import { formatDateLong, formatPrice } from "@/lib/format";
 import { VAT_TEXT } from "@/lib/vat";
 
@@ -607,14 +606,6 @@ export function reviewRequest(input: { order: Order; brand: MailBrand; reviewUrl
       { type: "p", text: "Ein Foto vom Strauß freut uns besonders – du kannst bis zu drei Bilder mitschicken." },
       { type: "button", label: "Bewertung schreiben", url: reviewUrl },
       { type: "p", text: "Das dauert nur einen Moment. Deine Bewertung wird von uns gelesen und erst danach im Shop veröffentlicht.", muted: true },
-      ...(order.foundVia
-        ? []
-        : ([
-            { type: "hr" },
-            { type: "h", text: "Und eine kurze Frage: Wie hast du uns gefunden?" },
-            { type: "choices", items: FOUND_VIA_OPTIONS.map((o) => ({ label: o.label, url: `${reviewUrl}${reviewUrl.includes("?") ? "&" : "?"}quelle=${o.id}#gefunden` })) },
-            { type: "p", text: "Ein Klick öffnet die Seite mit deiner Antwort – dort kannst du sie auch ohne Bewertung abschicken.", muted: true },
-          ] as Block[])),
     ],
     footerNotes: ["Du erhältst diese E-Mail einmalig, weil du bei uns bestellt hast."],
   });
