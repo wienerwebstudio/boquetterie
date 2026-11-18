@@ -147,6 +147,9 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
             <dl className="mb-4 text-[14px]">
               <Row label="Partner">{order.partner ? order.partner.name : <span className="font-semibold text-burgundy">Noch keiner</span>}</Row>
               {order.partner?.sentAt && <Row label="Auftrag gesendet">{formatDateTime(order.partner.sentAt)}{order.partner.sentTo?.length ? <div className="text-[12.5px] text-ink-muted">{order.partner.sentTo.join(", ")}</div> : null}</Row>}
+              {order.partner?.sentAt && !order.partner.cancelSentAt && (
+                <Row label="Bestätigt">{order.partner.confirmedAt ? <span className="font-semibold text-forest">Ja, {formatDateTime(order.partner.confirmedAt)}</span> : order.partner.confirmToken ? <span className="font-semibold text-burgundy">Noch nicht – ggf. anrufen</span> : <span className="text-ink-muted">Ohne Bestätigungslink gesendet</span>}</Row>
+              )}
               {order.partner?.cancelSentAt && <Row label="Storno gesendet">{formatDateTime(order.partner.cancelSentAt)}</Row>}
             </dl>
             <PartnerForm

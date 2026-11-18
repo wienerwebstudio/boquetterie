@@ -11,7 +11,7 @@ const PARTNERS = [
 ];
 vi.mock("@/lib/cms", () => ({ getSettings: vi.fn(), getOccasions: vi.fn(), getAllProducts: vi.fn(async () => []), getExtras: vi.fn(async () => []), getPartners: vi.fn(async () => PARTNERS), readData: vi.fn(async () => null), writeData: vi.fn() }));
 
-import { adminNewOrder, floristCancellation, floristOrder, orderConfirmation } from "@/lib/mail/templates";
+import { adminNewOrder, floristCancellation, floristOrder, orderConfirmation, partnerConfirmed } from "@/lib/mail/templates";
 import { formatPrice } from "@/lib/format";
 
 const order: Order = {
@@ -310,5 +310,30 @@ describe("partner mails", () => {
   it("internal mail flags an order without partner", () => {
     expect(adminNewOrder({ order, brand, adminUrl: "https://blumora.at/admin" }).text).toContain("NOCH KEINEM PARTNER ZUGEORDNET");
     expect(adminNewOrder({ order: { ...order, partner: { id: "x", name: "Rosenhaus", assignedAt: "", sentAt: "2026-11-18T09:00:00Z" } }, brand, adminUrl: "x" }).text).toContain("Rosenhaus (Auftrag gesendet)");
+  });
+});
+
+describe("partner confirmation and internal partner info", () => {
+  const budgeted: Order = { ...order, lines: [{ ...order.lines[0], floristBudget: 41.5, extras: [{ ...order.lines[0].extras[0], floristBudget: 12.5 }] }] };
+
+  it("order slip carries the confirm button only when a link is given", () => {
+    const withLink = floristOrder({ order: budgeted, brand, confirmUrl: "https://blumora.at/partner-auftrag?order=BQ-ABC123&token=abc" });
+    expect(withLink.html).toContain("Auftrag bestätigen");
+    expect(withLink.html).toContain("partner-auftrag?order=BQ-ABC123&amp;token=abc");
+    expect(floristOrder({ order: budgeted, brand }).html).not.toContain("Auftrag bestätigen");
+  });
+
+  it("internal order mail shows the partner part: ready time, max. budget per item and total", () => {
+    const m = adminNewOrder({ order: budgeted, brand, adminUrl: "https://blumora.at/admin", readyBy: "09:00" });
+    expect(m.text).toContain("FÜR DEN PARTNER");
+    expect(m.text).toContain("bis 09:00 Uhr");
+    expect(m.text).toContain(`Max. Budget gesamt: ${formatPrice(54)}`);
+    expect(m.text).toContain(formatPrice(41.5));
+    expect(m.text).toContain(formatPrice(12.5));
+  });
+
+  it("confirmation notice names partner and order", () => {
+    const m = partnerConfirmed({ order, brand, partnerName: "Rosenhaus", adminUrl: "https://blumora.at/admin/bestellungen/BQ-ABC123" });
+    expect(m.subject).toBe("Bestätigt: Rosenhaus übernimmt BQ-ABC123");
   });
 });

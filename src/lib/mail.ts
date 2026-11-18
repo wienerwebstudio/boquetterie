@@ -243,7 +243,7 @@ export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind
   };
   const render: Record<OrderMailKind, () => RenderedMail> = {
     customer: () => templates.orderConfirmation({ order, brand, trackingUrl: orderTrackingUrl(order, brand.siteUrl) }),
-    internal: () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}`, selfDelivery }),
+    internal: () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}`, selfDelivery, readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)) }),
     partner: () => templates.floristOrder({ order, brand, selfDelivery, readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)) }),
   };
   const types: Record<OrderMailKind, string> = { customer: "order_confirmation", internal: "admin_new_order", partner: "florist_order" };
@@ -271,15 +271,30 @@ export async function sendOrderConfirmation(order: Order): Promise<MailResult> {
 }
 
 /** Order slip to one partner florist (assignment in the admin). */
-export async function sendPartnerOrder(order: Order, partner: Partner): Promise<{ to: string[]; result: MailResult | null }> {
+export async function sendPartnerOrder(order: Order, partner: Partner, confirmToken?: string): Promise<{ to: string[]; result: MailResult | null }> {
   const to = partnerMailAddresses(partner);
   if (!to.length) return { to, result: null };
   const settings = await getSettings();
+  const brand = mailBrand(settings);
   const mail = templates.floristOrder({
-    order, brand: mailBrand(settings), selfDelivery: isSelfDeliveryDay(settings, order.delivery.date),
+    order, brand, selfDelivery: isSelfDeliveryDay(settings, order.delivery.date),
     readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)),
+    confirmUrl: confirmToken ? `${brand.siteUrl}/partner-auftrag?order=${encodeURIComponent(order.id)}&token=${confirmToken}` : undefined,
   });
   return { to, result: await send(to.length === 1 ? to[0] : to, mail, "florist_order") };
+}
+
+/** Tells the team (MAIL_ADMIN) that a partner confirmed an order slip. Never throws. */
+export async function sendPartnerConfirmedNotice(order: Order, partnerName: string): Promise<MailResult | null> {
+  const admin = adminMailAddress();
+  if (!admin) return null;
+  try {
+    const brand = mailBrand(await getSettings());
+    return await send(admin, templates.partnerConfirmed({ order, brand, partnerName, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}` }), "partner_confirmed");
+  } catch (err) {
+    console.error("[mail] partner confirmation notice failed", err);
+    return null;
+  }
 }
 
 /** Cancellation to a partner florist that already got the order slip. */

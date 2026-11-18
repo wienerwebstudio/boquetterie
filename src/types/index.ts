@@ -512,6 +512,10 @@ export interface OrderPartner {
   sentTo?: string[];
   /** When the cancellation went out to this partner. */
   cancelSentAt?: string;
+  /** Secret for the "Auftrag bestätigen" link in the order slip (new per slip). */
+  confirmToken?: string;
+  /** When the partner confirmed the order slip. */
+  confirmedAt?: string;
 }
 
 /* ---------------- Newsletter ---------------- */

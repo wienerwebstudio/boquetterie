@@ -349,7 +349,7 @@ export function orderStatusUpdate(input: { order: Order; status: OrderStatusDefi
   });
 }
 
-export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl: string; selfDelivery?: boolean }): RenderedMail {
+export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl: string; selfDelivery?: boolean; readyBy?: string | null }): RenderedMail {
   const { order, brand, adminUrl } = input;
   const items = order.lines.map((l) => `${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName} (${l.sizeLabel}${l.color ? `, ${l.color}` : ""})${l.floristNote ? ` – Wunsch: ${l.floristNote}` : ""}${l.extras.length ? ` + ${l.extras.map((e) => e.name).join(", ")}` : ""}`).join("\n");
   const greeting = order.lines.find((l) => l.message);
@@ -375,6 +375,15 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
           ["Gesamt", formatPrice(order.totals.total)],
         ],
       },
+      { type: "h", text: "Für den Partner" },
+      {
+        type: "kv",
+        rows: [
+          ["Fertig zur Abholung", (input.readyBy ?? order.delivery.windowFrom) ? `${formatDateLong(order.delivery.date)}, bis ${input.readyBy ?? order.delivery.windowFrom} Uhr` : formatDateLong(order.delivery.date)],
+          ...(partnerBudgetTotal(order) !== null ? [["Max. Budget gesamt", formatPrice(partnerBudgetTotal(order) as number)] as [string, string]] : []),
+        ],
+      },
+      { type: "floristItems", order, siteUrl: brand.siteUrl },
     ],
     footerNotes: ["Interne Benachrichtigung (MAIL_ADMIN)."],
   });
@@ -386,7 +395,7 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
  * discount is settled separately – and when it is collected. Without the customer's prices and without the customer's or recipient's
  * contact data – the courier delivers, the florist only prepares (data minimisation).
  */
-export function floristOrder(input: { order: Order; brand: MailBrand; selfDelivery?: boolean; readyBy?: string | null }): RenderedMail {
+export function floristOrder(input: { order: Order; brand: MailBrand; selfDelivery?: boolean; readyBy?: string | null; confirmUrl?: string }): RenderedMail {
   const { order, brand } = input;
   const first = order.lines[0];
   const card = order.lines.find((l) => l.message || l.senderName || l.anonymous);
@@ -409,6 +418,12 @@ export function floristOrder(input: { order: Order; brand: MailBrand; selfDelive
     headline: `Neuer Auftrag ${order.id}`,
     blocks: [
       { type: "p", text: "Bitte so binden wie auf dem Foto. Das Max. Budget ist der Betrag, für den ihr den Strauß bindet." },
+      ...(input.confirmUrl
+        ? [
+            { type: "p", text: "Bitte bestätigt kurz, dass ihr den Auftrag gesehen habt und übernehmt:" } as Block,
+            { type: "button", label: "Auftrag bestätigen", url: input.confirmUrl } as Block,
+          ]
+        : []),
       {
         type: "kv",
         rows: [
@@ -421,6 +436,31 @@ export function floristOrder(input: { order: Order; brand: MailBrand; selfDelive
       { type: "floristItems", order, siteUrl: brand.siteUrl },
     ],
     footerNotes: ["Auftrag von Blumora – bitte auf diese Mail antworten, wenn etwas nicht passt."],
+  });
+}
+
+/** Sum of all max. budgets of an order, or null when one is missing. */
+function partnerBudgetTotal(order: Order): number | null {
+  const budgets = order.lines.flatMap((l) => [
+    l.floristBudget === undefined ? null : l.floristBudget * l.quantity,
+    ...l.extras.map((e) => (e.floristBudget === undefined ? null : e.floristBudget * e.quantity)),
+  ]);
+  return budgets.length && budgets.every((b): b is number => b !== null) ? budgets.reduce((a, b) => a + b, 0) : null;
+}
+
+/** Internal notice: the partner confirmed the order slip. */
+export function partnerConfirmed(input: { order: Order; brand: MailBrand; partnerName: string; adminUrl: string }): RenderedMail {
+  const { order, brand, partnerName, adminUrl } = input;
+  return layout({
+    brand,
+    subject: `Bestätigt: ${partnerName} übernimmt ${order.id}`,
+    preheader: `${partnerName} hat den Auftrag ${order.id} für ${formatDateLong(order.delivery.date)} bestätigt.`,
+    headline: `${partnerName} hat ${order.id} bestätigt`,
+    blocks: [
+      { type: "kv", rows: [["Partner", partnerName], ["Liefertermin", deliveryLine(order)]] },
+      { type: "button", label: "Bestellung im Admin öffnen", url: adminUrl },
+    ],
+    footerNotes: ["Interne Benachrichtigung (MAIL_ADMIN)."],
   });
 }
 

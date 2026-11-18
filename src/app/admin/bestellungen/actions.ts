@@ -1,5 +1,6 @@
 "use server";
 
+import { randomBytes } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { getPartners, getSettings, updateOrder } from "@/lib/cms";
 import { requireAdmin } from "@/lib/admin-session";
@@ -291,7 +292,8 @@ export async function assignPartnerAction(_prev: OrderActionState, formData: For
     }
 
     const again = order.partner?.id === partner.id && Boolean(order.partner.sentAt) && !order.partner.cancelSentAt;
-    const { to, result } = await sendPartnerOrder(order, partner);
+    const confirmToken = randomBytes(16).toString("hex");
+    const { to, result } = await sendPartnerOrder(order, partner, confirmToken);
     const at = new Date().toISOString();
     if (!delivered(result)) {
       revalidateOrder(id);
@@ -299,7 +301,11 @@ export async function assignPartnerAction(_prev: OrderActionState, formData: For
     }
     await updateOrder(id, (o) => ({
       ...o,
-      partner: { id: partner.id, name: partner.name, assignedAt: again && o.partner ? o.partner.assignedAt : at, sentAt: at, sentTo: to },
+      partner: {
+        id: partner.id, name: partner.name, assignedAt: again && o.partner ? o.partner.assignedAt : at, sentAt: at, sentTo: to, confirmToken,
+        // A re-sent slip keeps an earlier confirmation; a new partner has to confirm again.
+        ...(again && o.partner?.confirmedAt ? { confirmedAt: o.partner.confirmedAt } : {}),
+      },
       history: [...o.history, { status: o.status, at, note: `${again ? "Auftrag erneut gesendet" : "Partner zugeordnet, Auftrag gesendet"}: ${partner.name} (${to.join(", ")})${logOnly(result)}` }],
     }));
     revalidateOrder(id);
