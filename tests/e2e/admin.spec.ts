@@ -36,6 +36,11 @@ test.describe("Admin", () => {
     await page.goto("/admin/bestellungen");
     await expect(page).toHaveURL(/\/admin\/bestellungen$/);
 
+    // Partner florists: list with the first partner, linked from the navigation.
+    await page.goto("/admin/partner");
+    await expect(page.getByRole("heading", { level: 1, name: "Partner" })).toBeVisible();
+    await expect(page.getByText("Blumen Dody")).toBeVisible();
+
     // Test mails: a recipient can be typed in; without a mail provider the admin is told so.
     await page.goto("/admin");
     await page.getByLabel("Welche Mail?").selectOption("partner");

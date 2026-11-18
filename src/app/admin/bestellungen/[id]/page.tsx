@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getOrderById, getSettings } from "@/lib/cms";
+import { getOrderById, getPartners, getSettings } from "@/lib/cms";
+import { partnerMailAddresses } from "@/lib/mail";
+import { withEffectivePartner } from "@/lib/partners";
 import { formatDateLong, formatDateTime, formatPrice } from "@/lib/format";
 import { Banner, Card, PageHeader } from "@/components/admin/controls";
 import { StatusBadge } from "@/components/admin/status-badge";
-import { CourierForm, InternalNoteForm, OrderStatusForm, ResendMailsForm, ReviewRequestForm } from "@/components/admin/order-forms";
+import { CourierForm, InternalNoteForm, OrderStatusForm, PartnerForm, ResendMailsForm, ReviewRequestForm } from "@/components/admin/order-forms";
 import { deliveredAt, getReviewRequestStatus, MAX_DAYS_AFTER_DELIVERY, MIN_DAYS_AFTER_DELIVERY } from "@/lib/mail/review-requests";
 import { courierEnabled } from "@/lib/courier";
 import { isSelfDeliveryDay } from "@/lib/delivery";
@@ -25,8 +27,10 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 
 export default async function OrderDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const [order, settings] = await Promise.all([getOrderById(decodeURIComponent(id)), getSettings()]);
-  if (!order) notFound();
+  const [found, settings, partners] = await Promise.all([getOrderById(decodeURIComponent(id)), getSettings(), getPartners(true)]);
+  if (!found) notFound();
+  const order = withEffectivePartner(found);
+  const needsPartner = order.payment.status === "paid" && order.status !== "cancelled" && !(order.partner?.sentAt && !order.partner.cancelSentAt);
   const review = await getReviewRequestStatus(order.id);
   const deliveredOn = order.status === "delivered" ? deliveredAt(order) : null;
   const cronActive = Boolean(process.env.CRON_SECRET);
@@ -45,7 +49,12 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
 
       {isUnpaidOrder(order) && (
         <Banner tone="error" className="mb-5">
-          <strong>Nicht bezahlt.</strong> Die Zahlung wurde abgebrochen oder nicht abgeschlossen – für diese Bestellung nichts binden und keinen Fahrer buchen. Kund:in und Floristik haben keine Mail bekommen.
+          <strong>Nicht bezahlt.</strong> Die Zahlung wurde abgebrochen oder nicht abgeschlossen – für diese Bestellung nichts binden und keinen Fahrer buchen. Kund:in und Partner haben keine Mail bekommen.
+        </Banner>
+      )}
+      {needsPartner && (
+        <Banner tone="warn" className="mb-5">
+          <strong>Noch keinem Partner zugeordnet.</strong> Niemand bindet diesen Strauß, bis ihr rechts unter „Partner“ eine Floristik wählt und den Auftrag sendet.
         </Banner>
       )}
       <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
@@ -134,6 +143,20 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
         </div>
 
         <div className="space-y-5">
+          <Card title="Partner" description="Welche Floristik bindet diesen Strauß. Erst mit „Auftrag senden“ bekommt der Partner die Mail.">
+            <dl className="mb-4 text-[14px]">
+              <Row label="Partner">{order.partner ? order.partner.name : <span className="font-semibold text-burgundy">Noch keiner</span>}</Row>
+              {order.partner?.sentAt && <Row label="Auftrag gesendet">{formatDateTime(order.partner.sentAt)}{order.partner.sentTo?.length ? <div className="text-[12.5px] text-ink-muted">{order.partner.sentTo.join(", ")}</div> : null}</Row>}
+              {order.partner?.cancelSentAt && <Row label="Storno gesendet">{formatDateTime(order.partner.cancelSentAt)}</Row>}
+            </dl>
+            <PartnerForm
+              orderId={order.id}
+              partners={partners.map((p) => ({ id: p.id, name: p.name, reachable: partnerMailAddresses(p).length > 0 }))}
+              current={order.partner ? { id: order.partner.id, name: order.partner.name, sent: Boolean(order.partner.sentAt), cancelled: Boolean(order.partner.cancelSentAt) } : null}
+              canAssign={order.payment.status === "paid" && order.status !== "cancelled"}
+            />
+            {partners.length === 0 && <p className="mt-3 text-[13px] text-ink-muted">Noch kein aktiver Partner – unter <Link href="/admin/partner" className="text-forest underline-offset-4 hover:underline">Partner</Link> anlegen.</p>}
+          </Card>
           <Card title="Status ändern">
             <OrderStatusForm orderId={order.id} current={order.status} statuses={settings.orderStatuses} canRequestReview={Boolean(order.customer.email) && !review.sentAt && !review.submittedAt} />
           </Card>
@@ -153,7 +176,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
             </Card>
           )}
           {order.payment.status === "paid" && (
-            <Card title="Mails erneut senden" description="Falls eine Mail nicht angekommen ist – geht an die echten Empfänger.">
+            <Card title="Mails erneut senden" description="Kundenbestellung oder Bestelleingang, falls eine Mail nicht angekommen ist. Den Partner-Auftrag sendet ihr oben unter „Partner“.">
               <ResendMailsForm orderId={order.id} customerEmail={order.customer.email} />
             </Card>
           )}

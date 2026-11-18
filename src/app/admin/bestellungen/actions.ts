@@ -1,15 +1,16 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { getSettings, updateOrder } from "@/lib/cms";
+import { getPartners, getSettings, updateOrder } from "@/lib/cms";
 import { requireAdmin } from "@/lib/admin-session";
-import { ORDER_MAIL_LABELS, sendOrderMails, sendOrderStatusUpdate, type OrderMailKind } from "@/lib/mail";
+import { ORDER_MAIL_LABELS, sendOrderMails, sendOrderStatusUpdate, sendPartnerCancellation, sendPartnerOrder, type MailResult, type OrderMailKind } from "@/lib/mail";
 import { attachFloristBudgets, getFloristBudgets } from "@/lib/florist-budget";
 import { releaseStock } from "@/lib/orders";
 import { bookCourier, cancelCourier } from "@/lib/courier";
 import { sendManualReviewRequest } from "@/lib/mail/review-requests";
 import { formatDateTime } from "@/lib/format";
-import type { Order, OrderStatus } from "@/types";
+import { withEffectivePartner } from "@/lib/partners";
+import type { Order, OrderStatus, Partner } from "@/types";
 
 export type OrderActionState = { ok: boolean; message: string } | null;
 
@@ -52,6 +53,13 @@ export async function updateOrderStatus(_prev: OrderActionState, formData: FormD
       const c = await cancelCourier(id);
       courierNote = c.ok ? " Fahrer wurde storniert." : ` Fahrer konnte nicht storniert werden: ${c.message}`;
     }
+    // …and the partner florist that already got the order slip gets a cancellation.
+    let partnerNote = "";
+    const withPartner = withEffectivePartner(updated);
+    if (status === "cancelled" && prev.status !== "cancelled" && withPartner.partner?.sentAt && !withPartner.partner.cancelSentAt) {
+      const r = await cancelAtPartner(withPartner, "cancelled");
+      partnerNote = ` ${r.message}`;
+    }
     revalidateOrder(id);
 
     // Customer notification – only for real changes to a customer-visible status.
@@ -74,7 +82,7 @@ export async function updateOrderStatus(_prev: OrderActionState, formData: FormD
       const r = await sendReviewRequestAndLog(updated);
       reviewNote = ` ${r.message}`;
     }
-    return { ok: true, message: `Status auf „${def.label}“ gesetzt.${mailNote}${courierNote}${reviewNote}` };
+    return { ok: true, message: `Status auf „${def.label}“ gesetzt.${mailNote}${courierNote}${partnerNote}${reviewNote}` };
   } catch (e) {
     return { ok: false, message: e instanceof Error ? e.message : "Fehler beim Speichern." };
   }
@@ -165,7 +173,8 @@ export async function cancelCourierAction(_prev: OrderActionState, formData: For
 
 /**
  * Send the order mails of a PAID order again – to the real recipients (customer,
- * MAIL_ADMIN, MAIL_FLORIST). For when a mail never arrived. Logged in the history.
+ * MAIL_ADMIN). For when a mail never arrived. Logged in the history. The partner's
+ * order slip is sent from the "Partner" card (assignPartnerAction).
  */
 export async function resendOrderMailsAction(_prev: OrderActionState, formData: FormData): Promise<OrderActionState> {
   try {
@@ -173,20 +182,13 @@ export async function resendOrderMailsAction(_prev: OrderActionState, formData: 
     const id = String(formData.get("id") ?? "");
     const which = String(formData.get("which") ?? "");
     const kinds: OrderMailKind[] | null =
-      which === "all" ? ["partner", "customer", "internal"] : which === "partner" || which === "customer" || which === "internal" ? [which] : null;
+      which === "all" ? ["customer", "internal"] : which === "customer" || which === "internal" ? [which] : null;
     if (!kinds) return { ok: false, message: "Bitte auswählen, welche Mail gesendet werden soll." };
 
     const { getOrderById } = await import("@/lib/cms");
-    let order = await getOrderById(id);
+    const order = await getOrderById(id);
     if (!order) return { ok: false, message: "Bestellung nicht gefunden." };
     if (order.payment.status !== "paid") return { ok: false, message: "Die Bestellung ist nicht bezahlt – es werden keine Mails gesendet." };
-
-    // Orders from before the budget list carry no budget yet: fill it in, so the
-    // florist's slip shows "Max. Budget" (and keep it on the order from now on).
-    if (kinds.includes("partner") && order.lines.every((l) => l.floristBudget === undefined)) {
-      const budgets = await getFloristBudgets();
-      order = (await updateOrder(id, (o) => ({ ...o, lines: attachFloristBudgets(o.lines, budgets) }))) ?? order;
-    }
 
     const results = await sendOrderMails(order, kinds);
     const sent = results.filter((r) => r.result?.sent);
@@ -207,6 +209,119 @@ export async function resendOrderMailsAction(_prev: OrderActionState, formData: 
       skipped.length ? `Übersprungen (keine Adresse hinterlegt): ${skipped.map((r) => ORDER_MAIL_LABELS[r.kind]).join(", ")}.` : "",
     ].filter(Boolean);
     return { ok: failed.length === 0 && sent.length > 0, message: parts.join(" ") };
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Senden fehlgeschlagen." };
+  }
+}
+
+/* ---------------- Partner florists ---------------- */
+
+/** Sent – or, without a mail provider (development), written to the server log. */
+const delivered = (r: MailResult | null) => Boolean(r && (r.sent || r.provider === "console"));
+const logOnly = (r: MailResult | null) => (r && !r.sent && r.provider === "console" ? " (nur ins Server-Log – kein Mail-Provider)" : "");
+
+const mailProblem = (r: MailResult | null) =>
+  !r ? "keine E-Mail-Adresse hinterlegt (Admin → Partner)" : r.provider === "console" ? "kein Mail-Provider konfiguriert" : r.error ?? "Fehler beim Senden";
+
+async function findPartner(id: string): Promise<Partner | null> {
+  return (await getPartners()).find((p) => p.id === id) ?? null;
+}
+
+/**
+ * Sends the cancellation to the partner the order was sent to and notes it on the
+ * order (cancelSentAt + history). Never throws.
+ */
+async function cancelAtPartner(order: Order, reason: "cancelled" | "reassigned"): Promise<{ ok: boolean; message: string }> {
+  const assigned = order.partner;
+  if (!assigned?.sentAt) return { ok: true, message: "" };
+  try {
+    const partner = (await findPartner(assigned.id)) ?? { id: assigned.id, name: assigned.name, emails: assigned.sentTo ?? [], active: false, sortOrder: 0 };
+    const { to, result } = await sendPartnerCancellation(order, partner, reason);
+    if (!delivered(result)) {
+      const message = `ACHTUNG: Storno an ${assigned.name} NICHT gesendet (${mailProblem(result)}) – bitte sofort telefonisch absagen.`;
+      await updateOrder(order.id, (o) => ({ ...o, history: [...o.history, { status: o.status, at: new Date().toISOString(), note: message }] }));
+      return { ok: false, message };
+    }
+    const at = new Date().toISOString();
+    await updateOrder(order.id, (o) => ({
+      ...o,
+      ...(!o.partner || o.partner.id === assigned.id ? { partner: { ...(o.partner ?? assigned), cancelSentAt: at } } : {}),
+      history: [...o.history, { status: o.status, at, note: `Storno an ${assigned.name} gesendet (${to.join(", ")})${logOnly(result)}` }],
+    }));
+    return { ok: true, message: `Storno an ${assigned.name} gesendet${logOnly(result)}.` };
+  } catch (err) {
+    console.error("[partner] cancellation failed", order.id, err);
+    return { ok: false, message: `ACHTUNG: Storno an ${assigned.name} NICHT gesendet – bitte sofort telefonisch absagen.` };
+  }
+}
+
+/**
+ * Assigns the order to a partner florist and sends them the order slip. Choosing the
+ * same partner again re-sends the slip; choosing another one first sends the old
+ * partner a cancellation ("wird von einer anderen Floristik übernommen").
+ */
+export async function assignPartnerAction(_prev: OrderActionState, formData: FormData): Promise<OrderActionState> {
+  try {
+    await requireAdmin();
+    const id = String(formData.get("id") ?? "");
+    const partnerId = String(formData.get("partnerId") ?? "");
+    const { getOrderById } = await import("@/lib/cms");
+    const found = await getOrderById(id);
+    if (!found) return { ok: false, message: "Bestellung nicht gefunden." };
+    let order = withEffectivePartner(found);
+    if (order.payment.status !== "paid") return { ok: false, message: "Die Bestellung ist nicht bezahlt – kein Auftrag an einen Partner." };
+    if (order.status === "cancelled") return { ok: false, message: "Die Bestellung ist storniert – kein Auftrag an einen Partner." };
+    const partner = await findPartner(partnerId);
+    if (!partner) return { ok: false, message: "Bitte einen Partner auswählen." };
+    if (!partner.active) return { ok: false, message: `${partner.name} ist im Admin als inaktiv markiert.` };
+
+    // Moving to another partner: the old one must not bind it.
+    const notes: string[] = [];
+    if (order.partner?.sentAt && order.partner.id !== partner.id && !order.partner.cancelSentAt) {
+      const c = await cancelAtPartner(order, "reassigned");
+      if (!c.ok) return { ok: false, message: `${c.message} Der Auftrag wurde deshalb noch NICHT an ${partner.name} gesendet.` };
+      notes.push(c.message);
+      order = withEffectivePartner((await getOrderById(id)) ?? order);
+    }
+
+    // Orders from before the budget list carry no budget yet: fill it in.
+    if (order.lines.every((l) => l.floristBudget === undefined)) {
+      const budgets = await getFloristBudgets();
+      order = (await updateOrder(id, (o) => ({ ...o, lines: attachFloristBudgets(o.lines, budgets) }))) ?? order;
+    }
+
+    const again = order.partner?.id === partner.id && Boolean(order.partner.sentAt) && !order.partner.cancelSentAt;
+    const { to, result } = await sendPartnerOrder(order, partner);
+    const at = new Date().toISOString();
+    if (!delivered(result)) {
+      revalidateOrder(id);
+      return { ok: false, message: [...notes, `Auftrag an ${partner.name} NICHT gesendet: ${mailProblem(result)}.`].join(" ") };
+    }
+    await updateOrder(id, (o) => ({
+      ...o,
+      partner: { id: partner.id, name: partner.name, assignedAt: again && o.partner ? o.partner.assignedAt : at, sentAt: at, sentTo: to },
+      history: [...o.history, { status: o.status, at, note: `${again ? "Auftrag erneut gesendet" : "Partner zugeordnet, Auftrag gesendet"}: ${partner.name} (${to.join(", ")})${logOnly(result)}` }],
+    }));
+    revalidateOrder(id);
+    return { ok: true, message: [...notes, `Auftrag ${again ? "erneut " : ""}an ${partner.name} gesendet (${to.join(", ")})${logOnly(result)}.`].join(" ") };
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Senden fehlgeschlagen." };
+  }
+}
+
+/** Sends the cancellation to the assigned partner by hand (e.g. when the order is changed by phone). */
+export async function sendPartnerCancellationAction(_prev: OrderActionState, formData: FormData): Promise<OrderActionState> {
+  try {
+    await requireAdmin();
+    const id = String(formData.get("id") ?? "");
+    const { getOrderById } = await import("@/lib/cms");
+    const found = await getOrderById(id);
+    if (!found) return { ok: false, message: "Bestellung nicht gefunden." };
+    const order = withEffectivePartner(found);
+    if (!order.partner?.sentAt) return { ok: false, message: "Es wurde noch kein Auftrag an einen Partner gesendet." };
+    const r = await cancelAtPartner(order, "cancelled");
+    revalidateOrder(id);
+    return r;
   } catch (e) {
     return { ok: false, message: e instanceof Error ? e.message : "Senden fehlgeschlagen." };
   }

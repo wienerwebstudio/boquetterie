@@ -367,6 +367,7 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
           ...(input.selfDelivery ? [["Zustellung", "Selbst ausliefern – es wird kein Fahrer gebucht. Strauß bei der Floristik abholen."] as [string, string]] : []),
           ["Empfänger:in", `${recipientLines(order)}\n${order.recipient.phone}`],
           ["Kund:in", `${order.customer.firstName} ${order.customer.lastName}\n${order.customer.email}\n${order.customer.phone}`],
+          ["Partner", order.partner ? `${order.partner.name}${order.partner.sentAt ? " (Auftrag gesendet)" : ""}` : "NOCH KEINEM PARTNER ZUGEORDNET – im Admin den Partner wählen und den Auftrag senden."],
           ["Positionen", items],
           ...(greeting?.message ? [["Grußkarte", greeting.message] as [string, string]] : []),
           ...(order.delivery.note ? [["Lieferhinweis", order.delivery.note] as [string, string]] : []),
@@ -420,6 +421,37 @@ export function floristOrder(input: { order: Order; brand: MailBrand; selfDelive
       { type: "floristItems", order, siteUrl: brand.siteUrl },
     ],
     footerNotes: ["Auftrag von Blumora – bitte auf diese Mail antworten, wenn etwas nicht passt."],
+  });
+}
+
+/**
+ * Cancellation for a partner florist that already received the order slip: the order
+ * was cancelled, or it was moved to another partner. Unmistakable subject, no prices,
+ * no customer data – the same data minimisation as the order slip.
+ */
+export function floristCancellation(input: { order: Order; brand: MailBrand; reason: "cancelled" | "reassigned" }): RenderedMail {
+  const { order, brand, reason } = input;
+  const items = order.lines.map((l) => `${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName} – Größe ${sizeShort(l.sizeId, l.sizeLabel, l.stems)}${l.color ? `, ${l.color}` : ""}`).join("\n");
+  const why = reason === "cancelled"
+    ? "Die Bestellung wurde storniert."
+    : "Der Auftrag wird von einer anderen Floristik übernommen.";
+  return layout({
+    brand,
+    subject: `STORNO Auftrag ${order.id} – bitte nicht binden`,
+    preheader: `${why} Auftrag ${order.id} für ${formatDateLong(order.delivery.date)} entfällt.`,
+    headline: `Storno: Auftrag ${order.id}`,
+    blocks: [
+      { type: "p", text: `${why} Bitte diesen Auftrag NICHT binden. Falls ihr schon angefangen habt, meldet euch bitte kurz per Antwort auf diese Mail.` },
+      {
+        type: "kv",
+        rows: [
+          ["Auftrag", order.id],
+          ["Geplant für", deliveryLine(order)],
+          ["Positionen", items],
+        ],
+      },
+    ],
+    footerNotes: ["Storno von Blumora – bitte auf diese Mail antworten, wenn etwas unklar ist."],
   });
 }
 

@@ -10,7 +10,7 @@ import type { Json } from "./paths";
 
 export type AdminCollection =
   | "products" | "categories" | "occasions" | "extras" | "delivery-zones"
-  | "coupons" | "faqs" | "reviews" | "landing-pages" | "pages";
+  | "coupons" | "faqs" | "reviews" | "landing-pages" | "pages" | "partners";
 export type SingletonCollection = "settings" | "homepage" | "subscription";
 export type OptionSource = "categories" | "occasions" | "products" | "faqs" | "extras";
 
@@ -639,9 +639,43 @@ export const pageSchema: EntitySchema = {
   template: { slug: "", title: "", sections: [], seo: { title: "", description: "" } },
 };
 
+export const partnerSchema: EntitySchema = {
+  collection: "partners",
+  slug: "partner",
+  idKey: "id",
+  labelKey: "name",
+  singular: "Partner",
+  plural: "Partner",
+  description: "Partner-Floristiken. Jede bezahlte Bestellung wird in der Bestellung einem Partner zugeordnet – erst dann bekommt er den Auftrag per Mail, bei Storno automatisch die Absage.",
+  sections: [
+    {
+      title: "Partner",
+      fields: [
+        { key: "name", label: "Name", type: "text", required: true, hint: "z. B. Blumen Dody" },
+        { key: "id", label: "Kennung", type: "text", hint: "Leer lassen – wird aus dem Namen erzeugt. Nicht mehr ändern, sobald Bestellungen zugeordnet sind." },
+        { key: "emails", label: "E-Mail-Adressen für Aufträge", type: "stringlist", span: "full", hint: "Eine oder mehrere Adressen. Bekommen den Auftrag und bei Storno die Absage." },
+        { key: "useEnvMail", label: "Ersatzweise Adresse aus MAIL_FLORIST (Netlify)", type: "boolean", span: "full", hint: "Nur solange oben keine Adresse eingetragen ist." },
+        { key: "contactName", label: "Ansprechperson", type: "text" },
+        { key: "phone", label: "Telefon", type: "text" },
+        { key: "address", label: "Adresse (Abholung)", type: "textarea", rows: 2, span: "full" },
+        { key: "note", label: "Interne Notiz", type: "textarea", rows: 2, span: "full" },
+        { key: "active", label: "Aktiv (in Bestellungen auswählbar)", type: "boolean", span: "third" },
+        { key: "sortOrder", label: "Reihenfolge", type: "number", min: 0, span: "third" },
+      ],
+    },
+  ],
+  columns: [
+    { key: "name", label: "Name" },
+    { key: "emails", label: "E-Mail", type: "list" },
+    { key: "phone", label: "Telefon" },
+    { key: "active", label: "Aktiv", type: "boolean" },
+  ],
+  template: { id: "", name: "", emails: [], useEnvMail: false, contactName: "", phone: "", address: "", note: "", active: true, sortOrder: 10 },
+};
+
 export const ENTITY_SCHEMAS: EntitySchema[] = [
   productSchema, categorySchema, occasionSchema, extraSchema, deliveryZoneSchema,
-  couponSchema, faqSchema, reviewSchema, landingPageSchema, pageSchema,
+  couponSchema, faqSchema, reviewSchema, landingPageSchema, pageSchema, partnerSchema,
 ];
 
 export function schemaBySlug(slug: string) {

@@ -141,6 +141,15 @@ function prepareEntity(schema: EntitySchema, data: Json, isNew: boolean, others:
       if (!str("id")) d.id = isNew ? uniqueId(`x-${d.slug}`, taken) : `x-${d.slug}`;
       break;
     }
+    case "partners": {
+      if (!str("id")) d.id = isNew ? uniqueId(slugify(str("name")), taken) : slugify(str("name"));
+      if (!Array.isArray(d.emails)) d.emails = [];
+      d.emails = (d.emails as unknown[]).map((e) => String(e).trim()).filter(Boolean);
+      const bad = (d.emails as string[]).filter((e) => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e));
+      if (bad.length) throw new Error(`Ungültige E-Mail-Adresse: ${bad.join(", ")}`);
+      if (typeof d.sortOrder !== "number") d.sortOrder = 10;
+      break;
+    }
     case "delivery-zones": {
       if (!str("id")) d.id = isNew ? uniqueId(slugify(str("name")), taken) : slugify(str("name"));
       if (d.freeFrom === undefined) d.freeFrom = null;

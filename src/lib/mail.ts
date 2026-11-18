@@ -1,8 +1,8 @@
 import "server-only";
 import nodemailer, { type Transporter } from "nodemailer";
-import type { Order, SiteSettings } from "@/types";
+import type { Order, Partner, SiteSettings } from "@/types";
 import type { Reminder } from "@/types/reminders";
-import { getAllProducts, getExtras, getOccasions, getSettings } from "@/lib/cms";
+import { getAllProducts, getExtras, getOccasions, getPartners, getSettings } from "@/lib/cms";
 import { getFloristBudgets } from "@/lib/florist-budget";
 import * as templates from "@/lib/mail/templates";
 import { floristReadyTime, getLocalNow, isSelfDeliveryDay } from "@/lib/delivery";
@@ -22,7 +22,9 @@ import { formatReminderDate } from "@/lib/mail/reminders";
  * MAIL_FROM  – sender, e.g. "Blumora <office@blumora.at>" (verified domain at Resend, or the SMTP mailbox itself)
  * MAIL_REPLY_TO – optional reply-to address
  * MAIL_ADMIN – optional address that receives internal notifications (new orders, inquiries)
- * MAIL_FLORIST – optional, comma-separated: the partner florist's order slip (no customer contact data)
+ * MAIL_FLORIST – optional, comma-separated: fallback addresses for a partner florist (admin → Partner)
+ *   that has no address of its own and "useEnvMail" set. Order slips only go out when an order is
+ *   assigned to a partner in the admin – never automatically on payment.
  * MAIL_REDIRECT_TO – test switch: when set, EVERY mail goes only to this address; the subject
  *   names the original recipients. Remove it to go live.
  *
@@ -72,6 +74,13 @@ export function floristMailAddresses(): string[] {
     .split(/[,;\s]+/)
     .map((a) => a.trim())
     .filter((a) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a));
+}
+
+/** Addresses of a partner florist: its own, or MAIL_FLORIST while it has none and `useEnvMail` is set. */
+export function partnerMailAddresses(partner: Pick<Partner, "emails" | "useEnvMail">): string[] {
+  const own = (partner.emails ?? []).map((a) => a.trim()).filter((a) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(a));
+  if (own.length) return own;
+  return partner.useEnvMail ? floristMailAddresses() : [];
 }
 
 /** One SMTP connection setup per process. Port 465 = implicit TLS, otherwise STARTTLS. */
@@ -204,25 +213,33 @@ function send(to: string | string[], mail: RenderedMail, type: string): Promise<
 
 /* ---------------- Order mails ---------------- */
 
-/** The three mails of a paid order. */
+/** The mails of a paid order. "partner" only goes to the partner the order is assigned to. */
 export type OrderMailKind = "customer" | "internal" | "partner";
 export const ORDER_MAIL_LABELS: Record<OrderMailKind, string> = { customer: "Kundenbestellung", internal: "Bestelleingang", partner: "Partner-Auftrag" };
 
+/** The partner record an order is assigned to (current data from the admin), or null. */
+export async function assignedPartner(order: Order): Promise<Partner | null> {
+  if (!order.partner) return null;
+  const partners = await getPartners().catch(() => [] as Partner[]);
+  return partners.find((p) => p.id === order.partner?.id) ?? null;
+}
+
 /**
  * Sends the chosen order mails for real: confirmation to the customer, internal
- * notification to MAIL_ADMIN and the order slip to the florist (MAIL_FLORIST).
- * A mail without a configured recipient is skipped (result `null`). All are awaited
- * together, one failing never stops the others.
+ * notification to MAIL_ADMIN and the order slip to the ASSIGNED partner florist.
+ * A mail without a recipient (e.g. no partner assigned yet) is skipped (result `null`).
+ * All are awaited together, one failing never stops the others.
  */
-export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind[] = ["customer", "internal", "partner"]): Promise<{ kind: OrderMailKind; to: string[]; result: MailResult | null }[]> {
+export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind[] = ["customer", "internal"]): Promise<{ kind: OrderMailKind; to: string[]; result: MailResult | null }[]> {
   const settings = await getSettings();
   const brand = mailBrand(settings);
   const selfDelivery = isSelfDeliveryDay(settings, order.delivery.date);
   const admin = adminMailAddress();
+  const partner = kinds.includes("partner") ? await assignedPartner(order) : null;
   const recipients: Record<OrderMailKind, string[]> = {
     customer: [order.customer.email],
     internal: admin ? [admin] : [],
-    partner: floristMailAddresses(),
+    partner: partner ? partnerMailAddresses(partner) : [],
   };
   const render: Record<OrderMailKind, () => RenderedMail> = {
     customer: () => templates.orderConfirmation({ order, brand, trackingUrl: orderTrackingUrl(order, brand.siteUrl) }),
@@ -243,10 +260,35 @@ export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind
   });
 }
 
-/** Mails for a paid order (all three). Resolves with the customer mail's result. */
+/**
+ * Mails for a freshly paid order: customer confirmation and the internal notification.
+ * The partner florist gets nothing here – the order is assigned to a partner in the
+ * admin first. Resolves with the customer mail's result.
+ */
 export async function sendOrderConfirmation(order: Order): Promise<MailResult> {
-  const results = await sendOrderMails(order);
+  const results = await sendOrderMails(order, ["customer", "internal"]);
   return results.find((r) => r.kind === "customer")?.result ?? { sent: false, provider: mailProvider(), error: "no customer mail" };
+}
+
+/** Order slip to one partner florist (assignment in the admin). */
+export async function sendPartnerOrder(order: Order, partner: Partner): Promise<{ to: string[]; result: MailResult | null }> {
+  const to = partnerMailAddresses(partner);
+  if (!to.length) return { to, result: null };
+  const settings = await getSettings();
+  const mail = templates.floristOrder({
+    order, brand: mailBrand(settings), selfDelivery: isSelfDeliveryDay(settings, order.delivery.date),
+    readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)),
+  });
+  return { to, result: await send(to.length === 1 ? to[0] : to, mail, "florist_order") };
+}
+
+/** Cancellation to a partner florist that already got the order slip. */
+export async function sendPartnerCancellation(order: Order, partner: Partner, reason: "cancelled" | "reassigned"): Promise<{ to: string[]; result: MailResult | null }> {
+  const to = partnerMailAddresses(partner);
+  if (!to.length) return { to, result: null };
+  const settings = await getSettings();
+  const mail = templates.floristCancellation({ order, brand: mailBrand(settings), reason });
+  return { to, result: await send(to.length === 1 ? to[0] : to, mail, "florist_cancellation") };
 }
 
 /**

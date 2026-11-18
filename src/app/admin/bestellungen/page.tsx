@@ -3,6 +3,7 @@ import { getOrders, getSettings } from "@/lib/cms";
 import { formatDateShort, formatDateTime, formatPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { EmptyState, PageHeader, Table, Td, Th, inputCls } from "@/components/admin/controls";
+import { effectivePartner } from "@/lib/partners";
 import { StatusBadge } from "@/components/admin/status-badge";
 import { isSelfDeliveryDay } from "@/lib/delivery";
 import { customerName, isOpenOrder, isUnpaidOrder, recipientName, statusLabel } from "@/components/admin/order-utils";
@@ -62,7 +63,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
         <Table>
           <thead>
             <tr>
-              <Th>Nr.</Th><Th>Eingang</Th><Th>Kund:in</Th><Th>Empfänger:in</Th><Th>Lieferdatum</Th><Th>Zahlung</Th><Th>Status</Th><Th className="text-right">Summe</Th>
+              <Th>Nr.</Th><Th>Eingang</Th><Th>Kund:in</Th><Th>Empfänger:in</Th><Th>Lieferdatum</Th><Th>Zahlung</Th><Th>Partner</Th><Th>Status</Th><Th className="text-right">Summe</Th>
             </tr>
           </thead>
           <tbody>
@@ -74,6 +75,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
                 <Td>{recipientName(o)}<div className="text-[12px] text-ink-soft">{o.recipient.zip} {o.recipient.city}</div></Td>
                 <Td className="whitespace-nowrap">{formatDateShort(o.delivery.date)}{o.delivery.windowLabel ? <div className="text-[12px] text-ink-soft">{o.delivery.windowLabel}</div> : null}{isSelfDeliveryDay(settings, o.delivery.date) ? <div className="text-[12px] font-semibold text-forest">Selbst ausliefern</div> : null}</Td>
                 <Td className="whitespace-nowrap text-[13px]">{o.payment.status === "paid" ? "Bezahlt" : o.payment.status === "refunded" ? "Erstattet" : <span className="font-semibold text-danger">Nicht bezahlt</span>}</Td>
+                <Td className="whitespace-nowrap text-[13px]">{effectivePartner(o)?.sentAt && !effectivePartner(o)?.cancelSentAt ? effectivePartner(o)?.name : o.payment.status === "paid" && o.status !== "cancelled" ? <span className="font-semibold text-danger">Kein Partner</span> : <span className="text-ink-soft">–</span>}</Td>
                 <Td><StatusBadge status={o.status} label={statusLabel(settings, o.status)} /></Td>
                 <Td className="whitespace-nowrap text-right font-semibold">{formatPrice(o.totals.total)}</Td>
               </tr>
@@ -82,7 +84,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
           <tfoot>
             <tr>
               <Td className="text-[13px] text-ink-muted" >{filtered.length} Bestellung(en)</Td>
-              <Td /><Td /><Td /><Td /><Td /><Td />
+              <Td /><Td /><Td /><Td /><Td /><Td /><Td />
               <Td className="whitespace-nowrap text-right font-semibold">{formatPrice(sum)}</Td>
             </tr>
           </tfoot>

@@ -3,7 +3,7 @@ import { getStore, jsonStore, type DocumentStore } from "@/lib/store";
 import { runContentMigrations } from "@/lib/content-migrations";
 import type {
   Category, CmsPage, Coupon, DeliveryZone, Extra, FAQ, HomepageContent, LandingPage,
-  Occasion, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber,
+  Occasion, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber,
 } from "@/types";
 
 /**
@@ -17,7 +17,7 @@ import type {
  */
 type Collection =
   | "products" | "occasions" | "categories" | "extras" | "delivery-zones" | "coupons"
-  | "faqs" | "reviews" | "subscription" | "settings" | "homepage" | "pages" | "landing-pages";
+  | "faqs" | "reviews" | "subscription" | "settings" | "homepage" | "pages" | "landing-pages" | "partners";
 
 /**
  * Reads an editorial document. With the Postgres store a document that is not yet
@@ -91,6 +91,9 @@ export const getCoupons = () => readCollection<Coupon[]>("coupons");
 export const getFaqs = async () =>
   (await readCollection<FAQ[]>("faqs")).sort((a, b) => a.sortOrder - b.sortOrder);
 export const getReviews = () => readCollection<Review[]>("reviews");
+/** Partner florists, sorted; `onlyActive` drops inactive ones. */
+export const getPartners = async (onlyActive = false) =>
+  (await readCollection<Partner[]>("partners")).filter((p) => !onlyActive || p.active).sort((a, b) => a.sortOrder - b.sortOrder);
 export const getPages = () => readCollection<CmsPage[]>("pages");
 export const getLandingPages = () => readCollection<LandingPage[]>("landing-pages");
 

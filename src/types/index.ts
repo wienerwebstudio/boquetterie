@@ -480,6 +480,38 @@ export interface Order {
   courier?: OrderCourier;
   /** Optional link to a customer account (e-mail based). */
   customerId?: string;
+  /** Partner florist this order is assigned to (chosen in the admin). Without it nobody gets the order slip. */
+  partner?: OrderPartner;
+}
+
+/* ---------------- Partner florists ---------------- */
+
+/** A partner florist (content document `partners`, edited in the admin). */
+export interface Partner {
+  id: string;
+  name: string;
+  /** Addresses that receive order slips and cancellations. */
+  emails: string[];
+  /** While `emails` is empty, use the addresses from MAIL_FLORIST (env) instead. */
+  useEnvMail?: boolean;
+  contactName?: string;
+  phone?: string;
+  address?: string;
+  note?: string;
+  active: boolean;
+  sortOrder: number;
+}
+
+/** The partner an order is assigned to, and what they were sent. */
+export interface OrderPartner {
+  id: string;
+  name: string;
+  assignedAt: string;
+  /** When the order slip went out (and to whom). */
+  sentAt?: string;
+  sentTo?: string[];
+  /** When the cancellation went out to this partner. */
+  cancelSentAt?: string;
 }
 
 /* ---------------- Newsletter ---------------- */

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "blumen-dody",
+    "name": "Blumen Dody",
+    "emails": [],
+    "useEnvMail": true,
+    "contactName": "",
+    "phone": "",
+    "address": "",
+    "note": "Solange hier keine E-Mail eingetragen ist, gehen Aufträge an die Adresse(n) aus MAIL_FLORIST (Netlify).",
+    "active": true,
+    "sortOrder": 1
+  }
+]

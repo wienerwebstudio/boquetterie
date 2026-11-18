@@ -5,9 +5,13 @@ vi.mock("server-only", () => ({}));
 const sendMail = vi.hoisted(() => vi.fn(async () => ({ messageId: "<test@smtp>" })));
 const createTransport = vi.hoisted(() => vi.fn(() => ({ sendMail })));
 vi.mock("nodemailer", () => ({ default: { createTransport } }));
-vi.mock("@/lib/cms", () => ({ getSettings: vi.fn(), getOccasions: vi.fn(), getAllProducts: vi.fn(async () => []), getExtras: vi.fn(async () => []), readData: vi.fn(async () => null), writeData: vi.fn() }));
+const PARTNERS = [
+  { id: "blumen-dody", name: "Blumen Dody", emails: [], useEnvMail: true, active: true, sortOrder: 1 },
+  { id: "rosenhaus", name: "Rosenhaus", emails: ["auftrag@rosenhaus.at"], active: true, sortOrder: 2 },
+];
+vi.mock("@/lib/cms", () => ({ getSettings: vi.fn(), getOccasions: vi.fn(), getAllProducts: vi.fn(async () => []), getExtras: vi.fn(async () => []), getPartners: vi.fn(async () => PARTNERS), readData: vi.fn(async () => null), writeData: vi.fn() }));
 
-import { floristOrder, orderConfirmation } from "@/lib/mail/templates";
+import { adminNewOrder, floristCancellation, floristOrder, orderConfirmation } from "@/lib/mail/templates";
 import { formatPrice } from "@/lib/format";
 
 const order: Order = {
@@ -215,26 +219,57 @@ describe("resending the mails of a real order", () => {
   beforeEach(() => { vi.resetModules(); delete (globalThis as { __blumoraSmtp?: unknown }).__blumoraSmtp; sendMail.mockClear(); });
   afterEach(() => vi.unstubAllEnvs());
 
-  it("sends only the chosen mails, to the real recipients", async () => {
+  it("sends the partner slip only to the partner the order is assigned to", async () => {
     vi.stubEnv("RESEND_API_KEY", ""); vi.stubEnv("SMTP_HOST", "mail.example.at"); vi.stubEnv("MAIL_REDIRECT_TO", "");
     vi.stubEnv("MAIL_FLORIST", "florist@example.at, office@florist.at"); vi.stubEnv("MAIL_ADMIN", "office@example.at");
     const cms = await import("@/lib/cms");
     vi.mocked(cms.getSettings).mockResolvedValue({ brand: { name: "Blumora" }, seo: { siteUrl: "https://blumora.at" } } as never);
     const mail = await import("@/lib/mail");
 
-    const partner = await mail.sendOrderMails(order, ["partner"]);
+    // Not assigned yet: nobody gets the slip.
+    expect((await mail.sendOrderMails(order, ["partner"]))[0].result).toBeNull();
+    expect(sendMail).not.toHaveBeenCalled();
+
+    // Assigned to Blumen Dody (no own address, useEnvMail) → MAIL_FLORIST.
+    const dody = { ...order, partner: { id: "blumen-dody", name: "Blumen Dody", assignedAt: "2026-11-18T09:00:00Z" } };
+    const partner = await mail.sendOrderMails(dody, ["partner"]);
     expect(partner.map((r) => [r.kind, r.result?.sent])).toEqual([["partner", true]]);
-    expect(sendMail).toHaveBeenCalledTimes(1);
     const slip = (sendMail.mock.calls[0] as unknown as [{ to: string[]; subject: string }])[0];
     expect(slip.to).toEqual(["florist@example.at", "office@florist.at"]);
     expect(slip.subject).toContain("BQ-ABC123");
-    expect(slip.subject).not.toContain("[Beispiel]");
 
+    // Another partner with its own address → only that address, never MAIL_FLORIST.
     sendMail.mockClear();
-    const all = await mail.sendOrderMails(order);
-    expect(all.map((r) => r.kind)).toEqual(["customer", "internal", "partner"]);
+    await mail.sendOrderMails({ ...order, partner: { id: "rosenhaus", name: "Rosenhaus", assignedAt: "2026-11-18T09:00:00Z" } }, ["partner"]);
+    expect((sendMail.mock.calls[0] as unknown as [{ to: string[] }])[0].to).toEqual(["auftrag@rosenhaus.at"]);
+
+    // Default (and payment): customer + internal only.
+    sendMail.mockClear();
+    const all = await mail.sendOrderMails(dody);
+    expect(all.map((r) => r.kind)).toEqual(["customer", "internal"]);
+    await mail.sendOrderConfirmation(dody);
     const to = sendMail.mock.calls.map((c) => (c as unknown as [{ to: string[] }])[0].to.join(","));
-    expect(to).toEqual(["paul@example.at", "office@example.at", "florist@example.at,office@florist.at"]);
+    expect(to).toEqual(["paul@example.at", "office@example.at", "paul@example.at", "office@example.at"]);
+  });
+
+  it("sends the cancellation to the partner", async () => {
+    vi.stubEnv("RESEND_API_KEY", ""); vi.stubEnv("SMTP_HOST", "mail.example.at"); vi.stubEnv("MAIL_REDIRECT_TO", "");
+    const cms = await import("@/lib/cms");
+    vi.mocked(cms.getSettings).mockResolvedValue({ brand: { name: "Blumora" }, seo: { siteUrl: "https://blumora.at" } } as never);
+    const mail = await import("@/lib/mail");
+    const r = await mail.sendPartnerCancellation(order, PARTNERS[1], "cancelled");
+    expect(r.result?.sent).toBe(true);
+    const m = (sendMail.mock.calls[0] as unknown as [{ to: string[]; subject: string }])[0];
+    expect(m.to).toEqual(["auftrag@rosenhaus.at"]);
+    expect(m.subject).toBe("STORNO Auftrag BQ-ABC123 – bitte nicht binden");
+  });
+
+  it("partner addresses: own ones first, MAIL_FLORIST only as fallback", async () => {
+    vi.stubEnv("MAIL_FLORIST", "florist@example.at");
+    const { partnerMailAddresses } = await import("@/lib/mail");
+    expect(partnerMailAddresses({ emails: [" a@b.at ", "kaputt"], useEnvMail: true })).toEqual(["a@b.at"]);
+    expect(partnerMailAddresses({ emails: [], useEnvMail: true })).toEqual(["florist@example.at"]);
+    expect(partnerMailAddresses({ emails: [], useEnvMail: false })).toEqual([]);
   });
 
   it("skips a mail without a configured address", async () => {
@@ -258,5 +293,22 @@ describe("size names for the florist", () => {
     expect(sizeShort("s", "60 cm")).toBe("60 cm");
     expect(sizeShort("xxl", "XXL", 61)).toBe("XXL · 61 Stiele");
     expect(sizeShort("xxxl", "XXXL", 99)).toBe("XXXL · 99 Stiele");
+  });
+});
+
+describe("partner mails", () => {
+  it("cancellation says clearly not to bind, without prices or customer data", () => {
+    const m = floristCancellation({ order, brand, reason: "cancelled" });
+    expect(m.text).toContain("NICHT binden");
+    expect(m.text).toContain("Rosalie");
+    expect(m.text).not.toContain("paul@example.at");
+    expect(m.text).not.toContain("Huber");
+    expect(m.text).not.toContain(formatPrice(85.8));
+    expect(floristCancellation({ order, brand, reason: "reassigned" }).text).toContain("anderen Floristik");
+  });
+
+  it("internal mail flags an order without partner", () => {
+    expect(adminNewOrder({ order, brand, adminUrl: "https://blumora.at/admin" }).text).toContain("NOCH KEINEM PARTNER ZUGEORDNET");
+    expect(adminNewOrder({ order: { ...order, partner: { id: "x", name: "Rosenhaus", assignedAt: "", sentAt: "2026-11-18T09:00:00Z" } }, brand, adminUrl: "x" }).text).toContain("Rosenhaus (Auftrag gesendet)");
   });
 });

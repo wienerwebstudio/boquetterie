@@ -3,7 +3,7 @@
 import { useActionState, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { OrderStatus, OrderStatusDefinition } from "@/types";
-import { bookCourierAction, cancelCourierAction, resendOrderMailsAction, saveInternalNote, sendReviewRequestAction, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
+import { assignPartnerAction, bookCourierAction, cancelCourierAction, resendOrderMailsAction, saveInternalNote, sendPartnerCancellationAction, sendReviewRequestAction, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
 import { Banner, Field, inputCls } from "./controls";
 import { cn } from "@/lib/format";
 
@@ -82,7 +82,7 @@ export function ResendMailsForm({ orderId, customerEmail }: { orderId: string; c
       className="space-y-3"
       onSubmit={(e) => {
         const which = (e.currentTarget.elements.namedItem("which") as HTMLSelectElement | null)?.value;
-        const text = which === "partner" ? "Auftrag jetzt an den Partner senden?" : which === "customer" ? `Bestellbestätigung jetzt an ${customerEmail} senden?` : which === "internal" ? "Bestelleingang jetzt an euch senden?" : `Alle drei Mails jetzt senden (Partner, ${customerEmail}, Bestelleingang)?`;
+        const text = which === "customer" ? `Bestellbestätigung jetzt an ${customerEmail} senden?` : which === "internal" ? "Bestelleingang jetzt an euch senden?" : `Beide Mails jetzt senden (${customerEmail} und Bestelleingang)?`;
         if (!confirm(text)) e.preventDefault();
       }}
     >
@@ -90,8 +90,7 @@ export function ResendMailsForm({ orderId, customerEmail }: { orderId: string; c
       {state && <Banner tone={state.ok ? "success" : "error"}>{state.message}</Banner>}
       <Field label="Welche Mail?" htmlFor="resend-which">
         <select id="resend-which" name="which" defaultValue="all" className={cn(inputCls, "appearance-none")}>
-          <option value="all">Alle (Partner, Kund:in, Bestelleingang)</option>
-          <option value="partner">Partner-Auftrag</option>
+          <option value="all">Beide (Kund:in und Bestelleingang)</option>
           <option value="customer">Kundenbestellung</option>
           <option value="internal">Bestelleingang</option>
         </select>
@@ -119,5 +118,61 @@ export function ReviewRequestForm({ orderId, customerEmail, delivered, lastSentL
       {state && <Banner tone={state.ok ? "success" : "error"}>{state.message}</Banner>}
       <Button type="submit" size="sm" variant="outline" loading={pending}>Bewertungsanfrage jetzt senden</Button>
     </form>
+  );
+}
+
+/**
+ * Assign the order to a partner florist and send the order slip; re-send it; move it to
+ * another partner (the old one gets a cancellation); or send the cancellation by hand.
+ */
+export function PartnerForm({ orderId, partners, current, canAssign }: {
+  orderId: string;
+  partners: { id: string; name: string; reachable: boolean }[];
+  current: { id: string; name: string; sent: boolean; cancelled: boolean } | null;
+  canAssign: boolean;
+}) {
+  const [assignState, assign, assigning] = useActionState<OrderActionState, FormData>(assignPartnerAction, null);
+  const [cancelState, cancel, cancelling] = useActionState<OrderActionState, FormData>(sendPartnerCancellationAction, null);
+  const active = current && current.sent && !current.cancelled ? current : null;
+  const [selected, setSelected] = useState<string>(current?.id ?? "");
+  const chosen = partners.find((p) => p.id === selected);
+  const label = !chosen ? "Partner auswählen" : active?.id === chosen.id ? "Auftrag erneut senden" : active ? `Zu ${chosen.name} wechseln` : "Zuordnen & Auftrag senden";
+  const state = cancelState ?? assignState;
+  return (
+    <div className="space-y-3">
+      {state && <Banner tone={state.ok ? "success" : "error"}>{state.message}</Banner>}
+      {canAssign && (
+        <form
+          action={assign}
+          className="space-y-3"
+          onSubmit={(e) => {
+            if (!chosen) { e.preventDefault(); return; }
+            const text = active?.id === chosen.id
+              ? `Auftrag noch einmal an ${chosen.name} senden?`
+              : active
+                ? `${active.name} bekommt eine Storno-Mail („wird von einer anderen Floristik übernommen“), danach geht der Auftrag an ${chosen.name}. Fortfahren?`
+                : `Auftrag jetzt an ${chosen.name} senden?`;
+            if (!confirm(text)) e.preventDefault();
+          }}
+        >
+          <input type="hidden" name="id" value={orderId} />
+          <Field label="Partner" htmlFor="partnerId">
+            <select id="partnerId" name="partnerId" value={selected} onChange={(e) => setSelected(e.target.value)} className={cn(inputCls, "appearance-none")}>
+              <option value="">– bitte wählen –</option>
+              {partners.map((p) => (
+                <option key={p.id} value={p.id} disabled={!p.reachable}>{p.name}{p.reachable ? "" : " (keine E-Mail hinterlegt)"}</option>
+              ))}
+            </select>
+          </Field>
+          <Button type="submit" size="sm" loading={assigning} disabled={!chosen}>{label}</Button>
+        </form>
+      )}
+      {active && (
+        <form action={cancel} onSubmit={(e) => { if (!confirm(`Storno-Mail jetzt an ${active.name} senden? Der Partner bindet den Strauß dann nicht.`)) e.preventDefault(); }}>
+          <input type="hidden" name="id" value={orderId} />
+          <Button type="submit" size="sm" variant="ghost" loading={cancelling}>Storno an {active.name} senden</Button>
+        </form>
+      )}
+    </div>
   );
 }
