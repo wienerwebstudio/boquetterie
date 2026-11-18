@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { FOUND_VIA_OPTIONS } from "@/lib/found-via";
 import { getAllProducts, getNewsletterSubscribers, getOrders, getSettings } from "@/lib/cms";
 import { getLocalNow } from "@/lib/delivery";
 import { formatDateShort, formatDateTime, formatPrice } from "@/lib/format";
@@ -28,6 +29,12 @@ export default async function AdminOverviewPage() {
   const openOrders = orders.filter((o) => isOpenOrder(o, settings));
   const deliveriesToday = orders.filter((o) => o.delivery.date === now.date && isOpenOrder(o, settings));
   const latest = [...orders].sort((a, b) => b.createdAt.localeCompare(a.createdAt)).slice(0, 8);
+  const answered = orders.filter((o) => o.foundVia);
+  const foundViaTotal = answered.length;
+  const foundViaCounts = FOUND_VIA_OPTIONS.map((opt) => ({ ...opt, count: answered.filter((o) => o.foundVia?.source === opt.id).length }))
+    .filter((c) => c.count > 0)
+    .sort((a, b) => b.count - a.count);
+  const foundViaOther = answered.map((o) => o.foundVia?.other).filter((v): v is string => Boolean(v)).slice(-10);
   const placeholders = [settings.brand.legalName, settings.brand.email, settings.brand.phone, settings.brand.address.street].filter((v) => v.startsWith("[")).length;
 
   return (
@@ -89,6 +96,21 @@ export default async function AdminOverviewPage() {
               </li>
             ))}
           </ul>
+        </Card>
+        <Card title="Wie Kund:innen uns finden" description="Antworten aus der Bewertungsmail bzw. dem Bewertungsformular.">
+          {foundViaTotal === 0 ? (
+            <p className="text-[14px] text-ink-muted">Noch keine Antworten.</p>
+          ) : (
+            <ul className="space-y-1.5 text-[14px]">
+              {foundViaCounts.map((c) => (
+                <li key={c.id} className="flex items-center justify-between gap-3">
+                  <span className="text-ink">{c.label}</span>
+                  <span className="tabular-nums text-ink-muted">{c.count} · {Math.round((c.count / foundViaTotal) * 100)} %</span>
+                </li>
+              ))}
+              {foundViaOther.length > 0 && <li className="pt-1 text-[12.5px] text-ink-soft">Sonstiges: {foundViaOther.join(", ")}</li>}
+            </ul>
+          )}
         </Card>
         <Card title="E-Mails testen">
           <TestMailButton defaultRecipient={process.env.MAIL_REDIRECT_TO?.trim() || process.env.MAIL_ADMIN?.trim() || ""} />

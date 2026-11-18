@@ -1,4 +1,5 @@
 import type { Order, OrderStatusDefinition } from "@/types";
+import { FOUND_VIA_OPTIONS } from "@/lib/found-via";
 import { formatDateLong, formatPrice } from "@/lib/format";
 import { VAT_TEXT } from "@/lib/vat";
 
@@ -58,7 +59,8 @@ type Block =
   | { type: "totals"; order: Order }
   | { type: "quote"; text: string; by?: string }
   | { type: "alert"; text: string }
-  | { type: "hr" };
+  | { type: "hr" }
+  | { type: "choices"; items: { label: string; url: string }[] };
 
 /**
  * Absolute URL of a product photo for e-mails, scaled down by the site's image
@@ -95,6 +97,10 @@ function renderBlockHtml(b: Block): string {
       return `<h2 style="margin:28px 0 12px;font-family:${SERIF};font-weight:500;font-size:22px;line-height:1.25;color:${C.ink};">${escapeHtml(b.text)}</h2>`;
     case "button":
       return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 24px;"><tr><td style="border-radius:6px;background:${C.forest};"><a href="${escapeHtml(b.url)}" style="display:inline-block;padding:13px 24px;font-family:${FONT};font-size:14px;font-weight:600;letter-spacing:0.02em;color:#faf7f2;text-decoration:none;border-radius:6px;">${escapeHtml(b.label)}</a></td></tr></table>`;
+    case "choices":
+      return `<p style="margin:0 0 20px;font-family:${FONT};font-size:14px;line-height:2.6;">${b.items
+        .map((i) => `<a href="${escapeHtml(i.url)}" style="display:inline-block;margin:0 6px 0 0;padding:6px 14px;border:1px solid ${C.line};border-radius:999px;color:${C.forest};text-decoration:none;white-space:nowrap;line-height:1.4;">${escapeHtml(i.label)}</a>`)
+        .join(" ")}</p>`;
     case "link":
       return `<p style="margin:0 0 16px;font-family:${FONT};font-size:14px;line-height:1.6;"><a href="${escapeHtml(b.url)}" style="color:${C.forest};text-decoration:underline;">${escapeHtml(b.label)}</a></p>`;
     case "kv":
@@ -160,6 +166,8 @@ function renderBlockText(b: Block): string {
     case "button":
     case "link":
       return `${b.label}: ${b.url}`;
+    case "choices":
+      return b.items.map((i) => `- ${i.label}: ${i.url}`).join("\n");
     case "kv":
       return b.rows.map(([k, v]) => `${k}: ${v.replace(/\n/g, ", ")}`).join("\n");
     case "items":
@@ -599,6 +607,14 @@ export function reviewRequest(input: { order: Order; brand: MailBrand; reviewUrl
       { type: "p", text: "Ein Foto vom Strauß freut uns besonders – du kannst bis zu drei Bilder mitschicken." },
       { type: "button", label: "Bewertung schreiben", url: reviewUrl },
       { type: "p", text: "Das dauert nur einen Moment. Deine Bewertung wird von uns gelesen und erst danach im Shop veröffentlicht.", muted: true },
+      ...(order.foundVia
+        ? []
+        : ([
+            { type: "hr" },
+            { type: "h", text: "Und eine kurze Frage: Wie hast du uns gefunden?" },
+            { type: "choices", items: FOUND_VIA_OPTIONS.map((o) => ({ label: o.label, url: `${reviewUrl}${reviewUrl.includes("?") ? "&" : "?"}quelle=${o.id}#gefunden` })) },
+            { type: "p", text: "Ein Klick öffnet die Seite mit deiner Antwort – dort kannst du sie auch ohne Bewertung abschicken.", muted: true },
+          ] as Block[])),
     ],
     footerNotes: ["Du erhältst diese E-Mail einmalig, weil du bei uns bestellt hast."],
   });

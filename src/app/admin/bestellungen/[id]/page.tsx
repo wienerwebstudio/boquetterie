@@ -1,3 +1,4 @@
+import { foundViaLabel } from "@/lib/found-via";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -124,6 +125,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                 <Row label="Zahlungsart">{PAYMENT_LABELS[order.payment.method] ?? order.payment.method}</Row>
                 <Row label="Zahlungsstatus">{PAYMENT_STATUS_LABELS[order.payment.status] ?? order.payment.status}</Row>
                 {order.payment.reference && <Row label="Referenz"><code className="text-[13px]">{order.payment.reference}</code></Row>}
+                {order.foundVia && <Row label="Gefunden über">{foundViaLabel(order.foundVia)}</Row>}
                 {order.coupon && <Row label="Gutschein">{order.coupon.code} (−{formatPrice(order.coupon.discount)})</Row>}
               </dl>
             </Card>

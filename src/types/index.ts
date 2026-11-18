@@ -1,3 +1,4 @@
+import type { FoundVia } from "@/lib/found-via";
 /**
  * Blumora – shared domain types.
  * Everything that an administrator can edit lives in `content/*.json`
@@ -482,6 +483,8 @@ export interface Order {
   customerId?: string;
   /** Partner florist this order is assigned to (chosen in the admin). Without it nobody gets the order slip. */
   partner?: OrderPartner;
+  /** Answer to "Wie hast du uns gefunden?" (review mail / review page). */
+  foundVia?: FoundVia;
 }
 
 /* ---------------- Partner florists ---------------- */

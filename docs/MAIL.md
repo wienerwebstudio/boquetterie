@@ -142,6 +142,10 @@ Auf der Bestellseite im Admin (`/admin/bestellungen/{id}`) zeigt die Karte **Bew
 
 Beim Statuswechsel auf *Zugestellt* gibt es dafür zusätzlich das Häkchen **„Bewertungsanfrage gleich mitschicken“** (nur sichtbar, solange noch keine Anfrage gesendet und nicht bewertet wurde).
 
+## „Wie hast du uns gefunden?“
+
+Die Bewertungsmail fragt zusätzlich, wie die Kundin uns gefunden hat (Google-Suche, Google Maps, Instagram, TikTok, Facebook, Empfehlung, Schon einmal bestellt, Sonstiges). Jede Antwort ist ein Link auf `/bewertung?…&quelle=<id>#gefunden` – die Antwort ist dort vorausgewählt, gespeichert wird erst per Klick („Nur diese Antwort senden“ oder mit der Bewertung). So beantworten Mail-Scanner nichts von selbst. Gespeichert in `order.foundVia` (`POST /api/reviews/found-via` bzw. Feld `found_via` in `POST /api/reviews`), sichtbar in der Bestellung („Gefunden über“) und als Auswertung auf der Admin-Startseite („Wie Kund:innen uns finden“). Ist schon geantwortet, fragt weder Mail noch Formular erneut.
+
 ## Fotos in Bewertungen
 
 Das Formular unter `/bewertung` nimmt bis zu **3 Fotos** (JPEG, PNG, WebP, je max. 10 MB) mit Vorschau und Entfernen-Knopf an. Der Browser verkleinert sie vor dem Senden (max. 1600 px, damit drei Fotos in eine Anfrage passen – Netlify Functions nehmen höchstens ca. 6 MB pro Anfrage an). Der Server (`POST /api/reviews`, multipart) prüft zuerst das Rate-Limit, dann Felder, Einwilligung und Bestell-Token, erkennt das Format an den Bytes (`sharp`), dreht das Bild nach EXIF, entfernt alle Metadaten (EXIF, GPS), verkleinert auf max. 1600 px und speichert JPEG mit Qualität 80 – Details und Speicherorte in `docs/UPLOADS.md`. HEIC-Dateien kann das mitgelieferte `sharp` nicht dekodieren (nur AVIF aus der HEIF-Familie); iOS wandelt Fotos bei diesem Formular selbst in JPEG um, sonst gibt es eine verständliche Fehlermeldung.

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { ReviewConsent, ReviewSubmission, ReviewSubmissionPhoto } from "@/types/reminders";
-import { getAllProducts, getOrderById } from "@/lib/cms";
+import { getAllProducts, getOrderById, updateOrder } from "@/lib/cms";
+import { readFoundVia, type FoundVia } from "@/lib/found-via";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import { tokenMatches } from "@/lib/mail/reminders";
 import { getReviewSubmissions, hasSubmittedReview, markReviewSubmitted, newSubmissionId, saveReviewSubmissions } from "@/lib/mail/review-requests";
@@ -33,6 +34,7 @@ export async function POST(req: Request) {
 
   let fields: ReviewFields;
   let files: File[] = [];
+  let foundVia: FoundVia | null = null;
   const contentType = req.headers.get("content-type") ?? "";
   if (contentType.startsWith("multipart/form-data")) {
     let form: FormData;
@@ -42,6 +44,7 @@ export async function POST(req: Request) {
       return invalid();
     }
     fields = readReviewFields(form);
+    foundVia = readFoundVia(form.get("found_via"), form.get("found_via_other"));
     if (fields.website.trim() !== "") return NextResponse.json({ ok: true });
     const photos = collectReviewPhotos(form);
     if (photos.error) return NextResponse.json({ ok: false, errors: { photos: photos.error }, message: photos.error }, { status: 422 });
@@ -55,6 +58,7 @@ export async function POST(req: Request) {
     }
     if (!body || typeof body !== "object" || Array.isArray(body)) return invalid();
     fields = readReviewFields(body as Record<string, unknown>);
+    foundVia = readFoundVia((body as Record<string, unknown>).found_via, (body as Record<string, unknown>).found_via_other);
     if (fields.website.trim() !== "") return NextResponse.json({ ok: true });
   }
 
@@ -112,6 +116,10 @@ export async function POST(req: Request) {
     list.push(submission);
     await saveReviewSubmissions(list);
     await markReviewSubmitted(order.id, createdAt, consent);
+    if (foundVia) {
+      const answer = foundVia;
+      await updateOrder(order.id, (o) => ({ ...o, foundVia: answer })).catch((err: unknown) => console.warn("[reviews] found-via not stored", err));
+    }
     return NextResponse.json({ ok: true, photos: stored.length }, { status: 201 });
   } catch (err) {
     console.error("[reviews] store failed", err);
