@@ -56,6 +56,12 @@ Beträge kommen immer aus der serverseitig berechneten Bestellung, nie vom Clien
 
 Die Bestellbestätigung per E-Mail geht erst raus, wenn die Zahlung bestätigt ist.
 
+### Absicherung im Browser (Stripe)
+
+- **Nur Zahlungsarten, die es wirklich gibt:** `/api/payments/methods` fragt die Stripe-Zahlungsmethoden-Konfiguration ab (5 Min. Cache) und blendet Arten aus, die dort nicht verfügbar sind (z. B. Klarna ausgeschaltet oder pausiert). Der Browser blendet zusätzlich Apple Pay ohne `ApplePaySession` (z. B. Chrome auf dem iPhone) und Google Pay auf iOS aus. Schlägt die Abfrage fehl, bleibt alles wie bisher sichtbar.
+- **Kein neuer Auftrag bei jedem „Zurück“:** Ändert die Kundin nach „Zurück“ nichts außer der Zahlungsart, nutzt die Kasse dieselbe Bestellung und denselben PaymentIntent weiter.
+- **Fehler werden gemeldet:** Lädt das Zahlungsfeld nicht (`loaderror`) oder nach 20 s noch nicht, oder liefert „Jetzt bezahlen“ einen Fehler (außer unvollständigen Eingaben), meldet der Browser das an `POST /api/payments/stripe/client-event`. Das steht als „Zahlungsproblem im Browser: …“ (mit Gerät) im Verlauf der Bestellung (max. 5 je Bestellung), und `MAIL_ADMIN` bekommt beim ersten Problem einer Bestellung die Mail „Zahlung hängt: BQ-… · Betrag“ mit den Kontaktdaten. Die Kundin sieht einen Hinweis mit ihrer Bestellnummer (neu laden, anderer Browser, uns kontaktieren).
+
 ## Lagerbestand
 
 `product.stock` und `sizes[].stock` (wenn nicht `null`/`undefined`) werden beim
@@ -183,6 +189,7 @@ Ohne Stripe bleibt das bisherige Anfrageformular.
 |---|---|
 | `GET /api/payments/methods` | verfügbare Zahlungsarten + Publishable Key + Abo-Checkout-Flag |
 | `POST /api/orders` | Bestellung anlegen, Zahlung starten |
+| `POST /api/payments/stripe/client-event` | Browser meldet Zahlungsproblem (Token, Rate-Limit) → Verlauf + Mail an `MAIL_ADMIN` |
 | `POST /api/payments/stripe/confirm` | Intent serverseitig prüfen, Bestellung als bezahlt markieren |
 | `POST /api/payments/stripe/subscription` | Checkout Session fürs Blumen-Abo |
 | `GET /api/payments/paypal/return` | PayPal-Rücksprung: capture + bezahlt |

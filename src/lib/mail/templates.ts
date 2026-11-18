@@ -472,6 +472,24 @@ export function partnerReminderNotice(input: { order: Order; brand: MailBrand; p
   });
 }
 
+/** Internal notice: a customer got stuck in the payment form (reported by the browser). */
+export function paymentProblemNotice(input: { order: Order; brand: MailBrand; note: string; adminUrl: string }): RenderedMail {
+  const { order, brand } = input;
+  return layout({
+    brand,
+    subject: `Zahlung hängt: ${order.id} · ${formatPrice(order.totals.total)}`,
+    preheader: `${order.customer.firstName} ${order.customer.lastName} kommt beim Bezahlen nicht weiter.`,
+    headline: `Zahlung hängt bei ${order.id}`,
+    blocks: [
+      { type: "alert", text: input.note },
+      { type: "kv", rows: [["Kund:in", `${order.customer.firstName} ${order.customer.lastName}\n${order.customer.email}\n${order.customer.phone}`], ["Betrag", formatPrice(order.totals.total)], ["Lieferung", deliveryLine(order)]] },
+      { type: "p", text: "Die Bestellung ist noch nicht bezahlt. Am besten kurz anrufen und eine andere Zahlungsart anbieten." },
+      { type: "button", label: "Bestellung im Admin öffnen", url: input.adminUrl },
+    ],
+    footerNotes: ["Interne Benachrichtigung (MAIL_ADMIN)."],
+  });
+}
+
 /** Internal notice: the partner confirmed the order slip. */
 export function partnerConfirmed(input: { order: Order; brand: MailBrand; partnerName: string; adminUrl: string }): RenderedMail {
   const { order, brand, partnerName, adminUrl } = input;

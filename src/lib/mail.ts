@@ -298,6 +298,20 @@ export async function sendPartnerConfirmedNotice(order: Order, partnerName: stri
   }
 }
 
+/** Tells the team (MAIL_ADMIN) that a customer got stuck in the payment form. Never throws. */
+export async function sendPaymentProblemNotice(order: Order, note: string): Promise<MailResult | null> {
+  const admin = adminMailAddress();
+  if (!admin) return null;
+  try {
+    const brand = mailBrand(await getSettings());
+    const adminUrl = `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}`;
+    return await send(admin, templates.paymentProblemNotice({ order, brand, note, adminUrl }), "payment_problem");
+  } catch (err) {
+    console.error("[mail] payment problem notice failed", err);
+    return null;
+  }
+}
+
 /** Tells the team (MAIL_ADMIN) that a partner has not confirmed yet. Never throws. */
 export async function sendPartnerReminderNotice(order: Order, partner: Partner, n: number, last: boolean, partnerMailSent: boolean): Promise<MailResult | null> {
   const admin = adminMailAddress();

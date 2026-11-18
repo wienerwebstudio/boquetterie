@@ -99,6 +99,8 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(() => (config.cancelled ? CANCELLED_MESSAGE : null));
   const [stripeSession, setStripeSession] = useState<StripeSession | null>(null);
+  /** The last Stripe order of this visit – reused when the customer only switches the payment method. */
+  const lastStripeOrder = useRef<{ key: string; id: string; token: string; clientSecret: string } | null>(null);
   const [couponState, setCouponState] = useState<{ code: string; coupon: Coupon | null; error?: string } | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const firstRender = useRef(true);
@@ -234,12 +236,23 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
       setErrors({ method: "Bitte wähle eine Zahlungsart." });
       return;
     }
+    const payload = buildPayload(config.cardsEnabled ? data : { ...data, greeting: EMPTY_CHECKOUT.greeting }, items, couponCode);
+    // Back from the payment form with the same cart and details, only another method:
+    // keep the order (one PaymentIntent serves every method) instead of a new one.
+    const reuseKey = JSON.stringify({ ...payload, payment: undefined });
+    const previous = lastStripeOrder.current;
+    if (previous && previous.key === reuseKey && selectedMethod.provider === "stripe" && methodsData?.stripePublishableKey) {
+      setSubmitError(null);
+      setStripeSession({ orderId: previous.id, token: previous.token, clientSecret: previous.clientSecret, method: selectedMethod.id });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     setSubmitting(true);
     setSubmitError(null);
     try {
       const res = await fetch("/api/orders", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(buildPayload(config.cardsEnabled ? data : { ...data, greeting: EMPTY_CHECKOUT.greeting }, items, couponCode)),
+        body: JSON.stringify(payload),
       });
       const body = (await res.json()) as Partial<OrderCreateResponse> & { message?: string; errors?: FieldErrors };
       if (!res.ok || !body.ok || !body.id || !body.token) {
@@ -266,6 +279,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
       const payment = body.payment;
       if (payment?.provider === "stripe" && payment.clientSecret && methodsData?.stripePublishableKey) {
         // Order stored (payment pending) – now collect the payment with the Payment Element.
+        lastStripeOrder.current = { key: reuseKey, id: body.id, token: body.token, clientSecret: payment.clientSecret };
         setStripeSession({ orderId: body.id, token: body.token, clientSecret: payment.clientSecret, method: selectedMethod.id });
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;

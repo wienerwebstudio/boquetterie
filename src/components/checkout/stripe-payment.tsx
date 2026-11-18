@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Elements, PaymentElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { loadStripe, type Appearance, type Stripe, type StripeElementsOptions } from "@stripe/stripe-js";
 import { ArrowLeft, Lock } from "lucide-react";
@@ -71,6 +71,18 @@ export function StripePaymentForm({ publishableKey, session, amount, email, name
   );
 }
 
+/** Tells the server about a problem that never reaches Stripe's logs (best effort, never throws). */
+function reportPaymentProblem(session: StripeSession, kind: "load_error" | "load_timeout" | "confirm_error", message?: string) {
+  try {
+    void fetch("/api/payments/stripe/client-event", {
+      method: "POST", headers: { "Content-Type": "application/json" }, keepalive: true,
+      body: JSON.stringify({ orderId: session.orderId, token: session.token, kind, method: session.method, message }),
+    }).catch(() => undefined);
+  } catch { /* ignore */ }
+}
+
+const LOAD_TIMEOUT_MS = 20_000;
+
 function StripeForm({ session, amount, email, name, onDone, onCancel }: {
   session: StripeSession; amount: number; email: string; name?: string;
   onDone: (status: PaymentConfirmResponse["status"]) => void; onCancel: () => void;
@@ -80,6 +92,18 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
   const [ready, setReady] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [loadProblem, setLoadProblem] = useState(false);
+  const readyRef = useRef(false);
+
+  // The form never appeared: tell the customer what to do and let the team know.
+  useEffect(() => {
+    const t = window.setTimeout(() => {
+      if (readyRef.current) return;
+      setLoadProblem(true);
+      reportPaymentProblem(session, "load_timeout");
+    }, LOAD_TIMEOUT_MS);
+    return () => window.clearTimeout(t);
+  }, [session]);
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -93,6 +117,10 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
       redirect: "if_required",
     });
     if (result.error) {
+      // Incomplete fields are normal typing mistakes – everything else is worth knowing.
+      if (result.error.type !== "validation_error") {
+        reportPaymentProblem(session, "confirm_error", [result.error.type, result.error.code, result.error.decline_code, result.error.message].filter(Boolean).join(" · "));
+      }
       setError(result.error.message ?? "Die Zahlung konnte nicht abgeschlossen werden. Bitte versuch es noch einmal.");
       setBusy(false);
       return;
@@ -126,10 +154,19 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
               // Customers are in Austria: without this, Stripe guesses the country from the IP (a VPN shows a US ZIP field).
               defaultValues: { billingDetails: { email: email || undefined, name: name || undefined, address: { country: "AT" } } },
             }}
-            onReady={() => setReady(true)}
+            onReady={() => { readyRef.current = true; setReady(true); setLoadProblem(false); }}
+            onLoadError={(e) => {
+              setLoadProblem(true);
+              reportPaymentProblem(session, "load_error", e.error?.message);
+            }}
           />
         </div>
       </div>
+      {loadProblem && !ready && (
+        <p role="alert" className="rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">
+          Das Zahlungsfeld lädt gerade nicht. Bitte lade die Seite neu oder öffne sie in einem anderen Browser (z. B. Safari). Deine Bestellung {session.orderId} ist gespeichert – du kannst uns auch einfach kontaktieren, dann helfen wir dir weiter.
+        </p>
+      )}
       {error && <p role="alert" className="rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">{error}</p>}
       <div className="flex flex-col-reverse gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
         <Button type="button" variant="ghost" size="lg" icon={<ArrowLeft className="size-4" aria-hidden />} onClick={onCancel} disabled={busy}>

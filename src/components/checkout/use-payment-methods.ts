@@ -8,11 +8,31 @@ import type { PaymentMethodsResponse } from "@/types/payments";
  */
 let cache: Promise<PaymentMethodsResponse> | null = null;
 
+/**
+ * Wallets the Stripe form can only show on suitable devices: Apple Pay needs Safari /
+ * an Apple device with Apple Pay set up, Google Pay is never offered on iPhone/iPad.
+ * Offering them elsewhere makes the customer pick a method the form then does not
+ * show (it falls back to the card form).
+ */
+export function walletUsable(id: string, nav: { userAgent: string } | undefined = typeof navigator === "undefined" ? undefined : navigator): boolean {
+  if (id !== "apple_pay" && id !== "google_pay") return true;
+  if (!nav) return true;
+  const ios = /iPhone|iPad|iPod/.test(nav.userAgent);
+  if (id === "google_pay") return !ios;
+  const w = typeof window === "undefined" ? undefined : (window as unknown as { ApplePaySession?: { canMakePayments?: () => boolean } });
+  try {
+    return Boolean(w?.ApplePaySession?.canMakePayments?.());
+  } catch {
+    return false;
+  }
+}
+
 async function load(): Promise<PaymentMethodsResponse> {
   const r = await fetch("/api/payments/methods", { cache: "no-store" });
   const body = (await r.json()) as Partial<PaymentMethodsResponse>;
   if (!r.ok || !body.ok || !Array.isArray(body.methods)) throw new Error("methods unavailable");
-  return { ok: true, methods: body.methods, stripePublishableKey: body.stripePublishableKey, subscriptionCheckout: Boolean(body.subscriptionCheckout) };
+  const methods = body.methods.filter((m) => m.provider !== "stripe" || walletUsable(m.id));
+  return { ok: true, methods, stripePublishableKey: body.stripePublishableKey, subscriptionCheckout: Boolean(body.subscriptionCheckout) };
 }
 
 export function fetchPaymentMethods(force = false): Promise<PaymentMethodsResponse> {
