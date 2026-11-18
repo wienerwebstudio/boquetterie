@@ -24,6 +24,7 @@ export default async function FloristBudgetPage() {
     <>
       <PageHeader
         title="Floristen-Budget"
+        actions={<a href="/admin/floristen-budget/export" className="inline-flex h-10 items-center rounded-md border border-line bg-white px-4 text-[14px] font-semibold text-ink hover:border-forest/50" download>Liste herunterladen (Excel)</a>}
         description={`Max. Budget je Größe und Extra = „Einkauf Dody (Liste)“, also der Betrag, für den die Floristik bindet (der Nachlass wird separat abgerechnet). Steht im Auftrag an die Floristik, nie beim Kunden. ${budgets.updatedAt ? `Zuletzt gespeichert: ${formatDateTime(budgets.updatedAt)}.` : "Es gelten die Startwerte aus der Preiskalkulation (hier änderbar)."}`}
       />
       <FloristBudgetForm rows={rows} />

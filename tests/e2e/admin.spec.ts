@@ -2,6 +2,12 @@ import { expect, test } from "@playwright/test";
 import { ADMIN_PASSWORD } from "./helpers";
 
 test.describe("Admin", () => {
+  test("Budget-Export ohne Anmeldung ist gesperrt", async ({ request }) => {
+    const res = await request.get("/admin/floristen-budget/export", { maxRedirects: 0 });
+    expect([302, 303, 307, 401]).toContain(res.status());
+    expect(await res.text()).not.toContain("Max. Budget");
+  });
+
   test("ohne Anmeldung wird auf das Login umgeleitet", async ({ page }) => {
     await page.goto("/admin/bestellungen");
     await expect(page).toHaveURL(/\/admin\/login\?next=%2Fadmin%2Fbestellungen/);
@@ -35,6 +41,12 @@ test.describe("Admin", () => {
     // Session cookie set – a direct visit no longer redirects.
     await page.goto("/admin/bestellungen");
     await expect(page).toHaveURL(/\/admin\/bestellungen$/);
+
+    // Budget list as CSV (admin only).
+    const csv = await page.request.get("/admin/floristen-budget/export");
+    expect(csv.status()).toBe(200);
+    expect(csv.headers()["content-type"]).toContain("text/csv");
+    expect(await csv.text()).toContain("Produkt;Größe;Aktiv;Verkaufspreis (EUR);Max. Budget Floristik (EUR)");
 
     // Partner florists: list with the first partner, linked from the navigation.
     await page.goto("/admin/partner");
