@@ -1,6 +1,98 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** ro – cart (translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Coș de cumpărături",
+  metaDescription: "Buchetele și produsele extra alese de tine – gata de livrare în Viena.",
+  title: "Coș de cumpărături",
+  eyebrow: "Aproape gata",
+  loading: "Se încarcă coșul",
+  itemsHeading: "Articole în coș",
+  items: { one: "{count} articol", few: "{count} articole", other: "{count} de articole" },
+  liveCount: "Coș: {count}",
+  continueShopping: "Continuă cumpărăturile",
+  summaryTitle: "Sumar",
+  checkout: "Spre plata sigură",
+  trust: {
+    securePayment: "Plată sigură",
+    ssl: "Criptare SSL",
+    privacy: "Confidențialitate",
+  },
+  empty: {
+    eyebrow: "Coșul tău",
+    title: "Încă e gol.",
+    textWithCards: "Buchete legate proaspăt, data dorită și o felicitare personală – totul te așteaptă.",
+    text: "Buchete legate proaspăt și data dorită – totul te așteaptă.",
+    cta: "Descoperă florile",
+  },
+  drawer: {
+    total: "Total",
+    inclDelivery: "{vat}, livrare inclusă",
+    plusDelivery: "{vat} · plus livrare",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Preț final",
+      note: "Conform § 6 Abs. 1 Z 27 UStG nu se percepe TVA (regimul micilor întreprinzători).",
+    },
+    standard: {
+      short: "TVA inclus",
+      note: "Toate prețurile includ TVA.",
+    },
+  },
+  line: {
+    color: "Culoare {color}",
+    wish: "Dorință: {note}",
+    delivery: "Livrare",
+    chooseDateInCheckout: "Alege data livrării la finalizarea comenzii",
+    anonymous: "Fără expeditor",
+    extras: "Extra",
+    extraLess: "{name}: unul mai puțin",
+    extraMore: "{name}: unul în plus",
+    removeExtra: "Elimină {name}",
+    quantity: "Cantitate {name}",
+    decrease: "Scade cantitatea",
+    increase: "Crește cantitatea",
+    remove: "Elimină",
+  },
+  summary: {
+    bouquets: "Buchete",
+    extras: "Extra",
+    delivery: "Livrare",
+    free: "Gratuit",
+    deliveryInCheckout: "se calculează la finalizarea comenzii",
+    discount: "Reducere",
+    total: "Total",
+    missingForFreeDelivery: "Mai ai {amount} până la livrarea gratuită.",
+    minOrder: "Pentru această adresă se aplică o valoare minimă a comenzii de {amount}.",
+    removeCoupon: "Elimină cuponul",
+    couponCode: "Cod de cupon",
+    redeem: "Aplică",
+    couponQuestion: "Ai un cod de cupon?",
+    couponCheckFailed: "Cuponul nu a putut fi verificat acum. Te rugăm să încerci din nou imediat.",
+    couponMissing: "Te rugăm să introduci un cod de cupon.",
+    couponUnknown: "Nu cunoaștem acest cod.",
+  },
+  surprise: {
+    title: "Surpriza ta",
+    bouquet: "Buchet",
+    card: "+ felicitare",
+    extras: "+ extra",
+    cardsSoon: "Felicitările vin în curând",
+    cardIncluded: "Felicitare inclusă – mesajul îl poți adăuga oricând",
+    noExtras: "Încă niciun produs extra",
+  },
+  upsell: {
+    title: "Mai adaugi ceva?",
+    subtitle: "Vine împreună cu buchetul",
+    add: "Adaugă",
+    addAria: "Adaugă {name} pentru {price}",
+  },
+  cardPreview: {
+    label: "Previzualizarea felicitării",
+    placeholder: "Mesajul tău apare aici.",
+    anonymous: "Fără expeditor",
+  },
+};
 
 export default cart;

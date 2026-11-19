@@ -1,6 +1,115 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** ro – forms (translated from src/i18n/messages/de/forms.ts). */
-const forms: NonNullable<PartialMessages["forms"]> = {};
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Nume",
+  email: "E-mail",
+  emailAddress: "Adresă de e-mail",
+  message: "Mesaj",
+  orderNumber: "Număr comandă",
+  honeypot: "Website",
+  charCount: "{count}/{max} caractere",
+  genericError: "Din păcate, nu a funcționat. Te rugăm să încerci din nou mai târziu.",
+  invalidEmailEnter: "Te rugăm să introduci o adresă de e-mail validă.",
+
+  mailFallback: {
+    title: "Formularul nu este disponibil momentan.",
+    text: "Mesajul tău nu s-a pierdut: te rugăm să ni-l trimiți direct pe e-mail la {email}. Textul este deja inserat.",
+    open: "Deschide e-mailul",
+  },
+
+  newsletter: {
+    honeypot: "Website (te rugăm să lași gol)",
+    successTitle: "Aproape gata – te rugăm să confirmi abonarea.",
+    successText: "Ți-am trimis un e-mail cu un link de confirmare. Abia după aceea primești newsletterul nostru.",
+  },
+
+  contact: {
+    formLabel: "Formular de contact",
+    subject: "Subiect",
+    subjects: {
+      order: "Comandă",
+      delivery: "Livrare",
+      business: "Clienți business",
+      other: "Altele",
+    },
+    orderNumberHint: "Îl găsești în confirmarea comenzii.",
+    errors: {
+      name: "Te rugăm să introduci numele tău.",
+      email: "Te rugăm să introduci o adresă de e-mail validă.",
+      subject: "Te rugăm să alegi un subiect.",
+      orderIdTooLong: "Numărul comenzii este prea lung.",
+      messageTooShort: "Te rugăm să descrii solicitarea ta (minimum 10 caractere).",
+      messageTooLong: "Mesajul poate avea cel mult 2000 de caractere.",
+    },
+    thanksTitle: "Mulțumim pentru mesaj.",
+    thanksText: "Am primit solicitarea ta și îți răspundem cât de repede putem pe e-mail la {email}.",
+    sendAnother: "Trimite alt mesaj",
+    failed: "Mesajul nu a putut fi trimis. Te rugăm să încerci din nou sau să ne scrii direct pe e-mail.",
+    consent: "Prin trimitere ești de acord ca datele tale să fie folosite pentru procesarea solicitării. Detalii în Politica de confidențialitate.",
+    submit: "Trimite mesajul",
+    mailSubject: "Solicitare de contact: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Retragere din contract",
+    errors: {
+      name: "Te rugăm să introduci numele tău.",
+      email: "Te rugăm să introduci o adresă de e-mail validă.",
+      orderId: "Te rugăm să introduci numărul comenzii (de ex. BQ-7K2M9Q).",
+    },
+    emailHint: "Aici trimitem confirmarea de primire.",
+    orderNumberHint: "Apare în confirmarea comenzii.",
+    items: "Din ce produse te retragi?",
+    itemsPlaceholder: "de ex. ursulețul – lasă gol pentru toate produsele din comandă pentru care există drept de retragere",
+    declaration: "Prin prezenta mă retrag din contractul încheiat de mine pentru cumpărarea produselor menționate mai sus.",
+    receivedTitle: "Retragerea ta a fost primită.",
+    receivedText: "Primită la {receivedAt} pentru comanda {orderId}.",
+    receivedTextWithCase: "Primită la {receivedAt} pentru comanda {orderId} (dosarul {id}).",
+    confirmationSent: "Confirmarea de primire am trimis-o la {email}.",
+    confirmationNotSent: "E-mailul de confirmare nu a putut fi trimis momentan – îți confirmăm personal primirea cât de repede putem. Te rugăm să păstrezi această pagină până atunci (de ex. ca captură de ecran).",
+    failed: "Retragerea nu a putut fi transmisă momentan. Te rugăm să încerci din nou sau să o trimiți pe e-mail la {email}.",
+    submit: "Confirmă retragerea",
+    mailSubject: "Retragere – comanda {orderId}",
+    mailDeclaration: "Prin prezenta mă retrag din contractul încheiat de mine pentru cumpărarea următoarelor produse: {items}",
+    mailAllItems: "toate produsele din comandă pentru care există drept de retragere",
+  },
+
+  business: {
+    formLabel: "Cerere pentru clienți business",
+    company: "Firmă",
+    contact: "Persoană de contact",
+    phone: "Telefon",
+    location: "Locație / cod poștal",
+    locationPlaceholder: "de ex. 1070 Viena",
+    need: "Necesar",
+    pleaseChoose: "Te rugăm să alegi",
+    needs: {
+      subscription: "Livrare regulată (abonament)",
+      oneOff: "Livrare unică",
+      event: "Eveniment",
+      gifts: "Cadouri pentru angajați sau clienți",
+    },
+    messagePlaceholder: "Despre ce e vorba, pentru când și în ce amploare – și orice altceva este important pentru tine.",
+    consent: "Sunt de acord ca datele mele să fie stocate și folosite pentru procesarea cererii. Detalii în {privacyLink}.",
+    privacyLink: "Politica de confidențialitate",
+    errors: {
+      company: "Te rugăm să introduci numele firmei tale.",
+      contact: "Te rugăm să introduci o persoană de contact.",
+      email: "Te rugăm să introduci o adresă de e-mail validă.",
+      phone: "Te rugăm să verifici numărul de telefon.",
+      location: "Te rugăm să introduci locația sau codul poștal.",
+      need: "Te rugăm să alegi de ce ai nevoie.",
+      message: "Te rugăm să descrii pe scurt necesarul tău (minimum 10 caractere).",
+      consent: "Te rugăm să confirmi că putem folosi datele tale pentru procesare.",
+    },
+    thanksTitle: "Mulțumim pentru cerere.",
+    thanksText: "Am primit totul și revenim pe e-mail la {email} (persoană de contact: {contact}).",
+    sendAnother: "Trimite altă cerere",
+    failed: "Cererea nu a putut fi trimisă. Te rugăm să încerci din nou sau să ne scrii direct pe e-mail.",
+    submit: "Trimite cererea",
+    mailSubject: "Cerere business: {company}",
+  },
+};
 
 export default forms;
