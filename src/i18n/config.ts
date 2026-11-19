@@ -20,7 +20,12 @@ export interface LocaleInfo {
   htmlLang: string;
   /** hreflang codes Google gets for this version (BKS covers three languages). */
   hreflang: string[];
-  /** Locale for Intl number and date formatting. */
+  /**
+   * Locale for Intl number and date formatting. Must give the same result in Node and in
+   * browsers (else React hydration fails): Chrome has no Bosnian or Chechen data, so BKS uses
+   * Serbian Latin (same month/day names as Bosnian) and Chechen uses Russian; Persian is forced
+   * to the Gregorian calendar (delivery dates must not appear as Solar Hijri dates).
+   */
   intl: string;
   /** Open Graph locale. */
   og: string;
@@ -31,7 +36,7 @@ export const LOCALE_INFO: Record<Locale, LocaleInfo> = {
   de: { name: "Deutsch", short: "DE", htmlLang: "de-AT", hreflang: ["de"], intl: "de-AT", og: "de_AT", dir: "ltr" },
   en: { name: "English", short: "EN", htmlLang: "en", hreflang: ["en"], intl: "en-GB", og: "en_GB", dir: "ltr" },
   tr: { name: "Türkçe", short: "TR", htmlLang: "tr", hreflang: ["tr"], intl: "tr-TR", og: "tr_TR", dir: "ltr" },
-  bks: { name: "Bosanski · Hrvatski · Srpski", short: "BKS", htmlLang: "hr", hreflang: ["bs", "hr", "sr"], intl: "bs-Latn-BA", og: "bs_BA", dir: "ltr" },
+  bks: { name: "Bosanski · Hrvatski · Srpski", short: "BKS", htmlLang: "hr", hreflang: ["bs", "hr", "sr"], intl: "sr-Latn", og: "bs_BA", dir: "ltr" },
   uk: { name: "Українська", short: "UK", htmlLang: "uk", hreflang: ["uk"], intl: "uk-UA", og: "uk_UA", dir: "ltr" },
   ru: { name: "Русский", short: "RU", htmlLang: "ru", hreflang: ["ru"], intl: "ru-RU", og: "ru_RU", dir: "ltr" },
   pl: { name: "Polski", short: "PL", htmlLang: "pl", hreflang: ["pl"], intl: "pl-PL", og: "pl_PL", dir: "ltr" },
@@ -39,12 +44,12 @@ export const LOCALE_INFO: Record<Locale, LocaleInfo> = {
   hu: { name: "Magyar", short: "HU", htmlLang: "hu", hreflang: ["hu"], intl: "hu-HU", og: "hu_HU", dir: "ltr" },
   ar: { name: "العربية", short: "AR", htmlLang: "ar", hreflang: ["ar"], intl: "ar-u-nu-latn", og: "ar_AR", dir: "rtl" },
   bg: { name: "Български", short: "BG", htmlLang: "bg", hreflang: ["bg"], intl: "bg-BG", og: "bg_BG", dir: "ltr" },
-  fa: { name: "فارسی", short: "FA", htmlLang: "fa", hreflang: ["fa"], intl: "fa-u-nu-latn", og: "fa_IR", dir: "rtl" },
+  fa: { name: "فارسی", short: "FA", htmlLang: "fa", hreflang: ["fa"], intl: "fa-u-ca-gregory-nu-latn", og: "fa_IR", dir: "rtl" },
   sk: { name: "Slovenčina", short: "SK", htmlLang: "sk", hreflang: ["sk"], intl: "sk-SK", og: "sk_SK", dir: "ltr" },
   it: { name: "Italiano", short: "IT", htmlLang: "it", hreflang: ["it"], intl: "it-IT", og: "it_IT", dir: "ltr" },
   fr: { name: "Français", short: "FR", htmlLang: "fr", hreflang: ["fr"], intl: "fr-FR", og: "fr_FR", dir: "ltr" },
   es: { name: "Español", short: "ES", htmlLang: "es", hreflang: ["es"], intl: "es-ES", og: "es_ES", dir: "ltr" },
-  ce: { name: "Нохчийн", short: "CE", htmlLang: "ce", hreflang: ["ce"], intl: "ce", og: "ce_RU", dir: "ltr" },
+  ce: { name: "Нохчийн", short: "CE", htmlLang: "ce", hreflang: ["ce"], intl: "ru-RU", og: "ce_RU", dir: "ltr" },
 };
 
 export function isLocale(v: unknown): v is Locale {

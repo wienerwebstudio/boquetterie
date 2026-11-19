@@ -54,7 +54,7 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
   return (
     <form onSubmit={submit} noValidate className="relative flex flex-col gap-3" aria-describedby={`${id}-note`}>
       <label htmlFor={`${id}-email`} className="sr-only">{m.forms.emailAddress}</label>
-      <div aria-hidden className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
+      <div aria-hidden className="hidden">
         <label htmlFor={`${id}-website`}>{m.forms.newsletter.honeypot}</label>
         <input id={`${id}-website`} type="text" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
       </div>

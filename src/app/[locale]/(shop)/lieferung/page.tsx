@@ -144,6 +144,14 @@ export default async function DeliveryPage() {
 
 /* ---------------- Zone card ---------------- */
 
+/** "Bestellung bis 18:30 Uhr, sonntags bis 17:45 Uhr" – German as before, other languages from the dictionary. */
+function sameDayCutoffText(zone: DeliveryZone, { locale, m, fmt }: I18n) {
+  if (locale === "de") return describeSameDayCutoff(zone);
+  const until = fmt(m.content.delivery.zone.orderUntil, { time: zone.sameDayCutoff });
+  const sunday = zone.sameDayCutoffSunday && zone.sameDayCutoffSunday !== zone.sameDayCutoff && zone.deliveryDays.includes(0);
+  return sunday ? `${until} · ${m.content.delivery.weekdays.sun}: ${zone.sameDayCutoffSunday}` : until;
+}
+
 function ZoneCard({ zone, settings, now, i18n }: { zone: DeliveryZone; settings: SiteSettings; now: ReturnType<typeof getLocalNow>; i18n: I18n }) {
   const { m, fmt, price, dateShort } = i18n;
   const t = m.content.delivery.zone;
@@ -177,7 +185,7 @@ function ZoneCard({ zone, settings, now, i18n }: { zone: DeliveryZone; settings:
         <Row label={t.days}>{info.days || "–"}</Row>
         {sameDay && (
           <Row label={t.sameDay}>
-            <span className="inline-flex items-center gap-1.5 text-success"><Check className="size-3.5" strokeWidth={2.5} aria-hidden /> {fmt(t.sameDayYes, { cutoff: describeSameDayCutoff(zone) })}</span>
+            <span className="inline-flex items-center gap-1.5 text-success"><Check className="size-3.5" strokeWidth={2.5} aria-hidden /> {fmt(t.sameDayYes, { cutoff: sameDayCutoffText(zone, i18n) })}</span>
           </Row>
         )}
         <Row label={zone.leadDays <= 1 ? t.nextDeliveryDay : fmt(t.leadDays, { days: zone.leadDays })}>{fmt(t.orderUntil, { time: info.cutoff })}</Row>

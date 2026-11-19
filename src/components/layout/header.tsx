@@ -57,7 +57,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
 
   return (
     <header className={cn("sticky top-0 z-50 bg-ivory/90 backdrop-blur-md transition-shadow duration-300", scrolled ? "shadow-[0_1px_0_var(--color-line),0_10px_30px_-20px_rgba(35,35,31,0.25)]" : "shadow-[0_1px_0_var(--color-line)]")} onMouseLeave={scheduleClose}>
-      <div className="container-x flex h-16 items-center justify-between gap-4 lg:h-[72px]">
+      <div className="container-x flex h-16 items-center justify-between gap-4 lg:h-[72px] lg:gap-2 xl:gap-4">
         <div className="flex items-center gap-2 lg:hidden">
           <IconButton label={t.openMenu} onClick={() => setMenuOpen(true)}><Menu className="size-5" strokeWidth={1.6} /></IconButton>
         </div>
@@ -67,14 +67,14 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
         </Link>
 
         <nav aria-label={t.mainNavigation} className="hidden lg:block">
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center xl:gap-1">
             {primaryNav.map((item) => (
               <li key={item.href} onMouseEnter={() => (item.mega ? open(item.mega) : setMega(null))}>
                 <Link
                   href={item.href}
                   aria-expanded={item.mega ? mega === item.mega : undefined}
                   onFocus={() => item.mega && open(item.mega)}
-                  className={cn("inline-flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-3 text-[13.5px] font-medium tracking-[0.01em] text-ink transition-colors hover:text-forest", isActive(item.href) && "text-forest")}
+                  className={cn("inline-flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-2 text-[13px] font-medium xl:px-3 xl:text-[13.5px] tracking-[0.01em] text-ink transition-colors hover:text-forest", isActive(item.href) && "text-forest")}
                 >
                   {item.label}
                   {item.mega && <ChevronDown className={cn("size-3.5 text-ink-soft transition-transform duration-300", mega === item.mega && "rotate-180")} aria-hidden />}
@@ -97,7 +97,8 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
             )}
           </button>
           {settings.headerCta.enabled && (
-            <div className="ml-2 hidden xl:block">
+            // Long labels (e.g. Chechen) only from 2xl, so the header never runs out of room.
+            <div className={cn("ms-2 hidden", settings.headerCta.label.length > 15 ? "2xl:block" : "xl:block")}>
               <Button href={settings.headerCta.href} size="sm">{settings.headerCta.label}</Button>
             </div>
           )}
