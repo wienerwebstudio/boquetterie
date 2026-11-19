@@ -19,7 +19,9 @@ type Collection =
   | "products" | "occasions" | "categories" | "extras" | "delivery-zones" | "coupons"
   | "faqs" | "reviews" | "subscription" | "settings" | "homepage" | "pages" | "landing-pages" | "partners"
   /** Content translations per language (src/lib/i18n-content.ts). */
-  | `i18n-${string}`;
+  | `i18n-${string}`
+  /** Topic pages of other languages. */
+  | `landing-pages-${string}`;
 
 /**
  * Reads an editorial document. With the Postgres store a document that is not yet
@@ -97,9 +99,19 @@ export const getReviews = () => readCollection<Review[]>("reviews");
 export const getPartners = async (onlyActive = false) =>
   (await readCollection<Partner[]>("partners")).filter((p) => !onlyActive || p.active).sort((a, b) => a.sortOrder - b.sortOrder);
 export const getPages = () => readCollection<CmsPage[]>("pages");
-/** Topic pages of one language (`locale` missing = German). */
-export const getLandingPages = async (locale: string = "de") =>
-  (await readCollection<LandingPage[]>("landing-pages")).filter((p) => (p.locale ?? "de") === locale);
+/**
+ * Topic pages of one language. German: `landing-pages`; every other language has
+ * its own document `landing-pages-{locale}` (content/landing-pages-{locale}.json) –
+ * pages written for that language, not translations of the German ones.
+ */
+export const getLandingPages = async (locale: string = "de"): Promise<LandingPage[]> => {
+  if (locale === "de") return (await readCollection<LandingPage[]>("landing-pages")).filter((p) => !p.locale || p.locale === "de");
+  try {
+    return (await readCollection<LandingPage[]>(`landing-pages-${locale}`)).map((p) => ({ ...p, locale }));
+  } catch {
+    return [];
+  }
+};
 
 export async function getAllProducts(includeInactive = false): Promise<Product[]> {
   const products = await readCollection<Product[]>("products");
