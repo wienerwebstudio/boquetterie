@@ -88,7 +88,7 @@ describe("customer mails in the order's language", () => {
     const res = await mail.sendOrderStatusUpdate({ ...order, status: "in_transit" });
     expect(res.sent).toBe(true);
     const sent = (sendMail.mock.calls[0] as unknown as [{ subject: string; html: string; text: string }])[0];
-    expect(sent.subject).toBe("On its way – Bestellung BQ-ABC123"); // English status name, German rest (no English texts yet)
+    expect(sent.subject).toBe("On its way – order BQ-ABC123"); // English status name and English mail text
     expect(sent.text).toContain("https://blumora.at/en/bestellung/BQ-ABC123?token=tok");
     expect(sent.html).toContain('<html lang="en">');
 
