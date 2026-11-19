@@ -1,6 +1,115 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** ce – forms (to be translated from src/i18n/messages/de/forms.ts; missing keys fall back to German). */
-const forms: NonNullable<PartialMessages["forms"]> = {};
+/** ce – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "ЦӀе",
+  email: "E-mail",
+  emailAddress: "E-mail адрес",
+  message: "Хаам",
+  orderNumber: "Заказан номер",
+  honeypot: "Сайт",
+  charCount: "{count}/{max} символ",
+  genericError: "Ца делира. ТӀаьхьо юха гӀертийша.",
+  invalidEmailEnter: "Нийса e-mail адрес язъейша.",
+
+  mailFallback: {
+    title: "Форма хӀинца болх беш яц.",
+    text: "Шун хаам ца байна: иза нийсса e-mail-ца {email} тӀе дӀахьийтийша. Текст хӀинцале а чуйиллина ю.",
+    open: "E-mail схьаелла",
+  },
+
+  newsletter: {
+    honeypot: "Сайт (цхьа а хӀума ма язъейша)",
+    successTitle: "Кхин кӀеззиг – шайн дӀаяздар тӀечӀагӀдейша.",
+    successText: "Оха шуна тӀечӀагӀдаран хьажорг йолу e-mail дӀахьажийна. Цул тӀаьхьа бен тхан рассылка кхочур яц шуна.",
+  },
+
+  contact: {
+    formLabel: "ЗӀе тасаран форма",
+    subject: "Тема",
+    subjects: {
+      order: "Заказ",
+      delivery: "ДӀакхачор",
+      business: "Компанешна",
+      other: "Кхин",
+    },
+    orderNumberHint: "Иза шун заказан тӀечӀагӀдарехь карор ю.",
+    errors: {
+      name: "Шайн цӀе язъейша.",
+      email: "Нийса e-mail адрес язъейша.",
+      subject: "Тема харжийша.",
+      orderIdTooLong: "Заказан номер тӀех беха бу.",
+      messageTooShort: "Шайн хаттар дийцийша (лаххара 10 символ).",
+      messageTooLong: "Хаам 2000 символал беха хила ца беза.",
+    },
+    thanksTitle: "Баркалла шун хаамна.",
+    thanksText: "Оха шун дехар схьаэцна, мел сиха аьлча {email} тӀе e-mail-ца жоп лур ду.",
+    sendAnother: "Кхин хаам дӀабахьийта",
+    failed: "Хаам дӀа ца кхечира. Юха гӀертийша я тхоьга нийсса e-mail-ца яздейша.",
+    consent: "Хаам дӀабахьийтича, шун хаамаш дехар кхочушдархьама лело аша бакъо ло. Кхин а – хаамаш ларбаран политикехь.",
+    submit: "Хаам дӀабахьийта",
+    mailSubject: "ЗӀе тасаран дехар: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Договорах дӀавала",
+    errors: {
+      name: "Шайн цӀе язъейша.",
+      email: "Нийса e-mail адрес язъейша.",
+      orderId: "Заказан номер язбейша (масала, BQ-7K2M9Q).",
+    },
+    emailHint: "ТӀеэцаран тӀечӀагӀдар оха кху адресе дӀахьажор ду.",
+    orderNumberHint: "Шун заказан тӀечӀагӀдарехь ю.",
+    items: "Муьлха товараш юхайохуьйту аша?",
+    itemsPlaceholder: "масала, тедди – заказан ерриге юхаяха йиш йолу товараш лаахь, баьсса дита",
+    declaration: "Оцу хаамца ас лакхахь хьахийна товараш эцаран договорах дӀавалар дӀахоуьйту.",
+    receivedTitle: "Шун дӀавалар схьаэцна.",
+    receivedText: "{receivedAt} схьаэцна, заказ {orderId}.",
+    receivedTextWithCase: "{receivedAt} схьаэцна, заказ {orderId} (гӀуллакх {id}).",
+    confirmationSent: "ТӀеэцаран тӀечӀагӀдар оха {email} тӀе дӀахьажийна.",
+    confirmationNotSent: "ТӀечӀагӀдаран e-mail хӀинца дӀа ца яхьийтира – оха тӀеэцар мел сиха аьлча долахь тӀечӀагӀдийр ду. Цу хенахь кхаччалц хӀара агӀо Ӏалашйейша (масала, скриншот санна).",
+    failed: "ДӀавалар хӀинца дӀа ца кхечира. Юха гӀертийша я {email} тӀе e-mail-ца дӀахьийтийша.",
+    submit: "ДӀавалар тӀечӀагӀдан",
+    mailSubject: "Договорах дӀавалар – заказ {orderId}",
+    mailDeclaration: "Оцу хаамца ас лахахь билгалйина товараш эцаран договорах дӀавалар дӀахоуьйту: {items}",
+    mailAllItems: "заказан ерриге юхаяха йиш йолу товараш",
+  },
+
+  business: {
+    formLabel: "Компанешна дехар",
+    company: "Компани",
+    contact: "Контактан стаг",
+    phone: "Телефон",
+    location: "Меттиг / индекс",
+    locationPlaceholder: "масала, 1070 Вена",
+    need: "Оьшург",
+    pleaseChoose: "Харжийша",
+    needs: {
+      subscription: "Даиман дӀакхачор (подписка)",
+      oneOff: "Цкъа дӀакхачор",
+      event: "Мероприяти",
+      gifts: "Белхахошна я клиенташна совгӀаташ",
+    },
+    messagePlaceholder: "ХӀун ду, маца оьшу, мел оьшу – кхин шуна хӀун мехала ду а.",
+    consent: "Дехар кхочушдархьама сан хаамаш Ӏалашбан а, лело а бакъо ло ас. Кхин а – {privacyLink}.",
+    privacyLink: "Хаамаш ларбаран политика",
+    errors: {
+      company: "Шайн компанин цӀе язъейша.",
+      contact: "Контактан стеган цӀе язъейша.",
+      email: "Нийса e-mail адрес язъейша.",
+      phone: "Телефонан номер таллийша.",
+      location: "Меттиг я почтан индекс язъейша.",
+      need: "Шуна хӀун оьшу харжийша.",
+      message: "Шуна оьшург доццачу дийцийша (лаххара 10 символ).",
+      consent: "Шун хаамаш дехар кхочушдархьама лело бакъо луш хилар тӀечӀагӀдейша.",
+    },
+    thanksTitle: "Баркалла шун дехарна.",
+    thanksText: "Оха дерриге а схьаэцна, e-mail-ца жоп лур ду: {contact}, {email}.",
+    sendAnother: "Кхин дехар дӀадахьийта",
+    failed: "Дехар дӀа ца кхечира. Юха гӀертийша я тхоьга нийсса e-mail-ца яздейша.",
+    submit: "Дехар дӀадахьийта",
+    mailSubject: "Компанин дехар: {company}",
+  },
+};
 
 export default forms;

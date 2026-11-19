@@ -1,6 +1,191 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** ce – product (to be translated from src/i18n/messages/de/product.ts; missing keys fall back to German). */
-const product: NonNullable<PartialMessages["product"]> = {};
+/** ce – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Продукт ца карийна",
+  priceFrom: "лаххара мах",
+
+  size: {
+    title: "Барам харжа",
+    recommended: "Хьехийна",
+    soldOut: "Чекхъелла",
+  },
+
+  color: {
+    title: "Бос харжа",
+    required: "(оьшу)",
+    notChosen: "ХӀинца а ца харжина",
+    error: "Бос харжийша.",
+  },
+
+  delivery: {
+    title: "Зезагаш маца кхача деза?",
+    formLabel: "ДӀакхачор таллар",
+    postalCodeLabel: "Схьаэцархочун почтан индекс",
+    postalCodePlaceholder: "Схьаэцархочун индекс",
+    check: "Талла",
+    prompt: "ДӀакхачоран де харжархьама индекс язъейша",
+    notAvailable: "{plz} индекс йолчу адресе оха хӀинца дӀа ца кхачадо.",
+    notAvailableHint: "Дерриге хӀинцалера зонаш {link} агӀонехь ю. Кхечу схьаэцархочун адресана керла индекс язъейша.",
+    deliveryLink: "ДӀакхачор",
+    available: "Оха оцу адресе дӀакхачадо.",
+    fee: "ДӀакхачор {plz} {region}: {fee}",
+    free: "маьхза",
+    freeFrom: "{price} дуьйна маьхза",
+    dateGroup: "ДӀакхачоран де",
+    today: "Тахана",
+    orderUntil: "{time} кхаччалц заказ ян",
+    tomorrow: "Кхана",
+    chooseDate: "Де харжа",
+    openCalendar: "Календарь схьаелла",
+    deliveryOn: "ДӀакхачор: {date}",
+    todaySuffix: "· тахана",
+    noDays: "ХӀинца дӀакхачоран денош дац.",
+  },
+
+  calendar: {
+    previousMonth: "Хьалхара бутт",
+    nextMonth: "ТӀедогӀу бутт",
+    weekdays: {
+      mon: { short: "Ор", long: "Оршот" },
+      tue: { short: "Ши", long: "Шинара" },
+      wed: { short: "Кха", long: "Кхаара" },
+      thu: { short: "Еа", long: "Еара" },
+      fri: { short: "ПӀе", long: "ПӀераска" },
+      sat: { short: "Шот", long: "Шот" },
+      sun: { short: "КӀи", long: "КӀиранде" },
+    },
+    daySameDay: "{date}, тахана дӀакхачадо",
+    dayAvailable: "{date}, дӀакхачо мега",
+    dayUnavailable: "{date}, дӀакхачо йиш яц",
+    legendSameDay: "Тахана дӀакхачадо",
+    legendToday: "Тахана",
+    legendUnavailable: "Сира денош дӀакхачо йиш яц.",
+  },
+
+  card: {
+    unavailableTitle: "Шайн дешнашца открытка",
+    unavailableText: "Шун букет хӀинцалера открытка йоцуш дӀакхачор ю.",
+    comingSoon: "Кестта хир ю!",
+    addMessage: "Шайн хаам тӀетоха",
+    included: "Декъалдаран открытка юкъахь ю",
+    handwritten: "Кулгашца язйина открытка",
+    saved: "Хаам Ӏалашбина",
+    messageLabel: "Шун хаам",
+    messagePlaceholder: "Вина де декъал хуьлда …",
+    maxChars: "Уггар дукха {max} символ.",
+    senderGroup: "ДӀадахьийтархо",
+    showSender: "ДӀадахьийтархо гайта",
+    anonymous: "ЦӀе йоцуш дӀадахьийта",
+    senderName: "Шун цӀе",
+    optional: "(лаахь)",
+    senderPlaceholder: "масала, Анна",
+  },
+
+  extras: {
+    title: "Кхин хӀума тӀетохий?",
+    deliveredTogether: "Цхьаьна дӀакхачадо",
+    addLabel: "{name} {price} тӀетоха",
+    add: "ТӀетоха",
+    quantity: "{name}: дукхалла",
+    less: "{name}: цхьаъ кӀезиг",
+    more: "{name}: цхьаъ дукха",
+  },
+
+  floristNote: {
+    title: "Тхан флористашна лаамаш",
+    optional: "(лаахь)",
+    hint: "Букетехь жима хийцамаш, масала, «можа розанийн метта кӀайн розанаш». Зезагаш делахь, оха уьш кхочушдо. ДӀакхачорна хьехамаш заказ кечъеш яздейша.",
+    placeholder: "Флористана шун лаам",
+  },
+
+  cta: {
+    total: "Дерриге",
+    comingSoon: "Кестта заказ ян мега",
+    unavailable: "ХӀинца яц",
+    addToCart: "Корзина чу",
+    fresh: "Керла вовшахтоьхна",
+    cardIncluded: "Декъалдаран открытка юкъахь ю",
+    securePayment: "Кхерамза мах бар",
+    added: "{name} ({options}) корзина чу тоьхна.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Хьалхара агӀо",
+      detail: "Деталь",
+      size: "Бараман дустар",
+      packaging: "Упаковка",
+      lifestyle: "Гонахе",
+    },
+    status: "Сурт {index} / {total}: {alt}",
+    carousel: "Карусель",
+    imagesOf: "{name}: суьрташ",
+    slide: "Сурт",
+    slideOf: "{index} / {total}",
+    choose: "Сурт харжа",
+    show: "{label} гайта",
+    thumb: "{label}: {alt}",
+    previous: "Хьалхара сурт",
+    next: "ТӀедогӀу сурт",
+    colorAlt: "{name}, бос: {color}",
+    colorLabel: "Бос {color}",
+    sizeAlt: "{name}, барам: {size}",
+    sizeDetailAlt: "{name}, барам: {size}, гергахь",
+    sizeLabel: "Барам {size}",
+    sizeDetailLabel: "Барам {size} · гергахь",
+  },
+
+  details: {
+    eyebrow: "Хаа пайдехь",
+    title: "{name}: дерриге а",
+    description: "Йийцар",
+    plant: "Орамат",
+    flowers: "Чохь долу зезагаш",
+    care: "Тидам баран хьехамаш",
+    delivery: "ДӀакхачор",
+    deliveryText: "Шун зезагаш тхоьца даим цхьаьна болх беш йолчу Венан флористикера догӀу. Цигахь шун заказана букеташ куьйга вовшахтуху. Курьеро уьш схьаоьцу а, юккъехь ца соцуш схьаэцархочун адресе дуьгу а.",
+    deliveryAreas: "Оха Венан ерриге 23 кӀошта дӀакхачадо. ДӀакхачоран мах кӀоштах дозуш бу, почтан индекс язйинчул тӀаьхьа гойту. ДӀакхачоран зонаш, хенан юкъаш а, заказан тӀаьххьара хан а {link} агӀонехь ю.",
+    deliveryLink: "ДӀакхачор",
+    looksPlant: "Орамат нийсса иштта хуьлий?",
+    looksBouquet: "Букет нийсса иштта хуьлий?",
+    looksOther: "Суьрта тӀехь санна нийсса хуьлий?",
+    naturalPlant: "Гергара. Ораматаш Ӏаламан сурсаташ ду: кхиар, барам а, зезагаш даккхар а суьртах къаьсташ хила мега. Кашпо а, йолучуьнга хьаьжжина, кхечу кепара хила мега.",
+    naturalFlowers: "Гергара. Зезагаш Ӏаламан сурсаташ ду: шеран хенна хьаьжжина цхьа сорт я басан бесни къаьсташ хила мега. Тхан партнер-флористо стиль а, басарийн дуьне а Ӏалашдеш тидам бо.",
+  },
+
+  pricePending: {
+    status: "Мах тӀаьхьа хир бу",
+    sizes: "Бараш",
+    sizesLabel: "Йолу бараш",
+    soonTitle: "Кестта заказ ян мега",
+    soonText: "Оха хӀинца тхан ассортиментан мехаш билгалбоху. Уьш билгалбаьлча, хӀара букет кхузахь нийсса заказ ян мегар ду шуна.",
+    contact: "Хаттарш дуй? Тхоьга яздейша",
+  },
+
+  related: {
+    eyebrow: "Кхин а хьажа",
+    title: "ХӀара а хазахета мега",
+    allFlowers: "Массо а зезагашка хьажа",
+  },
+
+  reviews: {
+    eyebrow: "Дешнаш",
+    title: "{name}: отзываш",
+    demoNote: "Масален отзываш – бакъ отзываш тӀаьхьа хир ю",
+    quote: "«{text}»",
+    verified: "ТӀечӀагӀдина эцар",
+    demo: "Масала",
+  },
+
+  reviewPhotos: {
+    photosOf: "{author}: суьрташ",
+    enlarge: "{alt} – сурт {index} / {total} доккха дан",
+    dialogTitle: "Клиентан сурт: {author}",
+    dialogCount: "({index} / {total})",
+    close: "Сурт дӀакъовла",
+    show: "Сурт {index} гайта",
+  },
+};
 
 export default product;

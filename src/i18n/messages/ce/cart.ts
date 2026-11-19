@@ -1,6 +1,98 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** ce – cart (to be translated from src/i18n/messages/de/cart.ts; missing keys fall back to German). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+/** ce – cart (translated from src/i18n/messages/de/cart.ts). */
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Корзина",
+  metaDescription: "Аша харжина букеташ а, тӀетохарш а – Венахь дӀакхачо кийча.",
+  title: "Корзина",
+  eyebrow: "Кхин кӀеззиг",
+  loading: "Корзина чуйоьлху",
+  itemsHeading: "Корзинехь йолу хӀуманаш",
+  items: { one: "{count} хӀума", other: "{count} хӀума" },
+  liveCount: "Корзина: {count}",
+  continueShopping: "Кхин а эца",
+  summaryTitle: "ЖамӀ",
+  checkout: "Кхерамза мах бан",
+  trust: {
+    securePayment: "Кхерамза мах бар",
+    ssl: "SSL-шифровка",
+    privacy: "Хаамаш ларбар",
+  },
+  empty: {
+    eyebrow: "Шун корзина",
+    title: "ХӀинца а еса ю.",
+    textWithCards: "Керла вовшахтоьхна букеташ, лаа де а, шайн открытка а – дерриге шуна хьоьжуш ду.",
+    text: "Керла вовшахтоьхна букеташ а, шайн лаа де а – дерриге шуна хьоьжуш ду.",
+    cta: "Зезагашка хьажа",
+  },
+  drawer: {
+    total: "Дерриге",
+    inclDelivery: "{vat}, дӀакхачор юкъахь",
+    plusDelivery: "{vat} · дӀакхачор къаьсттина",
+  },
+  vat: {
+    smallBusiness: {
+      short: "ТӀаьххьара мах",
+      note: "§ 6 Abs. 1 Z 27 UStG-ца догӀуш НДС ца лору (жима предпринимателийн низам).",
+    },
+    standard: {
+      short: "НДС юкъахь",
+      note: "Дерриге мехаш НДС юкъахь йолуш бу.",
+    },
+  },
+  line: {
+    color: "Бос {color}",
+    wish: "Лаам: {note}",
+    delivery: "ДӀакхачор",
+    chooseDateInCheckout: "ДӀакхачоран де заказ кечъеш харжа",
+    anonymous: "ЦӀе йоцуш",
+    extras: "ТӀетохарш",
+    extraLess: "{name}: цхьаъ кӀезиг",
+    extraMore: "{name}: цхьаъ дукха",
+    removeExtra: "{name} дӀаяккха",
+    quantity: "{name}: дукхалла",
+    decrease: "Дукхалла лахъян",
+    increase: "Дукхалла алсамъян",
+    remove: "ДӀаяккха",
+  },
+  summary: {
+    bouquets: "Букеташ",
+    extras: "ТӀетохарш",
+    delivery: "ДӀакхачор",
+    free: "Маьхза",
+    deliveryInCheckout: "заказ кечъеш лорур ю",
+    discount: "Скидка",
+    total: "Дерриге",
+    missingForFreeDelivery: "Маьхза дӀакхачорна кхин {amount} оьшу.",
+    minOrder: "ХӀокху адресана заказан лаххара мах – {amount}.",
+    removeCoupon: "Купон дӀаяккха",
+    couponCode: "Купонан код",
+    redeem: "Лело",
+    couponQuestion: "Купонан код юй?",
+    couponCheckFailed: "Купон хӀинца таллалур яц. Кестта юха гӀертийша.",
+    couponMissing: "Купонан код язъейша.",
+    couponUnknown: "ХӀара код тхуна йовзаш яц.",
+  },
+  surprise: {
+    title: "Шун сюрприз",
+    bouquet: "Букет",
+    card: "+ открытка",
+    extras: "+ тӀетохарш",
+    cardsSoon: "Декъалдаран открыткаш кестта хир ю",
+    cardIncluded: "Декъалдаран открытка юкъахь ю – хаам муьлххачу хенахь тӀетоха мега",
+    noExtras: "ХӀинца тӀетохарш яц",
+  },
+  upsell: {
+    title: "Кхин хӀума тӀетохий?",
+    subtitle: "Букетаца цхьаьна кхочу",
+    add: "ТӀетоха",
+    addAria: "{name} {price} тӀетоха",
+  },
+  cardPreview: {
+    label: "Открытка муха хир ю",
+    placeholder: "Шун хаам кхузахь гур бу.",
+    anonymous: "ЦӀе йоцуш",
+  },
+};
 
 export default cart;
