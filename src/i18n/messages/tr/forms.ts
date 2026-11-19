@@ -1,6 +1,115 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** tr – forms (translated from src/i18n/messages/de/forms.ts). */
-const forms: NonNullable<PartialMessages["forms"]> = {};
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Ad",
+  email: "E-posta",
+  emailAddress: "E-posta adresi",
+  message: "Mesaj",
+  orderNumber: "Sipariş numarası",
+  honeypot: "Web sitesi",
+  charCount: "{count}/{max} karakter",
+  genericError: "Maalesef işlem başarısız oldu. Lütfen daha sonra tekrar deneyin.",
+  invalidEmailEnter: "Lütfen geçerli bir e-posta adresi girin.",
+
+  mailFallback: {
+    title: "Form şu anda kullanılamıyor.",
+    text: "Mesajınız kaybolmadı: Lütfen mesajınızı doğrudan {email} adresine e-posta ile gönderin. Metin zaten eklenmiştir.",
+    open: "E-postayı aç",
+  },
+
+  newsletter: {
+    honeypot: "Web sitesi (lütfen boş bırakın)",
+    successTitle: "Neredeyse tamam – lütfen kaydınızı onaylayın.",
+    successText: "Size onay bağlantısı içeren bir e-posta gönderdik. Bültenimizi ancak onayladıktan sonra alırsınız.",
+  },
+
+  contact: {
+    formLabel: "İletişim formu",
+    subject: "Konu",
+    subjects: {
+      order: "Sipariş",
+      delivery: "Teslimat",
+      business: "Kurumsal müşteriler",
+      other: "Diğer",
+    },
+    orderNumberHint: "Sipariş onayınızda bulabilirsiniz.",
+    errors: {
+      name: "Lütfen adınızı girin.",
+      email: "Lütfen geçerli bir e-posta adresi girin.",
+      subject: "Lütfen bir konu seçin.",
+      orderIdTooLong: "Sipariş numarası çok uzun.",
+      messageTooShort: "Lütfen talebinizi açıklayın (en az 10 karakter).",
+      messageTooLong: "Mesaj en fazla 2000 karakter olabilir.",
+    },
+    thanksTitle: "Mesajınız için teşekkürler.",
+    thanksText: "Talebinizi aldık ve en kısa sürede {email} adresine e-posta ile size geri döneceğiz.",
+    sendAnother: "Başka bir mesaj gönder",
+    failed: "Mesaj gönderilemedi. Lütfen tekrar deneyin veya bize doğrudan e-posta ile yazın.",
+    consent: "Göndererek, bilgilerinizi talebinizi işlemek için kullanmamıza onay vermiş olursunuz. Ayrıntılar Gizlilik Politikası'nda.",
+    submit: "Mesaj gönder",
+    mailSubject: "İletişim talebi: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Sözleşmeden cayma",
+    errors: {
+      name: "Lütfen adınızı girin.",
+      email: "Lütfen geçerli bir e-posta adresi girin.",
+      orderId: "Lütfen sipariş numarasını girin (ör. BQ-7K2M9Q).",
+    },
+    emailHint: "Alındı onayını bu adrese göndeririz.",
+    orderNumberHint: "Sipariş onayınızda yer alır.",
+    items: "Hangi ürünlerden cayıyorsunuz?",
+    itemsPlaceholder: "ör. oyuncak ayı – siparişteki cayılabilir tüm ürünler için boş bırakın",
+    declaration: "İşbu beyanla, yukarıda belirtilen ürünlerin satın alınmasına ilişkin tarafımca akdedilen sözleşmeden cayıyorum.",
+    receivedTitle: "Cayma beyanınız bize ulaştı.",
+    receivedText: "Alınma tarihi: {receivedAt} · Sipariş: {orderId}.",
+    receivedTextWithCase: "Alınma tarihi: {receivedAt} · Sipariş: {orderId} (İşlem: {id}).",
+    confirmationSent: "Alındı onayını {email} adresine gönderdik.",
+    confirmationNotSent: "Onay e-postası şu anda gönderilemedi – alındığını en kısa sürede kişisel olarak onaylayacağız. Lütfen o zamana kadar bu sayfayı saklayın (ör. ekran görüntüsü olarak).",
+    failed: "Cayma beyanı şu anda iletilemedi. Lütfen tekrar deneyin veya {email} adresine e-posta ile gönderin.",
+    submit: "Caymayı onayla",
+    mailSubject: "Cayma – Sipariş {orderId}",
+    mailDeclaration: "İşbu beyanla, aşağıdaki ürünlerin satın alınmasına ilişkin tarafımca akdedilen sözleşmeden cayıyorum: {items}",
+    mailAllItems: "siparişteki cayılabilir tüm ürünler",
+  },
+
+  business: {
+    formLabel: "Kurumsal müşteri talebi",
+    company: "Şirket",
+    contact: "İrtibat kişisi",
+    phone: "Telefon",
+    location: "Konum / posta kodu",
+    locationPlaceholder: "ör. 1070 Viyana",
+    need: "İhtiyaç",
+    pleaseChoose: "Lütfen seçin",
+    needs: {
+      subscription: "Düzenli teslimat (abonelik)",
+      oneOff: "Tek seferlik teslimat",
+      event: "Etkinlik",
+      gifts: "Çalışanlar veya müşteriler için hediyeler",
+    },
+    messagePlaceholder: "Konu nedir, ne zaman için ve hangi kapsamda – ve sizin için önemli olan diğer her şey.",
+    consent: "Bilgilerimin talebimin işlenmesi amacıyla saklanmasını ve kullanılmasını kabul ediyorum. Ayrıntılar için: {privacyLink}.",
+    privacyLink: "Gizlilik Politikası",
+    errors: {
+      company: "Lütfen şirketinizin adını girin.",
+      contact: "Lütfen bir irtibat kişisi belirtin.",
+      email: "Lütfen geçerli bir e-posta adresi girin.",
+      phone: "Lütfen telefon numarasını kontrol edin.",
+      location: "Lütfen konum veya posta kodu girin.",
+      need: "Lütfen neye ihtiyacınız olduğunu seçin.",
+      message: "Lütfen ihtiyacınızı kısaca açıklayın (en az 10 karakter).",
+      consent: "Lütfen bilgilerinizi işlem için kullanabileceğimizi onaylayın.",
+    },
+    thanksTitle: "Talebiniz için teşekkürler.",
+    thanksText: "Her şeyi aldık ve {contact} ile {email} adresi üzerinden e-posta ile iletişime geçeceğiz.",
+    sendAnother: "Başka bir talep gönder",
+    failed: "Talep gönderilemedi. Lütfen tekrar deneyin veya bize doğrudan e-posta ile yazın.",
+    submit: "Talep gönder",
+    mailSubject: "Kurumsal talep: {company}",
+  },
+};
 
 export default forms;

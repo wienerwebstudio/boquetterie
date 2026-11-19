@@ -1,6 +1,98 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** tr – cart (translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Sepet",
+  metaDescription: "Seçtiğiniz buketler ve ekstralar – Viyana'da teslimata hazır.",
+  title: "Sepet",
+  eyebrow: "Neredeyse tamam",
+  loading: "Sepet yükleniyor",
+  itemsHeading: "Sepetteki ürünler",
+  items: { one: "{count} ürün", other: "{count} ürün" },
+  liveCount: "Sepet: {count}",
+  continueShopping: "Alışverişe devam et",
+  summaryTitle: "Özet",
+  checkout: "Güvenli ödemeye geç",
+  trust: {
+    securePayment: "Güvenli ödeme",
+    ssl: "SSL şifreli",
+    privacy: "Gizlilik",
+  },
+  empty: {
+    eyebrow: "Sepetiniz",
+    title: "Henüz bomboş.",
+    textWithCards: "Taze hazırlanmış buketler, istediğiniz tarih ve kişisel bir kart – hepsi sizi bekliyor.",
+    text: "Taze hazırlanmış buketler ve istediğiniz tarih – hepsi sizi bekliyor.",
+    cta: "Çiçekleri keşfedin",
+  },
+  drawer: {
+    total: "Toplam",
+    inclDelivery: "{vat} · teslimat dahil",
+    plusDelivery: "{vat} · teslimat ücreti hariç",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Nihai fiyat",
+      note: "§ 6 Abs. 1 Z 27 UStG uyarınca KDV hesaplanmaz (küçük işletme düzenlemesi).",
+    },
+    standard: {
+      short: "KDV dahil",
+      note: "Tüm fiyatlara KDV dahildir.",
+    },
+  },
+  line: {
+    color: "Renk: {color}",
+    wish: "İstek: {note}",
+    delivery: "Teslimat",
+    chooseDateInCheckout: "Teslimat tarihini ödeme adımında seçin",
+    anonymous: "Gönderen belirtilmeden",
+    extras: "Ekstralar",
+    extraLess: "{name}: bir azalt",
+    extraMore: "{name}: bir artır",
+    removeExtra: "{name} kaldır",
+    quantity: "{name} adedi",
+    decrease: "Adedi azalt",
+    increase: "Adedi artır",
+    remove: "Kaldır",
+  },
+  summary: {
+    bouquets: "Buketler",
+    extras: "Ekstralar",
+    delivery: "Teslimat",
+    free: "Ücretsiz",
+    deliveryInCheckout: "ödeme adımında hesaplanır",
+    discount: "İndirim",
+    total: "Toplam",
+    missingForFreeDelivery: "Ücretsiz teslimata {amount} kaldı.",
+    minOrder: "Bu adres için minimum sipariş tutarı {amount}.",
+    removeCoupon: "Kuponu kaldır",
+    couponCode: "Kupon kodu",
+    redeem: "Kullan",
+    couponQuestion: "Kupon kodunuz var mı?",
+    couponCheckFailed: "Kupon şu anda kontrol edilemedi. Lütfen birazdan tekrar deneyin.",
+    couponMissing: "Lütfen bir kupon kodu girin.",
+    couponUnknown: "Bu kodu tanımıyoruz.",
+  },
+  surprise: {
+    title: "Sürpriziniz",
+    bouquet: "Buket",
+    card: "+ Kart",
+    extras: "+ Ekstralar",
+    cardsSoon: "Tebrik kartları yakında",
+    cardIncluded: "Tebrik kartı dahil – mesaj istediğiniz zaman eklenebilir",
+    noExtras: "Henüz ekstra yok",
+  },
+  upsell: {
+    title: "Yanına başka bir şey?",
+    subtitle: "Buketle birlikte gelir",
+    add: "Ekle",
+    addAria: "{name} ekle ({price})",
+  },
+  cardPreview: {
+    label: "Tebrik kartı önizlemesi",
+    placeholder: "Mesajınız burada görünür.",
+    anonymous: "Gönderen belirtilmeden",
+  },
+};
 
 export default cart;
