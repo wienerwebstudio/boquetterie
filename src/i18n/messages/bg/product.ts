@@ -1,6 +1,191 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** bg – product (translated from src/i18n/messages/de/product.ts). */
-const product: NonNullable<PartialMessages["product"]> = {};
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Продуктът не е намерен",
+  priceFrom: "от",
+
+  size: {
+    title: "Изберете размер",
+    recommended: "Препоръчан",
+    soldOut: "Изчерпан",
+  },
+
+  color: {
+    title: "Изберете цвят",
+    required: "(задължително)",
+    notChosen: "Все още не е избран",
+    error: "Моля, изберете цвят.",
+  },
+
+  delivery: {
+    title: "Кога да пристигнат цветята?",
+    formLabel: "Проверка на доставката",
+    postalCodeLabel: "Пощенски код на получателя",
+    postalCodePlaceholder: "Пощенски код на получателя",
+    check: "Проверете",
+    prompt: "Въведете пощенски код, за да изберете дата на доставка",
+    notAvailable: "За съжаление все още не доставяме до {plz}.",
+    notAvailableHint: "Всички актуални райони ще намерите в {link}. За друг адрес на получател просто въведете нов пощенски код.",
+    deliveryLink: "Доставка и изпращане",
+    available: "Доставяме до този адрес.",
+    fee: "Доставка до {plz} {region}: {fee}",
+    free: "безплатно",
+    freeFrom: "безплатно над {price}",
+    dateGroup: "Дата на доставка",
+    today: "Днес",
+    orderUntil: "поръчайте до {time} ч.",
+    tomorrow: "Утре",
+    chooseDate: "Изберете дата",
+    openCalendar: "Отворете календара",
+    deliveryOn: "Доставка на {date}",
+    todaySuffix: "· днес",
+    noDays: "В момента няма налични дни за доставка.",
+  },
+
+  calendar: {
+    previousMonth: "Предишен месец",
+    nextMonth: "Следващ месец",
+    weekdays: {
+      mon: { short: "Пн", long: "Понеделник" },
+      tue: { short: "Вт", long: "Вторник" },
+      wed: { short: "Ср", long: "Сряда" },
+      thu: { short: "Чт", long: "Четвъртък" },
+      fri: { short: "Пт", long: "Петък" },
+      sat: { short: "Сб", long: "Събота" },
+      sun: { short: "Нд", long: "Неделя" },
+    },
+    daySameDay: "{date}, доставка днес",
+    dayAvailable: "{date}, възможна доставка",
+    dayUnavailable: "{date}, няма доставка",
+    legendSameDay: "Доставка днес",
+    legendToday: "Днес",
+    legendUnavailable: "В сивите дни няма доставка.",
+  },
+
+  card: {
+    unavailableTitle: "Лична поздравителна картичка",
+    unavailableText: "Засега букетът ви ще бъде доставен без картичка.",
+    comingSoon: "Очаквайте скоро!",
+    addMessage: "Добавете лично послание",
+    included: "Поздравителна картичка включена",
+    handwritten: "Ръкописна поздравителна картичка",
+    saved: "Посланието е запазено",
+    messageLabel: "Вашето послание",
+    messagePlaceholder: "Честит рожден ден с много обич …",
+    maxChars: "Най-много {max} знака.",
+    senderGroup: "Подател",
+    showSender: "Покажете подателя",
+    anonymous: "Изпратете без име",
+    senderName: "Вашето име",
+    optional: "(по избор)",
+    senderPlaceholder: "напр. Анна",
+  },
+
+  extras: {
+    title: "Още нещо към него?",
+    deliveredTogether: "Доставя се заедно",
+    addLabel: "Добавете {name} за {price}",
+    add: "Добавете",
+    quantity: "{name} брой",
+    less: "{name}: един по-малко",
+    more: "{name}: един повече",
+  },
+
+  floristNote: {
+    title: "Желания към нашите флористи",
+    optional: "(по избор)",
+    hint: "Малки промени в букета, напр. „бели рози вместо жълти“. Изпълняваме ги, ако цветята са налични. Указания за доставката въвеждате при завършване на поръчката.",
+    placeholder: "Вашето желание към флориста",
+  },
+
+  cta: {
+    total: "Общо",
+    comingSoon: "Скоро за поръчка",
+    unavailable: "В момента не е наличен",
+    addToCart: "Добавете в количката",
+    fresh: "Свежо аранжиран",
+    cardIncluded: "Поздравителна картичка включена",
+    securePayment: "Сигурно плащане",
+    added: "{name} ({options}) е добавен в количката.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Изглед отпред",
+      detail: "Детайл",
+      size: "Сравнение на размера",
+      packaging: "Опаковка",
+      lifestyle: "Атмосфера",
+    },
+    status: "Снимка {index} от {total}: {alt}",
+    carousel: "Въртележка",
+    imagesOf: "Снимки на {name}",
+    slide: "Снимка",
+    slideOf: "{index} от {total}",
+    choose: "Изберете снимка",
+    show: "Покажете {label}",
+    thumb: "{label}: {alt}",
+    previous: "Предишна снимка",
+    next: "Следваща снимка",
+    colorAlt: "{name} в цвят {color}",
+    colorLabel: "Цвят {color}",
+    sizeAlt: "{name} в размер {size}",
+    sizeDetailAlt: "{name} в размер {size}, отблизо",
+    sizeLabel: "Размер {size}",
+    sizeDetailLabel: "Размер {size} · отблизо",
+  },
+
+  details: {
+    eyebrow: "Полезно да знаете",
+    title: "Всичко за {name}",
+    description: "Описание",
+    plant: "Растение",
+    flowers: "Цветя в букета",
+    care: "Указания за грижа",
+    delivery: "Доставка",
+    deliveryText: "Вашите цветя идват от виенски цветарски магазин, с който работим постоянно. Там букетите се аранжират на ръка за вашата поръчка. Куриер ги взима и ги откарва без междинни спирки до адреса на получателя.",
+    deliveryAreas: "Доставяме във всички 23 района на Виена. Таксата за доставка зависи от района и се показва след въвеждане на пощенския код. Райони на доставка, часови интервали и крайни срокове за поръчка ще намерите в {link}.",
+    deliveryLink: "Доставка и изпращане",
+    looksPlant: "Растението изглежда ли точно така?",
+    looksBouquet: "Букетът изглежда ли точно така?",
+    looksOther: "Изглежда ли точно като на снимката?",
+    naturalPlant: "Почти. Растенията са природни продукти: растежът, размерът и цъфтежът може да се различават от снимката. Кашпата също може да изглежда различно в зависимост от наличността.",
+    naturalFlowers: "Почти. Цветята са природни продукти: в зависимост от сезона даден сорт или нюанс може да се различава. Нашият партньорски цветарски магазин се грижи стилът и цветовата гама да бъдат запазени.",
+  },
+
+  pricePending: {
+    status: "Цената предстои",
+    sizes: "Размери",
+    sizesLabel: "Налични размери",
+    soonTitle: "Скоро за поръчка",
+    soonText: "В момента определяме цените на нашия асортимент. Щом бъдат готови, ще можете да поръчате този букет директно тук.",
+    contact: "Въпроси? Пишете ни",
+  },
+
+  related: {
+    eyebrow: "Разгледайте още",
+    title: "Може да ви хареса и",
+    allFlowers: "Вижте всички цветя",
+  },
+
+  reviews: {
+    eyebrow: "Мнения",
+    title: "Отзиви за {name}",
+    demoNote: "Примерни отзиви – истинските отзиви предстоят",
+    quote: "„{text}“",
+    verified: "Потвърдена покупка",
+    demo: "Пример",
+  },
+
+  reviewPhotos: {
+    photosOf: "Снимки от {author}",
+    enlarge: "Увеличете {alt} – снимка {index} от {total}",
+    dialogTitle: "Снимка на клиент от {author}",
+    dialogCount: "({index} от {total})",
+    close: "Затворете снимката",
+    show: "Покажете снимка {index}",
+  },
+};
 
 export default product;

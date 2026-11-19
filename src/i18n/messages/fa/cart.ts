@@ -1,6 +1,98 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** fa – cart (translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "سبد خرید",
+  metaDescription: "دسته‌گل‌ها و افزودنی‌های انتخابی شما – آماده برای ارسال در وین.",
+  title: "سبد خرید",
+  eyebrow: "تقریباً تمام است",
+  loading: "در حال بارگذاری سبد خرید",
+  itemsHeading: "کالاهای سبد خرید",
+  items: { one: "{count} کالا", other: "{count} کالا" },
+  liveCount: "سبد خرید: {count}",
+  continueShopping: "ادامهٔ خرید",
+  summaryTitle: "خلاصه",
+  checkout: "تکمیل امن خرید",
+  trust: {
+    securePayment: "پرداخت امن",
+    ssl: "رمزگذاری‌شده با SSL",
+    privacy: "حریم خصوصی",
+  },
+  empty: {
+    eyebrow: "سبد خرید شما",
+    title: "هنوز کاملاً خالی است.",
+    textWithCards: "دسته‌گل‌های تازه بسته‌شده، تاریخ دلخواه و یک کارت شخصی – همه‌چیز منتظر شماست.",
+    text: "دسته‌گل‌های تازه بسته‌شده و تاریخ دلخواه شما – همه‌چیز منتظر شماست.",
+    cta: "دیدن گل‌ها",
+  },
+  drawer: {
+    total: "جمع کل",
+    inclDelivery: "{vat} با احتساب هزینهٔ ارسال",
+    plusDelivery: "{vat} · به‌علاوهٔ هزینهٔ ارسال",
+  },
+  vat: {
+    smallBusiness: {
+      short: "قیمت نهایی",
+      note: "طبق § 6 Abs. 1 Z 27 UStG مالیات بر ارزش افزوده محاسبه نمی‌شود (مقررات کسب‌وکارهای کوچک).",
+    },
+    standard: {
+      short: "با احتساب مالیات",
+      note: "همهٔ قیمت‌ها با احتساب مالیات بر ارزش افزوده.",
+    },
+  },
+  line: {
+    color: "رنگ {color}",
+    wish: "خواسته: {note}",
+    delivery: "تحویل",
+    chooseDateInCheckout: "انتخاب تاریخ تحویل هنگام تکمیل خرید",
+    anonymous: "بدون نام فرستنده",
+    extras: "افزودنی‌ها",
+    extraLess: "{name}: یکی کمتر",
+    extraMore: "{name}: یکی بیشتر",
+    removeExtra: "حذف {name}",
+    quantity: "تعداد {name}",
+    decrease: "کاهش تعداد",
+    increase: "افزایش تعداد",
+    remove: "حذف",
+  },
+  summary: {
+    bouquets: "دسته‌گل‌ها",
+    extras: "افزودنی‌ها",
+    delivery: "ارسال",
+    free: "رایگان",
+    deliveryInCheckout: "هنگام تکمیل خرید محاسبه می‌شود",
+    discount: "تخفیف",
+    total: "جمع کل",
+    missingForFreeDelivery: "فقط {amount} تا ارسال رایگان.",
+    minOrder: "برای این نشانی حداقل مبلغ سفارش {amount} است.",
+    removeCoupon: "حذف کد تخفیف",
+    couponCode: "کد تخفیف",
+    redeem: "اعمال",
+    couponQuestion: "کد تخفیف دارید؟",
+    couponCheckFailed: "کد تخفیف در حال حاضر بررسی نشد. لطفاً کمی بعد دوباره امتحان کنید.",
+    couponMissing: "لطفاً یک کد تخفیف وارد کنید.",
+    couponUnknown: "این کد برای ما شناخته‌شده نیست.",
+  },
+  surprise: {
+    title: "سورپرایز شما",
+    bouquet: "دسته‌گل",
+    card: "+ کارت",
+    extras: "+ افزودنی‌ها",
+    cardsSoon: "کارت تبریک به‌زودی",
+    cardIncluded: "همراه با کارت تبریک – پیام را هر زمان می‌توانید اضافه کنید",
+    noExtras: "هنوز افزودنی‌ای انتخاب نشده",
+  },
+  upsell: {
+    title: "چیز دیگری هم اضافه کنید؟",
+    subtitle: "همراه با دسته‌گل می‌رسد",
+    add: "افزودن",
+    addAria: "افزودن {name} به قیمت {price}",
+  },
+  cardPreview: {
+    label: "پیش‌نمایش کارت تبریک",
+    placeholder: "پیام شما اینجا نمایش داده می‌شود.",
+    anonymous: "بدون نام فرستنده",
+  },
+};
 
 export default cart;

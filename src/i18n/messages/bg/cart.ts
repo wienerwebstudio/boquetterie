@@ -1,6 +1,98 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** bg – cart (translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Количка",
+  metaDescription: "Избраните от вас букети и допълнения – готови за доставка във Виена.",
+  title: "Количка",
+  eyebrow: "Почти готово",
+  loading: "Количката се зарежда",
+  itemsHeading: "Артикули в количката",
+  items: { one: "{count} артикул", other: "{count} артикула" },
+  liveCount: "Количка: {count}",
+  continueShopping: "Продължете пазаруването",
+  summaryTitle: "Обобщение",
+  checkout: "Сигурно към плащане",
+  trust: {
+    securePayment: "Сигурно плащане",
+    ssl: "SSL криптиране",
+    privacy: "Защита на данните",
+  },
+  empty: {
+    eyebrow: "Вашата количка",
+    title: "Все още е празна.",
+    textWithCards: "Свежо аранжирани букети, желана дата и лична картичка – всичко само ви очаква.",
+    text: "Свежо аранжирани букети и желаната от вас дата – всичко само ви очаква.",
+    cta: "Разгледайте цветята",
+  },
+  drawer: {
+    total: "Общо",
+    inclDelivery: "{vat}, вкл. доставка",
+    plusDelivery: "{vat} · плюс доставка",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Крайна цена",
+      note: "Съгласно § 6 Abs. 1 Z 27 UStG не се начислява ДДС (режим за малки предприятия).",
+    },
+    standard: {
+      short: "с вкл. ДДС",
+      note: "Всички цени са с включен ДДС.",
+    },
+  },
+  line: {
+    color: "Цвят {color}",
+    wish: "Желание: {note}",
+    delivery: "Доставка",
+    chooseDateInCheckout: "Изберете датата на доставка при завършване на поръчката",
+    anonymous: "Без подател",
+    extras: "Допълнения",
+    extraLess: "{name}: един по-малко",
+    extraMore: "{name}: един повече",
+    removeExtra: "Премахнете {name}",
+    quantity: "Брой {name}",
+    decrease: "Намалете броя",
+    increase: "Увеличете броя",
+    remove: "Премахнете",
+  },
+  summary: {
+    bouquets: "Букети",
+    extras: "Допълнения",
+    delivery: "Доставка",
+    free: "Безплатно",
+    deliveryInCheckout: "изчислява се при завършване на поръчката",
+    discount: "Отстъпка",
+    total: "Общо",
+    missingForFreeDelivery: "Още {amount} до безплатна доставка.",
+    minOrder: "За този адрес важи минимална стойност на поръчката от {amount}.",
+    removeCoupon: "Премахнете ваучера",
+    couponCode: "Код на ваучер",
+    redeem: "Използвайте",
+    couponQuestion: "Имате код за ваучер?",
+    couponCheckFailed: "Ваучерът не можа да бъде проверен в момента. Моля, опитайте отново след малко.",
+    couponMissing: "Моля, въведете код на ваучер.",
+    couponUnknown: "Този код не ни е познат.",
+  },
+  surprise: {
+    title: "Вашата изненада",
+    bouquet: "Букет",
+    card: "+ картичка",
+    extras: "+ допълнения",
+    cardsSoon: "Поздравителните картички идват скоро",
+    cardIncluded: "Поздравителна картичка включена – посланието може да се добави по всяко време",
+    noExtras: "Все още няма допълнения",
+  },
+  upsell: {
+    title: "Още нещо към него?",
+    subtitle: "Идва с букета",
+    add: "Добавете",
+    addAria: "Добавете {name} за {price}",
+  },
+  cardPreview: {
+    label: "Преглед на поздравителната картичка",
+    placeholder: "Тук ще се появи вашето послание.",
+    anonymous: "Без подател",
+  },
+};
 
 export default cart;

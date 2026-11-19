@@ -1,0 +1,2520 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Trandafiri roz, gerbere roz aprins și crini albi",
+      "shortDescription": "Un buchet luminos și aerisit în roz și alb, care aduce voie bună în orice încăpere.",
+      "description": "Rosé Dream îmbină trandafiri roz și gerbere roz aprins cu crini albi, gypsophila delicată și verdeață proaspătă. Legat lejer și luminos, se potrivește de ziua de naștere, ca mulțumire sau pur și simplu așa.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere",
+        "Crini",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Pune zilnic apă proaspătă în vază.",
+        "Scurtează tulpinile la nevoie.",
+        "Îndepărtează regulat florile ofilite."
+      ],
+      "seo": {
+        "title": "Rosé Dream – buchet în roz și alb",
+        "description": "Rosé Dream: trandafiri roz, gerbere roz aprins și crini albi, legați lejer. Un buchet luminos de ziua de naștere sau ca mulțumire – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Buchet de trandafiri roz, gerbere roz aprins și crini albi într-o vază de sticlă pe o comodă de lemn"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Buchet galben",
+      "tagline": "Gerbere galbene, trandafiri și gypsophila",
+      "shortDescription": "Un buchet însorit în galben și alb, legat cu o fundă galbenă.",
+      "description": "Gerbere de un galben strălucitor se întâlnesc cu trandafiri albi și galbeni, gypsophila și verdeață proaspătă. Prins într-un ambalaj deschis la culoare, cu fundă galbenă – un buchet de ziua de naștere, ca felicitare, mulțumire sau urare de însănătoșire.",
+      "flowers": [
+        "Gerbere",
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Nu așeza florile în plin soare."
+      ],
+      "seo": {
+        "title": "Buchet galben – gerbere și trandafiri galbeni",
+        "description": "Gerbere galbene, trandafiri albi și galbeni cu gypsophila și fundă galbenă. Un salut luminos de ziua de naștere sau de însănătoșire – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Buchet de gerbere galbene, trandafiri albi și galbeni în ambalaj deschis la culoare, cu fundă galbenă"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Buchet alb",
+      "tagline": "Trandafiri deschiși la culoare, gerbere și crini",
+      "shortDescription": "Un buchet luminos și liniștit în alb și crem, cu accente delicate de roz.",
+      "description": "Buchetul alb îmbină trandafiri deschiși la culoare, gerbere și crini cu gypsophila într-un buchet simplu și atemporal. Accentele delicate de roz și caisă îl fac mai viu. Potrivit pentru aniversarea căsătoriei sau o altă aniversare, ca mulțumire sau ca salut elegant.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere",
+        "Crini",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Îndepărtează cu grijă polenul crinilor, la nevoie."
+      ],
+      "seo": {
+        "title": "Buchet alb – flori în alb și crem",
+        "description": "Trandafiri deschiși, gerbere și crini cu gypsophila: un buchet simplu pentru aniversare, aniversarea căsătoriei sau mulțumire – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Buchet luminos de trandafiri crem, gerbere roz, crini și gypsophila în ambalaj alb"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Trandafiri albaștri și albi în ambalaj albastru",
+      "shortDescription": "Trandafiri albaștri și albi în ambalaj bleu – un buchet care atrage privirile.",
+      "description": "Blue Bouquet combină trandafiri albaștri și albi cu gypsophila, un crin alb și verdeață proaspătă. Ambalajul bleu preia culoarea florilor. Un cadou neobișnuit de ziua de naștere, de aniversare sau pentru cei care iubesc lucrurile deosebite.",
+      "flowers": [
+        "Trandafiri",
+        "Crini",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – trandafiri albaștri și albi",
+        "description": "Trandafiri albaștri și albi cu gypsophila în ambalaj bleu. Un buchet de trandafiri neobișnuit de ziua de naștere sau de aniversare – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Buchet de trandafiri albaștri și albi cu gypsophila în ambalaj bleu pe o comodă de lemn"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Trandafiri curcubeu în multe culori",
+      "shortDescription": "Un buchet de trandafiri curcubeu, în care fiecare floare strălucește în mai multe culori.",
+      "description": "Farbensinfonie este alcătuit din trandafiri curcubeu: fiecare floare are mai multe culori una lângă alta, de la roșu și portocaliu la galben și verde, până la albastru și mov. Legat compact, buchetul arată ca o minge colorată. O surpriză veselă de ziua de naștere sau pentru o petrecere.",
+      "flowers": [
+        "Trandafiri curcubeu"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – trandafiri curcubeu",
+        "description": "Trandafiri curcubeu, în care fiecare floare strălucește în mai multe culori. Un buchet vesel de trandafiri de ziua de naștere – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Farbensinfonie, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Farbensinfonie, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Farbensinfonie, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Buchet compact de trandafiri curcubeu într-o vază crem",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Trandafiri curcubeu în prim-plan, fiecare floare în mai multe culori"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelitzia, crini și gerbere în portocaliu și galben",
+      "shortDescription": "Un buchet exotic în portocaliu și galben, cu flori pasărea-paradisului ca punct de atracție.",
+      "description": "Sonnenzauber îmbină flori spectaculoase pasărea-paradisului cu crini albi, gerbere galbene și verdeață proaspătă. Nuanțele calde de portocaliu și galben dau buchetului un aer viu, de vară.",
+      "flowers": [
+        "Strelitzia (pasărea-paradisului)",
+        "Crini",
+        "Gerbere",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Păstrează vaza curată și împrospătează regulat apa.",
+        "Nu așeza florile în plin soare."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelitzia și gerbere",
+        "description": "Flori pasărea-paradisului, crini și gerbere galbene în portocaliu și galben cald. Un buchet exotic care atrage privirile – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Buchet exotic de strelitzia, crini albi și gerbere galbene în folie transparentă",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Vedere de sus asupra strelitziei, crinului și gerberelor galbene din buchet"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Flori în roz aprins și roz, cu gerbere și crini",
+      "shortDescription": "Un buchet rotund și jucăuș în roz aprins și roz, cu accente galbene.",
+      "description": "Pink Bouquet reunește flori în roz aprins și roz, printre ele crini și gerbere, într-un buchet rotund și jucăuș. Gerberele galbene aduc accente proaspete, iar ambalajul roz completează imaginea. Frumos de ziua de naștere, de aniversare, de Ziua Mamei sau pur și simplu așa.",
+      "flowers": [
+        "Crini",
+        "Gerbere"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Îndepărtează regulat florile ofilite."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – buchet în roz aprins și roz",
+        "description": "Un buchet rotund în roz aprins și roz, cu crini și gerbere. De ziua de naștere, de Ziua Mamei sau pur și simplu așa – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Buchet rotund în roz aprins și roz, cu gerbere galbene, în ambalaj roz",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Buchet cu crini roz, gerbere galbene și flori roz aprins în ambalaj roz cu fundă"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Trandafiri portocalii și în nuanță de caisă",
+      "shortDescription": "Trandafiri portocalii și în nuanță de caisă – un buchet cald ca un apus de soare.",
+      "description": "Orange Bouquet este alcătuit din trandafiri portocalii și în nuanță de caisă, completați cu verdeață delicată și prinși într-un ambalaj deschis la culoare. Cald și vesel, se potrivește de ziua de naștere, ca mulțumire sau ca să luminezi ziua cuiva.",
+      "flowers": [
+        "Trandafiri"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – trandafiri portocalii",
+        "description": "Trandafiri portocalii și caisă, în ambalaj deschis. Un buchet cald de trandafiri de ziua de naștere sau ca mulțumire – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Orange Bouquet, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Orange Bouquet, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Orange Bouquet, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Buchet de trandafiri portocalii și în nuanță de caisă în ambalaj deschis la culoare, pe o comodă de lemn"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Trandafiri roșu închis în ambalaj închis la culoare",
+      "shortDescription": "Un buchet bogat de trandafiri roșu închis, cu fundă roșie din satin.",
+      "description": "Red Rose Bouquet este un buchet compact de trandafiri roșu închis, în ambalaj închis la culoare, prins cu o fundă roșie din satin. Declarația de dragoste clasică de Ziua Îndrăgostiților, de aniversare sau pentru o cerere în căsătorie.",
+      "flowers": [
+        "Trandafiri"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – trandafiri roșii",
+        "description": "Trandafiri roșu închis în ambalaj închis, cu fundă roșie din satin. Buchetul clasic de Ziua Îndrăgostiților și de aniversare – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Red Rose Bouquet, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Red Rose Bouquet, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Red Rose Bouquet, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Buchet de trandafiri roșu închis în ambalaj gri închis, cu fundă roșie din satin",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Buchet culcat de trandafiri roșii în ambalaj alb-negru, lângă lumânări"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Trandafiri și gerbere în roz, pastel și lila",
+      "shortDescription": "Un buchet blând și romantic în roz și pastel.",
+      "description": "Rosa Bouquet îmbină trandafiri în roz și pastel cu gerbere și flori lila. Prins în ambalaj alb cu fundă roz, pare ușor și plin de tandrețe. Frumos de ziua de naștere, de Ziua Mamei, la o naștere sau ca salut.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – trandafiri în roz și pastel",
+        "description": "Trandafiri și gerbere în roz, pastel și lila, în ambalaj alb. De ziua de naștere, de Ziua Mamei sau la o naștere – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Buchet de trandafiri roz, gerbere și flori lila în ambalaj alb cu fundă roz"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Trandafiri negri în ambalaj închis la culoare",
+      "shortDescription": "Trandafiri negri în ambalaj închis la culoare – misterioși și ieșiți din comun.",
+      "description": "Blackroses este un buchet de trandafiri negri, prins într-un ambalaj închis la culoare și transparent. O declarație neobișnuită pentru cei care apreciază lucrurile deosebite, de exemplu de ziua de naștere sau de aniversare.",
+      "flowers": [
+        "Trandafiri"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Blackroses – trandafiri negri",
+        "description": "Trandafiri negri în ambalaj închis la culoare: un buchet de trandafiri neobișnuit pentru cei care iubesc lucrurile deosebite – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Blackroses, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Blackroses, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Blackroses, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Buchet de trandafiri negri în ambalaj negru, într-o vază de sticlă",
+        "/images/products/sortiment/blackroses-2.jpg": "Trandafiri negri fără ambalaj, într-o vază de sticlă în fața unei ferestre"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Trandafiri albaștri cu gypsophila",
+      "shortDescription": "Trandafiri de un albastru strălucitor cu gypsophila – rari și cu adevărat spectaculoși.",
+      "description": "Blaue Liebe este un buchet de trandafiri de un albastru strălucitor, aerisit cu gypsophila fină și prins într-un ambalaj albastru. Un cadou deosebit de ziua de naștere, de aniversare sau ca semn al unei legături profunde.",
+      "flowers": [
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – trandafiri albaștri",
+        "description": "Trandafiri de un albastru strălucitor cu gypsophila, în ambalaj albastru. Un buchet rar de trandafiri pentru oameni deosebiți – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Blaue Liebe, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Blaue Liebe, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Blaue Liebe, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Buchet de trandafiri albaștri cu gypsophila în ambalaj albastru, într-o vază albă",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Trandafiri albaștri cu gypsophila în ambalaj albastru, din față",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Buchet culcat de trandafiri albaștri în ambalaj albastru, pe o comodă de lemn"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Trandafiri roz cu gypsophila",
+      "shortDescription": "Trandafiri roz în ambalaj delicat – plini de tandrețe și eleganți.",
+      "description": "Rosalie este un buchet de trandafiri roz, aerisit cu gypsophila și prins într-un ambalaj roz pal. Feminin și liniștit, se potrivește de Ziua Mamei, de ziua de naștere, de aniversare sau ca mulțumire.",
+      "flowers": [
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Rosalie – trandafiri roz cu gypsophila",
+        "description": "Trandafiri roz cu gypsophila în ambalaj roz pal. De Ziua Mamei, de ziua de naștere sau ca mulțumire – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Rosalie, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Rosalie, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Rosalie, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Buchet de trandafiri roz cu gypsophila în ambalaj roz pal, într-o vază albă",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie în ambalaj roz, într-o vază albă simplă",
+        "/images/products/sortiment/rosalie-3.jpg": "Trandafiri roz cu gypsophila într-o vază albă striată",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie culcat, vedere de sus asupra trandafirilor roz și a gypsophilei"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Mix roșu și alb",
+      "tagline": "Trandafiri roșii și albi",
+      "shortDescription": "Trandafiri roșii și albi într-un buchet festiv.",
+      "description": "Mixul roșu și alb reunește trandafiri roșii și albi în ambalaj alb, în funcție de mărime aerisiți cu gypsophila. Pasiunea se întâlnește cu tandrețea: un buchet de Ziua Îndrăgostiților, de aniversare, de aniversarea căsătoriei sau ca un cadou elegant.",
+      "flowers": [
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Mix roșu și alb – trandafiri roșii și albi",
+        "description": "Trandafiri roșii și albi în ambalaj festiv. De Ziua Îndrăgostiților, de aniversare sau de aniversarea căsătoriei, în șase mărimi – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Mix roșu și alb, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Mix roșu și alb, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Mix roșu și alb, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Buchet de trandafiri roșii și albi cu gypsophila în ambalaj alb, alături petale de trandafir",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Trandafiri roșii și albi legați compact în ambalaj alb",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Buchet de trandafiri roșii și albi în ambalaj alb, pe o comodă de lemn",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Buchet culcat de trandafiri roșii și albi, vedere de sus"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Buchet de lalele",
+      "tagline": "Lalele într-o singură culoare sau amestecate",
+      "shortDescription": "Un buchet simplu de lalele, într-o singură culoare sau în amestec colorat.",
+      "description": "Cu culorile lor clare și forma zveltă, lalelele aduc atmosferă de primăvară în casă. Buchetul este legat numai din lalele, după preferință într-o singură culoare sau ca mix colorat. Disponibil în roșu, galben, mov, roz, portocaliu, alb și mix.",
+      "flowers": [
+        "Lalele"
+      ],
+      "care": [
+        "Taie tulpinile drept și pune-le în apă rece.",
+        "Puțină apă e suficientă, dar completeaz-o regulat.",
+        "Lalelele continuă să crească în vază – scurtează-le la nevoie."
+      ],
+      "seo": {
+        "title": "Buchet de lalele – lalele în multe culori",
+        "description": "Un buchet de lalele în roșu, galben, mov, roz, portocaliu, alb sau amestecate. Atmosferă de primăvară acasă – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Roșu",
+        "gelb": "Galben",
+        "lila": "Mov",
+        "rosa": "Roz",
+        "orange": "Portocaliu",
+        "weiss": "Alb",
+        "mix": "Mix colorat"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Buchet de lalele galbene într-o vază de sticlă",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Lalele mov în hârtie kraft, într-o vază de sticlă",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Lalele roșii într-o vază bej",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Lalele portocalii într-o vază de sticlă",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Lalele roz într-o vază de sticlă, pe o față de masă din in",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Mix colorat de lalele în roșu, galben, roz, portocaliu și mov, într-o vază bej",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Lalele albe într-o vază albă"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Trandafiri roșii cu gypsophila",
+      "shortDescription": "Un buchet expresiv de trandafiri într-un roșu intens, pentru sentimente mari.",
+      "description": "Red Passion reunește trandafiri roșii într-un buchet compact și rotund, încadrat de gypsophila și de un ambalaj închis la culoare. Disponibil în șase mărimi – pentru gesturi romantice și momente care merită ținute minte.",
+      "flowers": [
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Reîmprospătează tăietura tulpinilor.",
+        "Pune zilnic apă proaspătă.",
+        "Ferește de soarele direct."
+      ],
+      "seo": {
+        "title": "Red Passion – buchet de trandafiri roșii",
+        "description": "Trandafiri roșii cu gypsophila în ambalaj închis la culoare, în șase mărimi. Un buchet de trandafiri pentru sentimente mari – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Red Passion, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Red Passion, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Red Passion, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Buchet culcat de trandafiri roșu închis cu gypsophila în ambalaj negru cu auriu",
+        "/images/products/sortiment/red-passion-2.jpg": "Buchet mare de trandafiri roșii cu gypsophila în ambalaj închis la culoare, într-o vază albă",
+        "/images/products/sortiment/red-passion-3.jpg": "Buchet rotund, foarte mare, de trandafiri roșii cu gypsophila în ambalaj închis la culoare"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Trandafiri roșii legați compact",
+      "shortDescription": "Trandafiri roșii legați compact, în ambalaj închis la culoare – atemporali și plini de sentiment.",
+      "description": "Klassiker der Liebe este alcătuit din trandafiri roșii, legați compact într-o formă rotundă și prinși în ambalaj închis la culoare cu fundă neagră. Buchetul de trandafiri pentru Ziua Îndrăgostiților, aniversare, cerere în căsătorie sau orice declarație de dragoste.",
+      "flowers": [
+        "Trandafiri"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – trandafiri roșii",
+        "description": "Trandafiri roșii legați compact, în ambalaj închis. Buchetul clasic pentru Ziua Îndrăgostiților, aniversare sau cerere în căsătorie – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Klassiker der Liebe, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Klassiker der Liebe, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Klassiker der Liebe, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Buchet rotund de trandafiri roșii legați compact, în ambalaj negru cu fundă",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Trandafiri roșii în formă de sferă, în ambalaj închis la culoare, din față"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Trandafiri roșii cu gypsophila",
+      "shortDescription": "Un buchet bogat de trandafiri, în șase mărimi.",
+      "description": "Königin der Herzen îmbină trandafiri roșii cu gypsophila fină, într-un ambalaj închis la culoare și transparent. Disponibil în șase mărimi – de la gestul mic până la marea apariție.",
+      "flowers": [
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros.",
+        "Îndepărtează la timp florile ofilite.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – buchet bogat de trandafiri",
+        "description": "Trandafiri roșii cu gypsophila, în șase mărimi. Un buchet bogat de trandafiri pentru momente mari – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Königin der Herzen, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Königin der Herzen, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Königin der Herzen, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Buchet de trandafiri roșii cu gypsophila în ambalaj închis la culoare, într-o vază albă",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Buchet mare de trandafiri roșii și gypsophila în ambalaj negru",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Trandafiri roșii cu gypsophila în ambalaj închis la culoare, într-un ghiveci negru",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Vedere de sus asupra trandafirilor roșii cu gypsophila, în ambalaj închis la culoare în formă de stea"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbere, trandafiri și crini în nuanțe calde",
+      "shortDescription": "Un buchet cald în portocaliu, roz și galben.",
+      "description": "Herbstzauber îmbină gerbere, trandafiri și crini în nuanțe de portocaliu, roz și galben cu verdeață proaspătă. Legat lejer, aduce culori calde în casă, mai ales când zilele devin mai scurte.",
+      "flowers": [
+        "Gerbere",
+        "Trandafiri",
+        "Crini"
+      ],
+      "care": [
+        "Nu le ține lângă fructe.",
+        "Completează regulat apa.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Herbstzauber – buchet în nuanțe calde",
+        "description": "Gerbere, trandafiri și crini în portocaliu, roz și galben. Un buchet cald de toamnă, de ziua de naștere sau ca mulțumire – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Buchet de gerbere portocalii, trandafiri în nuanță de caisă și roz și crini, într-o vază de sticlă"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Trandafiri roșii, gerbere și accente verzi",
+      "shortDescription": "Un buchet plin de viață în roșu și portocaliu, cu accente verzi proaspete.",
+      "description": "Blütenfreude îmbină trandafiri roșii și gerbere în roșu și portocaliu cu flori pompon verzi și verdeață de eucalipt. Cu culori puternice și totuși cu o formă rotundă – frumos de ziua de naștere, ca mulțumire sau pur și simplu așa.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere"
+      ],
+      "care": [
+        "Pune zilnic apă proaspătă în vază.",
+        "Scurtează tulpinile la nevoie.",
+        "Îndepărtează regulat florile ofilite."
+      ],
+      "seo": {
+        "title": "Blütenfreude – trandafiri și gerbere roșii",
+        "description": "Trandafiri roșii, gerbere în roșu și portocaliu și accente verzi proaspete. Un buchet plin de viață de ziua de naștere – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Buchet de trandafiri roșii, gerbere roșii și portocalii și flori pompon verzi, într-o vază de sticlă",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude într-o vază albă, pe o comodă de lemn"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Trandafiri roz, crini și gypsophila",
+      "shortDescription": "Nuanțe blânde de roz cu crini – liniștit, armonios și delicat.",
+      "description": "Zartrosa Zauber îmbină trandafiri roz cu crini roz și gypsophila, într-un ambalaj roz. Buchetul are un aer liniștit și armonios, cu o notă fină, romantică.",
+      "flowers": [
+        "Trandafiri",
+        "Crini",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Îndepărtează frunzele care ajung în apă.",
+        "Păstrează într-un loc răcoros.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – trandafiri și crini roz",
+        "description": "Trandafiri roz, crini roz și gypsophila în ambalaj delicat. Un buchet liniștit și romantic – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Buchet de trandafiri roz, crini roz și gypsophila în ambalaj roz, într-o vază albă",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber în ambalaj roz cu fundă mare"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbere, crini și trandafiri în portocaliu și galben",
+      "shortDescription": "Portocaliu și galben strălucitor pentru vești bune și ocazii însorite.",
+      "description": "Strahlender Tag îmbină gerbere și crini portocalii cu trandafiri galbeni, garoafe deschise la culoare și gypsophila. Culorile puternice aduc energie pozitivă – un buchet pentru felicitări, succese și ocazii însorite.",
+      "flowers": [
+        "Gerbere",
+        "Crini",
+        "Trandafiri",
+        "Garoafe",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Ferește de curent.",
+        "Schimbă regulat apa.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – buchet portocaliu și galben",
+        "description": "Gerbere și crini portocalii cu trandafiri galbeni și gypsophila. Un buchet vesel pentru felicitări – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Buchet de gerbere portocalii, trandafiri galbeni și gypsophila în ambalaj alb cu auriu",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Gerbere portocalii, crini și un trandafir galben într-o vază albă",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Buchet rotund de gerbere și crini portocalii, trandafiri galbeni și garoafe deschise la culoare, într-o vază de sticlă"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Trandafiri în roz, crem și caisă",
+      "shortDescription": "Un buchet armonios de trandafiri, între frumusețe clasică și stil modern.",
+      "description": "Rosentraum îmbină trandafiri în roz, crem și caisă cu flori violete, crenguțe cu bobițe și verdeață proaspătă. Prins într-un ambalaj roz pudrat, buchetul pare bogat și totodată modern.",
+      "flowers": [
+        "Trandafiri"
+      ],
+      "care": [
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Păstrează vaza curată.",
+        "Împrospătează regulat apa."
+      ],
+      "seo": {
+        "title": "Rosentraum – trandafiri în roz și crem",
+        "description": "Trandafiri în roz, crem și caisă cu accente violete, în ambalaj roz pudrat. Un buchet armonios de trandafiri – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Buchet legat de trandafiri în roz, crem și caisă, în ambalaj roz pudrat",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum în ambalaj roz pudrat, într-o vază albă",
+        "/images/products/sortiment/rosentraum-3.jpg": "Vedere de sus asupra trandafirilor, florilor violete și crenguțelor cu bobițe din buchet"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Trandafiri albi cu gypsophila",
+      "shortDescription": "Trandafiri albi cu gypsophila – delicați, romantici și luminoși.",
+      "description": "Rosenkuss este alcătuit din trandafiri albi până la crem, aerisiți cu gypsophila fină și prinși într-un ambalaj alb. Un buchet pentru afecțiune, apropiere și mici mesaje de dragoste.",
+      "flowers": [
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Nu ține florile într-un loc prea cald.",
+        "Verifică zilnic nivelul apei.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Rosenkuss – trandafiri albi",
+        "description": "Trandafiri albi cu gypsophila în ambalaj alb. Un buchet de trandafiri delicat și romantic – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Rosenkuss, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Rosenkuss, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Rosenkuss, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Buchet de trandafiri albi cu gypsophila în ambalaj alb, într-o vază albă",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Buchet mare de trandafiri albi în ambalaj alb, într-o vază albă",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Buchet culcat de trandafiri albi cu gypsophila, pe o comodă de lemn"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Trandafiri în pastel, roz aprins și bordo",
+      "shortDescription": "Trandafiri în pastel și roz aprins, aranjați cu eleganță.",
+      "description": "Rosenglanz reunește trandafiri în roz pastel, crem, roz aprins și bordo cu gypsophila, într-un ambalaj roz. Atemporal ca aspect, disponibil în șase mărimi.",
+      "flowers": [
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Reîmprospătează tăietura tulpinilor.",
+        "Evită soarele direct.",
+        "Schimbă regulat apa florilor."
+      ],
+      "seo": {
+        "title": "Rosenglanz – trandafiri în pastel și roz",
+        "description": "Trandafiri în roz pastel, roz aprins și bordo cu gypsophila, în șase mărimi. Un buchet elegant de trandafiri – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică",
+          "detailAlt": "Rosenglanz, mărimea Mică, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "m": {
+          "label": "Medie",
+          "detailAlt": "Rosenglanz, mărimea Medie, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "l": {
+          "label": "Mare",
+          "detailAlt": "Rosenglanz, mărimea Mare, ținut în mână – în fundal o stradă din Viena cu tramvai"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Buchet de trandafiri în roz pastel, roz aprins și bordo în ambalaj roz, într-o vază de sticlă",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Buchet rotund de trandafiri cu gypsophila în ambalaj roz, din față",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Buchet culcat de trandafiri pastel și roz aprins, pe o comodă de lemn"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Trandafiri roz, gerbere, crini și garoafe",
+      "shortDescription": "Un buchet expresiv în roz și roz aprins, care vorbește fără cuvinte.",
+      "description": "Pure Liebe îmbină trandafiri roz cu gerbere roz aprins, crini roz, garoafe și gypsophila. Intens în nuanțele de roz, aerisit cu accente deschise la culoare – un buchet plin de sentiment.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere",
+        "Crini",
+        "Garoafe",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Pune regulat apă proaspătă.",
+        "Păstrează vaza curată.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Pure Liebe – buchet în roz și roz aprins",
+        "description": "Trandafiri roz, gerbere roz aprins, crini și garoafe cu gypsophila. Un buchet plin de sentiment – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Buchet de trandafiri roz, gerbere roz aprins și crini roz, într-o vază bej",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe cu crini, gerbere și garoafe, într-o vază bej",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Buchet rotund de trandafiri roz, gerbere, garoafe și gypsophila, într-o vază de sticlă"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Gerbere roz aprins, trandafiri și accente violete",
+      "shortDescription": "Nuanțe puternice de roz, combinate într-un buchet proaspăt și modern.",
+      "description": "Pink Harmony îmbină gerbere și trandafiri roz aprins cu flori albe și lila, accente violete și gypsophila. Plin de viață și proaspăt, cu mult farmec.",
+      "flowers": [
+        "Gerbere",
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros.",
+        "Îndepărtează florile ofilite.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbere și trandafiri roz",
+        "description": "Gerbere și trandafiri roz aprins cu accente lila și violete. Un buchet proaspăt și modern – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Buchet de gerbere roz aprins, trandafiri și flori lila, într-o vază bej",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Buchet rotund cu gerbere roz aprins, trandafiri și accente violete"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Buchet colorat de trandafiri în roz, galben, caisă și mov",
+      "shortDescription": "Un buchet generos și colorat de trandafiri, pentru ocazii speciale.",
+      "description": "Love Deluxe este un buchet de trandafiri în multe culori: roz, crem, caisă, galben și mov, prins într-un ambalaj roz. Pentru ocazii speciale și gesturi mari, disponibil în cinci mărimi.",
+      "flowers": [
+        "Trandafiri"
+      ],
+      "care": [
+        "Scurtează tulpinile.",
+        "Schimbă zilnic apa florilor.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Love Deluxe – buchet colorat de trandafiri",
+        "description": "Trandafiri în roz, crem, caisă, galben și mov, în ambalaj roz, în cinci mărimi. Pentru gesturi mari – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Buchet colorat de trandafiri în roz, galben, caisă și mov, în ambalaj roz, într-o vază albă",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Buchet mare și colorat de trandafiri în ambalaj roz, din față",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Buchet culcat și colorat de trandafiri în ambalaj roz, pe o comodă de lemn"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Trandafiri roșii și verzi cu crini",
+      "shortDescription": "Un buchet emoționant în roșu, ca să spui „Te iubesc”.",
+      "description": "Liebeserklärung îmbină trandafiri roșii cu trandafiri verde deschis, crini albi, flori roșii de accent și gypsophila. Puternic și totuși proaspăt – un buchet care face sentimentele vizibile.",
+      "flowers": [
+        "Trandafiri",
+        "Crini",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Ferește de căldură.",
+        "Împrospătează regulat apa.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – trandafiri roșii și crini",
+        "description": "Trandafiri roșii și verde deschis cu crini și gypsophila. Un buchet ca să spui „Te iubesc” – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Buchet de trandafiri roșii și verde deschis cu crini și gypsophila, într-o vază de sticlă",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung într-o vază albă, pe o comodă de lemn"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Trandafiri și gerbere în roz, cu accente portocalii",
+      "shortDescription": "Elegant și echilibrat – un buchet cu o reținere plină de stil.",
+      "description": "Klassische Schönheit îmbină trandafiri în roz pudrat și alb cu gerbere roz aprins, flori mici portocalii și gypsophila. Prins într-un ambalaj închis la culoare cu margine aurie, buchetul pare echilibrat și atemporal.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Nu așeza direct lângă calorifer.",
+        "Taie tulpinile oblic înainte să le pui în vază.",
+        "Schimbă regulat apa florilor."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – trandafiri și gerbere",
+        "description": "Trandafiri în roz pudrat și alb cu gerbere roz aprins, în ambalaj închis la culoare. Un buchet echilibrat și atemporal – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Buchet de trandafiri roz pudrat și gerbere roz aprins, în ambalaj închis la culoare cu margine aurie",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit într-o vază albă",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Vedere de sus asupra trandafirilor, gerberelor și gypsophilei în ambalaj închis la culoare"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Trandafiri roz și gerbere roz aprins",
+      "shortDescription": "Jucăuș și plin de viață: trandafiri roz întâlnesc gerbere roz aprins.",
+      "description": "Herzklopfen îmbină trandafiri roz pal cu gerbere roz aprins, flori mici alb-verzui și accente fine de mov. Legat rotund și plin de culoare – un buchet cu mult sentiment.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere"
+      ],
+      "care": [
+        "Pune zilnic apă proaspătă.",
+        "Taie tulpinile oblic.",
+        "Păstrează într-un loc răcoros, ferit de soarele direct."
+      ],
+      "seo": {
+        "title": "Herzklopfen – trandafiri roz și gerbere",
+        "description": "Trandafiri roz pal și gerbere roz aprins, legați rotund. Un buchet jucăuș, plin de sentiment – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Buchet rotund de trandafiri roz pal și gerbere roz aprins, într-o vază albă",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen într-o vază albă, din lateral",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Buchet de trandafiri roz și gerbere roz aprins, într-o vază de sticlă"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Mix colorat cu trandafiri și gerbere",
+      "shortDescription": "Un buchet colorat care radiază bucurie de viață.",
+      "description": "Fröhlicher Blütenmix îmbină trandafiri roșii, gerbere în galben, roz și roșu și alte flori în galben, portocaliu și violet. Prins într-un ambalaj roșu – ideal ca să dăruiești un zâmbet.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros.",
+        "Schimbă regulat apa.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – buchet colorat",
+        "description": "Trandafiri roșii și gerbere în galben, roz și roșu, în ambalaj roșu. Un buchet colorat, plin de bucurie de viață – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Buchet colorat cu gerbere și trandafiri în ambalaj roșu, pe o comodă de lemn",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix în ambalaj roșu, într-o vază albă",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Vedere de sus asupra trandafirilor roșii și gerberelor galbene și roz, în ambalaj roșu"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Trandafiri și gerbere roz aprins, cu accente mov",
+      "shortDescription": "Un mix plin de viață în roz aprins, caisă și mov.",
+      "description": "Farbtänzer îmbină trandafiri și minitrandafiri în roz aprins și caisă cu gerbere roz, flori mov și bobițe deschise la culoare. Legat compact și plin de viață – modern și expresiv.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere"
+      ],
+      "care": [
+        "Îndepărtează frunzele care ajung în apă.",
+        "Păstrează vaza curată.",
+        "Taie tulpinile oblic înainte să le pui în vază."
+      ],
+      "seo": {
+        "title": "Farbtänzer – buchet în roz și mov",
+        "description": "Trandafiri și gerbere în roz aprins și caisă, cu accente mov. Un buchet plin de viață și modern – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Buchet culcat în roz aprins și mov, în ambalaj roz pal",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Buchet rotund de trandafiri roz aprins, gerbere și flori mov, într-o vază crem",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer într-o vază striată, din față"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Cutie cu flori în formă de inimă",
+      "tagline": "Trandafiri într-o cutie roșie în formă de inimă",
+      "shortDescription": "Trandafiri într-o cutie în formă de inimă – o declarație de dragoste pe care o poți așeza oriunde.",
+      "description": "În cutia roșie, în formă de inimă, sunt aranjați trandafiri în roșu, roz și alb, alături de alte flori și gypsophila. Un cadou de aniversare, de Ziua Îndrăgostiților sau ca o surpriză plină de afecțiune.",
+      "flowers": [
+        "Trandafiri",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Umezește ușor trandafirii.",
+        "Păstrează într-un loc răcoros.",
+        "Ferește de soarele direct."
+      ],
+      "seo": {
+        "title": "Cutie cu flori inimă – trandafiri în cutie",
+        "description": "Trandafiri în roșu, roz și alb într-o cutie roșie în formă de inimă. De aniversare și de Ziua Îndrăgostiților – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Cutie cu flori roșie, în formă de inimă, cu trandafiri în roșu, roz și alb și gypsophila"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Cutie cu flori clasică",
+      "tagline": "Trandafiri roșii într-o cutie rotundă",
+      "shortDescription": "Trandafiri clasici într-o cutie rotundă – simplu și expresiv.",
+      "description": "Cutia cu flori clasică umple o cutie rotundă cu trandafiri așezați compact. Minimalistă și atemporală, se potrivește de ziua de naștere, ca mulțumire sau pentru momente speciale. Disponibilă în roșu și alb.",
+      "flowers": [
+        "Trandafiri"
+      ],
+      "care": [
+        "Udă trandafirii regulat, cu puțină apă.",
+        "Păstrează într-un loc răcoros.",
+        "Ferește de soarele direct."
+      ],
+      "seo": {
+        "title": "Cutie cu flori clasică – trandafiri în cutie",
+        "description": "Trandafiri așezați compact într-o cutie rotundă, disponibili în roșu și alb. Un cadou simplu – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Trandafiri roșii într-o cutie rotundă albă, cu margine roz și aurie",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Două cutii rotunde din catifea roșie cu trandafiri roșii, pe un soclu alb"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Anthurium roz la ghiveci",
+      "tagline": "Anthurium cu flori roz",
+      "shortDescription": "Un anthurium cu flori roz pal – elegant și discret.",
+      "description": "Anthuriumul roz aduce culoare în încăpere cu florile lui delicate și frunzele verzi lucioase, fără să fie strident. Se potrivește în casă la fel de bine ca la birou.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Așază într-un loc luminos, fără soare direct.",
+        "Udă regulat și evită apa stagnantă.",
+        "Pulverizează din când în când apă pe frunze."
+      ],
+      "seo": {
+        "title": "Anthurium roz la ghiveci – plantă de interior",
+        "description": "Anthurium cu flori roz pal și frunze lucioase. O plantă de interior elegantă, drept cadou – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Anthurium roz într-un ghiveci ceramic roz pudrat, pe o comodă de lemn",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anthurium cu flori roz într-un ghiveci mov pal, lângă lumânări"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Anthurium roșu la ghiveci",
+      "tagline": "Anthurium cu flori roșii",
+      "shortDescription": "Un anthurium cu flori de un roșu aprins și un aer modern.",
+      "description": "Anthuriumul roșu aduce accente de culoare puternice cu florile lui lucioase. Ca plantă de interior decorativă sau drept cadou, rămâne mult timp frumos dacă e îngrijit bine.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Loc luminos, fără soare direct.",
+        "Menține pământul uniform umed.",
+        "Evită apa stagnantă."
+      ],
+      "seo": {
+        "title": "Anthurium roșu la ghiveci – plantă de interior",
+        "description": "Anthurium cu flori de un roșu aprins, la ghiveci. O plantă de interior decorativă, drept cadou – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Anthurium roșu într-un ghiveci ceramic roșu, pe o comodă de lemn"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "Anthurium roșu XXL la ghiveci",
+      "tagline": "Anthurium mare cu flori roșii",
+      "shortDescription": "Un anthurium mare și bogat, cu multe flori roșii.",
+      "description": "Acest anthurium roșu are peste 80 cm înălțime și numeroase flori roșii deasupra unui frunziș des și lucios. Un punct de atracție expresiv pentru casă sau birou.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Așază într-un loc luminos, fără soare direct.",
+        "Udă regulat și evită apa stagnantă.",
+        "Șterge din când în când praful de pe frunze."
+      ],
+      "seo": {
+        "title": "Anthurium roșu XXL la ghiveci",
+        "description": "Anthurium mare, cu numeroase flori roșii, la ghiveci. Un punct de atracție pentru casă sau birou – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Anthurium mare cu multe flori roșii într-un ghiveci roșu, lângă lumânări"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelia la ghiveci",
+      "tagline": "Bromelia cu floare roșie",
+      "shortDescription": "O bromelia cu floare de un roșu intens și un aer tropical.",
+      "description": "Cu rozeta ei de flori roșii și frunzele verzi și zvelte, bromelia aduce accente pline de viață. O plantă de interior decorativă pentru casă sau birou și un cadou deosebit.",
+      "flowers": [
+        "Bromelia"
+      ],
+      "care": [
+        "Așază într-un loc luminos, fără soare direct.",
+        "Toarnă regulat apă în pâlnia formată de frunze.",
+        "Menține pământul doar ușor umed."
+      ],
+      "seo": {
+        "title": "Bromelia la ghiveci – plantă de interior",
+        "description": "Bromelia cu floare roșie, la ghiveci: un aer tropical pentru casă sau birou – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelia cu floare roșie într-un ghiveci roșu, pe o comodă de lemn"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Ficus elastica la ghiveci",
+      "tagline": "Ficus elastica cu frunze verde închis",
+      "shortDescription": "Un ficus elastica ușor de îngrijit, cu frunze lucioase, verde închis.",
+      "description": "Cu frunzele lui mari și lucioase, ficusul elastica are un aer modern și liniștit. Este ușor de îngrijit și se potrivește bine în casă și la birou.",
+      "flowers": [
+        "Ficus elastica"
+      ],
+      "care": [
+        "Loc luminos până la semiumbră.",
+        "Udă cu moderație – se descurcă cu puțină apă.",
+        "Curăță din când în când frunzele de praf."
+      ],
+      "seo": {
+        "title": "Ficus elastica la ghiveci – ușor de îngrijit",
+        "description": "Ficus elastica cu frunze lucioase, verde închis. O plantă de interior ușor de îngrijit, pentru casă și birou – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Ficus elastica cu frunze verde închis într-un ghiveci roșu, pe o comodă de lemn"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Orhidee albă la ghiveci",
+      "tagline": "Orhidee la ghiveci, în mai multe culori",
+      "shortDescription": "O orhidee la ghiveci – liniștită, nobilă și atemporală.",
+      "description": "Orhideea înseamnă eleganță și liniște. Cu tijele ei florale fine, este o alegere plină de stil pentru casă, birou sau drept cadou. Disponibilă în mov, roz, galben, alb și albastru.",
+      "flowers": [
+        "Orhidee"
+      ],
+      "care": [
+        "Așază într-un loc luminos, fără soare direct.",
+        "Udă cu moderație și evită apa stagnantă.",
+        "Îndepărtează tijele florale trecute abia după ce s-au uscat."
+      ],
+      "seo": {
+        "title": "Orhidee la ghiveci – în cinci culori",
+        "description": "Orhidee la ghiveci în alb, roz, galben, mov sau albastru. O plantă de interior elegantă, drept cadou – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Orhidee albă cu centrul florii roz aprins, într-un ghiveci ceramic crem",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orhidee cu flori roz pal, într-un ghiveci ceramic crem",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Orhidee galbenă într-un ghiveci ceramic crem",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orhidee cu flori violete într-un ghiveci roz aprins",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orhidee cu flori albastre într-un ghiveci gri, lângă lumânări"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Buchet funerar roșu",
+      "tagline": "Trandafiri roșii, gerbere și garoafe pe crengi de brad",
+      "shortDescription": "Un buchet funerar în roșu, ca semn de iubire și apropiere.",
+      "description": "Buchetul funerar roșu îmbină trandafiri roșii, gerbere și garoafe cu trandafiri galbeni, gypsophila și crengi de brad. Un gest demn de comemorare, care exprimă în liniște sentimente puternice. Compoziția poate varia ușor în funcție de sezon.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere",
+        "Garoafe",
+        "Gypsophila (floarea miresei)"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros, nu în soare direct sau lângă calorifer.",
+        "La aranjamente, menține buretele floral umed."
+      ],
+      "seo": {
+        "title": "Buchet funerar roșu – trandafiri și gerbere",
+        "description": "Buchet funerar în roșu cu trandafiri, gerbere și garoafe pe crengi de brad, în trei mărimi. Un ultim salut demn – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Buchet funerar cu trandafiri roșii, gerbere și garoafe, trandafiri galbeni și crengi de brad, pe un soclu de piatră"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Buchet funerar roz",
+      "tagline": "Trandafiri roz și flori violete",
+      "shortDescription": "Un buchet funerar în nuanțe delicate de roz, cu un aer care alină.",
+      "description": "Trandafirii roz, florile violete și roz și crengile de brad dau acestui buchet funerar un aer blând, alinător. Exprimă recunoștință, apropiere și o amintire plină de iubire – potrivit pentru un rămas-bun liniștit și personal.",
+      "flowers": [
+        "Trandafiri"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros, nu în soare direct sau lângă calorifer.",
+        "La aranjamente, menține buretele floral umed."
+      ],
+      "seo": {
+        "title": "Buchet funerar roz – nuanțe delicate",
+        "description": "Buchet funerar în nuanțe delicate de roz, cu trandafiri roz pe crengi de brad, în trei mărimi. Pentru un rămas-bun liniștit – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Buchet funerar cu trandafiri roz și flori violete pe crengi de brad, cu fundă albă, pe un soclu de piatră"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Buchet funerar pastel",
+      "tagline": "Crini, trandafiri și flori albastre în pastel",
+      "shortDescription": "Un buchet funerar liniștit, în nuanțe fine de pastel.",
+      "description": "Buchetul funerar pastel îmbină crini și trandafiri roz cu flori bleu, lila și albe. Nuanțele fine de culoare transmit alinare și compasiune. Florile pot varia în funcție de sezon.",
+      "flowers": [
+        "Crini",
+        "Trandafiri"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros, nu în soare direct sau lângă calorifer.",
+        "La aranjamente, menține buretele floral umed."
+      ],
+      "seo": {
+        "title": "Buchet funerar pastel – nuanțe liniștite",
+        "description": "Buchet funerar pastel cu crini, trandafiri și flori bleu, în trei mărimi. Discret și elegant – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Buchet funerar pastel cu crini roz, trandafiri și flori bleu, cu fundă neagră, pe un soclu de piatră"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Buchet funerar portocaliu",
+      "tagline": "Trandafiri, gerbere și garoafe în portocaliu și galben",
+      "shortDescription": "Un buchet funerar în nuanțe calde de portocaliu, care exprimă prețuire.",
+      "description": "Trandafiri, gerbere și garoafe în portocaliu, galben și caisă se îmbină cu crengi de brad într-un buchet funerar cald. Exprimă recunoștință și amintirea unei vieți împlinite și se potrivește pentru priveghi sau slujba de pomenire.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere",
+        "Garoafe"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros, nu în soare direct sau lângă calorifer.",
+        "La aranjamente, menține buretele floral umed."
+      ],
+      "seo": {
+        "title": "Buchet funerar portocaliu – nuanțe calde",
+        "description": "Buchet funerar în portocaliu și galben cu trandafiri, gerbere și garoafe, în trei mărimi. Pentru priveghi și pomenire – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Buchet funerar cu trandafiri, gerbere și garoafe în portocaliu și galben pe crengi de brad, pe un soclu de piatră"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Buchet funerar alb",
+      "tagline": "Crini albi și crizanteme",
+      "shortDescription": "Un buchet funerar clasic în alb – simplu și demn.",
+      "description": "Crinii albi, crizantemele și florile mici albe pe crengi de brad fac acest buchet funerar simplu și atemporal. Albul simbolizează pacea și despărțirea – potrivit pentru ceremonii funerare formale sau ca semn discret de compasiune.",
+      "flowers": [
+        "Crini",
+        "Crizanteme"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros, nu în soare direct sau lângă calorifer.",
+        "La aranjamente, menține buretele floral umed."
+      ],
+      "seo": {
+        "title": "Buchet funerar alb – crini și crizanteme",
+        "description": "Buchet funerar clasic în alb cu crini și crizanteme, în trei mărimi. Simplu și demn – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Buchet funerar din crini albi, crizanteme și flori mici albe pe crengi de brad, pe un soclu de piatră"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Buchet funerar galben",
+      "tagline": "Floarea-soarelui, trandafiri galbeni și garoafe",
+      "shortDescription": "Un buchet funerar în galben, pentru amintire, speranță și recunoștință.",
+      "description": "Floarea-soarelui, trandafirii galbeni și garoafele în nuanță de caisă pe crengi de brad fac acest buchet funerar luminos și cald. Se potrivește la despărțiri în care viața stă în centru. Florile depind de sezon.",
+      "flowers": [
+        "Floarea-soarelui",
+        "Trandafiri",
+        "Garoafe"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros, nu în soare direct sau lângă calorifer.",
+        "La aranjamente, menține buretele floral umed."
+      ],
+      "seo": {
+        "title": "Buchet funerar galben – floarea-soarelui",
+        "description": "Buchet funerar în galben cu floarea-soarelui, trandafiri și garoafe, în trei mărimi. Un ultim salut luminos – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Buchet funerar cu floarea-soarelui, trandafiri galbeni și garoafe în nuanță de caisă pe crengi de brad, pe un soclu de piatră"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Coroană funerară multicoloră",
+      "tagline": "Gerbere, trandafiri și flori în culori vii",
+      "shortDescription": "O coroană funerară colorată, pentru despărțirea de un om plin de viață.",
+      "description": "Coroana funerară multicoloră îmbină gerbere, trandafiri și alte flori în galben, portocaliu, roz și alb pe un fond verde. Un ultim salut demn și totodată plin de culoare, realizat de mână. Dacă ai dorințe legate de aranjament, ia legătura cu noi.",
+      "flowers": [
+        "Gerbere",
+        "Trandafiri"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros și umbros.",
+        "Umezește ușor buretele floral, la nevoie."
+      ],
+      "seo": {
+        "title": "Coroană funerară multicoloră – plină de culoare",
+        "description": "Coroană funerară multicoloră cu gerbere și trandafiri, realizată de mână. Un ultim salut plin de culoare – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Coroană funerară colorată cu gerbere, crini și flori albe, cu fundă neagră, pe un șevalet de lemn"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Coroană funerară roz aprins",
+      "tagline": "Gerbere și trandafiri în roz aprins și roșu",
+      "shortDescription": "O coroană funerară în roz aprins și roșu, ca ultim salut plin de iubire.",
+      "description": "Coroana funerară în roz aprins și roșu îmbină gerbere roz aprins, trandafiri și alte flori cu accente deschise la culoare și verdeață proaspătă. Expresie a iubirii și a amintirii, realizată de mână. Dacă ai dorințe legate de aranjament, ia legătura cu noi.",
+      "flowers": [
+        "Gerbere",
+        "Trandafiri"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros și umbros.",
+        "Umezește ușor buretele floral, la nevoie."
+      ],
+      "seo": {
+        "title": "Coroană funerară – roz aprins și roșu",
+        "description": "Coroană funerară în roz aprins și roșu cu gerbere și trandafiri, realizată de mână. Un ultim salut plin de iubire – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Coroană funerară cu gerbere roz aprins, trandafiri și flori roșii, cu fundă bordo, pe un șevalet de lemn"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Coroană funerară roșu-galben",
+      "tagline": "Gerbere roșii și galbene",
+      "shortDescription": "O coroană funerară luminoasă în roșu și galben.",
+      "description": "Gerberele roșii și galbene, așezate compact pe un fond verde, fac din această coroană funerară un ultim salut luminos, plin de căldură, recunoștință și amintiri frumoase. Realizată de mână. Dacă ai dorințe legate de aranjament, ia legătura cu noi.",
+      "flowers": [
+        "Gerbere"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros și umbros.",
+        "Umezește ușor buretele floral, la nevoie."
+      ],
+      "seo": {
+        "title": "Coroană funerară roșu-galben – gerbere",
+        "description": "Coroană funerară din gerbere roșii și galbene, realizată de mână. Un ultim salut cald și luminos – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Coroană funerară din gerbere roșii și galbene, cu fundă gri-argintie, pe un șevalet de lemn"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Coroană funerară roșie",
+      "tagline": "Gerbere și trandafiri roșii",
+      "shortDescription": "O coroană funerară clasică în roșu, pentru o iubire care rămâne.",
+      "description": "Coroana funerară roșie îmbină gerbere și trandafiri roșii pe crengi de brad. Un ultim salut clasic și demn, pentru o iubire care rămâne dincolo de despărțire. Realizată de mână. Dacă ai dorințe legate de aranjament, ia legătura cu noi.",
+      "flowers": [
+        "Gerbere",
+        "Trandafiri"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros și umbros.",
+        "Umezește ușor buretele floral, la nevoie."
+      ],
+      "seo": {
+        "title": "Coroană funerară roșie – gerbere și trandafiri",
+        "description": "Coroană funerară roșie cu gerbere și trandafiri pe crengi de brad, realizată de mână. Un ultim salut clasic – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Coroană funerară din gerbere și trandafiri roșii pe crengi de brad, cu fundă neagră, pe un șevalet de lemn"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Coroană funerară albă",
+      "tagline": "Trandafiri albi, gerbere și garoafe",
+      "shortDescription": "O coroană funerară simplă în alb, pentru o compasiune discretă.",
+      "description": "Trandafirii albi, gerberele și garoafele, cu accente verde deschis și verdeață, alcătuiesc această coroană simplă. Albul simbolizează pacea și compasiunea discretă. Realizată de mână. Dacă ai dorințe legate de aranjament, ia legătura cu noi.",
+      "flowers": [
+        "Trandafiri",
+        "Gerbere",
+        "Garoafe"
+      ],
+      "care": [
+        "Păstrează într-un loc răcoros și umbros.",
+        "Umezește ușor buretele floral, la nevoie."
+      ],
+      "seo": {
+        "title": "Coroană funerară albă – simplă și demnă",
+        "description": "Coroană funerară albă cu trandafiri, gerbere și garoafe, realizată de mână. Un ultim salut simplu – livrare flori în Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Coroană funerară inelară din trandafiri albi, gerbere și garoafe, cu fundă albă, pe un șevalet de lemn"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Coronițe de Advent",
+      "tagline": "Crengi de brad cu patru lumânări, în șapte culori",
+      "shortDescription": "O coroniță de Advent legată de mână, din crengi de brad, cu patru lumânări.",
+      "description": "Coronița de Advent este legată de mână din crengi de brad parfumate și decorată cu patru lumânări, funde, globuri, conuri și alte detalii. Disponibilă în roșu, gri, mov, auriu, bej, vișiniu și roz.",
+      "flowers": [],
+      "care": [
+        "Nu lăsa niciodată lumânările aprinse nesupravegheate.",
+        "Păstrează într-un loc răcoros, nu direct lângă calorifer.",
+        "Pulverizează din când în când puțină apă pe crengile de brad."
+      ],
+      "seo": {
+        "title": "Coroniță de Advent – legată de mână, cu lumânări",
+        "description": "Coroniță de Advent legată de mână din crengi de brad, cu patru lumânări, în șapte culori și patru mărimi – livrare flori în Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mică"
+        },
+        "m": {
+          "label": "Medie"
+        },
+        "l": {
+          "label": "Mare"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Roșu",
+        "grau": "Gri",
+        "lila": "Mov",
+        "gold": "Auriu",
+        "beige": "Bej",
+        "weinrot": "Vișiniu",
+        "rosa": "Roz"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Coroniță de Advent din crengi de brad cu patru lumânări roșii, funde roșii, globuri și conuri",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Coroniță de Advent cu patru lumânări gri deschis, funde crem și felii de portocală",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Coroniță de Advent cu lumânări mov și roz, funde violete și o figurină de înger",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Coroniță de Advent cu patru lumânări aurii, funde aurii, bețișoare de scorțișoară și conuri",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Coroniță de Advent cu patru lumânări roz, funde bordo și o figurină de înger",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Coroniță de Advent cu patru lumânări vișinii, globuri și funde vișinii",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Coroniță de Advent cu patru lumânări gri închis, funde crem și globuri roșii",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Coroniță de Advent în auriu, cu lumânări și funde aurii, din lateral",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Coroniță de Advent în roz, cu lumânări roz și funde bordo, din lateral"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Toate florile",
+      "headline": "Comandă flori online",
+      "intro": "Buchete legate de mână pentru toată Viena. Alege-ți buchetul și stabilește data livrării.",
+      "seo": {
+        "title": "Comandă flori online cu livrare în Viena",
+        "description": "Comandă flori online cu livrare în Viena. Buchete legate de mână, la data dorită – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Trandafiri",
+      "headline": "Buchete de trandafiri",
+      "intro": "Trandafiri roșii, roz sau albi, în mai multe mărimi. Legați de mână și livrați în Viena.",
+      "seo": {
+        "title": "Buchete de trandafiri online – trandafiri în Viena",
+        "description": "Toate buchetele de trandafiri: trandafiri roșii, roz și albi în mai multe mărimi. Legați de mână, livrați în Viena la data dorită."
+      }
+    },
+    "saisonal": {
+      "name": "Flori de sezon",
+      "headline": "Flori de sezon",
+      "intro": "Buchete potrivite anotimpului. Selecția se schimbă de-a lungul anului.",
+      "seo": {
+        "title": "Buchete de flori de sezon cu livrare în Viena",
+        "description": "Buchete de sezon, potrivite anotimpului. Legate de mână și livrate în Viena."
+      }
+    },
+    "pastell": {
+      "name": "Pastel",
+      "headline": "Buchete pastel",
+      "intro": "Roz pal, crem, lila: culori blânde pentru momente delicate.",
+      "seo": {
+        "title": "Flori în culori pastel cu livrare în Viena",
+        "description": "Buchete în nuanțe pastel blânde, cu livrare în Viena – legate proaspăt, la data dorită."
+      }
+    },
+    "bunt": {
+      "name": "Colorate",
+      "headline": "Buchete colorate",
+      "intro": "Culori care aduc bucurie. Pentru zile de naștere, surprize și voie bună.",
+      "seo": {
+        "title": "Buchete de flori colorate cu livrare în Viena",
+        "description": "Buchete colorate și vesele cu livrare în Viena – legate proaspăt, la data dorită."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegant și alb",
+      "headline": "Elegant și alb",
+      "intro": "Alb, crem și verde. Buchete care aduc liniște și eleganță în orice încăpere.",
+      "seo": {
+        "title": "Flori albe elegante cu livrare în Viena",
+        "description": "Buchete albe și crem cu livrare în Viena – elegante, legate proaspăt, la data dorită."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Buchete premium",
+      "intro": "Buchete generoase pentru momente speciale.",
+      "seo": {
+        "title": "Buchete de flori premium cu livrare în Viena",
+        "description": "Buchete premium pentru ocazii speciale, cu livrare în Viena – legate de mână, la data dorită."
+      }
+    },
+    "unter-40": {
+      "name": "Sub 40 €",
+      "headline": "Flori sub 40 €",
+      "intro": "Buchete mici cu efect mare – toate sub 40 de euro.",
+      "seo": {
+        "title": "Flori sub 40 € cu livrare în Viena",
+        "description": "Buchete de flori ieftine, sub 40 €, cu livrare în Viena – legate proaspăt, la data dorită."
+      }
+    },
+    "bestseller": {
+      "name": "Buchete preferate",
+      "headline": "Buchetele noastre preferate",
+      "intro": "Buchete pe care le recomandăm cu mare drag.",
+      "seo": {
+        "title": "Buchetele noastre preferate – recomandări în Viena",
+        "description": "Buchete pe care le recomandăm cu mare drag – legate de mână și livrate în Viena."
+      }
+    },
+    "neu": {
+      "name": "Noutăți",
+      "headline": "Nou la Blumora",
+      "intro": "Proaspăt intrate în ofertă.",
+      "seo": {
+        "title": "Buchete de flori noi pentru Viena",
+        "description": "Buchete noi în ofertă – legate proaspăt și livrate în Viena."
+      }
+    },
+    "blumenboxen": {
+      "name": "Cutii cu flori",
+      "headline": "Cutii cu flori",
+      "intro": "Trandafiri aranjați într-o cutie – un cadou care nu are nevoie de vază.",
+      "seo": {
+        "title": "Cutii cu flori cu livrare în Viena",
+        "description": "Trandafiri în cutie cu flori – în formă de inimă sau clasică. Livrare flori în Viena la data dorită."
+      }
+    },
+    "pflanzen": {
+      "name": "Plante",
+      "headline": "Plante la ghiveci",
+      "intro": "Orhidee, anthurium și plante verzi – flori care rămân.",
+      "seo": {
+        "title": "Plante la ghiveci cu livrare în Viena",
+        "description": "Orhidee, anthurium și plante de interior la ghiveci, drept cadou. Livrare flori în Viena."
+      }
+    },
+    "trauer": {
+      "name": "Aranjamente funerare",
+      "headline": "Aranjamente funerare",
+      "intro": "Coroane și buchete funerare, legate cu demnitate pentru ultimul salut.",
+      "seo": {
+        "title": "Coroane și buchete funerare în Viena",
+        "description": "Coroane și buchete funerare pentru înmormântare și slujba de pomenire – cu livrare în Viena."
+      }
+    },
+    "advent": {
+      "name": "Coronițe de Advent",
+      "headline": "Coronițe de Advent",
+      "intro": "Crengi de brad, lumânări și decorațiuni – legate de mână pentru perioada Adventului.",
+      "seo": {
+        "title": "Coronițe de Advent cu livrare în Viena",
+        "description": "Coronițe de Advent legate de mână, în mai multe culori și mărimi – cu livrare în Viena."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Zi de naștere",
+      "headline": "Flori de ziua de naștere",
+      "intro": "Un buchet care spune: m-am gândit la tine. Alege florile și data dorită.",
+      "imageAlt": "Buchet colorat cu trandafiri roșii, gerbere și flori galbene, în ambalaj roșu",
+      "seo": {
+        "title": "Flori de ziua de naștere – buchete în Viena",
+        "description": "Buchete de ziua de naștere: colorate, vesele sau elegante. Legate de mână și livrate în Viena – la data dorită."
+      }
+    },
+    "liebe": {
+      "name": "Dragoste și romantism",
+      "headline": "Flori pentru dragoste",
+      "intro": "Trandafiri roșii sau ceva cu totul diferit: flori care spun ce simți.",
+      "imageAlt": "Buchet de trandafiri roșu închis în ambalaj gri, cu fundă roșie",
+      "seo": {
+        "title": "Flori romantice cu livrare în Viena",
+        "description": "Trandafiri și buchete romantice cu livrare în Viena – legate proaspăt, la data dorită."
+      }
+    },
+    "danke": {
+      "name": "Mulțumesc",
+      "headline": "Flori ca să spui mulțumesc",
+      "intro": "Pentru ajutor, pentru timp, pentru toate. Un buchet spune asta fără multe cuvinte.",
+      "imageAlt": "Buchet de gerbere galbene și trandafiri albi, cu fundă galbenă",
+      "seo": {
+        "title": "Flori de mulțumire cu livrare în Viena",
+        "description": "Spune mulțumesc cu flori: buchete legate proaspăt, cu livrare în Viena – la data dorită."
+      }
+    },
+    "gute-besserung": {
+      "name": "Însănătoșire grabnică",
+      "headline": "Flori pentru însănătoșire",
+      "intro": "Culori blânde, forme liniștite și un mic salut care face bine.",
+      "imageAlt": "Buchet însorit în portocaliu și galben, în ambalaj deschis la culoare",
+      "seo": {
+        "title": "Flori de însănătoșire cu livrare în Viena",
+        "description": "Flori pentru însănătoșire cu livrare în Viena – buchete blânde, legate proaspăt, la data dorită."
+      }
+    },
+    "jahrestag": {
+      "name": "Aniversare",
+      "headline": "Flori de aniversare",
+      "intro": "Pentru ziua în care a început totul. Și pentru toate cele care au urmat.",
+      "imageAlt": "Buchet de trandafiri roșii și albi în ambalaj alb",
+      "seo": {
+        "title": "Flori de aniversare cu livrare în Viena",
+        "description": "Buchete elegante de aniversare cu livrare în Viena – legate proaspăt, la data dorită."
+      }
+    },
+    "geburt": {
+      "name": "Naștere",
+      "headline": "Flori pentru o naștere",
+      "intro": "Bun venit, omuleț. Flori delicate pentru un moment mare.",
+      "imageAlt": "Buchet delicat de trandafiri roz și lila cu gypsophila",
+      "seo": {
+        "title": "Flori pentru naștere cu livrare în Viena",
+        "description": "Buchete delicate în culori pastel pentru o naștere, cu livrare în Viena – legate proaspăt, la data dorită."
+      }
+    },
+    "hochzeit": {
+      "name": "Nuntă",
+      "headline": "Flori de nuntă",
+      "intro": "Pentru miri sau pur și simplu ca felicitare: elegante, luminoase și festive.",
+      "imageAlt": "Buchet de trandafiri albi în ambalaj alb, într-o vază",
+      "seo": {
+        "title": "Flori de nuntă cu livrare în Viena",
+        "description": "Flori elegante de nuntă cu livrare în Viena – ca felicitare sau cadou, legate proaspăt."
+      }
+    },
+    "einfach-so": {
+      "name": "Pur și simplu",
+      "headline": "Flori pur și simplu",
+      "intro": "Fără ocazie. Doar gândul. Uneori acesta e cel mai bun motiv.",
+      "imageAlt": "Lalele galbene într-o vază de sticlă la fereastră",
+      "seo": {
+        "title": "Trimite flori pur și simplu – Viena",
+        "description": "Trimite flori fără ocazie: buchete mici și mari cu livrare în Viena – legate proaspăt, la data dorită."
+      }
+    },
+    "trauer": {
+      "name": "Doliu",
+      "headline": "Flori de doliu",
+      "intro": "Compasiune în culori liniștite. Coroane, buchete funerare și buchete, legate de mână și livrate în Viena.",
+      "imageAlt": "Coroană funerară albă cu fundă albă, pe un șevalet de lemn",
+      "seo": {
+        "title": "Flori de doliu cu livrare în Viena",
+        "description": "Flori de doliu cu livrare în Viena – coroane, buchete funerare și buchete liniștite, legate de mână, la data dorită."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Lumânare parfumată",
+      "description": "Lumânări parfumate decorative în ambalaj de cadou, în diferite forme și culori.",
+      "imageAlt": "Lumânări parfumate în formă de inimă și de sferă, în cutii de cadou transparente"
+    },
+    "x-teddy": {
+      "name": "Ursuleț",
+      "description": "Ursuleț de pluș cu inimă roșie – completarea plină de afecțiune a buchetului.",
+      "imageAlt": "Ursuleț de pluș maro deschis cu inimă roșie"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Unde livrați?",
+      "answer": "Livrăm în toate cele 23 de districte ale Vienei. În funcție de district, livrarea este gratuită sau costă 3,99 €, respectiv 7,99 €. Introdu pur și simplu codul poștal al adresei destinatarului – vezi imediat dacă și când putem livra și cât costă livrarea.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Pot primi flori livrate chiar azi?",
+      "answer": "Da – dacă comanzi de luni până sâmbătă până la ora 18:30 sau duminica până la ora 17:45, livrăm în aceeași zi în toată Viena, cât timp mai este liber un interval orar. Cel mai devreme termen pentru adresa ta îl vezi imediat ce introduci codul poștal.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Pot alege o anumită dată de livrare?",
+      "answer": "Da. Pe fiecare pagină de produs și în checkout îți alegi data dorită din calendar. Zilele în care nu livrăm sunt afișate în gri.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Pot alege o oră dorită?",
+      "answer": "Da. În Viena alegi în checkout un interval orar de o oră între 9:00 și 22:00 – în toate cele șapte zile ale săptămânii.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Ce se întâmplă dacă nu e nimeni acasă?",
+      "answer": "Curierul predă florile personal. Dacă nu e nimeni acasă, le lasă, pe cât posibil, la vecini. În checkout poți adăuga o indicație pentru livrare, de exemplu un cod de la ușă. Te informăm prin e-mail despre stadiul comenzii tale.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Pot trimite flori anonim?",
+      "answer": "Da. Fără felicitare, numele tău nu apare nicăieri pe buchet, iar factura ajunge doar la tine. Felicitările cu mesaj personal vin în curând.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Pot adăuga o felicitare?",
+      "answer": "Încă nu – felicitările vin în curând. Până atunci, buchetul este livrat fără felicitare.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Florile arată exact ca în fotografie?",
+      "answer": "Fiecare buchet este legat individual, iar florile sunt produse naturale. Culorile, soiurile și mărimea florilor pot varia ușor în funcție de sezon. Stilul și paleta de culori rămân aceleași.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Cum rămân florile proaspete?",
+      "answer": "Fiecare buchet este legat proaspăt pentru comanda ta și livrat direct de curier. Așa rezistă cel mai mult: taie tulpinile oblic, pune apă proaspătă și ține buchetul într-un loc răcoros, ferit de soarele direct.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Ce metode de plată există?",
+      "answer": "Metodele de plată disponibile le vezi în ultimul pas al comenzii. Plata se face în siguranță printr-un procesator de plăți – datele cardului tău nu ajung niciodată la noi.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Îmi pot modifica comanda?",
+      "answer": "Cât timp buchetul nu a fost încă legat, de obicei mai putem modifica data de livrare sau adresa. Scrie-ne cât mai repede posibil, cu numărul comenzii.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Pot trimite flori la firme sau hoteluri?",
+      "answer": "Da. În checkout, indică numele firmei sau al hotelului și – dacă îl știi – departamentul sau numărul camerei. Livrarea se face la recepție.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Flori pentru momente speciale.",
+      "intro": "Blumora este un serviciu online de livrare de flori din Viena. Fiecare buchet este legat de mână într-o florărie din Viena și livrat direct prin curier.",
+      "seo": {
+        "title": "Despre noi – livrare de flori din Viena",
+        "description": "Blumora este un serviciu online de livrare de flori din Viena: buchete legate de mână și livrate prin curier în toate cele 23 de districte."
+      },
+      "sections": [
+        {
+          "heading": "Cum lucrăm",
+          "paragraphs": [
+            "Blumora este un serviciu online de livrare de flori din Viena. Îți alegi buchetul la noi – îl leagă o florărie din Viena cu care colaborăm permanent. Acolo, fiecare buchet este făcut de mână, special pentru comanda ta.",
+            "Felicitările cu textul tău vin în curând."
+          ],
+          "imageAlt": "Buchet de trandafiri, dalii, hortensii și lalele pe pervazul unei clădiri vechi din Viena, în fundal Catedrala Sfântul Ștefan în lumina serii"
+        },
+        {
+          "heading": "Livrarea",
+          "paragraphs": [
+            "Un curier ridică buchetul tău direct de la florărie și îl duce fără opriri la adresa destinatarului. Livrăm în toate cele 23 de districte ale Vienei – în intervalul orar ales de tine: dimineața, după-amiaza sau seara până la ora 22:00."
+          ],
+          "imageAlt": "Buchetul Pure Liebe într-o vază de sticlă"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Livrare și expediere",
+      "intro": "Livrăm în toate cele 23 de districte ale Vienei. Costurile de livrare (gratuit, 3,99 € sau 7,99 €), zilele de livrare și intervalele orare depind de adresa destinatarului – introdu codul poștal și vezi totul dintr-o privire.",
+      "seo": {
+        "title": "Livrare și expediere – livrare de flori în Viena",
+        "description": "Zone de livrare, costuri de livrare, zile de livrare și intervale orare pentru livrarea de flori în Viena."
+      },
+      "sections": [
+        {
+          "heading": "Cum decurge livrarea",
+          "paragraphs": [
+            "Buchetul tău este legat proaspăt pentru comanda ta. Un curier îl ridică direct de la florărie și îl duce fără opriri la adresa destinatarului – în intervalul orar pe care l-ai ales. Dacă nu e nimeni acasă, buchetul este lăsat, pe cât posibil, la vecini.",
+            "Pentru fiecare comandă primești o confirmare prin e-mail și un link cu care poți urmări stadiul comenzii."
+          ]
+        },
+        {
+          "heading": "Livrare la firme, hoteluri și spitale",
+          "paragraphs": [
+            "În checkout, indică numele firmei sau al hotelului, precum și departamentul, secția sau numărul camerei. Livrăm la recepție. Te rugăm să ții cont că unele instituții nu permit flori în secții."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Contact",
+      "intro": "Ai întrebări despre o comandă, o dată de livrare sau o dorință specială? Suntem aici pentru tine.",
+      "seo": {
+        "title": "Contact – Blumora Viena",
+        "description": "Contactează Blumora pentru întrebări despre comandă, livrare sau dorințe speciale."
+      },
+      "sections": [
+        {
+          "heading": "Cum ne poți contacta",
+          "paragraphs": [
+            "[Substituent: e-mailul, telefonul și programul sunt preluate din setări și trebuie completate acolo.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Livrare flori Viena",
+      "headline": "Flori care spun mai mult.",
+      "subheadline": "Flori legate proaspăt pentru oamenii care contează pentru tine. Alege, stabilește data dorită și trimite bucurie.",
+      "primaryCta": {
+        "label": "Descoperă florile"
+      },
+      "secondaryCta": {
+        "label": "Alege după ocazie"
+      },
+      "imageAlt": "O femeie într-un palton de culoarea cămilei poartă un buchet mare de trandafiri, ranunculus, dalii și lalele pe o stradă pavată cu piatră cubică din Viena, în spate trece un tramvai",
+      "deliveryCheck": {
+        "title": "Unde să livrăm?",
+        "placeholder": "Introdu codul poștal",
+        "button": "Verifică livrarea"
+      }
+    },
+    "occasions": {
+      "headline": "Flori pentru fiecare moment",
+      "subheadline": "Uneori nu e nevoie de o ocazie mare. Doar de gestul potrivit."
+    },
+    "bestsellers": {
+      "headline": "Buchetele noastre preferate",
+      "subheadline": "O selecție din oferta noastră."
+    },
+    "collections": {
+      "headline": "Găsește-ți buchetul perfect",
+      "subheadline": "După culoare, stil sau buget."
+    },
+    "howItWorks": {
+      "headline": "Să dăruiești bucurie n-a fost niciodată atât de simplu.",
+      "steps": [
+        {
+          "title": "Alege buchetul preferat",
+          "text": "Descoperă flori pentru orice gust și orice ocazie."
+        },
+        {
+          "title": "Personalizează",
+          "text": "Alege mărimea și mici extra."
+        },
+        {
+          "title": "Alege data livrării",
+          "text": "Stabilește când să ajungă surpriza ta."
+        },
+        {
+          "title": "Trimite bucurie",
+          "text": "De restul ne ocupăm noi."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Perioada Adventului",
+      "headline": "În curând se aprinde prima lumânare.",
+      "text": "Coronițe de Advent cu crengi de brad, lumânări și decorațiuni – în mai multe culori și mărimi. Și buchete în nuanțe calde de toamnă.",
+      "cta": {
+        "label": "Coronițe de Advent"
+      },
+      "imageAlt": "Coroniță de Advent din crengi de brad cu patru lumânări roșii, pe o comodă de lemn"
+    },
+    "editorial": {
+      "eyebrow": "Meșteșug",
+      "headline": "De la floriști. Nu de pe banda rulantă.",
+      "text": "Fiecare buchet este legat de mână de o florărie din Viena, pentru comanda ta, și livrat direct prin curier – fără ocolul printr-un depozit.",
+      "cta": {
+        "label": "Cum lucrăm"
+      },
+      "imageAlt": "Un curier predă la ușa unei clădiri vechi din Viena un buchet colorat de trandafiri, dalii și ranunculus"
+    },
+    "extras": {
+      "headline": "Completează-ți surpriza.",
+      "subheadline": "Mici extra care fac momentul mai mare."
+    },
+    "subscription": {
+      "headline": "Mai multe flori în viața de zi cu zi.",
+      "text": "Buchete proaspete de sezon – săptămânal, la două săptămâni sau lunar. Pentru acasă, birou, recepție sau restaurant.",
+      "cta": {
+        "label": "Descoperă abonamentul de flori"
+      }
+    },
+    "reviews": {
+      "headline": "Momente care au ajuns la destinație.",
+      "subheadline": "Ce spun clienții despre comanda lor."
+    },
+    "gallery": {
+      "headline": "Flori pentru momente speciale.",
+      "images": [
+        {
+          "alt": "Buchet colorat de trandafiri în roșu, roz, crem și caisă, într-o vază albă"
+        },
+        {
+          "alt": "Buchet de trandafiri de un albastru strălucitor, într-o vază albă"
+        },
+        {
+          "alt": "Buchet în nuanțe puternice de roz, cu gerbere, într-o vază la fereastră"
+        },
+        {
+          "alt": "Buchet exotic cu flori pasărea-paradisului, crini și gerbere"
+        },
+        {
+          "alt": "Cutie cu flori roșie, în formă de inimă, cu trandafiri, pe o comodă"
+        },
+        {
+          "alt": "Buchet de trandafiri pastel și roz aprins, în ambalaj roz"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Bine de știut"
+    },
+    "newsletter": {
+      "headline": "Ceva mai multe flori în inbox.",
+      "text": "Noutăți, colecții de sezon și oferte speciale.",
+      "placeholder": "Adresa ta de e-mail",
+      "button": "Abonează-te",
+      "note": "Te poți dezabona oricând. Informații despre protecția datelor găsești în politica de confidențialitate."
+    }
+  },
+  "settings": {
+    "claim": "Flori care spun mai mult.",
+    "seo": {
+      "defaultTitle": "Blumora – livrare de flori în Viena",
+      "defaultDescription": "Flori legate proaspăt, livrate direct oamenilor care contează pentru tine. Alege data dorită, trimite bucurie – livrare de flori în Viena."
+    },
+    "announcement": {
+      "messages": [
+        "Livrare de flori în toată Viena",
+        "Legate proaspăt, livrate prin curier",
+        "Data dorită la alegere"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Legate proaspăt",
+        "text": "Legate de mână pentru comanda ta"
+      },
+      {
+        "title": "Livrare prin curier",
+        "text": "În toate cele 23 de districte ale Vienei"
+      },
+      {
+        "title": "Data dorită la alegere",
+        "text": "Tu stabilești ziua"
+      },
+      {
+        "title": "Felicitări",
+        "text": "În curând"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Comandă primită",
+        "description": "Am primit comanda ta."
+      },
+      "paid": {
+        "label": "Plată confirmată",
+        "description": "Plata a fost primită."
+      },
+      "preparing": {
+        "label": "În pregătire",
+        "description": "Se aleg florile pentru buchetul tău."
+      },
+      "arranging": {
+        "label": "Buchetul se leagă",
+        "description": "Buchetul tău este legat de mână."
+      },
+      "ready": {
+        "label": "Gata de livrare",
+        "description": "Buchetul este gata și urmează să fie ridicat de curier."
+      },
+      "in_transit": {
+        "label": "Pe drum",
+        "description": "Buchetul tău este pe drum."
+      },
+      "delivered": {
+        "label": "Livrată",
+        "description": "Florile au ajuns."
+      },
+      "undeliverable": {
+        "label": "Nu a putut fi livrată",
+        "description": "Nu am putut livra și te vom contacta."
+      },
+      "cancelled": {
+        "label": "Anulată",
+        "description": "Comanda a fost anulată."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Card de credit",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Transfer bancar online (eps)"
+    },
+    "headerCta": "Trimite flori",
+    "address": {
+      "city": "Viena",
+      "country": "Austria"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Viena zona 1",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Viena zona 2",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Viena zona 3",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Împrejurimile Vienei (Austria Inferioară)",
+      "note": "Livrare în împrejurimile Vienei marțea, joia și sâmbăta.",
+      "windows": {
+        "day": "9:00–18:00"
+      }
+    }
+  }
+}

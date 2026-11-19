@@ -1,6 +1,115 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** fr – forms (translated from src/i18n/messages/de/forms.ts). */
-const forms: NonNullable<PartialMessages["forms"]> = {};
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Nom",
+  email: "E-mail",
+  emailAddress: "Adresse e-mail",
+  message: "Message",
+  orderNumber: "Numéro de commande",
+  honeypot: "Site web",
+  charCount: "{count}/{max} caractères",
+  genericError: "Cela n’a malheureusement pas fonctionné. Veuillez réessayer plus tard.",
+  invalidEmailEnter: "Veuillez saisir une adresse e-mail valide.",
+
+  mailFallback: {
+    title: "Le formulaire est momentanément indisponible.",
+    text: "Votre message n’est pas perdu : envoyez-le-nous directement par e-mail à {email}. Le texte est déjà inséré.",
+    open: "Ouvrir l’e-mail",
+  },
+
+  newsletter: {
+    honeypot: "Site web (à laisser vide)",
+    successTitle: "Presque terminé – veuillez confirmer votre inscription.",
+    successText: "Nous vous avons envoyé un e-mail contenant un lien de confirmation. Vous ne recevrez notre newsletter qu’après cette confirmation.",
+  },
+
+  contact: {
+    formLabel: "Formulaire de contact",
+    subject: "Sujet",
+    subjects: {
+      order: "Commande",
+      delivery: "Livraison",
+      business: "Entreprises",
+      other: "Autre",
+    },
+    orderNumberHint: "Vous le trouverez dans votre confirmation de commande.",
+    errors: {
+      name: "Veuillez indiquer votre nom.",
+      email: "Veuillez indiquer une adresse e-mail valide.",
+      subject: "Veuillez choisir un sujet.",
+      orderIdTooLong: "Le numéro de commande est trop long.",
+      messageTooShort: "Veuillez décrire votre demande (10 caractères minimum).",
+      messageTooLong: "Le message ne doit pas dépasser 2000 caractères.",
+    },
+    thanksTitle: "Merci pour votre message.",
+    thanksText: "Nous avons bien reçu votre demande et vous répondrons dès que possible par e-mail à {email}.",
+    sendAnother: "Envoyer un autre message",
+    failed: "Le message n’a pas pu être envoyé. Veuillez réessayer ou nous écrire directement par e-mail.",
+    consent: "En envoyant ce formulaire, vous acceptez que nous utilisions vos données pour traiter votre demande. Détails dans notre politique de confidentialité.",
+    submit: "Envoyer le message",
+    mailSubject: "Demande de contact : {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Se rétracter du contrat",
+    errors: {
+      name: "Veuillez indiquer votre nom.",
+      email: "Veuillez indiquer une adresse e-mail valide.",
+      orderId: "Veuillez indiquer le numéro de commande (p. ex. BQ-7K2M9Q).",
+    },
+    emailHint: "Nous enverrons l’accusé de réception à cette adresse.",
+    orderNumberHint: "Il figure dans votre confirmation de commande.",
+    items: "Pour quels articles vous rétractez-vous ?",
+    itemsPlaceholder: "p. ex. l’ours en peluche – laisser vide pour tous les articles de la commande pouvant faire l’objet d’une rétractation",
+    declaration: "Par la présente, je me rétracte du contrat que j’ai conclu portant sur l’achat des articles mentionnés ci-dessus.",
+    receivedTitle: "Votre rétractation a bien été reçue.",
+    receivedText: "Reçue le {receivedAt} pour la commande {orderId}.",
+    receivedTextWithCase: "Reçue le {receivedAt} pour la commande {orderId} (dossier {id}).",
+    confirmationSent: "Nous avons envoyé l’accusé de réception à {email}.",
+    confirmationNotSent: "L’e-mail de confirmation n’a pas pu être envoyé pour le moment – nous confirmerons la réception personnellement dès que possible. Veuillez conserver cette page d’ici là (p. ex. sous forme de capture d’écran).",
+    failed: "La rétractation n’a pas pu être transmise pour le moment. Veuillez réessayer ou l’envoyer par e-mail à {email}.",
+    submit: "Confirmer la rétractation",
+    mailSubject: "Rétractation – commande {orderId}",
+    mailDeclaration: "Par la présente, je me rétracte du contrat que j’ai conclu portant sur l’achat des articles suivants : {items}",
+    mailAllItems: "tous les articles de la commande pouvant faire l’objet d’une rétractation",
+  },
+
+  business: {
+    formLabel: "Demande entreprise",
+    company: "Entreprise",
+    contact: "Personne de contact",
+    phone: "Téléphone",
+    location: "Lieu / code postal",
+    locationPlaceholder: "p. ex. 1070 Vienne",
+    need: "Besoin",
+    pleaseChoose: "Veuillez choisir",
+    needs: {
+      subscription: "Livraison régulière (abonnement)",
+      oneOff: "Livraison ponctuelle",
+      event: "Événement",
+      gifts: "Cadeaux pour collaborateurs ou clients",
+    },
+    messagePlaceholder: "De quoi s’agit-il, pour quand et dans quelle ampleur – et tout ce qui vous importe par ailleurs.",
+    consent: "J’accepte que mes données soient enregistrées et utilisées pour traiter ma demande. Détails dans la {privacyLink}.",
+    privacyLink: "politique de confidentialité",
+    errors: {
+      company: "Veuillez indiquer le nom de votre entreprise.",
+      contact: "Veuillez indiquer une personne de contact.",
+      email: "Veuillez indiquer une adresse e-mail valide.",
+      phone: "Veuillez vérifier le numéro de téléphone.",
+      location: "Veuillez indiquer le lieu ou le code postal.",
+      need: "Veuillez choisir ce dont vous avez besoin.",
+      message: "Veuillez décrire brièvement votre besoin (10 caractères minimum).",
+      consent: "Veuillez confirmer que nous pouvons utiliser vos données pour traiter votre demande.",
+    },
+    thanksTitle: "Merci pour votre demande.",
+    thanksText: "Nous avons tout bien reçu et répondrons à {contact} par e-mail à {email}.",
+    sendAnother: "Envoyer une autre demande",
+    failed: "La demande n’a pas pu être envoyée. Veuillez réessayer ou nous écrire directement par e-mail.",
+    submit: "Envoyer la demande",
+    mailSubject: "Demande entreprise : {company}",
+  },
+};
 
 export default forms;

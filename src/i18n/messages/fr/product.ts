@@ -1,6 +1,191 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** fr – product (translated from src/i18n/messages/de/product.ts). */
-const product: NonNullable<PartialMessages["product"]> = {};
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Produit introuvable",
+  priceFrom: "dès",
+
+  size: {
+    title: "Choisir la taille",
+    recommended: "Recommandée",
+    soldOut: "Épuisé",
+  },
+
+  color: {
+    title: "Choisir la couleur",
+    required: "(obligatoire)",
+    notChosen: "Pas encore choisie",
+    error: "Veuillez choisir une couleur.",
+  },
+
+  delivery: {
+    title: "Quand les fleurs doivent-elles arriver ?",
+    formLabel: "Vérification de livraison",
+    postalCodeLabel: "Code postal du destinataire",
+    postalCodePlaceholder: "Code postal du destinataire",
+    check: "Vérifier",
+    prompt: "Saisissez le code postal pour choisir la date de livraison",
+    notAvailable: "Nous ne livrons malheureusement pas encore à {plz}.",
+    notAvailableHint: "Retrouvez toutes les zones actuelles sur la page {link}. Pour une autre adresse de livraison, saisissez simplement un nouveau code postal.",
+    deliveryLink: "Livraison & expédition",
+    available: "Nous livrons à cette adresse.",
+    fee: "Livraison à {plz} {region} : {fee}",
+    free: "gratuite",
+    freeFrom: "gratuite dès {price}",
+    dateGroup: "Date de livraison",
+    today: "Aujourd’hui",
+    orderUntil: "commande jusqu’à {time}",
+    tomorrow: "Demain",
+    chooseDate: "Choisir une date",
+    openCalendar: "Ouvrir le calendrier",
+    deliveryOn: "Livraison le {date}",
+    todaySuffix: "· aujourd’hui",
+    noDays: "Aucun jour de livraison n’est disponible pour le moment.",
+  },
+
+  calendar: {
+    previousMonth: "Mois précédent",
+    nextMonth: "Mois suivant",
+    weekdays: {
+      mon: { short: "lu", long: "lundi" },
+      tue: { short: "ma", long: "mardi" },
+      wed: { short: "me", long: "mercredi" },
+      thu: { short: "je", long: "jeudi" },
+      fri: { short: "ve", long: "vendredi" },
+      sat: { short: "sa", long: "samedi" },
+      sun: { short: "di", long: "dimanche" },
+    },
+    daySameDay: "{date}, livrable aujourd’hui",
+    dayAvailable: "{date}, livrable",
+    dayUnavailable: "{date}, non livrable",
+    legendSameDay: "Livrable aujourd’hui",
+    legendToday: "Aujourd’hui",
+    legendUnavailable: "Les jours grisés ne sont pas livrables.",
+  },
+
+  card: {
+    unavailableTitle: "Carte message personnelle",
+    unavailableText: "Pour l’instant, votre bouquet est livré sans carte.",
+    comingSoon: "Bientôt disponible !",
+    addMessage: "Ajouter un message personnel",
+    included: "Carte message incluse",
+    handwritten: "Carte message écrite à la main",
+    saved: "Message enregistré",
+    messageLabel: "Votre message",
+    messagePlaceholder: "Joyeux anniversaire, avec toute mon affection…",
+    maxChars: "{max} caractères maximum.",
+    senderGroup: "Expéditeur",
+    showSender: "Afficher l’expéditeur",
+    anonymous: "Envoyer sans nom",
+    senderName: "Votre nom",
+    optional: "(facultatif)",
+    senderPlaceholder: "p. ex. Anna",
+  },
+
+  extras: {
+    title: "Un petit quelque chose en plus ?",
+    deliveredTogether: "Livré avec le bouquet",
+    addLabel: "Ajouter {name} pour {price}",
+    add: "Ajouter",
+    quantity: "Quantité {name}",
+    less: "{name} : un de moins",
+    more: "{name} : un de plus",
+  },
+
+  floristNote: {
+    title: "Vos souhaits pour nos fleuristes",
+    optional: "(facultatif)",
+    hint: "Petites modifications du bouquet, p. ex. « des roses blanches plutôt que jaunes ». Nous les réalisons si les fleurs sont disponibles. Les indications pour la livraison se saisissent lors de la commande.",
+    placeholder: "Votre souhait pour le fleuriste",
+  },
+
+  cta: {
+    total: "Total",
+    comingSoon: "Bientôt disponible à la commande",
+    unavailable: "Indisponible pour le moment",
+    addToCart: "Ajouter au panier",
+    fresh: "Fraîchement composé",
+    cardIncluded: "Carte message incluse",
+    securePayment: "Paiement sécurisé",
+    added: "{name} ({options}) a été ajouté au panier.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Vue de face",
+      detail: "Détail",
+      size: "Comparaison des tailles",
+      packaging: "Emballage",
+      lifestyle: "Ambiance",
+    },
+    status: "Image {index} sur {total} : {alt}",
+    carousel: "Carrousel",
+    imagesOf: "Images de {name}",
+    slide: "Image",
+    slideOf: "{index} sur {total}",
+    choose: "Choisir une image",
+    show: "Afficher {label}",
+    thumb: "{label} : {alt}",
+    previous: "Image précédente",
+    next: "Image suivante",
+    colorAlt: "{name} en {color}",
+    colorLabel: "Couleur {color}",
+    sizeAlt: "{name} en taille {size}",
+    sizeDetailAlt: "{name} en taille {size}, gros plan",
+    sizeLabel: "Taille {size}",
+    sizeDetailLabel: "Taille {size} · gros plan",
+  },
+
+  details: {
+    eyebrow: "Bon à savoir",
+    title: "Tout sur {name}",
+    description: "Description",
+    plant: "Plante",
+    flowers: "Fleurs composant le bouquet",
+    care: "Conseils d’entretien",
+    delivery: "Livraison",
+    deliveryText: "Vos fleurs viennent d’un fleuriste viennois avec lequel nous travaillons en partenariat fixe. Les bouquets y sont composés à la main pour votre commande. Un coursier vient les chercher et se rend sans arrêt intermédiaire à l’adresse de livraison.",
+    deliveryAreas: "Nous livrons dans les 23 arrondissements de Vienne. Les frais de livraison dépendent de l’arrondissement et s’affichent après la saisie du code postal. Vous trouverez les zones de livraison, les créneaux horaires et les heures limites de commande sur la page {link}.",
+    deliveryLink: "Livraison & expédition",
+    looksPlant: "La plante ressemble-t-elle exactement à la photo ?",
+    looksBouquet: "Le bouquet ressemble-t-il exactement à la photo ?",
+    looksOther: "Est-ce exactement comme sur la photo ?",
+    naturalPlant: "Presque. Les plantes sont des produits naturels : port, taille et floraison peuvent différer de la photo. Le cache-pot peut aussi varier selon les disponibilités.",
+    naturalFlowers: "Presque. Les fleurs sont des produits naturels : selon la saison, une variété ou une nuance de couleur peut varier. Notre fleuriste partenaire veille à conserver le style et l’univers de couleurs.",
+  },
+
+  pricePending: {
+    status: "Prix à venir",
+    sizes: "Tailles",
+    sizesLabel: "Tailles disponibles",
+    soonTitle: "Bientôt disponible à la commande",
+    soonText: "Nous fixons actuellement les prix de notre sélection. Dès qu’ils seront définis, vous pourrez commander ce bouquet directement ici.",
+    contact: "Des questions ? Écrivez-nous",
+  },
+
+  related: {
+    eyebrow: "Continuer à découvrir",
+    title: "Ceci pourrait aussi vous plaire",
+    allFlowers: "Voir toutes les fleurs",
+  },
+
+  reviews: {
+    eyebrow: "Avis",
+    title: "Avis sur {name}",
+    demoNote: "Exemples d’avis – de vrais avis suivront",
+    quote: "« {text} »",
+    verified: "Achat vérifié",
+    demo: "Exemple",
+  },
+
+  reviewPhotos: {
+    photosOf: "Photos de {author}",
+    enlarge: "{alt} – agrandir la photo {index} sur {total}",
+    dialogTitle: "Photo client de {author}",
+    dialogCount: "({index} sur {total})",
+    close: "Fermer la photo",
+    show: "Afficher la photo {index}",
+  },
+};
 
 export default product;

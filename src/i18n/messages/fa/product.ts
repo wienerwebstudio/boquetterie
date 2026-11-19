@@ -1,6 +1,191 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** fa – product (translated from src/i18n/messages/de/product.ts). */
-const product: NonNullable<PartialMessages["product"]> = {};
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "محصول پیدا نشد",
+  priceFrom: "از",
+
+  size: {
+    title: "انتخاب اندازه",
+    recommended: "پیشنهادی",
+    soldOut: "ناموجود",
+  },
+
+  color: {
+    title: "انتخاب رنگ",
+    required: "(الزامی)",
+    notChosen: "هنوز انتخاب نشده",
+    error: "لطفاً یک رنگ انتخاب کنید.",
+  },
+
+  delivery: {
+    title: "گل‌ها چه زمانی برسند؟",
+    formLabel: "بررسی امکان ارسال",
+    postalCodeLabel: "کد پستی گیرنده",
+    postalCodePlaceholder: "کد پستی گیرنده",
+    check: "بررسی",
+    prompt: "برای انتخاب تاریخ تحویل، کد پستی را وارد کنید",
+    notAvailable: "متأسفانه هنوز به {plz} ارسال نداریم.",
+    notAvailableHint: "همهٔ محدوده‌های فعلی را در {link} پیدا می‌کنید. برای نشانی گیرندهٔ دیگری کافی است کد پستی جدیدی وارد کنید.",
+    deliveryLink: "ارسال و تحویل",
+    available: "به این نشانی ارسال می‌کنیم.",
+    fee: "ارسال به {plz} {region}: {fee}",
+    free: "رایگان",
+    freeFrom: "رایگان از {price}",
+    dateGroup: "تاریخ تحویل",
+    today: "امروز",
+    orderUntil: "سفارش تا ساعت {time}",
+    tomorrow: "فردا",
+    chooseDate: "انتخاب تاریخ",
+    openCalendar: "باز کردن تقویم",
+    deliveryOn: "تحویل در {date}",
+    todaySuffix: "· امروز",
+    noDays: "در حال حاضر هیچ روز تحویلی در دسترس نیست.",
+  },
+
+  calendar: {
+    previousMonth: "ماه قبل",
+    nextMonth: "ماه بعد",
+    weekdays: {
+      mon: { short: "د", long: "دوشنبه" },
+      tue: { short: "س", long: "سه‌شنبه" },
+      wed: { short: "چ", long: "چهارشنبه" },
+      thu: { short: "پ", long: "پنجشنبه" },
+      fri: { short: "ج", long: "جمعه" },
+      sat: { short: "ش", long: "شنبه" },
+      sun: { short: "ی", long: "یکشنبه" },
+    },
+    daySameDay: "{date}، تحویل امروز ممکن است",
+    dayAvailable: "{date}، قابل تحویل",
+    dayUnavailable: "{date}، غیرقابل تحویل",
+    legendSameDay: "تحویل امروز",
+    legendToday: "امروز",
+    legendUnavailable: "روزهای خاکستری قابل تحویل نیستند.",
+  },
+
+  card: {
+    unavailableTitle: "کارت تبریک شخصی",
+    unavailableText: "دسته‌گل شما فعلاً بدون کارت تحویل داده می‌شود.",
+    comingSoon: "به‌زودی!",
+    addMessage: "افزودن پیام شخصی",
+    included: "همراه با کارت تبریک",
+    handwritten: "کارت تبریک دست‌نویس",
+    saved: "پیام ذخیره شد",
+    messageLabel: "پیام شما",
+    messagePlaceholder: "تولدت مبارک، با بهترین آرزوها …",
+    maxChars: "حداکثر {max} نویسه.",
+    senderGroup: "فرستنده",
+    showSender: "نمایش نام فرستنده",
+    anonymous: "ارسال بدون نام",
+    senderName: "نام شما",
+    optional: "(اختیاری)",
+    senderPlaceholder: "مثلاً Anna",
+  },
+
+  extras: {
+    title: "چیز دیگری هم اضافه کنید؟",
+    deliveredTogether: "همراه با دسته‌گل تحویل داده می‌شود",
+    addLabel: "افزودن {name} به قیمت {price}",
+    add: "افزودن",
+    quantity: "تعداد {name}",
+    less: "{name}: یکی کمتر",
+    more: "{name}: یکی بیشتر",
+  },
+
+  floristNote: {
+    title: "خواسته‌های شما از گل‌آرایان ما",
+    optional: "(اختیاری)",
+    hint: "تغییرات کوچک در دسته‌گل، مثلاً «به‌جای رز زرد لطفاً رز سفید». اگر گل‌ها موجود باشند، آن را انجام می‌دهیم. توضیحات مربوط به تحویل را هنگام تکمیل خرید وارد می‌کنید.",
+    placeholder: "خواستهٔ شما از گل‌فروشی",
+  },
+
+  cta: {
+    total: "جمع کل",
+    comingSoon: "به‌زودی قابل سفارش",
+    unavailable: "در حال حاضر موجود نیست",
+    addToCart: "افزودن به سبد خرید",
+    fresh: "تازه بسته‌شده",
+    cardIncluded: "همراه با کارت تبریک",
+    securePayment: "پرداخت امن",
+    added: "{name} ({options}) به سبد خرید اضافه شد.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "نمای روبه‌رو",
+      detail: "جزئیات",
+      size: "مقایسهٔ اندازه",
+      packaging: "بسته‌بندی",
+      lifestyle: "فضا",
+    },
+    status: "تصویر {index} از {total}: {alt}",
+    carousel: "نمایش اسلایدی",
+    imagesOf: "تصاویر {name}",
+    slide: "تصویر",
+    slideOf: "{index} از {total}",
+    choose: "انتخاب تصویر",
+    show: "نمایش {label}",
+    thumb: "{label}: {alt}",
+    previous: "تصویر قبلی",
+    next: "تصویر بعدی",
+    colorAlt: "{name} به رنگ {color}",
+    colorLabel: "رنگ {color}",
+    sizeAlt: "{name} در اندازهٔ {size}",
+    sizeDetailAlt: "{name} در اندازهٔ {size}، نمای نزدیک",
+    sizeLabel: "اندازهٔ {size}",
+    sizeDetailLabel: "اندازهٔ {size} · نمای نزدیک",
+  },
+
+  details: {
+    eyebrow: "خوب است بدانید",
+    title: "همه‌چیز دربارهٔ {name}",
+    description: "توضیحات",
+    plant: "گیاه",
+    flowers: "گل‌های به‌کاررفته",
+    care: "راهنمای نگهداری",
+    delivery: "ارسال",
+    deliveryText: "گل‌های شما از یک گل‌فروشی در وین می‌آیند که به‌طور ثابت با آن همکاری می‌کنیم. دسته‌گل‌ها آنجا برای سفارش شما با دست بسته می‌شوند. یک پیک آن‌ها را تحویل می‌گیرد و بدون توقف به نشانی گیرنده می‌برد.",
+    deliveryAreas: "به هر 23 منطقهٔ وین ارسال می‌کنیم. هزینهٔ ارسال به منطقه بستگی دارد و پس از وارد کردن کد پستی نمایش داده می‌شود. محدوده‌های ارسال، بازه‌های زمانی و مهلت‌های سفارش را در {link} پیدا می‌کنید.",
+    deliveryLink: "ارسال و تحویل",
+    looksPlant: "آیا گیاه دقیقاً همین شکلی است؟",
+    looksBouquet: "آیا دسته‌گل دقیقاً همین شکلی است؟",
+    looksOther: "آیا دقیقاً مثل عکس است؟",
+    naturalPlant: "تقریباً. گیاهان محصولات طبیعی‌اند: رشد، اندازه و گل‌دهی ممکن است با عکس تفاوت داشته باشد. گلدان بیرونی هم بسته به موجودی ممکن است متفاوت باشد.",
+    naturalFlowers: "تقریباً. گل‌ها محصولات طبیعی‌اند: بسته به فصل ممکن است یک گونه یا تهرنگ متفاوت باشد. گل‌فروشی همکار ما دقت می‌کند که سبک و حال‌وهوای رنگی حفظ شود.",
+  },
+
+  pricePending: {
+    status: "قیمت به‌زودی",
+    sizes: "اندازه‌ها",
+    sizesLabel: "اندازه‌های موجود",
+    soonTitle: "به‌زودی قابل سفارش",
+    soonText: "در حال تعیین قیمت محصولاتمان هستیم. به محض مشخص شدن قیمت‌ها، می‌توانید این دسته‌گل را مستقیماً از همین‌جا سفارش دهید.",
+    contact: "پرسشی دارید؟ برای ما بنویسید",
+  },
+
+  related: {
+    eyebrow: "بیشتر ببینید",
+    title: "شاید این‌ها را هم بپسندید",
+    allFlowers: "دیدن همهٔ گل‌ها",
+  },
+
+  reviews: {
+    eyebrow: "نظرها",
+    title: "نظرها دربارهٔ {name}",
+    demoNote: "نظرهای نمونه – نظرهای واقعی به‌زودی اضافه می‌شوند",
+    quote: "«{text}»",
+    verified: "خرید تأییدشده",
+    demo: "نمونه",
+  },
+
+  reviewPhotos: {
+    photosOf: "عکس‌های {author}",
+    enlarge: "{alt} – بزرگ کردن عکس {index} از {total}",
+    dialogTitle: "عکس مشتری از {author}",
+    dialogCount: "({index} از {total})",
+    close: "بستن عکس",
+    show: "نمایش عکس {index}",
+  },
+};
 
 export default product;

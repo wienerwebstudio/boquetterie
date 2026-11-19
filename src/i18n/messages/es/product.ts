@@ -1,6 +1,191 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** es – product (translated from src/i18n/messages/de/product.ts). */
-const product: NonNullable<PartialMessages["product"]> = {};
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Producto no encontrado",
+  priceFrom: "desde",
+
+  size: {
+    title: "Elige el tamaño",
+    recommended: "Recomendado",
+    soldOut: "Agotado",
+  },
+
+  color: {
+    title: "Elige el color",
+    required: "(obligatorio)",
+    notChosen: "Aún sin elegir",
+    error: "Elige un color.",
+  },
+
+  delivery: {
+    title: "¿Cuándo deben llegar las flores?",
+    formLabel: "Comprobar entrega",
+    postalCodeLabel: "Código postal del destinatario",
+    postalCodePlaceholder: "Código postal del destinatario",
+    check: "Comprobar",
+    prompt: "Indica el código postal para elegir la fecha de entrega",
+    notAvailable: "Lo sentimos, todavía no entregamos en {plz}.",
+    notAvailableHint: "Encontrarás todas las zonas actuales en {link}. Para otra dirección de entrega, simplemente indica otro código postal.",
+    deliveryLink: "Entrega y envío",
+    available: "Entregamos en esta dirección.",
+    fee: "Entrega en {plz} {region}: {fee}",
+    free: "gratis",
+    freeFrom: "gratis desde {price}",
+    dateGroup: "Fecha de entrega",
+    today: "Hoy",
+    orderUntil: "pide hasta las {time}",
+    tomorrow: "Mañana",
+    chooseDate: "Elegir fecha",
+    openCalendar: "Abrir calendario",
+    deliveryOn: "Entrega el {date}",
+    todaySuffix: "· hoy",
+    noDays: "Actualmente no hay días de entrega disponibles.",
+  },
+
+  calendar: {
+    previousMonth: "Mes anterior",
+    nextMonth: "Mes siguiente",
+    weekdays: {
+      mon: { short: "Lu", long: "Lunes" },
+      tue: { short: "Ma", long: "Martes" },
+      wed: { short: "Mi", long: "Miércoles" },
+      thu: { short: "Ju", long: "Jueves" },
+      fri: { short: "Vi", long: "Viernes" },
+      sat: { short: "Sá", long: "Sábado" },
+      sun: { short: "Do", long: "Domingo" },
+    },
+    daySameDay: "{date}, entrega hoy",
+    dayAvailable: "{date}, con entrega",
+    dayUnavailable: "{date}, sin entrega",
+    legendSameDay: "Entrega hoy",
+    legendToday: "Hoy",
+    legendUnavailable: "Los días en gris no tienen entrega.",
+  },
+
+  card: {
+    unavailableTitle: "Tarjeta de dedicatoria personal",
+    unavailableText: "Por ahora, tu ramo se entregará sin tarjeta.",
+    comingSoon: "¡Muy pronto!",
+    addMessage: "Añadir un mensaje personal",
+    included: "Tarjeta de dedicatoria incluida",
+    handwritten: "Tarjeta de dedicatoria escrita a mano",
+    saved: "Mensaje guardado",
+    messageLabel: "Tu mensaje",
+    messagePlaceholder: "Feliz cumpleaños, con todo mi cariño…",
+    maxChars: "Máximo {max} caracteres.",
+    senderGroup: "Remitente",
+    showSender: "Mostrar remitente",
+    anonymous: "Enviar sin nombre",
+    senderName: "Tu nombre",
+    optional: "(opcional)",
+    senderPlaceholder: "p. ej., Anna",
+  },
+
+  extras: {
+    title: "¿Algo más?",
+    deliveredTogether: "Se entrega junto con el ramo",
+    addLabel: "Añadir {name} por {price}",
+    add: "Añadir",
+    quantity: "Cantidad de {name}",
+    less: "{name}: uno menos",
+    more: "{name}: uno más",
+  },
+
+  floristNote: {
+    title: "Deseos para nuestros floristas",
+    optional: "(opcional)",
+    hint: "Pequeños cambios en el ramo, p. ej., «rosas blancas en lugar de amarillas». Los aplicamos si las flores están disponibles. Las indicaciones para la entrega las añades en el proceso de pago.",
+    placeholder: "Tu deseo para la floristería",
+  },
+
+  cta: {
+    total: "Total",
+    comingSoon: "Pronto a la venta",
+    unavailable: "No disponible actualmente",
+    addToCart: "Añadir al carrito",
+    fresh: "Recién atado",
+    cardIncluded: "Tarjeta de dedicatoria incluida",
+    securePayment: "Pago seguro",
+    added: "{name} ({options}) se ha añadido al carrito.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Vista frontal",
+      detail: "Detalle",
+      size: "Comparación de tamaño",
+      packaging: "Envoltorio",
+      lifestyle: "Ambiente",
+    },
+    status: "Imagen {index} de {total}: {alt}",
+    carousel: "Carrusel",
+    imagesOf: "Imágenes de {name}",
+    slide: "Imagen",
+    slideOf: "{index} de {total}",
+    choose: "Elegir imagen",
+    show: "Ver {label}",
+    thumb: "{label}: {alt}",
+    previous: "Imagen anterior",
+    next: "Imagen siguiente",
+    colorAlt: "{name} en {color}",
+    colorLabel: "Color {color}",
+    sizeAlt: "{name} en tamaño {size}",
+    sizeDetailAlt: "{name} en tamaño {size}, primer plano",
+    sizeLabel: "Tamaño {size}",
+    sizeDetailLabel: "Tamaño {size} · Primer plano",
+  },
+
+  details: {
+    eyebrow: "Conviene saber",
+    title: "Todo sobre {name}",
+    description: "Descripción",
+    plant: "Planta",
+    flowers: "Flores incluidas",
+    care: "Cuidados",
+    delivery: "Entrega",
+    deliveryText: "Tus flores vienen de una floristería vienesa con la que colaboramos de forma estable. Allí, los ramos se atan a mano para tu pedido. Un mensajero los recoge y va sin paradas intermedias a la dirección de entrega.",
+    deliveryAreas: "Entregamos en los 23 distritos de Viena. Los gastos de entrega dependen del distrito y se muestran al indicar el código postal. Encontrarás las zonas de entrega, las franjas horarias y las horas límite de pedido en {link}.",
+    deliveryLink: "Entrega y envío",
+    looksPlant: "¿La planta es exactamente como en la foto?",
+    looksBouquet: "¿El ramo es exactamente como en la foto?",
+    looksOther: "¿Es exactamente como en la foto?",
+    naturalPlant: "Casi. Las plantas son productos naturales: el crecimiento, el tamaño y la floración pueden diferir de la foto. También el macetero puede variar según la disponibilidad.",
+    naturalFlowers: "Casi. Las flores son productos naturales: según la temporada, puede variar alguna variedad o matiz de color. Nuestra floristería asociada se asegura de mantener el estilo y la gama de colores.",
+  },
+
+  pricePending: {
+    status: "Precio próximamente",
+    sizes: "Tamaños",
+    sizesLabel: "Tamaños disponibles",
+    soonTitle: "Pronto a la venta",
+    soonText: "Estamos fijando los precios de nuestro surtido. En cuanto estén definidos, podrás pedir este ramo directamente aquí.",
+    contact: "¿Preguntas? Escríbenos",
+  },
+
+  related: {
+    eyebrow: "Sigue explorando",
+    title: "También te puede gustar",
+    allFlowers: "Ver todas las flores",
+  },
+
+  reviews: {
+    eyebrow: "Opiniones",
+    title: "Valoraciones de {name}",
+    demoNote: "Valoraciones de ejemplo: pronto habrá valoraciones reales",
+    quote: "«{text}»",
+    verified: "Compra verificada",
+    demo: "Ejemplo",
+  },
+
+  reviewPhotos: {
+    photosOf: "Fotos de {author}",
+    enlarge: "{alt} – ampliar foto {index} de {total}",
+    dialogTitle: "Foto de cliente de {author}",
+    dialogCount: "({index} de {total})",
+    close: "Cerrar foto",
+    show: "Ver foto {index}",
+  },
+};
 
 export default product;

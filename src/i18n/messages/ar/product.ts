@@ -1,6 +1,191 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** ar – product (translated from src/i18n/messages/de/product.ts). */
-const product: NonNullable<PartialMessages["product"]> = {};
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "المنتج غير موجود",
+  priceFrom: "ابتداءً من",
+
+  size: {
+    title: "اختيار الحجم",
+    recommended: "موصى به",
+    soldOut: "نفدت الكمية",
+  },
+
+  color: {
+    title: "اختيار اللون",
+    required: "(إلزامي)",
+    notChosen: "لم يُختر بعد",
+    error: "يُرجى اختيار لون.",
+  },
+
+  delivery: {
+    title: "متى يجب أن تصل الزهور؟",
+    formLabel: "التحقق من التوصيل",
+    postalCodeLabel: "الرمز البريدي للمستلم",
+    postalCodePlaceholder: "الرمز البريدي للمستلم",
+    check: "تحقق",
+    prompt: "أدخلوا الرمز البريدي لاختيار تاريخ التوصيل",
+    notAvailable: "للأسف لا نوصل إلى {plz} بعد.",
+    notAvailableHint: "تجدون جميع المناطق الحالية في {link}. ولعنوان مستلم آخر، أدخلوا ببساطة رمزًا بريديًا جديدًا.",
+    deliveryLink: "التوصيل والشحن",
+    available: "نوصل إلى هذا العنوان.",
+    fee: "التوصيل إلى {plz} {region}: {fee}",
+    free: "مجانًا",
+    freeFrom: "مجانًا ابتداءً من {price}",
+    dateGroup: "تاريخ التوصيل",
+    today: "اليوم",
+    orderUntil: "اطلبوا حتى الساعة {time}",
+    tomorrow: "غدًا",
+    chooseDate: "اختيار التاريخ",
+    openCalendar: "فتح التقويم",
+    deliveryOn: "التوصيل في {date}",
+    todaySuffix: "· اليوم",
+    noDays: "لا توجد أيام توصيل متاحة حاليًا.",
+  },
+
+  calendar: {
+    previousMonth: "الشهر السابق",
+    nextMonth: "الشهر التالي",
+    weekdays: {
+      mon: { short: "ن", long: "الإثنين" },
+      tue: { short: "ث", long: "الثلاثاء" },
+      wed: { short: "ر", long: "الأربعاء" },
+      thu: { short: "خ", long: "الخميس" },
+      fri: { short: "ج", long: "الجمعة" },
+      sat: { short: "س", long: "السبت" },
+      sun: { short: "ح", long: "الأحد" },
+    },
+    daySameDay: "{date}، التوصيل اليوم ممكن",
+    dayAvailable: "{date}، التوصيل ممكن",
+    dayUnavailable: "{date}، التوصيل غير ممكن",
+    legendSameDay: "توصيل اليوم",
+    legendToday: "اليوم",
+    legendUnavailable: "الأيام الرمادية غير متاحة للتوصيل.",
+  },
+
+  card: {
+    unavailableTitle: "بطاقة تهنئة شخصية",
+    unavailableText: "ستُوصَل باقتكم مؤقتًا دون بطاقة.",
+    comingSoon: "قريبًا!",
+    addMessage: "إضافة رسالة شخصية",
+    included: "بطاقة التهنئة مشمولة",
+    handwritten: "بطاقة تهنئة مكتوبة بخط اليد",
+    saved: "تم حفظ الرسالة",
+    messageLabel: "رسالتكم",
+    messagePlaceholder: "أطيب التمنيات بعيد ميلادك …",
+    maxChars: "الحد الأقصى لعدد الأحرف: {max}.",
+    senderGroup: "المرسِل",
+    showSender: "إظهار اسم المرسِل",
+    anonymous: "الإرسال دون اسم",
+    senderName: "اسمكم",
+    optional: "(اختياري)",
+    senderPlaceholder: "مثلًا آنا",
+  },
+
+  extras: {
+    title: "هل تودّون إضافة شيء؟",
+    deliveredTogether: "يُوصَل مع الباقة",
+    addLabel: "إضافة {name} مقابل {price}",
+    add: "إضافة",
+    quantity: "عدد {name}",
+    less: "{name}: واحد أقل",
+    more: "{name}: واحد أكثر",
+  },
+
+  floristNote: {
+    title: "رغبات لمنسّقي الزهور لدينا",
+    optional: "(اختياري)",
+    hint: "تعديلات صغيرة على الباقة، مثلًا «ورود بيضاء بدلًا من الصفراء». ننفذها إذا توفرت الزهور. أما ملاحظات التوصيل فتُدخلونها عند إتمام الطلب.",
+    placeholder: "رغبتكم لمحل الزهور",
+  },
+
+  cta: {
+    total: "المجموع",
+    comingSoon: "متاح للطلب قريبًا",
+    unavailable: "غير متاح حاليًا",
+    addToCart: "إضافة إلى السلة",
+    fresh: "منسَّقة طازجة",
+    cardIncluded: "بطاقة التهنئة مشمولة",
+    securePayment: "دفع آمن",
+    added: "تمت إضافة {name} ({options}) إلى سلة التسوق.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "منظر أمامي",
+      detail: "تفصيل",
+      size: "مقارنة الحجم",
+      packaging: "التغليف",
+      lifestyle: "أجواء",
+    },
+    status: "الصورة {index} من {total}: {alt}",
+    carousel: "عرض متتابع",
+    imagesOf: "صور {name}",
+    slide: "صورة",
+    slideOf: "{index} من {total}",
+    choose: "اختيار صورة",
+    show: "عرض {label}",
+    thumb: "{label}: {alt}",
+    previous: "الصورة السابقة",
+    next: "الصورة التالية",
+    colorAlt: "{name} باللون {color}",
+    colorLabel: "اللون {color}",
+    sizeAlt: "{name} بالحجم {size}",
+    sizeDetailAlt: "{name} بالحجم {size}، لقطة مقرّبة",
+    sizeLabel: "الحجم {size}",
+    sizeDetailLabel: "الحجم {size} · لقطة مقرّبة",
+  },
+
+  details: {
+    eyebrow: "معلومات مفيدة",
+    title: "كل شيء عن {name}",
+    description: "الوصف",
+    plant: "النبتة",
+    flowers: "الزهور المستخدمة",
+    care: "إرشادات العناية",
+    delivery: "التوصيل",
+    deliveryText: "تأتي زهوركم من محل زهور في فيينا نتعاون معه بشكل ثابت، حيث تُنسَّق الباقات يدويًا لطلبكم. ثم يستلمها ساعي التوصيل ويتوجه دون توقف إلى عنوان المستلم.",
+    deliveryAreas: "نوصل إلى جميع أحياء فيينا الـ23. تعتمد رسوم التوصيل على الحي وتظهر بعد إدخال الرمز البريدي. تجدون مناطق التوصيل والفترات الزمنية والمواعيد النهائية للطلب في {link}.",
+    deliveryLink: "التوصيل والشحن",
+    looksPlant: "هل تبدو النبتة تمامًا كما في الصورة؟",
+    looksBouquet: "هل تبدو الباقة تمامًا كما في الصورة؟",
+    looksOther: "هل يبدو المنتج تمامًا كما في الصورة؟",
+    naturalPlant: "تقريبًا. النباتات منتجات طبيعية: قد يختلف النمو والحجم والإزهار عن الصورة. وقد يبدو الأصيص الخارجي مختلفًا أيضًا بحسب التوفر.",
+    naturalFlowers: "تقريبًا. الزهور منتجات طبيعية: بحسب الموسم قد يختلف صنف أو درجة لون. ويحرص محل الزهور الشريك على الحفاظ على الأسلوب وعالم الألوان.",
+  },
+
+  pricePending: {
+    status: "السعر قريبًا",
+    sizes: "الأحجام",
+    sizesLabel: "الأحجام المتاحة",
+    soonTitle: "متاح للطلب قريبًا",
+    soonText: "نحدد حاليًا أسعار تشكيلتنا. وبمجرد تحديدها، يمكنكم طلب هذه الباقة مباشرةً من هنا.",
+    contact: "لديكم أسئلة؟ راسلونا",
+  },
+
+  related: {
+    eyebrow: "تصفّحوا المزيد",
+    title: "قد يعجبكم أيضًا",
+    allFlowers: "عرض جميع الزهور",
+  },
+
+  reviews: {
+    eyebrow: "آراء",
+    title: "تقييمات {name}",
+    demoNote: "تقييمات تجريبية – التقييمات الحقيقية ستُضاف لاحقًا",
+    quote: "«{text}»",
+    verified: "شراء موثَّق",
+    demo: "مثال",
+  },
+
+  reviewPhotos: {
+    photosOf: "صور من {author}",
+    enlarge: "{alt} – تكبير الصورة {index} من {total}",
+    dialogTitle: "صورة العميل من {author}",
+    dialogCount: "({index} من {total})",
+    close: "إغلاق الصورة",
+    show: "عرض الصورة {index}",
+  },
+};
 
 export default product;
