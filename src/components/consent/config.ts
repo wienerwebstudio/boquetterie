@@ -6,5 +6,8 @@
  * link ("Cookie-Einstellungen").
  */
 export const consentToolsConfigured = Boolean(
-  process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+  process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ||
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ||
+    process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID ||
+    process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID,
 );
