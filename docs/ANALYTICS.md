@@ -10,8 +10,8 @@ Es gibt drei Kategorien:
 | Kategorie   | Schlüssel   | Bedeutung                                                                 |
 |-------------|-------------|---------------------------------------------------------------------------|
 | Notwendig   | `necessary` | Immer aktiv: Warenkorb, Lieferprüfung, Sicherheit, die Consent-Wahl selbst |
-| Statistik   | `analytics` | Reichweitenmessung (Plausible und/oder GA4) – lädt nur nach Zustimmung    |
-| Marketing   | `marketing` | Reserviert für Werbe-Tools; steuert in GA4 `ad_storage` & Co.             |
+| Statistik   | `analytics` | Reichweitenmessung (Plausible, GA4, Umami) und Heatmaps/Sitzungsaufzeichnung (Clarity) – lädt nur nach Zustimmung |
+| Marketing   | `marketing` | Reserviert für Werbe-Tools; steuert in GA4 `ad_storage` & Co. und in Clarity `ad_Storage` |
 
 Grundsätze (DSGVO / TKG § 165 Abs 3, keine Dark Patterns):
 
@@ -27,7 +27,7 @@ Die Wahl wird als JSON in `localStorage["bl-consent"]` gespeichert und in ein Co
 damit Server-Komponenten sie später lesen könnten. Format (`src/types/consent.ts`):
 
 ```json
-{ "necessary": true, "analytics": false, "marketing": false, "version": 1, "updatedAt": "2026-09-10T12:00:00.000Z" }
+{ "necessary": true, "analytics": false, "marketing": false, "version": 2, "updatedAt": "2026-09-10T12:00:00.000Z" }
 ```
 
 `version` wird erhöht, wenn Kategorien oder Tools sich ändern – ältere Entscheidungen werden dann erneut abgefragt.
@@ -45,7 +45,7 @@ hasAnalyticsConsent();        // imperativ, z. B. in Helfern
 ## Tools & Umgebungsvariablen
 
 `src/components/analytics/analytics.tsx` lädt Tools ausschließlich, wenn `consent.analytics === true`.
-Es können beide gleichzeitig konfiguriert sein; ohne Variablen passiert nichts.
+Es können mehrere gleichzeitig konfiguriert sein; ohne Variablen passiert nichts.
 
 Ist **kein** Tool konfiguriert, öffnet sich das Consent-Sheet beim ersten Besuch nicht (`src/components/consent/config.ts`): Der Shop setzt dann nur technisch notwendigen Speicher, für den keine Einwilligung nötig ist. Über „Cookie-Einstellungen“ im Footer bleibt es erreichbar. Sobald eine der Variablen gesetzt ist, erscheint es wieder automatisch.
 
@@ -55,6 +55,10 @@ Ist **kein** Tool konfiguriert, öffnet sich das Consent-Sheet beim ersten Besuc
 | `NEXT_PUBLIC_PLAUSIBLE_API`       | `https://blumora.at/api/event` | Optional: `data-api`, wenn Events über einen eigenen Proxy laufen. |
 | `NEXT_PUBLIC_PLAUSIBLE_SRC`       | `https://blumora.at/js/script.js` | Optional: alternative Script-URL (Proxy / Self-Hosting). Standard: `https://plausible.io/js/script.js` |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID`   | `G-XXXXXXXXXX`                   | Lädt gtag.js mit Consent Mode: `default` = alles `denied`, danach `update` gemäß Wahl; `anonymize_ip: true`. |
+| `NEXT_PUBLIC_UMAMI_WEBSITE_ID`    | `e425a6a0-…`                     | Lädt Umami (`data-website-id`). Cookielos, Pageviews inkl. SPA-Navigation automatisch. Account: Umami Cloud, Region EU. |
+| `NEXT_PUBLIC_UMAMI_SRC`           | `https://stats.blumora.at/script.js` | Optional: alternative Script-URL (Self-Hosting). Standard: `https://cloud.umami.is/script.js` |
+| `NEXT_PUBLIC_UMAMI_DOMAINS`       | `blumora.at`                     | Optional: `data-domains` – Umami zählt nur auf diesen Hosts, Deploy-Previews und localhost bleiben draußen. |
+| `NEXT_PUBLIC_CLARITY_PROJECT_ID`  | `zg4j5d4x6s`                     | Lädt Microsoft Clarity (Heatmaps, Sitzungsaufzeichnungen) und meldet die Wahl über die Consent API v2: Statistik → `analytics_Storage`, Marketing → `ad_Storage`. |
 
 Diese Variablen gehören in `.env.local` (bzw. in die Umgebung des Hostings). Sie sind `NEXT_PUBLIC_*`, also im Client sichtbar – das ist beabsichtigt.
 
@@ -64,6 +68,8 @@ Schaltet jemand Statistik wieder aus:
 
 - GA4: `ga-disable-<ID>` wird gesetzt, Consent Mode auf `denied` aktualisiert, das Script-Tag entfernt und die Cookies `_ga`, `_gid`, `_gat*`, `_ga_*` werden best-effort auf dem aktuellen Host und den übergeordneten Domains gelöscht.
 - Plausible: Das Script-Tag und `window.plausible` werden entfernt (Plausible setzt ohnehin keine Cookies). Der History-Hook des bereits geladenen Scripts kann bis zum nächsten Seitenaufruf aktiv bleiben.
+- Umami: Das geladene Script bleibt bis zum nächsten Seitenaufruf im Speicher, aber der `data-before-send`-Hook (`window.blUmamiBeforeSend`) prüft bei jedem Event die Zustimmung und verwirft es ohne sie. Umami setzt keine Cookies.
+- Clarity: `clarity("consentv2", { ad_Storage: "denied", analytics_Storage: "denied" })`, danach werden `_clck`, `_clsk`, `CLID` und `MUID` best-effort gelöscht.
 
 ## Events
 
@@ -97,13 +103,17 @@ Hinweis GA4: Für E-Commerce-Berichte erwartet GA4 bei `add_to_cart` ein `items`
 
 - Plausible: automatisch, inkl. Client-Navigation (das Script hängt sich an `history.pushState`).
 - GA4: Erster Pageview über `gtag("config")`, jede weitere Navigation sendet `Analytics` ein `page_view` mit `page_path`, `page_location`, `page_title`.
+- Umami: automatisch, inkl. Client-Navigation.
+- Clarity: zeichnet die Sitzung selbst auf. `track()` setzt zusätzlich `clarity("event", name)`, damit sich Aufnahmen nach Events filtern lassen (ohne Props).
+
+Clarity maskiert Eingabefelder standardmäßig. Für den Checkout empfiehlt sich im Clarity-Dashboard unter Einstellungen → Maskierung der Modus **Streng**.
 
 ## Rechtlicher Hinweis
 
 Die **Datenschutzerklärung** (`/datenschutz`, Inhalt in `content/pages.json`) muss die tatsächlich eingesetzten Tools nennen:
 
-- Anbieter (Plausible Insights OÜ, Estland bzw. Google Ireland Ltd.), Zweck, Rechtsgrundlage (Art. 6 Abs 1 lit a DSGVO – Einwilligung), Speicherdauer der Cookies, Empfänger/Drittlandübermittlung (bei GA4: USA, Data Privacy Framework / Standardvertragsklauseln).
+- Anbieter (Plausible Insights OÜ, Estland; Google Ireland Ltd.; Umami Software, Inc.; Microsoft Corporation), Zweck, Rechtsgrundlage (Art. 6 Abs 1 lit a DSGVO – Einwilligung), Speicherdauer der Cookies, Empfänger/Drittlandübermittlung (bei GA4: USA, Data Privacy Framework / Standardvertragsklauseln).
 - Den Hinweis, dass die Einwilligung jederzeit über „Cookie-Einstellungen“ im Footer widerrufen werden kann.
-- Die Cookie-Tabelle inkl. `bl-consent` (notwendig, 180 Tage) und – falls GA4 aktiv – `_ga`, `_ga_*` (Laufzeit laut Google).
+- Die Cookie-Tabelle inkl. `bl-consent` (notwendig, 180 Tage) und – falls GA4 aktiv – `_ga`, `_ga_*` (Laufzeit laut Google), falls Clarity aktiv – `_clck`, `_clsk`, `MUID` (Laufzeit laut Microsoft).
 
 Wird ein Tool hinzugefügt oder entfernt, sind Datenschutzerklärung **und** `CONSENT_VERSION` in `src/types/consent.ts` anzupassen.

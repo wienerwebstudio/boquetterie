@@ -24,6 +24,9 @@ declare global {
     plausible?: ((event: string, options?: { props?: Record<string, string | number | boolean>; callback?: () => void }) => void) & { q?: unknown[] };
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
+    umami?: { track: (event: string, data?: Record<string, string | number | boolean>) => void };
+    clarity?: (...args: unknown[]) => void;
+    blUmamiBeforeSend?: (type: string, payload: unknown) => unknown;
     [key: `ga-disable-${string}`]: boolean | undefined;
   }
 }
@@ -45,6 +48,17 @@ export function track(event: string, props: TrackProps = {}) {
   }
   try {
     window.gtag?.("event", event, hasProps ? clean : undefined);
+  } catch {
+    /* never break the UI because of analytics */
+  }
+  try {
+    window.umami?.track(event, hasProps ? clean : undefined);
+  } catch {
+    /* never break the UI because of analytics */
+  }
+  try {
+    // Clarity custom events carry no properties; they tag the recording for filtering.
+    window.clarity?.("event", event);
   } catch {
     /* never break the UI because of analytics */
   }

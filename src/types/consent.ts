@@ -8,7 +8,7 @@
  * or the tools behind them change – older choices are then asked again.
  */
 
-export const CONSENT_VERSION = 1;
+export const CONSENT_VERSION = 2;
 export const CONSENT_STORAGE_KEY = "bl-consent";
 export const CONSENT_COOKIE_NAME = "bl-consent";
 export const CONSENT_MAX_AGE_DAYS = 180;
