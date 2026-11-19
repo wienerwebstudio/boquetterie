@@ -1,8 +1,8 @@
 [
   {
-    "slug": "poczta-kwiatowa-wieden",
-    "title": "Poczta kwiatowa Wiedeń",
-    "headline": "Poczta kwiatowa Wiedeń – dostawa kwiatów pod każdy adres w mieście",
+    "slug": "dostawa-kwiatow-wieden",
+    "title": "Dostawa kwiatów Wiedeń",
+    "headline": "Dostawa kwiatów Wiedeń – bukiety pod każdy adres w mieście",
     "intro": "Zamawiasz online, a bukiet trafia do bliskiej osoby w Wiedniu: ręcznie wiązany przez wiedeńską kwiaciarnię i dostarczony przez kuriera.",
     "image": "/images/hero/hero-wide.jpg",
     "productFilter": { "limit": 8 },
@@ -10,7 +10,7 @@
       {
         "heading": "Dostawa kwiatów w Wiedniu – jak to działa",
         "paragraphs": [
-          "Szukasz poczty kwiatowej w Wiedniu? Wybierz bukiet, wpisz kod pocztowy adresu odbiorcy i wybierz dzień dostawy w kalendarzu. Nasza partnerska kwiaciarnia w Wiedniu wiąże bukiet ręcznie na twoje zamówienie, a kurier zawozi go prosto pod wskazany adres.",
+          "Szukasz dostawy kwiatów w Wiedniu? Wybierz bukiet, wpisz kod pocztowy adresu odbiorcy i wybierz dzień dostawy w kalendarzu. Nasza partnerska kwiaciarnia w Wiedniu wiąże bukiet ręcznie na twoje zamówienie, a kurier zawozi go prosto pod wskazany adres.",
           "Dostarczamy do wszystkich 23 dzielnic Wiednia, od poniedziałku do niedzieli. W zamówieniu wybierasz jednogodzinny przedział czasowy między 9:00 a 22:00 – tak, by kwiaty dotarły wtedy, gdy ktoś będzie na miejscu."
         ]
       },
@@ -30,7 +30,7 @@
     ],
     "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
     "seo": {
-      "title": "Poczta kwiatowa Wiedeń – dostawa kwiatów w Wiedniu",
+      "title": "Dostawa kwiatów Wiedeń – bukiety z kurierem",
       "description": "Dostawa kwiatów w Wiedniu do wszystkich 23 dzielnic, 7 dni w tygodniu, w wybranym przedziale godzinowym. Bukiety ręcznie wiązane, od 36,90 €."
     }
   },

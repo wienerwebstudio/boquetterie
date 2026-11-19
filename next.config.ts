@@ -74,6 +74,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/", has: oldHost, destination: "https://blumora.at/", permanent: true },
       { source: "/:path((?!api/).+)", has: oldHost, destination: "https://blumora.at/:path", permanent: true },
+      // Polish topic page renamed (owners' choice, 19.11.2026): "Poczta Kwiatowa" is also a company name.
+      { source: "/pl/poczta-kwiatowa-wieden", destination: "/pl/dostawa-kwiatow-wieden", permanent: true },
     ];
   },
   async headers() {

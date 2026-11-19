@@ -2190,16 +2190,16 @@
   "pages": {
     "ueber-uns": {
       "title": "Kwiaty na wyjątkowe chwile.",
-      "intro": "Blumora to internetowa poczta kwiatowa z Wiednia. Każdy bukiet jest wiązany ręcznie w wiedeńskiej kwiaciarni i dostarczany bezpośrednio przez kuriera.",
+      "intro": "Blumora to internetowa kwiaciarnia z dostawą w Wiedniu. Każdy bukiet jest wiązany ręcznie w wiedeńskiej kwiaciarni i dostarczany bezpośrednio przez kuriera.",
       "seo": {
-        "title": "O nas – poczta kwiatowa z Wiednia",
-        "description": "Blumora to internetowa poczta kwiatowa z Wiednia: bukiety wiązane ręcznie i dostarczane przez kuriera do wszystkich 23 dzielnic."
+        "title": "O nas – kwiaciarnia internetowa z Wiednia",
+        "description": "Blumora to internetowa kwiaciarnia z Wiednia: bukiety wiązane ręcznie i dostarczane przez kuriera do wszystkich 23 dzielnic."
       },
       "sections": [
         {
           "heading": "Jak pracujemy",
           "paragraphs": [
-            "Blumora to wiedeńska internetowa poczta kwiatowa. Bukiet wybierasz u nas – a wiąże go wiedeńska kwiaciarnia, z którą stale współpracujemy. Tam każdy bukiet powstaje ręcznie, specjalnie na twoje zamówienie.",
+            "Blumora to wiedeńska kwiaciarnia internetowa. Bukiet wybierasz u nas – a wiąże go wiedeńska kwiaciarnia, z którą stale współpracujemy. Tam każdy bukiet powstaje ręcznie, specjalnie na twoje zamówienie.",
             "Kartki z życzeniami z twoim tekstem już wkrótce."
           ],
           "imageAlt": "Bukiet z róż, dalii, hortensji i tulipanów na parapecie wiedeńskiej kamienicy, w tle katedra św. Szczepana w wieczornym świetle"
@@ -2255,7 +2255,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Poczta kwiatowa Wiedeń",
+      "eyebrow": "Dostawa kwiatów Wiedeń",
       "headline": "Kwiaty, które mówią więcej.",
       "subheadline": "Świeżo wiązane kwiaty dla ludzi, którzy są dla ciebie ważni. Wybierz bukiet, ustal datę i podaruj radość.",
       "primaryCta": {
@@ -2375,7 +2375,7 @@
     "claim": "Kwiaty, które mówią więcej.",
     "seo": {
       "defaultTitle": "Blumora – kwiaty z dostawą w Wiedniu",
-      "defaultDescription": "Świeżo wiązane kwiaty dostarczane prosto do ludzi, którzy są dla ciebie ważni. Wybierz datę, wyślij radość – poczta kwiatowa w Wiedniu."
+      "defaultDescription": "Świeżo wiązane kwiaty dostarczane prosto do ludzi, którzy są dla ciebie ważni. Wybierz datę, wyślij radość – dostawa kwiatów w Wiedniu."
     },
     "announcement": {
       "messages": [

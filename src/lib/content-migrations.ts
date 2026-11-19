@@ -310,6 +310,27 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
         ["Strauß Herbstzauber in einer Glasvase", "Strauß aus Rosen, Dahlien, Hortensien und Tulpen auf dem Fensterbrett eines Wiener Altbaus, dahinter der Stephansdom im Abendlicht"],
       ],
     },
+  },  {
+    // Owners' choice: no "Poczta kwiatowa" in Polish texts (also the name of a Polish company).
+    // Old URL /pl/poczta-kwiatowa-wieden redirects (next.config.ts).
+    id: "2026-11-19-pl-dostawa-kwiatow",
+    replace: {
+      "landing-pages-pl": [
+        ["poczta-kwiatowa-wieden", "dostawa-kwiatow-wieden"],
+        ["Poczta kwiatowa Wiedeń – dostawa kwiatów pod każdy adres w mieście", "Dostawa kwiatów Wiedeń – bukiety pod każdy adres w mieście"],
+        ["Poczta kwiatowa Wiedeń – dostawa kwiatów w Wiedniu", "Dostawa kwiatów Wiedeń – bukiety z kurierem"],
+        ["Poczta kwiatowa Wiedeń", "Dostawa kwiatów Wiedeń"],
+        ["Szukasz poczty kwiatowej w Wiedniu?", "Szukasz dostawy kwiatów w Wiedniu?"],
+      ],
+      "i18n-pl": [
+        ["Blumora to internetowa poczta kwiatowa z Wiednia. ", "Blumora to internetowa kwiaciarnia z dostawą w Wiedniu. "],
+        ["O nas – poczta kwiatowa z Wiednia", "O nas – kwiaciarnia internetowa z Wiednia"],
+        ["Blumora to internetowa poczta kwiatowa z Wiednia:", "Blumora to internetowa kwiaciarnia z Wiednia:"],
+        ["Blumora to wiedeńska internetowa poczta kwiatowa.", "Blumora to wiedeńska kwiaciarnia internetowa."],
+        ["Poczta kwiatowa Wiedeń", "Dostawa kwiatów Wiedeń"],
+        ["– poczta kwiatowa w Wiedniu.", "– dostawa kwiatów w Wiedniu."],
+      ],
+    },
   },
 ];
 
