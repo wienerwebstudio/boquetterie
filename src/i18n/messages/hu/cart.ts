@@ -1,6 +1,98 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** hu – cart (translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Kosár",
+  metaDescription: "A kiválasztott csokraid és extráid – készen a bécsi kiszállításra.",
+  title: "Kosár",
+  eyebrow: "Majdnem kész",
+  loading: "A kosár betöltése",
+  itemsHeading: "A kosár tartalma",
+  items: { one: "{count} termék", other: "{count} termék" },
+  liveCount: "Kosár: {count}",
+  continueShopping: "Vásárlás folytatása",
+  summaryTitle: "Összesítés",
+  checkout: "Biztonságosan a pénztárhoz",
+  trust: {
+    securePayment: "Biztonságos fizetés",
+    ssl: "SSL-titkosítás",
+    privacy: "Adatvédelem",
+  },
+  empty: {
+    eyebrow: "A kosarad",
+    title: "Még teljesen üres.",
+    textWithCards: "Frissen kötött csokrok, kívánt dátum és egy személyes kártya – minden csak rád vár.",
+    text: "Frissen kötött csokrok és a kívánt dátum – minden csak rád vár.",
+    cta: "Virágok felfedezése",
+  },
+  drawer: {
+    total: "Összesen",
+    inclDelivery: "{vat}, kiszállítással együtt",
+    plusDelivery: "{vat} · + kiszállítási díj",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Végösszeg",
+      note: "A § 6 Abs. 1 Z 27 UStG alapján nem számítunk fel forgalmi adót (alanyi adómentesség).",
+    },
+    standard: {
+      short: "áfával",
+      note: "Minden ár áfával értendő.",
+    },
+  },
+  line: {
+    color: "Szín: {color}",
+    wish: "Kívánság: {note}",
+    delivery: "Kiszállítás",
+    chooseDateInCheckout: "A kiszállítás dátumát a pénztárban választod ki",
+    anonymous: "Feladó nélkül",
+    extras: "Extrák",
+    extraLess: "{name}: eggyel kevesebb",
+    extraMore: "{name}: eggyel több",
+    removeExtra: "{name} eltávolítása",
+    quantity: "Mennyiség: {name}",
+    decrease: "Mennyiség csökkentése",
+    increase: "Mennyiség növelése",
+    remove: "Eltávolítás",
+  },
+  summary: {
+    bouquets: "Csokrok",
+    extras: "Extrák",
+    delivery: "Kiszállítás",
+    free: "Ingyenes",
+    deliveryInCheckout: "a pénztárban számítjuk ki",
+    discount: "Kedvezmény",
+    total: "Összesen",
+    missingForFreeDelivery: "Még {amount} az ingyenes kiszállításig.",
+    minOrder: "Erre a címre {amount} minimális rendelési érték vonatkozik.",
+    removeCoupon: "Kupon eltávolítása",
+    couponCode: "Kuponkód",
+    redeem: "Beváltás",
+    couponQuestion: "Kuponkód?",
+    couponCheckFailed: "A kupont most nem sikerült ellenőrizni. Kérjük, próbáld újra egy pillanat múlva.",
+    couponMissing: "Kérjük, adj meg egy kuponkódot.",
+    couponUnknown: "Ezt a kódot nem ismerjük.",
+  },
+  surprise: {
+    title: "A meglepetésed",
+    bouquet: "Csokor",
+    card: "+ kártya",
+    extras: "+ extrák",
+    cardsSoon: "Üdvözlőkártyák hamarosan",
+    cardIncluded: "Üdvözlőkártyával együtt – az üzenet bármikor kiegészíthető",
+    noExtras: "Még nincsenek extrák",
+  },
+  upsell: {
+    title: "Még valamit hozzá?",
+    subtitle: "A csokorral együtt érkezik",
+    add: "Hozzáadás",
+    addAria: "{name} hozzáadása {price} áron",
+  },
+  cardPreview: {
+    label: "Az üdvözlőkártya előnézete",
+    placeholder: "Itt jelenik meg az üzeneted.",
+    anonymous: "Feladó nélkül",
+  },
+};
 
 export default cart;

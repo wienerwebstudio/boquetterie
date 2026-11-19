@@ -31,8 +31,11 @@ describe.each(others)("UI texts %s", (locale) => {
     const mod = (await import(`@/i18n/messages/${locale}`)) as { default: Tree };
     const t = leaves(mod.default);
     for (const [key, value] of t) {
-      expect(german.has(key), `${locale}: unknown key ${key}`).toBe(true);
-      expect(placeholders(value), `${locale}: placeholders in ${key}`).toEqual(placeholders(german.get(key) ?? ""));
+      // Extra plural forms (few/many/two/zero) belong to a German `{ one, other }` object.
+      const plural = key.match(/^(.*)\.(few|many|two|zero)$/);
+      const source = plural && german.has(`${plural[1]}.other`) ? `${plural[1]}.other` : key;
+      expect(german.has(source), `${locale}: unknown key ${key}`).toBe(true);
+      expect(placeholders(value), `${locale}: placeholders in ${key}`).toEqual(placeholders(german.get(source) ?? ""));
       expect(value.trim().length, `${locale}: empty ${key}`).toBeGreaterThan(0);
     }
     if (LIVE_LOCALES.includes(locale)) {

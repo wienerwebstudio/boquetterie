@@ -1,0 +1,2520 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Pink roses, bright pink gerberas & white lilies",
+      "shortDescription": "A light, airy bouquet in pink and white that brings good cheer to any room.",
+      "description": "Rosé Dream pairs pink roses and bright pink gerberas with white lilies, delicate baby's breath and fresh greenery. Loosely tied and light in feel, it suits a birthday, a thank-you or no reason at all.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Lilies",
+        "Baby's breath"
+      ],
+      "care": [
+        "Add fresh water to the vase every day.",
+        "Trim the stems again as needed.",
+        "Remove wilted flowers regularly."
+      ],
+      "seo": {
+        "title": "Rosé Dream – Bouquet in Pink & White",
+        "description": "Rosé Dream: pink roses, gerberas and white lilies, loosely tied. A light bouquet for birthdays and thanks – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Bouquet of pink roses, bright pink gerberas and white lilies in a glass vase on a wooden chest of drawers"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Yellow Bouquet",
+      "tagline": "Yellow gerberas, roses & baby's breath",
+      "shortDescription": "A sunny bouquet in yellow and white, tied with a yellow ribbon.",
+      "description": "Bright yellow gerberas meet white and yellow roses, baby's breath and fresh greenery. Set in a pale wrap with a yellow ribbon – a bouquet for a birthday, congratulations, a thank-you or a get-well-soon greeting.",
+      "flowers": [
+        "Gerberas",
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep out of full sun."
+      ],
+      "seo": {
+        "title": "Yellow Bouquet – Gerberas & Roses in Yellow",
+        "description": "Yellow gerberas, white and yellow roses with baby's breath and a yellow ribbon. For birthdays or get well soon – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Bouquet of yellow gerberas and white and yellow roses in a pale wrap with a yellow ribbon"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "White Bouquet",
+      "tagline": "Pale roses, gerberas & lilies",
+      "shortDescription": "A light, calm bouquet in white and cream with delicate touches of pink.",
+      "description": "The White Bouquet brings together pale roses, gerberas and lilies with baby's breath in a simple, timeless bouquet. Delicate touches of pink and apricot soften the look. Ideal for a wedding anniversary or other anniversary, as a thank-you or a stylish greeting.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Lilies",
+        "Baby's breath"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Carefully remove lily pollen as needed."
+      ],
+      "seo": {
+        "title": "White Bouquet – Bouquet in White & Cream",
+        "description": "Pale roses, gerberas and lilies with baby's breath: a simple bouquet for anniversaries or to say thanks – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Pale bouquet of cream roses, pink gerberas, lilies and baby's breath in a white wrap"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Blue & white roses in a blue wrap",
+      "shortDescription": "Blue and white roses in a light blue wrap – a bouquet that stands out.",
+      "description": "The Blue Bouquet combines blue and white roses with baby's breath, a white lily and fresh greenery. The light blue wrap picks up the colour of the flowers. An unusual gift for a birthday, an anniversary or for people who love something special.",
+      "flowers": [
+        "Roses",
+        "Lilies",
+        "Baby's breath"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – Blue & White Roses",
+        "description": "Blue and white roses with baby's breath in a light blue wrap. An unusual rose bouquet for birthdays or anniversaries – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Bouquet of blue and white roses with baby's breath in a light blue wrap on a wooden chest of drawers"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Rainbow roses in many colours",
+      "shortDescription": "A bouquet of rainbow roses, each bloom glowing in several colours.",
+      "description": "Farbensinfonie is made of rainbow roses: each bloom shows several colours side by side, from red and orange through yellow and green to blue and purple. Tightly tied, the bouquet looks like a colourful ball. A cheerful surprise for a birthday or a celebration.",
+      "flowers": [
+        "Rainbow roses"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – Rainbow Roses",
+        "description": "Rainbow roses, each bloom glowing in several colours. A cheerful rose bouquet for a birthday – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Farbensinfonie, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Farbensinfonie, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Farbensinfonie, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Dense bouquet of rainbow roses in a cream vase",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Close-up of rainbow roses, each bloom in several colours"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelitzias, lilies & gerberas in orange and yellow",
+      "shortDescription": "An exotic bouquet in orange and yellow with bird of paradise flowers as a centrepiece.",
+      "description": "Sonnenzauber combines striking bird of paradise flowers with white lilies, yellow gerberas and fresh greenery. The warm orange and yellow tones give the bouquet a lively, summery feel.",
+      "flowers": [
+        "Strelitzias (bird of paradise flowers)",
+        "Lilies",
+        "Gerberas",
+        "Baby's breath"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Keep the vase clean and refresh the water regularly.",
+        "Keep out of full sun."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – Strelitzias & Gerberas",
+        "description": "Bird of paradise flowers, lilies and yellow gerberas in warm orange and yellow. An exotic statement bouquet – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Exotic bouquet of strelitzias, white lilies and yellow gerberas in clear cellophane",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Top view of the bouquet's strelitzias, lily and yellow gerberas"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Pink and rose-pink blooms with gerberas & lilies",
+      "shortDescription": "A round, playful bouquet in pink and rose-pink with touches of yellow.",
+      "description": "The Pink Bouquet brings together blooms in pink and rose-pink, including lilies and gerberas, in a round, playful bouquet. Yellow gerberas add fresh accents and the pink wrap completes the look. Lovely for a birthday, an anniversary, Mother's Day or just because.",
+      "flowers": [
+        "Lilies",
+        "Gerberas"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Remove wilted flowers regularly."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – Bouquet in Pink & Rose",
+        "description": "A round bouquet in pink and rose-pink with lilies and gerberas. For birthdays, Mother's Day or just because – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Round bouquet in pink and rose-pink with yellow gerberas in a pink wrap",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Bouquet with pink lilies, yellow gerberas and pink blooms in a pink wrap with a ribbon"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Roses in orange and apricot",
+      "shortDescription": "Roses in orange and apricot – a warm bouquet like a sunset.",
+      "description": "The Orange Bouquet is made of roses in orange and apricot, finished with delicate greenery and set in a pale wrap. Warm and cheerful, it suits a birthday, a thank-you or brightening someone's day.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – Roses in Orange",
+        "description": "Roses in orange and apricot in a pale wrap. A warm rose bouquet for a birthday or to say thank you – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Orange Bouquet, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Orange Bouquet, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Orange Bouquet, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Bouquet of orange and apricot roses in a pale wrap on a wooden chest of drawers"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Deep red roses in a dark wrap",
+      "shortDescription": "A lavish bouquet of deep red roses with a red satin ribbon.",
+      "description": "The Red Rose Bouquet is a tightly tied bouquet of deep red roses in a dark wrap, held by a red satin ribbon. The classic declaration of love for Valentine's Day, an anniversary or a proposal.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – Red Roses",
+        "description": "Deep red roses in a dark wrap with a red satin ribbon. The classic rose bouquet for Valentine's Day and anniversaries – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Red Rose Bouquet, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Red Rose Bouquet, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Red Rose Bouquet, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Bouquet of deep red roses in a dark grey wrap with a red satin ribbon",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Bouquet of red roses lying in a black and white wrap next to candles"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Roses and gerberas in pink, pastel & lilac",
+      "shortDescription": "A soft, romantic bouquet in pink and pastel shades.",
+      "description": "The Rosa Bouquet combines roses in pink and pastel shades with gerberas and lilac blooms. Set in a white wrap with a pink ribbon, it feels light and loving. Lovely for a birthday, Mother's Day, a new baby or as a greeting.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – Roses in Pink & Pastel",
+        "description": "Roses and gerberas in pink, pastel and lilac in a white wrap. For birthdays, Mother's Day or a new baby – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Bouquet of pink roses, gerberas and lilac blooms in a white wrap with a pink ribbon"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Black roses in a dark wrap",
+      "shortDescription": "Black roses in a dark wrap – mysterious and out of the ordinary.",
+      "description": "Blackroses is a bouquet of black roses set in a dark, translucent wrap. An unusual statement for people who appreciate something special, for example on a birthday or anniversary.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Blackroses – Black Roses",
+        "description": "Black roses in a dark wrap: an unusual rose bouquet for people who love something special – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Blackroses, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Blackroses, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Blackroses, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Bouquet of black roses in a black wrap in a glass vase",
+        "/images/products/sortiment/blackroses-2.jpg": "Black roses without a wrap in a glass vase in front of a window"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Blue roses with baby's breath",
+      "shortDescription": "Vivid blue roses with baby's breath – rare and a real eye-catcher.",
+      "description": "Blaue Liebe is a bouquet of vivid blue roses, lightened with fine baby's breath and set in a blue wrap. A special gift for a birthday, an anniversary or as a sign of a deep bond.",
+      "flowers": [
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – Blue Roses",
+        "description": "Vivid blue roses with baby's breath in a blue wrap. A rare rose bouquet for special people – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Blaue Liebe, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Blaue Liebe, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Blaue Liebe, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Bouquet of blue roses with baby's breath in a blue wrap in a white vase",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Blue roses with baby's breath in a blue wrap, front view",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Bouquet of blue roses in a blue wrap lying on a wooden chest of drawers"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Pink roses with baby's breath",
+      "shortDescription": "Pink roses in a delicate wrap – loving and elegant.",
+      "description": "Rosalie is a bouquet of pink roses, lightened with baby's breath and set in a pale pink wrap. Feminine and calm in feel, it suits Mother's Day, a birthday, an anniversary or a thank-you.",
+      "flowers": [
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Rosalie – Pink Roses with Baby's Breath",
+        "description": "Pink roses with baby's breath in a pale pink wrap. For Mother's Day, a birthday or to say thank you – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Rosalie, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Rosalie, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Rosalie, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Bouquet of pink roses with baby's breath in a pale pink wrap in a white vase",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie in a pink wrap in a simple white vase",
+        "/images/products/sortiment/rosalie-3.jpg": "Pink roses with baby's breath in a ribbed white vase",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie lying down, top view of the pink roses and baby's breath"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Red & White Mix",
+      "tagline": "Red and white roses",
+      "shortDescription": "Red and white roses in a festive bouquet.",
+      "description": "The Red & White Mix brings together red and white roses in a white wrap, lightened with baby's breath depending on the size. Passion meets tenderness: a bouquet for Valentine's Day, an anniversary, a wedding anniversary or as an elegant gift.",
+      "flowers": [
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Red & White Mix – Red and White Roses",
+        "description": "Red and white roses in a festive wrap. For Valentine's Day or anniversaries, in six sizes – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Red & White Mix, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Red & White Mix, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Red & White Mix, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Bouquet of red and white roses with baby's breath in a white wrap, with rose petals beside it",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Red and white roses tightly tied in a white wrap",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Red and white rose bouquet in a white wrap on a wooden chest of drawers",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Bouquet of red and white roses lying down, top view"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Tulip Bouquet",
+      "tagline": "Tulips in one colour or mixed",
+      "shortDescription": "A simple bouquet of tulips, in a single colour or a colourful mix.",
+      "description": "With their clear colours and slender shape, tulips bring a touch of spring into the home. The bouquet is made entirely of tulips, either in one colour or as a colourful mix. Available in red, yellow, purple, pink, orange, white and mixed.",
+      "flowers": [
+        "Tulips"
+      ],
+      "care": [
+        "Cut the stems straight and place them in cold water.",
+        "A little water is enough, but top it up regularly.",
+        "Tulips keep growing in the vase; trim them as needed."
+      ],
+      "seo": {
+        "title": "Tulip Bouquet – Tulips in Many Colours",
+        "description": "A bouquet of tulips in red, yellow, purple, pink, orange, white or mixed. A touch of spring at home – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Red",
+        "gelb": "Yellow",
+        "lila": "Purple",
+        "rosa": "Pink",
+        "orange": "Orange",
+        "weiss": "White",
+        "mix": "Colourful mix"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Bouquet of yellow tulips in a glass vase",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Purple tulips in kraft paper in a glass vase",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Red tulips in a beige vase",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Orange tulips in a glass vase",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Pink tulips in a glass vase on a linen cloth",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Colourful tulip mix in red, yellow, pink, orange and purple in a beige vase",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "White tulips in a white vase"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Red roses with baby's breath",
+      "shortDescription": "An expressive rose bouquet in deep red for big feelings.",
+      "description": "Red Passion brings red roses together in a dense, round bouquet, framed by baby's breath and a dark wrap. Available in six sizes – for romantic gestures and moments that are meant to be remembered.",
+      "flowers": [
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Give the stems a fresh cut.",
+        "Add fresh water every day.",
+        "Protect from direct sunlight."
+      ],
+      "seo": {
+        "title": "Red Passion – Red Rose Bouquet",
+        "description": "Red roses with baby's breath in a dark wrap, in six sizes. A rose bouquet for big feelings – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Red Passion, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Red Passion, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Red Passion, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Bouquet of dark red roses with baby's breath lying in a black and gold wrap",
+        "/images/products/sortiment/red-passion-2.jpg": "Large bouquet of red roses with baby's breath in a dark wrap in a white vase",
+        "/images/products/sortiment/red-passion-3.jpg": "Very large, round bouquet of red roses with baby's breath in a dark wrap"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Tightly tied red roses",
+      "shortDescription": "Tightly tied red roses in a dark wrap – timeless and full of feeling.",
+      "description": "Klassiker der Liebe is made of red roses, tightly tied into a round shape and set in a dark wrap with a black ribbon. The rose bouquet for Valentine's Day, an anniversary, a proposal or any declaration of love.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – Red Roses",
+        "description": "Tightly tied red roses in a dark wrap. The classic rose bouquet for Valentine's Day, anniversaries or a proposal – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Klassiker der Liebe, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Klassiker der Liebe, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Klassiker der Liebe, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Round bouquet of tightly tied red roses in a black wrap with a ribbon",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Red roses in a ball shape in a dark wrap, front view"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Red roses with baby's breath",
+      "shortDescription": "A lavish rose bouquet in six sizes.",
+      "description": "Königin der Herzen combines red roses with fine baby's breath in a dark, translucent wrap. Available in six sizes – from a small gesture to a grand entrance.",
+      "flowers": [
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Keep in a cool spot.",
+        "Remove wilted flowers promptly.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – Lavish Rose Bouquet",
+        "description": "Red roses with baby's breath, in six sizes. A lavish rose bouquet for big moments – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Königin der Herzen, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Königin der Herzen, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Königin der Herzen, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Bouquet of red roses with baby's breath in a dark wrap in a white vase",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Large bouquet of red roses and baby's breath in a black wrap",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Red roses with baby's breath in a dark wrap in a black pot",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Top view of red roses with baby's breath in a star-shaped dark wrap"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerberas, roses & lilies in warm tones",
+      "shortDescription": "A warm bouquet in orange, pink and yellow.",
+      "description": "Herbstzauber combines gerberas, roses and lilies in shades of orange, pink and yellow with fresh greenery. Loosely tied, it brings warm colours into the home, just as the days grow shorter.",
+      "flowers": [
+        "Gerberas",
+        "Roses",
+        "Lilies"
+      ],
+      "care": [
+        "Do not place next to fruit.",
+        "Top up the water regularly.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Herbstzauber – Bouquet in Warm Tones",
+        "description": "Gerberas, roses and lilies in orange, pink and yellow. A warm autumn bouquet for a birthday or to say thanks – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Bouquet of orange gerberas, apricot and pink roses and lilies in a glass vase"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Red roses, gerberas & green accents",
+      "shortDescription": "A lively bouquet in red and orange with fresh green accents.",
+      "description": "Blütenfreude combines red roses and gerberas in red and orange with green pompom blooms and eucalyptus. Bold in colour yet round in shape – lovely for a birthday, as a thank-you or just because.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Add fresh water to the vase every day.",
+        "Trim the stems again as needed.",
+        "Remove wilted flowers regularly."
+      ],
+      "seo": {
+        "title": "Blütenfreude – Roses & Gerberas in Red",
+        "description": "Red roses, gerberas in red and orange and fresh green accents. A lively birthday bouquet – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Bouquet of red roses, red and orange gerberas and green pompom blooms in a glass vase",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude in a white vase on a wooden chest of drawers"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Pink roses, lilies & baby's breath",
+      "shortDescription": "Soft pink tones with lilies – calm, harmonious and delicate.",
+      "description": "Zartrosa Zauber combines pink roses with pink lilies and baby's breath in a pink wrap. The bouquet feels calm and harmonious, with a delicate, romantic touch.",
+      "flowers": [
+        "Roses",
+        "Lilies",
+        "Baby's breath"
+      ],
+      "care": [
+        "Remove any leaves that would sit in the water.",
+        "Keep in a cool spot.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – Pink Roses & Lilies",
+        "description": "Pink roses, pink lilies and baby's breath in a delicate wrap. A calm, romantic bouquet – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Bouquet of pink roses, pink lilies and baby's breath in a pink wrap in a white vase",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber in a pink wrap with a large bow"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerberas, lilies & roses in orange and yellow",
+      "shortDescription": "Bright orange and yellow for good news and sunny occasions.",
+      "description": "Strahlender Tag combines orange gerberas and lilies with yellow roses, pale carnations and baby's breath. The bold colours bring positive energy – a bouquet for congratulations, achievements and sunny occasions.",
+      "flowers": [
+        "Gerberas",
+        "Lilies",
+        "Roses",
+        "Carnations",
+        "Baby's breath"
+      ],
+      "care": [
+        "Protect from draughts.",
+        "Change the water regularly.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – Bouquet in Orange & Yellow",
+        "description": "Orange gerberas and lilies with yellow roses and baby's breath. A cheerful bouquet to say congratulations – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Bouquet of orange gerberas, yellow roses and baby's breath in a white and gold wrap",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Orange gerberas, lilies and a yellow rose in a white vase",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Round bouquet of orange gerberas and lilies, yellow roses and pale carnations in a glass vase"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Roses in pink, cream & apricot",
+      "shortDescription": "A harmonious rose bouquet between classic beauty and modern style.",
+      "description": "Rosentraum combines roses in pink, cream and apricot with violet blooms, berry sprigs and fresh greenery. Set in a dusky pink wrap, the bouquet looks lush yet modern.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Cut the stems at an angle before placing them in water.",
+        "Keep the vase clean.",
+        "Refresh the water regularly."
+      ],
+      "seo": {
+        "title": "Rosentraum – Roses in Pink & Cream",
+        "description": "Roses in pink, cream and apricot with violet accents in a dusky pink wrap. A harmonious rose bouquet – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Hand-tied bouquet of roses in pink, cream and apricot in a dusky pink wrap",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum in a dusky pink wrap in a white vase",
+        "/images/products/sortiment/rosentraum-3.jpg": "Top view of the bouquet's roses, violet blooms and berry sprigs"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "White roses with baby's breath",
+      "shortDescription": "White roses with baby's breath – delicate, romantic and bright.",
+      "description": "Rosenkuss is made of white to cream roses, lightened with fine baby's breath and set in a white wrap. A bouquet for affection, closeness and little messages of love.",
+      "flowers": [
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Do not keep it too warm.",
+        "Check the water level every day.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Rosenkuss – White Roses",
+        "description": "White roses with baby's breath in a white wrap. A delicate, romantic rose bouquet – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Rosenkuss, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Rosenkuss, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Rosenkuss, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Bouquet of white roses with baby's breath in a white wrap in a white vase",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Large bouquet of white roses in a white wrap in a white vase",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Bouquet of white roses with baby's breath lying on a wooden chest of drawers"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Roses in pastel, pink & burgundy",
+      "shortDescription": "Roses in pastel and pink, elegantly arranged.",
+      "description": "Rosenglanz brings together roses in pastel pink, cream, bright pink and burgundy with baby's breath in a pink wrap. Timeless in feel and available in six sizes.",
+      "flowers": [
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Give the stems a fresh cut.",
+        "Avoid direct sunlight.",
+        "Change the vase water regularly."
+      ],
+      "seo": {
+        "title": "Rosenglanz – Roses in Pastel & Pink",
+        "description": "Roses in pastel pink, bright pink and burgundy with baby's breath, in six sizes. An elegant rose bouquet – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small",
+          "detailAlt": "Rosenglanz, size Small, held in a hand in front of a Viennese street with a tram"
+        },
+        "m": {
+          "label": "Medium",
+          "detailAlt": "Rosenglanz, size Medium, held in a hand in front of a Viennese street with a tram"
+        },
+        "l": {
+          "label": "Large",
+          "detailAlt": "Rosenglanz, size Large, held in a hand in front of a Viennese street with a tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Bouquet of roses in pastel pink, bright pink and burgundy in a pink wrap in a glass vase",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Round rose bouquet with baby's breath in a pink wrap, front view",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Bouquet of pastel and bright pink roses lying on a wooden chest of drawers"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Pink roses, gerberas, lilies & carnations",
+      "shortDescription": "An expressive bouquet in pink tones that speaks without words.",
+      "description": "Pure Liebe combines pink roses with a bright pink gerbera, pink lilies, carnations and baby's breath. Intense in its pink tones and lightened with pale accents – a bouquet full of feeling.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Lilies",
+        "Carnations",
+        "Baby's breath"
+      ],
+      "care": [
+        "Add fresh water regularly.",
+        "Keep the vase clean.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Pure Liebe – Bouquet in Pink",
+        "description": "Pink roses, gerberas, lilies and carnations with baby's breath. A bouquet full of feeling – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Bouquet of pink roses, a bright pink gerbera and pink lilies in a beige vase",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe with lilies, gerberas and carnations in a beige vase",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Round bouquet of pink roses, gerberas, carnations and baby's breath in a glass vase"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Pink gerberas, roses & violet accents",
+      "shortDescription": "Bold pink tones combined in a fresh, modern bouquet.",
+      "description": "Pink Harmony combines pink gerberas and roses with white and lilac blooms, violet accents and baby's breath. Lively and fresh, with plenty of charm.",
+      "flowers": [
+        "Gerberas",
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Keep in a cool spot.",
+        "Remove wilted flowers.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Pink Harmony – Gerberas & Roses in Pink",
+        "description": "Pink gerberas and roses with lilac and violet accents. A fresh, modern bouquet – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Bouquet of pink gerberas, roses and lilac blooms in a beige vase",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Round bouquet with pink gerberas, roses and violet accents"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Colourful rose bouquet in pink, yellow, apricot & purple",
+      "shortDescription": "A generous, colourful rose bouquet for special occasions.",
+      "description": "Love Deluxe is a rose bouquet in many colours: pink, cream, apricot, yellow and purple, set in a pink wrap. For special occasions and grand gestures, available in five sizes.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Trim the stems.",
+        "Change the vase water daily.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Love Deluxe – Colourful Rose Bouquet",
+        "description": "Roses in pink, cream, apricot, yellow and purple in a pink wrap, in five sizes. For grand gestures – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Colourful rose bouquet in pink, yellow, apricot and purple in a pink wrap in a white vase",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Large colourful rose bouquet in a pink wrap, front view",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Colourful rose bouquet in a pink wrap lying on a wooden chest of drawers"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Red & green roses with lilies",
+      "shortDescription": "An emotional bouquet in red to say “I love you”.",
+      "description": "Liebeserklärung combines red roses with light green roses, white lilies, red accent blooms and baby's breath. Bold yet fresh – a bouquet that makes feelings visible.",
+      "flowers": [
+        "Roses",
+        "Lilies",
+        "Baby's breath"
+      ],
+      "care": [
+        "Protect from heat.",
+        "Refresh the water regularly.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – Red Roses & Lilies",
+        "description": "Red and light green roses with lilies and baby's breath. A bouquet to say “I love you” – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Bouquet of red and light green roses with lilies and baby's breath in a glass vase",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung in a white vase on a wooden chest of drawers"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Pink roses & gerberas with orange accents",
+      "shortDescription": "Elegant and balanced – a bouquet with stylish restraint.",
+      "description": "Klassische Schönheit combines roses in dusky pink and white with a bright pink gerbera, small orange blooms and baby's breath. Set in a dark wrap with a gold edge, the bouquet looks balanced and timeless.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Baby's breath"
+      ],
+      "care": [
+        "Do not place directly next to a radiator.",
+        "Cut the stems at an angle before placing them in water.",
+        "Change the vase water regularly."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – Roses & Gerberas",
+        "description": "Roses in dusky pink and white with a bright pink gerbera in a dark wrap. A balanced, timeless bouquet – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Bouquet of dusky pink roses and a bright pink gerbera in a dark wrap with a gold edge",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit in a white vase",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Top view of roses, gerbera and baby's breath in a dark wrap"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Pink roses & bright pink gerberas",
+      "shortDescription": "Playful and lively: pink roses meet bright pink gerberas.",
+      "description": "Herzklopfen combines pale pink roses with a bright pink gerbera, small white-and-green blooms and fine purple foliage. Tied in a round shape and full of colour – a bouquet with plenty of feeling.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Add fresh water every day.",
+        "Cut the stems at an angle.",
+        "Keep in a cool spot, out of direct sunlight."
+      ],
+      "seo": {
+        "title": "Herzklopfen – Pink Roses & Gerberas",
+        "description": "Pale pink roses and bright pink gerberas, tied in a round shape. A playful bouquet full of feeling – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Round bouquet of pale pink roses and a bright pink gerbera in a white vase",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen in a white vase, side view",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Bouquet of pink roses and a bright pink gerbera in a glass vase"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Colourful mix with roses & gerberas",
+      "shortDescription": "A colourful bouquet full of joie de vivre.",
+      "description": "The Fröhlicher Blütenmix combines red roses, gerberas in yellow, pink and red and other blooms in yellow, orange and violet. Set in a red wrap – perfect for giving someone a smile.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Keep in a cool spot.",
+        "Change the water regularly.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – Colourful Bouquet",
+        "description": "Red roses and gerberas in yellow, pink and red in a red wrap. A colourful bouquet full of joie de vivre – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Colourful bouquet with gerberas and roses in a red wrap on a wooden chest of drawers",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix in a red wrap in a white vase",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Top view of red roses and yellow and pink gerberas in a red wrap"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Roses & gerberas in pink with purple accents",
+      "shortDescription": "A lively mix in pink, apricot and purple.",
+      "description": "Farbtänzer combines roses and spray roses in pink and apricot with pink gerberas, purple blooms and pale berries. Densely and vibrantly tied – modern and expressive.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Remove any leaves that would sit in the water.",
+        "Keep the vase clean.",
+        "Cut the stems at an angle before placing them in water."
+      ],
+      "seo": {
+        "title": "Farbtänzer – Bouquet in Pink & Purple",
+        "description": "Roses and gerberas in pink and apricot with purple accents. A lively, modern bouquet – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Bouquet in pink and purple lying in a pale pink wrap",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Round bouquet of pink roses, gerberas and purple blooms in a cream vase",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer in a ribbed vase, front view"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Heart-Shaped Flower Box",
+      "tagline": "Roses in a red heart box",
+      "shortDescription": "Roses in a heart-shaped box – a declaration of love to put on display.",
+      "description": "The red, heart-shaped box holds roses in red, pink and white, arranged with other blooms and baby's breath. A gift for an anniversary, Valentine's Day or as a loving surprise.",
+      "flowers": [
+        "Roses",
+        "Baby's breath"
+      ],
+      "care": [
+        "Lightly moisten the roses.",
+        "Keep in a cool spot.",
+        "Protect from direct sunlight."
+      ],
+      "seo": {
+        "title": "Heart-Shaped Flower Box – Roses in a Heart Box",
+        "description": "Roses in red, pink and white in a red heart box. For anniversaries and Valentine's Day – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Red heart-shaped flower box with roses in red, pink and white and baby's breath"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Classic Flower Box",
+      "tagline": "Red roses in a round box",
+      "shortDescription": "Classic roses in a round box – simple and expressive.",
+      "description": "The Classic Flower Box fills a round box with closely set roses. Minimalist and timeless, it suits a birthday, a thank-you or special moments. Available in red and white.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Water the roses lightly and regularly.",
+        "Keep in a cool spot.",
+        "Protect from direct sunlight."
+      ],
+      "seo": {
+        "title": "Classic Flower Box – Roses in a Box",
+        "description": "Closely set roses in a round box, available in red and white. A simple gift – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Red roses in a round white box with a pink and gold rim",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Two red velvet round boxes with red roses on a white pedestal"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Potted Pink Anthurium",
+      "tagline": "Anthurium with pink flowers",
+      "shortDescription": "An anthurium with pale pink flowers – elegant and understated.",
+      "description": "With its delicate flowers and glossy green leaves, the pink anthurium brings colour into a room without feeling loud. It suits living spaces as well as the office.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Place in a bright spot, out of direct sunlight.",
+        "Water regularly and avoid waterlogging.",
+        "Mist the leaves with water now and then."
+      ],
+      "seo": {
+        "title": "Potted Pink Anthurium – Houseplant",
+        "description": "Anthurium with pale pink flowers and glossy leaves. An elegant houseplant as a gift – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Pink anthurium in a dusky pink ceramic pot on a wooden chest of drawers",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anthurium with pink flowers in a mauve pot next to candles"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Potted Red Anthurium",
+      "tagline": "Anthurium with red flowers",
+      "shortDescription": "An anthurium with vivid red flowers and a modern look.",
+      "description": "With their glossy flowers, red anthuriums add bold splashes of colour. As a decorative houseplant or a gift, it stays beautiful for a long time with good care.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Bright spot without direct sunlight.",
+        "Keep the soil evenly moist.",
+        "Avoid waterlogging."
+      ],
+      "seo": {
+        "title": "Potted Red Anthurium – Houseplant",
+        "description": "Anthurium with vivid red flowers in a pot. A decorative houseplant as a gift – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Red anthurium in a red ceramic pot on a wooden chest of drawers"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL Potted Red Anthurium",
+      "tagline": "Large anthurium with red flowers",
+      "shortDescription": "A large, lush anthurium with lots of red flowers.",
+      "description": "This red anthurium is over 80 cm tall and carries numerous red flowers above dense, glossy foliage. An expressive eye-catcher for the living room or office.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Place in a bright spot, out of direct sunlight.",
+        "Water regularly and avoid waterlogging.",
+        "Wipe dust off the leaves now and then."
+      ],
+      "seo": {
+        "title": "XXL Potted Red Anthurium",
+        "description": "Large anthurium with numerous red flowers in a pot. An eye-catcher for the living room or office – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Large anthurium with many red flowers in a red pot next to candles"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Potted Bromeliad",
+      "tagline": "Bromeliad with a red flower",
+      "shortDescription": "A bromeliad with a vivid red flower and a tropical feel.",
+      "description": "With its red flower rosette and slender green leaves, the bromeliad adds lively accents. A decorative houseplant for living spaces or workspaces and a special gift.",
+      "flowers": [
+        "Bromeliad"
+      ],
+      "care": [
+        "Place in a bright spot, out of direct sunlight.",
+        "Regularly pour water into the leaf funnel.",
+        "Keep the soil only slightly moist."
+      ],
+      "seo": {
+        "title": "Potted Bromeliad – Houseplant",
+        "description": "Bromeliad with a red flower in a pot: a tropical touch for the living room or office – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromeliad with a red flower in a red pot on a wooden chest of drawers"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Potted Rubber Plant",
+      "tagline": "Rubber plant with dark green leaves",
+      "shortDescription": "An easy-care rubber plant with glossy, dark green leaves.",
+      "description": "With its large, glossy leaves, the rubber plant looks modern and calm. It is easy to care for and suits homes and offices well.",
+      "flowers": [
+        "Rubber plant"
+      ],
+      "care": [
+        "Bright to partly shaded spot.",
+        "Water sparingly; it needs little water.",
+        "Dust the leaves now and then."
+      ],
+      "seo": {
+        "title": "Potted Rubber Plant – Easy-Care Houseplant",
+        "description": "Rubber plant with glossy, dark green leaves. An easy-care houseplant for home and office – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Rubber plant with dark green leaves in a red pot on a wooden chest of drawers"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Potted White Orchid",
+      "tagline": "Potted orchid in several colours",
+      "shortDescription": "A potted orchid – calm, refined and timeless.",
+      "description": "The orchid stands for elegance and calm. With its fine flower sprays, it is a stylish choice for homes, offices or as a gift. Available in purple, pink, yellow, white and blue.",
+      "flowers": [
+        "Orchid"
+      ],
+      "care": [
+        "Place in a bright spot, out of direct sunlight.",
+        "Water sparingly and avoid waterlogging.",
+        "Only remove spent flower spikes once they have dried out."
+      ],
+      "seo": {
+        "title": "Potted Orchid – in Five Colours",
+        "description": "Potted orchid in white, pink, yellow, purple or blue. An elegant houseplant as a gift – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "White orchid with a pink throat in a cream ceramic pot",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orchid with pale pink flowers in a cream ceramic pot",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Yellow orchid in a cream ceramic pot",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orchid with violet flowers in a pink pot",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orchid with blue flowers in a grey pot next to candles"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Red Funeral Bouquet",
+      "tagline": "Red roses, gerberas & carnations with fir greenery",
+      "shortDescription": "A red funeral bouquet as a sign of love and connection.",
+      "description": "The red funeral bouquet combines red roses, gerberas and carnations with yellow roses, baby's breath and fir greenery. A dignified gesture of remembrance that quietly expresses deep feelings. The selection may vary slightly depending on the season.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Carnations",
+        "Baby's breath"
+      ],
+      "care": [
+        "Keep in a cool spot, away from direct sunlight and radiators.",
+        "For arrangements, keep the floral foam moist."
+      ],
+      "seo": {
+        "title": "Red Funeral Bouquet – Roses & Gerberas",
+        "description": "Red funeral bouquet with roses, gerberas and carnations on fir greenery, in three sizes. A dignified farewell – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Funeral bouquet with red roses, gerberas and carnations, yellow roses and fir greenery on a stone pedestal"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Pink Funeral Bouquet",
+      "tagline": "Pink roses & violet blooms",
+      "shortDescription": "A funeral bouquet in soft pink tones with a comforting feel.",
+      "description": "Pink roses, violet and pink blooms and fir greenery give this funeral bouquet a soft, comforting feel. It stands for gratitude, closeness and loving memories – fitting for a quiet, personal farewell.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Keep in a cool spot, away from direct sunlight and radiators.",
+        "For arrangements, keep the floral foam moist."
+      ],
+      "seo": {
+        "title": "Pink Funeral Bouquet – Soft Pink Tones",
+        "description": "Funeral bouquet in soft pink tones with pink roses on fir greenery, in three sizes. For a quiet farewell – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Funeral bouquet with pink roses and violet blooms on fir greenery, with a white ribbon, on a stone pedestal"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Pastel Funeral Bouquet",
+      "tagline": "Lilies, roses & blue blooms in pastel",
+      "shortDescription": "A calm funeral bouquet in soft pastel tones.",
+      "description": "The pastel funeral bouquet combines pink lilies and roses with light blue, lilac and white blooms. The subtle shades convey comfort and sympathy. The flowers may vary with the season.",
+      "flowers": [
+        "Lilies",
+        "Roses"
+      ],
+      "care": [
+        "Keep in a cool spot, away from direct sunlight and radiators.",
+        "For arrangements, keep the floral foam moist."
+      ],
+      "seo": {
+        "title": "Pastel Funeral Bouquet – Calm Tones",
+        "description": "Pastel funeral bouquet with lilies, roses and light blue blooms, in three sizes. Understated and stylish – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Pastel funeral bouquet with pink lilies, roses and light blue blooms, with a black ribbon, on a stone pedestal"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Orange Funeral Bouquet",
+      "tagline": "Roses, gerberas & carnations in orange and yellow",
+      "shortDescription": "A funeral bouquet in warm orange tones that expresses appreciation.",
+      "description": "Roses, gerberas and carnations in orange, yellow and apricot come together with fir greenery in a warm funeral bouquet. It stands for gratitude and the memory of a fulfilled life, and is suitable for a viewing or a memorial service.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Carnations"
+      ],
+      "care": [
+        "Keep in a cool spot, away from direct sunlight and radiators.",
+        "For arrangements, keep the floral foam moist."
+      ],
+      "seo": {
+        "title": "Orange Funeral Bouquet – Warm Tones",
+        "description": "Funeral bouquet in orange and yellow with roses, gerberas and carnations, in three sizes. For a viewing or memorial – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Funeral bouquet with roses, gerberas and carnations in orange and yellow on fir greenery, on a stone pedestal"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "White Funeral Bouquet",
+      "tagline": "White lilies & chrysanthemums",
+      "shortDescription": "A classic funeral bouquet in white – simple and dignified.",
+      "description": "White lilies, chrysanthemums and small white blooms on fir greenery make this funeral bouquet simple and timeless. White stands for peace and farewell – fitting for formal funeral services or as a quiet sign of sympathy.",
+      "flowers": [
+        "Lilies",
+        "Chrysanthemums"
+      ],
+      "care": [
+        "Keep in a cool spot, away from direct sunlight and radiators.",
+        "For arrangements, keep the floral foam moist."
+      ],
+      "seo": {
+        "title": "White Funeral Bouquet – Lilies & Chrysanthemums",
+        "description": "Classic white funeral bouquet with lilies and chrysanthemums, in three sizes. Simple and dignified – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Funeral bouquet of white lilies, chrysanthemums and small white blooms on fir greenery, on a stone pedestal"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Yellow Funeral Bouquet",
+      "tagline": "Sunflowers, yellow roses & carnations",
+      "shortDescription": "A funeral bouquet in yellow for remembrance, hope and gratitude.",
+      "description": "Sunflowers, yellow roses and apricot carnations on fir greenery make this funeral bouquet bright and warm. It suits farewells that celebrate a life. The flowers depend on the season.",
+      "flowers": [
+        "Sunflowers",
+        "Roses",
+        "Carnations"
+      ],
+      "care": [
+        "Keep in a cool spot, away from direct sunlight and radiators.",
+        "For arrangements, keep the floral foam moist."
+      ],
+      "seo": {
+        "title": "Yellow Funeral Bouquet – Sunflowers & Roses",
+        "description": "Yellow funeral bouquet with sunflowers, roses and carnations, in three sizes. A bright farewell – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Funeral bouquet with sunflowers, yellow roses and apricot carnations on fir greenery, on a stone pedestal"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Colourful Funeral Wreath",
+      "tagline": "Gerberas, roses & blooms in bright colours",
+      "shortDescription": "A colourful funeral wreath to say goodbye to someone full of life.",
+      "description": "The colourful funeral wreath combines gerberas, roses and other blooms in yellow, orange, pink and white on a green base. A dignified yet colourful farewell, made by hand. If you have wishes for the design, just get in touch with us.",
+      "flowers": [
+        "Gerberas",
+        "Roses"
+      ],
+      "care": [
+        "Keep in a cool, shady spot.",
+        "Lightly moisten the floral foam as needed."
+      ],
+      "seo": {
+        "title": "Colourful Funeral Wreath – a Vibrant Farewell",
+        "description": "Colourful funeral wreath with gerberas and roses, made by hand. A vibrant farewell – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Colourful funeral wreath with gerberas, lilies and white blooms, with a black ribbon, on a wooden easel"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Pink Funeral Wreath",
+      "tagline": "Gerberas & roses in pink and red",
+      "shortDescription": "A funeral wreath in pink and red as a loving farewell.",
+      "description": "The funeral wreath in pink and red combines pink gerberas, roses and other blooms with pale accents and fresh greenery. An expression of love and remembrance, made by hand. If you have wishes for the design, just get in touch with us.",
+      "flowers": [
+        "Gerberas",
+        "Roses"
+      ],
+      "care": [
+        "Keep in a cool, shady spot.",
+        "Lightly moisten the floral foam as needed."
+      ],
+      "seo": {
+        "title": "Pink Funeral Wreath – Pink & Red",
+        "description": "Funeral wreath in pink and red with gerberas and roses, made by hand. A loving farewell – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Funeral wreath with pink gerberas, roses and red blooms, with a burgundy ribbon, on a wooden easel"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Red & Yellow Funeral Wreath",
+      "tagline": "Red and yellow gerberas",
+      "shortDescription": "A radiant funeral wreath in red and yellow.",
+      "description": "Red and yellow gerberas, densely arranged on a green base, make this funeral wreath a radiant farewell full of warmth, gratitude and fond memories. Made by hand. If you have wishes for the design, just get in touch with us.",
+      "flowers": [
+        "Gerberas"
+      ],
+      "care": [
+        "Keep in a cool, shady spot.",
+        "Lightly moisten the floral foam as needed."
+      ],
+      "seo": {
+        "title": "Red & Yellow Funeral Wreath – Gerberas",
+        "description": "Funeral wreath of red and yellow gerberas, made by hand. A warm, radiant farewell – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Funeral wreath of red and yellow gerberas with a silver-grey ribbon on a wooden easel"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Red Funeral Wreath",
+      "tagline": "Red gerberas & roses",
+      "shortDescription": "A classic funeral wreath in red for a love that remains.",
+      "description": "The red funeral wreath combines red gerberas and roses on fir greenery. A classic, dignified farewell for a love that lasts beyond goodbye. Made by hand. If you have wishes for the design, just get in touch with us.",
+      "flowers": [
+        "Gerberas",
+        "Roses"
+      ],
+      "care": [
+        "Keep in a cool, shady spot.",
+        "Lightly moisten the floral foam as needed."
+      ],
+      "seo": {
+        "title": "Red Funeral Wreath – Gerberas & Roses",
+        "description": "Red funeral wreath with gerberas and roses on fir greenery, made by hand. A classic farewell – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Funeral wreath of red gerberas and roses on fir greenery with a black ribbon on a wooden easel"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "White Funeral Wreath",
+      "tagline": "White roses, gerberas & carnations",
+      "shortDescription": "A simple funeral wreath in white for quiet sympathy.",
+      "description": "White roses, gerberas and carnations with light green accents and greenery make up this simple wreath. White stands for peace and quiet sympathy. Made by hand. If you have wishes for the design, just get in touch with us.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Carnations"
+      ],
+      "care": [
+        "Keep in a cool, shady spot.",
+        "Lightly moisten the floral foam as needed."
+      ],
+      "seo": {
+        "title": "White Funeral Wreath – Simple & Dignified",
+        "description": "White funeral wreath with roses, gerberas and carnations, made by hand. A simple farewell – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Ring-shaped funeral wreath of white roses, gerberas and carnations with a white ribbon on a wooden easel"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Advent Wreaths",
+      "tagline": "Fir greenery with four candles, in seven colours",
+      "shortDescription": "A hand-tied Advent wreath of fir greenery with four candles.",
+      "description": "The Advent wreath is hand-tied from fragrant fir greenery and decorated with four candles, ribbons, baubles, pine cones and other details. Available in red, grey, purple, gold, beige, wine red and pink.",
+      "flowers": [],
+      "care": [
+        "Never leave burning candles unattended.",
+        "Keep in a cool spot, not directly next to a radiator.",
+        "Lightly mist the fir greenery with water now and then."
+      ],
+      "seo": {
+        "title": "Advent Wreath – Hand-Tied with Candles",
+        "description": "Hand-tied Advent wreath of fir greenery with four candles, in seven colours and four sizes – flower delivery in Vienna, Austria."
+      },
+      "sizes": {
+        "s": {
+          "label": "Small"
+        },
+        "m": {
+          "label": "Medium"
+        },
+        "l": {
+          "label": "Large"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Red",
+        "grau": "Grey",
+        "lila": "Purple",
+        "gold": "Gold",
+        "beige": "Beige",
+        "weinrot": "Wine red",
+        "rosa": "Pink"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Advent wreath of fir greenery with four red candles, red ribbons, baubles and pine cones",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Advent wreath with four light grey candles, cream ribbons and orange slices",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Advent wreath with purple and pink candles, violet ribbons and an angel figure",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Advent wreath with four gold candles, gold ribbons, cinnamon sticks and pine cones",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Advent wreath with four pink candles, burgundy ribbons and an angel figure",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Advent wreath with four wine-red candles, baubles and wine-red ribbons",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Advent wreath with four dark grey candles, cream ribbons and red baubles",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Gold Advent wreath with gold candles and ribbons, side view",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Pink Advent wreath with pink candles and burgundy ribbons, side view"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "All flowers",
+      "headline": "Order flowers online",
+      "intro": "Hand-tied bouquets for all of Vienna. Choose your bouquet and pick the delivery date.",
+      "seo": {
+        "title": "Order Flowers Online for Delivery in Vienna, Austria",
+        "description": "Order flowers online for delivery in Vienna, Austria. Hand-tied bouquets delivered on the date you choose – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Roses",
+      "headline": "Rose bouquets",
+      "intro": "Roses in red, pink or white, in several sizes. Hand-tied and delivered in Vienna.",
+      "seo": {
+        "title": "Order Rose Bouquets Online – Roses in Vienna",
+        "description": "All our rose bouquets at a glance: red, pink and white roses in several sizes. Hand-tied and delivered in Vienna, Austria, on the date you choose."
+      }
+    },
+    "saisonal": {
+      "name": "Seasonal flowers",
+      "headline": "Seasonal flowers",
+      "intro": "Bouquets that suit the season. The selection changes throughout the year.",
+      "seo": {
+        "title": "Seasonal Bouquet Delivery in Vienna, Austria",
+        "description": "Seasonal bouquets to suit the time of year. Hand-tied and delivered in Vienna, Austria."
+      }
+    },
+    "pastell": {
+      "name": "Pastel",
+      "headline": "Pastel bouquets",
+      "intro": "Blush, cream, lilac: soft colours for tender moments.",
+      "seo": {
+        "title": "Pastel Flower Delivery in Vienna, Austria",
+        "description": "Bouquets in soft pastel shades delivered in Vienna, Austria – freshly tied, on the date you choose."
+      }
+    },
+    "bunt": {
+      "name": "Colourful",
+      "headline": "Colourful bouquets",
+      "intro": "Colour that brings joy. For birthdays, surprises and good moods.",
+      "seo": {
+        "title": "Colourful Bouquet Delivery in Vienna, Austria",
+        "description": "Colourful, cheerful bouquets delivered in Vienna, Austria – freshly tied, on the date you choose."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegant & white",
+      "headline": "Elegant & white",
+      "intro": "White, cream and green. Bouquets that look calm and refined in any room.",
+      "seo": {
+        "title": "Elegant White Flower Delivery in Vienna, Austria",
+        "description": "White and cream bouquets delivered in Vienna, Austria – elegant, freshly tied, on the date you choose."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Premium bouquets",
+      "intro": "Generous bouquets for special moments.",
+      "seo": {
+        "title": "Premium Bouquet Delivery in Vienna, Austria",
+        "description": "Premium bouquets for special occasions delivered in Vienna, Austria – hand-tied, on the date you choose."
+      }
+    },
+    "unter-40": {
+      "name": "Under €40",
+      "headline": "Flowers under €40",
+      "intro": "Small bouquets with a big impact – all under 40 euros.",
+      "seo": {
+        "title": "Flowers Under €40 – Delivery in Vienna, Austria",
+        "description": "Affordable bouquets under €40 delivered in Vienna, Austria – freshly tied, on the date you choose."
+      }
+    },
+    "bestseller": {
+      "name": "Favourites",
+      "headline": "Our favourite bouquets",
+      "intro": "Bouquets we especially love to recommend.",
+      "seo": {
+        "title": "Our Favourite Bouquets – Picks for Vienna, Austria",
+        "description": "Bouquets we especially love to recommend – hand-tied and delivered in Vienna, Austria."
+      }
+    },
+    "neu": {
+      "name": "New",
+      "headline": "New at Blumora",
+      "intro": "Fresh in our range.",
+      "seo": {
+        "title": "New Bouquets for Vienna, Austria",
+        "description": "New bouquets in our range – freshly tied and delivered in Vienna, Austria."
+      }
+    },
+    "blumenboxen": {
+      "name": "Flower boxes",
+      "headline": "Flower boxes",
+      "intro": "Roses arranged in a box – a gift that needs no vase.",
+      "seo": {
+        "title": "Flower Box Delivery in Vienna, Austria",
+        "description": "Roses in a flower box – heart-shaped or classic. Flower delivery in Vienna, Austria, on the date you choose."
+      }
+    },
+    "pflanzen": {
+      "name": "Plants",
+      "headline": "Potted plants",
+      "intro": "Orchids, anthuriums and green plants – flowers that stay.",
+      "seo": {
+        "title": "Potted Plant Delivery in Vienna, Austria",
+        "description": "Potted orchids, anthuriums and houseplants as gifts. Flower delivery in Vienna, Austria."
+      }
+    },
+    "trauer": {
+      "name": "Funeral flowers",
+      "headline": "Funeral flowers",
+      "intro": "Funeral wreaths and funeral bouquets, made with dignity for a last farewell.",
+      "seo": {
+        "title": "Funeral Wreaths & Bouquets in Vienna, Austria",
+        "description": "Funeral wreaths and funeral bouquets for funerals and memorial services – delivered in Vienna, Austria."
+      }
+    },
+    "advent": {
+      "name": "Advent wreaths",
+      "headline": "Advent wreaths",
+      "intro": "Fir greenery, candles and decorations – hand-tied for the Advent season.",
+      "seo": {
+        "title": "Advent Wreath Delivery in Vienna, Austria",
+        "description": "Hand-tied Advent wreaths in several colours and sizes – delivered in Vienna, Austria."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Birthday",
+      "headline": "Birthday flowers",
+      "intro": "A bouquet that says: I was thinking of you. Choose your flowers and delivery date.",
+      "imageAlt": "Colourful bouquet with red roses, gerberas and yellow blooms in a red wrap",
+      "seo": {
+        "title": "Birthday Flowers – Birthday Bouquets for Vienna",
+        "description": "Birthday bouquets: colourful, cheerful or elegant. Hand-tied and delivered in Vienna, Austria – on the date you choose."
+      }
+    },
+    "liebe": {
+      "name": "Love & romance",
+      "headline": "Flowers for love",
+      "intro": "Red roses or something else entirely: flowers that say what you mean.",
+      "imageAlt": "Bouquet of deep red roses in a grey wrap with a red ribbon",
+      "seo": {
+        "title": "Romantic Flower Delivery in Vienna, Austria",
+        "description": "Roses and romantic bouquets delivered in Vienna, Austria – freshly tied, on the date you choose."
+      }
+    },
+    "danke": {
+      "name": "Thank you",
+      "headline": "Flowers to say thank you",
+      "intro": "For help, for time, for simply everything. A bouquet says it without many words.",
+      "imageAlt": "Bouquet of yellow gerberas and white roses with a yellow ribbon",
+      "seo": {
+        "title": "Thank You Flower Delivery in Vienna, Austria",
+        "description": "Say thank you with flowers: freshly tied bouquets delivered in Vienna, Austria – on the date you choose."
+      }
+    },
+    "gute-besserung": {
+      "name": "Get well soon",
+      "headline": "Get well soon flowers",
+      "intro": "Soft colours, calm shapes and a little greeting that does you good.",
+      "imageAlt": "Sunny bouquet in orange and yellow in a pale wrap",
+      "seo": {
+        "title": "Get Well Soon Flower Delivery in Vienna, Austria",
+        "description": "Get well soon flowers delivered in Vienna, Austria – gentle bouquets, freshly tied, on the date you choose."
+      }
+    },
+    "jahrestag": {
+      "name": "Anniversary",
+      "headline": "Anniversary flowers",
+      "intro": "For the day it all began. And for all the days that followed.",
+      "imageAlt": "Bouquet of red and white roses in a white wrap",
+      "seo": {
+        "title": "Anniversary Flower Delivery in Vienna, Austria",
+        "description": "Elegant anniversary bouquets delivered in Vienna, Austria – freshly tied, on the date you choose."
+      }
+    },
+    "geburt": {
+      "name": "New baby",
+      "headline": "Flowers for a new baby",
+      "intro": "Welcome, little one. Delicate flowers for a big moment.",
+      "imageAlt": "Delicate bouquet of roses in pink and lilac with baby's breath",
+      "seo": {
+        "title": "New Baby Flower Delivery in Vienna, Austria",
+        "description": "Delicate pastel bouquets for a new baby delivered in Vienna, Austria – freshly tied, on the date you choose."
+      }
+    },
+    "hochzeit": {
+      "name": "Wedding",
+      "headline": "Wedding flowers",
+      "intro": "For the happy couple or simply to say congratulations: elegant, bright and festive.",
+      "imageAlt": "Bouquet of white roses in a white wrap in a vase",
+      "seo": {
+        "title": "Wedding Flower Delivery in Vienna, Austria",
+        "description": "Elegant wedding flowers delivered in Vienna, Austria – as congratulations or a gift, freshly tied."
+      }
+    },
+    "einfach-so": {
+      "name": "Just because",
+      "headline": "Flowers just because",
+      "intro": "No occasion. Just the thought. Sometimes that's the best reason.",
+      "imageAlt": "Yellow tulips in a glass vase by the window",
+      "seo": {
+        "title": "Send Flowers Just Because – Vienna, Austria",
+        "description": "Send flowers for no reason: small and large bouquets delivered in Vienna, Austria – freshly tied, on the date you choose."
+      }
+    },
+    "trauer": {
+      "name": "Sympathy",
+      "headline": "Sympathy flowers",
+      "intro": "Condolences in calm colours. Wreaths, funeral bouquets and bouquets, hand-tied and delivered in Vienna.",
+      "imageAlt": "White funeral wreath with a white ribbon on a wooden easel",
+      "seo": {
+        "title": "Sympathy Flower Delivery in Vienna, Austria",
+        "description": "Sympathy flowers delivered in Vienna, Austria – wreaths, funeral bouquets and calm bouquets, hand-tied, on the date you choose."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Scented candle",
+      "description": "Decorative scented candles in gift packaging, in various shapes and colours.",
+      "imageAlt": "Heart-shaped and round scented candles in clear gift boxes"
+    },
+    "x-teddy": {
+      "name": "Teddy bear",
+      "description": "Plush bear with a red heart – the loving addition to your bouquet.",
+      "imageAlt": "Light brown plush bear with a red heart"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Where do you deliver?",
+      "answer": "We deliver to all 23 districts of Vienna. Depending on the district, delivery is free or costs €3.99 or €7.99. Just enter the postcode of the recipient's address – you'll see straight away whether and when we can deliver and what delivery costs.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Can I still have flowers delivered today?",
+      "answer": "Yes – if you order Monday to Saturday by 6:30 pm or on Sundays by 5:45 pm, we deliver the same day anywhere in Vienna, as long as a time slot is still available. You'll see the earliest delivery time for your address as soon as you enter the postcode.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Can I choose a specific delivery date?",
+      "answer": "Yes. On every product page and at checkout, you choose your preferred date in the calendar. Days on which we don't deliver are greyed out.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Can I choose a preferred time?",
+      "answer": "Yes. In Vienna, you choose a one-hour time slot between 9 am and 10 pm at checkout – on all seven days of the week.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "What happens if nobody is home?",
+      "answer": "The courier hands the flowers over in person. If nobody is there, they will be left with a neighbour where possible. At checkout, you can add a note for the delivery, for example a door code. We'll keep you updated on the status of your order by email.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Can I send flowers anonymously?",
+      "answer": "Yes. Without a greeting card, your name doesn't appear anywhere on the bouquet, and the invoice goes only to you. Greeting cards with a personal message are coming soon.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Can I add a greeting card?",
+      "answer": "Not yet – greeting cards are coming soon. Until then, the bouquet is delivered without a card.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Do the flowers look exactly like the photo?",
+      "answer": "Every bouquet is tied individually, and flowers are natural products. Colours, varieties and bloom size may vary slightly depending on the season. The style and colour palette stay the same.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "How do the flowers stay fresh?",
+      "answer": "Every bouquet is freshly tied for your order and delivered directly by courier. To make it last as long as possible: cut the stems at an angle, add fresh water and keep the bouquet in a cool spot out of direct sunlight.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "What payment options are there?",
+      "answer": "You'll see the available payment methods in the last step of your order. Payment is processed securely by a payment provider – your card details never reach us.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Can I change my order?",
+      "answer": "As long as the bouquet hasn't been tied yet, we can usually still change the delivery date or address. Write to us as soon as possible with your order number.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Can I send flowers to companies or hotels?",
+      "answer": "Yes. At checkout, enter the company or hotel name and – if known – the department or room number. Delivery is made to the reception desk.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Flowers for special moments.",
+      "intro": "Blumora is an online flower delivery service from Vienna. Every bouquet is hand-tied in a Viennese florist's shop and delivered directly by courier.",
+      "seo": {
+        "title": "About Us – Flower Delivery from Vienna, Austria",
+        "description": "Blumora is an online flower delivery service from Vienna, Austria: bouquets hand-tied and delivered by courier to all 23 districts."
+      },
+      "sections": [
+        {
+          "heading": "How we work",
+          "paragraphs": [
+            "Blumora is a Viennese online flower delivery service. You choose your bouquet with us – it is tied by a florist in Vienna we work with on a permanent basis. There, every bouquet is made by hand, for your order.",
+            "Greeting cards with your own message are coming soon."
+          ],
+          "imageAlt": "Bouquet of roses, dahlias, hydrangeas and tulips on the windowsill of an old Viennese building, with St. Stephen's Cathedral in the evening light behind it"
+        },
+        {
+          "heading": "The delivery",
+          "paragraphs": [
+            "A courier picks up your bouquet directly from the florist and brings it to the recipient's address without any stops in between. We deliver to all 23 districts of Vienna – in the time slot of your choice: morning, afternoon or evening until 10 pm."
+          ],
+          "imageAlt": "Pure Liebe bouquet in a glass vase"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Delivery & shipping",
+      "intro": "We deliver to all 23 districts of Vienna. Delivery costs (free, €3.99 or €7.99), delivery days and time slots depend on the recipient's address – enter the postcode and you'll see everything at a glance.",
+      "seo": {
+        "title": "Delivery – Flower Delivery in Vienna, Austria",
+        "description": "Delivery areas, delivery costs, delivery days and time slots for flower deliveries in Vienna, Austria."
+      },
+      "sections": [
+        {
+          "heading": "How delivery works",
+          "paragraphs": [
+            "Your bouquet is freshly tied for your order. A courier picks it up directly from the florist and brings it to the recipient's address without any stops in between – in the time slot you chose. If nobody is there, the bouquet will be left with a neighbour where possible.",
+            "For every order, you receive a confirmation by email and a link to track its status."
+          ]
+        },
+        {
+          "heading": "Delivery to companies, hotels and hospitals",
+          "paragraphs": [
+            "At checkout, enter the company or hotel name as well as the department, ward or room number. We deliver to the reception desk. Please note that some institutions do not allow flowers on wards."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Contact",
+      "intro": "Questions about an order, a delivery date or a special request? We're here for you.",
+      "seo": {
+        "title": "Contact – Blumora Vienna, Austria",
+        "description": "Contact Blumora with questions about your order, delivery or special requests."
+      },
+      "sections": [
+        {
+          "heading": "How to reach us",
+          "paragraphs": [
+            "[Placeholder: email, phone and opening hours are taken from the settings and must be added there.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Flower delivery Vienna",
+      "headline": "Flowers that say more.",
+      "subheadline": "Freshly tied flowers for the people who matter to you. Simply choose, pick your date and have joy delivered.",
+      "primaryCta": {
+        "label": "Discover flowers"
+      },
+      "secondaryCta": {
+        "label": "Shop by occasion"
+      },
+      "imageAlt": "A woman in a camel coat carries a large bouquet of roses, ranunculus, dahlias and tulips along a cobbled Viennese street, with a tram passing behind her",
+      "deliveryCheck": {
+        "title": "Where shall we deliver?",
+        "placeholder": "Enter postcode",
+        "button": "Check delivery"
+      }
+    },
+    "occasions": {
+      "headline": "Flowers for every moment",
+      "subheadline": "Sometimes it doesn't take a big occasion. Just the right gesture."
+    },
+    "bestsellers": {
+      "headline": "Our favourite bouquets",
+      "subheadline": "A selection from our range."
+    },
+    "collections": {
+      "headline": "Find your perfect bouquet",
+      "subheadline": "By colour, style or budget."
+    },
+    "howItWorks": {
+      "headline": "Giving joy has never been so easy.",
+      "steps": [
+        {
+          "title": "Choose your favourite bouquet",
+          "text": "Discover flowers for every taste and occasion."
+        },
+        {
+          "title": "Make it personal",
+          "text": "Choose a size and little extras."
+        },
+        {
+          "title": "Pick a delivery date",
+          "text": "Decide when your surprise should arrive."
+        },
+        {
+          "title": "Have joy delivered",
+          "text": "We'll take care of the rest."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Advent season",
+      "headline": "Soon the first candle will be lit.",
+      "text": "Advent wreaths with fir greenery, candles and decorations – in several colours and sizes. Plus bouquets in warm autumn tones.",
+      "cta": {
+        "label": "Advent wreaths"
+      },
+      "imageAlt": "Advent wreath of fir greenery with four red candles on a wooden chest of drawers"
+    },
+    "editorial": {
+      "eyebrow": "Craftsmanship",
+      "headline": "Made by florists. Not on a production line.",
+      "text": "Every bouquet is hand-tied for your order by a Viennese florist and delivered directly by courier – with no detour via a warehouse.",
+      "cta": {
+        "label": "How we work"
+      },
+      "imageAlt": "A courier hands over a colourful bouquet of roses, dahlias and ranunculus at the door of an old Viennese building"
+    },
+    "extras": {
+      "headline": "Make your surprise complete.",
+      "subheadline": "Little extras that make the moment bigger."
+    },
+    "subscription": {
+      "headline": "More flowers in everyday life.",
+      "text": "Fresh seasonal bouquets – weekly, fortnightly or monthly. For your home, office, reception or restaurant.",
+      "cta": {
+        "label": "Discover flower subscriptions"
+      }
+    },
+    "reviews": {
+      "headline": "Moments that arrived.",
+      "subheadline": "What customers say about their order."
+    },
+    "gallery": {
+      "headline": "Flowers for special moments.",
+      "images": [
+        {
+          "alt": "Colourful rose bouquet in red, pink, cream and apricot in a white vase"
+        },
+        {
+          "alt": "Bouquet of vivid blue roses in a white vase"
+        },
+        {
+          "alt": "Bouquet in bold pink tones with gerberas in a vase by the window"
+        },
+        {
+          "alt": "Exotic bouquet with bird of paradise flowers, lilies and gerberas"
+        },
+        {
+          "alt": "Heart-shaped red flower box with roses on a chest of drawers"
+        },
+        {
+          "alt": "Bouquet of roses in pastel and pink in a pink wrap"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Good to know"
+    },
+    "newsletter": {
+      "headline": "A few more flowers in your inbox.",
+      "text": "New arrivals, seasonal collections and special offers.",
+      "placeholder": "Your email address",
+      "button": "Sign up",
+      "note": "You can unsubscribe at any time. You'll find information on data protection in our privacy policy."
+    }
+  },
+  "settings": {
+    "claim": "Flowers that say more.",
+    "seo": {
+      "defaultTitle": "Blumora – Flower Delivery in Vienna, Austria",
+      "defaultDescription": "Freshly tied flowers delivered straight to the people who matter to you. Choose your date, send joy – flower delivery in Vienna, Austria."
+    },
+    "announcement": {
+      "messages": [
+        "Flower delivery across Vienna",
+        "Freshly tied, delivered by courier",
+        "Choose your delivery date"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Freshly tied",
+        "text": "Hand-tied for your order"
+      },
+      {
+        "title": "Delivery by courier",
+        "text": "To all 23 districts of Vienna"
+      },
+      {
+        "title": "Choose your date",
+        "text": "You decide the day"
+      },
+      {
+        "title": "Greeting cards",
+        "text": "Coming soon"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Order received",
+        "description": "We have received your order."
+      },
+      "paid": {
+        "label": "Payment confirmed",
+        "description": "We have received your payment."
+      },
+      "preparing": {
+        "label": "Being prepared",
+        "description": "The flowers for your bouquet are being selected."
+      },
+      "arranging": {
+        "label": "Bouquet being tied",
+        "description": "Your bouquet is being tied by hand."
+      },
+      "ready": {
+        "label": "Ready for delivery",
+        "description": "The bouquet is ready and will be collected by the courier."
+      },
+      "in_transit": {
+        "label": "Out for delivery",
+        "description": "Your bouquet is on its way."
+      },
+      "delivered": {
+        "label": "Delivered",
+        "description": "The flowers have arrived."
+      },
+      "undeliverable": {
+        "label": "Could not be delivered",
+        "description": "We were unable to deliver and will get in touch with you."
+      },
+      "cancelled": {
+        "label": "Cancelled",
+        "description": "The order has been cancelled."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Credit card",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Online bank transfer (eps)"
+    },
+    "headerCta": "Send flowers",
+    "address": {
+      "city": "Vienna",
+      "country": "Austria"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Vienna Zone 1",
+      "windows": {
+        "h09": "9–10 am",
+        "h10": "10–11 am",
+        "h11": "11 am–12 pm",
+        "h12": "12–1 pm",
+        "h13": "1–2 pm",
+        "h14": "2–3 pm",
+        "h15": "3–4 pm",
+        "h16": "4–5 pm",
+        "h17": "5–6 pm",
+        "h18": "6–7 pm",
+        "h19": "7–8 pm",
+        "h20": "8–9 pm",
+        "h21": "9–10 pm"
+      }
+    },
+    "wien-mitte": {
+      "name": "Vienna Zone 2",
+      "windows": {
+        "h09": "9–10 am",
+        "h10": "10–11 am",
+        "h11": "11 am–12 pm",
+        "h12": "12–1 pm",
+        "h13": "1–2 pm",
+        "h14": "2–3 pm",
+        "h15": "3–4 pm",
+        "h16": "4–5 pm",
+        "h17": "5–6 pm",
+        "h18": "6–7 pm",
+        "h19": "7–8 pm",
+        "h20": "8–9 pm",
+        "h21": "9–10 pm"
+      }
+    },
+    "wien-fern": {
+      "name": "Vienna Zone 3",
+      "windows": {
+        "h09": "9–10 am",
+        "h10": "10–11 am",
+        "h11": "11 am–12 pm",
+        "h12": "12–1 pm",
+        "h13": "1–2 pm",
+        "h14": "2–3 pm",
+        "h15": "3–4 pm",
+        "h16": "4–5 pm",
+        "h17": "5–6 pm",
+        "h18": "6–7 pm",
+        "h19": "7–8 pm",
+        "h20": "8–9 pm",
+        "h21": "9–10 pm"
+      }
+    },
+    "noe-umland": {
+      "name": "Greater Vienna area (Lower Austria)",
+      "note": "Delivery to the area around Vienna on Tuesdays, Thursdays and Saturdays.",
+      "windows": {
+        "day": "9 am–6 pm"
+      }
+    }
+  }
+}

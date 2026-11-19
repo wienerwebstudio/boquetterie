@@ -8,7 +8,11 @@ import type { Locale } from "@/i18n/config";
 
 export type { Messages };
 
-type DeepPartial<T> = { [K in keyof T]?: T[K] extends string ? string : DeepPartial<T[K]> };
+/** Plural objects `{ one, other }` may carry the extra forms other languages need. */
+type PluralForms = { zero?: string; one?: string; two?: string; few?: string; many?: string; other?: string };
+type DeepPartial<T> = {
+  [K in keyof T]?: T[K] extends string ? string : T[K] extends { one: string; other: string } ? PluralForms : DeepPartial<T[K]>;
+};
 export type PartialMessages = DeepPartial<Messages>;
 
 const loaders: Record<Exclude<Locale, "de">, () => Promise<{ default: PartialMessages }>> = {

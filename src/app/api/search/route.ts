@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { getCategoriesIn, getOccasionsIn, getProductsIn } from "@/lib/cms-localized";
 import { isLocale } from "@/i18n/config";
+import { searchIn } from "@/lib/search-localized";
 
-import { primaryImage, search, sortProducts } from "@/lib/catalog";
+import { primaryImage, sortProducts } from "@/lib/catalog";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import type { Product } from "@/types";
 
@@ -59,7 +60,7 @@ export async function GET(req: Request) {
     return NextResponse.json(body, { headers: { "Cache-Control": "no-store" } });
   }
 
-  const result = search(q, products, occasions, categories, limit);
+  const result = await searchIn(locale, q, limit);
   const body: SearchResponse = {
     query: q,
     products: result.products.map(hit),

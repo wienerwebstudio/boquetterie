@@ -1,6 +1,191 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** hu – product (translated from src/i18n/messages/de/product.ts). */
-const product: NonNullable<PartialMessages["product"]> = {};
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "A termék nem található",
+  priceFrom: "kezdőár",
+
+  size: {
+    title: "Válassz méretet",
+    recommended: "Ajánlott",
+    soldOut: "Elfogyott",
+  },
+
+  color: {
+    title: "Válassz színt",
+    required: "(kötelező)",
+    notChosen: "Még nincs kiválasztva",
+    error: "Kérjük, válassz színt.",
+  },
+
+  delivery: {
+    title: "Mikor érkezzenek a virágok?",
+    formLabel: "Kiszállítási ellenőrzés",
+    postalCodeLabel: "A címzett irányítószáma",
+    postalCodePlaceholder: "A címzett irányítószáma",
+    check: "Ellenőrzés",
+    prompt: "Add meg az irányítószámot a kiszállítási dátum kiválasztásához",
+    notAvailable: "Ide ({plz}) sajnos még nem szállítunk ki.",
+    notAvailableHint: "Az összes jelenlegi területet itt találod: {link}. Másik címzett címhez egyszerűen adj meg egy új irányítószámot.",
+    deliveryLink: "Kiszállítás és szállítás",
+    available: "Erre a címre kiszállítunk.",
+    fee: "Kiszállítás ide: {plz} {region}: {fee}",
+    free: "ingyenes",
+    freeFrom: "ingyenes {price}-tól",
+    dateGroup: "Kiszállítás dátuma",
+    today: "Ma",
+    orderUntil: "rendelj {time}-ig",
+    tomorrow: "Holnap",
+    chooseDate: "Dátum kiválasztása",
+    openCalendar: "Naptár megnyitása",
+    deliveryOn: "Kiszállítás: {date}",
+    todaySuffix: "· ma",
+    noDays: "Jelenleg nincsenek elérhető kiszállítási napok.",
+  },
+
+  calendar: {
+    previousMonth: "Előző hónap",
+    nextMonth: "Következő hónap",
+    weekdays: {
+      mon: { short: "H", long: "hétfő" },
+      tue: { short: "K", long: "kedd" },
+      wed: { short: "Sze", long: "szerda" },
+      thu: { short: "Cs", long: "csütörtök" },
+      fri: { short: "P", long: "péntek" },
+      sat: { short: "Szo", long: "szombat" },
+      sun: { short: "V", long: "vasárnap" },
+    },
+    daySameDay: "{date}, még ma kiszállítható",
+    dayAvailable: "{date}, kiszállítható",
+    dayUnavailable: "{date}, nem szállítható ki",
+    legendSameDay: "Még ma kiszállítható",
+    legendToday: "Ma",
+    legendUnavailable: "A szürkével jelölt napokon nincs kiszállítás.",
+  },
+
+  card: {
+    unavailableTitle: "Személyes üdvözlőkártya",
+    unavailableText: "A csokrodat egyelőre kártya nélkül szállítjuk ki.",
+    comingSoon: "Hamarosan!",
+    addMessage: "Személyes üzenet hozzáadása",
+    included: "Üdvözlőkártyával együtt",
+    handwritten: "Kézzel írt üdvözlőkártya",
+    saved: "Üzenet elmentve",
+    messageLabel: "Az üzeneted",
+    messagePlaceholder: "Boldog születésnapot …",
+    maxChars: "Legfeljebb {max} karakter.",
+    senderGroup: "Feladó",
+    showSender: "Feladó feltüntetése",
+    anonymous: "Küldés név nélkül",
+    senderName: "A neved",
+    optional: "(nem kötelező)",
+    senderPlaceholder: "pl. Anna",
+  },
+
+  extras: {
+    title: "Még valamit hozzá?",
+    deliveredTogether: "Együtt szállítjuk ki",
+    addLabel: "{name} hozzáadása {price} áron",
+    add: "Hozzáadás",
+    quantity: "{name} mennyisége",
+    less: "{name}: eggyel kevesebb",
+    more: "{name}: eggyel több",
+  },
+
+  floristNote: {
+    title: "Kívánságok a virágkötőinknek",
+    optional: "(nem kötelező)",
+    hint: "Apró változtatások a csokron, pl. „sárga helyett inkább fehér rózsát kérek”. Megvalósítjuk, ha a virágok elérhetők. A kiszállításra vonatkozó megjegyzéseket a pénztárban adhatod meg.",
+    placeholder: "A kívánságod a virágkötészetnek",
+  },
+
+  cta: {
+    total: "Összesen",
+    comingSoon: "Hamarosan rendelhető",
+    unavailable: "Jelenleg nem elérhető",
+    addToCart: "Kosárba",
+    fresh: "Frissen kötve",
+    cardIncluded: "Üdvözlőkártyával együtt",
+    securePayment: "Biztonságos fizetés",
+    added: "{name} ({options}) a kosárba került.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Elölnézet",
+      detail: "Részlet",
+      size: "Méretösszehasonlítás",
+      packaging: "Csomagolás",
+      lifestyle: "Hangulat",
+    },
+    status: "{index}. kép / {total}: {alt}",
+    carousel: "Képkarusszel",
+    imagesOf: "Képek: {name}",
+    slide: "Kép",
+    slideOf: "{index} / {total}",
+    choose: "Kép kiválasztása",
+    show: "{label} megjelenítése",
+    thumb: "{label}: {alt}",
+    previous: "Előző kép",
+    next: "Következő kép",
+    colorAlt: "{name}, szín: {color}",
+    colorLabel: "Szín: {color}",
+    sizeAlt: "{name}, méret: {size}",
+    sizeDetailAlt: "{name}, méret: {size}, közeli kép",
+    sizeLabel: "Méret: {size}",
+    sizeDetailLabel: "Méret: {size} · közeli kép",
+  },
+
+  details: {
+    eyebrow: "Jó tudni",
+    title: "Minden, amit tudni érdemes: {name}",
+    description: "Leírás",
+    plant: "Növény",
+    flowers: "Felhasznált virágok",
+    care: "Ápolási tudnivalók",
+    delivery: "Kiszállítás",
+    deliveryText: "A virágaid egy bécsi virágkötészetből érkeznek, amellyel állandó partnerségben dolgozunk. A csokrokat ott kézzel kötik meg a rendelésedhez. Egy futár átveszi őket, és megállás nélkül viszi a címzett címére.",
+    deliveryAreas: "Bécs mind a 23 kerületébe kiszállítunk. A kiszállítási díj a kerülettől függ, és az irányítószám megadása után jelenik meg. A kiszállítási területeket, idősávokat és rendelési határidőket itt találod: {link}.",
+    deliveryLink: "Kiszállítás és szállítás",
+    looksPlant: "Pontosan így néz ki a növény?",
+    looksBouquet: "Pontosan így néz ki a csokor?",
+    looksOther: "Pontosan úgy néz ki, mint a fotón?",
+    naturalPlant: "Majdnem. A növények természetes termékek: a növekedés, a méret és a virágzás eltérhet a fotótól. A kaspó is másképp nézhet ki az elérhetőségtől függően.",
+    naturalFlowers: "Majdnem. A virágok természetes termékek: évszaktól függően egy fajta vagy színárnyalat eltérhet. Partner virágkötészetünk ügyel arra, hogy a stílus és a színvilág megmaradjon.",
+  },
+
+  pricePending: {
+    status: "Az ár hamarosan",
+    sizes: "Méretek",
+    sizesLabel: "Elérhető méretek",
+    soonTitle: "Hamarosan rendelhető",
+    soonText: "Éppen most határozzuk meg a kínálatunk árait. Amint megvannak, ezt a csokrot közvetlenül itt rendelheted meg.",
+    contact: "Kérdésed van? Írj nekünk",
+  },
+
+  related: {
+    eyebrow: "Böngéssz tovább",
+    title: "Ez is tetszhet",
+    allFlowers: "Összes virág megtekintése",
+  },
+
+  reviews: {
+    eyebrow: "Vélemények",
+    title: "Értékelések: {name}",
+    demoNote: "Példaértékelések – a valódi értékelések hamarosan következnek",
+    quote: "„{text}”",
+    verified: "Ellenőrzött vásárlás",
+    demo: "Példa",
+  },
+
+  reviewPhotos: {
+    photosOf: "{author} fotói",
+    enlarge: "{alt} – {index}. fotó / {total} nagyítása",
+    dialogTitle: "Vásárlói fotó tőle: {author}",
+    dialogCount: "({index} / {total})",
+    close: "Fotó bezárása",
+    show: "{index}. fotó megjelenítése",
+  },
+};
 
 export default product;

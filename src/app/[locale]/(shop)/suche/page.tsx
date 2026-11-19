@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "@/components/ui/link";
 import { ArrowRight, Search } from "lucide-react";
-import { getAllProducts, getCategories, getOccasions } from "@/lib/content";
-import { search, sortProducts } from "@/lib/catalog";
+import { getAllProducts, getOccasions } from "@/lib/content";
+import { searchIn } from "@/lib/search-localized";
+import { currentLocale } from "@/i18n/server";
+import { sortProducts } from "@/lib/catalog";
 import { routes } from "@/lib/urls";
 import { getI18n } from "@/i18n/server";
 import { ProductGrid } from "@/components/shop/product-grid";
@@ -25,10 +27,10 @@ function readQuery(v: string | string[] | undefined) {
 
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }) {
   const q = readQuery((await searchParams).q);
-  const [products, occasions, categories, { m, fmt, plural }] = await Promise.all([getAllProducts(), getOccasions(), getCategories(), getI18n()]);
+  const [products, occasions, { m, fmt, plural }] = await Promise.all([getAllProducts(), getOccasions(), getI18n()]);
   const t = m.shop.search;
   const [resultsBefore, resultsAfter] = t.resultsFor.split("{query}");
-  const result = q.length >= 2 ? search(q, products, occasions, categories, 48) : { products: [], occasions: [], categories: [] };
+  const result = q.length >= 2 ? await searchIn(await currentLocale(), q, 48) : { products: [], occasions: [], categories: [] };
   const total = result.products.length + result.occasions.length + result.categories.length;
   const featured = occasions.filter((o) => o.featured).slice(0, 4);
   // Flagged bestsellers first; without any (new shop) simply the first recommended products.

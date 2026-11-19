@@ -39,6 +39,8 @@ const settings = {
   orderStatuses: Object.fromEntries(s.orderStatuses.filter((o) => o.customerVisible).map((o) => [o.key, { label: o.label, description: o.description }])),
   payments: Object.fromEntries(s.payments.map((p) => [p.id, p.label])),
   ...(s.brand.openingHours?.length ? { openingHours: s.brand.openingHours } : {}),
+  headerCta: s.headerCta.label,
+  address: { city: s.brand.address.city, country: s.brand.address.country },
 };
 const zones = Object.fromEntries(read("delivery-zones").map((z) => [z.id, { name: z.name, ...(z.note ? { note: z.note } : {}), windows: Object.fromEntries(z.windows.map((w) => [w.id, w.label])) }]));
 process.stdout.write(JSON.stringify({ products, categories, occasions, extras, faqs, pages, homepage, settings, zones }, null, 2) + "\n");

@@ -55,6 +55,9 @@ export interface ContentTranslations {
     /** payment method id → label */
     payments?: Record<string, string>;
     openingHours?: string[];
+    /** Header button label. */
+    headerCta?: string;
+    address?: { city?: string; country?: string };
   };
   zones?: Record<string, { name?: string; note?: string; windows?: Record<string, string> }>;
 }
@@ -163,7 +166,13 @@ export function localizeSettings(s: SiteSettings, t?: ContentTranslations): Site
   if (!x) return s;
   return {
     ...s,
-    brand: { ...s.brand, claim: pick(x.claim, s.brand.claim), openingHours: pickList(x.openingHours, s.brand.openingHours) },
+    brand: {
+      ...s.brand,
+      claim: pick(x.claim, s.brand.claim),
+      openingHours: pickList(x.openingHours, s.brand.openingHours),
+      address: { ...s.brand.address, city: pick(x.address?.city, s.brand.address.city), country: pick(x.address?.country, s.brand.address.country) },
+    },
+    headerCta: { ...s.headerCta, label: pick(x.headerCta, s.headerCta.label) },
     seo: { ...s.seo, defaultTitle: pick(x.seo?.defaultTitle, s.seo.defaultTitle), defaultDescription: pick(x.seo?.defaultDescription, s.seo.defaultDescription) },
     announcement: { ...s.announcement, messages: pickList(x.announcement?.messages, s.announcement.messages) },
     trust: s.trust.map((tr, i) => ({ ...tr, title: pick(x.trust?.[i]?.title, tr.title), text: pick(x.trust?.[i]?.text, tr.text) })),
