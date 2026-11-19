@@ -48,6 +48,16 @@ export interface MailMessage {
    * mails to an address the admin typed in – they contain no real customer data.
    */
   bypassRedirect?: boolean;
+  /** Real attachments (PDFs, images). Resend: base64 `content`; SMTP: nodemailer attachments. */
+  attachments?: MailAttachment[];
+  /** Extra headers, e.g. List-Unsubscribe (outreach mails). */
+  headers?: Record<string, string>;
+}
+
+export interface MailAttachment {
+  filename: string;
+  content: Buffer;
+  contentType?: string;
 }
 
 export interface MailResult {
@@ -135,7 +145,11 @@ export async function sendMail(msg: MailMessage): Promise<MailResult> {
 
   if (provider === "console") {
     if (process.env.NODE_ENV !== "test") {
-      console.info(`[mail] (console provider) To: ${to.join(", ")}\n[mail] Subject: ${msg.subject}\n${text.split("\n").map((l) => `[mail] ${l}`).join("\n")}`);
+      const extra = [
+        ...(msg.attachments ?? []).map((a) => `[mail] Attachment: ${a.filename} (${a.content.length} bytes)`),
+        ...Object.entries(msg.headers ?? {}).map(([k, v]) => `[mail] Header: ${k}: ${v}`),
+      ];
+      console.info(`[mail] (console provider) To: ${to.join(", ")}\n[mail] Subject: ${msg.subject}\n${extra.length ? `${extra.join("\n")}\n` : ""}${text.split("\n").map((l) => `[mail] ${l}`).join("\n")}`);
     }
     return { sent: false, provider };
   }
@@ -149,6 +163,8 @@ export async function sendMail(msg: MailMessage): Promise<MailResult> {
         html: msg.html,
         text,
         replyTo: msg.replyTo ?? process.env.MAIL_REPLY_TO ?? undefined,
+        ...(msg.attachments?.length ? { attachments: msg.attachments.map((a) => ({ filename: a.filename, content: a.content, contentType: a.contentType })) } : {}),
+        ...(msg.headers ? { headers: msg.headers } : {}),
       });
       return { sent: true, provider, id: info.messageId };
     } catch (err) {
@@ -169,6 +185,10 @@ export async function sendMail(msg: MailMessage): Promise<MailResult> {
         text,
         reply_to: msg.replyTo ?? process.env.MAIL_REPLY_TO ?? undefined,
         tags: msg.tags ? Object.entries(msg.tags).map(([name, value]) => ({ name, value })) : undefined,
+        attachments: msg.attachments?.length
+          ? msg.attachments.map((a) => ({ filename: a.filename, content: a.content.toString("base64"), ...(a.contentType ? { content_type: a.contentType } : {}) }))
+          : undefined,
+        headers: msg.headers,
       }),
     });
     if (!res.ok) {

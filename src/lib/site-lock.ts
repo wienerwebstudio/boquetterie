@@ -5,8 +5,11 @@
  *
  * Webhooks and cron endpoints stay reachable: they are called by Stripe, PayPal and
  * the scheduler, which cannot type a password, and they check their own secrets.
+ * Outreach tracking and the outreach opt-out stay open too: businesses must be able to
+ * unsubscribe even before launch (signed tokens, see docs/OUTREACH.md).
  */
-const OPEN_PREFIXES = ["/api/webhooks/", "/api/cron/"];
+const OPEN_PREFIXES = ["/api/webhooks/", "/api/cron/", "/api/o/", "/api/outreach/"];
+const OPEN_PATHS = new Set(["/e-mail-abmelden"]);
 
 export function siteLockPassword(): string | null {
   const value = process.env.SITE_PASSWORD?.trim();
@@ -14,7 +17,7 @@ export function siteLockPassword(): string | null {
 }
 
 export function isOpenPath(pathname: string): boolean {
-  return OPEN_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+  return OPEN_PREFIXES.some((prefix) => pathname.startsWith(prefix)) || OPEN_PATHS.has(pathname);
 }
 
 /** Compares in constant time so the response time does not reveal how much matched. */
