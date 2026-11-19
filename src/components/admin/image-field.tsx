@@ -257,7 +257,7 @@ export function ImageField({ id, value, onChange, placeholder, readonly, compact
                   type="button"
                   onClick={() => fileRef.current?.click()}
                   disabled={busy}
-                  className="inline-flex h-8 items-center gap-1.5 rounded-md border border-line bg-white px-3 text-[12.5px] font-semibold text-forest transition-colors hover:border-forest disabled:opacity-50"
+                  className="inline-flex h-8 items-center gap-1.5 rounded-md border border-line bg-white px-3 text-[12.5px] font-semibold text-[#0a6644] transition-colors hover:border-forest disabled:opacity-50"
                 >
                   {busy ? <Loader2 className="size-3.5 animate-spin" aria-hidden /> : <Upload className="size-3.5" aria-hidden />}
                   {busy ? "Lädt hoch …" : "Hochladen"}

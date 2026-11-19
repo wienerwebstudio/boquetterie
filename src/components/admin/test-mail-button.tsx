@@ -24,7 +24,7 @@ export function TestMailButton({ defaultRecipient = "" }: { defaultRecipient?: s
       <p className="text-[13px] leading-relaxed text-ink-muted">
         Schickt die Mails einer Beispielbestellung (Betreff „[Beispiel]“, keine echten Kundendaten) an eine Adresse deiner Wahl.
       </p>
-      <label htmlFor="test-mail-kind" className="mt-3 block text-[13px] font-semibold text-ink">Welche Mail?</label>
+      <label htmlFor="test-mail-kind" className="mt-4 block text-[13px] font-semibold text-ink">Welche Mail?</label>
       <select
         id="test-mail-kind"
         value={kind}
@@ -62,7 +62,7 @@ export function TestMailButton({ defaultRecipient = "" }: { defaultRecipient?: s
         {pending ? "Wird gesendet …" : "Test-Mails senden"}
       </button>
       {result && (
-        <p role="status" className={`mt-3 text-[13px] ${result.ok ? "text-success" : "text-danger"}`}>{result.message}</p>
+        <p role="status" className={`mt-3 rounded-lg border px-3 py-2 text-[13px] ${result.ok ? "border-[#b7e4cc] bg-[#ecf9f2] text-[#0a5e3f]" : "border-[#f3c4bf] bg-[#fdf0ee] text-[#a3201a]"}`}>{result.message}</p>
       )}
     </form>
   );

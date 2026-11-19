@@ -2,6 +2,7 @@ import { foundViaLabel } from "@/lib/found-via";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { Bike, CreditCard, Flower2, History, MapPin, RefreshCw, Send, Star, StickyNote, Store } from "lucide-react";
 import { getOrderById, getPartners, getSettings } from "@/lib/cms";
 import { partnerMailAddresses } from "@/lib/mail";
 import { withEffectivePartner } from "@/lib/partners";
@@ -19,8 +20,8 @@ export const dynamic = "force-dynamic";
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="grid grid-cols-[130px_1fr] gap-3 py-1.5 text-[14px]">
-      <dt className="text-ink-muted">{label}</dt>
+    <div className="grid grid-cols-[130px_1fr] gap-3 border-b border-dashed border-[#efebe4] py-2 text-[14px] last:border-b-0">
+      <dt className="text-[#5f5c56]">{label}</dt>
       <dd className="min-w-0 break-words text-ink">{children}</dd>
     </div>
   );
@@ -58,13 +59,13 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
           <strong>Noch keinem Partner zugeordnet.</strong> Niemand bindet diesen Strauß, bis ihr rechts unter „Partner“ eine Floristik wählt und den Auftrag sendet.
         </Banner>
       )}
-      <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_360px]">
         <div className="space-y-5">
-          <Card title="Positionen">
+          <Card title="Positionen" accent="rose" icon={Flower2}>
             <ul className="divide-y divide-line">
               {order.lines.map((line, i) => (
                 <li key={i} className="flex gap-4 py-4 first:pt-0 last:pb-0">
-                  <div className="relative size-16 shrink-0 overflow-hidden rounded-md bg-ivory-200">
+                  <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-[#f3efe8] ring-1 ring-black/5">
                     {line.image && <Image src={line.image} alt="" fill sizes="64px" className="object-cover" unoptimized />}
                   </div>
                   <div className="min-w-0 flex-1 text-[14px]">
@@ -80,10 +81,10 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                       </ul>
                     )}
                     {line.floristNote && (
-                      <p className="mt-2 rounded-md border-l-2 border-forest bg-ivory-100 px-3 py-2 text-[13px] text-ink"><span className="font-semibold">Wunsch an die Floristik:</span> {line.floristNote}</p>
+                      <p className="mt-2 rounded-lg border-l-[3px] border-[#0f9466] bg-[#f0faf5] px-3 py-2 text-[13px] text-ink"><span className="font-semibold">Wunsch an die Floristik:</span> {line.floristNote}</p>
                     )}
                     {line.message && (
-                      <blockquote className="mt-2 rounded-md bg-ivory-100 px-3 py-2 text-[13px] italic text-ink">
+                      <blockquote className="mt-2 rounded-lg border-l-[3px] border-[#d6406d] bg-[#fdf3f6] px-3 py-2 text-[13px] italic text-ink">
                         „{line.message}“
                         <span className="mt-1 block not-italic text-ink-soft">{line.anonymous ? "Ohne Absender" : line.senderName ? `Absender: ${line.senderName}` : ""}</span>
                       </blockquote>
@@ -100,16 +101,16 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               {order.totals.discount > 0 && (
                 <div className="flex justify-between py-1"><dt className="text-ink-muted">Rabatt{order.coupon ? ` (${order.coupon.code})` : ""}</dt><dd>−{formatPrice(order.totals.discount)}</dd></div>
               )}
-              <div className="flex justify-between border-t border-line py-2 text-[15px] font-semibold"><dt>Gesamt</dt><dd>{formatPrice(order.totals.total)}</dd></div>
+              <div className="mt-2 flex justify-between rounded-xl bg-[linear-gradient(90deg,#fde8ee,#fff5f0)] px-3 py-2.5 text-[16px] font-bold"><dt>Gesamt</dt><dd className="tabular-nums text-[#a92a52]">{formatPrice(order.totals.total)}</dd></div>
             </dl>
           </Card>
 
           <div className="grid gap-5 md:grid-cols-2">
-            <Card title="Empfänger:in & Lieferung">
+            <Card title="Empfänger:in & Lieferung" accent="teal" icon={MapPin}>
               <dl>
                 <Row label="Name">{recipientName(order)}{r.company ? <div className="text-ink-muted">{r.company}</div> : null}</Row>
                 <Row label="Adresse">{r.street} {r.houseNumber}{r.addition ? `, ${r.addition}` : ""}<br />{r.zip} {r.city}</Row>
-                <Row label="Telefon"><a href={`tel:${r.phone}`} className="text-forest underline-offset-4 hover:underline">{r.phone}</a></Row>
+                <Row label="Telefon"><a href={`tel:${r.phone}`} className="text-[#0a6644] underline-offset-4 hover:underline">{r.phone}</a></Row>
                 <Row label="Lieferdatum"><strong>{formatDateLong(order.delivery.date)}</strong></Row>
                 {order.delivery.windowLabel && <Row label="Zeitfenster">{order.delivery.windowLabel}</Row>}
                 <Row label="Zustellung">{selfDelivery ? <strong>Selbst ausliefern</strong> : courierEnabled() ? "Fahrer (RiderX)" : "Fahrer – von Hand buchen"}</Row>
@@ -117,10 +118,10 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                 {order.delivery.note && <Row label="Hinweis">{order.delivery.note}</Row>}
               </dl>
             </Card>
-            <Card title="Kund:in & Zahlung">
+            <Card title="Kund:in & Zahlung" accent="sky" icon={CreditCard}>
               <dl>
                 <Row label="Name">{customerName(order)}</Row>
-                <Row label="E-Mail"><a href={`mailto:${order.customer.email}`} className="text-forest underline-offset-4 hover:underline">{order.customer.email}</a></Row>
+                <Row label="E-Mail"><a href={`mailto:${order.customer.email}`} className="text-[#0a6644] underline-offset-4 hover:underline">{order.customer.email}</a></Row>
                 <Row label="Telefon">{order.customer.phone}</Row>
                 {orderLanguage(order) && <Row label="Sprache">bestellt auf {orderLanguage(order)} – Kundenmails gehen in dieser Sprache raus</Row>}
                 <Row label="Zahlungsart">{PAYMENT_LABELS[order.payment.method] ?? order.payment.method}</Row>
@@ -132,11 +133,12 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
             </Card>
           </div>
 
-          <Card title="Verlauf">
-            <ol className="space-y-3">
+          <Card title="Verlauf" accent="violet" icon={History}>
+            <ol className="relative space-y-4 before:absolute before:bottom-2 before:left-[5px] before:top-2 before:w-px before:bg-[#e2dbf9]">
               {[...order.history].reverse().map((h, i) => (
-                <li key={i} className="flex flex-wrap items-start gap-3 text-[14px]">
-                  <span className="w-36 shrink-0 text-ink-muted">{formatDateTime(h.at)}</span>
+                <li key={i} className="relative flex flex-wrap items-start gap-3 pl-6 text-[14px]">
+                  <span className={`absolute left-0 top-1.5 size-[11px] rounded-full ring-4 ring-white ${i === 0 ? "bg-[#7c4ff0]" : "bg-[#c7b5fc]"}`} aria-hidden />
+                  <span className="w-36 shrink-0 text-[#5f5c56]">{formatDateTime(h.at)}</span>
                   <StatusBadge status={h.status} label={statusLabel(settings, h.status)} />
                   {h.note && <span className="basis-full text-ink-muted sm:basis-auto">{h.note}</span>}
                 </li>
@@ -146,12 +148,12 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
         </div>
 
         <div className="space-y-5">
-          <Card title="Partner" description="Welche Floristik bindet diesen Strauß. Erst mit „Auftrag senden“ bekommt der Partner die Mail.">
+          <Card accent="emerald" icon={Store} title="Partner" description="Welche Floristik bindet diesen Strauß. Erst mit „Auftrag senden“ bekommt der Partner die Mail.">
             <dl className="mb-4 text-[14px]">
               <Row label="Partner">{order.partner ? order.partner.name : <span className="font-semibold text-burgundy">Noch keiner</span>}</Row>
               {order.partner?.sentAt && <Row label="Auftrag gesendet">{formatDateTime(order.partner.sentAt)}{order.partner.sentTo?.length ? <div className="text-[12.5px] text-ink-muted">{order.partner.sentTo.join(", ")}</div> : null}</Row>}
               {order.partner?.sentAt && !order.partner.cancelSentAt && (
-                <Row label="Bestätigt">{!order.partner.confirmedAt && order.partner.reminders?.length ? <div className="text-[12.5px] text-ink-muted">{order.partner.reminders.length} Erinnerung(en) gesendet, zuletzt {formatDateTime(order.partner.reminders[order.partner.reminders.length - 1])}</div> : null}{order.partner.confirmedAt ? <span className="font-semibold text-forest">Ja, {formatDateTime(order.partner.confirmedAt)}</span> : order.partner.confirmToken ? <span className="font-semibold text-burgundy">Noch nicht – ggf. anrufen</span> : <span className="text-ink-muted">Ohne Bestätigungslink gesendet</span>}</Row>
+                <Row label="Bestätigt">{!order.partner.confirmedAt && order.partner.reminders?.length ? <div className="text-[12.5px] text-ink-muted">{order.partner.reminders.length} Erinnerung(en) gesendet, zuletzt {formatDateTime(order.partner.reminders[order.partner.reminders.length - 1])}</div> : null}{order.partner.confirmedAt ? <span className="font-semibold text-[#0a6644]">Ja, {formatDateTime(order.partner.confirmedAt)}</span> : order.partner.confirmToken ? <span className="font-semibold text-burgundy">Noch nicht – ggf. anrufen</span> : <span className="text-ink-muted">Ohne Bestätigungslink gesendet</span>}</Row>
               )}
               {order.partner?.cancelSentAt && <Row label="Storno gesendet">{formatDateTime(order.partner.cancelSentAt)}</Row>}
             </dl>
@@ -161,13 +163,13 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               current={order.partner ? { id: order.partner.id, name: order.partner.name, sent: Boolean(order.partner.sentAt), cancelled: Boolean(order.partner.cancelSentAt) } : null}
               canAssign={order.payment.status === "paid" && order.status !== "cancelled"}
             />
-            {partners.length === 0 && <p className="mt-3 text-[13px] text-ink-muted">Noch kein aktiver Partner – unter <Link href="/admin/partner" className="text-forest underline-offset-4 hover:underline">Partner</Link> anlegen.</p>}
+            {partners.length === 0 && <p className="mt-3 text-[13px] text-ink-muted">Noch kein aktiver Partner – unter <Link href="/admin/partner" className="text-[#0a6644] underline-offset-4 hover:underline">Partner</Link> anlegen.</p>}
           </Card>
-          <Card title="Status ändern">
+          <Card title="Status ändern" accent="amber" icon={RefreshCw}>
             <OrderStatusForm orderId={order.id} current={order.status} statuses={settings.orderStatuses} canRequestReview={Boolean(order.customer.email) && !review.sentAt && !review.submittedAt} />
           </Card>
           {courierEnabled() && (
-            <Card title="Kurier (RiderX)" description={selfDelivery ? "Selbst ausliefern – an diesem Tag wird kein Fahrer automatisch gebucht. Bei Bedarf hier von Hand buchen." : "Kostenlos stornierbar bis 30 Min. vor der Abholung."}>
+            <Card accent="coral" icon={Bike} title="Kurier (RiderX)" description={selfDelivery ? "Selbst ausliefern – an diesem Tag wird kein Fahrer automatisch gebucht. Bei Bedarf hier von Hand buchen." : "Kostenlos stornierbar bis 30 Min. vor der Abholung."}>
               <dl className="mb-4 text-[14px]">
                 <Row label="Status">{order.courier ? (order.courier.status === "failed" ? "Nicht gebucht" : order.courier.status === "booking" ? "Wird gebucht …" : RIDERX_STATUS_LABELS[order.courier.status] ?? order.courier.status) : "Noch nicht gebucht"}</Row>
                 {order.courier?.deliveryId && <Row label="RiderX-Nr.">#{order.courier.deliveryId}</Row>}
@@ -182,11 +184,11 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
             </Card>
           )}
           {order.payment.status === "paid" && (
-            <Card title="Mails erneut senden" description="Kundenbestellung oder Bestelleingang, falls eine Mail nicht angekommen ist. Den Partner-Auftrag sendet ihr oben unter „Partner“.">
+            <Card accent="sky" icon={Send} title="Mails erneut senden" description="Kundenbestellung oder Bestelleingang, falls eine Mail nicht angekommen ist. Den Partner-Auftrag sendet ihr oben unter „Partner“.">
               <ResendMailsForm orderId={order.id} customerEmail={order.customer.email} />
             </Card>
           )}
-          <Card title="Bewertungsanfrage" description={`Mail „Wie war der Strauß?“ mit Link zum Bewertungsformular. Automatisch einmalig ${MIN_DAYS_AFTER_DELIVERY}–${MAX_DAYS_AFTER_DELIVERY} Tage nach der Zustellung.`}>
+          <Card accent="rose" icon={Star} title="Bewertungsanfrage" description={`Mail „Wie war der Strauß?“ mit Link zum Bewertungsformular. Automatisch einmalig ${MIN_DAYS_AFTER_DELIVERY}–${MAX_DAYS_AFTER_DELIVERY} Tage nach der Zustellung.`}>
             <dl className="mb-4 text-[14px]">
               <Row label="Zugestellt">{deliveredOn ? formatDateTime(deliveredOn) : <span className="text-burgundy">Noch nicht</span>}</Row>
               <Row label="Gesendet">
@@ -196,12 +198,12 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               </Row>
               <Row label="Bewertet">
                 {review.submittedAt
-                  ? <>Ja, am {formatDateTime(review.submittedAt)}{review.pendingSubmissionId && <> · <Link href="/admin/bewertungen/eingereicht" className="text-forest underline-offset-4 hover:underline">wartet auf Freigabe</Link></>}</>
+                  ? <>Ja, am {formatDateTime(review.submittedAt)}{review.pendingSubmissionId && <> · <Link href="/admin/bewertungen/eingereicht" className="text-[#0a6644] underline-offset-4 hover:underline">wartet auf Freigabe</Link></>}</>
                   : "Noch nicht"}
               </Row>
             </dl>
             {!cronActive && (
-              <p className="mb-4 rounded-md border border-line bg-ivory-100 px-3 py-2 text-[13px] text-ink-muted">
+              <p className="mb-4 rounded-lg border border-[#e7e2d9] bg-[#f6f4ef] px-3 py-2 text-[13px] text-[#5f5c56]">
                 Automatischer Versand ist nicht aktiv: <code>CRON_SECRET</code> fehlt in den Umgebungsvariablen (siehe docs/MAIL.md).
               </p>
             )}
@@ -220,7 +222,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               </>
             )}
           </Card>
-          <Card title="Interne Notiz" description="Nur für das Team sichtbar.">
+          <Card accent="violet" icon={StickyNote} title="Interne Notiz" description="Nur für das Team sichtbar.">
             <InternalNoteForm orderId={order.id} note={order.internalNote} />
           </Card>
         </div>

@@ -13,7 +13,7 @@ export default async function Page() {
   return (
     <>
       <PageHeader title={subscriptionSchema.title} description={subscriptionSchema.description}
-        actions={<Link href="/admin/blumen-abo/anfragen" className="text-[13px] font-semibold text-forest underline-offset-4 hover:underline">Abo-Anfragen ansehen</Link>} />
+        actions={<Link href="/admin/blumen-abo/anfragen" className="text-[13px] font-semibold text-[#0a6644] underline-offset-4 hover:underline">Abo-Anfragen ansehen</Link>} />
       <EntityForm
         title={subscriptionSchema.title}
         sections={subscriptionSchema.sections}

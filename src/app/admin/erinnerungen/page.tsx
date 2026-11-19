@@ -29,7 +29,7 @@ export default async function RemindersAdminPage() {
           <tbody>
             {reminders.map((r) => (
               <tr key={r.id}>
-                <Td><a href={`mailto:${r.email}`} className="text-forest underline-offset-4 hover:underline">{r.email}</a></Td>
+                <Td><a href={`mailto:${r.email}`} className="text-[#0a6644] underline-offset-4 hover:underline">{r.email}</a></Td>
                 <Td>{r.occasionLabel}{r.occasionSlug === "eigener" && <span className="ml-1 text-[12px] text-ink-soft">(eigener)</span>}</Td>
                 <Td className="text-ink-muted">{r.personName ?? "–"}</Td>
                 <Td className="whitespace-nowrap">{formatReminderDate(r)}</Td>

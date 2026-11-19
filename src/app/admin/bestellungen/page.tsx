@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Filter, Search } from "lucide-react";
 import { getOrders, getSettings } from "@/lib/cms";
 import { formatDateShort, formatDateTime, formatPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
@@ -37,13 +38,16 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
     <>
       <PageHeader title="Bestellungen" description={`${orders.length} Bestellungen gesamt, ${orders.filter((o) => isOpenOrder(o, settings)).length} offen (bezahlt), ${orders.filter(isUnpaidOrder).length} nicht bezahlt – für nicht bezahlte Bestellungen nichts binden lassen.`} />
 
-      <form method="get" className="mb-4 flex flex-wrap items-end gap-3 rounded-lg border border-line bg-white p-4">
+      <form method="get" className="bl-card mb-5 flex flex-wrap items-end gap-3 p-4" data-accent="emerald">
         <div className="flex min-w-[200px] flex-1 flex-col gap-1.5">
-          <label htmlFor="q" className="text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-muted">Suche</label>
-          <input id="q" name="q" defaultValue={q} placeholder="Bestellnummer, Name, E-Mail, PLZ" className={inputCls} />
+          <label htmlFor="q" className="text-[12px] font-semibold uppercase tracking-[0.07em] text-[#4f4c47]">Suche</label>
+          <div className="relative">
+            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[#5f5c56]" aria-hidden />
+            <input id="q" name="q" defaultValue={q} placeholder="Bestellnummer, Name, E-Mail, PLZ" className={cn(inputCls, "pl-9")} />
+          </div>
         </div>
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="status" className="text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-muted">Status</label>
+          <label htmlFor="status" className="text-[12px] font-semibold uppercase tracking-[0.07em] text-[#4f4c47]">Status</label>
           <select id="status" name="status" defaultValue={status} className={cn(inputCls, "min-w-[200px] appearance-none")}>
             <option value="">Alle</option>
             <option value="open">Alle offenen (bezahlt)</option>
@@ -53,8 +57,8 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
             ))}
           </select>
         </div>
-        <Button type="submit" size="sm" variant="outline">Filtern</Button>
-        {(q || status) && <Button href="/admin/bestellungen" size="sm" variant="ghost">Zurücksetzen</Button>}
+        <Button type="submit" size="sm" icon={<Filter className="size-4" aria-hidden />} className="h-10">Filtern</Button>
+        {(q || status) && <Button href="/admin/bestellungen" size="sm" variant="ghost" className="h-10 rounded-lg">Zurücksetzen</Button>}
       </form>
 
       {filtered.length === 0 ? (
@@ -68,24 +72,24 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
           </thead>
           <tbody>
             {filtered.map((o) => (
-              <tr key={o.id} className={cn("hover:bg-ivory-100/60", isUnpaidOrder(o) && "opacity-60")}>
-                <Td><Link href={`/admin/bestellungen/${o.id}`} className="font-semibold text-forest underline-offset-4 hover:underline">{o.id}</Link></Td>
-                <Td className="whitespace-nowrap text-ink-muted">{formatDateTime(o.createdAt)}</Td>
+              <tr key={o.id} className={cn(isUnpaidOrder(o) && "opacity-60")}>
+                <Td className="whitespace-nowrap"><Link href={`/admin/bestellungen/${o.id}`} className="font-semibold text-[#0a6644] underline-offset-4 hover:underline">{o.id}</Link></Td>
+                <Td className="min-w-[96px] text-[13px] text-[#5f5c56]">{formatDateTime(o.createdAt)}</Td>
                 <Td>{customerName(o)}<div className="text-[12px] text-ink-soft">{o.customer.email}</div>{orderLanguage(o) ? <div className="text-[12px] text-ink-soft">auf {orderLanguage(o)}</div> : null}</Td>
                 <Td>{recipientName(o)}<div className="text-[12px] text-ink-soft">{o.recipient.zip} {o.recipient.city}</div></Td>
-                <Td className="whitespace-nowrap">{formatDateShort(o.delivery.date)}{o.delivery.windowLabel ? <div className="text-[12px] text-ink-soft">{o.delivery.windowLabel}</div> : null}{isSelfDeliveryDay(settings, o.delivery.date) ? <div className="text-[12px] font-semibold text-forest">Selbst ausliefern</div> : null}</Td>
-                <Td className="whitespace-nowrap text-[13px]">{o.payment.status === "paid" ? "Bezahlt" : o.payment.status === "refunded" ? "Erstattet" : <span className="font-semibold text-danger">Nicht bezahlt</span>}</Td>
-                <Td className="whitespace-nowrap text-[13px]">{effectivePartner(o)?.sentAt && !effectivePartner(o)?.cancelSentAt ? <>{effectivePartner(o)?.name}{o.partner?.confirmToken ? <div className={o.partner.confirmedAt ? "text-[12px] text-forest" : "text-[12px] font-semibold text-burgundy"}>{o.partner.confirmedAt ? "bestätigt" : "nicht bestätigt"}</div> : null}</> : o.payment.status === "paid" && o.status !== "cancelled" ? <span className="font-semibold text-danger">Kein Partner</span> : <span className="text-ink-soft">–</span>}</Td>
+                <Td className="whitespace-nowrap">{formatDateShort(o.delivery.date)}{o.delivery.windowLabel ? <div className="text-[12px] text-ink-soft">{o.delivery.windowLabel}</div> : null}{isSelfDeliveryDay(settings, o.delivery.date) ? <div className="mt-0.5 inline-flex rounded-full bg-[#dff5f4] px-2 py-0.5 text-[11.5px] font-semibold text-[#0c6467]">Selbst ausliefern</div> : null}</Td>
+                <Td className="whitespace-nowrap text-[13px]">{o.payment.status === "paid" ? <span className="inline-flex items-center gap-1.5 font-medium text-[#0a6644]"><span className="size-1.5 rounded-full bg-[#0f9466]" aria-hidden />Bezahlt</span> : o.payment.status === "refunded" ? <span className="inline-flex items-center gap-1.5 font-medium text-[#4a5160]"><span className="size-1.5 rounded-full bg-[#9aa1ad]" aria-hidden />Erstattet</span> : <span className="inline-flex items-center gap-1.5 rounded-full bg-[#fdecea] px-2 py-0.5 font-semibold text-[#b42318]"><span className="size-1.5 rounded-full bg-[#c0392b]" aria-hidden />Nicht bezahlt</span>}</Td>
+                <Td className="whitespace-nowrap text-[13px]">{effectivePartner(o)?.sentAt && !effectivePartner(o)?.cancelSentAt ? <>{effectivePartner(o)?.name}{o.partner?.confirmToken ? <div className={o.partner.confirmedAt ? "text-[12px] text-[#0a6644]" : "text-[12px] font-semibold text-burgundy"}>{o.partner.confirmedAt ? "bestätigt" : "nicht bestätigt"}</div> : null}</> : o.payment.status === "paid" && o.status !== "cancelled" ? <span className="inline-flex items-center gap-1.5 rounded-full bg-[#fdecea] px-2 py-0.5 font-semibold text-[#b42318]"><span className="size-1.5 rounded-full bg-[#c0392b]" aria-hidden />Kein Partner</span> : <span className="text-ink-soft">–</span>}</Td>
                 <Td><StatusBadge status={o.status} label={statusLabel(settings, o.status)} /></Td>
-                <Td className="whitespace-nowrap text-right font-semibold">{formatPrice(o.totals.total)}</Td>
+                <Td className="whitespace-nowrap text-right font-semibold tabular-nums">{formatPrice(o.totals.total)}</Td>
               </tr>
             ))}
           </tbody>
           <tfoot>
             <tr>
-              <Td className="text-[13px] text-ink-muted" >{filtered.length} Bestellung(en)</Td>
+              <Td className="whitespace-nowrap text-[13px] font-semibold text-[#4f4c47]">{filtered.length} Bestellung(en)</Td>
               <Td /><Td /><Td /><Td /><Td /><Td /><Td />
-              <Td className="whitespace-nowrap text-right font-semibold">{formatPrice(sum)}</Td>
+              <Td className="whitespace-nowrap text-right text-[15px] font-bold tabular-nums">{formatPrice(sum)}</Td>
             </tr>
           </tfoot>
         </Table>

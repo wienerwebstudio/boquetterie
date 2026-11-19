@@ -40,7 +40,7 @@ export default async function SubmittedReviewsPage() {
                     {formatDateTime(s.createdAt)}
                     {s.consent && <span className="mt-1 block text-[12px]" title={s.consent.text}>Einwilligung {formatDateTime(s.consent.at)}</span>}
                   </Td>
-                  <Td><Link href={`/admin/bestellungen/${encodeURIComponent(s.orderId)}`} className="text-forest underline-offset-4 hover:underline">{s.orderId}</Link></Td>
+                  <Td><Link href={`/admin/bestellungen/${encodeURIComponent(s.orderId)}`} className="text-[#0a6644] underline-offset-4 hover:underline">{s.orderId}</Link></Td>
                   <Td className="whitespace-nowrap">{s.name}</Td>
                   <Td><StarRating value={s.rating} /></Td>
                   <Td className="min-w-[280px] max-w-xl whitespace-pre-line text-[13.5px] leading-relaxed">{s.text}</Td>

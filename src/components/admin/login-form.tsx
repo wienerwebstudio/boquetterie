@@ -41,7 +41,7 @@ export function AdminLoginForm({ next, disabled }: { next: string; disabled: boo
       <form
         method="post"
         action="/api/admin/login"
-        className="space-y-4 rounded-lg border border-line bg-white p-6"
+        className="bl-card space-y-5 p-6 shadow-[0_24px_48px_-28px_rgba(24,39,31,0.45)]"
         onSubmit={() => {
           setPending(true);
           setStalled(false);
@@ -63,7 +63,7 @@ export function AdminLoginForm({ next, disabled }: { next: string; disabled: boo
               required
               autoFocus
               disabled={disabled}
-              className={`${inputCls} pr-11`}
+              className={`${inputCls} h-11 pr-11`}
             />
             <button
               type="button"
@@ -77,7 +77,7 @@ export function AdminLoginForm({ next, disabled }: { next: string; disabled: boo
             </button>
           </div>
         </Field>
-        <Button type="submit" full disabled={disabled} loading={pending}>
+        <Button type="submit" full disabled={disabled} loading={pending} className="h-11">
           {pending ? "Wird geprüft …" : "Anmelden"}
         </Button>
       </form>

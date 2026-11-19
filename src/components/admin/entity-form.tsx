@@ -10,7 +10,7 @@ import { deleteEntity, saveEntity, saveSingleton, type ActionResult } from "@/ap
 import { getPath, setPath, type Json } from "./paths";
 import type { FieldDef, FieldOption, FieldSection } from "./schemas";
 import type { OptionMap } from "./options";
-import { Banner, Card, Field, inputCls, readonlyCls } from "./controls";
+import { ACCENT_CYCLE, Banner, Card, Field, inputCls, readonlyCls } from "./controls";
 import { ImageField } from "./image-field";
 
 export interface EntityFormProps {
@@ -121,10 +121,10 @@ export function EntityForm(props: EntityFormProps) {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
           {listHref && (
-            <Link href={listHref} className="text-[13px] font-semibold text-forest underline-offset-4 hover:underline">← Zur Liste</Link>
+            <Link href={listHref} className="inline-flex h-9 items-center rounded-full border border-[#e7e2d9] bg-white px-3.5 text-[13px] font-semibold text-[#0a6644] transition-colors hover:border-[#0f9466]">← Zur Liste</Link>
           )}
           {storefrontHref && !isNew && (
-            <a href={storefrontHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-[13px] font-semibold text-forest underline-offset-4 hover:underline">
+            <a href={storefrontHref} target="_blank" rel="noreferrer" className="inline-flex h-9 items-center gap-1.5 rounded-full border border-[#e7e2d9] bg-white px-3.5 text-[13px] font-semibold text-[#0a6644] transition-colors hover:border-[#0f9466]">
               Im Shop ansehen <ExternalLink className="size-3.5" aria-hidden />
             </a>
           )}
@@ -133,8 +133,8 @@ export function EntityForm(props: EntityFormProps) {
           type="button"
           onClick={toggleJson}
           className={cn(
-            "inline-flex h-9 items-center gap-2 rounded-md border px-3 text-[13px] font-semibold transition-colors",
-            jsonMode ? "border-forest bg-forest text-ivory" : "border-line bg-white text-ink hover:border-forest",
+            "inline-flex h-9 items-center gap-2 rounded-full border px-3.5 text-[13px] font-semibold transition-colors",
+            jsonMode ? "border-[#5b36c2] bg-[#5b36c2] text-white" : "border-[#e7e2d9] bg-white text-[#5b36c2] hover:border-[#7c4ff0]",
           )}
           aria-pressed={jsonMode}
         >
@@ -145,7 +145,7 @@ export function EntityForm(props: EntityFormProps) {
       {message && <Banner tone={message.tone}>{message.text}</Banner>}
 
       {jsonMode ? (
-        <Card title="JSON" description="Für Power-User: Rohdaten direkt bearbeiten. Beim Speichern wird geprüft, ob das JSON gültig ist.">
+        <Card accent="violet" title="JSON" description="Für Power-User: Rohdaten direkt bearbeiten. Beim Speichern wird geprüft, ob das JSON gültig ist.">
           <textarea
             value={jsonText}
             onChange={(e) => setJsonText(e.target.value)}
@@ -156,8 +156,8 @@ export function EntityForm(props: EntityFormProps) {
           {jsonError && <p className="mt-2 text-[13px] text-danger">{jsonError}</p>}
         </Card>
       ) : (
-        sections.map((section) => (
-          <Card key={section.title} title={section.title} description={section.description}>
+        sections.map((section, sectionIndex) => (
+          <Card key={section.title} title={section.title} description={section.description} accent={ACCENT_CYCLE[sectionIndex % ACCENT_CYCLE.length]}>
             <div className="grid gap-4 md:grid-cols-6">
               {section.fields.map((field) => (
                 <FieldRenderer
@@ -173,13 +173,13 @@ export function EntityForm(props: EntityFormProps) {
         ))
       )}
 
-      <div className="sticky bottom-0 z-10 -mx-1 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-line bg-white/95 px-4 py-3 shadow-soft backdrop-blur">
+      <div className="sticky bottom-3 z-10 -mx-1 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#e7e2d9] bg-white/90 px-4 py-3 shadow-[0_18px_40px_-20px_rgba(24,39,31,0.45)] backdrop-blur-md">
         <div className="flex items-center gap-2">
           <Button type="submit" size="sm" loading={pending} icon={<Save className="size-4" aria-hidden />}>
             {isNew ? "Anlegen" : "Speichern"}
           </Button>
           {listHref && (
-            <Button type="button" variant="ghost" size="sm" href={listHref}>Abbrechen</Button>
+            <Button type="button" variant="ghost" size="sm" href={listHref} className="rounded-lg">Abbrechen</Button>
           )}
         </div>
         {kind === "entity" && !isNew && (
@@ -187,7 +187,7 @@ export function EntityForm(props: EntityFormProps) {
             type="button"
             onClick={remove}
             disabled={pending}
-            className="inline-flex h-9 items-center gap-2 rounded-md px-3 text-[13px] font-semibold text-danger transition-colors hover:bg-[#f8ecec] disabled:opacity-50"
+            className="inline-flex h-9 items-center gap-2 rounded-lg border border-transparent px-3 text-[13px] font-semibold text-[#b42318] transition-colors hover:border-[#f3c4bf] hover:bg-[#fdecea] disabled:opacity-50"
           >
             <Trash className="size-4" aria-hidden /> Löschen
           </button>
@@ -282,7 +282,7 @@ function FieldRenderer({ field, value, onChange, options, compact }: RendererPro
       );
     case "boolean":
       return wrap(
-        <label className={cn("flex cursor-pointer items-center gap-3 rounded-md border border-line bg-white px-3 text-[14px] text-ink", compact ? "h-10" : "h-10")}>
+        <label className={cn("flex cursor-pointer items-center gap-3 rounded-[10px] border border-[#e7e2d9] bg-white px-3 text-[14px] text-ink transition-colors hover:border-[#0f9466] has-[:checked]:border-[#9bd8bc] has-[:checked]:bg-[#f0faf5]", compact ? "h-10" : "h-10")}>
           <input id={id} type="checkbox" checked={Boolean(value)} onChange={(e) => onChange(e.target.checked)} className="size-4 accent-forest" disabled={field.readonly} />
           <span>{field.label}</span>
         </label>,
@@ -348,7 +348,7 @@ function MultiSelect({ field, value, onChange, options }: { field: FieldDef; val
       {field.ordered && selected.length > 0 && (
         <ol className="flex flex-wrap gap-2">
           {selected.map((v, i) => (
-            <li key={v} className="inline-flex items-center gap-1 rounded-md border border-line bg-ivory-100 py-1 pl-3 pr-1 text-[13px]">
+            <li key={v} className="inline-flex items-center gap-1 rounded-full border border-[#d9cdfa] bg-[#f5f1fe] py-1 pl-3 pr-1 text-[13px]">
               <span className="text-ink-soft">{i + 1}.</span> {labelOf(v)}
               <button type="button" onClick={() => move(i, -1)} className="rounded p-1 text-ink-muted hover:bg-white" aria-label="nach vorne"><ArrowUp className="size-3.5" /></button>
               <button type="button" onClick={() => move(i, 1)} className="rounded p-1 text-ink-muted hover:bg-white" aria-label="nach hinten"><ArrowDown className="size-3.5" /></button>
@@ -378,13 +378,13 @@ function StringList({ field, value, onChange }: { field: FieldDef; value: unknow
     <div className="space-y-2">
       {items.map((item, i) => (
         <div key={i} className="flex items-center gap-2">
-          <input type={field.itemType ?? "text"} value={item} onChange={(e) => set(i, e.target.value)} className={cn(inputCls, "max-w-xs")} />
+          <input type={field.itemType ?? "text"} aria-label={`${field.label} ${i + 1}`} value={item} onChange={(e) => set(i, e.target.value)} className={cn(inputCls, "max-w-xs")} />
           <button type="button" onClick={() => removeAt(i)} className="rounded-md p-2 text-ink-muted hover:bg-ivory-100 hover:text-danger" aria-label="Eintrag entfernen">
             <X className="size-4" />
           </button>
         </div>
       ))}
-      <button type="button" onClick={() => onChange([...items, ""])} className="inline-flex h-9 items-center gap-1.5 rounded-md border border-line bg-white px-3 text-[13px] font-semibold text-forest hover:border-forest">
+      <button type="button" onClick={() => onChange([...items, ""])} className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-dashed border-[#9bd8bc] bg-[#f0faf5] px-3 text-[13px] font-semibold text-[#0a6644] transition-colors hover:border-[#0f9466] hover:bg-[#e2f6ec]">
         <Plus className="size-4" aria-hidden /> Hinzufügen
       </button>
     </div>
@@ -417,9 +417,9 @@ function ListField({ field, value, onChange, options }: { field: FieldDef; value
     <div className="space-y-3">
       {rows.length === 0 && <p className="text-[13px] text-ink-soft">Noch keine Einträge.</p>}
       {rows.map((row, i) => (
-        <div key={i} className="rounded-md border border-line bg-ivory-100/60 p-4">
+        <div key={i} className="rounded-xl border border-[#e7e2d9] bg-[#fbfaf7] p-4">
           <div className="mb-3 flex items-center justify-between gap-2">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.08em] text-ink-muted">{label} {i + 1}</p>
+            <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#4f4c47]"><span className="size-2 rounded-full bg-[#2f80d0]" aria-hidden />{label} {i + 1}</p>
             <div className="flex items-center gap-1">
               <button type="button" onClick={() => move(i, -1)} disabled={i === 0} className="rounded p-1.5 text-ink-muted hover:bg-white disabled:opacity-30" aria-label="nach oben"><ArrowUp className="size-4" /></button>
               <button type="button" onClick={() => move(i, 1)} disabled={i === rows.length - 1} className="rounded p-1.5 text-ink-muted hover:bg-white disabled:opacity-30" aria-label="nach unten"><ArrowDown className="size-4" /></button>
@@ -443,7 +443,7 @@ function ListField({ field, value, onChange, options }: { field: FieldDef; value
         </div>
       ))}
       {!field.fixedLength && (
-        <button type="button" onClick={addRow} className="inline-flex h-9 items-center gap-1.5 rounded-md border border-line bg-white px-3 text-[13px] font-semibold text-forest hover:border-forest">
+        <button type="button" onClick={addRow} className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-dashed border-[#9bd8bc] bg-[#f0faf5] px-3 text-[13px] font-semibold text-[#0a6644] transition-colors hover:border-[#0f9466] hover:bg-[#e2f6ec]">
           <Plus className="size-4" aria-hidden /> {label} hinzufügen
         </button>
       )}

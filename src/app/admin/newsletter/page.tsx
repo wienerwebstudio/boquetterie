@@ -26,7 +26,7 @@ export default async function NewsletterPage() {
           <tbody>
             {subscribers.map((s) => (
               <tr key={s.email}>
-                <Td><a href={`mailto:${s.email}`} className="text-forest underline-offset-4 hover:underline">{s.email}</a></Td>
+                <Td><a href={`mailto:${s.email}`} className="text-[#0a6644] underline-offset-4 hover:underline">{s.email}</a></Td>
                 <Td className="whitespace-nowrap">{s.status === "confirmed" ? "bestätigt" : s.status === "pending" ? "wartet auf Bestätigung" : "alt – nicht bestätigt"}</Td>
                 <Td className="text-ink-muted">{s.source === "checkout" ? "Kasse" : s.source === "website" ? "Website" : "–"}</Td>
                 <Td className="whitespace-nowrap text-ink-muted">{formatDateTime(s.createdAt)}</Td>

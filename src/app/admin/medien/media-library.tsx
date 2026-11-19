@@ -84,7 +84,7 @@ export function MediaLibrary({ initialItems, driver }: { initialItems: MediaItem
               dragging ? "border-forest bg-[#eaf3ee]" : "border-line",
             )}
           >
-            <Upload className="size-6 text-forest" aria-hidden />
+            <Upload className="size-6 text-[#0a6644]" aria-hidden />
             <div>
               <p className="text-[14px] font-semibold text-ink">Bilder hierher ziehen</p>
               <p className="mt-1 text-[13px] text-ink-muted">JPEG, PNG, WebP oder AVIF bis 15 MB. Werden auf max. 2000 px verkleinert und als JPEG (PNG bei Transparenz) gespeichert.</p>
@@ -135,7 +135,7 @@ export function MediaLibrary({ initialItems, driver }: { initialItems: MediaItem
                 <p className="truncate text-[12.5px] font-semibold text-ink" title={item.url}>{item.url.split("/").pop()}</p>
                 <p className="text-[11.5px] text-ink-soft">{formatBytes(item.bytes)}{item.modifiedAt ? ` · ${formatDateTime(item.modifiedAt)}` : ""}</p>
                 <div className="flex items-center gap-1 pt-1">
-                  <button type="button" onClick={() => copy(item.url)} className="inline-flex h-7 items-center gap-1 rounded-md px-2 text-[12px] font-semibold text-forest hover:bg-ivory-100">
+                  <button type="button" onClick={() => copy(item.url)} className="inline-flex h-7 items-center gap-1 rounded-md px-2 text-[12px] font-semibold text-[#0a6644] hover:bg-ivory-100">
                     <Copy className="size-3.5" aria-hidden /> Pfad kopieren
                   </button>
                   <button
