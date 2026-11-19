@@ -1,0 +1,417 @@
+[
+  {
+    "slug": "dostava-cvijeca-bec",
+    "title": "Dostava cvijeća Beč",
+    "headline": "Dostava cvijeća u Beču – ručno aranžirani buketi na adresu primaoca.",
+    "intro": "Dostava cvijeća u sva 23 bečka okruga, od ponedjeljka do nedjelje. Odaberite buket, datum i vremenski termin – ostalo prepustite nama.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "Kako funkcioniše dostava cvijeća u Beču",
+        "paragraphs": [
+          "Odaberite buket i veličinu, u kalendaru izaberite datum dostave, unesite adresu primaoca i platite. Nakon toga e-mailom dobijate potvrdu s linkom na status narudžbe.",
+          "Dostavljamo u sva 23 bečka okruga, svih sedam dana u sedmici, u vremenskim terminima od jednog sata između 9 i 22 sata. Cijena dostave zavisi od okruga – vidjet ćete je čim unesete poštanski broj adrese primaoca."
+        ]
+      },
+      {
+        "heading": "Ručno aranžirano, direktno dostavljeno",
+        "paragraphs": [
+          "Svaki buket za Vašu narudžbu ručno aranžira bečka cvjećarnica s kojom stalno sarađujemo. Kurir ga tamo preuzima i vozi bez usputnih zaustavljanja do adrese primaoca. Ako niko nije kod kuće, cvijeće se po mogućnosti ostavlja kod komšija.",
+          "Buketi su dostupni od 36,90 €. Stranica, naplata i e-mailovi o narudžbi dostupni su na Vašem jeziku, a platiti možete karticom, Apple Payom, Google Payom, Klarnom ili putem eps-a."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Dostava cvijeća Beč – buketi u sva 23 okruga",
+      "description": "Dostava cvijeća u Beču: ručno aranžirani buketi, željeni datum i termin od jednog sata, svih sedam dana u sedmici. U sva 23 okruga."
+    }
+  },
+  {
+    "slug": "slanje-cvijeca-u-bec",
+    "title": "Slanje cvijeća u Beč",
+    "headline": "Slanje cvijeća iz Srbije, Hrvatske i BiH u Beč.",
+    "intro": "Vaši najmiliji žive u Beču, a Vi ste u Beogradu, Zagrebu, Sarajevu ili negdje drugo? Cvijeće naručite online, a bečka cvjećarnica ga aranžira i kurirom dostavlja na adresu u Beču.",
+    "image": "/images/hero/hero-wien-tram-wide.jpg",
+    "productFilter": { "occasions": ["geburtstag", "danke", "liebe", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Naručite iz domovine, dostavljamo u Beču",
+        "paragraphs": [
+          "Slanje cvijeća iz Srbije, Hrvatske i Bosne i Hercegovine u Beč funkcioniše kao svaka online kupovina: odaberite buket, datum i vremenski termin, unesite adresu primaoca u Beču i platite. Dostavljamo isključivo na adrese u Beču – u sva 23 okruga.",
+          "Buket ne putuje preko granice: za Vašu narudžbu ga ručno aranžira bečka cvjećarnica s kojom stalno sarađujemo, a kurir ga donosi direktno primaocu."
+        ]
+      },
+      {
+        "heading": "Plaćanje i vrijeme",
+        "paragraphs": [
+          "Plaća se u eurima – karticom (i karticama izdatim izvan Austrije), Apple Payom, Google Payom, Klarnom ili putem eps-a. Sva vremena na stranici su po bečkom vremenu, koje je isto kao u Srbiji, Hrvatskoj i BiH.",
+          "Stranica, naplata i e-mailovi o narudžbi dostupni su na Vašem jeziku. Status narudžbe pratite preko linka iz e-maila s potvrdom."
+        ]
+      },
+      {
+        "heading": "Savjet za adresu u Beču",
+        "paragraphs": [
+          "Bečke adrese često imaju broj stepeništa (Stiege) i broj stana (Tür). Navedite ih uz adresu, a u napomeni za dostavu po mogućnosti i šifru ulaznih vrata – tako kurir lakše pronalazi primaoca."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-payment", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Slanje cvijeća u Beč iz Srbije, Hrvatske i BiH",
+      "description": "Slanje cvijeća u Beč iz Srbije, Hrvatske i BiH: naručite online, platite karticom, a bečka cvjećarnica dostavlja buket kurirom."
+    }
+  },
+  {
+    "slug": "cvjecara-bec",
+    "title": "Cvjećara Beč",
+    "headline": "Cvjećara u Beču – online, s dostavom na adresu.",
+    "intro": "Tražite cvjećaru u Beču? Blumora je online cvjećara: buket odaberete na stranici, a bečka partnerska cvjećarnica ga ručno aranžira i šalje kurirom.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Online cvjećara umjesto izloga",
+        "paragraphs": [
+          "Nemamo fizičku trgovinu u koju možete svratiti – sve se naručuje online, a cvijeće dostavljamo kurirom. Zato birate u miru: po prilici, boji ili vrsti cvijeća, uz fotografije i opis svakog buketa.",
+          "Svaki buket se ručno aranžira tek za Vašu narudžbu, u bečkoj cvjećarnici s kojom stalno sarađujemo. Cvijeće je prirodni proizvod, pa se nijanse ili vrste mogu neznatno razlikovati od fotografije – stil i paleta boja ostaju isti."
+        ]
+      },
+      {
+        "heading": "Šta nudimo",
+        "paragraphs": [
+          "Bukete od ruža, šarene i pastelne bukete, kutije s cvijećem, sobno bilje, žalobne vijence i bukete, a u sezoni i adventske vijence. Buketi su dostupni od 36,90 €.",
+          "Ako imate posebnu želju – na primjer neparan broj cvjetova – upišite je u napomenu za cvjećarnicu pri naručivanju. Ostvarujemo je na upit, ako je cvijeće dostupno."
+        ]
+      },
+      {
+        "heading": "Dostava u cijelom Beču",
+        "paragraphs": [
+          "Dostavljamo u sva 23 okruga, od ponedjeljka do nedjelje, u terminima od jednog sata između 9 i 22 sata. Narudžbe do 18:30 (nedjeljom do 17:45) mogu stići još isti dan, ako je slobodan neki termin."
+        ]
+      }
+    ],
+    "faqIds": ["f-photo", "f-fresh", "f-where", "f-date"],
+    "seo": {
+      "title": "Cvjećara Beč – online cvjećara s dostavom",
+      "description": "Cvjećara u Beču, online: buketi ručno aranžirani u bečkoj cvjećarnici i dostavljeni kurirom u sva 23 okruga, svih sedam dana u sedmici."
+    }
+  },
+  {
+    "slug": "dostava-cvijeca-isti-dan",
+    "title": "Dostava cvijeća isti dan",
+    "headline": "Dostava cvijeća isti dan u Beču.",
+    "intro": "Zaboravili ste rođendan ili Vas je nešto iznenadilo? U Beču je dostava cvijeća isti dan moguća za narudžbe do 18:30, a nedjeljom do 17:45 – dok god ima slobodnih termina.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Do kada možete naručiti",
+        "paragraphs": [
+          "Od ponedjeljka do subote naručite do 18:30, a nedjeljom do 17:45 (po bečkom vremenu). Buket tada može stići isti dan, ako je za adresu primaoca još slobodan neki vremenski termin. Najraniji termin završava najmanje dva sata nakon narudžbe.",
+          "Koji termini su danas još slobodni, vidjet ćete čim unesete poštanski broj, i ponovo pri naplati. Dostavu isti dan ne možemo obećati – ali prije plaćanja vidite šta je moguće."
+        ]
+      },
+      {
+        "heading": "I danas ručno aranžirano",
+        "paragraphs": [
+          "I kod kratkog roka buket se aranžira posebno za Vašu narudžbu. Kurir ga preuzima u cvjećarnici i vozi direktno na adresu primaoca.",
+          "Ako za danas više nema slobodnog termina, odaberite sutrašnji dan – dostavljamo svih sedam dana u sedmici, u terminima od jednog sata između 9 i 22 sata, u sva 23 bečka okruga."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-where", "f-window"],
+    "seo": {
+      "title": "Dostava cvijeća isti dan Beč – do 18:30",
+      "description": "Dostava cvijeća isti dan u Beču: naručite pon–sub do 18:30, nedjeljom do 17:45. Moguće dok ima slobodnih termina za adresu."
+    }
+  },
+  {
+    "slug": "dostava-ruza-bec",
+    "title": "Dostava ruža Beč",
+    "headline": "Dostava ruža u Beču – crvene, ružičaste, bijele.",
+    "intro": "Ruže za ljubav, rođendan ili zahvalu, ručno aranžirane i dostavljene kurirom na adresu u Beču. Izbor buketa od ruža nalazi se odmah ispod.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Koja boja za koju priliku",
+        "paragraphs": [
+          "Crvene ruže su klasika za ljubav i godišnjicu, ružičaste djeluju nježno i prijateljski, a bijele i krem ruže elegantno – za zahvalu ili vjenčanje. Šareni buketi od ruža lijep su izbor za rođendan."
+        ]
+      },
+      {
+        "heading": "Neparan broj ruža",
+        "paragraphs": [
+          "U mnogim porodicama s naših prostora za radosne prilike poklanja se neparan broj cvjetova, a paran broj nosi se na sahranu. Ako Vam je to važno, upišite to u napomenu za cvjećarnicu pri naručivanju – na upit, ako je moguće."
+        ]
+      },
+      {
+        "heading": "Kako ruže stižu",
+        "paragraphs": [
+          "Buket ruža aranžira bečka cvjećarnica s kojom stalno sarađujemo, a kurir ga vozi direktno primaocu. Datum birate u kalendaru, a uz njega termin od jednog sata između 9 i 22 sata, od ponedjeljka do nedjelje.",
+          "Dostavljamo u sva 23 bečka okruga. Cijenu dostave za okrug primaoca vidite nakon unosa poštanskog broja."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Dostava ruža Beč – buketi od ruža na adresu",
+      "description": "Dostava ruža u Beču: crvene, ružičaste i bijele ruže, ručno aranžirane i dostavljene kurirom – sa željenim datumom i terminom."
+    }
+  },
+  {
+    "slug": "vijenci-za-sahranu-bec",
+    "title": "Vijenci i cvijeće za sahranu",
+    "headline": "Vijenci i cvijeće za sahranu u Beču.",
+    "intro": "Kada riječi ne dolaze, cvijeće kaže posljednji pozdrav. Žalobni vijenci i žalobni buketi, dostojanstveno aranžirani i dostavljeni u Beču.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "category": "trauer", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Žalobni vijenci i buketi",
+        "paragraphs": [
+          "Za sahranu (sprovod) i komemoraciju nudimo žalobne vijence i žalobne bukete u bijeloj, crvenoj, ružičastoj, žutoj i šarenoj varijanti. Bijela boja izražava mir i tiho saučešće, crvena ljubav koja ostaje i nakon oproštaja.",
+          "Traku s natpisom na vijencu – na primjer ime ili kratku poruku oproštaja – možete dobiti na upit: upišite željeni tekst u napomenu za cvjećarnicu pri naručivanju."
+        ]
+      },
+      {
+        "heading": "Paran broj cvjetova",
+        "paragraphs": [
+          "U mnogim porodicama s naših prostora na sahranu se nosi paran broj cvjetova. Ako želite buket s parnim brojem cvjetova, navedite to u napomeni za cvjećarnicu – ostvarujemo to na upit."
+        ]
+      },
+      {
+        "heading": "Planirajte dostavu na vrijeme",
+        "paragraphs": [
+          "Dostavljamo na adresu u Beču koju navedete, u sva 23 okruga, svaki dan u terminima od jednog sata između 9 i 22 sata. Odaberite termin s dovoljno vremena prije ispraćaja, a u napomeni za dostavu navedite sve što kuriru pomaže da pronađe pravu osobu.",
+          "Ako ste u inostranstvu i ne možete doći, cvijeće može prenijeti Vaše saučešće porodici u Beču."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-change"],
+    "seo": {
+      "title": "Vijenci za sahranu Beč – žalobni vijenci i buketi",
+      "description": "Vijenci i cvijeće za sahranu u Beču: žalobni vijenci i buketi, ručno aranžirani, traka s natpisom na upit. Dostava u sva 23 okruga."
+    }
+  },
+  {
+    "slug": "cvijece-za-dan-zena",
+    "title": "Dan žena",
+    "headline": "Cvijeće za Dan žena u Beču – 8. mart.",
+    "intro": "Za mamu, sestru, koleginicu ili prijateljicu: na Dan žena cvijeće je najljepši pozdrav. Naručite unaprijed i odaberite datum dostave u Beču.",
+    "image": "/images/products/sortiment/tulpenstrauss-2.jpg",
+    "productFilter": { "occasions": ["danke", "geburtstag", "einfach-so"], "colors": ["rosa", "lila", "gelb"], "seasons": ["ganzjaehrig", "fruehling"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "8. mart (ožujak) kod nas",
+        "paragraphs": [
+          "Međunarodni dan žena obilježava se svake godine 8. marta (ožujka). U Srbiji, Hrvatskoj i Bosni i Hercegovini to je dan kada se ženama poklanja cvijeće – kod kuće, na poslu i među prijateljima. Nekada je to najčešće bio karanfil, a danas su omiljeni i tulipani, ruže i šareni proljetni buketi."
+        ]
+      },
+      {
+        "heading": "Cvijeće za žene u Beču",
+        "paragraphs": [
+          "Bilo da živite u Beču ili cvijeće šaljete izdaleka – buket ručno aranžira bečka cvjećarnica s kojom stalno sarađujemo, a kurir ga donosi na željenu adresu. Za koleginice na poslu navedite naziv firme i, ako ga znate, odjel; buket se predaje na recepciji.",
+          "Najbolje je naručiti nekoliko dana ranije i datum odabrati u kalendaru. Uz datum birate i termin od jednog sata između 9 i 22 sata. Dostavljamo u sva 23 bečka okruga."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-business", "f-window"],
+    "seo": {
+      "title": "Cvijeće za Dan žena Beč – 8. mart",
+      "description": "Cvijeće za Dan žena u Beču: tulipani, ruže i proljetni buketi, ručno aranžirani i dostavljeni kurirom na željeni datum."
+    }
+  },
+  {
+    "slug": "cvijece-za-majcin-dan",
+    "title": "Majčin dan",
+    "headline": "Cvijeće za Majčin dan u Beču.",
+    "intro": "U Hrvatskoj i Bosni i Hercegovini Majčin dan je druge nedjelje u maju (svibnju) – kao i u Austriji. Pošaljite mami buket na adresu u Beču.",
+    "image": "/images/products/sortiment/rosalie-1.jpg",
+    "productFilter": { "category": "pastell", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Kada je Majčin dan",
+        "paragraphs": [
+          "U Hrvatskoj i Bosni i Hercegovini Majčin dan obilježava se druge nedjelje u maju (svibnju). Istog dana je Majčin dan (Muttertag) i u Austriji. U Srbiji se majke tradicionalno slave na Materice, u decembru."
+        ]
+      },
+      {
+        "heading": "Buket za mamu",
+        "paragraphs": [
+          "Nježne pastelne boje, ruže ili šareni proljetni buket – birajte ono što mama najviše voli. Buket se ručno aranžira posebno za Vašu narudžbu i kurir ga donosi direktno na njenu adresu.",
+          "Majčin dan pada u nedjelju – dostavljamo i nedjeljom, u terminima od jednog sata između 9 i 22 sata. Naručite nekoliko dana ranije i odaberite datum u kalendaru."
+        ]
+      },
+      {
+        "heading": "Kada ste daleko",
+        "paragraphs": [
+          "Ako ste daleko od mame, cvijeće naručite online i platite karticom, Apple Payom, Google Payom, Klarnom ili putem eps-a. Status narudžbe pratite preko linka iz e-maila s potvrdom."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Cvijeće za Majčin dan Beč – buket za mamu",
+      "description": "Cvijeće za Majčin dan u Beču, druge nedjelje u maju: ručno aranžirani buketi za mamu, dostava i nedjeljom u terminu po izboru."
+    }
+  },
+  {
+    "slug": "cvijece-za-materice",
+    "title": "Materice",
+    "headline": "Cvijeće za Materice – za mamu u Beču.",
+    "intro": "Materice su srpski praznik posvećen majkama. Ako ne možete biti uz mamu, neka buket stigne na njenu adresu u Beču.",
+    "image": "/images/products/sortiment/rose-dream-1.jpg",
+    "productFilter": { "occasions": ["danke", "geburtstag", "einfach-so"], "colors": ["rosa", "weiss", "creme"], "seasons": ["ganzjaehrig", "winter"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Kada su Materice",
+        "paragraphs": [
+          "Materice se slave druge nedjelje prije Božića. Srpska pravoslavna crkva Božić slavi po julijanskom kalendaru – 7. januara po građanskom kalendaru – pa Materice padaju u decembar. Dio su niza od tri nedjelje pred Božić: Detinjci su posvećeni djeci, Materice majkama, a Oci očevima."
+        ]
+      },
+      {
+        "heading": "Običaj i cvijeće",
+        "paragraphs": [
+          "Prema poznatom običaju, djeca na Materice simbolično „vežu“ majku, a ona se „odrješuje“ poklonima. Cvijeće nije obavezni dio običaja, ali je lijep način da mama vidi da mislite na nju – posebno ako ste daleko."
+        ]
+      },
+      {
+        "heading": "Dostava u decembru",
+        "paragraphs": [
+          "Datum dostave birate u kalendaru. Materice padaju u nedjelju – dostavljamo i nedjeljom, u terminima od jednog sata između 9 i 22 sata. Buket ručno aranžira bečka cvjećarnica, a kurir ga donosi direktno na adresu u Beču.",
+          "Ako želite neparan broj cvjetova, upišite to u napomenu za cvjećarnicu – na upit."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Cvijeće za Materice – dostava u Beču",
+      "description": "Cvijeće za Materice u Beču: ručno aranžirani buketi za mamu, dostava i nedjeljom u terminu od jednog sata. Datum birate u kalendaru."
+    }
+  },
+  {
+    "slug": "cvijece-za-valentinovo",
+    "title": "Valentinovo",
+    "headline": "Cvijeće za Valentinovo u Beču – 14. 2.",
+    "intro": "Crvene ruže, kutija s cvijećem ili nešto nježnije: za Valentinovo pošaljite cvijeće voljenoj osobi na adresu u Beču.",
+    "image": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+    "productFilter": { "occasions": ["liebe"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "14. februar (veljača)",
+        "paragraphs": [
+          "Valentinovo se slavi svake godine 14. februara (veljače) kao dan zaljubljenih. Najpoznatiji simbol su crvene ruže, ali ružičaste ruže, bijelo-crveni buketi ili kutija s cvijećem u obliku srca jednako dobro kažu ono što mislite."
+        ]
+      },
+      {
+        "heading": "Dostava na Valentinovo",
+        "paragraphs": [
+          "Odaberite 14. februar u kalendaru i termin od jednog sata između 9 i 22 sata – ujutro prije posla ili navečer kod kuće. Valentinovo je jedan od najprometnijih dana za cvijeće, zato je najbolje naručiti nekoliko dana ranije.",
+          "Buket ručno aranžira bečka cvjećarnica s kojom stalno sarađujemo, a kurir ga donosi direktno na adresu. Ako želite ostati anonimni: bez čestitke Vaše ime nigdje ne stoji uz buket, a račun ide samo Vama.",
+          "Za radosne prilike, pa i za Valentinovo, mnogi biraju neparan broj ruža. Ako Vam je to važno, upišite to u napomenu za cvjećarnicu – na upit."
+        ]
+      }
+    ],
+    "faqIds": ["f-window", "f-date", "f-anon", "f-nobody"],
+    "seo": {
+      "title": "Cvijeće za Valentinovo Beč – ruže na adresu",
+      "description": "Cvijeće za Valentinovo u Beču: crvene ruže i romantični buketi, ručno aranžirani i dostavljeni 14. 2. u terminu po izboru."
+    }
+  },
+  {
+    "slug": "cvijece-za-vjencanje",
+    "title": "Vjenčanje",
+    "headline": "Cvijeće za vjenčanje u Beču – čestitka za mladence.",
+    "intro": "Ne možete biti na vjenčanju ili želite čestitati i nakon slavlja? Pošaljite mladencima buket na adresu u Beču.",
+    "image": "/images/products/sortiment/rosenkuss-1.jpg",
+    "productFilter": { "occasions": ["hochzeit"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Buket kao čestitka",
+        "paragraphs": [
+          "Bijele i krem ruže, bijelo-crveni buketi i svijetli, elegantni aranžmani čest su izbor za čestitku mladencima. Buket se ručno aranžira posebno za Vašu narudžbu u bečkoj cvjećarnici s kojom stalno sarađujemo.",
+          "Za radosne prilike mnogi biraju neparan broj cvjetova – ako Vam je to važno, upišite to u napomenu za cvjećarnicu (na upit)."
+        ]
+      },
+      {
+        "heading": "Gdje dostavljamo",
+        "paragraphs": [
+          "Dostavljamo na svaku adresu u Beču – mladencima kući, a ako su odsjeli u hotelu, navedite naziv hotela i ime gosta; buket se predaje na recepciji. Datum birate u kalendaru, a uz njega termin od jednog sata između 9 i 22 sata, i vikendom.",
+          "Ako ste na dan vjenčanja daleko, buket može stići i dan poslije – kao lijepa uspomena kad se slavlje smiri. Ako niko nije kod kuće, kurir ga po mogućnosti ostavlja kod komšija."
+        ]
+      }
+    ],
+    "faqIds": ["f-business", "f-date", "f-window", "f-photo"],
+    "seo": {
+      "title": "Cvijeće za vjenčanje Beč – buket za mladence",
+      "description": "Cvijeće za vjenčanje u Beču: elegantni buketi u bijeloj i crvenoj kao čestitka mladencima, dostava kući ili u hotel."
+    }
+  },
+  {
+    "slug": "cvijece-za-rodjenje-bebe",
+    "title": "Rođenje bebe",
+    "headline": "Cvijeće za rođenje bebe u Beču.",
+    "intro": "Stigla je beba – čestitajte roditeljima nježnim buketom, dostavljenim na adresu u Beču.",
+    "image": "/images/products/sortiment/zartrosa-zauber-1.jpg",
+    "productFilter": { "occasions": ["geburt"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Nježne boje za novi početak",
+        "paragraphs": [
+          "Za rođenje bebe često se biraju pastelne boje: ružičasta, bijela ili boja jorgovana. Buket se ručno aranžira posebno za Vašu narudžbu i kurir ga donosi direktno roditeljima. Uz bukete možete izabrati i sobnu biljku, koja dugo podsjeća na veliki dan.",
+          "Ako želite neparan broj cvjetova, kako je za radosne prilike uobičajeno u mnogim porodicama, upišite to u napomenu za cvjećarnicu – na upit."
+        ]
+      },
+      {
+        "heading": "Kada i gdje poslati",
+        "paragraphs": [
+          "Najpraktičnije je cvijeće poslati kući, kad se roditelji s bebom vrate iz bolnice. Datum birate u kalendaru, a uz njega termin od jednog sata između 9 i 22 sata – svih sedam dana u sedmici.",
+          "Ako ipak šaljete u bolnicu, prije narudžbe provjerite da li odjel prima cvijeće. Kurir predaje buket lično; ako niko nije tu, ostavlja ga po mogućnosti kod komšija."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-nobody", "f-window"],
+    "seo": {
+      "title": "Cvijeće za rođenje bebe Beč – nježni buketi",
+      "description": "Cvijeće za rođenje bebe u Beču: nježni pastelni buketi za roditelje, ručno aranžirani i dostavljeni na željeni datum."
+    }
+  },
+  {
+    "slug": "cvijece-za-slavu",
+    "title": "Slava",
+    "headline": "Cvijeće za slavu u Beču.",
+    "intro": "Idete na slavu kod porodice ili prijatelja u Beču – ili ne možete doći? Buket za domaćicu stiže na adresu domaćina.",
+    "image": "/images/products/sortiment/weiss-bouquet-1.jpg",
+    "productFilter": { "occasions": ["danke", "einfach-so"], "colors": ["weiss", "creme"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Šta je slava",
+        "paragraphs": [
+          "Slava je srpski pravoslavni porodični praznik u čast svetitelja zaštitnika porodice. Prenosi se s koljena na koljeno, a porodica je slavi svake godine istog dana. Godine 2014. slava je upisana na UNESCO-ovu Reprezentativnu listu nematerijalnog kulturnog nasljeđa čovječanstva.",
+          "Među najčešćim slavama su Sveti Nikola (19. decembar), Sveti Jovan (20. januar), Đurđevdan (6. maj) i Aranđelovdan (21. novembar)."
+        ]
+      },
+      {
+        "heading": "Cvijeće za domaćina",
+        "paragraphs": [
+          "Na slavu se dolazi u goste, a gosti često donose poklon. Buket za domaćicu lijep je znak pažnje – pogotovo ako ga pošaljete dan ranije ili ujutro, da ne mora tražiti vazu dok dočekuje goste.",
+          "Ako ste daleko i ne možete doći, buket prenosi Vaše dobre želje porodici u Beču."
+        ]
+      },
+      {
+        "heading": "Dostava na dan slave",
+        "paragraphs": [
+          "Datum birate u kalendaru, a uz njega termin od jednog sata između 9 i 22 sata – dostavljamo svih sedam dana u sedmici. Za neparan broj cvjetova upišite napomenu za cvjećarnicu – na upit."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Cvijeće za slavu Beč – buket za domaćicu",
+      "description": "Cvijeće za slavu u Beču: elegantni buketi za domaćicu, ručno aranžirani i dostavljeni na dan slave ili dan ranije."
+    }
+  }
+]
