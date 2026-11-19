@@ -12,7 +12,9 @@ export function generateStaticParams() {
   return liveLocales().map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
+type Props = { children: React.ReactNode; params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Pick<Props, "params">): Promise<Metadata> {
   const [settings, { locale }] = await Promise.all([getSettings(), params]);
   const og = LOCALE_INFO[(isLiveLocale(locale) ? locale : "de") as Locale].og;
   return {
@@ -47,7 +49,7 @@ export const viewport: Viewport = {
 };
 
 /** Root layout of the storefront: one per language (`lang` and text direction). */
-export default async function RootLayout({ children, params }: LayoutProps<"/[locale]">) {
+export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!isLiveLocale(locale)) notFound();
   const info = LOCALE_INFO[locale];
