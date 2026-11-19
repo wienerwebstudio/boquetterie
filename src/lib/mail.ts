@@ -6,8 +6,11 @@ import { getAllProducts, getExtras, getOccasions, getPartners, getSettings } fro
 import { getFloristBudgets } from "@/lib/florist-budget";
 import * as templates from "@/lib/mail/templates";
 import { floristReadyTime, getLocalNow, isSelfDeliveryDay } from "@/lib/delivery";
-import type { MailBrand, RenderedMail } from "@/lib/mail/templates";
+import type { MailBrand, MailMessages, RenderedMail } from "@/lib/mail/templates";
 import { formatReminderDate } from "@/lib/mail/reminders";
+import { DEFAULT_LOCALE, isLocale, LOCALE_INFO, type Locale } from "@/i18n/config";
+import { loadMessages } from "@/i18n/messages";
+import { localizePath } from "@/i18n/paths";
 
 /**
  * Transactional e-mail.
@@ -187,12 +190,14 @@ export function siteUrlOf(settings: Pick<SiteSettings, "seo">) {
   return settings.seo.siteUrl.replace(/\/$/, "");
 }
 
-export function orderTrackingUrl(order: Pick<Order, "id" | "token">, siteUrl: string) {
-  return `${siteUrl.replace(/\/$/, "")}/bestellung/${encodeURIComponent(order.id)}?token=${encodeURIComponent(order.token)}`;
+/** Status page of an order – in the shop language `locale` (German without prefix). */
+export function orderTrackingUrl(order: Pick<Order, "id" | "token">, siteUrl: string, locale: Locale = DEFAULT_LOCALE) {
+  return `${siteUrl.replace(/\/$/, "")}${localizePath(locale, `/bestellung/${encodeURIComponent(order.id)}?token=${encodeURIComponent(order.token)}`)}`;
 }
 
-export function reviewUrl(order: Pick<Order, "id" | "token">, siteUrl: string) {
-  return `${siteUrl.replace(/\/$/, "")}/bewertung?order=${encodeURIComponent(order.id)}&token=${encodeURIComponent(order.token)}`;
+/** Review page of an order – in the shop language `locale` (German without prefix). */
+export function reviewUrl(order: Pick<Order, "id" | "token">, siteUrl: string, locale: Locale = DEFAULT_LOCALE) {
+  return `${siteUrl.replace(/\/$/, "")}${localizePath(locale, `/bewertung?order=${encodeURIComponent(order.id)}&token=${encodeURIComponent(order.token)}`)}`;
 }
 
 /** Brand facts for the templates. Placeholder values ("[…]") from settings are never sent. */
@@ -205,6 +210,78 @@ export function mailBrand(settings: SiteSettings): MailBrand {
     email: real(settings.brand.email),
     logoUrl: `${siteUrlOf(settings)}/images/brand/logo-horizontal.png`,
   };
+}
+
+/* ---------------- Language of customer mails ---------------- */
+
+/** Language of a customer mail: the stored/requested locale when valid, else German. */
+export async function customerMailLang(locale: unknown): Promise<{ locale: Locale; m: MailMessages }> {
+  const l = isLocale(locale) ? locale : DEFAULT_LOCALE;
+  return { locale: l, m: (await loadMessages(l)).mail };
+}
+
+/**
+ * Brand facts and settings for a customer mail: German as stored, other languages with the
+ * translated content (claim, status names) where the admin has translated it.
+ */
+async function customerSettings(locale: Locale): Promise<SiteSettings> {
+  if (locale === DEFAULT_LOCALE) return getSettings();
+  const { getSettingsIn } = await import("@/lib/cms-localized");
+  return getSettingsIn(locale).catch(() => getSettings());
+}
+
+/**
+ * The order with product, size, colour, extra and window names in the customer's language
+ * (content translations; untranslated names stay German). German: the order as stored.
+ */
+async function orderInLanguage(order: Order, locale: Locale): Promise<Order> {
+  if (locale === DEFAULT_LOCALE) return order;
+  try {
+    const { getDeliveryZonesIn, getExtrasIn, getProductsIn } = await import("@/lib/cms-localized");
+    const [products, extras, zones, germanProducts] = await Promise.all([getProductsIn(locale, true), getExtrasIn(locale, false), getDeliveryZonesIn(locale, false), getAllProducts(true)]);
+    const window = zones.find((z) => z.id === order.delivery.zoneId)?.windows.find((w) => w.id === order.delivery.windowId);
+    return {
+      ...order,
+      delivery: { ...order.delivery, ...(order.delivery.windowLabel && window ? { windowLabel: window.label } : {}) },
+      lines: order.lines.map((l) => {
+        const p = products.find((x) => x.id === l.productId);
+        if (!p) return { ...l, extras: l.extras.map((e) => ({ ...e, name: extras.find((x) => x.id === e.extraId)?.name ?? e.name })) };
+        const colorId = germanProducts.find((x) => x.id === l.productId)?.colorOptions?.find((c) => c.label === l.color)?.id;
+        const color = colorId ? p.colorOptions?.find((c) => c.id === colorId)?.label : undefined;
+        return {
+          ...l,
+          productName: p.name,
+          sizeLabel: p.sizes.find((sz) => sz.id === l.sizeId)?.label ?? l.sizeLabel,
+          ...(l.color && color ? { color } : {}),
+          extras: l.extras.map((e) => ({ ...e, name: extras.find((x) => x.id === e.extraId)?.name ?? e.name })),
+        };
+      }),
+    };
+  } catch (err) {
+    console.warn(`[mail] content in ${locale} unavailable – order names stay German`, err);
+    return order;
+  }
+}
+
+/** Day and month of a reminder: "12. März" in German, `Intl` in other languages. */
+function reminderDateIn(locale: Locale, r: Pick<Reminder, "day" | "month">) {
+  if (locale === DEFAULT_LOCALE) return formatReminderDate(r);
+  // 2000 is a leap year, so 29 February exists.
+  return new Intl.DateTimeFormat(LOCALE_INFO[locale].intl, { day: "numeric", month: "long", timeZone: "UTC" }).format(new Date(Date.UTC(2000, r.month - 1, r.day, 12)));
+}
+
+/** Name of a reminder's occasion in the customer's language (own occasions keep the text they typed). */
+async function occasionLabelIn(locale: Locale, reminder: Reminder): Promise<string> {
+  if (locale === DEFAULT_LOCALE) return reminder.occasionLabel;
+  try {
+    const { getOccasionsIn } = await import("@/lib/cms-localized");
+    const [german, local] = await Promise.all([getOccasions(), getOccasionsIn(locale)]);
+    // Only when the stored label still is the occasion's German name (not a custom text).
+    if (german.find((o) => o.slug === reminder.occasionSlug)?.name !== reminder.occasionLabel) return reminder.occasionLabel;
+    return local.find((o) => o.slug === reminder.occasionSlug)?.name ?? reminder.occasionLabel;
+  } catch {
+    return reminder.occasionLabel;
+  }
 }
 
 function send(to: string | string[], mail: RenderedMail, type: string): Promise<MailResult> {
@@ -236,13 +313,18 @@ export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind
   const selfDelivery = isSelfDeliveryDay(settings, order.delivery.date);
   const admin = adminMailAddress();
   const partner = kinds.includes("partner") ? await assignedPartner(order) : null;
+  // The customer's mail in the order's language; internal and partner mails stay German.
+  const lang = await customerMailLang(order.locale);
+  const [customerBrand, customerOrder] = kinds.includes("customer") && lang.locale !== DEFAULT_LOCALE
+    ? await Promise.all([customerSettings(lang.locale).then(mailBrand), orderInLanguage(order, lang.locale)])
+    : [brand, order];
   const recipients: Record<OrderMailKind, string[]> = {
     customer: [order.customer.email],
     internal: admin ? [admin] : [],
     partner: partner ? partnerMailAddresses(partner) : [],
   };
   const render: Record<OrderMailKind, () => RenderedMail> = {
-    customer: () => templates.orderConfirmation({ order, brand, trackingUrl: orderTrackingUrl(order, brand.siteUrl) }),
+    customer: () => templates.orderConfirmation({ order: customerOrder, brand: customerBrand, trackingUrl: orderTrackingUrl(order, brand.siteUrl, lang.locale), ...lang }),
     internal: () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}`, selfDelivery, readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)) }),
     partner: () => templates.floristOrder({ order, brand, selfDelivery, readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)) }),
   };
@@ -343,16 +425,25 @@ export async function sendOrderStatusUpdate(order: Order): Promise<MailResult> {
   const settings = await getSettings();
   const status = settings.orderStatuses.find((s) => s.key === order.status);
   if (!status || !status.customerVisible) return { sent: false, provider: mailProvider(), error: "status not customer visible" };
-  const brand = mailBrand(settings);
-  const trackingUrl = orderTrackingUrl(order, brand.siteUrl);
-  return send(order.customer.email, templates.orderStatusUpdate({ order, status, brand, trackingUrl }), `order_status_${status.key}`);
+  const lang = await customerMailLang(order.locale);
+  if (lang.locale === DEFAULT_LOCALE) {
+    const brand = mailBrand(settings);
+    const trackingUrl = orderTrackingUrl(order, brand.siteUrl);
+    return send(order.customer.email, templates.orderStatusUpdate({ order, status, brand, trackingUrl }), `order_status_${status.key}`);
+  }
+  const [local, localOrder] = await Promise.all([customerSettings(lang.locale), orderInLanguage(order, lang.locale)]);
+  const brand = mailBrand(local);
+  const localStatus = local.orderStatuses.find((s) => s.key === status.key) ?? status;
+  const trackingUrl = orderTrackingUrl(order, brand.siteUrl, lang.locale);
+  return send(order.customer.email, templates.orderStatusUpdate({ order: localOrder, status: localStatus, brand, trackingUrl, ...lang }), `order_status_${status.key}`);
 }
 
 /** "Wie war der Strauß?" – sent once per delivered order by the review-requests cron. */
 export async function sendReviewRequest(order: Order): Promise<MailResult> {
-  const settings = await getSettings();
+  const lang = await customerMailLang(order.locale);
+  const [settings, localOrder] = await Promise.all([customerSettings(lang.locale), orderInLanguage(order, lang.locale)]);
   const brand = mailBrand(settings);
-  return send(order.customer.email, templates.reviewRequest({ order, brand, reviewUrl: reviewUrl(order, brand.siteUrl) }), "review_request");
+  return send(order.customer.email, templates.reviewRequest({ order: localOrder, brand, reviewUrl: reviewUrl(order, brand.siteUrl, lang.locale), ...lang }), "review_request");
 }
 
 /* ---------------- Occasion reminders ---------------- */
@@ -364,19 +455,21 @@ function reminderUrls(reminder: Reminder, siteUrl: string) {
 
 /** Double-opt-in mail with the confirmation link. */
 export async function sendReminderConfirmation(reminder: Reminder): Promise<MailResult> {
-  const settings = await getSettings();
+  const lang = await customerMailLang(reminder.locale);
+  const [settings, occasionLabel] = await Promise.all([customerSettings(lang.locale), occasionLabelIn(lang.locale, reminder)]);
   const brand = mailBrand(settings);
   const { confirmUrl } = reminderUrls(reminder, brand.siteUrl);
   return send(
     reminder.email,
-    templates.reminderConfirmation({ brand, confirmUrl, occasionLabel: reminder.occasionLabel, personName: reminder.personName, dateLabel: formatReminderDate(reminder), leadDays: reminder.leadDays }),
+    templates.reminderConfirmation({ brand, confirmUrl, occasionLabel, personName: reminder.personName, dateLabel: reminderDateIn(lang.locale, reminder), leadDays: reminder.leadDays, ...lang }),
     "reminder_confirmation",
   );
 }
 
 /** The actual reminder, `daysUntil` days before the occasion. */
 export async function sendOccasionReminder(reminder: Reminder, daysUntil: number): Promise<MailResult> {
-  const [settings, occasions] = await Promise.all([getSettings(), getOccasions()]);
+  const lang = await customerMailLang(reminder.locale);
+  const [settings, occasions, occasionLabel] = await Promise.all([customerSettings(lang.locale), getOccasions(), occasionLabelIn(lang.locale, reminder)]);
   const brand = mailBrand(settings);
   const occasion = occasions.find((o) => o.slug === reminder.occasionSlug);
   const { unsubscribeUrl } = reminderUrls(reminder, brand.siteUrl);
@@ -384,13 +477,14 @@ export async function sendOccasionReminder(reminder: Reminder, daysUntil: number
     reminder.email,
     templates.occasionReminder({
       brand,
-      occasionLabel: reminder.occasionLabel,
+      occasionLabel,
       personName: reminder.personName,
-      dateLabel: formatReminderDate(reminder),
+      dateLabel: reminderDateIn(lang.locale, reminder),
       leadDays: daysUntil,
-      occasionUrl: occasion ? `${brand.siteUrl}/anlaesse/${occasion.slug}` : undefined,
-      shopUrl: `${brand.siteUrl}/blumen`,
+      occasionUrl: occasion ? `${brand.siteUrl}${localizePath(lang.locale, `/anlaesse/${occasion.slug}`)}` : undefined,
+      shopUrl: `${brand.siteUrl}${localizePath(lang.locale, "/blumen")}`,
       unsubscribeUrl,
+      ...lang,
     }),
     "occasion_reminder",
   );
@@ -399,10 +493,11 @@ export async function sendOccasionReminder(reminder: Reminder, daysUntil: number
 /* ---------------- Auth ---------------- */
 
 /** Magic-link login mail (used by the customer account feature). */
-export async function sendMagicLink(input: { to: string; url: string; validMinutes?: number }): Promise<MailResult> {
+export async function sendMagicLink(input: { to: string; url: string; validMinutes?: number; locale?: Locale }): Promise<MailResult> {
   const settings = await getSettings();
   const brand = mailBrand(settings);
-  return send(input.to, templates.magicLink({ url: input.url, brandName: brand.name, siteUrl: brand.siteUrl, validMinutes: input.validMinutes }), "magic_link");
+  const lang = await customerMailLang(input.locale);
+  return send(input.to, templates.magicLink({ url: input.url, brandName: brand.name, siteUrl: brand.siteUrl, validMinutes: input.validMinutes, ...lang }), "magic_link");
 }
 
 export { escapeHtml } from "@/lib/mail/templates";

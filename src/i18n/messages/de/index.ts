@@ -15,6 +15,7 @@ import cart from "./cart";
 import checkout from "./checkout";
 import account from "./account";
 import reminders from "./reminders";
+import mail from "./mail";
 
 const de = {
   common,
@@ -29,6 +30,7 @@ const de = {
   checkout,
   account,
   reminders,
+  mail,
 };
 
 export default de;

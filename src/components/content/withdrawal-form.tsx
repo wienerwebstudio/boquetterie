@@ -33,7 +33,7 @@ export function WithdrawalForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   const [receipt, setReceipt] = useState<{ receivedAt: string; confirmationSent: boolean; id?: string } | null>(null);
   const [fallbackEmail, setFallbackEmail] = useState<string | null>(null);
-  const { m, fmt } = useI18n();
+  const { m, fmt, locale } = useI18n();
   const t = m.forms.withdrawal;
 
   const set = <K extends keyof FormState>(key: K) => (e: { target: { value: string } }) => {
@@ -51,7 +51,7 @@ export function WithdrawalForm() {
       const res = await fetch("/api/withdrawals", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: form.name.trim(), email: form.email.trim(), orderId: form.orderId.trim(), items: form.items.trim() || undefined, website: form.website }),
+        body: JSON.stringify({ name: form.name.trim(), email: form.email.trim(), orderId: form.orderId.trim(), items: form.items.trim() || undefined, website: form.website, locale }),
       });
       const data = (await res.json().catch(() => null)) as { ok?: boolean; errors?: Errors; code?: string; email?: string; receivedAt?: string; confirmationSent?: boolean; id?: string; message?: string } | null;
       if (!res.ok || !data?.ok) {

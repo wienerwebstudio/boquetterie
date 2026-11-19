@@ -5,6 +5,9 @@ import { isAuthConfigured } from "@/lib/auth/session";
 import { createLoginToken, normalizeEmail } from "@/lib/auth/tokens";
 import { sendMagicLinkMail } from "@/lib/auth/mail";
 import { getCapabilities } from "@/lib/capabilities";
+import { DEFAULT_LOCALE, isLocale } from "@/i18n/config";
+import { loadMessages } from "@/i18n/messages";
+import { localizePath } from "@/i18n/paths";
 
 export const dynamic = "force-dynamic";
 
@@ -22,7 +25,7 @@ function tooMany(retryAfterSeconds: number) {
   );
 }
 
-/** POST /api/auth/request-link { email, website? } – website is a honeypot. */
+/** POST /api/auth/request-link { email, locale?, website? } – website is a honeypot; locale (shop language) picks the mail's language and link. */
 export async function POST(req: Request) {
   const ip = rateLimit(clientKey(req), { scope: "auth-link-ip", limit: LIMIT, windowMs: WINDOW_MS });
   if (!ip.ok) return tooMany(ip.retryAfterSeconds);
@@ -53,10 +56,12 @@ export async function POST(req: Request) {
   const settings = await getSettings();
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || settings.seo.siteUrl).replace(/\/$/, "");
   const token = await createLoginToken(email);
-  const url = `${siteUrl}/auth/verify?token=${token}`;
+  const locale = isLocale(rec.locale) ? rec.locale : DEFAULT_LOCALE;
+  const url = `${siteUrl}${localizePath(locale, `/auth/verify?token=${token}`)}`;
+  const lang = locale === DEFAULT_LOCALE ? {} : { locale, m: (await loadMessages(locale)).mail };
   // Sent after the response (no timing leak), but the serverless function stays alive until the
   // mail is out – a fire-and-forget promise is dropped when the function freezes.
-  const send = () => sendMagicLinkMail({ to: email, url, brandName: settings.brand.name, siteUrl })
+  const send = () => sendMagicLinkMail({ to: email, url, brandName: settings.brand.name, siteUrl, ...lang })
     .then((r) => { if (!r.sent) console.error("[auth] magic link mail not sent", r.error ?? r.provider); })
     .catch((err) => console.error("[auth] magic link mail failed", err));
   try { after(send); } catch { await send(); }

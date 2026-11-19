@@ -2,13 +2,15 @@ import { NextResponse } from "next/server";
 import { getSettings } from "@/lib/cms";
 import { requestNewsletterSignup } from "@/lib/newsletter";
 import { enforceRateLimit } from "@/lib/rate-limit";
+import { DEFAULT_LOCALE, isLocale } from "@/i18n/config";
 
 export const dynamic = "force-dynamic";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 /**
- * POST /api/newsletter { email, website?: "" } – `website` is a honeypot and must be empty.
+ * POST /api/newsletter { email, locale?, website?: "" } – `website` is a honeypot and must be empty;
+ * `locale` (shop language) picks the language of the confirmation mail.
  * Starts the double opt-in: the address is stored as pending and gets a confirmation mail.
  * The answer is the same for new, pending and already confirmed addresses.
  */
@@ -41,7 +43,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, message: "Bitte gib eine gültige E-Mail-Adresse ein." }, { status: 400 });
   }
 
-  const result = await requestNewsletterSignup(email, "website");
+  const result = await requestNewsletterSignup(email, "website", new Date(), isLocale(body.locale) ? body.locale : DEFAULT_LOCALE);
   if (!result.ok) {
     return NextResponse.json({ ok: false, code: "unavailable", message: "Die Anmeldung ist gerade nicht möglich. Bitte versuch es später noch einmal." }, { status: 503 });
   }

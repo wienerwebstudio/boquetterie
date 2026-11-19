@@ -5,6 +5,10 @@ import { adminMailAddress, escapeHtml, mailBrand, sendMail } from "@/lib/mail";
 import { withdrawalReceipt } from "@/lib/mail/templates";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import { viennaDateTime } from "@/lib/format";
+import { DEFAULT_LOCALE, isLocale } from "@/i18n/config";
+import { formatDateTimeIn } from "@/i18n/format";
+import { loadMessages } from "@/i18n/messages";
+import { localizePath } from "@/i18n/paths";
 
 export const dynamic = "force-dynamic";
 
@@ -29,7 +33,8 @@ const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice
 
 /**
  * POST /api/withdrawals – the website's withdrawal function ("Vertrag widerrufen").
- * Body: { name, email, orderId, items?, website? (honeypot) }
+ * Body: { name, email, orderId, items?, locale?, website? (honeypot) } – `locale` is the
+ * shop language; the acknowledgement mail goes out in it (German by default).
  *
  * Every complete declaration is accepted – whether the order exists is noted for the
  * admin, not checked against the visitor (no order enumeration, no extra hurdle).
@@ -68,7 +73,13 @@ export async function POST(req: Request) {
 
   const settings = await getSettings();
   const brand = mailBrand(settings);
-  const receipt = withdrawalReceipt({ brand, id, receivedAt, name, orderId, items: items || undefined });
+  const locale = isLocale(body.locale) ? body.locale : DEFAULT_LOCALE;
+  const receipt = locale === DEFAULT_LOCALE
+    ? withdrawalReceipt({ brand, id, receivedAt, name, orderId, items: items || undefined })
+    : withdrawalReceipt({
+        brand, id, name, orderId, items: items || undefined, locale, m: (await loadMessages(locale)).mail,
+        receivedAt: formatDateTimeIn(locale, now.toISOString()), policyUrl: `${brand.siteUrl}${localizePath(locale, "/widerruf")}`,
+      });
   const confirmation = await sendMail({ to: email, subject: receipt.subject, html: receipt.html, text: receipt.text, tags: { type: "withdrawal_receipt" } }).catch(() => null);
 
   const entry: WithdrawalEntry = {

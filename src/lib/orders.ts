@@ -7,6 +7,7 @@ import type { CreatePaymentResult, PaymentProviderId } from "@/types/payments";
 import { addOrder, getAllProducts, getCoupons, getDeliveryZones, getExtras, getOrderById, getOrders, getSettings, readCollection, updateOrder, writeCollection } from "@/lib/cms";
 import { findZone, getAvailableDays, getLocalNow, normalizePostalCode } from "@/lib/delivery";
 import checkoutDe from "@/i18n/messages/de/checkout";
+import type { Locale } from "@/i18n/config";
 import { computeTotals, validateCoupon } from "@/lib/pricing";
 import { createPayment, providerForMethod, type PaymentEvent } from "@/lib/payments";
 import { sendOrderConfirmation } from "@/lib/mail";
@@ -324,7 +325,7 @@ export type CreateOrderOutcome =
  * PayPal return what the browser needs to finish the payment (client secret /
  * approve URL) and the order is marked paid by confirm endpoint or webhook.
  */
-export async function createOrderFromPayload(payload: OrderPayload, opts: { siteUrl: string }): Promise<CreateOrderOutcome> {
+export async function createOrderFromPayload(payload: OrderPayload, opts: { siteUrl: string; locale?: Locale }): Promise<CreateOrderOutcome> {
   const [products, extras, zones, coupons, settings] = await Promise.all([
     getAllProducts(), getExtras(), getDeliveryZones(), getCoupons(), getSettings(),
   ]);
@@ -403,6 +404,8 @@ export async function createOrderFromPayload(payload: OrderPayload, opts: { site
     coupon: coupon && totals.discount > 0 ? { code: coupon.code, discount: totals.discount } : coupon?.type === "free_shipping" ? { code: coupon.code, discount: 0 } : undefined,
     totals: { subtotal: totals.itemsSubtotal, extras: totals.extrasSubtotal, delivery: totals.delivery, discount: totals.discount, total: totals.total },
     payment: { method: paymentConfig.id, status: "pending", provider },
+    // Shop language for the customer mails; German orders carry none (as before).
+    ...(opts.locale && opts.locale !== "de" ? { locale: opts.locale } : {}),
   };
 
   try {

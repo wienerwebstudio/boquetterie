@@ -5,12 +5,14 @@ import { enforceRateLimit } from "@/lib/rate-limit";
 import { getCapabilities } from "@/lib/capabilities";
 import { sendReminderConfirmation } from "@/lib/mail";
 import { getReminders, newReminderId, newToken, parseReminderInput, pruneUnconfirmed, saveReminders } from "@/lib/mail/reminders";
+import { isLocale } from "@/i18n/config";
 
 export const dynamic = "force-dynamic";
 
 /**
  * POST /api/reminders
- * Body: { email, occasion, customOccasion?, personName?, day, month, yearly, leadDays, consent, website? }
+ * Body: { email, occasion, customOccasion?, personName?, day, month, yearly, leadDays, consent, locale?, website? }
+ * `locale` (shop language) is stored on the reminder; its mails go out in it (German by default).
  * Stores an unconfirmed reminder and sends the double-opt-in mail. The reminder
  * only becomes active via GET /api/reminders/confirm?id&token.
  */
@@ -37,6 +39,7 @@ export async function POST(req: Request) {
   const parsed = parseReminderInput(body, await getOccasions());
   if (!parsed.ok) return NextResponse.json({ ok: false, errors: parsed.errors }, { status: 422 });
   const input = parsed.input;
+  const locale = isLocale(body.locale) && body.locale !== "de" ? body.locale : undefined;
 
   try {
     const list = pruneUnconfirmed(await getReminders());
@@ -49,10 +52,10 @@ export async function POST(req: Request) {
 
     let reminder: Reminder;
     if (existing) {
-      reminder = { ...existing, ...input, createdAt: new Date().toISOString() };
+      reminder = { ...existing, ...input, locale, createdAt: new Date().toISOString() };
       list[list.indexOf(existing)] = reminder;
     } else {
-      reminder = { id: newReminderId(), createdAt: new Date().toISOString(), ...input, confirmed: false, unsubscribeToken: newToken() };
+      reminder = { id: newReminderId(), createdAt: new Date().toISOString(), ...input, confirmed: false, unsubscribeToken: newToken(), ...(locale && { locale }) };
       list.push(reminder);
     }
     await saveReminders(list);

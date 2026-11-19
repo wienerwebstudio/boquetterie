@@ -260,7 +260,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     try {
       const res = await fetch("/api/orders", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        // The locale only picks the language of the server's messages.
+        // The locale picks the language of the server's messages and of the customer mails.
         body: JSON.stringify({ ...payload, locale }),
       });
       const body = (await res.json()) as Partial<OrderCreateResponse> & { message?: string; errors?: FieldErrors };

@@ -15,7 +15,8 @@ export function LoginCard({ notice, unavailable = false }: { notice?: string; /*
   const [error, setError] = useState<string | undefined>();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   const [failMessage, setFailMessage] = useState<string | undefined>();
-  const t = useI18n().m.account.login;
+  const { m, locale } = useI18n();
+  const t = m.account.login;
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ export function LoginCard({ notice, unavailable = false }: { notice?: string; /*
       const res = await fetch("/api/auth/request-link", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: value, website }),
+        body: JSON.stringify({ email: value, website, locale }),
       });
       const data = (await res.json().catch(() => null)) as { ok?: boolean; message?: string } | null;
       if (!res.ok || !data?.ok) {

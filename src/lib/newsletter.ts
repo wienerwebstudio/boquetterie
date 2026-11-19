@@ -5,6 +5,9 @@ import { mailBrand, sendMail } from "@/lib/mail";
 import { newsletterConfirmation } from "@/lib/mail/templates";
 import { tokenMatches } from "@/lib/mail/reminders";
 import type { NewsletterSubscriber } from "@/types";
+import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
+import { loadMessages } from "@/i18n/messages";
+import { localizePath } from "@/i18n/paths";
 
 /**
  * Newsletter with double opt-in.
@@ -23,9 +26,10 @@ export const isConfirmed = (s: NewsletterSubscriber) => s.status === "confirmed"
 const newId = () => `NL-${Date.now().toString(36).toUpperCase()}-${randomBytes(3).toString("hex").toUpperCase()}`;
 const newToken = () => randomBytes(18).toString("hex");
 
-export function newsletterLinks(siteUrl: string, s: { id: string; token: string }) {
+/** Confirmation and unsubscribe page – in the shop language `locale` (German without prefix). */
+export function newsletterLinks(siteUrl: string, s: { id: string; token: string }, locale: Locale = DEFAULT_LOCALE) {
   const q = `id=${encodeURIComponent(s.id)}&token=${encodeURIComponent(s.token)}`;
-  return { confirm: `${siteUrl}/newsletter/bestaetigen?${q}`, unsubscribe: `${siteUrl}/newsletter/abmelden?${q}` };
+  return { confirm: `${siteUrl}${localizePath(locale, `/newsletter/bestaetigen?${q}`)}`, unsubscribe: `${siteUrl}${localizePath(locale, `/newsletter/abmelden?${q}`)}` };
 }
 
 export type SignupResult = { ok: true; mailed: boolean } | { ok: false; reason: "store" | "mail" };
@@ -34,9 +38,10 @@ export type SignupResult = { ok: true; mailed: boolean } | { ok: false; reason: 
  * Starts (or repeats) the double opt-in for `email`. Already confirmed addresses get no
  * mail and the same answer as everybody else, so the form reveals nothing about who
  * is subscribed. Storage or mail failures are reported – without the mail the visitor
- * cannot confirm, so the sign-up must not look successful.
+ * cannot confirm, so the sign-up must not look successful. `locale` is the shop language
+ * of the sign-up: the confirmation mail and its links use it (German by default).
  */
-export async function requestNewsletterSignup(email: string, source: "website" | "checkout", now = new Date()): Promise<SignupResult> {
+export async function requestNewsletterSignup(email: string, source: "website" | "checkout", now = new Date(), locale: Locale = DEFAULT_LOCALE): Promise<SignupResult> {
   const address = email.trim().toLowerCase();
   let list: NewsletterSubscriber[];
   try {
@@ -58,6 +63,7 @@ export async function requestNewsletterSignup(email: string, source: "website" |
     status: "pending",
     requestedAt: now.toISOString(),
     source: existing?.source ?? source,
+    locale: locale === DEFAULT_LOCALE ? undefined : locale,
   };
   const next = existing ? list.map((s) => (s === existing ? entry : s)) : [...list, entry];
   try {
@@ -68,7 +74,10 @@ export async function requestNewsletterSignup(email: string, source: "website" |
   }
 
   const brand = mailBrand(await getSettings());
-  const m = newsletterConfirmation({ brand, ...newsletterLinks(brand.siteUrl, { id: entry.id!, token: entry.token! }) });
+  const links = newsletterLinks(brand.siteUrl, { id: entry.id!, token: entry.token! }, locale);
+  const m = locale === DEFAULT_LOCALE
+    ? newsletterConfirmation({ brand, ...links })
+    : newsletterConfirmation({ brand, ...links, locale, m: (await loadMessages(locale)).mail });
   const res = await sendMail({ to: address, subject: m.subject, html: m.html, text: m.text, tags: { type: "newsletter_confirm" } }).catch(() => null);
   // Outside production the console provider only logs the mail (the link is in the log) – that counts.
   const logged = res?.provider === "console" && process.env.NODE_ENV !== "production";

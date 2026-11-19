@@ -14,7 +14,8 @@ export const dynamic = "force-dynamic";
 /**
  * POST /api/orders
  * Body: OrderPayload (see `src/lib/order-payload.ts`), plus an optional `locale`
- * that picks the language of the validation messages (German by default).
+ * that picks the language of the validation messages and of the customer mails
+ * (stored as `order.locale`; German by default).
  * Validates structurally, re-resolves every price from the catalog, checks zone,
  * delivery day, window and coupon, reserves stock, stores the order (payment
  * pending) and starts the provider payment.
@@ -51,7 +52,7 @@ export async function POST(req: Request) {
     : { ...parsed.payload, items: parsed.payload.items.map((i) => ({ ...i, message: undefined, anonymous: undefined, senderName: undefined })) };
 
   try {
-    const result = await createOrderFromPayload(payload, { siteUrl: resolveSiteUrl(req, settings) });
+    const result = await createOrderFromPayload(payload, { siteUrl: resolveSiteUrl(req, settings), locale: isLocale(requested) ? requested : undefined });
     if (!result.ok) {
       return NextResponse.json({ ok: false, message: result.message, errors: result.errors ?? {} }, { status: result.status });
     }

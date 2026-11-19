@@ -487,6 +487,8 @@ export interface Order {
   partner?: OrderPartner;
   /** Answer to "Wie hast du uns gefunden?" (review mail / review page). */
   foundVia?: FoundVia;
+  /** Shop language the order was placed in (`Locale`, e.g. "en"); customer mails use it. Missing = German. */
+  locale?: string;
 }
 
 /* ---------------- Partner florists ---------------- */
@@ -551,4 +553,6 @@ export interface NewsletterSubscriber {
   source?: string;
   /** Order in whose checkout the customer ticked the box (consent record). */
   orderId?: string;
+  /** Language of the sign-up (`Locale`) – the confirmation mail uses it. Missing = German. */
+  locale?: string;
 }

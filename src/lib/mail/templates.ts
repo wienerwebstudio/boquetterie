@@ -1,6 +1,10 @@
 import type { Order, OrderStatusDefinition } from "@/types";
 import { formatDateLong, formatPrice } from "@/lib/format";
-import { VAT_TEXT } from "@/lib/vat";
+import { SMALL_BUSINESS } from "@/lib/vat";
+import { LOCALE_INFO, type Locale } from "@/i18n/config";
+import { fmt, formatDateLongIn, formatPriceIn, plural } from "@/i18n/format";
+import type { Messages } from "@/i18n/messages/de";
+import germanMail from "@/i18n/messages/de/mail";
 
 /**
  * Transactional e-mail templates.
@@ -10,7 +14,28 @@ import { VAT_TEXT } from "@/lib/vat";
  * system fonts) that renders well in Gmail, Outlook and Apple Mail. No external
  * assets except an optional logo URL. The plain-text variant is generated from
  * the same content blocks, so both versions always say the same thing.
+ *
+ * Customer mails take an optional `locale` and `m` (the `mail` namespace of that
+ * language, see `loadMessages`) – German when omitted. Internal mails (team,
+ * partner florists) are always German.
  */
+
+export type MailMessages = Messages["mail"];
+
+/** Language of a customer mail: the texts and the locale for prices and dates. */
+export interface MailLang {
+  locale?: Locale;
+  m?: MailMessages;
+}
+
+interface Lang {
+  locale: Locale;
+  m: MailMessages;
+}
+
+const GERMAN: Lang = { locale: "de", m: germanMail };
+const langOf = (input: MailLang): Lang => ({ locale: input.locale ?? "de", m: input.m ?? germanMail });
+const priceIn = (L: Lang, value: number) => formatPriceIn(L.locale, value);
 
 export interface MailBrand {
   name: string;
@@ -88,7 +113,7 @@ export function sizeShort(sizeId: string, sizeLabel: string, stems?: number) {
   return stems ? `${size} · ${stems} Stiele` : size;
 }
 
-function renderBlockHtml(b: Block): string {
+function renderBlockHtml(b: Block, L: Lang): string {
   switch (b.type) {
     case "p":
       return `<p style="margin:0 0 16px;font-family:${FONT};font-size:15px;line-height:1.6;color:${b.muted ? C.muted : C.ink};">${escapeHtml(b.text)}</p>`;
@@ -112,12 +137,12 @@ function renderBlockHtml(b: Block): string {
           const extras = l.extras
             .map((e) => {
               const thumb = imgCell(mailImageUrl(b.siteUrl, e.image ?? ""), e.name, 32, 40);
-              const label = `+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)} (${escapeHtml(formatPrice(e.unitPrice * e.quantity))})`;
+              const label = `+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${escapeHtml(e.name)} (${escapeHtml(priceIn(L, e.unitPrice * e.quantity))})`;
               return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;"><tr>${thumb ? `<td width="40" style="width:40px;padding-right:8px;vertical-align:middle;">${thumb}</td>` : ""}<td style="font-family:${FONT};font-size:13px;color:${C.muted};vertical-align:middle;">${label}</td></tr></table>`;
             })
             .join("");
           const img = imgCell(mailImageUrl(b.siteUrl, l.image), l.productName, 64, 80);
-          return `<tr>${img ? `<td width="76" style="width:76px;padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};vertical-align:top;">${img}</td>` : ""}<td style="padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};vertical-align:top;"><strong style="font-weight:600;">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</strong><br><span style="color:${C.muted};font-size:13px;">Größe ${escapeHtml(l.sizeLabel)}${l.color ? ` · Farbe ${escapeHtml(l.color)}` : ""}</span>${l.floristNote ? `<br><span style="font-size:13px;color:${C.muted};">Dein Wunsch an die Floristik: ${escapeHtml(l.floristNote)}</span>` : ""}${extras}</td><td align="right" style="padding:12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;color:${C.ink};vertical-align:top;white-space:nowrap;">${escapeHtml(formatPrice(l.unitPrice * l.quantity))}</td></tr>`;
+          return `<tr>${img ? `<td width="76" style="width:76px;padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};vertical-align:top;">${img}</td>` : ""}<td style="padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};vertical-align:top;"><strong style="font-weight:600;">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</strong><br><span style="color:${C.muted};font-size:13px;">${escapeHtml(fmt(L.m.order.size, { size: l.sizeLabel }))}${l.color ? ` · ${escapeHtml(fmt(L.m.order.color, { color: l.color }))}` : ""}</span>${l.floristNote ? `<br><span style="font-size:13px;color:${C.muted};">${escapeHtml(fmt(L.m.order.floristNote, { note: l.floristNote }))}</span>` : ""}${extras}</td><td align="right" style="padding:12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;color:${C.ink};vertical-align:top;white-space:nowrap;">${escapeHtml(priceIn(L, l.unitPrice * l.quantity))}</td></tr>`;
         })
         .join("")}</table>`;
     case "floristItems":
@@ -137,15 +162,11 @@ function renderBlockHtml(b: Block): string {
         })
         .join("");
     case "totals": {
-      const t = b.order.totals;
-      const rows: [string, string, boolean][] = [["Blumen", formatPrice(t.subtotal), false]];
-      if (t.extras > 0) rows.push(["Extras", formatPrice(t.extras), false]);
-      rows.push(["Lieferung", t.delivery > 0 ? formatPrice(t.delivery) : "kostenlos", false]);
-      if (t.discount > 0) rows.push([`Gutschein${b.order.coupon ? ` ${b.order.coupon.code}` : ""}`, `– ${formatPrice(t.discount)}`, false]);
-      rows.push([VAT_TEXT.total, formatPrice(t.total), true]);
+      const rows: [string, string, boolean][] = totalsRows(b.order, L).map(([k, v], i, all) => [k, v, i === all.length - 1]);
+      const vat = vatText(L);
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px;">${rows
         .map(([k, v, strong]) => `<tr><td style="padding:6px 0;font-family:${FONT};font-size:${strong ? 15 : 14}px;color:${strong ? C.ink : C.muted};${strong ? "font-weight:600;border-top:1px solid " + C.line + ";padding-top:12px;" : ""}">${escapeHtml(k)}</td><td align="right" style="padding:6px 0;font-family:${FONT};font-size:${strong ? 15 : 14}px;color:${C.ink};${strong ? "font-weight:600;border-top:1px solid " + C.line + ";padding-top:12px;" : ""}white-space:nowrap;">${escapeHtml(v)}</td></tr>`)
-        .join("")}<tr><td colspan="2" style="padding:8px 0 0;font-family:${FONT};font-size:12px;color:${C.muted};">${escapeHtml(VAT_TEXT.note)}</td></tr></table>`;
+        .join("")}<tr><td colspan="2" style="padding:8px 0 0;font-family:${FONT};font-size:12px;color:${C.muted};">${escapeHtml(vat.note)}</td></tr></table>`;
     }
     case "quote":
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px;"><tr><td style="padding:18px 20px;background:${C.bg};border:1px solid ${C.line};border-radius:6px;font-family:${SERIF};font-size:17px;line-height:1.55;color:${C.ink};font-style:italic;">${escapeHtml(b.text).replace(/\n/g, "<br>")}${b.by ? `<br><span style="font-family:${FONT};font-style:normal;font-size:13px;color:${C.muted};">– ${escapeHtml(b.by)}</span>` : ""}</td></tr></table>`;
@@ -156,7 +177,7 @@ function renderBlockHtml(b: Block): string {
   }
 }
 
-function renderBlockText(b: Block): string {
+function renderBlockText(b: Block, L: Lang): string {
   switch (b.type) {
     case "p":
       return b.text;
@@ -172,8 +193,8 @@ function renderBlockText(b: Block): string {
     case "items":
       return b.order.lines
         .map((l) => {
-          const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} (${formatPrice(e.unitPrice * e.quantity)})`).join("\n");
-          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${l.sizeLabel}${l.color ? `, Farbe ${l.color}` : ""} – ${formatPrice(l.unitPrice * l.quantity)}${l.floristNote ? `\n  Dein Wunsch an die Floristik: ${l.floristNote}` : ""}${extras ? `\n${extras}` : ""}`;
+          const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} (${priceIn(L, e.unitPrice * e.quantity)})`).join("\n");
+          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, ${fmt(L.m.order.size, { size: l.sizeLabel })}${l.color ? `, ${fmt(L.m.order.color, { color: l.color })}` : ""} – ${priceIn(L, l.unitPrice * l.quantity)}${l.floristNote ? `\n  ${fmt(L.m.order.floristNote, { note: l.floristNote })}` : ""}${extras ? `\n${extras}` : ""}`;
         })
         .join("\n");
     case "floristItems":
@@ -183,23 +204,30 @@ function renderBlockText(b: Block): string {
           return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${sizeShort(l.sizeId, l.sizeLabel, l.stems)}${l.color ? `, Farbe ${l.color}` : ""}${l.floristNote ? `\n  Wunsch der Kund:in: ${l.floristNote}` : ""}\n  Max. Budget: ${budgetText(l.floristBudget, l.quantity)}\n  Foto: ${mailImageUrl(b.siteUrl, l.image, 480)}${extras ? `\n${extras}` : ""}`;
         })
         .join("\n");
-    case "totals": {
-      const t = b.order.totals;
-      const lines = [`Blumen: ${formatPrice(t.subtotal)}`];
-      if (t.extras > 0) lines.push(`Extras: ${formatPrice(t.extras)}`);
-      lines.push(`Lieferung: ${t.delivery > 0 ? formatPrice(t.delivery) : "kostenlos"}`);
-      if (t.discount > 0) lines.push(`Gutschein${b.order.coupon ? ` ${b.order.coupon.code}` : ""}: – ${formatPrice(t.discount)}`);
-      lines.push(`${VAT_TEXT.total}: ${formatPrice(t.total)}`);
-      lines.push(VAT_TEXT.note);
-      return lines.join("\n");
-    }
+    case "totals":
+      return [...totalsRows(b.order, L).map(([k, v]) => `${k}: ${v}`), vatText(L).note].join("\n");
     case "quote":
-      return `„${b.text}“${b.by ? ` – ${b.by}` : ""}`;
+      return `${fmt(L.m.order.greeting.quote, { text: b.text })}${b.by ? ` – ${b.by}` : ""}`;
     case "alert":
       return `! ${b.text}`;
     case "hr":
       return "—";
   }
+}
+
+/** VAT wording of the totals (see src/lib/vat.ts). */
+const vatText = (L: Lang) => L.m.order.vat[SMALL_BUSINESS ? "smallBusiness" : "standard"];
+
+/** Label/amount rows of the totals block; the last one is the total. */
+function totalsRows(order: Order, L: Lang): [string, string][] {
+  const t = order.totals;
+  const o = L.m.order.totals;
+  const rows: [string, string][] = [[o.flowers, priceIn(L, t.subtotal)]];
+  if (t.extras > 0) rows.push([o.extras, priceIn(L, t.extras)]);
+  rows.push([o.delivery, t.delivery > 0 ? priceIn(L, t.delivery) : o.free]);
+  if (t.discount > 0) rows.push([order.coupon ? fmt(o.couponCode, { code: order.coupon.code }) : o.coupon, `– ${priceIn(L, t.discount)}`]);
+  rows.push([vatText(L).total, priceIn(L, t.total)]);
+  return rows;
 }
 
 interface LayoutInput {
@@ -214,16 +242,17 @@ interface LayoutInput {
   footerNotes?: string[];
 }
 
-function layout(input: LayoutInput): RenderedMail {
+function layout(input: LayoutInput, L: Lang = GERMAN): RenderedMail {
   const { brand } = input;
-  const footer = [brand.claim, brand.email ? `Fragen? Schreib uns an ${brand.email}.` : undefined, ...(input.footerNotes ?? [])].filter((s): s is string => Boolean(s));
+  const footer = [brand.claim, brand.email ? fmt(L.m.layout.questions, { email: brand.email }) : undefined, ...(input.footerNotes ?? [])].filter((s): s is string => Boolean(s));
+  const info = LOCALE_INFO[L.locale];
 
   const logo = brand.logoUrl
     ? `<img src="${escapeHtml(brand.logoUrl)}" alt="${escapeHtml(brand.name)}" height="28" style="display:block;height:28px;width:auto;border:0;">`
     : `<span style="font-family:${SERIF};font-size:24px;letter-spacing:-0.01em;color:${C.forest};">${escapeHtml(brand.name)}</span>`;
 
   const html = `<!doctype html>
-<html lang="de">
+<html lang="${L.locale === "de" ? "de" : info.htmlLang}"${info.dir === "rtl" ? ' dir="rtl"' : ""}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -238,7 +267,7 @@ ${input.preheader ? `<div style="display:none;max-height:0;overflow:hidden;opaci
 <tr><td style="padding:0 4px 20px;"><a href="${escapeHtml(brand.siteUrl)}" style="text-decoration:none;">${logo}</a></td></tr>
 <tr><td style="background:${C.card};border:1px solid ${C.line};border-radius:10px;padding:32px 28px;">
 <h1 style="margin:0 0 20px;font-family:${SERIF};font-weight:500;font-size:28px;line-height:1.2;letter-spacing:-0.01em;color:${C.ink};">${escapeHtml(input.headline)}</h1>
-${input.blocks.map(renderBlockHtml).join("\n")}
+${input.blocks.map((b) => renderBlockHtml(b, L)).join("\n")}
 </td></tr>
 <tr><td style="padding:20px 4px 0;">
 ${footer.map((line) => `<p style="margin:0 0 6px;font-family:${FONT};font-size:12px;line-height:1.5;color:${C.soft};">${escapeHtml(line)}</p>`).join("\n")}
@@ -255,7 +284,7 @@ ${footer.map((line) => `<p style="margin:0 0 6px;font-family:${FONT};font-size:1
     "",
     input.headline,
     "",
-    ...input.blocks.map(renderBlockText),
+    ...input.blocks.map((b) => renderBlockText(b, L)),
     "",
     ...footer,
     brand.siteUrl,
@@ -281,79 +310,76 @@ function recipientLines(order: Order) {
     .join("\n");
 }
 
-function deliveryLine(order: Order) {
-  return `${formatDateLong(order.delivery.date)}${order.delivery.windowLabel ? `, ${order.delivery.windowLabel}` : ""}`;
+/** Delivery date (long, in the mail's language) and window. Internal mails: German. */
+function deliveryLine(order: Order, L: Lang = GERMAN) {
+  const date = L.locale === "de" ? formatDateLong(order.delivery.date) : formatDateLongIn(L.locale, order.delivery.date);
+  return `${date}${order.delivery.windowLabel ? `, ${order.delivery.windowLabel}` : ""}`;
 }
 
-function greetingBlocks(order: Order): Block[] {
+function greetingBlocks(order: Order, L: Lang): Block[] {
   const line = order.lines.find((l) => l.message || l.senderName || l.anonymous);
   if (!line) return [];
-  const by = line.anonymous ? "ohne Absender" : line.senderName || undefined;
-  if (line.message) return [{ type: "h", text: "Deine Grußkarte" }, { type: "quote", text: line.message, by }];
-  return [{ type: "p", text: `Grußkarte: ${line.anonymous ? "ohne Absender" : `Absender ${line.senderName}`}`, muted: true }];
+  const g = L.m.order.greeting;
+  const by = line.anonymous ? g.noSender : line.senderName || undefined;
+  if (line.message) return [{ type: "h", text: g.title }, { type: "quote", text: line.message, by }];
+  return [{ type: "p", text: fmt(g.line, { sender: line.anonymous ? g.noSender : fmt(g.sender, { name: line.senderName ?? "" }) }), muted: true }];
 }
 
 /* ---------------- Templates ---------------- */
 
-export function orderConfirmation(input: { order: Order; brand: MailBrand; trackingUrl: string }): RenderedMail {
+export function orderConfirmation(input: { order: Order; brand: MailBrand; trackingUrl: string } & MailLang): RenderedMail {
   const { order, brand, trackingUrl } = input;
+  const L = langOf(input);
+  const t = L.m.orderConfirmation;
+  const rows = L.m.order.rows;
   return layout({
     brand,
-    subject: `Deine Bestellung ${order.id} bei ${brand.name}`,
-    preheader: `Lieferung am ${deliveryLine(order)}.`,
-    headline: "Danke für deine Bestellung.",
+    subject: fmt(t.subject, { id: order.id, brand: brand.name }),
+    preheader: fmt(t.preheader, { delivery: deliveryLine(order, L) }),
+    headline: t.headline,
     blocks: [
-      { type: "p", text: `Hallo ${order.customer.firstName},` },
-      { type: "p", text: `wir haben deine Bestellung ${order.id} erhalten. Der Strauß wird für deine Bestellung von Hand gebunden und am gewählten Liefertag per Kurier zugestellt.` },
-      { type: "button", label: "Bestellung ansehen", url: trackingUrl },
-      { type: "h", text: "Lieferung" },
-      { type: "kv", rows: [["Termin", deliveryLine(order)], ["Empfänger:in", recipientLines(order)], ...(order.delivery.note ? [["Hinweis", order.delivery.note] as [string, string]] : [])] },
-      { type: "h", text: "Deine Blumen" },
+      { type: "p", text: fmt(L.m.layout.hello, { name: order.customer.firstName }) },
+      { type: "p", text: fmt(t.intro, { id: order.id }) },
+      { type: "button", label: L.m.order.viewOrder, url: trackingUrl },
+      { type: "h", text: t.deliveryTitle },
+      { type: "kv", rows: [[rows.date, deliveryLine(order, L)], [rows.recipient, recipientLines(order)], ...(order.delivery.note ? [[rows.note, order.delivery.note] as [string, string]] : [])] },
+      { type: "h", text: t.itemsTitle },
       { type: "items", order, siteUrl: brand.siteUrl },
       { type: "totals", order },
-      ...greetingBlocks(order),
+      ...greetingBlocks(order, L),
       { type: "hr" },
-      { type: "p", text: "Den aktuellen Stand deiner Bestellung siehst du jederzeit über den Link oben. Wenn sich etwas ändert, melden wir uns per E-Mail.", muted: true },
+      { type: "p", text: t.outro, muted: true },
     ],
-    footerNotes: ["Du erhältst diese E-Mail, weil du bei uns bestellt hast."],
-  });
+    footerNotes: [t.footer],
+  }, L);
 }
 
-const STATUS_COPY: Partial<Record<Order["status"], { headline: string; text: string }>> = {
-  received: { headline: "Deine Bestellung ist eingegangen.", text: "Wir haben alles erhalten und kümmern uns darum." },
-  paid: { headline: "Zahlung bestätigt.", text: "Deine Zahlung ist bei uns eingegangen. Danke." },
-  preparing: { headline: "Wir bereiten deinen Strauß vor.", text: "Die Blumen für deine Bestellung werden gerade ausgewählt." },
-  arranging: { headline: "Dein Strauß wird gebunden.", text: "Dein Strauß wird gerade von Hand gebunden." },
-  ready: { headline: "Bereit zur Lieferung.", text: "Der Strauß ist fertig. Ein Kurier holt ihn ab und bringt ihn zur Empfängeradresse." },
-  in_transit: { headline: "Dein Strauß ist unterwegs.", text: "Ein Kurier ist mit den Blumen auf dem Weg zur Empfängeradresse." },
-  delivered: { headline: "Zugestellt.", text: "Die Blumen sind angekommen. Wir hoffen, sie machen Freude." },
-  undeliverable: { headline: "Wir konnten leider nicht zustellen.", text: "Bei der Zustellung hat es nicht geklappt. Wir melden uns so bald wie möglich bei dir, um einen neuen Versuch abzustimmen." },
-  cancelled: { headline: "Deine Bestellung wurde storniert.", text: "Die Bestellung ist storniert. Falls du dazu Fragen hast oder das nicht deine Absicht war, antworte einfach auf diese E-Mail." },
-};
-
-export function orderStatusUpdate(input: { order: Order; status: OrderStatusDefinition; brand: MailBrand; trackingUrl: string }): RenderedMail {
+export function orderStatusUpdate(input: { order: Order; status: OrderStatusDefinition; brand: MailBrand; trackingUrl: string } & MailLang): RenderedMail {
   const { order, status, brand, trackingUrl } = input;
-  const copy = STATUS_COPY[status.key] ?? { headline: status.label, text: status.description };
+  const L = langOf(input);
+  const t = L.m.orderStatus;
+  const rows = L.m.order.rows;
+  const copy = (t.statuses as Partial<Record<string, { headline: string; text: string }>>)[status.key] ?? { headline: status.label, text: status.description };
   const negative = status.key === "undeliverable" || status.key === "cancelled";
   const latest = [...order.history].reverse().find((h) => h.status === status.key);
   const blocks: Block[] = [
-    { type: "p", text: `Hallo ${order.customer.firstName},` },
+    { type: "p", text: fmt(L.m.layout.hello, { name: order.customer.firstName }) },
     negative ? { type: "alert", text: copy.text } : { type: "p", text: copy.text },
   ];
   if (status.key === "undeliverable" && latest?.note) blocks.push({ type: "p", text: latest.note, muted: true });
   blocks.push(
-    { type: "kv", rows: [["Bestellung", order.id], ["Status", status.label], ["Lieferung", deliveryLine(order)], ["Empfänger:in", recipientLines(order)]] },
-    { type: "button", label: "Bestellung ansehen", url: trackingUrl },
+    { type: "kv", rows: [[rows.order, order.id], [rows.status, status.label], [rows.delivery, deliveryLine(order, L)], [rows.recipient, recipientLines(order)]] },
+    { type: "button", label: L.m.order.viewOrder, url: trackingUrl },
   );
-  if (negative && brand.email) blocks.push({ type: "p", text: `Erreichbar sind wir unter ${brand.email}.`, muted: true });
+  if (negative && brand.email) blocks.push({ type: "p", text: fmt(t.reachUs, { email: brand.email }), muted: true });
   return layout({
     brand,
-    subject: `${status.label} – Bestellung ${order.id}`,
+    subject: fmt(t.subject, { status: status.label, id: order.id }),
     preheader: copy.text,
     headline: copy.headline,
     blocks,
-    footerNotes: ["Du erhältst diese E-Mail, weil sich der Status deiner Bestellung geändert hat."],
-  });
+    footerNotes: [t.footer],
+  }, L);
 }
 
 export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl: string; selfDelivery?: boolean; readyBy?: string | null }): RenderedMail {
@@ -548,115 +574,132 @@ export function floristCancellation(input: { order: Order; brand: MailBrand; rea
  * Acknowledgement of a withdrawal sent through the website's withdrawal function
  * ("Vertrag widerrufen"): repeats what was received and when, on a durable medium.
  */
-export function withdrawalReceipt(input: { brand: MailBrand; id: string; receivedAt: string; name: string; orderId: string; items?: string }): RenderedMail {
+export function withdrawalReceipt(input: { brand: MailBrand; id: string; receivedAt: string; name: string; orderId: string; items?: string; policyUrl?: string } & MailLang): RenderedMail {
   const { brand } = input;
+  const L = langOf(input);
+  const t = L.m.withdrawal;
   return layout({
     brand,
-    subject: `Eingangsbestätigung deines Widerrufs – Bestellung ${input.orderId}`,
-    preheader: `Wir haben deinen Widerruf am ${input.receivedAt} erhalten.`,
-    headline: "Dein Widerruf ist eingegangen.",
+    subject: fmt(t.subject, { orderId: input.orderId }),
+    preheader: fmt(t.preheader, { receivedAt: input.receivedAt }),
+    headline: t.headline,
     blocks: [
-      { type: "p", text: `Hallo ${input.name},` },
-      { type: "p", text: "wir bestätigen den Eingang deiner Widerrufserklärung, die du über die Funktion „Vertrag widerrufen“ auf unserer Website abgegeben hast:" },
+      { type: "p", text: fmt(L.m.layout.hello, { name: input.name }) },
+      { type: "p", text: t.intro },
       {
         type: "kv",
         rows: [
-          ["Eingegangen am", input.receivedAt],
-          ["Bestellnummer", input.orderId],
-          ["Widerrufen", input.items?.trim() || "alle widerrufbaren Waren dieser Bestellung"],
-          ["Vorgangsnummer", input.id],
+          [t.rows.receivedAt, input.receivedAt],
+          [t.rows.orderId, input.orderId],
+          [t.rows.items, input.items?.trim() || t.allItems],
+          [t.rows.id, input.id],
         ],
       },
-      { type: "p", text: "Für frische Schnittblumen und andere schnell verderbliche Waren besteht nach § 18 Abs. 1 Z 4 FAGG kein Widerrufsrecht. Wir prüfen deine Erklärung und melden uns zur Rückabwicklung per E-Mail." },
-      { type: "link", label: "Widerrufsbelehrung ansehen", url: `${brand.siteUrl}/widerruf` },
+      { type: "p", text: t.legal },
+      { type: "link", label: t.policyLink, url: input.policyUrl ?? `${brand.siteUrl}/widerruf` },
     ],
-    footerNotes: ["Diese E-Mail bestätigt nur den Eingang deiner Erklärung."],
-  });
+    footerNotes: [t.footer],
+  }, L);
 }
 
 /** Double opt-in: the link leads to a page where a button confirms the newsletter sign-up. */
-export function newsletterConfirmation(input: { brand: MailBrand; confirm: string; unsubscribe: string }): RenderedMail {
+export function newsletterConfirmation(input: { brand: MailBrand; confirm: string; unsubscribe: string } & MailLang): RenderedMail {
   const { brand } = input;
+  const L = langOf(input);
+  const t = L.m.newsletter;
   return layout({
     brand,
-    subject: `Bitte bestätige deine Anmeldung zum ${brand.name}-Newsletter`,
-    preheader: "Ein Klick, dann bist du dabei.",
-    headline: "Fast geschafft.",
+    subject: fmt(t.subject, { brand: brand.name }),
+    preheader: t.preheader,
+    headline: t.headline,
     blocks: [
-      { type: "p", text: `Du – oder jemand mit deiner E-Mail-Adresse – möchtest den Newsletter von ${brand.name} bekommen. Bitte bestätige das mit einem Klick:` },
-      { type: "button", label: "Anmeldung bestätigen", url: input.confirm },
-      { type: "p", text: "Ohne Bestätigung schicken wir dir keinen Newsletter. Warst du das nicht, kannst du diese E-Mail einfach ignorieren.", muted: true },
-      { type: "link", label: "Adresse wieder löschen", url: input.unsubscribe },
+      { type: "p", text: fmt(t.intro, { brand: brand.name }) },
+      { type: "button", label: t.confirm, url: input.confirm },
+      { type: "p", text: t.ignore, muted: true },
+      { type: "link", label: t.unsubscribe, url: input.unsubscribe },
     ],
-    footerNotes: ["Du erhältst diese E-Mail, weil deine Adresse für unseren Newsletter angemeldet wurde."],
-  });
+    footerNotes: [t.footer],
+  }, L);
 }
 
-export function reviewRequest(input: { order: Order; brand: MailBrand; reviewUrl: string }): RenderedMail {
+export function reviewRequest(input: { order: Order; brand: MailBrand; reviewUrl: string } & MailLang): RenderedMail {
   const { order, brand, reviewUrl } = input;
+  const L = langOf(input);
+  const t = L.m.reviewRequest;
   const first = order.lines[0];
   return layout({
     brand,
-    subject: `Wie war der Strauß? – Bestellung ${order.id}`,
-    preheader: "Zwei Minuten, die uns sehr helfen.",
-    headline: "Wie hat es gefallen?",
+    subject: fmt(t.subject, { id: order.id }),
+    preheader: t.preheader,
+    headline: t.headline,
     blocks: [
-      { type: "p", text: `Hallo ${order.customer.firstName},` },
-      { type: "p", text: `vor Kurzem wurde ${first ? `„${first.productName}“` : "dein Strauß"} zugestellt. Wir würden gern wissen, wie die Blumen angekommen sind – und was wir besser machen können.` },
-      { type: "p", text: "Ein Foto vom Strauß freut uns besonders – du kannst bis zu drei Bilder mitschicken." },
-      { type: "button", label: "Bewertung schreiben", url: reviewUrl },
-      { type: "p", text: "Das dauert nur einen Moment. Deine Bewertung wird von uns gelesen und erst danach im Shop veröffentlicht.", muted: true },
+      { type: "p", text: fmt(L.m.layout.hello, { name: order.customer.firstName }) },
+      { type: "p", text: fmt(t.intro, { product: first ? fmt(t.product, { name: first.productName }) : t.productFallback }) },
+      { type: "p", text: t.photos },
+      { type: "button", label: t.cta, url: reviewUrl },
+      { type: "p", text: t.note, muted: true },
     ],
-    footerNotes: ["Du erhältst diese E-Mail einmalig, weil du bei uns bestellt hast."],
-  });
+    footerNotes: [t.footer],
+  }, L);
 }
 
-export function reminderConfirmation(input: { brand: MailBrand; confirmUrl: string; occasionLabel: string; personName?: string; dateLabel: string; leadDays: number }): RenderedMail {
+/** "Muttertag" or "Muttertag von Mama". */
+function occasionWhat(L: Lang, occasionLabel: string, personName?: string) {
+  return personName ? fmt(L.m.reminders.occasionWithPerson, { occasion: occasionLabel, person: personName }) : occasionLabel;
+}
+
+export function reminderConfirmation(input: { brand: MailBrand; confirmUrl: string; occasionLabel: string; personName?: string; dateLabel: string; leadDays: number } & MailLang): RenderedMail {
   const { brand, confirmUrl, occasionLabel, personName, dateLabel, leadDays } = input;
-  const what = personName ? `${occasionLabel} von ${personName}` : occasionLabel;
+  const L = langOf(input);
+  const t = L.m.reminders.confirmation;
+  const what = occasionWhat(L, occasionLabel, personName);
   return layout({
     brand,
-    subject: `Bitte bestätige deine Erinnerung: ${what}`,
-    preheader: "Ein Klick, und die Erinnerung ist aktiv.",
-    headline: "Fast fertig.",
+    subject: fmt(t.subject, { what }),
+    preheader: t.preheader,
+    headline: t.headline,
     blocks: [
-      { type: "p", text: `Du möchtest an ${what} erinnert werden – am ${dateLabel}, ${leadDays} Tage vorher. Bitte bestätige das mit einem Klick:` },
-      { type: "button", label: "Erinnerung bestätigen", url: confirmUrl },
-      { type: "p", text: "Falls du das nicht warst, kannst du diese E-Mail einfach ignorieren. Ohne Bestätigung senden wir nichts.", muted: true },
+      { type: "p", text: fmt(t.intro, { what, date: dateLabel, daysBefore: plural(L.locale, leadDays, t.daysBefore) }) },
+      { type: "button", label: t.cta, url: confirmUrl },
+      { type: "p", text: t.ignore, muted: true },
     ],
-    footerNotes: ["Die Erinnerung wurde auf unserer Website angelegt."],
-  });
+    footerNotes: [t.footer],
+  }, L);
 }
 
-export function occasionReminder(input: { brand: MailBrand; occasionLabel: string; personName?: string; dateLabel: string; leadDays: number; occasionUrl?: string; shopUrl: string; unsubscribeUrl: string }): RenderedMail {
+export function occasionReminder(input: { brand: MailBrand; occasionLabel: string; personName?: string; dateLabel: string; leadDays: number; occasionUrl?: string; shopUrl: string; unsubscribeUrl: string } & MailLang): RenderedMail {
   const { brand, occasionLabel, personName, dateLabel, leadDays, occasionUrl, shopUrl, unsubscribeUrl } = input;
-  const what = personName ? `${occasionLabel} von ${personName}` : occasionLabel;
-  const inDays = leadDays === 1 ? "morgen" : `in ${leadDays} Tagen`;
+  const L = langOf(input);
+  const t = L.m.reminders.reminder;
+  const what = occasionWhat(L, occasionLabel, personName);
+  const when = leadDays === 1 ? t.tomorrow : plural(L.locale, leadDays, t.inDays);
   return layout({
     brand,
-    subject: `${what} ist ${inDays}`,
-    preheader: `Am ${dateLabel}. Eine kleine Erinnerung.`,
-    headline: `${what} ist ${inDays}.`,
+    subject: fmt(t.subject, { what, when }),
+    preheader: fmt(t.preheader, { date: dateLabel }),
+    headline: fmt(t.headline, { what, when }),
     blocks: [
-      { type: "p", text: `Kleine Erinnerung: Am ${dateLabel} ist ${what}. Wenn du Blumen schicken möchtest, ist jetzt ein guter Moment. Du wählst das Wunschdatum, der Strauß wird für deine Bestellung von Hand gebunden.` },
-      ...(occasionUrl ? [{ type: "button", label: `Blumen zu ${occasionLabel}`, url: occasionUrl } as Block, { type: "link", label: "Alle Sträuße ansehen", url: shopUrl } as Block] : [{ type: "button", label: "Sträuße ansehen", url: shopUrl } as Block]),
+      { type: "p", text: fmt(t.text, { date: dateLabel, what }) },
+      ...(occasionUrl ? [{ type: "button", label: fmt(t.occasionCta, { occasion: occasionLabel }), url: occasionUrl } as Block, { type: "link", label: t.allBouquets, url: shopUrl } as Block] : [{ type: "button", label: t.bouquets, url: shopUrl } as Block]),
     ],
-    footerNotes: ["Du erhältst diese E-Mail, weil du auf unserer Website eine Erinnerung angelegt hast.", `Erinnerung löschen: ${unsubscribeUrl}`],
-  });
+    footerNotes: [t.footer, fmt(t.unsubscribe, { url: unsubscribeUrl })],
+  }, L);
 }
 
-export function magicLink(input: { url: string; brandName: string; siteUrl?: string; validMinutes?: number }): RenderedMail {
+export function magicLink(input: { url: string; brandName: string; siteUrl?: string; validMinutes?: number } & MailLang): RenderedMail {
   const brand: MailBrand = { name: input.brandName, siteUrl: (input.siteUrl ?? "").replace(/\/$/, "") };
+  const L = langOf(input);
+  const t = L.m.magicLink;
   const minutes = input.validMinutes ?? 15;
   return layout({
     brand,
-    subject: `Dein Anmeldelink für ${input.brandName}`,
-    preheader: `Der Link ist ${minutes} Minuten gültig.`,
-    headline: "Hier ist dein Anmeldelink.",
+    subject: fmt(t.subject, { brand: input.brandName }),
+    preheader: fmt(t.preheader, { minutes }),
+    headline: t.headline,
     blocks: [
-      { type: "p", text: "Mit einem Klick bist du angemeldet – kein Passwort nötig." },
-      { type: "button", label: "Jetzt anmelden", url: input.url },
-      { type: "p", text: `Der Link ist ${minutes} Minuten gültig und funktioniert nur einmal. Wenn du keine Anmeldung angefordert hast, ignoriere diese E-Mail einfach.`, muted: true },
+      { type: "p", text: t.intro },
+      { type: "button", label: t.cta, url: input.url },
+      { type: "p", text: fmt(t.note, { minutes }), muted: true },
     ],
-  });
+  }, L);
 }

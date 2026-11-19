@@ -12,7 +12,7 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
   const [website, setWebsite] = useState("");
   const [state, setState] = useState<State>({ status: "idle" });
   const id = useId();
-  const { m } = useI18n();
+  const { m, locale } = useI18n();
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: value, website }),
+        body: JSON.stringify({ email: value, website, locale }),
       });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; message?: string };
       if (!res.ok || !data.ok) {

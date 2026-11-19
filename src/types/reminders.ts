@@ -27,6 +27,8 @@ export interface Reminder {
   unsubscribeToken: string;
   /** Year of the occasion the last reminder was sent for (avoids duplicates). */
   lastSentYear?: number;
+  /** Language the reminder was created in (`Locale`) – its mails use it. Missing = German. */
+  locale?: string;
 }
 
 /** One entry per order that already received a review request. */

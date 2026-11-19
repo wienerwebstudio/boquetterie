@@ -11,8 +11,9 @@ import cart from "./cart";
 import checkout from "./checkout";
 import account from "./account";
 import reminders from "./reminders";
+import mail from "./mail";
 
 /** UI texts – ro. One file per namespace; missing keys fall back to German. */
-const messages: PartialMessages = { common, layout, ui, home, content, forms, shop, product, cart, checkout, account, reminders };
+const messages: PartialMessages = { common, layout, ui, home, content, forms, shop, product, cart, checkout, account, reminders, mail };
 
 export default messages;

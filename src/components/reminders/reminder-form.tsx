@@ -52,7 +52,7 @@ export function ReminderForm({ occasions, className }: { occasions: OccasionOpti
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   const [failMessage, setFailMessage] = useState<string | null>(null);
-  const { m, fmt } = useI18n();
+  const { m, fmt, locale } = useI18n();
   const t = m.reminders.form;
 
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) => {
@@ -77,7 +77,7 @@ export function ReminderForm({ occasions, className }: { occasions: OccasionOpti
           customOccasion: form.occasion === CUSTOM ? form.customOccasion.trim() : undefined,
           personName: form.personName.trim() || undefined,
           day: Number(form.day), month: Number(form.month), yearly: form.yearly, leadDays: form.leadDays,
-          consent: form.consent, website: form.website,
+          consent: form.consent, website: form.website, locale,
         }),
       });
       const data = (await res.json().catch(() => null)) as { ok?: boolean; errors?: Errors; message?: string } | null;
