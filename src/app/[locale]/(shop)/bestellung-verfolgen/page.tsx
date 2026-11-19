@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/ui/link";
-import { getSettings } from "@/lib/cms";
+import { getSettings } from "@/lib/content";
 import { routes } from "@/lib/urls";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { TrackingForm } from "@/components/checkout/tracking-form";

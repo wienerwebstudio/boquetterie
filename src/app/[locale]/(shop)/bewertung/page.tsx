@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Search } from "lucide-react";
-import { getOrderById } from "@/lib/cms";
+import { getOrderById } from "@/lib/content";
 import { routes } from "@/lib/urls";
 import { tokenMatches } from "@/lib/mail/reminders";
 import { hasSubmittedReview } from "@/lib/mail/review-requests";

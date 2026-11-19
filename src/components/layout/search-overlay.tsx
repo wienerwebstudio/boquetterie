@@ -24,7 +24,7 @@ export function SearchOverlay() {
   const closeSearch = useUi((s) => s.closeSearch);
   const router = useLocalizedRouter();
   const pathname = usePathname();
-  const { m, fmt } = useI18n();
+  const { m, fmt, locale } = useI18n();
   const t = m.layout.search;
 
   const [query, setQuery] = useState("");
@@ -87,7 +87,7 @@ export function SearchOverlay() {
       const ctrl = new AbortController();
       abortRef.current = ctrl;
       try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(trimmed)}`, { signal: ctrl.signal });
+        const res = await fetch(`/api/search?q=${encodeURIComponent(trimmed)}${locale === "de" ? "" : `&locale=${locale}`}`, { signal: ctrl.signal });
         if (!res.ok) throw new Error("search failed");
         const data = (await res.json()) as SearchResponse;
         if (!ctrl.signal.aborted) { setResults(data); setLoading(false); }
@@ -96,7 +96,7 @@ export function SearchOverlay() {
       }
     }, DEBOUNCE_MS);
     return () => clearTimeout(t);
-  }, [trimmed, active, open]);
+  }, [trimmed, active, open, locale]);
 
   const submit = useCallback((e: React.FormEvent) => {
     e.preventDefault();

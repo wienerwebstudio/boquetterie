@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import { notFound } from "next/navigation";
-import { getAllProducts, getCategories, getExtras, getProductBySlug, getReviews, getSettings } from "@/lib/cms";
+import { getAllProducts, getCategories, getExtras, getProductBySlug, getReviews, getSettings } from "@/lib/content";
 import { primaryImage } from "@/lib/catalog";
 import { JsonLd, breadcrumbLd, productLd } from "@/lib/seo";
 import { routes } from "@/lib/urls";

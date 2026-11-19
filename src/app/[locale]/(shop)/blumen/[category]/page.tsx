@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllProducts, getCategories, getCategoryBySlug, getSettings } from "@/lib/cms";
+import { getAllProducts, getCategories, getCategoryBySlug, getSettings } from "@/lib/content";
 import { matchesCategory } from "@/lib/catalog";
 import { hasQueryParams, pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/urls";

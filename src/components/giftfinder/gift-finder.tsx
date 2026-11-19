@@ -44,7 +44,7 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const abortRef = useRef<AbortController | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
-  const { href: localize, m, fmt } = useI18n();
+  const { href: localize, m, fmt, locale } = useI18n();
   const t = m.shop.giftFinder;
   const scrollOnResult = useRef(false);
   const groupRef = useRef<HTMLDivElement>(null);
@@ -66,7 +66,7 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
     setStatus("loading");
     try {
       const sp = new URLSearchParams({ for: q.for, occasion: q.occasion, budget: q.budget });
-      const res = await fetch(`/api/giftfinder?${sp}`, { signal: ctrl.signal, headers: { accept: "application/json" } });
+      const res = await fetch(`/api/giftfinder?${sp}${locale === "de" ? "" : `&locale=${locale}`}`, { signal: ctrl.signal, headers: { accept: "application/json" } });
       const data = (await res.json().catch(() => null)) as ApiResponse | null;
       if (!res.ok || !data?.ok || !data.products) throw new Error(data?.message || "giftfinder failed");
       setResult({ products: data.products, fallback: Boolean(data.fallback), occasionHits: data.occasionHits ?? 0 });
@@ -81,7 +81,7 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
       if ((err as Error).name === "AbortError") return;
       setStatus("error");
     }
-  }, []);
+  }, [locale]);
 
   // After a choice the next question replaces the current one – take the focus along.
   useEffect(() => {

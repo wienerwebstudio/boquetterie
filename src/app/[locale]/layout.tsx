@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import "../globals.css";
-import { getSettings } from "@/lib/cms";
+import { getSettings } from "@/lib/content";
 import { fontVariables } from "@/app/fonts";
 import { isLiveLocale, liveLocales, LOCALE_INFO, type Locale } from "@/i18n/config";
 import { RootI18nProvider } from "@/i18n/scope";

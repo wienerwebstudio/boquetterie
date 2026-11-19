@@ -1,5 +1,5 @@
 import { notFound, permanentRedirect } from "next/navigation";
-import { getCategoryBySlug } from "@/lib/cms";
+import { getCategoryBySlug } from "@/lib/content";
 import { routes } from "@/lib/urls";
 
 type Props = { children: React.ReactNode; params: Promise<{ category: string }> };

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Building2, CalendarDays, Gift, type LucideProps } from "lucide-react";
-import { getSettings } from "@/lib/cms";
+import { getSettings } from "@/lib/content";
 import { routes } from "@/lib/urls";
 import { breadcrumbLd, JsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/content/page-header";

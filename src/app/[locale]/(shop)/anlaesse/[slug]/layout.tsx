@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getOccasionBySlug } from "@/lib/cms";
+import { getOccasionBySlug } from "@/lib/content";
 
 type Props = { children: React.ReactNode; params: Promise<{ slug: string }> };
 

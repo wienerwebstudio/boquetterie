@@ -1,5 +1,5 @@
 import type { SiteSettings } from "@/types";
-import { getCategories, getOccasions } from "@/lib/cms";
+import { getCategories, getOccasions } from "@/lib/content";
 import { AnnouncementBar } from "./announcement-bar";
 import { Header } from "./header";
 import { LanguageHint } from "./language-hint";

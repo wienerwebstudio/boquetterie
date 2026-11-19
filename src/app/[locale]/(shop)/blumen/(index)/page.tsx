@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getCategories, getCategoryBySlug, getSettings } from "@/lib/cms";
+import { getCategories, getCategoryBySlug, getSettings } from "@/lib/content";
 import { routes } from "@/lib/urls";
 import { hasQueryParams, pageMetadata } from "@/lib/metadata";
 import { ShopPage } from "@/components/shop/shop-page";

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getAllProducts, getOccasions, getSettings } from "@/lib/cms";
+import { getAllProducts, getOccasions, getSettings } from "@/lib/content";
 import { breadcrumbLd, JsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/content/page-header";
 import { GiftFinder } from "@/components/giftfinder/gift-finder";

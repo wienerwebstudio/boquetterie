@@ -1,7 +1,7 @@
 import Link from "@/components/ui/link";
 import { ArrowRight, CalendarDays, Info, MapPin } from "lucide-react";
 import type { Occasion, Product } from "@/types";
-import { getAllProducts, getCategories, getDeliveryZones, getOccasions, getSettings } from "@/lib/cms";
+import { getAllProducts, getCategories, getDeliveryZones, getOccasions, getSettings } from "@/lib/content";
 import { applyFilter, sortProducts } from "@/lib/catalog";
 import { findZone, getAvailableDays, getLocalNow, sameDayCutoffOn } from "@/lib/delivery";
 import { cn } from "@/lib/format";

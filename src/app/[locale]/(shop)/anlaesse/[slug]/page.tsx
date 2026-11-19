@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "@/components/ui/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { getFaqs, getOccasionBySlug, getOccasions, getSettings } from "@/lib/cms";
+import { getFaqs, getOccasionBySlug, getOccasions, getSettings } from "@/lib/content";
 import { routes } from "@/lib/urls";
 import { JsonLd, breadcrumbLd } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";

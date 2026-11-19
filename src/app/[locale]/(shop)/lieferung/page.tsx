@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Check, Clock, DoorOpen, Euro, type LucideProps } from "lucide-react";
 import type { DeliveryZone, SiteSettings } from "@/types";
-import { getDeliveryZones, getFaqs, getPageBySlug, getSettings } from "@/lib/cms";
+import { getDeliveryZones, getFaqs, getPageBySlug, getSettings } from "@/lib/content";
 import { describeSameDayCutoff, describeZone, getAvailableDays, getLocalNow } from "@/lib/delivery";
 import { cn } from "@/lib/format";
 import { routes } from "@/lib/urls";
@@ -14,7 +14,7 @@ import { PostalCodeCheck } from "@/components/shop/postal-code-check";
 import { Accordion } from "@/components/ui/accordion";
 import { SectionHeading } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
-import { VAT_TEXT } from "@/lib/vat";
+import { SMALL_BUSINESS } from "@/lib/vat";
 import { getI18n, type I18n } from "@/i18n/server";
 import { fmtRich } from "@/components/content/rich-text";
 
@@ -105,7 +105,7 @@ export default async function DeliveryPage() {
           </ul>
         )}
         <p className="mt-8 max-w-2xl text-[13px] leading-relaxed text-ink-muted">
-          {VAT_TEXT.note} {t.calendarNote}
+          {m.cart.vat[SMALL_BUSINESS ? "smallBusiness" : "standard"].note} {t.calendarNote}
         </p>
       </section>
 

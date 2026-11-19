@@ -3,7 +3,7 @@ import Link from "@/components/ui/link";
 import Image from "next/image";
 import { timingSafeEqual } from "node:crypto";
 import { CircleAlert, CircleCheck, Search } from "lucide-react";
-import { getOrderById, getSettings } from "@/lib/cms";
+import { getOrderById, getSettings } from "@/lib/content";
 import { ORDER_STATUS_FLOW, isNegativeStatus, publicOrderView } from "@/lib/orders";
 import { isTestOrder } from "@/lib/payments";
 import { cn } from "@/lib/format";

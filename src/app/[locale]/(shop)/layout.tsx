@@ -1,4 +1,4 @@
-import { getSettings } from "@/lib/cms";
+import { getSettings } from "@/lib/content";
 import { SiteShell } from "@/components/layout/site-shell";
 
 /** Storefront layout: announcement bar, header, footer, cart drawer, search. */

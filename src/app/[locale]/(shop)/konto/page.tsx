@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/ui/link";
 import { ArrowRight, Bell, Heart, MapPin, Package, UserRound } from "lucide-react";
-import { getOrdersByEmail, getSettings } from "@/lib/cms";
+import { getOrdersByEmail, getSettings } from "@/lib/content";
 import { getCurrentCustomer, isAuthConfigured } from "@/lib/auth";
 import { routes } from "@/lib/urls";
 import { PageHeader } from "@/components/content/page-header";

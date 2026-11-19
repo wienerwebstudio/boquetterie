@@ -1,5 +1,6 @@
 "use client";
 import { useI18n } from "@/i18n/client";
+import type { Locale } from "@/i18n/config";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Elements, PaymentElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { loadStripe, type Appearance, type Stripe, type StripeElementsOptions } from "@stripe/stripe-js";
@@ -63,8 +64,9 @@ export function StripePaymentForm({ publishableKey, session, amount, email, name
   onDone: (status: PaymentConfirmResponse["status"]) => void;
   onCancel: () => void;
 }) {
+  const { locale } = useI18n();
   const stripePromise = useMemo(() => getStripe(publishableKey), [publishableKey]);
-  const options: StripeElementsOptions = useMemo(() => ({ clientSecret: session.clientSecret, locale: "de", appearance }), [session.clientSecret]);
+  const options: StripeElementsOptions = useMemo(() => ({ clientSecret: session.clientSecret, locale: stripeLocale(locale), appearance }), [session.clientSecret, locale]);
   return (
     <Elements stripe={stripePromise} options={options}>
       <StripeForm session={session} amount={amount} email={email} name={name} onDone={onDone} onCancel={onCancel} />
@@ -80,6 +82,13 @@ function reportPaymentProblem(session: StripeSession, kind: "load_error" | "load
       body: JSON.stringify({ orderId: session.orderId, token: session.token, kind, method: session.method, message }),
     }).catch(() => undefined);
   } catch { /* ignore */ }
+}
+
+/** Our languages → Stripe Elements locales (unsupported ones follow the browser). */
+function stripeLocale(l: Locale): StripeElementsOptions["locale"] {
+  if (l === "bks") return "hr";
+  if (l === "uk" || l === "fa") return "auto";
+  return l;
 }
 
 const LOAD_TIMEOUT_MS = 20_000;

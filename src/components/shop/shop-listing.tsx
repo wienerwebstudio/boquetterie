@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { getOccasions, getSettings } from "@/lib/cms";
+import { getOccasions, getSettings } from "@/lib/content";
 import { addDays, getLocalNow } from "@/lib/delivery";
 import { parseShopParams, serializeShopParams, type FilterKey, type FilterOptions } from "@/lib/shop-filters";
 import { FilterRail } from "./filter-rail";

@@ -5,9 +5,9 @@ import { getI18n } from "@/i18n/server";
 import {
   getSettings, getHomepage, getOccasions, getCategories, getProductsBySlugs, getAllProducts,
   getReviews, getFaqsByIds, getSubscription,
-} from "@/lib/cms";
+} from "@/lib/content";
 import { JsonLd, organizationLd } from "@/lib/seo";
-import { getDeliveryZones } from "@/lib/cms";
+import { getDeliveryZones } from "@/lib/content";
 import { isSameDayPossibleNow } from "@/lib/delivery";
 
 /** Re-render every 5 minutes so the time-based "Heute lieferbar" badge stays honest. */

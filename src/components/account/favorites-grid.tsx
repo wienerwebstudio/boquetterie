@@ -25,17 +25,18 @@ export function FavoritesGrid() {
   const slugs = useFavorites((s) => s.slugs);
   const key = slugs.join(",");
   const [loaded, setLoaded] = useState<{ key: string; products: Product[] | null; error?: string } | null>(null);
-  const t = useI18n().m.account.favorites;
+  const { m, locale } = useI18n();
+  const t = m.account.favorites;
 
   useEffect(() => {
     if (!hydrated || !key) return;
     let alive = true;
-    fetch(`/api/products?slugs=${encodeURIComponent(key)}`)
+    fetch(`/api/products?slugs=${encodeURIComponent(key)}${locale === "de" ? "" : `&locale=${locale}`}`)
       .then((r) => r.json() as Promise<{ ok: boolean; products: ProductCardData[] }>)
       .then((d) => { if (alive) setLoaded({ key, products: d.ok ? d.products.map(toProduct) : [] }); })
       .catch(() => { if (alive) setLoaded({ key, products: null, error: t.loadFailed }); });
     return () => { alive = false; };
-  }, [key, hydrated, t]);
+  }, [key, hydrated, t, locale]);
 
   const current = loaded?.key === key ? loaded : null;
   const products = !hydrated ? null : key === "" ? [] : current?.products ?? null;

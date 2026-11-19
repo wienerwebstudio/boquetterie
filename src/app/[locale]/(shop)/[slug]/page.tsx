@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "@/components/ui/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Clock } from "lucide-react";
-import { getAllProducts, getCategories, getFaqsByIds, getLandingPageBySlug, getLandingPages, getSettings } from "@/lib/cms";
+import { getAllProducts, getCategories, getFaqsByIds, getLandingPageBySlug, getLandingPages, getSettings } from "@/lib/content";
 import { applyFilter, sortProducts } from "@/lib/catalog";
 import { routes } from "@/lib/urls";
 import { JsonLd, breadcrumbLd, faqLd } from "@/lib/seo";

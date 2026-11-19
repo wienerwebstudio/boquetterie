@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getPageBySlug } from "@/lib/cms";
+import { getPageBySlug } from "@/lib/content";
 import { routes } from "@/lib/urls";
 import Link from "@/components/ui/link";
 import { CmsPage, GermanVersionNotice, legalMetadata } from "@/components/content/cms-page";

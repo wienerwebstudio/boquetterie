@@ -1,4 +1,5 @@
 "use client";
+import { resolvePublicPath, stripLocale } from "@/i18n/paths";
 import Link from "@/components/ui/link";
 import { usePathname } from "next/navigation";
 import { routes } from "@/lib/urls";
@@ -19,7 +20,9 @@ const LEGAL = [
 export function FooterSlot({ brandName, children }: { brandName: string; children: React.ReactNode }) {
   const pathname = usePathname();
   const { m } = useI18n();
-  if (!pathname.startsWith(routes.checkout)) return <>{children}</>;
+  // Compare the German path, so /en/checkout counts as checkout too.
+  const germanPath = stripLocale(resolvePublicPath(pathname)?.internal ?? pathname);
+  if (!germanPath.startsWith(routes.checkout)) return <>{children}</>;
   return (
     <footer className="border-t border-line bg-ivory-100">
       <div className="container-x flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between">

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import type { Product } from "@/types";
-import { getAllProducts, getProductsBySlugs } from "@/lib/cms";
+import { getProductsIn } from "@/lib/cms-localized";
+import { isLocale } from "@/i18n/config";
+
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
@@ -25,6 +27,8 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const raw = url.searchParams.get("slugs");
   const slugs = raw ? raw.split(",").map((s) => s.trim()).filter(Boolean).slice(0, 100) : null;
-  const products = slugs ? await getProductsBySlugs(slugs) : await getAllProducts();
+  const lang = url.searchParams.get("locale");
+  const all = await getProductsIn(isLocale(lang) ? lang : "de");
+  const products = slugs ? slugs.map((s) => all.find((p) => p.slug === s)).filter((p): p is Product => Boolean(p)) : all;
   return NextResponse.json({ ok: true, products: products.map(toCardData) });
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight, Info } from "lucide-react";
-import { getAllProducts, getExtras, getSettings } from "@/lib/cms";
+import { getAllProducts, getExtras, getSettings } from "@/lib/content";
 import { JsonLd, breadcrumbLd } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Button } from "@/components/ui/button";

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/ui/link";
 import { ArrowRight } from "lucide-react";
 import type { FAQ } from "@/types";
-import { getFaqs, getSettings } from "@/lib/cms";
+import { getFaqs, getSettings } from "@/lib/content";
 import { routes } from "@/lib/urls";
 import { breadcrumbLd, faqLd, JsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/content/page-header";

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getExtras, getSettings } from "@/lib/cms";
+import { getExtras, getSettings } from "@/lib/content";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { CartPageView } from "@/components/cart/cart-page";
 import { getI18n } from "@/i18n/server";

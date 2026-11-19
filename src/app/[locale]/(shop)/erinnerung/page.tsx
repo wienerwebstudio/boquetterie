@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { BellRing, CalendarCheck, MailCheck, Trash2 } from "lucide-react";
-import { getOccasions, getSettings } from "@/lib/cms";
+import { getOccasions, getSettings } from "@/lib/content";
 import { breadcrumbLd, JsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/content/page-header";
 import { ReminderForm } from "@/components/reminders/reminder-form";

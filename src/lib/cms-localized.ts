@@ -1,4 +1,5 @@
 import "server-only";
+import { cache } from "react";
 /**
  * CMS content in the visitor's language: the German documents merged with the
  * translations from `i18n-{locale}` (see src/lib/i18n-content.ts). Same shapes as
@@ -15,22 +16,22 @@ import {
 } from "@/lib/i18n-content";
 import type { Locale } from "@/i18n/config";
 
-/** Translation document of a language; `undefined` for German or when none exists yet. */
-export async function getContentTranslations(locale: Locale): Promise<ContentTranslations | undefined> {
+/** Translation document of a language; `undefined` for German or when none exists yet. Read once per request. */
+export const getContentTranslations = cache(async (locale: Locale): Promise<ContentTranslations | undefined> => {
   if (locale === "de") return undefined;
   try {
     return await readCollection<ContentTranslations>(`i18n-${locale}`);
   } catch {
     return undefined;
   }
-}
+});
 
 export async function getProductsIn(locale: Locale, includeInactive = false) {
   const [list, t] = await Promise.all([getAllProducts(includeInactive), getContentTranslations(locale)]);
   return t ? list.map((p) => localizeProduct(p, t)) : list;
 }
 export async function getProductIn(locale: Locale, slug: string) {
-  return (await getProductsIn(locale, true)).find((p) => p.slug === slug && p.active) ?? null;
+  return (await getProductsIn(locale)).find((p) => p.slug === slug) ?? null;
 }
 export async function getCategoriesIn(locale: Locale) {
   const [list, t] = await Promise.all([getCategories(), getContentTranslations(locale)]);

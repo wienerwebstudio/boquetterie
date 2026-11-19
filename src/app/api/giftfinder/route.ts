@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { getAllProducts, getOccasions } from "@/lib/cms";
+import { getOccasionsIn, getProductsIn } from "@/lib/cms-localized";
+import { isLocale } from "@/i18n/config";
+
 import { enforceRateLimit } from "@/lib/rate-limit";
 import { findGifts, isComplete, parseGiftFinderQuery } from "@/components/giftfinder/scoring";
 
@@ -14,7 +16,8 @@ export async function GET(req: Request) {
   if (limited) return limited;
 
   const params = Object.fromEntries(new URL(req.url).searchParams.entries());
-  const [occasions, products] = await Promise.all([getOccasions(), getAllProducts()]);
+  const locale = isLocale(params.locale) ? params.locale : "de";
+  const [occasions, products] = await Promise.all([getOccasionsIn(locale), getProductsIn(locale)]);
   const query = parseGiftFinderQuery(params, occasions);
 
   if (!isComplete(query)) {

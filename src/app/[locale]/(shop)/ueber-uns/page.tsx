@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getPageBySlug, getSettings } from "@/lib/cms";
+import { getPageBySlug, getSettings } from "@/lib/content";
 import { JsonLd, breadcrumbLd } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Button } from "@/components/ui/button";

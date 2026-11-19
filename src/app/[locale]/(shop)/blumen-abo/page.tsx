@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getSettings, getSubscription } from "@/lib/cms";
+import { getSettings, getSubscription } from "@/lib/content";
 import { JsonLd, breadcrumbLd } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Button } from "@/components/ui/button";

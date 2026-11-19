@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { getExtras } from "@/lib/cms";
+import { getExtrasIn } from "@/lib/cms-localized";
+import { isLocale } from "@/i18n/config";
+
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 /**
@@ -11,6 +13,7 @@ export async function GET(req: Request) {
   if (limited) return limited;
   const url = new URL(req.url);
   const cartOnly = url.searchParams.get("cart") === "1";
-  const extras = (await getExtras()).filter((e) => !cartOnly || e.showInCart);
+  const lang = url.searchParams.get("locale");
+  const extras = (await getExtrasIn(isLocale(lang) ? lang : "de")).filter((e) => !cartOnly || e.showInCart);
   return NextResponse.json({ ok: true, extras }, { headers: { "Cache-Control": "public, max-age=60, stale-while-revalidate=300" } });
 }

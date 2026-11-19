@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "@/components/ui/link";
 import { ArrowRight, Search } from "lucide-react";
-import { getAllProducts, getCategories, getOccasions } from "@/lib/cms";
+import { getAllProducts, getCategories, getOccasions } from "@/lib/content";
 import { search, sortProducts } from "@/lib/catalog";
 import { routes } from "@/lib/urls";
 import { getI18n } from "@/i18n/server";

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/ui/link";
 import { notFound } from "next/navigation";
 import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
-import { getFaqs, getPageBySlug, getSettings } from "@/lib/cms";
+import { getFaqs, getPageBySlug, getSettings } from "@/lib/content";
 import { routes } from "@/lib/urls";
 import { breadcrumbLd, JsonLd } from "@/lib/seo";
 import { cn } from "@/lib/format";

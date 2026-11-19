@@ -15,14 +15,14 @@ import { useCart } from "@/store/cart";
 import { useUi } from "@/store/ui";
 import { addDays, isValidAustrianPostalCode, normalizePostalCode, sameDayCutoffOn } from "@/lib/delivery";
 import { lowestPrice } from "@/lib/catalog";
-import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
+import { ordersPaused } from "@/lib/orders-paused";
 import { cartItemFromConfig, defaultSize, findSize, FLORIST_NOTE_MAX, isSoldOut } from "@/lib/cart-helpers";
 import { cn } from "@/lib/format";
 import { useI18n } from "@/i18n/client";
 import { deliveryErrorText } from "@/components/shop/postal-code-check";
 import { routes } from "@/lib/urls";
 import { onRadioGroupKeyDown } from "@/lib/roving-radio";
-import { VAT_TEXT } from "@/lib/vat";
+import { SMALL_BUSINESS } from "@/lib/vat";
 
 export function ProductConfigurator({ product, extras, greetingCard, onSizeChange, onColorChange }: {
   product: Product;
@@ -175,7 +175,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           <p className="text-[15px] tabular-nums text-ink">
             <span className="text-[12px] text-ink-muted">{`${t.priceFrom} `}</span>
             <span className="font-semibold">{price(lowestPrice(product))}</span>
-            <span className="ml-1.5 text-[12px] text-ink-muted">{VAT_TEXT.short}</span>
+            <span className="ml-1.5 text-[12px] text-ink-muted">{messages.cart.vat[SMALL_BUSINESS ? "smallBusiness" : "standard"].short}</span>
           </p>
           {hasRating && product.rating && <StarRating value={product.rating.value} count={product.rating.count} showValue />}
         </div>
@@ -494,7 +494,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           ))}
           <div className="flex justify-between border-t border-line pt-2 text-[15px] font-semibold text-ink"><dt>{t.cta.total}</dt><dd className="tabular-nums">{price(total)}</dd></div>
         </dl>
-        {paused && <p className="mb-3 rounded-md border border-line bg-ivory-100 px-4 py-3 text-[14px] leading-relaxed text-ink-muted" role="status">{ORDERS_PAUSED_MESSAGE}</p>}
+        {paused && <p className="mb-3 rounded-md border border-line bg-ivory-100 px-4 py-3 text-[14px] leading-relaxed text-ink-muted" role="status">{messages.checkout.paused.message}</p>}
         <Button type="button" size="xl" full onClick={addToCart} disabled={soldOut || paused} icon={<ShoppingBag className="size-4" aria-hidden />}>
           {paused ? t.cta.comingSoon : soldOut ? t.cta.unavailable : t.cta.addToCart}
         </Button>

@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { getAllProducts, getCategories, getOccasions } from "@/lib/cms";
+import { getCategoriesIn, getOccasionsIn, getProductsIn } from "@/lib/cms-localized";
+import { isLocale } from "@/i18n/config";
+
 import { primaryImage, search, sortProducts } from "@/lib/catalog";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import type { Product } from "@/types";
@@ -42,7 +44,9 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const q = (url.searchParams.get("q") ?? "").trim().slice(0, 80);
   const limit = Math.min(Math.max(Number(url.searchParams.get("limit")) || 6, 1), 24);
-  const [products, occasions, categories] = await Promise.all([getAllProducts(), getOccasions(), getCategories()]);
+  const lang = url.searchParams.get("locale");
+  const locale = isLocale(lang) ? lang : "de";
+  const [products, occasions, categories] = await Promise.all([getProductsIn(locale), getOccasionsIn(locale), getCategoriesIn(locale)]);
 
   if (q.length < 2) {
     const body: SearchResponse = {

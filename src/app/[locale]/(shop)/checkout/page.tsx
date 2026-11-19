@@ -1,4 +1,4 @@
-import { getSettings } from "@/lib/cms";
+import { getSettings } from "@/lib/content";
 import { Checkout } from "@/components/checkout/checkout";
 import { ordersPaused } from "@/lib/orders-paused";
 import { getI18n } from "@/i18n/server";

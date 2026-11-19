@@ -75,17 +75,20 @@ export function useCartTotals() {
 
 let extrasCache: Extra[] | null = null;
 let extrasPromise: Promise<Extra[]> | null = null;
+let extrasLocale: string | null = null;
 
 export function useCartExtras() {
-  const [extras, setExtras] = useState<Extra[]>(extrasCache ?? []);
+  const { locale } = useI18n();
+  const [extras, setExtras] = useState<Extra[]>(extrasLocale === locale ? extrasCache ?? [] : []);
   useEffect(() => {
-    extrasPromise ??= fetch("/api/extras?cart=1")
+    if (extrasLocale !== locale) { extrasPromise = null; extrasCache = null; extrasLocale = locale; }
+    extrasPromise ??= fetch(`/api/extras?cart=1${locale === "de" ? "" : `&locale=${locale}`}`)
       .then((r) => r.json() as Promise<{ ok: boolean; extras: Extra[] }>)
       .then((d) => { extrasCache = d.ok ? d.extras : []; return extrasCache; })
       .catch(() => { extrasPromise = null; return [] as Extra[]; });
     let alive = true;
     extrasPromise.then((list) => { if (alive) setExtras(list); });
     return () => { alive = false; };
-  }, []);
+  }, [locale]);
   return extras;
 }

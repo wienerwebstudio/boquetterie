@@ -15,7 +15,7 @@ const BASE = ["common", "ui", "layout", "cart", "shop", "product", "forms"] as c
 export function baseClientMessages(m: Messages): PartialMessages {
   const out: Record<string, unknown> = Object.fromEntries(BASE.map((k) => [k, m[k]]));
   // Used on every page: delivery check (hero, product page) and the greeting-card preview.
-  out.checkout = { deliveryCheck: m.checkout.deliveryCheck, cardPreview: m.checkout.cardPreview };
+  out.checkout = { deliveryCheck: m.checkout.deliveryCheck, cardPreview: m.checkout.cardPreview, paused: m.checkout.paused };
   return out as PartialMessages;
 }
 
