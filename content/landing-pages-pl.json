@@ -1,0 +1,399 @@
+[
+  {
+    "slug": "poczta-kwiatowa-wieden",
+    "title": "Poczta kwiatowa Wiedeń",
+    "headline": "Poczta kwiatowa Wiedeń – dostawa kwiatów pod każdy adres w mieście",
+    "intro": "Zamawiasz online, a bukiet trafia do bliskiej osoby w Wiedniu: ręcznie wiązany przez wiedeńską kwiaciarnię i dostarczony przez kuriera.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "Dostawa kwiatów w Wiedniu – jak to działa",
+        "paragraphs": [
+          "Szukasz poczty kwiatowej w Wiedniu? Wybierz bukiet, wpisz kod pocztowy adresu odbiorcy i wybierz dzień dostawy w kalendarzu. Nasza partnerska kwiaciarnia w Wiedniu wiąże bukiet ręcznie na twoje zamówienie, a kurier zawozi go prosto pod wskazany adres.",
+          "Dostarczamy do wszystkich 23 dzielnic Wiednia, od poniedziałku do niedzieli. W zamówieniu wybierasz jednogodzinny przedział czasowy między 9:00 a 22:00 – tak, by kwiaty dotarły wtedy, gdy ktoś będzie na miejscu."
+        ]
+      },
+      {
+        "heading": "Koszty i płatność",
+        "paragraphs": [
+          "Bukiety kosztują od 36,90 €. Opłata za dostawę zależy od dzielnicy i wyświetla się od razu po wpisaniu kodu pocztowego – bez niespodzianek przy kasie.",
+          "Zapłacisz kartą kredytową lub debetową, przez Apple Pay, Google Pay, Klarna lub eps. Karty wydane za granicą też działają. Wszystkie godziny podajemy według czasu wiedeńskiego."
+        ]
+      },
+      {
+        "heading": "Po polsku od początku do końca",
+        "paragraphs": [
+          "Stronę, zamówienie i e-maile z potwierdzeniem oraz statusem dostawy otrzymujesz po polsku. Jeśli zamawiasz z wyprzedzeniem, po prostu wybierz późniejszą datę – bukiet zostanie związany świeżo na ten dzień."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Poczta kwiatowa Wiedeń – dostawa kwiatów w Wiedniu",
+      "description": "Dostawa kwiatów w Wiedniu do wszystkich 23 dzielnic, 7 dni w tygodniu, w wybranym przedziale godzinowym. Bukiety ręcznie wiązane, od 36,90 €."
+    }
+  },
+  {
+    "slug": "kwiaty-z-polski-do-wiednia",
+    "title": "Kwiaty z Polski do Wiednia",
+    "headline": "Kwiaty z Polski do Wiednia – zamów online, doręczymy na miejscu",
+    "intro": "Mieszkasz w Polsce, a mama, przyjaciółka albo partner w Wiedniu? Zamów bukiet po polsku – zwiąże go wiedeńska kwiaciarnia, a kurier dostarczy go pod wskazany adres.",
+    "image": "/images/editorial/delivery.jpg",
+    "productFilter": { "occasions": ["geburtstag", "danke", "liebe", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Wysyłka kwiatów z Polski do Wiednia bez paczki",
+        "paragraphs": [
+          "Kwiaty z Polski do Wiednia nie muszą jechać przez pół Europy. Ty zamawiasz online z Polski, a bukiet powstaje na miejscu: nasza partnerska kwiaciarnia w Wiedniu wiąże go ręcznie na twoje zamówienie, a kurier dowozi go prosto do odbiorcy. Dzięki temu kwiaty docierają świeże.",
+          "Dostarczamy do wszystkich 23 dzielnic Wiednia, od poniedziałku do niedzieli, w jednogodzinnych przedziałach między 9:00 a 22:00 czasu wiedeńskiego – to ta sama strefa czasowa co w Polsce."
+        ]
+      },
+      {
+        "heading": "Płatność z Polski",
+        "paragraphs": [
+          "Ceny podajemy w euro, bukiety od 36,90 €. Płacisz kartą kredytową lub debetową – także wydaną w Polsce – albo przez Apple Pay, Google Pay, Klarna lub eps. Opłata za dostawę zależy od dzielnicy i pokaże się po wpisaniu austriackiego kodu pocztowego odbiorcy."
+        ]
+      },
+      {
+        "heading": "Na co zwrócić uwagę",
+        "paragraphs": [
+          "Przygotuj pełny adres odbiorcy w Wiedniu: ulicę, numer domu i mieszkania oraz kod pocztowy. W polu z uwagami dla kuriera możesz dodać np. kod do drzwi. Potwierdzenie zamówienia i informacje o statusie otrzymasz e-mailem po polsku."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-payment", "f-nobody"],
+    "seo": {
+      "title": "Kwiaty z Polski do Wiednia – dostawa w całym mieście",
+      "description": "Wyślij kwiaty z Polski do Wiednia: zamówienie po polsku, bukiet wiązany w Wiedniu, dostawa do 23 dzielnic, płatność kartą, Apple Pay lub Google Pay."
+    }
+  },
+  {
+    "slug": "kwiaciarnia-wieden",
+    "title": "Kwiaciarnia Wiedeń",
+    "headline": "Kwiaciarnia Wiedeń online – bukiety wiązane ręcznie na zamówienie",
+    "intro": "Kwiaciarnia internetowa dla Wiednia: wybierasz bukiet w sieci, a wiedeńska kwiaciarnia, z którą stale współpracujemy, wiąże go świeżo i przekazuje kurierowi.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Kwiaciarnia w Wiedniu bez wychodzenia z domu",
+        "paragraphs": [
+          "Szukasz kwiaciarni w Wiedniu, która dostarczy bukiet pod drzwi? U nas każdy bukiet powstaje dopiero po twoim zamówieniu – ręcznie, w partnerskiej kwiaciarni w Wiedniu. Kurier odbiera go i jedzie bez przystanków pod adres odbiorcy.",
+          "Kwiaty to produkt naturalny: w zależności od sezonu odmiana lub odcień mogą się nieco różnić od zdjęcia, ale styl i kolorystyka bukietu zostają zachowane."
+        ]
+      },
+      {
+        "heading": "Bukiety, róże, rośliny i kwiaty żałobne",
+        "paragraphs": [
+          "W ofercie znajdziesz kolorowe i pastelowe bukiety, róże, kwiaty w doniczkach, a także wieńce i wiązanki żałobne. Bukiety kosztują od 36,90 €. Masz szczególne życzenie, np. nieparzystą liczbę kwiatów? Wpisz je przy zamówieniu w polu z życzeniem dla kwiaciarni – uwzględnimy je, jeśli to możliwe."
+        ]
+      },
+      {
+        "heading": "Dostawa w całym Wiedniu",
+        "paragraphs": [
+          "Dostarczamy do wszystkich 23 dzielnic, siedem dni w tygodniu, w wybranym jednogodzinnym przedziale między 9:00 a 22:00. Opłatę za dostawę zobaczysz po wpisaniu kodu pocztowego."
+        ]
+      }
+    ],
+    "faqIds": ["f-fresh", "f-photo", "f-where", "f-window"],
+    "seo": {
+      "title": "Kwiaciarnia Wiedeń online – bukiety z dostawą",
+      "description": "Kwiaciarnia internetowa dla Wiednia: bukiety ręcznie wiązane przez wiedeńską kwiaciarnię i dostarczane kurierem do 23 dzielnic, 7 dni w tygodniu."
+    }
+  },
+  {
+    "slug": "dostawa-tego-samego-dnia-wieden",
+    "title": "Dostawa kwiatów tego samego dnia",
+    "headline": "Dostawa kwiatów tego samego dnia w Wiedniu",
+    "intro": "Zapomniałeś o urodzinach albo chcesz po prostu zrobić komuś niespodziankę dziś? Zamów do 18:30, w niedzielę do 17:45 – a kwiaty dotrą jeszcze dziś.",
+    "image": "/images/hero/hero-blumen-wide.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Kwiaty jeszcze dziś – terminy",
+        "paragraphs": [
+          "Dostawa kwiatów tego samego dnia w Wiedniu jest możliwa przy zamówieniach złożonych od poniedziałku do soboty do 18:30, a w niedzielę do 17:45 (czasu wiedeńskiego), dopóki są wolne przedziały czasowe.",
+          "Do wyboru masz przedziały kończące się co najmniej dwie godziny po złożeniu zamówienia – tyle czasu potrzeba, by kwiaciarnia związała bukiet, a kurier go dowiózł. Najwcześniejszy możliwy termin dla danego adresu zobaczysz po wpisaniu kodu pocztowego."
+        ]
+      },
+      {
+        "heading": "Jak zamówić na dziś",
+        "paragraphs": [
+          "Wybierz bukiet, wpisz kod pocztowy odbiorcy i zaznacz dzisiejszą datę w kalendarzu. Potem wybierz jednogodzinny przedział czasowy. Dostarczamy do wszystkich 23 dzielnic Wiednia; opłata za dostawę zależy od dzielnicy.",
+          "Płacisz kartą, Apple Pay, Google Pay, Klarna lub eps. Bukiet wiąże ręcznie nasza partnerska kwiaciarnia w Wiedniu, a kurier dowozi go prosto do odbiorcy. Jeśli dziś nie ma już wolnych przedziałów, wybierz jutrzejszy poranek – kwiaty i tak przyjdą świeże."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-where", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Dostawa kwiatów tego samego dnia Wiedeń – do 18:30",
+      "description": "Kwiaty z dostawą dziś w Wiedniu: zamów do 18:30, w niedzielę do 17:45. Bukiet ręcznie wiązany, dostawa do 23 dzielnic w wybranym przedziale."
+    }
+  },
+  {
+    "slug": "roze-z-dostawa-wieden",
+    "title": "Róże z dostawą Wiedeń",
+    "headline": "Róże z dostawą w Wiedniu – czerwone, różowe, białe",
+    "intro": "Bukiety róż ręcznie wiązane w Wiedniu i dostarczane kurierem – na miłość, urodziny, rocznicę albo po prostu z serca.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Róże z dostawą na każdą okazję",
+        "paragraphs": [
+          "Zamów róże z dostawą w Wiedniu: klasyczne czerwone róże jako wyznanie miłości, różowe na urodziny lub dla mamy, białe na ślub albo jako elegancki gest. Każdy bukiet wiąże ręcznie nasza partnerska kwiaciarnia w Wiedniu, a kurier dostarcza go pod wskazany adres."
+        ]
+      },
+      {
+        "heading": "Nieparzysta liczba róż",
+        "paragraphs": [
+          "W Polsce na radosne okazje tradycyjnie wręcza się nieparzystą liczbę kwiatów, a parzystą kojarzy się z pogrzebem. Jeśli zależy ci na nieparzystej liczbie róż, wpisz to przy zamówieniu w polu z życzeniem dla kwiaciarni – uwzględnimy to na życzenie, o ile to możliwe."
+        ]
+      },
+      {
+        "heading": "Dostawa i płatność",
+        "paragraphs": [
+          "Dostarczamy do wszystkich 23 dzielnic Wiednia, od poniedziałku do niedzieli, w jednogodzinnym przedziale między 9:00 a 22:00. Opłata za dostawę zależy od dzielnicy i pojawi się po wpisaniu kodu pocztowego. Płacisz kartą, Apple Pay, Google Pay, Klarna lub eps."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-anon", "f-photo"],
+    "seo": {
+      "title": "Róże z dostawą Wiedeń – bukiety róż do domu",
+      "description": "Róże z dostawą w Wiedniu: czerwone, różowe i białe bukiety ręcznie wiązane przez wiedeńską kwiaciarnię. Dostawa do 23 dzielnic, 7 dni w tygodniu."
+    }
+  },
+  {
+    "slug": "kwiaty-na-pogrzeb-wieden",
+    "title": "Kwiaty i wieńce na pogrzeb",
+    "headline": "Kwiaty i wieńce na pogrzeb w Wiedniu",
+    "intro": "Gdy nie możesz być na pogrzebie osobiście albo chcesz wyrazić współczucie: wieńce i wiązanki żałobne, ręcznie wykonane w Wiedniu i dostarczone w wybranym terminie.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "category": "trauer", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Wieńce i wiązanki pogrzebowe",
+        "paragraphs": [
+          "Kwiaty i wieńce na pogrzeb w Wiedniu zamówisz u nas online: wieńce żałobne w bieli, czerwieni lub barwach pastelowych oraz wiązanki pogrzebowe. Każdą kompozycję wykonuje ręcznie nasza partnerska kwiaciarnia w Wiedniu.",
+          "Wieniec z szarfą i napisem możesz zamówić na życzenie – wpisz treść szarfy i swoje życzenia w polu z życzeniem dla kwiaciarni przy zamówieniu. Uwzględnimy je, jeśli to możliwe."
+        ]
+      },
+      {
+        "heading": "Termin i adres dostawy",
+        "paragraphs": [
+          "W kalendarzu wybierasz dzień dostawy, a w zamówieniu jednogodzinny przedział między 9:00 a 22:00. Dostarczamy do wszystkich 23 dzielnic Wiednia, siedem dni w tygodniu.",
+          "Jeśli kwiaty mają trafić np. do zakładu pogrzebowego lub do instytucji, najpierw ustal z rodziną lub z tym miejscem, czy i kiedy mogą je przyjąć. W zamówieniu podaj nazwę miejsca i dokładny adres. Wieniec warto zamówić z wyprzedzeniem."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-business", "f-where"],
+    "seo": {
+      "title": "Kwiaty i wieńce na pogrzeb Wiedeń – z dostawą",
+      "description": "Wieńce i wiązanki pogrzebowe w Wiedniu: ręcznie wykonane, szarfa z napisem na życzenie, dostawa w wybranym dniu do wszystkich 23 dzielnic."
+    }
+  },
+  {
+    "slug": "kwiaty-na-imieniny",
+    "title": "Kwiaty na imieniny",
+    "headline": "Kwiaty na imieniny – z dostawą w Wiedniu",
+    "intro": "W Polsce imieniny to dla wielu osób święto równie ważne jak urodziny. Wyślij bukiet bliskiej osobie w Wiedniu dokładnie w dniu jej imienin.",
+    "image": "/images/products/sortiment/froehlicher-bluetenmix-1.jpg",
+    "productFilter": { "occasions": ["geburtstag", "danke", "einfach-so"], "colors": ["rosa", "gelb", "orange"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Na czym polega zwyczaj imienin",
+        "paragraphs": [
+          "Imieniny obchodzi się w dniu, który w kalendarzu przypisany jest do danego imienia – w polskich kalendarzach przy każdym dniu podanych jest kilka imion. Solenizant lub solenizantka przyjmuje tego dnia życzenia, często przy kawie i cieście, a goście przynoszą kwiaty i drobny prezent. Nie może zabraknąć „Sto lat”.",
+          "Niektóre imiona pojawiają się w kalendarzu kilka razy w roku. Zwykle obchodzi się wtedy jeden, stały dzień – jeśli nie masz pewności, zapytaj rodzinę."
+        ]
+      },
+      {
+        "heading": "Bukiet imieninowy do Wiednia",
+        "paragraphs": [
+          "Mieszkasz daleko, a solenizantka jest w Wiedniu? Wybierz bukiet, ustaw datę imienin w kalendarzu i jednogodzinny przedział czasowy. Nasza partnerska kwiaciarnia w Wiedniu zwiąże go ręcznie, a kurier dostarczy do wszystkich 23 dzielnic, także w weekend.",
+          "Tradycyjnie na radosne okazje wręcza się nieparzystą liczbę kwiatów. Jeśli ci na tym zależy, wpisz to przy zamówieniu w polu z życzeniem dla kwiaciarni."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody", "f-today"],
+    "seo": {
+      "title": "Kwiaty na imieniny – dostawa w Wiedniu",
+      "description": "Kwiaty na imieniny dla bliskiej osoby w Wiedniu: bukiet ręcznie wiązany, dostarczony dokładnie w dniu imienin, 7 dni w tygodniu."
+    }
+  },
+  {
+    "slug": "dzien-matki-kwiaty",
+    "title": "Kwiaty na Dzień Matki",
+    "headline": "Kwiaty na Dzień Matki 26 maja – dostawa w Wiedniu",
+    "intro": "W Polsce Dzień Matki obchodzimy 26 maja. Jeśli twoja mama mieszka w Wiedniu, wyślij jej bukiet dokładnie na ten dzień.",
+    "image": "/images/products/sortiment/rose-dream-1.jpg",
+    "productFilter": { "occasions": ["danke", "geburtstag", "einfach-so"], "colors": ["rosa", "weiss"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Dzień Matki po polsku – także w Wiedniu",
+        "paragraphs": [
+          "Dzień Matki w Polsce przypada zawsze 26 maja, niezależnie od dnia tygodnia. W Austrii Muttertag obchodzi się wcześniej – w drugą niedzielę maja. Jeśli twoja rodzina żyje między dwoma krajami, możesz pamiętać o obu dniach.",
+          "Na Dzień Matki najczęściej wybiera się delikatne bukiety w różu i bieli, róże albo kwiaty w doniczce, które posłużą dłużej."
+        ]
+      },
+      {
+        "heading": "Jak zamówić na 26 maja",
+        "paragraphs": [
+          "Wybierz bukiet, wpisz kod pocztowy mamy i zaznacz 26 maja w kalendarzu. W zamówieniu ustawisz jednogodzinny przedział między 9:00 a 22:00 – np. rano, zanim mama wyjdzie z domu. Nasza partnerska kwiaciarnia w Wiedniu zwiąże bukiet ręcznie, a kurier dostarczy go do wszystkich 23 dzielnic.",
+          "Możesz zamówić już teraz – bukiet zostanie związany świeżo na wybrany dzień. Jeśli mamy nie będzie w domu, kurier w miarę możliwości zostawi kwiaty u sąsiadów, a ty dostaniesz e-mail ze statusem zamówienia po polsku."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Kwiaty na Dzień Matki 26 maja – dostawa w Wiedniu",
+      "description": "Kwiaty na Dzień Matki dla mamy w Wiedniu: wybierz 26 maja w kalendarzu i przedział godzinowy. Bukiety ręcznie wiązane, dostawa do 23 dzielnic."
+    }
+  },
+  {
+    "slug": "dzien-babci-i-dziadka",
+    "title": "Dzień Babci i Dziadka",
+    "headline": "Kwiaty na Dzień Babci i Dzień Dziadka w Wiedniu",
+    "intro": "21 stycznia Dzień Babci, 22 stycznia Dzień Dziadka. Wyślij kwiaty dziadkom w Wiedniu – nawet jeśli w tym roku nie możesz ich odwiedzić.",
+    "image": "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg",
+    "productFilter": { "occasions": ["danke", "geburtstag"], "colors": ["rosa", "lila"], "seasons": ["ganzjaehrig"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Dwa dni dla dziadków",
+        "paragraphs": [
+          "W Polsce Dzień Babci obchodzimy 21 stycznia, a Dzień Dziadka dzień później, 22 stycznia. To okazja, by wnuki odwiedziły dziadków, złożyły życzenia i przyniosły kwiaty, laurkę albo drobny upominek.",
+          "Zimą dobrze sprawdzają się bukiety w ciepłych lub pastelowych kolorach, a także kwiaty w doniczce, np. anturium czy storczyk – cieszą przez wiele tygodni."
+        ]
+      },
+      {
+        "heading": "Dostawa do dziadków w Wiedniu",
+        "paragraphs": [
+          "Zamów dwa osobne bukiety – na 21 i 22 stycznia – albo jeden dla obojga. W kalendarzu wybierasz dzień, a w zamówieniu jednogodzinny przedział między 9:00 a 22:00. Jeśli babcia potrzebuje więcej czasu, by dojść do drzwi, albo dzwonek trudno znaleźć, zostaw wskazówkę dla kuriera.",
+          "Bukiety wiąże ręcznie nasza partnerska kwiaciarnia w Wiedniu; dostarczamy do wszystkich 23 dzielnic. Zamówić możesz z wyprzedzeniem, np. już na początku stycznia, a zapłacić kartą, Apple Pay, Google Pay, Klarna lub eps."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-nobody", "f-window", "f-fresh"],
+    "seo": {
+      "title": "Dzień Babci i Dziadka – kwiaty z dostawą w Wiedniu",
+      "description": "Kwiaty na Dzień Babci (21 stycznia) i Dzień Dziadka (22 stycznia) dla dziadków w Wiedniu: bukiety i rośliny z dostawą w wybranym dniu."
+    }
+  },
+  {
+    "slug": "dzien-kobiet-kwiaty",
+    "title": "Kwiaty na Dzień Kobiet",
+    "headline": "Kwiaty na Dzień Kobiet 8 marca – dostawa w Wiedniu",
+    "intro": "8 marca to w Polsce dzień, w którym kobiety dostają kwiaty – od partnerów, synów, przyjaciół i kolegów z pracy. Wyślij bukiet do Wiednia.",
+    "image": "/images/products/sortiment/tulpenstrauss-2.jpg",
+    "productFilter": { "occasions": ["danke", "einfach-so", "geburtstag"], "colors": ["lila", "rosa", "gelb"], "seasons": ["fruehling", "ganzjaehrig"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Tradycja 8 marca",
+        "paragraphs": [
+          "Dzień Kobiet przypada co roku 8 marca. W Polsce to popularny zwyczaj, by tego dnia obdarować kwiatem mamę, partnerkę, siostrę, przyjaciółkę czy koleżanki z pracy. Dawniej symbolem tego dnia był goździk, dziś często wybiera się tulipany i inne wiosenne kwiaty.",
+          "Na początku marca najlepiej sprawdzają się świeże, wiosenne kolory: fiolet, róż i żółć."
+        ]
+      },
+      {
+        "heading": "Dostawa 8 marca w Wiedniu",
+        "paragraphs": [
+          "Wybierz bukiet, wpisz kod pocztowy odbiorczyni i zaznacz 8 marca w kalendarzu. Dostarczamy do wszystkich 23 dzielnic Wiednia w wybranym jednogodzinnym przedziale między 9:00 a 22:00 – także do biura. Przy dostawie do firmy podaj jej nazwę i, jeśli znasz, dział.",
+          "Każdy bukiet wiąże ręcznie nasza partnerska kwiaciarnia w Wiedniu. Zamówić możesz z wyprzedzeniem – bukiet zostanie związany świeżo na 8 marca. Zapomniałeś? Przy zamówieniu do 18:30 dostarczymy go jeszcze tego samego dnia, jeśli są wolne przedziały."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-business", "f-window"],
+    "seo": {
+      "title": "Kwiaty na Dzień Kobiet 8 marca – dostawa w Wiedniu",
+      "description": "Kwiaty na Dzień Kobiet dla bliskiej osoby lub koleżanek w Wiedniu: wiosenne bukiety z dostawą 8 marca, także do biura."
+    }
+  },
+  {
+    "slug": "walentynki-kwiaty-wieden",
+    "title": "Kwiaty na Walentynki",
+    "headline": "Kwiaty na Walentynki – dostawa 14 lutego w Wiedniu",
+    "intro": "Czerwone róże, romantyczne bukiety i pudełka z kwiatami: zaskocz ukochaną osobę w Wiedniu 14 lutego.",
+    "image": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+    "productFilter": { "occasions": ["liebe"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Walentynki z kwiatami",
+        "paragraphs": [
+          "Walentynki obchodzimy 14 lutego. Klasyką są czerwone róże – symbol miłości – ale równie pięknie sprawdzą się różowe bukiety albo pudełko z różami. Każdą kompozycję wiąże ręcznie nasza partnerska kwiaciarnia w Wiedniu.",
+          "Chcesz podarować nieparzystą liczbę róż, jak nakazuje polski zwyczaj? Wpisz to przy zamówieniu w polu z życzeniem dla kwiaciarni – uwzględnimy to na życzenie, jeśli to możliwe."
+        ]
+      },
+      {
+        "heading": "Zamów z wyprzedzeniem",
+        "paragraphs": [
+          "Walentynki to jeden z najbardziej pracowitych dni dla kwiaciarni. Najlepiej zamów kilka dni wcześniej i wybierz 14 lutego w kalendarzu. W zamówieniu ustawisz jednogodzinny przedział między 9:00 a 22:00 – np. wieczorem, gdy ukochana osoba będzie już w domu.",
+          "Dostarczamy do wszystkich 23 dzielnic Wiednia. Bez kartki z życzeniami twoje imię nie pojawia się przy bukiecie – niespodzianka może pozostać anonimowa."
+        ]
+      }
+    ],
+    "faqIds": ["f-window", "f-date", "f-anon", "f-nobody"],
+    "seo": {
+      "title": "Kwiaty na Walentynki – dostawa 14 lutego w Wiedniu",
+      "description": "Czerwone róże i romantyczne bukiety na Walentynki z dostawą w Wiedniu: wybierz 14 lutego i godzinę dostawy. Także anonimowo."
+    }
+  },
+  {
+    "slug": "dzien-nauczyciela-kwiaty",
+    "title": "Kwiaty na Dzień Nauczyciela",
+    "headline": "Kwiaty na Dzień Nauczyciela 14 października w Wiedniu",
+    "intro": "14 października w Polsce dziękujemy nauczycielom – tradycyjnie kwiatami. Podtrzymaj ten zwyczaj w Wiedniu.",
+    "image": "/images/products/sortiment/rosentraum-1.jpg",
+    "productFilter": { "category": "unter-40", "occasions": ["danke"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Dzień Edukacji Narodowej",
+        "paragraphs": [
+          "Dzień Nauczyciela, czyli Dzień Edukacji Narodowej, przypada w Polsce 14 października. Uczniowie i rodzice dziękują tego dnia nauczycielkom i nauczycielom, najczęściej kwiatami – pojedynczą różą albo wspólnym bukietem od całej klasy.",
+          "Jeśli chcesz zachować ten zwyczaj w Wiedniu – dla nauczycielki twojego dziecka, korepetytora albo swojego dawnego nauczyciela – wybierz bukiet, który mówi „dziękuję”."
+        ]
+      },
+      {
+        "heading": "Dostawa do domu lub do szkoły",
+        "paragraphs": [
+          "Wybierz 14 października w kalendarzu i jednogodzinny przedział między 9:00 a 22:00. Przy dostawie do szkoły podaj w zamówieniu nazwę szkoły i najlepiej sekretariat. Dostarczamy do wszystkich 23 dzielnic Wiednia.",
+          "Poniżej znajdziesz skromniejsze bukiety z kategorii „do 40 €” – dobry wybór na wspólny prezent od klasy. Każdy z nich wiąże ręcznie nasza partnerska kwiaciarnia w Wiedniu. Zamówić możesz z wyprzedzeniem, a zapłacić kartą, Apple Pay, Google Pay, Klarna lub eps."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-business", "f-fresh"],
+    "seo": {
+      "title": "Kwiaty na Dzień Nauczyciela – 14 października, Wiedeń",
+      "description": "Kwiaty na Dzień Nauczyciela (14 października) z dostawą w Wiedniu: bukiety z podziękowaniem do domu lub szkoły, ręcznie wiązane."
+    }
+  },
+  {
+    "slug": "kwiaty-na-slub",
+    "title": "Kwiaty na ślub",
+    "headline": "Kwiaty na ślub – bukiet dla pary młodej w Wiedniu",
+    "intro": "Nie możesz przyjechać na ślub albo chcesz, by gratulacje dotarły osobno? Wyślij parze młodej elegancki bukiet w Wiedniu.",
+    "image": "/images/products/sortiment/rosenkuss-1.jpg",
+    "productFilter": { "occasions": ["hochzeit"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Kwiaty dla nowożeńców",
+        "paragraphs": [
+          "W Polsce goście tradycyjnie wręczają parze młodej kwiaty, składając życzenia po ceremonii. Na ślub najczęściej wybiera się jasne, eleganckie bukiety – białe i kremowe róże albo połączenie bieli z czerwienią.",
+          "Coraz więcej par prosi gości, by zamiast kwiatów przynieśli coś innego. Wtedy bukiet wysłany do domu dzień po ślubie albo na pierwszą rocznicę bywa jeszcze milszą niespodzianką."
+        ]
+      },
+      {
+        "heading": "Dostawa w dniu ślubu lub później",
+        "paragraphs": [
+          "Wybierz datę w kalendarzu i jednogodzinny przedział między 9:00 a 22:00. Jeśli bukiet ma trafić do hotelu, podaj w zamówieniu nazwę hotelu i, jeśli znasz, numer pokoju – kwiaty zostaną przekazane w recepcji. Przy dostawie na salę weselną ustal wcześniej, kto może je odebrać. Dostarczamy do wszystkich 23 dzielnic Wiednia.",
+          "Nieparzystą liczbę kwiatów, zgodnie z polskim zwyczajem, możesz zamówić na życzenie – wpisz to w polu z życzeniem dla kwiaciarni."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-business", "f-window", "f-photo"],
+    "seo": {
+      "title": "Kwiaty na ślub – bukiet dla pary młodej w Wiedniu",
+      "description": "Kwiaty na ślub z dostawą w Wiedniu: eleganckie białe i kremowe bukiety dla pary młodej, do domu, hotelu lub sali w wybranym dniu."
+    }
+  }
+]
