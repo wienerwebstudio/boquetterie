@@ -35,6 +35,8 @@ const ALLOWED_FORMATS = new Set(["jpeg", "png", "webp", "avif"]);
 const KEY_RE = /^\d{4}\/\d{2}\/[a-z0-9-]{1,80}-[a-f0-9]{8}\.(jpg|png)$/;
 /** Customer review photos: `reviews/2026/11/red-passion-1a2b3c4d.jpg` (kept out of the admin media library). */
 const REVIEW_KEY_RE = /^reviews\/\d{4}\/\d{2}\/[a-z0-9-]{1,80}-[a-f0-9]{8}\.jpg$/;
+/** Outreach files (admin → Outreach): images, PDFs and videos, e.g. `outreach/2026/11/preisliste-1a2b3c4d.pdf`. */
+const OUTREACH_KEY_RE = /^outreach\/\d{4}\/\d{2}\/[a-z0-9-]{1,80}-[a-f0-9]{8}\.(jpg|png|pdf|mp4|webm|mov)$/;
 const STATIC_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif", ".svg"]);
 
 /* Review photos (customer uploads on /bewertung); count and byte limits live in review-submission.ts. */
@@ -134,7 +136,7 @@ function objectKey(key: string) {
 export function publicUrl(key: string) {
   const driver = getUploadDriver();
   if (driver === "s3") return `${s3Config().publicBase}/${objectKey(key)}`;
-  if (driver === "local" && !key.startsWith("reviews/")) return `/uploads/${key}`;
+  if (driver === "local" && !key.startsWith("reviews/") && !key.startsWith("outreach/")) return `/uploads/${key}`;
   return `/media/${key}`;
 }
 
@@ -194,7 +196,7 @@ async function deleteObject(key: string) {
 
 /** Keys the `/media/<key>` route may serve: admin uploads and review photos. */
 export function isServableMediaKey(key: string) {
-  return KEY_RE.test(key) || REVIEW_KEY_RE.test(key);
+  return KEY_RE.test(key) || REVIEW_KEY_RE.test(key) || OUTREACH_KEY_RE.test(key);
 }
 
 export function isValidReviewPhotoKey(key: string) {
@@ -203,7 +205,8 @@ export function isValidReviewPhotoKey(key: string) {
 
 export interface StoredMedia { data: Uint8Array; contentType: string }
 
-const contentTypeOf = (key: string) => (key.endsWith(".png") ? "image/png" : "image/jpeg");
+const OTHER_TYPES: Record<string, string> = { pdf: "application/pdf", mp4: "video/mp4", webm: "video/webm", mov: "video/quicktime" };
+const contentTypeOf = (key: string) => OTHER_TYPES[key.slice(key.lastIndexOf(".") + 1)] ?? (key.endsWith(".png") ? "image/png" : "image/jpeg");
 
 /**
  * Reads one stored file for the `/media/<key>` route. On Netlify the Blobs store is
@@ -433,4 +436,138 @@ async function walk(root: string, rel = ""): Promise<string[]> {
     else if (entry.isFile()) out.push(child);
   }
   return out;
+}
+
+/* ---------------- outreach files (admin → Outreach) ---------------- */
+
+/** One PDF attachment. The total per template (≤ 20 MB) is checked when the template is saved. */
+export const MAX_OUTREACH_PDF_BYTES = 10 * 1024 * 1024;
+/** Uploaded videos are linked from the mail, never attached. */
+export const MAX_OUTREACH_VIDEO_BYTES = 50 * 1024 * 1024;
+/** Sum of all attachments of one template. */
+export const MAX_OUTREACH_ATTACHMENTS_BYTES = 20 * 1024 * 1024;
+
+export type OutreachUploadPurpose = "attachment" | "header" | "poster" | "video";
+
+export interface OutreachUploadResult {
+  key: string;
+  url: string;
+  name: string;
+  bytes: number;
+  contentType: string;
+  /** Poster only: the same image with a play button (what the mail shows). */
+  playUrl?: string;
+  playKey?: string;
+}
+
+export function isValidOutreachKey(key: string) {
+  return OUTREACH_KEY_RE.test(key);
+}
+
+function outreachKey(filename: string, data: Buffer, ext: string, suffix = "") {
+  const base = path.basename(filename || "datei", path.extname(filename || ""));
+  const slug = ((slugify(base) || "datei").slice(0, 60).replace(/-+$/, "") || "datei") + suffix;
+  const hash = crypto.createHash("sha1").update(data).digest("hex").slice(0, 8);
+  const now = new Date();
+  return `outreach/${now.getUTCFullYear()}/${String(now.getUTCMonth() + 1).padStart(2, "0")}/${slug}-${hash}.${ext}`;
+}
+
+function sniffVideo(buffer: Buffer): "mp4" | "mov" | "webm" | null {
+  if (buffer.length >= 4 && buffer.readUInt32BE(0) === 0x1a45dfa3) return "webm";
+  if (buffer.length >= 12 && buffer.toString("latin1", 4, 8) === "ftyp") return buffer.toString("latin1", 8, 10) === "qt" ? "mov" : "mp4";
+  return null;
+}
+
+const isPdf = (buffer: Buffer) => buffer.length > 5 && buffer.toString("latin1", 0, 5) === "%PDF-";
+
+/** The poster with a centred play button burnt in – works in every mail client (no CSS overlays). */
+async function posterWithPlayButton(image: Buffer): Promise<Buffer> {
+  const { data, info } = await sharp(image).resize({ width: 1024, height: 1024, fit: "inside", withoutEnlargement: true }).jpeg().toBuffer({ resolveWithObject: true });
+  const r = Math.round(Math.min(info.width, info.height) * 0.11);
+  const cx = info.width / 2;
+  const cy = info.height / 2;
+  const tri = `${cx - r * 0.32},${cy - r * 0.5} ${cx - r * 0.32},${cy + r * 0.5} ${cx + r * 0.52},${cy}`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${info.width}" height="${info.height}">
+<rect width="100%" height="100%" fill="#12241b" fill-opacity="0.18"/>
+<circle cx="${cx}" cy="${cy}" r="${r + 6}" fill="#000" fill-opacity="0.18"/>
+<circle cx="${cx}" cy="${cy}" r="${r}" fill="#faf7f2" fill-opacity="0.94"/>
+<polygon points="${tri}" fill="#1f3a2d"/>
+</svg>`;
+  return sharp(data).composite([{ input: Buffer.from(svg) }]).jpeg({ quality: 84, progressive: true, mozjpeg: true }).toBuffer();
+}
+
+/**
+ * Stores a file for an outreach template:
+ *  - attachment: PDF (bytes checked, stored as is, ≤ 10 MB) or image (re-encoded like admin uploads)
+ *  - header / poster: image (re-encoded, max 2000 px); a poster also gets a play-button version
+ *  - video: MP4/MOV/WebM (≤ 50 MB), stored as is and only linked from the mail
+ */
+export async function saveOutreachFile({ buffer, filename, purpose }: { buffer: Buffer; filename: string; purpose: OutreachUploadPurpose }): Promise<OutreachUploadResult> {
+  if (!buffer.length) throw new UploadError(400, "Die Datei ist leer.");
+  const name = path.basename(filename || "datei").slice(0, 120);
+
+  if (purpose === "video") {
+    if (buffer.length > MAX_OUTREACH_VIDEO_BYTES) throw new UploadError(413, "Das Video ist zu groß (maximal 50 MB). Tipp: das Video z. B. auf YouTube oder Vimeo hochladen und den Link einfügen.");
+    const ext = sniffVideo(buffer);
+    if (!ext) throw new UploadError(415, "Bitte ein Video als MP4, MOV oder WebM hochladen.");
+    const contentType = OTHER_TYPES[ext];
+    const key = outreachKey(name, buffer, ext);
+    await putObject(key, buffer, contentType);
+    return { key, url: publicUrl(key), name, bytes: buffer.length, contentType };
+  }
+
+  if (purpose === "attachment" && isPdf(buffer)) {
+    if (buffer.length > MAX_OUTREACH_PDF_BYTES) throw new UploadError(413, "Die PDF-Datei ist zu groß (maximal 10 MB).");
+    const key = outreachKey(name, buffer, "pdf");
+    await putObject(key, buffer, "application/pdf");
+    return { key, url: publicUrl(key), name: /\.pdf$/i.test(name) ? name : `${name}.pdf`, bytes: buffer.length, contentType: "application/pdf" };
+  }
+
+  if (buffer.length > MAX_UPLOAD_BYTES) throw new UploadError(413, "Die Datei ist zu groß (maximal 15 MB).");
+  let processed: Processed;
+  try {
+    processed = await processImage(buffer);
+  } catch (e) {
+    if (purpose === "attachment" && e instanceof UploadError && e.status === 415) {
+      throw new UploadError(415, "Als Anhang gehen PDF-Dateien und Bilder (JPEG, PNG, WebP, AVIF).");
+    }
+    throw e;
+  }
+  if (purpose === "header" || purpose === "poster") {
+    // Mail-friendly crops: header 2:1, video poster 16:9 (a portrait photo would fill the whole screen).
+    const [w, h] = purpose === "header" ? [1200, 600] : [1024, 576];
+    const data = await sharp(processed.data).resize({ width: w, height: h, fit: "cover", position: "attention" }).jpeg({ quality: JPEG_QUALITY, progressive: true, mozjpeg: true }).toBuffer();
+    processed = { data, ext: "jpg", mime: "image/jpeg", width: w, height: h };
+  }
+  const key = outreachKey(name, processed.data, processed.ext);
+  await putObject(key, processed.data, processed.mime);
+  const imageName = name.replace(/\.[a-z0-9]+$/i, "") + `.${processed.ext}`;
+  const result: OutreachUploadResult = { key, url: publicUrl(key), name: imageName, bytes: processed.data.length, contentType: processed.mime };
+  if (purpose === "poster") {
+    const play = await posterWithPlayButton(processed.data);
+    const playKey = outreachKey(name, play, "jpg", "-play");
+    await putObject(playKey, play, "image/jpeg");
+    result.playKey = playKey;
+    result.playUrl = publicUrl(playKey);
+  }
+  return result;
+}
+
+/** Bytes of a stored outreach file (to attach it to a mail); null when missing. */
+export async function readOutreachFile(key: string): Promise<Buffer | null> {
+  if (!isValidOutreachKey(key)) return null;
+  if (getUploadDriver() === "s3") {
+    const { GetObjectCommand } = await import("@aws-sdk/client-s3");
+    const client = await s3Client();
+    try {
+      const res = await client.send(new GetObjectCommand({ Bucket: s3Config().bucket, Key: objectKey(key) }));
+      const bytes = await res.Body?.transformToByteArray();
+      return bytes ? Buffer.from(bytes) : null;
+    } catch (e) {
+      if ((e as { name?: string }).name === "NoSuchKey") return null;
+      throw e;
+    }
+  }
+  const file = await readStoredMedia(key);
+  return file ? Buffer.from(file.data) : null;
 }

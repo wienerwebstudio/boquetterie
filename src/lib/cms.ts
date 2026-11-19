@@ -5,6 +5,8 @@ import type {
   Category, CmsPage, Coupon, DeliveryZone, Extra, FAQ, HomepageContent, LandingPage,
   Occasion, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber,
 } from "@/types";
+import type { OutreachContact, OutreachSend, OutreachTemplate, OutreachUnsubscribe } from "@/types/outreach";
+import { starterTemplates } from "@/lib/outreach/starter-templates";
 
 /**
  * Content repository.
@@ -199,4 +201,60 @@ export function canPersistData(): Promise<boolean> {
 export async function getOrdersByEmail(email: string) {
   const needle = email.trim().toLowerCase();
   return (await getOrders()).filter((o) => o.customer.email.toLowerCase() === needle);
+}
+
+/* ---------------- Outreach (runtime data, see docs/OUTREACH.md) ---------------- */
+
+/** Business contacts for one-to-one outreach mails. */
+export async function getOutreachContacts(): Promise<OutreachContact[]> {
+  return readDataDoc<OutreachContact[]>("outreach-contacts", []);
+}
+export async function saveOutreachContacts(list: OutreachContact[]) {
+  await getStore().set("data", "outreach-contacts", list);
+}
+/** Read-modify-write of one contact; null when it does not exist. */
+export async function updateOutreachContact(id: string, patch: (c: OutreachContact) => OutreachContact) {
+  const list = await getOutreachContacts();
+  const idx = list.findIndex((c) => c.id === id);
+  if (idx === -1) return null;
+  list[idx] = patch(list[idx]);
+  await saveOutreachContacts(list);
+  return list[idx];
+}
+
+/** Mail templates; the starter templates are seeded when the document does not exist yet. */
+export async function getOutreachTemplates(): Promise<OutreachTemplate[]> {
+  const store = getStore();
+  const value = await store.get<OutreachTemplate[]>("data", "outreach-templates");
+  if (value !== null) return value;
+  const seeded = starterTemplates(new Date().toISOString());
+  await store.set("data", "outreach-templates", seeded).catch((err: unknown) => {
+    console.warn("[blumora] could not seed outreach templates:", err);
+  });
+  return seeded;
+}
+export async function saveOutreachTemplates(list: OutreachTemplate[]) {
+  await getStore().set("data", "outreach-templates", list);
+}
+
+/** Outreach queue and send log (incl. open/click tracking). */
+export async function getOutreachSends(): Promise<OutreachSend[]> {
+  return readDataDoc<OutreachSend[]>("outreach-sends", []);
+}
+export async function saveOutreachSends(list: OutreachSend[]) {
+  await getStore().set("data", "outreach-sends", list);
+}
+/** Read-modify-write of the send log; `fn` returns the new list. */
+export async function updateOutreachSends(fn: (list: OutreachSend[]) => OutreachSend[]) {
+  const next = fn(await getOutreachSends());
+  await saveOutreachSends(next);
+  return next;
+}
+
+/** Addresses that unsubscribed from outreach mails – never mailed again. */
+export async function getOutreachUnsubscribed(): Promise<OutreachUnsubscribe[]> {
+  return readDataDoc<OutreachUnsubscribe[]>("outreach-unsubscribed", []);
+}
+export async function saveOutreachUnsubscribed(list: OutreachUnsubscribe[]) {
+  await getStore().set("data", "outreach-unsubscribed", list);
 }
