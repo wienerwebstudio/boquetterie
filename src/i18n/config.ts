@@ -31,7 +31,7 @@ export const LOCALE_INFO: Record<Locale, LocaleInfo> = {
   de: { name: "Deutsch", short: "DE", htmlLang: "de-AT", hreflang: ["de"], intl: "de-AT", og: "de_AT", dir: "ltr" },
   en: { name: "English", short: "EN", htmlLang: "en", hreflang: ["en"], intl: "en-GB", og: "en_GB", dir: "ltr" },
   tr: { name: "Türkçe", short: "TR", htmlLang: "tr", hreflang: ["tr"], intl: "tr-TR", og: "tr_TR", dir: "ltr" },
-  bks: { name: "Bosanski · Hrvatski · Srpski", short: "BKS", htmlLang: "hr", hreflang: ["bs", "hr", "sr"], intl: "hr-HR", og: "hr_HR", dir: "ltr" },
+  bks: { name: "Bosanski · Hrvatski · Srpski", short: "BKS", htmlLang: "hr", hreflang: ["bs", "hr", "sr"], intl: "bs-Latn-BA", og: "bs_BA", dir: "ltr" },
   uk: { name: "Українська", short: "UK", htmlLang: "uk", hreflang: ["uk"], intl: "uk-UA", og: "uk_UA", dir: "ltr" },
   ru: { name: "Русский", short: "RU", htmlLang: "ru", hreflang: ["ru"], intl: "ru-RU", og: "ru_RU", dir: "ltr" },
   pl: { name: "Polski", short: "PL", htmlLang: "pl", hreflang: ["pl"], intl: "pl-PL", og: "pl_PL", dir: "ltr" },

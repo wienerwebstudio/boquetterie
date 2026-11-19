@@ -1,6 +1,191 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** bks – product (translated from src/i18n/messages/de/product.ts). */
-const product: NonNullable<PartialMessages["product"]> = {};
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Proizvod nije pronađen",
+  priceFrom: "od",
+
+  size: {
+    title: "Odaberite veličinu",
+    recommended: "Preporučeno",
+    soldOut: "Rasprodano",
+  },
+
+  color: {
+    title: "Odaberite boju",
+    required: "(obavezno)",
+    notChosen: "Još nije odabrano",
+    error: "Molimo odaberite boju.",
+  },
+
+  delivery: {
+    title: "Kada cvijeće treba stići?",
+    formLabel: "Provjera dostave",
+    postalCodeLabel: "Poštanski broj primaoca",
+    postalCodePlaceholder: "Poštanski broj primaoca",
+    check: "Provjeri",
+    prompt: "Unesite poštanski broj kako biste odabrali datum dostave",
+    notAvailable: "Nažalost, na {plz} još ne dostavljamo.",
+    notAvailableHint: "Sva trenutna područja pronaći ćete ovdje: {link}. Za drugu adresu primaoca jednostavno unesite novi poštanski broj.",
+    deliveryLink: "Dostava i slanje",
+    available: "Dostavljamo na ovu adresu.",
+    fee: "Dostava na {plz} {region}: {fee}",
+    free: "besplatno",
+    freeFrom: "besplatno od {price}",
+    dateGroup: "Datum dostave",
+    today: "Danas",
+    orderUntil: "naručite do {time} sati",
+    tomorrow: "Sutra",
+    chooseDate: "Odaberite datum",
+    openCalendar: "Otvorite kalendar",
+    deliveryOn: "Dostava {date}",
+    todaySuffix: "· danas",
+    noDays: "Trenutno nema dostupnih dana dostave.",
+  },
+
+  calendar: {
+    previousMonth: "Prethodni mjesec",
+    nextMonth: "Sljedeći mjesec",
+    weekdays: {
+      mon: { short: "Pon", long: "Ponedjeljak" },
+      tue: { short: "Uto", long: "Utorak" },
+      wed: { short: "Sri", long: "Srijeda" },
+      thu: { short: "Čet", long: "Četvrtak" },
+      fri: { short: "Pet", long: "Petak" },
+      sat: { short: "Sub", long: "Subota" },
+      sun: { short: "Ned", long: "Nedjelja" },
+    },
+    daySameDay: "{date}, dostava danas",
+    dayAvailable: "{date}, dostava moguća",
+    dayUnavailable: "{date}, dostava nije moguća",
+    legendSameDay: "Dostava danas",
+    legendToday: "Danas",
+    legendUnavailable: "Na posivljene dane dostava nije moguća.",
+  },
+
+  card: {
+    unavailableTitle: "Lična kartica s porukom",
+    unavailableText: "Vaš buket će zasad biti dostavljen bez kartice.",
+    comingSoon: "Uskoro!",
+    addMessage: "Dodajte ličnu poruku",
+    included: "Kartica s porukom uključena",
+    handwritten: "Rukom pisana kartica s porukom",
+    saved: "Poruka sačuvana",
+    messageLabel: "Vaša poruka",
+    messagePlaceholder: "Sretan rođendan, sve najbolje …",
+    maxChars: "Najviše {max} znakova.",
+    senderGroup: "Pošiljalac",
+    showSender: "Prikaži pošiljaoca",
+    anonymous: "Pošalji bez imena",
+    senderName: "Vaše ime",
+    optional: "(neobavezno)",
+    senderPlaceholder: "npr. Ana",
+  },
+
+  extras: {
+    title: "Još nešto uz to?",
+    deliveredTogether: "Dostavlja se zajedno",
+    addLabel: "Dodajte {name} za {price}",
+    add: "Dodaj",
+    quantity: "{name} količina",
+    less: "{name}: jedan manje",
+    more: "{name}: jedan više",
+  },
+
+  floristNote: {
+    title: "Želje za naše cvjećare",
+    optional: "(neobavezno)",
+    hint: "Male izmjene buketa, npr. „bijele umjesto žutih ruža“. Ostvarit ćemo ih ako je cvijeće dostupno. Napomene za dostavu unosite pri plaćanju.",
+    placeholder: "Vaša želja za cvjećarnicu",
+  },
+
+  cta: {
+    total: "Ukupno",
+    comingSoon: "Uskoro u prodaji",
+    unavailable: "Trenutno nije dostupno",
+    addToCart: "Dodaj u korpu",
+    fresh: "Svježe aranžirano",
+    cardIncluded: "Kartica s porukom uključena",
+    securePayment: "Sigurno plaćanje",
+    added: "{name} ({options}) dodan je u korpu.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Prednji prikaz",
+      detail: "Detalj",
+      size: "Poređenje veličine",
+      packaging: "Pakovanje",
+      lifestyle: "Ambijent",
+    },
+    status: "Slika {index} od {total}: {alt}",
+    carousel: "Karusel",
+    imagesOf: "Slike: {name}",
+    slide: "Slika",
+    slideOf: "{index} od {total}",
+    choose: "Odaberite sliku",
+    show: "Prikaži: {label}",
+    thumb: "{label}: {alt}",
+    previous: "Prethodna slika",
+    next: "Sljedeća slika",
+    colorAlt: "{name} u boji: {color}",
+    colorLabel: "Boja: {color}",
+    sizeAlt: "{name} u veličini {size}",
+    sizeDetailAlt: "{name} u veličini {size}, krupni plan",
+    sizeLabel: "Veličina {size}",
+    sizeDetailLabel: "Veličina {size} · krupni plan",
+  },
+
+  details: {
+    eyebrow: "Dobro je znati",
+    title: "Sve o proizvodu {name}",
+    description: "Opis",
+    plant: "Biljka",
+    flowers: "Sadržano cvijeće",
+    care: "Upute za njegu",
+    delivery: "Dostava",
+    deliveryText: "Vaše cvijeće dolazi iz bečke cvjećarnice s kojom stalno sarađujemo. Buketi se tamo ručno aranžiraju za Vašu narudžbu. Kurir ih preuzima i vozi bez usputnih zaustavljanja do adrese primaoca.",
+    deliveryAreas: "Dostavljamo u sva 23 bečka okruga. Cijena dostave zavisi od okruga i prikazuje se nakon unosa poštanskog broja. Područja dostave, vremenske termine i rokove za narudžbu pronaći ćete ovdje: {link}.",
+    deliveryLink: "Dostava i slanje",
+    looksPlant: "Izgleda li biljka baš ovako?",
+    looksBouquet: "Izgleda li buket baš ovako?",
+    looksOther: "Izgleda li baš kao na fotografiji?",
+    naturalPlant: "Skoro. Biljke su prirodni proizvodi: rast, veličina i cvjetovi mogu se razlikovati od fotografije. I ukrasna posuda može izgledati drugačije, zavisno od dostupnosti.",
+    naturalFlowers: "Skoro. Cvijeće je prirodni proizvod: zavisno od sezone, neka sorta ili nijansa boje može se razlikovati. Naša partnerska cvjećarnica pazi da stil i paleta boja ostanu isti.",
+  },
+
+  pricePending: {
+    status: "Cijena uskoro",
+    sizes: "Veličine",
+    sizesLabel: "Dostupne veličine",
+    soonTitle: "Uskoro u prodaji",
+    soonText: "Upravo određujemo cijene za našu ponudu. Čim budu utvrđene, ovaj buket moći ćete naručiti direktno ovdje.",
+    contact: "Pitanja? Pišite nam",
+  },
+
+  related: {
+    eyebrow: "Pogledajte još",
+    title: "Moglo bi Vam se dopasti i ovo",
+    allFlowers: "Pogledajte sve cvijeće",
+  },
+
+  reviews: {
+    eyebrow: "Utisci",
+    title: "Recenzije za {name}",
+    demoNote: "Primjeri recenzija – prave recenzije uskoro",
+    quote: "„{text}“",
+    verified: "Potvrđena kupovina",
+    demo: "Primjer",
+  },
+
+  reviewPhotos: {
+    photosOf: "Fotografije korisnika {author}",
+    enlarge: "{alt} – uvećajte fotografiju {index} od {total}",
+    dialogTitle: "Fotografija kupca {author}",
+    dialogCount: "({index} od {total})",
+    close: "Zatvorite fotografiju",
+    show: "Prikaži fotografiju {index}",
+  },
+};
 
 export default product;

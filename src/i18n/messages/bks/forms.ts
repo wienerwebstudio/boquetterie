@@ -1,6 +1,115 @@
 import type { PartialMessages } from "@/i18n/messages";
 
 /** bks – forms (translated from src/i18n/messages/de/forms.ts). */
-const forms: NonNullable<PartialMessages["forms"]> = {};
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Ime",
+  email: "E-mail",
+  emailAddress: "E-mail adresa",
+  message: "Poruka",
+  orderNumber: "Broj narudžbe",
+  honeypot: "Web stranica",
+  charCount: "{count}/{max} znakova",
+  genericError: "Nažalost, to nije uspjelo. Molimo pokušajte ponovo kasnije.",
+  invalidEmailEnter: "Molimo unesite važeću e-mail adresu.",
+
+  mailFallback: {
+    title: "Obrazac trenutno nije dostupan.",
+    text: "Vaša poruka nije izgubljena: molimo pošaljite nam je direktno e-mailom na {email}. Tekst je već umetnut.",
+    open: "Otvori e-mail",
+  },
+
+  newsletter: {
+    honeypot: "Web stranica (ostavite prazno)",
+    successTitle: "Skoro gotovo – molimo potvrdite svoju prijavu.",
+    successText: "Poslali smo Vam e-mail s linkom za potvrdu. Tek nakon toga ćete primati naš newsletter.",
+  },
+
+  contact: {
+    formLabel: "Kontakt obrazac",
+    subject: "Tema",
+    subjects: {
+      order: "Narudžba",
+      delivery: "Dostava",
+      business: "Poslovni klijenti",
+      other: "Ostalo",
+    },
+    orderNumberHint: "Nalazi se u Vašoj potvrdi narudžbe.",
+    errors: {
+      name: "Molimo navedite svoje ime.",
+      email: "Molimo navedite važeću e-mail adresu.",
+      subject: "Molimo odaberite temu.",
+      orderIdTooLong: "Broj narudžbe je predug.",
+      messageTooShort: "Molimo opišite svoj zahtjev (najmanje 10 znakova).",
+      messageTooLong: "Poruka smije imati najviše 2000 znakova.",
+    },
+    thanksTitle: "Hvala na Vašoj poruci.",
+    thanksText: "Primili smo Vaš upit i javit ćemo Vam se što je prije moguće e-mailom na {email}.",
+    sendAnother: "Pošaljite još jednu poruku",
+    failed: "Poruku nije bilo moguće poslati. Molimo pokušajte ponovo ili nam pišite direktno e-mailom.",
+    consent: "Slanjem pristajete da Vaše podatke koristimo za obradu upita. Detalji u Izjavi o zaštiti podataka.",
+    submit: "Pošaljite poruku",
+    mailSubject: "Upit putem kontakt obrasca: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Odustanak od ugovora",
+    errors: {
+      name: "Molimo navedite svoje ime.",
+      email: "Molimo navedite važeću e-mail adresu.",
+      orderId: "Molimo navedite broj narudžbe (npr. BQ-7K2M9Q).",
+    },
+    emailHint: "Na ovu adresu šaljemo potvrdu prijema.",
+    orderNumberHint: "Navedeno je u Vašoj potvrdi narudžbe.",
+    items: "Od kupovine koje robe odustajete?",
+    itemsPlaceholder: "npr. plišani medvjedić – ostavite prazno za svu robu iz narudžbe za koju je moguć odustanak",
+    declaration: "Ovim odustajem od ugovora koji sam zaključio/la o kupovini gore navedene robe.",
+    receivedTitle: "Vaš odustanak je zaprimljen.",
+    receivedText: "Zaprimljeno {receivedAt} za narudžbu {orderId}.",
+    receivedTextWithCase: "Zaprimljeno {receivedAt} za narudžbu {orderId} (predmet {id}).",
+    confirmationSent: "Potvrdu prijema poslali smo na {email}.",
+    confirmationNotSent: "E-mail s potvrdom trenutno nije bilo moguće poslati – prijem ćemo Vam lično potvrditi što je prije moguće. Molimo da do tada sačuvate ovu stranicu (npr. kao snimak ekrana).",
+    failed: "Odustanak trenutno nije bilo moguće poslati. Molimo pokušajte ponovo ili ga pošaljite e-mailom na {email}.",
+    submit: "Potvrdite odustanak",
+    mailSubject: "Odustanak – narudžba {orderId}",
+    mailDeclaration: "Ovim odustajem od ugovora koji sam zaključio/la o kupovini sljedeće robe: {items}",
+    mailAllItems: "sva roba iz narudžbe za koju je moguć odustanak",
+  },
+
+  business: {
+    formLabel: "Upit za poslovne klijente",
+    company: "Firma",
+    contact: "Kontakt osoba",
+    phone: "Telefon",
+    location: "Lokacija / poštanski broj",
+    locationPlaceholder: "npr. 1070 Beč",
+    need: "Potreba",
+    pleaseChoose: "Molimo odaberite",
+    needs: {
+      subscription: "Redovna dostava (pretplata)",
+      oneOff: "Jednokratna dostava",
+      event: "Događaj",
+      gifts: "Pokloni za zaposlene ili klijente",
+    },
+    messagePlaceholder: "O čemu se radi, za kada i u kojem obimu – i šta Vam je još važno.",
+    consent: "Slažem se da se moji podaci pohrane i koriste za obradu upita. Detalji u {privacyLink}.",
+    privacyLink: "Izjavi o zaštiti podataka",
+    errors: {
+      company: "Molimo navedite naziv svoje firme.",
+      contact: "Molimo navedite kontakt osobu.",
+      email: "Molimo navedite važeću e-mail adresu.",
+      phone: "Molimo provjerite broj telefona.",
+      location: "Molimo navedite lokaciju ili poštanski broj.",
+      need: "Molimo odaberite šta Vam treba.",
+      message: "Molimo ukratko opišite svoju potrebu (najmanje 10 znakova).",
+      consent: "Molimo potvrdite da Vaše podatke smijemo koristiti za obradu upita.",
+    },
+    thanksTitle: "Hvala na Vašem upitu.",
+    thanksText: "Sve smo primili i javit ćemo se osobi {contact} e-mailom na {email}.",
+    sendAnother: "Pošaljite još jedan upit",
+    failed: "Upit nije bilo moguće poslati. Molimo pokušajte ponovo ili nam pišite direktno e-mailom.",
+    submit: "Pošaljite upit",
+    mailSubject: "Upit firme: {company}",
+  },
+};
 
 export default forms;
