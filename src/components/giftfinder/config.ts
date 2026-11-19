@@ -8,40 +8,37 @@ export const GIFT_FINDER_PATH = "/geschenkfinder";
 
 export type ForValue = "partner" | "mama" | "freundin" | "kollegin" | "familie" | "selbst";
 
+/** Labels and hints (a short, honest description of the taste profile) live in `shop.giftFinder.forOptions`. */
 export interface ForOption {
   value: ForValue;
-  label: string;
-  /** Short, honest description of the taste profile behind the mapping. */
-  hint: string;
   colors: string[];
   styles: string[];
 }
 
 export const FOR_OPTIONS: ForOption[] = [
-  { value: "partner", label: "Partner:in", hint: "Romantisch & ausdrucksstark", colors: ["rot", "rosa", "burgund"], styles: ["romantisch", "elegant"] },
-  { value: "mama", label: "Mama", hint: "Weich & klassisch", colors: ["rosa", "creme", "lila"], styles: ["klassisch", "romantisch", "natuerlich"] },
-  { value: "freundin", label: "Freund:in", hint: "Fröhlich & unkompliziert", colors: ["gelb", "orange", "rosa"], styles: ["froehlich", "wild", "natuerlich"] },
-  { value: "kollegin", label: "Kolleg:in", hint: "Elegant & dezent", colors: ["weiss", "creme", "gruen"], styles: ["elegant", "modern"] },
-  { value: "familie", label: "Familie", hint: "Warm & vertraut", colors: ["creme", "beige", "gelb", "orange"], styles: ["klassisch", "natuerlich", "froehlich"] },
-  { value: "selbst", label: "Mich selbst", hint: "Modern & eigenwillig", colors: ["lila", "gruen", "orange", "burgund"], styles: ["modern", "wild", "natuerlich"] },
+  { value: "partner", colors: ["rot", "rosa", "burgund"], styles: ["romantisch", "elegant"] },
+  { value: "mama", colors: ["rosa", "creme", "lila"], styles: ["klassisch", "romantisch", "natuerlich"] },
+  { value: "freundin", colors: ["gelb", "orange", "rosa"], styles: ["froehlich", "wild", "natuerlich"] },
+  { value: "kollegin", colors: ["weiss", "creme", "gruen"], styles: ["elegant", "modern"] },
+  { value: "familie", colors: ["creme", "beige", "gelb", "orange"], styles: ["klassisch", "natuerlich", "froehlich"] },
+  { value: "selbst", colors: ["lila", "gruen", "orange", "burgund"], styles: ["modern", "wild", "natuerlich"] },
 ];
 
 export type BudgetValue = "bis-40" | "40-60" | "60-90" | "ab-90";
 
+/** Labels and hints live in `shop.giftFinder.budgets`. */
 export interface BudgetOption {
   value: BudgetValue;
-  label: string;
-  hint: string;
   min: number;
   /** null = open end */
   max: number | null;
 }
 
 export const BUDGET_OPTIONS: BudgetOption[] = [
-  { value: "bis-40", label: "bis 40 €", hint: "Kleine Aufmerksamkeit", min: 0, max: 40 },
-  { value: "40-60", label: "40–60 €", hint: "Der Klassiker", min: 40, max: 60 },
-  { value: "60-90", label: "60–90 €", hint: "Großzügig", min: 60, max: 90 },
-  { value: "ab-90", label: "ab 90 €", hint: "Ganz groß", min: 90, max: null },
+  { value: "bis-40", min: 0, max: 40 },
+  { value: "40-60", min: 40, max: 60 },
+  { value: "60-90", min: 60, max: 90 },
+  { value: "ab-90", min: 90, max: null },
 ];
 
 export const forOption = (value: string | null | undefined) => FOR_OPTIONS.find((o) => o.value === value) ?? null;

@@ -1,17 +1,20 @@
 "use client";
 import type { CartItem, PaymentMethodConfig } from "@/types";
 import {
-  validateCustomerFields, validateDeliveryFields, validateGreetingFields, validateRecipientFields, type FieldErrors, type OrderPayload,
+  validateCustomerFields, validateDeliveryFields, validateGreetingFields, validateRecipientFields, type FieldErrors, type OrderPayload, type ValidationMessages,
 } from "@/lib/order-payload";
 
 export type StepId = 1 | 2 | 3 | 4 | 5;
 
-export const STEPS: { id: StepId; label: string; title: string }[] = [
-  { id: 1, label: "Empfänger", title: "Wohin dürfen wir liefern?" },
-  { id: 2, label: "Lieferung", title: "Wann soll der Strauß ankommen?" },
-  { id: 3, label: "Grußkarte", title: "Deine Worte auf der Karte" },
-  { id: 4, label: "Besteller", title: "Deine Kontaktdaten" },
-  { id: 5, label: "Bezahlung", title: "Fast geschafft" },
+export type StepKey = "recipient" | "delivery" | "greeting" | "customer" | "payment";
+
+/** Label and title of each step come from the `checkout.steps` dictionary (by key). */
+export const STEPS: { id: StepId; key: StepKey }[] = [
+  { id: 1, key: "recipient" },
+  { id: 2, key: "delivery" },
+  { id: 3, key: "greeting" },
+  { id: 4, key: "customer" },
+  { id: 5, key: "payment" },
 ];
 
 export interface CheckoutData {
@@ -97,26 +100,27 @@ export function isViennaZip(zip: string) {
 
 /* ---------------- Per-step validation ---------------- */
 
-export function validateStep(step: StepId, data: CheckoutData, ctx: { zoneAvailable: boolean | null; greetingMaxChars: number; dateAvailable: boolean; windowRequired: boolean; windowValid: boolean }): FieldErrors {
+export function validateStep(step: StepId, data: CheckoutData, ctx: { zoneAvailable: boolean | null; greetingMaxChars: number; dateAvailable: boolean; windowRequired: boolean; windowValid: boolean; t: ValidationMessages }): FieldErrors {
+  const { t } = ctx;
   switch (step) {
     case 1: {
-      const e = validateRecipientFields(data.recipient);
-      if (!e.zip && ctx.zoneAvailable === false) e.zip = "In dieses Gebiet liefern wir derzeit leider noch nicht.";
+      const e = validateRecipientFields(data.recipient, t);
+      if (!e.zip && ctx.zoneAvailable === false) e.zip = t.zoneUnavailable;
       return e;
     }
     case 2: {
-      const e = validateDeliveryFields({ date: data.delivery.date, windowId: data.delivery.windowId || undefined, note: data.delivery.note });
-      if (!e.date && !ctx.dateAvailable) e.date = "An diesem Tag liefern wir leider nicht. Bitte wähle ein anderes Datum.";
-      if (!e.date && ctx.windowRequired && !data.delivery.windowId) e.windowId = "Bitte wähle ein Zeitfenster.";
-      else if (!e.date && data.delivery.windowId && !ctx.windowValid) e.windowId = "Dieses Zeitfenster ist an dem Tag nicht verfügbar.";
+      const e = validateDeliveryFields({ date: data.delivery.date, windowId: data.delivery.windowId || undefined, note: data.delivery.note }, t);
+      if (!e.date && !ctx.dateAvailable) e.date = t.dateUnavailable;
+      if (!e.date && ctx.windowRequired && !data.delivery.windowId) e.windowId = t.window;
+      else if (!e.date && data.delivery.windowId && !ctx.windowValid) e.windowId = t.windowUnavailable;
       return e;
     }
     case 3:
-      return validateGreetingFields(data.greeting, ctx.greetingMaxChars);
+      return validateGreetingFields(data.greeting, ctx.greetingMaxChars, t);
     case 4:
-      return validateCustomerFields(data.customer);
+      return validateCustomerFields(data.customer, t);
     case 5:
-      return data.payment.method ? {} : { method: "Bitte wähle eine Zahlungsart." };
+      return data.payment.method ? {} : { method: t.paymentMethod };
   }
 }
 

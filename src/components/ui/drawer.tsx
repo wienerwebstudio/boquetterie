@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "@/lib/format";
 import { useFocusTrap } from "@/lib/use-focus-trap";
+import { useI18n } from "@/i18n/client";
 
 export function Drawer({
   open, onClose, title, children, side = "right", footer, width = "max-w-[480px]", className, labelledBy,
@@ -14,6 +15,7 @@ export function Drawer({
   const panelRef = useRef<HTMLDivElement>(null);
   const autoId = useId();
   const titleId = labelledBy ?? autoId;
+  const { m } = useI18n();
 
   // Focus trap, Escape, focus return, inert background and scroll lock.
   useFocusTrap(panelRef, { active: open, onEscape: onClose });
@@ -39,7 +41,7 @@ export function Drawer({
         {(title || true) && (
           <div className="flex items-center justify-between border-b border-line px-5 py-4 sm:px-6">
             <div className="font-serif text-2xl text-ink" id={titleId}>{title}</div>
-            <button type="button" onClick={onClose} aria-label="Schließen" className="-mr-2 rounded-full p-2 text-ink-muted transition-colors hover:bg-ivory-200 hover:text-ink">
+            <button type="button" onClick={onClose} aria-label={m.common.close} className="-mr-2 rounded-full p-2 text-ink-muted transition-colors hover:bg-ivory-200 hover:text-ink">
               <X className="size-5" aria-hidden />
             </button>
           </div>

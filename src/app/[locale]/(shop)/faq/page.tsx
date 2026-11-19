@@ -9,22 +9,24 @@ import { PageHeader } from "@/components/content/page-header";
 import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { pageMetadata } from "@/lib/metadata";
+import { getI18n } from "@/i18n/server";
+import type { Messages } from "@/i18n/messages";
 
-const TITLE = "Häufige Fragen";
-const INTRO = "Antworten zu Lieferung, Bestellung und Bezahlung sowie zur Pflege deiner Blumen. Falls etwas fehlt: Wir sind nur eine Nachricht entfernt.";
+type GroupKey = keyof Messages["content"]["faq"]["groups"];
 
 /** Known categories in display order. Unknown categories are appended under "Weitere Fragen". */
-const GROUPS: { id: string; label: string }[] = [
-  { id: "lieferung", label: "Lieferung" },
-  { id: "bestellung", label: "Bestellung & Bezahlung" },
-  { id: "produkt", label: "Blumen & Pflege" },
+const GROUPS: { id: string; key: GroupKey }[] = [
+  { id: "lieferung", key: "delivery" },
+  { id: "bestellung", key: "order" },
+  { id: "produkt", key: "product" },
 ];
-const OTHER = { id: "weitere", label: "Weitere Fragen" };
+const OTHER: { id: string; key: GroupKey } = { id: "weitere", key: "other" };
 
-export function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
+  const { m } = await getI18n();
   return pageMetadata({
-    title: `${TITLE} – Lieferung, Bestellung & Pflege`,
-    description: "Antworten auf häufige Fragen zu Blumenlieferung in Wien, Lieferzeiten, Zahlung, Grußkarten und Pflege der Blumen.",
+    title: m.content.faq.metaTitle,
+    description: m.content.faq.metaDescription,
     path: routes.faq,
   });
 }
@@ -38,22 +40,23 @@ function groupFaqs(faqs: FAQ[]) {
 }
 
 export default async function FaqPage() {
-  const [faqs, settings] = await Promise.all([getFaqs(), getSettings()]);
-  const groups = groupFaqs(faqs);
+  const [faqs, settings, { m }] = await Promise.all([getFaqs(), getSettings(), getI18n()]);
+  const t = m.content.faq;
+  const groups = groupFaqs(faqs).map((g) => ({ ...g, label: t.groups[g.key] }));
 
   return (
     <article>
-      <PageHeader eyebrow="Service" title={TITLE} intro={INTRO} crumbs={[{ label: "FAQ" }]} />
+      <PageHeader eyebrow={m.content.serviceEyebrow} title={m.content.faqTitle} intro={t.intro} crumbs={[{ label: t.crumb }]} />
 
       <div className="container-x py-14 sm:py-20 lg:py-24">
         {faqs.length === 0 ? (
-          <p className="text-[15px] text-ink-muted">Derzeit sind keine Fragen hinterlegt.</p>
+          <p className="text-[15px] text-ink-muted">{t.empty}</p>
         ) : (
           <div className="grid gap-12 lg:grid-cols-[220px_1fr] lg:gap-20">
             {/* Sticky mini nav (desktop) */}
             <aside className="hidden lg:block">
-              <nav aria-label="Themen" className="sticky top-28">
-                <p className="eyebrow mb-4">Themen</p>
+              <nav aria-label={t.topics} className="sticky top-28">
+                <p className="eyebrow mb-4">{t.topics}</p>
                 <ul className="space-y-1 border-l border-line">
                   {groups.map((g) => (
                     <li key={g.id}>
@@ -68,7 +71,7 @@ export default async function FaqPage() {
             </aside>
 
             {/* Mobile topic chips */}
-            <nav aria-label="Themen" className="-mt-4 flex gap-2 overflow-x-auto scrollbar-none lg:hidden">
+            <nav aria-label={t.topics} className="-mt-4 flex gap-2 overflow-x-auto scrollbar-none lg:hidden">
               {groups.map((g) => (
                 <a key={g.id} href={`#${g.id}`} className="inline-flex shrink-0 rounded-full border border-line bg-white px-3.5 py-1.5 text-[13px] text-ink hover:border-forest hover:text-forest">
                   {g.label}
@@ -86,14 +89,14 @@ export default async function FaqPage() {
 
               {/* Closing CTA */}
               <section aria-labelledby="faq-cta-heading" className="rounded-md bg-forest px-6 py-10 text-ivory sm:px-10 sm:py-12">
-                <p className="eyebrow mb-3 text-sand">Nicht gefunden?</p>
-                <h2 id="faq-cta-heading" className="display-3 text-ivory">Noch Fragen?</h2>
+                <p className="eyebrow mb-3 text-sand">{t.ctaEyebrow}</p>
+                <h2 id="faq-cta-heading" className="display-3 text-ivory">{t.ctaTitle}</h2>
                 <p className="mt-3 max-w-md text-[15px] leading-relaxed text-sand">
-                  Schreib uns – bei Fragen zu einer Bestellung am besten gleich mit der Bestellnummer. Wir melden uns so schnell wie möglich.
+                  {t.ctaText}
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
-                  <Button href={routes.contact} variant="light" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />}>Kontakt aufnehmen</Button>
-                  <Link href={routes.tracking} className="text-sm font-semibold text-ivory underline-offset-4 hover:underline">Bestellung verfolgen</Link>
+                  <Button href={routes.contact} variant="light" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />}>{t.ctaContact}</Button>
+                  <Link href={routes.tracking} className="text-sm font-semibold text-ivory underline-offset-4 hover:underline">{t.ctaTracking}</Link>
                 </div>
               </section>
             </div>
@@ -102,7 +105,7 @@ export default async function FaqPage() {
       </div>
 
       {faqs.length > 0 && <JsonLd data={faqLd(faqs)} />}
-      <JsonLd data={breadcrumbLd([{ name: "Start", url: "/" }, { name: TITLE, url: routes.faq }], settings)} />
+      <JsonLd data={breadcrumbLd([{ name: m.content.homeCrumb, url: "/" }, { name: m.content.faqTitle, url: routes.faq }], settings)} />
     </article>
   );
 }

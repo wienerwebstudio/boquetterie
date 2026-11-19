@@ -5,6 +5,7 @@ import { parseShopParams, serializeShopParams, type FilterKey, type FilterOption
 import { FilterRail } from "./filter-rail";
 import { ProductGridSkeleton } from "./product-grid";
 import { ProductResults, type FixedFilter } from "./product-results";
+import { getI18n } from "@/i18n/server";
 
 export type RawSearchParams = Record<string, string | string[] | undefined>;
 
@@ -15,7 +16,7 @@ export type RawSearchParams = Record<string, string | string[] | undefined>;
 export async function ShopListing({ searchParams, pathname, fixed = {}, hide: hideProp = [] }: {
   searchParams: RawSearchParams; pathname: string; fixed?: FixedFilter; hide?: FilterKey[];
 }) {
-  const [occasions, settings] = await Promise.all([getOccasions(), getSettings()]);
+  const [occasions, settings, { m }] = await Promise.all([getOccasions(), getSettings(), getI18n()]);
   // No "Heute lieferbar" filter while same-day delivery is switched off.
   const hide: FilterKey[] = settings.sameDayEnabled || hideProp.includes("sameday") ? hideProp : [...hideProp, "sameday"];
   const params = parseShopParams(searchParams);
@@ -37,7 +38,7 @@ export async function ShopListing({ searchParams, pathname, fixed = {}, hide: hi
         </div>
       </div>
       <div className="min-w-0">
-        <Suspense key={key} fallback={<ProductGridSkeleton withToolbar />}>
+        <Suspense key={key} fallback={<ProductGridSkeleton withToolbar label={m.shop.results.loading} />}>
           <ProductResults params={params} pathname={pathname} fixed={fixed} hide={hide} options={options} />
         </Suspense>
       </div>

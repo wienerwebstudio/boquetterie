@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Plus } from "lucide-react";
 import type { CartItem, Extra } from "@/types";
 import { useCart } from "@/store/cart";
-import { formatPrice, cn } from "@/lib/format";
+import { cn } from "@/lib/format";
+import { useI18n } from "@/i18n/client";
 import { extraToCartExtra } from "@/lib/cart-helpers";
 import { useCartExtras } from "./use-cart-totals";
 
@@ -14,6 +15,8 @@ import { useCartExtras } from "./use-cart-totals";
 export function CartUpsell({ items, extras: provided, max = 4, className }: { items: CartItem[]; extras?: Extra[]; max?: number; className?: string }) {
   const fetched = useCartExtras();
   const addExtra = useCart((s) => s.addExtra);
+  const { m, fmt, price } = useI18n();
+  const t = m.cart.upsell;
   const target = items[0];
   if (!target) return null;
   const source = provided ?? fetched;
@@ -24,8 +27,8 @@ export function CartUpsell({ items, extras: provided, max = 4, className }: { it
   return (
     <section className={cn("", className)} aria-labelledby="cart-upsell-title">
       <div className="mb-3 flex items-baseline justify-between">
-        <h3 id="cart-upsell-title" className="font-serif text-[20px] text-ink">Noch etwas dazu?</h3>
-        <p className="text-[12px] text-ink-muted">Kommt mit dem Strauß</p>
+        <h3 id="cart-upsell-title" className="font-serif text-[20px] text-ink">{t.title}</h3>
+        <p className="text-[12px] text-ink-muted">{t.subtitle}</p>
       </div>
       <ul className="-mx-5 flex snap-x gap-3 overflow-x-auto px-5 pb-1 scrollbar-none sm:-mx-6 sm:px-6">
         {list.map((e) => (
@@ -35,14 +38,14 @@ export function CartUpsell({ items, extras: provided, max = 4, className }: { it
                 <Image src={e.image} alt={e.imageAlt} fill sizes="160px" className="object-cover" />
               </div>
               <p className="mt-2.5 truncate text-[13.5px] font-semibold text-ink">{e.name}</p>
-              <p className="text-[12.5px] tabular-nums text-ink-muted">{formatPrice(e.price)}</p>
+              <p className="text-[12.5px] tabular-nums text-ink-muted">{price(e.price)}</p>
               <button
                 type="button"
                 onClick={() => addExtra(target.id, extraToCartExtra(e))}
                 className="mt-2.5 inline-flex h-10 w-full items-center justify-center gap-1 rounded-md border border-forest/60 text-[13px] font-semibold text-forest transition-colors hover:bg-forest hover:text-ivory"
-                aria-label={`${e.name} für ${formatPrice(e.price)} hinzufügen`}
+                aria-label={fmt(t.addAria, { name: e.name, price: price(e.price) })}
               >
-                <Plus className="size-3.5" aria-hidden /> Hinzufügen
+                <Plus className="size-3.5" aria-hidden /> {t.add}
               </button>
             </div>
           </li>

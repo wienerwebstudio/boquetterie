@@ -2,7 +2,7 @@
 import { createContext, useContext, useMemo, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import type { Locale } from "@/i18n/config";
-import type { Messages } from "@/i18n/messages";
+import type { Messages, PartialMessages } from "@/i18n/messages";
 import { makeI18n, type I18n } from "@/i18n/shared";
 import germanMessages from "@/i18n/messages/de";
 
@@ -10,8 +10,17 @@ type ClientI18n = I18n & { /** Languages switched on (for the language switcher)
 const Ctx = createContext<ClientI18n | null>(null);
 
 /** Provides the language and its texts to Client Components (set in the locale layout). */
-export function I18nProvider({ locale, messages, live = [locale], children }: { locale: Locale; messages: Messages; live?: readonly Locale[]; children: ReactNode }) {
-  const value = useMemo(() => ({ ...makeI18n(locale, messages), live }), [locale, messages, live]);
+/**
+ * Provides the language and its texts to Client Components. Only the namespaces
+ * Client Components need are passed (see src/i18n/scope.tsx); a nested provider
+ * adds namespaces for one page (checkout, account, …) on top of its parent's.
+ */
+export function I18nProvider({ locale, messages, live, children }: { locale: Locale; messages: PartialMessages; live?: readonly Locale[]; children: ReactNode }) {
+  const parent = useContext(Ctx);
+  const value = useMemo(() => {
+    const merged = (parent ? { ...parent.m, ...messages } : messages) as Messages;
+    return { ...makeI18n(locale, merged), live: live ?? parent?.live ?? [locale] };
+  }, [locale, messages, live, parent]);
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 

@@ -2,6 +2,7 @@ import type { Product } from "@/types";
 import { ProductCard } from "@/components/shop/product-card";
 import { SectionHeading } from "@/components/ui/section";
 import { routes } from "@/lib/urls";
+import { getI18n } from "@/i18n/server";
 
 /** Same category first, then shared occasions, then bestsellers – never the product itself. */
 export function pickRelated(all: Product[], product: Product, limit = 4) {
@@ -18,12 +19,14 @@ export function pickRelated(all: Product[], product: Product, limit = 4) {
     .map((x) => x.p);
 }
 
-export function RelatedProducts({ products }: { products: Product[] }) {
+export async function RelatedProducts({ products }: { products: Product[] }) {
   if (!products.length) return null;
+  const { m } = await getI18n();
+  const t = m.product.related;
   return (
     <section className="border-t border-line py-16 lg:py-24" aria-labelledby="related-title">
       <div className="container-x">
-        <SectionHeading eyebrow="Weiter stöbern" title="Das könnte auch gefallen" link={{ label: "Alle Blumen ansehen", href: routes.shop }} />
+        <SectionHeading eyebrow={t.eyebrow} title={t.title} link={{ label: t.allFlowers, href: routes.shop }} />
         <ul className="grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-6">
           {products.map((p) => (
             <li key={p.slug}><ProductCard product={p} sizesAttr="(min-width: 1024px) 22vw, 45vw" /></li>

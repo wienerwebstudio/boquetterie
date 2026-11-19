@@ -4,8 +4,7 @@ import "../globals.css";
 import { getSettings } from "@/lib/cms";
 import { fontVariables } from "@/app/fonts";
 import { isLiveLocale, liveLocales, LOCALE_INFO, type Locale } from "@/i18n/config";
-import { I18nProvider } from "@/i18n/client";
-import { loadMessages } from "@/i18n/messages";
+import { RootI18nProvider } from "@/i18n/scope";
 
 /** Live languages are prerendered; any other locale answers 404 (see LIVE_LOCALES). */
 export function generateStaticParams() {
@@ -53,11 +52,10 @@ export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!isLiveLocale(locale)) notFound();
   const info = LOCALE_INFO[locale];
-  const messages = await loadMessages(locale);
   return (
     <html lang={info.htmlLang} dir={info.dir} className={`${fontVariables} h-full`}>
       <body className="flex min-h-full flex-col">
-        <I18nProvider locale={locale} messages={messages} live={liveLocales()}>{children}</I18nProvider>
+        <RootI18nProvider locale={locale}>{children}</RootI18nProvider>
       </body>
     </html>
   );

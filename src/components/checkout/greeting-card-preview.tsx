@@ -1,13 +1,16 @@
+"use client";
 import { cn } from "@/lib/format";
+import { useI18n } from "@/i18n/client";
 
 /** Live preview of the greeting card – ivory stock, serif italic, hand-written feel. */
 export function GreetingCardPreview({ message, senderName, anonymous, className, compact }: {
   message: string; senderName?: string; anonymous?: boolean; className?: string; compact?: boolean;
 }) {
+  const t = useI18n().m.checkout.cardPreview;
   const text = message.trim();
   const signature = anonymous ? null : senderName?.trim() || null;
   return (
-    <div className={cn("relative", className)} aria-label="Vorschau der Grußkarte">
+    <div className={cn("relative", className)} aria-label={t.label}>
       <div className="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded-md bg-sand/60" aria-hidden />
       <div
         className={cn(
@@ -30,10 +33,10 @@ export function GreetingCardPreview({ message, senderName, anonymous, className,
             !text && "text-ink-soft",
           )}
         >
-          {text || "Deine Worte erscheinen hier."}
+          {text || t.placeholder}
         </p>
         <p className={cn("mt-4 text-right font-serif text-ink-muted", compact ? "text-[15px]" : "text-[17px]")}>
-          {signature ? `— ${signature}` : anonymous ? <span className="text-[12px] font-sans not-italic tracking-[0.08em] uppercase text-ink-soft">Ohne Absender</span> : null}
+          {signature ? `— ${signature}` : anonymous ? <span className="text-[12px] font-sans not-italic tracking-[0.08em] uppercase text-ink-soft">{t.anonymous}</span> : null}
         </p>
       </div>
     </div>

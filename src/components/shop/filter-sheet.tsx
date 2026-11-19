@@ -6,10 +6,12 @@ import { Button } from "@/components/ui/button";
 import { countActiveFilters, resetFilters, type FilterKey, type FilterOptions, type ShopParams } from "@/lib/shop-filters";
 import { FilterGroups } from "./filter-groups";
 import { useShopParams } from "./use-shop-params";
+import { useI18n } from "@/i18n/client";
 
 /** Mobile: a "Filter" button that opens a bottom sheet with a draft state and an apply button. */
 export function FilterSheet({ options, hide = [], resultCount }: { options: FilterOptions; hide?: FilterKey[]; resultCount?: number }) {
   const { params, apply } = useShopParams();
+  const { m, fmt, plural } = useI18n();
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState<ShopParams>(params);
 
@@ -28,13 +30,13 @@ export function FilterSheet({ options, hide = [], resultCount }: { options: Filt
         className="inline-flex h-11 items-center gap-2 rounded-md border border-line bg-white px-4 text-[13px] font-semibold text-ink transition-colors hover:border-forest"
       >
         <SlidersHorizontal className="size-4" strokeWidth={1.7} aria-hidden />
-        Filter{active > 0 && <span className="ml-0.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-forest px-1.5 text-[11px] text-ivory">{active}</span>}
+        {m.shop.filters.title}{active > 0 && <span className="ml-0.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-forest px-1.5 text-[11px] text-ivory">{active}</span>}
       </button>
       <Drawer
         open={open}
         onClose={() => setOpen(false)}
         side="bottom"
-        title="Filter"
+        title={m.shop.filters.title}
         labelledBy="filter-sheet-title"
         footer={
           <div className="flex items-center gap-3">
@@ -44,10 +46,10 @@ export function FilterSheet({ options, hide = [], resultCount }: { options: Filt
               disabled={draftActive === 0}
               className="h-12 shrink-0 px-2 text-[13px] font-semibold text-ink-muted underline-offset-4 hover:text-ink hover:underline disabled:opacity-40"
             >
-              Zurücksetzen
+              {m.shop.filters.reset}
             </button>
             <Button size="lg" full onClick={submit} disabled={!dirty && resultCount === undefined}>
-              {dirty ? "Filter anwenden" : resultCount !== undefined ? `${resultCount === 1 ? "1 Strauß" : `${resultCount} Sträuße`} anzeigen` : "Anwenden"}
+              {dirty ? m.shop.filters.apply : resultCount !== undefined ? fmt(m.shop.filters.showResults, { results: plural(resultCount, m.shop.results.bouquets) }) : m.shop.filters.applyIdle}
             </Button>
           </div>
         }

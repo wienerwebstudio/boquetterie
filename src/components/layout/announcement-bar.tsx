@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { Pause, Play } from "lucide-react";
+import { useI18n } from "@/i18n/client";
 
 const ROTATE_MS = 5000;
 const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
@@ -22,6 +23,7 @@ const textCls = "truncate text-[12px] font-medium tracking-[0.04em] sm:text-[13p
  * `prefers-reduced-motion: reduce`.
  */
 export function AnnouncementBar({ messages }: { messages: string[] }) {
+  const { m: t } = useI18n();
   const [index, setIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
@@ -63,13 +65,13 @@ export function AnnouncementBar({ messages }: { messages: string[] }) {
         <p key={current} className={`animate-fade-in min-w-0 flex-1 ${textCls}`} aria-hidden>
           {messages[current]}
         </p>
-        <ul className="sr-only" aria-label="Hinweise">
+        <ul className="sr-only" aria-label={t.layout.announcement.listLabel}>
           {messages.map((m, n) => <li key={n}>{m}</li>)}
         </ul>
         <button
           type="button"
           onClick={() => setUserPaused(!paused)}
-          aria-label={paused ? "Wechsel der Hinweise fortsetzen" : "Wechsel der Hinweise anhalten"}
+          aria-label={paused ? t.layout.announcement.resume : t.layout.announcement.pause}
           className="grid size-6 shrink-0 place-items-center rounded-full text-ivory/70 transition-colors hover:text-ivory focus-visible:text-ivory focus-visible:outline-offset-2 focus-visible:outline-ivory"
         >
           {paused ? <Play className="size-3" aria-hidden /> : <Pause className="size-3" aria-hidden />}

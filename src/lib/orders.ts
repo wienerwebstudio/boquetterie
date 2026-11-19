@@ -6,6 +6,7 @@ import type { CartItem, Coupon, DeliveryZone, Extra, Order, OrderLine, OrderStat
 import type { CreatePaymentResult, PaymentProviderId } from "@/types/payments";
 import { addOrder, getAllProducts, getCoupons, getDeliveryZones, getExtras, getOrderById, getOrders, getSettings, readCollection, updateOrder, writeCollection } from "@/lib/cms";
 import { findZone, getAvailableDays, getLocalNow, normalizePostalCode } from "@/lib/delivery";
+import checkoutDe from "@/i18n/messages/de/checkout";
 import { computeTotals, validateCoupon } from "@/lib/pricing";
 import { createPayment, providerForMethod, type PaymentEvent } from "@/lib/payments";
 import { sendOrderConfirmation } from "@/lib/mail";
@@ -71,33 +72,37 @@ function asInt(v: unknown, min: number, max: number): number | null {
   return n;
 }
 
-/** Hand-written structural validation of an unknown JSON body – no schema library. */
-export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: number }): ParseResult {
+/**
+ * Hand-written structural validation of an unknown JSON body – no schema library.
+ * `messages`: the `checkout` dictionary of the customer's language (German by default).
+ */
+export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: number; messages?: typeof checkoutDe }): ParseResult {
+  const { api, validation } = opts.messages ?? checkoutDe;
   const body = asRecord(input);
-  if (!body) return { ok: false, status: 400, message: "Ungültige Anfrage." };
+  if (!body) return { ok: false, status: 400, message: api.invalidRequest };
 
   // items
   if (!Array.isArray(body.items) || body.items.length === 0 || body.items.length > 20) {
-    return { ok: false, status: 400, message: "Dein Warenkorb ist leer.", errors: { items: "Dein Warenkorb ist leer." } };
+    return { ok: false, status: 400, message: api.cartEmpty, errors: { items: api.cartEmpty } };
   }
   const items: OrderPayloadItem[] = [];
   for (const raw of body.items) {
     const it = asRecord(raw);
-    if (!it) return { ok: false, status: 400, message: "Ungültiger Artikel im Warenkorb." };
+    if (!it) return { ok: false, status: 400, message: api.invalidItem };
     const productId = cleanString(it.productId, 60);
     const sizeId = cleanString(it.sizeId, 4) as SizeId | undefined;
     const quantity = asInt(it.quantity, 1, 20);
     if (!productId || !sizeId || !SIZE_IDS.has(sizeId) || quantity === null) {
-      return { ok: false, status: 400, message: "Ungültiger Artikel im Warenkorb." };
+      return { ok: false, status: 400, message: api.invalidItem };
     }
     const extras: OrderPayloadItem["extras"] = [];
     if (it.extras !== undefined) {
-      if (!Array.isArray(it.extras) || it.extras.length > 20) return { ok: false, status: 400, message: "Ungültige Extras." };
+      if (!Array.isArray(it.extras) || it.extras.length > 20) return { ok: false, status: 400, message: api.invalidExtras };
       for (const rawExtra of it.extras) {
         const ex = asRecord(rawExtra);
         const extraId = ex ? cleanString(ex.extraId, 60) : undefined;
         const q = ex ? asInt(ex.quantity, 1, 20) : null;
-        if (!extraId || q === null) return { ok: false, status: 400, message: "Ungültige Extras." };
+        if (!extraId || q === null) return { ok: false, status: 400, message: api.invalidExtras };
         extras.push({ extraId, quantity: q });
       }
     }
@@ -106,8 +111,8 @@ export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: numb
       anonymous: it.anonymous === true,
       senderName: cleanString(it.senderName, LIMITS.name + 1),
     };
-    const gErr = validateGreetingFields(greeting, opts.greetingMaxChars);
-    if (Object.keys(gErr).length) return { ok: false, status: 400, message: "Bitte prüfe die Grußkarte.", errors: gErr };
+    const gErr = validateGreetingFields(greeting, opts.greetingMaxChars, validation);
+    if (Object.keys(gErr).length) return { ok: false, status: 400, message: api.checkGreeting, errors: gErr };
     const colorId = cleanString(it.colorId, 40);
     const floristNote = typeof it.floristNote === "string" ? it.floristNote.replace(/\r\n/g, "\n").trim().slice(0, 300) || undefined : undefined;
     items.push({
@@ -122,7 +127,7 @@ export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: numb
 
   // recipient
   const r = asRecord(body.recipient);
-  if (!r) return { ok: false, status: 400, message: "Bitte gib die Empfängeradresse an." };
+  if (!r) return { ok: false, status: 400, message: api.recipientMissing };
   const recipient = {
     firstName: cleanString(r.firstName, LIMITS.name + 1) ?? "",
     lastName: cleanString(r.lastName, LIMITS.name + 1) ?? "",
@@ -134,8 +139,8 @@ export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: numb
     city: cleanString(r.city, LIMITS.name + 1) ?? "",
     phone: cleanString(r.phone, LIMITS.phone + 1) ?? "",
   };
-  const rErr = validateRecipientFields(recipient);
-  if (Object.keys(rErr).length) return { ok: false, status: 400, message: "Bitte prüfe die Empfängeradresse.", errors: prefix("recipient", rErr) };
+  const rErr = validateRecipientFields(recipient, validation);
+  if (Object.keys(rErr).length) return { ok: false, status: 400, message: api.checkRecipient, errors: prefix("recipient", rErr) };
 
   // delivery
   const d = asRecord(body.delivery);
@@ -144,9 +149,9 @@ export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: numb
     windowId: cleanString(d?.windowId, 40),
     note: cleanString(d?.note, LIMITS.note + 1),
   };
-  const dErr = validateDeliveryFields(delivery);
+  const dErr = validateDeliveryFields(delivery, validation);
   if (Object.keys(dErr).length || !isIsoDate(delivery.date)) {
-    return { ok: false, status: 400, message: "Bitte prüfe die Lieferangaben.", errors: prefix("delivery", { date: "Bitte wähle ein Lieferdatum.", ...dErr }) };
+    return { ok: false, status: 400, message: api.checkDelivery, errors: prefix("delivery", { date: validation.date, ...dErr }) };
   }
 
   // customer
@@ -159,14 +164,14 @@ export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: numb
     acceptedTerms: c?.acceptedTerms === true,
     newsletter: c?.newsletter === true,
   };
-  const cErr = validateCustomerFields(customer);
-  if (Object.keys(cErr).length) return { ok: false, status: 400, message: "Bitte prüfe deine Kontaktdaten.", errors: prefix("customer", cErr) };
+  const cErr = validateCustomerFields(customer, validation);
+  if (Object.keys(cErr).length) return { ok: false, status: 400, message: api.checkCustomer, errors: prefix("customer", cErr) };
 
   // payment
   const p = asRecord(body.payment);
   const method = cleanString(p?.method, 20);
   if (!method || !PAYMENT_METHODS.has(method)) {
-    return { ok: false, status: 400, message: "Bitte wähle eine Zahlungsart.", errors: { "payment.method": "Bitte wähle eine Zahlungsart." } };
+    return { ok: false, status: 400, message: validation.paymentMethod, errors: { "payment.method": validation.paymentMethod } };
   }
 
   const couponCode = cleanString(body.couponCode, 40)?.toUpperCase();

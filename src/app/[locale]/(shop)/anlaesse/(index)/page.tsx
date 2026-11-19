@@ -9,27 +9,29 @@ import { JsonLd, breadcrumbLd } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
+import { getI18n } from "@/i18n/server";
 
-export function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
+  const { m } = await getI18n();
   return pageMetadata({
-    title: "Blumen für jeden Anlass – Geburtstag, Liebe, Danke & mehr",
-    description: "Blumen zum Geburtstag, zur Geburt, zum Danke sagen oder einfach so: Finde den passenden Strauß für jeden Moment – frisch gebunden und in Wien geliefert.",
+    title: m.shop.occasions.metaTitle,
+    description: m.shop.occasions.metaDescription,
     path: routes.occasions,
   });
 }
 
 export default async function OccasionsPage() {
-  const [occasions, settings] = await Promise.all([getOccasions(), getSettings()]);
+  const [occasions, settings, { m }] = await Promise.all([getOccasions(), getSettings(), getI18n()]);
+  const t = m.shop.occasions;
   return (
     <div className="container-x pb-20 pt-6 sm:pt-8 lg:pb-28">
-      <JsonLd data={breadcrumbLd([{ name: "Anlässe", url: routes.occasions }], settings)} />
-      <Breadcrumbs items={[{ label: "Anlässe" }]} />
+      <JsonLd data={breadcrumbLd([{ name: m.shop.breadcrumbs.occasions, url: routes.occasions }], settings)} />
+      <Breadcrumbs items={[{ label: m.shop.breadcrumbs.occasions }]} />
       <header className="mt-8 max-w-3xl sm:mt-12">
-        <p className="eyebrow mb-3">Anlässe</p>
-        <h1 className="display-1 text-balance text-ink animate-fade-up">Blumen für jeden Moment</h1>
+        <p className="eyebrow mb-3">{t.eyebrow}</p>
+        <h1 className="display-1 text-balance text-ink animate-fade-up">{t.title}</h1>
         <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-ink-muted sm:text-lg">
-          Ein Geburtstag, ein Danke, ein stiller Gruß oder einfach so: Für jeden Anlass gibt es Blumen, die das Richtige sagen.
-          Wähle den Moment – wir zeigen dir die Sträuße, die dazu passen.
+          {t.intro}
         </p>
       </header>
 
@@ -63,10 +65,10 @@ export default async function OccasionsPage() {
 
       <div className="mt-16 flex flex-col items-start gap-4 border-t border-line pt-10 sm:flex-row sm:items-center sm:justify-between lg:mt-24">
         <div>
-          <h2 className="display-3 text-ink">Kein passender Anlass dabei?</h2>
-          <p className="mt-2 text-[15px] text-ink-muted">Alle Sträuße lassen sich nach Farbe, Blumenart und Preis filtern.</p>
+          <h2 className="display-3 text-ink">{t.noMatchTitle}</h2>
+          <p className="mt-2 text-[15px] text-ink-muted">{t.noMatchText}</p>
         </div>
-        <Button href={routes.shop} variant="outline" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />}>Alle Blumen ansehen</Button>
+        <Button href={routes.shop} variant="outline" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />}>{t.allFlowers}</Button>
       </div>
     </div>
   );

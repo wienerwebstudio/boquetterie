@@ -4,17 +4,21 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input, Textarea } from "@/components/ui/input";
 import { MailFallback } from "./mail-fallback";
+import { fmtRich } from "./rich-text";
+import { useI18n } from "@/i18n/client";
+import type { Messages } from "@/i18n/messages";
 
 interface FormState { name: string; email: string; orderId: string; items: string; website: string }
 type Errors = Partial<Record<keyof FormState, string>>;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const OFFICE_EMAIL = "office@blumora.at";
 
-function validate(f: FormState): Errors {
+function validate(f: FormState, t: Messages["forms"]["withdrawal"]["errors"]): Errors {
   const e: Errors = {};
-  if (f.name.trim().length < 2) e.name = "Bitte gib deinen Namen an.";
-  if (!EMAIL_RE.test(f.email.trim())) e.email = "Bitte gib eine gültige E-Mail-Adresse an.";
-  if (!/^[A-Za-z0-9-]{4,20}$/.test(f.orderId.trim())) e.orderId = "Bitte gib die Bestellnummer an (z. B. BQ-7K2M9Q).";
+  if (f.name.trim().length < 2) e.name = t.name;
+  if (!EMAIL_RE.test(f.email.trim())) e.email = t.email;
+  if (!/^[A-Za-z0-9-]{4,20}$/.test(f.orderId.trim())) e.orderId = t.orderId;
   return e;
 }
 
@@ -29,6 +33,8 @@ export function WithdrawalForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   const [receipt, setReceipt] = useState<{ receivedAt: string; confirmationSent: boolean; id?: string } | null>(null);
   const [fallbackEmail, setFallbackEmail] = useState<string | null>(null);
+  const { m, fmt } = useI18n();
+  const t = m.forms.withdrawal;
 
   const set = <K extends keyof FormState>(key: K) => (e: { target: { value: string } }) => {
     setForm((f) => ({ ...f, [key]: e.target.value }));
@@ -37,7 +43,7 @@ export function WithdrawalForm() {
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
-    const next = validate(form);
+    const next = validate(form, t.errors);
     setErrors(next);
     if (Object.keys(next).length) return;
     setStatus("sending");
@@ -65,57 +71,60 @@ export function WithdrawalForm() {
     return (
       <div role="status" aria-live="polite" className="rounded-md border border-line bg-white/70 p-8 sm:p-10">
         <span className="inline-flex size-10 items-center justify-center rounded-full bg-success text-ivory"><Check className="size-5" strokeWidth={2.5} aria-hidden /></span>
-        <h2 className="display-3 mt-5 text-ink">Dein Widerruf ist eingegangen.</h2>
+        <h2 className="display-3 mt-5 text-ink">{t.receivedTitle}</h2>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
-          Eingegangen am <strong className="font-semibold text-ink">{receipt.receivedAt}</strong> zur Bestellung{" "}
-          <strong className="font-semibold text-ink">{form.orderId.trim().toUpperCase()}</strong>{receipt.id ? ` (Vorgang ${receipt.id})` : ""}.
+          {fmtRich(receipt.id ? t.receivedTextWithCase : t.receivedText, {
+            receivedAt: <strong className="font-semibold text-ink">{receipt.receivedAt}</strong>,
+            orderId: <strong className="font-semibold text-ink">{form.orderId.trim().toUpperCase()}</strong>,
+            id: receipt.id,
+          })}
         </p>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
           {receipt.confirmationSent
-            ? <>Die Eingangsbestätigung haben wir an <strong className="font-semibold text-ink">{form.email.trim()}</strong> geschickt.</>
-            : <>Die Bestätigungs-E-Mail konnte gerade nicht versendet werden – wir bestätigen den Eingang so schnell wie möglich persönlich. Bitte bewahre diese Seite bis dahin auf (z. B. als Screenshot).</>}
+            ? fmtRich(t.confirmationSent, { email: <strong className="font-semibold text-ink">{form.email.trim()}</strong> })
+            : t.confirmationNotSent}
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={submit} noValidate aria-label="Vertrag widerrufen">
+    <form onSubmit={submit} noValidate aria-label={t.formLabel}>
       <div className="grid gap-5 sm:grid-cols-2">
-        <Input label="Name" name="name" autoComplete="name" value={form.name} onChange={set("name")} error={errors.name} required />
-        <Input label="E-Mail-Adresse" name="email" type="email" autoComplete="email" inputMode="email" value={form.email} onChange={set("email")} error={errors.email} required hint="Hierhin schicken wir die Eingangsbestätigung." />
-        <Input label="Bestellnummer" name="orderId" placeholder="BQ-XXXXXX" autoComplete="off" value={form.orderId} onChange={set("orderId")} error={errors.orderId} required hint="Steht in deiner Bestellbestätigung." />
+        <Input label={m.forms.name} name="name" autoComplete="name" value={form.name} onChange={set("name")} error={errors.name} required />
+        <Input label={m.forms.emailAddress} name="email" type="email" autoComplete="email" inputMode="email" value={form.email} onChange={set("email")} error={errors.email} required hint={t.emailHint} />
+        <Input label={m.forms.orderNumber} name="orderId" placeholder="BQ-XXXXXX" autoComplete="off" value={form.orderId} onChange={set("orderId")} error={errors.orderId} required hint={t.orderNumberHint} />
         <Textarea
-          label="Welche Waren widerrufst du?" name="items" optional rows={3} maxLength={1000}
-          placeholder="z. B. den Teddy – leer lassen für alle widerrufbaren Waren der Bestellung"
+          label={t.items} name="items" optional rows={3} maxLength={1000}
+          placeholder={t.itemsPlaceholder}
           value={form.items} onChange={set("items")} error={errors.items} className="sm:col-span-2"
         />
         <div className="hidden" aria-hidden>
-          <label htmlFor="withdrawal-website">Website</label>
+          <label htmlFor="withdrawal-website">{m.forms.honeypot}</label>
           <input id="withdrawal-website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={set("website")} />
         </div>
       </div>
 
       <p className="mt-6 max-w-xl text-[14px] leading-relaxed text-ink-muted">
-        Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf der oben genannten Waren.
+        {t.declaration}
       </p>
 
       {status === "failed" && fallbackEmail && (
         <MailFallback
           className="mt-5"
           email={fallbackEmail}
-          subject={`Widerruf – Bestellung ${form.orderId.trim().toUpperCase()}`}
-          body={[`Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf der folgenden Waren: ${form.items.trim() || "alle widerrufbaren Waren der Bestellung"}`, "", `Bestellnummer: ${form.orderId.trim().toUpperCase()}`, `Name: ${form.name.trim()}`].join("\n")}
+          subject={fmt(t.mailSubject, { orderId: form.orderId.trim().toUpperCase() })}
+          body={[fmt(t.mailDeclaration, { items: form.items.trim() || t.mailAllItems }), "", `${m.forms.orderNumber}: ${form.orderId.trim().toUpperCase()}`, `${m.forms.name}: ${form.name.trim()}`].join("\n")}
         />
       )}
       {status === "failed" && !fallbackEmail && (
         <p role="alert" className="mt-5 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-danger">
-          Der Widerruf konnte gerade nicht übermittelt werden. Bitte versuch es noch einmal oder schick ihn per E-Mail an office@blumora.at.
+          {fmt(t.failed, { email: OFFICE_EMAIL })}
         </p>
       )}
 
       <div className="mt-7">
-        <Button type="submit" size="lg" loading={status === "sending"}>Widerruf bestätigen</Button>
+        <Button type="submit" size="lg" loading={status === "sending"}>{t.submit}</Button>
       </div>
     </form>
   );

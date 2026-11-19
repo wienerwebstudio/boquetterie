@@ -9,11 +9,13 @@ import { cn } from "@/lib/format";
 import { PageHeader } from "@/components/content/page-header";
 import { RichSections, cmsMetadata } from "@/components/content/cms-page";
 import { ContactForm } from "@/components/content/contact-form";
+import { getI18n } from "@/i18n/server";
 
 const SLUG = "kontakt";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return cmsMetadata(await getPageBySlug(SLUG), "Kontakt", routes.contact);
+  const [page, { m }] = await Promise.all([getPageBySlug(SLUG), getI18n()]);
+  return cmsMetadata(page, m.content.contact, routes.contact);
 }
 
 /** Settings values that still need to be filled in start with "[" (see settings.json). */
@@ -24,10 +26,11 @@ const FAQ_ANCHORS = new Set(["lieferung", "bestellung", "produkt"]);
 const faqHref = (category?: string) => (category && FAQ_ANCHORS.has(category) ? `${routes.faq}#${category}` : routes.faq);
 
 export default async function ContactPage() {
-  const [page, settings, faqs] = await Promise.all([getPageBySlug(SLUG), getSettings(), getFaqs()]);
+  const [page, settings, faqs, { m }] = await Promise.all([getPageBySlug(SLUG), getSettings(), getFaqs(), getI18n()]);
   if (!page) notFound();
 
   const { brand } = settings;
+  const t = m.content.contactPage;
   const address = brand.address;
   const quickFaqs = faqs.slice(0, 4);
   // Placeholder sections on this page only repeat that details come from settings – the block below already shows them.
@@ -35,34 +38,34 @@ export default async function ContactPage() {
 
   return (
     <article>
-      <PageHeader eyebrow="Service" title={page.title} intro={page.intro} crumbs={[{ label: page.title }]} />
+      <PageHeader eyebrow={m.content.serviceEyebrow} title={page.title} intro={page.intro} crumbs={[{ label: page.title }]} />
 
       <div className="container-x py-14 sm:py-20 lg:py-24">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-20">
           {/* Contact details */}
           <div className="space-y-12">
             <section aria-labelledby="contact-details-heading">
-              <p className="eyebrow mb-3">So erreichst du uns</p>
-              <h2 id="contact-details-heading" className="display-3 text-ink">Direkt & persönlich</h2>
+              <p className="eyebrow mb-3">{t.detailsEyebrow}</p>
+              <h2 id="contact-details-heading" className="display-3 text-ink">{t.detailsTitle}</h2>
               <address className="mt-8 divide-y divide-line border-y border-line not-italic">
-                <Detail icon={<Mail className="size-4" aria-hidden />} label="E-Mail">
+                <Detail icon={<Mail className="size-4" aria-hidden />} label={t.email}>
                   <Value value={brand.email} href={isPlaceholder(brand.email) ? undefined : `mailto:${brand.email}`} />
                 </Detail>
                 {/* Rows without real data (operator placeholders, empty lists) are left out entirely. */}
                 {!isPlaceholder(brand.phone) && (
-                  <Detail icon={<Phone className="size-4" aria-hidden />} label="Telefon">
+                  <Detail icon={<Phone className="size-4" aria-hidden />} label={t.phone}>
                     <Value value={brand.phone} href={`tel:${brand.phone.replace(/[^\d+]/g, "")}`} />
                   </Detail>
                 )}
                 {!isPlaceholder(address.street) && (
-                  <Detail icon={<MapPin className="size-4" aria-hidden />} label="Firmensitz">
+                  <Detail icon={<MapPin className="size-4" aria-hidden />} label={t.address}>
                     <Value value={address.street} />
                     <span className="block text-ink">{address.zip} {address.city}, {address.country}</span>
-                    <span className="mt-1 block text-[13px] text-ink-muted">Kein Ladengeschäft – wir liefern per Kurier.</span>
+                    <span className="mt-1 block text-[13px] text-ink-muted">{t.noShop}</span>
                   </Detail>
                 )}
                 {brand.openingHours.length > 0 && (
-                  <Detail icon={<Clock className="size-4" aria-hidden />} label="Erreichbar">
+                  <Detail icon={<Clock className="size-4" aria-hidden />} label={t.hours}>
                     {brand.openingHours.map((h, i) => <Value key={i} value={h} />)}
                   </Detail>
                 )}
@@ -71,8 +74,8 @@ export default async function ContactPage() {
 
             {quickFaqs.length > 0 && (
               <section aria-labelledby="quick-faq-heading" className="rounded-md bg-ivory-100 p-6 sm:p-8">
-                <p className="eyebrow mb-3">Häufige Fragen</p>
-                <h2 id="quick-faq-heading" className="font-serif text-2xl text-ink">Vielleicht ist die Antwort schon da</h2>
+                <p className="eyebrow mb-3">{m.content.faqTitle}</p>
+                <h2 id="quick-faq-heading" className="font-serif text-2xl text-ink">{t.quickFaqTitle}</h2>
                 <ul className="mt-5 divide-y divide-line">
                   {quickFaqs.map((f) => (
                     <li key={f.id}>
@@ -84,7 +87,7 @@ export default async function ContactPage() {
                   ))}
                 </ul>
                 <Link href={routes.faq} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-forest">
-                  Alle Fragen ansehen <ArrowRight className="size-4" aria-hidden />
+                  {t.allQuestions} <ArrowRight className="size-4" aria-hidden />
                 </Link>
               </section>
             )}
@@ -92,10 +95,10 @@ export default async function ContactPage() {
 
           {/* Form */}
           <section aria-labelledby="contact-form-heading" className="rounded-md border border-line bg-white/70 p-6 shadow-soft sm:p-10">
-            <p className="eyebrow mb-3">Nachricht</p>
-            <h2 id="contact-form-heading" className="display-3 text-ink">Schreib uns</h2>
+            <p className="eyebrow mb-3">{t.formEyebrow}</p>
+            <h2 id="contact-form-heading" className="display-3 text-ink">{t.formTitle}</h2>
             <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
-              Bei Fragen zu einer Bestellung hilft uns die Bestellnummer, dir schneller zu antworten.
+              {t.formText}
             </p>
             <ContactForm className="mt-8" />
           </section>
@@ -108,7 +111,7 @@ export default async function ContactPage() {
         )}
       </div>
 
-      <JsonLd data={breadcrumbLd([{ name: "Start", url: "/" }, { name: page.title, url: routes.contact }], settings)} />
+      <JsonLd data={breadcrumbLd([{ name: m.content.homeCrumb, url: "/" }, { name: page.title, url: routes.contact }], settings)} />
     </article>
   );
 }

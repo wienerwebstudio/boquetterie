@@ -2,9 +2,11 @@
 import Image from "next/image";
 import { useUi } from "@/store/ui";
 import { X } from "lucide-react";
+import { useI18n } from "@/i18n/client";
 
 export function ToastViewport() {
   const { toasts, dismissToast } = useUi();
+  const { m } = useI18n();
   if (!toasts.length) return null;
   return (
     <div className="pointer-events-none fixed inset-x-4 bottom-4 z-[110] flex flex-col items-center gap-2 sm:inset-x-auto sm:right-6 sm:bottom-6 sm:items-end" aria-live="polite">
@@ -24,7 +26,7 @@ export function ToastViewport() {
               {t.action.label}
             </button>
           )}
-          <button onClick={() => dismissToast(t.id)} aria-label="Schließen" className="shrink-0 rounded-full p-1 text-ink-soft hover:text-ink">
+          <button onClick={() => dismissToast(t.id)} aria-label={m.common.close} className="shrink-0 rounded-full p-1 text-ink-soft hover:text-ink">
             <X className="size-4" />
           </button>
         </div>

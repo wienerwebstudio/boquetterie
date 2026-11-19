@@ -3,13 +3,15 @@ import { Section } from "@/components/ui/section";
 import { TrustIcon } from "@/components/icons/trust-icon";
 import { accentChip } from "@/lib/accents";
 import { cn } from "@/lib/format";
+import { getI18n } from "@/i18n/server";
 
-export function HowItWorks({ content }: { content: HomepageContent["howItWorks"] }) {
+export async function HowItWorks({ content }: { content: HomepageContent["howItWorks"] }) {
+  const { m } = await getI18n();
   return (
     <Section id="so-funktioniert-es">
       <div className="grid gap-7 sm:gap-10 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-4">
-          <p className="eyebrow mb-3">So funktioniert es</p>
+          <p className="eyebrow mb-3">{m.home.howItWorks.eyebrow}</p>
           <h2 className="display-2 max-w-md text-balance text-ink">{content.headline}</h2>
         </div>
         {/* Phones: compact numbered rows. From `sm`: cards with icon. */}

@@ -7,15 +7,14 @@ import {
   AVAILABILITY_OPTIONS, PRICE_PRESETS, toggleListValue,
   type FilterKey, type FilterOptions, type ListKey, type ShopParams,
 } from "@/lib/shop-filters";
+import { useI18n } from "@/i18n/client";
 
 export type GroupId = "anlass" | "preis" | "blume" | "farbe" | "groesse" | "stil" | "saison" | "verfuegbarkeit" | "lieferdatum";
 
 export const ALL_GROUPS: GroupId[] = ["anlass", "preis", "blume", "farbe", "groesse", "stil", "saison", "verfuegbarkeit", "lieferdatum"];
 
-const GROUP_TITLES: Record<GroupId, string> = {
-  anlass: "Anlass", preis: "Preis", blume: "Blumenart", farbe: "Farbe", groesse: "Größe",
-  stil: "Stil", saison: "Saison", verfuegbarkeit: "Verfügbarkeit", lieferdatum: "Lieferdatum",
-};
+/** Option label in the visitor's language (falls back to the German label in catalog.ts). */
+const labelOf = (dict: Record<string, string>, o: { value: string; label: string }) => dict[o.value] ?? o.label;
 
 function groupCount(id: GroupId, p: ShopParams) {
   switch (id) {
@@ -40,6 +39,7 @@ export function FilterGroups({
   defaultOpen?: GroupId[];
   dense?: boolean;
 }) {
+  const { m } = useI18n();
   const [open, setOpen] = useState<GroupId[]>(defaultOpen);
   const toggleGroup = (id: GroupId) => setOpen((o) => (o.includes(id) ? o.filter((x) => x !== id) : [...o, id]));
   const toggle = (key: ListKey, value: string) => onChange(toggleListValue(values, key, value));
@@ -52,7 +52,7 @@ export function FilterGroups({
   return (
     <div className={cn("divide-y divide-line", dense && "text-[15px]")}>
       {groups.map((id) => (
-        <Group key={id} id={id} title={GROUP_TITLES[id]} count={groupCount(id, values)} open={open.includes(id)} onToggle={() => toggleGroup(id)}>
+        <Group key={id} id={id} title={m.shop.filters.groups[id]} count={groupCount(id, values)} open={open.includes(id)} onToggle={() => toggleGroup(id)}>
           {id === "anlass" && (
             <OptionList>
               {options.occasions.map((o) => (
@@ -62,16 +62,16 @@ export function FilterGroups({
           )}
           {id === "preis" && (
             <OptionList>
-              <RadioOption name={`preis-${dense ? "sheet" : "rail"}`} label="Alle Preise" checked={values.preis === null} onChange={() => onChange({ ...values, preis: null })} />
+              <RadioOption name={`preis-${dense ? "sheet" : "rail"}`} label={m.shop.filters.allPrices} checked={values.preis === null} onChange={() => onChange({ ...values, preis: null })} />
               {PRICE_PRESETS.map((o) => (
-                <RadioOption key={o.value} name={`preis-${dense ? "sheet" : "rail"}`} label={o.label} checked={values.preis === o.value} onChange={() => onChange({ ...values, preis: o.value })} />
+                <RadioOption key={o.value} name={`preis-${dense ? "sheet" : "rail"}`} label={labelOf(m.shop.priceRanges, o)} checked={values.preis === o.value} onChange={() => onChange({ ...values, preis: o.value })} />
               ))}
             </OptionList>
           )}
           {id === "blume" && (
             <OptionList>
               {FLOWER_OPTIONS.map((o) => (
-                <CheckOption key={o.value} label={o.label} checked={values.blume.includes(o.value)} onChange={() => toggle("blume", o.value)} />
+                <CheckOption key={o.value} label={labelOf(m.shop.flowers, o)} checked={values.blume.includes(o.value)} onChange={() => toggle("blume", o.value)} />
               ))}
             </OptionList>
           )}
@@ -92,7 +92,7 @@ export function FilterGroups({
                       style={{ backgroundColor: o.swatch }}
                       className={cn("relative inline-flex size-5 shrink-0 items-center justify-center rounded-full ring-1 ring-inset ring-ink/10 transition-transform group-hover:scale-105", active && "ring-2 ring-forest ring-offset-2 ring-offset-ivory")}
                     />
-                    {o.label}
+                    {labelOf(m.shop.colors, o)}
                   </button>
                 );
               })}
@@ -101,21 +101,21 @@ export function FilterGroups({
           {id === "groesse" && (
             <OptionList>
               {SIZE_OPTIONS.map((o) => (
-                <CheckOption key={o.value} label={o.label} checked={values.groesse.includes(o.value)} onChange={() => toggle("groesse", o.value)} />
+                <CheckOption key={o.value} label={labelOf(m.shop.sizes, o)} checked={values.groesse.includes(o.value)} onChange={() => toggle("groesse", o.value)} />
               ))}
             </OptionList>
           )}
           {id === "stil" && (
             <OptionList>
               {STYLE_OPTIONS.map((o) => (
-                <CheckOption key={o.value} label={o.label} checked={values.stil.includes(o.value)} onChange={() => toggle("stil", o.value)} />
+                <CheckOption key={o.value} label={labelOf(m.shop.styles, o)} checked={values.stil.includes(o.value)} onChange={() => toggle("stil", o.value)} />
               ))}
             </OptionList>
           )}
           {id === "saison" && (
             <OptionList>
               {SEASON_OPTIONS.map((o) => (
-                <CheckOption key={o.value} label={o.label} checked={values.saison.includes(o.value)} onChange={() => toggle("saison", o.value)} />
+                <CheckOption key={o.value} label={labelOf(m.shop.seasons, o)} checked={values.saison.includes(o.value)} onChange={() => toggle("saison", o.value)} />
               ))}
             </OptionList>
           )}
@@ -124,8 +124,8 @@ export function FilterGroups({
               {AVAILABILITY_OPTIONS.filter((o) => !hide.includes(o.value)).map((o) => (
                 <CheckOption
                   key={o.value}
-                  label={o.label}
-                  hint={o.hint}
+                  label={m.shop.availability[o.value].label}
+                  hint={m.shop.availability[o.value].hint}
                   checked={values[o.value]}
                   onChange={() => onChange({ ...values, [o.value]: !values[o.value] })}
                 />
@@ -216,6 +216,7 @@ function RadioOption({ name, label, checked, onChange }: { name: string; label: 
 
 function DeliveryDateFields({ values, onChange, options, hide }: { values: ShopParams; onChange: (n: ShopParams) => void; options: FilterOptions; hide: FilterKey[] }) {
   const base = useId();
+  const { m } = useI18n();
   const [plzDraft, setPlzDraft] = useState(values.plz ?? "");
   const commitPlz = () => {
     const clean = plzDraft.replace(/\D/g, "").slice(0, 4);
@@ -227,14 +228,14 @@ function DeliveryDateFields({ values, onChange, options, hide }: { values: ShopP
     <div className="flex flex-col gap-3">
       {!hide.includes("plz") && (
         <div className="flex flex-col gap-1.5">
-          <label htmlFor={`${base}-plz`} className="text-[13px] font-semibold text-ink">Postleitzahl</label>
+          <label htmlFor={`${base}-plz`} className="text-[13px] font-semibold text-ink">{m.shop.filters.postalCode}</label>
           <div className="relative">
             <input
               id={`${base}-plz`}
               inputMode="numeric"
               autoComplete="postal-code"
               maxLength={4}
-              placeholder="z. B. 1010"
+              placeholder={m.shop.filters.postalCodePlaceholder}
               value={plzDraft}
               onChange={(e) => setPlzDraft(e.target.value.replace(/\D/g, "").slice(0, 4))}
               onBlur={commitPlz}
@@ -242,7 +243,7 @@ function DeliveryDateFields({ values, onChange, options, hide }: { values: ShopP
               className={cn(fieldCls, "tracking-[0.08em] placeholder:tracking-normal", values.plz && "pr-9")}
             />
             {values.plz && (
-              <button type="button" onClick={() => { setPlzDraft(""); onChange({ ...values, plz: null }); }} aria-label="Postleitzahl entfernen" className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-ink-soft hover:text-ink">
+              <button type="button" onClick={() => { setPlzDraft(""); onChange({ ...values, plz: null }); }} aria-label={m.shop.filters.removePostalCode} className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-ink-soft hover:text-ink">
                 <X className="size-3.5" />
               </button>
             )}
@@ -251,7 +252,7 @@ function DeliveryDateFields({ values, onChange, options, hide }: { values: ShopP
       )}
       {!hide.includes("datum") && (
         <div className="flex flex-col gap-1.5">
-          <label htmlFor={`${base}-datum`} className="text-[13px] font-semibold text-ink">Wunschdatum</label>
+          <label htmlFor={`${base}-datum`} className="text-[13px] font-semibold text-ink">{m.shop.filters.date}</label>
           <div className="relative">
             <input
               id={`${base}-datum`}
@@ -263,12 +264,12 @@ function DeliveryDateFields({ values, onChange, options, hide }: { values: ShopP
               className={cn(fieldCls, "appearance-none", values.datum && "pr-9")}
             />
             {values.datum && (
-              <button type="button" onClick={() => onChange({ ...values, datum: null })} aria-label="Lieferdatum entfernen" className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full bg-white p-1.5 text-ink-soft hover:text-ink">
+              <button type="button" onClick={() => onChange({ ...values, datum: null })} aria-label={m.shop.filters.removeDate} className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full bg-white p-1.5 text-ink-soft hover:text-ink">
                 <X className="size-3.5" />
               </button>
             )}
           </div>
-          <p className="text-[12px] leading-snug text-ink-muted">Mit Postleitzahl zeigen wir nur Sträuße, die wir an diesem Tag zu dir liefern können.</p>
+          <p className="text-[12px] leading-snug text-ink-muted">{m.shop.filters.dateHint}</p>
         </div>
       )}
     </div>

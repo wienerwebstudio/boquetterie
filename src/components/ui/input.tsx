@@ -1,5 +1,7 @@
+"use client";
 import { forwardRef, useId, type InputHTMLAttributes, type TextareaHTMLAttributes, type SelectHTMLAttributes } from "react";
 import { cn } from "@/lib/format";
+import { useI18n } from "@/i18n/client";
 
 /**
  * Shared look of text fields. The resting border (`line-strong`) has >= 3:1 against
@@ -27,11 +29,12 @@ export const Input = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputE
 ) {
   const autoId = useId();
   const inputId = id ?? autoId;
+  const { m } = useI18n();
   return (
     <div className={cn("flex flex-col gap-1.5", className)}>
       {label && (
         <label htmlFor={inputId} className="text-[13px] font-semibold text-ink">
-          {label}{rest.required && <span className="text-burgundy" aria-hidden> *</span>} {optional && <span className="font-normal text-ink-muted">(optional)</span>}
+          {label}{rest.required && <span className="text-burgundy" aria-hidden> *</span>} {optional && <span className="font-normal text-ink-muted">{m.ui.optional}</span>}
         </label>
       )}
       <input
@@ -57,11 +60,12 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaHTMLAttributes<H
 ) {
   const autoId = useId();
   const inputId = id ?? autoId;
+  const { m } = useI18n();
   return (
     <div className={cn("flex flex-col gap-1.5", className)}>
       {label && (
         <label htmlFor={inputId} className="text-[13px] font-semibold text-ink">
-          {label}{rest.required && <span className="text-burgundy" aria-hidden> *</span>} {optional && <span className="font-normal text-ink-muted">(optional)</span>}
+          {label}{rest.required && <span className="text-burgundy" aria-hidden> *</span>} {optional && <span className="font-normal text-ink-muted">{m.ui.optional}</span>}
         </label>
       )}
       <textarea

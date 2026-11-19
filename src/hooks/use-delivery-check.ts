@@ -3,6 +3,7 @@ import { useCallback, useState } from "react";
 import type { DeliveryZone } from "@/types";
 import type { DeliveryDay, LocalNow } from "@/lib/delivery";
 import { useDeliveryContext } from "@/store/delivery";
+import { useI18n } from "@/i18n/client";
 
 export interface DeliveryCheckResult {
   ok: boolean;
@@ -22,16 +23,20 @@ export function useDeliveryCheck(productSlug?: string) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const setContext = useDeliveryContext((s) => s.setResult);
+  const { m, locale } = useI18n();
+  const t = m.checkout.deliveryCheck;
 
   const check = useCallback(async (plz: string) => {
     setLoading(true); setError(null);
     try {
       const params = new URLSearchParams({ plz });
       if (productSlug) params.set("product", productSlug);
+      // Only picks the language of the server's messages.
+      if (locale !== "de") params.set("locale", locale);
       const res = await fetch(`/api/delivery/check?${params}`);
       const data = (await res.json()) as DeliveryCheckResult & { error?: string };
       if (!res.ok || !data.ok) {
-        setError(data.message ?? "Bitte gib eine gültige Postleitzahl ein.");
+        setError(data.message ?? t.invalid);
         setResult(null);
         return null;
       }
@@ -39,12 +44,12 @@ export function useDeliveryCheck(productSlug?: string) {
       setContext(data.postalCode, data.zone);
       return data;
     } catch {
-      setError("Die Lieferprüfung ist gerade nicht erreichbar. Bitte versuch es gleich noch einmal.");
+      setError(t.unreachable);
       return null;
     } finally {
       setLoading(false);
     }
-  }, [productSlug, setContext]);
+  }, [productSlug, setContext, locale, t]);
 
   return { result, loading, error, check, reset: () => { setResult(null); setError(null); } };
 }

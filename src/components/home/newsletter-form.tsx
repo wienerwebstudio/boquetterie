@@ -2,6 +2,7 @@
 import { useId, useState } from "react";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "@/i18n/client";
 
 type State = { status: "idle" | "loading" | "success" | "error"; message?: string };
 
@@ -11,12 +12,13 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
   const [website, setWebsite] = useState("");
   const [state, setState] = useState<State>({ status: "idle" });
   const id = useId();
+  const { m } = useI18n();
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const value = email.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
-      setState({ status: "error", message: "Bitte gib eine gültige E-Mail-Adresse ein." });
+      setState({ status: "error", message: m.forms.invalidEmailEnter });
       return;
     }
     setState({ status: "loading" });
@@ -28,12 +30,12 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
       });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; message?: string };
       if (!res.ok || !data.ok) {
-        setState({ status: "error", message: data.message ?? "Das hat leider nicht geklappt. Bitte versuch es später noch einmal." });
+        setState({ status: "error", message: data.message ?? m.forms.genericError });
         return;
       }
       setState({ status: "success" });
     } catch {
-      setState({ status: "error", message: "Das hat leider nicht geklappt. Bitte versuch es später noch einmal." });
+      setState({ status: "error", message: m.forms.genericError });
     }
   };
 
@@ -42,8 +44,8 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
       <div role="status" className="flex items-start gap-3 rounded-md bg-white p-5 shadow-soft animate-fade-up">
         <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-success text-ivory"><Check className="size-3.5" strokeWidth={3} aria-hidden /></span>
         <div>
-          <p className="text-[15px] font-semibold text-ink">Fast geschafft – bitte bestätige deine Anmeldung.</p>
-          <p className="mt-1 text-[13.5px] text-ink-muted">Wir haben dir eine E-Mail mit einem Bestätigungslink geschickt. Erst danach bekommst du unseren Newsletter.</p>
+          <p className="text-[15px] font-semibold text-ink">{m.forms.newsletter.successTitle}</p>
+          <p className="mt-1 text-[13.5px] text-ink-muted">{m.forms.newsletter.successText}</p>
         </div>
       </div>
     );
@@ -51,9 +53,9 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
 
   return (
     <form onSubmit={submit} noValidate className="relative flex flex-col gap-3" aria-describedby={`${id}-note`}>
-      <label htmlFor={`${id}-email`} className="sr-only">E-Mail-Adresse</label>
+      <label htmlFor={`${id}-email`} className="sr-only">{m.forms.emailAddress}</label>
       <div aria-hidden className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
-        <label htmlFor={`${id}-website`}>Website (bitte leer lassen)</label>
+        <label htmlFor={`${id}-website`}>{m.forms.newsletter.honeypot}</label>
         <input id={`${id}-website`} type="text" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
       </div>
       <div className="flex flex-col gap-2 sm:flex-row">

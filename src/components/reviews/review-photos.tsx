@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 import type { ReviewPhoto } from "@/types";
 import { cn } from "@/lib/format";
 import { useFocusTrap } from "@/lib/use-focus-trap";
+import { useI18n } from "@/i18n/client";
 
 /**
  * Small thumbnails under a review; a click opens the photo large in an accessible
@@ -13,16 +14,18 @@ import { useFocusTrap } from "@/lib/use-focus-trap";
  */
 export function ReviewPhotos({ photos, author, className }: { photos: ReviewPhoto[]; author: string; className?: string }) {
   const [open, setOpen] = useState<number | null>(null);
+  const { m, fmt } = useI18n();
+  const t = m.product.reviewPhotos;
   if (!photos.length) return null;
   return (
     <>
-      <ul className={cn("flex flex-wrap gap-2", className)} aria-label={`Fotos von ${author}`}>
+      <ul className={cn("flex flex-wrap gap-2", className)} aria-label={fmt(t.photosOf, { author })}>
         {photos.map((p, i) => (
           <li key={p.src}>
             <button
               type="button"
               onClick={() => setOpen(i)}
-              aria-label={`${p.alt} – Foto ${i + 1} von ${photos.length} vergrößern`}
+              aria-label={fmt(t.enlarge, { alt: p.alt, index: i + 1, total: photos.length })}
               className="block overflow-hidden rounded-md border border-line transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest"
             >
               <Image src={p.src} alt="" width={64} height={64} sizes="64px" className="size-16 object-cover" />
@@ -38,6 +41,8 @@ export function ReviewPhotos({ photos, author, className }: { photos: ReviewPhot
 function PhotoDialog({ photos, index, onIndex, onClose, author }: { photos: ReviewPhoto[]; index: number; onIndex: (i: number) => void; onClose: () => void; author: string }) {
   const panelRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
+  const { m, fmt } = useI18n();
+  const t = m.product.reviewPhotos;
   useFocusTrap(panelRef, { active: true, onEscape: onClose });
   const photo = photos[index];
   if (typeof document === "undefined" || !photo) return null;
@@ -48,9 +53,9 @@ function PhotoDialog({ photos, index, onIndex, onClose, author }: { photos: Revi
       <div ref={panelRef} role="dialog" aria-modal="true" aria-labelledby={titleId} className="relative flex max-h-full w-full max-w-3xl flex-col overflow-hidden rounded-md bg-ivory shadow-drawer">
         <div className="flex items-center justify-between gap-4 border-b border-line px-5 py-3">
           <h2 id={titleId} className="text-[14px] font-semibold text-ink">
-            Kundenfoto von {author}{photos.length > 1 ? ` (${index + 1} von ${photos.length})` : ""}
+            {fmt(t.dialogTitle, { author })}{photos.length > 1 ? ` ${fmt(t.dialogCount, { index: index + 1, total: photos.length })}` : ""}
           </h2>
-          <button type="button" onClick={onClose} aria-label="Foto schließen" className="inline-flex size-9 items-center justify-center rounded-full text-ink hover:bg-ivory-200">
+          <button type="button" onClick={onClose} aria-label={t.close} className="inline-flex size-9 items-center justify-center rounded-full text-ink hover:bg-ivory-200">
             <X className="size-5" strokeWidth={1.5} aria-hidden />
           </button>
         </div>
@@ -64,7 +69,7 @@ function PhotoDialog({ photos, index, onIndex, onClose, author }: { photos: Revi
                 key={p.src}
                 type="button"
                 onClick={() => onIndex(i)}
-                aria-label={`Foto ${i + 1} zeigen`}
+                aria-label={fmt(t.show, { index: i + 1 })}
                 aria-current={i === index || undefined}
                 className={cn("overflow-hidden rounded-md border-2", i === index ? "border-forest" : "border-transparent opacity-70 hover:opacity-100")}
               >

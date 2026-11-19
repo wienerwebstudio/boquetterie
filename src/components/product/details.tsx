@@ -4,9 +4,13 @@ import { Info } from "lucide-react";
 import type { Product } from "@/types";
 import { Accordion, type AccordionItem } from "@/components/ui/accordion";
 import { routes } from "@/lib/urls";
+import { getI18n } from "@/i18n/server";
 
 /** Below-the-fold product information. Server component; the accordion itself is interactive. */
-export function ProductDetails({ product }: { product: Product }) {
+export async function ProductDetails({ product }: { product: Product }) {
+  const { m, fmt } = await getI18n();
+  const t = m.product.details;
+  const [areasBefore, areasAfter] = t.deliveryAreas.split("{link}");
   // The note card shows the product's own detail photo when there is one; otherwise it stands on its own.
   const detailImage = product.images.find((img, i) => i > 0 && img.kind === "detail");
   const isPlant = product.category === "pflanzen";
@@ -14,12 +18,12 @@ export function ProductDetails({ product }: { product: Product }) {
   const items: AccordionItem[] = [
     {
       id: "beschreibung",
-      title: "Beschreibung",
+      title: t.description,
       content: <p className="text-pretty">{product.description}</p>,
     },
     ...(product.flowers.length === 0 ? [] : [{
       id: "blumen",
-      title: isPlant ? "Pflanze" : "Enthaltene Blumen",
+      title: isPlant ? t.plant : t.flowers,
       content: (
         <ul className="grid gap-1.5 sm:grid-cols-2">
           {product.flowers.map((f) => (
@@ -30,7 +34,7 @@ export function ProductDetails({ product }: { product: Product }) {
     }]),
     {
       id: "pflege",
-      title: "Pflegehinweise",
+      title: t.care,
       content: (
         <ol className="space-y-2">
           {product.care.map((c, i) => (
@@ -41,11 +45,11 @@ export function ProductDetails({ product }: { product: Product }) {
     },
     {
       id: "lieferung",
-      title: "Lieferung",
+      title: t.delivery,
       content: (
         <div className="space-y-3">
-          <p>Deine Blumen kommen von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Sträuße werden dort für deine Bestellung von Hand gebunden. Ein Kurier holt sie ab und fährt ohne Zwischenstopp zur Empfängeradresse.</p>
-          <p>Wir liefern in alle 23 Wiener Bezirke. Die Liefergebühr richtet sich nach dem Bezirk und wird nach Eingabe der Postleitzahl angezeigt. Liefergebiete, Zeitfenster und Bestellfristen findest du unter <Link href={routes.delivery} className="text-forest underline underline-offset-2">Lieferung & Versand</Link>.</p>
+          <p>{t.deliveryText}</p>
+          <p>{areasBefore}<Link href={routes.delivery} className="text-forest underline underline-offset-2">{t.deliveryLink}</Link>{areasAfter || null}</p>
         </div>
       ),
     },
@@ -55,8 +59,8 @@ export function ProductDetails({ product }: { product: Product }) {
     <section className="container-x py-16 lg:py-24" aria-labelledby="product-details-title">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-7">
-          <p className="eyebrow mb-3">Gut zu wissen</p>
-          <h2 id="product-details-title" className="display-3 mb-6 text-ink">Alles über {product.name}</h2>
+          <p className="eyebrow mb-3">{t.eyebrow}</p>
+          <h2 id="product-details-title" className="display-3 mb-6 text-ink">{fmt(t.title, { name: product.name })}</h2>
           <Accordion items={items} defaultOpen="beschreibung" />
         </div>
         <aside className="lg:col-span-5 lg:pt-16">
@@ -67,11 +71,11 @@ export function ProductDetails({ product }: { product: Product }) {
               </div>
             )}
             <div className="p-6 sm:p-7">
-              <p className="flex items-center gap-2 font-serif text-[22px] text-ink"><Info className="size-4 text-forest" strokeWidth={1.6} aria-hidden /> {isPlant ? "Sieht die Pflanze genau so aus?" : isBouquet ? "Sieht der Strauß genau so aus?" : "Sieht es genau so aus wie am Foto?"}</p>
+              <p className="flex items-center gap-2 font-serif text-[22px] text-ink"><Info className="size-4 text-forest" strokeWidth={1.6} aria-hidden /> {isPlant ? t.looksPlant : isBouquet ? t.looksBouquet : t.looksOther}</p>
               <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
                 {isPlant
-                  ? "Fast. Pflanzen sind Naturprodukte: Wuchs, Größe und Blüte können vom Foto abweichen. Auch der Übertopf kann je nach Verfügbarkeit anders aussehen."
-                  : "Fast. Blumen sind Naturprodukte: Je nach Saison kann eine Sorte oder Farbnuance abweichen. Unsere Partnerfloristik achtet darauf, dass Stil und Farbwelt erhalten bleiben."}
+                  ? t.naturalPlant
+                  : t.naturalFlowers}
               </p>
             </div>
           </div>

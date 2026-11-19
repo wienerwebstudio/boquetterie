@@ -4,10 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { ProductImage } from "@/types";
 import { cn } from "@/lib/format";
-
-const KIND_LABEL: Record<ProductImage["kind"], string> = {
-  front: "Vorderansicht", detail: "Detail", size: "Größenvergleich", packaging: "Verpackung", lifestyle: "Ambiente",
-};
+import { useI18n } from "@/i18n/client";
 
 /** Photos of the chosen option. `only`: the gallery shows nothing else (a size), otherwise they come first (a colour). */
 export interface GalleryFocus { images: ProductImage[]; labels: string[]; only: boolean }
@@ -26,9 +23,11 @@ export function ProductGallery({ images, name, focus, className }: {
     return focus.only ? own : [...own, ...images.filter((i) => !own.some((o) => o.src === i.src))];
   }, [images, focus]);
 
+  const { m, fmt } = useI18n();
+  const t = m.product.gallery;
   const labelOf = (img: ProductImage) => {
     const i = focus?.images.findIndex((o) => o.src === img.src) ?? -1;
-    return i >= 0 && focus?.labels[i] ? focus.labels[i] : KIND_LABEL[img.kind];
+    return i >= 0 && focus?.labels[i] ? focus.labels[i] : t.kinds[img.kind];
   };
   const focusKey = focus?.images.map((i) => i.src).join("|") ?? "";
   const [index, setIndex] = useState(0);
@@ -73,7 +72,7 @@ export function ProductGallery({ images, name, focus, className }: {
 
   return (
     <div className={cn("", className)}>
-      <p className="sr-only" aria-live="polite">Bild {index + 1} von {all.length}: {current.alt}</p>
+      <p className="sr-only" aria-live="polite">{fmt(t.status, { index: index + 1, total: all.length, alt: current.alt })}</p>
 
       {/* Mobile carousel */}
       <div className="min-w-0 lg:hidden">
@@ -84,23 +83,23 @@ export function ProductGallery({ images, name, focus, className }: {
           role="region"
           tabIndex={0}
           className="-mx-5 flex snap-x snap-mandatory overflow-x-auto scroll-smooth scrollbar-none sm:-mx-8 sm:rounded-md"
-          aria-roledescription="Karussell"
-          aria-label={`Bilder von ${name}`}
+          aria-roledescription={t.carousel}
+          aria-label={fmt(t.imagesOf, { name })}
         >
           {all.map((img, i) => (
-            <div key={img.src} className="relative aspect-[4/5] w-full shrink-0 snap-center bg-ivory-200" role="group" aria-roledescription="Bild" aria-label={`${i + 1} von ${all.length}`}>
+            <div key={img.src} className="relative aspect-[4/5] w-full shrink-0 snap-center bg-ivory-200" role="group" aria-roledescription={t.slide} aria-label={fmt(t.slideOf, { index: i + 1, total: all.length })}>
               <Image src={img.src} alt={img.alt} fill priority={i === 0} sizes="(min-width: 1440px) 780px, (min-width: 1024px) 55vw, 100vw" className="object-cover" />
             </div>
           ))}
         </div>
-        <div className="mt-3 flex items-center justify-center gap-2" role="tablist" aria-label="Bild auswählen">
+        <div className="mt-3 flex items-center justify-center gap-2" role="tablist" aria-label={t.choose}>
           {all.map((img, i) => (
             <button
               key={img.src}
               type="button"
               role="tab"
               aria-selected={i === index}
-              aria-label={`${labelOf(img)} anzeigen`}
+              aria-label={fmt(t.show, { label: labelOf(img) })}
               onClick={() => setIndex(i)}
               className="grid size-8 place-items-center"
             >
@@ -112,7 +111,7 @@ export function ProductGallery({ images, name, focus, className }: {
 
       {/* Desktop: rail + main */}
       <div className="hidden gap-4 lg:grid lg:grid-cols-[76px_minmax(0,1fr)] xl:gap-5">
-        <div className="flex flex-col gap-3" role="tablist" aria-orientation="vertical" aria-label="Bild auswählen">
+        <div className="flex flex-col gap-3" role="tablist" aria-orientation="vertical" aria-label={t.choose}>
           {all.map((img, i) => (
             <button
               key={img.src}
@@ -121,7 +120,7 @@ export function ProductGallery({ images, name, focus, className }: {
               ref={(el) => { thumbRefs.current[i] = el; }}
               tabIndex={i === index ? 0 : -1}
               aria-selected={i === index}
-              aria-label={`${labelOf(img)}: ${img.alt}`}
+              aria-label={fmt(t.thumb, { label: labelOf(img), alt: img.alt })}
               onClick={() => setIndex(i)}
               onKeyDown={(e) => onThumbKey(e, i)}
               className={cn(
@@ -148,10 +147,10 @@ export function ProductGallery({ images, name, focus, className }: {
           </span>
           {all.length > 1 && (
             <>
-              <button type="button" onClick={() => go(-1)} aria-label="Vorheriges Bild" className="absolute left-3 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-ivory/90 text-ink opacity-0 shadow-soft backdrop-blur transition-opacity hover:bg-white focus-visible:opacity-100 group-hover:opacity-100">
+              <button type="button" onClick={() => go(-1)} aria-label={t.previous} className="absolute left-3 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-ivory/90 text-ink opacity-0 shadow-soft backdrop-blur transition-opacity hover:bg-white focus-visible:opacity-100 group-hover:opacity-100">
                 <ChevronLeft className="size-5" strokeWidth={1.6} />
               </button>
-              <button type="button" onClick={() => go(1)} aria-label="Nächstes Bild" className="absolute right-3 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-ivory/90 text-ink opacity-0 shadow-soft backdrop-blur transition-opacity hover:bg-white focus-visible:opacity-100 group-hover:opacity-100">
+              <button type="button" onClick={() => go(1)} aria-label={t.next} className="absolute right-3 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-ivory/90 text-ink opacity-0 shadow-soft backdrop-blur transition-opacity hover:bg-white focus-visible:opacity-100 group-hover:opacity-100">
                 <ChevronRight className="size-5" strokeWidth={1.6} />
               </button>
             </>

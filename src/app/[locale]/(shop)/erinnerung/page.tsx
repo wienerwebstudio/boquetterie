@@ -8,43 +8,48 @@ import { pageMetadata } from "@/lib/metadata";
 import { getCapabilities } from "@/lib/capabilities";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/urls";
+import { getI18n } from "@/i18n/server";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { reminders } = await getCapabilities();
+  const [{ reminders }, { m }] = await Promise.all([getCapabilities(), getI18n()]);
   return pageMetadata({
     noindex: !reminders,
-    title: "Anlass-Erinnerung – nie wieder einen Anlass vergessen",
-    description: "Geburtstag, Jahrestag, Muttertag: Wir erinnern dich rechtzeitig per E-Mail, damit die Blumen pünktlich ankommen. Kostenlos, jederzeit löschbar.",
+    title: m.reminders.page.metaTitle,
+    description: m.reminders.page.metaDescription,
     path: "/erinnerung",
   });
 }
 
-const STATUS_NOTES: Record<string, { tone: "success" | "info" | "error"; title: string; text: string }> = {
-  bestaetigt: { tone: "success", title: "Erinnerung bestätigt.", text: "Wir melden uns rechtzeitig per E-Mail. Du kannst die Erinnerung jederzeit über den Link in der E-Mail löschen." },
-  geloescht: { tone: "info", title: "Erinnerung gelöscht.", text: "Du bekommst zu diesem Anlass keine E-Mails mehr von uns." },
-  ungueltig: { tone: "error", title: "Dieser Link ist nicht mehr gültig.", text: "Die Erinnerung wurde vielleicht schon gelöscht. Du kannst unten jederzeit eine neue anlegen." },
-  fehler: { tone: "error", title: "Das hat gerade nicht geklappt.", text: "Bitte versuch es in einem Moment noch einmal." },
+/** `?status=` value → tone and key of its texts in `reminders.page.status`. */
+const STATUS_NOTES: Record<string, { tone: "success" | "info" | "error"; key: "confirmed" | "deleted" | "invalid" | "error" }> = {
+  bestaetigt: { tone: "success", key: "confirmed" },
+  geloescht: { tone: "info", key: "deleted" },
+  ungueltig: { tone: "error", key: "invalid" },
+  fehler: { tone: "error", key: "error" },
 };
 
+/** Texts come from `reminders.page.steps` (by key). */
 const STEPS = [
-  { icon: CalendarCheck, title: "Anlass & Datum", text: "Wähle den Anlass, Tag und Monat – auf Wunsch jedes Jahr." },
-  { icon: MailCheck, title: "Einmal bestätigen", text: "Du bekommst eine E-Mail mit Bestätigungslink. Erst dann ist die Erinnerung aktiv." },
-  { icon: BellRing, title: "Rechtzeitig erinnert", text: "3, 7 oder 14 Tage vorher schreiben wir dir – mit Link zu passenden Sträußen." },
-  { icon: Trash2, title: "Jederzeit löschen", text: "Jede Erinnerung hat einen Lösch-Link. Keine Werbung, kein Newsletter." },
-];
+  { icon: CalendarCheck, key: "occasion" },
+  { icon: MailCheck, key: "confirm" },
+  { icon: BellRing, key: "remind" },
+  { icon: Trash2, key: "delete" },
+] as const;
 
 export default async function ReminderPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
-  const [sp, occasions, settings, capabilities] = await Promise.all([searchParams, getOccasions(), getSettings(), getCapabilities()]);
-  const note = typeof sp.status === "string" ? STATUS_NOTES[sp.status] : undefined;
+  const [sp, occasions, settings, capabilities, { m, fmt }] = await Promise.all([searchParams, getOccasions(), getSettings(), getCapabilities(), getI18n()]);
+  const t = m.reminders.page;
+  const status = typeof sp.status === "string" ? STATUS_NOTES[sp.status] : undefined;
+  const note = status ? { tone: status.tone, ...t.status[status.key] } : undefined;
   const options = occasions.map((o) => ({ slug: o.slug, name: o.name }));
 
   return (
     <article>
       <PageHeader
-        eyebrow="Service"
-        title="Nie wieder einen Anlass vergessen."
-        intro="Geburtstag, Jahrestag, Muttertag – wir erinnern dich ein paar Tage vorher per E-Mail. Genug Zeit, um Blumen auszusuchen und das Wunschdatum zu wählen."
-        crumbs={[{ label: "Anlass-Erinnerung" }]}
+        eyebrow={t.eyebrow}
+        title={t.title}
+        intro={t.intro}
+        crumbs={[{ label: t.breadcrumb }]}
       />
 
       <div className="container-x py-14 sm:py-20 lg:py-24">
@@ -64,19 +69,20 @@ export default async function ReminderPage({ searchParams }: { searchParams: Pro
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-20">
           <section aria-labelledby="how-heading" className="space-y-10">
             <div>
-              <p className="eyebrow mb-3">So funktioniert’s</p>
-              <h2 id="how-heading" className="display-3 text-ink">Einmal eintragen, entspannt bleiben</h2>
+              <p className="eyebrow mb-3">{t.howEyebrow}</p>
+              <h2 id="how-heading" className="display-3 text-ink">{t.howTitle}</h2>
             </div>
             <ol className="divide-y divide-line border-y border-line">
               {STEPS.map((s, i) => {
                 const Icon = s.icon;
+                const step = t.steps[s.key];
                 return (
-                  <li key={s.title} className="grid grid-cols-[auto_1fr] gap-x-4 py-5">
+                  <li key={s.key} className="grid grid-cols-[auto_1fr] gap-x-4 py-5">
                     <span className="mt-0.5 inline-flex size-8 items-center justify-center rounded-full bg-ivory-100 text-forest"><Icon className="size-4" aria-hidden /></span>
                     <div>
-                      <p className="text-[12px] font-semibold uppercase tracking-[0.1em] text-ink-soft">Schritt {i + 1}</p>
-                      <p className="mt-1 font-semibold text-ink">{s.title}</p>
-                      <p className="mt-1 text-[14.5px] leading-relaxed text-ink-muted">{s.text}</p>
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.1em] text-ink-soft">{fmt(t.step, { number: i + 1 })}</p>
+                      <p className="mt-1 font-semibold text-ink">{step.title}</p>
+                      <p className="mt-1 text-[14.5px] leading-relaxed text-ink-muted">{step.text}</p>
                     </div>
                   </li>
                 );
@@ -85,29 +91,29 @@ export default async function ReminderPage({ searchParams }: { searchParams: Pro
           </section>
 
           <section aria-labelledby="reminder-form-heading" className="rounded-md border border-line bg-white/70 p-6 shadow-soft sm:p-10">
-            <p className="eyebrow mb-3">Erinnerung</p>
-            <h2 id="reminder-form-heading" className="display-3 text-ink">Woran sollen wir dich erinnern?</h2>
+            <p className="eyebrow mb-3">{t.formEyebrow}</p>
+            <h2 id="reminder-form-heading" className="display-3 text-ink">{t.formTitle}</h2>
             {capabilities.reminders ? (
               <>
                 <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
-                  Kostenlos und ohne Konto. Wir schreiben dir nur zu diesem Anlass – sonst nichts.
+                  {t.formIntro}
                 </p>
                 <ReminderForm occasions={options} className="mt-8" />
               </>
             ) : (
               <div role="note" className="mt-6 rounded-md border border-line-strong bg-ivory-100 px-5 py-5">
-                <p className="font-semibold text-ink">Die Anlass-Erinnerung startet in Kürze.</p>
+                <p className="font-semibold text-ink">{t.unavailableTitle}</p>
                 <p className="mt-1.5 max-w-md text-[14.5px] leading-relaxed text-ink-muted">
-                  Wir richten den E-Mail-Versand gerade ein. Bis dahin nehmen wir hier keine Daten entgegen – schau gern bald wieder vorbei.
+                  {t.unavailableText}
                 </p>
-                <Button href={routes.shop} variant="outline" className="mt-5">Blumen ansehen</Button>
+                <Button href={routes.shop} variant="outline" className="mt-5">{t.unavailableCta}</Button>
               </div>
             )}
           </section>
         </div>
       </div>
 
-      <JsonLd data={breadcrumbLd([{ name: "Start", url: "/" }, { name: "Anlass-Erinnerung", url: "/erinnerung" }], settings)} />
+      <JsonLd data={breadcrumbLd([{ name: t.breadcrumbHome, url: "/" }, { name: t.breadcrumb, url: "/erinnerung" }], settings)} />
     </article>
   );
 }

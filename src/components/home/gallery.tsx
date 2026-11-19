@@ -2,20 +2,22 @@ import Image from "next/image";
 import type { HomepageContent } from "@/types";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/format";
+import { getI18n } from "@/i18n/server";
 
 /**
  * Asymmetric editorial grid: the first image spans 2x2 on tablet and up.
  * Mobile: two columns, first image full width.
  */
-export function Gallery({ content }: { content: HomepageContent["gallery"] }) {
+export async function Gallery({ content }: { content: HomepageContent["gallery"] }) {
   const images = content.images.slice(0, 6);
   if (!images.length) return null;
+  const { m } = await getI18n();
   return (
     <section id="galerie" aria-labelledby="gallery-title" className="bg-ivory-100 py-16 sm:py-20 lg:py-28">
       <div className="container-x">
         <div className="mb-10 flex flex-col gap-3 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="eyebrow mb-3">Galerie</p>
+            <p className="eyebrow mb-3">{m.home.gallery.eyebrow}</p>
             <h2 id="gallery-title" className="display-2 text-balance text-ink">{content.headline}</h2>
           </div>
         </div>

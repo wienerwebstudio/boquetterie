@@ -2,11 +2,13 @@ import type { SiteSettings } from "@/types";
 import { TrustIcon } from "@/components/icons/trust-icon";
 import { accentChip } from "@/lib/accents";
 import { cn } from "@/lib/format";
+import { getI18n } from "@/i18n/server";
 
-export function TrustBar({ items }: { items: SiteSettings["trust"] }) {
+export async function TrustBar({ items }: { items: SiteSettings["trust"] }) {
   if (!items.length) return null;
+  const { m } = await getI18n();
   return (
-    <section aria-label="Unsere Versprechen" className="border-y border-line bg-white">
+    <section aria-label={m.home.trustBarLabel} className="border-y border-line bg-white">
       <div className="container-x">
         <ul className="grid grid-cols-2 gap-x-6 gap-y-5 py-6 sm:py-7 lg:grid-cols-4 lg:gap-x-10">
           {items.map((t, i) => (

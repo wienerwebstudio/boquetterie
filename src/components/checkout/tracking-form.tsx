@@ -1,5 +1,5 @@
 "use client";
-import { useLocalizedRouter } from "@/i18n/client";
+import { useI18n, useLocalizedRouter } from "@/i18n/client";
 import { useState } from "react";
 
 import { ArrowRight } from "lucide-react";
@@ -14,12 +14,13 @@ export function TrackingForm({ initialOrderId = "" }: { initialOrderId?: string 
   const [errors, setErrors] = useState<{ orderId?: string; email?: string }>({});
   const [message, setMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const t = useI18n().m.checkout.tracking.form;
 
   const validate = () => {
     const e: typeof errors = {};
     const id = orderId.trim().toUpperCase();
-    if (!/^(BQ-)?[A-Z0-9]{6}$/.test(id)) e.orderId = "Bitte gib deine Bestellnummer ein, z. B. BQ-7K2M9Q.";
-    if (!isEmail(email)) e.email = "Bitte gib die E-Mail-Adresse ein, die du bei der Bestellung verwendet hast.";
+    if (!/^(BQ-)?[A-Z0-9]{6}$/.test(id)) e.orderId = t.orderIdInvalid;
+    if (!isEmail(email)) e.email = t.emailInvalid;
     return e;
   };
 
@@ -36,31 +37,31 @@ export function TrackingForm({ initialOrderId = "" }: { initialOrderId?: string 
       const body = (await res.json()) as { ok: boolean; id?: string; token?: string; message?: string; errors?: Record<string, string> };
       if (!body.ok || !body.id || !body.token) {
         setErrors(body.errors ?? {});
-        setMessage(body.message ?? "Wir konnten die Bestellung nicht finden.");
+        setMessage(body.message ?? t.notFound);
         return;
       }
       router.push(`/bestellung/${encodeURIComponent(body.id)}?token=${encodeURIComponent(body.token)}`);
     } catch {
-      setMessage("Die Abfrage ist gerade nicht möglich. Bitte versuch es gleich noch einmal.");
+      setMessage(t.unavailable);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={submit} noValidate className="flex flex-col gap-5" aria-label="Sendungsverfolgung">
+    <form onSubmit={submit} noValidate className="flex flex-col gap-5" aria-label={t.label}>
       <Input
-        id="track-order-id" label="Bestellnummer" placeholder="BQ-XXXXXX" autoComplete="off" autoCapitalize="characters"
+        id="track-order-id" label={t.orderId} placeholder="BQ-XXXXXX" autoComplete="off" autoCapitalize="characters"
         value={orderId} onChange={(e) => setOrderId(e.target.value)} onBlur={() => setErrors((p) => ({ ...p, orderId: validate().orderId }))}
         error={errors.orderId} className="[&_input]:tracking-[0.08em] [&_input]:uppercase"
       />
       <Input
-        id="track-email" label="E-Mail-Adresse" type="email" inputMode="email" autoComplete="email"
+        id="track-email" label={t.email} type="email" inputMode="email" autoComplete="email"
         value={email} onChange={(e) => setEmail(e.target.value)} onBlur={() => setErrors((p) => ({ ...p, email: validate().email }))}
-        error={errors.email} hint="Die Adresse, die du bei der Bestellung angegeben hast."
+        error={errors.email} hint={t.emailHint}
       />
       {message && <p role="alert" className="rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">{message}</p>}
-      <Button type="submit" size="lg" loading={loading} iconRight={<ArrowRight className="size-4" aria-hidden />} className="sm:self-start sm:min-w-56">Status anzeigen</Button>
+      <Button type="submit" size="lg" loading={loading} iconRight={<ArrowRight className="size-4" aria-hidden />} className="sm:self-start sm:min-w-56">{t.submit}</Button>
     </form>
   );
 }

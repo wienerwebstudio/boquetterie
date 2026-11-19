@@ -4,16 +4,21 @@ import { ArrowRight, MailCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox, Input, Select } from "@/components/ui/input";
 import { cn } from "@/lib/format";
+import { useI18n } from "@/i18n/client";
+import { rich } from "@/components/checkout/rich-text";
+import type { Messages } from "@/i18n/messages";
 
 export interface OccasionOption { slug: string; name: string }
 
 const CUSTOM = "eigener";
-const MONTHS = ["Jänner", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
-const LEAD_OPTIONS: { value: 3 | 7 | 14; label: string; hint: string }[] = [
-  { value: 3, label: "3 Tage vorher", hint: "Für Spontane" },
-  { value: 7, label: "1 Woche vorher", hint: "Unsere Empfehlung" },
-  { value: 14, label: "2 Wochen vorher", hint: "Für Planer:innen" },
-];
+/** Month names come from `reminders.form.months` (by key). */
+const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"] as const;
+/** Label and hint come from `reminders.form.lead` (by key). */
+const LEAD_OPTIONS = [
+  { value: 3, key: "days3" },
+  { value: 7, key: "days7" },
+  { value: 14, key: "days14" },
+] as const;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 interface FormState {
@@ -26,16 +31,16 @@ function daysInMonth(month: number) {
   return [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1] ?? 31;
 }
 
-function validate(f: FormState): Errors {
+function validate(f: FormState, t: Messages["reminders"]["form"]["errors"]): Errors {
   const e: Errors = {};
-  if (!EMAIL_RE.test(f.email.trim())) e.email = "Bitte gib eine gültige E-Mail-Adresse an.";
-  if (!f.occasion) e.occasion = "Bitte wähle einen Anlass.";
-  if (f.occasion === CUSTOM && f.customOccasion.trim().length < 2) e.customOccasion = "Bitte gib an, woran wir dich erinnern sollen.";
+  if (!EMAIL_RE.test(f.email.trim())) e.email = t.email;
+  if (!f.occasion) e.occasion = t.occasion;
+  if (f.occasion === CUSTOM && f.customOccasion.trim().length < 2) e.customOccasion = t.customOccasion;
   const m = Number(f.month);
   const d = Number(f.day);
-  if (!(m >= 1 && m <= 12)) e.month = "Bitte wähle einen Monat.";
-  if (!(d >= 1 && d <= daysInMonth(m))) e.day = "Bitte prüfe den Tag.";
-  if (!f.consent) e.consent = "Bitte bestätige, dass wir dir Erinnerungen schicken dürfen.";
+  if (!(m >= 1 && m <= 12)) e.month = t.month;
+  if (!(d >= 1 && d <= daysInMonth(m))) e.day = t.day;
+  if (!f.consent) e.consent = t.consent;
   return e;
 }
 
@@ -47,6 +52,8 @@ export function ReminderForm({ occasions, className }: { occasions: OccasionOpti
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   const [failMessage, setFailMessage] = useState<string | null>(null);
+  const { m, fmt } = useI18n();
+  const t = m.reminders.form;
 
   const set = <K extends keyof FormState>(key: K, value: FormState[K]) => {
     setForm((f) => ({ ...f, [key]: value }));
@@ -56,7 +63,7 @@ export function ReminderForm({ occasions, className }: { occasions: OccasionOpti
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
-    const next = validate(form);
+    const next = validate(form, t.errors);
     setErrors(next);
     if (Object.keys(next).length) return;
     setStatus("sending");
@@ -91,13 +98,13 @@ export function ReminderForm({ occasions, className }: { occasions: OccasionOpti
       <div className={className} role="status" aria-live="polite">
         <div className="rounded-md border border-line bg-white/70 p-8 sm:p-10">
           <span className="inline-flex size-10 items-center justify-center rounded-full bg-forest text-ivory"><MailCheck className="size-5" aria-hidden /></span>
-          <h2 className="display-3 mt-5 text-ink">Fast fertig – bitte bestätigen.</h2>
+          <h2 className="display-3 mt-5 text-ink">{t.sentTitle}</h2>
           <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
-            Wir haben dir eine E-Mail an <strong className="font-semibold text-ink">{form.email}</strong> geschickt. Klick dort auf „Erinnerung bestätigen“ – erst dann ist sie aktiv.
+            {rich(t.sentText, { email: <strong className="font-semibold text-ink">{form.email}</strong> })}
           </p>
-          <p className="mt-3 text-[13px] text-ink-soft">Keine E-Mail? Schau bitte im Spam-Ordner nach.</p>
+          <p className="mt-3 text-[13px] text-ink-soft">{t.sentHint}</p>
           <Button variant="link" className="mt-6" onClick={() => { setForm((f) => ({ ...f, personName: "", day: "", month: "", customOccasion: "", consent: false })); setStatus("idle"); }} iconRight={<ArrowRight className="size-4" aria-hidden />}>
-            Weitere Erinnerung anlegen
+            {t.another}
           </Button>
         </div>
       </div>
@@ -108,32 +115,32 @@ export function ReminderForm({ occasions, className }: { occasions: OccasionOpti
   const maxDay = monthNum ? daysInMonth(monthNum) : 31;
 
   return (
-    <form onSubmit={submit} noValidate className={className} aria-label="Erinnerung anlegen">
+    <form onSubmit={submit} noValidate className={className} aria-label={t.label}>
       <div className="grid gap-5 sm:grid-cols-2">
-        <Select label="Anlass" name="occasion" value={form.occasion} onChange={onText("occasion")} error={errors.occasion}>
+        <Select label={t.occasion} name="occasion" value={form.occasion} onChange={onText("occasion")} error={errors.occasion}>
           {occasions.map((o) => <option key={o.slug} value={o.slug}>{o.name}</option>)}
-          <option value={CUSTOM}>Eigener Anlass</option>
+          <option value={CUSTOM}>{t.customOption}</option>
         </Select>
         {form.occasion === CUSTOM ? (
-          <Input label="Woran sollen wir erinnern?" name="customOccasion" maxLength={60} placeholder="z. B. Namenstag, Einzug" value={form.customOccasion} onChange={onText("customOccasion")} error={errors.customOccasion} required />
+          <Input label={t.customOccasion} name="customOccasion" maxLength={60} placeholder={t.customPlaceholder} value={form.customOccasion} onChange={onText("customOccasion")} error={errors.customOccasion} required />
         ) : (
-          <Input label="Für wen?" name="personName" optional maxLength={60} placeholder="z. B. Mama, Lisa" autoComplete="off" value={form.personName} onChange={onText("personName")} error={errors.personName} />
+          <Input label={t.person} name="personName" optional maxLength={60} placeholder={t.personPlaceholder} autoComplete="off" value={form.personName} onChange={onText("personName")} error={errors.personName} />
         )}
         {form.occasion === CUSTOM && (
-          <Input label="Für wen?" name="personName" optional maxLength={60} placeholder="z. B. Mama, Lisa" autoComplete="off" value={form.personName} onChange={onText("personName")} error={errors.personName} className="sm:col-span-2" />
+          <Input label={t.person} name="personName" optional maxLength={60} placeholder={t.personPlaceholder} autoComplete="off" value={form.personName} onChange={onText("personName")} error={errors.personName} className="sm:col-span-2" />
         )}
 
-        <Select label="Tag" name="day" value={form.day} onChange={onText("day")} error={errors.day}>
-          <option value="">Tag wählen</option>
-          {Array.from({ length: maxDay }, (_, i) => i + 1).map((d) => <option key={d} value={d}>{d}.</option>)}
+        <Select label={t.day} name="day" value={form.day} onChange={onText("day")} error={errors.day}>
+          <option value="">{t.chooseDay}</option>
+          {Array.from({ length: maxDay }, (_, i) => i + 1).map((d) => <option key={d} value={d}>{fmt(t.dayOption, { day: d })}</option>)}
         </Select>
-        <Select label="Monat" name="month" value={form.month} onChange={onText("month")} error={errors.month}>
-          <option value="">Monat wählen</option>
-          {MONTHS.map((m, i) => <option key={m} value={i + 1}>{m}</option>)}
+        <Select label={t.month} name="month" value={form.month} onChange={onText("month")} error={errors.month}>
+          <option value="">{t.chooseMonth}</option>
+          {MONTHS.map((k, i) => <option key={k} value={i + 1}>{t.months[k]}</option>)}
         </Select>
 
         <fieldset className="sm:col-span-2">
-          <legend className="mb-2 text-[13px] font-semibold text-ink">Wann sollen wir dich erinnern?</legend>
+          <legend className="mb-2 text-[13px] font-semibold text-ink">{t.when}</legend>
           <div className="grid gap-3 sm:grid-cols-3">
             {LEAD_OPTIONS.map((o) => {
               const active = form.leadDays === o.value;
@@ -141,20 +148,20 @@ export function ReminderForm({ occasions, className }: { occasions: OccasionOpti
                 <label key={o.value} className={cn("flex cursor-pointer flex-col rounded-md border px-4 py-3 transition-colors", active ? "border-forest bg-white" : "border-line bg-white/60 hover:border-stone")}>
                   <span className="flex items-center gap-2 text-[14px] font-semibold text-ink">
                     <input type="radio" name="leadDays" value={o.value} checked={active} onChange={() => set("leadDays", o.value)} className="accent-forest" />
-                    {o.label}
+                    {t.lead[o.key].label}
                   </span>
-                  <span className="mt-0.5 pl-6 text-[12.5px] text-ink-soft">{o.hint}</span>
+                  <span className="mt-0.5 pl-6 text-[12.5px] text-ink-soft">{t.lead[o.key].hint}</span>
                 </label>
               );
             })}
           </div>
         </fieldset>
 
-        <Input label="Deine E-Mail" name="email" type="email" autoComplete="email" inputMode="email" value={form.email} onChange={onText("email")} error={errors.email} required className="sm:col-span-2" />
+        <Input label={t.email} name="email" type="email" autoComplete="email" inputMode="email" value={form.email} onChange={onText("email")} error={errors.email} required className="sm:col-span-2" />
 
         <div className="flex flex-col gap-3 sm:col-span-2">
-          <Checkbox name="yearly" checked={form.yearly} onChange={(e) => set("yearly", e.target.checked)} label="Jedes Jahr erinnern" />
-          <Checkbox name="consent" checked={form.consent} onChange={(e) => set("consent", e.target.checked)} label={<>Ja, schickt mir Erinnerungs-E-Mails zu diesem Anlass. Ich kann sie jederzeit über den Link in der E-Mail löschen.</>} />
+          <Checkbox name="yearly" checked={form.yearly} onChange={(e) => set("yearly", e.target.checked)} label={t.yearly} />
+          <Checkbox name="consent" checked={form.consent} onChange={(e) => set("consent", e.target.checked)} label={<>{t.consent}</>} />
           {errors.consent && <p role="alert" className="text-[13px] text-danger">{errors.consent}</p>}
         </div>
 
@@ -167,16 +174,16 @@ export function ReminderForm({ occasions, className }: { occasions: OccasionOpti
 
       {status === "failed" && (
         <p role="alert" className="mt-5 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-danger">
-          {failMessage ?? "Die Erinnerung konnte nicht gespeichert werden. Bitte prüfe deine Angaben und versuch es noch einmal."}
+          {failMessage ?? t.errors.saveFailed}
         </p>
       )}
 
       <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-sm text-[12px] leading-relaxed text-ink-soft">
-          Wir verwenden deine E-Mail-Adresse nur für diese Erinnerung. Details in der Datenschutzerklärung.
+          {t.privacy}
         </p>
         <Button type="submit" size="lg" loading={status === "sending"} iconRight={<ArrowRight className="size-4" aria-hidden />}>
-          Erinnerung anlegen
+          {t.submit}
         </Button>
       </div>
     </form>

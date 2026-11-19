@@ -1,7 +1,8 @@
 import Link from "@/components/ui/link";
 import { ArrowRight, Package } from "lucide-react";
 import type { Order, OrderStatusDefinition } from "@/types";
-import { formatDateShort, formatDateTime, formatPrice } from "@/lib/format";
+import { formatDateTimeIn } from "@/i18n/format";
+import { getI18n } from "@/i18n/server";
 import { routes } from "@/lib/urls";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,14 +15,16 @@ function tone(status: Order["status"]): "success" | "rose" | "sand" | "forest" {
 }
 
 /** Rendered server-side only – the tracking token never reaches a client component. */
-export function OrdersList({ orders, statuses }: { orders: Order[]; statuses: OrderStatusDefinition[] }) {
+export async function OrdersList({ orders, statuses }: { orders: Order[]; statuses: OrderStatusDefinition[] }) {
+  const { m, fmt, price, dateShort, locale } = await getI18n();
+  const t = m.account.orders;
   if (orders.length === 0) {
     return (
       <div className="rounded-lg border border-dashed border-stone p-8 text-center">
         <span className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-ivory-200 text-forest"><Package className="size-5" strokeWidth={1.5} aria-hidden /></span>
-        <p className="font-serif text-2xl text-ink">Noch keine Bestellungen</p>
-        <p className="mt-2 text-[14px] text-ink-muted">Bestellungen mit dieser E-Mail-Adresse erscheinen hier automatisch.</p>
-        <Button href={routes.shop} variant="outline" className="mt-6">Blumen entdecken</Button>
+        <p className="font-serif text-2xl text-ink">{t.emptyTitle}</p>
+        <p className="mt-2 text-[14px] text-ink-muted">{t.emptyText}</p>
+        <Button href={routes.shop} variant="outline" className="mt-6">{t.cta}</Button>
       </div>
     );
   }
@@ -39,15 +42,15 @@ export function OrdersList({ orders, statuses }: { orders: Order[]; statuses: Or
                   <Badge tone={tone(o.status)}>{def?.label ?? o.status}</Badge>
                 </div>
                 <p className="mt-2 text-[13.5px] text-ink-muted">
-                  Bestellt am {formatDateTime(o.createdAt)} · Lieferung {formatDateShort(o.delivery.date)}{o.delivery.windowLabel ? `, ${o.delivery.windowLabel}` : ""}
+                  {fmt(t.meta, { date: formatDateTimeIn(locale, o.createdAt), delivery: dateShort(o.delivery.date), window: o.delivery.windowLabel ? `, ${o.delivery.windowLabel}` : "" })}
                 </p>
                 <p className="mt-1 text-[13.5px] text-ink-muted">
-                  Für {o.recipient.firstName} {o.recipient.lastName} · {o.lines.map((l) => `${l.quantity > 1 ? `${l.quantity}× ` : ""}${l.productName}`).join(", ")}
+                  {fmt(t.for, { name: `${o.recipient.firstName} ${o.recipient.lastName}`, items: o.lines.map((l) => `${l.quantity > 1 ? `${l.quantity}× ` : ""}${l.productName}`).join(", ") })}
                 </p>
               </div>
               <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end sm:gap-1">
-                <span className="font-serif text-[22px] tabular-nums leading-none text-ink">{formatPrice(o.totals.total)}</span>
-                <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-forest">Details <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden /></span>
+                <span className="font-serif text-[22px] tabular-nums leading-none text-ink">{price(o.totals.total)}</span>
+                <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-forest">{t.details} <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden /></span>
               </div>
             </Link>
           </li>

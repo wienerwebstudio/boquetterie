@@ -6,8 +6,12 @@ import { SiteShell } from "@/components/layout/site-shell";
 import { NotFoundView } from "@/components/content/not-found-view";
 import { I18nProvider } from "@/i18n/client";
 import { germanMessages } from "@/i18n/messages";
+import { getI18n } from "@/i18n/server";
 
-export const metadata: Metadata = { title: "Seite nicht gefunden", robots: { index: false } };
+export async function generateMetadata(): Promise<Metadata> {
+  const { m } = await getI18n("de");
+  return { title: m.layout.notFound.metaTitle, robots: { index: false } };
+}
 
 /** 404 for URLs that match no route at all – German, wrapped in the shop shell. */
 export default async function GlobalNotFound() {

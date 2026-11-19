@@ -3,6 +3,8 @@ import { useState, type FormEvent } from "react";
 import { ArrowRight, MailCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useI18n } from "@/i18n/client";
+import { rich } from "@/components/checkout/rich-text";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -13,12 +15,13 @@ export function LoginCard({ notice, unavailable = false }: { notice?: string; /*
   const [error, setError] = useState<string | undefined>();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   const [failMessage, setFailMessage] = useState<string | undefined>();
+  const t = useI18n().m.account.login;
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
     const value = email.trim();
     if (!EMAIL_RE.test(value)) {
-      setError("Bitte gib eine gültige E-Mail-Adresse ein.");
+      setError(t.emailInvalid);
       return;
     }
     setError(undefined);
@@ -31,13 +34,13 @@ export function LoginCard({ notice, unavailable = false }: { notice?: string; /*
       });
       const data = (await res.json().catch(() => null)) as { ok?: boolean; message?: string } | null;
       if (!res.ok || !data?.ok) {
-        setFailMessage(data?.message ?? "Der Link konnte gerade nicht gesendet werden. Bitte versuch es noch einmal.");
+        setFailMessage(data?.message ?? t.sendFailed);
         setStatus("failed");
         return;
       }
       setStatus("sent");
     } catch {
-      setFailMessage("Der Link konnte gerade nicht gesendet werden. Bitte versuch es noch einmal.");
+      setFailMessage(t.sendFailed);
       setStatus("failed");
     }
   };
@@ -46,12 +49,12 @@ export function LoginCard({ notice, unavailable = false }: { notice?: string; /*
     return (
       <div className="rounded-lg border border-line bg-white/60 p-6 sm:p-8" role="status" aria-live="polite">
         <span className="flex size-11 items-center justify-center rounded-full bg-ivory-200 text-forest"><MailCheck className="size-5" strokeWidth={1.5} aria-hidden /></span>
-        <h2 className="mt-5 font-serif text-[26px] leading-tight text-ink">Sieh in dein Postfach.</h2>
+        <h2 className="mt-5 font-serif text-[26px] leading-tight text-ink">{t.sentTitle}</h2>
         <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
-          Wenn die Adresse gültig ist, ist dein Login-Link an <strong className="font-semibold text-ink">{email.trim()}</strong> unterwegs. Er ist 15 Minuten gültig und funktioniert nur einmal.
+          {rich(t.sentText, { email: <strong className="font-semibold text-ink">{email.trim()}</strong> })}
         </p>
-        <p className="mt-3 text-[13px] leading-relaxed text-ink-soft">Nichts angekommen? Wirf einen Blick in den Spam-Ordner oder fordere den Link in ein paar Minuten neu an.</p>
-        <Button variant="link" className="mt-5" onClick={() => setStatus("idle")} iconRight={<ArrowRight className="size-4" aria-hidden />}>Andere Adresse verwenden</Button>
+        <p className="mt-3 text-[13px] leading-relaxed text-ink-soft">{t.sentHint}</p>
+        <Button variant="link" className="mt-5" onClick={() => setStatus("idle")} iconRight={<ArrowRight className="size-4" aria-hidden />}>{t.otherAddress}</Button>
       </div>
     );
   }
@@ -59,19 +62,19 @@ export function LoginCard({ notice, unavailable = false }: { notice?: string; /*
   return (
     <div className="rounded-lg border border-line bg-white/60 p-6 sm:p-8">
       <span className="flex size-11 items-center justify-center rounded-full bg-ivory-200 text-forest"><Sparkles className="size-5" strokeWidth={1.5} aria-hidden /></span>
-      <h2 className="mt-5 font-serif text-[26px] leading-tight text-ink">Anmelden ohne Passwort</h2>
+      <h2 className="mt-5 font-serif text-[26px] leading-tight text-ink">{t.title}</h2>
       {!unavailable && (
         <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
-          Gib deine E-Mail-Adresse ein – wir schicken dir einen Link, mit dem du direkt angemeldet bist. Kein Passwort, nichts zu merken.
+          {t.intro}
         </p>
       )}
       {notice && <p role="status" className="mt-4 rounded-md bg-ivory-100 px-4 py-3 text-[13.5px] text-ink-muted">{notice}</p>}
       {!unavailable && (
-      <form onSubmit={submit} noValidate className="mt-6" aria-label="Login-Link anfordern">
+      <form onSubmit={submit} noValidate className="mt-6" aria-label={t.formLabel}>
         <Input
-          label="E-Mail-Adresse" name="email" type="email" autoComplete="email" inputMode="email" required
+          label={t.email} name="email" type="email" autoComplete="email" inputMode="email" required
           value={email} onChange={(e) => { setEmail(e.target.value); if (error) setError(undefined); }} error={error}
-          placeholder="du@beispiel.at"
+          placeholder={t.emailPlaceholder}
         />
         <div className="hidden" aria-hidden>
           <label htmlFor="login-website">Website</label>
@@ -81,13 +84,13 @@ export function LoginCard({ notice, unavailable = false }: { notice?: string; /*
           <p role="alert" className="mt-4 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-danger">{failMessage}</p>
         )}
         <Button type="submit" size="lg" full className="mt-5" loading={status === "sending"} iconRight={<ArrowRight className="size-4" aria-hidden />}>
-          Login-Link senden
+          {t.submit}
         </Button>
       </form>
       )}
       {!unavailable && (
         <p className="mt-4 text-[12.5px] leading-relaxed text-ink-soft">
-          Beim ersten Login legen wir dein Konto automatisch an. Bestellen kannst du weiterhin auch ohne Konto.
+          {t.firstLogin}
         </p>
       )}
     </div>

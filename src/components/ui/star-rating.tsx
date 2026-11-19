@@ -1,9 +1,12 @@
+"use client";
 import { cn } from "@/lib/format";
+import { useI18n } from "@/i18n/client";
 
 export function StarRating({ value, count, size = "sm", className, showValue }: { value: number; count?: number; size?: "sm" | "md"; className?: string; showValue?: boolean }) {
   const px = size === "sm" ? "size-3.5" : "size-4";
+  const { m, fmt } = useI18n();
   return (
-    <span role="img" className={cn("inline-flex items-center gap-1.5", className)} aria-label={`${value.toFixed(1)} von 5 Sternen`}>
+    <span role="img" className={cn("inline-flex items-center gap-1.5", className)} aria-label={fmt(m.ui.starRating, { value: value.toFixed(1) })}>
       <span className="inline-flex gap-0.5 text-forest">
         {[1, 2, 3, 4, 5].map((i) => (
           <svg key={i} viewBox="0 0 20 20" className={px} aria-hidden fill={i <= Math.round(value) ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.2">

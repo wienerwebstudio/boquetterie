@@ -6,25 +6,14 @@ import type { ConsentCategory, ConsentChoice, ConsentState } from "@/types/conse
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/format";
 import { routes } from "@/lib/urls";
+import { useI18n } from "@/i18n/client";
 import { useConsent } from "./store";
 
-const CATEGORIES: { key: ConsentCategory; label: string; text: string; locked?: boolean }[] = [
-  {
-    key: "necessary",
-    label: "Notwendig",
-    locked: true,
-    text: "Warenkorb, Lieferprüfung, Sicherheit und deine Cookie-Auswahl selbst. Ohne diese Cookies funktioniert der Shop nicht.",
-  },
-  {
-    key: "analytics",
-    label: "Statistik",
-    text: "Reichweitenmessung, damit wir verstehen, welche Seiten und Sträuße gut ankommen. Wird nur geladen, wenn du zustimmst.",
-  },
-  {
-    key: "marketing",
-    label: "Marketing",
-    text: "Ermöglicht es, dir passende Angebote auf anderen Plattformen zu zeigen und deren Erfolg zu messen. Wird nur mit deiner Zustimmung aktiviert.",
-  },
+/** Labels and texts live in the dictionary (`layout.consent.categories`). */
+const CATEGORIES: { key: ConsentCategory; locked?: boolean }[] = [
+  { key: "necessary", locked: true },
+  { key: "analytics" },
+  { key: "marketing" },
 ];
 
 /**
@@ -44,6 +33,7 @@ export function ConsentBanner() {
   const acceptNecessary = useConsent((s) => s.acceptNecessary);
   const save = useConsent((s) => s.save);
   const close = useConsent((s) => s.close);
+  const t = useI18n().m.layout.consent;
 
   const dialogRef = useRef<HTMLDivElement>(null);
   const lastActive = useRef<Element | null>(null);
@@ -96,14 +86,14 @@ export function ConsentBanner() {
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="eyebrow mb-2">Datenschutz</p>
-          <h2 id={titleId} className="font-serif text-[26px] leading-tight text-ink">Cookies &amp; Datenschutz</h2>
+          <p className="eyebrow mb-2">{t.eyebrow}</p>
+          <h2 id={titleId} className="font-serif text-[26px] leading-tight text-ink">{t.title}</h2>
         </div>
         {canDismiss && (
           <button
             type="button"
             onClick={close}
-            aria-label="Schließen"
+            aria-label={t.close}
             className="-mr-2 -mt-1 rounded-full p-2 text-ink-muted transition-colors hover:bg-ivory-200 hover:text-ink"
           >
             <X className="size-5" aria-hidden />
@@ -114,15 +104,14 @@ export function ConsentBanner() {
       {view === "choice" ? (
         <>
           <p id={descId} className="mt-3 text-[14px] leading-relaxed text-ink-muted">
-            Wir verwenden notwendige Cookies, damit der Shop funktioniert. Statistik- und Marketing-Cookies setzen wir nur, wenn du zustimmst.
-            Deine Auswahl kannst du jederzeit über „Cookie-Einstellungen“ im Footer ändern. Mehr dazu in der{" "}
-            <Link href={routes.legal.privacy} className="text-forest underline underline-offset-4">Datenschutzerklärung</Link>.
+            {t.intro}{" "}
+            <Link href={routes.legal.privacy} className="text-forest underline underline-offset-4">{t.privacyPolicy}</Link>.
           </p>
           {/* Three equal-weight choices – no highlighted "accept" and no hidden "reject". */}
           <div className="mt-6 grid gap-2.5 sm:grid-cols-3">
-            <Button variant="outline" onClick={acceptAll}>Alle akzeptieren</Button>
-            <Button variant="outline" onClick={acceptNecessary}>Nur notwendige</Button>
-            <Button variant="outline" onClick={() => setView("settings")}>Einstellungen</Button>
+            <Button variant="outline" onClick={acceptAll}>{t.acceptAll}</Button>
+            <Button variant="outline" onClick={acceptNecessary}>{t.necessaryOnly}</Button>
+            <Button variant="outline" onClick={() => setView("settings")}>{t.settings}</Button>
           </div>
         </>
       ) : (
@@ -137,29 +126,31 @@ export function ConsentBanner() {
 function SettingsView({ consent, onBack, onSave }: { consent: ConsentState | null; onBack: () => void; onSave: (choice: ConsentChoice) => void }) {
   // Mounted fresh whenever the settings view opens, so the initial draft mirrors the stored choice.
   const [draft, setDraft] = useState<ConsentChoice>({ analytics: consent?.analytics ?? false, marketing: consent?.marketing ?? false });
+  const t = useI18n().m.layout.consent;
 
   return (
     <>
       <p className="mt-3 text-[14px] leading-relaxed text-ink-muted">
-        Wähle, welche Cookies wir setzen dürfen. Notwendige Cookies sind immer aktiv. Details in der{" "}
-        <Link href={routes.legal.privacy} className="text-forest underline underline-offset-4">Datenschutzerklärung</Link>.
+        {t.settingsIntro}{" "}
+        <Link href={routes.legal.privacy} className="text-forest underline underline-offset-4">{t.privacyPolicy}</Link>.
       </p>
       <ul className="mt-5 divide-y divide-line border-y border-line">
         {CATEGORIES.map((c) => {
           const checked = c.locked ? true : draft[c.key as keyof ConsentChoice];
+          const { label, text } = t.categories[c.key];
           return (
             <li key={c.key} className="flex items-start justify-between gap-5 py-4">
               <div className="min-w-0">
                 <p className="text-[14px] font-semibold text-ink">
-                  {c.label}
-                  {c.locked && <span className="ml-2 text-[12px] font-normal text-ink-soft">Immer aktiv</span>}
+                  {label}
+                  {c.locked && <span className="ml-2 text-[12px] font-normal text-ink-soft">{t.alwaysActive}</span>}
                 </p>
-                <p className="mt-1 text-[13px] leading-relaxed text-ink-muted">{c.text}</p>
+                <p className="mt-1 text-[13px] leading-relaxed text-ink-muted">{text}</p>
               </div>
               <Switch
                 checked={checked}
                 disabled={c.locked}
-                label={c.label}
+                label={label}
                 onChange={(v) => setDraft((d) => ({ ...d, [c.key]: v }))}
               />
             </li>
@@ -168,9 +159,9 @@ function SettingsView({ consent, onBack, onSave }: { consent: ConsentState | nul
       </ul>
       <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
         <button type="button" onClick={onBack} className="text-[13px] font-semibold text-forest underline-offset-4 hover:underline">
-          Zurück
+          {t.back}
         </button>
-        <Button variant="outline" onClick={() => onSave(draft)}>Auswahl speichern</Button>
+        <Button variant="outline" onClick={() => onSave(draft)}>{t.save}</Button>
       </div>
     </>
   );

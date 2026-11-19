@@ -8,24 +8,40 @@ import { cn } from "@/lib/format";
 import { onRadioGroupKeyDown, rovingTabIndex } from "@/lib/roving-radio";
 import { routes } from "@/lib/urls";
 import { FOUND_VIA_OPTIONS, type FoundViaSource } from "@/lib/found-via";
-import { CLIENT_PHOTO_BUDGET_BYTES, MAX_REVIEW_PHOTO_BYTES, MAX_REVIEW_PHOTOS, REVIEW_CONSENT_TEXT, REVIEW_PHOTO_ACCEPT } from "@/lib/review-submission";
+import { CLIENT_PHOTO_BUDGET_BYTES, MAX_REVIEW_PHOTO_BYTES, MAX_REVIEW_PHOTOS, REVIEW_PHOTO_ACCEPT } from "@/lib/review-submission";
+import { useI18n } from "@/i18n/client";
+import type { Messages } from "@/i18n/messages";
+import { rich } from "@/components/checkout/rich-text";
 
 interface FormState { name: string; rating: number; text: string; website: string; consent: boolean }
 type Errors = Partial<Record<keyof FormState | "photos", string>>;
 
 interface Photo { id: string; blob: Blob; name: string; preview: string }
 
-const RATING_LABELS = ["", "Enttäuschend", "Geht so", "Gut", "Sehr gut", "Wunderbar"];
+/** Star count (index + 1) → key of its label in `reminders.reviewForm.ratings`. */
+const RATING_KEYS = ["r1", "r2", "r3", "r4", "r5"] as const;
+/** Found-via id → key of its label in `reminders.reviewForm.foundVia.options`. */
+const FOUND_VIA_KEYS = {
+  google: "google",
+  maps: "maps",
+  instagram: "instagram",
+  tiktok: "tiktok",
+  facebook: "facebook",
+  empfehlung: "recommendation",
+  stammkunde: "returningCustomer",
+  sonstiges: "other",
+} as const satisfies Record<FoundViaSource, string>;
+type ReviewTexts = Messages["reminders"]["reviewForm"];
 /** Photos are shrunk in the browser before upload (the server re-encodes them anyway). */
 const CLIENT_MAX_SIDE = 1600;
 
-function validate(f: FormState): Errors {
+function validate(f: FormState, t: ReviewTexts["errors"]): Errors {
   const e: Errors = {};
-  if (f.name.trim().length < 2) e.name = "Bitte gib deinen Namen an (z. B. „Anna M.“).";
-  if (f.rating < 1 || f.rating > 5) e.rating = "Bitte wähle 1 bis 5 Sterne.";
-  if (f.text.trim().length < 10) e.text = "Bitte schreib ein paar Worte (mindestens 10 Zeichen).";
-  if (f.text.length > 1000) e.text = "Die Bewertung darf höchstens 1000 Zeichen lang sein.";
-  if (!f.consent) e.consent = "Bitte bestätige, dass wir deine Bewertung zeigen dürfen.";
+  if (f.name.trim().length < 2) e.name = t.name;
+  if (f.rating < 1 || f.rating > 5) e.rating = t.rating;
+  if (f.text.trim().length < 10) e.text = t.textShort;
+  if (f.text.length > 1000) e.text = t.textLong;
+  if (!f.consent) e.consent = t.consent;
   return e;
 }
 
@@ -58,9 +74,10 @@ async function shrink(file: File): Promise<Blob> {
 function FoundViaQuestion({ source, other, onSource, onOther }: {
   source: FoundViaSource | ""; other: string; onSource: (s: FoundViaSource) => void; onOther: (v: string) => void;
 }) {
+  const t = useI18n().m.reminders.reviewForm.foundVia;
   return (
     <div className="flex flex-col gap-2" role="group" aria-labelledby="found-via-label">
-      <span id="found-via-label" className="text-[13px] font-semibold text-ink">Wie hast du uns gefunden? <span className="font-normal text-ink-muted">(optional)</span></span>
+      <span id="found-via-label" className="text-[13px] font-semibold text-ink">{t.question} <span className="font-normal text-ink-muted">{t.optional}</span></span>
       <div role="radiogroup" aria-labelledby="found-via-label" onKeyDown={onRadioGroupKeyDown} className="mt-1 flex flex-wrap gap-2">
         {FOUND_VIA_OPTIONS.map((o, i) => (
           <button
@@ -75,12 +92,12 @@ function FoundViaQuestion({ source, other, onSource, onOther }: {
               source === o.id ? "border-forest bg-forest text-ivory" : "border-line bg-white text-ink hover:border-forest/50",
             )}
           >
-            {o.label}
+            {t.options[FOUND_VIA_KEYS[o.id]]}
           </button>
         ))}
       </div>
       {source === "sonstiges" && (
-        <Input label="Wo genau?" name="found_via_other" maxLength={80} value={other} onChange={(e) => onOther(e.target.value)} className="mt-1" />
+        <Input label={t.where} name="found_via_other" maxLength={80} value={other} onChange={(e) => onOther(e.target.value)} className="mt-1" />
       )}
     </div>
   );
@@ -98,6 +115,8 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
   const [preparing, setPreparing] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
   const photosRef = useRef<Photo[]>([]);
+  const { m, fmt } = useI18n();
+  const t = m.reminders.reviewForm;
   useEffect(() => {
     photosRef.current = photos;
   }, [photos]);
@@ -115,11 +134,11 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
     if (!files.length) return;
     const room = MAX_REVIEW_PHOTOS - photos.length;
     let message: string | undefined;
-    if (files.length > room) message = `Höchstens ${MAX_REVIEW_PHOTOS} Fotos – ${room > 0 ? `${room === 1 ? "eines wurde" : `${room} wurden`} übernommen` : "bitte zuerst eines entfernen"}.`;
+    if (files.length > room) message = fmt(t.errors.tooManyPhotos, { max: MAX_REVIEW_PHOTOS, rest: room > 0 ? (room === 1 ? t.errors.oneTaken : fmt(t.errors.someTaken, { count: room })) : t.errors.removeFirst });
     const accepted: File[] = [];
     for (const file of files.slice(0, Math.max(0, room))) {
-      if (file.type && !file.type.startsWith("image/")) { message = "Bitte nur Fotos auswählen (JPEG, PNG oder WebP)."; continue; }
-      if (file.size > MAX_REVIEW_PHOTO_BYTES) { message = `„${file.name}“ ist zu groß (maximal 10 MB pro Foto).`; continue; }
+      if (file.type && !file.type.startsWith("image/")) { message = t.errors.photosOnly; continue; }
+      if (file.size > MAX_REVIEW_PHOTO_BYTES) { message = fmt(t.errors.photoTooBig, { name: file.name }); continue; }
       accepted.push(file);
     }
     setPreparing(true);
@@ -133,7 +152,7 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
     const total = next.reduce((s, p) => s + p.blob.size, 0);
     if (total > CLIENT_PHOTO_BUDGET_BYTES) {
       prepared.forEach((p) => URL.revokeObjectURL(p.preview));
-      setErrors((prev) => ({ ...prev, photos: "Die Fotos sind zusammen zu groß. Bitte weniger oder kleinere Fotos wählen." }));
+      setErrors((prev) => ({ ...prev, photos: t.errors.photosTooBigTotal }));
       return;
     }
     setPhotos(next);
@@ -151,7 +170,7 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
-    const next = validate(form);
+    const next = validate(form, t.errors);
     setErrors(next);
     if (Object.keys(next).length) return;
     setStatus("sending");
@@ -174,7 +193,7 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
       const data = (await res.json().catch(() => null)) as { ok?: boolean; errors?: Errors; message?: string } | null;
       if (!res.ok || !data?.ok) {
         if (data?.errors) setErrors(data.errors);
-        setFailMessage(data?.message ?? (res.status === 413 ? "Die Fotos sind zu groß. Bitte weniger oder kleinere Fotos wählen." : null));
+        setFailMessage(data?.message ?? (res.status === 413 ? t.errors.photosTooBig : null));
         setStatus("failed");
         return;
       }
@@ -189,11 +208,11 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
       <div className={className} role="status" aria-live="polite">
         <div className="rounded-md border border-line bg-white/70 p-8 sm:p-10">
           <span className="inline-flex size-10 items-center justify-center rounded-full bg-success text-ivory"><Check className="size-5" strokeWidth={2.5} aria-hidden /></span>
-          <h2 className="display-3 mt-5 text-ink">Danke für deine Bewertung.</h2>
+          <h2 className="display-3 mt-5 text-ink">{t.sentTitle}</h2>
           <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
-            Wir lesen jede Bewertung persönlich. Sobald wir sie freigegeben haben, erscheint sie im Shop.
+            {t.sentText}
           </p>
-          <Button href="/blumen" variant="link" className="mt-6" iconRight={<ArrowRight className="size-4" aria-hidden />}>Zu den Sträußen</Button>
+          <Button href="/blumen" variant="link" className="mt-6" iconRight={<ArrowRight className="size-4" aria-hidden />}>{t.toBouquets}</Button>
         </div>
       </div>
     );
@@ -202,10 +221,10 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
   const shown = hover || form.rating;
 
   return (
-    <form onSubmit={submit} noValidate className={className} aria-label="Bewertung schreiben">
+    <form onSubmit={submit} noValidate className={className} aria-label={t.label}>
       <div className="grid gap-5">
         <div className="flex flex-col gap-1.5">
-          <span id="rating-label" className="text-[13px] font-semibold text-ink">Deine Bewertung</span>
+          <span id="rating-label" className="text-[13px] font-semibold text-ink">{t.rating}</span>
           <div
             role="radiogroup"
             aria-labelledby="rating-label"
@@ -223,7 +242,7 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
                   role="radio"
                   aria-checked={form.rating === n}
                   tabIndex={rovingTabIndex(form.rating === n, n - 1, form.rating > 0)}
-                  aria-label={`${n} von 5 Sternen – ${RATING_LABELS[n]}`}
+                  aria-label={fmt(t.starAria, { n, label: t.ratings[RATING_KEYS[n - 1]] })}
                   onClick={() => set("rating", n)}
                   onMouseEnter={() => setHover(n)}
                   onFocus={() => setHover(n)}
@@ -236,28 +255,28 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
                 </button>
               ))}
             </div>
-            <span className={cn("text-[14px]", shown ? "text-ink" : "text-ink-soft")}>{shown ? RATING_LABELS[shown] : "Sterne wählen"}</span>
+            <span className={cn("text-[14px]", shown ? "text-ink" : "text-ink-soft")}>{shown ? t.ratings[RATING_KEYS[shown - 1]] : t.chooseStars}</span>
           </div>
           {errors.rating && <p id="rating-error" role="alert" className="text-[13px] text-danger">{errors.rating}</p>}
         </div>
 
-        <Input label="Dein Name" name="name" autoComplete="name" maxLength={60} value={form.name} onChange={(e) => set("name", e.target.value)} error={errors.name} hint="So erscheint er im Shop – z. B. „Anna M.“" required />
-        <Textarea label="Wie war der Strauß?" name="text" rows={6} maxLength={1000} value={form.text} onChange={(e) => set("text", e.target.value)} error={errors.text} hint={`${form.text.length}/1000 Zeichen`} placeholder="Frische, Lieferung, Karte – was ist dir aufgefallen?" required />
+        <Input label={t.name} name="name" autoComplete="name" maxLength={60} value={form.name} onChange={(e) => set("name", e.target.value)} error={errors.name} hint={t.nameHint} required />
+        <Textarea label={t.text} name="text" rows={6} maxLength={1000} value={form.text} onChange={(e) => set("text", e.target.value)} error={errors.text} hint={fmt(t.textHint, { count: form.text.length })} placeholder={t.textPlaceholder} required />
 
         <div className="flex flex-col gap-2" role="group" aria-labelledby="photos-label" aria-describedby={errors.photos ? "photos-hint photos-error" : "photos-hint"}>
-          <span id="photos-label" className="text-[13px] font-semibold text-ink">Fotos vom Strauß <span className="font-normal text-ink-muted">(optional)</span></span>
-          <p id="photos-hint" className="text-[13px] text-ink-muted">Bis zu {MAX_REVIEW_PHOTOS} Fotos, JPEG, PNG oder WebP, je max. 10 MB. Wir entfernen Standort- und Kameradaten.</p>
+          <span id="photos-label" className="text-[13px] font-semibold text-ink">{t.photos} <span className="font-normal text-ink-muted">{t.optional}</span></span>
+          <p id="photos-hint" className="text-[13px] text-ink-muted">{fmt(t.photosHint, { max: MAX_REVIEW_PHOTOS })}</p>
           {photos.length > 0 && (
-            <ul className="mt-1 flex flex-wrap gap-3" aria-label="Ausgewählte Fotos">
+            <ul className="mt-1 flex flex-wrap gap-3" aria-label={t.selectedPhotos}>
               {photos.map((p, i) => (
                 <li key={p.id} className="relative">
                   {/* Local preview of a not yet uploaded file (blob: URL) – next/image cannot load it. */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.preview} alt={`Foto ${i + 1}: ${p.name}`} className="size-24 rounded-md border border-line object-cover" />
+                  <img src={p.preview} alt={fmt(t.photoAlt, { number: i + 1, name: p.name })} className="size-24 rounded-md border border-line object-cover" />
                   <button
                     type="button"
                     onClick={() => removePhoto(p.id)}
-                    aria-label={`Foto ${i + 1} entfernen`}
+                    aria-label={fmt(t.removePhoto, { number: i + 1 })}
                     className="absolute -right-2 -top-2 inline-flex size-7 items-center justify-center rounded-full border border-line bg-white text-ink shadow-soft hover:bg-ivory-200"
                   >
                     <X className="size-3.5" strokeWidth={2} aria-hidden />
@@ -280,7 +299,7 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
                 onChange={(e) => void addPhotos(e.target.files)}
               />
               <Button type="button" variant="outline" size="sm" loading={preparing} onClick={() => fileInput.current?.click()} icon={<ImagePlus className="size-4" aria-hidden />}>
-                {photos.length ? "Weiteres Foto hinzufügen" : "Fotos hinzufügen"}
+                {photos.length ? t.addMorePhotos : t.addPhotos}
               </Button>
             </div>
           )}
@@ -300,7 +319,7 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
             required
             aria-invalid={Boolean(errors.consent) || undefined}
             aria-describedby={errors.consent ? "review-consent-error" : undefined}
-            label={REVIEW_CONSENT_TEXT}
+            label={t.consent}
           />
           {errors.consent && <p id="review-consent-error" role="alert" className="pl-7 text-[13px] text-danger">{errors.consent}</p>}
         </div>
@@ -313,17 +332,16 @@ export function ReviewForm({ orderId, token, defaultName, className, askFoundVia
 
       {status === "failed" && (
         <p role="alert" className="mt-5 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-danger">
-          {failMessage ?? "Die Bewertung konnte nicht gespeichert werden. Bitte versuch es noch einmal."}
+          {failMessage ?? t.errors.saveFailed}
         </p>
       )}
 
       <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-sm text-[12px] leading-relaxed text-ink-soft">
-          Deine Bewertung wird vor der Veröffentlichung von uns gelesen. Bestellnummer {orderId}. Mehr dazu in der{" "}
-          <Link href={routes.legal.privacy} className="underline underline-offset-2 hover:text-forest">Datenschutzerklärung</Link>.
+          {rich(t.footer, { orderId, link: <Link href={routes.legal.privacy} className="underline underline-offset-2 hover:text-forest">{t.privacyLink}</Link> })}
         </p>
         <Button type="submit" size="lg" loading={status === "sending"} disabled={preparing} iconRight={<ArrowRight className="size-4" aria-hidden />}>
-          Bewertung absenden
+          {t.submit}
         </Button>
       </div>
     </form>

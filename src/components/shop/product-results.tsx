@@ -4,7 +4,8 @@ import type { Occasion, Product } from "@/types";
 import { getAllProducts, getCategories, getDeliveryZones, getOccasions, getSettings } from "@/lib/cms";
 import { applyFilter, sortProducts } from "@/lib/catalog";
 import { findZone, getAvailableDays, getLocalNow, sameDayCutoffOn } from "@/lib/delivery";
-import { formatDateLong, formatDateShort, cn } from "@/lib/format";
+import { cn } from "@/lib/format";
+import { getI18n } from "@/i18n/server";
 import { routes } from "@/lib/urls";
 import { countActiveFilters, roughlyDeliverableOn, shopHref, toProductFilter, type FilterKey, type FilterOptions, type ShopParams } from "@/lib/shop-filters";
 import { Button } from "@/components/ui/button";
@@ -28,9 +29,10 @@ interface DeliveryInfo {
 export async function ProductResults({ params, pathname, fixed = {}, hide = [], options }: {
   params: ShopParams; pathname: string; fixed?: FixedFilter; hide?: FilterKey[]; options: FilterOptions;
 }) {
-  const [products, categories, occasions, settings, zones] = await Promise.all([
-    getAllProducts(), getCategories(), getOccasions(), getSettings(), getDeliveryZones(),
+  const [products, categories, occasions, settings, zones, { m, fmt, dateShort, dateLong }] = await Promise.all([
+    getAllProducts(), getCategories(), getOccasions(), getSettings(), getDeliveryZones(), getI18n(),
   ]);
+  const t = m.shop.deliveryInfo;
   const now = getLocalNow(settings.timezone);
   const filter = toProductFilter(params, fixed);
   let list = applyFilter(products, filter, categories);
@@ -41,7 +43,7 @@ export async function ProductResults({ params, pathname, fixed = {}, hide = [], 
   const zone = params.plz ? findZone(params.plz, zones) : null;
 
   if (params.datum && !datum) {
-    info = { tone: "warn", icon: "calendar", text: "Das gewählte Lieferdatum liegt in der Vergangenheit – bitte wähle einen neuen Tag." };
+    info = { tone: "warn", icon: "calendar", text: t.pastDate };
   } else if (zone) {
     const zoneDays = getAvailableDays({ zone, settings, now });
     const sameDayToday = zoneDays.some((d) => d.sameDay);
@@ -50,24 +52,24 @@ export async function ProductResults({ params, pathname, fixed = {}, hide = [], 
       list = list.filter((p) => getAvailableDays({ zone, settings, now, product: p }).some((d) => d.date === datum));
       const dayOk = zoneDays.some((d) => d.date === datum);
       if (dayOk) {
-        info = { tone: "ok", icon: "calendar", text: `Lieferung nach ${params.plz} am ${formatDateLong(datum)} möglich.${datum === now.date ? ` Bestellung bis ${sameDayCutoffOn(zone, now.date)} Uhr.` : ""}` };
+        info = { tone: "ok", icon: "calendar", text: `${fmt(t.dateOk, { plz: params.plz ?? "", date: dateLong(datum) })}${datum === now.date ? ` ${fmt(t.orderUntil, { time: sameDayCutoffOn(zone, now.date) })}` : ""}` };
       } else {
         const next = zoneDays.find((d) => d.date > datum) ?? zoneDays[0];
-        info = { tone: "warn", icon: "calendar", text: `Am ${formatDateShort(datum)} liefern wir nach ${params.plz} leider nicht.`, nextDate: next?.date };
+        info = { tone: "warn", icon: "calendar", text: fmt(t.dateNotOk, { date: dateShort(datum), plz: params.plz ?? "" }), nextDate: next?.date };
       }
     } else {
       const first = zoneDays[0];
       const tail = sameDayToday
-        ? `Heute lieferbar bei Bestellung bis ${sameDayCutoffOn(zone, now.date)} Uhr.`
-        : first ? `Nächste Lieferung ${formatDateShort(first.date)}.` : "";
-      info = { tone: "ok", icon: "pin", text: `Lieferung nach ${params.plz} ${zone.region}. ${tail}`.trim() };
+        ? fmt(t.sameDayTail, { time: sameDayCutoffOn(zone, now.date) })
+        : first ? fmt(t.nextTail, { date: dateShort(first.date) }) : "";
+      info = { tone: "ok", icon: "pin", text: fmt(t.zone, { plz: params.plz ?? "", region: zone.region, tail }).trim() };
     }
   } else if (params.plz) {
     if (datum) list = list.filter((p) => roughlyDeliverableOn(p, datum, now.date));
-    info = { tone: "warn", icon: "pin", text: `An ${params.plz} liefern wir derzeit leider noch nicht. Alle Liefergebiete findest du unter Lieferung & Versand.` };
+    info = { tone: "warn", icon: "pin", text: fmt(t.noZone, { plz: params.plz }) };
   } else if (datum) {
     list = list.filter((p) => roughlyDeliverableOn(p, datum, now.date));
-    info = { tone: "neutral", icon: "info", text: `Sträuße für ${formatDateLong(datum)}. Gib deine Postleitzahl an, um die Lieferbarkeit an diesem Tag genau zu prüfen.` };
+    info = { tone: "neutral", icon: "info", text: fmt(t.dateOnly, { date: dateLong(datum) }) };
   }
 
   list = sortProducts(list, params.sort);
@@ -79,7 +81,7 @@ export async function ProductResults({ params, pathname, fixed = {}, hide = [], 
       {info && <DeliveryInfoLine info={info} params={params} pathname={pathname} />}
       {list.length > 0 ? (
         <>
-          <h2 className="sr-only">Sträuße</h2>
+          <h2 className="sr-only">{m.shop.results.heading}</h2>
           <ProductGrid products={list} showSameDay={showSameDay} />
         </>
       ) : (
@@ -89,7 +91,8 @@ export async function ProductResults({ params, pathname, fixed = {}, hide = [], 
   );
 }
 
-function DeliveryInfoLine({ info, params, pathname }: { info: DeliveryInfo; params: ShopParams; pathname: string }) {
+async function DeliveryInfoLine({ info, params, pathname }: { info: DeliveryInfo; params: ShopParams; pathname: string }) {
+  const { m, fmt, dateShort } = await getI18n();
   const Icon = info.icon === "pin" ? MapPin : info.icon === "calendar" ? CalendarDays : Info;
   return (
     <p
@@ -105,38 +108,40 @@ function DeliveryInfoLine({ info, params, pathname }: { info: DeliveryInfo; para
       <span>{info.text}</span>
       {info.nextDate && (
         <Link href={shopHref(pathname, { ...params, datum: info.nextDate })} className="inline-flex items-center gap-1 font-semibold underline-offset-4 hover:underline">
-          Nächster Liefertag: {formatDateShort(info.nextDate)} <ArrowRight className="size-3.5" aria-hidden />
+          {fmt(m.shop.deliveryInfo.nextDeliveryDay, { date: dateShort(info.nextDate) })} <ArrowRight className="size-3.5" aria-hidden />
         </Link>
       )}
       {info.tone === "warn" && info.icon === "pin" && (
-        <Link href={routes.delivery} className="font-semibold underline-offset-4 hover:underline">Liefergebiete ansehen</Link>
+        <Link href={routes.delivery} className="font-semibold underline-offset-4 hover:underline">{m.shop.deliveryInfo.viewAreas}</Link>
       )}
     </p>
   );
 }
 
-function EmptyState({ pathname, params, activeCount, occasions, fallback, info }: {
+async function EmptyState({ pathname, params, activeCount, occasions, fallback, info }: {
   pathname: string; params: ShopParams; activeCount: number; occasions: Occasion[]; fallback: Product[]; info: DeliveryInfo | null;
 }) {
+  const { m, fmt, dateShort } = await getI18n();
+  const t = m.shop.empty;
   return (
     <div className="flex flex-col gap-10 py-6">
       <div className="max-w-xl">
-        <h2 className="display-3 text-ink">Dafür haben wir gerade keinen Strauß.</h2>
+        <h2 className="display-3 text-ink">{t.title}</h2>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">
           {info?.nextDate
-            ? "An diesem Tag liefern wir in dein Gebiet nicht – am nächsten Liefertag aber gerne."
+            ? t.nextDay
             : activeCount > 0
-              ? "Versuch es mit weniger Filtern oder schau dir unsere Lieblingssträuße an."
-              : "Schau in einer anderen Kollektion vorbei – oder lass dich von unseren Anlässen inspirieren."}
+              ? t.fewerFilters
+              : t.otherCollection}
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           {info?.nextDate && (
             <Button href={shopHref(pathname, { ...params, datum: info.nextDate })} size="md">
-              {formatDateShort(info.nextDate)} wählen
+              {fmt(t.chooseDate, { date: dateShort(info.nextDate) })}
             </Button>
           )}
-          {activeCount > 0 && <Button href={pathname} variant={info?.nextDate ? "outline" : "primary"} size="md">Filter zurücksetzen</Button>}
-          <Button href={routes.shop} variant="outline" size="md">Alle Blumen ansehen</Button>
+          {activeCount > 0 && <Button href={pathname} variant={info?.nextDate ? "outline" : "primary"} size="md">{m.shop.filters.resetAll}</Button>}
+          <Button href={routes.shop} variant="outline" size="md">{t.allFlowers}</Button>
         </div>
         {occasions.length > 0 && (
           <ul className="mt-6 flex flex-wrap gap-2">
@@ -152,7 +157,7 @@ function EmptyState({ pathname, params, activeCount, occasions, fallback, info }
       </div>
       {fallback.length > 0 && (
         <div>
-          <p className="eyebrow mb-5">Vielleicht gefällt dir</p>
+          <p className="eyebrow mb-5">{t.maybeYouLike}</p>
           <ProductGrid products={fallback} priorityCount={0} />
         </div>
       )}

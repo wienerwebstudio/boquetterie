@@ -1,5 +1,5 @@
 "use client";
-import { useLocalizedRouter } from "@/i18n/client";
+import { useI18n, useLocalizedRouter } from "@/i18n/client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import {usePathname} from "next/navigation";
 import { ArrowRight, Loader2, Search, X } from "lucide-react";
 import { useUi } from "@/store/ui";
 import { routes } from "@/lib/urls";
-import { formatPrice, cn } from "@/lib/format";
+import { cn } from "@/lib/format";
 import { useFocusTrap } from "@/lib/use-focus-trap";
 import type { SearchResponse } from "@/app/api/search/route";
 
@@ -24,6 +24,8 @@ export function SearchOverlay() {
   const closeSearch = useUi((s) => s.closeSearch);
   const router = useLocalizedRouter();
   const pathname = usePathname();
+  const { m, fmt } = useI18n();
+  const t = m.layout.search;
 
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResponse | null>(null);
@@ -116,12 +118,12 @@ export function SearchOverlay() {
         ref={panelRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Suche"
+        aria-label={t.dialogLabel}
         className="absolute inset-x-0 top-0 max-h-[100dvh] overflow-y-auto overscroll-contain bg-ivory shadow-lift animate-fade-in sm:max-h-[88dvh] sm:rounded-b-xl"
       >
         <div className="container-x pb-8 pt-4 sm:pb-12 sm:pt-6">
           <form onSubmit={submit} role="search" className="flex items-center gap-3 border-b border-line pb-3 transition-[border-color,box-shadow] has-[input:focus-visible]:border-forest has-[input:focus-visible]:shadow-[0_1px_0_0_var(--color-forest)] sm:gap-4 sm:pb-4">
-            <label htmlFor="site-search" className="sr-only">Suchbegriff</label>
+            <label htmlFor="site-search" className="sr-only">{t.inputLabel}</label>
             <Search className="size-5 shrink-0 text-forest sm:size-6" strokeWidth={1.6} aria-hidden />
             <input
               ref={inputRef}
@@ -129,43 +131,43 @@ export function SearchOverlay() {
               type="search"
               value={query}
               onChange={(e) => setQueryValue(e.target.value)}
-              placeholder="Wonach suchst du?"
+              placeholder={t.placeholder}
               autoComplete="off"
               enterKeyHint="search"
               className="min-w-0 flex-1 bg-transparent font-serif text-[26px] text-ink placeholder:text-ink-soft focus-visible:outline-none sm:text-4xl [&::-webkit-search-cancel-button]:hidden"
             />
             {loading && <Loader2 className="size-5 animate-spin text-ink-soft" aria-hidden />}
             {query && !loading && (
-              <button type="button" onClick={() => { setQueryValue(""); inputRef.current?.focus(); }} aria-label="Eingabe löschen" className="rounded-full p-2 text-ink-soft transition-colors hover:bg-ivory-200 hover:text-ink">
+              <button type="button" onClick={() => { setQueryValue(""); inputRef.current?.focus(); }} aria-label={t.clearInput} className="rounded-full p-2 text-ink-soft transition-colors hover:bg-ivory-200 hover:text-ink">
                 <X className="size-4" aria-hidden />
               </button>
             )}
             <button type="button" onClick={closeSearch} className="hidden h-9 items-center gap-2 rounded-md border border-line px-3 text-[12px] font-semibold text-ink-muted transition-colors hover:border-forest hover:text-forest sm:inline-flex">
-              Schließen <kbd className="rounded-xs bg-ivory-200 px-1.5 py-0.5 font-sans text-[10px] tracking-wider">ESC</kbd>
+              {t.close} <kbd className="rounded-xs bg-ivory-200 px-1.5 py-0.5 font-sans text-[10px] tracking-wider">ESC</kbd>
             </button>
-            <button type="button" onClick={closeSearch} aria-label="Suche schließen" className="rounded-full p-2 text-ink transition-colors hover:bg-ivory-200 sm:hidden">
+            <button type="button" onClick={closeSearch} aria-label={t.closeSearch} className="rounded-full p-2 text-ink transition-colors hover:bg-ivory-200 sm:hidden">
               <X className="size-5" aria-hidden />
             </button>
           </form>
 
           <div className="mt-6 sm:mt-8" aria-live="polite">
             {!active && quick && <QuickLinks data={quick} onSuggest={(s) => { setQueryValue(s); inputRef.current?.focus(); }} />}
-            {!active && !quick && <p className="text-[14px] text-ink-soft">Tipp: Suche nach Blumen, Farben oder Anlässen – zum Beispiel „Rosen“ oder „Mama“.</p>}
+            {!active && !quick && <p className="text-[14px] text-ink-soft">{t.tip}</p>}
 
             {active && results && total > 0 && <Results data={results} query={trimmed} />}
             {empty && (
               <div className="max-w-lg">
-                <p className="font-serif text-2xl text-ink">Keine Treffer für „{trimmed}“.</p>
-                <p className="mt-2 text-[14px] leading-relaxed text-ink-muted">Versuch es mit einer Blume, einer Farbe oder einem Anlass. Oder schau dich in allen Sträußen um.</p>
+                <p className="font-serif text-2xl text-ink">{fmt(t.noResultsTitle, { query: trimmed })}</p>
+                <p className="mt-2 text-[14px] leading-relaxed text-ink-muted">{t.noResultsText}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {(quick?.suggestions ?? []).map((s) => <SuggestionChip key={s} label={s} onClick={() => setQueryValue(s)} />)}
                 </div>
                 <Link href={routes.shop} data-result className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold text-forest">
-                  Alle Blumen ansehen <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                  {t.viewAllFlowers} <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
                 </Link>
               </div>
             )}
-            {active && !results && loading && <p className="text-[14px] text-ink-soft">Suche läuft …</p>}
+            {active && !results && loading && <p className="text-[14px] text-ink-soft">{t.searching}</p>}
           </div>
         </div>
       </div>
@@ -187,6 +189,7 @@ function SuggestionChip({ label, onClick }: { label: string; onClick: () => void
 }
 
 function ProductHit({ p, compact }: { p: SearchResponse["products"][number]; compact?: boolean }) {
+  const { m, price } = useI18n();
   return (
     <Link href={routes.product(p.slug)} data-result className="group flex items-center gap-4 rounded-md p-1.5 transition-colors hover:bg-ivory-100">
       <div className={cn("relative shrink-0 overflow-hidden rounded-sm bg-ivory-200", compact ? "size-14" : "h-20 w-16")}>
@@ -196,9 +199,9 @@ function ProductHit({ p, compact }: { p: SearchResponse["products"][number]; com
         <p className="font-serif text-[19px] leading-tight text-ink group-hover:text-forest">{p.name}</p>
         <p className="line-clamp-1 text-[13px] text-ink-muted">{p.tagline}</p>
         {p.pricePending ? (
-          <p className="mt-0.5 text-[13px] text-ink-muted">Preis folgt</p>
+          <p className="mt-0.5 text-[13px] text-ink-muted">{m.layout.search.pricePending}</p>
         ) : (
-          <p className="mt-0.5 text-[13px] tabular-nums text-ink"><span className="text-ink-muted">ab </span>{formatPrice(p.basePrice)}</p>
+          <p className="mt-0.5 text-[13px] tabular-nums text-ink"><span className="text-ink-muted">{m.layout.search.priceFromPrefix} </span>{price(p.basePrice)}</p>
         )}
       </div>
     </Link>
@@ -206,10 +209,11 @@ function ProductHit({ p, compact }: { p: SearchResponse["products"][number]; com
 }
 
 function QuickLinks({ data, onSuggest }: { data: SearchResponse; onSuggest: (s: string) => void }) {
+  const t = useI18n().m.layout.search;
   return (
     <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
       <div>
-        <SectionTitle>Anlässe</SectionTitle>
+        <SectionTitle>{t.occasions}</SectionTitle>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-3">
           {data.occasions.map((o) => (
             <li key={o.slug}>
@@ -225,33 +229,33 @@ function QuickLinks({ data, onSuggest }: { data: SearchResponse; onSuggest: (s: 
       </div>
       <div className="flex flex-col gap-8">
         <div>
-          <SectionTitle>Schnell zu</SectionTitle>
+          <SectionTitle>{t.quickLinks}</SectionTitle>
           <ul className="flex flex-col gap-1">
             <li>
               <Link href={routes.shop} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
-                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Alle Blumen
+                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> {t.allFlowers}
               </Link>
             </li>
             <li>
               <Link href={routes.category("rosen")} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
-                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Rosen
+                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> {t.roses}
               </Link>
             </li>
             <li>
               <Link href={routes.category("blumenboxen")} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
-                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Blumenboxen
+                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> {t.flowerBoxes}
               </Link>
             </li>
             <li>
               <Link href={routes.category("pflanzen")} data-result className="group flex items-center gap-3 rounded-md py-2 text-[15px] text-ink hover:text-forest">
-                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> Pflanzen
+                <ArrowRight className="size-4 text-forest" strokeWidth={1.7} aria-hidden /> {t.plants}
               </Link>
             </li>
           </ul>
         </div>
         {data.suggestions && data.suggestions.length > 0 && (
           <div>
-            <SectionTitle>Häufig gesucht</SectionTitle>
+            <SectionTitle>{t.popularSearches}</SectionTitle>
             <div className="flex flex-wrap gap-2">
               {data.suggestions.map((s) => <SuggestionChip key={s} label={s} onClick={() => onSuggest(s)} />)}
             </div>
@@ -259,7 +263,7 @@ function QuickLinks({ data, onSuggest }: { data: SearchResponse; onSuggest: (s: 
         )}
       </div>
       <div>
-        <SectionTitle>Aus dem Sortiment</SectionTitle>
+        <SectionTitle>{t.fromAssortment}</SectionTitle>
         <ul className="flex flex-col gap-1">
           {data.products.map((p) => <li key={p.slug}><ProductHit p={p} compact /></li>)}
         </ul>
@@ -269,14 +273,16 @@ function QuickLinks({ data, onSuggest }: { data: SearchResponse; onSuggest: (s: 
 }
 
 function Results({ data, query }: { data: SearchResponse; query: string }) {
+  const { m, fmt } = useI18n();
+  const t = m.layout.search;
   const hasSide = data.occasions.length > 0 || data.categories.length > 0;
   return (
     <div className={cn("grid gap-10", hasSide && "lg:grid-cols-[1.6fr_1fr]")}>
       <div>
         <div className="flex items-baseline justify-between gap-4">
-          <SectionTitle>Sträuße</SectionTitle>
+          <SectionTitle>{t.bouquets}</SectionTitle>
           <Link href={`${routes.search}?q=${encodeURIComponent(query)}`} data-result className="group mb-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-forest">
-            Alle Ergebnisse <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
+            {t.allResults} <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
           </Link>
         </div>
         {data.products.length > 0 ? (
@@ -284,14 +290,14 @@ function Results({ data, query }: { data: SearchResponse; query: string }) {
             {data.products.map((p) => <li key={p.slug}><ProductHit p={p} /></li>)}
           </ul>
         ) : (
-          <p className="text-[14px] text-ink-muted">Kein Strauß passt direkt zu „{query}“ – vielleicht ein Anlass oder eine Kollektion?</p>
+          <p className="text-[14px] text-ink-muted">{fmt(t.noBouquetMatch, { query })}</p>
         )}
       </div>
       {hasSide && (
         <div className="flex flex-col gap-8">
           {data.occasions.length > 0 && (
             <div>
-              <SectionTitle>Anlässe</SectionTitle>
+              <SectionTitle>{t.occasions}</SectionTitle>
               <ul className="flex flex-col gap-1">
                 {data.occasions.map((o) => (
                   <li key={o.slug}>
@@ -308,7 +314,7 @@ function Results({ data, query }: { data: SearchResponse; query: string }) {
           )}
           {data.categories.length > 0 && (
             <div>
-              <SectionTitle>Kollektionen</SectionTitle>
+              <SectionTitle>{t.collections}</SectionTitle>
               <ul className="flex flex-wrap gap-2">
                 {data.categories.map((c) => (
                   <li key={c.slug}>

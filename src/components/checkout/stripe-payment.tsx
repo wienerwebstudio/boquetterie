@@ -9,7 +9,7 @@ import Link from "@/components/ui/link";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/urls";
 import { Skeleton } from "@/components/ui/skeleton";
-import { formatPrice } from "@/lib/format";
+import { rich } from "./rich-text";
 
 /** One Stripe.js instance per publishable key for the lifetime of the page. */
 const stripeInstances = new Map<string, Promise<Stripe | null>>();
@@ -95,7 +95,8 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
   const [error, setError] = useState<string | null>(null);
   const [loadProblem, setLoadProblem] = useState(false);
   const readyRef = useRef(false);
-  const { href } = useI18n();
+  const { href, m, fmt, price } = useI18n();
+  const t = m.checkout.stripe;
 
   // The form never appeared: tell the customer what to do and let the team know.
   useEffect(() => {
@@ -123,7 +124,7 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
       if (result.error.type !== "validation_error") {
         reportPaymentProblem(session, "confirm_error", [result.error.type, result.error.code, result.error.decline_code, result.error.message].filter(Boolean).join(" · "));
       }
-      setError(result.error.message ?? "Die Zahlung konnte nicht abgeschlossen werden. Bitte versuch es noch einmal.");
+      setError(result.error.message ?? t.failed);
       setBusy(false);
       return;
     }
@@ -144,7 +145,7 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
   return (
     <form onSubmit={submit} className="flex flex-col gap-5" aria-busy={busy}>
       <p className="text-[13.5px] leading-relaxed text-ink-muted">
-        Bestellung <strong className="font-semibold text-ink">{session.orderId}</strong> ist angelegt. Schließe jetzt die Zahlung ab – erst danach wird sie verbindlich.
+        {rich(t.orderCreated, { orderId: <strong className="font-semibold text-ink">{session.orderId}</strong> })}
       </p>
       <div className="min-h-40">
         {!ready && <div className="flex flex-col gap-3" aria-hidden><Skeleton className="h-11 w-full" /><Skeleton className="h-11 w-full" /><Skeleton className="h-11 w-2/3" /></div>}
@@ -166,26 +167,27 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
       </div>
       {loadProblem && !ready && (
         <p role="alert" className="rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">
-          Das Zahlungsfeld lädt gerade nicht. Bitte lade die Seite neu oder öffne sie in einem anderen Browser (z. B. Safari). Deine Bestellung {session.orderId} ist gespeichert – du kannst uns auch einfach kontaktieren, dann helfen wir dir weiter.
+          {fmt(t.loadProblem, { orderId: session.orderId })}
         </p>
       )}
       {error && <p role="alert" className="rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">{error}</p>}
       <div className="flex flex-col-reverse gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
         <Button type="button" variant="ghost" size="lg" icon={<ArrowLeft className="size-4" aria-hidden />} onClick={onCancel} disabled={busy}>
-          Zurück
+          {t.back}
         </Button>
         <Button type="submit" size="xl" loading={busy} disabled={!ready || !stripe} className="sm:min-w-64">
-          Jetzt bezahlen · {formatPrice(amount)}
+          {fmt(t.pay, { amount: price(amount) })}
         </Button>
       </div>
       <p className="text-[12.5px] leading-relaxed text-ink-soft">
-        Mit „Jetzt bezahlen“ gibst du eine zahlungspflichtige Bestellung auf. Es gelten unsere{" "}
-        <Link href={routes.legal.terms} className="underline underline-offset-2">AGB</Link> und die{" "}
-        <Link href={routes.legal.withdrawal} className="underline underline-offset-2">Widerrufsbelehrung</Link>. Für frische Schnittblumen und Blumensträuße besteht kein Widerrufsrecht (§ 18 Abs. 1 Z 4 FAGG).
+        {rich(t.legal, {
+          terms: <Link href={routes.legal.terms} className="underline underline-offset-2">{m.checkout.terms}</Link>,
+          withdrawal: <Link href={routes.legal.withdrawal} className="underline underline-offset-2">{m.checkout.withdrawal}</Link>,
+        })}{" "}{m.checkout.noWithdrawalRight}
       </p>
       <p className="flex items-start gap-2 text-[12.5px] text-ink-soft">
         <Lock className="mt-0.5 size-3.5 shrink-0 text-forest" aria-hidden />
-        Die Zahlung wird sicher über Stripe abgewickelt. Zahlungsdaten werden nicht bei uns gespeichert.
+        {t.secure}
       </p>
     </form>
   );

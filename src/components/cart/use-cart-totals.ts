@@ -4,10 +4,11 @@ import type { Coupon, Extra } from "@/types";
 import { computeTotals } from "@/lib/pricing";
 import { useCart } from "@/store/cart";
 import { useDeliveryContext } from "@/store/delivery";
+import { useI18n } from "@/i18n/client";
 
 interface ValidateResponse { ok: boolean; coupon?: Coupon; error?: string }
 
-async function validate(code: string, subtotal: number): Promise<ValidateResponse> {
+async function validate(code: string, subtotal: number, unavailable: string): Promise<ValidateResponse> {
   try {
     const res = await fetch("/api/coupons/validate", {
       method: "POST",
@@ -16,7 +17,7 @@ async function validate(code: string, subtotal: number): Promise<ValidateRespons
     });
     return (await res.json()) as ValidateResponse;
   } catch {
-    return { ok: false, error: "Der Gutschein konnte gerade nicht geprüft werden. Bitte versuch es gleich noch einmal." };
+    return { ok: false, error: unavailable };
   }
 }
 
@@ -30,6 +31,7 @@ export function useCartTotals() {
   const code = useCart((s) => s.coupon);
   const setCoupon = useCart((s) => s.setCoupon);
   const zone = useDeliveryContext((s) => s.zone);
+  const t = useI18n().m.cart.summary;
 
   const [couponObj, setCouponObj] = useState<Coupon | null>(null);
   const [couponError, setCouponError] = useState<string | null>(null);
@@ -41,23 +43,23 @@ export function useCartTotals() {
   useEffect(() => {
     if (!code) return;
     const run = ++latest.current;
-    validate(code, subtotal).then((r) => {
+    validate(code, subtotal, t.couponCheckFailed).then((r) => {
       if (run !== latest.current) return;
       if (r.ok && r.coupon) { setCouponObj(r.coupon); setCouponError(null); }
       else { setCouponObj(null); setCouponError(r.error ?? null); }
     });
-  }, [code, subtotal]);
+  }, [code, subtotal, t]);
 
   const apply = useCallback(async (input: string) => {
     const c = input.trim().toUpperCase();
-    if (!c) { setCouponError("Bitte gib einen Gutscheincode ein."); return false; }
+    if (!c) { setCouponError(t.couponMissing); return false; }
     setApplying(true);
-    const r = await validate(c, subtotal);
+    const r = await validate(c, subtotal, t.couponCheckFailed);
     setApplying(false);
     if (r.ok && r.coupon) { setCouponObj(r.coupon); setCouponError(null); setCoupon(r.coupon.code); return true; }
-    setCouponError(r.error ?? "Dieser Code ist uns nicht bekannt.");
+    setCouponError(r.error ?? t.couponUnknown);
     return false;
-  }, [subtotal, setCoupon]);
+  }, [subtotal, setCoupon, t]);
 
   const remove = useCallback(() => { setCoupon(null); setCouponObj(null); setCouponError(null); }, [setCoupon]);
 

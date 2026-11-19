@@ -5,19 +5,20 @@ import { Drawer } from "@/components/ui/drawer";
 import { useCart, cartCount } from "@/store/cart";
 import { useUi } from "@/store/ui";
 import { routes } from "@/lib/urls";
-import { formatPrice, pluralize } from "@/lib/format";
 import { CartLine } from "./cart-line";
 import { CartSurprise } from "./cart-surprise";
 import { CartUpsell } from "./cart-upsell";
 import { CartSummary } from "./cart-summary";
 import { useCartTotals } from "./use-cart-totals";
-import { VAT_TEXT } from "@/lib/vat";
+import { SMALL_BUSINESS } from "@/lib/vat";
+import { useI18n } from "@/i18n/client";
 
 export function CartTrustRow({ className }: { className?: string }) {
+  const { m } = useI18n();
   const hints = [
-    { icon: Lock, label: "Sichere Zahlung" },
-    { icon: ShieldCheck, label: "SSL-verschlüsselt" },
-    { icon: Fingerprint, label: "Datenschutz" },
+    { icon: Lock, label: m.cart.trust.securePayment },
+    { icon: ShieldCheck, label: m.cart.trust.ssl },
+    { icon: Fingerprint, label: m.cart.trust.privacy },
   ];
   return (
     <ul className={className ?? "flex items-center justify-center gap-4 text-[11.5px] text-ink-muted"}>
@@ -29,15 +30,16 @@ export function CartTrustRow({ className }: { className?: string }) {
 }
 
 export function CartEmpty({ onClose, cardsEnabled = false }: { onClose?: () => void; cardsEnabled?: boolean }) {
+  const { m } = useI18n();
   return (
     <div className="flex h-full flex-col items-center justify-center px-6 py-16 text-center">
-      <p className="eyebrow">Dein Warenkorb</p>
-      <p className="mt-3 font-serif text-3xl text-ink">Noch ganz leer.</p>
+      <p className="eyebrow">{m.cart.empty.eyebrow}</p>
+      <p className="mt-3 font-serif text-3xl text-ink">{m.cart.empty.title}</p>
       <p className="mt-3 max-w-xs text-[14px] leading-relaxed text-ink-muted">
-        {cardsEnabled ? "Frisch gebundene Sträuße, Wunschdatum und eine persönliche Karte – alles wartet nur auf dich." : "Frisch gebundene Sträuße und dein Wunschdatum – alles wartet nur auf dich."}
+        {cardsEnabled ? m.cart.empty.textWithCards : m.cart.empty.text}
       </p>
       <Link href={routes.shop} onClick={onClose} className="mt-8 inline-flex h-13 items-center justify-center gap-2 rounded-md bg-forest px-7 text-[15px] font-semibold tracking-wide text-ivory transition-colors hover:bg-forest-700">
-        Blumen entdecken <ArrowRight className="size-4" aria-hidden />
+        {m.cart.empty.cta} <ArrowRight className="size-4" aria-hidden />
       </Link>
     </div>
   );
@@ -45,17 +47,19 @@ export function CartEmpty({ onClose, cardsEnabled = false }: { onClose?: () => v
 
 function DrawerFooter({ onClose }: { onClose: () => void }) {
   const { totals, zone } = useCartTotals();
+  const { m, fmt, price } = useI18n();
+  const vat = m.cart.vat[SMALL_BUSINESS ? "smallBusiness" : "standard"];
   return (
     <div className="space-y-3">
       <div className="flex items-baseline justify-between">
-        <span className="text-[14px] font-semibold text-ink">Gesamt</span>
+        <span className="text-[14px] font-semibold text-ink">{m.cart.drawer.total}</span>
         <span className="text-right">
-          <span className="text-[19px] font-semibold tabular-nums text-ink">{formatPrice(totals.total)}</span>
-          <span className="block text-[11.5px] text-ink-muted">{zone ? `${VAT_TEXT.short} inkl. Lieferung` : `${VAT_TEXT.short} · zzgl. Lieferung`}</span>
+          <span className="text-[19px] font-semibold tabular-nums text-ink">{price(totals.total)}</span>
+          <span className="block text-[11.5px] text-ink-muted">{fmt(zone ? m.cart.drawer.inclDelivery : m.cart.drawer.plusDelivery, { vat: vat.short })}</span>
         </span>
       </div>
       <Link href={routes.checkout} onClick={onClose} className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-md bg-forest px-8 text-base font-semibold tracking-wide text-ivory transition-colors hover:bg-forest-700">
-        <Lock className="size-4" aria-hidden /> Sicher zur Kasse
+        <Lock className="size-4" aria-hidden /> {m.cart.checkout}
       </Link>
       <CartTrustRow />
     </div>
@@ -67,18 +71,20 @@ export function CartDrawer({ cardsEnabled = false }: { cardsEnabled?: boolean })
   const closeCart = useUi((s) => s.closeCart);
   const hydrated = useCart((s) => s.hydrated);
   const items = useCart((s) => s.items);
+  const { m, fmt, plural } = useI18n();
   if (!hydrated) return null;
   const count = cartCount(items);
+  const countLabel = plural(count, m.cart.items);
 
   return (
     <Drawer
       open={cartOpen}
       onClose={closeCart}
       labelledBy="cart-drawer-title"
-      title={<span>Warenkorb {count > 0 && <span className="ml-1 font-sans text-[13px] text-ink-muted">({pluralize(count, "Artikel", "Artikel")})</span>}</span>}
+      title={<span>{m.cart.title} {count > 0 && <span className="ml-1 font-sans text-[13px] text-ink-muted">({countLabel})</span>}</span>}
       footer={items.length ? <DrawerFooter onClose={closeCart} /> : undefined}
     >
-      <p className="sr-only" aria-live="polite">Warenkorb: {pluralize(count, "Artikel", "Artikel")}</p>
+      <p className="sr-only" aria-live="polite">{fmt(m.cart.liveCount, { count: countLabel })}</p>
       {items.length === 0 ? (
         <CartEmpty onClose={closeCart} cardsEnabled={cardsEnabled} />
       ) : (

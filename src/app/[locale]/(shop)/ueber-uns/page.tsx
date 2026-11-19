@@ -9,6 +9,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { routes } from "@/lib/urls";
 import { cn } from "@/lib/format";
 import { pageMetadata } from "@/lib/metadata";
+import { getI18n } from "@/i18n/server";
 
 const SLUG = "ueber-uns";
 
@@ -25,19 +26,20 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const [page, settings] = await Promise.all([getPageBySlug(SLUG), getSettings()]);
+  const [page, settings, { m }] = await Promise.all([getPageBySlug(SLUG), getSettings(), getI18n()]);
   if (!page) notFound();
+  const t = m.content.about;
 
   return (
     <>
-      <JsonLd data={breadcrumbLd([{ name: "Über uns", url: routes.about }], settings)} />
+      <JsonLd data={breadcrumbLd([{ name: t.title, url: routes.about }], settings)} />
 
       {/* Intro */}
       <section className="container-x pt-6 sm:pt-8">
-        <Breadcrumbs items={[{ label: "Über uns" }]} />
+        <Breadcrumbs items={[{ label: t.title }]} />
         <div className="grid gap-8 py-10 sm:py-14 lg:grid-cols-12 lg:gap-12 lg:py-20">
           <div className="lg:col-span-7">
-            <p className="eyebrow mb-4">Über uns</p>
+            <p className="eyebrow mb-4">{t.title}</p>
             <h1 className="display-1 max-w-[14ch] text-balance text-ink">{page.title}</h1>
           </div>
           {page.intro && (
@@ -58,7 +60,7 @@ export default async function AboutPage() {
                 <section key={s.heading ?? i} aria-labelledby={`about-s-${i}`} className="mx-auto w-full max-w-3xl">
                   {s.heading && <h2 id={`about-s-${i}`} className="display-3 text-ink">{s.heading}</h2>}
                   <div className="mt-6 rounded-md border border-dashed border-stone bg-ivory-100/70 p-6 sm:p-8" role="note">
-                    <p className="eyebrow mb-3 text-warn">Platzhalter – Inhalt folgt</p>
+                    <p className="eyebrow mb-3 text-warn">{t.placeholder}</p>
                     {s.paragraphs.map((p, j) => (
                       <p key={j} className="text-[15px] leading-relaxed text-ink-muted">{p}</p>
                     ))}
@@ -94,12 +96,12 @@ export default async function AboutPage() {
       <section className="border-t border-line bg-ivory-100">
         <div className="container-x flex flex-col items-start gap-6 py-14 sm:flex-row sm:items-center sm:justify-between lg:py-20">
           <div>
-            <p className="eyebrow mb-3">Bereit?</p>
-            <h2 className="display-3 text-balance text-ink">Jemandem eine Freude machen.</h2>
+            <p className="eyebrow mb-3">{m.content.ready}</p>
+            <h2 className="display-3 text-balance text-ink">{t.ctaTitle}</h2>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button href={routes.shop} size="lg">Blumen entdecken</Button>
-            <Button href={routes.contact} size="lg" variant="outline">Kontakt</Button>
+            <Button href={routes.shop} size="lg">{m.content.discoverFlowers}</Button>
+            <Button href={routes.contact} size="lg" variant="outline">{m.content.contact}</Button>
           </div>
         </div>
       </section>

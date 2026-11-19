@@ -3,17 +3,19 @@ import Link from "@/components/ui/link";
 import { ArrowRight } from "lucide-react";
 import type { Category, HomepageContent } from "@/types";
 import { routes } from "@/lib/urls";
+import { getI18n } from "@/i18n/server";
 
 /**
  * "Finde deinen perfekten Strauß" – a calm row of image chips linking to collections.
  */
-export function Collections({ content, categories }: { content: HomepageContent["collections"]; categories: Category[] }) {
+export async function Collections({ content, categories }: { content: HomepageContent["collections"]; categories: Category[] }) {
   if (!categories.length) return null;
+  const { m } = await getI18n();
   return (
     <section aria-labelledby="collections-title" className="bg-sage py-14 sm:py-16 lg:py-20">
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow mb-3">Kollektionen</p>
+          <p className="eyebrow mb-3">{m.home.collections.eyebrow}</p>
           <h2 id="collections-title" className="display-2 text-balance text-ink">{content.headline}</h2>
           <p className="mt-3 text-[15px] text-ink-muted sm:text-base">{content.subheadline}</p>
         </div>

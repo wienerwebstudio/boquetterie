@@ -6,6 +6,7 @@ import { cn, slugify } from "@/lib/format";
 import { PageHeader } from "./page-header";
 import { Paragraphs } from "./prose";
 import type { Crumb } from "@/components/ui/breadcrumbs";
+import { currentLocale, getI18n } from "@/i18n/server";
 
 /* ---------------- Metadata helper ---------------- */
 
@@ -23,6 +24,33 @@ export function cmsMetadata(page: CmsPageType | null, fallbackTitle: string, can
   });
 }
 
+/**
+ * Metadata for legal pages: their text exists only in German, so other languages
+ * point their canonical at the German URL and stay out of the index.
+ */
+export async function legalMetadata(page: CmsPageType | null, fallbackTitle: string, canonical: string): Promise<Metadata> {
+  const locale = await currentLocale();
+  const meta = await pageMetadata({
+    title: page?.seo.title ?? fallbackTitle,
+    description: page?.seo.description,
+    path: canonical,
+    noindex: isPlaceholderPage(page) || locale !== "de",
+    locales: ["de"],
+  });
+  return locale === "de" ? meta : { ...meta, alternates: { ...meta.alternates, canonical } };
+}
+
+/** Shown above a legal text in every language but German: the German version applies. */
+export async function GermanVersionNotice({ className }: { className?: string }) {
+  const { m, locale } = await getI18n();
+  if (locale === "de") return null;
+  return (
+    <div className={cn("mb-12 max-w-2xl rounded-md border border-line bg-ivory-100/70 p-5 sm:p-6", className)} role="note">
+      <p className="text-[14px] leading-relaxed text-ink-muted">{m.common.germanVersionApplies}</p>
+    </div>
+  );
+}
+
 /* ---------------- Placeholder box ---------------- */
 
 /**
@@ -30,10 +58,11 @@ export function cmsMetadata(page: CmsPageType | null, fallbackTitle: string, can
  * paragraphs in the content are internal to-do notes (shown in the admin), so
  * visitors only get a neutral notice – never the note itself.
  */
-export function PlaceholderBox({ label = "Dieser Abschnitt wird gerade fertiggestellt.", className }: { paragraphs?: string[]; label?: string; className?: string }) {
+export async function PlaceholderBox({ label, className }: { paragraphs?: string[]; label?: string; className?: string }) {
+  const { m } = await getI18n();
   return (
     <div className={cn("max-w-2xl rounded-md border border-line bg-ivory-100/70 p-5 sm:p-6", className)} role="note">
-      <p className="text-[14px] leading-relaxed text-ink-muted">{label}</p>
+      <p className="text-[14px] leading-relaxed text-ink-muted">{label ?? m.content.placeholderSection}</p>
     </div>
   );
 }

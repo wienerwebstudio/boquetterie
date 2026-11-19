@@ -7,15 +7,16 @@ import { ProductCardSkeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/format";
 import { onRadioGroupKeyDown, rovingTabIndex } from "@/lib/roving-radio";
 import { events, track } from "@/components/analytics/track";
-import { BUDGET_OPTIONS, FOR_OPTIONS, budgetOption, forOption, giftFinderUrl } from "./config";
+import { BUDGET_OPTIONS, FOR_OPTIONS, giftFinderUrl } from "./config";
 import { isComplete, type CompleteGiftFinderQuery, type GiftFinderQuery, type GiftFinderResult } from "./scoring";
 import { GiftFinderResults } from "./gift-finder-results";
 
 type Step = keyof GiftFinderQuery;
-const STEPS: { key: Step; index: string; label: string; question: string }[] = [
-  { key: "for", index: "01", label: "Für wen?", question: "Für wen sind die Blumen?" },
-  { key: "occasion", index: "02", label: "Anlass", question: "Zu welchem Anlass?" },
-  { key: "budget", index: "03", label: "Budget", question: "Welches Budget?" },
+/** Labels and questions: `shop.giftFinder.steps`. */
+const STEPS: { key: Step; index: string }[] = [
+  { key: "for", index: "01" },
+  { key: "occasion", index: "02" },
+  { key: "budget", index: "03" },
 ];
 
 export interface OccasionOption { slug: string; name: string }
@@ -43,7 +44,8 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const abortRef = useRef<AbortController | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
-  const { href: localize } = useI18n();
+  const { href: localize, m, fmt } = useI18n();
+  const t = m.shop.giftFinder;
   const scrollOnResult = useRef(false);
   const groupRef = useRef<HTMLDivElement>(null);
   const focusNextStep = useRef(false);
@@ -113,8 +115,8 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
   };
 
   const optionsFor = (step: Step): Option[] => {
-    if (step === "for") return FOR_OPTIONS;
-    if (step === "budget") return BUDGET_OPTIONS;
+    if (step === "for") return FOR_OPTIONS.map((o) => ({ value: o.value, ...t.forOptions[o.value] }));
+    if (step === "budget") return BUDGET_OPTIONS.map((o) => ({ value: o.value, ...t.budgets[o.value] }));
     return occasions.map((o) => ({ value: o.slug, label: o.name }));
   };
   const labelFor = (step: Step): string | null => {
@@ -129,7 +131,7 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
   return (
     <div>
       {/* Stepper */}
-      <ol className="grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-3" aria-label="Schritte">
+      <ol className="grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-3" aria-label={t.stepsLabel}>
         {STEPS.map((s, i) => {
           const value = labelFor(s.key);
           const reachable = STEPS.slice(0, i).every((prev) => Boolean(query[prev.key]));
@@ -149,11 +151,11 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
               >
                 <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-moss">
                   <span className="font-serif text-[13px] normal-case italic tracking-normal text-ink-soft">{s.index}</span>
-                  {s.label}
+                  {t.steps[s.key].label}
                   {value && <Check className="size-3.5 text-forest" strokeWidth={2.5} aria-hidden />}
                 </span>
                 <span className={cn("font-serif text-[22px] leading-tight", value ? "text-ink" : "italic text-ink-soft")}>
-                  {value ?? "Noch offen"}
+                  {value ?? t.open}
                 </span>
               </button>
             </li>
@@ -164,8 +166,8 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
       {/* Active step */}
       {active && (
         <section key={active.key} aria-labelledby="gf-step-title" className="mt-10 animate-fade-up sm:mt-12">
-          <p className="eyebrow mb-3">Schritt {active.index} von 03</p>
-          <h2 id="gf-step-title" className="display-3 text-ink">{active.question}</h2>
+          <p className="eyebrow mb-3">{fmt(t.stepOf, { index: active.index, total: "03" })}</p>
+          <h2 id="gf-step-title" className="display-3 text-ink">{t.steps[active.key].question}</h2>
           {/* Choosing an option moves on to the next question, so the arrow keys only move the focus; Space/Enter choose. */}
           <div ref={groupRef} role="radiogroup" aria-labelledby="gf-step-title" onKeyDown={(e) => onRadioGroupKeyDown(e, { select: false })} className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {optionsFor(active.key).map((o, i) => {
@@ -206,13 +208,13 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
       {/* Results */}
       <div ref={resultsRef} className="mt-14 scroll-mt-24 sm:mt-16">
         {complete && status === "loading" && (
-          <div aria-busy="true" aria-label="Sträuße werden gesucht" className="grid grid-cols-2 gap-x-4 gap-y-8 border-t border-line pt-10 sm:gap-x-6 lg:grid-cols-3">
+          <div aria-busy="true" aria-label={t.searching} className="grid grid-cols-2 gap-x-4 gap-y-8 border-t border-line pt-10 sm:gap-x-6 lg:grid-cols-3">
             {Array.from({ length: 3 }).map((_, i) => <ProductCardSkeleton key={i} />)}
           </div>
         )}
         {status === "error" && (
           <p role="alert" className="rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-danger">
-            Die Empfehlungen konnten gerade nicht geladen werden. Bitte versuch es gleich noch einmal.
+            {t.error}
           </p>
         )}
         {status === "idle" && result && complete && occasion && (
@@ -220,15 +222,15 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
             products={result.products}
             fallback={result.fallback}
             occasionHits={result.occasionHits}
-            forLabel={forOption(query.for)?.label ?? ""}
+            forLabel={labelFor("for") ?? ""}
             occasion={occasion}
-            budgetLabel={budgetOption(query.budget)?.label ?? ""}
+            budgetLabel={labelFor("budget") ?? ""}
             onReset={reset}
           />
         )}
         {!complete && (
           <p className="border-t border-line pt-8 text-[14px] leading-relaxed text-ink-soft">
-            Sobald alle drei Antworten da sind, erscheinen hier unsere Empfehlungen.
+            {t.waiting}
           </p>
         )}
       </div>

@@ -3,9 +3,12 @@ import { Flower2, MessageSquare, Gift } from "lucide-react";
 import type { CartItem } from "@/types";
 import { cn } from "@/lib/format";
 import { truncateMessage } from "@/lib/cart-helpers";
+import { useI18n } from "@/i18n/client";
 
 /** "Deine Überraschung" – what the recipient will unwrap: bouquet, card, extras. */
 export function CartSurprise({ items, className, cardsEnabled = false }: { items: CartItem[]; className?: string; cardsEnabled?: boolean }) {
+  const { m } = useI18n();
+  const t = m.cart.surprise;
   if (!items.length) return null;
   const bouquets = items.map((i) => `${i.snapshot.name} (${i.snapshot.sizeLabel})${i.quantity > 1 ? ` × ${i.quantity}` : ""}`);
   const withMessage = items.find((i) => i.message);
@@ -14,21 +17,21 @@ export function CartSurprise({ items, className, cardsEnabled = false }: { items
   const extrasList = Array.from(extras.entries()).map(([name, q]) => (q > 1 ? `${q} × ${name}` : name));
 
   const rows = [
-    { icon: Flower2, label: "Strauß", value: bouquets.join(", ") },
+    { icon: Flower2, label: t.bouquet, value: bouquets.join(", ") },
     {
       icon: MessageSquare,
-      label: "+ Karte",
+      label: t.card,
       value: !cardsEnabled
-        ? "Grußkarten kommen bald"
-        : withMessage?.message ? `„${truncateMessage(withMessage.message, 44)}“` : "Grußkarte inklusive – Nachricht jederzeit ergänzbar",
+        ? t.cardsSoon
+        : withMessage?.message ? `„${truncateMessage(withMessage.message, 44)}“` : t.cardIncluded,
       muted: !cardsEnabled || !withMessage,
     },
-    { icon: Gift, label: "+ Extras", value: extrasList.length ? extrasList.join(", ") : "Noch keine Extras", muted: !extrasList.length },
+    { icon: Gift, label: t.extras, value: extrasList.length ? extrasList.join(", ") : t.noExtras, muted: !extrasList.length },
   ];
 
   return (
     <section className={cn("rounded-md bg-ivory-100 p-4", className)} aria-labelledby="cart-surprise-title">
-      <h3 id="cart-surprise-title" className="eyebrow mb-3">Deine Überraschung</h3>
+      <h3 id="cart-surprise-title" className="eyebrow mb-3">{t.title}</h3>
       <ul className="space-y-2">
         {rows.map(({ icon: Icon, label, value, muted }) => (
           <li key={label} className="flex items-start gap-2.5 text-[13.5px]">

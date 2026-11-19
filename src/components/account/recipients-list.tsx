@@ -1,6 +1,6 @@
 import { ArrowRight, MapPin } from "lucide-react";
 import type { Order } from "@/types";
-import { formatDateShort, pluralize } from "@/lib/format";
+import { getI18n } from "@/i18n/server";
 import { routes } from "@/lib/urls";
 import { Button } from "@/components/ui/button";
 
@@ -39,13 +39,15 @@ export function deriveRecipients(orders: Order[]): RecipientSummary[] {
   return [...map.values()].sort((a, b) => b.lastDelivery.localeCompare(a.lastDelivery));
 }
 
-export function RecipientsList({ recipients }: { recipients: RecipientSummary[] }) {
+export async function RecipientsList({ recipients }: { recipients: RecipientSummary[] }) {
+  const { m, fmt, plural, dateShort } = await getI18n();
+  const t = m.account.recipients;
   if (recipients.length === 0) {
     return (
       <div className="rounded-lg border border-dashed border-stone p-8 text-center">
         <span className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-ivory-200 text-forest"><MapPin className="size-5" strokeWidth={1.5} aria-hidden /></span>
-        <p className="font-serif text-2xl text-ink">Noch keine Empfänger:innen</p>
-        <p className="mt-2 text-[14px] text-ink-muted">Sobald du Blumen verschickt hast, findest du die Adressen hier wieder.</p>
+        <p className="font-serif text-2xl text-ink">{t.emptyTitle}</p>
+        <p className="mt-2 text-[14px] text-ink-muted">{t.emptyText}</p>
       </div>
     );
   }
@@ -58,8 +60,8 @@ export function RecipientsList({ recipients }: { recipients: RecipientSummary[] 
             {r.company && <>{r.company}<br /></>}
             {r.addressLine}<br />{r.cityLine}
           </p>
-          <p className="mt-3 text-[12.5px] text-ink-soft">{pluralize(r.orders, "Lieferung", "Lieferungen")} · zuletzt {formatDateShort(r.lastDelivery)}</p>
-          <Button href={routes.shop} variant="outline" size="sm" className="mt-5 self-start" iconRight={<ArrowRight className="size-3.5" aria-hidden />}>Erneut Blumen schicken</Button>
+          <p className="mt-3 text-[12.5px] text-ink-soft">{fmt(t.last, { deliveries: plural(r.orders, t.deliveries), date: dateShort(r.lastDelivery) })}</p>
+          <Button href={routes.shop} variant="outline" size="sm" className="mt-5 self-start" iconRight={<ArrowRight className="size-3.5" aria-hidden />}>{t.sendAgain}</Button>
         </li>
       ))}
     </ul>

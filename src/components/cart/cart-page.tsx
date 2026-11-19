@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCart, cartCount } from "@/store/cart";
 import { routes } from "@/lib/urls";
-import { pluralize } from "@/lib/format";
+import { useI18n } from "@/i18n/client";
 import { CartLine } from "./cart-line";
 import { CartSurprise } from "./cart-surprise";
 import { CartUpsell } from "./cart-upsell";
@@ -17,10 +17,11 @@ import { CartEmpty, CartTrustRow } from "./cart-drawer";
 export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]; cardsEnabled?: boolean }) {
   const hydrated = useCart((s) => s.hydrated);
   const items = useCart((s) => s.items);
+  const { m, fmt, plural } = useI18n();
 
   if (!hydrated) {
     return (
-      <div role="status" className="grid gap-10 lg:grid-cols-12" aria-busy="true" aria-label="Warenkorb wird geladen">
+      <div role="status" className="grid gap-10 lg:grid-cols-12" aria-busy="true" aria-label={m.cart.loading}>
         <div className="space-y-6 lg:col-span-7"><Skeleton className="h-28 w-full" /><Skeleton className="h-28 w-full" /></div>
         <div className="lg:col-span-5"><Skeleton className="h-64 w-full" /></div>
       </div>
@@ -35,16 +36,16 @@ export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]
 
   return (
     <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
-      <p className="sr-only" aria-live="polite">Warenkorb: {pluralize(count, "Artikel", "Artikel")}</p>
+      <p className="sr-only" aria-live="polite">{fmt(m.cart.liveCount, { count: plural(count, m.cart.items) })}</p>
       <section className="lg:col-span-7" aria-labelledby="cart-items-title">
-        <h2 id="cart-items-title" className="sr-only">Artikel im Warenkorb</h2>
+        <h2 id="cart-items-title" className="sr-only">{m.cart.itemsHeading}</h2>
         <ul className="divide-y divide-line border-y border-line">
           {items.map((item) => (
             <li key={item.id} className="py-6"><CartLine item={item} compact={false} /></li>
           ))}
         </ul>
         <Link href={routes.shop} className="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-forest">
-          <ArrowLeft className="size-4" aria-hidden /> Weiter einkaufen
+          <ArrowLeft className="size-4" aria-hidden /> {m.cart.continueShopping}
         </Link>
         <div className="mt-10 space-y-8">
           <CartSurprise items={items} cardsEnabled={cardsEnabled} />
@@ -54,9 +55,9 @@ export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]
 
       <aside className="lg:col-span-5">
         <div className="rounded-lg border border-line bg-white/60 p-5 sm:p-6 lg:sticky lg:top-28">
-          <h2 className="font-serif text-2xl text-ink">Zusammenfassung</h2>
+          <h2 className="font-serif text-2xl text-ink">{m.cart.summaryTitle}</h2>
           <CartSummary className="mt-5" />
-          <Button href={routes.checkout} size="xl" full className="mt-6" icon={<Lock className="size-4" aria-hidden />}>Sicher zur Kasse</Button>
+          <Button href={routes.checkout} size="xl" full className="mt-6" icon={<Lock className="size-4" aria-hidden />}>{m.cart.checkout}</Button>
           <CartTrustRow className="mt-4 flex items-center justify-center gap-4 text-[11.5px] text-ink-muted" />
         </div>
       </aside>

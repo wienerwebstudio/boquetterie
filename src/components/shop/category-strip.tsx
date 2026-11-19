@@ -2,12 +2,14 @@ import Link from "@/components/ui/link";
 import type { Category } from "@/types";
 import { routes } from "@/lib/urls";
 import { cn } from "@/lib/format";
+import { getI18n } from "@/i18n/server";
 
 /** Horizontal, scrollable row of collection pills. Server component. */
-export function CategoryStrip({ categories, active, className }: { categories: Category[]; active: string; className?: string }) {
+export async function CategoryStrip({ categories, active, className }: { categories: Category[]; active: string; className?: string }) {
+  const { m } = await getI18n();
   const items = categories.filter((c) => c.showInNav);
   return (
-    <nav aria-label="Kollektionen" className={cn("-mx-5 sm:mx-0", className)}>
+    <nav aria-label={m.shop.listing.collections} className={cn("-mx-5 sm:mx-0", className)}>
       <ul className="flex gap-2 overflow-x-auto px-5 pb-1 scrollbar-none sm:flex-wrap sm:px-0">
         {items.map((c) => {
           const isActive = c.slug === active;

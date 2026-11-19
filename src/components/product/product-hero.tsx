@@ -5,21 +5,24 @@ import { ProductGallery, type GalleryFocus } from "./gallery";
 import { ProductConfigurator } from "./configurator";
 import { PricePendingPanel } from "./price-pending";
 import { defaultSize } from "@/lib/cart-helpers";
+import { useI18n } from "@/i18n/client";
 
 /** Gallery + configurator. Holds the selected size so the gallery can show a size-specific image. */
 export function ProductHero({ product, extras, greetingCard }: { product: Product; extras: Extra[]; greetingCard: SiteSettings["greetingCard"] }) {
+  const { m, fmt } = useI18n();
+  const t = m.product.gallery;
   const [size, setSize] = useState<ProductSize>(() => defaultSize(product));
   const [color, setColor] = useState<ProductColorOption | null>(null);
   // The chosen colour's photo wins over the size photo; a size shows only its own photos.
   const focus: GalleryFocus | null = color?.image
-    ? { images: [{ src: color.image, alt: `${product.name} in ${color.label}`, kind: "front" }], labels: [`Farbe ${color.label}`], only: false }
+    ? { images: [{ src: color.image, alt: fmt(t.colorAlt, { name: product.name, color: color.label }), kind: "front" }], labels: [fmt(t.colorLabel, { color: color.label })], only: false }
     : size.image
       ? {
           images: [
-            { src: size.image, alt: `${product.name} in Größe ${size.label}`, kind: "size" },
-            ...(size.detailImage ? [{ src: size.detailImage, alt: size.detailAlt || `${product.name} in Größe ${size.label}, Nahaufnahme`, kind: "detail" as const }] : []),
+            { src: size.image, alt: fmt(t.sizeAlt, { name: product.name, size: size.label }), kind: "size" },
+            ...(size.detailImage ? [{ src: size.detailImage, alt: size.detailAlt || fmt(t.sizeDetailAlt, { name: product.name, size: size.label }), kind: "detail" as const }] : []),
           ],
-          labels: [`Größe ${size.label}`, size.detailAlt ? `Größe ${size.label}` : `Größe ${size.label} · Nahaufnahme`],
+          labels: [fmt(t.sizeLabel, { size: size.label }), fmt(size.detailAlt ? t.sizeLabel : t.sizeDetailLabel, { size: size.label })],
           only: true,
         }
       : null;

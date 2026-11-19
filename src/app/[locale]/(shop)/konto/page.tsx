@@ -13,13 +13,17 @@ import { deriveRecipients, RecipientsList } from "@/components/account/recipient
 import { ProfileForm } from "@/components/account/profile-form";
 import { updateProfileAction } from "./actions";
 import { getCapabilities } from "@/lib/capabilities";
+import { getI18n } from "@/i18n/server";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Mein Konto",
-  robots: { index: false, follow: true },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { m } = await getI18n();
+  return {
+    title: m.account.metaTitle,
+    robots: { index: false, follow: true },
+  };
+}
 
 type Props = { searchParams: Promise<Record<string, string | string[] | undefined>> };
 
@@ -35,32 +39,34 @@ function SectionTitle({ id, icon: Icon, eyebrow, title, link }: { id: string; ic
   );
 }
 
-function FavoritesSection() {
+async function FavoritesSection() {
+  const t = (await getI18n()).m.account.sections;
   return (
     <section aria-labelledby="favoriten" className="scroll-mt-32">
-      <SectionTitle id="favoriten" icon={Heart} eyebrow="Gemerkt" title="Deine Favoriten" link={{ href: routes.shop, label: "Alle Blumen" }} />
+      <SectionTitle id="favoriten" icon={Heart} eyebrow={t.favoritesEyebrow} title={t.favoritesTitle} link={{ href: routes.shop, label: t.allFlowers }} />
       <FavoritesGrid />
-      <p className="mt-6 text-[12.5px] text-ink-soft">Favoriten werden nur in diesem Browser gespeichert.</p>
+      <p className="mt-6 text-[12.5px] text-ink-soft">{t.favoritesNote}</p>
     </section>
   );
 }
 
 export default async function AccountPage({ searchParams }: Props) {
-  const [settings, customer, sp] = await Promise.all([getSettings(), getCurrentCustomer(), searchParams]);
+  const [settings, customer, sp, { m, fmt }] = await Promise.all([getSettings(), getCurrentCustomer(), searchParams, getI18n()]);
+  const t = m.account;
 
   /* ---------------- Logged out ---------------- */
   if (!customer) {
     const loginAvailable = isAuthConfigured() && (await getCapabilities()).accountLogin;
     const notice = !loginAvailable
-      ? "Der Login wird gerade eingerichtet und ist in Kürze verfügbar. Zum Bestellen brauchst du kein Konto."
-      : sp.abgemeldet === "1" ? "Du bist abgemeldet. Bis zum nächsten Mal." : undefined;
+      ? t.loggedOut.loginUnavailable
+      : sp.abgemeldet === "1" ? t.loggedOut.loggedOut : undefined;
     return (
       <div className="pb-16 lg:pb-24">
         <PageHeader
-          crumbs={[{ label: "Mein Konto" }]}
-          eyebrow="Mein Konto"
-          title="Deine Blumen, deine Bestellungen."
-          intro="Ein Konto brauchst du zum Bestellen nicht. Wenn du eines möchtest: Es gibt kein Passwort – du bekommst bei jedem Login einen Link per E-Mail."
+          crumbs={[{ label: t.title }]}
+          eyebrow={t.title}
+          title={t.loggedOut.title}
+          intro={t.loggedOut.intro}
         />
         <div className="container-x mt-10 grid gap-4 lg:mt-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-6">
           <LoginCard notice={notice} unavailable={!loginAvailable} />
@@ -68,16 +74,16 @@ export default async function AccountPage({ searchParams }: Props) {
             <Link href={routes.tracking} className="group flex items-start gap-4 rounded-lg border border-line bg-white/60 p-6 transition-colors hover:border-forest">
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-ivory-200 text-forest"><Package className="size-5" strokeWidth={1.5} aria-hidden /></span>
               <span className="min-w-0 flex-1">
-                <span className="flex items-center gap-2 font-serif text-[22px] text-ink">Bestellung verfolgen <ArrowRight className="size-4 text-forest transition-transform group-hover:translate-x-1" aria-hidden /></span>
-                <span className="mt-1 block text-[14px] text-ink-muted">Ohne Login – mit Bestellnummer und E-Mail-Adresse.</span>
+                <span className="flex items-center gap-2 font-serif text-[22px] text-ink">{t.loggedOut.trackTitle} <ArrowRight className="size-4 text-forest transition-transform group-hover:translate-x-1" aria-hidden /></span>
+                <span className="mt-1 block text-[14px] text-ink-muted">{t.loggedOut.trackText}</span>
               </span>
             </Link>
             <div className="rounded-lg border border-line bg-ivory-100/60 p-6">
-              <p className="font-serif text-[22px] text-ink">Was dein Konto kann</p>
+              <p className="font-serif text-[22px] text-ink">{t.loggedOut.featuresTitle}</p>
               <ul className="mt-3 grid gap-2 text-[14px] text-ink-muted">
-                <li className="flex gap-2"><Package className="mt-0.5 size-4 shrink-0 text-forest" strokeWidth={1.5} aria-hidden />Alle Bestellungen und ihren Status auf einen Blick</li>
-                <li className="flex gap-2"><MapPin className="mt-0.5 size-4 shrink-0 text-forest" strokeWidth={1.5} aria-hidden />Empfänger:innen, denen du schon Blumen geschickt hast</li>
-                <li className="flex gap-2"><Bell className="mt-0.5 size-4 shrink-0 text-forest" strokeWidth={1.5} aria-hidden />Erinnerungen an Geburtstage und Jahrestage</li>
+                <li className="flex gap-2"><Package className="mt-0.5 size-4 shrink-0 text-forest" strokeWidth={1.5} aria-hidden />{t.loggedOut.featureOrders}</li>
+                <li className="flex gap-2"><MapPin className="mt-0.5 size-4 shrink-0 text-forest" strokeWidth={1.5} aria-hidden />{t.loggedOut.featureRecipients}</li>
+                <li className="flex gap-2"><Bell className="mt-0.5 size-4 shrink-0 text-forest" strokeWidth={1.5} aria-hidden />{t.loggedOut.featureReminders}</li>
               </ul>
             </div>
           </div>
@@ -96,29 +102,29 @@ export default async function AccountPage({ searchParams }: Props) {
   return (
     <div className="pb-16 lg:pb-24">
       <PageHeader
-        crumbs={[{ label: "Mein Konto" }]}
-        eyebrow={welcome ? "Schön, dass du da bist" : "Mein Konto"}
-        title={name ? `Hallo ${name}.` : "Hallo."}
-        intro={`Du bist angemeldet als ${customer.email}. Hier findest du deine Bestellungen, Empfänger:innen und dein Profil.`}
+        crumbs={[{ label: t.title }]}
+        eyebrow={welcome ? t.loggedIn.welcomeEyebrow : t.title}
+        title={name ? fmt(t.loggedIn.hello, { name }) : t.loggedIn.helloAnonymous}
+        intro={fmt(t.loggedIn.intro, { email: customer.email })}
       />
       <div className="container-x mt-10 flex flex-col gap-14 lg:mt-14 lg:gap-20">
         <AccountNav showFavorites={settings.favoritesEnabled} />
 
         <section aria-labelledby="bestellungen" className="scroll-mt-32">
-          <SectionTitle id="bestellungen" icon={Package} eyebrow="Bestellhistorie" title="Deine Bestellungen" />
+          <SectionTitle id="bestellungen" icon={Package} eyebrow={t.sections.ordersEyebrow} title={t.sections.ordersTitle} />
           <OrdersList orders={orders} statuses={settings.orderStatuses} />
-          <p className="mt-4 text-[12.5px] text-ink-soft">Wir zeigen alle Bestellungen, die mit {customer.email} aufgegeben wurden.</p>
+          <p className="mt-4 text-[12.5px] text-ink-soft">{fmt(t.sections.ordersNote, { email: customer.email })}</p>
         </section>
 
         <section aria-labelledby="empfaenger" className="scroll-mt-32">
-          <SectionTitle id="empfaenger" icon={MapPin} eyebrow="Adressbuch" title="Empfänger:innen" />
+          <SectionTitle id="empfaenger" icon={MapPin} eyebrow={t.sections.recipientsEyebrow} title={t.sections.recipientsTitle} />
           <RecipientsList recipients={recipients} />
         </section>
 
         {settings.favoritesEnabled && <FavoritesSection />}
 
         <section aria-labelledby="profil" className="scroll-mt-32">
-          <SectionTitle id="profil" icon={UserRound} eyebrow="Deine Daten" title="Profil" />
+          <SectionTitle id="profil" icon={UserRound} eyebrow={t.sections.profileEyebrow} title={t.sections.profileTitle} />
           <ProfileForm customer={customer} action={updateProfileAction} />
         </section>
 
@@ -126,8 +132,8 @@ export default async function AccountPage({ searchParams }: Props) {
           <Link href="/erinnerung" className="group flex items-start gap-4 rounded-lg border border-line bg-white/60 p-6 transition-colors hover:border-forest sm:p-8">
             <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-ivory-200 text-forest"><Bell className="size-5" strokeWidth={1.5} aria-hidden /></span>
             <span className="min-w-0 flex-1">
-              <span id="erinnerungen" className="flex items-center gap-2 font-serif text-[22px] text-ink">Erinnerungen <ArrowRight className="size-4 text-forest transition-transform group-hover:translate-x-1" aria-hidden /></span>
-              <span className="mt-1 block text-[14px] text-ink-muted">Lass dich rechtzeitig an Geburtstage, Jahrestage und den Muttertag erinnern.</span>
+              <span id="erinnerungen" className="flex items-center gap-2 font-serif text-[22px] text-ink">{t.sections.remindersTitle} <ArrowRight className="size-4 text-forest transition-transform group-hover:translate-x-1" aria-hidden /></span>
+              <span className="mt-1 block text-[14px] text-ink-muted">{t.sections.remindersText}</span>
             </span>
           </Link>
         </section>

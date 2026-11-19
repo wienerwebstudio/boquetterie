@@ -4,16 +4,18 @@ import { ArrowUpRight } from "lucide-react";
 import type { HomepageContent, Occasion } from "@/types";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { routes } from "@/lib/urls";
+import { getI18n } from "@/i18n/server";
 
 /**
  * "Shoppen nach Anlass" – one compact row of six on desktop, 3 columns on tablets,
  * snap-scroll row on mobile. Kept low so it doesn't push the products down.
  */
-export function OccasionGrid({ content, occasions }: { content: HomepageContent["occasions"]; occasions: Occasion[] }) {
+export async function OccasionGrid({ content, occasions }: { content: HomepageContent["occasions"]; occasions: Occasion[] }) {
   if (!occasions.length) return null;
+  const { m } = await getI18n();
   return (
     <Section id="anlaesse">
-      <SectionHeading eyebrow="Shoppen nach Anlass" title={content.headline} subtitle={content.subheadline} link={{ label: "Alle Anlässe", href: routes.occasions }} />
+      <SectionHeading eyebrow={m.home.occasions.eyebrow} title={content.headline} subtitle={content.subheadline} link={{ label: m.home.occasions.allLink, href: routes.occasions }} />
       <ul className="-mx-5 flex snap-x snap-mandatory scroll-pl-5 sm:scroll-pl-8 gap-4 overflow-x-auto px-5 pb-2 scrollbar-none sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-6 lg:gap-4">
         {occasions.map((o) => (
           <li key={o.slug} className="w-[72vw] shrink-0 snap-start sm:w-[46vw] md:w-auto">

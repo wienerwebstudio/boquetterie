@@ -8,6 +8,9 @@ import { routes } from "@/lib/urls";
 import { MailFallback } from "@/components/content/mail-fallback";
 import { events, track } from "@/components/analytics/track";
 import { BUSINESS_NEEDS, LIMITS, validateBusinessInquiry, type BusinessInquiryErrors, type BusinessNeed } from "@/app/api/business-inquiry/schema";
+import { fmtRich } from "@/components/content/rich-text";
+import { useI18n } from "@/i18n/client";
+import type { Messages } from "@/i18n/messages";
 
 interface FormState {
   company: string;
@@ -21,6 +24,14 @@ interface FormState {
   website: string; // honeypot
 }
 
+/** Option values stay as they are (the API checks them); only the labels are translated. */
+const NEED_LABEL: Record<BusinessNeed, keyof Messages["forms"]["business"]["needs"]> = {
+  abo: "subscription",
+  einmalig: "oneOff",
+  event: "event",
+  geschenke: "gifts",
+};
+
 const INITIAL: FormState = { company: "", contact: "", email: "", phone: "", location: "", need: "", message: "", consent: false, website: "" };
 
 export function BusinessInquiryForm({ className }: { className?: string }) {
@@ -29,6 +40,10 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   /** Set when the server could neither store nor mail the inquiry (503 `unavailable`). */
   const [fallbackEmail, setFallbackEmail] = useState<string | null>(null);
+  const { m, fmt } = useI18n();
+  const t = m.forms.business;
+  /** The shared validation (also used by the API) speaks German; its messages are looked up per field. */
+  const errorText = (field: keyof BusinessInquiryErrors) => (errors[field] ? t.errors[field] : undefined);
 
   const set = <K extends keyof FormState>(key: K) => (e: { target: { value: string } }) => {
     setForm((f) => ({ ...f, [key]: e.target.value }));
@@ -73,13 +88,15 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
           <span className="inline-flex size-10 items-center justify-center rounded-full bg-success text-ivory">
             <Check className="size-5" strokeWidth={2.5} aria-hidden />
           </span>
-          <h2 className="display-3 mt-5 text-ink">Danke für deine Anfrage.</h2>
+          <h2 className="display-3 mt-5 text-ink">{t.thanksTitle}</h2>
           <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
-            Wir haben alles erhalten und melden uns bei <strong className="font-semibold text-ink">{form.contact}</strong> per E-Mail an{" "}
-            <strong className="font-semibold text-ink">{form.email}</strong>.
+            {fmtRich(t.thanksText, {
+              contact: <strong className="font-semibold text-ink">{form.contact}</strong>,
+              email: <strong className="font-semibold text-ink">{form.email}</strong>,
+            })}
           </p>
           <Button variant="link" className="mt-6" onClick={() => { setForm(INITIAL); setStatus("idle"); }} iconRight={<ArrowRight className="size-4" aria-hidden />}>
-            Weitere Anfrage senden
+            {t.sendAnother}
           </Button>
         </div>
       </div>
@@ -87,29 +104,29 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
   }
 
   return (
-    <form onSubmit={submit} noValidate className={className} aria-label="Anfrage für Firmenkunden">
+    <form onSubmit={submit} noValidate className={className} aria-label={t.formLabel}>
       <div className="grid gap-5 sm:grid-cols-2">
-        <Input label="Firma" name="company" autoComplete="organization" maxLength={LIMITS.company} value={form.company} onChange={set("company")} error={errors.company} required />
-        <Input label="Ansprechperson" name="contact" autoComplete="name" maxLength={LIMITS.contact} value={form.contact} onChange={set("contact")} error={errors.contact} required />
-        <Input label="E-Mail" name="email" type="email" autoComplete="email" inputMode="email" maxLength={LIMITS.email} value={form.email} onChange={set("email")} error={errors.email} required />
-        <Input label="Telefon" name="phone" type="tel" optional autoComplete="tel" inputMode="tel" maxLength={LIMITS.phone} value={form.phone} onChange={set("phone")} error={errors.phone} />
-        <Input label="Standort / PLZ" name="location" autoComplete="postal-code" maxLength={LIMITS.location} placeholder="z. B. 1070 Wien" value={form.location} onChange={set("location")} error={errors.location} required />
-        <Select label="Bedarf" name="need" value={form.need} onChange={set("need")} error={errors.need} required>
-          <option value="" disabled>Bitte wählen</option>
-          {BUSINESS_NEEDS.map((n) => <option key={n.value} value={n.value}>{n.label}</option>)}
+        <Input label={t.company} name="company" autoComplete="organization" maxLength={LIMITS.company} value={form.company} onChange={set("company")} error={errorText("company")} required />
+        <Input label={t.contact} name="contact" autoComplete="name" maxLength={LIMITS.contact} value={form.contact} onChange={set("contact")} error={errorText("contact")} required />
+        <Input label={m.forms.email} name="email" type="email" autoComplete="email" inputMode="email" maxLength={LIMITS.email} value={form.email} onChange={set("email")} error={errorText("email")} required />
+        <Input label={t.phone} name="phone" type="tel" optional autoComplete="tel" inputMode="tel" maxLength={LIMITS.phone} value={form.phone} onChange={set("phone")} error={errorText("phone")} />
+        <Input label={t.location} name="location" autoComplete="postal-code" maxLength={LIMITS.location} placeholder={t.locationPlaceholder} value={form.location} onChange={set("location")} error={errorText("location")} required />
+        <Select label={t.need} name="need" value={form.need} onChange={set("need")} error={errorText("need")} required>
+          <option value="" disabled>{t.pleaseChoose}</option>
+          {BUSINESS_NEEDS.map((n) => <option key={n.value} value={n.value}>{t.needs[NEED_LABEL[n.value]]}</option>)}
         </Select>
         <Textarea
-          label="Nachricht"
+          label={m.forms.message}
           name="message"
           rows={6}
           maxLength={LIMITS.message}
           value={form.message}
           onChange={set("message")}
-          error={errors.message}
+          error={errorText("message")}
           className="sm:col-span-2"
           required
-          placeholder="Worum geht es, für wann und in welchem Umfang – und was dir sonst noch wichtig ist."
-          hint={`${form.message.length}/${LIMITS.message} Zeichen`}
+          placeholder={t.messagePlaceholder}
+          hint={fmt(m.forms.charCount, { count: form.message.length, max: LIMITS.message })}
         />
         <div className="sm:col-span-2">
           <Checkbox
@@ -120,17 +137,16 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
               if (errors.consent) setErrors((prev) => ({ ...prev, consent: undefined }));
             }}
             label={
-              <>
-                Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert und verwendet werden. Details in der{" "}
-                <Link href={routes.legal.privacy} className="text-forest underline underline-offset-4">Datenschutzerklärung</Link>.
-              </>
+              fmtRich(t.consent, {
+                privacyLink: <Link href={routes.legal.privacy} className="text-forest underline underline-offset-4">{t.privacyLink}</Link>,
+              })
             }
           />
-          {errors.consent && <p role="alert" className="mt-2 text-[13px] text-danger">{errors.consent}</p>}
+          {errors.consent && <p role="alert" className="mt-2 text-[13px] text-danger">{t.errors.consent}</p>}
         </div>
         {/* Honeypot – hidden from people, filled by bots. */}
         <div className="hidden" aria-hidden>
-          <label htmlFor="business-website">Website</label>
+          <label htmlFor="business-website">{m.forms.honeypot}</label>
           <input id="business-website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={set("website")} />
         </div>
       </div>
@@ -139,26 +155,26 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
         <MailFallback
           className="mt-5"
           email={fallbackEmail}
-          subject={`Firmenanfrage: ${form.company.trim()}`}
+          subject={fmt(t.mailSubject, { company: form.company.trim() })}
           body={[
             form.message.trim(), "",
-            `Firma: ${form.company.trim()}`,
-            `Ansprechperson: ${form.contact.trim()}`,
-            form.phone.trim() ? `Telefon: ${form.phone.trim()}` : "",
-            `Standort / PLZ: ${form.location.trim()}`,
-            `Bedarf: ${BUSINESS_NEEDS.find((n) => n.value === form.need)?.label ?? form.need}`,
+            `${t.company}: ${form.company.trim()}`,
+            `${t.contact}: ${form.contact.trim()}`,
+            form.phone.trim() ? `${t.phone}: ${form.phone.trim()}` : "",
+            `${t.location}: ${form.location.trim()}`,
+            `${t.need}: ${(form.need && t.needs[NEED_LABEL[form.need]]) || form.need}`,
           ].filter((l, i) => i < 2 || l).join("\n")}
         />
       )}
       {status === "failed" && !fallbackEmail && (
         <p role="alert" className="mt-5 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-danger">
-          Die Anfrage konnte nicht gesendet werden. Bitte versuch es noch einmal oder schreib uns direkt per E-Mail.
+          {t.failed}
         </p>
       )}
 
       <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
         <Button type="submit" size="lg" loading={status === "sending"} iconRight={<ArrowRight className="size-4" aria-hidden />}>
-          Anfrage senden
+          {t.submit}
         </Button>
       </div>
     </form>

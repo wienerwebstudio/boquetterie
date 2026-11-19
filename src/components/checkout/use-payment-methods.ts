@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import type { PaymentMethodsResponse } from "@/types/payments";
+import { useI18n } from "@/i18n/client";
 
 /**
  * Loads the truly available payment methods (`GET /api/payments/methods`).
@@ -48,12 +49,13 @@ export function fetchPaymentMethods(force = false): Promise<PaymentMethodsRespon
 
 export function usePaymentMethods() {
   const [state, setState] = useState<{ loading: boolean; data: PaymentMethodsResponse | null; error: string | null }>({ loading: true, data: null, error: null });
+  const loadFailed = useI18n().m.checkout.payment.loadFailed;
   useEffect(() => {
     let alive = true;
     fetchPaymentMethods()
       .then((data) => { if (alive) setState({ loading: false, data, error: null }); })
-      .catch(() => { if (alive) setState({ loading: false, data: null, error: "Die Zahlungsarten konnten nicht geladen werden. Bitte lade die Seite neu." }); });
+      .catch(() => { if (alive) setState({ loading: false, data: null, error: loadFailed }); });
     return () => { alive = false; };
-  }, []);
+  }, [loadFailed]);
   return state;
 }

@@ -7,6 +7,7 @@ import { ProductCardSkeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { useFavorites } from "@/store/favorites";
 import { routes } from "@/lib/urls";
+import { useI18n } from "@/i18n/client";
 
 /** What `/api/products?slugs=` returns – long texts and SEO data are stripped. */
 type ProductCardData = Omit<Product, "description" | "care" | "seo">;
@@ -24,6 +25,7 @@ export function FavoritesGrid() {
   const slugs = useFavorites((s) => s.slugs);
   const key = slugs.join(",");
   const [loaded, setLoaded] = useState<{ key: string; products: Product[] | null; error?: string } | null>(null);
+  const t = useI18n().m.account.favorites;
 
   useEffect(() => {
     if (!hydrated || !key) return;
@@ -31,9 +33,9 @@ export function FavoritesGrid() {
     fetch(`/api/products?slugs=${encodeURIComponent(key)}`)
       .then((r) => r.json() as Promise<{ ok: boolean; products: ProductCardData[] }>)
       .then((d) => { if (alive) setLoaded({ key, products: d.ok ? d.products.map(toProduct) : [] }); })
-      .catch(() => { if (alive) setLoaded({ key, products: null, error: "Deine Favoriten konnten gerade nicht geladen werden." }); });
+      .catch(() => { if (alive) setLoaded({ key, products: null, error: t.loadFailed }); });
     return () => { alive = false; };
-  }, [key, hydrated]);
+  }, [key, hydrated, t]);
 
   const current = loaded?.key === key ? loaded : null;
   const products = !hydrated ? null : key === "" ? [] : current?.products ?? null;
@@ -51,9 +53,9 @@ export function FavoritesGrid() {
     return (
       <div className="rounded-lg border border-dashed border-stone p-8 text-center">
         <span className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-ivory-200 text-burgundy"><Heart className="size-5" strokeWidth={1.5} aria-hidden /></span>
-        <p className="font-serif text-2xl text-ink">Noch keine Favoriten</p>
-        <p className="mt-2 text-[14px] text-ink-muted">Tippe auf das Herz bei einem Strauß, um ihn hier zu merken.</p>
-        <Button href={routes.shop} variant="outline" className="mt-6">Blumen entdecken</Button>
+        <p className="font-serif text-2xl text-ink">{t.emptyTitle}</p>
+        <p className="mt-2 text-[14px] text-ink-muted">{t.emptyText}</p>
+        <Button href={routes.shop} variant="outline" className="mt-6">{t.cta}</Button>
       </div>
     );
   }

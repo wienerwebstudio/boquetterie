@@ -2,16 +2,18 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPageBySlug } from "@/lib/cms";
 import { routes } from "@/lib/urls";
-import { CmsPage, cmsMetadata } from "@/components/content/cms-page";
+import { CmsPage, GermanVersionNotice, legalMetadata } from "@/components/content/cms-page";
+import { getI18n } from "@/i18n/server";
 
 const SLUG = "datenschutz";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return cmsMetadata(await getPageBySlug(SLUG), "Datenschutzerklärung", routes.legal.privacy);
+  const [page, { m }] = await Promise.all([getPageBySlug(SLUG), getI18n()]);
+  return legalMetadata(page, m.content.legal.privacyTitle, routes.legal.privacy);
 }
 
 export default async function Page() {
-  const page = await getPageBySlug(SLUG);
+  const [page, { m }] = await Promise.all([getPageBySlug(SLUG), getI18n()]);
   if (!page) notFound();
-  return <CmsPage page={page} eyebrow="Rechtliches" crumbs={[{ label: page.title }]} dense />;
+  return <CmsPage page={page} eyebrow={m.content.legalEyebrow} crumbs={[{ label: page.title }]} dense before={<GermanVersionNotice />} />;
 }

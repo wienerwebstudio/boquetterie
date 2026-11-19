@@ -4,13 +4,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { ISODate } from "@/types";
 import type { DeliveryDay } from "@/lib/delivery";
 import { addDays, weekdayOf } from "@/lib/delivery";
-import { formatDateLong, cn } from "@/lib/format";
+import { cn } from "@/lib/format";
+import { useI18n } from "@/i18n/client";
+import { LOCALE_INFO, type Locale } from "@/i18n/config";
 
-const WEEKDAYS = [
-  { short: "Mo", long: "Montag" }, { short: "Di", long: "Dienstag" }, { short: "Mi", long: "Mittwoch" },
-  { short: "Do", long: "Donnerstag" }, { short: "Fr", long: "Freitag" }, { short: "Sa", long: "Samstag" }, { short: "So", long: "Sonntag" },
-];
-const monthFmt = new Intl.DateTimeFormat("de-AT", { month: "long", year: "numeric", timeZone: "UTC" });
+/** Monday first – keys of `product.calendar.weekdays`. */
+const WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
 
 const pad = (n: number) => String(n).padStart(2, "0");
 const ym = (iso: string) => iso.slice(0, 7);
@@ -21,9 +20,9 @@ function shiftMonth(month: string, delta: number) {
   const d = new Date(Date.UTC(y, m - 1 + delta, 1, 12));
   return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}`;
 }
-function monthLabel(month: string) {
+function monthLabel(month: string, locale: Locale) {
   const [y, m] = month.split("-").map(Number);
-  return monthFmt.format(new Date(Date.UTC(y, m - 1, 1, 12)));
+  return new Intl.DateTimeFormat(LOCALE_INFO[locale].intl, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, 1, 12)));
 }
 function monthCells(month: string): (ISODate | null)[] {
   const [y, m] = month.split("-").map(Number);
@@ -43,6 +42,8 @@ export function DeliveryCalendar({
 }: {
   days: DeliveryDay[]; value: ISODate | null; onChange: (date: ISODate) => void; today: ISODate; id?: string; className?: string;
 }) {
+  const { m: messages, fmt, dateLong, locale } = useI18n();
+  const c = messages.product.calendar;
   const available = useMemo(() => new Map(days.map((d) => [d.date, d])), [days]);
   const first = days[0]?.date ?? today;
   const last = days[days.length - 1]?.date ?? today;
@@ -107,11 +108,11 @@ export function DeliveryCalendar({
   return (
     <div className={cn("rounded-md border border-line bg-white/70 p-3 sm:p-4", className)}>
       <div className="flex items-center justify-between">
-        <button type="button" onClick={() => goMonth(-1)} disabled={view <= minMonth} aria-label="Vorheriger Monat" className="grid size-10 place-items-center rounded-full text-ink-muted transition-colors hover:bg-ivory-200 hover:text-ink disabled:opacity-30">
+        <button type="button" onClick={() => goMonth(-1)} disabled={view <= minMonth} aria-label={c.previousMonth} className="grid size-10 place-items-center rounded-full text-ink-muted transition-colors hover:bg-ivory-200 hover:text-ink disabled:opacity-30">
           <ChevronLeft className="size-4" />
         </button>
-        <p id={`${id}-month`} className="font-serif text-[19px] text-ink" aria-live="polite">{monthLabel(view)}</p>
-        <button type="button" onClick={() => goMonth(1)} disabled={view >= maxMonth} aria-label="Nächster Monat" className="grid size-10 place-items-center rounded-full text-ink-muted transition-colors hover:bg-ivory-200 hover:text-ink disabled:opacity-30">
+        <p id={`${id}-month`} className="font-serif text-[19px] text-ink" aria-live="polite">{monthLabel(view, locale)}</p>
+        <button type="button" onClick={() => goMonth(1)} disabled={view >= maxMonth} aria-label={c.nextMonth} className="grid size-10 place-items-center rounded-full text-ink-muted transition-colors hover:bg-ivory-200 hover:text-ink disabled:opacity-30">
           <ChevronRight className="size-4" />
         </button>
       </div>
@@ -120,8 +121,8 @@ export function DeliveryCalendar({
         <thead>
           <tr>
             {WEEKDAYS.map((w) => (
-              <th key={w.short} scope="col" className="pb-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-muted">
-                <abbr title={w.long} className="no-underline">{w.short}</abbr>
+              <th key={w} scope="col" className="pb-1.5 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-muted">
+                <abbr title={c.weekdays[w].long} className="no-underline">{c.weekdays[w].short}</abbr>
               </th>
             ))}
           </tr>
@@ -134,7 +135,7 @@ export function DeliveryCalendar({
                 const day = available.get(iso);
                 const selected = iso === value;
                 const isToday = iso === today;
-                const label = `${formatDateLong(iso)}${day ? (day.sameDay ? ", heute lieferbar" : ", lieferbar") : ", nicht lieferbar"}`;
+                const label = fmt(day ? (day.sameDay ? c.daySameDay : c.dayAvailable) : c.dayUnavailable, { date: dateLong(iso) });
                 return (
                   <td key={iso} role="gridcell" aria-selected={selected} className="p-0 text-center">
                     <button
@@ -165,9 +166,9 @@ export function DeliveryCalendar({
       </table>
 
       <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-line pt-3 text-[12px] text-ink-muted">
-        {hasSameDay && <span className="inline-flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-success" aria-hidden /> Heute lieferbar</span>}
-        <span className="inline-flex items-center gap-1.5"><span className="size-3 rounded-full ring-1 ring-inset ring-stone" aria-hidden /> Heute</span>
-        <span>Ausgegraute Tage sind nicht lieferbar.</span>
+        {hasSameDay && <span className="inline-flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-success" aria-hidden /> {c.legendSameDay}</span>}
+        <span className="inline-flex items-center gap-1.5"><span className="size-3 rounded-full ring-1 ring-inset ring-stone" aria-hidden /> {c.legendToday}</span>
+        <span>{c.legendUnavailable}</span>
       </div>
     </div>
   );

@@ -5,17 +5,16 @@ import { ArrowRight, Search } from "lucide-react";
 import { getAllProducts, getCategories, getOccasions } from "@/lib/cms";
 import { search, sortProducts } from "@/lib/catalog";
 import { routes } from "@/lib/urls";
-import { resultLabel } from "@/lib/shop-filters";
+import { getI18n } from "@/i18n/server";
 import { ProductGrid } from "@/components/shop/product-grid";
 import { Button } from "@/components/ui/button";
 
-const SUGGESTIONS = ["Rosen", "Mama", "Geburtstag", "Weiß", "Danke", "Pastell", "Pflanzen"];
-
 export async function generateMetadata({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }): Promise<Metadata> {
   const q = readQuery((await searchParams).q);
+  const { m, fmt } = await getI18n();
   return {
-    title: q ? `Suche: „${q}“` : "Suche",
-    description: "Finde Sträuße nach Blume, Farbe oder Anlass – frisch gebunden und in Wien geliefert.",
+    title: q ? fmt(m.shop.search.metaTitleQuery, { query: q }) : m.shop.search.metaTitle,
+    description: m.shop.search.metaDescription,
     robots: { index: false, follow: true },
   };
 }
@@ -26,7 +25,9 @@ function readQuery(v: string | string[] | undefined) {
 
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }) {
   const q = readQuery((await searchParams).q);
-  const [products, occasions, categories] = await Promise.all([getAllProducts(), getOccasions(), getCategories()]);
+  const [products, occasions, categories, { m, fmt, plural }] = await Promise.all([getAllProducts(), getOccasions(), getCategories(), getI18n()]);
+  const t = m.shop.search;
+  const [resultsBefore, resultsAfter] = t.resultsFor.split("{query}");
   const result = q.length >= 2 ? search(q, products, occasions, categories, 48) : { products: [], occasions: [], categories: [] };
   const total = result.products.length + result.occasions.length + result.categories.length;
   const featured = occasions.filter((o) => o.featured).slice(0, 4);
@@ -36,12 +37,12 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
   return (
     <div className="container-x pb-20 pt-8 sm:pt-12 lg:pb-28">
       <header className="max-w-3xl">
-        <p className="eyebrow mb-3">Suche</p>
+        <p className="eyebrow mb-3">{t.eyebrow}</p>
         <h1 className="display-2 text-balance text-ink">
-          {q ? <>Ergebnisse für <span className="italic">„{q}“</span></> : "Wonach suchst du?"}
+          {q ? <>{resultsBefore}<span className="italic">{fmt(t.quoted, { query: q })}</span>{resultsAfter || null}</> : t.title}
         </h1>
         <form action={routes.search} method="get" role="search" className="mt-6 flex max-w-xl gap-2">
-          <label htmlFor="search-page-q" className="sr-only">Suchbegriff</label>
+          <label htmlFor="search-page-q" className="sr-only">{t.inputLabel}</label>
           <div className="relative min-w-0 flex-1">
             <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-ink-soft" aria-hidden />
             <input
@@ -49,23 +50,23 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
               name="q"
               type="search"
               defaultValue={q}
-              placeholder="Blume, Farbe oder Anlass"
+              placeholder={t.placeholder}
               autoComplete="off"
               className="h-12 w-full rounded-md border border-line-strong bg-white pl-11 pr-4 text-[15px] text-ink placeholder:text-ink-soft focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
             />
           </div>
-          <Button type="submit" size="md">Suchen</Button>
+          <Button type="submit" size="md">{t.submit}</Button>
         </form>
         {q && (
           <p className="mt-4 text-[13px] text-ink-muted" aria-live="polite">
-            {total > 0 ? <>{resultLabel(result.products.length)}{result.occasions.length + result.categories.length > 0 && ` · ${result.occasions.length + result.categories.length} passende Seiten`}</> : "Keine Treffer"}
+            {total > 0 ? <>{plural(result.products.length, m.shop.results.bouquets)}{result.occasions.length + result.categories.length > 0 && ` · ${plural(result.occasions.length + result.categories.length, t.matchingPagesCount)}`}</> : t.noHits}
           </p>
         )}
       </header>
 
       {(result.occasions.length > 0 || result.categories.length > 0) && (
         <div className="mt-8 flex flex-wrap items-center gap-2">
-          <span className="mr-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-moss">Passende Seiten</span>
+          <span className="mr-1 text-[12px] font-semibold uppercase tracking-[0.14em] text-moss">{t.matchingPages}</span>
           {result.occasions.map((o) => (
             <Link key={o.slug} href={routes.occasion(o.slug)} className="inline-flex h-9 items-center gap-2 rounded-full border border-line bg-white pl-1.5 pr-4 text-[13px] text-ink transition-colors hover:border-forest hover:text-forest">
               <span className="relative size-6 overflow-hidden rounded-full bg-ivory-200"><Image src={o.image} alt="" fill sizes="24px" className="object-cover" /></span>
@@ -82,28 +83,28 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
 
       {result.products.length > 0 ? (
         <section className="mt-10 border-t border-line pt-10" aria-labelledby="search-products">
-          <h2 id="search-products" className="sr-only">Sträuße</h2>
+          <h2 id="search-products" className="sr-only">{m.shop.results.heading}</h2>
           <ProductGrid products={result.products} />
         </section>
       ) : (
         <section className="mt-10 border-t border-line pt-10">
           {q.length >= 2 && (
             <div className="max-w-xl">
-              <h2 className="display-3 text-ink">Dazu haben wir noch keinen Strauß.</h2>
-              <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">Probier es mit einer Blume, einer Farbe oder einem Anlass – oder lass dich von unseren Lieblingssträußen inspirieren.</p>
+              <h2 className="display-3 text-ink">{t.emptyTitle}</h2>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">{t.emptyText}</p>
             </div>
           )}
           {q.length < 2 && (
-            <p className="max-w-xl text-[15px] leading-relaxed text-ink-muted">Suche nach Blumen, Farben oder Anlässen – zum Beispiel „Rosen“, „Weiß“ oder „Mama“.</p>
+            <p className="max-w-xl text-[15px] leading-relaxed text-ink-muted">{t.prompt}</p>
           )}
           <div className="mt-6 flex flex-wrap gap-2">
-            {SUGGESTIONS.filter((s) => s.toLowerCase() !== q.toLowerCase()).map((s) => (
+            {Object.values(t.suggestions).filter((s) => s.toLowerCase() !== q.toLowerCase()).map((s) => (
               <Link key={s} href={`${routes.search}?q=${encodeURIComponent(s)}`} className="inline-flex h-9 items-center rounded-full border border-line bg-white px-4 text-[13px] text-ink transition-colors hover:border-forest hover:text-forest">{s}</Link>
             ))}
           </div>
           <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
             <div>
-              <p className="eyebrow mb-4">Anlässe</p>
+              <p className="eyebrow mb-4">{t.occasions}</p>
               <ul className="grid grid-cols-2 gap-4">
                 {featured.map((o) => (
                   <li key={o.slug}>
@@ -119,9 +120,9 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
             </div>
             <div>
               <div className="mb-4 flex items-baseline justify-between">
-                <p className="eyebrow">Aus dem Sortiment</p>
+                <p className="eyebrow">{t.fromRange}</p>
                 <Link href={routes.shop} className="group inline-flex items-center gap-1.5 text-[13px] font-semibold text-forest">
-                  Alle Blumen <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
+                  {t.allFlowers} <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
                 </Link>
               </div>
               <ProductGrid products={bestsellers} className="lg:grid-cols-2 xl:grid-cols-2" priorityCount={0} />

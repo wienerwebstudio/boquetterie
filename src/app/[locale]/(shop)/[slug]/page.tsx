@@ -18,6 +18,7 @@ import { PostalCodeCheck } from "@/components/shop/postal-code-check";
 import { ParagraphBlock } from "@/components/content/prose";
 import { relatedLandingPages } from "@/lib/landing-links";
 import { ProductGrid } from "@/components/shop/product-grid";
+import { getI18n } from "@/i18n/server";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
@@ -46,9 +47,10 @@ export default async function LandingPage({ params }: { params: Params }) {
   const page = await getLandingPageBySlug(slug, locale);
   if (!page) notFound();
 
-  const [settings, products, categories, faqs, landingPages] = await Promise.all([
-    getSettings(), getAllProducts(), getCategories(), getFaqsByIds(page.faqIds), getLandingPages(locale),
+  const [settings, products, categories, faqs, landingPages, { m }] = await Promise.all([
+    getSettings(), getAllProducts(), getCategories(), getFaqsByIds(page.faqIds), getLandingPages(locale), getI18n(),
   ]);
+  const t = m.content.landing;
   const related = relatedLandingPages(landingPages, page.slug);
   const f = page.productFilter;
   const list = sortProducts(
@@ -75,7 +77,7 @@ export default async function LandingPage({ params }: { params: Params }) {
             <h1 className="display-1 hyphens-auto text-balance break-words text-ink animate-fade-up">{page.headline}</h1>
             <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-muted sm:text-lg">{page.intro}</p>
             <div className="mt-8 max-w-md">
-              <PostalCodeCheck variant="inline" title="Wohin dürfen wir liefern?" />
+              <PostalCodeCheck variant="inline" title={t.deliveryCheckTitle} />
             </div>
           </div>
           {page.image && (
@@ -91,17 +93,17 @@ export default async function LandingPage({ params }: { params: Params }) {
         <section className="container-x mt-14 border-t border-line pt-10 sm:mt-20 sm:pt-12" aria-labelledby="landing-products">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="eyebrow mb-3">Sträuße</p>
-              <h2 id="landing-products" className="display-3 text-ink">{f.sameDayOnly ? "Sträuße, die wir heute binden können" : "Unsere Auswahl"}</h2>
+              <p className="eyebrow mb-3">{t.productsEyebrow}</p>
+              <h2 id="landing-products" className="display-3 text-ink">{f.sameDayOnly ? t.sameDayTitle : t.selectionTitle}</h2>
               {f.sameDayOnly && (
                 <p className="mt-3 flex max-w-xl items-start gap-2 text-[14px] leading-relaxed text-ink-muted">
                   <Clock className="mt-0.5 size-4 shrink-0 text-forest" aria-hidden />
-                  <span>Ob die Lieferung heute klappt, hängt von Postleitzahl und Uhrzeit ab. Nach der Lieferprüfung siehst du die genaue Bestellfrist für dein Gebiet.</span>
+                  <span>{t.sameDayNote}</span>
                 </p>
               )}
             </div>
             <Link href={shopHref} className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-forest">
-              Alle ansehen <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
+              {t.viewAll} <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
             </Link>
           </div>
           <ProductGrid products={list} showSameDay={Boolean(f.sameDayOnly)} />
@@ -119,7 +121,7 @@ export default async function LandingPage({ params }: { params: Params }) {
                   <div className="mt-4 flex flex-col gap-4 text-[15px] leading-relaxed text-ink-muted sm:text-base [&_a]:text-forest [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-forest-700 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
                     {s.paragraphs.map((p, j) => <ParagraphBlock key={j} text={p} />)}
                   </div>
-                  {s.placeholder && <p className="mt-3 text-[12px] italic text-warn">[Inhalt folgt]</p>}
+                  {s.placeholder && <p className="mt-3 text-[12px] italic text-warn">{t.placeholder}</p>}
                 </div>
                 {s.image && (
                   <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-ivory-200">
@@ -137,10 +139,10 @@ export default async function LandingPage({ params }: { params: Params }) {
         <section className="container-x mt-20 lg:mt-28" aria-labelledby="landing-faq">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] lg:gap-16">
             <div>
-              <p className="eyebrow mb-3">Gut zu wissen</p>
-              <h2 id="landing-faq" className="display-3 text-balance text-ink">Häufige Fragen</h2>
+              <p className="eyebrow mb-3">{m.content.goodToKnow}</p>
+              <h2 id="landing-faq" className="display-3 text-balance text-ink">{m.content.faqTitle}</h2>
               <Link href={routes.faq} className="group mt-4 inline-flex items-center gap-2 text-sm font-semibold text-forest">
-                Alle Fragen & Antworten <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                {m.content.allFaqs} <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
               </Link>
             </div>
             <Accordion items={faqs.map((q) => ({ id: q.id, title: q.question, content: <p>{q.answer}</p> }))} />
@@ -152,8 +154,8 @@ export default async function LandingPage({ params }: { params: Params }) {
       {related.length > 0 && (
         <nav className="container-x mt-20 lg:mt-28" aria-labelledby="landing-related">
           <div className="border-t border-line pt-10 sm:pt-12">
-            <p className="eyebrow mb-3">Mehr entdecken</p>
-            <h2 id="landing-related" className="display-3 text-balance text-ink">Weitere Anlässe & Themen</h2>
+            <p className="eyebrow mb-3">{t.relatedEyebrow}</p>
+            <h2 id="landing-related" className="display-3 text-balance text-ink">{t.relatedTitle}</h2>
             <ul className="mt-8 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((r) => (
                 <li key={r.slug} className="border-b border-line">
@@ -172,10 +174,10 @@ export default async function LandingPage({ params }: { params: Params }) {
       <section className="container-x mt-20 lg:mt-28">
         <div className="flex flex-col items-start gap-5 rounded-lg bg-forest px-6 py-10 text-ivory sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-14 lg:py-14">
           <div>
-            <p className="eyebrow text-sand">Bereit?</p>
-            <p className="mt-2 font-serif text-3xl leading-tight sm:text-4xl">Strauß wählen, Datum bestimmen, Freude schicken.</p>
+            <p className="eyebrow text-sand">{m.content.ready}</p>
+            <p className="mt-2 font-serif text-3xl leading-tight sm:text-4xl">{t.ctaTitle}</p>
           </div>
-          <Button href={shopHref} variant="light" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />}>Blumen entdecken</Button>
+          <Button href={shopHref} variant="light" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />}>{m.content.discoverFlowers}</Button>
         </div>
       </section>
     </div>

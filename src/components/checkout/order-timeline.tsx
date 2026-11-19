@@ -1,18 +1,21 @@
 import { Check } from "lucide-react";
 import type { Order, OrderStatus, OrderStatusDefinition } from "@/types";
-import { cn, formatDateTime } from "@/lib/format";
+import { cn } from "@/lib/format";
+import { formatDateTimeIn } from "@/i18n/format";
+import { getI18n } from "@/i18n/server";
 
 /**
  * Vertical status timeline for the customer. Shows every customer-visible step
  * of the happy path; done / current / upcoming are styled differently.
  * Negative terminal states are rendered by the page as an alert instead.
  */
-export function OrderTimeline({ flow, definitions, status, history }: {
+export async function OrderTimeline({ flow, definitions, status, history }: {
   flow: OrderStatus[];
   definitions: OrderStatusDefinition[];
   status: OrderStatus;
   history: Order["history"];
 }) {
+  const { m, locale } = await getI18n();
   const steps = flow
     .map((key) => definitions.find((d) => d.key === key))
     .filter((d): d is OrderStatusDefinition => Boolean(d && d.customerVisible));
@@ -20,7 +23,7 @@ export function OrderTimeline({ flow, definitions, status, history }: {
   const at = (key: OrderStatus) => history.filter((h) => h.status === key).at(-1)?.at;
 
   return (
-    <ol className="relative flex flex-col" aria-label="Status der Bestellung">
+    <ol className="relative flex flex-col" aria-label={m.checkout.timeline.label}>
       {steps.map((s, i) => {
         const done = i < currentIdx;
         const current = i === currentIdx;
@@ -41,10 +44,10 @@ export function OrderTimeline({ flow, definitions, status, history }: {
             <div className="min-w-0 flex-1">
               <p className={cn("text-[15px] font-semibold", current ? "text-forest" : done ? "text-ink" : "text-ink-soft")}>
                 {s.label}
-                {current && <span className="ml-2 rounded-sm bg-forest/10 px-1.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-forest">Aktuell</span>}
+                {current && <span className="ml-2 rounded-sm bg-forest/10 px-1.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-forest">{m.checkout.timeline.current}</span>}
               </p>
               <p className={cn("mt-0.5 text-[13.5px] leading-relaxed", done || current ? "text-ink-muted" : "text-ink-soft")}>{s.description}</p>
-              {when && <p className="mt-1 text-[12px] tabular-nums text-ink-soft">{formatDateTime(when)}</p>}
+              {when && <p className="mt-1 text-[12px] tabular-nums text-ink-soft">{formatDateTimeIn(locale, when)}</p>}
             </div>
           </li>
         );

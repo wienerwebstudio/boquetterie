@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import { isPricePending } from "@/lib/catalog";
-import { formatPrice } from "@/lib/format";
+import { getI18n } from "@/i18n/server";
 import {
   getSettings, getHomepage, getOccasions, getCategories, getProductsBySlugs, getAllProducts,
   getReviews, getFaqsByIds, getSubscription,
@@ -32,8 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const [settings, home, occasions, categories, reviews, subscription] = await Promise.all([
-    getSettings(), getHomepage(), getOccasions(), getCategories(), getReviews(), getSubscription(),
+  const [settings, home, occasions, categories, reviews, subscription, { m, fmt, price }] = await Promise.all([
+    getSettings(), getHomepage(), getOccasions(), getCategories(), getReviews(), getSubscription(), getI18n(),
   ]);
   const [bestsellers, seasonalProducts, faqs, zones, allProducts] = await Promise.all([
     getProductsBySlugs(home.bestsellers.productSlugs),
@@ -46,9 +46,9 @@ export default async function HomePage() {
   const priced = allProducts.filter((p) => p.active && !isPricePending(p));
   const activeZones = zones.filter((z) => z.active);
   const heroFacts = [
-    ...(priced.length ? [`Sträuße ab ${formatPrice(Math.min(...priced.map((p) => p.basePrice)))}`] : []),
-    ...(activeZones.length && activeZones.every((z) => z.region === "Wien") ? ["Lieferung in ganz Wien"] : []),
-    ...(settings.greetingCard.enabled === true && settings.greetingCard.freeCardIncluded ? ["Grußkarte inklusive"] : []),
+    ...(priced.length ? [fmt(m.home.heroFacts.bouquetsFrom, { price: price(Math.min(...priced.map((p) => p.basePrice))) })] : []),
+    ...(activeZones.length && activeZones.every((z) => z.region === "Wien") ? [m.home.heroFacts.allOfVienna] : []),
+    ...(settings.greetingCard.enabled === true && settings.greetingCard.freeCardIncluded ? [m.home.heroFacts.greetingCardIncluded] : []),
   ];
   const sameDayNow = isSameDayPossibleNow(zones, settings);
 

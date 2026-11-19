@@ -14,12 +14,16 @@ import { useUi } from "@/store/ui";
 import { routes } from "@/lib/urls";
 import { cn } from "@/lib/format";
 import { Drawer } from "@/components/ui/drawer";
+import { useI18n } from "@/i18n/client";
 
 interface NavCategory { slug: string; name: string }
 interface NavOccasion { slug: string; name: string; image: string }
 
 export function Header({ settings, categories, occasions }: { settings: SiteSettings; categories: NavCategory[]; occasions: NavOccasion[] }) {
   const pathname = usePathname();
+  const { m, plural } = useI18n();
+  const nav = m.layout.nav;
+  const t = m.layout.header;
   const [scrolled, setScrolled] = useState(false);
   const [mega, setMega] = useState<"blumen" | "anlaesse" | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -39,14 +43,14 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
   const scheduleClose = () => { closeTimer.current = setTimeout(() => setMega(null), 120); };
 
   const primaryNav: { label: string; href: string; mega?: "blumen" | "anlaesse" }[] = [
-    { label: "Blumen", href: routes.shop, mega: "blumen" },
-    { label: "Anlässe", href: routes.occasions, mega: "anlaesse" },
-    { label: "Rosen", href: routes.category("rosen") },
-    { label: "Pflanzen", href: routes.category("pflanzen") },
-    { label: "Extras", href: routes.extras },
-    ...(settings.subscriptionEnabled ? [{ label: "Blumen-Abo", href: routes.subscription }] : []),
-    { label: "Lieferung", href: routes.delivery },
-    { label: "Über uns", href: routes.about },
+    { label: nav.flowers, href: routes.shop, mega: "blumen" },
+    { label: nav.occasions, href: routes.occasions, mega: "anlaesse" },
+    { label: nav.roses, href: routes.category("rosen") },
+    { label: nav.plants, href: routes.category("pflanzen") },
+    { label: nav.extras, href: routes.extras },
+    ...(settings.subscriptionEnabled ? [{ label: nav.subscription, href: routes.subscription }] : []),
+    { label: nav.delivery, href: routes.delivery },
+    { label: nav.about, href: routes.about },
   ];
 
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
@@ -55,14 +59,14 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
     <header className={cn("sticky top-0 z-50 bg-ivory/90 backdrop-blur-md transition-shadow duration-300", scrolled ? "shadow-[0_1px_0_var(--color-line),0_10px_30px_-20px_rgba(35,35,31,0.25)]" : "shadow-[0_1px_0_var(--color-line)]")} onMouseLeave={scheduleClose}>
       <div className="container-x flex h-16 items-center justify-between gap-4 lg:h-[72px]">
         <div className="flex items-center gap-2 lg:hidden">
-          <IconButton label="Menü öffnen" onClick={() => setMenuOpen(true)}><Menu className="size-5" strokeWidth={1.6} /></IconButton>
+          <IconButton label={t.openMenu} onClick={() => setMenuOpen(true)}><Menu className="size-5" strokeWidth={1.6} /></IconButton>
         </div>
 
-        <Link href="/" className="shrink-0" aria-label="Blumora – Startseite">
+        <Link href="/" className="shrink-0" aria-label={t.homeLink}>
           <Logo priority />
         </Link>
 
-        <nav aria-label="Hauptnavigation" className="hidden lg:block">
+        <nav aria-label={t.mainNavigation} className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {primaryNav.map((item) => (
               <li key={item.href} onMouseEnter={() => (item.mega ? open(item.mega) : setMega(null))}>
@@ -82,11 +86,11 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
 
         <div className="flex items-center gap-0.5 sm:gap-1">
           <LanguageSwitcher />
-          <IconButton label="Suche" onClick={openSearch}><Search className="size-5" strokeWidth={1.6} /></IconButton>
-          <Link href={routes.account} aria-label="Mein Konto" className="hidden size-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-ivory-200 hover:text-forest sm:inline-flex">
+          <IconButton label={t.search} onClick={openSearch}><Search className="size-5" strokeWidth={1.6} /></IconButton>
+          <Link href={routes.account} aria-label={t.myAccount} className="hidden size-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-ivory-200 hover:text-forest sm:inline-flex">
             <User className="size-5" strokeWidth={1.6} />
           </Link>
-          <button onClick={openCart} aria-label={`Warenkorb, ${count} Artikel`} className="relative inline-flex size-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-ivory-200 hover:text-forest">
+          <button onClick={openCart} aria-label={plural(count, t.cart)} className="relative inline-flex size-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-ivory-200 hover:text-forest">
             <ShoppingBag className="size-5" strokeWidth={1.6} />
             {count > 0 && (
               <span className="absolute -right-0.5 -top-0.5 flex size-[18px] items-center justify-center rounded-full bg-forest text-[10px] font-bold text-ivory animate-fade-in">{count}</span>
@@ -111,7 +115,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
           {mega === "blumen" && (
             <div className="grid grid-cols-[minmax(0,1.6fr)_minmax(0,0.9fr)_minmax(0,1.1fr)] items-start gap-10">
               <div>
-                <p className="eyebrow mb-3">Kollektionen</p>
+                <p className="eyebrow mb-3">{t.collections}</p>
                 <ul className="grid grid-cols-2 gap-x-8 gap-y-1.5">
                   {categories.map((c) => (
                     <li key={c.slug}><Link href={routes.category(c.slug)} className="text-[14px] leading-6 text-ink hover:text-forest">{c.name}</Link></li>
@@ -119,26 +123,26 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
                 </ul>
               </div>
               <div>
-                <p className="eyebrow mb-3">Schnell zu</p>
+                <p className="eyebrow mb-3">{t.quickLinks}</p>
                 <ul className="space-y-1.5">
-                  {settings.sameDayEnabled && <li><Link href={`${routes.shop}?sameday=1`} className="text-[14px] leading-6 text-ink hover:text-forest">Heute lieferbar</Link></li>}
-                  <li><Link href={routes.extras} className="text-[14px] leading-6 text-ink hover:text-forest">Extras zum Strauß</Link></li>
-                  {settings.subscriptionEnabled && <li><Link href={routes.subscription} className="text-[14px] leading-6 text-ink hover:text-forest">Blumen-Abo</Link></li>}
+                  {settings.sameDayEnabled && <li><Link href={`${routes.shop}?sameday=1`} className="text-[14px] leading-6 text-ink hover:text-forest">{t.sameDay}</Link></li>}
+                  <li><Link href={routes.extras} className="text-[14px] leading-6 text-ink hover:text-forest">{t.extrasForBouquet}</Link></li>
+                  {settings.subscriptionEnabled && <li><Link href={routes.subscription} className="text-[14px] leading-6 text-ink hover:text-forest">{nav.subscription}</Link></li>}
                 </ul>
               </div>
               <Link href={routes.shop} className="group relative block aspect-[16/9] max-h-[220px] w-full overflow-hidden rounded-md bg-ivory-200">
                 <Image src="/images/products/sortiment/rosenglanz-1.jpg" alt="" fill sizes="400px" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
                 <div className="absolute bottom-3 left-4 text-ivory">
-                  <p className="font-serif text-xl">Unser Sortiment</p>
-                  <p className="inline-flex items-center gap-1 text-[12.5px] font-semibold">Alle Blumen entdecken <ArrowRight className="size-3.5" /></p>
+                  <p className="font-serif text-xl">{t.assortmentTitle}</p>
+                  <p className="inline-flex items-center gap-1 text-[12.5px] font-semibold">{t.discoverAllFlowers} <ArrowRight className="size-3.5" /></p>
                 </div>
               </Link>
             </div>
           )}
           {mega === "anlaesse" && (
             <div>
-              <p className="eyebrow mb-5">Für wen? Zu welchem Anlass?</p>
+              <p className="eyebrow mb-5">{t.occasionsTitle}</p>
               <ul className="grid grid-cols-5 gap-4 xl:grid-cols-9">
                 {occasions.map((o) => (
                   <li key={o.slug}>
@@ -158,7 +162,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
 
       {/* Mobile menu */}
       <Drawer open={menuOpen} onClose={() => setMenuOpen(false)} side="left" width="max-w-[380px]" title={<Logo />} labelledBy="mobile-menu-title">
-        <nav aria-label="Mobile Navigation" className="px-5 py-4" onClick={(e) => { if ((e.target as HTMLElement).closest("a")) setMenuOpen(false); }}>
+        <nav aria-label={t.mobileNavigation} className="px-5 py-4" onClick={(e) => { if ((e.target as HTMLElement).closest("a")) setMenuOpen(false); }}>
           <ul className="divide-y divide-line">
             {primaryNav.map((item) => (
               <li key={item.href}>
@@ -178,9 +182,9 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
           <div className="mt-6 flex flex-col gap-3">
             <Button href={settings.headerCta.href} size="lg" full>{settings.headerCta.label}</Button>
             <div className="flex gap-4 text-sm text-ink-muted">
-              <Link href={routes.account} className="inline-flex items-center gap-1.5"><User className="size-4" /> Konto</Link>
-              <Link href={routes.tracking}>Bestellung verfolgen</Link>
-              <Link href={routes.faq}>FAQ</Link>
+              <Link href={routes.account} className="inline-flex items-center gap-1.5"><User className="size-4" /> {t.account}</Link>
+              <Link href={routes.tracking}>{t.trackOrder}</Link>
+              <Link href={routes.faq}>{t.faq}</Link>
             </div>
           </div>
         </nav>

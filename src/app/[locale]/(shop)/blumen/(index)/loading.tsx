@@ -1,8 +1,10 @@
 import { Skeleton, ProductCardSkeleton } from "@/components/ui/skeleton";
+import { getI18n } from "@/i18n/server";
 
-export default function ShopLoading() {
+export default async function ShopLoading() {
+  const { m } = await getI18n();
   return (
-    <div className="container-x py-8 lg:py-12" aria-busy="true" aria-label="Sträuße werden geladen">
+    <div className="container-x py-8 lg:py-12" aria-busy="true" aria-label={m.shop.results.loading}>
       <Skeleton className="mb-6 h-3 w-32" />
       <Skeleton className="mb-4 h-12 w-72" />
       <Skeleton className="mb-10 h-4 w-96 max-w-full" />

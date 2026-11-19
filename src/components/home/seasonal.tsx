@@ -6,10 +6,11 @@ import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { primaryImage, lowestPrice, isPricePending } from "@/lib/catalog";
-import { formatPrice } from "@/lib/format";
 import { routes } from "@/lib/urls";
+import { getI18n } from "@/i18n/server";
 
-export function Seasonal({ content, products }: { content: HomepageContent["seasonal"]; products: Product[] }) {
+export async function Seasonal({ content, products }: { content: HomepageContent["seasonal"]; products: Product[] }) {
+  const { m, price } = await getI18n();
   return (
     <Section id="saisonal" tone="wine">
       <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
@@ -37,11 +38,11 @@ export function Seasonal({ content, products }: { content: HomepageContent["seas
                         <span className="mt-0.5 line-clamp-1 block text-[13.5px] text-ivory/75">{p.tagline}</span>
                       </span>
                       {isPricePending(p) ? (
-                        <span className="shrink-0 text-right text-[13px] text-ivory/75">Preis folgt</span>
+                        <span className="shrink-0 text-right text-[13px] text-ivory/75">{m.home.seasonal.pricePending}</span>
                       ) : (
                         <span className="shrink-0 text-right">
-                          <span className="block text-[12px] text-ivory/75">ab</span>
-                          <span className="block text-[15px] font-semibold tabular-nums text-ivory">{formatPrice(lowestPrice(p))}</span>
+                          <span className="block text-[12px] text-ivory/75">{m.home.seasonal.from}</span>
+                          <span className="block text-[15px] font-semibold tabular-nums text-ivory">{price(lowestPrice(p))}</span>
                         </span>
                       )}
                       <ArrowRight className="hidden size-4 shrink-0 text-ivory/70 transition-all duration-300 group-hover:translate-x-1 group-hover:text-blush sm:block" aria-hidden />

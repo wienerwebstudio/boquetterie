@@ -6,12 +6,15 @@ import { subscribeFromCheckout } from "@/lib/newsletter";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
 import type { OrderCreateResponse } from "@/types/payments";
+import { DEFAULT_LOCALE, isLocale } from "@/i18n/config";
+import { loadMessages } from "@/i18n/messages";
 
 export const dynamic = "force-dynamic";
 
 /**
  * POST /api/orders
- * Body: OrderPayload (see `src/lib/order-payload.ts`).
+ * Body: OrderPayload (see `src/lib/order-payload.ts`), plus an optional `locale`
+ * that picks the language of the validation messages (German by default).
  * Validates structurally, re-resolves every price from the catalog, checks zone,
  * delivery day, window and coupon, reserves stock, stores the order (payment
  * pending) and starts the provider payment.
@@ -31,11 +34,13 @@ export async function POST(req: Request) {
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ ok: false, message: "Ungültige Anfrage." }, { status: 400 });
+    return NextResponse.json({ ok: false, message: (await loadMessages(DEFAULT_LOCALE)).checkout.api.invalidRequest }, { status: 400 });
   }
 
+  const requested = body && typeof body === "object" ? (body as { locale?: unknown }).locale : undefined;
+  const t = (await loadMessages(isLocale(requested) ? requested : DEFAULT_LOCALE)).checkout;
   const settings = await getSettings();
-  const parsed = parseOrderPayload(body, { greetingMaxChars: settings.greetingCard.maxChars });
+  const parsed = parseOrderPayload(body, { greetingMaxChars: settings.greetingCard.maxChars, messages: t });
   if (!parsed.ok) {
     return NextResponse.json({ ok: false, message: parsed.message, errors: parsed.errors ?? {} }, { status: parsed.status });
   }
@@ -71,6 +76,6 @@ export async function POST(req: Request) {
     return NextResponse.json(res, { status: 201 });
   } catch (err) {
     console.error("[orders] create failed", err);
-    return NextResponse.json({ ok: false, message: "Die Bestellung konnte gerade nicht gespeichert werden. Bitte versuch es in einem Moment noch einmal." }, { status: 500 });
+    return NextResponse.json({ ok: false, message: t.api.saveFailed }, { status: 500 });
   }
 }

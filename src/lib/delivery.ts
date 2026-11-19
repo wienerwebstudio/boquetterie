@@ -174,9 +174,8 @@ export function describeSameDayCutoff(zone: DeliveryZone, date?: ISODate) {
   return `Bestellung bis ${zone.sameDayCutoff} Uhr${sunday}`;
 }
 
-/** Human readable summary of a zone for delivery pages and the PLZ check. */
-export function describeZone(zone: DeliveryZone) {
-  const names = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+/** Human readable summary of a zone for delivery pages and the PLZ check. `names`: short weekday names, Sunday first. */
+export function describeZone(zone: DeliveryZone, names: readonly string[] = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"]) {
   const days = zone.deliveryDays.map((d) => names[d]).join(", ");
   return {
     days,

@@ -4,6 +4,12 @@
  * server (authoritative validation). Pure & isomorphic – no I/O here.
  */
 import type { PaymentMethodConfig, SizeId } from "@/types";
+import { fmt } from "@/i18n/format";
+import checkoutDe from "@/i18n/messages/de/checkout";
+
+/** Validation texts (from the `checkout` dictionary); German when none are given. */
+export type ValidationMessages = typeof checkoutDe.validation;
+const DE: ValidationMessages = checkoutDe.validation;
 
 export interface OrderPayloadItem {
   productId: string;
@@ -81,48 +87,48 @@ export function isIsoDate(value: string) {
 }
 
 const required = (v: string | undefined, msg: string) => (!v || !v.trim() ? msg : undefined);
-const tooLong = (v: string | undefined, max: number) => (v && v.trim().length > max ? `Maximal ${max} Zeichen.` : undefined);
+const tooLong = (v: string | undefined, max: number, t: ValidationMessages) => (v && v.trim().length > max ? fmt(t.tooLong, { max }) : undefined);
 
-export function validateRecipientFields(r: Partial<OrderPayloadRecipient>): FieldErrors {
+export function validateRecipientFields(r: Partial<OrderPayloadRecipient>, t: ValidationMessages = DE): FieldErrors {
   const e: FieldErrors = {};
   const set = (k: string, msg?: string) => { if (msg && !e[k]) e[k] = msg; };
-  set("firstName", required(r.firstName, "Bitte gib den Vornamen an.") ?? tooLong(r.firstName, LIMITS.name));
-  set("lastName", required(r.lastName, "Bitte gib den Nachnamen an.") ?? tooLong(r.lastName, LIMITS.name));
-  set("company", tooLong(r.company, LIMITS.company));
-  set("street", required(r.street, "Bitte gib die Straße an.") ?? tooLong(r.street, LIMITS.street));
-  set("houseNumber", required(r.houseNumber, "Bitte gib die Hausnummer an.") ?? tooLong(r.houseNumber, LIMITS.houseNumber));
-  set("addition", tooLong(r.addition, LIMITS.addition));
-  if (!r.zip || !/^[1-9]\d{3}$/.test(r.zip.trim())) set("zip", "Bitte gib eine gültige Postleitzahl ein.");
-  set("city", required(r.city, "Bitte gib den Ort an.") ?? tooLong(r.city, LIMITS.name));
-  if (!r.phone || !r.phone.trim()) set("phone", "Bitte gib eine Telefonnummer für die Zustellung an.");
-  else if (!isPhone(r.phone)) set("phone", "Bitte gib eine gültige Telefonnummer ein.");
+  set("firstName", required(r.firstName, t.recipientFirstName) ?? tooLong(r.firstName, LIMITS.name, t));
+  set("lastName", required(r.lastName, t.recipientLastName) ?? tooLong(r.lastName, LIMITS.name, t));
+  set("company", tooLong(r.company, LIMITS.company, t));
+  set("street", required(r.street, t.street) ?? tooLong(r.street, LIMITS.street, t));
+  set("houseNumber", required(r.houseNumber, t.houseNumber) ?? tooLong(r.houseNumber, LIMITS.houseNumber, t));
+  set("addition", tooLong(r.addition, LIMITS.addition, t));
+  if (!r.zip || !/^[1-9]\d{3}$/.test(r.zip.trim())) set("zip", t.zip);
+  set("city", required(r.city, t.city) ?? tooLong(r.city, LIMITS.name, t));
+  if (!r.phone || !r.phone.trim()) set("phone", t.recipientPhone);
+  else if (!isPhone(r.phone)) set("phone", t.phoneInvalid);
   return e;
 }
 
-export function validateCustomerFields(c: Partial<OrderPayloadCustomer>): FieldErrors {
+export function validateCustomerFields(c: Partial<OrderPayloadCustomer>, t: ValidationMessages = DE): FieldErrors {
   const e: FieldErrors = {};
   const set = (k: string, msg?: string) => { if (msg && !e[k]) e[k] = msg; };
-  set("firstName", required(c.firstName, "Bitte gib deinen Vornamen an.") ?? tooLong(c.firstName, LIMITS.name));
-  set("lastName", required(c.lastName, "Bitte gib deinen Nachnamen an.") ?? tooLong(c.lastName, LIMITS.name));
-  if (!c.email || !c.email.trim()) set("email", "Bitte gib deine E-Mail-Adresse an.");
-  else if (!isEmail(c.email) || c.email.length > LIMITS.email) set("email", "Bitte gib eine gültige E-Mail-Adresse ein.");
-  if (!c.phone || !c.phone.trim()) set("phone", "Bitte gib deine Telefonnummer an.");
-  else if (!isPhone(c.phone)) set("phone", "Bitte gib eine gültige Telefonnummer ein.");
-  if (!c.acceptedTerms) set("acceptedTerms", "Bitte bestätige die AGB und die Datenschutzerklärung.");
+  set("firstName", required(c.firstName, t.customerFirstName) ?? tooLong(c.firstName, LIMITS.name, t));
+  set("lastName", required(c.lastName, t.customerLastName) ?? tooLong(c.lastName, LIMITS.name, t));
+  if (!c.email || !c.email.trim()) set("email", t.email);
+  else if (!isEmail(c.email) || c.email.length > LIMITS.email) set("email", t.emailInvalid);
+  if (!c.phone || !c.phone.trim()) set("phone", t.customerPhone);
+  else if (!isPhone(c.phone)) set("phone", t.phoneInvalid);
+  if (!c.acceptedTerms) set("acceptedTerms", t.acceptTerms);
   return e;
 }
 
-export function validateGreetingFields(g: { message?: string; anonymous?: boolean; senderName?: string }, maxChars: number): FieldErrors {
+export function validateGreetingFields(g: { message?: string; anonymous?: boolean; senderName?: string }, maxChars: number, t: ValidationMessages = DE): FieldErrors {
   const e: FieldErrors = {};
-  if ((g.message ?? "").length > maxChars) e.message = `Die Grußbotschaft darf maximal ${maxChars} Zeichen lang sein.`;
-  if (!g.anonymous && (g.senderName ?? "").trim().length > LIMITS.name) e.senderName = `Maximal ${LIMITS.name} Zeichen.`;
+  if ((g.message ?? "").length > maxChars) e.message = fmt(t.greetingTooLong, { max: maxChars });
+  if (!g.anonymous && (g.senderName ?? "").trim().length > LIMITS.name) e.senderName = fmt(t.tooLong, { max: LIMITS.name });
   return e;
 }
 
-export function validateDeliveryFields(d: Partial<OrderPayloadDelivery>): FieldErrors {
+export function validateDeliveryFields(d: Partial<OrderPayloadDelivery>, t: ValidationMessages = DE): FieldErrors {
   const e: FieldErrors = {};
-  if (!d.date || !isIsoDate(d.date)) e.date = "Bitte wähle ein Lieferdatum.";
-  if (d.note && d.note.length > LIMITS.note) e.note = `Maximal ${LIMITS.note} Zeichen.`;
+  if (!d.date || !isIsoDate(d.date)) e.date = t.date;
+  if (d.note && d.note.length > LIMITS.note) e.note = fmt(t.tooLong, { max: LIMITS.note });
   return e;
 }
 

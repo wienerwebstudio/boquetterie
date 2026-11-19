@@ -1,14 +1,18 @@
+"use client";
 import { cn } from "@/lib/format";
+import { useI18n } from "@/i18n/client";
 
 /**
  * Live preview of the greeting card. Used in the product configurator and the cart.
  * Deliberately calm: ivory card, serif italic text, a discreet brand mark.
  */
 export function GreetingCardPreview({
-  message, senderName, anonymous, placeholder = "Deine Nachricht erscheint hier.", compact, className,
+  message, senderName, anonymous, placeholder, compact, className,
 }: {
   message?: string; senderName?: string; anonymous?: boolean; placeholder?: string; compact?: boolean; className?: string;
 }) {
+  const { m } = useI18n();
+  const t = m.cart.cardPreview;
   const text = message?.trim();
   const showSender = !anonymous && Boolean(senderName?.trim());
   return (
@@ -19,7 +23,7 @@ export function GreetingCardPreview({
         className,
       )}
       role="group"
-      aria-label="Vorschau der Grußkarte"
+      aria-label={t.label}
     >
       <div className="pointer-events-none absolute inset-2 rounded-[6px] border border-sand/70" aria-hidden />
       <p
@@ -29,13 +33,13 @@ export function GreetingCardPreview({
           text ? "text-ink" : "text-ink-muted",
         )}
       >
-        {text || placeholder}
+        {text || (placeholder ?? t.placeholder)}
       </p>
       {showSender && (
         <p className={cn("relative mt-4 font-serif text-ink", compact ? "text-[15px]" : "text-[17px]")}>— {senderName?.trim()}</p>
       )}
       {text && anonymous && (
-        <p className="relative mt-4 text-[11px] uppercase tracking-[0.16em] text-ink-muted">Ohne Absender</p>
+        <p className="relative mt-4 text-[11px] uppercase tracking-[0.16em] text-ink-muted">{t.anonymous}</p>
       )}
       <p className={cn("relative text-center font-serif uppercase tracking-[0.32em] text-stone", compact ? "mt-5 text-[11px]" : "mt-8 text-[12px]")}>
         Blumora

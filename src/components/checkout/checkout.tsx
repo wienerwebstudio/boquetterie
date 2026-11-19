@@ -1,5 +1,5 @@
 "use client";
-import { useLocalizedRouter } from "@/i18n/client";
+import { useI18n, useLocalizedRouter } from "@/i18n/client";
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "@/components/ui/link";
@@ -14,7 +14,6 @@ import { useDeliveryContext } from "@/store/delivery";
 import { useDeliveryCheck } from "@/hooks/use-delivery-check";
 import { isValidAustrianPostalCode, type DeliveryDay } from "@/lib/delivery";
 import { computeTotals } from "@/lib/pricing";
-import { formatPrice } from "@/lib/format";
 import { routes } from "@/lib/urls";
 import type { FieldErrors } from "@/lib/order-payload";
 import {
@@ -29,13 +28,19 @@ import { StepGreeting } from "./step-greeting";
 import { StepCustomer } from "./step-customer";
 import { StepPayment } from "./step-payment";
 import type { StripeSession } from "./stripe-payment";
+import { rich } from "./rich-text";
 
 // Stripe.js (and its script from js.stripe.com) is only needed once a Stripe payment
 // actually starts – keep it out of the checkout bundle until then.
 const StripePaymentForm = dynamic(() => import("./stripe-payment").then((m) => m.StripePaymentForm), {
   ssr: false,
-  loading: () => <p className="py-10 text-center text-[14px] text-ink-muted" role="status">Zahlung wird geladen …</p>,
+  loading: () => <PaymentLoading />,
 });
+
+function PaymentLoading() {
+  const { m } = useI18n();
+  return <p className="py-10 text-center text-[14px] text-ink-muted" role="status">{m.checkout.paymentLoading}</p>;
+}
 import { usePaymentMethods } from "./use-payment-methods";
 
 export interface CheckoutConfig {
@@ -48,18 +53,17 @@ export interface CheckoutConfig {
   cancelled?: boolean;
 }
 
-const CANCELLED_MESSAGE = "Die Zahlung wurde abgebrochen. Deine Angaben sind noch da – du kannst es gleich noch einmal versuchen oder eine andere Zahlungsart wählen.";
-
 type Scope = "recipient" | "delivery" | "greeting" | "customer" | "payment";
 
 /** Gate: waits for the persisted cart, handles the empty state, then mounts the form once. */
 export function Checkout({ config }: { config: CheckoutConfig }) {
   const items = useCart((s) => s.items);
   const hydrated = useCart((s) => s.hydrated);
+  const { m } = useI18n();
 
   if (!hydrated) {
     return (
-      <div className="grid gap-10 lg:grid-cols-[1fr_400px]" aria-busy="true" aria-label="Kasse wird geladen">
+      <div className="grid gap-10 lg:grid-cols-[1fr_400px]" aria-busy="true" aria-label={m.checkout.loading}>
         <div className="flex flex-col gap-5"><Skeleton className="h-6 w-2/3" /><Skeleton className="h-12 w-full" /><Skeleton className="h-12 w-full" /><Skeleton className="h-12 w-2/3" /></div>
         <Skeleton className="hidden h-80 lg:block" />
       </div>
@@ -70,9 +74,9 @@ export function Checkout({ config }: { config: CheckoutConfig }) {
     return (
       <div className="mx-auto max-w-md py-16 text-center">
         <span className="mx-auto mb-5 flex size-14 items-center justify-center rounded-full bg-ivory-200 text-forest"><ShoppingBag className="size-6" strokeWidth={1.5} aria-hidden /></span>
-        <h1 className="display-3 text-ink">Dein Warenkorb ist leer</h1>
-        <p className="mt-3 text-[15px] text-ink-muted">Such dir einen Strauß aus – wir kümmern uns um den Rest.</p>
-        <Button href={routes.shop} size="lg" className="mt-8">Blumen entdecken</Button>
+        <h1 className="display-3 text-ink">{m.checkout.empty.title}</h1>
+        <p className="mt-3 text-[15px] text-ink-muted">{m.checkout.empty.text}</p>
+        <Button href={routes.shop} size="lg" className="mt-8">{m.checkout.empty.cta}</Button>
       </div>
     );
   }
@@ -90,6 +94,8 @@ function reconcileDelivery(d: CheckoutData, days: DeliveryDay[]): CheckoutData {
 
 function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartItem[] }) {
   const router = useLocalizedRouter();
+  const { m, fmt, price, locale } = useI18n();
+  const t = m.checkout;
   const couponCode = useCart((s) => s.coupon);
   const clearCart = useCart((s) => s.clear);
   const contextZip = useDeliveryContext((s) => s.postalCode);
@@ -98,7 +104,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
   const [errors, setErrors] = useState<FieldErrors>({});
   const [maxReached, setMaxReached] = useState<StepId>(() => data.step);
   const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(() => (config.cancelled ? CANCELLED_MESSAGE : null));
+  const [submitError, setSubmitError] = useState<string | null>(() => (config.cancelled ? t.errors.cancelled : null));
   const [stripeSession, setStripeSession] = useState<StripeSession | null>(null);
   /** The last Stripe order of this visit – reused when the customer only switches the payment method. */
   const lastStripeOrder = useRef<{ key: string; id: string; token: string; clientSecret: string } | null>(null);
@@ -145,10 +151,10 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     let alive = true;
     fetch("/api/coupons/validate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ code: couponCode, subtotal }) })
       .then((r) => r.json() as Promise<{ ok: boolean; coupon?: Coupon; error?: string }>)
-      .then((r) => { if (alive) setCouponState({ code: couponCode, coupon: r.ok && r.coupon ? r.coupon : null, error: r.ok ? undefined : r.error ?? "Dieser Code ist nicht gültig." }); })
-      .catch(() => { if (alive) setCouponState({ code: couponCode, coupon: null, error: "Der Gutschein konnte gerade nicht geprüft werden." }); });
+      .then((r) => { if (alive) setCouponState({ code: couponCode, coupon: r.ok && r.coupon ? r.coupon : null, error: r.ok ? undefined : r.error ?? t.errors.couponInvalid }); })
+      .catch(() => { if (alive) setCouponState({ code: couponCode, coupon: null, error: t.errors.couponCheckFailed }); });
     return () => { alive = false; };
-  }, [couponCode, subtotal]);
+  }, [couponCode, subtotal, t]);
   const coupon = couponCode && couponState?.code === couponCode ? couponState.coupon : null;
   const couponError = couponCode && couponState?.code === couponCode ? couponState.error : undefined;
 
@@ -189,13 +195,14 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
       dateAvailable: Boolean(day),
       windowRequired: (day?.windows.length ?? 0) > 0,
       windowValid: day?.windows.some((w) => w.id === d.delivery.windowId) ?? false,
+      t: t.validation,
     });
     if (s === 1 && !e.zip && result === null && isValidAustrianPostalCode(d.recipient.zip)) {
-      e.zip = checking ? "Wir prüfen die Postleitzahl gerade – bitte einen Moment." : "Die Postleitzahl konnte nicht geprüft werden. Bitte versuch es noch einmal.";
+      e.zip = checking ? t.errors.zipChecking : t.errors.zipCheckFailed;
       if (!checking) runCheck(d.recipient.zip);
     }
     return e;
-  }, [days, result, checking, runCheck, config.greetingMaxChars, config.cardsEnabled]);
+  }, [days, result, checking, runCheck, config.greetingMaxChars, config.cardsEnabled, t]);
 
   const onBlur = (field: string) => {
     const all = validate(step, data);
@@ -234,7 +241,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     }
     if (methodsLoading || !selectedMethod) {
       setData({ ...data, step: 5 });
-      setErrors({ method: "Bitte wähle eine Zahlungsart." });
+      setErrors({ method: t.validation.paymentMethod });
       return;
     }
     const payload = buildPayload(config.cardsEnabled ? data : { ...data, greeting: EMPTY_CHECKOUT.greeting }, items, couponCode);
@@ -253,7 +260,8 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     try {
       const res = await fetch("/api/orders", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        // The locale only picks the language of the server's messages.
+        body: JSON.stringify({ ...payload, locale }),
       });
       const body = (await res.json()) as Partial<OrderCreateResponse> & { message?: string; errors?: FieldErrors };
       if (!res.ok || !body.ok || !body.id || !body.token) {
@@ -269,10 +277,10 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
           const forStep = byStep.get(target) ?? {};
           setData({ ...data, step: target });
           setErrors(forStep);
-          setSubmitError(body.message ?? "Bitte prüfe deine Angaben.");
+          setSubmitError(body.message ?? t.errors.checkFields);
           requestAnimationFrame(() => focusFirstError(target, forStep));
         } else {
-          setSubmitError(body.message ?? "Die Bestellung konnte nicht abgeschlossen werden. Bitte versuch es noch einmal.");
+          setSubmitError(body.message ?? t.errors.orderFailed);
         }
         return;
       }
@@ -295,7 +303,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
       clearCheckout();
       router.push(statusUrl);
     } catch {
-      setSubmitError("Die Verbindung wurde unterbrochen. Bitte prüfe deine Internetverbindung und versuch es noch einmal.");
+      setSubmitError(t.errors.connection);
     } finally {
       setSubmitting(false);
     }
@@ -308,7 +316,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     router.push(`/bestellung/${encodeURIComponent(stripeSession.orderId)}?token=${encodeURIComponent(stripeSession.token)}&neu=1`);
   };
 
-  const stepMeta = STEPS.find((s) => s.id === step)!;
+  const stepMeta = t.steps[STEPS.find((s) => s.id === step)!.key];
   // Only a deliverable day reaches the summary – not a half-typed date like "0026-11-16".
   const summaryDate = days.some((d) => d.date === data.delivery.date) ? data.delivery.date : undefined;
   const summaryProps = { items, totals, zone, deliveryDate: summaryDate, windowLabel, greeting: data.greeting, cardsEnabled: config.cardsEnabled, couponCode, couponError, recipient: data.recipient };
@@ -321,8 +329,8 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         <CheckoutProgress current={step} maxReached={maxReached} onNavigate={goTo} />
 
         <section aria-labelledby="checkout-step-title" className="rounded-lg border border-line bg-white/60 p-5 sm:p-8">
-          <p className="eyebrow mb-2">Schritt {step} · {stepMeta.label}</p>
-          <h1 id="checkout-step-title" ref={headingRef} tabIndex={-1} className="display-3 mb-6 text-ink outline-none">{step === 3 && !config.cardsEnabled ? "Grußkarten kommen bald" : stepMeta.title}</h1>
+          <p className="eyebrow mb-2">{fmt(t.stepEyebrow, { step, label: stepMeta.label })}</p>
+          <h1 id="checkout-step-title" ref={headingRef} tabIndex={-1} className="display-3 mb-6 text-ink outline-none">{step === 3 && !config.cardsEnabled ? t.greetingComingSoonTitle : stepMeta.title}</h1>
 
           {submitError && (
             <p role="alert" className="mb-6 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">{submitError}</p>
@@ -336,7 +344,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
               email={data.customer.email}
               name={`${data.customer.firstName} ${data.customer.lastName}`.trim()}
               onDone={finishStripe}
-              onCancel={() => { setStripeSession(null); setSubmitError("Die Zahlung wurde nicht abgeschlossen. Du kannst eine andere Zahlungsart wählen und es erneut versuchen."); }}
+              onCancel={() => { setStripeSession(null); setSubmitError(t.errors.notCompleted); }}
             />
           ) : (
           <form noValidate onSubmit={(e) => { e.preventDefault(); if (step === 5) submit(); else goNext(); }}>
@@ -349,24 +357,26 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
             <div className="mt-8 flex flex-col-reverse gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
               {step > 1 ? (
                 <Button type="button" variant="ghost" size="lg" icon={<ArrowLeft className="size-4" aria-hidden />} onClick={() => goTo((step - 1) as StepId)}>
-                  Zurück
+                  {t.back}
                 </Button>
               ) : (
-                <Link href={routes.cart} className="inline-flex h-13 items-center gap-2 px-2 text-[15px] font-semibold text-forest"><ArrowLeft className="size-4" aria-hidden /> Zum Warenkorb</Link>
+                <Link href={routes.cart} className="inline-flex h-13 items-center gap-2 px-2 text-[15px] font-semibold text-forest"><ArrowLeft className="size-4" aria-hidden /> {t.toCart}</Link>
               )}
               {step < 5 ? (
-                <Button type="submit" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />} className="sm:min-w-48">Weiter</Button>
+                <Button type="submit" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />} className="sm:min-w-48">{t.next}</Button>
               ) : (
                 <Button type="submit" size="xl" loading={submitting} disabled={methodsLoading || methods.length === 0} className="sm:min-w-64">
-                  {selectedMethod?.provider === "paypal" ? "Weiter zu PayPal" : selectedMethod?.provider === "stripe" ? "Weiter zur Zahlung" : "Jetzt kaufen"} · {formatPrice(totals.total)}
+                  {fmt(t.submitWithTotal, { action: selectedMethod?.provider === "paypal" ? t.submitPaypal : selectedMethod?.provider === "stripe" ? t.submitStripe : t.submitBuy, total: price(totals.total) })}
                 </Button>
               )}
             </div>
             {step === 5 && (
               <p className="mt-4 text-[12.5px] leading-relaxed text-ink-soft">
-                Mit Abschluss der Zahlung gibst du eine zahlungspflichtige Bestellung auf. Es gelten unsere{" "}
-                <Link href={routes.legal.terms} className="underline underline-offset-2">AGB</Link> und die <Link href={routes.legal.withdrawal} className="underline underline-offset-2">Widerrufsbelehrung</Link>.
-                {" "}Für frische Schnittblumen und Blumensträuße besteht kein Widerrufsrecht (§ 18 Abs. 1 Z 4 FAGG).
+                {rich(t.legal, {
+                  terms: <Link href={routes.legal.terms} className="underline underline-offset-2">{t.terms}</Link>,
+                  withdrawal: <Link href={routes.legal.withdrawal} className="underline underline-offset-2">{t.withdrawal}</Link>,
+                })}
+                {" "}{t.noWithdrawalRight}
               </p>
             )}
           </form>
@@ -374,7 +384,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         </section>
 
         <p className="mt-6 flex items-center gap-2 text-[12.5px] text-ink-soft lg:hidden">
-          <Lock className="size-3.5 text-forest" aria-hidden /> Sicher bezahlen · SSL-verschlüsselt
+          <Lock className="size-3.5 text-forest" aria-hidden /> {t.secureMobile}
         </p>
       </div>
 

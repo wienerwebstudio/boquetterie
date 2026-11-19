@@ -7,33 +7,37 @@ import { ordersPaused } from "@/lib/orders-paused";
 import { ConsentSettingsLink } from "@/components/consent/consent-link";
 import { GIFT_FINDER_PATH } from "@/components/giftfinder/config";
 import { VAT_TEXT } from "@/lib/vat";
+import { getI18n } from "@/i18n/server";
 
 type FooterLink = { label: string; href: string } | { label: string; consent: true };
 
-export function Footer({ settings }: { settings: SiteSettings }) {
+export async function Footer({ settings }: { settings: SiteSettings }) {
+  const { m } = await getI18n();
+  const nav = m.layout.nav;
+  const t = m.layout.footer;
   const cols: { title: string; links: FooterLink[] }[] = [
-    { title: "Shop", links: [
-      { label: "Blumen", href: routes.shop }, { label: "Pflanzen", href: routes.category("pflanzen") },
-      { label: "Rosen", href: routes.category("rosen") }, { label: "Extras", href: routes.extras },
-      ...(settings.subscriptionEnabled ? [{ label: "Blumen-Abo", href: routes.subscription }] : []),
+    { title: t.columns.shop, links: [
+      { label: nav.flowers, href: routes.shop }, { label: nav.plants, href: routes.category("pflanzen") },
+      { label: nav.roses, href: routes.category("rosen") }, { label: nav.extras, href: routes.extras },
+      ...(settings.subscriptionEnabled ? [{ label: nav.subscription, href: routes.subscription }] : []),
     ] },
-    { title: "Anlässe", links: [
-      { label: "Geburtstag", href: routes.occasion("geburtstag") }, { label: "Liebe", href: routes.occasion("liebe") },
-      { label: "Danke", href: routes.occasion("danke") }, { label: "Gute Besserung", href: routes.occasion("gute-besserung") },
-      { label: "Hochzeit", href: routes.occasion("hochzeit") }, { label: "Trauer", href: routes.occasion("trauer") },
+    { title: t.columns.occasions, links: [
+      { label: t.links.birthday, href: routes.occasion("geburtstag") }, { label: t.links.love, href: routes.occasion("liebe") },
+      { label: t.links.thanks, href: routes.occasion("danke") }, { label: t.links.getWell, href: routes.occasion("gute-besserung") },
+      { label: t.links.wedding, href: routes.occasion("hochzeit") }, { label: t.links.sympathy, href: routes.occasion("trauer") },
     ] },
-    { title: "Service", links: [
-      { label: "Lieferung", href: routes.delivery }, { label: "FAQ", href: routes.faq },
-      { label: "Kontakt", href: routes.contact }, { label: "Bestellung verfolgen", href: routes.tracking },
-      { label: "Geschenkfinder", href: GIFT_FINDER_PATH }, { label: "Erinnerung", href: "/erinnerung" },
+    { title: t.columns.service, links: [
+      { label: nav.delivery, href: routes.delivery }, { label: t.links.faq, href: routes.faq },
+      { label: t.links.contact, href: routes.contact }, { label: t.links.trackOrder, href: routes.tracking },
+      { label: t.links.giftFinder, href: GIFT_FINDER_PATH }, { label: t.links.reminder, href: "/erinnerung" },
     ] },
-    { title: "Unternehmen", links: [
-      { label: "Über uns", href: routes.about }, { label: "Firmenkunden", href: "/firmenkunden" },
-      { label: "Impressum", href: routes.legal.imprint },
-      { label: "Datenschutz", href: routes.legal.privacy }, { label: "AGB", href: routes.legal.terms },
-      { label: "Widerruf", href: routes.legal.withdrawal },
-      { label: "Vertrag widerrufen", href: routes.legal.withdrawalForm },
-      { label: "Cookie-Einstellungen", consent: true },
+    { title: t.columns.company, links: [
+      { label: nav.about, href: routes.about }, { label: t.links.business, href: "/firmenkunden" },
+      { label: t.links.imprint, href: routes.legal.imprint },
+      { label: t.links.privacy, href: routes.legal.privacy }, { label: t.links.terms, href: routes.legal.terms },
+      { label: t.links.withdrawal, href: routes.legal.withdrawal },
+      { label: t.links.withdrawalForm, href: routes.legal.withdrawalForm },
+      { label: t.links.cookieSettings, consent: true },
     ] },
   ];
   const linkCls = "inline-flex min-h-7 items-center text-left text-[14.5px] text-ink transition-colors hover:text-forest";
@@ -45,7 +49,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
           <div className="max-w-xs">
             <Logo variant="stacked" />
-            <p className="mt-4 text-[15px] leading-relaxed text-ink-muted">{settings.brand.claim} Frisch gebunden in Wien, per Kurier geliefert.</p>
+            <p className="mt-4 text-[15px] leading-relaxed text-ink-muted">{settings.brand.claim} {t.claimSuffix}</p>
             <div className="mt-6 flex gap-2">
               {settings.brand.social.instagram && (
                 <a href={settings.brand.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex size-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-forest hover:text-forest"><svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.3" cy="6.7" r="0.8" fill="currentColor"/></svg></a>
@@ -73,7 +77,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         <div className="mt-14 flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-2">
             {payments.map((p) => <PaymentMark key={p.id} id={p.id} />)}
-            {payments.length > 0 && <span className="ml-2 text-[12px] text-ink-soft">Sichere Zahlung · SSL-verschlüsselt</span>}
+            {payments.length > 0 && <span className="ml-2 text-[12px] text-ink-soft">{t.securePayment}</span>}
           </div>
           <p className="text-[12px] text-ink-soft">© {new Date().getFullYear()} {settings.brand.name}. {settings.brand.address.city}, {settings.brand.address.country}. {VAT_TEXT.note}</p>
         </div>

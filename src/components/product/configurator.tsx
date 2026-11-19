@@ -17,7 +17,9 @@ import { addDays, isValidAustrianPostalCode, normalizePostalCode, sameDayCutoffO
 import { lowestPrice } from "@/lib/catalog";
 import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
 import { cartItemFromConfig, defaultSize, findSize, FLORIST_NOTE_MAX, isSoldOut } from "@/lib/cart-helpers";
-import { formatDateShort, formatPrice, cn } from "@/lib/format";
+import { cn } from "@/lib/format";
+import { useI18n } from "@/i18n/client";
+import { deliveryErrorText } from "@/components/shop/postal-code-check";
 import { routes } from "@/lib/urls";
 import { onRadioGroupKeyDown } from "@/lib/roving-radio";
 import { VAT_TEXT } from "@/lib/vat";
@@ -30,12 +32,16 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   onColorChange?: (color: ProductColorOption | null) => void;
 }) {
   const uid = useId();
+  const { m: messages, fmt, price, dateShort } = useI18n();
+  const t = messages.product;
   const addItem = useCart((s) => s.addItem);
   const paused = ordersPaused();
   const openCart = useUi((s) => s.openCart);
   const ctx = useDeliveryContext();
   const preferredDate = ctx.preferredDate;
-  const { result, loading, error, check } = useDeliveryCheck(product.slug);
+  const delivery = useDeliveryCheck(product.slug);
+  const { result, loading, check } = delivery;
+  const error = deliveryErrorText(delivery, messages.shop.postalCheck.errors);
 
   /* ---------- size ---------- */
   const [sizeId, setSizeId] = useState(() => defaultSize(product).id);
@@ -148,12 +154,14 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       extras: chosenExtras,
     });
     addItem(item);
-    setAnnounce(`${product.name} (${size.label}${color ? `, ${color.label}` : ""}) wurde in den Warenkorb gelegt.`);
+    setAnnounce(fmt(t.cta.added, { name: product.name, options: `${size.label}${color ? `, ${color.label}` : ""}` }));
     // The drawer that opens is the confirmation – a toast on top of it would only cover its buttons.
     openCart();
   };
 
   const hasRating = Boolean(product.rating && product.rating.count > 0);
+  const [areasBefore, areasAfter] = t.delivery.notAvailableHint.split("{link}");
+  const [deliveryOnBefore, deliveryOnAfter] = t.delivery.deliveryOn.split("{date}");
 
   return (
     <div className="flex flex-col gap-9">
@@ -165,8 +173,8 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
         <h1 className="display-2 text-ink">{product.name}</h1>
         <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
           <p className="text-[15px] tabular-nums text-ink">
-            <span className="text-[12px] text-ink-muted">ab </span>
-            <span className="font-semibold">{formatPrice(lowestPrice(product))}</span>
+            <span className="text-[12px] text-ink-muted">{`${t.priceFrom} `}</span>
+            <span className="font-semibold">{price(lowestPrice(product))}</span>
             <span className="ml-1.5 text-[12px] text-ink-muted">{VAT_TEXT.short}</span>
           </p>
           {hasRating && product.rating && <StarRating value={product.rating.value} count={product.rating.count} showValue />}
@@ -178,7 +186,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       {product.sizes.length > 1 && (
       <fieldset>
         <legend className="mb-3 flex w-full items-baseline justify-between">
-          <span className="text-[14px] font-semibold text-ink">Größe wählen</span>
+          <span className="text-[14px] font-semibold text-ink">{t.size.title}</span>
           <span className="text-[12.5px] text-ink-muted">{size.description ?? size.label}</span>
         </legend>
         <div className={cn("grid gap-2.5", product.sizes.length === 4 ? "grid-cols-2" : product.sizes.length > 4 ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-3")}>
@@ -204,13 +212,13 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                 >
                   <span className="flex flex-wrap items-start justify-between gap-1">
                     <span className="text-[14px] font-semibold text-ink">{s.label}</span>
-                    {s.popular && <Badge tone="rose" className="px-1.5 py-0.5 text-[9.5px]">Empfohlen</Badge>}
+                    {s.popular && <Badge tone="rose" className="px-1.5 py-0.5 text-[9.5px]">{t.size.recommended}</Badge>}
                   </span>
                   <span>
-                    <span className="block text-[15px] font-semibold tabular-nums text-ink">{formatPrice(s.price)}</span>
-                    {s.compareAtPrice && s.compareAtPrice > s.price && <s className="text-[12px] text-ink-muted">{formatPrice(s.compareAtPrice)}</s>}
+                    <span className="block text-[15px] font-semibold tabular-nums text-ink">{price(s.price)}</span>
+                    {s.compareAtPrice && s.compareAtPrice > s.price && <s className="text-[12px] text-ink-muted">{price(s.compareAtPrice)}</s>}
                     {s.description && <span className="block text-[12px] text-ink-muted">{s.description}</span>}
-                    {out && <span className="block text-[11px] text-danger">Ausverkauft</span>}
+                    {out && <span className="block text-[11px] text-danger">{t.size.soldOut}</span>}
                   </span>
                 </span>
               </label>
@@ -224,8 +232,8 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       {colors.length > 0 && (
       <fieldset ref={colorRef} aria-describedby={colorError ? `${uid}-color-error` : undefined}>
         <legend className="mb-3 flex w-full items-baseline justify-between">
-          <span className="text-[14px] font-semibold text-ink">Farbe wählen <span className="font-normal text-ink-muted">(Pflicht)</span></span>
-          <span className="text-[12.5px] text-ink-muted">{color?.label ?? "Noch nicht gewählt"}</span>
+          <span className="text-[14px] font-semibold text-ink">{t.color.title} <span className="font-normal text-ink-muted">{t.color.required}</span></span>
+          <span className="text-[12.5px] text-ink-muted">{color?.label ?? t.color.notChosen}</span>
         </legend>
         <div className="flex flex-wrap gap-2">
           {colors.map((c) => {
@@ -241,16 +249,16 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
             );
           })}
         </div>
-        {colorError && <p id={`${uid}-color-error`} role="alert" className="mt-2 text-[13px] text-danger">Bitte wähle eine Farbe.</p>}
+        {colorError && <p id={`${uid}-color-error`} role="alert" className="mt-2 text-[13px] text-danger">{t.color.error}</p>}
       </fieldset>
       )}
 
       {/* ---------- Delivery ---------- */}
       <section aria-labelledby={`${uid}-delivery`} className="rounded-md border border-line bg-white/50 p-4 sm:p-5">
-        <h2 id={`${uid}-delivery`} className="font-serif text-[22px] text-ink">Wann sollen die Blumen ankommen?</h2>
+        <h2 id={`${uid}-delivery`} className="font-serif text-[22px] text-ink">{t.delivery.title}</h2>
 
-        <form onSubmit={submitPlz} className="mt-3 flex gap-2" aria-label="Lieferprüfung">
-          <label htmlFor={`${uid}-plz`} className="sr-only">Postleitzahl des Empfängers</label>
+        <form onSubmit={submitPlz} className="mt-3 flex gap-2" aria-label={t.delivery.formLabel}>
+          <label htmlFor={`${uid}-plz`} className="sr-only">{t.delivery.postalCodeLabel}</label>
           <div className="relative min-w-0 flex-1">
             <MapPin className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-forest" aria-hidden />
             <input
@@ -261,35 +269,35 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
               maxLength={4}
               value={plz}
               onChange={(e) => setPlz(normalizePostalCode(e.target.value))}
-              placeholder="PLZ des Empfängers"
+              placeholder={t.delivery.postalCodePlaceholder}
               aria-describedby={`${uid}-plz-status`}
               className="h-12 w-full rounded-md border border-line-strong bg-white pl-10 pr-3 text-[15px] tracking-[0.08em] text-ink placeholder:tracking-normal placeholder:text-ink-soft focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
             />
           </div>
-          <Button type="submit" variant="outline" size="md" loading={loading} className="h-12! shrink-0">Prüfen</Button>
+          <Button type="submit" variant="outline" size="md" loading={loading} className="h-12! shrink-0">{t.delivery.check}</Button>
         </form>
 
         <div id={`${uid}-plz-status`} aria-live="polite" className="mt-3">
           {error && <p className="text-[13px] text-danger">{error}</p>}
           {!result && !error && (
             <p className="inline-flex items-center gap-1.5 text-[13px] text-ink-muted">
-              <CalendarDays className="size-3.5 text-ink-soft" aria-hidden /> PLZ eingeben, um Lieferdatum zu wählen
+              <CalendarDays className="size-3.5 text-ink-soft" aria-hidden /> {t.delivery.prompt}
             </p>
           )}
           {result && !result.available && (
             <div className="text-[13px] text-ink-muted">
-              <p className="font-semibold text-ink">Leider liefern wir an {result.postalCode} noch nicht.</p>
-              <p className="mt-1">Alle aktuellen Gebiete findest du unter <Link href={routes.delivery} className="text-forest underline underline-offset-2">Lieferung & Versand</Link>. Für eine andere Empfängeradresse einfach eine neue PLZ eingeben.</p>
+              <p className="font-semibold text-ink">{fmt(t.delivery.notAvailable, { plz: result.postalCode })}</p>
+              <p className="mt-1">{areasBefore}<Link href={routes.delivery} className="text-forest underline underline-offset-2">{t.delivery.deliveryLink}</Link>{areasAfter || null}</p>
             </div>
           )}
           {zone && (
             <div className="animate-fade-up">
               <p className="flex items-center gap-2 text-[14px] font-semibold text-success">
                 <span className="inline-flex size-5 items-center justify-center rounded-full bg-success text-ivory"><Check className="size-3" strokeWidth={3} aria-hidden /></span>
-                Wir liefern an diese Adresse.
+                {t.delivery.available}
               </p>
               <p className="mt-1 pl-7 text-[13px] text-ink-muted">
-                Lieferung nach {plz} {zone.region}: {zone.fee === 0 ? "gratis" : formatPrice(zone.fee)}{zone.fee > 0 && zone.freeFrom !== null && <> · gratis ab {formatPrice(zone.freeFrom)}</>}
+                {fmt(t.delivery.fee, { plz, region: zone.region, fee: zone.fee === 0 ? t.delivery.free : price(zone.fee) })}{zone.fee > 0 && zone.freeFrom !== null && ` · ${fmt(t.delivery.freeFrom, { price: price(zone.freeFrom) })}`}
                 {zone.note && <span className="block">{zone.note}</span>}
               </p>
             </div>
@@ -299,19 +307,19 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
         {zone && days.length > 0 && (
           <div className="mt-4">
             {/* "Datum wählen" toggles the calendar, so the arrow keys only move the focus; Space/Enter choose. */}
-            <div role="radiogroup" aria-label="Lieferdatum" onKeyDown={(e) => onRadioGroupKeyDown(e, { select: false })} className={cn("grid gap-2", dateOptionCount === 3 ? "grid-cols-3" : dateOptionCount === 2 ? "grid-cols-2" : "grid-cols-1 sm:max-w-[240px]")}>
+            <div role="radiogroup" aria-label={t.delivery.dateGroup} onKeyDown={(e) => onRadioGroupKeyDown(e, { select: false })} className={cn("grid gap-2", dateOptionCount === 3 ? "grid-cols-3" : dateOptionCount === 2 ? "grid-cols-2" : "grid-cols-1 sm:max-w-[240px]")}>
               {canToday && today && (
-                <QuickOption tabIndex={dateTabStop === "today" ? 0 : -1} checked={dateMode === "today"} onClick={() => chooseDate(today)} title="Heute" sub={`bis ${sameDayCutoffOn(zone, today)} Uhr bestellen`} icon={<Clock className="size-3.5" aria-hidden />} />
+                <QuickOption tabIndex={dateTabStop === "today" ? 0 : -1} checked={dateMode === "today"} onClick={() => chooseDate(today)} title={t.delivery.today} sub={fmt(t.delivery.orderUntil, { time: sameDayCutoffOn(zone, today) })} icon={<Clock className="size-3.5" aria-hidden />} />
               )}
               {canTomorrow && tomorrow && (
-                <QuickOption tabIndex={dateTabStop === "tomorrow" ? 0 : -1} checked={dateMode === "tomorrow"} onClick={() => chooseDate(tomorrow)} title="Morgen" sub={formatDateShort(tomorrow)} />
+                <QuickOption tabIndex={dateTabStop === "tomorrow" ? 0 : -1} checked={dateMode === "tomorrow"} onClick={() => chooseDate(tomorrow)} title={t.delivery.tomorrow} sub={dateShort(tomorrow)} />
               )}
               <QuickOption
                 tabIndex={dateTabStop === "other" ? 0 : -1}
                 checked={dateMode === "other" || calendarOpen}
                 onClick={() => setCalendarOpen((o) => !o)}
-                title="Datum wählen"
-                sub={dateMode === "other" && selectedDate ? formatDateShort(selectedDate) : "Kalender öffnen"}
+                title={t.delivery.chooseDate}
+                sub={dateMode === "other" && selectedDate ? dateShort(selectedDate) : t.delivery.openCalendar}
                 icon={<CalendarDays className="size-3.5" aria-hidden />}
               />
             </div>
@@ -328,11 +336,11 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
             {selectedDate && (
               <p className="mt-3 flex items-center gap-1.5 text-[13px] text-ink-muted">
                 <CalendarDays className="size-3.5 text-forest" aria-hidden />
-                Lieferung am <span className="font-semibold text-ink">{formatDateShort(selectedDate)}</span>
-                {dateMode === "today" && <span>· heute</span>}
+                {deliveryOnBefore}<span className="font-semibold text-ink">{dateShort(selectedDate)}</span>{deliveryOnAfter || null}
+                {dateMode === "today" && <span>{t.delivery.todaySuffix}</span>}
               </p>
             )}
-            {days.length === 0 && <p className="mt-3 text-[13px] text-ink-muted">Derzeit sind keine Liefertage verfügbar.</p>}
+            {days.length === 0 && <p className="mt-3 text-[13px] text-ink-muted">{t.delivery.noDays}</p>}
           </div>
         )}
       </section>
@@ -343,11 +351,11 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           <span className="flex items-center gap-3">
             <span className="grid size-9 place-items-center rounded-full bg-ivory-100 text-ink-soft"><PenLine className="size-4" strokeWidth={1.6} aria-hidden /></span>
             <span>
-              <span id={`${uid}-card`} className="block text-[14px] font-semibold text-ink-muted">Persönliche Grußkarte</span>
-              <span className="block text-[12.5px] text-ink-muted">Dein Strauß wird vorerst ohne Karte geliefert.</span>
+              <span id={`${uid}-card`} className="block text-[14px] font-semibold text-ink-muted">{t.card.unavailableTitle}</span>
+              <span className="block text-[12.5px] text-ink-muted">{t.card.unavailableText}</span>
             </span>
           </span>
-          <Badge tone="rose" className="shrink-0">Kommt bald!</Badge>
+          <Badge tone="rose" className="shrink-0">{t.card.comingSoon}</Badge>
         </section>
       ) : (
       <section aria-labelledby={`${uid}-card`}>
@@ -361,8 +369,8 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           <span className="flex items-center gap-3">
             <span className="grid size-9 place-items-center rounded-full bg-ivory-100 text-forest"><PenLine className="size-4" strokeWidth={1.6} aria-hidden /></span>
             <span>
-              <span id={`${uid}-card`} className="block text-[14px] font-semibold text-ink">Persönliche Nachricht hinzufügen</span>
-              <span className="block text-[12.5px] text-ink-muted">{greetingCard.freeCardIncluded ? "Grußkarte inklusive" : "Handgeschriebene Grußkarte"}{message.trim() && " · Nachricht gespeichert"}</span>
+              <span id={`${uid}-card`} className="block text-[14px] font-semibold text-ink">{t.card.addMessage}</span>
+              <span className="block text-[12.5px] text-ink-muted">{greetingCard.freeCardIncluded ? t.card.included : t.card.handwritten}{message.trim() && ` · ${t.card.saved}`}</span>
             </span>
           </span>
           <Plus className={cn("size-4 shrink-0 text-forest transition-transform duration-300", cardOpen && "rotate-45")} aria-hidden />
@@ -372,7 +380,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           <div id={`${uid}-card-panel`} className="mt-3 space-y-4 animate-fade-in">
             <div>
               <div className="mb-1.5 flex items-baseline justify-between">
-                <label htmlFor={`${uid}-message`} className="text-[13px] font-semibold text-ink">Deine Nachricht</label>
+                <label htmlFor={`${uid}-message`} className="text-[13px] font-semibold text-ink">{t.card.messageLabel}</label>
                 <span className={cn("text-[12px] tabular-nums", message.length >= maxChars ? "text-danger" : "text-ink-muted")} aria-hidden>{message.length} / {maxChars}</span>
               </div>
               <textarea
@@ -381,27 +389,27 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                 onChange={(e) => setMessage(e.target.value.slice(0, maxChars))}
                 maxLength={maxChars}
                 rows={3}
-                placeholder="Alles Liebe zum Geburtstag …"
+                placeholder={t.card.messagePlaceholder}
                 aria-describedby={`${uid}-message-hint`}
                 className="w-full resize-y rounded-md border border-line-strong bg-white/70 px-4 py-3 text-[15px] text-ink placeholder:text-ink-soft focus:border-forest focus:bg-white focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
               />
-              <p id={`${uid}-message-hint`} className="sr-only">Maximal {maxChars} Zeichen.</p>
+              <p id={`${uid}-message-hint`} className="sr-only">{fmt(t.card.maxChars, { max: maxChars })}</p>
             </div>
 
-            <div role="radiogroup" aria-label="Absender" onKeyDown={onRadioGroupKeyDown} className="grid grid-cols-2 gap-2">
-              <Segment tabIndex={anonymous ? -1 : 0} checked={!anonymous} onClick={() => setAnonymous(false)}>Absender anzeigen</Segment>
-              <Segment tabIndex={anonymous ? 0 : -1} checked={anonymous} onClick={() => setAnonymous(true)}>Ohne Namen senden</Segment>
+            <div role="radiogroup" aria-label={t.card.senderGroup} onKeyDown={onRadioGroupKeyDown} className="grid grid-cols-2 gap-2">
+              <Segment tabIndex={anonymous ? -1 : 0} checked={!anonymous} onClick={() => setAnonymous(false)}>{t.card.showSender}</Segment>
+              <Segment tabIndex={anonymous ? 0 : -1} checked={anonymous} onClick={() => setAnonymous(true)}>{t.card.anonymous}</Segment>
             </div>
 
             {!anonymous && (
               <div>
-                <label htmlFor={`${uid}-sender`} className="mb-1.5 block text-[13px] font-semibold text-ink">Dein Name <span className="font-normal text-ink-muted">(optional)</span></label>
+                <label htmlFor={`${uid}-sender`} className="mb-1.5 block text-[13px] font-semibold text-ink">{t.card.senderName} <span className="font-normal text-ink-muted">{t.card.optional}</span></label>
                 <input
                   id={`${uid}-sender`}
                   value={senderName}
                   onChange={(e) => setSenderName(e.target.value.slice(0, 60))}
                   autoComplete="name"
-                  placeholder="z. B. Anna"
+                  placeholder={t.card.senderPlaceholder}
                   className="h-12 w-full rounded-md border border-line-strong bg-white/70 px-4 text-[15px] text-ink placeholder:text-ink-soft focus:border-forest focus:bg-white focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
                 />
               </div>
@@ -417,8 +425,8 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       {activeExtras.length > 0 && (
         <section aria-labelledby={`${uid}-extras`}>
           <div className="mb-3 flex items-baseline justify-between">
-            <h2 id={`${uid}-extras`} className="font-serif text-[22px] text-ink">Noch etwas dazu?</h2>
-            <span className="text-[12.5px] text-ink-muted">Wird gemeinsam geliefert</span>
+            <h2 id={`${uid}-extras`} className="font-serif text-[22px] text-ink">{t.extras.title}</h2>
+            <span className="text-[12.5px] text-ink-muted">{t.extras.deliveredTogether}</span>
           </div>
           <ul className="-mx-5 flex snap-x gap-3 overflow-x-auto px-5 pb-1 scrollbar-none sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0">
             {activeExtras.map((e) => {
@@ -430,22 +438,22 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
                       <Image src={e.image} alt={e.imageAlt} fill sizes="160px" className="object-cover" />
                     </div>
                     <p className="mt-2.5 truncate text-[13.5px] font-semibold text-ink" title={e.description}>{e.name}</p>
-                    <p className="text-[12.5px] tabular-nums text-ink-muted">{formatPrice(e.price)}</p>
+                    <p className="text-[12.5px] tabular-nums text-ink-muted">{price(e.price)}</p>
                     {q === 0 ? (
                       <button
                         type="button"
                         onClick={() => setQty(e.id, 1)}
                         aria-pressed={false}
-                        aria-label={`${e.name} für ${formatPrice(e.price)} hinzufügen`}
+                        aria-label={fmt(t.extras.addLabel, { name: e.name, price: price(e.price) })}
                         className="mt-2.5 inline-flex h-10 w-full items-center justify-center gap-1 rounded-md border border-forest/60 text-[13px] font-semibold text-forest transition-colors hover:bg-forest hover:text-ivory"
                       >
-                        <Plus className="size-3.5" aria-hidden /> Hinzufügen
+                        <Plus className="size-3.5" aria-hidden /> {t.extras.add}
                       </button>
                     ) : (
-                      <div className="mt-2.5 inline-flex h-10 w-full items-center justify-between rounded-md bg-forest text-ivory" role="group" aria-label={`${e.name} Anzahl`}>
-                        <button type="button" onClick={() => setQty(e.id, q - 1)} aria-label={`${e.name}: eins weniger`} className="grid size-10 place-items-center"><Minus className="size-3.5" /></button>
+                      <div className="mt-2.5 inline-flex h-10 w-full items-center justify-between rounded-md bg-forest text-ivory" role="group" aria-label={fmt(t.extras.quantity, { name: e.name })}>
+                        <button type="button" onClick={() => setQty(e.id, q - 1)} aria-label={fmt(t.extras.less, { name: e.name })} className="grid size-10 place-items-center"><Minus className="size-3.5" /></button>
                         <span className="text-[13px] font-semibold tabular-nums" aria-live="polite">{q}</span>
-                        <button type="button" onClick={() => setQty(e.id, q + 1)} aria-label={`${e.name}: eins mehr`} className="grid size-10 place-items-center"><Plus className="size-3.5" /></button>
+                        <button type="button" onClick={() => setQty(e.id, q + 1)} aria-label={fmt(t.extras.more, { name: e.name })} className="grid size-10 place-items-center"><Plus className="size-3.5" /></button>
                       </div>
                     )}
                   </div>
@@ -459,11 +467,11 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       {/* ---------- Wish to the florist ---------- */}
       <details className="group rounded-md border border-line bg-white/50 px-4 py-3 sm:px-5" open={floristNote.length > 0 || undefined}>
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[14px] font-semibold text-ink">
-          <span className="flex items-start gap-2"><PenLine className="mt-0.5 size-4 shrink-0 text-forest" aria-hidden /><span>Wünsche an unsere Florist:innen <span className="font-normal text-ink-muted">(optional)</span></span></span>
+          <span className="flex items-start gap-2"><PenLine className="mt-0.5 size-4 shrink-0 text-forest" aria-hidden /><span>{t.floristNote.title} <span className="font-normal text-ink-muted">{t.floristNote.optional}</span></span></span>
           <Plus className="size-4 text-ink-muted transition-transform group-open:rotate-45" aria-hidden />
         </summary>
         <label htmlFor={`${uid}-florist-note`} className="mt-3 block text-[13px] leading-relaxed text-ink-muted">
-          Kleine Änderungen am Strauß, z. B. „statt gelber bitte weiße Rosen“. Wir setzen sie um, wenn die Blumen verfügbar sind. Hinweise für die Lieferung gibst du im Checkout an.
+          {t.floristNote.hint}
         </label>
         <textarea
           id={`${uid}-florist-note`}
@@ -472,7 +480,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
           value={floristNote}
           onChange={(e) => setFloristNote(e.target.value)}
           className="mt-2 w-full resize-y rounded-md border border-line bg-white px-3 py-2 text-[14px] text-ink focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20"
-          placeholder="Dein Wunsch an die Floristik"
+          placeholder={t.floristNote.placeholder}
         />
         <p className="mt-1 text-right text-[12px] text-ink-soft">{floristNote.length}/{FLORIST_NOTE_MAX}</p>
       </details>
@@ -480,20 +488,20 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       {/* ---------- CTA ---------- */}
       <div ref={ctaRef} className="border-t border-line pt-6">
         <dl className="mb-4 space-y-1 text-[13.5px] text-ink-muted">
-          <div className="flex justify-between"><dt>{lineLabel}</dt><dd className="tabular-nums text-ink">{formatPrice(size.price)}</dd></div>
+          <div className="flex justify-between"><dt>{lineLabel}</dt><dd className="tabular-nums text-ink">{price(size.price)}</dd></div>
           {chosenExtras.map((e) => (
-            <div key={e.extra.id} className="flex justify-between"><dt>{e.quantity > 1 && `${e.quantity} × `}{e.extra.name}</dt><dd className="tabular-nums text-ink">{formatPrice(e.extra.price * e.quantity)}</dd></div>
+            <div key={e.extra.id} className="flex justify-between"><dt>{e.quantity > 1 && `${e.quantity} × `}{e.extra.name}</dt><dd className="tabular-nums text-ink">{price(e.extra.price * e.quantity)}</dd></div>
           ))}
-          <div className="flex justify-between border-t border-line pt-2 text-[15px] font-semibold text-ink"><dt>Gesamt</dt><dd className="tabular-nums">{formatPrice(total)}</dd></div>
+          <div className="flex justify-between border-t border-line pt-2 text-[15px] font-semibold text-ink"><dt>{t.cta.total}</dt><dd className="tabular-nums">{price(total)}</dd></div>
         </dl>
         {paused && <p className="mb-3 rounded-md border border-line bg-ivory-100 px-4 py-3 text-[14px] leading-relaxed text-ink-muted" role="status">{ORDERS_PAUSED_MESSAGE}</p>}
         <Button type="button" size="xl" full onClick={addToCart} disabled={soldOut || paused} icon={<ShoppingBag className="size-4" aria-hidden />}>
-          {paused ? "Bald bestellbar" : soldOut ? "Derzeit nicht verfügbar" : "In den Warenkorb"}
+          {paused ? t.cta.comingSoon : soldOut ? t.cta.unavailable : t.cta.addToCart}
         </Button>
         <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[12px] text-ink-muted">
-          {product.category !== "pflanzen" && <li className="inline-flex items-center gap-1.5"><Leaf className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Frisch gebunden</li>}
-          {cardsEnabled && greetingCard.freeCardIncluded && <li className="inline-flex items-center gap-1.5"><Mail className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Grußkarte inklusive</li>}
-          <li className="inline-flex items-center gap-1.5"><Lock className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> Sichere Zahlung</li>
+          {product.category !== "pflanzen" && <li className="inline-flex items-center gap-1.5"><Leaf className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> {t.cta.fresh}</li>}
+          {cardsEnabled && greetingCard.freeCardIncluded && <li className="inline-flex items-center gap-1.5"><Mail className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> {t.cta.cardIncluded}</li>}
+          <li className="inline-flex items-center gap-1.5"><Lock className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> {t.cta.securePayment}</li>
         </ul>
       </div>
 
@@ -508,9 +516,9 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
         <div className="flex items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="truncate font-serif text-[18px] leading-tight text-ink">{lineLabel}</p>
-            <p className="text-[13px] tabular-nums text-ink-muted">{formatPrice(total)}</p>
+            <p className="text-[13px] tabular-nums text-ink-muted">{price(total)}</p>
           </div>
-          <Button type="button" size="lg" onClick={addToCart} disabled={soldOut || paused} tabIndex={ctaVisible ? -1 : 0}>{paused ? "Bald bestellbar" : "In den Warenkorb"}</Button>
+          <Button type="button" size="lg" onClick={addToCart} disabled={soldOut || paused} tabIndex={ctaVisible ? -1 : 0}>{paused ? t.cta.comingSoon : t.cta.addToCart}</Button>
         </div>
       </div>
     </div>

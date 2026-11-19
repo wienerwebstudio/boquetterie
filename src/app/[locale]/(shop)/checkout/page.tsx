@@ -1,6 +1,7 @@
 import { getSettings } from "@/lib/cms";
 import { Checkout } from "@/components/checkout/checkout";
-import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
+import { ordersPaused } from "@/lib/orders-paused";
+import { getI18n } from "@/i18n/server";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/urls";
 
@@ -14,14 +15,15 @@ type Props = { searchParams: Promise<Record<string, string | string[] | undefine
  * actually configured (Stripe/PayPal keys) and falls back to the mock provider.
  */
 export default async function CheckoutPage({ searchParams }: Props) {
-  const [settings, sp] = await Promise.all([getSettings(), searchParams]);
+  const [settings, sp, { m }] = await Promise.all([getSettings(), searchParams, getI18n()]);
   if (ordersPaused()) {
+    const t = m.checkout.paused;
     return (
       <div className="container-x py-24 text-center">
-        <p className="eyebrow mb-3">Kasse</p>
-        <h1 className="display-2 text-ink">Bald bestellbar</h1>
-        <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-ink-muted">{ORDERS_PAUSED_MESSAGE}</p>
-        <Button href={routes.shop} variant="outline" size="lg" className="mt-8">Zurück zu den Blumen</Button>
+        <p className="eyebrow mb-3">{t.eyebrow}</p>
+        <h1 className="display-2 text-ink">{t.title}</h1>
+        <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-ink-muted">{t.message}</p>
+        <Button href={routes.shop} variant="outline" size="lg" className="mt-8">{t.backToShop}</Button>
       </div>
     );
   }

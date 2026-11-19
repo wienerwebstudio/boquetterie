@@ -6,13 +6,13 @@ import { GiftFinder } from "@/components/giftfinder/gift-finder";
 import { GIFT_FINDER_PATH } from "@/components/giftfinder/config";
 import { findGifts, isComplete, parseGiftFinderQuery } from "@/components/giftfinder/scoring";
 import { pageMetadata } from "@/lib/metadata";
+import { getI18n } from "@/i18n/server";
 
-const TITLE = "Geschenk-Finder";
-
-export function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
+  const { m } = await getI18n();
   return pageMetadata({
-    title: TITLE,
-    description: "Für wen? Zu welchem Anlass? Welches Budget? Drei Antworten – und wir zeigen dir passende Sträuße, frisch gebunden in Wien.",
+    title: m.shop.giftFinder.title,
+    description: m.shop.giftFinder.metaDescription,
     path: GIFT_FINDER_PATH,
   });
 }
@@ -26,22 +26,23 @@ type SearchParams = Promise<Record<string, string | string[] | undefined>>;
  */
 export default async function GiftFinderPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const [occasions, products, settings] = await Promise.all([getOccasions(), getAllProducts(), getSettings()]);
+  const [occasions, products, settings, { m }] = await Promise.all([getOccasions(), getAllProducts(), getSettings(), getI18n()]);
+  const t = m.shop.giftFinder;
   const query = parseGiftFinderQuery(params, occasions);
   const result = isComplete(query) ? findGifts(products, query) : null;
 
   return (
     <article>
       <PageHeader
-        eyebrow={TITLE}
-        title="Für wen? Zu welchem Anlass? Welches Budget?"
-        intro="Drei Antworten, und wir zeigen dir Sträuße, die passen. Kein Quiz – nur eine Abkürzung zum richtigen Strauß."
-        crumbs={[{ label: TITLE }]}
+        eyebrow={t.title}
+        title={t.headerTitle}
+        intro={t.intro}
+        crumbs={[{ label: t.title }]}
       />
       <div className="container-x py-12 sm:py-16 lg:py-20">
         <GiftFinder occasions={occasions.map((o) => ({ slug: o.slug, name: o.name }))} initialQuery={query} initialResult={result} />
       </div>
-      <JsonLd data={breadcrumbLd([{ name: "Start", url: "/" }, { name: TITLE, url: GIFT_FINDER_PATH }], settings)} />
+      <JsonLd data={breadcrumbLd([{ name: m.shop.breadcrumbs.home, url: "/" }, { name: t.title, url: GIFT_FINDER_PATH }], settings)} />
     </article>
   );
 }
