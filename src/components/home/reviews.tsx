@@ -3,6 +3,7 @@ import type { HomepageContent, Review } from "@/types";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { StarRating } from "@/components/ui/star-rating";
 import { ReviewPhotos } from "@/components/reviews/review-photos";
+import { ReviewLanguageNote } from "@/components/reviews/review-language";
 import { publicReviewPhotos } from "@/lib/review-submission";
 import { getI18n } from "@/i18n/server";
 
@@ -21,6 +22,7 @@ export async function Reviews({ content, reviews }: { content: HomepageContent["
               <blockquote className="mt-4 flex-1">
                 <p className="font-serif text-[20px] leading-snug text-ink sm:text-[21px]">{fmt(m.home.reviews.quote, { text: r.text })}</p>
               </blockquote>
+              <ReviewLanguageNote review={r} className="mt-3" />
               <ReviewPhotos photos={publicReviewPhotos(r)} author={r.name} className="mt-4" />
               <figcaption className="mt-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-line pt-4">
                 <div>

@@ -8,8 +8,9 @@ import { cache } from "react";
  */
 import {
   getAllProducts, getCategories, getDeliveryZones, getExtras, getFaqs, getHomepage, getOccasions, getPages,
-  getSettings, readCollection,
+  getReviews, getSettings, readCollection,
 } from "@/lib/cms";
+import { localizeReview, type ReviewTranslations } from "@/lib/review-translations";
 import {
   localizeCategory, localizeExtra, localizeFaq, localizeHomepage, localizeOccasion, localizePage, localizeProduct,
   localizeSettings, localizeZone, type ContentTranslations,
@@ -69,4 +70,19 @@ export async function getSettingsIn(locale: Locale) {
 export async function getDeliveryZonesIn(locale: Locale, onlyActive = true) {
   const [list, t] = await Promise.all([getDeliveryZones(onlyActive), getContentTranslations(locale)]);
   return t ? list.map((z) => localizeZone(z, t)) : list;
+}
+
+/** Review translations (one document for all languages); `undefined` when none exist. Read once per request. */
+const getReviewTranslations = cache(async (): Promise<ReviewTranslations | undefined> => {
+  try {
+    return await readCollection<ReviewTranslations>("review-translations");
+  } catch {
+    return undefined;
+  }
+});
+
+/** Reviews in the visitor's language – translated text with `display` marking it (see review-translations.ts). */
+export async function getReviewsIn(locale: Locale) {
+  const [list, t] = await Promise.all([getReviews(), getReviewTranslations()]);
+  return list.map((r) => localizeReview(r, locale, t));
 }

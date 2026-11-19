@@ -7,6 +7,13 @@ import { useI18n } from "@/i18n/client";
 import { LOCALE_INFO, type Locale } from "@/i18n/config";
 import { switchLocalePath } from "@/i18n/paths";
 import { cn } from "@/lib/format";
+import dynamic from "next/dynamic";
+
+/** Flags (~14 KB) are only loaded when the menu is opened. */
+const LanguageFlag = dynamic(() => import("@/components/layout/language-flag").then((m) => m.LanguageFlag), {
+  ssr: false,
+  loading: () => <span aria-hidden className="inline-block h-[14px] w-[21px] shrink-0" />,
+});
 
 export const LANGUAGE_CHOICE_KEY = "bl_lang_choice";
 
@@ -45,20 +52,20 @@ export function LanguageSwitcher() {
         <span>{LOCALE_INFO[locale].short}</span>
       </button>
       {open && (
-        <ul className="absolute end-0 top-full z-50 mt-2 max-h-[70vh] w-60 overflow-y-auto rounded-md border border-line bg-white py-1.5 shadow-[0_18px_40px_-20px_rgba(35,35,31,0.35)]">
+        <ul className="absolute end-0 top-full z-50 mt-2 grid max-h-[75vh] w-64 overflow-y-auto rounded-md border border-line bg-white py-1.5 shadow-[0_18px_40px_-20px_rgba(35,35,31,0.35)] sm:w-[30rem] sm:grid-cols-2 sm:px-1.5">
           {live.map((l) => (
             <li key={l}>
               <NextLink
                 href={switchLocalePath(pathname, l)}
                 hrefLang={LOCALE_INFO[l].htmlLang}
                 lang={LOCALE_INFO[l].htmlLang}
-                dir={LOCALE_INFO[l].dir}
                 aria-current={l === locale ? "true" : undefined}
                 onClick={() => { rememberChoice(l); setOpen(false); }}
-                className={cn("flex items-center justify-between gap-3 px-4 py-2 text-[14px] transition-colors hover:bg-ivory-100", l === locale ? "font-semibold text-forest" : "text-ink")}
+                className={cn("flex items-center gap-3 rounded-md px-3 py-2 text-[14px] transition-colors hover:bg-ivory-100", l === locale ? "font-semibold text-forest" : "text-ink")}
               >
-                {LOCALE_INFO[l].name}
-                {l === locale && <Check className="size-4 shrink-0" aria-hidden />}
+                <LanguageFlag locale={l} />
+                <span dir={LOCALE_INFO[l].dir} className="min-w-0 leading-snug">{LOCALE_INFO[l].name}</span>
+                {l === locale && <Check className="ms-auto size-4 shrink-0" aria-hidden />}
               </NextLink>
             </li>
           ))}

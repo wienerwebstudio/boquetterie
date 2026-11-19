@@ -12,11 +12,11 @@ import type { Product } from "@/types";
 import { currentLocale } from "@/i18n/server";
 import {
   getCategoriesIn, getDeliveryZonesIn, getExtrasIn, getFaqsByIdsIn, getFaqsIn, getHomepageIn, getOccasionsIn,
-  getPageIn, getProductsIn, getSettingsIn,
+  getPageIn, getProductsIn, getReviewsIn, getSettingsIn,
 } from "@/lib/cms-localized";
 
 export {
-  getSubscription, getReviews, getLandingPages, getLandingPageBySlug, getOrderById, getOrdersByEmail, getCoupons,
+  getSubscription, getLandingPages, getLandingPageBySlug, getOrderById, getOrdersByEmail, getCoupons,
 } from "@/lib/cms";
 
 export const getSettings = async () => getSettingsIn(await currentLocale());
@@ -26,6 +26,7 @@ export const getCategories = async () => getCategoriesIn(await currentLocale());
 export const getExtras = async (onlyActive = true) => getExtrasIn(await currentLocale(), onlyActive);
 export const getDeliveryZones = async (onlyActive = true) => getDeliveryZonesIn(await currentLocale(), onlyActive);
 export const getFaqs = async () => getFaqsIn(await currentLocale());
+export const getReviews = async () => getReviewsIn(await currentLocale());
 export const getFaqsByIds = async (ids: string[]) => getFaqsByIdsIn(await currentLocale(), ids);
 export const getPageBySlug = async (slug: string) => getPageIn(await currentLocale(), slug);
 export const getAllProducts = async (includeInactive = false) => getProductsIn(await currentLocale(), includeInactive);

@@ -9,6 +9,9 @@ const common: NonNullable<PartialMessages["common"]> = {
   languageHintAction: "Prejsť na verziu: {language}",
   close: "Zavrieť",
   germanVersionApplies: "Tento text je dostupný len v nemčine. Platí nemecké znenie.",
+  reviewTranslatedFrom: "Preložené z jazyka: {language}",
+  reviewOriginalLanguage: "Pôvodný jazyk: {language}",
+  reviewShowOriginal: "Zobraziť originál",
 };
 
 export default common;

@@ -9,6 +9,9 @@ const common: NonNullable<PartialMessages["common"]> = {
   languageHintAction: "{language} sürümüne geç",
   close: "Kapat",
   germanVersionApplies: "Bu metin yalnızca Almanca olarak mevcuttur. Almanca metin geçerlidir.",
+  reviewTranslatedFrom: "Şu dilden çevrildi: {language}",
+  reviewOriginalLanguage: "Orijinal dil: {language}",
+  reviewShowOriginal: "Orijinali göster",
 };
 
 export default common;

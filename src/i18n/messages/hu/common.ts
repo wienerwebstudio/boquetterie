@@ -9,6 +9,9 @@ const common: NonNullable<PartialMessages["common"]> = {
   languageHintAction: "Váltás {language} nyelvű változatra",
   close: "Bezárás",
   germanVersionApplies: "Ez a szöveg csak németül érhető el. A német változat az irányadó.",
+  reviewTranslatedFrom: "Fordítás, forrásnyelv: {language}",
+  reviewOriginalLanguage: "Eredeti nyelv: {language}",
+  reviewShowOriginal: "Eredeti szöveg megjelenítése",
 };
 
 export default common;

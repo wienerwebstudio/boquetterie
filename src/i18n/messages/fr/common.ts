@@ -9,6 +9,9 @@ const common: NonNullable<PartialMessages["common"]> = {
   languageHintAction: "Voir la version en {language}",
   close: "Fermer",
   germanVersionApplies: "Ce texte n’est disponible qu’en allemand. La version allemande fait foi.",
+  reviewTranslatedFrom: "Traduit de : {language}",
+  reviewOriginalLanguage: "Langue d’origine : {language}",
+  reviewShowOriginal: "Afficher l’original",
 };
 
 export default common;

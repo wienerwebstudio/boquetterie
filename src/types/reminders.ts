@@ -78,5 +78,7 @@ export interface ReviewSubmission {
   /** Up to three photos; only shown on the site if an admin accepts them. */
   photos?: ReviewSubmissionPhoto[];
   consent?: ReviewConsent;
+  /** Shop language of the order (`Locale`), i.e. the language the review is most likely written in. Missing = German. */
+  lang?: string;
   status: "pending";
 }

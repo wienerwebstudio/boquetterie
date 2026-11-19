@@ -110,6 +110,8 @@ export async function POST(req: Request) {
       text: fields.text,
       ...(stored.length ? { photos: stored } : {}),
       consent,
+      // Shop language of the order – the review is shown with "translated from" notes in other languages.
+      ...(order.locale && order.locale !== "de" ? { lang: order.locale } : {}),
       status: "pending",
     };
     const list = await getReviewSubmissions();

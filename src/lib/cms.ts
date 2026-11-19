@@ -21,7 +21,9 @@ type Collection =
   /** Content translations per language (src/lib/i18n-content.ts). */
   | `i18n-${string}`
   /** Topic pages of other languages. */
-  | `landing-pages-${string}`;
+  | `landing-pages-${string}`
+  /** Translations of customer reviews (src/lib/review-translations.ts). */
+  | "review-translations";
 
 /**
  * Reads an editorial document. With the Postgres store a document that is not yet

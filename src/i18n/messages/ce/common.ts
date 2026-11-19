@@ -9,6 +9,9 @@ const common: NonNullable<PartialMessages["common"]> = {
   languageHintAction: "Версе хьажа: {language}",
   close: "ДӀакъовла",
   germanVersionApplies: "ХӀара текст немцойн маттахь бен яц. Немцойн верси лору бакъ.",
+  reviewTranslatedFrom: "Кхечу маттара гочйина: {language}",
+  reviewOriginalLanguage: "Оригиналан мотт: {language}",
+  reviewShowOriginal: "Оригинал гайта",
 };
 
 export default common;

@@ -168,5 +168,6 @@ export function submissionToReview(s: ReviewSubmission, id: string, opts: { phot
     date: s.createdAt.slice(0, 10),
     demo: false,
     ...(photos.length ? { photos } : {}),
+    ...(s.lang && s.lang !== "de" ? { lang: s.lang } : {}),
   };
 }

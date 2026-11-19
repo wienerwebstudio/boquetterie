@@ -181,6 +181,13 @@ export interface Review {
   demo: boolean;
   /** Customer photos accepted by an admin (only shown for real, verified reviews). */
   photos?: ReviewPhoto[];
+  /** Language the review was written in (shop locale, e.g. "tr"). Missing = German. */
+  lang?: string;
+  /**
+   * Set by the storefront when `text` is shown in another language than written:
+   * `translated` = `text` is a translation of `original`; otherwise `text` is the original.
+   */
+  display?: { lang: string; translated: boolean; original: string };
 }
 
 export interface ReviewPhoto {
