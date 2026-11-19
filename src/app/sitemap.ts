@@ -3,6 +3,8 @@ import { getAllProducts, getCategories, getLandingPages, getOccasions, getPageBy
 import { matchesCategory } from "@/lib/catalog";
 import { isPlaceholderPage } from "@/components/content/cms-page";
 import { routes } from "@/lib/urls";
+import { DEFAULT_LOCALE, LOCALE_INFO, liveLocales, type Locale } from "@/i18n/config";
+import { localizePath } from "@/i18n/paths";
 
 type Freq = MetadataRoute.Sitemap[number]["changeFrequency"];
 
@@ -40,8 +42,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = settings.seo.siteUrl.replace(/\/$/, "");
   const abs = (path: string) => `${base}${path}`;
   const active = products.filter((p) => p.active);
+  const locales = liveLocales();
+
+  /** One entry per live language, each listing all language versions (hreflang). */
+  type Entry = MetadataRoute.Sitemap[number];
+  const everyLanguage = (e: Entry, langs: readonly Locale[] = locales): Entry[] => {
+    const path = e.url.slice(base.length) || "/";
+    if (langs.length < 2) return [e];
+    const languages: Record<string, string> = {};
+    for (const l of langs) for (const code of LOCALE_INFO[l].hreflang) languages[code] = abs(localizePath(l, path));
+    languages["x-default"] = abs(path);
+    return langs.map((l) => ({ ...e, url: abs(localizePath(l, path)), alternates: { languages } }));
+  };
+  const translated = (entries: Entry[]) => entries.flatMap((e) => everyLanguage(e));
+  // Legal texts stay German only.
+  const germanOnly = (entries: Entry[]) => entries.flatMap((e) => everyLanguage(e, [DEFAULT_LOCALE]));
 
   return [
+    ...translated([
     { url: abs(routes.home), changeFrequency: "daily", priority: 1 },
     { url: abs(routes.shop), changeFrequency: "daily", priority: 0.9 },
     { url: abs(routes.occasions), changeFrequency: "weekly", priority: 0.8 },
@@ -53,11 +71,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: abs(routes.product(p.slug)), changeFrequency: "weekly" as const, priority: 0.7,
       images: p.images.slice(0, 3).map((i) => abs(i.src)),
     })),
-    ...landingPages.map((l) => ({ url: abs(`/${l.slug}`), changeFrequency: "monthly" as const, priority: 0.6 })),
-    ...STATIC_PAGES.map((s) => ({ url: abs(s.path), changeFrequency: s.changeFrequency, priority: s.priority })),
-    ...(settings.subscriptionEnabled ? [{ url: abs(routes.subscription), changeFrequency: "monthly" as const, priority: 0.6 }] : []),
-    ...cmsPages
-      .filter((p) => p.page && !isPlaceholderPage(p.page))
-      .map((p) => ({ url: abs(p.path), changeFrequency: "yearly" as const, priority: 0.2 })),
+    ...STATIC_PAGES.filter((s) => s.path !== routes.legal.withdrawalForm).map((s) => ({ url: abs(s.path), changeFrequency: s.changeFrequency, priority: s.priority })),
+    ]),
+    // German topic pages (other languages get their own, see intl pages).
+    ...germanOnly(landingPages.map((l) => ({ url: abs(`/${l.slug}`), changeFrequency: "monthly" as const, priority: 0.6 }))),
+    ...germanOnly([
+      ...(settings.subscriptionEnabled ? [{ url: abs(routes.subscription), changeFrequency: "monthly" as const, priority: 0.6 }] : []),
+      { url: abs(routes.legal.withdrawalForm), changeFrequency: "yearly" as const, priority: 0.2 },
+      ...cmsPages
+        .filter((p) => p.page && !isPlaceholderPage(p.page))
+        .map((p) => ({ url: abs(p.path), changeFrequency: "yearly" as const, priority: 0.2 })),
+    ]),
   ];
 }

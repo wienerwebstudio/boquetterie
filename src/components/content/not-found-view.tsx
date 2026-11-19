@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { ArrowRight } from "lucide-react";
 import { routes } from "@/lib/urls";
 import { Button } from "@/components/ui/button";

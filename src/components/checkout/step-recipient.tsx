@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { Check, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { normalizePostalCode } from "@/lib/delivery";

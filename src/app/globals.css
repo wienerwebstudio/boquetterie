@@ -38,8 +38,8 @@
   --color-danger: #a23b3b;
 
   /* ---- Typography ---- */
-  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
-  --font-sans: var(--font-sans), "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--nf-serif), var(--nf-serif-ext), var(--nf-serif-cyr), var(--nf-arabic), Georgia, serif;
+  --font-sans: var(--nf-sans), var(--nf-sans-ext), var(--nf-sans-cyr), var(--nf-arabic), ui-sans-serif, system-ui, sans-serif;
 
   /* ---- Radii ---- */
   --radius-xs: 2px;

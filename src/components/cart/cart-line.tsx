@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { CalendarDays, Minus, Plus, X, MessageSquare } from "lucide-react";
 import type { CartItem } from "@/types";
 import { useCart } from "@/store/cart";

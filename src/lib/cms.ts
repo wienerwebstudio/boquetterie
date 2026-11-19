@@ -95,7 +95,9 @@ export const getReviews = () => readCollection<Review[]>("reviews");
 export const getPartners = async (onlyActive = false) =>
   (await readCollection<Partner[]>("partners")).filter((p) => !onlyActive || p.active).sort((a, b) => a.sortOrder - b.sortOrder);
 export const getPages = () => readCollection<CmsPage[]>("pages");
-export const getLandingPages = () => readCollection<LandingPage[]>("landing-pages");
+/** Topic pages of one language (`locale` missing = German). */
+export const getLandingPages = async (locale: string = "de") =>
+  (await readCollection<LandingPage[]>("landing-pages")).filter((p) => (p.locale ?? "de") === locale);
 
 export async function getAllProducts(includeInactive = false): Promise<Product[]> {
   const products = await readCollection<Product[]>("products");
@@ -119,8 +121,8 @@ export async function getCategoryBySlug(slug: string) {
 export async function getPageBySlug(slug: string) {
   return (await getPages()).find((p) => p.slug === slug) ?? null;
 }
-export async function getLandingPageBySlug(slug: string) {
-  return (await getLandingPages()).find((p) => p.slug === slug) ?? null;
+export async function getLandingPageBySlug(slug: string, locale: string = "de") {
+  return (await getLandingPages(locale)).find((p) => p.slug === slug) ?? null;
 }
 export async function getFaqsByIds(ids: string[]) {
   const all = await getFaqs();

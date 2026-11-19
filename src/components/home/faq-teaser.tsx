@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { ArrowRight } from "lucide-react";
 import type { FAQ, HomepageContent } from "@/types";
 import { Section } from "@/components/ui/section";

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { CalendarDays, Check, Clock, Leaf, Lock, Mail, MapPin, Minus, PenLine, Plus, ShoppingBag } from "lucide-react";
 import type { Extra, ISODate, Product, ProductColorOption, ProductSize, SiteSettings, SizeId } from "@/types";

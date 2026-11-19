@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import type { SiteSettings } from "@/types";
 import { Logo } from "@/components/icons/logo";
 import { PaymentMark } from "@/components/icons/payment";

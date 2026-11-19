@@ -1,10 +1,11 @@
 "use client";
+import { useI18n } from "@/i18n/client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Elements, PaymentElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { loadStripe, type Appearance, type Stripe, type StripeElementsOptions } from "@stripe/stripe-js";
 import { ArrowLeft, Lock } from "lucide-react";
 import type { PaymentMethodId, PaymentConfirmResponse } from "@/types/payments";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/urls";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -94,6 +95,7 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
   const [error, setError] = useState<string | null>(null);
   const [loadProblem, setLoadProblem] = useState(false);
   const readyRef = useRef(false);
+  const { href } = useI18n();
 
   // The form never appeared: tell the customer what to do and let the team know.
   useEffect(() => {
@@ -110,7 +112,7 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
     if (!stripe || !elements || busy) return;
     setBusy(true);
     setError(null);
-    const returnUrl = `${window.location.origin}/checkout/rueckkehr?orderId=${encodeURIComponent(session.orderId)}&token=${encodeURIComponent(session.token)}`;
+    const returnUrl = `${window.location.origin}${href("/checkout/rueckkehr")}?orderId=${encodeURIComponent(session.orderId)}&token=${encodeURIComponent(session.token)}`;
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: { return_url: returnUrl, receipt_email: email || undefined },

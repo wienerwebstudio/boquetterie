@@ -43,6 +43,8 @@ const nextConfig: NextConfig = {
   },
   serverExternalPackages: ["postgres", "sharp"],
   experimental: {
+    // app/global-not-found.tsx: 404 for URLs outside the language root layouts.
+    globalNotFound: true,
     // Turbopack's persistent build cache stores a copy of the whole build environment,
     // secrets included (e.g. SMTP_PASS). Netlify's secret scan then fails the deploy, and
     // the free plan cannot limit a secret to runtime only. Without this cache no secret is

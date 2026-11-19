@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { Info } from "lucide-react";
 import type { Product } from "@/types";
 import { Accordion, type AccordionItem } from "@/components/ui/accordion";

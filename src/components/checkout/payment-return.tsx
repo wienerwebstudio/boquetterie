@@ -1,6 +1,7 @@
 "use client";
+import { useLocalizedRouter } from "@/i18n/client";
 import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import {useSearchParams} from "next/navigation";
 import { CircleAlert, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/urls";
@@ -14,7 +15,7 @@ import type { PaymentConfirmResponse } from "@/types/payments";
  */
 export function PaymentReturn() {
   const params = useSearchParams();
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const [confirmFailed, setConfirmFailed] = useState<string | null>(null);
 
   const orderId = params.get("orderId") ?? "";

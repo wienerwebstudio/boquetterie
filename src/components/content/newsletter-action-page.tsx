@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { Check } from "lucide-react";
 import { routes } from "@/lib/urls";
 import { PageHeader } from "@/components/content/page-header";

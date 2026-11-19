@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { ArrowRight, Check, ImagePlus, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox, Input, Textarea } from "@/components/ui/input";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import type { Category } from "@/types";
 import { routes } from "@/lib/urls";
 import { cn } from "@/lib/format";

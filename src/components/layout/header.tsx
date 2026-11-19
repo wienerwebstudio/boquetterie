@@ -1,8 +1,9 @@
 "use client";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { Search, User, ShoppingBag, Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import type { SiteSettings } from "@/types";
 import { Logo } from "@/components/icons/logo";
@@ -80,6 +81,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
         </nav>
 
         <div className="flex items-center gap-0.5 sm:gap-1">
+          <LanguageSwitcher />
           <IconButton label="Suche" onClick={openSearch}><Search className="size-5" strokeWidth={1.6} /></IconButton>
           <Link href={routes.account} aria-label="Mein Konto" className="hidden size-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-ivory-200 hover:text-forest sm:inline-flex">
             <User className="size-5" strokeWidth={1.6} />

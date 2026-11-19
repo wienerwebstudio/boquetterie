@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { Checkbox, Input } from "@/components/ui/input";
 import { routes } from "@/lib/urls";
 import type { FieldErrors } from "@/lib/order-payload";

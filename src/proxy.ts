@@ -1,11 +1,15 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { ADMIN_COOKIE, getAdminSecret, verifySessionToken } from "@/lib/admin-auth";
 import { isOpenPath, isUnlocked, siteLockPassword } from "@/lib/site-lock";
+import { resolvePublicPath } from "@/i18n/paths";
 
 /**
  * 1. Optional site lock (SITE_PASSWORD): the whole site asks for a password before launch.
  * 2. Protects the admin area and admin API with the signed `bl_admin` cookie.
  *    The login page and the login/logout endpoints stay reachable.
+ * 3. Languages: public storefront URLs (`/blumen`, `/en/flowers`) are rewritten to the
+ *    internal routes `/{locale}/{German path}` (app/[locale]); `/de/...` and German path
+ *    names under another language redirect to the canonical URL (src/i18n/paths.ts).
  */
 const PUBLIC = new Set(["/admin/login", "/api/admin/login", "/api/admin/logout"]);
 
@@ -25,7 +29,16 @@ export async function proxy(request: NextRequest) {
   }
 
   if (!pathname.startsWith("/admin") && !pathname.startsWith("/api/admin")) {
-    return NextResponse.next();
+    const resolved = resolvePublicPath(pathname);
+    if (!resolved) return NextResponse.next();
+    if (resolved.redirect !== undefined) {
+      const url = request.nextUrl.clone();
+      url.pathname = resolved.redirect;
+      return NextResponse.redirect(url, 308);
+    }
+    const url = request.nextUrl.clone();
+    url.pathname = resolved.internal;
+    return NextResponse.rewrite(url);
   }
 
   const authed = await verifySessionToken(request.cookies.get(ADMIN_COOKIE)?.value, getAdminSecret());

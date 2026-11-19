@@ -1,13 +1,14 @@
 "use client";
+import { useLocalizedRouter } from "@/i18n/client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { isEmail } from "@/lib/order-payload";
 
 export function TrackingForm({ initialOrderId = "" }: { initialOrderId?: string }) {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const [orderId, setOrderId] = useState(initialOrderId);
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState<{ orderId?: string; email?: string }>({});

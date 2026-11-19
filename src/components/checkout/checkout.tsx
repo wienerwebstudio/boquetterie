@@ -1,8 +1,9 @@
 "use client";
+import { useLocalizedRouter } from "@/i18n/client";
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Link from "@/components/ui/link";
+
 import { ArrowLeft, ArrowRight, Lock, ShoppingBag } from "lucide-react";
 import type { CartItem, Coupon } from "@/types";
 import type { OrderCreateResponse } from "@/types/payments";
@@ -88,7 +89,7 @@ function reconcileDelivery(d: CheckoutData, days: DeliveryDay[]): CheckoutData {
 }
 
 function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartItem[] }) {
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const couponCode = useCart((s) => s.coupon);
   const clearCart = useCart((s) => s.clear);
   const contextZip = useDeliveryContext((s) => s.postalCode);

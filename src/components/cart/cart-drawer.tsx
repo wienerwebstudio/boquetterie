@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { Lock, ShieldCheck, Fingerprint, ArrowRight } from "lucide-react";
 import { Drawer } from "@/components/ui/drawer";
 import { useCart, cartCount } from "@/store/cart";

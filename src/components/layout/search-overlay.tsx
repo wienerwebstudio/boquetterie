@@ -1,9 +1,10 @@
 "use client";
+import { useLocalizedRouter } from "@/i18n/client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "@/components/ui/link";
+import {usePathname} from "next/navigation";
 import { ArrowRight, Loader2, Search, X } from "lucide-react";
 import { useUi } from "@/store/ui";
 import { routes } from "@/lib/urls";
@@ -21,7 +22,7 @@ const DEBOUNCE_MS = 150;
 export function SearchOverlay() {
   const open = useUi((s) => s.searchOpen);
   const closeSearch = useUi((s) => s.closeSearch);
-  const router = useRouter();
+  const router = useLocalizedRouter();
   const pathname = usePathname();
 
   const [query, setQuery] = useState("");

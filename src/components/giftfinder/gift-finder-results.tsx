@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import type { Product } from "@/types";
 import { ProductCard } from "@/components/shop/product-card";

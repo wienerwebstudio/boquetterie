@@ -6,7 +6,7 @@ import { useDeliveryCheck } from "@/hooks/use-delivery-check";
 import { useDeliveryContext } from "@/store/delivery";
 import { formatDateShort, formatPrice, cn } from "@/lib/format";
 import { normalizePostalCode, sameDayCutoffOn } from "@/lib/delivery";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { routes } from "@/lib/urls";
 
 /**

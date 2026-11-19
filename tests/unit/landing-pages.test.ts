@@ -24,7 +24,7 @@ describe("landing pages wave 1", () => {
   });
 
   it("uses unique, clean slugs that collide with no route", () => {
-    const routes = fs.readdirSync(path.join(process.cwd(), "src", "app", "(shop)"));
+    const routes = fs.readdirSync(path.join(process.cwd(), "src", "app", "[locale]", "(shop)"));
     const slugs = pages.map((p) => p.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
     for (const slug of slugs) {
@@ -65,7 +65,7 @@ describe("landing pages wave 1", () => {
   it("shows at least four fitting products on every page", () => {
     for (const p of LANDING_PAGES_WAVE1) {
       const f = p.productFilter;
-      // Same selection as src/app/(shop)/[slug]/page.tsx.
+      // Same selection as src/app/[locale]/(shop)/[slug]/page.tsx.
       const list = sortProducts(
         applyFilter(products, { occasions: f.occasions, category: f.category, colors: f.colors, seasons: f.seasons, sameDayOnly: f.sameDayOnly }, categories),
         f.sameDayOnly ? "bestseller" : "recommended",

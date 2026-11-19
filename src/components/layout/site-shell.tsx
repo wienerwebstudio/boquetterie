@@ -2,6 +2,7 @@ import type { SiteSettings } from "@/types";
 import { getCategories, getOccasions } from "@/lib/cms";
 import { AnnouncementBar } from "./announcement-bar";
 import { Header } from "./header";
+import { LanguageHint } from "./language-hint";
 import { Footer } from "./footer";
 import { FooterSlot } from "./footer-slot";
 import { CartDrawer } from "@/components/cart/cart-drawer";
@@ -20,6 +21,7 @@ export async function SiteShell({ settings, children }: { settings: SiteSettings
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-md focus:bg-forest focus:px-4 focus:py-2 focus:text-ivory">
         Zum Inhalt springen
       </a>
+      <LanguageHint />
       {settings.announcement.enabled && settings.announcement.messages.length > 0 && (
         <AnnouncementBar messages={settings.announcement.messages} />
       )}

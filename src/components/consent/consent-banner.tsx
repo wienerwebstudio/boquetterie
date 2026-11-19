@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useId, useRef, useState } from "react";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { X } from "lucide-react";
 import type { ConsentCategory, ConsentChoice, ConsentState } from "@/types/consent";
 import { Button } from "@/components/ui/button";

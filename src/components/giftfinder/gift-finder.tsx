@@ -1,4 +1,5 @@
 "use client";
+import { useI18n } from "@/i18n/client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Check } from "lucide-react";
 import type { Product } from "@/types";
@@ -42,6 +43,7 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const abortRef = useRef<AbortController | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+  const { href: localize } = useI18n();
   const scrollOnResult = useRef(false);
   const groupRef = useRef<HTMLDivElement>(null);
   const focusNextStep = useRef(false);
@@ -49,9 +51,9 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
 
   // Keep the URL in sync – replaceState is integrated with the App Router, no server round-trip.
   useEffect(() => {
-    const url = giftFinderUrl(query);
+    const url = localize(giftFinderUrl(query));
     if (`${window.location.pathname}${window.location.search}` !== url) window.history.replaceState(null, "", url);
-  }, [query]);
+  }, [query, localize]);
 
   useEffect(() => () => abortRef.current?.abort(), []);
 

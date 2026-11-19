@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { ArrowRight, Package } from "lucide-react";
 import type { Order, OrderStatusDefinition } from "@/types";
 import { formatDateShort, formatDateTime, formatPrice } from "@/lib/format";

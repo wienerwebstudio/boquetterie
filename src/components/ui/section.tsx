@@ -1,5 +1,5 @@
 import { cn } from "@/lib/format";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { ArrowRight } from "lucide-react";
 
 export function Section({ className, children, id, tone = "ivory" }: { className?: string; children: React.ReactNode; id?: string; tone?: "ivory" | "ivory-100" | "forest" | "wine" | "sand" | "white" }) {

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { ArrowRight, CalendarDays, Info, MapPin } from "lucide-react";
 import type { Occasion, Product } from "@/types";
 import { getAllProducts, getCategories, getDeliveryZones, getOccasions, getSettings } from "@/lib/cms";

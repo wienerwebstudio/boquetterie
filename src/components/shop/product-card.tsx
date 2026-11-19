@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import type { Product } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { formatPrice, cn } from "@/lib/format";

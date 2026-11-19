@@ -337,6 +337,8 @@ export interface CmsPage {
 
 export interface LandingPage {
   slug: string; // "blumenversand-wien"
+  /** Language of the page (missing = German). Other languages are served under /{locale}/{slug}. */
+  locale?: string;
   title: string;
   headline: string;
   intro: string;
