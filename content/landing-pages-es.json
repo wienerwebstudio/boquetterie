@@ -1,0 +1,298 @@
+[
+  {
+    "slug": "enviar-flores-viena",
+    "title": "Enviar flores a Viena",
+    "headline": "Enviar flores a Viena, Austria.",
+    "intro": "Ramos atados a mano y entregados en los 23 distritos de Viena. Elige tu ramo, la fecha y una franja horaria de una hora.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "Enviar flores a Viena (Austria), paso a paso",
+        "paragraphs": [
+          "Elige un ramo y su tamaño, marca la fecha de entrega en el calendario, escoge una franja horaria e introduce la dirección del destinatario. Después pagas y recibes un correo de confirmación con un enlace para seguir el estado de tu pedido.",
+          "Entregamos en los 23 distritos de Viena, de lunes a domingo, en franjas de una hora entre las 9:00 y las 22:00. El gasto de envío depende del distrito: lo ves en cuanto introduces el código postal."
+        ]
+      },
+      {
+        "heading": "Atado a mano, entregado por mensajero",
+        "paragraphs": [
+          "Cada ramo lo ata a mano para tu pedido una floristería vienesa con la que colaboramos de forma estable. Un mensajero lo recoge allí y lo lleva directamente a la dirección de entrega.",
+          "La web, el pago y los correos de tu pedido están en español. Puedes pagar con tarjeta de crédito o débito, Apple Pay, Google Pay, Klarna o eps."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Enviar flores a Viena (Austria) – a domicilio",
+      "description": "Enviar flores a Viena: ramos atados a mano por una floristería vienesa, con fecha y franja horaria a elegir. Entrega en los 23 distritos."
+    }
+  },
+  {
+    "slug": "enviar-flores-desde-espana-latinoamerica",
+    "title": "Flores a Viena desde España o Latinoamérica",
+    "headline": "Enviar flores a Viena desde España o Latinoamérica.",
+    "intro": "¿Tu hermana estudia en Viena, tu madre vive allí o un amigo celebra algo lejos de ti? Pide desde casa y un mensajero le lleva el ramo en Viena.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": { "occasions": ["geburtstag", "liebe", "danke", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Pedir desde lejos, entregar en Viena",
+        "paragraphs": [
+          "Para enviar flores a Viena desde España o Latinoamérica solo necesitas la dirección del destinatario en Viena. Eliges el ramo, la fecha y una franja horaria de una hora entre las 9:00 y las 22:00, de lunes a domingo.",
+          "Todas las horas que ves en la web son hora de Viena. Desde España no hay diferencia horaria; desde Latinoamérica, ten en cuenta que en Viena ya es más tarde que en tu país."
+        ]
+      },
+      {
+        "heading": "Pago y confirmación",
+        "paragraphs": [
+          "Puedes pagar con tarjeta de crédito o débito (también tarjetas emitidas fuera de Austria), Apple Pay, Google Pay, Klarna o eps. La web, el pago y los correos de tu pedido están en español.",
+          "Tras el pago recibes una confirmación por correo con un enlace al estado de tu pedido, para que sepas cuándo el ramo va en camino."
+        ]
+      },
+      {
+        "heading": "Un ramo hecho en Viena",
+        "paragraphs": [
+          "No enviamos flores por paquetería: una floristería vienesa ata el ramo a mano para tu pedido y un mensajero lo entrega en la ciudad. Entregamos solo dentro de Viena, en sus 23 distritos."
+        ]
+      }
+    ],
+    "faqIds": ["f-payment", "f-date", "f-window", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Enviar flores a Viena desde España o Latinoamérica",
+      "description": "Enviar flores a Viena desde España o Latinoamérica: pide en español, paga con tarjeta internacional y un mensajero entrega el ramo en Viena."
+    }
+  },
+  {
+    "slug": "floristeria-viena",
+    "title": "Floristería en Viena",
+    "headline": "Floristería Viena: ramos atados a mano.",
+    "intro": "Pide online y una floristería vienesa ata tu ramo a mano. Un mensajero lo entrega en cualquiera de los 23 distritos.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Una floristería en Viena, online",
+        "paragraphs": [
+          "Si buscas una floristería en Viena, en Blumora pides en español y sin desplazarte. Cada ramo lo ata a mano para tu pedido una floristería vienesa con la que colaboramos de forma estable; no hay ramos preparados de antemano en un almacén.",
+          "Las flores pueden variar ligeramente respecto a la foto según la temporada, pero el estilo, los colores y el tamaño del ramo se mantienen."
+        ]
+      },
+      {
+        "heading": "Del taller a la puerta",
+        "paragraphs": [
+          "Cuando el ramo está listo, un mensajero lo recoge en la floristería y lo lleva directamente a la dirección de entrega. Tú eliges la fecha en el calendario y una franja horaria de una hora entre las 9:00 y las 22:00, de lunes a domingo.",
+          "¿Quieres un número impar de tallos o tienes un deseo concreto? Puedes pedirlo: anótalo en las indicaciones del pedido para la floristería."
+        ]
+      }
+    ],
+    "faqIds": ["f-fresh", "f-photo", "f-where", "f-window"],
+    "seo": {
+      "title": "Floristería Viena – ramos a mano con entrega",
+      "description": "Floristería en Viena online: ramos atados a mano por una floristería vienesa y entregados por mensajero en los 23 distritos, con franja horaria."
+    }
+  },
+  {
+    "slug": "flores-en-el-dia-viena",
+    "title": "Envío de flores en el día",
+    "headline": "Envío de flores en el día en Viena.",
+    "intro": "¿Te has acordado hoy? Pide antes de las 18:30 (domingos, 17:45) y tu ramo se entrega hoy mismo en Viena.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Cómo funciona la entrega en el mismo día",
+        "paragraphs": [
+          "El envío de flores en el día en Viena es posible para pedidos realizados hasta las 18:30; los domingos, hasta las 17:45 (hora de Viena). Puedes elegir franjas horarias que terminen al menos dos horas después de tu pedido, para que la floristería tenga tiempo de atar el ramo y el mensajero de llevarlo.",
+          "Introduce el código postal del destinatario y verás si la entrega hoy es posible y qué franjas quedan libres."
+        ]
+      },
+      {
+        "heading": "Rápido, pero atado a mano",
+        "paragraphs": [
+          "También con prisa, cada ramo lo ata a mano una floristería vienesa para tu pedido. Después, un mensajero lo lleva directamente a la dirección, en cualquiera de los 23 distritos, de lunes a domingo.",
+          "Si pides desde fuera de Austria, recuerda que todas las horas son hora de Viena."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-where", "f-window"],
+    "seo": {
+      "title": "Envío de flores en el día Viena – hasta las 18:30",
+      "description": "Envío de flores en el día en Viena: pide hasta las 18:30 (domingos 17:45) y recibe hoy un ramo atado a mano. Entrega en los 23 distritos."
+    }
+  },
+  {
+    "slug": "enviar-rosas-viena",
+    "title": "Enviar rosas a Viena",
+    "headline": "Enviar rosas a Viena.",
+    "intro": "Rosas rojas, rosas, blancas o de colores, atadas a mano en Viena y entregadas por mensajero en el día que elijas.",
+    "image": "/images/products/sortiment/red-passion-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Rosas para cada mensaje",
+        "paragraphs": [
+          "Si quieres enviar rosas a Viena, aquí encuentras ramos de rosas para el amor, un aniversario, un cumpleaños o simplemente porque sí. Las rosas rojas dicen «te quiero», las rosas y blancas resultan delicadas, y las de colores alegran cualquier celebración.",
+          "¿Prefieres un número impar de rosas? Puedes pedirlo: anótalo en las indicaciones del pedido para la floristería."
+        ]
+      },
+      {
+        "heading": "Entrega en toda Viena",
+        "paragraphs": [
+          "Una floristería vienesa ata cada ramo a mano para tu pedido y un mensajero lo lleva a la dirección de entrega. Entregamos en los 23 distritos, de lunes a domingo, en franjas de una hora entre las 9:00 y las 22:00.",
+          "Si pides antes de las 18:30 (domingos, 17:45), tus rosas pueden llegar incluso hoy. El gasto de envío lo ves tras introducir el código postal."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-anon", "f-photo"],
+    "seo": {
+      "title": "Enviar rosas a Viena – ramos de rosas a domicilio",
+      "description": "Enviar rosas a Viena: ramos de rosas rojas, rosas y blancas atados a mano y entregados por mensajero en los 23 distritos, con franja horaria."
+    }
+  },
+  {
+    "slug": "flores-funebres-viena",
+    "title": "Flores y coronas fúnebres",
+    "headline": "Flores y coronas fúnebres en Viena.",
+    "intro": "Cuando no puedes estar presente, las flores despiden por ti. Ramos y coronas fúnebres hechos con cuidado por una floristería vienesa.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "category": "trauer", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Ramo o corona",
+        "paragraphs": [
+          "Nuestras flores y coronas fúnebres en Viena se preparan a mano para cada pedido. Los ramos fúnebres descansan sobre ramas de abeto y se colocan junto al féretro o la tumba; la corona es en Austria un signo tradicional de recuerdo. El blanco transmite calma, el rojo habla de amor y los tonos cálidos o pastel pueden recordar a la persona.",
+          "¿Quieres una cinta con un breve texto en la corona, por ejemplo una despedida y vuestros nombres? Es posible bajo petición: anota el texto en las indicaciones del pedido para la floristería."
+        ]
+      },
+      {
+        "heading": "Fecha, hora y lugar de entrega",
+        "paragraphs": [
+          "Elige la fecha y una franja horaria de una hora con margen suficiente antes de la ceremonia e indica la dirección completa en Viena. En las indicaciones para la entrega, añade el nombre de la persona fallecida y la hora de la ceremonia, para que las flores lleguen al lugar correcto.",
+          "Entregamos en los 23 distritos, de lunes a domingo. Si pides desde España o Latinoamérica, todas las horas son hora de Viena."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-photo", "f-change"],
+    "seo": {
+      "title": "Flores y coronas fúnebres Viena – con entrega",
+      "description": "Flores y coronas fúnebres en Viena: ramos y coronas de una floristería vienesa, cinta con texto bajo petición, entregados en la fecha que elijas."
+    }
+  },
+  {
+    "slug": "dia-de-la-madre-viena",
+    "title": "Día de la Madre",
+    "headline": "Flores para el Día de la Madre en Viena.",
+    "intro": "¿Tu madre vive en Viena y tú no? ¿O vives en Viena y quieres celebrar en la fecha de tu país? Elige el día y nosotros llevamos el ramo.",
+    "image": "/images/products/sortiment/rosalie-1.jpg",
+    "productFilter": { "category": "pastell", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Tres fechas, un mismo cariño",
+        "paragraphs": [
+          "El Día de la Madre no cae el mismo día en todas partes. En Austria se celebra el segundo domingo de mayo; en España, el primer domingo de mayo; y en México, siempre el 10 de mayo, sea el día de la semana que sea.",
+          "Da igual qué tradición sigáis en tu familia: eliges la fecha en el calendario y una franja horaria de una hora entre las 9:00 y las 22:00. También entregamos en domingo."
+        ]
+      },
+      {
+        "heading": "Mejor con tiempo",
+        "paragraphs": [
+          "Alrededor del Día de la Madre hay muchos pedidos, así que conviene reservar la fecha con unos días de antelación. Cada ramo lo ata a mano una floristería vienesa para tu pedido y un mensajero lo entrega en cualquiera de los 23 distritos de Viena.",
+          "Puedes pagar con tarjeta de crédito o débito, también extranjera, Apple Pay, Google Pay, Klarna o eps. Todas las horas son hora de Viena."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody", "f-payment"],
+    "seo": {
+      "title": "Día de la Madre Viena – enviar flores a mamá",
+      "description": "Flores para el Día de la Madre en Viena: elige la fecha de Austria, España o México y un ramo atado a mano llega a tu madre en Viena."
+    }
+  },
+  {
+    "slug": "san-valentin-viena",
+    "title": "San Valentín",
+    "headline": "Flores para San Valentín en Viena.",
+    "intro": "El 14 de febrero, rosas rojas y ramos románticos para la persona que quieres, entregados en Viena en la franja horaria que elijas.",
+    "image": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+    "productFilter": { "occasions": ["liebe"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "El 14 de febrero en Viena",
+        "paragraphs": [
+          "San Valentín se celebra el 14 de febrero, en España y en Austria igual que en muchos países de Latinoamérica, donde a menudo se llama Día del Amor y la Amistad. Las rosas rojas son el clásico, pero un ramo en rosa o blanco también dice mucho.",
+          "Elige una franja horaria de una hora entre las 9:00 y las 22:00: por la mañana en la oficina o por la tarde en casa, como prefieras."
+        ]
+      },
+      {
+        "heading": "Reserva con tiempo",
+        "paragraphs": [
+          "En San Valentín hay mucha demanda, así que lo mejor es elegir la fecha con antelación. Si se te pasa, aún puedes pedir el mismo día hasta las 18:30 (domingos, 17:45), según disponibilidad de franjas.",
+          "Cada ramo lo ata a mano una floristería vienesa y un mensajero lo entrega en cualquiera de los 23 distritos. ¿Quieres que sea una sorpresa sin remitente? Mira abajo cómo enviar flores de forma anónima."
+        ]
+      }
+    ],
+    "faqIds": ["f-window", "f-date", "f-anon", "f-nobody"],
+    "seo": {
+      "title": "San Valentín Viena – enviar rosas el 14 de febrero",
+      "description": "Flores para San Valentín en Viena: rosas rojas y ramos románticos atados a mano, entregados el 14 de febrero en la franja horaria que elijas."
+    }
+  },
+  {
+    "slug": "sant-jordi-viena",
+    "title": "Sant Jordi",
+    "headline": "Una rosa por Sant Jordi, también en Viena.",
+    "intro": "El 23 de abril, en Cataluña se regalan rosas y libros. Si tú o alguien a quien quieres vive en Viena, la rosa puede llegar igual.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "colors": ["rot"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "La diada de la rosa y el libro",
+        "paragraphs": [
+          "Sant Jordi se celebra cada 23 de abril en Cataluña. Es costumbre regalar una rosa roja a la persona querida, y el mismo día, Día del Libro, también se regalan libros. Hoy en día rosas y libros se intercambian en todas direcciones: entre parejas, amigos y familia.",
+          "Desde Barcelona, Girona o cualquier otro lugar, puedes hacer llegar esa rosa a Viena: elige un ramo de rosas rojas, marca el 23 de abril en el calendario y una franja horaria de una hora."
+        ]
+      },
+      {
+        "heading": "Rosas atadas a mano en Viena",
+        "paragraphs": [
+          "Una floristería vienesa ata cada ramo a mano para tu pedido y un mensajero lo entrega en cualquiera de los 23 distritos. ¿Prefieres un número impar de rosas? Anótalo en las indicaciones del pedido para la floristería.",
+          "No hay diferencia horaria entre Cataluña y Viena, así que la hora que ves es también la tuya."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-anon", "f-nobody"],
+    "seo": {
+      "title": "Sant Jordi Viena – enviar rosas el 23 de abril",
+      "description": "Sant Jordi en Viena: envía una rosa roja el 23 de abril. Ramos de rosas atados a mano por una floristería vienesa y entregados por mensajero."
+    }
+  },
+  {
+    "slug": "flores-boda-viena",
+    "title": "Flores para una boda",
+    "headline": "Flores para una boda en Viena.",
+    "intro": "¿Te casas en Viena o te ha invitado alguien que se casa allí? Envía un ramo a los novios, a casa o al hotel, en la fecha que elijas.",
+    "image": "/images/products/sortiment/rosenkuss-1.jpg",
+    "productFilter": { "occasions": ["hochzeit"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Felicitar a los novios con flores",
+        "paragraphs": [
+          "Si no puedes viajar a la boda, un ramo es una forma bonita de estar presente. Los tonos blancos y crema resultan elegantes y combinan con casi cualquier decoración; el rojo y blanco añade un toque romántico.",
+          "También puedes enviar las flores al día siguiente o en el primer aniversario, como recuerdo del gran día."
+        ]
+      },
+      {
+        "heading": "Entrega en casa, en la oficina o en el hotel",
+        "paragraphs": [
+          "Entregamos en los 23 distritos de Viena, de lunes a domingo, en franjas de una hora entre las 9:00 y las 22:00. Si las flores van a un hotel, indica el hotel en el campo «Empresa / hotel» del pedido; el ramo se entrega en la recepción.",
+          "Cada ramo lo ata a mano una floristería vienesa para tu pedido y un mensajero lo lleva directamente a la dirección. Si pides desde España o Latinoamérica, todas las horas son hora de Viena."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-business", "f-nobody"],
+    "seo": {
+      "title": "Flores para boda Viena – ramos para los novios",
+      "description": "Flores para una boda en Viena: ramos elegantes en blanco y crema, atados a mano y entregados a los novios en casa o en el hotel, en la fecha elegida."
+    }
+  }
+]
