@@ -61,7 +61,7 @@ export function isLocale(v: unknown): v is Locale {
  * sitemap and in hreflang. Any other locale answers 404 – a half-translated
  * language never goes public. Add a locale here once its texts are complete.
  */
-export const LIVE_LOCALES: readonly Locale[] = ["de"];
+export const LIVE_LOCALES: readonly Locale[] = LOCALES;
 
 /** `I18N_PREVIEW=1` (local, tests, previews) switches every language on. Server only. */
 export function liveLocales(): readonly Locale[] {
