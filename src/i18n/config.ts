@@ -7,7 +7,7 @@
  * Pure and client-safe.
  */
 
-export const LOCALES = ["de", "en", "tr", "bks", "uk", "ru", "pl", "ro", "hu", "ar", "bg", "fa", "sk", "it", "fr", "es"] as const;
+export const LOCALES = ["de", "en", "tr", "bks", "uk", "ru", "pl", "ro", "hu", "ar", "bg", "fa", "sk", "it", "fr", "es", "ce"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "de";
 
@@ -44,6 +44,7 @@ export const LOCALE_INFO: Record<Locale, LocaleInfo> = {
   it: { name: "Italiano", short: "IT", htmlLang: "it", hreflang: ["it"], intl: "it-IT", og: "it_IT", dir: "ltr" },
   fr: { name: "Français", short: "FR", htmlLang: "fr", hreflang: ["fr"], intl: "fr-FR", og: "fr_FR", dir: "ltr" },
   es: { name: "Español", short: "ES", htmlLang: "es", hreflang: ["es"], intl: "es-ES", og: "es_ES", dir: "ltr" },
+  ce: { name: "Нохчийн", short: "CE", htmlLang: "ce", hreflang: ["ce"], intl: "ce", og: "ce_RU", dir: "ltr" },
 };
 
 export function isLocale(v: unknown): v is Locale {
@@ -84,6 +85,7 @@ export const LANGUAGE_HINTS: Record<Locale, { text: string; action: string }> = 
   it: { text: "Questo sito è disponibile anche in italiano.", action: "Vedi in italiano" },
   fr: { text: "Ce site est également disponible en français.", action: "Voir en français" },
   es: { text: "Este sitio también está disponible en español.", action: "Ver en español" },
+  ce: { text: "ХӀара сайт нохчийн маттахь а ю.", action: "Нохчийн маттахь хьажа" },
 };
 
 /** Browser language code (e.g. "hr-HR", "sr", "uk") → our locale. */

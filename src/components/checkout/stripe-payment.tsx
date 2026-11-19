@@ -87,7 +87,7 @@ function reportPaymentProblem(session: StripeSession, kind: "load_error" | "load
 /** Our languages → Stripe Elements locales (unsupported ones follow the browser). */
 function stripeLocale(l: Locale): StripeElementsOptions["locale"] {
   if (l === "bks") return "hr";
-  if (l === "uk" || l === "fa") return "auto";
+  if (l === "uk" || l === "fa" || l === "ce") return "auto";
   return l;
 }
 

@@ -27,6 +27,7 @@ const loaders: Record<Exclude<Locale, "de">, () => Promise<{ default: PartialMes
   ar: () => import("@/i18n/messages/ar"),
   bg: () => import("@/i18n/messages/bg"),
   fa: () => import("@/i18n/messages/fa"),
+  ce: () => import("@/i18n/messages/ce"),
   sk: () => import("@/i18n/messages/sk"),
   it: () => import("@/i18n/messages/it"),
   fr: () => import("@/i18n/messages/fr"),

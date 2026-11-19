@@ -38,6 +38,7 @@ export const SEGMENT_NAMES: Record<Exclude<Locale, "de">, Record<Segment, string
   sk: T("kvety", "produkt", "prilezitosti", "darcekove-sady", "vyber-darceka", "pre-firmy", "pripomienka", "dorucenie", "o-nas", "kontakt", "otazky", "kosik", "hladat", "sledovanie-objednavky"),
   it: T("fiori", "prodotto", "occasioni", "set-regalo", "idee-regalo", "aziende", "promemoria", "consegna", "chi-siamo", "contatti", "domande", "carrello", "cerca", "traccia-ordine"),
   fr: T("fleurs", "produit", "occasions", "coffrets-cadeaux", "idees-cadeaux", "entreprises", "rappel", "livraison", "a-propos", "contact", "questions", "panier", "recherche", "suivi-commande"),
+  ce: EN,
   es: T("flores", "producto", "ocasiones", "sets-regalo", "ideas-regalo", "empresas", "recordatorio", "entrega", "sobre-nosotros", "contacto", "preguntas", "carrito", "buscar", "seguimiento-pedido"),
 };
 

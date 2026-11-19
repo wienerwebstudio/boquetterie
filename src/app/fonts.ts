@@ -41,6 +41,18 @@ const serifCyr = localFont({
   ],
 });
 
+/** Cyrillic Extended (Chechen palochka Ӏ) – headlines only; Manrope has no such glyph, body text uses the system font for it. */
+const serifCyrExt = localFont({
+  variable: "--nf-serif-cyr-ext",
+  display: "swap",
+  adjustFontFallback: false,
+  preload: false,
+  src: [
+    { path: "../fonts/cormorant-garamond-cyrillic-ext-wght-normal.woff2", weight: "300 700", style: "normal" },
+    { path: "../fonts/cormorant-garamond-cyrillic-ext-wght-italic.woff2", weight: "300 700", style: "italic" },
+  ],
+});
+
 export const sans = localFont({
   variable: "--nf-sans",
   display: "swap",
@@ -74,4 +86,4 @@ const arabic = localFont({
 });
 
 /** All font variables for the `<html>` class. */
-export const fontVariables = [serif, serifExt, serifCyr, sans, sansExt, sansCyr, arabic].map((f) => f.variable).join(" ");
+export const fontVariables = [serif, serifExt, serifCyr, serifCyrExt, sans, sansExt, sansCyr, arabic].map((f) => f.variable).join(" ");

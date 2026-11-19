@@ -38,7 +38,7 @@
   --color-danger: #a23b3b;
 
   /* ---- Typography ---- */
-  --font-serif: var(--nf-serif), var(--nf-serif-ext), var(--nf-serif-cyr), var(--nf-arabic), Georgia, serif;
+  --font-serif: var(--nf-serif), var(--nf-serif-ext), var(--nf-serif-cyr), var(--nf-serif-cyr-ext), var(--nf-arabic), Georgia, serif;
   --font-sans: var(--nf-sans), var(--nf-sans-ext), var(--nf-sans-cyr), var(--nf-arabic), ui-sans-serif, system-ui, sans-serif;
 
   /* ---- Radii ---- */
