@@ -1,0 +1,191 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** en – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Product not found",
+  priceFrom: "from",
+
+  size: {
+    title: "Choose a size",
+    recommended: "Recommended",
+    soldOut: "Sold out",
+  },
+
+  color: {
+    title: "Choose a colour",
+    required: "(required)",
+    notChosen: "Not chosen yet",
+    error: "Please choose a colour.",
+  },
+
+  delivery: {
+    title: "When should the flowers arrive?",
+    formLabel: "Delivery check",
+    postalCodeLabel: "Recipient's postcode",
+    postalCodePlaceholder: "Recipient's postcode",
+    check: "Check",
+    prompt: "Enter a postcode to choose a delivery date",
+    notAvailable: "Unfortunately, we don't deliver to {plz} yet.",
+    notAvailableHint: "You'll find all current areas under {link}. For a different recipient address, simply enter a new postcode.",
+    deliveryLink: "Delivery & shipping",
+    available: "We deliver to this address.",
+    fee: "Delivery to {plz} {region}: {fee}",
+    free: "free",
+    freeFrom: "free from {price}",
+    dateGroup: "Delivery date",
+    today: "Today",
+    orderUntil: "order by {time}",
+    tomorrow: "Tomorrow",
+    chooseDate: "Choose a date",
+    openCalendar: "Open calendar",
+    deliveryOn: "Delivery on {date}",
+    todaySuffix: "· today",
+    noDays: "No delivery days are currently available.",
+  },
+
+  calendar: {
+    previousMonth: "Previous month",
+    nextMonth: "Next month",
+    weekdays: {
+      mon: { short: "Mo", long: "Monday" },
+      tue: { short: "Tu", long: "Tuesday" },
+      wed: { short: "We", long: "Wednesday" },
+      thu: { short: "Th", long: "Thursday" },
+      fri: { short: "Fr", long: "Friday" },
+      sat: { short: "Sa", long: "Saturday" },
+      sun: { short: "Su", long: "Sunday" },
+    },
+    daySameDay: "{date}, available today",
+    dayAvailable: "{date}, available",
+    dayUnavailable: "{date}, not available",
+    legendSameDay: "Available today",
+    legendToday: "Today",
+    legendUnavailable: "Greyed-out days are not available for delivery.",
+  },
+
+  card: {
+    unavailableTitle: "Personal greeting card",
+    unavailableText: "For now, your bouquet will be delivered without a card.",
+    comingSoon: "Coming soon!",
+    addMessage: "Add a personal message",
+    included: "Greeting card included",
+    handwritten: "Handwritten greeting card",
+    saved: "Message saved",
+    messageLabel: "Your message",
+    messagePlaceholder: "Happy birthday, with love …",
+    maxChars: "Maximum {max} characters.",
+    senderGroup: "Sender",
+    showSender: "Show sender",
+    anonymous: "Send without a name",
+    senderName: "Your name",
+    optional: "(optional)",
+    senderPlaceholder: "e.g. Anna",
+  },
+
+  extras: {
+    title: "Anything else?",
+    deliveredTogether: "Delivered together",
+    addLabel: "Add {name} for {price}",
+    add: "Add",
+    quantity: "{name} quantity",
+    less: "{name}: one fewer",
+    more: "{name}: one more",
+  },
+
+  floristNote: {
+    title: "Requests for our florists",
+    optional: "(optional)",
+    hint: "Small changes to the bouquet, e.g. “white roses instead of yellow, please”. We'll make them if the flowers are available. You can add delivery instructions at checkout.",
+    placeholder: "Your request for the florist",
+  },
+
+  cta: {
+    total: "Total",
+    comingSoon: "Available to order soon",
+    unavailable: "Currently unavailable",
+    addToCart: "Add to basket",
+    fresh: "Freshly hand-tied",
+    cardIncluded: "Greeting card included",
+    securePayment: "Secure payment",
+    added: "{name} ({options}) has been added to your basket.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Front view",
+      detail: "Detail",
+      size: "Size comparison",
+      packaging: "Packaging",
+      lifestyle: "Setting",
+    },
+    status: "Image {index} of {total}: {alt}",
+    carousel: "Carousel",
+    imagesOf: "Images of {name}",
+    slide: "Image",
+    slideOf: "{index} of {total}",
+    choose: "Choose image",
+    show: "Show {label}",
+    thumb: "{label}: {alt}",
+    previous: "Previous image",
+    next: "Next image",
+    colorAlt: "{name} in {color}",
+    colorLabel: "Colour {color}",
+    sizeAlt: "{name} in size {size}",
+    sizeDetailAlt: "{name} in size {size}, close-up",
+    sizeLabel: "Size {size}",
+    sizeDetailLabel: "Size {size} · close-up",
+  },
+
+  details: {
+    eyebrow: "Good to know",
+    title: "All about {name}",
+    description: "Description",
+    plant: "Plant",
+    flowers: "Flowers included",
+    care: "Care instructions",
+    delivery: "Delivery",
+    deliveryText: "Your flowers come from a Viennese florist we work with on a permanent basis. That's where bouquets are hand-tied for your order. A courier picks them up and drives to the recipient's address without stopping on the way.",
+    deliveryAreas: "We deliver to all 23 districts of Vienna. The delivery fee depends on the district and is shown once you've entered the postcode. You'll find delivery areas, time slots and order deadlines under {link}.",
+    deliveryLink: "Delivery & shipping",
+    looksPlant: "Will the plant look exactly like this?",
+    looksBouquet: "Will the bouquet look exactly like this?",
+    looksOther: "Will it look exactly like the photo?",
+    naturalPlant: "Almost. Plants are natural products: growth, size and flowering may differ from the photo. The planter may also look different depending on availability.",
+    naturalFlowers: "Almost. Flowers are natural products: depending on the season, a variety or shade of colour may differ. Our partner florist makes sure the style and colour palette stay the same.",
+  },
+
+  pricePending: {
+    status: "Price to follow",
+    sizes: "Sizes",
+    sizesLabel: "Available sizes",
+    soonTitle: "Available to order soon",
+    soonText: "We're currently setting the prices for our range. As soon as they're fixed, you'll be able to order this bouquet directly here.",
+    contact: "Questions? Write to us",
+  },
+
+  related: {
+    eyebrow: "Keep browsing",
+    title: "You might also like",
+    allFlowers: "View all flowers",
+  },
+
+  reviews: {
+    eyebrow: "Reviews",
+    title: "Reviews of {name}",
+    demoNote: "Sample reviews – real reviews to follow",
+    quote: "“{text}”",
+    verified: "Verified purchase",
+    demo: "Sample",
+  },
+
+  reviewPhotos: {
+    photosOf: "Photos by {author}",
+    enlarge: "Enlarge {alt} – photo {index} of {total}",
+    dialogTitle: "Customer photo by {author}",
+    dialogCount: "({index} of {total})",
+    close: "Close photo",
+    show: "Show photo {index}",
+  },
+};
+
+export default product;

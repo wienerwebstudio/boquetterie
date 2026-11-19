@@ -1,0 +1,98 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** en – cart (translated from src/i18n/messages/de/cart.ts). */
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Basket",
+  metaDescription: "Your chosen bouquets and extras – ready for delivery in Vienna, Austria.",
+  title: "Basket",
+  eyebrow: "Almost there",
+  loading: "Loading basket",
+  itemsHeading: "Items in your basket",
+  items: { one: "{count} item", other: "{count} items" },
+  liveCount: "Basket: {count}",
+  continueShopping: "Continue shopping",
+  summaryTitle: "Summary",
+  checkout: "Secure checkout",
+  trust: {
+    securePayment: "Secure payment",
+    ssl: "SSL-encrypted",
+    privacy: "Privacy",
+  },
+  empty: {
+    eyebrow: "Your basket",
+    title: "Still completely empty.",
+    textWithCards: "Freshly hand-tied bouquets, your preferred date and a personal card – everything is just waiting for you.",
+    text: "Freshly hand-tied bouquets and your preferred date – everything is just waiting for you.",
+    cta: "Discover flowers",
+  },
+  drawer: {
+    total: "Total",
+    inclDelivery: "{vat} incl. delivery",
+    plusDelivery: "{vat} · plus delivery",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Final price",
+      note: "In accordance with § 6 Abs. 1 Z 27 UStG, no VAT is charged (small business exemption).",
+    },
+    standard: {
+      short: "incl. VAT",
+      note: "All prices incl. VAT.",
+    },
+  },
+  line: {
+    color: "Colour {color}",
+    wish: "Request: {note}",
+    delivery: "Delivery",
+    chooseDateInCheckout: "Choose delivery date at checkout",
+    anonymous: "No sender",
+    extras: "Extras",
+    extraLess: "{name}: one fewer",
+    extraMore: "{name}: one more",
+    removeExtra: "Remove {name}",
+    quantity: "Quantity {name}",
+    decrease: "Decrease quantity",
+    increase: "Increase quantity",
+    remove: "Remove",
+  },
+  summary: {
+    bouquets: "Bouquets",
+    extras: "Extras",
+    delivery: "Delivery",
+    free: "Free",
+    deliveryInCheckout: "calculated at checkout",
+    discount: "Discount",
+    total: "Total",
+    missingForFreeDelivery: "Just {amount} more for free delivery.",
+    minOrder: "A minimum order value of {amount} applies to this address.",
+    removeCoupon: "Remove voucher",
+    couponCode: "Voucher code",
+    redeem: "Redeem",
+    couponQuestion: "Voucher code?",
+    couponCheckFailed: "The voucher couldn't be checked just now. Please try again in a moment.",
+    couponMissing: "Please enter a voucher code.",
+    couponUnknown: "We don't recognise this code.",
+  },
+  surprise: {
+    title: "Your surprise",
+    bouquet: "Bouquet",
+    card: "+ card",
+    extras: "+ extras",
+    cardsSoon: "Greeting cards coming soon",
+    cardIncluded: "Greeting card included – you can add a message at any time",
+    noExtras: "No extras yet",
+  },
+  upsell: {
+    title: "Anything else?",
+    subtitle: "Comes with the bouquet",
+    add: "Add",
+    addAria: "Add {name} for {price}",
+  },
+  cardPreview: {
+    label: "Greeting card preview",
+    placeholder: "Your message will appear here.",
+    anonymous: "No sender",
+  },
+};
+
+export default cart;

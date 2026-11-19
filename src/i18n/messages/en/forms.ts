@@ -1,0 +1,115 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** en – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Name",
+  email: "Email",
+  emailAddress: "Email address",
+  message: "Message",
+  orderNumber: "Order number",
+  honeypot: "Website",
+  charCount: "{count}/{max} characters",
+  genericError: "Sorry, that didn't work. Please try again later.",
+  invalidEmailEnter: "Please enter a valid email address.",
+
+  mailFallback: {
+    title: "The form isn't available right now.",
+    text: "Your message isn't lost: please send it to us directly by email at {email}. The text has already been filled in.",
+    open: "Open email",
+  },
+
+  newsletter: {
+    honeypot: "Website (please leave empty)",
+    successTitle: "Almost done – please confirm your sign-up.",
+    successText: "We've sent you an email with a confirmation link. You'll only receive our newsletter after confirming.",
+  },
+
+  contact: {
+    formLabel: "Contact form",
+    subject: "Topic",
+    subjects: {
+      order: "Order",
+      delivery: "Delivery",
+      business: "Business customers",
+      other: "Other",
+    },
+    orderNumberHint: "You'll find it in your order confirmation.",
+    errors: {
+      name: "Please enter your name.",
+      email: "Please enter a valid email address.",
+      subject: "Please choose a topic.",
+      orderIdTooLong: "The order number is too long.",
+      messageTooShort: "Please describe your request (at least 10 characters).",
+      messageTooLong: "The message can be no longer than 2000 characters.",
+    },
+    thanksTitle: "Thank you for your message.",
+    thanksText: "We've received your request and will get back to you as soon as possible by email at {email}.",
+    sendAnother: "Send another message",
+    failed: "The message couldn't be sent. Please try again or email us directly.",
+    consent: "By submitting, you agree that we may use your details to process your request. Details in our privacy policy.",
+    submit: "Send message",
+    mailSubject: "Contact request: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Withdraw from contract",
+    errors: {
+      name: "Please enter your name.",
+      email: "Please enter a valid email address.",
+      orderId: "Please enter the order number (e.g. BQ-7K2M9Q).",
+    },
+    emailHint: "We'll send the acknowledgement of receipt here.",
+    orderNumberHint: "You'll find it in your order confirmation.",
+    items: "Which goods are you withdrawing from?",
+    itemsPlaceholder: "e.g. the teddy bear – leave empty for all goods in the order that can be withdrawn",
+    declaration: "I hereby withdraw from the contract I concluded for the purchase of the goods listed above.",
+    receivedTitle: "Your withdrawal has been received.",
+    receivedText: "Received on {receivedAt} for order {orderId}.",
+    receivedTextWithCase: "Received on {receivedAt} for order {orderId} (case {id}).",
+    confirmationSent: "We've sent the acknowledgement of receipt to {email}.",
+    confirmationNotSent: "The confirmation email couldn't be sent just now – we'll confirm receipt personally as soon as possible. Please keep this page until then (e.g. as a screenshot).",
+    failed: "The withdrawal couldn't be submitted just now. Please try again or send it by email to {email}.",
+    submit: "Confirm withdrawal",
+    mailSubject: "Withdrawal – order {orderId}",
+    mailDeclaration: "I hereby withdraw from the contract I concluded for the purchase of the following goods: {items}",
+    mailAllItems: "all goods in the order that can be withdrawn",
+  },
+
+  business: {
+    formLabel: "Business customer enquiry",
+    company: "Company",
+    contact: "Contact person",
+    phone: "Phone",
+    location: "Location / postcode",
+    locationPlaceholder: "e.g. 1070 Vienna",
+    need: "Requirement",
+    pleaseChoose: "Please choose",
+    needs: {
+      subscription: "Regular delivery (subscription)",
+      oneOff: "One-off delivery",
+      event: "Event",
+      gifts: "Gifts for employees or clients",
+    },
+    messagePlaceholder: "What it's about, for when and on what scale – and anything else that matters to you.",
+    consent: "I agree that my details may be stored and used to process the enquiry. Details in the {privacyLink}.",
+    privacyLink: "privacy policy",
+    errors: {
+      company: "Please enter your company's name.",
+      contact: "Please enter a contact person.",
+      email: "Please enter a valid email address.",
+      phone: "Please check the phone number.",
+      location: "Please enter a location or postcode.",
+      need: "Please choose what you need.",
+      message: "Please briefly describe what you need (at least 10 characters).",
+      consent: "Please confirm that we may use your details to process your enquiry.",
+    },
+    thanksTitle: "Thank you for your enquiry.",
+    thanksText: "We've received everything and will get back to {contact} by email at {email}.",
+    sendAnother: "Send another enquiry",
+    failed: "The enquiry couldn't be sent. Please try again or email us directly.",
+    submit: "Send enquiry",
+    mailSubject: "Business enquiry: {company}",
+  },
+};
+
+export default forms;
