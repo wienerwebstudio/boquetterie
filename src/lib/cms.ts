@@ -17,7 +17,9 @@ import type {
  */
 type Collection =
   | "products" | "occasions" | "categories" | "extras" | "delivery-zones" | "coupons"
-  | "faqs" | "reviews" | "subscription" | "settings" | "homepage" | "pages" | "landing-pages" | "partners";
+  | "faqs" | "reviews" | "subscription" | "settings" | "homepage" | "pages" | "landing-pages" | "partners"
+  /** Content translations per language (src/lib/i18n-content.ts). */
+  | `i18n-${string}`;
 
 /**
  * Reads an editorial document. With the Postgres store a document that is not yet
