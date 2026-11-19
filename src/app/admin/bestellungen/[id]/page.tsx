@@ -13,7 +13,7 @@ import { deliveredAt, getReviewRequestStatus, MAX_DAYS_AFTER_DELIVERY, MIN_DAYS_
 import { courierEnabled } from "@/lib/courier";
 import { isSelfDeliveryDay } from "@/lib/delivery";
 import { RIDERX_STATUS_LABELS } from "@/lib/courier/riderx-core";
-import { PAYMENT_LABELS, PAYMENT_STATUS_LABELS, customerName, recipientName, statusLabel, isUnpaidOrder } from "@/components/admin/order-utils";
+import { PAYMENT_LABELS, PAYMENT_STATUS_LABELS, customerName, orderLanguage, recipientName, statusLabel, isUnpaidOrder } from "@/components/admin/order-utils";
 
 export const dynamic = "force-dynamic";
 
@@ -122,6 +122,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                 <Row label="Name">{customerName(order)}</Row>
                 <Row label="E-Mail"><a href={`mailto:${order.customer.email}`} className="text-forest underline-offset-4 hover:underline">{order.customer.email}</a></Row>
                 <Row label="Telefon">{order.customer.phone}</Row>
+                {orderLanguage(order) && <Row label="Sprache">bestellt auf {orderLanguage(order)} – Kundenmails gehen in dieser Sprache raus</Row>}
                 <Row label="Zahlungsart">{PAYMENT_LABELS[order.payment.method] ?? order.payment.method}</Row>
                 <Row label="Zahlungsstatus">{PAYMENT_STATUS_LABELS[order.payment.status] ?? order.payment.status}</Row>
                 {order.payment.reference && <Row label="Referenz"><code className="text-[13px]">{order.payment.reference}</code></Row>}

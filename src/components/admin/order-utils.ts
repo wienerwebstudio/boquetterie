@@ -53,3 +53,16 @@ export const PAYMENT_LABELS: Record<Order["payment"]["method"], string> = {
 export const PAYMENT_STATUS_LABELS: Record<Order["payment"]["status"], string> = {
   pending: "Ausstehend", paid: "Bezahlt", failed: "Fehlgeschlagen", refunded: "Erstattet",
 };
+
+/** German names of the shop languages – for "bestellt auf …" in the admin. */
+const LANGUAGE_NAMES_DE: Record<string, string> = {
+  de: "Deutsch", en: "Englisch", tr: "Türkisch", bks: "Bosnisch/Kroatisch/Serbisch", uk: "Ukrainisch", ru: "Russisch",
+  pl: "Polnisch", ro: "Rumänisch", hu: "Ungarisch", ar: "Arabisch", bg: "Bulgarisch", fa: "Persisch", sk: "Slowakisch",
+  it: "Italienisch", fr: "Französisch", es: "Spanisch", ce: "Tschetschenisch",
+};
+
+/** Shop language of an order in German ("Türkisch"); `null` for German orders (no `locale`). */
+export function orderLanguage(order: Pick<Order, "locale">): string | null {
+  if (!order.locale || order.locale === "de") return null;
+  return LANGUAGE_NAMES_DE[order.locale] ?? order.locale;
+}

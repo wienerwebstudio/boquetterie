@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isOpenOrder, isUnpaidOrder } from "@/components/admin/order-utils";
+import { isOpenOrder, isUnpaidOrder, orderLanguage } from "@/components/admin/order-utils";
 import type { Order, SiteSettings } from "@/types";
 
 const settings = { orderStatuses: [{ key: "received", terminal: false }, { key: "paid", terminal: false }, { key: "delivered", terminal: true }] } as unknown as SiteSettings;
@@ -18,5 +18,14 @@ describe("admin order filters", () => {
     expect(isUnpaidOrder(order("received", "failed"))).toBe(true);
     expect(isUnpaidOrder(order("paid", "paid"))).toBe(false);
     expect(isUnpaidOrder(order("refunded", "refunded"))).toBe(false);
+  });
+});
+
+describe("order language in the admin", () => {
+  it("names non-German shop languages and hides German", () => {
+    expect(orderLanguage({ locale: "tr" })).toBe("Türkisch");
+    expect(orderLanguage({ locale: "ce" })).toBe("Tschetschenisch");
+    expect(orderLanguage({})).toBeNull();
+    expect(orderLanguage({ locale: "de" })).toBeNull();
   });
 });
