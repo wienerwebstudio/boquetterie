@@ -1,0 +1,426 @@
+[
+  {
+    "slug": "livraison-fleurs-vienne",
+    "title": "Livraison de fleurs à Vienne",
+    "headline": "Livraison de fleurs à Vienne (Autriche), bouquets noués à la main.",
+    "intro": "Des bouquets composés à la main par un fleuriste viennois et livrés par coursier dans les 23 arrondissements de Vienne, du lundi au dimanche. Choisissez le bouquet, la date et un créneau d’une heure.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": {
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Comment se passe la livraison de fleurs à Vienne",
+        "paragraphs": [
+          "Choisissez un bouquet et sa taille, sélectionnez la date de livraison dans le calendrier, saisissez l’adresse du destinataire et payez. Vous recevez ensuite une confirmation par e-mail, avec un lien pour suivre l’état de votre commande.",
+          "Nous livrons dans les 23 arrondissements de Vienne, du lundi au dimanche. Lors de la commande, vous choisissez un créneau d’une heure entre 9 h et 22 h, pour que les fleurs arrivent quand quelqu’un est là pour les recevoir."
+        ]
+      },
+      {
+        "heading": "Noué à la main pour chaque commande",
+        "paragraphs": [
+          "Chaque bouquet est composé à la main pour votre commande par un fleuriste viennois avec lequel nous travaillons de façon permanente. Un coursier le récupère à l’atelier et l’apporte directement à l’adresse de livraison, sans détour.",
+          "Les bouquets sont proposés à partir de 36,90 €. Les frais de livraison dépendent de l’arrondissement : ils s’affichent dès que vous saisissez le code postal."
+        ]
+      },
+      {
+        "heading": "Besoin de fleurs aujourd’hui ?",
+        "paragraphs": [
+          "La livraison le jour même à Vienne est possible pour toute commande passée avant 18 h 30 (le dimanche avant 17 h 45), tant qu’un créneau est encore libre pour l’adresse. Le premier créneau disponible s’affiche après la saisie du code postal."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-date",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Livraison de fleurs à Vienne (Autriche) – 7 jours sur 7",
+      "description": "Livraison de fleurs à Vienne : bouquets noués à la main, livrés par coursier dans les 23 arrondissements, avec un créneau d’une heure entre 9 h et 22 h."
+    }
+  },
+  {
+    "slug": "envoyer-fleurs-vienne",
+    "title": "Envoyer des fleurs à Vienne depuis l’étranger",
+    "headline": "Envoyer des fleurs à Vienne depuis la France, la Belgique ou la Suisse.",
+    "intro": "Vous vivez à Paris, Bruxelles, Lyon ou Genève, et quelqu’un vous est cher à Vienne ? Commandez en ligne en français : le bouquet est noué à la main sur place et livré par coursier à son adresse.",
+    "image": "/images/hero/hero-wien-tram-wide.jpg",
+    "productFilter": {
+      "occasions": [
+        "geburtstag",
+        "liebe",
+        "danke",
+        "einfach-so"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Tout se fait en ligne, en français",
+        "paragraphs": [
+          "Pour envoyer des fleurs à Vienne depuis la France, la Belgique ou la Suisse, le site, la commande et les e-mails de confirmation sont en français. Vous choisissez le bouquet, la date et un créneau d’une heure, puis vous indiquez l’adresse du destinataire à Vienne. Vous n’avez rien à organiser sur place.",
+          "Le bouquet ne voyage pas par la poste : il est composé à la main à Vienne par un fleuriste partenaire, puis livré par coursier directement chez le destinataire."
+        ]
+      },
+      {
+        "heading": "Paiement et heure de livraison",
+        "paragraphs": [
+          "Vous payez par carte bancaire, Apple Pay, Google Pay, Klarna ou eps ; les cartes internationales sont acceptées. Les prix sont indiqués en euros.",
+          "Les heures affichées sont celles de Vienne, qui a le même fuseau horaire que Paris, Bruxelles et Genève : le créneau de 18 h à 19 h que vous choisissez correspond donc aussi à votre heure."
+        ]
+      },
+      {
+        "heading": "Vienne en Autriche, pas en France",
+        "paragraphs": [
+          "Attention à ne pas confondre : nous livrons uniquement à Vienne, la capitale de l’Autriche, dans ses 23 arrondissements – pas à Vienne en Isère ni dans le département de la Vienne. Les codes postaux viennois comptent quatre chiffres et commencent par 1, comme 1010 pour le centre-ville.",
+          "Si le destinataire est absent, le coursier remet les fleurs si possible à un voisin. Vous êtes tenu informé de l’état de la commande par e-mail."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-payment",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Envoyer des fleurs à Vienne (Autriche) depuis l’étranger",
+      "description": "Envoyer des fleurs à Vienne depuis la France, la Belgique ou la Suisse : commande en français, bouquet noué sur place, livraison par coursier."
+    }
+  },
+  {
+    "slug": "fleuriste-vienne",
+    "title": "Fleuriste à Vienne",
+    "headline": "Fleuriste à Vienne : des bouquets faits main, livrés à domicile.",
+    "intro": "Blumora travaille avec un fleuriste viennois qui compose chaque bouquet à la main, au moment de la commande. Vous choisissez en ligne, un coursier livre dans tout Vienne.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": {
+      "category": "bunt",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Un travail d’artisan, pas d’entrepôt",
+        "paragraphs": [
+          "Les bouquets ne sont ni préparés à l’avance ni expédiés en carton. Ils sont noués à la main pour chaque commande par un fleuriste de Vienne avec lequel nous travaillons de façon permanente, puis confiés à un coursier qui les apporte directement au destinataire.",
+          "Les fleurs sont un produit naturel : chaque bouquet est unique. Selon la saison, une variété ou une nuance peut légèrement changer, mais le style et les couleurs restent ceux de la photo."
+        ]
+      },
+      {
+        "heading": "Un souhait pour le fleuriste ?",
+        "paragraphs": [
+          "Lors de la commande, un champ de remarque est prévu pour le fleuriste. Vous pouvez y indiquer un souhait, par exemple un nombre impair de tiges : c’est possible sur demande."
+        ]
+      },
+      {
+        "heading": "Livré dans les 23 arrondissements",
+        "paragraphs": [
+          "Nous livrons du lundi au dimanche, dans un créneau d’une heure au choix entre 9 h et 22 h. Commandé avant 18 h 30 (le dimanche avant 17 h 45), un bouquet peut encore arriver le jour même, s’il reste un créneau libre.",
+          "Les frais de livraison dépendent de l’arrondissement et s’affichent après la saisie du code postal."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-photo",
+      "f-fresh",
+      "f-where",
+      "f-window"
+    ],
+    "seo": {
+      "title": "Fleuriste Vienne – bouquets faits main, livrés à domicile",
+      "description": "Fleuriste à Vienne : chaque bouquet est noué à la main par un fleuriste viennois et livré par coursier dans les 23 arrondissements, 7 jours sur 7."
+    }
+  },
+  {
+    "slug": "livraison-fleurs-jour-meme-vienne",
+    "title": "Livraison le jour même à Vienne",
+    "headline": "Livraison de fleurs le jour même à Vienne.",
+    "intro": "Commandez avant 18 h 30 – le dimanche avant 17 h 45 – et le bouquet arrive aujourd’hui encore, dans les 23 arrondissements de Vienne, tant qu’un créneau est libre.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": {
+      "sameDayOnly": true,
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Les heures limites",
+        "paragraphs": [
+          "La livraison de fleurs le jour même à Vienne est possible du lundi au samedi pour toute commande passée avant 18 h 30, et le dimanche avant 17 h 45. Il s’agit de l’heure de Vienne, la même qu’à Paris, Bruxelles ou Genève.",
+          "Le créneau choisi se termine au moins deux heures après votre commande : le fleuriste a le temps de composer le bouquet, et le coursier de l’apporter. Le premier créneau possible pour l’adresse s’affiche dès que vous saisissez le code postal."
+        ]
+      },
+      {
+        "heading": "Quels bouquets aujourd’hui ?",
+        "paragraphs": [
+          "La sélection ci-dessus ne montre que ce qui peut être livré le jour même. Chaque bouquet est noué à la main au moment de la commande par un fleuriste viennois, puis livré directement par coursier."
+        ]
+      },
+      {
+        "heading": "Quand le temps presse",
+        "paragraphs": [
+          "Un anniversaire oublié, une bonne nouvelle, un merci de dernière minute : choisissez la date du jour dans le calendrier, puis un créneau encore libre. Si personne n’ouvre, le coursier laisse les fleurs si possible chez un voisin, et vous êtes informé par e-mail."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-today",
+      "f-window",
+      "f-where",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Livraison de fleurs le jour même à Vienne – avant 18 h 30",
+      "description": "Livraison de fleurs le jour même à Vienne : commande avant 18 h 30 (dimanche 17 h 45), bouquet noué à la main, livré par coursier."
+    }
+  },
+  {
+    "slug": "livraison-roses-vienne",
+    "title": "Livraison de roses à Vienne",
+    "headline": "Livraison de roses à Vienne, nouées à la main.",
+    "intro": "Rouges, roses, blanches ou plus inattendues : des bouquets de roses composés à la main par un fleuriste viennois et livrés par coursier, à la date et dans le créneau de votre choix.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": {
+      "category": "rosen",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Quelle couleur choisir ?",
+        "paragraphs": [
+          "La rose rouge dit l’amour sans détour. Le rose et le crème sont plus tendres, le blanc plus sobre, l’orange et le jaune plus joyeux. Pour surprendre, il existe aussi des roses bleues, noires ou multicolores."
+        ]
+      },
+      {
+        "heading": "De 9 à 99 roses",
+        "paragraphs": [
+          "La plupart de nos bouquets de roses existent en six tailles, du Petit avec 9 roses au XXXL avec 99 roses. Pour la livraison de roses à Vienne, vous choisissez la taille directement sur la page du bouquet.",
+          "Vous souhaitez un autre nombre de tiges, par exemple un nombre impair ? C’est possible sur demande : notez-le dans la remarque pour le fleuriste lors de la commande."
+        ]
+      },
+      {
+        "heading": "Date, créneau et frais",
+        "paragraphs": [
+          "Nous livrons dans les 23 arrondissements de Vienne, du lundi au dimanche, dans un créneau d’une heure entre 9 h et 22 h. Les frais de livraison dépendent de l’arrondissement et s’affichent après la saisie du code postal."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-window",
+      "f-anon",
+      "f-photo"
+    ],
+    "seo": {
+      "title": "Livraison de roses à Vienne – de 9 à 99 roses",
+      "description": "Livraison de roses à Vienne : bouquets de roses noués à la main, de 9 à 99 roses, livrés par coursier avec date et créneau d’une heure au choix."
+    }
+  },
+  {
+    "slug": "fleurs-deuil-vienne",
+    "title": "Fleurs de deuil à Vienne",
+    "headline": "Fleurs et couronnes de deuil à Vienne.",
+    "intro": "Gerbes et couronnes de deuil composées à la main par un fleuriste viennois et livrées par coursier à l’adresse que vous indiquez à Vienne – pour accompagner un adieu, même à distance.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": {
+      "category": "trauer",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Gerbe ou couronne",
+        "paragraphs": [
+          "En Autriche comme en France, la couronne est un signe d’hommage traditionnel lors des obsèques. Les gerbes de deuil, posées sur un lit de branches de sapin, se déposent près du cercueil ou sur la tombe. Le blanc exprime le calme et le recueillement, le rouge l’amour ; des tons chauds ou pastel peuvent rappeler la personne disparue.",
+          "Vous souhaitez un ruban avec un court texte sur la couronne, par exemple un dernier adieu et vos prénoms ? C’est possible sur demande : notez le texte dans la remarque pour le fleuriste lors de la commande."
+        ]
+      },
+      {
+        "heading": "Date, heure et adresse",
+        "paragraphs": [
+          "Choisissez la date et un créneau d’une heure suffisamment avant le début de la cérémonie, et indiquez l’adresse complète à Vienne. Dans la remarque pour la livraison, précisez le nom du défunt et l’heure de la cérémonie, pour que les fleurs arrivent au bon endroit.",
+          "Nous livrons des fleurs de deuil dans les 23 arrondissements de Vienne, sept jours sur sept. Si vous commandez depuis la France, la Belgique ou la Suisse, les heures affichées sont celles de Vienne – la même heure que chez vous."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-date",
+      "f-window",
+      "f-change"
+    ],
+    "seo": {
+      "title": "Fleurs et couronnes de deuil à Vienne – livraison",
+      "description": "Fleurs et couronnes de deuil à Vienne, nouées à la main et livrées par coursier dans les 23 arrondissements. Ruban avec texte sur demande."
+    }
+  },
+  {
+    "slug": "fete-des-meres-vienne",
+    "title": "Fête des mères à Vienne",
+    "headline": "Fête des mères : des fleurs pour maman à Vienne.",
+    "intro": "En Autriche, la fête des mères a lieu le deuxième dimanche de mai. Un bouquet aux tons doux, noué à la main et livré chez elle à Vienne – même si vous ne pouvez pas être là.",
+    "image": "/images/products/sortiment/rose-dream-1.jpg",
+    "productFilter": {
+      "category": "pastell",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Attention : pas la même date qu’en France",
+        "paragraphs": [
+          "En Autriche, la fête des mères tombe toujours le deuxième dimanche de mai. En France, elle a lieu en général le dernier dimanche de mai, et début juin les années où ce dimanche coïncide avec la Pentecôte. Si votre maman vit à Vienne, la fête y arrive donc en général plus tôt que chez vous.",
+          "Nous livrons aussi le dimanche à Vienne : le bouquet peut arriver le jour même de la fête. Autour de cette date, les créneaux partent vite – commandez quelques jours à l’avance pour garder le choix."
+        ]
+      },
+      {
+        "heading": "Quelles fleurs pour maman ?",
+        "paragraphs": [
+          "Le rose tendre, le crème et le lilas sont affectueux sans être trop appuyés. Roses, lys et gerberas forment un bouquet généreux, et les bouquets de roses existent en plusieurs tailles.",
+          "Si elle préfère quelque chose qui dure, une orchidée en pot est une belle alternative."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Fête des mères à Vienne – fleurs livrées le dimanche",
+      "description": "Fête des mères en Autriche : le 2e dimanche de mai. Bouquets aux tons doux, noués à la main et livrés à Vienne, aussi le dimanche."
+    }
+  },
+  {
+    "slug": "saint-valentin-vienne",
+    "title": "Saint-Valentin à Vienne",
+    "headline": "Saint-Valentin : des roses livrées à Vienne le 14 février.",
+    "intro": "Roses rouges, tons tendres ou bouquet plus surprenant – noués à la main et livrés par coursier le 14 février, dans le créneau horaire de votre choix.",
+    "image": "/images/products/sortiment/red-passion-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "liebe"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Rouge, rose ou autrement",
+        "paragraphs": [
+          "La rose rouge reste le classique de la Saint-Valentin et dit sans détour ce que l’on ressent. Pour un message plus doux, choisissez le rose et le crème ; les roses bleues ou noires plairont à qui aime l’inattendu.",
+          "Beaucoup de nos bouquets de roses existent en six tailles, de 9 à 99 roses. Pour une première Saint-Valentin, un petit bouquet suffit souvent ; pour une grande déclaration, on peut voir plus grand."
+        ]
+      },
+      {
+        "heading": "Commander tôt, choisir son créneau",
+        "paragraphs": [
+          "Autour du 14 février, les commandes sont nombreuses : commandez quelques jours à l’avance pour garder le choix des créneaux. Nous livrons du lundi au dimanche, donc aussi quand la Saint-Valentin tombe un week-end.",
+          "Le créneau d’une heure se choisit entre 9 h et 22 h : au petit-déjeuner, au bureau ou juste avant le dîner. Vous êtes loin de Vienne ? L’heure affichée est celle de Vienne, la même qu’en France, en Belgique et en Suisse."
+        ]
+      },
+      {
+        "heading": "Une surprise sans signature",
+        "paragraphs": [
+          "Vous préférez garder le mystère ? Aucun nom d’expéditeur ne figure sur le bouquet, et la facture n’est envoyée qu’à vous."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-window",
+      "f-date",
+      "f-anon",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Saint-Valentin à Vienne – roses livrées le 14 février",
+      "description": "Saint-Valentin à Vienne : roses et bouquets noués à la main, livrés par coursier le 14 février dans un créneau d’une heure entre 9 h et 22 h."
+    }
+  },
+  {
+    "slug": "fleurs-mariage-vienne",
+    "title": "Fleurs pour un mariage à Vienne",
+    "headline": "Mariage à Vienne : envoyer des fleurs aux mariés.",
+    "intro": "Invité à un mariage à Vienne sans pouvoir y assister, ou envie de féliciter les jeunes mariés après la fête ? Un bouquet blanc ou rouge et blanc, noué à la main et livré par coursier.",
+    "image": "/images/products/sortiment/weiss-bouquet-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "hochzeit"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Blanc, crème ou rouge et blanc",
+        "paragraphs": [
+          "Le blanc et le crème sont les couleurs classiques du mariage : roses blanches et gypsophile donnent un bouquet lumineux et élégant. Le mélange de roses rouges et blanches associe l’amour à la fête."
+        ]
+      },
+      {
+        "heading": "Livrer au bon endroit, au bon moment",
+        "paragraphs": [
+          "Le jour du mariage, les mariés sont rarement chez eux. Faites plutôt livrer la veille ou le lendemain à leur domicile, ou à l’hôtel où ils séjournent à Vienne : indiquez le nom de l’hôtel et, si vous le connaissez, le numéro de chambre ; les fleurs sont remises à la réception.",
+          "Vous choisissez la date dans le calendrier et un créneau d’une heure entre 9 h et 22 h, du lundi au dimanche, dans les 23 arrondissements de Vienne."
+        ]
+      },
+      {
+        "heading": "Depuis l’étranger",
+        "paragraphs": [
+          "Le paiement se fait par carte bancaire, Apple Pay, Google Pay, Klarna ou eps ; les cartes internationales sont acceptées. La confirmation de commande vous parvient par e-mail, en français."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-business",
+      "f-date",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Fleurs pour un mariage à Vienne – livraison aux mariés",
+      "description": "Mariage à Vienne : bouquets blancs ou rouge et blanc, noués à la main et livrés par coursier au domicile des mariés ou à leur hôtel."
+    }
+  },
+  {
+    "slug": "fleurs-naissance-vienne",
+    "title": "Fleurs pour une naissance à Vienne",
+    "headline": "Naissance à Vienne : des fleurs pour accueillir bébé.",
+    "intro": "Un bouquet tendre pour féliciter les nouveaux parents, noué à la main et livré par coursier à leur adresse à Vienne, le jour que vous choisissez.",
+    "image": "/images/products/sortiment/zartrosa-zauber-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "geburt"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Des couleurs douces",
+        "paragraphs": [
+          "Le rose pâle, le blanc et le lilas conviennent bien pour saluer une naissance. Des roses tendres et du gypsophile donnent un bouquet léger et lumineux, qui apporte un peu de douceur dans ces premiers jours."
+        ]
+      },
+      {
+        "heading": "Le bon moment",
+        "paragraphs": [
+          "Si la maman est encore à la maternité, demandez d’abord si les fleurs y sont acceptées ; sinon, faites livrer à la maison après le retour. Vous choisissez la date dans le calendrier et un créneau d’une heure entre 9 h et 22 h, du lundi au dimanche.",
+          "Si personne n’ouvre, le coursier laisse les fleurs si possible chez un voisin. Vous êtes informé de l’état de la commande par e-mail."
+        ]
+      },
+      {
+        "heading": "Une plante qui dure",
+        "paragraphs": [
+          "Les parents préfèrent quelque chose de durable ? Une plante en pot, comme une orchidée, est une alternative qui demande peu d’entretien."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-nobody",
+      "f-fresh"
+    ],
+    "seo": {
+      "title": "Fleurs pour une naissance à Vienne – livraison",
+      "description": "Naissance à Vienne : bouquets aux tons doux pour féliciter les parents, noués à la main et livrés par coursier, avec date et créneau au choix."
+    }
+  }
+]
