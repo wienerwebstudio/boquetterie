@@ -1,0 +1,2520 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Roses roses, gerberas fuchsia & lys blancs",
+      "shortDescription": "Un bouquet clair et léger en rose et blanc, qui met de bonne humeur dans chaque pièce.",
+      "description": "Rosé Dream associe roses roses et gerberas fuchsia à des lys blancs, à un gypsophile délicat et à une verdure fraîche. Composé de façon légère et lumineux, il convient pour un anniversaire, pour dire merci ou simplement comme ça.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Lys",
+        "Gypsophile"
+      ],
+      "care": [
+        "Mettre chaque jour de l’eau fraîche dans le vase.",
+        "Recouper les tiges si nécessaire.",
+        "Retirer régulièrement les fleurs fanées."
+      ],
+      "seo": {
+        "title": "Rosé Dream – bouquet en rose & blanc",
+        "description": "Rosé Dream : roses roses, gerberas fuchsia et lys blancs en bouquet léger. Lumineux, pour un anniversaire ou un merci – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Bouquet de roses roses, de gerberas fuchsia et de lys blancs dans un vase en verre sur une commode en bois"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Bouquet jaune",
+      "tagline": "Gerberas jaunes, roses & gypsophile",
+      "shortDescription": "Un bouquet ensoleillé en jaune et blanc, noué d’un ruban jaune.",
+      "description": "Des gerberas d’un jaune éclatant rencontrent des roses blanches et jaunes, du gypsophile et une verdure fraîche. Dans une collerette claire avec un ruban jaune – un bouquet pour un anniversaire, des félicitations, un merci ou un vœu de prompt rétablissement.",
+      "flowers": [
+        "Gerberas",
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Ne pas placer en plein soleil."
+      ],
+      "seo": {
+        "title": "Bouquet jaune – gerberas & roses en jaune",
+        "description": "Gerberas jaunes, roses blanches et jaunes, gypsophile et ruban jaune. Un salut lumineux d’anniversaire ou de rétablissement – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Bouquet de gerberas jaunes et de roses blanches et jaunes dans une collerette claire avec un ruban jaune"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Bouquet blanc",
+      "tagline": "Roses claires, gerberas & lys",
+      "shortDescription": "Un bouquet clair et paisible en blanc et crème, avec de délicates touches de rose.",
+      "description": "Le Bouquet blanc réunit roses claires, gerberas et lys avec du gypsophile en un bouquet sobre et intemporel. De délicates touches de rose et d’abricot l’animent. Idéal pour un anniversaire de mariage ou de couple, pour remercier ou comme salut élégant.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Lys",
+        "Gypsophile"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Retirer délicatement le pollen des lys si nécessaire."
+      ],
+      "seo": {
+        "title": "Bouquet blanc – bouquet en blanc & crème",
+        "description": "Roses claires, gerberas, lys et gypsophile : un bouquet sobre pour un anniversaire de couple ou de mariage, ou un merci – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Bouquet clair de roses crème, de gerberas roses, de lys et de gypsophile dans une collerette blanche"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Roses bleues & blanches dans une collerette bleue",
+      "shortDescription": "Des roses bleues et blanches dans une collerette bleu clair – un bouquet qui ne passe pas inaperçu.",
+      "description": "Le Blue Bouquet associe roses bleues et blanches, gypsophile, un lys blanc et une verdure fraîche. La collerette bleu clair reprend la couleur des fleurs. Un cadeau original pour un anniversaire, un anniversaire de couple ou pour celles et ceux qui aiment ce qui sort de l’ordinaire.",
+      "flowers": [
+        "Roses",
+        "Lys",
+        "Gypsophile"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – roses bleues & blanches",
+        "description": "Roses bleues et blanches, gypsophile, collerette bleu clair : un bouquet original pour un anniversaire ou un anniversaire de couple – fleurs livrées à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Bouquet de roses bleues et blanches avec du gypsophile dans une collerette bleu clair sur une commode en bois"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Roses arc-en-ciel aux multiples couleurs",
+      "shortDescription": "Un bouquet de roses arc-en-ciel, dont chaque fleur brille de plusieurs couleurs.",
+      "description": "Farbensinfonie se compose de roses arc-en-ciel : chaque fleur montre plusieurs couleurs côte à côte, du rouge et de l’orange au bleu et au violet, en passant par le jaune et le vert. Composé de manière dense, le bouquet ressemble à une boule colorée. Une surprise joyeuse pour un anniversaire ou une fête.",
+      "flowers": [
+        "Roses arc-en-ciel"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – roses arc-en-ciel",
+        "description": "Des roses arc-en-ciel dont chaque fleur brille de plusieurs couleurs. Un bouquet de roses joyeux pour un anniversaire – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Farbensinfonie en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Farbensinfonie en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Farbensinfonie en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Bouquet dense de roses arc-en-ciel dans un vase crème",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Roses arc-en-ciel en gros plan, chaque fleur de plusieurs couleurs"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelitzias, lys & gerberas en orange et jaune",
+      "shortDescription": "Un bouquet exotique en orange et jaune, avec des oiseaux de paradis pour attirer le regard.",
+      "description": "Sonnenzauber associe des oiseaux de paradis spectaculaires à des lys blancs, des gerberas jaunes et une verdure fraîche. Les tons chauds d’orange et de jaune donnent au bouquet un rayonnement vivant et estival.",
+      "flowers": [
+        "Strelitzias (oiseaux de paradis)",
+        "Lys",
+        "Gerberas",
+        "Gypsophile"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Garder le vase propre et renouveler l’eau régulièrement.",
+        "Ne pas placer en plein soleil."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelitzias & gerberas",
+        "description": "Oiseaux de paradis, lys et gerberas jaunes dans un orange et un jaune chaleureux. Un bouquet exotique qui attire le regard – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Bouquet exotique de strelitzias, de lys blancs et de gerberas jaunes sous film transparent",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Vue de dessus des strelitzias, du lys et des gerberas jaunes du bouquet"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Fleurs fuchsia et roses avec gerberas & lys",
+      "shortDescription": "Un bouquet rond et espiègle en fuchsia et rose, avec des touches de jaune.",
+      "description": "Le Pink Bouquet réunit des fleurs fuchsia et roses, dont des lys et des gerberas, en un bouquet rond et espiègle. Des gerberas jaunes apportent des touches de fraîcheur, la collerette rose complète l’ensemble. Joli pour un anniversaire, un anniversaire de couple, la fête des Mères ou simplement comme ça.",
+      "flowers": [
+        "Lys",
+        "Gerberas"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Retirer régulièrement les fleurs fanées."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – bouquet en fuchsia & rose",
+        "description": "Un bouquet rond en fuchsia et rose avec lys et gerberas. Pour un anniversaire, la fête des Mères ou simplement comme ça – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Bouquet rond en fuchsia et rose avec des gerberas jaunes dans une collerette rose",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Bouquet de lys roses, de gerberas jaunes et de fleurs fuchsia dans une collerette rose avec un ruban"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Roses orange et abricot",
+      "shortDescription": "Des roses orange et abricot – un bouquet chaleureux comme un coucher de soleil.",
+      "description": "L’Orange Bouquet se compose de roses orange et abricot, complétées d’une verdure délicate et présentées dans une collerette claire. Chaleureux et joyeux, il convient pour un anniversaire, pour dire merci ou pour illuminer la journée de quelqu’un.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – roses orange",
+        "description": "Des roses orange et abricot dans une collerette claire. Un bouquet de roses chaleureux pour un anniversaire ou un merci – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Orange Bouquet en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Orange Bouquet en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Orange Bouquet en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Bouquet de roses orange et abricot dans une collerette claire sur une commode en bois"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Roses rouge profond dans une collerette sombre",
+      "shortDescription": "Un bouquet généreux de roses rouge profond avec un ruban de satin rouge.",
+      "description": "Le Red Rose Bouquet est un bouquet dense de roses rouge profond dans une collerette sombre, tenu par un ruban de satin rouge. La déclaration d’amour classique pour la Saint-Valentin, un anniversaire de couple ou une demande en mariage.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – roses rouges",
+        "description": "Roses rouge profond, collerette sombre, ruban de satin rouge. Le bouquet classique pour la Saint-Valentin et les anniversaires de couple – livraison à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Red Rose Bouquet en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Red Rose Bouquet en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Red Rose Bouquet en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Bouquet de roses rouge profond dans une collerette gris foncé avec un ruban de satin rouge",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Bouquet de roses rouges couché, dans une collerette noir et blanc, à côté de bougies"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Roses et gerberas en rose, pastel & lilas",
+      "shortDescription": "Un bouquet doux et romantique en rose et pastel.",
+      "description": "Le Rosa Bouquet associe des roses roses et pastel à des gerberas et à des fleurs couleur lilas. Présenté dans une collerette blanche avec un ruban rose, il paraît léger et tendre. Joli pour un anniversaire, la fête des Mères, une naissance ou comme petit salut.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – roses en rose & pastel",
+        "description": "Roses et gerberas en rose, pastel et lilas, collerette blanche. Pour un anniversaire, la fête des Mères ou une naissance – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Bouquet de roses roses, de gerberas et de fleurs couleur lilas dans une collerette blanche avec un ruban rose"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Roses noires dans une collerette sombre",
+      "shortDescription": "Des roses noires dans une collerette sombre – mystérieuses et hors du commun.",
+      "description": "Blackroses est un bouquet de roses noires, présenté dans une collerette sombre et transparente. Une affirmation originale pour celles et ceux qui apprécient ce qui sort de l’ordinaire, par exemple pour un anniversaire ou un anniversaire de couple.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Blackroses – roses noires",
+        "description": "Des roses noires dans une collerette sombre : un bouquet de roses original pour celles et ceux qui aiment l’exception – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Blackroses en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Blackroses en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Blackroses en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Bouquet de roses noires dans une collerette noire dans un vase en verre",
+        "/images/products/sortiment/blackroses-2.jpg": "Roses noires sans collerette dans un vase en verre devant une fenêtre"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Roses bleues avec gypsophile",
+      "shortDescription": "Des roses d’un bleu éclatant avec du gypsophile – rares et vraiment remarquables.",
+      "description": "Blaue Liebe est un bouquet de roses d’un bleu éclatant, allégé de gypsophile fin et présenté dans une collerette bleue. Un cadeau particulier pour un anniversaire, un anniversaire de couple ou comme signe d’un lien profond.",
+      "flowers": [
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – roses bleues",
+        "description": "Des roses d’un bleu éclatant avec du gypsophile dans une collerette bleue. Un bouquet de roses rare pour des personnes chères – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Blaue Liebe en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Blaue Liebe en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Blaue Liebe en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Bouquet de roses bleues avec du gypsophile dans une collerette bleue dans un vase blanc",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Roses bleues avec du gypsophile dans une collerette bleue, de face",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Bouquet de roses bleues couché, dans une collerette bleue, sur une commode en bois"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Roses roses avec gypsophile",
+      "shortDescription": "Des roses roses dans une collerette délicate – tendre et élégant.",
+      "description": "Rosalie est un bouquet de roses roses, allégé de gypsophile et présenté dans une collerette rose tendre. Féminin et paisible, il convient pour la fête des Mères, un anniversaire, un anniversaire de couple ou pour dire merci.",
+      "flowers": [
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Rosalie – roses roses avec gypsophile",
+        "description": "Des roses roses avec du gypsophile dans une collerette rose tendre. Pour la fête des Mères, un anniversaire ou un merci – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Rosalie en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Rosalie en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Rosalie en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Bouquet de roses roses avec du gypsophile dans une collerette rose tendre dans un vase blanc",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie dans une collerette rose, dans un vase blanc sobre",
+        "/images/products/sortiment/rosalie-3.jpg": "Roses roses avec du gypsophile dans un vase blanc cannelé",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie couché, vue de dessus sur les roses roses et le gypsophile"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Mix rouge & blanc",
+      "tagline": "Roses rouges et blanches",
+      "shortDescription": "Des roses rouges et blanches dans un bouquet festif.",
+      "description": "Le Mix rouge & blanc réunit des roses rouges et blanches dans une collerette blanche, allégées de gypsophile selon la taille. La passion rencontre la tendresse : un bouquet pour la Saint-Valentin, un anniversaire de couple, un anniversaire de mariage ou comme cadeau élégant.",
+      "flowers": [
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Mix rouge & blanc – roses rouges et blanches",
+        "description": "Roses rouges et blanches en collerette festive. Pour la Saint-Valentin, un anniversaire de couple ou de mariage, en six tailles – fleurs livrées à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Mix rouge & blanc en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Mix rouge & blanc en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Mix rouge & blanc en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Bouquet de roses rouges et blanches avec du gypsophile dans une collerette blanche, à côté de pétales de rose",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Roses rouges et blanches composées de manière dense dans une collerette blanche",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Bouquet de roses rouge et blanc dans une collerette blanche sur une commode en bois",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Bouquet de roses rouges et blanches couché, vue de dessus"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Bouquet de tulipes",
+      "tagline": "Tulipes d’une seule couleur ou mélangées",
+      "shortDescription": "Un bouquet simple de tulipes, unicolore ou en mélange coloré.",
+      "description": "Avec leurs couleurs franches et leur silhouette élancée, les tulipes apportent une ambiance printanière à la maison. Le bouquet est composé uniquement de tulipes, au choix d’une seule couleur ou en mélange coloré. Disponible en rouge, jaune, violet, rose, orange, blanc et mélange.",
+      "flowers": [
+        "Tulipes"
+      ],
+      "care": [
+        "Couper les tiges droit et les mettre dans de l’eau froide.",
+        "Peu d’eau suffit, mais en rajouter régulièrement.",
+        "Les tulipes continuent de pousser dans le vase : recouper si nécessaire."
+      ],
+      "seo": {
+        "title": "Bouquet de tulipes – tulipes de toutes les couleurs",
+        "description": "Un bouquet de tulipes en rouge, jaune, violet, rose, orange, blanc ou mélangées. Le printemps à la maison – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rouge",
+        "gelb": "Jaune",
+        "lila": "Violet",
+        "rosa": "Rose",
+        "orange": "Orange",
+        "weiss": "Blanc",
+        "mix": "Mélange coloré"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Bouquet de tulipes jaunes dans un vase en verre",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Tulipes violettes dans du papier kraft dans un vase en verre",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Tulipes rouges dans un vase beige",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Tulipes orange dans un vase en verre",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Tulipes roses dans un vase en verre sur une nappe en lin",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Mélange coloré de tulipes rouges, jaunes, roses, orange et violettes dans un vase beige",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Tulipes blanches dans un vase blanc"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Roses rouges avec gypsophile",
+      "shortDescription": "Un bouquet de roses expressif, d’un rouge profond, pour les grands sentiments.",
+      "description": "Red Passion réunit des roses rouges en un bouquet dense et rond, encadré de gypsophile et d’une collerette sombre. Disponible en six tailles – pour les gestes romantiques et les moments qui doivent rester en mémoire.",
+      "flowers": [
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Recouper les tiges.",
+        "Donner chaque jour de l’eau fraîche.",
+        "Protéger du soleil direct."
+      ],
+      "seo": {
+        "title": "Red Passion – bouquet de roses rouges",
+        "description": "Roses rouges avec gypsophile dans une collerette sombre, en six tailles. Un bouquet de roses pour les grands sentiments – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Red Passion en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Red Passion en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Red Passion en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Bouquet de roses rouge foncé couché, avec du gypsophile, dans une collerette noir et or",
+        "/images/products/sortiment/red-passion-2.jpg": "Grand bouquet de roses rouges avec du gypsophile dans une collerette sombre dans un vase blanc",
+        "/images/products/sortiment/red-passion-3.jpg": "Très grand bouquet rond de roses rouges entourées de gypsophile dans une collerette sombre"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Roses rouges en bouquet serré",
+      "shortDescription": "Des roses rouges serrées dans une collerette sombre – intemporelles et pleines d’émotion.",
+      "description": "Klassiker der Liebe se compose de roses rouges, serrées en une forme ronde et présentées dans une collerette sombre avec un ruban noir. Le bouquet de roses pour la Saint-Valentin, un anniversaire de couple, une demande en mariage ou toute déclaration d’amour.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – roses rouges",
+        "description": "Roses rouges serrées, collerette sombre : le bouquet classique pour la Saint-Valentin, un anniversaire de couple ou une demande en mariage – livraison à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Klassiker der Liebe en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Klassiker der Liebe en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Klassiker der Liebe en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Bouquet rond de roses rouges serrées dans une collerette noire avec un ruban",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Roses rouges en forme de boule dans une collerette sombre, de face"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Roses rouges avec gypsophile",
+      "shortDescription": "Un bouquet de roses généreux en six tailles.",
+      "description": "Königin der Herzen associe des roses rouges à un gypsophile fin dans une collerette sombre et transparente. Disponible en six tailles – du petit geste à la grande entrée en scène.",
+      "flowers": [
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Placer au frais.",
+        "Retirer à temps les fleurs fanées.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – bouquet de roses généreux",
+        "description": "Roses rouges avec gypsophile, en six tailles. Un bouquet de roses généreux pour les grands moments – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Königin der Herzen en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Königin der Herzen en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Königin der Herzen en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Bouquet de roses rouges avec du gypsophile dans une collerette sombre dans un vase blanc",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Grand bouquet de roses rouges et de gypsophile dans une collerette noire",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Roses rouges avec du gypsophile dans une collerette sombre dans un pot noir",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Vue de dessus de roses rouges avec du gypsophile dans une collerette sombre en forme d’étoile"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerberas, roses & lys aux tons chauds",
+      "shortDescription": "Un bouquet chaleureux en orange, rose et jaune.",
+      "description": "Herbstzauber associe gerberas, roses et lys aux tons orange, rose et jaune à une verdure fraîche. Composé avec légèreté, il apporte des couleurs chaudes à la maison, justement quand les jours raccourcissent.",
+      "flowers": [
+        "Gerberas",
+        "Roses",
+        "Lys"
+      ],
+      "care": [
+        "Ne pas placer à côté de fruits.",
+        "Rajouter régulièrement de l’eau.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Herbstzauber – bouquet aux tons chauds",
+        "description": "Gerberas, roses et lys en orange, rose et jaune. Un bouquet d’automne chaleureux pour un anniversaire ou un merci – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Bouquet de gerberas orange, de roses abricot et roses et de lys dans un vase en verre"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Roses rouges, gerberas & touches de vert",
+      "shortDescription": "Un bouquet vivant en rouge et orange, avec de fraîches touches de vert.",
+      "description": "Blütenfreude associe roses rouges et gerberas rouges et orange à des fleurs pompon vertes et à du feuillage d’eucalyptus. Des couleurs intenses et pourtant une forme toute ronde – joli pour un anniversaire, pour dire merci ou simplement comme ça.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Mettre chaque jour de l’eau fraîche dans le vase.",
+        "Recouper les tiges si nécessaire.",
+        "Retirer régulièrement les fleurs fanées."
+      ],
+      "seo": {
+        "title": "Blütenfreude – roses & gerberas en rouge",
+        "description": "Roses rouges, gerberas rouges et orange et de fraîches touches de vert. Un bouquet vivant pour un anniversaire – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Bouquet de roses rouges, de gerberas rouges et orange et de fleurs pompon vertes dans un vase en verre",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude dans un vase blanc sur une commode en bois"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Roses roses, lys & gypsophile",
+      "shortDescription": "De doux tons de rose avec des lys – paisible, harmonieux et délicat.",
+      "description": "Zartrosa Zauber associe des roses roses à des lys roses et à du gypsophile dans une collerette rose. Le bouquet est paisible et harmonieux, avec une note délicate et romantique.",
+      "flowers": [
+        "Roses",
+        "Lys",
+        "Gypsophile"
+      ],
+      "care": [
+        "Retirer les feuilles qui trempent dans l’eau.",
+        "Placer au frais.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – roses & lys en rose",
+        "description": "Roses roses, lys roses et gypsophile dans une collerette délicate. Un bouquet paisible et romantique – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Bouquet de roses roses, de lys roses et de gypsophile dans une collerette rose dans un vase blanc",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber dans une collerette rose avec un grand nœud"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerberas, lys & roses en orange et jaune",
+      "shortDescription": "Un orange et un jaune lumineux pour les bonnes nouvelles et les occasions ensoleillées.",
+      "description": "Strahlender Tag associe gerberas et lys orange à des roses jaunes, des œillets clairs et du gypsophile. Les couleurs vives apportent une énergie positive – un bouquet pour les félicitations, les réussites et les occasions ensoleillées.",
+      "flowers": [
+        "Gerberas",
+        "Lys",
+        "Roses",
+        "Œillets",
+        "Gypsophile"
+      ],
+      "care": [
+        "Protéger des courants d’air.",
+        "Changer l’eau régulièrement.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – bouquet en orange & jaune",
+        "description": "Gerberas et lys orange avec roses jaunes et gypsophile. Un bouquet joyeux pour adresser vos félicitations – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Bouquet de gerberas orange, de roses jaunes et de gypsophile dans une collerette blanc et or",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Gerberas orange, lys et rose jaune dans un vase blanc",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Bouquet rond de gerberas et de lys orange, de roses jaunes et d’œillets clairs dans un vase en verre"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Roses en rose, crème & abricot",
+      "shortDescription": "Un bouquet de roses harmonieux, entre beauté classique et style moderne.",
+      "description": "Rosentraum associe des roses rose, crème et abricot à des fleurs violettes, des branches de baies et une verdure fraîche. Dans une collerette vieux rose, le bouquet paraît à la fois généreux et moderne.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Garder le vase propre.",
+        "Renouveler l’eau régulièrement."
+      ],
+      "seo": {
+        "title": "Rosentraum – roses en rose & crème",
+        "description": "Roses rose, crème et abricot avec des touches de violet dans une collerette vieux rose. Un bouquet de roses harmonieux – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Bouquet composé de roses rose, crème et abricot dans une collerette vieux rose",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum dans une collerette vieux rose dans un vase blanc",
+        "/images/products/sortiment/rosentraum-3.jpg": "Vue de dessus des roses, des fleurs violettes et des branches de baies du bouquet"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Roses blanches avec gypsophile",
+      "shortDescription": "Des roses blanches avec du gypsophile – délicates, romantiques et lumineuses.",
+      "description": "Rosenkuss se compose de roses blanches à crème, allégées de gypsophile fin et présentées dans une collerette blanche. Un bouquet pour l’affection, la proximité et les petits messages d’amour.",
+      "flowers": [
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Ne pas placer dans un endroit trop chaud.",
+        "Vérifier chaque jour le niveau d’eau.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Rosenkuss – roses blanches",
+        "description": "Roses blanches avec gypsophile dans une collerette blanche. Un bouquet de roses délicat et romantique – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Rosenkuss en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Rosenkuss en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Rosenkuss en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Bouquet de roses blanches avec du gypsophile dans une collerette blanche dans un vase blanc",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Grand bouquet de roses blanches dans une collerette blanche dans un vase blanc",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Bouquet de roses blanches couché, avec du gypsophile, sur une commode en bois"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Roses en pastel, fuchsia & bordeaux",
+      "shortDescription": "Des roses en pastel et fuchsia, élégamment assemblées.",
+      "description": "Rosenglanz réunit des roses rose pastel, crème, fuchsia et bordeaux avec du gypsophile dans une collerette rose. Un rayonnement intemporel, disponible en six tailles.",
+      "flowers": [
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Recouper les tiges.",
+        "Éviter le soleil direct.",
+        "Changer régulièrement l’eau du vase."
+      ],
+      "seo": {
+        "title": "Rosenglanz – roses en pastel & fuchsia",
+        "description": "Roses rose pastel, fuchsia et bordeaux avec gypsophile, en six tailles. Un bouquet de roses élégant – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit",
+          "detailAlt": "Rosenglanz en taille Petit, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "m": {
+          "label": "Moyen",
+          "detailAlt": "Rosenglanz en taille Moyen, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "l": {
+          "label": "Grand",
+          "detailAlt": "Rosenglanz en taille Grand, tenu à la main, avec en arrière-plan une rue de Vienne et un tramway"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Bouquet de roses rose pastel, fuchsia et bordeaux dans une collerette rose dans un vase en verre",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Bouquet de roses rond avec du gypsophile dans une collerette rose, de face",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Bouquet de roses pastel et fuchsia couché sur une commode en bois"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Roses roses, gerberas, lys & œillets",
+      "shortDescription": "Un bouquet expressif en rose et fuchsia, qui parle sans mots.",
+      "description": "Pure Liebe associe des roses roses à un gerbera fuchsia, des lys roses, des œillets et du gypsophile. Intense dans ses tons de rose et de fuchsia, allégé de touches claires – un bouquet plein d’émotion.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Lys",
+        "Œillets",
+        "Gypsophile"
+      ],
+      "care": [
+        "Donner régulièrement de l’eau fraîche.",
+        "Garder le vase propre.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Pure Liebe – bouquet en rose & fuchsia",
+        "description": "Roses roses, gerbera fuchsia, lys et œillets avec du gypsophile. Un bouquet plein d’émotion – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Bouquet de roses roses, d’un gerbera fuchsia et de lys roses dans un vase beige",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe avec lys, gerberas et œillets dans un vase beige",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Bouquet rond de roses roses, de gerberas, d’œillets et de gypsophile dans un vase en verre"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Gerberas fuchsia, roses & touches de violet",
+      "shortDescription": "Des tons fuchsia intenses réunis en un bouquet frais et moderne.",
+      "description": "Pink Harmony associe gerberas et roses fuchsia à des fleurs blanches et lilas, des touches de violet et du gypsophile. Vivant et frais, avec beaucoup de charme.",
+      "flowers": [
+        "Gerberas",
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Placer au frais.",
+        "Retirer les fleurs fanées.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerberas & roses en fuchsia",
+        "description": "Gerberas et roses fuchsia avec des touches de lilas et de violet. Un bouquet frais et moderne – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Bouquet de gerberas fuchsia, de roses et de fleurs lilas dans un vase beige",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Bouquet rond avec gerberas fuchsia, roses et touches de violet"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Bouquet de roses multicolore en rose, jaune, abricot & violet",
+      "shortDescription": "Un bouquet de roses généreux et coloré pour les occasions particulières.",
+      "description": "Love Deluxe est un bouquet de roses aux multiples couleurs : rose, crème, abricot, jaune et violet, présenté dans une collerette rose. Pour les occasions particulières et les grands gestes, disponible en cinq tailles.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Recouper les tiges.",
+        "Changer chaque jour l’eau du vase.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Love Deluxe – bouquet de roses multicolore",
+        "description": "Roses rose, crème, abricot, jaune et violet dans une collerette rose, en cinq tailles. Pour les grands gestes – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Bouquet de roses multicolore en rose, jaune, abricot et violet dans une collerette rose dans un vase blanc",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Grand bouquet de roses multicolore dans une collerette rose, de face",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Bouquet de roses multicolore couché, dans une collerette rose, sur une commode en bois"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Roses rouges & vertes avec lys",
+      "shortDescription": "Un bouquet plein d’émotion en rouge, pour dire « Je t’aime ».",
+      "description": "Liebeserklärung associe des roses rouges à des roses vert clair, des lys blancs, des fleurs d’accent rouges et du gypsophile. Intense et pourtant frais – un bouquet qui rend les sentiments visibles.",
+      "flowers": [
+        "Roses",
+        "Lys",
+        "Gypsophile"
+      ],
+      "care": [
+        "Protéger de la chaleur.",
+        "Renouveler l’eau régulièrement.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – roses rouges & lys",
+        "description": "Roses rouges et vert clair avec lys et gypsophile. Un bouquet pour dire « Je t’aime » – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Bouquet de roses rouges et vert clair avec des lys et du gypsophile dans un vase en verre",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung dans un vase blanc sur une commode en bois"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Roses & gerberas en rose avec touches d’orange",
+      "shortDescription": "Élégant et équilibré – un bouquet d’une retenue raffinée.",
+      "description": "Klassische Schönheit associe des roses vieux rose et blanches à un gerbera fuchsia, de petites fleurs orange et du gypsophile. Dans une collerette sombre bordée d’or, le bouquet paraît équilibré et intemporel.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Gypsophile"
+      ],
+      "care": [
+        "Ne pas placer juste à côté du chauffage.",
+        "Couper les tiges en biais avant de les mettre dans l’eau.",
+        "Changer régulièrement l’eau du vase."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – roses & gerberas",
+        "description": "Roses vieux rose et blanches avec un gerbera fuchsia dans une collerette sombre. Un bouquet équilibré et intemporel – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Bouquet de roses vieux rose et d’un gerbera fuchsia dans une collerette sombre bordée d’or",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit dans un vase blanc",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Vue de dessus des roses, du gerbera et du gypsophile dans une collerette sombre"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Roses roses & gerbera fuchsia",
+      "shortDescription": "Espiègle et vivant : des roses roses rencontrent un gerbera fuchsia.",
+      "description": "Herzklopfen associe des roses rose tendre à un gerbera fuchsia, à de petites fleurs blanc et vert et à un fin feuillage violet. Composé en rond et plein de couleurs – un bouquet plein d’émotion.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Donner chaque jour de l’eau fraîche.",
+        "Couper les tiges en biais.",
+        "Placer au frais, à l’abri du soleil direct."
+      ],
+      "seo": {
+        "title": "Herzklopfen – roses roses & gerbera",
+        "description": "Roses rose tendre et gerbera fuchsia, composés en rond. Un bouquet espiègle et plein d’émotion – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Bouquet rond de roses rose tendre et d’un gerbera fuchsia dans un vase blanc",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen dans un vase blanc, de côté",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Bouquet de roses roses et d’un gerbera fuchsia dans un vase en verre"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Mélange coloré de roses & gerberas",
+      "shortDescription": "Un bouquet coloré qui respire la joie de vivre.",
+      "description": "Le Fröhlicher Blütenmix associe des roses rouges, des gerberas jaunes, roses et rouges et d’autres fleurs jaunes, orange et violettes. Présenté dans une collerette rouge – idéal pour offrir un sourire.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Placer au frais.",
+        "Changer l’eau régulièrement.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – bouquet coloré",
+        "description": "Roses rouges et gerberas jaunes, roses et rouges dans une collerette rouge. Un bouquet coloré plein de joie de vivre – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Bouquet coloré de gerberas et de roses dans une collerette rouge sur une commode en bois",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix dans une collerette rouge dans un vase blanc",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Vue de dessus des roses rouges et des gerberas jaunes et roses dans une collerette rouge"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Roses & gerberas fuchsia avec touches de violet",
+      "shortDescription": "Un mélange vivant en fuchsia, abricot et violet.",
+      "description": "Farbtänzer associe roses et roses branchues en fuchsia et abricot à des gerberas roses, des fleurs violettes et des baies claires. Composé de manière dense et vivante – moderne et expressif.",
+      "flowers": [
+        "Roses",
+        "Gerberas"
+      ],
+      "care": [
+        "Retirer les feuilles qui trempent dans l’eau.",
+        "Garder le vase propre.",
+        "Couper les tiges en biais avant de les mettre dans l’eau."
+      ],
+      "seo": {
+        "title": "Farbtänzer – bouquet en fuchsia & violet",
+        "description": "Roses et gerberas en fuchsia et abricot avec des touches de violet. Un bouquet vivant et moderne – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Bouquet couché en fuchsia et violet dans une collerette rose tendre",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Bouquet rond de roses fuchsia, de gerberas et de fleurs violettes dans un vase crème",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer dans un vase cannelé, de face"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Boîte à fleurs en forme de cœur",
+      "tagline": "Roses dans une boîte cœur rouge",
+      "shortDescription": "Des roses dans une boîte en forme de cœur – une déclaration d’amour à poser.",
+      "description": "Dans la boîte rouge en forme de cœur, des roses rouges, roses et blanches sont arrangées avec d’autres fleurs et du gypsophile. Un cadeau pour un anniversaire de couple, la Saint-Valentin ou comme tendre surprise.",
+      "flowers": [
+        "Roses",
+        "Gypsophile"
+      ],
+      "care": [
+        "Humidifier légèrement les roses.",
+        "Placer au frais.",
+        "Protéger du soleil direct."
+      ],
+      "seo": {
+        "title": "Boîte à fleurs cœur – roses dans une boîte cœur",
+        "description": "Roses rouges, roses et blanches dans une boîte cœur rouge. Pour un anniversaire de couple ou la Saint-Valentin – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Boîte à fleurs rouge en forme de cœur avec des roses rouges, roses et blanches et du gypsophile"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Boîte à fleurs classique",
+      "tagline": "Roses rouges dans une boîte ronde",
+      "shortDescription": "Des roses classiques dans une boîte ronde – sobre et expressive.",
+      "description": "La Boîte à fleurs classique remplit une boîte ronde de roses serrées. Minimaliste et intemporelle, elle convient pour un anniversaire, pour dire merci ou pour les moments particuliers. Disponible en rouge et en blanc.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Arroser légèrement les roses de façon régulière.",
+        "Placer au frais.",
+        "Protéger du soleil direct."
+      ],
+      "seo": {
+        "title": "Boîte à fleurs classique – roses en boîte",
+        "description": "Des roses serrées dans une boîte ronde, disponibles en rouge et en blanc. Un cadeau sobre – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Roses rouges dans une boîte ronde blanche bordée de rose et d’or",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Deux boîtes rondes en velours rouge avec des roses rouges sur un socle blanc"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Anthurium rose en pot",
+      "tagline": "Anthurium aux fleurs roses",
+      "shortDescription": "Un anthurium aux fleurs rose tendre – élégant et discret.",
+      "description": "Avec ses fleurs délicates et son feuillage vert brillant, l’anthurium rose apporte de la couleur dans la pièce sans être tapageur. Il trouve sa place dans le salon comme au bureau.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Placer dans un endroit lumineux, sans soleil direct.",
+        "Arroser régulièrement en évitant l’eau stagnante.",
+        "Vaporiser de temps en temps les feuilles avec de l’eau."
+      ],
+      "seo": {
+        "title": "Anthurium rose en pot – plante d’intérieur",
+        "description": "Anthurium aux fleurs rose tendre et au feuillage brillant. Une plante d’intérieur élégante à offrir – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Anthurium rose dans un pot en céramique vieux rose sur une commode en bois",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anthurium aux fleurs roses dans un pot mauve à côté de bougies"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Anthurium rouge en pot",
+      "tagline": "Anthurium aux fleurs rouges",
+      "shortDescription": "Un anthurium aux fleurs d’un rouge éclatant, au style moderne.",
+      "description": "Avec leurs fleurs brillantes, les anthuriums rouges apportent de vives touches de couleur. Plante d’intérieur décorative ou cadeau, il reste beau longtemps avec un entretien adapté.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Emplacement lumineux, sans soleil direct.",
+        "Garder la terre uniformément humide.",
+        "Éviter l’eau stagnante."
+      ],
+      "seo": {
+        "title": "Anthurium rouge en pot – plante d’intérieur",
+        "description": "Anthurium aux fleurs d’un rouge éclatant, en pot. Une plante d’intérieur décorative à offrir – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Anthurium rouge dans un pot en céramique rouge sur une commode en bois"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "Anthurium rouge XXL en pot",
+      "tagline": "Grand anthurium aux fleurs rouges",
+      "shortDescription": "Un grand anthurium généreux, aux nombreuses fleurs rouges.",
+      "description": "Cet anthurium rouge mesure plus de 80 cm et porte de nombreuses fleurs rouges au-dessus d’un feuillage dense et brillant. Un point de mire expressif pour le salon ou le bureau.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Placer dans un endroit lumineux, sans soleil direct.",
+        "Arroser régulièrement en évitant l’eau stagnante.",
+        "Essuyer de temps en temps la poussière des feuilles."
+      ],
+      "seo": {
+        "title": "Anthurium rouge XXL en pot",
+        "description": "Grand anthurium aux nombreuses fleurs rouges, en pot. Un point de mire pour le salon ou le bureau – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Grand anthurium aux nombreuses fleurs rouges dans un pot rouge à côté de bougies"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Broméliacée en pot",
+      "tagline": "Broméliacée à fleur rouge",
+      "shortDescription": "Une broméliacée à la fleur d’un rouge vif, à l’allure tropicale.",
+      "description": "Avec sa rosette florale rouge et son feuillage vert élancé, la broméliacée apporte des touches vivantes. Une plante d’intérieur décorative pour le salon ou le bureau, et un cadeau original.",
+      "flowers": [
+        "Broméliacée"
+      ],
+      "care": [
+        "Placer dans un endroit lumineux, sans soleil direct.",
+        "Verser régulièrement de l’eau dans la rosette de feuilles.",
+        "Garder la terre seulement légèrement humide."
+      ],
+      "seo": {
+        "title": "Broméliacée en pot – plante d’intérieur",
+        "description": "Broméliacée à fleur rouge, en pot : une touche tropicale pour le salon ou le bureau – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Broméliacée à fleur rouge dans un pot rouge sur une commode en bois"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Caoutchouc en pot",
+      "tagline": "Caoutchouc au feuillage vert foncé",
+      "shortDescription": "Un caoutchouc facile d’entretien aux feuilles vert foncé brillantes.",
+      "description": "Avec ses grandes feuilles brillantes, le caoutchouc (Ficus elastica) a une allure moderne et paisible. Il est facile d’entretien et trouve bien sa place à la maison comme au bureau.",
+      "flowers": [
+        "Caoutchouc (Ficus elastica)"
+      ],
+      "care": [
+        "Emplacement lumineux à mi-ombragé.",
+        "Arroser avec modération, il se contente de peu d’eau.",
+        "Dépoussiérer les feuilles de temps en temps."
+      ],
+      "seo": {
+        "title": "Caoutchouc en pot – plante facile d’entretien",
+        "description": "Caoutchouc aux feuilles vert foncé brillantes. Une plante d’intérieur facile d’entretien pour la maison et le bureau – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Caoutchouc aux feuilles vert foncé dans un pot rouge sur une commode en bois"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Orchidée blanche en pot",
+      "tagline": "Orchidée en pot, en plusieurs couleurs",
+      "shortDescription": "Une orchidée en pot – paisible, raffinée et intemporelle.",
+      "description": "L’orchidée incarne l’élégance et la sérénité. Avec ses fines grappes de fleurs, c’est un choix raffiné pour la maison, le bureau ou comme cadeau. Disponible en violet, rose, jaune, blanc et bleu.",
+      "flowers": [
+        "Orchidée"
+      ],
+      "care": [
+        "Placer dans un endroit lumineux, sans soleil direct.",
+        "Arroser avec modération en évitant l’eau stagnante.",
+        "Ne retirer les hampes fanées qu’une fois sèches."
+      ],
+      "seo": {
+        "title": "Orchidée en pot – en cinq couleurs",
+        "description": "Orchidée en pot en blanc, rose, jaune, violet ou bleu. Une plante d’intérieur élégante à offrir – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Orchidée blanche au cœur fuchsia dans un pot en céramique crème",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orchidée aux fleurs rose tendre dans un pot en céramique crème",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Orchidée jaune dans un pot en céramique crème",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orchidée aux fleurs violettes dans un pot fuchsia",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orchidée aux fleurs bleues dans un pot gris à côté de bougies"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Bouquet de deuil rouge",
+      "tagline": "Roses rouges, gerberas & œillets sur branches de sapin",
+      "shortDescription": "Un bouquet de deuil en rouge, en signe d’amour et d’attachement.",
+      "description": "Le bouquet de deuil rouge associe roses rouges, gerberas et œillets à des roses jaunes, du gypsophile et des branches de sapin. Un geste digne de recueillement, qui exprime en silence des sentiments forts. La composition peut légèrement varier selon la saison.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Œillets",
+        "Gypsophile"
+      ],
+      "care": [
+        "Placer au frais, ni en plein soleil ni à côté du chauffage.",
+        "Pour les compositions piquées, garder la mousse florale humide."
+      ],
+      "seo": {
+        "title": "Bouquet de deuil rouge – roses & gerberas",
+        "description": "Bouquet de deuil rouge avec roses, gerberas et œillets sur branches de sapin, en trois tailles. Un dernier adieu digne – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Bouquet de deuil avec des roses, des gerberas et des œillets rouges, des roses jaunes et des branches de sapin sur un socle en pierre"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Bouquet de deuil rose",
+      "tagline": "Roses roses & fleurs violettes",
+      "shortDescription": "Un bouquet de deuil aux tons rose tendre, empreint de réconfort.",
+      "description": "Des roses roses, des fleurs violettes et roses et des branches de sapin donnent à ce bouquet de deuil un effet doux et réconfortant. Il exprime la gratitude, la proximité et le souvenir affectueux – pour un adieu intime et recueilli.",
+      "flowers": [
+        "Roses"
+      ],
+      "care": [
+        "Placer au frais, ni en plein soleil ni à côté du chauffage.",
+        "Pour les compositions piquées, garder la mousse florale humide."
+      ],
+      "seo": {
+        "title": "Bouquet de deuil rose – tons rose tendre",
+        "description": "Bouquet de deuil aux tons rose tendre avec roses roses sur branches de sapin, en trois tailles. Pour un adieu recueilli – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Bouquet de deuil avec des roses roses et des fleurs violettes sur des branches de sapin, avec un ruban blanc, sur un socle en pierre"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Bouquet de deuil pastel",
+      "tagline": "Lys, roses & fleurs bleues en pastel",
+      "shortDescription": "Un bouquet de deuil paisible aux tons pastel délicats.",
+      "description": "Le bouquet de deuil pastel associe lys roses et roses à des fleurs bleu clair, lilas et blanches. Les fines nuances de couleur expriment réconfort et compassion. Les fleurs peuvent varier selon la saison.",
+      "flowers": [
+        "Lys",
+        "Roses"
+      ],
+      "care": [
+        "Placer au frais, ni en plein soleil ni à côté du chauffage.",
+        "Pour les compositions piquées, garder la mousse florale humide."
+      ],
+      "seo": {
+        "title": "Bouquet de deuil pastel – tons paisibles",
+        "description": "Bouquet de deuil pastel avec lys, roses et fleurs bleu clair, en trois tailles. Discret et élégant – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Bouquet de deuil pastel avec des lys roses, des roses et des fleurs bleu clair, avec un ruban noir, sur un socle en pierre"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Bouquet de deuil orange",
+      "tagline": "Roses, gerberas & œillets en orange et jaune",
+      "shortDescription": "Un bouquet de deuil aux tons orange chaleureux, qui exprime l’estime.",
+      "description": "Roses, gerberas et œillets en orange, jaune et abricot s’unissent à des branches de sapin en un bouquet de deuil chaleureux. Il exprime la gratitude et le souvenir d’une vie bien remplie, et convient pour une veillée funèbre ou une cérémonie commémorative.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Œillets"
+      ],
+      "care": [
+        "Placer au frais, ni en plein soleil ni à côté du chauffage.",
+        "Pour les compositions piquées, garder la mousse florale humide."
+      ],
+      "seo": {
+        "title": "Bouquet de deuil orange – tons chauds",
+        "description": "Bouquet de deuil en orange et jaune avec roses, gerberas et œillets, en trois tailles. Pour veillée funèbre et cérémonie – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Bouquet de deuil avec des roses, des gerberas et des œillets orange et jaunes sur des branches de sapin, sur un socle en pierre"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Bouquet de deuil blanc",
+      "tagline": "Lys blancs & chrysanthèmes",
+      "shortDescription": "Un bouquet de deuil classique en blanc – sobre et digne.",
+      "description": "Des lys blancs, des chrysanthèmes et de petites fleurs blanches sur des branches de sapin rendent ce bouquet de deuil sobre et intemporel. Le blanc symbolise la paix et l’adieu – pour des obsèques formelles ou comme signe discret de compassion.",
+      "flowers": [
+        "Lys",
+        "Chrysanthèmes"
+      ],
+      "care": [
+        "Placer au frais, ni en plein soleil ni à côté du chauffage.",
+        "Pour les compositions piquées, garder la mousse florale humide."
+      ],
+      "seo": {
+        "title": "Bouquet de deuil blanc – lys & chrysanthèmes",
+        "description": "Bouquet de deuil classique en blanc avec lys et chrysanthèmes, en trois tailles. Sobre et digne – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Bouquet de deuil de lys blancs, de chrysanthèmes et de petites fleurs blanches sur des branches de sapin, sur un socle en pierre"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Bouquet de deuil jaune",
+      "tagline": "Tournesols, roses jaunes & œillets",
+      "shortDescription": "Un bouquet de deuil en jaune pour le souvenir, l’espoir et la gratitude.",
+      "description": "Des tournesols, des roses jaunes et des œillets abricot sur des branches de sapin rendent ce bouquet de deuil lumineux et chaleureux. Il convient aux adieux qui célèbrent la vie. Les fleurs dépendent de la saison.",
+      "flowers": [
+        "Tournesols",
+        "Roses",
+        "Œillets"
+      ],
+      "care": [
+        "Placer au frais, ni en plein soleil ni à côté du chauffage.",
+        "Pour les compositions piquées, garder la mousse florale humide."
+      ],
+      "seo": {
+        "title": "Bouquet de deuil jaune – tournesols & roses",
+        "description": "Bouquet de deuil en jaune avec tournesols, roses et œillets, en trois tailles. Un dernier adieu lumineux – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Bouquet de deuil avec des tournesols, des roses jaunes et des œillets abricot sur des branches de sapin, sur un socle en pierre"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Couronne de deuil multicolore",
+      "tagline": "Gerberas, roses & fleurs aux couleurs vives",
+      "shortDescription": "Une couronne de deuil colorée pour dire adieu à une personne pleine de joie de vivre.",
+      "description": "La couronne de deuil multicolore associe gerberas, roses et autres fleurs en jaune, orange, rose et blanc sur un fond vert. Un dernier adieu à la fois digne et coloré, composé à la main. Pour vos souhaits concernant la composition, n’hésitez pas à nous contacter.",
+      "flowers": [
+        "Gerberas",
+        "Roses"
+      ],
+      "care": [
+        "Placer au frais et à l’ombre.",
+        "Humidifier légèrement la mousse florale si nécessaire."
+      ],
+      "seo": {
+        "title": "Couronne de deuil multicolore – adieu coloré",
+        "description": "Couronne de deuil multicolore avec gerberas et roses, composée à la main. Un dernier adieu plein de couleurs – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Couronne de deuil multicolore avec des gerberas, des lys et des fleurs blanches, avec un ruban noir, sur un chevalet en bois"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Couronne de deuil fuchsia",
+      "tagline": "Gerberas & roses en fuchsia et rouge",
+      "shortDescription": "Une couronne de deuil en fuchsia et rouge, comme un tendre dernier adieu.",
+      "description": "La couronne de deuil en fuchsia et rouge associe gerberas fuchsia, roses et autres fleurs à des touches claires et à une verdure fraîche. Expression d’amour et de souvenir, composée à la main. Pour vos souhaits concernant la composition, n’hésitez pas à nous contacter.",
+      "flowers": [
+        "Gerberas",
+        "Roses"
+      ],
+      "care": [
+        "Placer au frais et à l’ombre.",
+        "Humidifier légèrement la mousse florale si nécessaire."
+      ],
+      "seo": {
+        "title": "Couronne de deuil fuchsia – fuchsia & rouge",
+        "description": "Couronne de deuil en fuchsia et rouge avec gerberas et roses, composée à la main. Un tendre dernier adieu – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Couronne de deuil avec des gerberas fuchsia, des roses et des fleurs rouges, avec un ruban bordeaux, sur un chevalet en bois"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Couronne de deuil rouge et jaune",
+      "tagline": "Gerberas rouges et jaunes",
+      "shortDescription": "Une couronne de deuil lumineuse en rouge et jaune.",
+      "description": "Des gerberas rouges et jaunes, piqués serrés sur un fond vert, font de cette couronne de deuil un dernier adieu lumineux, plein de chaleur, de gratitude et de beaux souvenirs. Composée à la main. Pour vos souhaits concernant la composition, n’hésitez pas à nous contacter.",
+      "flowers": [
+        "Gerberas"
+      ],
+      "care": [
+        "Placer au frais et à l’ombre.",
+        "Humidifier légèrement la mousse florale si nécessaire."
+      ],
+      "seo": {
+        "title": "Couronne de deuil rouge et jaune – gerberas",
+        "description": "Couronne de deuil de gerberas rouges et jaunes, composée à la main. Un dernier adieu chaleureux et lumineux – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Couronne de deuil de gerberas rouges et jaunes avec un ruban gris argent sur un chevalet en bois"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Couronne de deuil rouge",
+      "tagline": "Gerberas & roses rouges",
+      "shortDescription": "Une couronne de deuil classique en rouge, pour un amour qui demeure.",
+      "description": "La couronne de deuil rouge associe gerberas et roses rouges sur des branches de sapin. Un dernier adieu classique et digne, pour un amour qui demeure au-delà de la séparation. Composée à la main. Pour vos souhaits concernant la composition, n’hésitez pas à nous contacter.",
+      "flowers": [
+        "Gerberas",
+        "Roses"
+      ],
+      "care": [
+        "Placer au frais et à l’ombre.",
+        "Humidifier légèrement la mousse florale si nécessaire."
+      ],
+      "seo": {
+        "title": "Couronne de deuil rouge – gerberas & roses",
+        "description": "Couronne de deuil rouge avec gerberas et roses sur branches de sapin, composée à la main. Un dernier adieu classique – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Couronne de deuil de gerberas et de roses rouges sur des branches de sapin, avec un ruban noir, sur un chevalet en bois"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Couronne de deuil blanche",
+      "tagline": "Roses, gerberas & œillets blancs",
+      "shortDescription": "Une couronne de deuil sobre en blanc, pour une compassion discrète.",
+      "description": "Des roses, des gerberas et des œillets blancs, avec des touches vert clair et de la verdure, forment cette couronne sobre. Le blanc symbolise la paix et une compassion discrète. Composée à la main. Pour vos souhaits concernant la composition, n’hésitez pas à nous contacter.",
+      "flowers": [
+        "Roses",
+        "Gerberas",
+        "Œillets"
+      ],
+      "care": [
+        "Placer au frais et à l’ombre.",
+        "Humidifier légèrement la mousse florale si nécessaire."
+      ],
+      "seo": {
+        "title": "Couronne de deuil blanche – sobre & digne",
+        "description": "Couronne de deuil blanche avec roses, gerberas et œillets, composée à la main. Un dernier adieu sobre – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Couronne de deuil en anneau de roses, de gerberas et d’œillets blancs avec un ruban blanc sur un chevalet en bois"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Couronnes de l’Avent",
+      "tagline": "Branches de sapin et quatre bougies, en sept couleurs",
+      "shortDescription": "Une couronne de l’Avent en branches de sapin, composée à la main, avec quatre bougies.",
+      "description": "La couronne de l’Avent est composée à la main de branches de sapin parfumées et décorée de quatre bougies, de rubans, de boules, de pommes de pin et d’autres détails. Disponible en rouge, gris, violet, or, beige, bordeaux et rose.",
+      "flowers": [],
+      "care": [
+        "Ne jamais laisser brûler les bougies sans surveillance.",
+        "Placer au frais, pas juste à côté du chauffage.",
+        "Vaporiser de temps en temps un peu d’eau sur les branches de sapin."
+      ],
+      "seo": {
+        "title": "Couronne de l’Avent – faite main, avec bougies",
+        "description": "Couronne de l’Avent faite main en branches de sapin avec quatre bougies, en sept couleurs et quatre tailles – livraison de fleurs à Vienne."
+      },
+      "sizes": {
+        "s": {
+          "label": "Petit"
+        },
+        "m": {
+          "label": "Moyen"
+        },
+        "l": {
+          "label": "Grand"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rouge",
+        "grau": "Gris",
+        "lila": "Violet",
+        "gold": "Or",
+        "beige": "Beige",
+        "weinrot": "Bordeaux",
+        "rosa": "Rose"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Couronne de l’Avent en branches de sapin avec quatre bougies rouges, des rubans rouges, des boules et des pommes de pin",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Couronne de l’Avent avec quatre bougies gris clair, des rubans crème et des tranches d’orange",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Couronne de l’Avent avec des bougies violettes et roses, des rubans violets et une figurine d’ange",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Couronne de l’Avent avec quatre bougies dorées, des rubans dorés, des bâtons de cannelle et des pommes de pin",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Couronne de l’Avent avec quatre bougies roses, des rubans bordeaux et une figurine d’ange",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Couronne de l’Avent avec quatre bougies bordeaux, des boules et des rubans bordeaux",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Couronne de l’Avent avec quatre bougies gris foncé, des rubans crème et des boules rouges",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Couronne de l’Avent dorée avec des bougies et des rubans dorés, de côté",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Couronne de l’Avent rose avec des bougies roses et des rubans bordeaux, de côté"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Toutes les fleurs",
+      "headline": "Commander des fleurs en ligne",
+      "intro": "Des bouquets composés à la main pour tout Vienne. Choisissez votre bouquet et fixez la date de livraison.",
+      "seo": {
+        "title": "Commander et faire livrer des fleurs à Vienne",
+        "description": "Commander des fleurs en ligne et les faire livrer à Vienne (Autriche). Des bouquets composés à la main, à la date de votre choix – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Roses",
+      "headline": "Bouquets de roses",
+      "intro": "Des roses rouges, roses ou blanches, en plusieurs tailles. Composées à la main et livrées à Vienne.",
+      "seo": {
+        "title": "Commander des bouquets de roses – roses à Vienne",
+        "description": "Tous nos bouquets de roses : roses rouges, roses et blanches en plusieurs tailles. Composés à la main, livrés à Vienne à la date de votre choix."
+      }
+    },
+    "saisonal": {
+      "name": "Fleurs de saison",
+      "headline": "Fleurs de saison",
+      "intro": "Des bouquets en accord avec la saison. La sélection change au fil de l’année.",
+      "seo": {
+        "title": "Bouquets de saison livrés à Vienne",
+        "description": "Des bouquets de saison, en accord avec le moment de l’année. Composés à la main et livrés à Vienne (Autriche)."
+      }
+    },
+    "pastell": {
+      "name": "Pastel",
+      "headline": "Bouquets pastel",
+      "intro": "Rosé, crème, lilas : des couleurs douces pour les moments tendres.",
+      "seo": {
+        "title": "Livraison de fleurs pastel à Vienne",
+        "description": "Faites livrer à Vienne des bouquets aux doux tons pastel – fraîchement composés, à la date de votre choix."
+      }
+    },
+    "bunt": {
+      "name": "Coloré",
+      "headline": "Bouquets colorés",
+      "intro": "Des couleurs qui font plaisir. Pour les anniversaires, les surprises et la bonne humeur.",
+      "seo": {
+        "title": "Livraison de bouquets colorés à Vienne",
+        "description": "Faites livrer à Vienne des bouquets colorés et joyeux – fraîchement composés, à la date de votre choix."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Élégant & blanc",
+      "headline": "Élégant & blanc",
+      "intro": "Blanc, crème et vert. Des bouquets qui apportent calme et raffinement à chaque pièce.",
+      "seo": {
+        "title": "Livraison de fleurs blanches élégantes à Vienne",
+        "description": "Faites livrer à Vienne des bouquets blancs et crème – élégants, fraîchement composés, à la date de votre choix."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Bouquets premium",
+      "intro": "Des bouquets généreux pour les moments particuliers.",
+      "seo": {
+        "title": "Livraison de bouquets premium à Vienne",
+        "description": "Faites livrer à Vienne des bouquets premium pour les grandes occasions – composés à la main, à la date de votre choix."
+      }
+    },
+    "unter-40": {
+      "name": "Moins de 40 €",
+      "headline": "Fleurs à moins de 40 €",
+      "intro": "De petits bouquets pour un grand effet – tous à moins de 40 euros.",
+      "seo": {
+        "title": "Fleurs à moins de 40 € livrées à Vienne",
+        "description": "Faites livrer à Vienne des bouquets à petit prix, à moins de 40 € – fraîchement composés, à la date de votre choix."
+      }
+    },
+    "bestseller": {
+      "name": "Nos coups de cœur",
+      "headline": "Nos bouquets coups de cœur",
+      "intro": "Les bouquets que nous recommandons tout particulièrement.",
+      "seo": {
+        "title": "Nos bouquets coups de cœur – à Vienne",
+        "description": "Les bouquets que nous recommandons tout particulièrement – composés à la main et livrés à Vienne (Autriche)."
+      }
+    },
+    "neu": {
+      "name": "Nouveautés",
+      "headline": "Nouveau chez Blumora",
+      "intro": "Tout juste arrivés dans notre sélection.",
+      "seo": {
+        "title": "Nouveaux bouquets pour Vienne",
+        "description": "Les nouveaux bouquets de notre sélection – fraîchement composés et livrés à Vienne (Autriche)."
+      }
+    },
+    "blumenboxen": {
+      "name": "Boîtes à fleurs",
+      "headline": "Boîtes à fleurs",
+      "intro": "Des roses arrangées dans une boîte – un cadeau qui se passe de vase.",
+      "seo": {
+        "title": "Livraison de boîtes à fleurs à Vienne",
+        "description": "Des roses en boîte à fleurs – en forme de cœur ou classique. Livraison de fleurs à Vienne (Autriche) à la date de votre choix."
+      }
+    },
+    "pflanzen": {
+      "name": "Plantes",
+      "headline": "Plantes en pot",
+      "intro": "Orchidées, anthuriums et plantes vertes – des fleurs qui restent.",
+      "seo": {
+        "title": "Livraison de plantes en pot à Vienne",
+        "description": "Orchidées, anthuriums et plantes d’intérieur en pot à offrir. Livraison de fleurs à Vienne (Autriche)."
+      }
+    },
+    "trauer": {
+      "name": "Fleurs de deuil",
+      "headline": "Fleurs de deuil",
+      "intro": "Couronnes et bouquets de deuil, composés avec dignité pour un dernier adieu.",
+      "seo": {
+        "title": "Couronnes & bouquets de deuil à Vienne",
+        "description": "Couronnes et bouquets de deuil pour des obsèques ou une cérémonie commémorative – livrés à Vienne (Autriche)."
+      }
+    },
+    "advent": {
+      "name": "Couronnes de l’Avent",
+      "headline": "Couronnes de l’Avent",
+      "intro": "Branches de sapin, bougies et décorations – composées à la main pour la période de l’Avent.",
+      "seo": {
+        "title": "Livraison de couronnes de l’Avent à Vienne",
+        "description": "Couronnes de l’Avent faites main, en plusieurs couleurs et tailles – livrées à Vienne (Autriche)."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Anniversaire",
+      "headline": "Des fleurs pour un anniversaire",
+      "intro": "Un bouquet qui dit : j’ai pensé à toi. Choisissez les fleurs et la date de livraison.",
+      "imageAlt": "Bouquet coloré de roses rouges, de gerberas et de fleurs jaunes dans une collerette rouge",
+      "seo": {
+        "title": "Fleurs d’anniversaire – bouquets pour Vienne",
+        "description": "Bouquets d’anniversaire : colorés, joyeux ou élégants. Composés à la main et livrés à Vienne, à la date de votre choix."
+      }
+    },
+    "liebe": {
+      "name": "Amour & romantisme",
+      "headline": "Des fleurs pour l’amour",
+      "intro": "Des roses rouges ou tout autre chose : des fleurs qui disent ce que vous ressentez.",
+      "imageAlt": "Bouquet de roses rouge profond dans une collerette grise avec un ruban rouge",
+      "seo": {
+        "title": "Livraison de fleurs romantiques à Vienne",
+        "description": "Faites livrer à Vienne des roses et des bouquets romantiques – fraîchement composés, à la date de votre choix."
+      }
+    },
+    "danke": {
+      "name": "Merci",
+      "headline": "Des fleurs pour dire merci",
+      "intro": "Pour un coup de main, pour du temps, pour tout simplement tout. Un bouquet le dit sans grands mots.",
+      "imageAlt": "Bouquet de gerberas jaunes et de roses blanches avec un ruban jaune",
+      "seo": {
+        "title": "Livraison de fleurs pour dire merci à Vienne",
+        "description": "Dire merci avec des fleurs : faites livrer à Vienne des bouquets fraîchement composés, à la date de votre choix."
+      }
+    },
+    "gute-besserung": {
+      "name": "Prompt rétablissement",
+      "headline": "Des fleurs pour un prompt rétablissement",
+      "intro": "Des couleurs douces, des formes paisibles et un petit mot qui fait du bien.",
+      "imageAlt": "Bouquet ensoleillé en orange et jaune dans une collerette claire",
+      "seo": {
+        "title": "Fleurs de prompt rétablissement livrées à Vienne",
+        "description": "Faites livrer à Vienne des fleurs pour un prompt rétablissement – des bouquets doux, fraîchement composés, à la date de votre choix."
+      }
+    },
+    "jahrestag": {
+      "name": "Anniversaire de couple",
+      "headline": "Des fleurs pour un anniversaire de couple",
+      "intro": "Pour le jour où tout a commencé. Et pour tous ceux qui ont suivi.",
+      "imageAlt": "Bouquet de roses rouges et blanches dans une collerette blanche",
+      "seo": {
+        "title": "Fleurs pour un anniversaire de couple à Vienne",
+        "description": "Faites livrer à Vienne des bouquets élégants pour un anniversaire de couple – fraîchement composés, à la date de votre choix."
+      }
+    },
+    "geburt": {
+      "name": "Naissance",
+      "headline": "Des fleurs pour une naissance",
+      "intro": "Bienvenue, petit être. Des fleurs délicates pour un grand moment.",
+      "imageAlt": "Bouquet délicat de roses roses et lilas avec du gypsophile",
+      "seo": {
+        "title": "Fleurs de naissance livrées à Vienne",
+        "description": "Faites livrer à Vienne de délicats bouquets pastel pour une naissance – fraîchement composés, à la date de votre choix."
+      }
+    },
+    "hochzeit": {
+      "name": "Mariage",
+      "headline": "Des fleurs pour un mariage",
+      "intro": "Pour les mariés ou simplement pour féliciter : élégantes, lumineuses et festives.",
+      "imageAlt": "Bouquet de roses blanches dans une collerette blanche, dans un vase",
+      "seo": {
+        "title": "Livraison de fleurs de mariage à Vienne",
+        "description": "Faites livrer à Vienne des fleurs élégantes pour un mariage – pour féliciter ou offrir, fraîchement composées."
+      }
+    },
+    "einfach-so": {
+      "name": "Juste comme ça",
+      "headline": "Des fleurs, juste comme ça",
+      "intro": "Pas d’occasion. Juste une pensée. C’est parfois la meilleure des raisons.",
+      "imageAlt": "Tulipes jaunes dans un vase en verre près d’une fenêtre",
+      "seo": {
+        "title": "Envoyer des fleurs juste comme ça – Vienne",
+        "description": "Envoyer des fleurs sans occasion : faites livrer à Vienne de petits et grands bouquets – fraîchement composés, à la date de votre choix."
+      }
+    },
+    "trauer": {
+      "name": "Deuil",
+      "headline": "Des fleurs pour un deuil",
+      "intro": "Exprimer sa compassion en couleurs paisibles. Couronnes, bouquets de deuil et bouquets, composés à la main et livrés à Vienne.",
+      "imageAlt": "Couronne de deuil blanche avec un ruban blanc sur un chevalet en bois",
+      "seo": {
+        "title": "Livraison de fleurs de deuil à Vienne",
+        "description": "Faites livrer des fleurs de deuil à Vienne – couronnes, bouquets de deuil et bouquets sobres, composés à la main, à la date de votre choix."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Bougie parfumée",
+      "description": "Des bougies parfumées décoratives dans un emballage cadeau, de différentes formes et couleurs.",
+      "imageAlt": "Bougies parfumées en forme de cœur et de boule dans des boîtes cadeaux transparentes"
+    },
+    "x-teddy": {
+      "name": "Ours en peluche",
+      "description": "Un ours en peluche avec un cœur rouge – le complément tendre du bouquet.",
+      "imageAlt": "Ours en peluche brun clair avec un cœur rouge"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Où livrez-vous ?",
+      "answer": "Nous livrons dans les 23 arrondissements de Vienne. Selon l’arrondissement, la livraison est gratuite ou coûte 3,99 € ou 7,99 €. Saisissez simplement le code postal de l’adresse de livraison – vous voyez aussitôt si et quand nous pouvons livrer, et ce que coûte la livraison.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Puis-je encore faire livrer des fleurs aujourd’hui ?",
+      "answer": "Oui – si vous commandez du lundi au samedi jusqu’à 18 h 30 ou le dimanche jusqu’à 17 h 45, nous livrons le jour même dans tout Vienne, tant qu’un créneau horaire est disponible. Vous voyez la date la plus proche pour votre adresse dès que vous saisissez le code postal.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Puis-je choisir une date de livraison précise ?",
+      "answer": "Oui. Sur chaque page produit et lors de la commande, vous choisissez la date souhaitée dans le calendrier. Les jours où nous ne livrons pas sont grisés.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Puis-je choisir une heure de livraison ?",
+      "answer": "Oui. À Vienne, vous choisissez lors de la commande un créneau d’une heure entre 9 h et 22 h – sept jours sur sept.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Que se passe-t-il si personne n’est à la maison ?",
+      "answer": "Le coursier remet les fleurs en main propre. En l’absence du destinataire, elles sont si possible déposées chez des voisins. Lors de la commande, vous pouvez laisser une indication pour la livraison, par exemple un code de porte. Nous vous informons par e-mail du statut de votre commande.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Puis-je envoyer des fleurs de façon anonyme ?",
+      "answer": "Oui. Sans carte message, votre nom n’apparaît nulle part sur le bouquet, et la facture n’est envoyée qu’à vous. Les cartes avec un message personnel arrivent bientôt.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Puis-je ajouter une carte message ?",
+      "answer": "Pas encore – les cartes message arrivent bientôt. D’ici là, le bouquet est livré sans carte.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Les fleurs sont-elles exactement comme sur la photo ?",
+      "answer": "Chaque bouquet est composé individuellement, et les fleurs sont des produits naturels. Les couleurs, les variétés et la taille des fleurs peuvent légèrement varier selon la saison. Le style et l’univers de couleurs sont conservés.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Comment les fleurs restent-elles fraîches ?",
+      "answer": "Chaque bouquet est fraîchement composé pour votre commande et remis directement par le coursier. Pour qu’il tienne le plus longtemps possible : couper les tiges en biais, mettre de l’eau fraîche et placer le bouquet au frais, à l’abri du soleil direct.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Quels sont les moyens de paiement ?",
+      "answer": "Vous voyez les moyens de paiement disponibles à la dernière étape de la commande. Le paiement est traité de façon sécurisée par un prestataire de paiement – vos données de carte ne nous parviennent jamais.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Puis-je modifier ma commande ?",
+      "answer": "Tant que le bouquet n’est pas encore composé, nous pouvons généralement encore modifier la date ou l’adresse de livraison. Écrivez-nous le plus vite possible en indiquant votre numéro de commande.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Puis-je envoyer des fleurs à une entreprise ou à un hôtel ?",
+      "answer": "Oui. Lors de la commande, indiquez le nom de l’entreprise ou de l’hôtel et – si vous les connaissez – le service ou le numéro de chambre. La livraison se fait à la réception ou à l’accueil.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Des fleurs pour les moments particuliers.",
+      "intro": "Blumora est un service de livraison de fleurs en ligne basé à Vienne. Chaque bouquet est composé à la main chez un fleuriste viennois et livré directement par coursier.",
+      "seo": {
+        "title": "À propos – livraison de fleurs depuis Vienne",
+        "description": "Blumora, service de livraison de fleurs en ligne à Vienne (Autriche) : bouquets composés à la main, livrés par coursier dans les 23 arrondissements."
+      },
+      "sections": [
+        {
+          "heading": "Notre façon de travailler",
+          "paragraphs": [
+            "Blumora est un service viennois de livraison de fleurs en ligne. Vous choisissez votre bouquet chez nous – il est composé par un fleuriste de Vienne avec lequel nous travaillons en partenariat fixe. C’est là que chaque bouquet naît, à la main et pour votre commande.",
+            "Les cartes message avec votre texte arrivent bientôt."
+          ],
+          "imageAlt": "Bouquet de roses, de dahlias, d’hortensias et de tulipes sur le rebord de la fenêtre d’un immeuble ancien viennois, avec en arrière-plan la cathédrale Saint-Étienne dans la lumière du soir"
+        },
+        {
+          "heading": "La livraison",
+          "paragraphs": [
+            "Un coursier récupère votre bouquet directement chez le fleuriste et l’apporte sans arrêt intermédiaire à l’adresse de livraison. Nous livrons dans les 23 arrondissements de Vienne – dans le créneau de votre choix : le matin, l’après-midi ou le soir jusqu’à 22 h."
+          ],
+          "imageAlt": "Bouquet Pure Liebe dans un vase en verre"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Livraison & expédition",
+      "intro": "Nous livrons dans les 23 arrondissements de Vienne. Les frais de livraison (gratuite, 3,99 € ou 7,99 €), les jours de livraison et les créneaux horaires dépendent de l’adresse de livraison – saisissez le code postal et vous voyez tout d’un coup d’œil.",
+      "seo": {
+        "title": "Livraison & expédition – fleurs livrées à Vienne",
+        "description": "Zones, frais, jours et créneaux de livraison pour vos livraisons de fleurs à Vienne (Autriche)."
+      },
+      "sections": [
+        {
+          "heading": "Comment se déroule la livraison",
+          "paragraphs": [
+            "Votre bouquet est fraîchement composé pour votre commande. Un coursier le récupère directement chez le fleuriste et l’apporte sans arrêt intermédiaire à l’adresse de livraison – dans le créneau que vous avez choisi. En l’absence du destinataire, le bouquet est si possible déposé chez des voisins.",
+            "Pour chaque commande, vous recevez une confirmation par e-mail et un lien qui vous permet de suivre son statut."
+          ]
+        },
+        {
+          "heading": "Livraison aux entreprises, hôtels et hôpitaux",
+          "paragraphs": [
+            "Lors de la commande, indiquez le nom de l’entreprise ou de l’hôtel ainsi que le service, l’unité de soins ou le numéro de chambre. Nous livrons à la réception ou à l’accueil. Veuillez noter que certains établissements n’autorisent pas les fleurs dans les unités de soins."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Contact",
+      "intro": "Une question sur une commande, une date de livraison ou un souhait particulier ? Nous sommes là pour vous.",
+      "seo": {
+        "title": "Contact – Blumora Vienne",
+        "description": "Contactez Blumora pour toute question sur une commande, une livraison ou un souhait particulier."
+      },
+      "sections": [
+        {
+          "heading": "Comment nous joindre",
+          "paragraphs": [
+            "[Espace réservé : l’e-mail, le téléphone et les horaires d’ouverture sont repris des paramètres et doivent y être complétés.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Livraison de fleurs à Vienne",
+      "headline": "Des fleurs qui en disent plus.",
+      "subheadline": "Des fleurs fraîchement composées pour les personnes qui comptent pour vous. Il suffit de choisir, de fixer la date et de faire livrer un peu de bonheur.",
+      "primaryCta": {
+        "label": "Découvrir les fleurs"
+      },
+      "secondaryCta": {
+        "label": "Choisir par occasion"
+      },
+      "imageAlt": "Une femme en manteau camel porte un grand bouquet de roses, de renoncules, de dahlias et de tulipes dans une rue pavée de Vienne, un tramway passe derrière elle",
+      "deliveryCheck": {
+        "title": "Où pouvons-nous livrer ?",
+        "placeholder": "Saisir le code postal",
+        "button": "Vérifier la livraison"
+      }
+    },
+    "occasions": {
+      "headline": "Des fleurs pour chaque moment",
+      "subheadline": "Pas besoin d’une grande occasion. Juste le bon geste."
+    },
+    "bestsellers": {
+      "headline": "Nos bouquets coups de cœur",
+      "subheadline": "Une sélection de notre assortiment."
+    },
+    "collections": {
+      "headline": "Trouvez votre bouquet idéal",
+      "subheadline": "Par couleur, style ou budget."
+    },
+    "howItWorks": {
+      "headline": "Faire plaisir n’a jamais été aussi simple.",
+      "steps": [
+        {
+          "title": "Choisir son bouquet",
+          "text": "Découvrez des fleurs pour tous les goûts et toutes les occasions."
+        },
+        {
+          "title": "Le personnaliser",
+          "text": "Choisissez la taille et de petits extras."
+        },
+        {
+          "title": "Choisir la date de livraison",
+          "text": "Décidez quand votre surprise doit arriver."
+        },
+        {
+          "title": "Faire livrer le bonheur",
+          "text": "Nous nous occupons du reste."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Période de l’Avent",
+      "headline": "Bientôt, la première bougie s’allume.",
+      "text": "Des couronnes de l’Avent avec branches de sapin, bougies et décorations – en plusieurs couleurs et tailles. Et des bouquets aux chaleureux tons d’automne.",
+      "cta": {
+        "label": "Couronnes de l’Avent"
+      },
+      "imageAlt": "Couronne de l’Avent en branches de sapin avec quatre bougies rouges sur une commode en bois"
+    },
+    "editorial": {
+      "eyebrow": "Savoir-faire",
+      "headline": "Par des fleuristes. Pas à la chaîne.",
+      "text": "Chaque bouquet est composé à la main par un fleuriste viennois pour votre commande et livré directement par coursier – sans détour par un entrepôt.",
+      "cta": {
+        "label": "Notre façon de travailler"
+      },
+      "imageAlt": "À la porte d’un immeuble ancien viennois, un coursier remet un bouquet coloré de roses, de dahlias et de renoncules"
+    },
+    "extras": {
+      "headline": "Complétez votre surprise.",
+      "subheadline": "De petits extras qui rendent le moment plus grand."
+    },
+    "subscription": {
+      "headline": "Plus de fleurs au quotidien.",
+      "text": "Des bouquets de saison frais – chaque semaine, toutes les deux semaines ou chaque mois. Pour la maison, le bureau, l’accueil ou la restauration.",
+      "cta": {
+        "label": "Découvrir l’abonnement floral"
+      }
+    },
+    "reviews": {
+      "headline": "Des moments qui sont bien arrivés.",
+      "subheadline": "Ce que nos clients disent de leur commande."
+    },
+    "gallery": {
+      "headline": "Des fleurs pour les moments particuliers.",
+      "images": [
+        {
+          "alt": "Bouquet de roses multicolore en rouge, rose, crème et abricot dans un vase blanc"
+        },
+        {
+          "alt": "Bouquet de roses d’un bleu éclatant dans un vase blanc"
+        },
+        {
+          "alt": "Bouquet aux tons fuchsia intenses avec des gerberas dans un vase près d’une fenêtre"
+        },
+        {
+          "alt": "Bouquet exotique avec des oiseaux de paradis, des lys et des gerberas"
+        },
+        {
+          "alt": "Boîte à fleurs rouge en forme de cœur avec des roses sur une commode"
+        },
+        {
+          "alt": "Bouquet de roses pastel et fuchsia dans une collerette rose"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Bon à savoir"
+    },
+    "newsletter": {
+      "headline": "Un peu plus de fleurs dans votre boîte mail.",
+      "text": "Nouveautés, collections de saison et offres spéciales.",
+      "placeholder": "Votre adresse e-mail",
+      "button": "S’inscrire",
+      "note": "Désinscription possible à tout moment. Vous trouverez les informations sur la protection des données dans la politique de confidentialité."
+    }
+  },
+  "settings": {
+    "claim": "Des fleurs qui en disent plus.",
+    "seo": {
+      "defaultTitle": "Blumora – livraison de fleurs à Vienne",
+      "defaultDescription": "Des fleurs fraîchement composées, livrées directement à ceux qui comptent pour vous. Choisissez la date, offrez du bonheur – livraison de fleurs à Vienne."
+    },
+    "announcement": {
+      "messages": [
+        "Livraison de fleurs dans tout Vienne",
+        "Fraîchement composées, livrées par coursier",
+        "Date de livraison au choix"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Fraîchement composés",
+        "text": "Composés à la main pour votre commande"
+      },
+      {
+        "title": "Livraison par coursier",
+        "text": "Dans les 23 arrondissements de Vienne"
+      },
+      {
+        "title": "Date au choix",
+        "text": "Vous choisissez le jour"
+      },
+      {
+        "title": "Cartes message",
+        "text": "Bientôt disponibles"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Commande reçue",
+        "description": "Nous avons bien reçu votre commande."
+      },
+      "paid": {
+        "label": "Paiement confirmé",
+        "description": "Nous avons bien reçu votre paiement."
+      },
+      "preparing": {
+        "label": "En préparation",
+        "description": "Les fleurs de votre bouquet sont en cours de sélection."
+      },
+      "arranging": {
+        "label": "Bouquet en composition",
+        "description": "Votre bouquet est composé à la main."
+      },
+      "ready": {
+        "label": "Prêt pour la livraison",
+        "description": "Le bouquet est prêt et va être récupéré par le coursier."
+      },
+      "in_transit": {
+        "label": "En route",
+        "description": "Votre bouquet est en chemin."
+      },
+      "delivered": {
+        "label": "Livré",
+        "description": "Les fleurs sont arrivées."
+      },
+      "undeliverable": {
+        "label": "Livraison impossible",
+        "description": "Nous n’avons pas pu livrer et revenons vers vous."
+      },
+      "cancelled": {
+        "label": "Commande annulée",
+        "description": "La commande a été annulée."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Carte bancaire",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Virement en ligne (eps)"
+    },
+    "headerCta": "Envoyer des fleurs",
+    "address": {
+      "city": "Vienne",
+      "country": "Autriche"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Vienne zone 1",
+      "windows": {
+        "h09": "9 h–10 h",
+        "h10": "10 h–11 h",
+        "h11": "11 h–12 h",
+        "h12": "12 h–13 h",
+        "h13": "13 h–14 h",
+        "h14": "14 h–15 h",
+        "h15": "15 h–16 h",
+        "h16": "16 h–17 h",
+        "h17": "17 h–18 h",
+        "h18": "18 h–19 h",
+        "h19": "19 h–20 h",
+        "h20": "20 h–21 h",
+        "h21": "21 h–22 h"
+      }
+    },
+    "wien-mitte": {
+      "name": "Vienne zone 2",
+      "windows": {
+        "h09": "9 h–10 h",
+        "h10": "10 h–11 h",
+        "h11": "11 h–12 h",
+        "h12": "12 h–13 h",
+        "h13": "13 h–14 h",
+        "h14": "14 h–15 h",
+        "h15": "15 h–16 h",
+        "h16": "16 h–17 h",
+        "h17": "17 h–18 h",
+        "h18": "18 h–19 h",
+        "h19": "19 h–20 h",
+        "h20": "20 h–21 h",
+        "h21": "21 h–22 h"
+      }
+    },
+    "wien-fern": {
+      "name": "Vienne zone 3",
+      "windows": {
+        "h09": "9 h–10 h",
+        "h10": "10 h–11 h",
+        "h11": "11 h–12 h",
+        "h12": "12 h–13 h",
+        "h13": "13 h–14 h",
+        "h14": "14 h–15 h",
+        "h15": "15 h–16 h",
+        "h16": "16 h–17 h",
+        "h17": "17 h–18 h",
+        "h18": "18 h–19 h",
+        "h19": "19 h–20 h",
+        "h20": "20 h–21 h",
+        "h21": "21 h–22 h"
+      }
+    },
+    "noe-umland": {
+      "name": "Environs de Vienne (Basse-Autriche)",
+      "note": "Livraison dans les environs de Vienne le mardi, le jeudi et le samedi.",
+      "windows": {
+        "day": "9 h–18 h"
+      }
+    }
+  }
+}
