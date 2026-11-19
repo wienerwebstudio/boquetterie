@@ -266,6 +266,7 @@ export async function assignPartnerAction(_prev: OrderActionState, formData: For
     await requireAdmin();
     const id = String(formData.get("id") ?? "");
     const partnerId = String(formData.get("partnerId") ?? "");
+    const floristNote = String(formData.get("floristNote") ?? "").replace(/\r\n/g, "\n").trim().slice(0, 1000);
     const { getOrderById } = await import("@/lib/cms");
     const found = await getOrderById(id);
     if (!found) return { ok: false, message: "Bestellung nicht gefunden." };
@@ -293,6 +294,8 @@ export async function assignPartnerAction(_prev: OrderActionState, formData: For
 
     const again = order.partner?.id === partner.id && Boolean(order.partner.sentAt) && !order.partner.cancelSentAt;
     const confirmToken = randomBytes(16).toString("hex");
+    // The team note travels with the slip (and its reminders).
+    order = { ...order, partner: { ...(order.partner ?? { id: partner.id, name: partner.name, assignedAt: new Date().toISOString() }), note: floristNote || undefined } };
     const { to, result } = await sendPartnerOrder(order, partner, confirmToken);
     const at = new Date().toISOString();
     if (!delivered(result)) {
@@ -303,10 +306,11 @@ export async function assignPartnerAction(_prev: OrderActionState, formData: For
       ...o,
       partner: {
         id: partner.id, name: partner.name, assignedAt: again && o.partner ? o.partner.assignedAt : at, sentAt: at, sentTo: to, confirmToken,
+        ...(floristNote ? { note: floristNote } : {}),
         // A re-sent slip keeps an earlier confirmation; a new partner has to confirm again.
         ...(again && o.partner?.confirmedAt ? { confirmedAt: o.partner.confirmedAt } : {}),
       },
-      history: [...o.history, { status: o.status, at, note: `${again ? "Auftrag erneut gesendet" : "Partner zugeordnet, Auftrag gesendet"}: ${partner.name} (${to.join(", ")})${logOnly(result)}` }],
+      history: [...o.history, { status: o.status, at, note: `${again ? "Auftrag erneut gesendet" : "Partner zugeordnet, Auftrag gesendet"}: ${partner.name} (${to.join(", ")})${logOnly(result)}${floristNote ? ` – Hinweis an Floristik: „${floristNote}“` : ""}` }],
     }));
     revalidateOrder(id);
     return { ok: true, message: [...notes, `Auftrag ${again ? "erneut " : ""}an ${partner.name} gesendet (${to.join(", ")})${logOnly(result)}.`].join(" ") };

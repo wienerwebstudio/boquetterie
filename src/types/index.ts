@@ -523,6 +523,8 @@ export interface Partner {
 
 /** The partner an order is assigned to, and what they were sent. */
 export interface OrderPartner {
+  /** Note from the team to the florist – shown big and bold at the top of the order slip. */
+  note?: string;
   id: string;
   name: string;
   assignedAt: string;

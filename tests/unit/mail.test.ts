@@ -339,3 +339,18 @@ describe("partner confirmation and internal partner info", () => {
     expect(m.subject).toBe("Bestätigt: Rosenhaus übernimmt BQ-ABC123");
   });
 });
+
+describe("team note to the florist", () => {
+  const brand = { name: "Blumora", siteUrl: "https://blumora.at", email: "office@blumora.at" } as Parameters<typeof floristOrder>[0]["brand"];
+  it("is shown big, bold and escaped at the top, and flagged in the subject", () => {
+    const noted = { ...order, partner: { id: "dody", name: "Blumen Dody", assignedAt: "2026-11-04T10:00:00.000Z", note: "Bitte 11 Rosen <ungerade>\nSchleife: In Liebe" } };
+    const mail = floristOrder({ order: noted, brand });
+    expect(mail.subject.startsWith("WICHTIGER HINWEIS – Auftrag BQ-ABC123")).toBe(true);
+    expect(mail.html).toContain("Bitte 11 Rosen &lt;ungerade&gt;<br>Schleife: In Liebe");
+    expect(mail.html.indexOf("Wichtiger Hinweis von Blumora")).toBeLessThan(mail.html.indexOf("Bitte so binden"));
+    expect(mail.text).toContain("!!! WICHTIGER HINWEIS VON BLUMORA – BITTE BEACHTEN !!!");
+  });
+  it("leaves the slip unchanged without a note", () => {
+    expect(floristOrder({ order, brand }).subject.startsWith("Auftrag")).toBe(true);
+  });
+});

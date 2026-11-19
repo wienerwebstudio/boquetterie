@@ -83,6 +83,8 @@ type Block =
   | { type: "totals"; order: Order }
   | { type: "quote"; text: string; by?: string }
   | { type: "alert"; text: string }
+  /** Big, bold, framed note that must not be overlooked (team note to the florist). */
+  | { type: "important"; title: string; text: string }
   | { type: "hr" }
   | { type: "choices"; items: { label: string; url: string }[] };
 
@@ -172,6 +174,8 @@ function renderBlockHtml(b: Block, L: Lang): string {
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px;"><tr><td style="padding:18px 20px;background:${C.bg};border:1px solid ${C.line};border-radius:6px;font-family:${SERIF};font-size:17px;line-height:1.55;color:${C.ink};font-style:italic;">${escapeHtml(b.text).replace(/\n/g, "<br>")}${b.by ? `<br><span style="font-family:${FONT};font-style:normal;font-size:13px;color:${C.muted};">– ${escapeHtml(b.by)}</span>` : ""}</td></tr></table>`;
     case "alert":
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;"><tr><td style="padding:14px 18px;background:${C.rose};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.55;color:${C.burgundy};">${escapeHtml(b.text)}</td></tr></table>`;
+    case "important":
+      return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px;border-collapse:separate;"><tr><td style="padding:18px 20px;background:#fff4e5;border:3px solid #c2410c;border-radius:8px;font-family:${FONT};color:#111111;"><div style="font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#c2410c;margin:0 0 8px;">&#9888;&#xFE0E; ${escapeHtml(b.title)}</div><div style="font-size:18px;line-height:1.5;font-weight:700;">${escapeHtml(b.text).replace(/\n/g, "<br>")}</div></td></tr></table>`;
     case "hr":
       return `<hr style="border:0;border-top:1px solid ${C.line};margin:24px 0;">`;
   }
@@ -210,6 +214,8 @@ function renderBlockText(b: Block, L: Lang): string {
       return `${fmt(L.m.order.greeting.quote, { text: b.text })}${b.by ? ` – ${b.by}` : ""}`;
     case "alert":
       return `! ${b.text}`;
+    case "important":
+      return `\n!!! ${b.title.toUpperCase()} !!!\n${b.text}\n`;
     case "hr":
       return "—";
   }
@@ -444,12 +450,14 @@ export function floristOrder(input: { order: Order; brand: MailBrand; selfDelive
   const ready = readyBy
     ? `${formatDateLong(order.delivery.date)}, bis ${readyBy} Uhr (Abholung durch ${input.selfDelivery ? brand.name : "den Kurier"})`
     : `${formatDateLong(order.delivery.date)} (Uhrzeit folgt)`;
+  const note = order.partner?.note?.trim();
   return layout({
     brand,
-    subject: `${input.reminder ? `Erinnerung ${input.reminder}: bitte bestätigen – ` : ""}Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${readyBy ? ` ${readyBy} Uhr` : ""}`,
-    preheader: first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – Größe ${sizeShort(first.sizeId, first.sizeLabel, first.stems)}` : undefined,
+    subject: `${input.reminder ? `Erinnerung ${input.reminder}: bitte bestätigen – ` : ""}${note ? "WICHTIGER HINWEIS – " : ""}Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${readyBy ? ` ${readyBy} Uhr` : ""}`,
+    preheader: note ? `Wichtiger Hinweis: ${note.slice(0, 90)}` : first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – Größe ${sizeShort(first.sizeId, first.sizeLabel, first.stems)}` : undefined,
     headline: `Neuer Auftrag ${order.id}`,
     blocks: [
+      ...(note ? [{ type: "important", title: "Wichtiger Hinweis von Blumora – bitte beachten", text: note } as Block] : []),
       ...(input.reminder ? [{ type: "alert", text: `Erinnerung ${input.reminder}: Wir haben für diesen Auftrag noch keine Bestätigung von euch. Bitte kurz auf „Auftrag bestätigen“ klicken – oder antwortet auf diese Mail, falls ihr ihn nicht übernehmen könnt.` } as Block] : []),
       { type: "p", text: "Bitte so binden wie auf dem Foto. Das Max. Budget ist der Betrag, für den ihr den Strauß bindet." },
       ...(input.confirmUrl

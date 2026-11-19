@@ -155,6 +155,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               {order.partner?.sentAt && !order.partner.cancelSentAt && (
                 <Row label="Bestätigt">{!order.partner.confirmedAt && order.partner.reminders?.length ? <div className="text-[12.5px] text-ink-muted">{order.partner.reminders.length} Erinnerung(en) gesendet, zuletzt {formatDateTime(order.partner.reminders[order.partner.reminders.length - 1])}</div> : null}{order.partner.confirmedAt ? <span className="font-semibold text-[#0a6644]">Ja, {formatDateTime(order.partner.confirmedAt)}</span> : order.partner.confirmToken ? <span className="font-semibold text-burgundy">Noch nicht – ggf. anrufen</span> : <span className="text-ink-muted">Ohne Bestätigungslink gesendet</span>}</Row>
               )}
+              {order.partner?.note && <Row label="Hinweis an Floristik"><span className="whitespace-pre-line font-semibold text-[#9a3412]">{order.partner.note}</span></Row>}
               {order.partner?.cancelSentAt && <Row label="Storno gesendet">{formatDateTime(order.partner.cancelSentAt)}</Row>}
             </dl>
             <PartnerForm
@@ -162,6 +163,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               partners={partners.map((p) => ({ id: p.id, name: p.name, reachable: partnerMailAddresses(p).length > 0 }))}
               current={order.partner ? { id: order.partner.id, name: order.partner.name, sent: Boolean(order.partner.sentAt), cancelled: Boolean(order.partner.cancelSentAt) } : null}
               canAssign={order.payment.status === "paid" && order.status !== "cancelled"}
+              note={order.partner?.note}
             />
             {partners.length === 0 && <p className="mt-3 text-[13px] text-ink-muted">Noch kein aktiver Partner – unter <Link href="/admin/partner" className="text-[#0a6644] underline-offset-4 hover:underline">Partner</Link> anlegen.</p>}
           </Card>

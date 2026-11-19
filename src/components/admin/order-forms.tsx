@@ -125,10 +125,12 @@ export function ReviewRequestForm({ orderId, customerEmail, delivered, lastSentL
  * Assign the order to a partner florist and send the order slip; re-send it; move it to
  * another partner (the old one gets a cancellation); or send the cancellation by hand.
  */
-export function PartnerForm({ orderId, partners, current, canAssign }: {
+export function PartnerForm({ orderId, partners, current, canAssign, note }: {
   orderId: string;
   partners: { id: string; name: string; reachable: boolean }[];
   current: { id: string; name: string; sent: boolean; cancelled: boolean } | null;
+  /** Team note to the florist from the last slip – prefilled. */
+  note?: string;
   canAssign: boolean;
 }) {
   const [assignState, assign, assigning] = useActionState<OrderActionState, FormData>(assignPartnerAction, null);
@@ -163,6 +165,9 @@ export function PartnerForm({ orderId, partners, current, canAssign }: {
                 <option key={p.id} value={p.id} disabled={!p.reachable}>{p.name}{p.reachable ? "" : " (keine E-Mail hinterlegt)"}</option>
               ))}
             </select>
+          </Field>
+          <Field label="Hinweis an die Floristik (optional)" htmlFor="floristNote" hint="Steht fett und farbig ganz oben in der Auftrags-Mail, der Betreff beginnt mit „WICHTIGER HINWEIS“. Zum Ändern einfach Text anpassen und Auftrag erneut senden.">
+            <textarea id="floristNote" name="floristNote" rows={3} maxLength={1000} defaultValue={note ?? ""} placeholder="z. B. Bitte ungerade Stückzahl (11 Rosen), Schleife mit Text „In Liebe, Anna“" className={cn(inputCls, "min-h-[88px] py-2.5")} />
           </Field>
           <Button type="submit" size="sm" loading={assigning} disabled={!chosen}>{label}</Button>
         </form>
