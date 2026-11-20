@@ -185,6 +185,8 @@ export interface Review {
   video?: ReviewVideo;
   /** Language the review was written in (shop locale, e.g. "tr"). Missing = German. */
   lang?: string;
+  /** Translations entered in the admin, per shop locale (the original language needs none). */
+  translations?: Partial<Record<string, string>>;
   /**
    * Set by the storefront when `text` is shown in another language than written:
    * `translated` = `text` is a translation of `original`; otherwise `text` is the original.

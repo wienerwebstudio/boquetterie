@@ -56,7 +56,8 @@ export const PAYMENT_STATUS_LABELS: Record<Order["payment"]["status"], string> =
 };
 
 /** German names of the shop languages – for "bestellt auf …" in the admin. */
-const LANGUAGE_NAMES_DE: Record<string, string> = {
+/** Shop languages in German, for admin labels. */
+export const LANGUAGE_NAMES_DE: Record<string, string> = {
   de: "Deutsch", en: "Englisch", tr: "Türkisch", bks: "Bosnisch/Kroatisch/Serbisch", uk: "Ukrainisch", ru: "Russisch",
   pl: "Polnisch", ro: "Rumänisch", hu: "Ungarisch", ar: "Arabisch", bg: "Bulgarisch", fa: "Persisch", sk: "Slowakisch",
   it: "Italienisch", fr: "Französisch", es: "Spanisch", ce: "Tschetschenisch",

@@ -7,6 +7,8 @@
  */
 import { COLOR_OPTIONS, SEASON_OPTIONS, SIZE_OPTIONS, STYLE_OPTIONS } from "@/lib/catalog";
 import type { Json } from "./paths";
+import { LOCALES } from "@/i18n/config";
+import { LANGUAGE_NAMES_DE } from "./order-utils";
 
 export type AdminCollection =
   | "products" | "categories" | "occasions" | "extras" | "delivery-zones"
@@ -536,6 +538,8 @@ export const reviewSchema: EntitySchema = {
           { value: "5", label: "5" }, { value: "4", label: "4" }, { value: "3", label: "3" }, { value: "2", label: "2" }, { value: "1", label: "1" },
         ], span: "third" },
         { key: "text", label: "Text", type: "textarea", required: true, span: "full", rows: 4 },
+        { key: "lang", label: "Originalsprache", type: "select", options: LOCALES.map((l) => ({ value: l, label: LANGUAGE_NAMES_DE[l] ?? l })),
+          hint: "Sprache, in der der Text oben geschrieben ist. Leer = Deutsch. Auf allen anderen Sprachseiten steht „Übersetzt aus: …“ (mit Übersetzung) bzw. „Originalsprache: …“ (ohne)." },
         { key: "productSlug", label: "Produkt (optional)", type: "select", optionsFrom: "products" },
         { key: "date", label: "Datum", type: "date", required: true, span: "third" },
         { key: "verified", label: "Verifizierter Kauf", type: "boolean", span: "third" },
@@ -568,8 +572,13 @@ export const reviewSchema: EntitySchema = {
         { key: "video.height", label: "Höhe (px)", type: "number", min: 0, span: "third" },
       ],
     },
+    {
+      title: "Übersetzungen",
+      description: "Optional: Übersetzung des Textes pro Sprache. Die Seite in der Originalsprache zeigt immer den Originaltext; andere Sprachseiten zeigen die Übersetzung mit „Übersetzt aus: … · Original anzeigen“. Leere Felder = Originaltext mit Hinweis „Originalsprache: …“.",
+      fields: LOCALES.map((l) => ({ key: `translations.${l}`, label: LANGUAGE_NAMES_DE[l] ?? l, type: "textarea" as const, rows: 2 })),
+    },
   ],
-  removeEmptyObjectsAt: ["video"],
+  removeEmptyObjectsAt: ["video", "translations"],
   columns: [
     { key: "name", label: "Name" },
     { key: "rating", label: "Sterne", type: "rating" },

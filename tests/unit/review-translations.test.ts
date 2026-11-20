@@ -27,3 +27,33 @@ describe("review translations", () => {
     expect(localizeReview({ ...review, text: "Anderer Text" }, "en", t).display?.translated).toBe(false);
   });
 });
+
+describe("admin translations on the review", () => {
+  const base = { id: "r-uk", name: "Олена", rating: 5 as const, text: "Дуже гарний букет!", verified: true, date: "2026-11-20", demo: false, lang: "uk",
+    translations: { de: "Sehr schöner Strauß!", en: "", tr: "  " } };
+
+  it("original language page: original text, no note", () => {
+    const r = localizeReview(base, "uk");
+    expect(r.text).toBe("Дуже гарний букет!");
+    expect(r.display).toBeUndefined();
+  });
+
+  it("other pages: translation with 'translated from Ukrainian' and the original", () => {
+    const r = localizeReview(base, "de");
+    expect(r.text).toBe("Sehr schöner Strauß!");
+    expect(r.display).toEqual({ lang: "uk", translated: true, original: "Дуже гарний букет!" });
+  });
+
+  it("empty translation fields fall back to the original with the language note", () => {
+    for (const l of ["en", "tr", "fr"]) {
+      const r = localizeReview(base, l);
+      expect(r.text).toBe("Дуже гарний букет!");
+      expect(r.display).toEqual({ lang: "uk", translated: false, original: "Дуже гарний букет!" });
+    }
+  });
+
+  it("admin translation wins over the shared translation document", () => {
+    const doc = { [reviewTextKey(base.text)]: { lang: "uk", texts: { de: "Alt" } } };
+    expect(localizeReview(base, "de", doc).text).toBe("Sehr schöner Strauß!");
+  });
+});

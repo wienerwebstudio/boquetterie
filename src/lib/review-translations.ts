@@ -24,7 +24,8 @@ export function localizeReview(review: Review, locale: string, translations?: Re
   const entry = translations?.[reviewTextKey(review.text)];
   const lang = review.lang ?? entry?.lang ?? "de";
   if (lang === locale) return review;
-  const text = entry?.texts[locale]?.trim();
+  // Admin translations on the review itself win over the shared translation document.
+  const text = review.translations?.[locale]?.trim() || entry?.texts[locale]?.trim();
   return text
     ? { ...review, text, display: { lang, translated: true, original: review.text } }
     : { ...review, display: { lang, translated: false, original: review.text } };
