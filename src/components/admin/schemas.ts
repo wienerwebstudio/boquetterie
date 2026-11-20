@@ -16,7 +16,9 @@ export type OptionSource = "categories" | "occasions" | "products" | "faqs" | "e
 
 export type FieldType =
   | "text" | "textarea" | "lines" | "number" | "boolean" | "select" | "multiselect"
-  | "tags" | "list" | "stringlist" | "image" | "date" | "time";
+  | "tags" | "list" | "stringlist" | "image" | "date" | "time"
+  /** Review video upload on `<obj>.src`; fills `<obj>.poster/duration/width/height/alt` (top-level fields only). */
+  | "video";
 
 export interface FieldOption { value: string; label: string }
 
@@ -556,9 +558,9 @@ export const reviewSchema: EntitySchema = {
     },
     {
       title: "Kundenvideo",
-      description: "Video aus einer eingereichten Bewertung (max. 15 s, freigegeben unter „Eingereichte Bewertungen“). Videopfad leeren nimmt das Video aus dem Shop; die Datei bleibt gespeichert.",
+      description: "Kurzes Kundenvideo (max. 15 s) – aus einer eingereichten Bewertung oder hier selbst hochgeladen (z. B. ein Clip, den Kund:innen per WhatsApp geschickt haben). „Video entfernen“ nimmt es aus dem Shop; die Datei bleibt gespeichert.",
       fields: [
-        { key: "video.src", label: "Videopfad", type: "text", span: "full", placeholder: "/media/review-videos/…/video.mp4" },
+        { key: "video.src", label: "Video", type: "video", span: "full" },
         { key: "video.poster", label: "Vorschaubild", type: "image" },
         { key: "video.alt", label: "Alternativtext", type: "text", placeholder: "Kundenvideo zu Red Passion" },
         { key: "video.duration", label: "Länge (Sekunden)", type: "number", min: 0, max: 16, step: 0.01, span: "third" },

@@ -51,12 +51,13 @@ function pickImages(list: FileList | File[] | null | undefined) {
   return Array.from(list ?? []).filter((f) => f.type.startsWith("image/") || /\.(jpe?g|png|webp|avif)$/i.test(f.name));
 }
 
-/** Drag & drop target. Children render inside; `dragging` is passed for styling. */
-export function Dropzone({ onFiles, disabled, className, children }: {
+/** Drag & drop target. Children render inside; `dragging` is passed for styling. `pick` filters the dropped files (default: images). */
+export function Dropzone({ onFiles, disabled, className, children, pick = pickImages }: {
   onFiles: (files: File[]) => void;
   disabled?: boolean;
   className?: string;
   children: (state: { dragging: boolean }) => ReactNode;
+  pick?: (list: FileList | File[] | null | undefined) => File[];
 }) {
   const [dragging, setDragging] = useState(false);
   const depth = useRef(0);
@@ -72,7 +73,7 @@ export function Dropzone({ onFiles, disabled, className, children }: {
         depth.current = 0;
         setDragging(false);
         if (disabled) return;
-        const files = pickImages(e.dataTransfer.files);
+        const files = pick(e.dataTransfer.files);
         if (files.length) onFiles(files);
       }}
     >

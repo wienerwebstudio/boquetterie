@@ -1,6 +1,7 @@
 /**
  * Browser side of the review video: reading duration and size from the file, the
- * poster frame, and the chunked upload to /api/reviews/video. Client only.
+ * poster frame, and the chunked upload to /api/reviews/video (customers) or
+ * /api/admin/reviews/video (admin review editor). Client only.
  */
 
 import { isReviewVideoType, type ReviewVideoType } from "@/lib/review-video";
@@ -117,33 +118,48 @@ export interface UploadVideoInput {
   onProgress?: (fraction: number) => void;
 }
 
+export interface ChunkedVideoUploadInput {
+  /** API route with the start (POST JSON) → chunks (PUT) → finish (POST multipart) → DELETE flow. */
+  endpoint: string;
+  file: Blob;
+  type: ReviewVideoType;
+  duration: number;
+  /** Extra fields of the start request (e.g. order + token). */
+  start?: Record<string, unknown>;
+  /** Extra headers of the chunk and delete requests (e.g. the order binding). */
+  headers?: Record<string, string>;
+  /** Fields of the finish request besides `upload` (e.g. the poster frame). */
+  finish: (form: FormData) => void;
+  onProgress?: (fraction: number) => void;
+}
+
 /**
  * Start → chunks (≤ 4 MB each, sequential, every chunk retried twice) → finish.
- * Resolves with the upload id to send along with the review.
+ * Shared by the customer form and the admin review editor. Resolves with the upload
+ * id and the JSON body of the finish response.
  */
-export async function uploadReviewVideo({ orderId, token, file, type, duration, poster, onProgress }: UploadVideoInput): Promise<string> {
-  const start = await fetch("/api/reviews/video", {
+export async function uploadChunkedVideo({ endpoint, file, type, duration, start: startFields, headers: extraHeaders = {}, finish: fillFinish, onProgress }: ChunkedVideoUploadInput): Promise<{ upload: string; result: Record<string, unknown> }> {
+  const start = await fetch(endpoint, {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ order: orderId, token, size: file.size, type, duration }),
+    body: JSON.stringify({ ...startFields, size: file.size, type, duration }),
   });
   if (!start.ok) throw await readError(start);
   const { upload, chunkSize, chunks } = (await start.json()) as { upload: string; chunkSize: number; chunks: number };
-  const headers = { "content-type": "application/octet-stream", "x-review-order": orderId, "x-review-token": token };
+  const headers = { "content-type": "application/octet-stream", ...extraHeaders };
 
   try {
     await sendChunks(upload, chunkSize, chunks);
     const form = new FormData();
-    form.set("order", orderId);
-    form.set("token", token);
+    fillFinish(form);
     form.set("upload", upload);
-    form.set("poster", poster, "poster.jpg");
-    const finish = await fetch("/api/reviews/video", { method: "POST", body: form });
+    const finish = await fetch(endpoint, { method: "POST", body: form });
     if (!finish.ok) throw await readError(finish);
-    return upload;
+    const result = ((await finish.json().catch(() => null)) ?? {}) as Record<string, unknown>;
+    return { upload, result };
   } catch (err) {
     // A failed upload is not resumed – drop its chunks; the next attempt starts fresh.
-    discardReviewVideo(orderId, token, upload);
+    discardChunkedVideo(endpoint, upload, extraHeaders);
     throw err;
   }
 
@@ -152,7 +168,7 @@ export async function uploadReviewVideo({ orderId, token, file, type, duration, 
       const body = file.slice(index * chunkSize, Math.min(file.size, (index + 1) * chunkSize));
       let attempt = 0;
       for (;;) {
-        const res = await fetch(`/api/reviews/video?upload=${encodeURIComponent(upload)}&index=${index}`, { method: "PUT", headers, body }).catch(() => null);
+        const res = await fetch(`${endpoint}?upload=${encodeURIComponent(upload)}&index=${index}`, { method: "PUT", headers, body }).catch(() => null);
         if (res?.ok) break;
         // Validation errors (4xx except 408/429) will not get better by retrying.
         if (res && res.status < 500 && res.status !== 408 && res.status !== 429) throw await readError(res);
@@ -164,10 +180,31 @@ export async function uploadReviewVideo({ orderId, token, file, type, duration, 
   }
 }
 
+/** Customer review form: the upload is bound to the order token. Resolves with the upload id to send along with the review. */
+export async function uploadReviewVideo({ orderId, token, file, type, duration, poster, onProgress }: UploadVideoInput): Promise<string> {
+  const { upload } = await uploadChunkedVideo({
+    endpoint: "/api/reviews/video",
+    file,
+    type,
+    duration,
+    start: { order: orderId, token },
+    headers: { "x-review-order": orderId, "x-review-token": token },
+    finish: (form) => {
+      form.set("order", orderId);
+      form.set("token", token);
+      form.set("poster", poster, "poster.jpg");
+    },
+    onProgress,
+  });
+  return upload;
+}
+
+/** Best effort: drops an unfinished upload. */
+function discardChunkedVideo(endpoint: string, upload: string, headers: Record<string, string>) {
+  void fetch(`${endpoint}?upload=${encodeURIComponent(upload)}`, { method: "DELETE", headers }).catch(() => undefined);
+}
+
 /** Best effort: drops an upload that will not be used (the customer removed the video). */
 export function discardReviewVideo(orderId: string, token: string, upload: string) {
-  void fetch(`/api/reviews/video?upload=${encodeURIComponent(upload)}`, {
-    method: "DELETE",
-    headers: { "x-review-order": orderId, "x-review-token": token },
-  }).catch(() => undefined);
+  discardChunkedVideo("/api/reviews/video", upload, { "x-review-order": orderId, "x-review-token": token });
 }

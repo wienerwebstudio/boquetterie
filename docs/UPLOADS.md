@@ -24,6 +24,7 @@ Dateiname: `<jahr>/<monat>/<slug-des-originalnamens>-<8 Zeichen SHA-1>.<jpg|png>
 | `GET` | `/api/admin/uploads` | Alle Uploads, neueste zuerst (`{ key, url, bytes, modifiedAt }`) |
 | `GET` | `/api/admin/uploads?source=static` | Bilder aus `public/images` (nur lesen – für den Medien-Dialog) |
 | `DELETE` | `/api/admin/uploads?key=2026/09/….jpg` | Upload löschen |
+| `POST`/`PUT`/`DELETE` | `/api/admin/reviews/video` | Kundenvideo für eine Bewertung hochladen (in Teilen, siehe „Kundenvideos“ → „Upload im Admin“) |
 
 Alle Routen liegen unter `/api/admin/*` und sind durch den Proxy (`src/proxy.ts`) und zusätzlich in der Route selbst durch `isAdminAuthenticated()` geschützt.
 
@@ -120,6 +121,17 @@ Grenzen und offene Punkte:
 - Das Video wird nicht umkodiert: ein iPhone-HEVC-MOV spielt in Safari und auf den meisten Android-Geräten, aber nicht in jedem Chrome/Firefox unter Windows/Linux. In diesem Fall lässt schon das Formular den Upload nicht zu, wenn der Browser der Kund:in die Datei nicht lesen kann; Besucher:innen mit anderem Browser sehen dann nur das Vorschaubild.
 - Abgebrochene Uploads (Formular nie abgeschickt) bleiben liegen, bis sie von Hand gelöscht werden (Ordner `review-videos/<id>/` mit Status `uploading`/`complete` im Manifest).
 - Lokaler Treiber: die Teile liegen unter `public/uploads/review-videos/<id>/` (zufällige ID, nicht verlinkt); ausgeliefert wird nur über `/media`.
+
+### Upload im Admin (Bewertung bearbeiten)
+
+Unter *Admin → Bewertungen → (Bewertung)* → Abschnitt „Kundenvideo“ können die Inhaber ein Video selbst hochladen (z. B. einen Clip, den Kund:innen per WhatsApp geschickt haben): Button **„Video hochladen“** oder Datei auf das Feld ziehen. Feldtyp `video` im Formular-Schema (`src/components/admin/video-field.tsx`, verwendet für `video.src`).
+
+- Gleiche Pipeline wie bei Kund:innen: `probeReviewVideo` liest Länge, Breite/Höhe und das Vorschaubild im Browser (über 15 s → deutliche Fehlermeldung, kein Upload), `uploadChunkedVideo` schickt 4-MB-Teile mit Wiederholung, Fortschrittsbalken.
+- Route `/api/admin/reviews/video` (`src/app/api/admin/reviews/video/route.ts`): `POST` JSON `{ size, type, duration }` → `PUT ?upload=<id>&index=<n>` → `POST` multipart `{ upload, poster, product?, width?, height? }`. Jeder Schritt zuerst rate-limitiert (Start/Abschluss 30 / Stunde, Teile 300 / 10 min), dann **gültige Admin-Sitzung** (sonst 401). Dieselben Prüfungen wie oben (Typ, 60 MB, ≤ 15,5 s, genaue Teilgrößen, Magic Bytes). Manifest mit `orderId: "admin"`; Kunden-Uploads sind über diese Route nicht erreichbar.
+- Beim Abschluss wird das Vorschaubild gespeichert (`reviews/<jahr>/<monat>/<produkt-slug>-video-<hash>.jpg`, ohne Produkt `kundenvideo-video-…`) und das Manifest **sofort `approved`** – der Admin veröffentlicht es selbst. Antwort `{ video: { src, poster, duration, width, height } }`; das Formular füllt damit `video.src/poster/duration/width/height`, den Alternativtext nur wenn leer („Kundenvideo zu <Produkt>“ bzw. „Kundenvideo“). Erst **„Speichern“** schreibt die Bewertung.
+- **„Video entfernen“** leert alle Videofelder (nach „Speichern“ ist das Video aus dem Shop); die Datei bleibt gespeichert. Der Videopfad ist unter „Videopfad manuell bearbeiten“ weiter direkt editierbar.
+- Ein gescheiterter Versuch wird per `DELETE ?upload=<id>` verworfen; veröffentlichte (`approved`) Videos löscht die Route nicht. Hochgeladene, aber nie gespeicherte Videos bleiben liegen (öffentlich abrufbar nur über ihre zufällige URL), bis sie von Hand gelöscht werden.
+- Im Shop erscheint das Video wie jedes Kundenvideo nur bei echten, verifizierten Bewertungen (das Feld zeigt sonst einen Hinweis).
 
 ## Grenzen
 

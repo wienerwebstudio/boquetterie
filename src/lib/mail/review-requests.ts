@@ -4,6 +4,7 @@ import type { Order, Review } from "@/types";
 import type { ReviewConsent, ReviewRequestRecord, ReviewSubmission } from "@/types/reminders";
 import { getOrders, readData, writeData } from "@/lib/cms";
 import { sendReviewRequest, type MailResult } from "@/lib/mail";
+import { reviewVideoAlt } from "@/lib/review-video";
 
 /**
  * Review requests & submissions.
@@ -151,10 +152,7 @@ export function reviewPhotoAlt(productName?: string | null) {
   return productName ? `Kundenfoto zu ${productName}` : "Kundenfoto";
 }
 
-/** Alt text of a customer video, e.g. "Kundenvideo zu Red Passion". */
-export function reviewVideoAlt(productName?: string | null) {
-  return productName ? `Kundenvideo zu ${productName}` : "Kundenvideo";
-}
+export { reviewVideoAlt } from "@/lib/review-video";
 
 /**
  * Converts an accepted submission into a public review entry. `photoKeys` are the

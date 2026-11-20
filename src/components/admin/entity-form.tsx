@@ -12,6 +12,7 @@ import type { FieldDef, FieldOption, FieldSection } from "./schemas";
 import type { OptionMap } from "./options";
 import { ACCENT_CYCLE, Banner, Card, Field, inputCls, readonlyCls } from "./controls";
 import { ImageField } from "./image-field";
+import { VideoField, type VideoFieldValues } from "./video-field";
 
 export interface EntityFormProps {
   title: string;
@@ -50,6 +51,11 @@ export function EntityForm(props: EntityFormProps) {
 
   const update = useCallback((path: string, value: unknown) => {
     setData((d) => setPath(d, path, value));
+  }, []);
+
+  /** Sets several fields below `base` at once; `null` removes the object at `base`. */
+  const patch = useCallback((base: string, values: Record<string, unknown> | null) => {
+    setData((d) => (values === null ? setPath(d, base, undefined) : Object.entries(values).reduce((acc, [k, v]) => setPath(acc, `${base}.${k}`, v), d)));
   }, []);
 
   const toggleJson = () => {
@@ -166,6 +172,7 @@ export function EntityForm(props: EntityFormProps) {
                   value={getPath(data, field.key)}
                   onChange={(v) => update(field.key, v)}
                   options={options}
+                  form={{ data, patch }}
                 />
               ))}
             </div>
@@ -205,13 +212,15 @@ interface RendererProps {
   onChange: (v: unknown) => void;
   options: OptionMap;
   compact?: boolean;
+  /** Top-level fields only: the whole entity and a multi-field setter (used by `video`). */
+  form?: { data: Json; patch: (base: string, values: Record<string, unknown> | null) => void };
 }
 
 function resolveOptions(field: FieldDef, options: OptionMap): FieldOption[] {
   return field.options ?? (field.optionsFrom ? options[field.optionsFrom] ?? [] : []);
 }
 
-function FieldRenderer({ field, value, onChange, options, compact }: RendererProps) {
+function FieldRenderer({ field, value, onChange, options, compact, form }: RendererProps) {
   const id = useId();
   const span = spanCls[field.span ?? "half"];
   const wrap = (children: React.ReactNode, extra?: { noLabel?: boolean }) =>
@@ -321,6 +330,27 @@ function FieldRenderer({ field, value, onChange, options, compact }: RendererPro
       );
     case "image":
       return wrap(<ImageField id={id} value={value} onChange={onChange} placeholder={field.placeholder} readonly={field.readonly} compact={compact} />);
+    case "video": {
+      // `video.src` → the sibling fields `video.poster`, `video.duration`, … are filled by the upload.
+      if (!form || !field.key.endsWith(".src")) return null;
+      const base = field.key.slice(0, -".src".length);
+      const productSlug = getPath(form.data, "productSlug");
+      const productLabel = typeof productSlug === "string" ? options.products?.find((o) => o.value === productSlug)?.label : undefined;
+      const product = typeof productSlug === "string" && productSlug ? { slug: productSlug, name: (productLabel ?? productSlug).replace(/ \(inaktiv\)$/, "") } : null;
+      const hidden = form.data.demo === true || form.data.verified !== true;
+      return wrap(
+        <VideoField
+          id={id}
+          label={field.label}
+          value={getPath(form.data, base) as Partial<VideoFieldValues> | undefined}
+          onPatch={(values) => form.patch(base, values)}
+          product={product}
+          hiddenNote={hidden ? "Hinweis: Im Shop erscheint das Video nur bei verifizierten Bewertungen, die keine Demo-Bewertung sind." : null}
+          readonly={field.readonly}
+        />,
+        { noLabel: true },
+      );
+    }
     case "stringlist":
       return wrap(<StringList field={field} value={value} onChange={onChange} />);
     case "list":

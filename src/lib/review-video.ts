@@ -177,6 +177,11 @@ export function publicReviewVideo(review: Review): ReviewVideo | null {
   return v && typeof v.src === "string" && v.src.length > 0 && typeof v.poster === "string" ? v : null;
 }
 
+/** Alt text of a customer video, e.g. "Kundenvideo zu Red Passion". */
+export function reviewVideoAlt(productName?: string | null) {
+  return productName ? `Kundenvideo zu ${productName}` : "Kundenvideo";
+}
+
 /** "0:12" for 12.3 seconds. */
 export function formatClipDuration(seconds: number): string {
   const s = Math.max(0, Math.round(seconds));
