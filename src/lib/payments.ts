@@ -2,13 +2,13 @@ import "server-only";
 import type { Order, SiteSettings } from "@/types";
 import type { CreatePaymentResult, PaymentMethodId, PaymentProviderId, PublicPaymentMethod } from "@/types/payments";
 import { mockProvider, MOCK_REFERENCE_PREFIX, isMockReference, mockPaymentsAllowed } from "@/lib/payments/mock";
-import { stripeProvider, stripeConfigured, stripePublishableKey, resumeStripeIntent, cancelStripeIntent } from "@/lib/payments/stripe";
+import { stripeProvider, stripeConfigured, stripePublishableKey, resumeStripeIntent, cancelStripeIntent, stripeIntentState } from "@/lib/payments/stripe";
 import { paypalProvider, paypalConfigured } from "@/lib/payments/paypal";
 import type { PaymentProviderAdapter, VerifyResult, WebhookResult } from "@/lib/payments/provider";
 
 export { WebhookVerificationError } from "@/lib/payments/provider";
 export type { PaymentEvent, VerifyResult, WebhookResult } from "@/lib/payments/provider";
-export { stripeConfigured, stripePublishableKey, paypalConfigured, MOCK_REFERENCE_PREFIX };
+export { stripeConfigured, stripePublishableKey, paypalConfigured, MOCK_REFERENCE_PREFIX, stripeIntentState, cancelStripeIntent };
 
 /**
  * Payment facade.

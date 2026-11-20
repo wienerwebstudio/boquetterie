@@ -3,7 +3,7 @@
 import { useActionState, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { OrderStatus, OrderStatusDefinition } from "@/types";
-import { assignPartnerAction, bookCourierAction, cancelCourierAction, resendOrderMailsAction, saveInternalNote, sendPartnerCancellationAction, sendReviewRequestAction, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
+import { assignPartnerAction, bookCourierAction, cancelCourierAction, deleteCheckoutDraftAction, expireStaleOrdersAction, resendOrderMailsAction, saveInternalNote, sendPartnerCancellationAction, sendReviewRequestAction, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
 import { Banner, Field, inputCls } from "./controls";
 import { cn } from "@/lib/format";
 
@@ -179,5 +179,28 @@ export function PartnerForm({ orderId, partners, current, canAssign, note }: {
         </form>
       )}
     </div>
+  );
+}
+
+/** Orders list: runs the stale-payment cleanup (same as the hourly cron) by hand. */
+export function ExpireStaleOrdersForm() {
+  const [state, action, pending] = useActionState<OrderActionState, FormData>(expireStaleOrdersAction, null);
+  return (
+    <form action={action} className="flex flex-col gap-2" onSubmit={(e) => { if (!confirm("Alle Bestellungen, deren Zahlung seit über 2 Stunden aussteht, als abgebrochen markieren und den Bestand freigeben? Bezahlte Bestellungen bleiben unberührt.")) e.preventDefault(); }}>
+      <Button type="submit" size="sm" variant="outline" loading={pending}>Unbezahlte jetzt bereinigen</Button>
+      {state && <Banner tone={state.ok ? "success" : "error"}>{state.message}</Banner>}
+    </form>
+  );
+}
+
+/** "Abgebrochene Kasse": delete one entry. */
+export function DeleteDraftForm({ draftId }: { draftId: string }) {
+  const [state, action, pending] = useActionState<OrderActionState, FormData>(deleteCheckoutDraftAction, null);
+  return (
+    <form action={action} onSubmit={(e) => { if (!confirm("Diesen Eintrag endgültig löschen?")) e.preventDefault(); }}>
+      <input type="hidden" name="id" value={draftId} />
+      <Button type="submit" size="sm" variant="ghost" loading={pending}>Löschen</Button>
+      {state && !state.ok && <Banner tone="error" className="mt-2">{state.message}</Banner>}
+    </form>
   );
 }

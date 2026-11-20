@@ -180,6 +180,12 @@ export async function resumeStripeIntent(intentId: string): Promise<{ verify: Ve
   return { verify, ...(open && intent.client_secret ? { clientSecret: intent.client_secret } : {}) };
 }
 
+/** Raw state of a PaymentIntent (`succeeded`, `processing`, `requires_payment_method`, `canceled` …) – read only. */
+export async function stripeIntentState(intentId: string): Promise<{ status: string; reference?: string; orderId?: string }> {
+  const intent = await stripeClient().paymentIntents.retrieve(intentId);
+  return { status: intent.status, reference: chargeId(intent), orderId: intent.metadata?.orderId };
+}
+
 /** Cancels an unpaid PaymentIntent so it can never be charged (e.g. the customer switched to PayPal). */
 export async function cancelStripeIntent(intentId: string): Promise<void> {
   const intent = await stripeClient().paymentIntents.retrieve(intentId);

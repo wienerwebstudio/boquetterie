@@ -31,6 +31,8 @@ import type { StripeInlineHandle } from "./stripe-inline";
 import { amountChanged, clearAttempt, displayCents, loadAttempt, saveAttempt, statusPath, type StripeAttempt } from "./pay-logic";
 import { rich } from "./rich-text";
 import { usePaymentMethods } from "./use-payment-methods";
+import { clearDraftId, draftId, peekDraftId, postDraft } from "./checkout-draft";
+import { submitFailureReason, type SubmitFailureReason } from "@/lib/payment-note";
 
 // Stripe.js (and its script from js.stripe.com) is only needed once a Stripe method is
 // selected in step 5 – keep it out of the checkout bundle until then.
@@ -46,6 +48,16 @@ function PaymentLoading() {
 
 /** Order answer of /api/orders and /api/orders/resume as the checkout reads it. */
 type OrderAnswer = Partial<OrderCreateResponse> & { message?: string; errors?: FieldErrors };
+
+/** Fire-and-forget history note "Zahlung nicht abgeschlossen: …" when submit() stopped after the order was created. */
+function notePaymentNotFinished(order: { id: string; token: string }, reason: SubmitFailureReason, method: string, detail?: string) {
+  try {
+    void fetch("/api/orders/payment-note", {
+      method: "POST", headers: { "Content-Type": "application/json" }, keepalive: true,
+      body: JSON.stringify({ orderId: order.id, token: order.token, reason, method, detail }),
+    }).catch(() => undefined);
+  } catch { /* ignore */ }
+}
 
 /** Fire-and-forget report of a browser-side payment problem for a stored order. */
 function reportProblem(order: { id: string; token: string }, method: string, kind: "load_error" | "load_timeout" | "confirm_error", message?: string) {
@@ -205,6 +217,25 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [step]);
 
+  /* ---- "Abgebrochene Kasse": snapshot once the contact data is done (step 4 → 5, reload on 5) ---- */
+  const draftKey = useRef<string | null>(null);
+  useEffect(() => {
+    if (step !== 5) return;
+    // An order of exactly these details exists already – the order list shows it.
+    if (loadAttempt("checkout")?.key === currentKey || draftKey.current === currentKey) return;
+    draftKey.current = currentKey;
+    const p = payloadFor(data);
+    postDraft({
+      id: draftId("checkout"), source: "checkout", step: 5, locale,
+      items: p.items, couponCode: p.couponCode,
+      contact: { firstName: p.customer.firstName, lastName: p.customer.lastName, email: p.customer.email, phone: p.customer.phone },
+      recipient: p.recipient,
+      delivery: { date: p.delivery.date, windowId: p.delivery.windowId },
+    });
+    // Only the details define the snapshot (`currentKey`), not every render of `data`.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step, currentKey, locale]);
+
   /* ---- Field helpers ---- */
   const setScope = useCallback(<S extends Scope>(scope: S) => (patch: Partial<CheckoutData[S]>) => {
     setData((d) => ({ ...d, [scope]: { ...d[scope], ...patch } }));
@@ -289,42 +320,47 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     const submitted = isStripe && handle ? handle.submit() : null;
     setSubmitting(true);
     setSubmitError(null);
-    try {
-      if (submitted) {
-        const checked = await submitted;
-        if (checked.error) {
-          setSubmitError(checked.error.message ?? t.errors.orderFailed);
-          return;
-        }
-      }
+    const draft = peekDraftId("checkout");
 
-      // Create the order – or continue the open Stripe order of these details.
-      let body: OrderAnswer | null = null;
+    // Create the order – or continue the open Stripe order of these details. Runs in
+    // parallel with submit(): the order exists even when the customer never finishes the
+    // payment (fields left empty, wallet sheet closed), so the team sees the contact data.
+    const obtainOrder = async (): Promise<OrderAnswer> => {
       if (isStripe) {
         const memo = attemptRef.current?.key === reuseKey ? attemptRef.current : null;
         const saved = loadAttempt("checkout");
         const stored = memo ?? (saved?.key === reuseKey ? saved : null);
         if (memo?.clientSecret && memo.method === selectedMethod.id) {
-          body = { ok: true, id: memo.id, token: memo.token, total: memo.total, payment: { provider: "stripe", status: "pending", clientSecret: memo.clientSecret } };
-        } else if (stored) {
+          return { ok: true, id: memo.id, token: memo.token, total: memo.total, payment: { provider: "stripe", status: "pending", clientSecret: memo.clientSecret } };
+        }
+        if (stored) {
           const res = await fetch("/api/orders/resume", {
             method: "POST", headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ orderId: stored.id, token: stored.token, method: selectedMethod.id }),
           });
           const resumed = (await res.json()) as OrderAnswer;
-          if (res.ok && resumed.ok) body = resumed;
-          else { attemptRef.current = null; clearAttempt("checkout"); }
+          if (res.ok && resumed.ok) return resumed;
+          attemptRef.current = null;
+          clearAttempt("checkout");
         }
       }
-      if (!body) {
-        const res = await fetch("/api/orders", {
-          method: "POST", headers: { "Content-Type": "application/json" },
-          // The locale picks the language of the server's messages and of the customer mails.
-          body: JSON.stringify({ ...payload, locale }),
-        });
-        body = (await res.json()) as OrderAnswer;
-        if (!res.ok) body.ok = undefined;
-      }
+      const res = await fetch("/api/orders", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        // The locale picks the language of the server's messages and of the customer mails;
+        // the draft id removes this session's "Abgebrochene Kasse" entry.
+        body: JSON.stringify({ ...payload, locale, ...(draft ? { draftId: draft } : {}) }),
+      });
+      const created = (await res.json()) as OrderAnswer;
+      if (!res.ok) created.ok = undefined;
+      return created;
+    };
+
+    try {
+      const [checked, answer] = await Promise.allSettled([submitted ?? Promise.resolve(null), obtainOrder()]);
+      if (answer.status === "rejected") throw answer.reason;
+      const body = answer.value;
+      /** Why Stripe's submit() stopped (null = fine or not Stripe). */
+      const submitError = checked.status === "rejected" ? { message: undefined, type: "api_error", code: undefined } : checked.value?.error ?? null;
       if (!body.ok || !body.id || !body.token) {
         // Map server field errors ("recipient.zip") back to the step that owns them.
         const byStep = new Map<StepId, FieldErrors>();
@@ -347,6 +383,8 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
       }
       const order = { id: body.id, token: body.token };
       const payment = body.payment;
+      // The server removed the draft with the order; a later snapshot starts a new one.
+      clearDraftId("checkout");
 
       if (payment?.provider === "stripe") {
         const serverTotal = typeof body.total === "number" ? body.total : shownTotal;
@@ -359,6 +397,13 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         attemptRef.current = { ...attempt, clientSecret: payment.clientSecret, method: selectedMethod.id };
         saveAttempt("checkout", attempt);
         setKnownTotal({ key: reuseKey, total: serverTotal });
+        // submit() stopped (fields incomplete, wallet sheet closed): the order stays pending
+        // (a retry continues it), the team sees why in its history, the customer the reason.
+        if (submitError) {
+          notePaymentNotFinished(order, submitFailureReason(selectedMethod.id, submitError), selectedMethod.id, [submitError.type, submitError.code].filter(Boolean).join(" · "));
+          setSubmitError(submitError.message ?? t.errors.orderFailed);
+          return;
+        }
         // The server charges something else than Elements showed (coupon, fee changed):
         // never confirm a different amount – show it and let the customer click again.
         if (amountChanged(serverTotal, displayCents(shownTotal))) {

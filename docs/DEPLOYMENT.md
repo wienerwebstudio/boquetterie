@@ -141,7 +141,7 @@ Der Shop läuft auf Netlify (Projekt `boquetterie-preview`); jeder Push auf den 
 
 - **Datenbank**: `DATABASE_URL` (Neon) ist Pflicht, siehe Option B.
 - **Bild-Uploads** (Admin-Bilder und Kundenfotos aus Bewertungen) landen automatisch in **Netlify Blobs** (Store `media`, ausgeliefert über `/media/…`), solange keine `S3_*`-Variablen gesetzt sind. Keine weitere Einrichtung nötig – Details in `docs/UPLOADS.md`.
-- **Zeitgesteuerte Aufgaben** (Bewertungsanfragen 1–30 Tage nach Zustellung, Anlass-Erinnerungen): zwei Scheduled Functions in `netlify/functions/` rufen täglich `/api/cron/review-requests` und `/api/cron/reminders` auf. Sie brauchen die Umgebungsvariable **`CRON_SECRET`**:
+- **Zeitgesteuerte Aufgaben** (Bewertungsanfragen 1–30 Tage nach Zustellung, Anlass-Erinnerungen): zwei Scheduled Functions in `netlify/functions/` rufen täglich `/api/cron/review-requests` und `/api/cron/reminders` auf. Dazu kommt **`cron-stale-orders`** (stündlich, Minute 17): ruft `/api/cron/stale-orders` auf, markiert Bestellungen, deren Zahlung 2 Std. nach der letzten Aktivität noch aussteht, als abgebrochen (Bestand frei, Stripe wird vorher gefragt) und löscht „Abgebrochene Kasse“-Einträge älter als 30 Tage (siehe `docs/PAYMENTS.md`). Ohne Netlify (Vercel/crontab) denselben Endpunkt stündlich mit `Authorization: Bearer $CRON_SECRET` aufrufen; von Hand: Admin → Bestellungen → „Unbezahlte jetzt bereinigen“. Alle brauchen die Umgebungsvariable **`CRON_SECRET`**:
 
   | Variable | Wo | Wert |
   | --- | --- | --- |

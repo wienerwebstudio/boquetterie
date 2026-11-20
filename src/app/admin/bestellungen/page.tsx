@@ -9,6 +9,9 @@ import { StatusBadge } from "@/components/admin/status-badge";
 import { isSelfDeliveryDay } from "@/lib/delivery";
 import { customerName, isOpenOrder, isUnpaidOrder, orderLanguage, recipientName, statusLabel } from "@/components/admin/order-utils";
 import { cn } from "@/lib/format";
+import { listCheckoutDrafts } from "@/lib/checkout-drafts";
+import { AbandonedCheckouts } from "@/components/admin/abandoned-checkouts";
+import { ExpireStaleOrdersForm } from "@/components/admin/order-forms";
 
 export const dynamic = "force-dynamic";
 
@@ -16,12 +19,14 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
   const sp = await searchParams;
   const status = typeof sp.status === "string" ? sp.status : "";
   const q = typeof sp.q === "string" ? sp.q.trim().toLowerCase() : "";
-  const [orders, settings] = await Promise.all([getOrders(), getSettings()]);
+  const [orders, settings, drafts] = await Promise.all([getOrders(), getSettings(), listCheckoutDrafts()]);
+  const abandoned = status === "abandoned";
 
   const filtered = orders
     .filter((o) => {
       if (status === "open") return isOpenOrder(o, settings);
       if (status === "unpaid") return isUnpaidOrder(o);
+      if (status === "abandoned") return false;
       if (status && o.status !== status) return false;
       return true;
     })
@@ -36,7 +41,21 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
 
   return (
     <>
-      <PageHeader title="Bestellungen" description={`${orders.length} Bestellungen gesamt, ${orders.filter((o) => isOpenOrder(o, settings)).length} offen (bezahlt), ${orders.filter(isUnpaidOrder).length} nicht bezahlt – für nicht bezahlte Bestellungen nichts binden lassen.`} />
+      <PageHeader
+        title="Bestellungen"
+        description={`${orders.length} Bestellungen gesamt, ${orders.filter((o) => isOpenOrder(o, settings)).length} offen (bezahlt), ${orders.filter(isUnpaidOrder).length} nicht bezahlt – für nicht bezahlte Bestellungen nichts binden lassen. ${drafts.length} abgebrochene Kasse(n).`}
+        actions={<ExpireStaleOrdersForm />}
+      />
+
+      <nav aria-label="Schnellfilter" className="mb-4 flex flex-wrap gap-2 text-[13px]">
+        {[
+          { key: "", label: "Alle" },
+          { key: "unpaid", label: `Nicht bezahlt (${orders.filter(isUnpaidOrder).length})` },
+          { key: "abandoned", label: `Abgebrochene Kasse (${drafts.length})` },
+        ].map((f) => (
+          <Link key={f.key || "all"} href={f.key ? `/admin/bestellungen?status=${f.key}` : "/admin/bestellungen"} aria-current={status === f.key ? "page" : undefined} className={cn("rounded-full border px-3 py-1 font-semibold", status === f.key ? "border-[#0a6644] bg-[#e2f6ec] text-[#0a6644]" : "border-[#dcd8d0] text-[#4f4c47] hover:border-[#0a6644]")}>{f.label}</Link>
+        ))}
+      </nav>
 
       <form method="get" className="bl-card mb-5 flex flex-wrap items-end gap-3 p-4" data-accent="emerald">
         <div className="flex min-w-[200px] flex-1 flex-col gap-1.5">
@@ -52,6 +71,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
             <option value="">Alle</option>
             <option value="open">Alle offenen (bezahlt)</option>
             <option value="unpaid">Nicht bezahlt</option>
+            <option value="abandoned">Abgebrochene Kasse (ohne Bestellung)</option>
             {settings.orderStatuses.map((s) => (
               <option key={s.key} value={s.key}>{s.label}</option>
             ))}
@@ -61,7 +81,9 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
         {(q || status) && <Button href="/admin/bestellungen" size="sm" variant="ghost" className="h-10 rounded-lg">Zurücksetzen</Button>}
       </form>
 
-      {filtered.length === 0 ? (
+      {abandoned ? (
+        <AbandonedCheckouts drafts={q ? drafts.filter((d) => [d.contact?.firstName, d.contact?.lastName, d.contact?.email, d.contact?.phone, d.recipient?.zip, d.express?.postalCode].join(" ").toLowerCase().includes(q)) : drafts} />
+      ) : filtered.length === 0 ? (
         <EmptyState>{orders.length === 0 ? "Noch keine Bestellungen vorhanden." : "Keine Bestellungen für diese Filter."}</EmptyState>
       ) : (
         <Table>
