@@ -168,6 +168,20 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     textIntro: "بهذا الرابط تسجّلون الدخول إلى حسابكم. وهو صالح لمدة {minutes} دقيقة ويعمل مرة واحدة فقط:",
     textIgnore: "لم تطلبوا تسجيل الدخول؟ يمكنكم إذن تجاهل هذه الرسالة ببساطة.",
   },
+  /** Individual offer (admin → Angebote): the mail with the payment link. */
+  offer: {
+    subject: "عرضكم الشخصي من {brand}",
+    preheader: "{total} شاملًا التوصيل – صالح حتى {date}.",
+    headline: "عرضكم الشخصي",
+    intro: "شكرًا لطلبكم. إليكم عرضنا – السعر يشمل التوصيل.",
+    pay: "ادفعوا الآن",
+    valid: "صالح حتى {date}. بعد الدفع مباشرة يصلكم تأكيد الطلب.",
+    place: "مكان التوصيل",
+    fallback: "إذا لم يعمل الزر: {url}",
+    footer: "وصلكم هذا البريد لأنكم طلبتم منا عرضًا.",
+    byArrangement: "حسب الاتفاق",
+    confirmed: "شكرًا على الدفع – تم تأكيد طلبكم {id} الخاص بعرضكم الشخصي. سنتولى كل ما تبقى وسنتواصل معكم إذا كان هناك ما يحتاج إلى توضيح.",
+  },
 };
 
 export default mail;

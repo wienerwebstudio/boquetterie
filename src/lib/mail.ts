@@ -1,6 +1,7 @@
 import "server-only";
 import nodemailer, { type Transporter } from "nodemailer";
-import type { Order, Partner, SiteSettings } from "@/types";
+import type { Offer, Order, Partner, SiteSettings } from "@/types";
+import { offerPreviewOrder } from "@/lib/offers-core";
 import type { Reminder } from "@/types/reminders";
 import { getAllProducts, getExtras, getOccasions, getPartners, getSettings } from "@/lib/cms";
 import { getFloristBudgets } from "@/lib/florist-budget";
@@ -464,6 +465,36 @@ export async function sendReviewRequest(order: Order): Promise<MailResult> {
   const [settings, localOrder] = await Promise.all([customerSettings(lang.locale), orderInLanguage(order, lang.locale)]);
   const brand = mailBrand(settings);
   return send(order.customer.email, templates.reviewRequest({ order: localOrder, brand, reviewUrl: reviewUrl(order, brand.siteUrl, lang.locale), ...lang }), "review_request");
+}
+
+/* ---------------- Individual offers ---------------- */
+
+/**
+ * The offer mail with the payment link, in the offer's language. `test` sends a copy
+ * ("[Test]" subject) to the address the admin typed in – nothing is recorded on the offer.
+ */
+export async function sendOfferMail(offer: Offer, opts: { payUrl: string; to?: string; test?: boolean }): Promise<{ to: string; result: MailResult }> {
+  const lang = await customerMailLang(offer.locale);
+  const settings = await customerSettings(lang.locale);
+  const brand = mailBrand(settings);
+  const preview = await orderInLanguage(offerPreviewOrder(offer, { cardsEnabled: settings.greetingCard?.enabled === true }), lang.locale);
+  const mail = templates.offerMail({ order: preview, brand, payUrl: opts.payUrl, validUntil: offer.validUntil, ...lang });
+  const to = opts.to?.trim() || offer.customer.email;
+  const result = await sendMail({
+    to, subject: opts.test ? `[Test] ${mail.subject}` : mail.subject, html: mail.html, text: mail.text,
+    tags: { type: opts.test ? "offer_test" : "offer" },
+    // A test copy goes exactly where the admin typed it (like the sample order mails).
+    bypassRedirect: Boolean(opts.test && opts.to),
+  });
+  return { to, result };
+}
+
+/** Rendered offer mail (admin preview). */
+export async function renderOfferMail(offer: Offer, payUrl: string): Promise<RenderedMail> {
+  const lang = await customerMailLang(offer.locale);
+  const settings = await customerSettings(lang.locale);
+  const preview = await orderInLanguage(offerPreviewOrder(offer, { cardsEnabled: settings.greetingCard?.enabled === true }), lang.locale);
+  return templates.offerMail({ order: preview, brand: mailBrand(settings), payUrl, validUntil: offer.validUntil, ...lang });
 }
 
 /* ---------------- Occasion reminders ---------------- */

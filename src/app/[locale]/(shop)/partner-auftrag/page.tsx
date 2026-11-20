@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getOrderById } from "@/lib/cms";
 import { formatDateLong } from "@/lib/format";
 import { tokenMatches } from "@/lib/mail/reminders";
-import { sizeShort } from "@/lib/mail/templates";
+import { floristSize } from "@/lib/mail/templates";
 import { ConfirmForm } from "./confirm-form";
 
 export const dynamic = "force-dynamic";
@@ -46,7 +46,7 @@ export default async function PartnerConfirmPage({ searchParams }: { searchParam
       <p>{p.name} · Lieferung am <strong className="text-ink">{formatDateLong(order.delivery.date)}</strong>{order.delivery.windowLabel ? `, ${order.delivery.windowLabel}` : ""}</p>
       <ul className="list-disc pl-5 text-ink">
         {order.lines.map((l, i) => (
-          <li key={i}>{l.quantity > 1 ? `${l.quantity} × ` : ""}{l.productName} – Größe {sizeShort(l.sizeId, l.sizeLabel, l.stems)}{l.extras.length ? ` + ${l.extras.map((e) => e.name).join(", ")}` : ""}</li>
+          <li key={i}>{l.quantity > 1 ? `${l.quantity} × ` : ""}{l.productName} – Größe {floristSize(l)}{l.extras.length ? ` + ${l.extras.map((e) => e.name).join(", ")}` : ""}</li>
         ))}
       </ul>
       {p.confirmedAt ? <p className="text-forest">Danke – ihr habt den Auftrag bereits bestätigt.</p> : <ConfirmForm orderId={order.id} token={token} />}

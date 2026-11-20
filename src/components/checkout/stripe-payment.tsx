@@ -53,8 +53,10 @@ export interface StripeSession {
   method: PaymentMethodId;
 }
 
-export function StripePaymentForm({ publishableKey, session, amount, email, name, onDone, onCancel }: {
+export function StripePaymentForm({ publishableKey, session, amount, email, name, onDone, onCancel, backPath }: {
   publishableKey: string;
+  /** German path the return page offers when a redirect payment failed (default: the checkout). */
+  backPath?: string;
   session: StripeSession;
   amount: number;
   email: string;
@@ -69,7 +71,7 @@ export function StripePaymentForm({ publishableKey, session, amount, email, name
   const options: StripeElementsOptions = useMemo(() => ({ clientSecret: session.clientSecret, locale: stripeLocale(locale), appearance }), [session.clientSecret, locale]);
   return (
     <Elements stripe={stripePromise} options={options}>
-      <StripeForm session={session} amount={amount} email={email} name={name} onDone={onDone} onCancel={onCancel} />
+      <StripeForm session={session} amount={amount} email={email} name={name} onDone={onDone} onCancel={onCancel} backPath={backPath} />
     </Elements>
   );
 }
@@ -93,8 +95,8 @@ function stripeLocale(l: Locale): StripeElementsOptions["locale"] {
 
 const LOAD_TIMEOUT_MS = 20_000;
 
-function StripeForm({ session, amount, email, name, onDone, onCancel }: {
-  session: StripeSession; amount: number; email: string; name?: string;
+function StripeForm({ session, amount, email, name, onDone, onCancel, backPath }: {
+  session: StripeSession; amount: number; email: string; name?: string; backPath?: string;
   onDone: (status: PaymentConfirmResponse["status"]) => void; onCancel: () => void;
 }) {
   const stripe = useStripe();
@@ -122,7 +124,7 @@ function StripeForm({ session, amount, email, name, onDone, onCancel }: {
     if (!stripe || !elements || busy) return;
     setBusy(true);
     setError(null);
-    const returnUrl = `${window.location.origin}${href("/checkout/rueckkehr")}?orderId=${encodeURIComponent(session.orderId)}&token=${encodeURIComponent(session.token)}`;
+    const returnUrl = `${window.location.origin}${href("/checkout/rueckkehr")}?orderId=${encodeURIComponent(session.orderId)}&token=${encodeURIComponent(session.token)}${backPath ? `&back=${encodeURIComponent(backPath)}` : ""}`;
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: { return_url: returnUrl, receipt_email: email || undefined },

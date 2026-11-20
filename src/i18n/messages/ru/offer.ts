@@ -1,0 +1,36 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** ru – offer (translated from src/i18n/messages/de/offer.ts). */
+const offer: NonNullable<PartialMessages["offer"]> = {
+  metaTitle: "Ваше предложение",
+  eyebrow: "Персональное предложение {id}",
+  title: "Ваше персональное предложение",
+  intro: "Здравствуйте, {name}! Вот ваше предложение. Спокойно всё проверьте и безопасно оплатите онлайн.",
+  items: "Ваши цветы",
+  delivery: "Доставка",
+  date: "Дата и время",
+  place: "Место доставки",
+  recipient: "Получатель",
+  card: "Открытка",
+  flowers: "Цветы",
+  extras: "Дополнения",
+  deliveryFee: "Доставка",
+  free: "бесплатно",
+  validUntil: "Действительно до {date}",
+  payTitle: "Оплата",
+  pay: "Оплатить сейчас · {total}",
+  acceptTerms: "Я ознакомился(-ась) с {terms} и {withdrawal}.",
+  acceptTermsError: "Пожалуйста, подтвердите общие условия.",
+  paidTitle: "Спасибо – уже оплачено",
+  paidText: "Это предложение оплачено. Подтверждение заказа вы получили по электронной почте.",
+  viewOrder: "Посмотреть заказ",
+  expiredTitle: "Срок действия предложения истёк",
+  expiredText: "Это предложение больше не действует. Напишите нам – мы с радостью подготовим новое.",
+  cancelledTitle: "Предложение больше недоступно",
+  cancelledText: "Это предложение отозвано. Если у вас есть вопросы, напишите нам.",
+  cancelledPayment: "Оплата не была завершена. Вы можете попробовать ещё раз.",
+  failed: "Не удалось начать оплату. Пожалуйста, попробуйте ещё раз.",
+  byArrangement: "По договорённости",
+};
+
+export default offer;

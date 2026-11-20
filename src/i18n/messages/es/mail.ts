@@ -154,6 +154,20 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     textIntro: "Con este enlace inicias sesión en tu cuenta. Es válido durante {minutes} minutos y solo funciona una vez:",
     textIgnore: "¿No has solicitado iniciar sesión? Entonces puedes ignorar este correo electrónico.",
   },
+  /** Individual offer (admin → Angebote): the mail with the payment link. */
+  offer: {
+    subject: "Tu oferta personal de {brand}",
+    preheader: "{total} con entrega incluida – válida hasta el {date}.",
+    headline: "Tu oferta personal",
+    intro: "Gracias por tu solicitud. Aquí tienes nuestra oferta – el precio incluye la entrega.",
+    pay: "Pagar ahora",
+    valid: "Válida hasta el {date}. Justo después del pago recibirás la confirmación del pedido.",
+    place: "Lugar de entrega",
+    fallback: "Si el botón no funciona: {url}",
+    footer: "Recibes este correo porque nos pediste una oferta.",
+    byArrangement: "Según lo acordado",
+    confirmed: "Gracias por tu pago – tu pedido {id} de tu oferta personal está confirmado. Nosotros nos encargamos del resto y te escribimos si queda algo pendiente.",
+  },
 };
 
 export default mail;

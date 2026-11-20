@@ -3,13 +3,15 @@ import { after } from "next/server";
 import { bookCourierSafely } from "@/lib/courier";
 import { randomBytes, randomInt } from "node:crypto";
 import type { CartItem, Coupon, DeliveryZone, Extra, Order, OrderLine, OrderStatus, Product, SizeId } from "@/types";
-import type { CreatePaymentResult, PaymentProviderId } from "@/types/payments";
-import { addOrder, getAllProducts, getCoupons, getDeliveryZones, getExtras, getOrderById, getOrders, getSettings, readCollection, updateOrder, writeCollection } from "@/lib/cms";
+import type { CreatePaymentResult, PaymentMethodId, PaymentProviderId } from "@/types/payments";
+import { addOrder, getAllProducts, getCoupons, getDeliveryZones, getExtras, getOfferById, getOrderById, getOrders, getSettings, readCollection, updateOffer, updateOrder, writeCollection } from "@/lib/cms";
 import { findZone, getAvailableDays, getLocalNow, normalizePostalCode } from "@/lib/delivery";
 import checkoutDe from "@/i18n/messages/de/checkout";
 import type { Locale } from "@/i18n/config";
 import { computeTotals, validateCoupon } from "@/lib/pricing";
-import { createPayment, providerForMethod, type PaymentEvent } from "@/lib/payments";
+import { cancelOpenPayment, createPayment, providerForMethod, resumePayment, verifyPayment, type PaymentEvent } from "@/lib/payments";
+import { isOfferPayable, offerOrderLines, offerOrderParts, offerTotals } from "@/lib/offers-core";
+import { markOfferPaidForOrder, offerLocale, withOfferLock } from "@/lib/offers";
 import { sendOrderConfirmation } from "@/lib/mail";
 import { attachFloristBudgets, EMPTY_BUDGETS, getFloristBudgets } from "@/lib/florist-budget";
 import {
@@ -415,10 +417,19 @@ export async function createOrderFromPayload(payload: OrderPayload, opts: { site
     throw err;
   }
 
-  // Provider step
+  return startPayment(order, opts.siteUrl);
+}
+
+/**
+ * Provider step for a stored order (payment pending): creates the provider payment and applies the immediate result. Mock pays at
+ * once; Stripe and PayPal stay pending until confirm endpoint or webhook.
+ */
+async function startPayment(order: Order, siteUrl: string): Promise<CreateOrderOutcome> {
+  const id = order.id;
+  const provider = order.payment.provider as PaymentProviderId;
   let payment: CreatePaymentResult;
   try {
-    payment = await createPayment({ order, siteUrl: opts.siteUrl });
+    payment = await createPayment({ order, siteUrl });
   } catch (err) {
     console.error(`[payments] ${provider} createPayment failed for ${id}`, err);
     payment = { status: "failed", provider, message: "Die Zahlung konnte nicht gestartet werden. Bitte versuch es noch einmal oder wähle eine andere Zahlungsart." };
@@ -440,6 +451,125 @@ export async function createOrderFromPayload(payload: OrderPayload, opts: { site
   }
 
   return { ok: true, order: stored ?? order, payment };
+}
+
+/* ---------------- Orders from individual offers ---------------- */
+
+export type OfferPaymentOutcome =
+  | (Extract<CreateOrderOutcome, { ok: true }> & { reused: boolean })
+  | { ok: false; status: number; code: "not_found" | "paid" | "unavailable" | "method" | "payment"; message: string; order?: Order };
+
+/**
+ * Turns a sent, still valid offer into an order and starts its payment.
+ *
+ * Every amount comes from the stored offer – the client only names the payment
+ * method. Idempotent per offer: while an earlier order of the offer still waits for
+ * its payment with the same provider (and the offer was not edited since), that order
+ * and its provider payment are reused (Stripe: the same PaymentIntent). Before a new
+ * order replaces an open one, the open payment is verified and cancelled (Stripe
+ * intent), so an offer can never be paid twice. Serialised per offer.
+ *
+ * Custom items become `custom` order lines (no stock); shop products keep their stock
+ * rules. The order carries the offer's language, the free window ("14:00–16:00 Uhr"),
+ * the zone of the ZIP, the billing address, the florist note and `offerId`.
+ */
+export async function createOrderFromOffer(offerId: string, method: PaymentMethodId, opts: { siteUrl: string }): Promise<OfferPaymentOutcome> {
+  return withOfferLock(offerId, async () => {
+    const [offer, settings, zones] = await Promise.all([getOfferById(offerId), getSettings(), getDeliveryZones()]);
+    if (!offer) return { ok: false, status: 404, code: "not_found", message: "Angebot nicht gefunden." };
+    const today = getLocalNow(settings.timezone).date;
+    if (offer.status === "paid") return { ok: false, status: 409, code: "paid", message: "Dieses Angebot ist bereits bezahlt." };
+    if (!isOfferPayable(offer, today)) return { ok: false, status: 410, code: "unavailable", message: "Dieses Angebot ist nicht mehr gültig." };
+
+    const paymentConfig = settings.payments.find((p) => p.id === method && p.enabled);
+    const provider = paymentConfig ? providerForMethod(paymentConfig.id) : null;
+    if (!paymentConfig || !provider) return { ok: false, status: 400, code: "method", message: "Diese Zahlungsart ist derzeit nicht verfügbar." };
+
+    const totals = offerTotals(offer);
+
+    // An earlier attempt of this offer?
+    const previous = offer.orderId ? await getOrderById(offer.orderId) : null;
+    if (previous && previous.payment.status === "paid") {
+      await markOfferPaidForOrder(previous);
+      return { ok: false, status: 409, code: "paid", message: "Dieses Angebot ist bereits bezahlt.", order: previous };
+    }
+    if (previous && previous.payment.status === "pending") {
+      const stale = previous.createdAt < offer.updatedAt || previous.totals.total !== totals.total;
+      const replace = stale || previous.payment.provider !== provider || provider === "mock";
+      if (!replace) {
+        const reusable = previous.payment.method === method ? previous : (await updateOrder(previous.id, (o) => ({ ...o, payment: { ...o.payment, method } }))) ?? previous;
+        let resumed: CreatePaymentResult;
+        try {
+          resumed = await resumePayment({ order: reusable, siteUrl: opts.siteUrl });
+        } catch (err) {
+          // Unknown state of the open payment – never start a second one blindly.
+          console.error(`[offers] resuming the payment of ${previous.id} failed`, err);
+          return { ok: false, status: 503, code: "payment", message: "Die Zahlung konnte gerade nicht gestartet werden. Bitte versuch es gleich noch einmal." };
+        }
+        if (resumed.status === "paid") {
+          const paid = await markOrderPaid(previous.id, { provider: resumed.provider, reference: resumed.reference, intentId: resumed.intentId, note: "Zahlung bestätigt" });
+          return { ok: true, order: paid ?? reusable, payment: resumed, reused: true };
+        }
+        if (resumed.status === "pending") return { ok: true, order: reusable, payment: resumed, reused: true };
+        // The old payment can no longer be completed (e.g. intent cancelled) – a fresh order follows.
+        await markOrderPaymentFailed(previous.id, { note: resumed.message ?? "Zahlung abgebrochen", intentId: resumed.intentId });
+      }
+      if (replace) {
+        // Edited offer or another provider: the open payment must never complete.
+        try {
+          const verified = await verifyPayment(previous);
+          if (verified.status === "paid") {
+            const paid = await markOrderPaid(previous.id, { reference: verified.reference, intentId: verified.intentId, note: "Zahlung nachträglich bestätigt" });
+            return { ok: false, status: 409, code: "paid", message: "Dieses Angebot ist bereits bezahlt.", order: paid ?? previous };
+          }
+          await cancelOpenPayment(previous);
+        } catch (err) {
+          console.error(`[offers] could not cancel the open payment of ${previous.id}`, err);
+          return { ok: false, status: 409, code: "payment", message: "Eine frühere Zahlung für dieses Angebot ist noch offen. Bitte versuch es in ein paar Minuten noch einmal." };
+        }
+        await markOrderPaymentFailed(previous.id, { note: stale ? "Angebot geändert – neue Bestellung angelegt" : "Zahlungsart gewechselt – neue Bestellung angelegt" });
+      }
+    }
+
+    // Lines: custom items as entered; shop products and extras get the stored florist budget when none was entered.
+    const budgets = await getFloristBudgets().catch(() => EMPTY_BUDGETS);
+    const lines = offerOrderLines(offer, { cardsEnabled: settings.greetingCard.enabled === true }).map((l) => ({
+      ...l,
+      ...(l.custom ? {} : { floristBudget: l.floristBudget ?? budgets.products[l.productId]?.[l.sizeId] }),
+      extras: l.extras.map((e) => ({ ...e, floristBudget: budgets.extras[e.extraId] })),
+    }));
+    const reserved = await reserveStock(lines);
+    if (!reserved.ok) return { ok: false, status: 409, code: "unavailable", message: reserved.message };
+
+    const zone = findZone(offer.recipient.zip, zones);
+    const id = await generateOrderId();
+    const createdAt = new Date().toISOString();
+    const locale = offerLocale(offer);
+    const order: Order = {
+      id, token: randomBytes(12).toString("hex"), createdAt, status: "received",
+      history: [{ status: "received", at: createdAt, note: `Aus Angebot ${offer.id} – Partner und Zustellung von Hand organisieren` }],
+      ...offerOrderParts(offer, offer.delivery.enabled ? zone : null, today),
+      customer: { firstName: offer.customer.firstName, lastName: offer.customer.lastName, email: offer.customer.email, phone: offer.customer.phone ?? "" },
+      lines,
+      totals: { subtotal: totals.items, extras: totals.extras, delivery: totals.delivery, discount: 0, total: totals.total },
+      payment: { method: paymentConfig.id, status: "pending", provider },
+      ...(locale !== "de" ? { locale } : {}),
+      offerId: offer.id,
+      ...(offer.floristNote ? { floristNote: offer.floristNote } : {}),
+      ...(offer.billing ? { billing: offer.billing } : {}),
+    };
+
+    try {
+      await addOrder(order);
+    } catch (err) {
+      await releaseStock(lines);
+      throw err;
+    }
+    await updateOffer(offer.id, (o) => ({ ...o, orderId: id, history: [...o.history, { at: createdAt, note: `Zahlung gestartet (${paymentConfig.label}) – Bestellung ${id}` }] }));
+
+    const started = await startPayment(order, opts.siteUrl);
+    return started.ok ? { ...started, reused: false } : { ok: false, status: started.status, code: "payment", message: started.message };
+  });
 }
 
 /* ---------------- Payment transitions (idempotent) ---------------- */
@@ -483,6 +613,9 @@ export async function markOrderPaid(id: string, info: PaidInfo): Promise<Order |
   });
   if (!updated) return null;
 
+  // An order from an individual offer settles the offer ("Bezahlt").
+  if (updated.offerId) await markOfferPaidForOrder(updated).catch((err) => console.error("[offers] marking offer paid failed", err));
+
   // A payment that arrives after we already gave the units back (late webhook) re-reserves them.
   if (wasReleased) await reserveStock(updated.lines).catch((err) => console.error("[orders] re-reserving stock failed", err));
 
@@ -493,7 +626,8 @@ export async function markOrderPaid(id: string, info: PaidInfo): Promise<Order |
   // (scripts, tests) `after` is unavailable – then run inline. Never throws.
   const followUp = async () => {
     await sendOrderConfirmation(updated).catch((err) => console.error("[mail] confirmation failed", err));
-    await bookCourierSafely(updated.id);
+    // Orders from individual offers are handled by the team by hand: never an automatic rider.
+    if (!updated.offerId) await bookCourierSafely(updated.id);
   };
   try {
     after(followUp);

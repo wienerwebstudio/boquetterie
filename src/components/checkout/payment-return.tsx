@@ -22,6 +22,9 @@ export function PaymentReturn() {
   const orderId = params.get("orderId") ?? "";
   const token = params.get("token") ?? "";
   const redirectStatus = params.get("redirect_status");
+  // Offers come back to their own page; only local paths are accepted.
+  const backParam = params.get("back") ?? "";
+  const back = /^\/(?!\/)[\w\-/?=&.%]*$/.test(backParam) ? backParam : `${routes.checkout}?cancelled=1`;
   const incomplete = !orderId || !token;
   const failed = incomplete ? t.incomplete : confirmFailed;
 
@@ -52,7 +55,7 @@ export function PaymentReturn() {
         <span className="mx-auto mb-5 flex size-14 items-center justify-center rounded-full bg-rose-100 text-burgundy"><CircleAlert className="size-6" strokeWidth={1.5} aria-hidden /></span>
         <h1 className="display-3 text-ink">{t.failedTitle}</h1>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">{failed}</p>
-        <Button href={`${routes.checkout}?cancelled=1`} size="lg" className="mt-8">{t.backToCheckout}</Button>
+        <Button href={back} size="lg" className="mt-8">{t.backToCheckout}</Button>
       </div>
     );
   }

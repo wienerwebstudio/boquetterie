@@ -114,7 +114,7 @@ export function stripLocale(internal: string): string {
 /** German top-level routes that exist in every language (the rest are topic pages of one language). */
 const SHARED_ROUTES = new Set<string>([
   ...SEGMENTS, "checkout", "bestellung", "konto", "bewertung", "auth", "newsletter", "partner-auftrag",
-  "impressum", "datenschutz", "agb", "widerruf", "vertrag-widerrufen", "blumen-abo",
+  "impressum", "datenschutz", "agb", "widerruf", "vertrag-widerrufen", "blumen-abo", "angebot",
 ]);
 
 /**

@@ -95,7 +95,8 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
       <header className="mx-auto max-w-2xl text-center">
         {isNew ? (
           <>
-            <OrderPlacedCleanup />
+            {/* An offer was paid without the cart – leave the visitor's cart alone. */}
+            {!order.offerId && <OrderPlacedCleanup />}
             <span className="mx-auto mb-5 flex size-14 items-center justify-center rounded-full bg-forest text-ivory animate-fade-in"><CircleCheck className="size-7" strokeWidth={1.5} aria-hidden /></span>
             <p className="eyebrow mb-3">{fmt(t.eyebrow, { id: order.id })}</p>
             <h1 className="display-2 text-balance text-ink animate-fade-up">
@@ -142,9 +143,9 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
           <dl className="grid gap-5 text-[14.5px]">
             <div>
               <dt className="eyebrow mb-1">{t.deliveryDate}</dt>
-              <dd className="text-ink">{dateLong(order.delivery.date)}{order.delivery.windowLabel ? `, ${order.delivery.windowLabel}` : ""}</dd>
+              <dd className="text-ink">{order.delivery.none ? m.offer.byArrangement : dateLong(order.delivery.date)}{order.delivery.windowLabel ? `, ${order.delivery.windowLabel}` : ""}</dd>
             </div>
-            <div>
+            {!order.delivery.none && <div>
               <dt className="eyebrow mb-1">{t.recipient}</dt>
               <dd className="text-ink">
                 {order.recipient.firstName} {order.recipient.lastName}
@@ -152,7 +153,7 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
                 <br />{order.recipient.street} {order.recipient.houseNumber}{order.recipient.addition ? `, ${order.recipient.addition}` : ""}
                 <br />{order.recipient.zip} {order.recipient.city}
               </dd>
-            </div>
+            </div>}
             {order.delivery.note && (
               <div>
                 <dt className="eyebrow mb-1">{t.note}</dt>
@@ -176,7 +177,8 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
                     <p className="font-serif text-[19px] leading-tight text-ink">{line.productName}</p>
                     <p className="shrink-0 text-[14px] font-semibold tabular-nums text-ink">{price(line.unitPrice * line.quantity)}</p>
                   </div>
-                  <p className="text-[12.5px] text-ink-muted">{line.sizeLabel}{line.quantity > 1 ? ` · ${line.quantity}×` : ""}</p>
+                  <p className="text-[12.5px] text-ink-muted">{[line.custom ? "" : line.sizeLabel, line.quantity > 1 ? `${line.quantity}×` : ""].filter(Boolean).join(" · ")}</p>
+                  {line.description && <p className="mt-1 whitespace-pre-line text-[12.5px] text-ink-muted">{line.description}</p>}
                   {line.extras.length > 0 && (
                     <ul className="mt-2 flex flex-col gap-1">
                       {line.extras.map((e) => (

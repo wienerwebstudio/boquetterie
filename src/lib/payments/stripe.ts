@@ -167,6 +167,29 @@ export const stripeProvider: PaymentProviderAdapter = {
   },
 };
 
+/* ---------------- Resuming / cancelling an open intent (individual offers) ---------------- */
+
+/**
+ * Re-opens an existing PaymentIntent: its client secret while it can still be paid,
+ * else its final state. Used when a customer clicks "pay" on an offer again.
+ */
+export async function resumeStripeIntent(intentId: string): Promise<{ verify: VerifyResult; clientSecret?: string }> {
+  const intent = await stripeClient().paymentIntents.retrieve(intentId);
+  const verify = intentStatusToVerify(intent);
+  const open = ["requires_payment_method", "requires_confirmation", "requires_action"].includes(intent.status);
+  return { verify, ...(open && intent.client_secret ? { clientSecret: intent.client_secret } : {}) };
+}
+
+/** Cancels an unpaid PaymentIntent so it can never be charged (e.g. the customer switched to PayPal). */
+export async function cancelStripeIntent(intentId: string): Promise<void> {
+  const intent = await stripeClient().paymentIntents.retrieve(intentId);
+  if (["succeeded", "canceled", "processing"].includes(intent.status)) {
+    if (intent.status === "canceled") return;
+    throw new Error(`PaymentIntent ${intentId} is ${intent.status} and cannot be cancelled`);
+  }
+  await stripeClient().paymentIntents.cancel(intentId);
+}
+
 /* ---------------- Subscriptions (Blumen-Abo via Stripe Checkout) ---------------- */
 
 export interface SubscriptionCheckoutInput {

@@ -154,6 +154,20 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     textIntro: "Ezzel a linkkel bejelentkezel a fiókodba. {minutes} percig érvényes, és csak egyszer használható:",
     textIgnore: "Nem kértél bejelentkezést? Akkor egyszerűen hagyd figyelmen kívül ezt az e-mailt.",
   },
+  /** Individual offer (admin → Angebote): the mail with the payment link. */
+  offer: {
+    subject: "Személyes ajánlatod – {brand}",
+    preheader: "{total} szállítással – érvényes eddig: {date}.",
+    headline: "A személyes ajánlatod",
+    intro: "Köszönjük a megkeresést. Íme az ajánlatunk – az ár tartalmazza a szállítást.",
+    pay: "Fizetés most",
+    valid: "Érvényes eddig: {date}. A fizetés után azonnal megkapod a rendelés visszaigazolását.",
+    place: "Szállítási hely",
+    fallback: "Ha a gomb nem működik: {url}",
+    footer: "Azért kaptad ezt az e-mailt, mert ajánlatot kértél tőlünk.",
+    byArrangement: "Egyeztetés szerint",
+    confirmed: "Köszönjük a fizetést – a személyes ajánlatodhoz tartozó {id} rendelésed visszaigazolva. A többit mi intézzük, és jelentkezünk, ha valami még nyitott.",
+  },
 };
 
 export default mail;

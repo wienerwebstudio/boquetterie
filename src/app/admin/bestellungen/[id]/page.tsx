@@ -54,7 +54,12 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
           <strong>Nicht bezahlt.</strong> Die Zahlung wurde abgebrochen oder nicht abgeschlossen – für diese Bestellung nichts binden und keinen Fahrer buchen. Kund:in und Partner haben keine Mail bekommen.
         </Banner>
       )}
-      {needsPartner && (
+      {needsPartner && order.offerId && (
+        <Banner tone="info" className="mb-5">
+          <strong>Individuelles Angebot <Link href={`/admin/angebote/${order.offerId}`} className="underline underline-offset-4">{order.offerId}</Link>.</strong> Es wird weder ein Partner noch ein Kurier automatisch beauftragt – Ware und Zustellung organisiert ihr selbst. Bei Bedarf rechts einen Partner wählen oder den Kurier von Hand buchen.
+        </Banner>
+      )}
+      {needsPartner && !order.offerId && (
         <Banner tone="warn" className="mb-5">
           <strong>Noch keinem Partner zugeordnet.</strong> Niemand bindet diesen Strauß, bis ihr rechts unter „Partner“ eine Floristik wählt und den Auftrag sendet.
         </Banner>
@@ -70,7 +75,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                   </div>
                   <div className="min-w-0 flex-1 text-[14px]">
                     <div className="flex items-start justify-between gap-3">
-                      <p className="font-semibold">{line.quantity} × {line.productName} <span className="font-normal text-ink-muted">({line.sizeLabel}{line.stems ? ` · ${line.stems} Stiele` : ""}{line.color ? ` · Farbe ${line.color}` : ""})</span></p>
+                      <p className="font-semibold">{line.quantity} × {line.productName} <span className="font-normal text-ink-muted">({line.custom ? "individuell" : line.sizeLabel}{line.stems ? ` · ${line.stems} Stiele` : ""}{line.color ? ` · Farbe ${line.color}` : ""})</span></p>
                       <p className="whitespace-nowrap font-semibold">{formatPrice(line.unitPrice * line.quantity)}</p>
                     </div>
                     {line.extras.length > 0 && (
@@ -80,6 +85,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                         ))}
                       </ul>
                     )}
+                    {line.description && <p className="mt-1 whitespace-pre-line text-[13px] text-ink-muted">{line.description}</p>}
                     {line.floristNote && (
                       <p className="mt-2 rounded-lg border-l-[3px] border-[#0f9466] bg-[#f0faf5] px-3 py-2 text-[13px] text-ink"><span className="font-semibold">Wunsch an die Floristik:</span> {line.floristNote}</p>
                     )}
@@ -111,7 +117,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                 <Row label="Name">{recipientName(order)}{r.company ? <div className="text-ink-muted">{r.company}</div> : null}</Row>
                 <Row label="Adresse">{r.street} {r.houseNumber}{r.addition ? `, ${r.addition}` : ""}<br />{r.zip} {r.city}</Row>
                 <Row label="Telefon"><a href={`tel:${r.phone}`} className="text-[#0a6644] underline-offset-4 hover:underline">{r.phone}</a></Row>
-                <Row label="Lieferdatum"><strong>{formatDateLong(order.delivery.date)}</strong></Row>
+                <Row label="Lieferdatum">{order.delivery.none ? <strong>Keine Lieferung – nach Absprache</strong> : <strong>{formatDateLong(order.delivery.date)}</strong>}</Row>
                 {order.delivery.windowLabel && <Row label="Zeitfenster">{order.delivery.windowLabel}</Row>}
                 <Row label="Zustellung">{selfDelivery ? <strong>Selbst ausliefern</strong> : courierEnabled() ? "Fahrer (RiderX)" : "Fahrer – von Hand buchen"}</Row>
                 <Row label="Gebiet">{order.delivery.zoneName} · {formatPrice(order.delivery.fee)}</Row>
@@ -129,6 +135,8 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                 {order.payment.reference && <Row label="Referenz"><code className="text-[13px]">{order.payment.reference}</code></Row>}
                 {order.foundVia && <Row label="Gefunden über">{foundViaLabel(order.foundVia)}</Row>}
                 {order.coupon && <Row label="Gutschein">{order.coupon.code} (−{formatPrice(order.coupon.discount)})</Row>}
+                {order.offerId && <Row label="Angebot"><Link href={`/admin/angebote/${order.offerId}`} className="text-[#0a6644] underline-offset-4 hover:underline">{order.offerId}</Link></Row>}
+                {order.billing && <Row label="Rechnung">{[order.billing.company, order.billing.name, order.billing.street, `${order.billing.zip} ${order.billing.city}`, order.billing.country, order.billing.vatId ? `UID ${order.billing.vatId}` : ""].filter(Boolean).join(", ")}</Row>}
               </dl>
             </Card>
           </div>
@@ -155,7 +163,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               {order.partner?.sentAt && !order.partner.cancelSentAt && (
                 <Row label="Bestätigt">{!order.partner.confirmedAt && order.partner.reminders?.length ? <div className="text-[12.5px] text-ink-muted">{order.partner.reminders.length} Erinnerung(en) gesendet, zuletzt {formatDateTime(order.partner.reminders[order.partner.reminders.length - 1])}</div> : null}{order.partner.confirmedAt ? <span className="font-semibold text-[#0a6644]">Ja, {formatDateTime(order.partner.confirmedAt)}</span> : order.partner.confirmToken ? <span className="font-semibold text-burgundy">Noch nicht – ggf. anrufen</span> : <span className="text-ink-muted">Ohne Bestätigungslink gesendet</span>}</Row>
               )}
-              {order.partner?.note && <Row label="Hinweis an Floristik"><span className="whitespace-pre-line font-semibold text-[#9a3412]">{order.partner.note}</span></Row>}
+              {(order.partner ? order.partner.note : order.floristNote) && <Row label="Hinweis an Floristik"><span className="whitespace-pre-line font-semibold text-[#9a3412]">{order.partner ? order.partner.note : order.floristNote}</span>{!order.partner && <div className="text-[12px] font-normal text-ink-muted">aus dem Angebot – wird beim Zuordnen mitgesendet</div>}</Row>}
               {order.partner?.cancelSentAt && <Row label="Storno gesendet">{formatDateTime(order.partner.cancelSentAt)}</Row>}
             </dl>
             <PartnerForm
@@ -163,7 +171,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               partners={partners.map((p) => ({ id: p.id, name: p.name, reachable: partnerMailAddresses(p).length > 0 }))}
               current={order.partner ? { id: order.partner.id, name: order.partner.name, sent: Boolean(order.partner.sentAt), cancelled: Boolean(order.partner.cancelSentAt) } : null}
               canAssign={order.payment.status === "paid" && order.status !== "cancelled"}
-              note={order.partner?.note}
+              note={order.partner ? order.partner.note : order.floristNote}
             />
             {partners.length === 0 && <p className="mt-3 text-[13px] text-ink-muted">Noch kein aktiver Partner – unter <Link href="/admin/partner" className="text-[#0a6644] underline-offset-4 hover:underline">Partner</Link> anlegen.</p>}
           </Card>

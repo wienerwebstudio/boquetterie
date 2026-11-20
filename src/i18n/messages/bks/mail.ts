@@ -154,6 +154,20 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     textIntro: "Ovim linkom ste prijavljeni u svoj korisnički račun. Važi {minutes} minuta i može se iskoristiti samo jednom:",
     textIgnore: "Niste zatražili prijavu? Onda ovaj e-mail jednostavno zanemarite.",
   },
+  /** Individual offer (admin → Angebote): the mail with the payment link. */
+  offer: {
+    subject: "Vaša lična ponuda od {brand}",
+    preheader: "{total} uključujući dostavu – vrijedi do {date}.",
+    headline: "Vaša lična ponuda",
+    intro: "Hvala na Vašem upitu. Evo naše ponude za Vas – cijena uključuje dostavu.",
+    pay: "Platite sada",
+    valid: "Vrijedi do {date}. Odmah nakon plaćanja dobijate potvrdu narudžbe.",
+    place: "Mjesto dostave",
+    fallback: "Ako dugme ne radi: {url}",
+    footer: "Ovaj e-mail ste dobili jer ste od nas zatražili ponudu.",
+    byArrangement: "Po dogovoru",
+    confirmed: "Hvala na uplati – Vaša narudžba {id} za Vašu ličnu ponudu je potvrđena. Za sve ostalo se brinemo mi i javit ćemo Vam se ako nešto bude otvoreno.",
+  },
 };
 
 export default mail;

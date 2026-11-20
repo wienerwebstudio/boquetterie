@@ -154,6 +154,20 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     textIntro: "Cu acest link ești autentificat în contul tău. Este valabil {minutes} minute și funcționează o singură dată:",
     textIgnore: "Nu ai cerut o autentificare? Atunci poți ignora pur și simplu acest e-mail.",
   },
+  /** Individual offer (admin → Angebote): the mail with the payment link. */
+  offer: {
+    subject: "Oferta ta personalizată de la {brand}",
+    preheader: "{total} cu livrare inclusă – valabilă până la {date}.",
+    headline: "Oferta ta personalizată",
+    intro: "Îți mulțumim pentru cerere. Iată oferta noastră pentru tine – prețul include livrarea.",
+    pay: "Plătește acum",
+    valid: "Valabilă până la {date}. Imediat după plată primești confirmarea comenzii.",
+    place: "Locul livrării",
+    fallback: "Dacă butonul nu funcționează: {url}",
+    footer: "Primești acest e-mail pentru că ne-ai cerut o ofertă.",
+    byArrangement: "Conform înțelegerii",
+    confirmed: "Îți mulțumim pentru plată – comanda ta {id} pentru oferta personalizată este confirmată. Ne ocupăm noi de restul și te contactăm dacă mai e ceva de clarificat.",
+  },
 };
 
 export default mail;

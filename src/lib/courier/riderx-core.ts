@@ -184,7 +184,7 @@ export function buildDeliveryRequest(order: Order, opts: {
 }): RiderxDeliveryRequest {
   const r = order.recipient;
   const p = opts.pickup;
-  const items = order.lines.map((l) => `${l.quantity}× ${l.productName} (${l.sizeLabel})`).join(", ");
+  const items = order.lines.map((l) => `${l.quantity}× ${l.productName}${l.sizeLabel ? ` (${l.sizeLabel})` : ""}`).join(", ");
   const extraDetails = [r.company, r.addition].filter(Boolean).join(" · ");
   const description = clip(
     [`${opts.brand} ${order.id}: ${items}.`, "Blumen – aufrecht transportieren.", order.delivery.note ? `Hinweis: ${order.delivery.note}` : ""].filter(Boolean).join(" "),

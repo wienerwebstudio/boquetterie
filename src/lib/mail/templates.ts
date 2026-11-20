@@ -86,6 +86,8 @@ type Block =
   /** Big, bold, framed note that must not be overlooked (team note to the florist). */
   | { type: "important"; title: string; text: string }
   | { type: "hr" }
+  /** Large photo (e.g. the bouquet of an offer). `src` is already an absolute URL. */
+  | { type: "image"; src: string; alt: string }
   | { type: "choices"; items: { label: string; url: string }[] };
 
 /**
@@ -113,6 +115,18 @@ export function sizeShort(sizeId: string, sizeLabel: string, stems?: number) {
   const size = ["Klein", "Mittel", "Groß", "XL", "XXL", "XXXL"].includes(sizeLabel) ? sizeId.toUpperCase() : sizeLabel;
   // Our sizes differ from the florist's own (their XL is 51 roses, ours 41) – the count settles it.
   return stems ? `${size} · ${stems} Stiele` : size;
+}
+
+/** Size as the florist reads it; custom lines (individual offers) have none – their description says what to bind. */
+export function floristSize(l: Pick<Order["lines"][number], "custom" | "sizeId" | "sizeLabel" | "stems">) {
+  return l.custom ? "individuell – siehe Beschreibung" : sizeShort(l.sizeId, l.sizeLabel, l.stems);
+}
+
+/** Size/colour line under an item in customer mails; custom lines show their description instead. */
+function customerLineMeta(l: Order["lines"][number], L: Lang): string {
+  const parts = l.custom || !l.sizeLabel ? [] : [fmt(L.m.order.size, { size: l.sizeLabel })];
+  if (l.color) parts.push(fmt(L.m.order.color, { color: l.color }));
+  return parts.join(" · ");
 }
 
 function renderBlockHtml(b: Block, L: Lang): string {
@@ -144,7 +158,7 @@ function renderBlockHtml(b: Block, L: Lang): string {
             })
             .join("");
           const img = imgCell(mailImageUrl(b.siteUrl, l.image), l.productName, 64, 80);
-          return `<tr>${img ? `<td width="76" style="width:76px;padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};vertical-align:top;">${img}</td>` : ""}<td style="padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};vertical-align:top;"><strong style="font-weight:600;">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</strong><br><span style="color:${C.muted};font-size:13px;">${escapeHtml(fmt(L.m.order.size, { size: l.sizeLabel }))}${l.color ? ` · ${escapeHtml(fmt(L.m.order.color, { color: l.color }))}` : ""}</span>${l.floristNote ? `<br><span style="font-size:13px;color:${C.muted};">${escapeHtml(fmt(L.m.order.floristNote, { note: l.floristNote }))}</span>` : ""}${extras}</td><td align="right" style="padding:12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;color:${C.ink};vertical-align:top;white-space:nowrap;">${escapeHtml(priceIn(L, l.unitPrice * l.quantity))}</td></tr>`;
+          return `<tr>${img ? `<td width="76" style="width:76px;padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};vertical-align:top;">${img}</td>` : ""}<td style="padding:12px 12px 12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};vertical-align:top;"><strong style="font-weight:600;">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</strong><br>${customerLineMeta(l, L) ? `<span style="color:${C.muted};font-size:13px;">${escapeHtml(customerLineMeta(l, L))}</span>` : ""}${l.description ? `<br><span style="font-size:13px;color:${C.muted};">${escapeHtml(l.description).replace(/\n/g, "<br>")}</span>` : ""}${l.floristNote ? `<br><span style="font-size:13px;color:${C.muted};">${escapeHtml(fmt(L.m.order.floristNote, { note: l.floristNote }))}</span>` : ""}${extras}</td><td align="right" style="padding:12px 0;border-bottom:1px solid ${C.line};font-family:${FONT};font-size:14px;color:${C.ink};vertical-align:top;white-space:nowrap;">${escapeHtml(priceIn(L, l.unitPrice * l.quantity))}</td></tr>`;
         })
         .join("")}</table>`;
     case "floristItems":
@@ -160,7 +174,7 @@ function renderBlockHtml(b: Block, L: Lang): string {
           const extrasRow = extras
             ? `<tr><td colspan="2" style="padding:0 16px 16px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid ${C.line};"><tr><td colspan="2" style="padding:12px 0 0;font-family:${FONT};font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Dazu</td></tr>${extras}</table></td></tr>`
             : "";
-          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border:1px solid ${C.line};border-radius:8px;"><tr>${img ? `<td width="176" style="width:176px;padding:16px 0 16px 16px;vertical-align:top;">${img}</td>` : ""}<td style="padding:16px;vertical-align:top;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:${SERIF};font-size:20px;line-height:1.3;color:${C.ink};">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</td></tr><tr><td style="padding:2px 0 10px;font-family:${FONT};font-size:15px;color:${C.ink};">Größe <strong style="font-weight:600;">${escapeHtml(sizeShort(l.sizeId, l.sizeLabel, l.stems))}</strong>${l.color ? `<br>Farbe <strong style="font-weight:600;">${escapeHtml(l.color)}</strong>` : ""}</td></tr>${l.floristNote ? `<tr><td style="padding:0 0 10px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="display:block;padding:10px 12px;border-left:3px solid ${C.forest};background:${C.bg};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Wunsch der Kund:in</span><br>${escapeHtml(l.floristNote)}</span></td></tr>` : ""}<tr><td style="padding:10px 12px;background:${C.bg};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Max. Budget</span><br><strong style="font-size:19px;font-weight:600;">${escapeHtml(budgetText(l.floristBudget, l.quantity))}</strong></td></tr></table></td></tr>${extrasRow}</table>`;
+          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;border:1px solid ${C.line};border-radius:8px;"><tr>${img ? `<td width="176" style="width:176px;padding:16px 0 16px 16px;vertical-align:top;">${img}</td>` : ""}<td style="padding:16px;vertical-align:top;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-family:${SERIF};font-size:20px;line-height:1.3;color:${C.ink};">${l.quantity > 1 ? `${l.quantity} × ` : ""}${escapeHtml(l.productName)}</td></tr><tr><td style="padding:2px 0 10px;font-family:${FONT};font-size:15px;color:${C.ink};">Größe <strong style="font-weight:600;">${escapeHtml(floristSize(l))}</strong>${l.color ? `<br>Farbe <strong style="font-weight:600;">${escapeHtml(l.color)}</strong>` : ""}</td></tr>${l.description ? `<tr><td style="padding:0 0 10px;font-family:${FONT};font-size:15px;line-height:1.5;color:${C.ink};"><span style="display:block;padding:10px 12px;border-left:3px solid ${C.burgundy};background:${C.bg};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Beschreibung</span><br><strong style="font-weight:600;">${escapeHtml(l.description).replace(/\n/g, "<br>")}</strong></span></td></tr>` : ""}${l.floristNote ? `<tr><td style="padding:0 0 10px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="display:block;padding:10px 12px;border-left:3px solid ${C.forest};background:${C.bg};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Wunsch der Kund:in</span><br>${escapeHtml(l.floristNote)}</span></td></tr>` : ""}<tr><td style="padding:10px 12px;background:${C.bg};border-radius:6px;font-family:${FONT};font-size:14px;line-height:1.5;color:${C.ink};"><span style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:${C.muted};">Max. Budget</span><br><strong style="font-size:19px;font-weight:600;">${escapeHtml(budgetText(l.floristBudget, l.quantity))}</strong></td></tr></table></td></tr>${extrasRow}</table>`;
         })
         .join("");
     case "totals": {
@@ -178,6 +192,8 @@ function renderBlockHtml(b: Block, L: Lang): string {
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px;border-collapse:separate;"><tr><td style="padding:18px 20px;background:#fff4e5;border:3px solid #c2410c;border-radius:8px;font-family:${FONT};color:#111111;"><div style="font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#c2410c;margin:0 0 8px;">&#9888;&#xFE0E; ${escapeHtml(b.title)}</div><div style="font-size:18px;line-height:1.5;font-weight:700;">${escapeHtml(b.text).replace(/\n/g, "<br>")}</div></td></tr></table>`;
     case "hr":
       return `<hr style="border:0;border-top:1px solid ${C.line};margin:24px 0;">`;
+    case "image":
+      return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px;"><tr><td align="center" style="background:${C.ivory200};border-radius:8px;"><img src="${escapeHtml(b.src)}" alt="${escapeHtml(b.alt)}" width="480" style="display:block;width:100%;max-width:480px;height:auto;border:0;border-radius:8px;"></td></tr></table>`;
   }
 }
 
@@ -198,14 +214,14 @@ function renderBlockText(b: Block, L: Lang): string {
       return b.order.lines
         .map((l) => {
           const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} (${priceIn(L, e.unitPrice * e.quantity)})`).join("\n");
-          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, ${fmt(L.m.order.size, { size: l.sizeLabel })}${l.color ? `, ${fmt(L.m.order.color, { color: l.color })}` : ""} – ${priceIn(L, l.unitPrice * l.quantity)}${l.floristNote ? `\n  ${fmt(L.m.order.floristNote, { note: l.floristNote })}` : ""}${extras ? `\n${extras}` : ""}`;
+          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}${customerLineMeta(l, L) ? `, ${customerLineMeta(l, L).replace(" · ", ", ")}` : ""} – ${priceIn(L, l.unitPrice * l.quantity)}${l.description ? `\n  ${l.description.replace(/\n/g, " ")}` : ""}${l.floristNote ? `\n  ${fmt(L.m.order.floristNote, { note: l.floristNote })}` : ""}${extras ? `\n${extras}` : ""}`;
         })
         .join("\n");
     case "floristItems":
       return b.order.lines
         .map((l) => {
           const extras = l.extras.map((e) => `   + ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} – Max. Budget ${budgetText(e.floristBudget, e.quantity)}${e.image ? `\n     Foto: ${mailImageUrl(b.siteUrl, e.image, 160)}` : ""}`).join("\n");
-          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${sizeShort(l.sizeId, l.sizeLabel, l.stems)}${l.color ? `, Farbe ${l.color}` : ""}${l.floristNote ? `\n  Wunsch der Kund:in: ${l.floristNote}` : ""}\n  Max. Budget: ${budgetText(l.floristBudget, l.quantity)}\n  Foto: ${mailImageUrl(b.siteUrl, l.image, 480)}${extras ? `\n${extras}` : ""}`;
+          return `- ${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}, Größe ${floristSize(l)}${l.color ? `, Farbe ${l.color}` : ""}${l.description ? `\n  Beschreibung: ${l.description.replace(/\n/g, " ")}` : ""}${l.floristNote ? `\n  Wunsch der Kund:in: ${l.floristNote}` : ""}\n  Max. Budget: ${budgetText(l.floristBudget, l.quantity)}\n  Foto: ${mailImageUrl(b.siteUrl, l.image, 480)}${extras ? `\n${extras}` : ""}`;
         })
         .join("\n");
     case "totals":
@@ -218,6 +234,8 @@ function renderBlockText(b: Block, L: Lang): string {
       return `\n!!! ${b.title.toUpperCase()} !!!\n${b.text}\n`;
     case "hr":
       return "—";
+    case "image":
+      return "";
   }
 }
 
@@ -318,6 +336,8 @@ function recipientLines(order: Order) {
 
 /** Delivery date (long, in the mail's language) and window. Internal mails: German. */
 function deliveryLine(order: Order, L: Lang = GERMAN) {
+  // Individual offer without delivery: pickup or whatever was agreed.
+  if (order.delivery.none) return [L.m.offer.byArrangement, order.delivery.windowLabel].filter(Boolean).join(", ");
   const date = L.locale === "de" ? formatDateLong(order.delivery.date) : formatDateLongIn(L.locale, order.delivery.date);
   return `${date}${order.delivery.windowLabel ? `, ${order.delivery.windowLabel}` : ""}`;
 }
@@ -345,16 +365,53 @@ export function orderConfirmation(input: { order: Order; brand: MailBrand; track
     headline: t.headline,
     blocks: [
       { type: "p", text: fmt(L.m.layout.hello, { name: order.customer.firstName }) },
-      { type: "p", text: fmt(t.intro, { id: order.id }) },
+      // Offer orders: no word about binding or couriers – the team arranges everything individually.
+      { type: "p", text: order.offerId ? fmt(L.m.offer.confirmed, { id: order.id }) : fmt(t.intro, { id: order.id }) },
       { type: "button", label: L.m.order.viewOrder, url: trackingUrl },
       { type: "h", text: t.deliveryTitle },
-      { type: "kv", rows: [[rows.date, deliveryLine(order, L)], [rows.recipient, recipientLines(order)], ...(order.delivery.note ? [[rows.note, order.delivery.note] as [string, string]] : [])] },
+      { type: "kv", rows: [[rows.date, deliveryLine(order, L)], ...(order.delivery.none ? [] : [[rows.recipient, recipientLines(order)] as [string, string]]), ...(order.delivery.note ? [[rows.note, order.delivery.note] as [string, string]] : [])] },
       { type: "h", text: t.itemsTitle },
       { type: "items", order, siteUrl: brand.siteUrl },
       { type: "totals", order },
       ...greetingBlocks(order, L),
       { type: "hr" },
       { type: "p", text: t.outro, muted: true },
+    ],
+    footerNotes: [t.footer],
+  }, L);
+}
+
+/**
+ * Individual offer (admin → Angebote): summary, photo, total incl. delivery, the big
+ * "Jetzt bezahlen" button and the validity – in the offer's language. `order` is the
+ * offer rendered as an unpaid order (`offerPreviewOrder`).
+ */
+export function offerMail(input: { order: Order; brand: MailBrand; payUrl: string; validUntil: string } & MailLang): RenderedMail {
+  const { order, brand, payUrl } = input;
+  const L = langOf(input);
+  const t = L.m.offer;
+  const rows = L.m.order.rows;
+  const valid = L.locale === "de" ? formatDateLong(input.validUntil) : formatDateLongIn(L.locale, input.validUntil);
+  const total = priceIn(L, order.totals.total);
+  const r = order.recipient;
+  const place = [r.company, `${r.street} ${r.houseNumber}`, r.addition, `${r.zip} ${r.city}`].filter((x): x is string => Boolean(x && x.trim())).join("\n");
+  const photo = order.lines.find((l) => l.image)?.image;
+  return layout({
+    brand,
+    subject: fmt(t.subject, { brand: brand.name }),
+    preheader: fmt(t.preheader, { total, date: valid }),
+    headline: t.headline,
+    blocks: [
+      { type: "p", text: fmt(L.m.layout.hello, { name: order.customer.firstName }) },
+      { type: "p", text: t.intro },
+      ...(photo ? [{ type: "image", src: mailImageUrl(brand.siteUrl, photo, 480), alt: order.lines[0]?.productName ?? "" } as Block] : []),
+      { type: "items", order, siteUrl: brand.siteUrl },
+      { type: "totals", order },
+      { type: "button", label: `${t.pay} · ${total}`, url: payUrl },
+      { type: "p", text: fmt(t.valid, { date: valid }), muted: true },
+      { type: "kv", rows: [[rows.date, deliveryLine(order, L)], ...(order.delivery.none ? [] : [[t.place, place], [rows.recipient, [r.firstName, r.lastName].filter(Boolean).join(" ")]] as [string, string][]), ...(order.delivery.note ? [[rows.note, order.delivery.note] as [string, string]] : [])] },
+      ...greetingBlocks(order, L),
+      { type: "p", text: fmt(t.fallback, { url: payUrl }), muted: true },
     ],
     footerNotes: [t.footer],
   }, L);
@@ -390,7 +447,7 @@ export function orderStatusUpdate(input: { order: Order; status: OrderStatusDefi
 
 export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl: string; selfDelivery?: boolean; readyBy?: string | null }): RenderedMail {
   const { order, brand, adminUrl } = input;
-  const items = order.lines.map((l) => `${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName} (${l.sizeLabel}${l.color ? `, ${l.color}` : ""})${l.floristNote ? ` – Wunsch: ${l.floristNote}` : ""}${l.extras.length ? ` + ${l.extras.map((e) => e.name).join(", ")}` : ""}`).join("\n");
+  const items = order.lines.map((l) => `${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName}${l.custom ? ` – ${l.description ?? "individuell"}` : ` (${l.sizeLabel}${l.color ? `, ${l.color}` : ""})`}${l.floristNote ? ` – Wunsch: ${l.floristNote}` : ""}${l.extras.length ? ` + ${l.extras.map((e) => e.name).join(", ")}` : ""}`).join("\n");
   const greeting = order.lines.find((l) => l.message);
   return layout({
     brand,
@@ -406,10 +463,13 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
           ...(input.selfDelivery ? [["Zustellung", "Selbst ausliefern – es wird kein Fahrer gebucht. Strauß bei der Floristik abholen."] as [string, string]] : []),
           ["Empfänger:in", `${recipientLines(order)}\n${order.recipient.phone}`],
           ["Kund:in", `${order.customer.firstName} ${order.customer.lastName}\n${order.customer.email}\n${order.customer.phone}`],
-          ["Partner", order.partner ? `${order.partner.name}${order.partner.sentAt ? " (Auftrag gesendet)" : ""}` : "NOCH KEINEM PARTNER ZUGEORDNET – im Admin den Partner wählen und den Auftrag senden."],
+          ["Partner", order.partner ? `${order.partner.name}${order.partner.sentAt ? " (Auftrag gesendet)" : ""}` : order.offerId ? "Individuelles Angebot – kein Partner und kein Kurier automatisch. Ware und Zustellung von Hand organisieren (bei Bedarf im Admin einen Partner wählen)." : "NOCH KEINEM PARTNER ZUGEORDNET – im Admin den Partner wählen und den Auftrag senden."],
           ["Positionen", items],
           ...(greeting?.message ? [["Grußkarte", greeting.message] as [string, string]] : []),
           ...(order.delivery.note ? [["Lieferhinweis", order.delivery.note] as [string, string]] : []),
+          ...(order.offerId ? [["Angebot", `${order.offerId} (individuelles Angebot)`] as [string, string]] : []),
+          ...(order.floristNote ? [["Hinweis an Floristik", `${order.floristNote}\n(wird beim Zuordnen des Partners mitgesendet)`] as [string, string]] : []),
+          ...(order.billing ? [["Rechnung an", [order.billing.company, order.billing.name, order.billing.street, `${order.billing.zip} ${order.billing.city}`, order.billing.country, order.billing.vatId ? `UID ${order.billing.vatId}` : ""].filter(Boolean).join("\n")] as [string, string]] : []),
           ["Zahlung", `${order.payment.method} · ${order.payment.status}${order.payment.reference ? ` · ${order.payment.reference}` : ""}`],
           ["Gesamt", formatPrice(order.totals.total)],
         ],
@@ -450,11 +510,12 @@ export function floristOrder(input: { order: Order; brand: MailBrand; selfDelive
   const ready = readyBy
     ? `${formatDateLong(order.delivery.date)}, bis ${readyBy} Uhr (Abholung durch ${input.selfDelivery ? brand.name : "den Kurier"})`
     : `${formatDateLong(order.delivery.date)} (Uhrzeit folgt)`;
-  const note = order.partner?.note?.trim();
+  // The team note of the slip; before a partner was assigned, the note from the offer.
+  const note = (order.partner ? order.partner.note : order.floristNote)?.trim();
   return layout({
     brand,
     subject: `${input.reminder ? `Erinnerung ${input.reminder}: bitte bestätigen – ` : ""}${note ? "WICHTIGER HINWEIS – " : ""}Auftrag ${order.id} · fertig bis ${formatDateLong(order.delivery.date)}${readyBy ? ` ${readyBy} Uhr` : ""}`,
-    preheader: note ? `Wichtiger Hinweis: ${note.slice(0, 90)}` : first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – Größe ${sizeShort(first.sizeId, first.sizeLabel, first.stems)}` : undefined,
+    preheader: note ? `Wichtiger Hinweis: ${note.slice(0, 90)}` : first ? `${first.quantity > 1 ? `${first.quantity} × ` : ""}${first.productName} – Größe ${floristSize(first)}` : undefined,
     headline: `Neuer Auftrag ${order.id}`,
     blocks: [
       ...(note ? [{ type: "important", title: "Wichtiger Hinweis von Blumora – bitte beachten", text: note } as Block] : []),
@@ -554,7 +615,7 @@ export function partnerConfirmed(input: { order: Order; brand: MailBrand; partne
  */
 export function floristCancellation(input: { order: Order; brand: MailBrand; reason: "cancelled" | "reassigned" }): RenderedMail {
   const { order, brand, reason } = input;
-  const items = order.lines.map((l) => `${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName} – Größe ${sizeShort(l.sizeId, l.sizeLabel, l.stems)}${l.color ? `, ${l.color}` : ""}`).join("\n");
+  const items = order.lines.map((l) => `${l.quantity > 1 ? `${l.quantity} × ` : ""}${l.productName} – Größe ${floristSize(l)}${l.color ? `, ${l.color}` : ""}`).join("\n");
   const why = reason === "cancelled"
     ? "Die Bestellung wurde storniert."
     : "Der Auftrag wird von einer anderen Floristik übernommen.";

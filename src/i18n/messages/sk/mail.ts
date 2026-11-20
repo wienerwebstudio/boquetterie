@@ -164,6 +164,20 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     textIntro: "Týmto odkazom sa prihlásite do svojho účtu. Platí {minutes} minút a funguje len raz:",
     textIgnore: "Nežiadali ste o prihlásenie? Potom tento e-mail jednoducho ignorujte.",
   },
+  /** Individual offer (admin → Angebote): the mail with the payment link. */
+  offer: {
+    subject: "Vaša osobná ponuka od {brand}",
+    preheader: "{total} vrátane doručenia – platí do {date}.",
+    headline: "Vaša osobná ponuka",
+    intro: "Ďakujeme za vašu požiadavku. Tu je naša ponuka pre vás – cena zahŕňa doručenie.",
+    pay: "Zaplatiť teraz",
+    valid: "Platí do {date}. Hneď po platbe dostanete potvrdenie objednávky.",
+    place: "Miesto doručenia",
+    fallback: "Ak tlačidlo nefunguje: {url}",
+    footer: "Tento e-mail ste dostali, pretože ste si od nás vyžiadali ponuku.",
+    byArrangement: "Podľa dohody",
+    confirmed: "Ďakujeme za platbu – vaša objednávka {id} k osobnej ponuke je potvrdená. O všetko ostatné sa postaráme a ozveme sa, ak bude niečo otvorené.",
+  },
 };
 
 export default mail;

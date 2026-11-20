@@ -4,6 +4,7 @@ import { getOrderById, getSettings } from "@/lib/cms";
 import { markOrderPaid, markOrderPaymentFailed } from "@/lib/orders";
 import { paypalConfigured, resolveSiteUrl, verifyPayment } from "@/lib/payments";
 import { capturePayPalOrder } from "@/lib/payments/paypal";
+import { offerReturnUrl } from "@/lib/offers";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
@@ -35,10 +36,14 @@ export async function GET(req: Request) {
   }
   const success = `${site}/bestellung/${encodeURIComponent(order.id)}?token=${encodeURIComponent(order.token)}&neu=1`;
   if (order.payment.status === "paid") return NextResponse.redirect(success, 303);
+  // Offer orders: back to the offer page on failure. A replaced attempt (failed) is never captured –
+  // the offer may already be paid with its new order.
+  const failure = (await offerReturnUrl(order, site)) ?? `${site}/checkout?cancelled=1`;
+  if (order.offerId && order.payment.status === "failed") return NextResponse.redirect(failure, 303);
 
   const paypalOrderId = url.searchParams.get("paypalOrderId") ?? order.payment.intentId ?? url.searchParams.getAll("token").find((t) => t !== ourToken);
   if (!paypalOrderId || (order.payment.intentId && paypalOrderId !== order.payment.intentId)) {
-    return NextResponse.redirect(`${site}/checkout?cancelled=1`, 303);
+    return NextResponse.redirect(failure, 303);
   }
 
   try {
@@ -53,9 +58,9 @@ export async function GET(req: Request) {
       return NextResponse.redirect(success, 303);
     }
     await markOrderPaymentFailed(order.id, { note: result.message ?? "PayPal-Zahlung fehlgeschlagen", intentId: paypalOrderId });
-    return NextResponse.redirect(`${site}/checkout?cancelled=1`, 303);
+    return NextResponse.redirect(failure, 303);
   } catch (err) {
     console.error("[payments] paypal capture failed", err);
-    return NextResponse.redirect(`${site}/checkout?cancelled=1`, 303);
+    return NextResponse.redirect(failure, 303);
   }
 }

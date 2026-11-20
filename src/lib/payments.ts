@@ -2,7 +2,7 @@ import "server-only";
 import type { Order, SiteSettings } from "@/types";
 import type { CreatePaymentResult, PaymentMethodId, PaymentProviderId, PublicPaymentMethod } from "@/types/payments";
 import { mockProvider, MOCK_REFERENCE_PREFIX, isMockReference, mockPaymentsAllowed } from "@/lib/payments/mock";
-import { stripeProvider, stripeConfigured, stripePublishableKey } from "@/lib/payments/stripe";
+import { stripeProvider, stripeConfigured, stripePublishableKey, resumeStripeIntent, cancelStripeIntent } from "@/lib/payments/stripe";
 import { paypalProvider, paypalConfigured } from "@/lib/payments/paypal";
 import type { PaymentProviderAdapter, VerifyResult, WebhookResult } from "@/lib/payments/provider";
 
@@ -73,6 +73,29 @@ export function createPayment(ctx: { order: Order; siteUrl: string }): Promise<C
     return Promise.resolve({ status: "failed", provider, message: "Ungültiger Betrag." });
   }
   return PROVIDERS[provider].createPayment(ctx);
+}
+
+/**
+ * Continues the open payment of a stored order (individual offers: "pay" clicked again).
+ * Stripe: the same PaymentIntent (client secret) while it is still open, else its final
+ * state; PayPal: the same PayPal order (idempotent request id); mock: a new mock payment.
+ * Amounts always come from the stored order.
+ */
+export async function resumePayment(ctx: { order: Order; siteUrl: string }): Promise<CreatePaymentResult> {
+  const provider = ctx.order.payment.provider as PaymentProviderId | undefined;
+  if (provider === "stripe" && ctx.order.payment.intentId) {
+    const { verify, clientSecret } = await resumeStripeIntent(ctx.order.payment.intentId);
+    if (verify.status === "paid") return { status: "paid", provider, intentId: verify.intentId, reference: verify.reference };
+    if (clientSecret) return { status: "pending", provider, intentId: verify.intentId, clientSecret };
+    if (verify.status === "pending") return { status: "pending", provider, intentId: verify.intentId, message: verify.message };
+    return { status: "failed", provider, intentId: verify.intentId, message: verify.message ?? "Die Zahlung wurde abgebrochen." };
+  }
+  return createPayment(ctx);
+}
+
+/** Makes sure an unpaid provider payment can never be completed any more (Stripe: cancel the intent). */
+export async function cancelOpenPayment(order: Order): Promise<void> {
+  if (order.payment.provider === "stripe" && order.payment.intentId) await cancelStripeIntent(order.payment.intentId);
 }
 
 /** Re-checks the payment state with the provider that handled the order. */

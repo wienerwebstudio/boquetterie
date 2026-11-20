@@ -154,6 +154,20 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     textIntro: "This link logs you in to your account. It's valid for {minutes} minutes and only works once:",
     textIgnore: "Didn't request a login? Then you can simply ignore this email.",
   },
+  /** Individual offer (admin → Angebote): the mail with the payment link. */
+  offer: {
+    subject: "Your personal offer from {brand}",
+    preheader: "{total} incl. delivery – valid until {date}.",
+    headline: "Your personal offer",
+    intro: "Thank you for your request. Here is our offer for you – the price includes delivery.",
+    pay: "Pay now",
+    valid: "Valid until {date}. Right after payment you will receive an order confirmation.",
+    place: "Delivery place",
+    fallback: "If the button does not work: {url}",
+    footer: "You are receiving this email because you asked us for an offer.",
+    byArrangement: "As arranged",
+    confirmed: "Thank you for your payment – your order {id} for your personal offer is confirmed. We will take care of everything else and get in touch if anything is still open.",
+  },
 };
 
 export default mail;

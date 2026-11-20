@@ -154,6 +154,20 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     textIntro: "Bu bağlantıyla hesabınıza giriş yaparsınız. Bağlantı {minutes} dakika geçerlidir ve yalnızca bir kez kullanılabilir:",
     textIgnore: "Giriş talep etmediniz mi? O halde bu e-postayı dikkate almamanız yeterli.",
   },
+  /** Individual offer (admin → Angebote): the mail with the payment link. */
+  offer: {
+    subject: "{brand} size özel teklifiniz",
+    preheader: "Teslimat dahil {total} – {date} tarihine kadar geçerli.",
+    headline: "Size özel teklifiniz",
+    intro: "Talebiniz için teşekkür ederiz. Teklifimiz aşağıda – fiyata teslimat dahildir.",
+    pay: "Şimdi öde",
+    valid: "{date} tarihine kadar geçerlidir. Ödemeden hemen sonra sipariş onayınızı alırsınız.",
+    place: "Teslimat yeri",
+    fallback: "Buton çalışmıyorsa: {url}",
+    footer: "Bu e-postayı bizden teklif istediğiniz için aldınız.",
+    byArrangement: "Anlaşmaya göre",
+    confirmed: "Ödemeniz için teşekkürler – kişisel teklifinize ait {id} numaralı siparişiniz onaylandı. Gerisini biz hallediyoruz; açık bir konu olursa size ulaşırız.",
+  },
 };
 
 export default mail;

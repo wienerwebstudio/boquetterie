@@ -172,6 +172,20 @@ const mail = {
     textIntro: "Mit diesem Link bist du in deinem Konto angemeldet. Er ist {minutes} Minuten gültig und funktioniert nur einmal:",
     textIgnore: "Du hast keinen Login angefordert? Dann kannst du diese E-Mail einfach ignorieren.",
   },
+  /** Individual offer (admin → Angebote): the mail with the payment link. */
+  offer: {
+    subject: "Dein persönliches Angebot von {brand}",
+    preheader: "{total} inkl. Lieferung – gültig bis {date}.",
+    headline: "Dein persönliches Angebot",
+    intro: "Danke für deine Anfrage. Hier ist unser Angebot für dich – der Preis enthält die Lieferung.",
+    pay: "Jetzt bezahlen",
+    valid: "Gültig bis {date}. Nach der Zahlung bekommst du sofort eine Bestellbestätigung.",
+    place: "Lieferort",
+    fallback: "Falls der Button nicht funktioniert: {url}",
+    footer: "Du bekommst diese E-Mail, weil du bei uns ein Angebot angefragt hast.",
+    byArrangement: "Nach Absprache",
+    confirmed: "Danke für deine Zahlung – deine Bestellung {id} zu deinem persönlichen Angebot ist bestätigt. Wir kümmern uns um alles Weitere und melden uns, falls noch etwas offen ist.",
+  },
 };
 
 export default mail;

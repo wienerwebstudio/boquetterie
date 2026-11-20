@@ -90,7 +90,8 @@ export function parseFloristBudgets(input: unknown, products: Product[], extras:
 export function attachFloristBudgets(lines: OrderLine[], budgets: FloristBudgets): OrderLine[] {
   return lines.map((l) => ({
     ...l,
-    floristBudget: budgets.products[l.productId]?.[l.sizeId],
+    // Custom lines (individual offers) have no catalogue budget – keep what the team entered.
+    floristBudget: l.custom ? l.floristBudget : budgets.products[l.productId]?.[l.sizeId],
     extras: l.extras.map((e) => ({ ...e, floristBudget: budgets.extras[e.extraId] })),
   }));
 }

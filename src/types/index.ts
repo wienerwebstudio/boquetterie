@@ -438,6 +438,10 @@ export interface OrderLine {
   message?: string;
   anonymous?: boolean;
   senderName?: string;
+  /** Line of an individual offer (no shop product behind it): `productId` is "custom", size fields are placeholders. */
+  custom?: boolean;
+  /** What the florist binds for a custom line (from the offer), e.g. "Strauß nur aus rosa Tulpen". */
+  description?: string;
 }
 
 export interface OrderCourier {
@@ -470,6 +474,8 @@ export interface Order {
     zoneId: string;
     zoneName: string;
     fee: number;
+    /** No delivery at all (individual offer: pickup or as agreed) – mails show "Nach Absprache". */
+    none?: boolean;
   };
   customer: { firstName: string; lastName: string; email: string; phone: string };
   lines: OrderLine[];
@@ -496,6 +502,111 @@ export interface Order {
   foundVia?: FoundVia;
   /** Shop language the order was placed in (`Locale`, e.g. "en"); customer mails use it. Missing = German. */
   locale?: string;
+  /** Individual offer this order was created from (admin → Angebote). */
+  offerId?: string;
+  /** Team note to the florist from the offer – prefilled as partner note when the order is assigned. */
+  floristNote?: string;
+  /** Invoice address, when the customer asked for one (offers). */
+  billing?: BillingAddress;
+}
+
+export interface BillingAddress {
+  company?: string;
+  name?: string;
+  street: string;
+  zip: string;
+  city: string;
+  country: string;
+  /** UID / VAT ID. */
+  vatId?: string;
+}
+
+/* ---------------- Individual offers (admin → Angebote) ---------------- */
+
+/** Stored status; "viewed" and "expired" are derived (see `offerStatus` in src/lib/offers-core.ts). */
+export type OfferStoredStatus = "draft" | "sent" | "paid" | "cancelled";
+export type OfferStatus = OfferStoredStatus | "viewed" | "expired";
+
+export interface OfferItem {
+  id: string;
+  /** "custom" = free text item; "product" = a shop product + size (price editable). */
+  kind: "custom" | "product";
+  title: string;
+  description?: string;
+  image?: string;
+  productId?: string;
+  sizeId?: SizeId;
+  sizeLabel?: string;
+  quantity: number;
+  /** Final price per unit (EUR). */
+  unitPrice: number;
+  /** Optional purchase budget for the partner florist per unit (internal). */
+  floristBudget?: number;
+}
+
+export interface OfferExtra {
+  extraId: string;
+  name: string;
+  quantity: number;
+  unitPrice: number;
+  image?: string;
+}
+
+export interface Offer {
+  id: string; // AN-XXXXXX
+  /** Unguessable secret of the public offer link. */
+  token: string;
+  createdAt: string;
+  updatedAt: string;
+  status: OfferStoredStatus;
+  /** Language of the offer mail and page (`Locale`). */
+  locale: string;
+  customer: { firstName: string; lastName: string; email: string; phone?: string };
+  items: OfferItem[];
+  extras: OfferExtra[];
+  delivery: {
+    /** false = no delivery (pickup or anything else agreed) – date, time and place are optional then. */
+    enabled: boolean;
+    /** Any date (no delivery-day rules); "" when not set. */
+    date: ISODate;
+    /** Optional window "HH:MM"–"HH:MM" ("" when not set). */
+    from: string;
+    to: string;
+    /** Free time text instead of / in addition to the window, e.g. "nach Absprache, ca. 15 Uhr". */
+    text?: string;
+    /** Manual amount (prefilled from the zone of the ZIP in the admin). */
+    fee: number;
+    zoneId?: string;
+    zoneName?: string;
+    note?: string;
+  };
+  recipient: {
+    /** "meeting" = a meeting point (e.g. "Haupteingang Burgtheater"), described in `addition`. */
+    kind: "address" | "meeting";
+    firstName: string;
+    lastName: string;
+    company?: string;
+    phone: string;
+    street: string;
+    houseNumber: string;
+    addition?: string;
+    zip: string;
+    city: string;
+  };
+  greeting?: { message: string; senderName?: string };
+  floristNote?: string;
+  billing?: BillingAddress;
+  internalNote?: string;
+  /** Last day the offer can be paid (Vienna time, inclusive). */
+  validUntil: ISODate;
+  sentAt?: string;
+  sentCount?: number;
+  viewedAt?: string;
+  /** Order of the current/last payment attempt. */
+  orderId?: string;
+  paidAt?: string;
+  cancelledAt?: string;
+  history: { at: string; note: string }[];
 }
 
 /* ---------------- Partner florists ---------------- */

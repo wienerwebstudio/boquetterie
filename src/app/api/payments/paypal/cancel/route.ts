@@ -3,6 +3,7 @@ import { timingSafeEqual } from "node:crypto";
 import { getOrderById, getSettings } from "@/lib/cms";
 import { markOrderPaymentFailed } from "@/lib/orders";
 import { resolveSiteUrl } from "@/lib/payments";
+import { offerReturnUrl } from "@/lib/offers";
 
 export const dynamic = "force-dynamic";
 
@@ -26,5 +27,7 @@ export async function GET(req: Request) {
   if (order && ourToken && order.payment.status === "pending") {
     await markOrderPaymentFailed(order.id, { note: "PayPal-Zahlung vom Kunden abgebrochen" });
   }
-  return NextResponse.redirect(`${site}/checkout?cancelled=1`, 303);
+  // An offer's payment goes back to the offer page, not to the (empty) checkout.
+  const back = order && ourToken ? await offerReturnUrl(order, site) : null;
+  return NextResponse.redirect(back ?? `${site}/checkout?cancelled=1`, 303);
 }

@@ -3,7 +3,7 @@ import { getStore, jsonStore, type DocumentStore } from "@/lib/store";
 import { runContentMigrations } from "@/lib/content-migrations";
 import type {
   Category, CmsPage, Coupon, DeliveryZone, Extra, FAQ, HomepageContent, LandingPage,
-  Occasion, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber,
+  Occasion, Offer, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber,
 } from "@/types";
 import type { OutreachContact, OutreachSend, OutreachTemplate, OutreachUnsubscribe } from "@/types/outreach";
 import { starterTemplates } from "@/lib/outreach/starter-templates";
@@ -171,6 +171,33 @@ export async function updateOrder(id: string, patch: (o: Order) => Order) {
   orders[idx] = patch(orders[idx]);
   await saveOrders(orders);
   return orders[idx];
+}
+
+/* ---------------- Individual offers (runtime data, see docs/OFFERS.md) ---------------- */
+
+export async function getOffers(): Promise<Offer[]> {
+  return readDataDoc<Offer[]>("offers", []);
+}
+export async function saveOffers(offers: Offer[]) {
+  await getStore().set("data", "offers", offers);
+}
+export async function getOfferById(id: string) {
+  return (await getOffers()).find((o) => o.id === id) ?? null;
+}
+/** Read-modify-write of one offer; null when it does not exist. */
+export async function updateOffer(id: string, patch: (o: Offer) => Offer) {
+  const offers = await getOffers();
+  const idx = offers.findIndex((o) => o.id === id);
+  if (idx === -1) return null;
+  offers[idx] = patch(offers[idx]);
+  await saveOffers(offers);
+  return offers[idx];
+}
+export async function addOffer(offer: Offer) {
+  const offers = await getOffers();
+  offers.unshift(offer);
+  await saveOffers(offers);
+  return offer;
 }
 
 export async function getNewsletterSubscribers(): Promise<NewsletterSubscriber[]> {
