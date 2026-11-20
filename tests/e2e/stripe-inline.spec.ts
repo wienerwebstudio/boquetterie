@@ -160,6 +160,9 @@ test.describe("Stripe Payment Element inline @stripe", () => {
   test("product page: express purchase never breaks the layout (shown only where a wallet is available)", async ({ page }) => {
     test.slow();
     test.skip(!publishableKey, "public publishable key not reachable");
+    // Stripe throws IntegrationErrors for invalid element options (e.g. layout) – they hid the express buttons once.
+    const pageErrors: string[] = [];
+    page.on("pageerror", (e) => pageErrors.push(e.message));
     await interceptPayments(page);
     await addAmourToCart(page);
     await page.keyboard.press("Escape");
@@ -168,6 +171,7 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     // Stripe decides per device which wallets exist (headless Chromium usually has none).
     await page.waitForTimeout(8_000);
     await noHorizontalOverflow(page);
+    expect(pageErrors.filter((m) => /stripe|options\./i.test(m))).toEqual([]);
     if (await express.count()) {
       await expect(express.locator("input[autocomplete=postal-code]")).toHaveValue(PLZ_SERVED);
       test.info().annotations.push({ type: "note", description: (await express.isVisible()) ? "express block visible" : "express block mounted but hidden (no wallet)" });

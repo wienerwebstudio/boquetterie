@@ -215,7 +215,8 @@ function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, o
         },
         buttonHeight: 48,
         buttonTheme: { applePay: "black", googlePay: "black" },
-        layout: { maxColumns: 2, maxRows: 3, overflow: "never" },
+        // Stripe: overflow "never" is only allowed with maxRows 0 (no row limit) – anything else throws and hides the buttons.
+        layout: { maxColumns: 2, maxRows: 0, overflow: "never" },
       }}
       onReady={(e) => onAvailability(Boolean(e.availablePaymentMethods && Object.values(e.availablePaymentMethods).some(Boolean)))}
       onLoadError={() => onAvailability(false)}
