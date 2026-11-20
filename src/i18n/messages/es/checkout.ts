@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "Ir al carrito",
   next: "Continuar",
   submitPaypal: "Continuar a PayPal",
-  submitStripe: "Continuar al pago",
   submitBuy: "Comprar ahora",
   submitWithTotal: "{action} · {total}",
   legal: "Al completar el pago, realizas un pedido con obligación de pago. Se aplican nuestras {terms} y la {withdrawal}.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Pago seguro · Cifrado SSL",
   errors: {
     cancelled: "El pago se ha cancelado. Tus datos siguen aquí: puedes volver a intentarlo ahora o elegir otro método de pago.",
-    notCompleted: "El pago no se ha completado. Puedes elegir otro método de pago y volver a intentarlo.",
     checkFields: "Revisa tus datos.",
     orderFailed: "No se ha podido completar el pedido. Inténtalo de nuevo.",
     connection: "Se ha interrumpido la conexión. Comprueba tu conexión a internet e inténtalo de nuevo.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Modo de prueba.",
     testModeText: " El pago es simulado: no se cobra ningún importe.",
-    stripeHint: "Tras pulsar «Comprar ahora», introduces tus datos de pago de forma segura en Stripe.",
     secure: "Tus datos se transmiten con cifrado SSL. No guardamos los datos de pago.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Entrega gratuita",
     couponError: "Error del cupón",
     total: "Total",
-  },
-  stripe: {
-    card: "Tarjeta",
-    orderCreated: "Se ha creado el pedido {orderId}. Completa ahora el pago: solo entonces el pedido será vinculante.",
-    loadProblem: "El campo de pago no se carga en este momento. Vuelve a cargar la página o ábrela en otro navegador (p. ej., Safari). Tu pedido {orderId} está guardado; también puedes contactarnos y te ayudaremos.",
-    failed: "No se ha podido completar el pago. Inténtalo de nuevo.",
-    back: "Atrás",
-    pay: "Pagar ahora · {amount}",
-    legal: "Al pulsar «Pagar ahora», realizas un pedido con obligación de pago. Se aplican nuestras {terms} y la {withdrawal}.",
-    secure: "El pago se procesa de forma segura a través de Stripe. No guardamos los datos de pago.",
   },
   return: {
     metaTitle: "Confirmando el pago",

@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "Na korpu",
   next: "Dalje",
   submitPaypal: "Dalje na PayPal",
-  submitStripe: "Dalje na plaćanje",
   submitBuy: "Kupite sada",
   submitWithTotal: "{action} · {total}",
   legal: "Završetkom plaćanja dajete narudžbu s obavezom plaćanja. Važe naši {terms} i {withdrawal}.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Sigurno plaćanje · SSL enkripcija",
   errors: {
     cancelled: "Plaćanje je prekinuto. Vaši podaci su još tu – možete odmah pokušati ponovo ili odabrati drugi način plaćanja.",
-    notCompleted: "Plaćanje nije završeno. Možete odabrati drugi način plaćanja i pokušati ponovo.",
     checkFields: "Molimo provjerite svoje podatke.",
     orderFailed: "Narudžbu nije bilo moguće završiti. Molimo pokušajte ponovo.",
     connection: "Veza je prekinuta. Molimo provjerite internetsku vezu i pokušajte ponovo.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Testni način rada.",
     testModeText: " Plaćanje se simulira – nijedan iznos neće biti naplaćen.",
-    stripeHint: "Nakon „Kupite sada“ sigurno unosite svoje podatke za plaćanje kod Stripea.",
     secure: "Vaši podaci se prenose uz SSL enkripciju. Podatke za plaćanje ne čuvamo kod nas.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Besplatna dostava",
     couponError: "Greška kupona",
     total: "Ukupno",
-  },
-  stripe: {
-    card: "Kartica",
-    orderCreated: "Narudžba {orderId} je kreirana. Sada završite plaćanje – tek tada narudžba postaje obavezujuća.",
-    loadProblem: "Polje za plaćanje se trenutno ne učitava. Molimo ponovo učitajte stranicu ili je otvorite u drugom pregledniku (npr. Safari). Vaša narudžba {orderId} je sačuvana – možete nas i jednostavno kontaktirati, pa ćemo Vam pomoći.",
-    failed: "Plaćanje nije bilo moguće završiti. Molimo pokušajte ponovo.",
-    back: "Nazad",
-    pay: "Platite sada · {amount}",
-    legal: "Klikom na „Platite sada“ dajete narudžbu s obavezom plaćanja. Važe naši {terms} i {withdrawal}.",
-    secure: "Plaćanje se sigurno obrađuje putem Stripea. Podatke za plaćanje ne čuvamo kod nas.",
   },
   return: {
     metaTitle: "Plaćanje se potvrđuje",

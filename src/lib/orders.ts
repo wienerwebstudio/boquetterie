@@ -1,7 +1,7 @@
 import "server-only";
 import { after } from "next/server";
 import { bookCourierSafely } from "@/lib/courier";
-import { randomBytes, randomInt } from "node:crypto";
+import { randomBytes, randomInt, timingSafeEqual } from "node:crypto";
 import type { CartItem, Coupon, DeliveryZone, Extra, Order, OrderLine, OrderStatus, Product, SizeId } from "@/types";
 import type { CreatePaymentResult, PaymentMethodId, PaymentProviderId } from "@/types/payments";
 import { addOrder, getAllProducts, getCoupons, getDeliveryZones, getExtras, getOfferById, getOrderById, getOrders, getSettings, readCollection, updateOffer, updateOrder, writeCollection } from "@/lib/cms";
@@ -75,16 +75,10 @@ function asInt(v: unknown, min: number, max: number): number | null {
   return n;
 }
 
-/**
- * Hand-written structural validation of an unknown JSON body – no schema library.
- * `messages`: the `checkout` dictionary of the customer's language (German by default).
- */
-export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: number; messages?: typeof checkoutDe }): ParseResult {
+/** The `items` part of an order payload (also used by the express-checkout quote). */
+export function parseOrderItems(input: unknown, opts: { greetingMaxChars: number; messages?: typeof checkoutDe }): { ok: true; items: OrderPayloadItem[] } | { ok: false; status: number; message: string; errors?: FieldErrors } {
   const { api, validation } = opts.messages ?? checkoutDe;
-  const body = asRecord(input);
-  if (!body) return { ok: false, status: 400, message: api.invalidRequest };
-
-  // items
+  const body = { items: input };
   if (!Array.isArray(body.items) || body.items.length === 0 || body.items.length > 20) {
     return { ok: false, status: 400, message: api.cartEmpty, errors: { items: api.cartEmpty } };
   }
@@ -127,6 +121,23 @@ export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: numb
       senderName: greeting.anonymous ? undefined : greeting.senderName,
     });
   }
+
+  return { ok: true, items };
+}
+
+/**
+ * Hand-written structural validation of an unknown JSON body – no schema library.
+ * `messages`: the `checkout` dictionary of the customer's language (German by default).
+ */
+export function parseOrderPayload(input: unknown, opts: { greetingMaxChars: number; messages?: typeof checkoutDe }): ParseResult {
+  const { api, validation } = opts.messages ?? checkoutDe;
+  const body = asRecord(input);
+  if (!body) return { ok: false, status: 400, message: api.invalidRequest };
+
+  // items
+  const parsedItems = parseOrderItems(body.items, { greetingMaxChars: opts.greetingMaxChars, messages: opts.messages });
+  if (!parsedItems.ok) return parsedItems;
+  const items = parsedItems.items;
 
   // recipient
   const r = asRecord(body.recipient);
@@ -327,60 +338,87 @@ export type CreateOrderOutcome =
  * PayPal return what the browser needs to finish the payment (client secret /
  * approve URL) and the order is marked paid by confirm endpoint or webhook.
  */
-export async function createOrderFromPayload(payload: OrderPayload, opts: { siteUrl: string; locale?: Locale }): Promise<CreateOrderOutcome> {
+/** Error codes of `priceOrder` – the express checkout maps them to translated texts. */
+export type PriceOrderCode = "items" | "zone" | "date" | "window" | "coupon" | "min_order";
+
+export type PriceOrderResult =
+  | {
+      ok: true;
+      lines: ResolvedLine[];
+      zone: DeliveryZone;
+      window?: { id: string; label: string; from?: string; to?: string };
+      coupon: Coupon | null;
+      totals: ReturnType<typeof computeTotals>;
+    }
+  | { ok: false; status: number; code: PriceOrderCode; message: string; errors?: FieldErrors };
+
+/**
+ * The price-relevant half of an order, shared by `createOrderFromPayload` and the
+ * express-checkout quote: resolves every line from the catalog, the zone of the PLZ,
+ * the delivery day and window, the coupon and the totals (minimum order value).
+ * Never trusts client prices.
+ */
+export async function priceOrder(input: { items: OrderPayloadItem[]; zip: string; date: string; windowId?: string; couponCode?: string }): Promise<PriceOrderResult> {
   const [products, extras, zones, coupons, settings] = await Promise.all([
     getAllProducts(), getExtras(), getDeliveryZones(), getCoupons(), getSettings(),
   ]);
 
-  const paymentConfig = settings.payments.find((p) => p.id === payload.payment.method && p.enabled);
-  const provider = paymentConfig ? providerForMethod(paymentConfig.id) : null;
-  if (!paymentConfig || !provider) {
-    return { ok: false, status: 400, message: "Diese Zahlungsart ist derzeit nicht verfügbar.", errors: { "payment.method": "Bitte wähle eine andere Zahlungsart." } };
-  }
-
-  const resolved = resolveLines(payload.items, products, extras);
-  if (!resolved.ok) return { ok: false, status: 409, message: resolved.message, errors: { items: resolved.message } };
+  const resolved = resolveLines(input.items, products, extras);
+  if (!resolved.ok) return { ok: false, status: 409, code: "items", message: resolved.message, errors: { items: resolved.message } };
   const lines = resolved.lines;
 
   // Zone & delivery day
-  const zone: DeliveryZone | null = findZone(payload.recipient.zip, zones);
+  const zone: DeliveryZone | null = findZone(input.zip, zones);
   if (!zone) {
-    return { ok: false, status: 400, message: "In dieses Gebiet liefern wir derzeit leider noch nicht.", errors: { "recipient.zip": "In dieses Gebiet liefern wir derzeit leider noch nicht." } };
+    return { ok: false, status: 400, code: "zone", message: "In dieses Gebiet liefern wir derzeit leider noch nicht.", errors: { "recipient.zip": "In dieses Gebiet liefern wir derzeit leider noch nicht." } };
   }
   const now = getLocalNow(settings.timezone);
   const days = getAvailableDays({
     zone, settings, now,
     product: { sameDayCapable: lines.every((l) => l.product.sameDayCapable), deliverable: lines.every((l) => l.product.deliverable) },
   });
-  const day = days.find((d) => d.date === payload.delivery.date);
+  const day = days.find((d) => d.date === input.date);
   if (!day) {
-    return { ok: false, status: 400, message: "Das gewählte Lieferdatum ist nicht mehr verfügbar. Bitte wähle ein anderes Datum.", errors: { "delivery.date": "Dieses Datum ist nicht mehr verfügbar." } };
+    return { ok: false, status: 400, code: "date", message: "Das gewählte Lieferdatum ist nicht mehr verfügbar. Bitte wähle ein anderes Datum.", errors: { "delivery.date": "Dieses Datum ist nicht mehr verfügbar." } };
   }
-  let windowLabel: string | undefined;
-  let windowFrom: string | undefined;
-  let windowTo: string | undefined;
-  if (payload.delivery.windowId) {
-    const win = day.windows.find((w) => w.id === payload.delivery.windowId);
-    if (!win) return { ok: false, status: 400, message: "Das gewählte Zeitfenster ist an diesem Tag nicht verfügbar.", errors: { "delivery.windowId": "Bitte wähle ein anderes Zeitfenster." } };
-    windowLabel = win.label;
-    windowFrom = win.from;
-    windowTo = win.to;
+  let window: { id: string; label: string; from?: string; to?: string } | undefined;
+  if (input.windowId) {
+    const win = day.windows.find((w) => w.id === input.windowId);
+    if (!win) return { ok: false, status: 400, code: "window", message: "Das gewählte Zeitfenster ist an diesem Tag nicht verfügbar.", errors: { "delivery.windowId": "Bitte wähle ein anderes Zeitfenster." } };
+    window = { id: win.id, label: win.label, from: win.from, to: win.to };
   }
 
   // Coupon
   let coupon: Coupon | null = null;
   const cartItems = lines.map((l) => l.cartItem);
-  if (payload.couponCode) {
-    coupon = coupons.find((c) => c.code.toUpperCase() === payload.couponCode) ?? null;
+  if (input.couponCode) {
+    coupon = coupons.find((c) => c.code.toUpperCase() === input.couponCode) ?? null;
     const subtotal = cartItems.reduce((s, i) => s + i.snapshot.unitPrice * i.quantity + i.extras.reduce((x, e) => x + e.price * e.quantity, 0), 0);
     const v = validateCoupon(coupon, subtotal, now.date);
-    if (!v.ok) return { ok: false, status: 400, message: v.error ?? "Dieser Gutschein ist nicht gültig.", errors: { couponCode: v.error ?? "Ungültiger Code." } };
+    if (!v.ok) return { ok: false, status: 400, code: "coupon", message: v.error ?? "Dieser Gutschein ist nicht gültig.", errors: { couponCode: v.error ?? "Ungültiger Code." } };
   }
 
-  const totals = computeTotals({ items: cartItems, zone, windowId: payload.delivery.windowId, coupon, today: now.date });
+  const totals = computeTotals({ items: cartItems, zone, windowId: input.windowId, coupon, today: now.date });
   if (totals.belowMinOrder) {
-    return { ok: false, status: 400, message: `Für dieses Liefergebiet gilt ein Mindestbestellwert von ${totals.minOrder.toFixed(2).replace(".", ",")} €.` };
+    return { ok: false, status: 400, code: "min_order", message: `Für dieses Liefergebiet gilt ein Mindestbestellwert von ${totals.minOrder.toFixed(2).replace(".", ",")} €.` };
   }
+  return { ok: true, lines, zone, window, coupon, totals };
+}
+
+export async function createOrderFromPayload(payload: OrderPayload, opts: { siteUrl: string; locale?: Locale }): Promise<CreateOrderOutcome> {
+  const settings = await getSettings();
+  const paymentConfig = settings.payments.find((p) => p.id === payload.payment.method && p.enabled);
+  const provider = paymentConfig ? providerForMethod(paymentConfig.id) : null;
+  if (!paymentConfig || !provider) {
+    return { ok: false, status: 400, message: "Diese Zahlungsart ist derzeit nicht verfügbar.", errors: { "payment.method": "Bitte wähle eine andere Zahlungsart." } };
+  }
+
+  const priced = await priceOrder({ items: payload.items, zip: payload.recipient.zip, date: payload.delivery.date, windowId: payload.delivery.windowId, couponCode: payload.couponCode });
+  if (!priced.ok) return { ok: false, status: priced.status, message: priced.message, ...(priced.errors ? { errors: priced.errors } : {}) };
+  const { lines, zone, coupon, totals } = priced;
+  const windowLabel = priced.window?.label;
+  const windowFrom = priced.window?.from;
+  const windowTo = priced.window?.to;
 
   // Reserve stock before anything is persisted – the check inside the lock is authoritative.
   const orderLines = attachFloristBudgets(lines.map((l) => l.line), await getFloristBudgets().catch((err: unknown) => {
@@ -451,6 +489,52 @@ async function startPayment(order: Order, siteUrl: string): Promise<CreateOrderO
   }
 
   return { ok: true, order: stored ?? order, payment };
+}
+
+/* ---------------- Resuming an open checkout payment ---------------- */
+
+export type ResumeCheckoutOutcome =
+  | { ok: true; order: Order; payment: CreatePaymentResult }
+  | { ok: false; status: number; code: "not_found" | "gone" | "method" | "payment" };
+
+function sameToken(expected: string, given: string) {
+  const a = Buffer.from(expected);
+  const b = Buffer.from(given);
+  return a.length === b.length && timingSafeEqual(a, b);
+}
+
+/**
+ * The customer tries again (same browser session, same cart and details) after a
+ * cancelled or failed Stripe payment: continue the stored order and its PaymentIntent
+ * instead of creating a second order. Only for unpaid checkout orders paid via Stripe
+ * whose intent can still be paid; the amount stays the stored one. `gone` = start a new
+ * order (the old one is marked failed and its stock released, so nothing is held twice).
+ */
+export async function resumeCheckoutOrder(id: string, token: string, method: PaymentMethodId, opts: { siteUrl: string }): Promise<ResumeCheckoutOutcome> {
+  const order = await getOrderById(id);
+  if (!order || order.offerId || !sameToken(order.token, token)) return { ok: false, status: 404, code: "not_found" };
+  const settings = await getSettings();
+  const enabled = settings.payments.some((p) => p.id === method && p.enabled);
+  if (!enabled || providerForMethod(method) !== "stripe") return { ok: false, status: 400, code: "method" };
+  if (order.payment.provider !== "stripe" || order.payment.status !== "pending" || !order.payment.intentId) return { ok: false, status: 409, code: "gone" };
+
+  const current = order.payment.method === method ? order : (await updateOrder(order.id, (o) => ({ ...o, payment: { ...o.payment, method } }))) ?? order;
+  let resumed: CreatePaymentResult;
+  try {
+    resumed = await resumePayment({ order: current, siteUrl: opts.siteUrl });
+  } catch (err) {
+    // Unknown state of the open payment – never start a second one blindly.
+    console.error(`[orders] resuming the payment of ${order.id} failed`, err);
+    return { ok: false, status: 503, code: "payment" };
+  }
+  if (resumed.status === "paid") {
+    const paid = await markOrderPaid(order.id, { provider: resumed.provider, reference: resumed.reference, intentId: resumed.intentId, note: "Zahlung bestätigt" });
+    return { ok: true, order: paid ?? current, payment: resumed };
+  }
+  // Still payable (client secret) or already processing (no secret – the status page follows the webhook).
+  if (resumed.status === "pending") return { ok: true, order: current, payment: resumed };
+  await markOrderPaymentFailed(order.id, { note: "Zahlung abgebrochen – neue Bestellung angelegt", intentId: resumed.intentId });
+  return { ok: false, status: 409, code: "gone" };
 }
 
 /* ---------------- Orders from individual offers ---------------- */

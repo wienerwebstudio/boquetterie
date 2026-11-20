@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "Sepete git",
   next: "İleri",
   submitPaypal: "PayPal ile devam et",
-  submitStripe: "Ödemeye geç",
   submitBuy: "Şimdi satın al",
   submitWithTotal: "{action} · {total}",
   legal: "Ödemeyi tamamlayarak ödeme yükümlülüğü doğuran bir sipariş vermiş olursunuz. {terms} ve {withdrawal} geçerlidir.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Güvenli ödeme · SSL şifreli",
   errors: {
     cancelled: "Ödeme iptal edildi. Bilgileriniz duruyor – hemen tekrar deneyebilir veya başka bir ödeme yöntemi seçebilirsiniz.",
-    notCompleted: "Ödeme tamamlanmadı. Başka bir ödeme yöntemi seçip tekrar deneyebilirsiniz.",
     checkFields: "Lütfen bilgilerinizi kontrol edin.",
     orderFailed: "Sipariş tamamlanamadı. Lütfen tekrar deneyin.",
     connection: "Bağlantı kesildi. Lütfen internet bağlantınızı kontrol edip tekrar deneyin.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Test modu.",
     testModeText: " Ödeme simüle edilir – herhangi bir tutar tahsil edilmez.",
-    stripeHint: "“Şimdi satın al” düğmesine tıkladıktan sonra ödeme bilgilerinizi güvenli bir şekilde Stripe'ta girersiniz.",
     secure: "Verileriniz SSL şifreli olarak iletilir. Ödeme bilgileri bizde saklanmaz.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Ücretsiz teslimat",
     couponError: "Kupon hatası",
     total: "Toplam",
-  },
-  stripe: {
-    card: "Kart",
-    orderCreated: "{orderId} numaralı sipariş oluşturuldu. Şimdi ödemeyi tamamlayın – sipariş ancak bundan sonra bağlayıcı olur.",
-    loadProblem: "Ödeme alanı şu anda yüklenmiyor. Lütfen sayfayı yenileyin veya başka bir tarayıcıda açın (ör. Safari). {orderId} numaralı siparişiniz kaydedildi – dilerseniz bizimle iletişime geçin, size yardımcı olalım.",
-    failed: "Ödeme tamamlanamadı. Lütfen tekrar deneyin.",
-    back: "Geri",
-    pay: "Şimdi öde · {amount}",
-    legal: "“Şimdi öde” ile ödeme yükümlülüğü doğuran bir sipariş vermiş olursunuz. {terms} ve {withdrawal} geçerlidir.",
-    secure: "Ödeme Stripe üzerinden güvenli bir şekilde gerçekleştirilir. Ödeme bilgileri bizde saklanmaz.",
   },
   return: {
     metaTitle: "Ödeme onaylanıyor",

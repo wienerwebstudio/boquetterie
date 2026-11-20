@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "A kosárhoz",
   next: "Tovább",
   submitPaypal: "Tovább a PayPalhoz",
-  submitStripe: "Tovább a fizetéshez",
   submitBuy: "Megvásárlom",
   submitWithTotal: "{action} · {total}",
   legal: "A fizetés befejezésével fizetési kötelezettséggel járó rendelést adsz le. Az {terms} és az {withdrawal} érvényes.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Biztonságos fizetés · SSL-titkosítás",
   errors: {
     cancelled: "A fizetés megszakadt. Az adataid megmaradtak – rögtön újra próbálkozhatsz, vagy választhatsz másik fizetési módot.",
-    notCompleted: "A fizetés nem fejeződött be. Választhatsz másik fizetési módot, és újra próbálkozhatsz.",
     checkFields: "Kérjük, ellenőrizd az adataidat.",
     orderFailed: "A rendelést nem sikerült befejezni. Kérjük, próbáld újra.",
     connection: "Megszakadt a kapcsolat. Kérjük, ellenőrizd az internetkapcsolatodat, és próbáld újra.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Tesztüzemmód.",
     testModeText: " A fizetés szimulált – semmilyen összeget nem vonunk le.",
-    stripeHint: "A „Megvásárlom” gomb után a fizetési adataidat biztonságosan a Stripe-nál adod meg.",
     secure: "Az adataidat SSL-titkosítással továbbítjuk. A fizetési adatokat nem tároljuk.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Ingyenes kiszállítás",
     couponError: "Kuponhiba",
     total: "Összesen",
-  },
-  stripe: {
-    card: "Kártya",
-    orderCreated: "A(z) {orderId} rendelés létrejött. Most fejezd be a fizetést – a rendelés csak ezután lesz kötelező érvényű.",
-    loadProblem: "A fizetési mező most nem töltődik be. Kérjük, töltsd újra az oldalt, vagy nyisd meg egy másik böngészőben (pl. Safari). A(z) {orderId} rendelésedet elmentettük – egyszerűen kapcsolatba is léphetsz velünk, és segítünk.",
-    failed: "A fizetést nem sikerült befejezni. Kérjük, próbáld újra.",
-    back: "Vissza",
-    pay: "Fizetés most · {amount}",
-    legal: "A „Fizetés most” gombbal fizetési kötelezettséggel járó rendelést adsz le. Az {terms} és az {withdrawal} érvényes.",
-    secure: "A fizetés biztonságosan a Stripe-on keresztül történik. A fizetési adatokat nem tároljuk.",
   },
   return: {
     metaTitle: "A fizetés megerősítése",

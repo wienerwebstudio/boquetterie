@@ -97,5 +97,6 @@ Stand nach dem Integrationsdurchgang: keine `serious`/`critical`-Verstöße auf 
 
 - Einzelnen Test starten: `npx playwright test tests/e2e/checkout.spec.ts --project=e2e --headed`
 - Report ansehen: `npx playwright show-report`
+- Stripe-Zahlungsfeld ohne Stripe-Schlüssel prüfen (opt-in, braucht Internet): `E2E_STRIPE_UI=1 npx playwright test tests/e2e/stripe-inline.spec.ts --project=e2e`. Der Test fängt `/api/payments/methods` ab (Provider `stripe` + der öffentliche Publishable Key der Live-Seite, zur Laufzeit gelesen, nie gespeichert), prüft, dass das Payment Element inline unter der gewählten Zahlart steht, `elements.submit()` vor jeder Bestellung läuft (keine `/api/orders`-Anfrage bei leeren Kartenfeldern) und die Seite bei 390 px nicht seitlich scrollt. Es entsteht nie ein PaymentIntent (deferred Elements; PaymentIntent-Aufrufe werden zusätzlich blockiert).
 - Anderen Port nutzen: `PLAYWRIGHT_BASE_URL=http://localhost:3100 npm run test:e2e`
 - Unit-Tests im Watch-Modus: `npx vitest`

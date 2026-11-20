@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "Al carrello",
   next: "Avanti",
   submitPaypal: "Continua con PayPal",
-  submitStripe: "Vai al pagamento",
   submitBuy: "Acquista ora",
   submitWithTotal: "{action} · {total}",
   legal: "Completando il pagamento effettui un ordine con obbligo di pagamento. Si applicano le nostre {terms} e l'{withdrawal}.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Pagamento sicuro · Crittografia SSL",
   errors: {
     cancelled: "Il pagamento è stato annullato. I tuoi dati sono ancora qui – puoi riprovare subito o scegliere un altro metodo di pagamento.",
-    notCompleted: "Il pagamento non è stato completato. Puoi scegliere un altro metodo di pagamento e riprovare.",
     checkFields: "Controlla i dati inseriti.",
     orderFailed: "Non è stato possibile completare l'ordine. Riprova.",
     connection: "La connessione si è interrotta. Controlla la tua connessione internet e riprova.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Modalità test.",
     testModeText: " Il pagamento è simulato – non viene addebitato alcun importo.",
-    stripeHint: "Dopo «Acquista ora» inserisci i tuoi dati di pagamento in modo sicuro su Stripe.",
     secure: "I tuoi dati vengono trasmessi con crittografia SSL. I dati di pagamento non vengono salvati da noi.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Consegna gratuita",
     couponError: "Errore buono",
     total: "Totale",
-  },
-  stripe: {
-    card: "Carta",
-    orderCreated: "L'ordine {orderId} è stato creato. Completa ora il pagamento – solo dopo l'ordine diventa vincolante.",
-    loadProblem: "Il campo di pagamento non si sta caricando. Ricarica la pagina o aprila in un altro browser (ad es. Safari). Il tuo ordine {orderId} è salvato – puoi anche semplicemente contattarci e ti aiuteremo.",
-    failed: "Non è stato possibile completare il pagamento. Riprova.",
-    back: "Indietro",
-    pay: "Paga ora · {amount}",
-    legal: "Con «Paga ora» effettui un ordine con obbligo di pagamento. Si applicano le nostre {terms} e l'{withdrawal}.",
-    secure: "Il pagamento viene elaborato in modo sicuro tramite Stripe. I dati di pagamento non vengono salvati da noi.",
   },
   return: {
     metaTitle: "Conferma del pagamento",

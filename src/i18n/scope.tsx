@@ -10,7 +10,7 @@ import { currentLocale } from "@/i18n/server";
  * cards, PLZ check, …). Everything else is sent only by the pages that need it via
  * <ClientMessages ns={[…]}> – the whole dictionary on every page would cost ~20 KB.
  */
-const BASE = ["common", "ui", "layout", "cart", "shop", "product", "forms"] as const satisfies readonly (keyof Messages)[];
+const BASE = ["common", "ui", "layout", "cart", "shop", "product", "forms", "pay"] as const satisfies readonly (keyof Messages)[];
 
 export function baseClientMessages(m: Messages): PartialMessages {
   const out: Record<string, unknown> = Object.fromEntries(BASE.map((k) => [k, m[k]]));

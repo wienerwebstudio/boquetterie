@@ -49,6 +49,7 @@ export async function POST(req: Request) {
       id: result.order.id,
       token: result.order.token,
       status: result.order.status,
+      total: result.order.totals.total,
       payment: { provider: result.payment.provider, status: result.payment.status, clientSecret: result.payment.clientSecret, approveUrl: result.payment.approveUrl },
     };
     return NextResponse.json(res, { status: result.reused ? 200 : 201 });

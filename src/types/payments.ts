@@ -46,6 +46,8 @@ export interface OrderCreateResponse {
   id: string;
   token: string;
   status: string;
+  /** Server-side amount of the payment in EUR – the browser compares it with what Stripe Elements showed. */
+  total: number;
   payment: {
     provider: PaymentProviderId;
     status: CreatePaymentResult["status"];
@@ -60,3 +62,19 @@ export interface PaymentConfirmResponse {
   status: "paid" | "pending" | "failed" | "refunded";
   message?: string;
 }
+
+/** What the browser receives from `POST /api/express/quote` (amounts in EUR, server-side). */
+export type ExpressQuoteResponse =
+  | {
+      ok: true;
+      postalCode: string;
+      zoneName: string;
+      windowLabel?: string;
+      /** Everything to pay. */
+      total: number;
+      /** Delivery fee incl. window surcharge (the wallet's shipping rate). */
+      delivery: number;
+      /** Flowers + extras − discount (the wallet's line item). */
+      goods: number;
+    }
+  | { ok: false; code: "items" | "zone" | "date" | "window" | "coupon" | "min_order" | "unavailable"; message: string };

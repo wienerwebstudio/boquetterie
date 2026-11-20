@@ -95,8 +95,8 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
       <header className="mx-auto max-w-2xl text-center">
         {isNew ? (
           <>
-            {/* An offer was paid without the cart – leave the visitor's cart alone. */}
-            {!order.offerId && <OrderPlacedCleanup />}
+            {/* An offer or an express purchase from the product page (`warenkorb=behalten`) was paid without the cart – leave the visitor's cart alone. */}
+            {!order.offerId && sp.warenkorb !== "behalten" && <OrderPlacedCleanup />}
             <span className="mx-auto mb-5 flex size-14 items-center justify-center rounded-full bg-forest text-ivory animate-fade-in"><CircleCheck className="size-7" strokeWidth={1.5} aria-hidden /></span>
             <p className="eyebrow mb-3">{fmt(t.eyebrow, { id: order.id })}</p>
             <h1 className="display-2 text-balance text-ink animate-fade-up">

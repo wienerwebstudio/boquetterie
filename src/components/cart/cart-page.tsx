@@ -7,6 +7,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useCart, cartCount } from "@/store/cart";
 import { routes } from "@/lib/urls";
 import { useI18n } from "@/i18n/client";
+import { ExpressBuy } from "@/components/checkout/express-buy";
+import { ordersPaused } from "@/lib/orders-paused";
 import { CartLine } from "./cart-line";
 import { CartSurprise } from "./cart-surprise";
 import { CartUpsell } from "./cart-upsell";
@@ -17,6 +19,7 @@ import { CartEmpty, CartTrustRow } from "./cart-drawer";
 export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]; cardsEnabled?: boolean }) {
   const hydrated = useCart((s) => s.hydrated);
   const items = useCart((s) => s.items);
+  const couponCode = useCart((s) => s.coupon);
   const { m, fmt, plural } = useI18n();
 
   if (!hydrated) {
@@ -58,6 +61,7 @@ export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]
           <h2 className="font-serif text-2xl text-ink">{m.cart.summaryTitle}</h2>
           <CartSummary className="mt-5" />
           <Button href={routes.checkout} size="xl" full className="mt-6" icon={<Lock className="size-4" aria-hidden />}>{m.cart.checkout}</Button>
+          {!ordersPaused() && <ExpressBuy items={items} couponCode={couponCode} source="cart" />}
           <CartTrustRow className="mt-4 flex items-center justify-center gap-4 text-[11.5px] text-ink-muted" />
         </div>
       </aside>

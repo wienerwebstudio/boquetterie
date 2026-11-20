@@ -31,7 +31,6 @@ const checkout = {
   toCart: "Zum Warenkorb",
   next: "Weiter",
   submitPaypal: "Weiter zu PayPal",
-  submitStripe: "Weiter zur Zahlung",
   submitBuy: "Jetzt kaufen",
   /** Submit button: "{action} · {total}". */
   submitWithTotal: "{action} · {total}",
@@ -43,7 +42,6 @@ const checkout = {
   secureMobile: "Sicher bezahlen · SSL-verschlüsselt",
   errors: {
     cancelled: "Die Zahlung wurde abgebrochen. Deine Angaben sind noch da – du kannst es gleich noch einmal versuchen oder eine andere Zahlungsart wählen.",
-    notCompleted: "Die Zahlung wurde nicht abgeschlossen. Du kannst eine andere Zahlungsart wählen und es erneut versuchen.",
     checkFields: "Bitte prüfe deine Angaben.",
     orderFailed: "Die Bestellung konnte nicht abgeschlossen werden. Bitte versuch es noch einmal.",
     connection: "Die Verbindung wurde unterbrochen. Bitte prüfe deine Internetverbindung und versuch es noch einmal.",
@@ -203,7 +201,6 @@ const checkout = {
     },
     testModeTitle: "Testmodus.",
     testModeText: " Die Zahlung wird simuliert – es wird kein Betrag abgebucht.",
-    stripeHint: "Nach „Jetzt kaufen“ gibst du deine Zahlungsdaten sicher bei Stripe ein.",
     secure: "Deine Daten werden SSL-verschlüsselt übertragen. Zahlungsdaten werden nicht bei uns gespeichert.",
   },
   summary: {
@@ -228,18 +225,6 @@ const checkout = {
     freeDelivery: "Gratis-Lieferung",
     couponError: "Gutschein-Fehler",
     total: "Gesamt",
-  },
-  stripe: {
-    card: "Karte",
-    /** "{orderId}" is shown in bold. */
-    orderCreated: "Bestellung {orderId} ist angelegt. Schließe jetzt die Zahlung ab – erst danach wird sie verbindlich.",
-    loadProblem: "Das Zahlungsfeld lädt gerade nicht. Bitte lade die Seite neu oder öffne sie in einem anderen Browser (z. B. Safari). Deine Bestellung {orderId} ist gespeichert – du kannst uns auch einfach kontaktieren, dann helfen wir dir weiter.",
-    failed: "Die Zahlung konnte nicht abgeschlossen werden. Bitte versuch es noch einmal.",
-    back: "Zurück",
-    pay: "Jetzt bezahlen · {amount}",
-    /** "{terms}" and "{withdrawal}" are links. */
-    legal: "Mit „Jetzt bezahlen“ gibst du eine zahlungspflichtige Bestellung auf. Es gelten unsere {terms} und die {withdrawal}.",
-    secure: "Die Zahlung wird sicher über Stripe abgewickelt. Zahlungsdaten werden nicht bei uns gespeichert.",
   },
   return: {
     metaTitle: "Zahlung wird bestätigt",
