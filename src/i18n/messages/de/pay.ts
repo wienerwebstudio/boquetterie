@@ -19,6 +19,8 @@ const pay = {
   },
   express: {
     title: "Express-Kauf",
+    /** Divider between the checkout button and the wallet buttons in the cart. */
+    or: "oder",
     intro: "Direkt mit Apple Pay, Google Pay oder Link bestellen – Lieferadresse und Kontaktdaten kommen aus deiner Wallet.",
     postalCode: "PLZ des Empfängers",
     date: "Liefertag",

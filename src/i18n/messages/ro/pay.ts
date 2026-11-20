@@ -13,6 +13,8 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   },
   express: {
     title: "Cumpărare expresă",
+    /** Divider between the checkout button and the wallet buttons in the cart. */
+    or: "sau",
     intro: "Comandă direct cu Apple Pay, Google Pay sau Link – adresa de livrare și datele de contact vin din portofelul tău.",
     postalCode: "Codul poștal al destinatarului",
     date: "Ziua livrării",

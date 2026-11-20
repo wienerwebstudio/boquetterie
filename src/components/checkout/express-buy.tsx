@@ -220,33 +220,40 @@ function ExpressPanel({ publishableKey, wallets, items, couponCode, postalCode, 
 
   if (available === false) return null;
 
+  // Only ask for what the cart lines do not already answer.
+  const needPlz = !isValidAustrianPostalCode(plz) || Boolean(zoneResult && !zoneResult.available) || Boolean(checkError);
+  const needDay = !needPlz && Boolean(zoneResult?.available) && !days.some((d) => d.date === dayChoice);
+  const needWindow = !needPlz && windows.length > 1 && !windows.some((w) => w.id === windowChoice);
+
   return (
     // Until Stripe reports a wallet on this device the block stays collapsed and out of the tab order.
-    <section aria-labelledby={`${uid}-title`} aria-hidden={!available || undefined} inert={!available || undefined} className={cn("mt-5", available ? "animate-fade-in" : "h-0 overflow-hidden")} data-testid="express-buy">
+    <section aria-labelledby={`${uid}-title`} aria-hidden={!available || undefined} inert={!available || undefined} className={cn("mt-1", available ? "animate-fade-in" : "h-0 overflow-hidden")} data-testid="express-buy">
       <div className="flex items-center gap-3">
         <span className="h-px flex-1 bg-line" aria-hidden />
-        <h2 id={`${uid}-title`} className="eyebrow">{t.title}</h2>
+        <h2 id={`${uid}-title`} className="font-sans text-[12px] font-normal tracking-normal text-ink-muted"><span className="sr-only">{t.title} – </span>{t.or}</h2>
         <span className="h-px flex-1 bg-line" aria-hidden />
       </div>
-      <p className="mt-2 text-center text-[12.5px] leading-relaxed text-ink-muted">{t.intro}</p>
 
-      <div className="mt-3 grid grid-cols-[7.5rem_minmax(0,1fr)] items-end gap-2 sm:grid-cols-[7.5rem_minmax(0,1fr)_minmax(0,1fr)]">
-        <Input
+      {/* Day and PLZ normally come from the cart line – fields only appear when something is missing. */}
+      {(needPlz || needDay || needWindow) && (
+      <div className={cn("mt-3 grid items-end gap-2", [needPlz, needDay, needWindow].filter(Boolean).length > 1 ? "grid-cols-2" : "grid-cols-1")}>
+        {needPlz && <Input
           label={t.postalCode} inputMode="numeric" autoComplete="postal-code" maxLength={4} value={plz}
           onChange={(e) => { setPlz(normalizePostalCode(e.target.value)); setError(null); }}
           error={checkError ?? (zoneResult && !zoneResult.available ? t.errors.zone : undefined)}
-        />
-        <Select label={t.date} value={selectedDay ? day : ""} disabled={!days.length || loading} onChange={(e) => { setDay(e.target.value); setError(null); }}>
+        />}
+        {needDay && <Select label={t.date} value={selectedDay ? day : ""} disabled={!days.length || loading} onChange={(e) => { setDay(e.target.value); setError(null); }}>
           {!selectedDay && <option value="">{t.choose}</option>}
           {days.map((d) => <option key={d.date} value={d.date}>{dateShort(d.date)}</option>)}
-        </Select>
-        {windows.length > 0 && (
-          <Select label={t.window} value={windowId} className="col-span-2 sm:col-span-1" onChange={(e) => { setWindowId(e.target.value); setError(null); }}>
+        </Select>}
+        {needWindow && (
+          <Select label={t.window} value={windowId} className={needPlz && needDay ? "col-span-2" : undefined} onChange={(e) => { setWindowId(e.target.value); setError(null); }}>
             {!windowId && <option value="">{t.choose}</option>}
             {windows.map((w) => <option key={w.id} value={w.id}>{w.label}</option>)}
           </Select>
         )}
       </div>
+      )}
       {zoneResult?.available && days.length === 0 && <p className="mt-2 text-[13px] text-ink-muted">{t.noDays}</p>}
       {windowLabel && <span className="sr-only" aria-live="polite">{windowLabel}</span>}
 
@@ -266,7 +273,7 @@ function ExpressPanel({ publishableKey, wallets, items, couponCode, postalCode, 
         />
       </div>
       {error && <p role="alert" className="mt-3 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[13.5px] text-ink">{error}</p>}
-      <p className="mt-3 text-[11.5px] leading-relaxed text-ink-soft">
+      <p className="mt-2 text-[11px] leading-snug text-ink-soft">
         {rich(t.legal, {
           terms: <Link href={routes.legal.terms} className="underline underline-offset-2">{t.terms}</Link>,
           withdrawal: <Link href={routes.legal.withdrawal} className="underline underline-offset-2">{t.withdrawal}</Link>,

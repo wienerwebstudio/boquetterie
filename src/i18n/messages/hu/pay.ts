@@ -13,6 +13,8 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   },
   express: {
     title: "Expressz vásárlás",
+    /** Divider between the checkout button and the wallet buttons in the cart. */
+    or: "vagy",
     intro: "Rendelj közvetlenül Apple Pay, Google Pay vagy Link segítségével – a szállítási cím és az elérhetőségek a pénztárcádból érkeznek.",
     postalCode: "A címzett irányítószáma",
     date: "Szállítási nap",

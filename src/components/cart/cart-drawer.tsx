@@ -49,6 +49,8 @@ export function CartEmpty({ onClose, cardsEnabled = false }: { onClose?: () => v
 
 function DrawerFooter({ onClose }: { onClose: () => void }) {
   const { totals, zone } = useCartTotals();
+  const items = useCart((s) => s.items);
+  const coupon = useCart((s) => s.coupon);
   const { m, fmt, price } = useI18n();
   const vat = m.cart.vat[SMALL_BUSINESS ? "smallBusiness" : "standard"];
   return (
@@ -63,6 +65,8 @@ function DrawerFooter({ onClose }: { onClose: () => void }) {
       <Link href={routes.checkout} onClick={onClose} className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-md bg-forest px-8 text-base font-semibold tracking-wide text-ivory transition-colors hover:bg-forest-700">
         <Lock className="size-4" aria-hidden /> {m.cart.checkout}
       </Link>
+      {/* Express purchase right under the checkout button: "oder" + wallet buttons (fields only when something is missing). */}
+      {!ordersPaused() && <ExpressBuy items={items} couponCode={coupon} source="cart" />}
       <CartTrustRow />
     </div>
   );
@@ -73,7 +77,6 @@ export function CartDrawer({ cardsEnabled = false }: { cardsEnabled?: boolean })
   const closeCart = useUi((s) => s.closeCart);
   const hydrated = useCart((s) => s.hydrated);
   const items = useCart((s) => s.items);
-  const coupon = useCart((s) => s.coupon);
   const { m, fmt, plural } = useI18n();
   if (!hydrated) return null;
   const count = cartCount(items);
@@ -102,8 +105,6 @@ export function CartDrawer({ cardsEnabled = false }: { cardsEnabled?: boolean })
           <div className="border-t border-line pt-5">
             <CartSummary showTotal={false} />
           </div>
-          {/* Express purchase in the scrollable body – the footer stays compact on phones. */}
-          {!ordersPaused() && <ExpressBuy items={items} couponCode={coupon} source="cart" />}
         </div>
       )}
     </Drawer>

@@ -13,6 +13,8 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   },
   express: {
     title: "Brza kupovina",
+    /** Divider between the checkout button and the wallet buttons in the cart. */
+    or: "ili",
     intro: "Naručite direktno putem Apple Pay, Google Pay ili Link – adresa dostave i kontakt podaci dolaze iz vašeg novčanika.",
     postalCode: "Poštanski broj primaoca",
     date: "Dan dostave",

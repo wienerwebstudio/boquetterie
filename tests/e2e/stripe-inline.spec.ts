@@ -157,7 +157,7 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     expect(orderCalls).toHaveLength(1);
   });
 
-  test("product page: express purchase never breaks the layout (shown only where a wallet is available)", async ({ page }) => {
+  test("cart drawer: express purchase sits under the checkout button, compact (shown only where a wallet is available)", async ({ page }) => {
     test.slow();
     test.skip(!publishableKey, "public publishable key not reachable");
     // Stripe throws IntegrationErrors for invalid element options (e.g. layout) – they hid the express buttons once.
@@ -165,21 +165,24 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     page.on("pageerror", (e) => pageErrors.push(e.message));
     await interceptPayments(page);
     await addAmourToCart(page);
-    await page.keyboard.press("Escape");
-    const express = page.getByTestId("express-buy");
-    await express.scrollIntoViewIfNeeded().catch(() => undefined);
-    // Stripe decides per device which wallets exist (headless Chromium usually has none).
+    // Not on the product page any more (owner's wish) – only in the cart.
+    await expect(page.getByRole("main").getByTestId("express-buy")).toHaveCount(0);
+    const drawer = page.getByRole("dialog");
+    const express = drawer.getByTestId("express-buy");
+    // Stripe decides per device which wallets exist (headless Chromium usually offers Link).
     await page.waitForTimeout(8_000);
     await noHorizontalOverflow(page);
     expect(pageErrors.filter((m) => /stripe|options\./i.test(m))).toEqual([]);
-    if (await express.count()) {
-      await expect(express.locator("input[autocomplete=postal-code]")).toHaveValue(PLZ_SERVED);
-      test.info().annotations.push({ type: "note", description: (await express.isVisible()) ? "express block visible" : "express block mounted but hidden (no wallet)" });
+    if (await express.isVisible()) {
+      // Day and PLZ come from the cart line: no picker, only "oder" + the buttons.
+      await expect(express.locator("input[autocomplete=postal-code]")).toHaveCount(0);
+      const checkoutBox = await drawer.getByRole("link", { name: /Sicher zur Kasse/ }).boundingBox();
+      const expressBox = await express.boundingBox();
+      expect(expressBox!.y).toBeGreaterThan(checkoutBox!.y);
+      test.info().annotations.push({ type: "note", description: "express block visible in the drawer footer" });
     } else {
-      test.info().annotations.push({ type: "note", description: "no wallet on this device – express block removed" });
+      test.info().annotations.push({ type: "note", description: "no wallet on this device – express block hidden" });
     }
-    const cta = page.getByRole("button", { name: "In den Warenkorb" }).first();
-    await cta.scrollIntoViewIfNeeded();
-    await page.screenshot({ path: "test-results/express-product.png" });
+    await page.screenshot({ path: "test-results/express-cart.png" });
   });
 });

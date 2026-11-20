@@ -13,6 +13,8 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   },
   express: {
     title: "Hızlı satın alma",
+    /** Divider between the checkout button and the wallet buttons in the cart. */
+    or: "veya",
     intro: "Doğrudan Apple Pay, Google Pay veya Link ile sipariş verin – teslimat adresi ve iletişim bilgileri cüzdanınızdan gelir.",
     postalCode: "Alıcının posta kodu",
     date: "Teslimat günü",

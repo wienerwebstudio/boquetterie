@@ -23,7 +23,6 @@ import { deliveryErrorText } from "@/components/shop/postal-code-check";
 import { routes } from "@/lib/urls";
 import { onRadioGroupKeyDown } from "@/lib/roving-radio";
 import { SMALL_BUSINESS } from "@/lib/vat";
-import { ExpressBuy } from "@/components/checkout/express-buy";
 
 export function ProductConfigurator({ product, extras, greetingCard, onSizeChange, onColorChange }: {
   product: Product;
@@ -159,18 +158,6 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
     // The drawer that opens is the confirmation – a toast on top of it would only cover its buttons.
     openCart();
   };
-
-  // Express purchase (Apple Pay / Google Pay): exactly this configuration, without the cart.
-  const expressItems = [{
-    id: "express",
-    ...cartItemFromConfig({
-      product, size, color, floristNote,
-      deliveryDate: selectedDate,
-      postalCode: zone ? result?.postalCode : undefined,
-      ...(cardsEnabled ? { message, anonymous, senderName } : {}),
-      extras: chosenExtras,
-    }),
-  }];
 
   const hasRating = Boolean(product.rating && product.rating.count > 0);
   const [areasBefore, areasAfter] = t.delivery.notAvailableHint.split("{link}");
@@ -511,15 +498,6 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
         <Button type="button" size="xl" full onClick={addToCart} disabled={soldOut || paused} icon={<ShoppingBag className="size-4" aria-hidden />}>
           {paused ? t.cta.comingSoon : soldOut ? t.cta.unavailable : t.cta.addToCart}
         </Button>
-        {!paused && !soldOut && (
-          <ExpressBuy
-            items={expressItems}
-            postalCode={zone ? result?.postalCode : null}
-            date={selectedDate}
-            source="product"
-            blockedMessage={colors.length && !color ? t.color.error : undefined}
-          />
-        )}
         <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[12px] text-ink-muted">
           {product.category !== "pflanzen" && <li className="inline-flex items-center gap-1.5"><Leaf className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> {t.cta.fresh}</li>}
           {cardsEnabled && greetingCard.freeCardIncluded && <li className="inline-flex items-center gap-1.5"><Mail className="size-3.5 text-forest" strokeWidth={1.5} aria-hidden /> {t.cta.cardIncluded}</li>}
