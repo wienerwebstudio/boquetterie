@@ -331,6 +331,16 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
         ["– poczta kwiatowa w Wiedniu.", "– dostawa kwiatów w Wiedniu."],
       ],
     },
+  },  {
+    // Chechen proofreading by a native speaker (owners, 20.11.2026).
+    id: "2026-11-20-ce-proofreading-1",
+    replace: {
+      "i18n-ce": [
+        ["Кхин а дукха олу зезагаш.", "Кхин а дукха тайп-тайпан зезагаш."],
+        ["Басе, стиле я бюджете хьаьжжина.", "Басе, стиле я щи тарунг хяжан хьаьжжина."],
+      ],
+      "review-translations": [["ЧӀогӀа хаза букет!", "ЧӀога хаза букет ду!"]],
+    },
   },
 ];
 
