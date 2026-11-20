@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "Spre coș",
   next: "Continuă",
   submitPaypal: "Continuă la PayPal",
-  submitStripe: "Continuă la plată",
   submitBuy: "Cumpără acum",
   submitWithTotal: "{action} · {total}",
   legal: "Prin finalizarea plății plasezi o comandă cu obligație de plată. Se aplică {terms} și {withdrawal}.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Plată sigură · criptare SSL",
   errors: {
     cancelled: "Plata a fost anulată. Datele tale sunt încă aici – poți încerca din nou imediat sau poți alege o altă metodă de plată.",
-    notCompleted: "Plata nu a fost finalizată. Poți alege o altă metodă de plată și poți încerca din nou.",
     checkFields: "Te rugăm să verifici datele introduse.",
     orderFailed: "Comanda nu a putut fi finalizată. Te rugăm să încerci din nou.",
     connection: "Conexiunea a fost întreruptă. Te rugăm să verifici conexiunea la internet și să încerci din nou.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Mod de test.",
     testModeText: " Plata este simulată – nu se debitează nicio sumă.",
-    stripeHint: "După „Cumpără acum” introduci datele de plată în siguranță la Stripe.",
     secure: "Datele tale sunt transmise criptat prin SSL. Datele de plată nu sunt stocate la noi.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Livrare gratuită",
     couponError: "Eroare la cupon",
     total: "Total",
-  },
-  stripe: {
-    card: "Card",
-    orderCreated: "Comanda {orderId} a fost creată. Finalizează acum plata – abia după aceea comanda devine fermă.",
-    loadProblem: "Câmpul de plată nu se încarcă momentan. Te rugăm să reîncarci pagina sau s-o deschizi în alt browser (de ex. Safari). Comanda ta {orderId} este salvată – ne poți și contacta, iar noi te ajutăm mai departe.",
-    failed: "Plata nu a putut fi finalizată. Te rugăm să încerci din nou.",
-    back: "Înapoi",
-    pay: "Plătește acum · {amount}",
-    legal: "Prin „Plătește acum” plasezi o comandă cu obligație de plată. Se aplică {terms} și {withdrawal}.",
-    secure: "Plata este procesată în siguranță prin Stripe. Datele de plată nu sunt stocate la noi.",
   },
   return: {
     metaTitle: "Plata se confirmă",

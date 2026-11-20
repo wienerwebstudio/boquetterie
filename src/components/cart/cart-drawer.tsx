@@ -12,6 +12,8 @@ import { CartSummary } from "./cart-summary";
 import { useCartTotals } from "./use-cart-totals";
 import { SMALL_BUSINESS } from "@/lib/vat";
 import { useI18n } from "@/i18n/client";
+import { ExpressBuy } from "@/components/checkout/express-buy";
+import { ordersPaused } from "@/lib/orders-paused";
 
 export function CartTrustRow({ className }: { className?: string }) {
   const { m } = useI18n();
@@ -71,6 +73,7 @@ export function CartDrawer({ cardsEnabled = false }: { cardsEnabled?: boolean })
   const closeCart = useUi((s) => s.closeCart);
   const hydrated = useCart((s) => s.hydrated);
   const items = useCart((s) => s.items);
+  const coupon = useCart((s) => s.coupon);
   const { m, fmt, plural } = useI18n();
   if (!hydrated) return null;
   const count = cartCount(items);
@@ -99,6 +102,8 @@ export function CartDrawer({ cardsEnabled = false }: { cardsEnabled?: boolean })
           <div className="border-t border-line pt-5">
             <CartSummary showTotal={false} />
           </div>
+          {/* Express purchase in the scrollable body – the footer stays compact on phones. */}
+          {!ordersPaused() && <ExpressBuy items={items} couponCode={coupon} source="cart" />}
         </div>
       )}
     </Drawer>

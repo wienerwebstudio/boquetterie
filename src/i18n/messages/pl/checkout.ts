@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "Do koszyka",
   next: "Dalej",
   submitPaypal: "Przejdź do PayPal",
-  submitStripe: "Przejdź do płatności",
   submitBuy: "Kupuję",
   submitWithTotal: "{action} · {total}",
   legal: "Finalizując płatność, składasz zamówienie z obowiązkiem zapłaty. Obowiązują: {terms} i {withdrawal}.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Bezpieczna płatność · szyfrowanie SSL",
   errors: {
     cancelled: "Płatność została anulowana. Twoje dane są zachowane – możesz od razu spróbować ponownie albo wybrać inną metodę płatności.",
-    notCompleted: "Płatność nie została sfinalizowana. Możesz wybrać inną metodę płatności i spróbować ponownie.",
     checkFields: "Sprawdź swoje dane.",
     orderFailed: "Nie udało się sfinalizować zamówienia. Spróbuj ponownie.",
     connection: "Połączenie zostało przerwane. Sprawdź połączenie z internetem i spróbuj ponownie.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Tryb testowy.",
     testModeText: " Płatność jest symulowana – żadna kwota nie zostanie pobrana.",
-    stripeHint: "Po kliknięciu „Kupuję” bezpiecznie wpiszesz dane płatnicze w Stripe.",
     secure: "Twoje dane są przesyłane z szyfrowaniem SSL. Nie przechowujemy danych płatniczych.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Darmowa dostawa",
     couponError: "Błąd kodu rabatowego",
     total: "Razem",
-  },
-  stripe: {
-    card: "Karta",
-    orderCreated: "Zamówienie {orderId} zostało utworzone. Teraz sfinalizuj płatność – dopiero wtedy zamówienie stanie się wiążące.",
-    loadProblem: "Pole płatności teraz się nie ładuje. Odśwież stronę lub otwórz ją w innej przeglądarce (np. Safari). Twoje zamówienie {orderId} jest zapisane – możesz też po prostu się z nami skontaktować, a pomożemy.",
-    failed: "Nie udało się sfinalizować płatności. Spróbuj ponownie.",
-    back: "Wstecz",
-    pay: "Zapłać teraz · {amount}",
-    legal: "Klikając „Zapłać teraz”, składasz zamówienie z obowiązkiem zapłaty. Obowiązują: {terms} i {withdrawal}.",
-    secure: "Płatność jest bezpiecznie obsługiwana przez Stripe. Nie przechowujemy danych płatniczych.",
   },
   return: {
     metaTitle: "Potwierdzanie płatności",

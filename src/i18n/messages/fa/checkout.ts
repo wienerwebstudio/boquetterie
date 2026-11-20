@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "رفتن به سبد خرید",
   next: "ادامه",
   submitPaypal: "ادامه با PayPal",
-  submitStripe: "ادامه به پرداخت",
   submitBuy: "خرید نهایی",
   submitWithTotal: "{action} · {total}",
   legal: "با تکمیل پرداخت، سفارشی با الزام پرداخت ثبت می‌کنید. {terms} ما و {withdrawal} اعمال می‌شوند.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "پرداخت امن · رمزگذاری‌شده با SSL",
   errors: {
     cancelled: "پرداخت لغو شد. اطلاعات شما هنوز موجود است – می‌توانید همین حالا دوباره امتحان کنید یا روش پرداخت دیگری انتخاب کنید.",
-    notCompleted: "پرداخت تکمیل نشد. می‌توانید روش پرداخت دیگری انتخاب کنید و دوباره امتحان کنید.",
     checkFields: "لطفاً اطلاعات خود را بررسی کنید.",
     orderFailed: "سفارش تکمیل نشد. لطفاً دوباره امتحان کنید.",
     connection: "ارتباط قطع شد. لطفاً اتصال اینترنت خود را بررسی کنید و دوباره امتحان کنید.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "حالت آزمایشی.",
     testModeText: " پرداخت شبیه‌سازی می‌شود – هیچ مبلغی برداشت نمی‌شود.",
-    stripeHint: "پس از «خرید نهایی»، اطلاعات پرداخت خود را به‌طور امن در Stripe وارد می‌کنید.",
     secure: "اطلاعات شما با رمزگذاری SSL منتقل می‌شود. اطلاعات پرداخت نزد ما ذخیره نمی‌شود.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "ارسال رایگان",
     couponError: "خطای کد تخفیف",
     total: "جمع کل",
-  },
-  stripe: {
-    card: "کارت",
-    orderCreated: "سفارش {orderId} ثبت شد. اکنون پرداخت را تکمیل کنید – سفارش فقط پس از آن قطعی می‌شود.",
-    loadProblem: "بخش پرداخت در حال حاضر بارگذاری نمی‌شود. لطفاً صفحه را دوباره بارگذاری کنید یا آن را در مرورگر دیگری (مثلاً Safari) باز کنید. سفارش {orderId} شما ذخیره شده است – می‌توانید به‌سادگی با ما تماس بگیرید تا کمکتان کنیم.",
-    failed: "پرداخت تکمیل نشد. لطفاً دوباره امتحان کنید.",
-    back: "بازگشت",
-    pay: "پرداخت · {amount}",
-    legal: "با «پرداخت»، سفارشی با الزام پرداخت ثبت می‌کنید. {terms} ما و {withdrawal} اعمال می‌شوند.",
-    secure: "پرداخت به‌طور امن از طریق Stripe انجام می‌شود. اطلاعات پرداخت نزد ما ذخیره نمی‌شود.",
   },
   return: {
     metaTitle: "در حال تأیید پرداخت",

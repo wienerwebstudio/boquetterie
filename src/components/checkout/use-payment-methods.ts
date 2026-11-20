@@ -49,7 +49,9 @@ export function fetchPaymentMethods(force = false): Promise<PaymentMethodsRespon
 
 export function usePaymentMethods() {
   const [state, setState] = useState<{ loading: boolean; data: PaymentMethodsResponse | null; error: string | null }>({ loading: true, data: null, error: null });
-  const loadFailed = useI18n().m.checkout.payment.loadFailed;
+  const { m } = useI18n();
+  // The product page and the cart (express purchase) only carry the base namespaces, not `checkout`.
+  const loadFailed = (m.checkout.payment as typeof m.checkout.payment | undefined)?.loadFailed ?? m.pay.inline.loadFailed;
   useEffect(() => {
     let alive = true;
     fetchPaymentMethods()

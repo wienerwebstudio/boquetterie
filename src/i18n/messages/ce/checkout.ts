@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "Корзине",
   next: "Кхин дӀа",
   submitPaypal: "PayPal-е дӀа",
-  submitStripe: "Мах бан дӀа",
   submitBuy: "ХӀинца эца",
   submitWithTotal: "{action} · {total}",
   legal: "Мах бар чекхдаьккхича, аша мах бан дезаш йолу заказ йо. Тхан {terms} а, {withdrawal} а лелало.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Кхерамза мах бар · SSL-шифровка",
   errors: {
     cancelled: "Мах бар сацийна. Шун хаамаш Ӏалашбина бу – хӀинцца юха гӀерта я кхин мах баран кеп харжа мега шуна.",
-    notCompleted: "Мах бар чекх ца даьлла. Кхин мах баран кеп харжий, юха гӀерта мега шуна.",
     checkFields: "Шайн хаамаш таллийша.",
     orderFailed: "Заказ чекх ца яьлла. Юха гӀертийша.",
     connection: "ЗӀе хедира. Шайн интернет-зӀе таллий, юха гӀертийша.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Тестан режим.",
     testModeText: " Мах бар тардеш бен ду – цхьа а ахча дӀа ца доккху.",
-    stripeHint: "«ХӀинца эца» тӀетаӀийча, шайн мах баран хаамаш Stripe-ехь кхерамза язбийр бу аша.",
     secure: "Шун хаамаш SSL-шифровкица дӀабахьийту. Мах баран хаамаш тхоьгахь Ӏалашбеш бац.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Маьхза дӀакхачор",
     couponError: "Купонан гӀалат",
     total: "Дерриге",
-  },
-  stripe: {
-    card: "Карта",
-    orderCreated: "Заказ {orderId} кечйина. ХӀинца мах бар чекхдаккхийша – цул тӀаьхьа бен иза чӀагӀ ца хуьлу.",
-    loadProblem: "Мах баран меттиг хӀинца чу ца йоьлху. АгӀо юха чуяккхийша я кхечу браузерехь схьаеллийша (масала, Safari). Шун заказ {orderId} Ӏалашйина ю – тхоьца зӀе таса а мега, тӀаккха оха шуна гӀо дийр ду.",
-    failed: "Мах бар чекх ца даьлла. Юха гӀертийша.",
-    back: "Юха",
-    pay: "ХӀинца мах бан · {amount}",
-    legal: "«ХӀинца мах бан» тӀетаӀийча, аша мах бан дезаш йолу заказ йо. Тхан {terms} а, {withdrawal} а лелало.",
-    secure: "Мах бар Stripe-ехула кхерамза дӀадаьхьа. Мах баран хаамаш тхоьгахь Ӏалашбеш бац.",
   },
   return: {
     metaTitle: "Мах бар тӀечӀагӀдеш ду",

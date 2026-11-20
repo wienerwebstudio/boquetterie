@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "Do košíka",
   next: "Ďalej",
   submitPaypal: "Pokračovať na PayPal",
-  submitStripe: "Pokračovať k platbe",
   submitBuy: "Kúpiť teraz",
   submitWithTotal: "{action} · {total}",
   legal: "Dokončením platby odosielate objednávku s povinnosťou platby. Platia naše {terms} a {withdrawal}.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Bezpečná platba · šifrované cez SSL",
   errors: {
     cancelled: "Platba bola zrušená. Vaše údaje zostali zachované – môžete to hneď skúsiť znova alebo zvoliť iný spôsob platby.",
-    notCompleted: "Platba nebola dokončená. Môžete zvoliť iný spôsob platby a skúsiť to znova.",
     checkFields: "Skontrolujte, prosím, svoje údaje.",
     orderFailed: "Objednávku sa nepodarilo dokončiť. Skúste to, prosím, znova.",
     connection: "Spojenie bolo prerušené. Skontrolujte, prosím, internetové pripojenie a skúste to znova.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Testovací režim.",
     testModeText: " Platba je iba simulovaná – nestrhne sa žiadna suma.",
-    stripeHint: "Po kliknutí na „Kúpiť teraz“ zadáte svoje platobné údaje bezpečne u Stripe.",
     secure: "Vaše údaje sa prenášajú šifrovane cez SSL. Platobné údaje u nás neukladáme.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Doručenie zadarmo",
     couponError: "Chyba kupónu",
     total: "Spolu",
-  },
-  stripe: {
-    card: "Karta",
-    orderCreated: "Objednávka {orderId} je vytvorená. Teraz dokončite platbu – až potom bude záväzná.",
-    loadProblem: "Platobné pole sa práve nenačítava. Obnovte, prosím, stránku alebo ju otvorte v inom prehliadači (napr. Safari). Vaša objednávka {orderId} je uložená – môžete nás tiež jednoducho kontaktovať a pomôžeme vám.",
-    failed: "Platbu sa nepodarilo dokončiť. Skúste to, prosím, znova.",
-    back: "Späť",
-    pay: "Zaplatiť teraz · {amount}",
-    legal: "Kliknutím na „Zaplatiť teraz“ odosielate objednávku s povinnosťou platby. Platia naše {terms} a {withdrawal}.",
-    secure: "Platba prebieha bezpečne cez Stripe. Platobné údaje u nás neukladáme.",
   },
   return: {
     metaTitle: "Platba sa potvrdzuje",

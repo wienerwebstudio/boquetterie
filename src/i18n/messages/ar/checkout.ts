@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "إلى سلة التسوق",
   next: "متابعة",
   submitPaypal: "المتابعة إلى PayPal",
-  submitStripe: "المتابعة إلى الدفع",
   submitBuy: "الشراء الآن",
   submitWithTotal: "{action} · {total}",
   legal: "بإتمام الدفع تقدّمون طلبًا ملزمًا بالدفع. وتسري {terms} و{withdrawal}.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "دفع آمن · مشفّر بـ SSL",
   errors: {
     cancelled: "تم إلغاء الدفع. بياناتكم ما زالت محفوظة – يمكنكم المحاولة مرة أخرى فورًا أو اختيار طريقة دفع أخرى.",
-    notCompleted: "لم يكتمل الدفع. يمكنكم اختيار طريقة دفع أخرى والمحاولة مجددًا.",
     checkFields: "يُرجى التحقق من بياناتكم.",
     orderFailed: "تعذّر إتمام الطلب. يُرجى المحاولة مرة أخرى.",
     connection: "انقطع الاتصال. يُرجى التحقق من اتصالكم بالإنترنت والمحاولة مرة أخرى.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "وضع الاختبار.",
     testModeText: " تتم محاكاة الدفع – ولن يُخصم أي مبلغ.",
-    stripeHint: "بعد «الشراء الآن» تُدخلون بيانات الدفع بأمان لدى Stripe.",
     secure: "تُنقل بياناتكم مشفّرة بـ SSL. ولا نحفظ بيانات الدفع لدينا.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "توصيل مجاني",
     couponError: "خطأ في القسيمة",
     total: "المجموع",
-  },
-  stripe: {
-    card: "بطاقة",
-    orderCreated: "تم إنشاء الطلب {orderId}. أكملوا الدفع الآن – فلا يصبح الطلب ملزمًا إلا بعد ذلك.",
-    loadProblem: "حقل الدفع لا يُحمَّل حاليًا. يُرجى إعادة تحميل الصفحة أو فتحها في متصفح آخر (مثلًا Safari). طلبكم {orderId} محفوظ – ويمكنكم أيضًا التواصل معنا ببساطة وسنساعدكم.",
-    failed: "تعذّر إتمام الدفع. يُرجى المحاولة مرة أخرى.",
-    back: "رجوع",
-    pay: "الدفع الآن · {amount}",
-    legal: "بالنقر على «الدفع الآن» تقدّمون طلبًا ملزمًا بالدفع. وتسري {terms} و{withdrawal}.",
-    secure: "تتم معالجة الدفع بأمان عبر Stripe. ولا نحفظ بيانات الدفع لدينا.",
   },
   return: {
     metaTitle: "جارٍ تأكيد الدفع",

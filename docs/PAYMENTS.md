@@ -35,26 +35,41 @@ Beträge kommen immer aus der serverseitig berechneten Bestellung, nie vom Clien
 
 1. `POST /api/orders` validiert alles, **reserviert Lagerbestand**, speichert die
    Bestellung mit `status: received`, `payment.status: pending` und startet die
-   Zahlung beim Provider. Antwort: `{ id, token, payment: { provider, clientSecret?, approveUrl? } }`.
+   Zahlung beim Provider. Antwort: `{ id, token, total, payment: { provider, clientSecret?, approveUrl? } }` (`total` = Server-Betrag).
 2. **Mock** – sofort `paid`, History-Eintrag „Testzahlung (mock)“. Nur in Entwicklung oder mit `PAYMENTS_ALLOW_MOCK=true` (E2E-Tests); ein Produktions-Build ohne Stripe-Schlüssel bietet Karte/Apple Pay/Google Pay gar nicht an, statt Bestellungen ohne Zahlung als bezahlt zu markieren.
-3. **Stripe** – PaymentIntent (`automatic_payment_methods`, Metadata `orderId`,
-   `receipt_email`). Der Browser bestätigt mit dem Payment Element
-   (`stripe.confirmPayment`, `redirect: "if_required"`). Danach ruft der Client
-   `POST /api/payments/stripe/confirm { orderId, token }` auf – der Server liest
-   den Intent selbst und markiert bei `succeeded` als bezahlt (idempotent).
-   Redirect-Methoden (EPS, Klarna, 3-D Secure) landen auf
-   `/checkout/rueckkehr?orderId&token`, das dieselbe Bestätigung auslöst.
-   **Zahlarten-Leiste:** Über dem Zahlungsfeld steht eine eigene, wischbare Leiste
-   (Karte, Klarna, EPS, Amazon Pay … – genau die Methoden, die Stripe für den Intent
-   erlaubt, `stripe.retrievePaymentIntent`; die im Checkout gewählte zuerst). Das
-   Payment Element läuft dafür im „deferred“-Modus (`mode: "payment"`, Betrag/Währung
-   aus dem Intent, `allowedPaymentMethodTypes` = gewählte Methode) und zeigt nur das
-   Formular dieser Methode – kein „Mehr“-Dropdown am Handy. Bezahlt wird mit
-   `elements.submit()` + `confirmPayment({ elements, clientSecret })` gegen den
-   bestehenden Intent. Apple Pay / Google Pay erscheinen innerhalb von „Karte“.
-   Sicherheitsnetz: Lässt sich der Intent im Browser nicht lesen oder lehnt Stripe
-   die Bestätigung mit `invalid_request_error` ab, wird das klassische Payment
-   Element (Stripe-Tabs) gezeigt. Logik: `src/components/checkout/stripe-methods.ts`.
+3. **Stripe – ein Schritt:** Bestellung anlegen und bezahlen passiert auf **einem**
+   Bildschirm (Kasse Schritt 5, Angebotsseite). Die eigene Zahlarten-Liste bleibt; unter
+   der **gewählten** Zahlart zeigt Stripe das Payment Element direkt an (Kreditkarte →
+   Kartenfelder, Apple Pay / Google Pay → nur diese Wallet, Klarna/EPS → Hinweis auf die
+   Weiterleitung). Elements laufen im „deferred“-Modus: `mode: "payment"`, Betrag = die in
+   der Kasse angezeigte Summe in Cent (nur Anzeige), `currency: "eur"`,
+   `allowedPaymentMethodTypes` = Stripe-Typ der Zahlart (Apple/Google Pay = `card` mit
+   nur dieser Wallet, `wallets`-Option). Schrift im Stripe-Feld: Manrope (Google Fonts via
+   `fonts`, `appearance.variables.fontFamily`). Logik: `src/components/checkout/pay-logic.ts`,
+   Feld: `stripe-inline.tsx`.
+
+   „Jetzt kaufen“ macht der Reihe nach:
+   1. `elements.submit()` – **synchron im Klick** (Apple Pay braucht die Nutzergeste),
+      prüft die Eingaben, öffnet ggf. das Wallet-Fenster. Fehler → nichts wird angelegt.
+   2. `POST /api/orders` – der Server berechnet alle Beträge selbst, legt die Bestellung
+      an und erstellt den PaymentIntent (`automatic_payment_methods`, Metadata `orderId`,
+      `receipt_email`). Antwort mit `total` (Server-Betrag).
+   3. Weicht `total` vom angezeigten Betrag ab (Gutschein, Liefergebühr geändert), wird
+      **nicht** bestätigt: Hinweis „Der Gesamtbetrag beträgt jetzt …“, Elements zeigen den
+      neuen Betrag, die Kundin tippt erneut (dieselbe Bestellung wird weiterverwendet).
+   4. `stripe.confirmPayment({ elements, clientSecret, confirmParams: { return_url },
+      redirect: "if_required" })`, danach `POST /api/payments/stripe/confirm { orderId, token }`
+      – der Server liest den Intent selbst und markiert bei `succeeded` als bezahlt
+      (idempotent) – und die Statusseite.
+      Redirect-Methoden (EPS, Klarna, 3-D Secure) landen auf
+      `/checkout/rueckkehr?orderId&token`, das dieselbe Bestätigung auslöst.
+
+   **Sicherheitsnetze:** Lässt sich Stripe.js nicht laden (Blocker, Netz) oder erscheint
+   das Feld nach 20 s nicht, steht ein Hinweis da (neu laden, anderer Browser, andere
+   Zahlart) – es wird **keine** Bestellung angelegt. Lehnt Stripe die Bestätigung als
+   Integrationsfehler ab (`invalid_request_error`), wird das klassische Payment Element für
+   den **bestehenden** Intent gezeigt (`clientSecret`-Modus) – die Bestellung bleibt dieselbe.
+
 4. **PayPal** – PayPal-Order via REST, Kunde wird zur `approveUrl` geleitet.
    Rücksprung `GET /api/payments/paypal/return?orderId&token` captured serverseitig,
    markiert als bezahlt und leitet auf `/bestellung/{id}?token&neu=1`.
@@ -70,8 +85,49 @@ Die Bestellbestätigung per E-Mail geht erst raus, wenn die Zahlung bestätigt i
 ### Absicherung im Browser (Stripe)
 
 - **Nur Zahlungsarten, die es wirklich gibt:** `/api/payments/methods` fragt die Stripe-Zahlungsmethoden-Konfiguration ab (5 Min. Cache) und blendet Arten aus, die dort nicht verfügbar sind (z. B. Klarna ausgeschaltet oder pausiert). Der Browser blendet zusätzlich Apple Pay ohne `ApplePaySession` (z. B. Chrome auf dem iPhone) und Google Pay auf iOS aus. Schlägt die Abfrage fehl, bleibt alles wie bisher sichtbar. **Bei einem eingeschränkten Schlüssel (`rk_live_…`) braucht dieser die Berechtigung „Payment Method Configurations: Read“** (Stripe → Entwickler → API-Schlüssel → Schlüssel bearbeiten), sonst steht im Function-Log „payment method availability unavailable … Permission denied“.
-- **Kein neuer Auftrag bei jedem „Zurück“:** Ändert die Kundin nach „Zurück“ nichts außer der Zahlungsart, nutzt die Kasse dieselbe Bestellung und denselben PaymentIntent weiter.
-- **Fehler werden gemeldet:** Lädt das Zahlungsfeld nicht (`loaderror`) oder nach 20 s noch nicht, oder liefert „Jetzt bezahlen“ einen Fehler (außer unvollständigen Eingaben), meldet der Browser das an `POST /api/payments/stripe/client-event`. Das steht als „Zahlungsproblem im Browser: …“ (mit Gerät) im Verlauf der Bestellung (max. 5 je Bestellung), und `MAIL_ADMIN` bekommt beim ersten Problem einer Bestellung die Mail „Zahlung hängt: BQ-… · Betrag“ mit den Kontaktdaten. Die Kundin sieht einen Hinweis mit ihrer Bestellnummer (neu laden, anderer Browser, uns kontaktieren).
+- **Kein doppelter Auftrag bei einem neuen Versuch:** Schlägt die Zahlung fehl, bricht die Kundin ab (auch nach einer Klarna-/EPS-Weiterleitung) oder wechselt sie nur die Zahlart, nutzt die Kasse dieselbe Bestellung und denselben PaymentIntent weiter, solange Warenkorb und Angaben gleich sind. Die Bestellung bleibt bis dahin `pending`. Die Sitzung merkt sich Bestellnummer + Token (sessionStorage `blumora-stripe-attempt:checkout`, ohne Client-Secret); nach einem Neuladen holt `POST /api/orders/resume` das Client-Secret desselben Intents (`resumeCheckoutOrder` in `src/lib/orders.ts`). Ist der Intent nicht mehr bezahlbar, wird die alte Bestellung als fehlgeschlagen markiert (Bestand frei) und eine neue angelegt. Angebote nutzen die eigene Wiederverwendung von `/api/offers/pay`.
+- **Fehler werden gemeldet:** Lädt das Zahlungsfeld bei einem erneuten Versuch einer bestehenden Bestellung nicht (`loaderror`) oder nach 20 s noch nicht, oder liefert „Jetzt kaufen“ einen Fehler (außer unvollständigen Eingaben), meldet der Browser das an `POST /api/payments/stripe/client-event`. Das steht als „Zahlungsproblem im Browser: …“ (mit Gerät) im Verlauf der Bestellung (max. 5 je Bestellung), und `MAIL_ADMIN` bekommt beim ersten Problem einer Bestellung die Mail „Zahlung hängt: BQ-… · Betrag“ mit den Kontaktdaten. Die Kundin sieht einen Hinweis mit ihrer Bestellnummer (neu laden, anderer Browser, uns kontaktieren).
+
+## Express-Kauf (Apple Pay, Google Pay, Link)
+
+Produktseite (unter „In den Warenkorb“, kauft genau diese Konfiguration, der Warenkorb
+bleibt unangetastet: Statusseite mit `&warenkorb=behalten`), Warenkorb-Schublade und
+Warenkorbseite (kauft den Warenkorb inkl. Gutschein) zeigen Stripes **Express Checkout
+Element**. Es erscheint nur, wenn Stripe konfiguriert ist **und** das Gerät mindestens eine
+Wallet anbietet (`ready` → `availablePaymentMethods`); sonst ist der Block weg. Apple Pay /
+Google Pay erscheinen nur, wenn sie in den Settings aktiv sind, Link nur mit „Kreditkarte“.
+Stripe.js lädt erst, wenn der Block in den Sichtbereich scrollt. Keine neuen Umgebungsvariablen.
+
+1. **Kompakte Auswahl** über den Buttons: PLZ (vorbelegt aus Produktseite/PLZ-Kontext),
+   Liefertag und Zeitfenster (Pflicht, wenn der Tag Fenster hat) – Tage aus
+   `/api/delivery/check` (Liefer-Engine). Grußkarten sind shopweit aus und werden nicht abgefragt.
+2. `POST /api/express/quote { items, couponCode?, postalCode, date, windowId? }` rechnet
+   serverseitig (`priceOrder` in `src/lib/orders.ts`, dieselbe Funktion wie die Bestellung):
+   Zone der PLZ, Tag/Fenster dieser Zone, Gutschein, Mindestbestellwert → `total`,
+   `delivery` (Versandposition im Wallet), `goods` (Blumen & Extras). Fehler mit `code`
+   (`zone`, `date`, `window`, `min_order`, `items`, `coupon`) → übersetzte Meldung.
+3. **Klick** auf einen Wallet-Button: fehlt etwas, öffnet sich das Fenster nicht
+   (`event.reject()`) und die Auswahl meldet, was fehlt. Sonst zeigt das Wallet den
+   Server-Betrag (Positionen + Lieferung = Summe).
+4. **Lieferadresse im Wallet** (`shippingaddresschange`, nur PLZ/Ort/Land bekannt):
+   erneute Quote für diese PLZ; nur Österreich (`allowedShippingCountries: ["AT"]`), PLZ
+   außerhalb der Zonen → `reject()` plus Hinweis auf der Seite.
+5. **Bezahlen** (`confirm`): `elements.submit()` → `POST /api/express/order` (eigener
+   Rate-Limit 10/10 min) – der Server bildet aus Wallet-Daten den Checkout-Payload
+   (Besteller = Rechnungskontakt, Empfänger = Lieferkontakt, Telefon für beide,
+   „Straße 12/3“ → Straße + Hausnummer, Zusatz aus Zeile 2; `src/lib/express.ts`) und
+   ruft **denselben** Code wie `POST /api/orders` (`src/lib/order-request.ts`). Fehlende
+   Hausnummer/Telefon → Wallet zeigt „Adresse ungültig“. Weicht der Server-Betrag vom
+   Wallet-Betrag ab, wird nicht bestätigt. Dann `stripe.confirmPayment` mit dem neuen
+   Client-Secret, `POST /api/payments/stripe/confirm`, Statusseite.
+   Ein erneuter Versuch mit denselben Daten (z. B. Karte abgelehnt) nutzt dieselbe Bestellung.
+
+Rechtliches: unter den Buttons steht „Mit Apple Pay, Google Pay oder Link gibst du eine
+zahlungspflichtige Bestellung auf. Es gelten unsere AGB und die Widerrufsbelehrung …“; der
+Browser sendet dafür `acceptedTerms: true`.
+
+Apple Pay braucht die verifizierte Domain (siehe „Stripe einrichten“, Punkt 3) – für das
+Payment Element und das Express Checkout Element gilt dieselbe Registrierung.
 
 ## Lagerbestand
 
@@ -199,7 +255,10 @@ Ohne Stripe bleibt das bisherige Anfrageformular.
 | Route | Zweck |
 |---|---|
 | `GET /api/payments/methods` | verfügbare Zahlungsarten + Publishable Key + Abo-Checkout-Flag |
-| `POST /api/orders` | Bestellung anlegen, Zahlung starten |
+| `POST /api/orders` | Bestellung anlegen, Zahlung starten (Antwort mit Server-`total`) |
+| `POST /api/orders/resume` | offene Stripe-Bestellung derselben Sitzung fortsetzen (Token, Rate-Limit) |
+| `POST /api/express/quote` | Express-Kauf: Betrag/Zone/Tag für die Wallet-Adresse prüfen |
+| `POST /api/express/order` | Express-Kauf: Bestellung aus Warenkorb + Wallet-Daten anlegen |
 | `POST /api/payments/stripe/client-event` | Browser meldet Zahlungsproblem (Token, Rate-Limit) → Verlauf + Mail an `MAIL_ADMIN` |
 | `POST /api/payments/stripe/confirm` | Intent serverseitig prüfen, Bestellung als bezahlt markieren |
 | `POST /api/payments/stripe/subscription` | Checkout Session fürs Blumen-Abo |

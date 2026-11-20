@@ -27,21 +27,30 @@ import { StepDelivery } from "./step-delivery";
 import { StepGreeting } from "./step-greeting";
 import { StepCustomer } from "./step-customer";
 import { StepPayment } from "./step-payment";
-import type { StripeSession } from "./stripe-payment";
+import type { StripeInlineHandle } from "./stripe-inline";
+import { amountChanged, clearAttempt, displayCents, loadAttempt, saveAttempt, statusPath, type StripeAttempt } from "./pay-logic";
 import { rich } from "./rich-text";
+import { usePaymentMethods } from "./use-payment-methods";
 
-// Stripe.js (and its script from js.stripe.com) is only needed once a Stripe payment
-// actually starts – keep it out of the checkout bundle until then.
-const StripePaymentForm = dynamic(() => import("./stripe-payment").then((m) => m.StripePaymentForm), {
+// Stripe.js (and its script from js.stripe.com) is only needed once a Stripe method is
+// selected in step 5 – keep it out of the checkout bundle until then.
+const StripeInline = dynamic(() => import("./stripe-inline").then((m) => m.StripeInline), {
   ssr: false,
   loading: () => <PaymentLoading />,
 });
 
 function PaymentLoading() {
   const { m } = useI18n();
-  return <p className="py-10 text-center text-[14px] text-ink-muted" role="status">{m.checkout.paymentLoading}</p>;
+  return <p className="py-3 text-[14px] text-ink-muted" role="status">{m.checkout.paymentLoading}</p>;
 }
-import { usePaymentMethods } from "./use-payment-methods";
+
+/** Order answer of /api/orders and /api/orders/resume as the checkout reads it. */
+type OrderAnswer = Partial<OrderCreateResponse> & { message?: string; errors?: FieldErrors };
+
+/** Fire-and-forget report of a browser-side payment problem for a stored order. */
+function reportProblem(order: { id: string; token: string }, method: string, kind: "load_error" | "load_timeout" | "confirm_error", message?: string) {
+  void import("./stripe-shared").then((m) => m.reportPaymentProblem({ orderId: order.id, token: order.token, method }, kind, message)).catch(() => undefined);
+}
 
 export interface CheckoutConfig {
   /** Greeting cards on offer; off = step 3 only says they are coming soon. */
@@ -94,7 +103,7 @@ function reconcileDelivery(d: CheckoutData, days: DeliveryDay[]): CheckoutData {
 
 function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartItem[] }) {
   const router = useLocalizedRouter();
-  const { m, fmt, price, locale } = useI18n();
+  const { m, fmt, price, locale, href } = useI18n();
   const t = m.checkout;
   const couponCode = useCart((s) => s.coupon);
   const clearCart = useCart((s) => s.clear);
@@ -105,9 +114,21 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
   const [maxReached, setMaxReached] = useState<StepId>(() => data.step);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(() => (config.cancelled ? t.errors.cancelled : null));
-  const [stripeSession, setStripeSession] = useState<StripeSession | null>(null);
-  /** The last Stripe order of this visit – reused when the customer only switches the payment method. */
-  const lastStripeOrder = useRef<{ key: string; id: string; token: string; clientSecret: string } | null>(null);
+  /** Inline Payment Element of the selected Stripe method (null until it is ready). */
+  const [stripeHandle, setStripeHandle] = useState<StripeInlineHandle | null>(null);
+  /**
+   * The Stripe order of this session that a retry continues (same cart and details – only the
+   * payment failed, was cancelled or the method changed): no second order, same PaymentIntent.
+   * The client secret is kept in memory only; after a reload `/api/orders/resume` returns it.
+   */
+  const attemptRef = useRef<(StripeAttempt & { clientSecret?: string; method?: string }) | null>(null);
+  /** Server-side total of the current details (known once an order exists) – what Elements must show. */
+  const [knownTotal, setKnownTotal] = useState<{ key: string; total: number } | null>(() => {
+    const a = loadAttempt("checkout");
+    return a ? { key: a.key, total: a.total } : null;
+  });
+  /** Safety net: Elements bound to the existing intent after Stripe refused the deferred confirmation. */
+  const [classic, setClassic] = useState<{ key: string; secret: string } | null>(null);
   const [couponState, setCouponState] = useState<{ code: string; coupon: Coupon | null; error?: string } | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const firstRender = useRef(true);
@@ -162,6 +183,17 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     () => computeTotals({ items, zone, windowId: data.delivery.windowId || undefined, coupon }),
     [items, zone, data.delivery.windowId, coupon],
   );
+  // Everything that defines the order except the payment method (the reuse fingerprint).
+  const payloadFor = useCallback((d: CheckoutData) => buildPayload(config.cardsEnabled ? d : { ...d, greeting: EMPTY_CHECKOUT.greeting }, items, couponCode), [config.cardsEnabled, items, couponCode]);
+  const currentKey = useMemo(() => JSON.stringify({ ...payloadFor(data), payment: undefined }), [payloadFor, data]);
+  /** What the customer pays: the server's amount once known for these details, else the cart calculation. */
+  const shownTotal = knownTotal?.key === currentKey ? knownTotal.total : totals.total;
+  const classicSecret = classic?.key === currentKey ? classic.secret : null;
+  const onStripeLoadProblem = useCallback((kind: "load_error" | "load_timeout", message?: string) => {
+    const a = attemptRef.current ?? loadAttempt("checkout");
+    if (a) reportProblem(a, data.payment.method, kind, message);
+  }, [data.payment.method]);
+
   const selectedDay = days.find((d) => d.date === data.delivery.date);
   const windowLabel = selectedDay?.windows.find((w) => w.id === data.delivery.windowId)?.label;
 
@@ -244,27 +276,56 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
       setErrors({ method: t.validation.paymentMethod });
       return;
     }
-    const payload = buildPayload(config.cardsEnabled ? data : { ...data, greeting: EMPTY_CHECKOUT.greeting }, items, couponCode);
-    // Back from the payment form with the same cart and details, only another method:
-    // keep the order (one PaymentIntent serves every method) instead of a new one.
+    const payload = payloadFor(data);
     const reuseKey = JSON.stringify({ ...payload, payment: undefined });
-    const previous = lastStripeOrder.current;
-    if (previous && previous.key === reuseKey && selectedMethod.provider === "stripe" && methodsData?.stripePublishableKey) {
-      setSubmitError(null);
-      setStripeSession({ orderId: previous.id, token: previous.token, clientSecret: previous.clientSecret, method: selectedMethod.id });
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    const isStripe = selectedMethod.provider === "stripe";
+    const handle = stripeHandle;
+    if (isStripe && (!methodsData?.stripePublishableKey || !handle)) {
+      setSubmitError(m.pay.inline.loadFailed);
       return;
     }
+    // Apple Pay / Google Pay need the click as user gesture: Stripe's submit() (validates the
+    // fields, opens the wallet sheet) must start before anything is awaited.
+    const submitted = isStripe && handle ? handle.submit() : null;
     setSubmitting(true);
     setSubmitError(null);
     try {
-      const res = await fetch("/api/orders", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        // The locale picks the language of the server's messages and of the customer mails.
-        body: JSON.stringify({ ...payload, locale }),
-      });
-      const body = (await res.json()) as Partial<OrderCreateResponse> & { message?: string; errors?: FieldErrors };
-      if (!res.ok || !body.ok || !body.id || !body.token) {
+      if (submitted) {
+        const checked = await submitted;
+        if (checked.error) {
+          setSubmitError(checked.error.message ?? t.errors.orderFailed);
+          return;
+        }
+      }
+
+      // Create the order – or continue the open Stripe order of these details.
+      let body: OrderAnswer | null = null;
+      if (isStripe) {
+        const memo = attemptRef.current?.key === reuseKey ? attemptRef.current : null;
+        const saved = loadAttempt("checkout");
+        const stored = memo ?? (saved?.key === reuseKey ? saved : null);
+        if (memo?.clientSecret && memo.method === selectedMethod.id) {
+          body = { ok: true, id: memo.id, token: memo.token, total: memo.total, payment: { provider: "stripe", status: "pending", clientSecret: memo.clientSecret } };
+        } else if (stored) {
+          const res = await fetch("/api/orders/resume", {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ orderId: stored.id, token: stored.token, method: selectedMethod.id }),
+          });
+          const resumed = (await res.json()) as OrderAnswer;
+          if (res.ok && resumed.ok) body = resumed;
+          else { attemptRef.current = null; clearAttempt("checkout"); }
+        }
+      }
+      if (!body) {
+        const res = await fetch("/api/orders", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          // The locale picks the language of the server's messages and of the customer mails.
+          body: JSON.stringify({ ...payload, locale }),
+        });
+        body = (await res.json()) as OrderAnswer;
+        if (!res.ok) body.ok = undefined;
+      }
+      if (!body.ok || !body.id || !body.token) {
         // Map server field errors ("recipient.zip") back to the step that owns them.
         const byStep = new Map<StepId, FieldErrors>();
         for (const [key, msg] of Object.entries(body.errors ?? {})) {
@@ -284,13 +345,50 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         }
         return;
       }
-      const statusUrl = `/bestellung/${encodeURIComponent(body.id)}?token=${encodeURIComponent(body.token)}&neu=1`;
+      const order = { id: body.id, token: body.token };
       const payment = body.payment;
-      if (payment?.provider === "stripe" && payment.clientSecret && methodsData?.stripePublishableKey) {
-        // Order stored (payment pending) – now collect the payment with the Payment Element.
-        lastStripeOrder.current = { key: reuseKey, id: body.id, token: body.token, clientSecret: payment.clientSecret };
-        setStripeSession({ orderId: body.id, token: body.token, clientSecret: payment.clientSecret, method: selectedMethod.id });
-        window.scrollTo({ top: 0, behavior: "smooth" });
+
+      if (payment?.provider === "stripe") {
+        const serverTotal = typeof body.total === "number" ? body.total : shownTotal;
+        if (payment.status === "paid" || !payment.clientSecret || !handle) {
+          // Paid meanwhile, or already processing: the status page follows the payment.
+          finish(order);
+          return;
+        }
+        const attempt = { key: reuseKey, id: order.id, token: order.token, total: serverTotal };
+        attemptRef.current = { ...attempt, clientSecret: payment.clientSecret, method: selectedMethod.id };
+        saveAttempt("checkout", attempt);
+        setKnownTotal({ key: reuseKey, total: serverTotal });
+        // The server charges something else than Elements showed (coupon, fee changed):
+        // never confirm a different amount – show it and let the customer click again.
+        if (amountChanged(serverTotal, displayCents(shownTotal))) {
+          setSubmitError(fmt(m.pay.inline.amountChanged, { total: price(serverTotal) }));
+          return;
+        }
+        const returnUrl = `${window.location.origin}${href("/checkout/rueckkehr")}?orderId=${encodeURIComponent(order.id)}&token=${encodeURIComponent(order.token)}`;
+        const result = await handle.confirm({ clientSecret: payment.clientSecret, returnUrl, email: data.customer.email });
+        if (result.error) {
+          // Incomplete fields are normal typing mistakes – everything else is worth knowing.
+          if (result.error.type !== "validation_error") {
+            reportProblem(order, selectedMethod.id, "confirm_error", [result.error.type, result.error.code, result.error.decline_code, result.error.message].filter(Boolean).join(" · "));
+          }
+          // Not the customer's input but our integration: offer Stripe's own form for this intent.
+          if (!handle.classic && result.error.type === "invalid_request_error") {
+            setClassic({ key: reuseKey, secret: payment.clientSecret });
+            setSubmitError(m.pay.inline.retry);
+            return;
+          }
+          setSubmitError(fmt(m.pay.inline.failed, { reason: result.error.message ?? "", orderId: order.id }));
+          return;
+        }
+        // No redirect was needed (card, wallet): the server verifies the intent and marks the order paid.
+        try {
+          await fetch("/api/payments/stripe/confirm", {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ orderId: order.id, token: order.token }),
+          });
+        } catch { /* Stripe has the money; the webhook settles the order. */ }
+        finish(order);
         return;
       }
       if (payment?.provider === "paypal" && payment.approveUrl) {
@@ -299,9 +397,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         return;
       }
       // Mock (paid immediately) or anything already settled.
-      clearCart();
-      clearCheckout();
-      router.push(statusUrl);
+      finish(order);
     } catch {
       setSubmitError(t.errors.connection);
     } finally {
@@ -309,11 +405,12 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     }
   };
 
-  const finishStripe = () => {
-    if (!stripeSession) return;
+  const finish = (order: { id: string; token: string }) => {
+    attemptRef.current = null;
+    clearAttempt("checkout");
     clearCart();
     clearCheckout();
-    router.push(`/bestellung/${encodeURIComponent(stripeSession.orderId)}?token=${encodeURIComponent(stripeSession.token)}&neu=1`);
+    router.push(statusPath(order.id, order.token));
   };
 
   const stepMeta = t.steps[STEPS.find((s) => s.id === step)!.key];
@@ -336,23 +433,28 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
             <p role="alert" className="mb-6 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">{submitError}</p>
           )}
 
-          {step === 5 && stripeSession && methodsData?.stripePublishableKey ? (
-            <StripePaymentForm
-              publishableKey={methodsData.stripePublishableKey}
-              session={stripeSession}
-              amount={totals.total}
-              email={data.customer.email}
-              name={`${data.customer.firstName} ${data.customer.lastName}`.trim()}
-              onDone={finishStripe}
-              onCancel={() => { setStripeSession(null); setSubmitError(t.errors.notCompleted); }}
-            />
-          ) : (
           <form noValidate onSubmit={(e) => { e.preventDefault(); if (step === 5) submit(); else goNext(); }}>
             {step === 1 && <StepRecipient data={data.recipient} set={setScope("recipient")} errors={errors} onBlur={onBlur} zone={zoneStatus} />}
             {step === 2 && <StepDelivery data={data.delivery} set={setScope("delivery")} errors={errors} onBlur={onBlur} days={days} now={result?.now} zone={zone} loading={checking} />}
             {step === 3 && <StepGreeting data={data.greeting} set={setScope("greeting")} errors={errors} onBlur={onBlur} maxChars={config.greetingMaxChars} freeCardIncluded={config.freeCardIncluded} enabled={config.cardsEnabled} />}
             {step === 4 && <StepCustomer data={data.customer} set={setScope("customer")} errors={errors} onBlur={onBlur} newsletterEnabled={config.newsletterEnabled} />}
-            {step === 5 && <StepPayment data={paymentData} set={setScope("payment")} errors={errors} methods={methods} loading={methodsLoading} loadError={methodsError} />}
+            {step === 5 && (
+              <StepPayment
+                data={paymentData} set={setScope("payment")} errors={errors} methods={methods} loading={methodsLoading} loadError={methodsError}
+                inline={selectedMethod?.provider === "stripe" && methodsData?.stripePublishableKey ? (
+                  <StripeInline
+                    publishableKey={methodsData.stripePublishableKey}
+                    method={selectedMethod.id}
+                    amount={shownTotal}
+                    email={data.customer.email}
+                    name={`${data.customer.firstName} ${data.customer.lastName}`.trim()}
+                    classicSecret={classicSecret}
+                    onHandle={setStripeHandle}
+                    onLoadProblem={onStripeLoadProblem}
+                  />
+                ) : null}
+              />
+            )}
 
             <div className="mt-8 flex flex-col-reverse gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
               {step > 1 ? (
@@ -365,8 +467,8 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
               {step < 5 ? (
                 <Button type="submit" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />} className="sm:min-w-48">{t.next}</Button>
               ) : (
-                <Button type="submit" size="xl" loading={submitting} disabled={methodsLoading || methods.length === 0} className="sm:min-w-64">
-                  {fmt(t.submitWithTotal, { action: selectedMethod?.provider === "paypal" ? t.submitPaypal : selectedMethod?.provider === "stripe" ? t.submitStripe : t.submitBuy, total: price(totals.total) })}
+                <Button type="submit" size="xl" loading={submitting} disabled={methodsLoading || methods.length === 0 || (selectedMethod?.provider === "stripe" && !stripeHandle)} className="sm:min-w-64">
+                  {fmt(t.submitWithTotal, { action: selectedMethod?.provider === "paypal" ? t.submitPaypal : t.submitBuy, total: price(shownTotal) })}
                 </Button>
               )}
             </div>
@@ -380,7 +482,6 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
               </p>
             )}
           </form>
-          )}
         </section>
 
         <p className="mt-6 flex items-center gap-2 text-[12.5px] text-ink-soft lg:hidden">

@@ -33,7 +33,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   toCart: "Vers le panier",
   next: "Continuer",
   submitPaypal: "Continuer vers PayPal",
-  submitStripe: "Continuer vers le paiement",
   submitBuy: "Acheter maintenant",
   submitWithTotal: "{action} · {total}",
   legal: "En finalisant le paiement, vous passez une commande avec obligation de paiement. Nos {terms} et les {withdrawal} s’appliquent.",
@@ -43,7 +42,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
   secureMobile: "Paiement sécurisé · chiffrement SSL",
   errors: {
     cancelled: "Le paiement a été annulé. Vos informations sont conservées – vous pouvez réessayer tout de suite ou choisir un autre moyen de paiement.",
-    notCompleted: "Le paiement n’a pas été finalisé. Vous pouvez choisir un autre moyen de paiement et réessayer.",
     checkFields: "Veuillez vérifier vos informations.",
     orderFailed: "La commande n’a pas pu être finalisée. Veuillez réessayer.",
     connection: "La connexion a été interrompue. Veuillez vérifier votre connexion Internet et réessayer.",
@@ -197,7 +195,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     },
     testModeTitle: "Mode test.",
     testModeText: " Le paiement est simulé – aucun montant n’est débité.",
-    stripeHint: "Après « Acheter maintenant », vous saisissez vos données de paiement en toute sécurité chez Stripe.",
     secure: "Vos données sont transmises avec un chiffrement SSL. Les données de paiement ne sont pas enregistrées chez nous.",
   },
   summary: {
@@ -222,16 +219,6 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     freeDelivery: "Livraison gratuite",
     couponError: "Erreur de code promo",
     total: "Total",
-  },
-  stripe: {
-    card: "Carte",
-    orderCreated: "La commande {orderId} est créée. Finalisez maintenant le paiement – elle ne devient ferme qu’ensuite.",
-    loadProblem: "Le champ de paiement ne se charge pas pour le moment. Veuillez recharger la page ou l’ouvrir dans un autre navigateur (p. ex. Safari). Votre commande {orderId} est enregistrée – vous pouvez aussi simplement nous contacter, nous vous aiderons.",
-    failed: "Le paiement n’a pas pu être finalisé. Veuillez réessayer.",
-    back: "Retour",
-    pay: "Payer maintenant · {amount}",
-    legal: "En cliquant sur « Payer maintenant », vous passez une commande avec obligation de paiement. Nos {terms} et les {withdrawal} s’appliquent.",
-    secure: "Le paiement est traité en toute sécurité par Stripe. Les données de paiement ne sont pas enregistrées chez nous.",
   },
   return: {
     metaTitle: "Confirmation du paiement",
