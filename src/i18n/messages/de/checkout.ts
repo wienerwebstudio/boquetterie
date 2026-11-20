@@ -230,6 +230,7 @@ const checkout = {
     total: "Gesamt",
   },
   stripe: {
+    card: "Karte",
     /** "{orderId}" is shown in bold. */
     orderCreated: "Bestellung {orderId} ist angelegt. Schließe jetzt die Zahlung ab – erst danach wird sie verbindlich.",
     loadProblem: "Das Zahlungsfeld lädt gerade nicht. Bitte lade die Seite neu oder öffne sie in einem anderen Browser (z. B. Safari). Deine Bestellung {orderId} ist gespeichert – du kannst uns auch einfach kontaktieren, dann helfen wir dir weiter.",

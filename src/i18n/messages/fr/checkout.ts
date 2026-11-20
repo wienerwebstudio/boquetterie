@@ -224,6 +224,7 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     total: "Total",
   },
   stripe: {
+    card: "Carte",
     orderCreated: "La commande {orderId} est créée. Finalisez maintenant le paiement – elle ne devient ferme qu’ensuite.",
     loadProblem: "Le champ de paiement ne se charge pas pour le moment. Veuillez recharger la page ou l’ouvrir dans un autre navigateur (p. ex. Safari). Votre commande {orderId} est enregistrée – vous pouvez aussi simplement nous contacter, nous vous aiderons.",
     failed: "Le paiement n’a pas pu être finalisé. Veuillez réessayer.",

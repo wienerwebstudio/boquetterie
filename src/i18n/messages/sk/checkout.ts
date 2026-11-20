@@ -224,6 +224,7 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     total: "Spolu",
   },
   stripe: {
+    card: "Karta",
     orderCreated: "Objednávka {orderId} je vytvorená. Teraz dokončite platbu – až potom bude záväzná.",
     loadProblem: "Platobné pole sa práve nenačítava. Obnovte, prosím, stránku alebo ju otvorte v inom prehliadači (napr. Safari). Vaša objednávka {orderId} je uložená – môžete nás tiež jednoducho kontaktovať a pomôžeme vám.",
     failed: "Platbu sa nepodarilo dokončiť. Skúste to, prosím, znova.",

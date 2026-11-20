@@ -224,6 +224,7 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     total: "Total",
   },
   stripe: {
+    card: "Tarjeta",
     orderCreated: "Se ha creado el pedido {orderId}. Completa ahora el pago: solo entonces el pedido será vinculante.",
     loadProblem: "El campo de pago no se carga en este momento. Vuelve a cargar la página o ábrela en otro navegador (p. ej., Safari). Tu pedido {orderId} está guardado; también puedes contactarnos y te ayudaremos.",
     failed: "No se ha podido completar el pago. Inténtalo de nuevo.",

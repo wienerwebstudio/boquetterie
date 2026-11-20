@@ -44,6 +44,17 @@ Beträge kommen immer aus der serverseitig berechneten Bestellung, nie vom Clien
    den Intent selbst und markiert bei `succeeded` als bezahlt (idempotent).
    Redirect-Methoden (EPS, Klarna, 3-D Secure) landen auf
    `/checkout/rueckkehr?orderId&token`, das dieselbe Bestätigung auslöst.
+   **Zahlarten-Leiste:** Über dem Zahlungsfeld steht eine eigene, wischbare Leiste
+   (Karte, Klarna, EPS, Amazon Pay … – genau die Methoden, die Stripe für den Intent
+   erlaubt, `stripe.retrievePaymentIntent`; die im Checkout gewählte zuerst). Das
+   Payment Element läuft dafür im „deferred“-Modus (`mode: "payment"`, Betrag/Währung
+   aus dem Intent, `allowedPaymentMethodTypes` = gewählte Methode) und zeigt nur das
+   Formular dieser Methode – kein „Mehr“-Dropdown am Handy. Bezahlt wird mit
+   `elements.submit()` + `confirmPayment({ elements, clientSecret })` gegen den
+   bestehenden Intent. Apple Pay / Google Pay erscheinen innerhalb von „Karte“.
+   Sicherheitsnetz: Lässt sich der Intent im Browser nicht lesen oder lehnt Stripe
+   die Bestätigung mit `invalid_request_error` ab, wird das klassische Payment
+   Element (Stripe-Tabs) gezeigt. Logik: `src/components/checkout/stripe-methods.ts`.
 4. **PayPal** – PayPal-Order via REST, Kunde wird zur `approveUrl` geleitet.
    Rücksprung `GET /api/payments/paypal/return?orderId&token` captured serverseitig,
    markiert als bezahlt und leitet auf `/bestellung/{id}?token&neu=1`.

@@ -224,6 +224,7 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     total: "Összesen",
   },
   stripe: {
+    card: "Kártya",
     orderCreated: "A(z) {orderId} rendelés létrejött. Most fejezd be a fizetést – a rendelés csak ezután lesz kötelező érvényű.",
     loadProblem: "A fizetési mező most nem töltődik be. Kérjük, töltsd újra az oldalt, vagy nyisd meg egy másik böngészőben (pl. Safari). A(z) {orderId} rendelésedet elmentettük – egyszerűen kapcsolatba is léphetsz velünk, és segítünk.",
     failed: "A fizetést nem sikerült befejezni. Kérjük, próbáld újra.",

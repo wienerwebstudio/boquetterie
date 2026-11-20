@@ -224,6 +224,7 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     total: "Total",
   },
   stripe: {
+    card: "Card",
     orderCreated: "Order {orderId} has been created. Now complete the payment – only then does it become binding.",
     loadProblem: "The payment field isn't loading right now. Please reload the page or open it in a different browser (e.g. Safari). Your order {orderId} has been saved – you can also simply contact us and we'll help you.",
     failed: "The payment couldn't be completed. Please try again.",

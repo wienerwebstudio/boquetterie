@@ -224,6 +224,7 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     total: "Razem",
   },
   stripe: {
+    card: "Karta",
     orderCreated: "Zamówienie {orderId} zostało utworzone. Teraz sfinalizuj płatność – dopiero wtedy zamówienie stanie się wiążące.",
     loadProblem: "Pole płatności teraz się nie ładuje. Odśwież stronę lub otwórz ją w innej przeglądarce (np. Safari). Twoje zamówienie {orderId} jest zapisane – możesz też po prostu się z nami skontaktować, a pomożemy.",
     failed: "Nie udało się sfinalizować płatności. Spróbuj ponownie.",

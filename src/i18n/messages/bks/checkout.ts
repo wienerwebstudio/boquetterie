@@ -224,6 +224,7 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     total: "Ukupno",
   },
   stripe: {
+    card: "Kartica",
     orderCreated: "Narudžba {orderId} je kreirana. Sada završite plaćanje – tek tada narudžba postaje obavezujuća.",
     loadProblem: "Polje za plaćanje se trenutno ne učitava. Molimo ponovo učitajte stranicu ili je otvorite u drugom pregledniku (npr. Safari). Vaša narudžba {orderId} je sačuvana – možete nas i jednostavno kontaktirati, pa ćemo Vam pomoći.",
     failed: "Plaćanje nije bilo moguće završiti. Molimo pokušajte ponovo.",

@@ -224,6 +224,7 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     total: "Total",
   },
   stripe: {
+    card: "Card",
     orderCreated: "Comanda {orderId} a fost creată. Finalizează acum plata – abia după aceea comanda devine fermă.",
     loadProblem: "Câmpul de plată nu se încarcă momentan. Te rugăm să reîncarci pagina sau s-o deschizi în alt browser (de ex. Safari). Comanda ta {orderId} este salvată – ne poți și contacta, iar noi te ajutăm mai departe.",
     failed: "Plata nu a putut fi finalizată. Te rugăm să încerci din nou.",

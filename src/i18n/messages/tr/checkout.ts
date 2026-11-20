@@ -224,6 +224,7 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     total: "Toplam",
   },
   stripe: {
+    card: "Kart",
     orderCreated: "{orderId} numaralı sipariş oluşturuldu. Şimdi ödemeyi tamamlayın – sipariş ancak bundan sonra bağlayıcı olur.",
     loadProblem: "Ödeme alanı şu anda yüklenmiyor. Lütfen sayfayı yenileyin veya başka bir tarayıcıda açın (ör. Safari). {orderId} numaralı siparişiniz kaydedildi – dilerseniz bizimle iletişime geçin, size yardımcı olalım.",
     failed: "Ödeme tamamlanamadı. Lütfen tekrar deneyin.",
