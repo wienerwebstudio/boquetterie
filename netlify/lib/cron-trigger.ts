@@ -38,7 +38,7 @@ export function cronBaseUrl(context: CronContext | undefined, env: Env): string 
 }
 
 export async function triggerCron(
-  path: "/api/cron/review-requests" | "/api/cron/reminders" | "/api/cron/partner-reminders" | "/api/cron/outreach",
+  path: "/api/cron/review-requests" | "/api/cron/reminders" | "/api/cron/partner-reminders" | "/api/cron/outreach" | "/api/cron/stale-orders",
   context: CronContext | undefined,
   { env = process.env as Env, fetchImpl = fetch as Fetch, log = console }: { env?: Env; fetchImpl?: Fetch; log?: Pick<Console, "log" | "error"> } = {},
 ): Promise<CronTriggerResult> {

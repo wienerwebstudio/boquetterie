@@ -3,7 +3,7 @@ import { getStore, jsonStore, type DocumentStore } from "@/lib/store";
 import { runContentMigrations } from "@/lib/content-migrations";
 import type {
   Category, CmsPage, Coupon, DeliveryZone, Extra, FAQ, HomepageContent, LandingPage,
-  Occasion, Offer, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber,
+  Occasion, Offer, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber, CheckoutDraft,
 } from "@/types";
 import type { OutreachContact, OutreachSend, OutreachTemplate, OutreachUnsubscribe } from "@/types/outreach";
 import { starterTemplates } from "@/lib/outreach/starter-templates";
@@ -205,6 +205,15 @@ export async function getNewsletterSubscribers(): Promise<NewsletterSubscriber[]
 }
 export async function saveNewsletterSubscribers(list: NewsletterSubscriber[]) {
   await getStore().set("data", "newsletter", list);
+}
+
+/* ---------------- Abandoned checkouts (runtime data, see docs/PAYMENTS.md) ---------------- */
+
+export async function getCheckoutDrafts(): Promise<CheckoutDraft[]> {
+  return readDataDoc<CheckoutDraft[]>("checkout-drafts", []);
+}
+export async function saveCheckoutDrafts(list: CheckoutDraft[]) {
+  await getStore().set("data", "checkout-drafts", list);
 }
 
 /* ---------------- Generic runtime data (reminders, sessions, requests …) ---------------- */

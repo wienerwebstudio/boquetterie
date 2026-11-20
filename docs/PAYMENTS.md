@@ -50,10 +50,21 @@ Beträge kommen immer aus der serverseitig berechneten Bestellung, nie vom Clien
 
    „Jetzt kaufen“ macht der Reihe nach:
    1. `elements.submit()` – **synchron im Klick** (Apple Pay braucht die Nutzergeste),
-      prüft die Eingaben, öffnet ggf. das Wallet-Fenster. Fehler → nichts wird angelegt.
-   2. `POST /api/orders` – der Server berechnet alle Beträge selbst, legt die Bestellung
-      an und erstellt den PaymentIntent (`automatic_payment_methods`, Metadata `orderId`,
-      `receipt_email`). Antwort mit `total` (Server-Betrag).
+      prüft die Eingaben, öffnet ggf. das Wallet-Fenster. **Gleichzeitig** (nicht danach)
+      startet
+   2. `POST /api/orders` (mit `draftId`, siehe „Abgebrochene Kasse“) – der Server berechnet
+      alle Beträge selbst, legt die Bestellung an und erstellt den PaymentIntent
+      (`automatic_payment_methods`, Metadata `orderId`, `receipt_email`). Antwort mit
+      `total` (Server-Betrag). Die Bestellung entsteht **immer**, auch wenn `submit()`
+      scheitert (Kartenfelder leer, Apple-/Google-Pay-Fenster geschlossen): Sie bleibt
+      `pending` („Nicht bezahlt“ im Admin, mit allen Kontaktdaten), der Browser schreibt
+      über `POST /api/orders/payment-note { orderId, token, reason, method, detail }`
+      (Rate-Limit 20/10 min, Token-Prüfung, nur unbezahlte Bestellungen, max. 10 je
+      Bestellung) „Zahlung nicht abgeschlossen: Kartenangaben unvollständig“ bzw.
+      „… Apple-Pay-Fenster geschlossen“ in den Verlauf (Einordnung aus Stripe-Fehlertyp/-code:
+      `src/lib/payment-note.ts`), die Kundin sieht Stripes Meldung wie bisher, und ein neuer
+      Klick nutzt dieselbe Bestellung (siehe „Kein doppelter Auftrag“). PayPal und Mock
+      verhalten sich unverändert.
    3. Weicht `total` vom angezeigten Betrag ab (Gutschein, Liefergebühr geändert), wird
       **nicht** bestätigt: Hinweis „Der Gesamtbetrag beträgt jetzt …“, Elements zeigen den
       neuen Betrag, die Kundin tippt erneut (dieselbe Bestellung wird weiterverwendet).
@@ -129,6 +140,47 @@ Browser sendet dafür `acceptedTerms: true`.
 Apple Pay braucht die verifizierte Domain (siehe „Stripe einrichten“, Punkt 3) – für das
 Payment Element und das Express Checkout Element gilt dieselbe Registrierung.
 
+## Abgebrochene Kasse
+
+Wunsch der Inhaber: Auch nicht erfolgreiche Bestellungen sollen im Admin sichtbar sein –
+mit den Kontaktdaten, egal wie weit die Kundin gekommen ist.
+
+- **Bestellung angelegt, Zahlung nicht fertig** (Karte abgelehnt, Fenster geschlossen,
+  Felder leer, Klarna abgebrochen): steht unter Admin → Bestellungen → „Nicht bezahlt“
+  (grau), Grund im Verlauf.
+- **Keine Bestellung, aber Kontaktdaten** („Abgebrochene Kasse“): Sobald Schritt 4
+  (Kontaktdaten) abgeschlossen ist – und erneut beim Betreten von Schritt 5 (z. B. nach
+  Neuladen oder geänderten Angaben) – schickt die Kasse eine Momentaufnahme an
+  `POST /api/checkout/draft` (Rate-Limit 30/10 min, max. 16 KB, Honeypot-Feld `website`):
+  Besteller (Name, E-Mail, Telefon), Warenkorb (`items` wie bei der Bestellung),
+  Empfängeradresse, Liefertag und Zeitfenster, Sprache. Gespeichert wird nur mit gültiger
+  E-Mail **oder** Telefonnummer. Der Server nimmt Namen und Preise aus dem Katalog und
+  schätzt die Summe (`priceOrder`: inkl. Lieferung/Gutschein, sonst nur Waren – Hinweis
+  „ohne Lieferung“). Schlüssel ist eine zufällige ID pro Browser-Sitzung
+  (sessionStorage `blumora-checkout-draft:checkout`), mehrfaches Senden aktualisiert
+  denselben Eintrag.
+- **Express-Kauf:** Schließt die Kundin das Apple-/Google-Pay-Fenster (`cancel` des Express
+  Checkout Element), entsteht ein Eintrag mit Produkt/Warenkorb, Liefertag, Zeitfenster und
+  PLZ (Auswahl über den Buttons bzw. die anonymisierte Adresse aus `shippingaddresschange`:
+  PLZ, Ort, Land). Apple/Google geben Name, E-Mail und Telefon erst beim Bezahlen frei –
+  der Admin zeigt dann „Express – keine Kontaktdaten (Apple/Google geben sie erst beim
+  Bezahlen frei)“. Wurde die Zahlung im Wallet bestätigt, aber die Bestellung konnte nicht
+  angelegt werden (Adresse ungültig, Verbindung), enthält der Eintrag die freigegebenen
+  Kontaktdaten.
+- **Aufräumen:** Wird aus derselben Sitzung eine Bestellung angelegt, schickt der Browser
+  `draftId` mit (`/api/orders`, `/api/express/order`), und der Server löscht den Eintrag –
+  die Bestellung zeigt die Daten dann selbst. Einträge älter als **30 Tage** werden beim
+  Öffnen der Liste und vom stündlichen Cron (`/api/cron/stale-orders`) gelöscht; höchstens
+  1000 Einträge (die ältesten fallen weg). Im Admin: Bestellungen → Filter „Abgebrochene
+  Kasse“ mit Kontakt, Warenkorb, Summe (ca.), Liefertag/Zeitfenster und „Löschen“.
+- **Speicher:** nur über `src/lib/cms.ts` (`getCheckoutDrafts`/`saveCheckoutDrafts`,
+  Laufzeitdokument `checkout-drafts`: `data/checkout-drafts.json` bzw. Postgres-Tabelle
+  `documents`). Logik in `src/lib/checkout-drafts.ts`.
+- **Datenschutz:** Die Datenschutzerklärung muss die Speicherung dieser Kontaktdaten aus
+  nicht abgeschlossenen Bestellungen (Zweck: Rückfrage/Hilfe bei der Bestellung,
+  Speicherdauer 30 Tage) erwähnen. Das ist ein rechtlicher Text – von den Inhabern bzw.
+  ihrer Beratung zu ergänzen, nicht automatisch geändert.
+
 ## Lagerbestand
 
 `product.stock` und `sizes[].stock` (wenn nicht `null`/`undefined`) werden beim
@@ -136,11 +188,23 @@ Anlegen der Bestellung verringert – innerhalb einer prozessweiten Sperre, dami
 zwei gleichzeitige Bestellungen nicht dieselben Einheiten bekommen. Bei
 fehlgeschlagener oder abgebrochener Zahlung wird der Bestand zurückgebucht.
 
+**Unbezahlte Bestellungen aufräumen:** `GET|POST /api/cron/stale-orders` (stündlich,
+`CRON_SECRET`, Netlify-Function `cron-stale-orders`, siehe `docs/DEPLOYMENT.md`) und der
+Button „Unbezahlte jetzt bereinigen“ unter Admin → Bestellungen markieren jede Bestellung,
+deren Zahlung **2 Stunden nach der letzten Aktivität** (Anlage oder letzter Verlaufseintrag)
+noch `pending` ist, als fehlgeschlagen – Notiz „Zahlung abgebrochen (nach 2 Std.
+automatisch)“, Bestand wird über `markOrderPaymentFailed` genau einmal freigegeben
+(`src/lib/stale-orders.ts`). Stripe-Bestellungen werden vorher bei Stripe nachgesehen (nur
+lesend, wenn Stripe konfiguriert ist): `succeeded` → stattdessen als bezahlt markiert,
+`processing` oder Stripe nicht erreichbar → bleibt bis zum nächsten Lauf. Bezahlte,
+erstattete oder bereits fehlgeschlagene Bestellungen werden nie angefasst. Der Intent wird
+nicht storniert: Kommt die Zahlung doch noch (Webhook, Rücksprung), markiert
+`markOrderPaid` die Bestellung als bezahlt und reserviert den Bestand erneut.
+
 Bekannte Grenzen:
-- Verlassene, nie bezahlte Stripe-Bestellungen bleiben `pending` und behalten die
-  Reservierung, bis ein `payment_failed`-Webhook eintrifft oder das Team die
-  Bestellung storniert. Stripe bricht unbestätigte Intents nicht automatisch ab
-  (kein 24-h-Timeout) – bei Bedarf eine Aufräumroutine ergänzen.
+- Bis zum nächsten Lauf (max. ca. 3 Std. nach dem Abbruch) halten unbezahlte
+  Bestellungen ihre Reservierung. Ohne `CRON_SECRET` läuft die Aufräumroutine nur über
+  den Admin-Button.
 - Eine Stornierung im Admin gibt den Bestand derzeit nicht automatisch zurück.
 - Die Sperre gilt nur innerhalb eines Node-Prozesses (wie der Rate-Limiter).
 

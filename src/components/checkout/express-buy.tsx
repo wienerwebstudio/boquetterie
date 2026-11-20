@@ -15,7 +15,8 @@ import { useI18n } from "@/i18n/client";
 import type { ExpressWalletData } from "@/lib/express";
 import { rich } from "./rich-text";
 import { usePaymentMethods } from "./use-payment-methods";
-import type { ExpressSheetDetails } from "./express-element";
+import type { ExpressAbandonInfo, ExpressSheetDetails } from "./express-element";
+import { clearDraftId, draftId, peekDraftId, postDraft } from "./checkout-draft";
 
 // Stripe.js is loaded only when the block scrolls into view and Stripe is configured.
 const ExpressElement = dynamic(() => import("./express-element").then((m) => m.ExpressElement), { ssr: false });
@@ -189,6 +190,7 @@ function ExpressPanel({ publishableKey, wallets, items, couponCode, postalCode, 
     return sheetFor(q);
   }, [fetchQuote, errorText, sheetFor, t]);
 
+  const draftScope = `express-${source}`;
   const orderBody = useCallback((wallet: ExpressWalletData) => ({
     items: payloadItems,
     couponCode: couponCode || undefined,
@@ -196,7 +198,25 @@ function ExpressPanel({ publishableKey, wallets, items, couponCode, postalCode, 
     wallet,
     acceptedTerms: true,
     locale,
-  }), [payloadItems, couponCode, day, windowId, locale]);
+    // An earlier closed sheet of this session ("Abgebrochene Kasse") is removed once the order exists.
+    draftId: peekDraftId(draftScope),
+  }), [payloadItems, couponCode, day, windowId, locale, draftScope]);
+
+  /** Sheet closed without an order: record what we know for the team (no contact data unless the wallet released it). */
+  const onAbandon = useCallback((info: ExpressAbandonInfo) => {
+    const [firstName = "", ...rest] = (info.contact?.name ?? "").trim().split(/\s+/);
+    const contact = info.contact && (info.contact.email || info.contact.phone)
+      ? { firstName, lastName: rest.join(" "), email: info.contact.email ?? "", phone: info.contact.phone ?? "" }
+      : undefined;
+    postDraft({
+      id: draftId(draftScope), source: "express", locale,
+      items: payloadItems, couponCode: couponCode || undefined,
+      delivery: day ? { date: day, windowId: windowId || undefined } : undefined,
+      express: { wallet: info.wallet, postalCode: info.address?.postalCode || plz, city: info.address?.city, country: info.address?.country },
+      ...(contact ? { contact } : {}),
+    });
+  }, [draftScope, locale, payloadItems, couponCode, day, windowId, plz]);
+  const onOrderCreated = useCallback(() => clearDraftId(draftScope), [draftScope]);
 
   if (available === false) return null;
 
@@ -241,6 +261,8 @@ function ExpressPanel({ publishableKey, wallets, items, couponCode, postalCode, 
           orderBody={orderBody}
           source={source}
           onError={setError}
+          onAbandon={onAbandon}
+          onOrderCreated={onOrderCreated}
         />
       </div>
       {error && <p role="alert" className="mt-3 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[13.5px] text-ink">{error}</p>}

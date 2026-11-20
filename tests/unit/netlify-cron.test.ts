@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { cronBaseUrl, triggerCron } from "../../netlify/lib/cron-trigger";
 import * as reviewFn from "../../netlify/functions/cron-review-requests.mjs";
 import * as remindersFn from "../../netlify/functions/cron-reminders.mjs";
+import * as staleFn from "../../netlify/functions/cron-stale-orders.mjs";
 
 const silent = () => ({ log: vi.fn(), error: vi.fn() });
 
@@ -9,6 +10,10 @@ describe("Netlify scheduled functions", () => {
   it("run once a day", () => {
     expect(reviewFn.config.schedule).toMatch(/^\d+ \d+ \* \* \*$/);
     expect(remindersFn.config.schedule).toMatch(/^\d+ \d+ \* \* \*$/);
+  });
+
+  it("expires stale unpaid orders every hour", () => {
+    expect(staleFn.config.schedule).toMatch(/^\d+ \* \* \* \*$/);
   });
 });
 

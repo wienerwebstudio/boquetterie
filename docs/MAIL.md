@@ -62,6 +62,7 @@ Auf Netlify gibt es keinen Server-Cron. Deshalb liegen im Repo zwei [Scheduled F
 | `netlify/functions/cron-reminders.mts` | `0 7 * * *` (09:00 Sommerzeit / 08:00 Winterzeit) | `POST /api/cron/reminders` |
 | `netlify/functions/cron-review-requests.mts` | `30 7 * * *` (09:30 / 08:30) | `POST /api/cron/review-requests` |
 | `netlify/functions/cron-partner-reminders.mts` | `*/10 * * * *` (alle 10 Min.) | `POST /api/cron/partner-reminders` |
+| `netlify/functions/cron-stale-orders.mts` | `17 * * * *` (stündlich) | `POST /api/cron/stale-orders` – unbezahlte Bestellungen nach 2 Std. als abgebrochen markieren, „Abgebrochene Kasse“ nach 30 Tagen löschen (`docs/PAYMENTS.md`) |
 
 Jede Function ruft den Endpunkt auf der veröffentlichten Adresse auf (`context.site.url`, also die Hauptdomain, z. B. `https://blumora.at`; Fallback `URL`, dann `NEXT_PUBLIC_SITE_URL`) und schickt `Authorization: Bearer $CRON_SECRET`. Die gemeinsame Logik steht in `netlify/lib/cron-trigger.ts`.
 

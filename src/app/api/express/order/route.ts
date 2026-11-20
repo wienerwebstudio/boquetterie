@@ -11,7 +11,7 @@ const str = (v: unknown, max: number) => (typeof v === "string" ? v.slice(0, max
 /**
  * POST /api/express/order
  * Body: { items, couponCode?, delivery: { date, windowId? }, wallet: { expressPaymentType,
- * billingDetails, shippingAddress }, acceptedTerms: true, locale? }
+ * billingDetails, shippingAddress }, acceptedTerms: true, locale?, draftId? }
  *
  * Express purchase from the product page or the cart (Stripe Express Checkout Element).
  * The wallet data is mapped to the checkout payload (buyer = billing contact, recipient =
@@ -52,5 +52,6 @@ export async function POST(req: Request) {
     wallet,
     locale: str(body.locale, 5),
   });
-  return createOrderResponse(req, orderBody);
+  // `draftId`: the "Abgebrochene Kasse" entry of an earlier closed wallet sheet – removed once the order exists.
+  return createOrderResponse(req, orderBody, { draftId: body.draftId });
 }

@@ -36,7 +36,16 @@ function sheet(d: ExpressSheetDetails) {
  * `POST /api/express/order`, amount check, `stripe.confirmPayment` with the new client
  * secret, `POST /api/payments/stripe/confirm`, status page.
  */
-export function ExpressElement({ publishableKey, amount, wallets, onAvailability, clickDetails, addressQuote, orderBody, source, onError }: {
+/** What is known when the customer closes the wallet sheet without paying ("Abgebrochene Kasse"). */
+export interface ExpressAbandonInfo {
+  wallet: string;
+  /** Redacted shipping address of the sheet (Apple/Google reveal only PLZ, city, country before payment). */
+  address?: { postalCode?: string; city?: string; country?: string };
+  /** Only when the customer authorised the payment but the order could not be created. */
+  contact?: { name?: string; email?: string; phone?: string };
+}
+
+export function ExpressElement({ publishableKey, amount, wallets, onAvailability, clickDetails, addressQuote, orderBody, source, onError, onAbandon, onOrderCreated }: {
   publishableKey: string;
   /** EUR – the current quote (or the goods estimate before one exists). */
   amount: number;
@@ -47,6 +56,9 @@ export function ExpressElement({ publishableKey, amount, wallets, onAvailability
   orderBody: (wallet: ExpressWalletData) => Record<string, unknown>;
   source: "product" | "cart";
   onError: (message: string | null) => void;
+  /** The sheet was closed before an order existed. */
+  onAbandon?: (info: ExpressAbandonInfo) => void;
+  onOrderCreated?: () => void;
 }) {
   const { locale } = useI18n();
   const [stripe, setStripe] = useState<Stripe | null>(null);
@@ -68,12 +80,12 @@ export function ExpressElement({ publishableKey, amount, wallets, onAvailability
   if (!stripe) return null;
   return (
     <Elements stripe={stripe} options={options}>
-      <ExpressButtons wallets={wallets} onAvailability={onAvailability} clickDetails={clickDetails} addressQuote={addressQuote} orderBody={orderBody} source={source} onError={onError} />
+      <ExpressButtons wallets={wallets} onAvailability={onAvailability} clickDetails={clickDetails} addressQuote={addressQuote} orderBody={orderBody} source={source} onError={onError} onAbandon={onAbandon} onOrderCreated={onOrderCreated} />
     </Elements>
   );
 }
 
-function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, orderBody, source, onError }: {
+function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, orderBody, source, onError, onAbandon, onOrderCreated }: {
   wallets: { applePay: boolean; googlePay: boolean; link: boolean };
   onAvailability: (available: boolean) => void;
   clickDetails: () => ExpressSheetDetails | null;
@@ -81,6 +93,8 @@ function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, o
   orderBody: (wallet: ExpressWalletData) => Record<string, unknown>;
   source: "product" | "cart";
   onError: (message: string | null) => void;
+  onAbandon?: (info: ExpressAbandonInfo) => void;
+  onOrderCreated?: () => void;
 }) {
   const stripe = useStripe();
   const elements = useElements();
@@ -91,16 +105,20 @@ function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, o
   const shown = useRef(0);
   /** Order of the last attempt: a retry with the same data continues it (no duplicate order). */
   const attempt = useRef<{ key: string; id: string; token: string; total: number; clientSecret: string } | null>(null);
+  /** The sheet of the current click: which wallet, what address it revealed, whether an order was created. */
+  const sheetState = useRef<{ wallet: string; address?: ExpressAbandonInfo["address"]; ordered: boolean } | null>(null);
 
   const onClick = (event: StripeExpressCheckoutElementClickEvent) => {
     const details = clickDetails();
     if (!details || !elements) { event.reject(); return; }
     shown.current = details.totalCents;
     elements.update({ amount: details.totalCents });
+    sheetState.current = { wallet: event.expressPaymentType, ordered: false };
     event.resolve(sheet(details));
   };
 
   const onShippingAddressChange = async (event: StripeExpressCheckoutElementShippingAddressChangeEvent) => {
+    if (sheetState.current) sheetState.current.address = { postalCode: event.address.postal_code, city: event.address.city, country: event.address.country };
     const details = await addressQuote(event.address.postal_code, event.address.country);
     if (!details || !elements) { event.reject(); return; }
     shown.current = details.totalCents;
@@ -118,8 +136,21 @@ function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, o
       billingDetails: { name: event.billingDetails?.name, email: event.billingDetails?.email, phone: event.billingDetails?.phone },
       shippingAddress: { name: event.shippingAddress?.name, address: event.shippingAddress?.address },
     };
+    // The order could not be created (address, zone, connection): keep what the wallet released.
+    const abandonWithContact = () => {
+      const state = sheetState.current;
+      if (!state || state.ordered) return;
+      state.ordered = true; // a later `cancel` must not overwrite this entry without contact data
+      const a = event.shippingAddress?.address;
+      onAbandon?.({
+        wallet: event.expressPaymentType,
+        address: { postalCode: a?.postal_code ?? state.address?.postalCode, city: a?.city ?? state.address?.city, country: a?.country ?? state.address?.country },
+        contact: { name: event.billingDetails?.name ?? event.shippingAddress?.name, email: event.billingDetails?.email, phone: event.billingDetails?.phone },
+      });
+    };
     const body = orderBody(wallet);
-    const key = JSON.stringify(body);
+    // The draft id is not part of the purchase – a retry with the same data continues the same order.
+    const key = JSON.stringify({ ...body, draftId: undefined });
     let order = attempt.current?.key === key ? attempt.current : null;
     if (!order) {
       let answer: OrderAnswer;
@@ -130,6 +161,7 @@ function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, o
       } catch {
         event.paymentFailed({ reason: "fail" });
         onError(t.errors.connection);
+        abandonWithContact();
         return;
       }
       if (!answer.ok || !answer.id || !answer.token || !answer.payment?.clientSecret || typeof answer.total !== "number") {
@@ -137,11 +169,15 @@ function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, o
         const address = fields.some((f) => f.startsWith("recipient.") || f.startsWith("customer."));
         event.paymentFailed({ reason: fields.some((f) => f === "recipient.zip") ? "address_unserviceable" : address ? "invalid_shipping_address" : "fail" });
         onError(address ? (fields.includes("recipient.zip") ? t.errors.zone : t.errors.address) : answer.message ?? t.errors.failed);
+        abandonWithContact();
         return;
       }
       order = { key, id: answer.id, token: answer.token, total: answer.total, clientSecret: answer.payment.clientSecret };
       attempt.current = order;
+      onOrderCreated?.();
     }
+    // From here on the order list shows this purchase – no "Abgebrochene Kasse" entry.
+    if (sheetState.current) sheetState.current.ordered = true;
     // Never charge something else than the sheet showed.
     if (amountChanged(order.total, shown.current)) {
       event.paymentFailed({ reason: "fail" });
@@ -186,7 +222,12 @@ function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, o
       onClick={onClick}
       onShippingAddressChange={onShippingAddressChange}
       onConfirm={onConfirm}
-      onCancel={() => onError(null)}
+      onCancel={() => {
+        onError(null);
+        const state = sheetState.current;
+        sheetState.current = null;
+        if (state && !state.ordered) onAbandon?.({ wallet: state.wallet, address: state.address });
+      }}
     />
   );
 }

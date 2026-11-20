@@ -691,3 +691,33 @@ export interface NewsletterSubscriber {
   /** Language of the sign-up (`Locale`) – the confirmation mail uses it. Missing = German. */
   locale?: string;
 }
+
+/**
+ * "Abgebrochene Kasse": a snapshot of a checkout that has not (yet) become an order –
+ * stored when the customer reaches the payment step (contact data known) or closes the
+ * Express-Kauf wallet sheet. Runtime data (`data/checkout-drafts.json` or Postgres),
+ * deleted when an order is created from the same session and after 30 days.
+ * See docs/PAYMENTS.md → „Abgebrochene Kasse“.
+ */
+export interface CheckoutDraft {
+  /** Random id generated in the browser (kept in sessionStorage). */
+  id: string;
+  source: "checkout" | "express";
+  createdAt: string;
+  updatedAt: string;
+  /** Checkout step the snapshot was taken at (4 = contact data done, 5 = payment step). */
+  step?: number;
+  locale?: string;
+  contact?: { firstName: string; lastName: string; email: string; phone: string };
+  recipient?: { firstName: string; lastName: string; company?: string; street: string; houseNumber: string; addition?: string; zip: string; city: string; phone: string };
+  delivery?: { date: string; windowId?: string; windowLabel?: string };
+  /** Cart lines as resolved from the catalog at snapshot time. */
+  lines: { productId: string; name: string; sizeLabel?: string; color?: string; quantity: number; unitPrice?: number; extras?: { name: string; quantity: number }[] }[];
+  couponCode?: string;
+  /** Server-side estimate (EUR): the full total incl. delivery when zone and day are known, else goods only. */
+  totalEstimate?: number;
+  /** True when `totalEstimate` includes delivery and coupon. */
+  totalComplete?: boolean;
+  /** Express-Kauf: what the wallet revealed before payment (Apple/Google release name, e-mail and phone only on payment). */
+  express?: { wallet?: string; postalCode?: string; city?: string; country?: string };
+}

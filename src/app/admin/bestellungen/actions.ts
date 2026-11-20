@@ -7,6 +7,8 @@ import { requireAdmin } from "@/lib/admin-session";
 import { ORDER_MAIL_LABELS, sendOrderMails, sendOrderStatusUpdate, sendPartnerCancellation, sendPartnerOrder, type MailResult, type OrderMailKind } from "@/lib/mail";
 import { attachFloristBudgets, getFloristBudgets } from "@/lib/florist-budget";
 import { releaseStock } from "@/lib/orders";
+import { expireStaleOrders } from "@/lib/stale-orders";
+import { deleteCheckoutDraft, pruneCheckoutDrafts } from "@/lib/checkout-drafts";
 import { bookCourier, cancelCourier } from "@/lib/courier";
 import { sendManualReviewRequest } from "@/lib/mail/review-requests";
 import { formatDateTime } from "@/lib/format";
@@ -334,5 +336,39 @@ export async function sendPartnerCancellationAction(_prev: OrderActionState, for
     return r;
   } catch (e) {
     return { ok: false, message: e instanceof Error ? e.message : "Senden fehlgeschlagen." };
+  }
+}
+
+/* ---------------- Unpaid orders & abandoned checkouts ---------------- */
+
+/** "Unbezahlte jetzt bereinigen": the same run as the hourly cron (`/api/cron/stale-orders`). */
+export async function expireStaleOrdersAction(): Promise<OrderActionState> {
+  try {
+    await requireAdmin();
+    const r = await expireStaleOrders();
+    const pruned = await pruneCheckoutDrafts().catch(() => 0);
+    revalidatePath("/admin/bestellungen");
+    revalidatePath("/admin");
+    const parts = [
+      `${r.expired.length} Bestellung(en) als abgebrochen markiert (Bestand freigegeben)`,
+      ...(r.confirmed.length ? [`${r.confirmed.length} nachträglich als bezahlt bestätigt`] : []),
+      ...(r.skipped.length ? [`${r.skipped.length} übersprungen (Zahlung läuft noch oder Stripe nicht erreichbar)`] : []),
+      ...(pruned ? [`${pruned} abgebrochene Kasse(n) älter als 30 Tage gelöscht`] : []),
+    ];
+    return { ok: true, message: `${parts.join(", ")}.` };
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Bereinigen fehlgeschlagen." };
+  }
+}
+
+/** Deletes one "Abgebrochene Kasse" entry. */
+export async function deleteCheckoutDraftAction(_prev: OrderActionState, formData: FormData): Promise<OrderActionState> {
+  try {
+    await requireAdmin();
+    const removed = await deleteCheckoutDraft(String(formData.get("id") ?? ""));
+    revalidatePath("/admin/bestellungen");
+    return removed ? { ok: true, message: "Eintrag gelöscht." } : { ok: false, message: "Eintrag nicht gefunden." };
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Löschen fehlgeschlagen." };
   }
 }

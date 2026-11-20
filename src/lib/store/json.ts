@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { randomBytes } from "node:crypto";
 import type { DocumentStore, StoreKind } from "./types";
 
 /**
@@ -81,7 +82,8 @@ export class JsonStore implements DocumentStore {
   async set(kind: StoreKind, name: string, value: unknown): Promise<void> {
     const file = this.file(kind, name);
     await fs.mkdir(path.dirname(file), { recursive: true });
-    const tmp = `${file}.${process.pid}.${Date.now()}.tmp`;
+    // Unique per write: two writes of the same document in the same millisecond must not share a temp file.
+    const tmp = `${file}.${process.pid}.${Date.now()}.${randomBytes(4).toString("hex")}.tmp`;
     try {
       await fs.writeFile(tmp, JSON.stringify(value, null, 2) + "\n", "utf8");
       await fs.rename(tmp, file);

@@ -5,8 +5,9 @@ import { PLZ_SERVED, addAmourToCart } from "./helpers";
  * Stripe path of checkout step 5 without Stripe keys in the environment: the methods
  * endpoint is intercepted to answer "provider stripe" with the shop's PUBLIC publishable
  * key (read from the live site at run time, never stored or printed). Elements run in
- * deferred mode, so no PaymentIntent is ever created; `/api/orders` and Stripe's
- * PaymentIntent endpoints are intercepted as a safety net and must not be reached.
+ * deferred mode, so no PaymentIntent is ever created. `/api/orders` is intercepted (a fake
+ * pending order whose client secret is never confirmed) and Stripe's PaymentIntent
+ * endpoints are blocked.
  *
  * Opt-in (needs internet + js.stripe.com): E2E_STRIPE_UI=1 npx playwright test stripe-inline
  */
@@ -27,6 +28,7 @@ test.describe("Stripe Payment Element inline @stripe", () => {
 
   async function interceptPayments(page: Page) {
     const orderCalls: string[] = [];
+    const notes: Record<string, unknown>[] = [];
     await page.route("**/api/payments/methods", (route) => route.fulfill({
       json: {
         ok: true,
@@ -40,11 +42,20 @@ test.describe("Stripe Payment Element inline @stripe", () => {
         subscriptionCheckout: false,
       },
     }));
-    await page.route("**/api/orders**", (route) => { orderCalls.push(route.request().url()); return route.fulfill({ status: 500, json: { ok: false, message: "intercepted" } }); });
+    await page.route("**/api/orders**", (route) => {
+      const url = route.request().url();
+      if (url.includes("/api/orders/payment-note")) {
+        notes.push(route.request().postDataJSON() as Record<string, unknown>);
+        return route.fulfill({ json: { ok: true, added: true } });
+      }
+      orderCalls.push(url);
+      // A pending order as the server would create it – its secret is never confirmed here.
+      return route.fulfill({ status: 201, json: { ok: true, id: "BQ-E2EFAKE", token: "f".repeat(24), status: "received", payment: { provider: "stripe", status: "pending", clientSecret: "pi_e2e_fake_secret_e2e" } } });
+    });
     await page.route("**/api/express/**", (route) => route.fulfill({ status: 500, json: { ok: false, code: "unavailable", message: "intercepted" } }));
     // Never create or confirm a real PaymentIntent.
     await page.route(/api\.stripe\.com\/v1\/payment_intents/, (route) => route.abort());
-    return orderCalls;
+    return { orderCalls, notes };
   }
 
   async function reachPaymentStep(page: Page) {
@@ -87,10 +98,10 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     expect(scrollWidth).toBeLessThanOrEqual(innerWidth);
   }
 
-  test("renders the Payment Element under the selected method, submits before any order", async ({ page }) => {
+  test("renders the Payment Element under the selected method; empty fields still create the (pending) order", async ({ page }) => {
     test.slow();
     test.skip(!publishableKey, "public publishable key not reachable");
-    const orderCalls = await interceptPayments(page);
+    const { orderCalls, notes } = await interceptPayments(page);
     await reachPaymentStep(page);
 
     const choose = async (label: string) => {
@@ -122,10 +133,18 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     await noHorizontalOverflow(page);
     await page.screenshot({ path: "test-results/stripe-inline-card.png", fullPage: true });
 
-    /* ---- "Jetzt kaufen" with empty card fields: Stripe's submit() stops it – no order ---- */
+    /* ---- "Jetzt kaufen" with empty card fields: Stripe's submit() stops the payment, but the
+       order exists (the team sees the contact data) with the note "Kartenangaben unvollständig" ---- */
     await buy.click();
     await expect(page.getByRole("alert").first()).toBeVisible({ timeout: 15_000 });
-    expect(orderCalls).toEqual([]);
+    expect(orderCalls).toHaveLength(1);
+    await expect.poll(() => notes.length).toBe(1);
+    expect(notes[0]).toMatchObject({ orderId: "BQ-E2EFAKE", reason: "incomplete", method: "card" });
+
+    /* ---- A second click reuses the same order – no new request ---- */
+    await buy.click();
+    await expect.poll(() => notes.length).toBe(2);
+    expect(orderCalls).toHaveLength(1);
 
     /* ---- Klarna: the element moves under Klarna ---- */
     await choose("Klarna");
@@ -135,7 +154,7 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     await expect(buy).toBeEnabled({ timeout: 30_000 });
     await noHorizontalOverflow(page);
     await page.screenshot({ path: "test-results/stripe-inline-klarna.png", fullPage: true });
-    expect(orderCalls).toEqual([]);
+    expect(orderCalls).toHaveLength(1);
   });
 
   test("product page: express purchase never breaks the layout (shown only where a wallet is available)", async ({ page }) => {
