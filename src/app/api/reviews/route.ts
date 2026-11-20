@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
-import type { ReviewConsent, ReviewSubmission, ReviewSubmissionPhoto } from "@/types/reminders";
+import type { ReviewConsent, ReviewSubmission, ReviewSubmissionPhoto, ReviewSubmissionVideo } from "@/types/reminders";
 import { getAllProducts, getOrderById, updateOrder } from "@/lib/cms";
 import { readFoundVia, type FoundVia } from "@/lib/found-via";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import { tokenMatches } from "@/lib/mail/reminders";
 import { getReviewSubmissions, hasSubmittedReview, markReviewSubmitted, newSubmissionId, saveReviewSubmissions } from "@/lib/mail/review-requests";
 import { collectReviewPhotos, MAX_REVIEW_REQUEST_BYTES, readReviewFields, REVIEW_CONSENT_TEXT, validateReviewFields, type ReviewFields } from "@/lib/review-submission";
-import { deleteReviewPhoto, processReviewPhoto, storeReviewPhoto, UploadError } from "@/lib/uploads";
+import { REVIEW_VIDEO_ID_RE } from "@/lib/review-video";
+import { deleteReviewPhoto, processReviewPhoto, readReviewVideoManifest, reviewVideoUrl, storeReviewPhoto, UploadError, writeReviewVideoManifest } from "@/lib/uploads";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -15,7 +16,8 @@ const invalid = () => NextResponse.json({ ok: false, message: "Ungültige Anfrag
 
 /**
  * POST /api/reviews
- * multipart/form-data: order, token, name, rating, text, consent, website (honeypot), photos (0–3 files)
+ * multipart/form-data: order, token, name, rating, text, consent, website (honeypot), photos (0–3 files),
+ * video (optional upload id of a finished chunked upload – see /api/reviews/video)
  * (application/json with the same text fields is still accepted, without photos).
  *
  * Stores a customer review as "pending" in data/review-submissions.json. Photos are
@@ -35,6 +37,7 @@ export async function POST(req: Request) {
   let fields: ReviewFields;
   let files: File[] = [];
   let foundVia: FoundVia | null = null;
+  let videoId = "";
   const contentType = req.headers.get("content-type") ?? "";
   if (contentType.startsWith("multipart/form-data")) {
     let form: FormData;
@@ -49,6 +52,8 @@ export async function POST(req: Request) {
     const photos = collectReviewPhotos(form);
     if (photos.error) return NextResponse.json({ ok: false, errors: { photos: photos.error }, message: photos.error }, { status: 422 });
     files = photos.files;
+    videoId = typeof form.get("video") === "string" ? String(form.get("video")).trim() : "";
+    if (videoId && !REVIEW_VIDEO_ID_RE.test(videoId)) return invalid();
   } else {
     let body: unknown;
     try {
@@ -74,6 +79,27 @@ export async function POST(req: Request) {
   }
   if (await hasSubmittedReview(order.id)) {
     return NextResponse.json({ ok: false, message: "Für diese Bestellung wurde bereits eine Bewertung abgegeben. Danke!" }, { status: 409 });
+  }
+
+  // The video was uploaded beforehand (chunked); it must belong to this order and be complete.
+  let video: ReviewSubmissionVideo | undefined;
+  const videoManifest = videoId ? await readReviewVideoManifest(videoId) : null;
+  if (videoId) {
+    if (!videoManifest || videoManifest.orderId !== order.id || videoManifest.status !== "complete" || !videoManifest.poster) {
+      const message = "Das Video wurde nicht vollständig hochgeladen. Bitte entferne es oder versuch es noch einmal.";
+      return NextResponse.json({ ok: false, errors: { video: message }, message }, { status: 422 });
+    }
+    video = {
+      id: videoManifest.id,
+      url: reviewVideoUrl(videoManifest),
+      contentType: videoManifest.type,
+      bytes: videoManifest.size,
+      duration: videoManifest.duration,
+      posterKey: videoManifest.poster.key,
+      posterUrl: videoManifest.poster.url,
+      width: videoManifest.poster.width,
+      height: videoManifest.poster.height,
+    };
   }
 
   // Decode every photo before storing any, so one bad file stores nothing.
@@ -109,6 +135,7 @@ export async function POST(req: Request) {
       rating: fields.rating as ReviewSubmission["rating"],
       text: fields.text,
       ...(stored.length ? { photos: stored } : {}),
+      ...(video ? { video } : {}),
       consent,
       // Shop language of the order – the review is shown with "translated from" notes in other languages.
       ...(order.locale && order.locale !== "de" ? { lang: order.locale } : {}),
@@ -118,11 +145,12 @@ export async function POST(req: Request) {
     list.push(submission);
     await saveReviewSubmissions(list);
     await markReviewSubmitted(order.id, createdAt, consent);
+    if (videoManifest) await writeReviewVideoManifest({ ...videoManifest, status: "submitted" });
     if (foundVia) {
       const answer = foundVia;
       await updateOrder(order.id, (o) => ({ ...o, foundVia: answer })).catch((err: unknown) => console.warn("[reviews] found-via not stored", err));
     }
-    return NextResponse.json({ ok: true, photos: stored.length }, { status: 201 });
+    return NextResponse.json({ ok: true, photos: stored.length, ...(video ? { video: true } : {}) }, { status: 201 });
   } catch (err) {
     console.error("[reviews] store failed", err);
     await Promise.all(stored.map((p) => deleteReviewPhoto(p.key).catch(() => undefined)));

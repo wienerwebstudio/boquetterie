@@ -186,6 +186,10 @@ const product: NonNullable<PartialMessages["product"]> = {
     close: "Fotoğrafı kapat",
     show: "Fotoğraf {index} göster",
   },
+  reviewVideo: {
+    videoOf: "{author} tarafından video",
+    caption: "Müşteri videosu · {duration}",
+  },
 };
 
 export default product;

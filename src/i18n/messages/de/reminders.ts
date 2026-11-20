@@ -110,6 +110,11 @@ const reminders = {
       photosTooBigTotal: "Die Fotos sind zusammen zu groß. Bitte weniger oder kleinere Fotos wählen.",
       photosTooBig: "Die Fotos sind zu groß. Bitte weniger oder kleinere Fotos wählen.",
       saveFailed: "Die Bewertung konnte nicht gespeichert werden. Bitte versuch es noch einmal.",
+      videoType: "Bitte ein Video als MP4, MOV oder WebM auswählen.",
+      videoTooBig: "Das Video ist zu groß (maximal {mb} MB).",
+      videoTooLong: "Das Video ist zu lang (maximal {seconds} Sekunden). Bitte kürze es und wähle es noch einmal aus.",
+      videoUnreadable: "Dieses Video kann dein Browser nicht öffnen. Bitte als MP4 speichern oder ein anderes Video wählen.",
+      videoUploadFailed: "Das Video konnte nicht hochgeladen werden. Bitte versuch es noch einmal.",
     },
     foundVia: {
       question: "Wie hast du uns gefunden?",
@@ -146,8 +151,15 @@ const reminders = {
     removePhoto: "Foto {number} entfernen",
     addMorePhotos: "Weiteres Foto hinzufügen",
     addPhotos: "Fotos hinzufügen",
+    video: "Video vom Strauß",
+    videoHint: "Ein kurzes Video, höchstens {seconds} Sekunden (MP4, MOV oder WebM, max. {mb} MB). Es erscheint erst, nachdem wir es geprüft haben.",
+    addVideo: "Video hinzufügen",
+    removeVideo: "Video entfernen",
+    videoPreviewAlt: "Vorschaubild des Videos „{name}“",
+    videoLength: "Länge {duration}",
+    uploadingVideo: "Video wird hochgeladen … {percent} %",
     /** Shown next to the consent checkbox; the German wording is stored with the review as consent record. */
-    consent: "Ich bin einverstanden, dass Blumora meine Bewertung mit Vornamen und die hochgeladenen Fotos auf blumora.at zeigt.",
+    consent: "Ich bin einverstanden, dass Blumora meine Bewertung mit Vornamen und die hochgeladenen Fotos und Videos auf blumora.at zeigt.",
     /** "{link}" is the privacy policy link. */
     footer: "Deine Bewertung wird vor der Veröffentlichung von uns gelesen. Bestellnummer {orderId}. Mehr dazu in der {link}.",
     privacyLink: "Datenschutzerklärung",

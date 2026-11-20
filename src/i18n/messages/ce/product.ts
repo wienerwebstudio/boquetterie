@@ -186,6 +186,10 @@ const product: NonNullable<PartialMessages["product"]> = {
     close: "Сурт дӀакъовла",
     show: "Сурт {index} гайта",
   },
+  reviewVideo: {
+    videoOf: "{author}: видео",
+    caption: "Клиентан видео · {duration}",
+  },
 };
 
 export default product;

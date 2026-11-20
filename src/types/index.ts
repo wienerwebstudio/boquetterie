@@ -181,6 +181,8 @@ export interface Review {
   demo: boolean;
   /** Customer photos accepted by an admin (only shown for real, verified reviews). */
   photos?: ReviewPhoto[];
+  /** One short customer video (max. 15 s) accepted by an admin; only shown for real, verified reviews. */
+  video?: ReviewVideo;
   /** Language the review was written in (shop locale, e.g. "tr"). Missing = German. */
   lang?: string;
   /**
@@ -194,6 +196,19 @@ export interface ReviewPhoto {
   src: string;
   /** e.g. "Kundenfoto zu Red Passion" */
   alt: string;
+}
+
+export interface ReviewVideo {
+  /** `/media/review-videos/<id>/video.<mp4|mov|webm>` – served with HTTP Range support. */
+  src: string;
+  /** Poster frame (JPEG, generated in the browser, re-encoded on the server). */
+  poster: string;
+  /** e.g. "Kundenvideo zu Red Passion" */
+  alt: string;
+  /** Length in seconds as measured by the customer's browser. */
+  duration?: number;
+  width?: number;
+  height?: number;
 }
 
 export interface SubscriptionPlan {

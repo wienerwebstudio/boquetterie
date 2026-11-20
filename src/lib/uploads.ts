@@ -5,6 +5,18 @@ import crypto from "node:crypto";
 import sharp, { type Metadata } from "sharp";
 import { slugify } from "@/lib/format";
 import { MAX_REVIEW_PHOTO_BYTES } from "@/lib/review-submission";
+import {
+  chunkCount,
+  expectedChunkSize,
+  mapRangeToChunks,
+  MAX_REVIEW_VIDEO_CHUNKS,
+  REVIEW_VIDEO_CHUNK_BYTES,
+  REVIEW_VIDEO_ID_RE,
+  reviewVideoKeys,
+  videoMagicMatches,
+  type ByteRange,
+  type ReviewVideoType,
+} from "@/lib/review-video";
 
 /**
  * Upload storage for admin images (product photos, hero images, …) and customer
@@ -144,9 +156,10 @@ export function publicUrl(key: string) {
 
 interface BlobMeta { contentType?: string; bytes?: number; uploadedAt?: string }
 
-async function blobStore() {
+/** `strong` consistency for review videos: chunks and manifest are read right after another function wrote them. */
+async function blobStore(consistency: "eventual" | "strong" = "eventual") {
   const { getStore } = await import("@netlify/blobs");
-  return getStore({ name: BLOB_STORE_NAME });
+  return getStore(consistency === "strong" ? { name: BLOB_STORE_NAME, consistency } : { name: BLOB_STORE_NAME });
 }
 
 /* ---------------- storage primitives (all drivers) ---------------- */
@@ -570,4 +583,230 @@ export async function readOutreachFile(key: string): Promise<Buffer | null> {
   }
   const file = await readStoredMedia(key);
   return file ? Buffer.from(file.data) : null;
+}
+
+/* ---------------- customer review videos (chunked) ---------------- */
+
+/**
+ * Upload state of one review video, stored next to its chunks as
+ * `review-videos/<id>/manifest.json` (all drivers). Status:
+ *  - uploading: chunks are arriving
+ *  - complete: every chunk is there, the poster is stored – can be attached to a review
+ *  - submitted: attached to a pending review (only admins can play it)
+ *  - approved: published with the review (public)
+ */
+export interface ReviewVideoManifest {
+  id: string;
+  orderId: string;
+  type: ReviewVideoType;
+  size: number;
+  /** Seconds, as measured in the customer's browser. */
+  duration: number;
+  chunkSize: number;
+  chunks: number;
+  status: "uploading" | "complete" | "submitted" | "approved";
+  createdAt: string;
+  completedAt?: string;
+  poster?: { key: string; url: string; width: number; height: number };
+}
+
+/** Public URL of a review video – always the `/media` route (it answers Range requests). */
+export function reviewVideoUrl(manifest: Pick<ReviewVideoManifest, "id" | "type">) {
+  return `/media/${reviewVideoKeys(manifest.id).video(manifest.type)}`;
+}
+
+/** Sizes of all chunks of the video. */
+export function reviewVideoChunkSizes(manifest: Pick<ReviewVideoManifest, "size" | "chunkSize">): number[] {
+  return Array.from({ length: chunkCount(manifest.size, manifest.chunkSize) }, (_, i) => expectedChunkSize(manifest.size, i, manifest.chunkSize));
+}
+
+/** Reads a stored object with the current driver; `range` is inclusive. Null when missing. */
+async function readObject(key: string, range?: { from: number; to: number }): Promise<Uint8Array | null> {
+  const driver = getUploadDriver();
+  if (driver === "s3") {
+    const { GetObjectCommand } = await import("@aws-sdk/client-s3");
+    const client = await s3Client();
+    try {
+      const res = await client.send(new GetObjectCommand({ Bucket: s3Config().bucket, Key: objectKey(key), ...(range ? { Range: `bytes=${range.from}-${range.to}` } : {}) }));
+      return (await res.Body?.transformToByteArray()) ?? null;
+    } catch (e) {
+      const name = (e as { name?: string }).name;
+      if (name === "NoSuchKey" || name === "NotFound") return null;
+      throw e;
+    }
+  }
+  if (driver === "netlify") {
+    const store = await blobStore("strong");
+    const data = await store.get(key, { type: "arrayBuffer" });
+    if (data === null) return null;
+    const bytes = new Uint8Array(data);
+    return range ? bytes.subarray(range.from, range.to + 1) : bytes;
+  }
+  const target = path.resolve(LOCAL_ROOT, key);
+  if (!target.startsWith(LOCAL_ROOT + path.sep)) return null;
+  try {
+    if (!range) return new Uint8Array(await fs.readFile(target));
+    const handle = await fs.open(target, "r");
+    try {
+      const length = range.to - range.from + 1;
+      const buf = Buffer.alloc(length);
+      const { bytesRead } = await handle.read(buf, 0, length, range.from);
+      return new Uint8Array(buf.buffer, buf.byteOffset, bytesRead);
+    } finally {
+      await handle.close();
+    }
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") return null;
+    throw e;
+  }
+}
+
+/** Size of a stored object in bytes, or null when it does not exist. */
+async function objectSize(key: string): Promise<number | null> {
+  const driver = getUploadDriver();
+  if (driver === "s3") {
+    const { HeadObjectCommand } = await import("@aws-sdk/client-s3");
+    const client = await s3Client();
+    try {
+      const res = await client.send(new HeadObjectCommand({ Bucket: s3Config().bucket, Key: objectKey(key) }));
+      return res.ContentLength ?? null;
+    } catch (e) {
+      const name = (e as { name?: string }).name;
+      if (name === "NotFound" || name === "NoSuchKey") return null;
+      throw e;
+    }
+  }
+  if (driver === "netlify") {
+    const store = await blobStore("strong");
+    const meta = await store.getMetadata(key);
+    if (meta === null) return null;
+    const bytes = Number((meta.metadata as BlobMeta).bytes);
+    return Number.isFinite(bytes) ? bytes : null;
+  }
+  const target = path.resolve(LOCAL_ROOT, key);
+  if (!target.startsWith(LOCAL_ROOT + path.sep)) return null;
+  try {
+    return (await fs.stat(target)).size;
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") return null;
+    throw e;
+  }
+}
+
+/** Deletes an object; a missing object is fine. */
+async function removeObject(key: string) {
+  if (getUploadDriver() === "netlify") {
+    const store = await blobStore("strong");
+    await store.delete(key);
+    return;
+  }
+  try {
+    await deleteObject(key);
+  } catch (e) {
+    if (e instanceof UploadError && e.status === 404) return;
+    throw e;
+  }
+}
+
+export function newReviewVideoId() {
+  return crypto.randomBytes(12).toString("hex");
+}
+
+export async function readReviewVideoManifest(id: string): Promise<ReviewVideoManifest | null> {
+  if (!REVIEW_VIDEO_ID_RE.test(id)) return null;
+  const raw = await readObject(reviewVideoKeys(id).manifest);
+  if (!raw) return null;
+  try {
+    const m = JSON.parse(Buffer.from(raw).toString("utf8")) as ReviewVideoManifest;
+    return m && m.id === id ? m : null;
+  } catch {
+    return null;
+  }
+}
+
+export async function writeReviewVideoManifest(manifest: ReviewVideoManifest) {
+  await putObject(reviewVideoKeys(manifest.id).manifest, Buffer.from(JSON.stringify(manifest)), "application/json");
+}
+
+/** Starts an upload: writes the manifest with status "uploading". Inputs are validated by the route. */
+export async function createReviewVideoUpload(input: { orderId: string; type: ReviewVideoType; size: number; duration: number }): Promise<ReviewVideoManifest> {
+  const manifest: ReviewVideoManifest = {
+    id: newReviewVideoId(),
+    orderId: input.orderId,
+    type: input.type,
+    size: input.size,
+    duration: Math.round(input.duration * 100) / 100,
+    chunkSize: REVIEW_VIDEO_CHUNK_BYTES,
+    chunks: chunkCount(input.size),
+    status: "uploading",
+    createdAt: new Date().toISOString(),
+  };
+  await writeReviewVideoManifest(manifest);
+  return manifest;
+}
+
+/**
+ * Stores chunk `index`. Its length must be exactly what the declared file size
+ * implies; chunk 0 must start with the magic bytes of the declared container.
+ */
+export async function storeReviewVideoChunk(manifest: ReviewVideoManifest, index: number, data: Buffer): Promise<void> {
+  const expected = expectedChunkSize(manifest.size, index, manifest.chunkSize);
+  if (expected < 0) throw new UploadError(400, "Ungültiger Videoteil.");
+  if (data.length !== expected) throw new UploadError(400, "Ein Teil des Videos ist unvollständig angekommen. Bitte noch einmal versuchen.");
+  if (index === 0 && !videoMagicMatches(manifest.type, data.subarray(0, 16))) {
+    throw new UploadError(415, "Die Datei ist kein unterstütztes Video (MP4, MOV oder WebM).");
+  }
+  await putObject(reviewVideoKeys(manifest.id).chunk(index), data, "application/octet-stream");
+}
+
+/** Index of the first missing or wrongly sized chunk, or -1 when the upload is complete. */
+export async function firstMissingReviewVideoChunk(manifest: ReviewVideoManifest): Promise<number> {
+  const sizes = reviewVideoChunkSizes(manifest);
+  for (let i = 0; i < sizes.length; i++) {
+    if ((await objectSize(reviewVideoKeys(manifest.id).chunk(i))) !== sizes[i]) return i;
+  }
+  return -1;
+}
+
+/**
+ * Bytes `range` of a stored video, read from the chunks that hold it (the caller
+ * clamps the range first – see `clampRange`). Null when a chunk is missing.
+ */
+export async function readReviewVideoRange(manifest: ReviewVideoManifest, range: ByteRange): Promise<Uint8Array | null> {
+  const keys = reviewVideoKeys(manifest.id);
+  const parts: Uint8Array[] = [];
+  for (const s of mapRangeToChunks(reviewVideoChunkSizes(manifest), range)) {
+    const part = await readObject(keys.chunk(s.index), { from: s.from, to: s.to });
+    if (!part || part.byteLength !== s.to - s.from + 1) return null;
+    parts.push(part);
+  }
+  if (parts.length === 1) return parts[0];
+  const out = new Uint8Array(parts.reduce((n, p) => n + p.byteLength, 0));
+  let offset = 0;
+  for (const p of parts) {
+    out.set(p, offset);
+    offset += p.byteLength;
+  }
+  return out;
+}
+
+/** One whole chunk (to stream a full 200 response). */
+export function readReviewVideoChunk(manifest: ReviewVideoManifest, index: number): Promise<Uint8Array | null> {
+  return readObject(reviewVideoKeys(manifest.id).chunk(index));
+}
+
+/** Removes every chunk, the poster and the manifest of a video. Missing parts are ignored. */
+export async function deleteReviewVideo(id: string): Promise<void> {
+  if (!REVIEW_VIDEO_ID_RE.test(id)) throw new UploadError(400, "Ungültige Video-ID.");
+  const manifest = await readReviewVideoManifest(id);
+  const keys = reviewVideoKeys(id);
+  if (getUploadDriver() === "local") {
+    const dir = path.resolve(LOCAL_ROOT, "review-videos", id);
+    if (dir.startsWith(LOCAL_ROOT + path.sep)) await fs.rm(dir, { recursive: true, force: true });
+  } else {
+    const count = manifest ? manifest.chunks : MAX_REVIEW_VIDEO_CHUNKS;
+    for (let i = 0; i < count; i++) await removeObject(keys.chunk(i));
+    await removeObject(keys.manifest);
+  }
+  if (manifest?.poster) await deleteReviewPhoto(manifest.poster.key);
 }

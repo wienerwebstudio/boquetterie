@@ -186,6 +186,10 @@ const product: NonNullable<PartialMessages["product"]> = {
     close: "بستن عکس",
     show: "نمایش عکس {index}",
   },
+  reviewVideo: {
+    videoOf: "ویدیو از {author}",
+    caption: "ویدیوی مشتری · {duration}",
+  },
 };
 
 export default product;

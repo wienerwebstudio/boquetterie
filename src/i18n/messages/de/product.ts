@@ -186,5 +186,9 @@ const product = {
     close: "Foto schließen",
     show: "Foto {index} zeigen",
   },
+  reviewVideo: {
+    videoOf: "Video von {author}",
+    caption: "Kundenvideo · {duration}",
+  },
 };
 export default product;

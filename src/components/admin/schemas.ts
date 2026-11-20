@@ -554,7 +554,20 @@ export const reviewSchema: EntitySchema = {
         },
       ],
     },
+    {
+      title: "Kundenvideo",
+      description: "Video aus einer eingereichten Bewertung (max. 15 s, freigegeben unter „Eingereichte Bewertungen“). Videopfad leeren nimmt das Video aus dem Shop; die Datei bleibt gespeichert.",
+      fields: [
+        { key: "video.src", label: "Videopfad", type: "text", span: "full", placeholder: "/media/review-videos/…/video.mp4" },
+        { key: "video.poster", label: "Vorschaubild", type: "image" },
+        { key: "video.alt", label: "Alternativtext", type: "text", placeholder: "Kundenvideo zu Red Passion" },
+        { key: "video.duration", label: "Länge (Sekunden)", type: "number", min: 0, max: 16, step: 0.01, span: "third" },
+        { key: "video.width", label: "Breite (px)", type: "number", min: 0, span: "third" },
+        { key: "video.height", label: "Höhe (px)", type: "number", min: 0, span: "third" },
+      ],
+    },
   ],
+  removeEmptyObjectsAt: ["video"],
   columns: [
     { key: "name", label: "Name" },
     { key: "rating", label: "Sterne", type: "rating" },

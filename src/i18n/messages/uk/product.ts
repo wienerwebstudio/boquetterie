@@ -186,6 +186,10 @@ const product: NonNullable<PartialMessages["product"]> = {
     close: "Закрити фото",
     show: "Показати фото {index}",
   },
+  reviewVideo: {
+    videoOf: "Відео від {author}",
+    caption: "Відео покупця · {duration}",
+  },
 };
 
 export default product;

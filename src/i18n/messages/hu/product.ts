@@ -186,6 +186,10 @@ const product: NonNullable<PartialMessages["product"]> = {
     close: "Fotó bezárása",
     show: "{index}. fotó megjelenítése",
   },
+  reviewVideo: {
+    videoOf: "{author} videója",
+    caption: "Vásárlói videó · {duration}",
+  },
 };
 
 export default product;

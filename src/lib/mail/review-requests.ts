@@ -151,13 +151,21 @@ export function reviewPhotoAlt(productName?: string | null) {
   return productName ? `Kundenfoto zu ${productName}` : "Kundenfoto";
 }
 
+/** Alt text of a customer video, e.g. "Kundenvideo zu Red Passion". */
+export function reviewVideoAlt(productName?: string | null) {
+  return productName ? `Kundenvideo zu ${productName}` : "Kundenvideo";
+}
+
 /**
  * Converts an accepted submission into a public review entry. `photoKeys` are the
- * photos the admin approved (all others are left out); `productName` feeds the alt text.
+ * photos the admin approved (all others are left out), `video` whether the video is
+ * approved; `productName` feeds the alt texts.
  */
-export function submissionToReview(s: ReviewSubmission, id: string, opts: { photoKeys?: readonly string[]; productName?: string | null } = {}): Review {
+export function submissionToReview(s: ReviewSubmission, id: string, opts: { photoKeys?: readonly string[]; video?: boolean; productName?: string | null } = {}): Review {
   const keep = new Set(opts.photoKeys ?? []);
   const photos = (s.photos ?? []).filter((p) => keep.has(p.key)).map((p) => ({ src: p.url, alt: reviewPhotoAlt(opts.productName) }));
+  const v = opts.video && s.video ? s.video : null;
+  const video = v ? { src: v.url, poster: v.posterUrl, alt: reviewVideoAlt(opts.productName), duration: v.duration, width: v.width, height: v.height } : null;
   return {
     id,
     name: s.name,
@@ -168,6 +176,7 @@ export function submissionToReview(s: ReviewSubmission, id: string, opts: { phot
     date: s.createdAt.slice(0, 10),
     demo: false,
     ...(photos.length ? { photos } : {}),
+    ...(video ? { video } : {}),
     ...(s.lang && s.lang !== "de" ? { lang: s.lang } : {}),
   };
 }

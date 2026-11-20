@@ -1,8 +1,10 @@
 import type { Review } from "@/types";
 import { StarRating } from "@/components/ui/star-rating";
 import { ReviewPhotos } from "@/components/reviews/review-photos";
+import { ReviewVideo } from "@/components/reviews/review-video";
 import { ReviewLanguageNote } from "@/components/reviews/review-language";
 import { publicReviewPhotos } from "@/lib/review-submission";
+import { publicReviewVideo } from "@/lib/review-video";
 import { getI18n } from "@/i18n/server";
 import { LOCALE_INFO, type Locale } from "@/i18n/config";
 
@@ -37,6 +39,7 @@ export async function ProductReviews({ reviews, productName }: { reviews: Review
               <p className="mt-4 flex-1 font-serif text-[19px] leading-snug text-ink">{fmt(t.quote, { text: r.text })}</p>
               <ReviewLanguageNote review={r} className="mt-3" />
               <ReviewPhotos photos={publicReviewPhotos(r)} author={r.name} className="mt-4" />
+              <ReviewVideo video={publicReviewVideo(r)} author={r.name} className="mt-4" />
               <p className="mt-5 text-[13px] text-ink-muted">
                 <span className="font-semibold text-ink">{r.name}</span> · {formatMonth(r.date, locale)}
                 {r.verified && !r.demo && <span className="ml-2 text-success">{t.verified}</span>}

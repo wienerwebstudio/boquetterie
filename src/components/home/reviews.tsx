@@ -3,8 +3,10 @@ import type { HomepageContent, Review } from "@/types";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { StarRating } from "@/components/ui/star-rating";
 import { ReviewPhotos } from "@/components/reviews/review-photos";
+import { ReviewVideo } from "@/components/reviews/review-video";
 import { ReviewLanguageNote } from "@/components/reviews/review-language";
 import { publicReviewPhotos } from "@/lib/review-submission";
+import { publicReviewVideo } from "@/lib/review-video";
 import { getI18n } from "@/i18n/server";
 
 export async function Reviews({ content, reviews }: { content: HomepageContent["reviews"]; reviews: Review[] }) {
@@ -24,6 +26,7 @@ export async function Reviews({ content, reviews }: { content: HomepageContent["
               </blockquote>
               <ReviewLanguageNote review={r} className="mt-3" />
               <ReviewPhotos photos={publicReviewPhotos(r)} author={r.name} className="mt-4" />
+              <ReviewVideo video={publicReviewVideo(r)} author={r.name} className="mt-4" />
               <figcaption className="mt-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-line pt-4">
                 <div>
                   <p className="text-[14px] font-semibold text-ink">{r.name}</p>

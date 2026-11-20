@@ -13,7 +13,7 @@ export function publicReviewPhotos(review: Review): ReviewPhoto[] {
 }
 
 /** Wording of the required consent checkbox; stored with a timestamp for every review. */
-export const REVIEW_CONSENT_TEXT = "Ich bin einverstanden, dass Blumora meine Bewertung mit Vornamen und die hochgeladenen Fotos auf blumora.at zeigt.";
+export const REVIEW_CONSENT_TEXT = "Ich bin einverstanden, dass Blumora meine Bewertung mit Vornamen und die hochgeladenen Fotos und Videos auf blumora.at zeigt.";
 
 export const MAX_REVIEW_PHOTOS = 3;
 /** Per photo as it arrives at the server (the form shrinks photos before sending). */

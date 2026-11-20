@@ -170,4 +170,18 @@ describe("submissionToReview", () => {
     expect(submissionToReview(submission, "r9", { photoKeys: [] }).photos).toBeUndefined();
     expect(submissionToReview(submission, "r9").photos).toBeUndefined();
   });
+
+  it("publishes the video only when the admin approved it", () => {
+    const video = {
+      id: "0123456789abcdef01234567", url: "/media/review-videos/0123456789abcdef01234567/video.mp4", contentType: "video/mp4", bytes: 9_000_000, duration: 12.4,
+      posterKey: "reviews/2026/11/red-passion-video-cccccccc.jpg", posterUrl: "/media/reviews/2026/11/red-passion-video-cccccccc.jpg", width: 720, height: 1280,
+    };
+    const withVideo = { ...submission, video };
+    expect(submissionToReview(withVideo, "r9", { video: true, productName: "Red Passion" }).video).toEqual({
+      src: video.url, poster: video.posterUrl, alt: "Kundenvideo zu Red Passion", duration: 12.4, width: 720, height: 1280,
+    });
+    expect(submissionToReview(withVideo, "r9", { video: false }).video).toBeUndefined();
+    expect(submissionToReview(withVideo, "r9").video).toBeUndefined();
+    expect(submissionToReview(submission, "r9", { video: true }).video).toBeUndefined();
+  });
 });

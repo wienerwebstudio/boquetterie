@@ -86,6 +86,41 @@ Die vollständigen Objekt-Schlüssel lauten `<S3_PREFIX>/<jahr>/<monat>/<name>`;
 - Schlüssel `reviews/<jahr>/<monat>/<produkt-slug>-<hash>.jpg`, URL `/media/reviews/…` (lokal und Netlify) bzw. die S3-URL. Die Bestellnummer steht nicht im Namen.
 - Kundenfotos erscheinen nicht in der Medienbibliothek. Verworfene Bewertungen und nicht freigegebene Fotos werden beim Übernehmen/Verwerfen gelöscht.
 
+## Kundenvideos aus Bewertungen
+
+Zu einer Bewertung gehört höchstens **ein Video**: max. **15 Sekunden**, max. **60 MB**, `video/mp4`, `video/quicktime` (MOV) oder `video/webm`. Logik: `src/lib/review-video.ts` (Grenzen, Prüfungen, Range-Rechnung – rein, auch im Browser), Speicher in `src/lib/uploads.ts`, Browser-Teil in `src/lib/review-video-client.ts`.
+
+**Warum in Teilen:** Netlify Functions nehmen höchstens ca. 6 MB pro Anfrage an (Binärdaten werden unterwegs base64-kodiert). Der Browser schickt das Video deshalb in Teilen von **4 MB** (4.000.000 Bytes, base64 ≈ 5,3 MB).
+
+Ablauf (`/api/reviews/video`, öffentlich; jeder Schritt zuerst rate-limitiert, dann an Bestellnummer + Token gebunden – Bestellung zugestellt, noch nicht bewertet):
+
+1. Der Browser liest das Video in ein unsichtbares `<video>`: Länge (≤ 15,5 s, mit 0,5 s Toleranz), Breite/Höhe; dann wird ein Bild bei 0,5 s auf ein Canvas gezeichnet → **Vorschaubild (JPEG, max. 1280 px)**. Kann der Browser die Datei nicht öffnen (z. B. HEVC-MOV in Chrome unter Windows), gibt es eine Fehlermeldung statt eines Uploads.
+2. `POST` JSON `{ order, token, size, type, duration }` → prüft Typ, Größe, Länge → legt `review-videos/<id>/manifest.json` an (`id` = 24 Hex-Zeichen, zufällig), Antwort `{ upload, chunkSize, chunks }`. Rate-Limit 10 / Stunde.
+3. `PUT ?upload=<id>&index=<n>` mit den rohen Bytes, Header `x-review-order` / `x-review-token`. Jeder Teil muss genau die erwartete Länge haben (alle voll, nur der letzte kürzer); **Teil 0 wird an den Magic Bytes geprüft** (MP4/MOV: `ftyp`-Box, WebM: EBML `1A 45 DF A3`, passend zum angegebenen Typ). Gespeichert als `review-videos/<id>/chunk-000`, `chunk-001`, … Rate-Limit 120 / 10 min. Der Browser wiederholt einen Teil bei Netzwerk-/5xx-Fehlern zweimal.
+4. `POST` multipart `{ order, token, upload, poster }` → alle Teile vorhanden und richtig groß? Das Vorschaubild wird wie ein Kundenfoto verarbeitet (`reviews/<jahr>/<monat>/<slug>-video-<hash>.jpg`), Status `complete`. Rate-Limit 20 / Stunde.
+5. `POST /api/reviews` mit `video=<id>` hängt das Video an die Bewertung (`ReviewSubmission.video`), Status `submitted`.
+6. `DELETE ?upload=<id>` (gleiche Header) verwirft ein noch nicht zugeordnetes Video (Kund:in entfernt es nach einem Fehlversuch).
+
+Das Video wird erst beim Absenden hochgeladen (Fortschrittsbalken); scheitert danach die Bewertung, verwendet ein neuer Versuch das fertige Video wieder.
+
+**Freigabe:** Unter *Admin → Bewertungen → Eingereicht* steht das Video mit Vorschaubild und Häkchen „Video zeigen“. Übernehmen mit Häkchen → Status `approved`, die Bewertung bekommt `video: { src, poster, alt, duration, width, height }`. Ohne Häkchen oder beim Verwerfen werden alle Teile, das Manifest und das Vorschaubild gelöscht. Im Shop (Startseite, Produktseite; nur echte, verifizierte Bewertungen) erscheint `<video controls playsinline preload="none" poster=…>` – vor dem Klick auf Play wird nur das Vorschaubild geladen.
+
+**Auslieferung:** `/media/review-videos/<id>/video.<mp4|mov|webm>` (alle Treiber, auch S3 – die Teile liegen dort als eigene Objekte unter `<S3_PREFIX>/review-videos/<id>/`):
+
+- Vor der Freigabe nur für angemeldete Admins (sonst 404, `no-store`).
+- `Range: bytes=a-b` → `206` mit `Content-Range`; der Bereich wird auf die Teile abgebildet und zusammengesetzt. Antworten sind höchstens **4 MB** groß – auch `bytes=0-` bekommt nur den ersten Teil, der Player fragt den Rest nach. Safaris Probe `bytes=0-1` funktioniert. `206` ist `private` (kein geteilter Cache, der Bereiche vertauschen könnte), freigegebene Videos sonst ein Jahr im Browser-Cache.
+- Ohne `Range` → `200`, Teil für Teil gestreamt. Auf Netlify sind gestreamte Antworten auf ca. 20 MB begrenzt – Video-Player schicken aber immer `Range`.
+- Unpassende Endung, unbekannte ID oder noch nicht fertiger Upload → 404; Bereich hinter dem Dateiende → 416.
+
+Netlify Blobs: Videos lesen mit `consistency: "strong"` (Teile und Manifest werden direkt nach dem Schreiben von einer anderen Function gelesen).
+
+Grenzen und offene Punkte:
+
+- Die Länge misst der Browser des Kunden (der Server prüft den gemeldeten Wert und speichert ihn, parst das Video aber nicht). Größe, Typ, Teile und Magic Bytes prüft der Server.
+- Das Video wird nicht umkodiert: ein iPhone-HEVC-MOV spielt in Safari und auf den meisten Android-Geräten, aber nicht in jedem Chrome/Firefox unter Windows/Linux. In diesem Fall lässt schon das Formular den Upload nicht zu, wenn der Browser der Kund:in die Datei nicht lesen kann; Besucher:innen mit anderem Browser sehen dann nur das Vorschaubild.
+- Abgebrochene Uploads (Formular nie abgeschickt) bleiben liegen, bis sie von Hand gelöscht werden (Ordner `review-videos/<id>/` mit Status `uploading`/`complete` im Manifest).
+- Lokaler Treiber: die Teile liegen unter `public/uploads/review-videos/<id>/` (zufällige ID, nicht verlinkt); ausgeliefert wird nur über `/media`.
+
 ## Grenzen
 
 | | Wert |
@@ -98,6 +133,8 @@ Die vollständigen Objekt-Schlüssel lauten `<S3_PREFIX>/<jahr>/<monat>/<name>`;
 | Rate-Limit Upload | 60 / 10 min pro IP |
 | Rate-Limit Liste/Löschen | 120 / min pro IP |
 | Kundenfotos | max. 3 pro Bewertung, je 10 MB, 1600 px, JPEG q80 |
+| Kundenvideo | max. 1 pro Bewertung, 15 s, 60 MB, MP4/MOV/WebM, Teile à 4 MB |
+| Rate-Limit Video (Start / Teile / Abschluss) | 10 / h, 120 / 10 min, 20 / h pro IP |
 | Rate-Limit `/media/…` | 600 / min pro IP |
 
 ## Docker / Persistenz

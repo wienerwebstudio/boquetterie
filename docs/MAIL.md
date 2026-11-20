@@ -150,9 +150,13 @@ Nur im Bewertungsformular (`/bewertung`), nicht in der Mail und nirgends öffent
 
 Das Formular unter `/bewertung` nimmt bis zu **3 Fotos** (JPEG, PNG, WebP, je max. 10 MB) mit Vorschau und Entfernen-Knopf an. Der Browser verkleinert sie vor dem Senden (max. 1600 px, damit drei Fotos in eine Anfrage passen – Netlify Functions nehmen höchstens ca. 6 MB pro Anfrage an). Der Server (`POST /api/reviews`, multipart) prüft zuerst das Rate-Limit, dann Felder, Einwilligung und Bestell-Token, erkennt das Format an den Bytes (`sharp`), dreht das Bild nach EXIF, entfernt alle Metadaten (EXIF, GPS), verkleinert auf max. 1600 px und speichert JPEG mit Qualität 80 – Details und Speicherorte in `docs/UPLOADS.md`. HEIC-Dateien kann das mitgelieferte `sharp` nicht dekodieren (nur AVIF aus der HEIF-Familie); iOS wandelt Fotos bei diesem Formular selbst in JPEG um, sonst gibt es eine verständliche Fehlermeldung.
 
-Pflicht ist das Häkchen *„Ich bin einverstanden, dass Blumora meine Bewertung mit Vornamen und die hochgeladenen Fotos auf blumora.at zeigt.“* – gespeichert mit Zeitpunkt und Wortlaut (siehe Datendateien).
+Pflicht ist das Häkchen *„Ich bin einverstanden, dass Blumora meine Bewertung mit Vornamen und die hochgeladenen Fotos und Videos auf blumora.at zeigt.“* – gespeichert mit Zeitpunkt und Wortlaut (siehe Datendateien).
 
 Im Shop erscheinen Fotos nur bei übernommenen, echten Bewertungen (`demo: false`, `verified: true`) als kleine Vorschaubilder unter dem Text (Produktseite und Startseite); ein Klick öffnet das Foto groß in einem Dialog. Die Produktgalerie bleibt unverändert.
+
+### Video in Bewertungen
+
+Zusätzlich ist **ein kurzes Video** (max. 15 Sekunden, MP4/MOV/WebM, max. 60 MB) möglich. Der Browser prüft Länge und Format, erzeugt ein Vorschaubild und lädt das Video beim Absenden in Teilen von 4 MB hoch (Fortschrittsanzeige) – Details in `docs/UPLOADS.md` → „Kundenvideos aus Bewertungen“. Das Video ist vor der Freigabe nur für Admins abspielbar; unter *Eingereicht* entscheidet das Häkchen „Video zeigen“ (wie bei Fotos), nicht freigegebene oder verworfene Videos werden gelöscht. Im Shop steht es mit Vorschaubild und Play-Knopf unter dem Text. Das Einwilligungs-Häkchen nennt seit der Video-Funktion „Fotos und Videos“.
 
 ## Schutz & Grenzen
 

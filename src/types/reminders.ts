@@ -67,6 +67,22 @@ export interface ReviewSubmissionPhoto {
   height: number;
 }
 
+export interface ReviewSubmissionVideo {
+  /** Upload id (24 hex) – the chunks live under `review-videos/<id>/`. */
+  id: string;
+  /** `/media/review-videos/<id>/video.<ext>` */
+  url: string;
+  contentType: string;
+  bytes: number;
+  /** Seconds, measured in the customer's browser (≤ 15.5). */
+  duration: number;
+  /** Poster frame, stored like a review photo (`reviews/<yyyy>/<mm>/…-poster-<hash>.jpg`). */
+  posterKey: string;
+  posterUrl: string;
+  width: number;
+  height: number;
+}
+
 export interface ReviewSubmission {
   id: string;
   createdAt: string; // ISO datetime
@@ -77,6 +93,8 @@ export interface ReviewSubmission {
   text: string;
   /** Up to three photos; only shown on the site if an admin accepts them. */
   photos?: ReviewSubmissionPhoto[];
+  /** At most one short video; only playable for others once an admin accepts it. */
+  video?: ReviewSubmissionVideo;
   consent?: ReviewConsent;
   /** Shop language of the order (`Locale`), i.e. the language the review is most likely written in. Missing = German. */
   lang?: string;
