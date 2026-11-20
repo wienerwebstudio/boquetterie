@@ -31,6 +31,8 @@ const offer: NonNullable<PartialMessages["offer"]> = {
   cancelledPayment: "Plaćanje nije završeno. Možete pokušati ponovo.",
   failed: "Plaćanje nije moglo započeti. Molimo pokušajte ponovo.",
   byArrangement: "Po dogovoru",
+  previewTitle: "Pregled – još nije poslano",
+  previewText: "Ova ponuda je još nacrt. Ovako će je vidjeti kupac. Plaćanje je moguće tek nakon što je poslana ili je link kopiran.",
 };
 
 export default offer;

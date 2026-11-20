@@ -89,4 +89,43 @@ test.describe("Angebote @slow", () => {
     await page.goto(new URL(link).pathname);
     await expect(page.getByRole("heading", { level: 1, name: "Thank you – already paid" })).toBeVisible();
   });
+
+  test("Entwurf: Link aus der Test-Mail zeigt eine Vorschau, Bezahlen ist gesperrt", async ({ page }) => {
+    test.slow();
+    const day = new Date(Date.now() + 9 * 86_400_000).toISOString().slice(0, 10);
+    await page.goto("/admin/login?next=%2Fadmin%2Fangebote%2Fneu");
+    await page.locator("input#password").fill(ADMIN_PASSWORD);
+    await page.getByRole("button", { name: "Anmelden" }).click();
+    await expect(page).toHaveURL(/\/admin\/angebote\/neu$/);
+
+    await page.locator("#c-first").fill("Vera");
+    await page.locator("#c-last").fill("Vorschau");
+    await page.locator("#c-email").fill("vera.vorschau@example.com");
+    await page.locator("[id^='items.0-title']").fill("Strauß zur Vorschau");
+    await page.locator("[id^='items.0-price']").fill("50");
+    await page.locator("#d-date").fill(day);
+    await page.locator("#r-street").fill("Universitätsring");
+    await page.locator("#r-no").fill("2");
+    await page.locator("#r-zip").fill("1010");
+    await page.locator("#r-first").fill("Vera");
+    await page.getByRole("button", { name: "Als Entwurf speichern" }).click();
+    await expect(page).toHaveURL(/\/admin\/angebote\/AN-[A-Z0-9]+(\?|$)/, { timeout: 30_000 });
+
+    const preview = page.getByRole("link", { name: "Vorschau ansehen" });
+    await expect(preview).toBeVisible();
+    const href = (await preview.getAttribute("href")) ?? "";
+    const token = href.split("/").pop() ?? "";
+    expect(token).toMatch(/^[A-Za-z0-9_-]{32}$/);
+
+    await page.goto(new URL(href, page.url()).pathname);
+    await dismissConsent(page);
+    await expect(page.getByRole("heading", { level: 1, name: "Dein persönliches Angebot" })).toBeVisible();
+    await expect(page.getByText("Strauß zur Vorschau")).toBeVisible();
+    await expect(page.getByTestId("offer-preview")).toContainText("Vorschau – noch nicht versendet");
+    await expect(page.getByRole("button", { name: /Jetzt bezahlen|Pay now/ })).toHaveCount(0);
+
+    // The server refuses to start a payment for a draft, whatever the browser sends.
+    const res = await page.request.post("/api/offers/pay", { data: { token, method: "card", acceptedTerms: true } });
+    expect(res.ok()).toBe(false);
+  });
 });

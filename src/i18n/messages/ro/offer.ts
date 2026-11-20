@@ -31,6 +31,8 @@ const offer: NonNullable<PartialMessages["offer"]> = {
   cancelledPayment: "Plata nu a fost finalizată. Poți încerca din nou.",
   failed: "Plata nu a putut fi inițiată. Te rugăm să încerci din nou.",
   byArrangement: "Conform înțelegerii",
+  previewTitle: "Previzualizare – încă netrimisă",
+  previewText: "Această ofertă este încă o ciornă. Așa o va vedea clientul. Plata este posibilă doar după ce a fost trimisă sau linkul ei a fost copiat.",
 };
 
 export default offer;

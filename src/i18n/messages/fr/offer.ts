@@ -31,6 +31,8 @@ const offer: NonNullable<PartialMessages["offer"]> = {
   cancelledPayment: "Le paiement n’a pas été finalisé. Vous pouvez réessayer.",
   failed: "Le paiement n’a pas pu être lancé. Veuillez réessayer.",
   byArrangement: "Selon accord",
+  previewTitle: "Aperçu – pas encore envoyé",
+  previewText: "Cette offre est encore un brouillon. Voici comment le client la verra. Le paiement n’est possible qu’une fois l’offre envoyée ou son lien copié.",
 };
 
 export default offer;

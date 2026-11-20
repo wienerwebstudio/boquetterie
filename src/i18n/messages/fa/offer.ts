@@ -31,6 +31,8 @@ const offer: NonNullable<PartialMessages["offer"]> = {
   cancelledPayment: "پرداخت تکمیل نشد. می‌توانید دوباره امتحان کنید.",
   failed: "شروع پرداخت ممکن نشد. لطفاً دوباره امتحان کنید.",
   byArrangement: "طبق توافق",
+  previewTitle: "پیش‌نمایش – هنوز ارسال نشده",
+  previewText: "این پیشنهاد هنوز پیش‌نویس است. مشتری آن را این‌گونه می‌بیند. پرداخت فقط پس از ارسال یا کپی کردن لینک آن ممکن است.",
 };
 
 export default offer;

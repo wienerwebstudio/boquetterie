@@ -32,6 +32,8 @@ const offer = {
   cancelledPayment: "Die Zahlung wurde nicht abgeschlossen. Du kannst es noch einmal versuchen.",
   failed: "Die Zahlung konnte nicht gestartet werden. Bitte versuch es noch einmal.",
   byArrangement: "Nach Absprache",
+  previewTitle: "Vorschau – noch nicht versendet",
+  previewText: "Dieses Angebot ist noch ein Entwurf. So sieht es die Kundin oder der Kunde. Bezahlen ist erst möglich, nachdem ihr es gesendet oder den Link kopiert habt.",
 };
 
 export default offer;

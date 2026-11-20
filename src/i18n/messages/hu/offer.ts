@@ -31,6 +31,8 @@ const offer: NonNullable<PartialMessages["offer"]> = {
   cancelledPayment: "A fizetés nem fejeződött be. Megpróbálhatod újra.",
   failed: "A fizetést nem sikerült elindítani. Kérjük, próbáld újra.",
   byArrangement: "Egyeztetés szerint",
+  previewTitle: "Előnézet – még nincs elküldve",
+  previewText: "Ez az ajánlat még piszkozat. Így fogja látni az ügyfél. Fizetni csak elküldés vagy a link másolása után lehet.",
 };
 
 export default offer;

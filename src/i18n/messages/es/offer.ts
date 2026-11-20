@@ -31,6 +31,8 @@ const offer: NonNullable<PartialMessages["offer"]> = {
   cancelledPayment: "El pago no se completó. Puedes intentarlo de nuevo.",
   failed: "No se pudo iniciar el pago. Inténtalo de nuevo.",
   byArrangement: "Según lo acordado",
+  previewTitle: "Vista previa – aún no enviada",
+  previewText: "Esta oferta todavía es un borrador. Así la verá el cliente. El pago solo es posible una vez enviada o copiado su enlace.",
 };
 
 export default offer;

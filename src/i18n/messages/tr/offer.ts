@@ -31,6 +31,8 @@ const offer: NonNullable<PartialMessages["offer"]> = {
   cancelledPayment: "Ödeme tamamlanmadı. Tekrar deneyebilirsiniz.",
   failed: "Ödeme başlatılamadı. Lütfen tekrar deneyin.",
   byArrangement: "Anlaşmaya göre",
+  previewTitle: "Önizleme – henüz gönderilmedi",
+  previewText: "Bu teklif henüz bir taslak. Müşteri onu böyle görecek. Ödeme ancak teklif gönderildikten veya bağlantısı kopyalandıktan sonra mümkündür.",
 };
 
 export default offer;

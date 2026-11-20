@@ -46,8 +46,10 @@ function Notice({ tone, title, text, action }: { tone: "ok" | "warn"; title: str
 export default async function OfferPage({ params, searchParams }: Props) {
   const [{ token }, sp] = await Promise.all([params, searchParams]);
   const offer = await findOfferByToken(token);
-  // Drafts are not shared yet – behave exactly like an unknown link.
-  if (!offer || offer.status === "draft") notFound();
+  if (!offer) notFound();
+  // Drafts only reach the team (test mail): shown as a preview, payment stays locked
+  // (`isOfferPayable` rejects drafts server-side as well).
+  const isDraft = offer.status === "draft";
 
   const [settings, i18n] = await Promise.all([getSettings(), getI18n()]);
   const { m, fmt, price, dateLong, locale } = i18n;
@@ -176,6 +178,12 @@ export default async function OfferPage({ params, searchParams }: Props) {
             </dl>
             <p className="mt-4 rounded-md bg-ivory-100 px-3 py-2 text-[13px] text-ink">{fmt(t.validUntil, { date: dateLong(offer.validUntil) })}</p>
             <div className="mt-6">
+              {isDraft ? (
+                <div role="status" data-testid="offer-preview" className="rounded-md border border-rose/40 bg-rose-100 px-4 py-3 text-[13.5px] leading-relaxed text-ink">
+                  <p className="font-semibold">{t.previewTitle}</p>
+                  <p className="mt-1 text-ink-muted">{t.previewText}</p>
+                </div>
+              ) : (
               <ClientMessages ns={["checkout", "offer"]}>
                 <OfferPayment
                   token={offer.token}
@@ -185,6 +193,7 @@ export default async function OfferPage({ params, searchParams }: Props) {
                   cancelled={sp.abgebrochen === "1"}
                 />
               </ClientMessages>
+              )}
             </div>
           </section>
         </aside>

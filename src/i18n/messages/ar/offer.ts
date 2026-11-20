@@ -31,6 +31,8 @@ const offer: NonNullable<PartialMessages["offer"]> = {
   cancelledPayment: "لم تكتمل عملية الدفع. يمكنكم المحاولة مرة أخرى.",
   failed: "تعذّر بدء الدفع. يرجى المحاولة مرة أخرى.",
   byArrangement: "حسب الاتفاق",
+  previewTitle: "معاينة – لم يُرسَل بعد",
+  previewText: "هذا العرض لا يزال مسودة. هكذا سيراه العميل. يمكن الدفع فقط بعد إرساله أو نسخ رابطه.",
 };
 
 export default offer;

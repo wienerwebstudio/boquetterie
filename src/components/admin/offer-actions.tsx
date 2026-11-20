@@ -58,7 +58,7 @@ export function OfferActions({ id, url, sent, live, editable, cancellable, custo
           {link && <input readOnly value={link} aria-label="Link zum Angebot" className={`${inputCls} text-[12.5px]`} onFocus={(e) => e.currentTarget.select()} />}
           <div className="flex gap-2">
             <Button href={`/admin/angebote/${id}/bearbeiten`} variant="ghost" size="sm" icon={<Pencil className="size-4" aria-hidden />}>Bearbeiten</Button>
-            {live && <a href={url} target="_blank" rel="noreferrer" className="inline-flex h-9 items-center gap-1.5 rounded-md px-3 text-[13px] font-semibold text-forest hover:bg-ivory-200"><ExternalLink className="size-4" aria-hidden /> Seite ansehen</a>}
+            <a href={url} target="_blank" rel="noreferrer" className="inline-flex h-9 items-center gap-1.5 rounded-md px-3 text-[13px] font-semibold text-forest hover:bg-ivory-200"><ExternalLink className="size-4" aria-hidden /> {live ? "Seite ansehen" : "Vorschau ansehen"}</a>
           </div>
         </div>
       )}

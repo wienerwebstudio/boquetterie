@@ -31,6 +31,8 @@ const offer: NonNullable<PartialMessages["offer"]> = {
   cancelledPayment: "Platba nebola dokončená. Môžete to skúsiť znova.",
   failed: "Platbu sa nepodarilo spustiť. Skúste to prosím znova.",
   byArrangement: "Podľa dohody",
+  previewTitle: "Náhľad – zatiaľ neodoslané",
+  previewText: "Táto ponuka je zatiaľ koncept. Takto ju uvidí zákazník. Platba je možná až po jej odoslaní alebo skopírovaní odkazu.",
 };
 
 export default offer;
