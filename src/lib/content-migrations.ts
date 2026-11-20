@@ -342,7 +342,25 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
       "review-translations": [["ЧӀогӀа хаза букет!", "ЧӀога хаза букет ду!"]],
     },
   },
+  {
+    // Inhaber: im Impressum erwähnen, wer den Webshop umgesetzt hat (nach „Kontakt“).
+    id: "2026-11-20-imprint-webdesign-credit",
+    transform: { pages: (doc) => mapList(doc, (p) => (p.slug === "impressum" ? withImprintCredit(p) : p)) },
+  },
 ];
+
+const IMPRINT_CREDIT = { heading: "Webdesign & Umsetzung", paragraphs: ["Webshop umgesetzt von [Tetik Drwal Media GesbR](https://tdm-agency.at/)"] };
+
+/** Adds the web-design credit after "Kontakt" (or at the end) – once; same object when it is already there. */
+export function withImprintCredit(page: Obj): Obj {
+  if (!Array.isArray(page.sections)) return page;
+  const sections = page.sections as Obj[];
+  if (sections.some((s) => s.heading === IMPRINT_CREDIT.heading)) return page;
+  const at = sections.findIndex((s) => s.heading === "Kontakt");
+  const next = [...sections];
+  next.splice(at >= 0 ? at + 1 : next.length, 0, structuredClone(IMPRINT_CREDIT));
+  return { ...page, sections: next };
+}
 
 /** Appends the pages whose slug is not in the stored list yet; same list when nothing is missing. */
 export function appendMissingBySlug<T>(doc: T, pages: { slug: string }[]): T {
