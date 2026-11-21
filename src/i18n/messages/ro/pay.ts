@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "Cumpărare expresă",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "sau",
     intro: "Comandă direct cu Apple Pay, Google Pay sau Link – adresa de livrare și datele de contact vin din portofelul tău.",
     postalCode: "Codul poștal al destinatarului",
     date: "Ziua livrării",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "Flori și extra",
     shipping: "Livrare pe {date}",
     shippingWindow: "Livrare pe {date}, {window}",
-    legal: "Cu Apple Pay, Google Pay sau Link plasezi o comandă cu obligație de plată. Se aplică {terms} și {withdrawal}. Pentru flori tăiate proaspete nu există drept de retragere.",
-    terms: "termenii și condițiile noastre",
-    withdrawal: "informațiile privind dreptul de retragere",
+    legal: "Cu {wallet} plasezi o comandă cu obligație de plată · {terms} · {withdrawal}",
+    terms: "Termeni",
+    withdrawal: "Retragere",
+    withdrawalNote: "Pentru flori tăiate proaspete nu există drept de retragere.",
   },
 };
 

@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "Compra exprés",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "o",
     intro: "Pide directamente con Apple Pay, Google Pay o Link – la dirección de entrega y los datos de contacto vienen de tu monedero.",
     postalCode: "Código postal del destinatario",
     date: "Día de entrega",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "Flores y extras",
     shipping: "Entrega el {date}",
     shippingWindow: "Entrega el {date}, {window}",
-    legal: "Con Apple Pay, Google Pay o Link realizas un pedido con obligación de pago. Se aplican nuestras {terms} y la {withdrawal}. Para flores cortadas frescas no existe derecho de desistimiento.",
-    terms: "condiciones generales",
-    withdrawal: "información sobre el desistimiento",
+    legal: "Con {wallet} realizas un pedido con obligación de pago · {terms} · {withdrawal}",
+    terms: "Condiciones",
+    withdrawal: "Desistimiento",
+    withdrawalNote: "Para flores cortadas frescas no existe derecho de desistimiento.",
   },
 };
 

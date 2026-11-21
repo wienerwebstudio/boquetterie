@@ -27,8 +27,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "Total",
-    inclDelivery: "{vat}, livrare inclusă",
-    plusDelivery: "{vat} · plus livrare",
+    inclDelivery: "livrare inclusă",
+    plusDelivery: "plus livrare",
   },
   vat: {
     smallBusiness: {
@@ -45,6 +45,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "Dorință: {note}",
     delivery: "Livrare",
     chooseDateInCheckout: "Alege data livrării la finalizarea comenzii",
+    expired: "Data livrării a expirat – te rugăm să alegi alta",
+    chooseDate: "Alege ziua livrării",
+    chooseWindow: "Alege intervalul orar",
     anonymous: "Fără expeditor",
     extras: "Extra",
     extraLess: "{name}: unul mai puțin",

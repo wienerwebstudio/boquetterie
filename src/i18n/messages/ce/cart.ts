@@ -27,8 +27,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "Дерриге",
-    inclDelivery: "{vat}, дӀакхачор юкъахь",
-    plusDelivery: "{vat} · дӀакхачор къаьсттина",
+    inclDelivery: "дӀакхачор юкъахь",
+    plusDelivery: "дӀакхачор къаьсттина",
   },
   vat: {
     smallBusiness: {
@@ -45,6 +45,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "Лаам: {note}",
     delivery: "ДӀакхачор",
     chooseDateInCheckout: "ДӀакхачоран де заказ кечъеш харжа",
+    expired: "ДӀакхачоран хан яьлла – керла харжа",
+    chooseDate: "ДӀакхачоран де харжа",
+    chooseWindow: "Хенан юкъ харжа",
     anonymous: "ЦӀе йоцуш",
     extras: "ТӀетохарш",
     extraLess: "{name}: цхьаъ кӀезиг",

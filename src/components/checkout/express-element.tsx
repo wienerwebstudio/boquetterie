@@ -19,6 +19,9 @@ export interface ExpressSheetDetails {
   shippingLabel: string;
 }
 
+/** Wallet buttons we may show (Stripe's `availablePaymentMethods` keys). */
+export type ExpressWallet = "applePay" | "googlePay" | "link";
+
 type OrderAnswer = Partial<OrderCreateResponse> & { message?: string; errors?: Record<string, string> };
 
 /** Line item + shipping rate for the sheet; the rate takes the rest so both add up exactly. */
@@ -45,12 +48,17 @@ export interface ExpressAbandonInfo {
   contact?: { name?: string; email?: string; phone?: string };
 }
 
-export function ExpressElement({ publishableKey, amount, wallets, onAvailability, clickDetails, addressQuote, orderBody, source, onError, onAbandon, onOrderCreated }: {
+export function ExpressElement({ publishableKey, amount, wallets, buttonHeight = 48, buttonType = "buy", onWallets, clickDetails, addressQuote, orderBody, source, onError, onAbandon, onOrderCreated }: {
   publishableKey: string;
   /** EUR – the current quote (or the goods estimate before one exists). */
   amount: number;
   wallets: { applePay: boolean; googlePay: boolean; link: boolean };
-  onAvailability: (available: boolean) => void;
+  /** Stripe allows 40–55 px. */
+  buttonHeight?: number;
+  /** "plain": logo only (narrow button next to the checkout button). */
+  buttonType?: "buy" | "plain";
+  /** The wallet buttons Stripe shows on this device (empty: none – the block stays hidden). */
+  onWallets: (wallets: ExpressWallet[]) => void;
   clickDetails: () => ExpressSheetDetails | null;
   addressQuote: (postalCode: string, country: string) => Promise<ExpressSheetDetails | null>;
   orderBody: (wallet: ExpressWalletData) => Record<string, unknown>;
@@ -66,10 +74,10 @@ export function ExpressElement({ publishableKey, amount, wallets, onAvailability
   useEffect(() => {
     let alive = true;
     getStripe(publishableKey)
-      .then((s) => { if (!alive) return; if (s) setStripe(s); else onAvailability(false); })
-      .catch(() => { if (alive) onAvailability(false); });
+      .then((s) => { if (!alive) return; if (s) setStripe(s); else onWallets([]); })
+      .catch(() => { if (alive) onWallets([]); });
     return () => { alive = false; };
-  }, [publishableKey, onAvailability]);
+  }, [publishableKey, onWallets]);
 
   const cents = displayCents(amount);
   const options = useMemo<StripeElementsOptions>(() => ({
@@ -80,14 +88,16 @@ export function ExpressElement({ publishableKey, amount, wallets, onAvailability
   if (!stripe) return null;
   return (
     <Elements stripe={stripe} options={options}>
-      <ExpressButtons wallets={wallets} onAvailability={onAvailability} clickDetails={clickDetails} addressQuote={addressQuote} orderBody={orderBody} source={source} onError={onError} onAbandon={onAbandon} onOrderCreated={onOrderCreated} />
+      <ExpressButtons wallets={wallets} buttonHeight={buttonHeight} buttonType={buttonType} onWallets={onWallets} clickDetails={clickDetails} addressQuote={addressQuote} orderBody={orderBody} source={source} onError={onError} onAbandon={onAbandon} onOrderCreated={onOrderCreated} />
     </Elements>
   );
 }
 
-function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, orderBody, source, onError, onAbandon, onOrderCreated }: {
+function ExpressButtons({ wallets, buttonHeight, buttonType, onWallets, clickDetails, addressQuote, orderBody, source, onError, onAbandon, onOrderCreated }: {
   wallets: { applePay: boolean; googlePay: boolean; link: boolean };
-  onAvailability: (available: boolean) => void;
+  buttonHeight: number;
+  buttonType: "buy" | "plain";
+  onWallets: (wallets: ExpressWallet[]) => void;
   clickDetails: () => ExpressSheetDetails | null;
   addressQuote: (postalCode: string, country: string) => Promise<ExpressSheetDetails | null>;
   orderBody: (wallet: ExpressWalletData) => Record<string, unknown>;
@@ -213,13 +223,17 @@ function ExpressButtons({ wallets, onAvailability, clickDetails, addressQuote, o
           link: wallets.link ? "auto" : "never",
           amazonPay: "never", paypal: "never", klarna: "never",
         },
-        buttonHeight: 48,
+        buttonHeight,
         buttonTheme: { applePay: "black", googlePay: "black" },
+        buttonType: { applePay: buttonType, googlePay: buttonType },
         // Stripe: overflow "never" is only allowed with maxRows 0 (no row limit) – anything else throws and hides the buttons.
         layout: { maxColumns: 2, maxRows: 0, overflow: "never" },
       }}
-      onReady={(e) => onAvailability(Boolean(e.availablePaymentMethods && Object.values(e.availablePaymentMethods).some(Boolean)))}
-      onLoadError={() => onAvailability(false)}
+      onReady={(e) => {
+        const a = e.availablePaymentMethods;
+        onWallets(a ? (["applePay", "googlePay", "link"] as const).filter((k) => a[k] && wallets[k]) : []);
+      }}
+      onLoadError={() => onWallets([])}
       onClick={onClick}
       onShippingAddressChange={onShippingAddressChange}
       onConfirm={onConfirm}

@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "Expresný nákup",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "alebo",
     intro: "Objednajte priamo cez Apple Pay, Google Pay alebo Link – adresa doručenia a kontaktné údaje sa prevezmú z vašej peňaženky.",
     postalCode: "PSČ príjemcu",
     date: "Deň doručenia",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "Kvety a doplnky",
     shipping: "Doručenie {date}",
     shippingWindow: "Doručenie {date}, {window}",
-    legal: "Cez Apple Pay, Google Pay alebo Link zadávate objednávku s povinnosťou platby. Platia naše {terms} a {withdrawal}. Pri čerstvých rezaných kvetoch neexistuje právo na odstúpenie.",
+    legal: "Cez {wallet} zadávate objednávku s povinnosťou platby · {terms} · {withdrawal}",
     terms: "VOP",
-    withdrawal: "poučenie o odstúpení od zmluvy",
+    withdrawal: "Odstúpenie",
+    withdrawalNote: "Pri čerstvých rezaných kvetoch neexistuje právo na odstúpenie.",
   },
 };
 

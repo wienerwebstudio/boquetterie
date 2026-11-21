@@ -34,8 +34,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "المجموع",
-    inclDelivery: "{vat} شامل التوصيل",
-    plusDelivery: "{vat} · يُضاف التوصيل",
+    inclDelivery: "شامل التوصيل",
+    plusDelivery: "يُضاف التوصيل",
   },
   vat: {
     smallBusiness: {
@@ -52,6 +52,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "الرغبة: {note}",
     delivery: "التوصيل",
     chooseDateInCheckout: "اختيار تاريخ التوصيل عند إتمام الطلب",
+    expired: "انتهى موعد التوصيل – يُرجى اختيار موعد جديد",
+    chooseDate: "اختيار يوم التوصيل",
+    chooseWindow: "اختيار الفترة الزمنية",
     anonymous: "دون اسم المرسِل",
     extras: "الإضافات",
     extraLess: "{name}: واحد أقل",

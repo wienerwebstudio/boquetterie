@@ -27,8 +27,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "Toplam",
-    inclDelivery: "{vat} · teslimat dahil",
-    plusDelivery: "{vat} · teslimat ücreti hariç",
+    inclDelivery: "teslimat dahil",
+    plusDelivery: "teslimat ücreti hariç",
   },
   vat: {
     smallBusiness: {
@@ -45,6 +45,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "İstek: {note}",
     delivery: "Teslimat",
     chooseDateInCheckout: "Teslimat tarihini ödeme adımında seçin",
+    expired: "Teslimat tarihi geçti – lütfen yeni bir tarih seçin",
+    chooseDate: "Teslimat gününü seçin",
+    chooseWindow: "Zaman aralığını seçin",
     anonymous: "Gönderen belirtilmeden",
     extras: "Ekstralar",
     extraLess: "{name}: bir azalt",

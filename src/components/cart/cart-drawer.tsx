@@ -9,8 +9,8 @@ import { CartLine } from "./cart-line";
 import { CartSurprise } from "./cart-surprise";
 import { CartUpsell } from "./cart-upsell";
 import { CartSummary } from "./cart-summary";
+import { CartDeliveryProvider } from "./cart-delivery";
 import { useCartTotals } from "./use-cart-totals";
-import { SMALL_BUSINESS } from "@/lib/vat";
 import { useI18n } from "@/i18n/client";
 import { ExpressBuy } from "@/components/checkout/express-buy";
 import { ordersPaused } from "@/lib/orders-paused";
@@ -23,7 +23,7 @@ export function CartTrustRow({ className }: { className?: string }) {
     { icon: Fingerprint, label: m.cart.trust.privacy },
   ];
   return (
-    <ul className={className ?? "flex items-center justify-center gap-4 text-[11.5px] text-ink-muted"}>
+    <ul className={className ?? "flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11.5px] text-ink-muted"}>
       {hints.map(({ icon: Icon, label }) => (
         <li key={label} className="inline-flex items-center gap-1.5"><Icon className="size-3.5" strokeWidth={1.5} aria-hidden />{label}</li>
       ))}
@@ -47,27 +47,28 @@ export function CartEmpty({ onClose, cardsEnabled = false }: { onClose?: () => v
   );
 }
 
+/**
+ * Sticky footer, kept small so the cart itself gets the screen: total in one line, checkout
+ * and wallet button side by side (stacked below 360px), one legal line. Delivery fields sit
+ * at the cart line, the trust hints below the summary.
+ */
 function DrawerFooter({ onClose }: { onClose: () => void }) {
   const { totals, zone } = useCartTotals();
   const items = useCart((s) => s.items);
   const coupon = useCart((s) => s.coupon);
-  const { m, fmt, price } = useI18n();
-  const vat = m.cart.vat[SMALL_BUSINESS ? "smallBusiness" : "standard"];
+  const { m, price } = useI18n();
+  const checkout = (
+    <Link href={routes.checkout} onClick={onClose} className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-forest px-4 text-center text-[15px] font-semibold leading-tight tracking-wide text-ivory transition-colors hover:bg-forest-700">
+      <Lock className="size-4 shrink-0" aria-hidden /> {m.cart.checkout}
+    </Link>
+  );
   return (
-    <div className="space-y-3">
-      <div className="flex items-baseline justify-between">
-        <span className="text-[14px] font-semibold text-ink">{m.cart.drawer.total}</span>
-        <span className="text-right">
-          <span className="text-[19px] font-semibold tabular-nums text-ink">{price(totals.total)}</span>
-          <span className="block text-[11.5px] text-ink-muted">{fmt(zone ? m.cart.drawer.inclDelivery : m.cart.drawer.plusDelivery, { vat: vat.short })}</span>
-        </span>
-      </div>
-      <Link href={routes.checkout} onClick={onClose} className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-md bg-forest px-8 text-base font-semibold tracking-wide text-ivory transition-colors hover:bg-forest-700">
-        <Lock className="size-4" aria-hidden /> {m.cart.checkout}
-      </Link>
-      {/* Express purchase right under the checkout button: "oder" + wallet buttons (fields only when something is missing). */}
-      {!ordersPaused() && <ExpressBuy items={items} couponCode={coupon} source="cart" />}
-      <CartTrustRow />
+    <div className="space-y-2.5" data-testid="cart-drawer-footer">
+      <p className="flex items-baseline justify-between gap-3">
+        <span className="text-[12.5px] text-ink-muted">{m.cart.drawer.total} · {zone ? m.cart.drawer.inclDelivery : m.cart.drawer.plusDelivery}</span>
+        <span className="text-[18px] font-semibold tabular-nums text-ink">{price(totals.total)}</span>
+      </p>
+      {ordersPaused() ? checkout : <ExpressBuy items={items} couponCode={coupon} source="cart" layout="drawer" primary={checkout} />}
     </div>
   );
 }
@@ -83,30 +84,34 @@ export function CartDrawer({ cardsEnabled = false }: { cardsEnabled?: boolean })
   const countLabel = plural(count, m.cart.items);
 
   return (
-    <Drawer
-      open={cartOpen}
-      onClose={closeCart}
-      labelledBy="cart-drawer-title"
-      title={<span>{m.cart.title} {count > 0 && <span className="ml-1 font-sans text-[13px] text-ink-muted">({countLabel})</span>}</span>}
-      footer={items.length ? <DrawerFooter onClose={closeCart} /> : undefined}
-    >
-      <p className="sr-only" aria-live="polite">{fmt(m.cart.liveCount, { count: countLabel })}</p>
-      {items.length === 0 ? (
-        <CartEmpty onClose={closeCart} cardsEnabled={cardsEnabled} />
-      ) : (
-        <div className="space-y-7 px-5 py-5 sm:px-6">
-          <ul className="divide-y divide-line">
-            {items.map((item) => (
-              <li key={item.id} className="py-5 first:pt-0"><CartLine item={item} /></li>
-            ))}
-          </ul>
-          <CartSurprise items={items} cardsEnabled={cardsEnabled} />
-          <CartUpsell items={items} />
-          <div className="border-t border-line pt-5">
-            <CartSummary showTotal={false} />
+    <CartDeliveryProvider items={items} active={cartOpen}>
+      <Drawer
+        open={cartOpen}
+        onClose={closeCart}
+        labelledBy="cart-drawer-title"
+        title={<span>{m.cart.title} {count > 0 && <span className="ml-1 font-sans text-[13px] text-ink-muted">({countLabel})</span>}</span>}
+        footer={items.length ? <DrawerFooter onClose={closeCart} /> : undefined}
+        footerClassName="px-5 py-3 sm:px-6"
+      >
+        <p className="sr-only" aria-live="polite">{fmt(m.cart.liveCount, { count: countLabel })}</p>
+        {items.length === 0 ? (
+          <CartEmpty onClose={closeCart} cardsEnabled={cardsEnabled} />
+        ) : (
+          <div className="space-y-7 px-5 py-5 sm:px-6">
+            <ul className="divide-y divide-line">
+              {items.map((item) => (
+                <li key={item.id} className="py-5 first:pt-0"><CartLine item={item} /></li>
+              ))}
+            </ul>
+            <CartSurprise items={items} cardsEnabled={cardsEnabled} />
+            <CartUpsell items={items} />
+            <div className="border-t border-line pt-5">
+              <CartSummary showTotal={false} />
+              <CartTrustRow className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11.5px] text-ink-muted" />
+            </div>
           </div>
-        </div>
-      )}
-    </Drawer>
+        )}
+      </Drawer>
+    </CartDeliveryProvider>
   );
 }

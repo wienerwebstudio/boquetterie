@@ -4,18 +4,16 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react"
 import Link from "@/components/ui/link";
 import type { CartItem } from "@/types";
 import type { ExpressQuoteResponse } from "@/types/payments";
-import { Input, Select } from "@/components/ui/input";
-import { useDeliveryCheck } from "@/hooks/use-delivery-check";
-import { useDeliveryContext } from "@/store/delivery";
-import { isValidAustrianPostalCode, normalizePostalCode } from "@/lib/delivery";
+import { normalizePostalCode } from "@/lib/delivery";
 import { computeTotals } from "@/lib/pricing";
 import { routes } from "@/lib/urls";
 import { cn } from "@/lib/format";
 import { useI18n } from "@/i18n/client";
 import type { ExpressWalletData } from "@/lib/express";
+import { useCartDelivery, type CartDeliveryState } from "@/components/cart/cart-delivery";
 import { rich } from "./rich-text";
 import { usePaymentMethods } from "./use-payment-methods";
-import type { ExpressAbandonInfo, ExpressSheetDetails } from "./express-element";
+import type { ExpressAbandonInfo, ExpressSheetDetails, ExpressWallet } from "./express-element";
 import { clearDraftId, draftId, peekDraftId, postDraft } from "./checkout-draft";
 
 // Stripe.js is loaded only when the block scrolls into view and Stripe is configured.
@@ -26,30 +24,39 @@ const ERROR_KEYS = {
   zone: "zone", date: "date", window: "window", min_order: "minOrder", items: "items", coupon: "coupon", unavailable: "failed",
 } as const satisfies Record<Extract<ExpressQuoteResponse, { ok: false }>["code"], string>;
 
+const WALLET_NAMES: Record<ExpressWallet, string> = { applePay: "Apple Pay", googlePay: "Google Pay", link: "Link" };
+
+type Layout = "drawer" | "page";
+
 /**
- * "Express-Kauf" with Apple Pay / Google Pay / Link (Stripe Express Checkout Element) on the
- * product page and in the cart. Renders nothing unless Stripe is configured and the device
- * offers at least one wallet. Before the wallet sheet opens, the customer picks PLZ, delivery
- * day and time window here (compact picker); the sheet then collects the recipient address
- * (restricted to our delivery zones via `/api/express/quote`), name, e-mail and phone, and
- * `/api/express/order` creates the order with exactly the checkout's rules.
+ * "Express-Kauf" with Apple Pay / Google Pay (Stripe Express Checkout Element) in the cart
+ * drawer and on the cart page, next to / under the checkout button (`primary`). Without
+ * Stripe or a wallet on the device only `primary` is rendered. PLZ, delivery day and time
+ * window come from the cart lines (`CartDeliveryProvider`); if something is missing there,
+ * a tap on the wallet button does not open the sheet but scrolls to the cart line, which
+ * shows the fields. The sheet collects the recipient address (restricted to our delivery
+ * zones via `/api/express/quote`), name, e-mail and phone, and `/api/express/order` creates
+ * the order with exactly the checkout's rules.
  */
-export function ExpressBuy({ items, couponCode, postalCode, date, source, blockedMessage, className }: {
+export function ExpressBuy({ items, couponCode, source, layout, primary, className }: {
   items: CartItem[];
   couponCode?: string | null;
-  /** PLZ already known (product page check, PLZ context). */
-  postalCode?: string | null;
-  /** Delivery day already chosen (product page, cart item). */
-  date?: string | null;
-  /** "product": buy just this configuration and leave the cart alone; "cart": buy the cart. */
-  source: "product" | "cart";
-  /** Set when the configuration is incomplete (e.g. no colour chosen) – the sheet does not open. */
-  blockedMessage?: string;
+  source: "cart";
+  /** "drawer": checkout + wallet button side by side (from 360px), only the device's wallet. "page": stacked, Link as well. */
+  layout: Layout;
+  /** The checkout button. */
+  primary: React.ReactNode;
   className?: string;
 }) {
   const { data } = usePaymentMethods();
+  const delivery = useCartDelivery();
   const stripeMethods = useMemo(() => new Set((data?.methods ?? []).filter((x) => x.provider === "stripe").map((x) => x.id)), [data]);
-  const enabled = Boolean(data?.stripePublishableKey) && (stripeMethods.has("apple_pay") || stripeMethods.has("google_pay") || stripeMethods.has("card"));
+  // Only the device's wallet: Apple Pay where it is set up, otherwise Google Pay (never both). Link only on the cart page.
+  const wallets = useMemo(() => {
+    const applePay = stripeMethods.has("apple_pay");
+    return { applePay, googlePay: !applePay && stripeMethods.has("google_pay"), link: layout === "page" && stripeMethods.has("card") };
+  }, [stripeMethods, layout]);
+  const enabled = Boolean(data?.stripePublishableKey) && (wallets.applePay || wallets.googlePay || wallets.link);
   const ref = useRef<HTMLDivElement>(null);
   // Without IntersectionObserver (old browsers) load right away.
   const [inView, setInView] = useState(() => typeof IntersectionObserver === "undefined");
@@ -62,69 +69,43 @@ export function ExpressBuy({ items, couponCode, postalCode, date, source, blocke
     return () => io.disconnect();
   }, [enabled, inView]);
 
-  if (!enabled || items.length === 0) return null;
+  const ready = enabled && inView && delivery && items.length > 0 && data?.stripePublishableKey;
   return (
     <div ref={ref} className={className}>
-      {inView && data?.stripePublishableKey && (
+      {ready ? (
         <ExpressPanel
-          publishableKey={data.stripePublishableKey}
-          wallets={{ applePay: stripeMethods.has("apple_pay"), googlePay: stripeMethods.has("google_pay"), link: stripeMethods.has("card") }}
-          items={items} couponCode={couponCode} postalCode={postalCode} date={date} source={source} blockedMessage={blockedMessage}
+          publishableKey={data.stripePublishableKey!} wallets={wallets} delivery={delivery}
+          items={items} couponCode={couponCode} source={source} layout={layout} primary={primary}
         />
-      )}
+      ) : primary}
     </div>
   );
 }
 
-function ExpressPanel({ publishableKey, wallets, items, couponCode, postalCode, date, source, blockedMessage }: {
+function ExpressPanel({ publishableKey, wallets, delivery, items, couponCode, source, layout, primary }: {
   publishableKey: string;
   wallets: { applePay: boolean; googlePay: boolean; link: boolean };
+  delivery: CartDeliveryState;
   items: CartItem[];
   couponCode?: string | null;
-  postalCode?: string | null;
-  date?: string | null;
-  source: "product" | "cart";
-  blockedMessage?: string;
+  source: "cart";
+  layout: Layout;
+  primary: React.ReactNode;
 }) {
   const uid = useId();
   const { m, fmt, dateShort, locale } = useI18n();
   const t = m.pay.express;
-  const ctxZip = useDeliveryContext((s) => s.postalCode);
-  const [available, setAvailable] = useState<boolean | null>(null);
+  /** Wallet buttons Stripe shows on this device (null until it reported). */
+  const [shown, setShown] = useState<ExpressWallet[] | null>(null);
+  const available = shown ? shown.length > 0 : null;
   const [error, setError] = useState<string | null>(null);
+  const { postalCode: plz, date: day, windowId, windows, complete: slotComplete, requestAttention, setWalletReady } = delivery;
 
-  /* ---- PLZ, day and window ---- */
-  const restrictiveSlug = useMemo(() => items.find((i) => !i.snapshot.sameDayCapable)?.snapshot.slug ?? items[0]?.snapshot.slug, [items]);
-  const { result, loading, error: checkError, check } = useDeliveryCheck(restrictiveSlug);
-  const [plz, setPlz] = useState(() => postalCode || items.find((i) => i.postalCode)?.postalCode || ctxZip || "");
-  const [dayChoice, setDay] = useState(() => date || items.find((i) => i.deliveryDate)?.deliveryDate || "");
-  const [windowChoice, setWindowId] = useState(() => items.find((i) => i.windowId)?.windowId ?? "");
-  const checked = useRef<string | null>(null);
-
-  // Follow the product page when its PLZ or day changes (adjusting state while rendering).
-  const [seen, setSeen] = useState({ postalCode, date });
-  if (seen.postalCode !== postalCode || seen.date !== date) {
-    setSeen({ postalCode, date });
-    if (postalCode && postalCode !== seen.postalCode) setPlz(postalCode);
-    if (date && date !== seen.date) setDay(date);
-  }
-
-  useEffect(() => {
-    if (!isValidAustrianPostalCode(plz) || checked.current === plz) return;
-    const timer = setTimeout(() => { checked.current = plz; void check(plz); }, 300);
-    return () => clearTimeout(timer);
-  }, [plz, check]);
-
-  const zoneResult = result && result.postalCode === plz ? result : null;
-  const days = useMemo(() => (zoneResult?.available ? zoneResult.days : []), [zoneResult]);
-  // A day the zone does not offer falls back to the first one; a single window is preselected.
-  const selectedDay = days.find((d) => d.date === dayChoice) ?? days[0];
-  const day = selectedDay?.date ?? "";
-  const windows = useMemo(() => selectedDay?.windows ?? [], [selectedDay]);
-  const windowId = windows.length === 1 ? windows[0].id : windows.some((w) => w.id === windowChoice) ? windowChoice : "";
+  useEffect(() => { setWalletReady(Boolean(available)); }, [available, setWalletReady]);
+  useEffect(() => () => setWalletReady(false), [setWalletReady]);
+  const onWallets = useCallback((list: ExpressWallet[]) => setShown(list), []);
 
   /* ---- Server quote for the chosen slot (what the wallet sheet shows) ---- */
-  // Keyed by content: the product page rebuilds `items` on every render.
   const itemsKey = JSON.stringify(items.map((i) => ({
     productId: i.productId, sizeId: i.sizeId, quantity: i.quantity,
     ...(i.colorId && { colorId: i.colorId }),
@@ -133,7 +114,6 @@ function ExpressPanel({ publishableKey, wallets, items, couponCode, postalCode, 
     ...(i.message && { message: i.message, anonymous: Boolean(i.anonymous), ...(i.senderName && !i.anonymous ? { senderName: i.senderName } : {}) }),
   })));
   const payloadItems = useMemo(() => JSON.parse(itemsKey) as unknown[], [itemsKey]);
-  const slotComplete = Boolean(zoneResult?.available && selectedDay && (windows.length === 0 || windows.some((w) => w.id === windowId)));
   const [quote, setQuote] = useState<{ key: string; value: ExpressQuoteResponse } | null>(null);
   const quoteKey = JSON.stringify({ payloadItems, couponCode, plz, day, windowId });
 
@@ -170,16 +150,14 @@ function ExpressPanel({ publishableKey, wallets, items, couponCode, postalCode, 
     shippingLabel: q.windowLabel ? fmt(t.shippingWindow, { date: dateShort(day), window: q.windowLabel }) : fmt(t.shipping, { date: dateShort(day) }),
   }), [t, fmt, dateShort, day]);
 
-  /** Called synchronously when a wallet button is clicked: everything chosen? */
+  /** Called synchronously when a wallet button is clicked: everything chosen? Otherwise the cart line asks for it. */
   const clickDetails = useCallback((): ExpressSheetDetails | null => {
-    if (blockedMessage) { setError(blockedMessage); return null; }
-    if (!isValidAustrianPostalCode(plz)) { setError(t.needPostalCode); return null; }
-    if (!slotComplete) { setError(t.needSlot); return null; }
+    if (!slotComplete) { setError(null); requestAttention(); return null; }
     if (!current) { setError(t.needSlot); return null; }
     if (!current.ok) { setError(errorText(current)); return null; }
     setError(null);
     return sheetFor(current);
-  }, [blockedMessage, plz, slotComplete, current, errorText, sheetFor, t]);
+  }, [slotComplete, current, errorText, sheetFor, requestAttention, t]);
 
   /** The wallet's shipping address changed (only PLZ/city/country are known yet). */
   const addressQuote = useCallback(async (zip: string, country: string): Promise<ExpressSheetDetails | null> => {
@@ -218,67 +196,55 @@ function ExpressPanel({ publishableKey, wallets, items, couponCode, postalCode, 
   }, [draftScope, locale, payloadItems, couponCode, day, windowId, plz]);
   const onOrderCreated = useCallback(() => clearDraftId(draftScope), [draftScope]);
 
-  if (available === false) return null;
-
-  // Only ask for what the cart lines do not already answer.
-  const needPlz = !isValidAustrianPostalCode(plz) || Boolean(zoneResult && !zoneResult.available) || Boolean(checkError);
-  const needDay = !needPlz && Boolean(zoneResult?.available) && !days.some((d) => d.date === dayChoice);
-  const needWindow = !needPlz && windows.length > 1 && !windows.some((w) => w.id === windowChoice);
+  const walletName = (shown ?? []).map((w) => WALLET_NAMES[w]).join(" / ");
+  const drawer = layout === "drawer";
+  const element = (
+    <ExpressElement
+      publishableKey={publishableKey}
+      amount={amount}
+      wallets={wallets}
+      buttonHeight={44}
+      buttonType={drawer ? "plain" : "buy"}
+      onWallets={onWallets}
+      clickDetails={clickDetails}
+      addressQuote={addressQuote}
+      orderBody={orderBody}
+      source={source}
+      onError={setError}
+      onAbandon={onAbandon}
+      onOrderCreated={onOrderCreated}
+    />
+  );
 
   return (
-    // Until Stripe reports a wallet on this device the block stays collapsed and out of the tab order.
-    <section aria-labelledby={`${uid}-title`} aria-hidden={!available || undefined} inert={!available || undefined} className={cn("mt-1", available ? "animate-fade-in" : "h-0 overflow-hidden")} data-testid="express-buy">
-      <div className="flex items-center gap-3">
-        <span className="h-px flex-1 bg-line" aria-hidden />
-        <h2 id={`${uid}-title`} className="font-sans text-[12px] font-normal tracking-normal text-ink-muted"><span className="sr-only">{t.title} – </span>{t.or}</h2>
-        <span className="h-px flex-1 bg-line" aria-hidden />
+    <section aria-labelledby={`${uid}-title`} data-testid="express-buy" data-layout={layout}>
+      <h2 id={`${uid}-title`} className="sr-only">{t.title}</h2>
+      <div className={cn("relative flex flex-col gap-2", drawer && available && "min-[360px]:flex-row min-[360px]:items-center")}>
+        <div className={cn("min-w-0", drawer && available && "min-[360px]:flex-1")}>{primary}</div>
+        {/* Until Stripe reports a wallet on this device the buttons stay collapsed and out of the tab order. */}
+        <div
+          aria-hidden={!available || undefined}
+          inert={!available || undefined}
+          className={cn(
+            available ? "min-h-11 animate-fade-in" : "pointer-events-none absolute inset-x-0 top-0 h-0 overflow-hidden",
+            available && drawer && "min-[360px]:w-[42%] min-[360px]:shrink-0",
+          )}
+          data-testid="express-wallets"
+        >
+          {element}
+        </div>
       </div>
-
-      {/* Day and PLZ normally come from the cart line – fields only appear when something is missing. */}
-      {(needPlz || needDay || needWindow) && (
-      <div className={cn("mt-3 grid items-end gap-2", [needPlz, needDay, needWindow].filter(Boolean).length > 1 ? "grid-cols-2" : "grid-cols-1")}>
-        {needPlz && <Input
-          label={t.postalCode} inputMode="numeric" autoComplete="postal-code" maxLength={4} value={plz}
-          onChange={(e) => { setPlz(normalizePostalCode(e.target.value)); setError(null); }}
-          error={checkError ?? (zoneResult && !zoneResult.available ? t.errors.zone : undefined)}
-        />}
-        {needDay && <Select label={t.date} value={selectedDay ? day : ""} disabled={!days.length || loading} onChange={(e) => { setDay(e.target.value); setError(null); }}>
-          {!selectedDay && <option value="">{t.choose}</option>}
-          {days.map((d) => <option key={d.date} value={d.date}>{dateShort(d.date)}</option>)}
-        </Select>}
-        {needWindow && (
-          <Select label={t.window} value={windowId} className={needPlz && needDay ? "col-span-2" : undefined} onChange={(e) => { setWindowId(e.target.value); setError(null); }}>
-            {!windowId && <option value="">{t.choose}</option>}
-            {windows.map((w) => <option key={w.id} value={w.id}>{w.label}</option>)}
-          </Select>
-        )}
-      </div>
-      )}
-      {zoneResult?.available && days.length === 0 && <p className="mt-2 text-[13px] text-ink-muted">{t.noDays}</p>}
       {windowLabel && <span className="sr-only" aria-live="polite">{windowLabel}</span>}
-
-      <div className="mt-3 min-h-12">
-        <ExpressElement
-          publishableKey={publishableKey}
-          amount={amount}
-          wallets={wallets}
-          onAvailability={setAvailable}
-          clickDetails={clickDetails}
-          addressQuote={addressQuote}
-          orderBody={orderBody}
-          source={source}
-          onError={setError}
-          onAbandon={onAbandon}
-          onOrderCreated={onOrderCreated}
-        />
-      </div>
-      {error && <p role="alert" className="mt-3 rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[13.5px] text-ink">{error}</p>}
-      <p className="mt-2 text-[11px] leading-snug text-ink-soft">
-        {rich(t.legal, {
-          terms: <Link href={routes.legal.terms} className="underline underline-offset-2">{t.terms}</Link>,
-          withdrawal: <Link href={routes.legal.withdrawal} className="underline underline-offset-2">{t.withdrawal}</Link>,
-        })}
-      </p>
+      {error && <p role="alert" className="mt-2 rounded-md border border-danger/30 bg-rose-100/60 px-3 py-2 text-[13px] text-ink">{error}</p>}
+      {available && (
+        <p className="mt-1.5 text-center text-[11px] leading-snug text-ink-soft" data-testid="express-legal">
+          {rich(t.legal, {
+            wallet: walletName,
+            terms: <Link href={routes.legal.terms} className="underline underline-offset-2">{t.terms}</Link>,
+            withdrawal: <Link href={routes.legal.withdrawal} title={t.withdrawalNote} className="underline underline-offset-2">{t.withdrawal}</Link>,
+          })}
+        </p>
+      )}
     </section>
   );
 }

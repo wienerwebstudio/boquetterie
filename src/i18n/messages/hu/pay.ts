@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "Expressz vásárlás",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "vagy",
     intro: "Rendelj közvetlenül Apple Pay, Google Pay vagy Link segítségével – a szállítási cím és az elérhetőségek a pénztárcádból érkeznek.",
     postalCode: "A címzett irányítószáma",
     date: "Szállítási nap",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "Virágok és extrák",
     shipping: "Szállítás: {date}",
     shippingWindow: "Szállítás: {date}, {window}",
-    legal: "Az Apple Pay, Google Pay vagy Link használatával fizetési kötelezettséggel járó rendelést adsz le. Az {terms} és az {withdrawal} érvényes. Friss vágott virágok esetén nincs elállási jog.",
+    legal: "A(z) {wallet} használatával fizetési kötelezettséggel rendelsz · {terms} · {withdrawal}",
     terms: "ÁSZF",
-    withdrawal: "Elállási tájékoztató",
+    withdrawal: "Elállás",
+    withdrawalNote: "Friss vágott virágok esetén nincs elállási jog.",
   },
 };
 
