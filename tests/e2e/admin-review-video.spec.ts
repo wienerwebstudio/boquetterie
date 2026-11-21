@@ -9,9 +9,13 @@ import { ADMIN_PASSWORD, dismissConsent } from "./helpers";
  * fills the video fields; after „Speichern“ the video is public on the product page.
  * „Video entfernen“ takes it out of the review again.
  *
- * Needs the JSON store and the local upload driver. content/reviews.json is tracked
- * (no fixture overlay for reviews) – the original bytes are restored afterwards, and
- * the uploaded files below public/uploads are deleted.
+ * Needs the JSON store and the local upload driver. content/reviews.json is tracked –
+ * the original bytes are restored afterwards, and the uploaded files below
+ * public/uploads are deleted.
+ *
+ * With CONTENT_OVERLAY_DIR the store reads reviews from the fixture overlay but still
+ * writes to content/: the review is then seeded into both files, and the saved entry is
+ * copied into the overlay before the product page is checked (overlay restored too).
  */
 
 const REVIEW_ID = "e2e-admin-video";
@@ -19,15 +23,32 @@ const NAME = "Viktor V.";
 const PRODUCT = { slug: "solstice", name: "Solstice" };
 const CLIP = path.resolve(process.cwd(), "tests/fixtures/media/review-clip.webm");
 const REVIEWS = path.resolve(process.cwd(), "content/reviews.json");
+const OVERLAY_REVIEWS = process.env.CONTENT_OVERLAY_DIR ? path.resolve(process.cwd(), process.env.CONTENT_OVERLAY_DIR, "reviews.json") : null;
 const UPLOADS = path.resolve(process.cwd(), "public/uploads");
 
 type StoredReview = { id: string; video?: { src: string; poster: string; alt: string; duration?: number; width?: number; height?: number } };
 
-let original: string | null = null;
+/** Original bytes per file (content/ and, if present, the overlay). */
+const originals = new Map<string, string>();
 const uploaded = new Set<string>();
 
-async function readReviews(): Promise<StoredReview[]> {
-  return JSON.parse(await readFile(REVIEWS, "utf8")) as StoredReview[];
+async function readReviews(file = REVIEWS): Promise<StoredReview[]> {
+  return JSON.parse(await readFile(file, "utf8")) as StoredReview[];
+}
+
+async function overlayFile(): Promise<string | null> {
+  if (!OVERLAY_REVIEWS) return null;
+  return (await readFile(OVERLAY_REVIEWS, "utf8").then(() => true, () => false)) ? OVERLAY_REVIEWS : null;
+}
+
+/** Overlay active: copy the review as saved in content/ into the overlay the shop reads. */
+async function syncOverlay() {
+  const overlay = await overlayFile();
+  if (!overlay) return;
+  const saved = (await readReviews()).find((r) => r.id === REVIEW_ID);
+  const list = (await readReviews(overlay)).filter((r) => r.id !== REVIEW_ID);
+  if (saved) list.push(saved);
+  await writeFile(overlay, JSON.stringify(list, null, 2) + "\n", "utf8");
 }
 
 test.describe("Admin: Kundenvideo hochladen", () => {
@@ -35,25 +56,28 @@ test.describe("Admin: Kundenvideo hochladen", () => {
   test.describe.configure({ mode: "serial" });
 
   test.beforeAll(async () => {
-    const raw = await readFile(REVIEWS, "utf8");
-    const reviews = (JSON.parse(raw) as StoredReview[]).filter((r) => r.id !== REVIEW_ID);
-    // Restore the exact bytes – minus a leftover entry of an aborted earlier run.
-    original = reviews.length === (JSON.parse(raw) as StoredReview[]).length ? raw : JSON.stringify(reviews, null, 2) + "\n";
-    reviews.push({
-      id: REVIEW_ID,
-      name: NAME,
-      rating: 5,
-      text: "Der Strauß war noch schöner als auf den Fotos.",
-      productSlug: PRODUCT.slug,
-      date: "2026-11-15",
-      verified: true,
-      demo: false,
-    } as StoredReview);
-    await writeFile(REVIEWS, JSON.stringify(reviews, null, 2) + "\n", "utf8");
+    const overlay = await overlayFile();
+    for (const file of overlay ? [REVIEWS, overlay] : [REVIEWS]) {
+      const raw = await readFile(file, "utf8");
+      const reviews = (JSON.parse(raw) as StoredReview[]).filter((r) => r.id !== REVIEW_ID);
+      // Restore the exact bytes – minus a leftover entry of an aborted earlier run.
+      originals.set(file, reviews.length === (JSON.parse(raw) as StoredReview[]).length ? raw : JSON.stringify(reviews, null, 2) + "\n");
+      reviews.push({
+        id: REVIEW_ID,
+        name: NAME,
+        rating: 5,
+        text: "Der Strauß war noch schöner als auf den Fotos.",
+        productSlug: PRODUCT.slug,
+        date: "2026-11-15",
+        verified: true,
+        demo: false,
+      } as StoredReview);
+      await writeFile(file, JSON.stringify(reviews, null, 2) + "\n", "utf8");
+    }
   });
 
   test.afterAll(async () => {
-    if (original !== null) await writeFile(REVIEWS, original, "utf8");
+    for (const [file, raw] of originals) await writeFile(file, raw, "utf8");
     for (const key of uploaded) await rm(path.join(UPLOADS, key), { recursive: true, force: true });
   });
 
@@ -116,6 +140,7 @@ test.describe("Admin: Kundenvideo hochladen", () => {
     await anonymous.dispose();
 
     // … and shown under the review on the product page.
+    await syncOverlay();
     const shop = await page.context().browser()!.newPage({ baseURL });
     await shop.goto(`/produkt/${PRODUCT.slug}`, { waitUntil: "domcontentloaded" });
     await dismissConsent(shop);

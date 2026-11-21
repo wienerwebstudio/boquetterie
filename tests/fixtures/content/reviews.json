@@ -1,0 +1,105 @@
+[
+  {
+    "id": "r-e2e-lukas",
+    "name": "Lukas P.",
+    "rating": 5,
+    "text": "Ich habe den Strauß für den Geburtstag meiner Schwester bestellt und war ehrlich gesagt skeptisch, ob das mit der Lieferung am selben Tag klappt. Es hat geklappt: Am Vormittag bestellt, am frühen Nachmittag stand der Bote bei ihr vor der Tür. Die Blumen waren frisch, die Rosen noch geschlossen und haben sich in den folgenden Tagen schön geöffnet. Die Verpackung war sorgfältig, das Wasserdepot hat gehalten, und die Grußkarte war genau so gedruckt, wie ich sie eingegeben hatte. Meine Schwester hat mir ein Foto geschickt, und der Strauß sah sogar noch voller aus als auf der Website. Auch nach einer Woche standen die meisten Blüten noch. Beim nächsten Anlass bestelle ich wieder hier, weil die Bestellung einfach war und alles so ankam, wie es beschrieben war. Danke an das ganze Team!",
+    "verified": true,
+    "date": "2026-11-05",
+    "demo": false
+  },
+  {
+    "id": "r-e2e-anna",
+    "name": "Anna K.",
+    "rating": 5,
+    "text": "Der Strauß kam pünktlich und sah genauso aus wie auf den Fotos.",
+    "verified": true,
+    "date": "2026-11-12",
+    "demo": false
+  },
+  {
+    "id": "r-e2e-sophie",
+    "name": "Sophie M.",
+    "rating": 5,
+    "text": "Wunderschöne Farben, meine Mama hat sich sehr gefreut.",
+    "verified": true,
+    "date": "2026-10-28",
+    "demo": false,
+    "photos": [
+      {
+        "src": "/images/products/amour-1.jpg",
+        "alt": "Kundenfoto zu Amour"
+      },
+      {
+        "src": "/images/products/amour-2.jpg",
+        "alt": "Kundenfoto zu Amour"
+      }
+    ]
+  },
+  {
+    "id": "r-e2e-james",
+    "name": "James W.",
+    "rating": 4,
+    "text": "Lovely bouquet, delivered on time to my colleague in the office.",
+    "lang": "en",
+    "translations": {
+      "de": "Schöner Strauß, pünktlich bei meiner Kollegin im Büro angekommen."
+    },
+    "verified": true,
+    "date": "2026-10-15",
+    "demo": false
+  },
+  {
+    "id": "r-e2e-clara",
+    "name": "Clara B.",
+    "rating": 5,
+    "text": "Das kurze Video zeigt den Strauß gleich nach dem Auspacken.",
+    "verified": true,
+    "date": "2026-10-02",
+    "demo": false,
+    "video": {
+      "src": "/videos/hero-loop.mp4",
+      "poster": "/images/products/amour-3.jpg",
+      "alt": "Kundenvideo zu Amour",
+      "duration": 9,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  {
+    "id": "r-e2e-nina",
+    "name": "Nina R.",
+    "rating": 5,
+    "text": "Sehr freundlicher Kontakt, als ich die Adresse noch ändern musste.",
+    "verified": true,
+    "date": "2026-09-20",
+    "demo": false
+  },
+  {
+    "id": "r-e2e-paul",
+    "name": "Paul H.",
+    "rating": 4,
+    "text": "Gute Auswahl und einfache Bestellung.",
+    "verified": true,
+    "date": "2026-09-08",
+    "demo": false
+  },
+  {
+    "id": "r-e2e-emre",
+    "name": "Emre Y.",
+    "rating": 5,
+    "text": "Zum Jahrestag bestellt, alles hat gepasst.",
+    "verified": true,
+    "date": "2026-08-30",
+    "demo": false
+  },
+  {
+    "id": "r-e2e-martin",
+    "name": "Martin S.",
+    "rating": 5,
+    "text": "Frische Blumen und eine schöne Karte dazu.",
+    "verified": true,
+    "date": "2026-08-14",
+    "demo": false
+  }
+]

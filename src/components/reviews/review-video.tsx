@@ -9,7 +9,7 @@ import { getI18n } from "@/i18n/server";
  * `preload="none"` – nothing but the poster is loaded until the visitor presses play;
  * the `/media` route answers the Range requests the player sends.
  */
-export async function ReviewVideo({ video, author, className }: { video: ReviewVideoData | null; author: string; className?: string }) {
+export async function ReviewVideo({ video, author, className, compact }: { video: ReviewVideoData | null; author: string; className?: string; /** Small thumbnail height for fixed-height tiles (homepage row). */ compact?: boolean }) {
   if (!video) return null;
   const { m, fmt } = await getI18n();
   const t = m.product.reviewVideo;
@@ -25,7 +25,7 @@ export async function ReviewVideo({ video, author, className }: { video: ReviewV
         width={video.width}
         height={video.height}
         aria-label={`${fmt(t.videoOf, { author })} – ${video.alt}`}
-        className="h-auto max-h-72 w-auto max-w-full rounded-md border border-line bg-ink object-contain"
+        className={cn("h-auto w-auto max-w-full rounded-md border border-line bg-ink object-contain", compact ? "max-h-24" : "max-h-72")}
       />
       <figcaption className="inline-flex items-center gap-1.5 text-[12px] text-ink-soft">
         <Video className="size-3.5" strokeWidth={1.5} aria-hidden />

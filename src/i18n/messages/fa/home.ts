@@ -56,6 +56,9 @@ const home: NonNullable<PartialMessages["home"]> = {
     listLabel: "نظرها",
     quote: "«{text}»",
     verifiedPurchase: "خرید تأییدشده",
+    previous: "نظرات قبلی",
+    next: "نظرات بعدی",
+    textLabel: "نظر {name}",
     demoNote: "نظرهای نمونه – نظرهای واقعی به‌زودی اضافه می‌شوند.",
   },
   faq: {

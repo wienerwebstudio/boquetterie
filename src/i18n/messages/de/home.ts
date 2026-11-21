@@ -54,6 +54,9 @@ const home = {
     listLabel: "Bewertungen",
     quote: "„{text}“",
     verifiedPurchase: "Verifizierter Kauf",
+    previous: "Vorherige Bewertungen",
+    next: "Nächste Bewertungen",
+    textLabel: "Bewertung von {name}",
     demoNote: "Beispielbewertungen – echte Bewertungen folgen.",
   },
   faq: {

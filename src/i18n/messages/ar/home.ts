@@ -56,6 +56,9 @@ const home: NonNullable<PartialMessages["home"]> = {
     listLabel: "التقييمات",
     quote: "«{text}»",
     verifiedPurchase: "شراء موثَّق",
+    previous: "التقييمات السابقة",
+    next: "التقييمات التالية",
+    textLabel: "تقييم من {name}",
     demoNote: "تقييمات تجريبية – التقييمات الحقيقية ستُضاف لاحقًا.",
   },
   faq: {

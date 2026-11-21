@@ -57,7 +57,8 @@ export default async function HomePage() {
 
   const homeOccasions = pick(home.occasions.slugs, occasions).slice(0, 6);
   const homeCollections = pick(home.collections.slugs, categories);
-  const homeReviews = reviews.slice(0, 6);
+  // Every review, newest first – the homepage row scrolls sideways down to the oldest one.
+  const homeReviews = [...reviews].sort((a, b) => b.date.localeCompare(a.date));
   const showSubscription = settings.subscriptionEnabled && subscription.enabled;
 
   return (
