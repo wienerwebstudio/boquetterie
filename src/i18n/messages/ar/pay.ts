@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "الشراء السريع",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "أو",
     intro: "اطلبوا مباشرة عبر Apple Pay أو Google Pay أو Link – يُؤخذ عنوان التوصيل وبيانات التواصل من محفظتكم.",
     postalCode: "الرمز البريدي للمستلم",
     date: "يوم التوصيل",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "الزهور والإضافات",
     shipping: "التوصيل في {date}",
     shippingWindow: "التوصيل في {date}، {window}",
-    legal: "باستخدام Apple Pay أو Google Pay أو Link تقدّمون طلبًا ملزمًا بالدفع. وتسري {terms} و{withdrawal}. لا يوجد حق عدول عن الزهور المقطوفة الطازجة.",
-    terms: "الشروط والأحكام العامة",
-    withdrawal: "معلومات حق العدول",
+    legal: "باستخدام {wallet} تقدّمون طلبًا ملزمًا بالدفع · {terms} · {withdrawal}",
+    terms: "الشروط",
+    withdrawal: "العدول",
+    withdrawalNote: "لا يوجد حق عدول عن الزهور المقطوفة الطازجة.",
   },
 };
 

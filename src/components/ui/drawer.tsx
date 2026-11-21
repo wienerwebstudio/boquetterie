@@ -7,10 +7,10 @@ import { useFocusTrap } from "@/lib/use-focus-trap";
 import { useI18n } from "@/i18n/client";
 
 export function Drawer({
-  open, onClose, title, children, side = "right", footer, width = "max-w-[480px]", className, labelledBy,
+  open, onClose, title, children, side = "right", footer, footerClassName, width = "max-w-[480px]", className, labelledBy,
 }: {
   open: boolean; onClose: () => void; title?: React.ReactNode; children: React.ReactNode;
-  side?: "right" | "left" | "bottom"; footer?: React.ReactNode; width?: string; className?: string; labelledBy?: string;
+  side?: "right" | "left" | "bottom"; footer?: React.ReactNode; footerClassName?: string; width?: string; className?: string; labelledBy?: string;
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
   const autoId = useId();
@@ -47,7 +47,7 @@ export function Drawer({
           </div>
         )}
         <div className="flex-1 overflow-y-auto overscroll-contain">{children}</div>
-        {footer && <div className="border-t border-line bg-ivory px-5 py-4 sm:px-6">{footer}</div>}
+        {footer && <div className={cn("border-t border-line bg-ivory", footerClassName ?? "px-5 py-4 sm:px-6")}>{footer}</div>}
       </div>
     </div>,
     document.body,

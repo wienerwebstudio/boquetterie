@@ -19,8 +19,6 @@ const pay = {
   },
   express: {
     title: "Express-Kauf",
-    /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "oder",
     intro: "Direkt mit Apple Pay, Google Pay oder Link bestellen – Lieferadresse und Kontaktdaten kommen aus deiner Wallet.",
     postalCode: "PLZ des Empfängers",
     date: "Liefertag",
@@ -45,10 +43,12 @@ const pay = {
     /** Shipping rate in the wallet sheet. */
     shipping: "Lieferung am {date}",
     shippingWindow: "Lieferung am {date}, {window}",
-    /** "{terms}" and "{withdrawal}" are links. */
-    legal: "Mit Apple Pay, Google Pay oder Link gibst du eine zahlungspflichtige Bestellung auf. Es gelten unsere {terms} und die {withdrawal}. Für frische Schnittblumen besteht kein Widerrufsrecht.",
+    /** One line under the wallet button: "{wallet}" is Apple Pay / Google Pay / Link, "{terms}" and "{withdrawal}" are links. */
+    legal: "Mit {wallet} bestellst du zahlungspflichtig · {terms} · {withdrawal}",
     terms: "AGB",
-    withdrawal: "Widerrufsbelehrung",
+    withdrawal: "Widerruf",
+    /** Title of the withdrawal link (cut flowers are excluded from the right of withdrawal). */
+    withdrawalNote: "Für frische Schnittblumen besteht kein Widerrufsrecht.",
   },
 };
 

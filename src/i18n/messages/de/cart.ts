@@ -27,9 +27,9 @@ const cart = {
   },
   drawer: {
     total: "Gesamt",
-    /** "{vat}" is the short price label (e.g. "Endpreis"). */
-    inclDelivery: "{vat} inkl. Lieferung",
-    plusDelivery: "{vat} · zzgl. Lieferung",
+    /** Shown after "Gesamt ·" in the drawer footer. */
+    inclDelivery: "inkl. Lieferung",
+    plusDelivery: "zzgl. Lieferung",
   },
   /** Price wording depends on the VAT status (see src/lib/vat.ts). */
   vat: {
@@ -47,6 +47,10 @@ const cart = {
     wish: "Wunsch: {note}",
     delivery: "Lieferung",
     chooseDateInCheckout: "Lieferdatum im Checkout wählen",
+    /** Notice at the cart line when its delivery day is past or no longer offered. */
+    expired: "Liefertermin abgelaufen – bitte neu wählen",
+    chooseDate: "Liefertag wählen",
+    chooseWindow: "Zeitfenster wählen",
     anonymous: "Ohne Absender",
     extras: "Extras",
     extraLess: "{name}: eins weniger",

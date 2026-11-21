@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "Brza kupovina",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "ili",
     intro: "Naručite direktno putem Apple Pay, Google Pay ili Link – adresa dostave i kontakt podaci dolaze iz vašeg novčanika.",
     postalCode: "Poštanski broj primaoca",
     date: "Dan dostave",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "Cvijeće i dodaci",
     shipping: "Dostava {date}",
     shippingWindow: "Dostava {date}, {window}",
-    legal: "Putem Apple Pay, Google Pay ili Link dajete narudžbu s obavezom plaćanja. Važe naši {terms} i {withdrawal}. Za svježe rezano cvijeće ne postoji pravo na odustanak.",
-    terms: "Opći uslovi poslovanja",
-    withdrawal: "Pouka o pravu na odustanak",
+    legal: "Putem {wallet} dajete narudžbu s obavezom plaćanja · {terms} · {withdrawal}",
+    terms: "Uslovi",
+    withdrawal: "Odustanak",
+    withdrawalNote: "Za svježe rezano cvijeće ne postoji pravo na odustanak.",
   },
 };
 

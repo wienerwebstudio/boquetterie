@@ -14,6 +14,7 @@ import { CartSurprise } from "./cart-surprise";
 import { CartUpsell } from "./cart-upsell";
 import { CartSummary } from "./cart-summary";
 import { CartEmpty, CartTrustRow } from "./cart-drawer";
+import { CartDeliveryProvider } from "./cart-delivery";
 
 /** Full-page cart. Lines left, sticky summary right. */
 export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]; cardsEnabled?: boolean }) {
@@ -36,8 +37,10 @@ export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]
   }
 
   const count = cartCount(items);
+  const checkout = <Button href={routes.checkout} size="xl" full className={ordersPaused() ? "mt-6" : undefined} icon={<Lock className="size-4" aria-hidden />}>{m.cart.checkout}</Button>;
 
   return (
+    <CartDeliveryProvider items={items}>
     <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
       <p className="sr-only" aria-live="polite">{fmt(m.cart.liveCount, { count: plural(count, m.cart.items) })}</p>
       <section className="lg:col-span-7" aria-labelledby="cart-items-title">
@@ -60,11 +63,11 @@ export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]
         <div className="rounded-lg border border-line bg-white/60 p-5 sm:p-6 lg:sticky lg:top-28">
           <h2 className="font-serif text-2xl text-ink">{m.cart.summaryTitle}</h2>
           <CartSummary className="mt-5" />
-          <Button href={routes.checkout} size="xl" full className="mt-6" icon={<Lock className="size-4" aria-hidden />}>{m.cart.checkout}</Button>
-          {!ordersPaused() && <ExpressBuy items={items} couponCode={couponCode} source="cart" />}
-          <CartTrustRow className="mt-4 flex items-center justify-center gap-4 text-[11.5px] text-ink-muted" />
+          {ordersPaused() ? checkout : <ExpressBuy items={items} couponCode={couponCode} source="cart" layout="page" primary={checkout} className="mt-6" />}
+          <CartTrustRow className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11.5px] text-ink-muted" />
         </div>
       </aside>
     </div>
+    </CartDeliveryProvider>
   );
 }

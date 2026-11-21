@@ -32,8 +32,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "Spolu",
-    inclDelivery: "{vat} vrátane doručenia",
-    plusDelivery: "{vat} · plus doručenie",
+    inclDelivery: "vrátane doručenia",
+    plusDelivery: "plus doručenie",
   },
   vat: {
     smallBusiness: {
@@ -50,6 +50,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "Želanie: {note}",
     delivery: "Doručenie",
     chooseDateInCheckout: "Dátum doručenia vyberiete v pokladni",
+    expired: "Termín doručenia uplynul – vyberte nový",
+    chooseDate: "Vyberte deň doručenia",
+    chooseWindow: "Vyberte časové okno",
     anonymous: "Bez odosielateľa",
     extras: "Doplnky",
     extraLess: "{name}: o jeden menej",

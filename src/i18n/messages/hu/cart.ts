@@ -27,8 +27,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "Összesen",
-    inclDelivery: "{vat}, kiszállítással együtt",
-    plusDelivery: "{vat} · + kiszállítási díj",
+    inclDelivery: "kiszállítással együtt",
+    plusDelivery: "+ kiszállítási díj",
   },
   vat: {
     smallBusiness: {
@@ -45,6 +45,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "Kívánság: {note}",
     delivery: "Kiszállítás",
     chooseDateInCheckout: "A kiszállítás dátumát a pénztárban választod ki",
+    expired: "A kiszállítási időpont lejárt – kérjük, válassz újat",
+    chooseDate: "Válassz kiszállítási napot",
+    chooseWindow: "Válassz időablakot",
     anonymous: "Feladó nélkül",
     extras: "Extrák",
     extraLess: "{name}: eggyel kevesebb",

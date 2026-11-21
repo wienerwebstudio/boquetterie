@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "خرید سریع",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "یا",
     intro: "مستقیماً با Apple Pay، Google Pay یا Link سفارش دهید – نشانی تحویل و اطلاعات تماس از کیف پول شما گرفته می‌شود.",
     postalCode: "کد پستی گیرنده",
     date: "روز تحویل",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "گل‌ها و افزودنی‌ها",
     shipping: "تحویل در {date}",
     shippingWindow: "تحویل در {date}، {window}",
-    legal: "با Apple Pay، Google Pay یا Link سفارشی با تعهد پرداخت ثبت می‌کنید. {terms} و {withdrawal} ما معتبر است. برای گل‌های شاخه‌بریدهٔ تازه حق انصراف وجود ندارد.",
+    legal: "با {wallet} سفارشی با تعهد پرداخت ثبت می‌کنید · {terms} · {withdrawal}",
     terms: "شرایط و ضوابط",
-    withdrawal: "اطلاعات مربوط به حق انصراف",
+    withdrawal: "انصراف",
+    withdrawalNote: "برای گل‌های شاخه‌بریدهٔ تازه حق انصراف وجود ندارد.",
   },
 };
 

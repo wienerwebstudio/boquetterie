@@ -27,8 +27,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "Total",
-    inclDelivery: "{vat}, livraison incluse",
-    plusDelivery: "{vat} · hors frais de livraison",
+    inclDelivery: "livraison incluse",
+    plusDelivery: "hors frais de livraison",
   },
   vat: {
     smallBusiness: {
@@ -45,6 +45,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "Souhait : {note}",
     delivery: "Livraison",
     chooseDateInCheckout: "Choisir la date de livraison lors de la commande",
+    expired: "Date de livraison dépassée – veuillez en choisir une nouvelle",
+    chooseDate: "Choisir le jour de livraison",
+    chooseWindow: "Choisir le créneau horaire",
     anonymous: "Sans expéditeur",
     extras: "Extras",
     extraLess: "{name} : un de moins",

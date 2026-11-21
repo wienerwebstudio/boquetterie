@@ -8,6 +8,8 @@ import { cn } from "@/lib/format";
 import { useI18n } from "@/i18n/client";
 import { routes } from "@/lib/urls";
 import { truncateMessage } from "@/lib/cart-helpers";
+import { useCartDelivery } from "./cart-delivery";
+import { CartLineDelivery } from "./cart-line-delivery";
 
 export function CartLine({ item, compact = true, className }: { item: CartItem; compact?: boolean; className?: string }) {
   const setQuantity = useCart((s) => s.setQuantity);
@@ -18,6 +20,13 @@ export function CartLine({ item, compact = true, className }: { item: CartItem; 
   const t = m.cart.line;
   const { snapshot } = item;
   const href = routes.product(snapshot.slug);
+  const delivery = useCartDelivery();
+  const anchor = delivery?.anchorId === item.id ? delivery : null;
+  const expired = anchor?.visibleIssue === "expired";
+  // All lines share the order's slot: show its window once it is chosen.
+  const windowLabel = delivery && item.deliveryDate === delivery.date && delivery.complete && delivery.windows.length > 1
+    ? delivery.windows.find((w) => w.id === delivery.windowId)?.label
+    : undefined;
 
   return (
     <article className={cn("flex gap-4", className)} aria-label={`${snapshot.name}, ${snapshot.sizeLabel}`}>
@@ -35,14 +44,19 @@ export function CartLine({ item, compact = true, className }: { item: CartItem; 
           <p className="shrink-0 text-[15px] font-semibold tabular-nums text-ink">{price(snapshot.unitPrice * item.quantity)}</p>
         </div>
 
-        <p className="mt-2 flex items-center gap-1.5 text-[13px] text-ink-muted">
+        {(item.deliveryDate || !anchor?.visibleIssue) && <p className="mt-2 flex items-center gap-1.5 text-[13px] text-ink-muted">
           <CalendarDays className="size-3.5 shrink-0 text-forest" aria-hidden />
           {item.deliveryDate ? (
-            <span>{t.delivery} <span className="font-semibold text-ink">{dateShort(item.deliveryDate)}</span>{item.postalCode && <span> · {item.postalCode}</span>}</span>
+            <span>
+              {t.delivery} <span className={cn("font-semibold", expired ? "text-ink-muted line-through" : "text-ink")}>{dateShort(item.deliveryDate)}</span>
+              {windowLabel && <span> · {windowLabel}</span>}
+              {item.postalCode && <span> · {item.postalCode}</span>}
+            </span>
           ) : (
             <span>{t.chooseDateInCheckout}</span>
           )}
-        </p>
+        </p>}
+        {anchor && <CartLineDelivery delivery={anchor} />}
 
         {item.message && (
           <p className="mt-1.5 flex items-center gap-1.5 text-[13px] text-ink-muted">

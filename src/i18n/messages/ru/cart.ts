@@ -27,8 +27,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "Итого",
-    inclDelivery: "{vat}, включая доставку",
-    plusDelivery: "{vat} · плюс доставка",
+    inclDelivery: "включая доставку",
+    plusDelivery: "плюс доставка",
   },
   vat: {
     smallBusiness: {
@@ -45,6 +45,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "Пожелание: {note}",
     delivery: "Доставка",
     chooseDateInCheckout: "Дату доставки можно выбрать при оформлении заказа",
+    expired: "Дата доставки истекла – выберите новую",
+    chooseDate: "Выберите день доставки",
+    chooseWindow: "Выберите временной интервал",
     anonymous: "Без указания отправителя",
     extras: "Дополнения",
     extraLess: "{name}: на один меньше",

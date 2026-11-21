@@ -27,8 +27,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "جمع کل",
-    inclDelivery: "{vat} با احتساب هزینهٔ ارسال",
-    plusDelivery: "{vat} · به‌علاوهٔ هزینهٔ ارسال",
+    inclDelivery: "با احتساب هزینهٔ ارسال",
+    plusDelivery: "به‌علاوهٔ هزینهٔ ارسال",
   },
   vat: {
     smallBusiness: {
@@ -45,6 +45,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "خواسته: {note}",
     delivery: "تحویل",
     chooseDateInCheckout: "انتخاب تاریخ تحویل هنگام تکمیل خرید",
+    expired: "زمان تحویل گذشته است – لطفاً زمان جدیدی انتخاب کنید",
+    chooseDate: "انتخاب روز تحویل",
+    chooseWindow: "انتخاب بازهٔ زمانی",
     anonymous: "بدون نام فرستنده",
     extras: "افزودنی‌ها",
     extraLess: "{name}: یکی کمتر",

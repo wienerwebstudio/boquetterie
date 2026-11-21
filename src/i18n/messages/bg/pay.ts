@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "Експресна покупка",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "или",
     intro: "Поръчайте директно с Apple Pay, Google Pay или Link – адресът за доставка и данните за контакт идват от вашия портфейл.",
     postalCode: "Пощенски код на получателя",
     date: "Ден на доставка",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "Цветя и допълнения",
     shipping: "Доставка на {date}",
     shippingWindow: "Доставка на {date}, {window}",
-    legal: "С Apple Pay, Google Pay или Link правите поръчка със задължение за плащане. Важат нашите {terms} и {withdrawal}. За свежи рязани цветя няма право на отказ.",
+    legal: "С {wallet} правите поръчка със задължение за плащане · {terms} · {withdrawal}",
     terms: "Общи условия",
-    withdrawal: "Информацията за правото на отказ",
+    withdrawal: "Отказ",
+    withdrawalNote: "За свежи рязани цветя няма право на отказ.",
   },
 };
 

@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "Експрес-покупка",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "або",
     intro: "Замовляйте одразу через Apple Pay, Google Pay або Link – адреса доставки й контактні дані беруться з вашого гаманця.",
     postalCode: "Поштовий індекс отримувача",
     date: "День доставки",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "Квіти та доповнення",
     shipping: "Доставка {date}",
     shippingWindow: "Доставка {date}, {window}",
-    legal: "Через Apple Pay, Google Pay або Link ви оформлюєте замовлення з обов’язком оплати. Діють наші {terms} та {withdrawal}. Щодо свіжих зрізаних квітів право на відмову не діє.",
-    terms: "Умови продажу",
-    withdrawal: "Інформація про право на відмову",
+    legal: "Через {wallet} ви оформлюєте замовлення з обов’язком оплати · {terms} · {withdrawal}",
+    terms: "Умови",
+    withdrawal: "Відмова",
+    withdrawalNote: "Щодо свіжих зрізаних квітів право на відмову не діє.",
   },
 };
 

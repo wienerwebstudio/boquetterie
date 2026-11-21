@@ -32,8 +32,8 @@ const cart: NonNullable<PartialMessages["cart"]> = {
   },
   drawer: {
     total: "Ukupno",
-    inclDelivery: "{vat} uklj. dostavu",
-    plusDelivery: "{vat} · plus dostava",
+    inclDelivery: "uklj. dostavu",
+    plusDelivery: "plus dostava",
   },
   vat: {
     smallBusiness: {
@@ -50,6 +50,9 @@ const cart: NonNullable<PartialMessages["cart"]> = {
     wish: "Želja: {note}",
     delivery: "Dostava",
     chooseDateInCheckout: "Datum dostave birate pri plaćanju",
+    expired: "Termin dostave je istekao – odaberite novi",
+    chooseDate: "Odaberite dan dostave",
+    chooseWindow: "Odaberite vremenski termin",
     anonymous: "Bez pošiljaoca",
     extras: "Dodaci",
     extraLess: "{name}: jedan manje",

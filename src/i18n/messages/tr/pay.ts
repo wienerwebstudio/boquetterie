@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "Hızlı satın alma",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "veya",
     intro: "Doğrudan Apple Pay, Google Pay veya Link ile sipariş verin – teslimat adresi ve iletişim bilgileri cüzdanınızdan gelir.",
     postalCode: "Alıcının posta kodu",
     date: "Teslimat günü",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "Çiçekler ve ekstralar",
     shipping: "{date} tarihinde teslimat",
     shippingWindow: "{date} tarihinde teslimat, {window}",
-    legal: "Apple Pay, Google Pay veya Link ile ödeme yükümlülüğü doğuran bir sipariş verirsiniz. {terms} ve {withdrawal} geçerlidir. Taze kesme çiçekler için cayma hakkı yoktur.",
-    terms: "Genel İşlem Koşullarımız",
-    withdrawal: "Cayma Hakkı Bilgilendirmesi",
+    legal: "{wallet} ile ödeme yükümlülüğü doğuran bir sipariş verirsiniz · {terms} · {withdrawal}",
+    terms: "Koşullar",
+    withdrawal: "Cayma",
+    withdrawalNote: "Taze kesme çiçekler için cayma hakkı yoktur.",
   },
 };
 

@@ -14,7 +14,6 @@ const pay: NonNullable<PartialMessages["pay"]> = {
   express: {
     title: "Сиха эцар",
     /** Divider between the checkout button and the wallet buttons in the cart. */
-    or: "я",
     intro: "Apple Pay, Google Pay я Link-ца нийсса заказ йе – дӀакхачоран адрес а, зӀенан хаамаш а шун бумажникера схьаоьцу.",
     postalCode: "Схьаоьцучун почтан индекс",
     date: "ДӀакхачоран де",
@@ -38,9 +37,10 @@ const pay: NonNullable<PartialMessages["pay"]> = {
     goods: "Зезагаш а, тӀетохарш а",
     shipping: "ДӀакхачор {date}",
     shippingWindow: "ДӀакхачор {date}, {window}",
-    legal: "Apple Pay, Google Pay я Link-ца аша мах бан дезаш йолу заказ йо. Тхан {terms} а, {withdrawal} а лелало. Керла хедина зезагашна дӀаваларан бакъо яц.",
+    legal: "{wallet}-ца аша мах бан дезаш йолу заказ йо · {terms} · {withdrawal}",
     terms: "Юкъара хьелаш (AGB)",
-    withdrawal: "договорах дӀаваларан бакъонах лаьцна хаам",
+    withdrawal: "ДӀавалар",
+    withdrawalNote: "Керла хедина зезагашна дӀаваларан бакъо яц.",
   },
 };
 
