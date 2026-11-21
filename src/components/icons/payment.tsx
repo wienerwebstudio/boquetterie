@@ -12,7 +12,9 @@ function Brand({ icon, color, className }: { icon: SimpleIcon; color?: string; c
   );
 }
 
-const box = "inline-flex h-8 items-center gap-1.5 rounded-md border border-line bg-white px-2";
+const base = "inline-flex h-8 items-center gap-1.5 rounded-md border px-2";
+/** Default look; brand marks with their own background pass `surface` instead (cn only joins classes – two bg-* would clash). */
+const box = `${base} border-line bg-white`;
 
 /** Payment method marks for the checkout: the brands customers look for. */
 export function PaymentMark({ id, className }: { id: PaymentMethodConfig["id"]; className?: string }) {
@@ -26,11 +28,11 @@ export function PaymentMark({ id, className }: { id: PaymentMethodConfig["id"]; 
         </span>
       );
     case "apple_pay":
-      return <span className={cn(box, "border-black bg-black", className)}><Brand icon={siApplepay} color="#ffffff" className="h-6" /></span>;
+      return <span className={cn(base, "border-black bg-black", className)}><Brand icon={siApplepay} color="#ffffff" className="h-6" /></span>;
     case "google_pay":
       return <span className={cn(box, className)}><Brand icon={siGooglepay} className="h-6" /></span>;
     case "klarna":
-      return <span className={cn(box, "border-[#FFB3C7] bg-[#FFB3C7]", className)}><Brand icon={siKlarna} color="#0b051d" className="h-4" /><span className="text-[12px] font-bold text-[#0b051d]">Klarna</span></span>;
+      return <span className={cn(base, "border-[#FFB3C7] bg-[#FFB3C7]", className)}><Brand icon={siKlarna} color="#0b051d" className="h-4" /><span className="text-[12px] font-bold text-[#0b051d]">Klarna</span></span>;
     case "paypal":
       return <span className={cn(box, className)}><Brand icon={siPaypal} className="h-5" /></span>;
     case "eps":
