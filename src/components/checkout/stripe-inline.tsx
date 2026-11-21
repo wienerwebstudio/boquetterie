@@ -11,8 +11,8 @@ import { STRIPE_APPEARANCE, STRIPE_FONTS, getStripe, stripeLocale } from "./stri
 /**
  * Stripe Payment Element shown inline under the selected entry of our own method list
  * (checkout step 5, offer page). Elements run in deferred mode – no PaymentIntent
- * exists yet: amount/currency are for display only, `allowedPaymentMethodTypes` is the
- * Stripe type of the chosen entry. The parent drives the one-step purchase through the
+ * exists yet: amount/currency are for display only; the chosen entry's Stripe type is
+ * shown first (`paymentMethodOrder`) – Stripe's other methods stay available as tabs. The parent drives the one-step purchase through the
  * handle: `submit()` FIRST and synchronously in the click handler (Apple Pay needs the
  * user gesture), then the order is created, then `confirm()` with its client secret.
  *
@@ -59,8 +59,11 @@ export function StripeInline({ publishableKey, method, amount, email, name, clas
   const options = useMemo<StripeElementsOptions>(() => {
     const common = { locale: stripeLocale(locale), appearance: STRIPE_APPEARANCE, fonts: STRIPE_FONTS };
     if (classicSecret) return { ...common, clientSecret: classicSecret };
-    return { ...common, mode: "payment", amount: cents, currency: "eur", allowedPaymentMethodTypes: config?.types ?? ["card"] };
-  }, [locale, classicSecret, cents, config]);
+    // No allowedPaymentMethodTypes: Stripe refuses to confirm such Elements against our PaymentIntents
+    // ("…using allowed_payment_method_types cannot be confirmed through the API configured with
+    // automatic payment methods"). Dynamic methods (Dashboard) + paymentMethodOrder instead.
+    return { ...common, mode: "payment", amount: cents, currency: "eur" };
+  }, [locale, classicSecret, cents]);
 
   if (failed) return <p role="alert" className="rounded-md border border-danger/30 bg-rose-100/60 px-4 py-3 text-[14px] text-ink">{t.loadFailed}</p>;
   if (!stripe || !config) return <InlineSkeleton label={t.loading} />;

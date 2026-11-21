@@ -7,8 +7,8 @@ function memoryStorage() {
 }
 
 describe("inline Payment Element per list entry", () => {
-  it("shows only the card fields for Kreditkarte – no wallet, no Link", () => {
-    expect(inlineElementsFor("card")).toEqual({ types: ["card"], wallets: { applePay: "never", googlePay: "never", link: "never" } });
+  it("puts the card fields first for Kreditkarte – no wallet, no Link", () => {
+    expect(inlineElementsFor("card")).toEqual({ types: ["card"], wallets: { applePay: "never", googlePay: "never", link: "never" }, order: ["card"] });
   });
 
   it("maps Apple Pay and Google Pay to the card type with only their own wallet visible and first", () => {
@@ -25,6 +25,8 @@ describe("inline Payment Element per list entry", () => {
   it("uses the redirect methods' own Stripe types and nothing for PayPal", () => {
     expect(inlineElementsFor("klarna")?.types).toEqual(["klarna"]);
     expect(inlineElementsFor("eps")?.types).toEqual(["eps"]);
+    expect(inlineElementsFor("klarna")?.order).toEqual(["klarna"]);
+    expect(inlineElementsFor("eps")?.order).toEqual(["eps"]);
     expect(inlineElementsFor("paypal")).toBeNull();
   });
 });

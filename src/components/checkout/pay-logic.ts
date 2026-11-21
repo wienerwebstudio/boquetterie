@@ -9,11 +9,11 @@ import type { PaymentMethodId } from "@/types/payments";
 export type WalletSetting = "auto" | "never";
 
 export interface InlineElementsConfig {
-  /** `allowedPaymentMethodTypes` of the deferred Elements group. */
+  /** Stripe type(s) of the entry (first in `order`; not passed as allowedPaymentMethodTypes – see stripe-inline.tsx). */
   types: string[];
   /** Payment Element `wallets` – only the wallet of the chosen entry may show. */
   wallets: { applePay: WalletSetting; googlePay: WalletSetting; link: WalletSetting };
-  /** Payment Element `paymentMethodOrder` – the wallet tab first. */
+  /** Payment Element `paymentMethodOrder` – the chosen method's tab first. */
   order?: string[];
 }
 
@@ -26,15 +26,15 @@ export interface InlineElementsConfig {
 export function inlineElementsFor(method: PaymentMethodId): InlineElementsConfig | null {
   switch (method) {
     case "card":
-      return { types: ["card"], wallets: { applePay: "never", googlePay: "never", link: "never" } };
+      return { types: ["card"], wallets: { applePay: "never", googlePay: "never", link: "never" }, order: ["card"] };
     case "apple_pay":
       return { types: ["card"], wallets: { applePay: "auto", googlePay: "never", link: "never" }, order: ["apple_pay", "card"] };
     case "google_pay":
       return { types: ["card"], wallets: { applePay: "never", googlePay: "auto", link: "never" }, order: ["google_pay", "card"] };
     case "klarna":
-      return { types: ["klarna"], wallets: { applePay: "never", googlePay: "never", link: "never" } };
+      return { types: ["klarna"], wallets: { applePay: "never", googlePay: "never", link: "never" }, order: ["klarna"] };
     case "eps":
-      return { types: ["eps"], wallets: { applePay: "never", googlePay: "never", link: "never" } };
+      return { types: ["eps"], wallets: { applePay: "never", googlePay: "never", link: "never" }, order: ["eps"] };
     default:
       return null;
   }
