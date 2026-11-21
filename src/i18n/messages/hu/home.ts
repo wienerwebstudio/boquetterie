@@ -56,6 +56,9 @@ const home: NonNullable<PartialMessages["home"]> = {
     listLabel: "Értékelések",
     quote: "„{text}”",
     verifiedPurchase: "Ellenőrzött vásárlás",
+    previous: "Előző értékelések",
+    next: "Következő értékelések",
+    textLabel: "{name} értékelése",
     demoNote: "Példaértékelések – a valódi értékelések hamarosan következnek.",
   },
   faq: {

@@ -56,6 +56,9 @@ const home: NonNullable<PartialMessages["home"]> = {
     listLabel: "Valoraciones",
     quote: "«{text}»",
     verifiedPurchase: "Compra verificada",
+    previous: "Opiniones anteriores",
+    next: "Opiniones siguientes",
+    textLabel: "Opinión de {name}",
     demoNote: "Valoraciones de ejemplo: pronto habrá valoraciones reales.",
   },
   faq: {

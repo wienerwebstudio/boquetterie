@@ -56,6 +56,9 @@ const home: NonNullable<PartialMessages["home"]> = {
     listLabel: "Hodnotenia",
     quote: "„{text}“",
     verifiedPurchase: "Overený nákup",
+    previous: "Predchádzajúce hodnotenia",
+    next: "Ďalšie hodnotenia",
+    textLabel: "Hodnotenie od {name}",
     demoNote: "Ukážkové hodnotenia – skutočné hodnotenia doplníme.",
   },
   faq: {

@@ -56,6 +56,9 @@ const home: NonNullable<PartialMessages["home"]> = {
     listLabel: "Recenzije",
     quote: "„{text}“",
     verifiedPurchase: "Potvrđena kupovina",
+    previous: "Prethodne recenzije",
+    next: "Sljedeće recenzije",
+    textLabel: "Recenzija od {name}",
     demoNote: "Primjeri recenzija – prave recenzije uskoro.",
   },
   faq: {
