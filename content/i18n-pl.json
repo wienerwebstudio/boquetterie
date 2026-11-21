@@ -1,0 +1,2520 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Różowe róże, różowe gerbery i białe lilie",
+      "shortDescription": "Jasny, swobodny bukiet w różu i bieli, który wnosi dobry nastrój do każdego wnętrza.",
+      "description": "Rosé Dream łączy różowe róże i różowe gerbery z białymi liliami, delikatną gipsówką i świeżą zielenią. Swobodnie związany i jasny w odbiorze, pasuje na urodziny, jako podziękowanie albo po prostu bez okazji.",
+      "flowers": [
+        "Róże",
+        "Gerbery",
+        "Lilie",
+        "Gipsówka"
+      ],
+      "care": [
+        "Codziennie nalewaj do wazonu świeżej wody.",
+        "W razie potrzeby podcinaj łodygi.",
+        "Regularnie usuwaj zwiędłe kwiaty."
+      ],
+      "seo": {
+        "title": "Rosé Dream – bukiet w różu i bieli",
+        "description": "Rosé Dream: różowe róże, różowe gerbery i białe lilie, swobodnie związane. Jasny bukiet na urodziny i podziękowanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Bukiet z różowych róż, różowych gerber i białych lilii w szklanym wazonie na drewnianej komodzie"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Żółty bukiet",
+      "tagline": "Żółte gerbery, róże i gipsówka",
+      "shortDescription": "Słoneczny bukiet w żółci i bieli, przewiązany żółtą kokardą.",
+      "description": "Intensywnie żółte gerbery spotykają się z białymi i żółtymi różami, gipsówką i świeżą zielenią. W jasnym opakowaniu z żółtą kokardą – bukiet na urodziny, z gratulacjami, na podziękowanie lub z życzeniami powrotu do zdrowia.",
+      "flowers": [
+        "Gerbery",
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Nie stawiaj w pełnym słońcu."
+      ],
+      "seo": {
+        "title": "Żółty bukiet – gerbery i róże w żółci",
+        "description": "Żółte gerbery, białe i żółte róże z gipsówką i żółtą kokardą. Jasne pozdrowienie na urodziny lub powrót do zdrowia – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Bukiet z żółtych gerber, białych i żółtych róż w jasnym opakowaniu z żółtą kokardą"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Biały bukiet",
+      "tagline": "Jasne róże, gerbery i lilie",
+      "shortDescription": "Jasny, spokojny bukiet w bieli i kremie z delikatnymi różowymi akcentami.",
+      "description": "Biały bukiet łączy jasne róże, gerbery i lilie z gipsówką w prostą, ponadczasową kompozycję. Delikatne akcenty w różu i kolorze morelowym dodają mu lekkości. Pasuje na rocznicę ślubu lub inną rocznicę, jako podziękowanie albo stylowe pozdrowienie.",
+      "flowers": [
+        "Róże",
+        "Gerbery",
+        "Lilie",
+        "Gipsówka"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "W razie potrzeby ostrożnie usuń pyłek z lilii."
+      ],
+      "seo": {
+        "title": "Biały bukiet – bukiet w bieli i kremie",
+        "description": "Jasne róże, gerbery i lilie z gipsówką: prosty bukiet na rocznicę, rocznicę ślubu lub podziękowanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Jasny bukiet z kremowych róż, różowych gerber, lilii i gipsówki w białym opakowaniu"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Niebieskie i białe róże w niebieskim opakowaniu",
+      "shortDescription": "Niebieskie i białe róże w jasnoniebieskim opakowaniu – bukiet, który przyciąga wzrok.",
+      "description": "Blue Bouquet łączy niebieskie i białe róże z gipsówką, białą lilią i świeżą zielenią. Jasnoniebieskie opakowanie podkreśla kolor kwiatów. Niezwykły prezent na urodziny, rocznicę albo dla osób, które lubią coś wyjątkowego.",
+      "flowers": [
+        "Róże",
+        "Lilie",
+        "Gipsówka"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – niebieskie i białe róże",
+        "description": "Niebieskie i białe róże z gipsówką w jasnoniebieskim opakowaniu. Niezwykły bukiet róż na urodziny lub rocznicę – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Bukiet z niebieskich i białych róż z gipsówką w jasnoniebieskim opakowaniu na drewnianej komodzie"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Tęczowe róże w wielu kolorach",
+      "shortDescription": "Bukiet z tęczowych róż, w których każdy kwiat mieni się kilkoma kolorami.",
+      "description": "Farbensinfonie to bukiet z tęczowych róż: każdy kwiat ma kilka kolorów obok siebie, od czerwieni i pomarańczu przez żółć i zieleń aż po błękit i fiolet. Ciasno związany wygląda jak kolorowa kula. Radosna niespodzianka na urodziny lub przyjęcie.",
+      "flowers": [
+        "Tęczowe róże"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – tęczowe róże",
+        "description": "Tęczowe róże, w których każdy kwiat mieni się kilkoma kolorami. Radosny bukiet róż na urodziny – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Farbensinfonie, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Farbensinfonie, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Farbensinfonie, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Gęsty bukiet z tęczowych róż w kremowym wazonie",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Tęczowe róże z bliska, każdy kwiat w kilku kolorach"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelicje, lilie i gerbery w pomarańczu i żółci",
+      "shortDescription": "Egzotyczny bukiet w pomarańczu i żółci ze strelicjami jako głównym akcentem.",
+      "description": "Sonnenzauber łączy efektowne strelicje (rajskie ptaki) z białymi liliami, żółtymi gerberami i świeżą zielenią. Ciepłe odcienie pomarańczu i żółci nadają bukietowi żywy, letni charakter.",
+      "flowers": [
+        "Strelicje (rajskie ptaki)",
+        "Lilie",
+        "Gerbery",
+        "Gipsówka"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Dbaj o czystość wazonu i regularnie wymieniaj wodę.",
+        "Nie stawiaj w pełnym słońcu."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelicje i gerbery",
+        "description": "Strelicje, lilie i żółte gerbery w ciepłym pomarańczu i żółci. Egzotyczny bukiet, który przyciąga wzrok – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Egzotyczny bukiet ze strelicji, białych lilii i żółtych gerber w przezroczystej folii",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Widok z góry na strelicje, lilię i żółte gerbery w bukiecie"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Kwiaty w odcieniach różu z gerberami i liliami",
+      "shortDescription": "Okrągły, zabawny bukiet w odcieniach różu z żółtymi akcentami.",
+      "description": "Pink Bouquet łączy kwiaty w intensywnym i jasnym różu, w tym lilie i gerbery, w okrągły, zabawny bukiet. Żółte gerbery dodają świeżych akcentów, a różowe opakowanie dopełnia całości. Piękny na urodziny, rocznicę, Dzień Matki albo bez okazji.",
+      "flowers": [
+        "Lilie",
+        "Gerbery"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Regularnie usuwaj zwiędłe kwiaty."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – bukiet w odcieniach różu",
+        "description": "Okrągły bukiet w odcieniach różu z liliami i gerberami. Na urodziny, Dzień Matki albo bez okazji – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Okrągły bukiet w odcieniach różu z żółtymi gerberami w różowym opakowaniu",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Bukiet z różowymi liliami, żółtymi gerberami i różowymi kwiatami w różowym opakowaniu z kokardą"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Róże w kolorze pomarańczowym i morelowym",
+      "shortDescription": "Róże w kolorze pomarańczowym i morelowym – ciepły bukiet jak zachód słońca.",
+      "description": "Orange Bouquet składa się z róż w kolorze pomarańczowym i morelowym, uzupełnionych delikatną zielenią i podanych w jasnym opakowaniu. Ciepły i radosny w odbiorze, pasuje na urodziny, jako podziękowanie albo po to, by komuś rozjaśnić dzień.",
+      "flowers": [
+        "Róże"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – pomarańczowe róże",
+        "description": "Róże w kolorze pomarańczowym i morelowym w jasnym opakowaniu. Ciepły bukiet róż na urodziny lub podziękowanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Orange Bouquet, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Orange Bouquet, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Orange Bouquet, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Bukiet z pomarańczowych i morelowych róż w jasnym opakowaniu na drewnianej komodzie"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Ciemnoczerwone róże w ciemnym opakowaniu",
+      "shortDescription": "Bujny bukiet z ciemnoczerwonych róż z czerwoną satynową kokardą.",
+      "description": "Red Rose Bouquet to gęsto związany bukiet z ciemnoczerwonych róż w ciemnym opakowaniu, przewiązany czerwoną satynową kokardą. Klasyczne wyznanie miłości na walentynki, rocznicę lub oświadczyny.",
+      "flowers": [
+        "Róże"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – czerwone róże",
+        "description": "Ciemnoczerwone róże w ciemnym opakowaniu z czerwoną satynową kokardą. Klasyczny bukiet róż na walentynki i rocznicę – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Red Rose Bouquet, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Red Rose Bouquet, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Red Rose Bouquet, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Bukiet z ciemnoczerwonych róż w ciemnoszarym opakowaniu z czerwoną satynową kokardą",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Leżący bukiet czerwonych róż w czarno-białym opakowaniu obok świec"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Róże i gerbery w różu, pastelach i kolorze bzu",
+      "shortDescription": "Łagodny, romantyczny bukiet w różu i pastelach.",
+      "description": "Rosa Bouquet łączy róże w różu i pastelach z gerberami i kwiatami w kolorze bzu. W białym opakowaniu z różową kokardą wygląda lekko i czule. Piękny na urodziny, Dzień Matki, narodziny dziecka lub jako pozdrowienie.",
+      "flowers": [
+        "Róże",
+        "Gerbery"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – róże w różu i pastelach",
+        "description": "Róże i gerbery w różu, pastelach i kolorze bzu, w białym opakowaniu. Na urodziny, Dzień Matki lub narodziny – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Bukiet z różowych róż, gerber i kwiatów w kolorze bzu w białym opakowaniu z różową kokardą"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Czarne róże w ciemnym opakowaniu",
+      "shortDescription": "Czarne róże w ciemnym opakowaniu – tajemnicze i niezwykłe.",
+      "description": "Blackroses to bukiet z czarnych róż w ciemnym, przezroczystym opakowaniu. Niezwykły gest dla osób, które cenią coś wyjątkowego, na przykład na urodziny lub rocznicę.",
+      "flowers": [
+        "Róże"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Blackroses – czarne róże",
+        "description": "Czarne róże w ciemnym opakowaniu: niezwykły bukiet róż dla osób, które lubią coś wyjątkowego – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Blackroses, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Blackroses, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Blackroses, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Bukiet z czarnych róż w czarnym opakowaniu w szklanym wazonie",
+        "/images/products/sortiment/blackroses-2.jpg": "Czarne róże bez opakowania w szklanym wazonie przed oknem"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Niebieskie róże z gipsówką",
+      "shortDescription": "Intensywnie niebieskie róże z gipsówką – rzadkie i naprawdę przyciągające wzrok.",
+      "description": "Blaue Liebe to bukiet z intensywnie niebieskich róż, rozluźniony delikatną gipsówką i podany w niebieskim opakowaniu. Wyjątkowy prezent na urodziny, rocznicę lub jako wyraz głębokiej więzi.",
+      "flowers": [
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – niebieskie róże",
+        "description": "Intensywnie niebieskie róże z gipsówką w niebieskim opakowaniu. Rzadki bukiet róż dla wyjątkowych osób – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Blaue Liebe, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Blaue Liebe, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Blaue Liebe, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Bukiet z niebieskich róż z gipsówką w niebieskim opakowaniu w białym wazonie",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Niebieskie róże z gipsówką w niebieskim opakowaniu, od przodu",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Leżący bukiet niebieskich róż w niebieskim opakowaniu na drewnianej komodzie"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Różowe róże z gipsówką",
+      "shortDescription": "Różowe róże w delikatnym opakowaniu – czułe i eleganckie.",
+      "description": "Rosalie to bukiet z różowych róż, rozluźniony gipsówką i podany w jasnoróżowym opakowaniu. Kobiecy i spokojny w odbiorze, pasuje na Dzień Matki, urodziny, rocznicę lub jako podziękowanie.",
+      "flowers": [
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Rosalie – różowe róże z gipsówką",
+        "description": "Różowe róże z gipsówką w jasnoróżowym opakowaniu. Na Dzień Matki, urodziny lub jako podziękowanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Rosalie, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Rosalie, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Rosalie, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Bukiet z różowych róż z gipsówką w jasnoróżowym opakowaniu w białym wazonie",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie w różowym opakowaniu w prostym białym wazonie",
+        "/images/products/sortiment/rosalie-3.jpg": "Różowe róże z gipsówką w żłobkowanym białym wazonie",
+        "/images/products/sortiment/rosalie-4.jpg": "Leżąca Rosalie, widok z góry na różowe róże i gipsówkę"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Mix czerwono-biały",
+      "tagline": "Czerwone i białe róże",
+      "shortDescription": "Czerwone i białe róże w odświętnym bukiecie.",
+      "description": "Mix czerwono-biały łączy czerwone i białe róże w białym opakowaniu, w zależności od rozmiaru rozluźnione gipsówką. Namiętność spotyka czułość: bukiet na walentynki, rocznicę, rocznicę ślubu lub jako elegancki prezent.",
+      "flowers": [
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Mix czerwono-biały – czerwone i białe róże",
+        "description": "Czerwone i białe róże w odświętnym opakowaniu. Na walentynki, rocznicę lub rocznicę ślubu, w sześciu rozmiarach – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Mix czerwono-biały, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Mix czerwono-biały, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Mix czerwono-biały, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Bukiet z czerwonych i białych róż z gipsówką w białym opakowaniu, obok płatki róż",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Czerwone i białe róże gęsto związane w białym opakowaniu",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Czerwono-biały bukiet róż w białym opakowaniu na drewnianej komodzie",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Leżący bukiet czerwonych i białych róż, widok z góry"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Bukiet tulipanów",
+      "tagline": "Tulipany w jednym kolorze lub mieszane",
+      "shortDescription": "Prosty bukiet z tulipanów, jednokolorowy lub w kolorowym miksie.",
+      "description": "Tulipany swoimi czystymi kolorami i smukłym kształtem wnoszą do domu wiosenny nastrój. Bukiet jest wiązany wyłącznie z tulipanów, w jednym kolorze lub jako kolorowy mix. Dostępny w kolorze czerwonym, żółtym, liliowym, różowym, pomarańczowym, białym i jako mix.",
+      "flowers": [
+        "Tulipany"
+      ],
+      "care": [
+        "Przytnij łodygi prosto i wstaw do zimnej wody.",
+        "Wystarczy niewiele wody, ale regularnie ją uzupełniaj.",
+        "Tulipany rosną dalej w wazonie – w razie potrzeby podcinaj łodygi."
+      ],
+      "seo": {
+        "title": "Bukiet tulipanów – tulipany w wielu kolorach",
+        "description": "Bukiet tulipanów w kolorze czerwonym, żółtym, liliowym, różowym, pomarańczowym, białym lub mieszanym. Wiosenny nastrój w domu – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "colorOptions": {
+        "rot": "Czerwony",
+        "gelb": "Żółty",
+        "lila": "Liliowy",
+        "rosa": "Różowy",
+        "orange": "Pomarańczowy",
+        "weiss": "Biały",
+        "mix": "Kolorowy mix"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Bukiet żółtych tulipanów w szklanym wazonie",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Liliowe tulipany w papierze pakowym w szklanym wazonie",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Czerwone tulipany w beżowym wazonie",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Pomarańczowe tulipany w szklanym wazonie",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Różowe tulipany w szklanym wazonie na lnianym obrusie",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Kolorowy mix tulipanów w czerwieni, żółci, różu, pomarańczu i fiolecie w beżowym wazonie",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Białe tulipany w białym wazonie"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Czerwone róże z gipsówką",
+      "shortDescription": "Wyrazisty bukiet róż w głębokiej czerwieni na wielkie uczucia.",
+      "description": "Red Passion łączy czerwone róże w gęsty, okrągły bukiet, otoczony gipsówką i ciemnym opakowaniem. Dostępny w sześciu rozmiarach – na romantyczne gesty i chwile, które mają zostać w pamięci.",
+      "flowers": [
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Przytnij łodygi na świeżo.",
+        "Codziennie nalewaj świeżej wody.",
+        "Chroń przed bezpośrednim słońcem."
+      ],
+      "seo": {
+        "title": "Red Passion – bukiet czerwonych róż",
+        "description": "Czerwone róże z gipsówką w ciemnym opakowaniu, w sześciu rozmiarach. Bukiet róż na wielkie uczucia – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Red Passion, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Red Passion, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Red Passion, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Leżący bukiet ciemnoczerwonych róż z gipsówką w czarno-złotym opakowaniu",
+        "/images/products/sortiment/red-passion-2.jpg": "Duży bukiet czerwonych róż z gipsówką w ciemnym opakowaniu w białym wazonie",
+        "/images/products/sortiment/red-passion-3.jpg": "Bardzo duży, okrągły bukiet czerwonych róż z gipsówką w ciemnym opakowaniu"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Gęsto związane czerwone róże",
+      "shortDescription": "Gęsto związane czerwone róże w ciemnym opakowaniu – ponadczasowe i pełne uczuć.",
+      "description": "Klassiker der Liebe składa się z czerwonych róż, gęsto związanych w okrągły kształt i podanych w ciemnym opakowaniu z czarną kokardą. Bukiet róż na walentynki, rocznicę, oświadczyny lub każde wyznanie miłości.",
+      "flowers": [
+        "Róże"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – czerwone róże",
+        "description": "Gęsto związane czerwone róże w ciemnym opakowaniu. Klasyczny bukiet róż na walentynki, rocznicę lub oświadczyny – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Klassiker der Liebe, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Klassiker der Liebe, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Klassiker der Liebe, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Okrągły bukiet z gęsto związanych czerwonych róż w czarnym opakowaniu z kokardą",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Czerwone róże ułożone w kulę w ciemnym opakowaniu, od przodu"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Czerwone róże z gipsówką",
+      "shortDescription": "Bujny bukiet róż w sześciu rozmiarach.",
+      "description": "Königin der Herzen łączy czerwone róże z delikatną gipsówką w ciemnym, przezroczystym opakowaniu. Dostępny w sześciu rozmiarach – od drobnego gestu po wielkie wejście.",
+      "flowers": [
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Postaw w chłodnym miejscu.",
+        "Na bieżąco usuwaj przekwitłe kwiaty.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – bujny bukiet róż",
+        "description": "Czerwone róże z gipsówką, w sześciu rozmiarach. Bujny bukiet róż na wielkie chwile – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Königin der Herzen, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Königin der Herzen, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Königin der Herzen, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Bukiet czerwonych róż z gipsówką w ciemnym opakowaniu w białym wazonie",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Duży bukiet czerwonych róż i gipsówki w czarnym opakowaniu",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Czerwone róże z gipsówką w ciemnym opakowaniu w czarnej donicy",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Widok z góry na czerwone róże z gipsówką w ciemnym opakowaniu w kształcie gwiazdy"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbery, róże i lilie w ciepłych odcieniach",
+      "shortDescription": "Ciepły bukiet w pomarańczu, różu i żółci.",
+      "description": "Herbstzauber łączy gerbery, róże i lilie w odcieniach pomarańczu, różu i żółci ze świeżą zielenią. Swobodnie związany wnosi do domu ciepłe kolory, zwłaszcza gdy dni stają się krótsze.",
+      "flowers": [
+        "Gerbery",
+        "Róże",
+        "Lilie"
+      ],
+      "care": [
+        "Nie stawiaj obok owoców.",
+        "Regularnie uzupełniaj wodę.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Herbstzauber – bukiet w ciepłych odcieniach",
+        "description": "Gerbery, róże i lilie w pomarańczu, różu i żółci. Ciepły jesienny bukiet na urodziny lub podziękowanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Bukiet z pomarańczowych gerber, róż w kolorze morelowym i różowym oraz lilii w szklanym wazonie"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Czerwone róże, gerbery i zielone akcenty",
+      "shortDescription": "Żywy bukiet w czerwieni i pomarańczu ze świeżymi zielonymi akcentami.",
+      "description": "Blütenfreude łączy czerwone róże i gerbery w czerwieni i pomarańczu z zielonymi kwiatami pompon i gałązkami eukaliptusa. Intensywny w kolorach, a jednak harmonijny w formie – piękny na urodziny, jako podziękowanie albo bez okazji.",
+      "flowers": [
+        "Róże",
+        "Gerbery"
+      ],
+      "care": [
+        "Codziennie nalewaj do wazonu świeżej wody.",
+        "W razie potrzeby podcinaj łodygi.",
+        "Regularnie usuwaj zwiędłe kwiaty."
+      ],
+      "seo": {
+        "title": "Blütenfreude – róże i gerbery w czerwieni",
+        "description": "Czerwone róże, gerbery w czerwieni i pomarańczu oraz świeże zielone akcenty. Żywy bukiet na urodziny – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Bukiet z czerwonych róż, czerwonych i pomarańczowych gerber oraz zielonych kwiatów pompon w szklanym wazonie",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude w białym wazonie na drewnianej komodzie"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Różowe róże, lilie i gipsówka",
+      "shortDescription": "Łagodne odcienie różu z liliami – spokojnie, harmonijnie i subtelnie.",
+      "description": "Zartrosa Zauber łączy różowe róże z różowymi liliami i gipsówką w różowym opakowaniu. Bukiet wygląda spokojnie i harmonijnie, z subtelną, romantyczną nutą.",
+      "flowers": [
+        "Róże",
+        "Lilie",
+        "Gipsówka"
+      ],
+      "care": [
+        "Usuń liście, które sięgają do wody.",
+        "Postaw w chłodnym miejscu.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – róże i lilie w różu",
+        "description": "Różowe róże, różowe lilie i gipsówka w delikatnym opakowaniu. Spokojny, romantyczny bukiet – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Bukiet z różowych róż, różowych lilii i gipsówki w różowym opakowaniu w białym wazonie",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber w różowym opakowaniu z dużą kokardą"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbery, lilie i róże w pomarańczu i żółci",
+      "shortDescription": "Świetlisty pomarańcz i żółć na dobre wieści i słoneczne okazje.",
+      "description": "Strahlender Tag łączy pomarańczowe gerbery i lilie z żółtymi różami, jasnymi goździkami i gipsówką. Intensywne kolory dodają pozytywnej energii – bukiet z gratulacjami, na sukcesy i słoneczne okazje.",
+      "flowers": [
+        "Gerbery",
+        "Lilie",
+        "Róże",
+        "Goździki",
+        "Gipsówka"
+      ],
+      "care": [
+        "Chroń przed przeciągami.",
+        "Regularnie wymieniaj wodę.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – bukiet w pomarańczu i żółci",
+        "description": "Pomarańczowe gerbery i lilie z żółtymi różami i gipsówką. Radosny bukiet z gratulacjami – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Bukiet z pomarańczowych gerber, żółtych róż i gipsówki w biało-złotym opakowaniu",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Pomarańczowe gerbery, lilie i żółta róża w białym wazonie",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Okrągły bukiet z pomarańczowych gerber i lilii, żółtych róż i jasnych goździków w szklanym wazonie"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Róże w różu, kremie i kolorze morelowym",
+      "shortDescription": "Harmonijny bukiet róż między klasycznym pięknem a nowoczesnym stylem.",
+      "description": "Rosentraum łączy róże w różu, kremie i kolorze morelowym z fioletowymi kwiatami, gałązkami z owocami i świeżą zielenią. W opakowaniu w kolorze pudrowego różu bukiet wygląda bujnie, a zarazem nowocześnie.",
+      "flowers": [
+        "Róże"
+      ],
+      "care": [
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Dbaj o czystość wazonu.",
+        "Regularnie wymieniaj wodę."
+      ],
+      "seo": {
+        "title": "Rosentraum – róże w różu i kremie",
+        "description": "Róże w różu, kremie i kolorze morelowym z fioletowymi akcentami w opakowaniu w kolorze pudrowego różu. Harmonijny bukiet róż – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Związany bukiet z róż w różu, kremie i kolorze morelowym w opakowaniu w kolorze pudrowego różu",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum w opakowaniu w kolorze pudrowego różu w białym wazonie",
+        "/images/products/sortiment/rosentraum-3.jpg": "Widok z góry na róże, fioletowe kwiaty i gałązki z owocami w bukiecie"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Białe róże z gipsówką",
+      "shortDescription": "Białe róże z gipsówką – delikatnie, romantycznie i jasno.",
+      "description": "Rosenkuss składa się z białych i kremowych róż, rozluźnionych delikatną gipsówką i podanych w białym opakowaniu. Bukiet wyrażający sympatię, bliskość i drobne miłosne wiadomości.",
+      "flowers": [
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Nie stawiaj w zbyt ciepłym miejscu.",
+        "Codziennie sprawdzaj poziom wody.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Rosenkuss – białe róże",
+        "description": "Białe róże z gipsówką w białym opakowaniu. Delikatny, romantyczny bukiet róż – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Rosenkuss, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Rosenkuss, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Rosenkuss, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Bukiet białych róż z gipsówką w białym opakowaniu w białym wazonie",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Duży bukiet białych róż w białym opakowaniu w białym wazonie",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Leżący bukiet białych róż z gipsówką na drewnianej komodzie"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Róże w pastelach, różu i bordo",
+      "shortDescription": "Róże w pastelach i intensywnym różu, elegancko zestawione.",
+      "description": "Rosenglanz łączy róże w pastelowym różu, kremie, intensywnym różu i bordo z gipsówką w różowym opakowaniu. Ponadczasowy w wyrazie, dostępny w sześciu rozmiarach.",
+      "flowers": [
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Przytnij łodygi na świeżo.",
+        "Unikaj bezpośredniego słońca.",
+        "Regularnie wymieniaj wodę w wazonie."
+      ],
+      "seo": {
+        "title": "Rosenglanz – róże w pastelach i różu",
+        "description": "Róże w pastelowym różu, intensywnym różu i bordo z gipsówką, w sześciu rozmiarach. Elegancki bukiet róż – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały",
+          "detailAlt": "Rosenglanz, rozmiar Mały, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "m": {
+          "label": "Średni",
+          "detailAlt": "Rosenglanz, rozmiar Średni, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "l": {
+          "label": "Duży",
+          "detailAlt": "Rosenglanz, rozmiar Duży, w dłoni, w tle wiedeńska ulica z tramwajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Bukiet róż w pastelowym różu, intensywnym różu i bordo w różowym opakowaniu w szklanym wazonie",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Okrągły bukiet róż z gipsówką w różowym opakowaniu, od przodu",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Leżący bukiet pastelowych i różowych róż na drewnianej komodzie"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Różowe róże, gerbery, lilie i goździki",
+      "shortDescription": "Wyrazisty bukiet w odcieniach różu, który mówi bez słów.",
+      "description": "Pure Liebe łączy różowe róże z różową gerberą, różowymi liliami, goździkami i gipsówką. Intensywny w odcieniach różu, rozjaśniony jasnymi akcentami – bukiet pełen uczuć.",
+      "flowers": [
+        "Róże",
+        "Gerbery",
+        "Lilie",
+        "Goździki",
+        "Gipsówka"
+      ],
+      "care": [
+        "Regularnie nalewaj świeżej wody.",
+        "Dbaj o czystość wazonu.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Pure Liebe – bukiet w odcieniach różu",
+        "description": "Różowe róże, różowe gerbery, lilie i goździki z gipsówką. Bukiet pełen uczuć – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Bukiet z różowych róż, różowej gerbery i różowych lilii w beżowym wazonie",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe z liliami, gerberami i goździkami w beżowym wazonie",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Okrągły bukiet z różowych róż, gerber, goździków i gipsówki w szklanym wazonie"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Różowe gerbery, róże i fioletowe akcenty",
+      "shortDescription": "Intensywne odcienie różu w świeżym, nowoczesnym bukiecie.",
+      "description": "Pink Harmony łączy różowe gerbery i róże z białymi kwiatami i kwiatami w kolorze bzu, fioletowymi akcentami i gipsówką. Żywy i świeży, z dużą dozą uroku.",
+      "flowers": [
+        "Gerbery",
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Postaw w chłodnym miejscu.",
+        "Usuwaj przekwitłe kwiaty.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbery i róże w różu",
+        "description": "Różowe gerbery i róże z akcentami w kolorze bzu i fioletu. Świeży, nowoczesny bukiet – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Bukiet z różowych gerber, róż i kwiatów w kolorze bzu w beżowym wazonie",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Okrągły bukiet z różowymi gerberami, różami i fioletowymi akcentami"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Kolorowy bukiet róż w różu, żółci, kolorze morelowym i liliowym",
+      "shortDescription": "Okazały, kolorowy bukiet róż na wyjątkowe okazje.",
+      "description": "Love Deluxe to bukiet róż w wielu kolorach: różowym, kremowym, morelowym, żółtym i liliowym, w różowym opakowaniu. Na wyjątkowe okazje i wielkie gesty, dostępny w pięciu rozmiarach.",
+      "flowers": [
+        "Róże"
+      ],
+      "care": [
+        "Podcinaj łodygi.",
+        "Codziennie wymieniaj wodę w wazonie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Love Deluxe – kolorowy bukiet róż",
+        "description": "Róże w kolorze różowym, kremowym, morelowym, żółtym i liliowym w różowym opakowaniu, w pięciu rozmiarach. Na wielkie gesty – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Kolorowy bukiet róż w różu, żółci, kolorze morelowym i liliowym w różowym opakowaniu w białym wazonie",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Duży kolorowy bukiet róż w różowym opakowaniu, od przodu",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Leżący kolorowy bukiet róż w różowym opakowaniu na drewnianej komodzie"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Czerwone i zielone róże z liliami",
+      "shortDescription": "Emocjonalny bukiet w czerwieni, by powiedzieć „Kocham cię”.",
+      "description": "Liebeserklärung łączy czerwone róże z jasnozielonymi różami, białymi liliami, czerwonymi kwiatami dla akcentu i gipsówką. Wyrazisty, a jednak świeży w odbiorze – bukiet, który sprawia, że uczucia stają się widoczne.",
+      "flowers": [
+        "Róże",
+        "Lilie",
+        "Gipsówka"
+      ],
+      "care": [
+        "Chroń przed upałem.",
+        "Regularnie wymieniaj wodę.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – czerwone róże i lilie",
+        "description": "Czerwone i jasnozielone róże z liliami i gipsówką. Bukiet, by powiedzieć „Kocham cię” – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Bukiet z czerwonych i jasnozielonych róż z liliami i gipsówką w szklanym wazonie",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung w białym wazonie na drewnianej komodzie"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Róże i gerbery w różu z pomarańczowymi akcentami",
+      "shortDescription": "Elegancki i wyważony – bukiet o stylowej powściągliwości.",
+      "description": "Klassische Schönheit łączy róże w kolorze pudrowego różu i bieli z różową gerberą, drobnymi pomarańczowymi kwiatami i gipsówką. W ciemnym opakowaniu ze złotym brzegiem bukiet wygląda harmonijnie i ponadczasowo.",
+      "flowers": [
+        "Róże",
+        "Gerbery",
+        "Gipsówka"
+      ],
+      "care": [
+        "Nie stawiaj tuż przy kaloryferze.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie.",
+        "Regularnie wymieniaj wodę w wazonie."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – róże i gerbery",
+        "description": "Róże w kolorze pudrowego różu i bieli z różową gerberą w ciemnym opakowaniu. Wyważony, ponadczasowy bukiet – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Bukiet z róż w kolorze pudrowego różu i różowej gerbery w ciemnym opakowaniu ze złotym brzegiem",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit w białym wazonie",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Widok z góry na róże, gerbery i gipsówkę w ciemnym opakowaniu"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Różowe róże i różowe gerbery",
+      "shortDescription": "Zabawny i żywy: jasnoróżowe róże spotykają różowe gerbery.",
+      "description": "Herzklopfen łączy jasnoróżowe róże z różową gerberą, drobnymi biało-zielonymi kwiatami i delikatnymi liliowymi dodatkami. Okrągło związany i pełen koloru – bukiet z dużą dozą uczuć.",
+      "flowers": [
+        "Róże",
+        "Gerbery"
+      ],
+      "care": [
+        "Codziennie nalewaj świeżej wody.",
+        "Przycinaj łodygi ukośnie.",
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca."
+      ],
+      "seo": {
+        "title": "Herzklopfen – różowe róże i gerbery",
+        "description": "Jasnoróżowe róże i różowe gerbery, okrągło związane. Zabawny bukiet pełen uczuć – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Okrągły bukiet z jasnoróżowych róż i różowej gerbery w białym wazonie",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen w białym wazonie, z boku",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Bukiet z różowych róż i różowej gerbery w szklanym wazonie"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Kolorowy mix z różami i gerberami",
+      "shortDescription": "Kolorowy bukiet, który promienieje radością życia.",
+      "description": "Fröhlicher Blütenmix łączy czerwone róże, gerbery w żółci, różu i czerwieni oraz inne kwiaty w żółci, pomarańczu i fiolecie. W czerwonym opakowaniu – idealny, by podarować komuś uśmiech.",
+      "flowers": [
+        "Róże",
+        "Gerbery"
+      ],
+      "care": [
+        "Postaw w chłodnym miejscu.",
+        "Regularnie wymieniaj wodę.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – kolorowy bukiet",
+        "description": "Czerwone róże i gerbery w żółci, różu i czerwieni w czerwonym opakowaniu. Kolorowy bukiet pełen radości życia – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Kolorowy bukiet z gerberami i różami w czerwonym opakowaniu na drewnianej komodzie",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix w czerwonym opakowaniu w białym wazonie",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Widok z góry na czerwone róże, żółte i różowe gerbery w czerwonym opakowaniu"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Róże i gerbery w różu z liliowymi akcentami",
+      "shortDescription": "Żywy mix w różu, kolorze morelowym i liliowym.",
+      "description": "Farbtänzer łączy róże i róże gałązkowe w różu i kolorze morelowym z różowymi gerberami, liliowymi kwiatami i jasnymi owocami. Gęsto i żywo związany – nowoczesny i wyrazisty.",
+      "flowers": [
+        "Róże",
+        "Gerbery"
+      ],
+      "care": [
+        "Usuń liście, które sięgają do wody.",
+        "Dbaj o czystość wazonu.",
+        "Przed wstawieniem do wazonu przytnij łodygi ukośnie."
+      ],
+      "seo": {
+        "title": "Farbtänzer – bukiet w różu i liliowym",
+        "description": "Róże i gerbery w różu i kolorze morelowym z liliowymi akcentami. Żywy, nowoczesny bukiet – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Leżący bukiet w różu i liliowym w jasnoróżowym opakowaniu",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Okrągły bukiet z różowych róż, gerber i liliowych kwiatów w kremowym wazonie",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer w żłobkowanym wazonie, od przodu"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Flower box w kształcie serca",
+      "tagline": "Róże w czerwonym pudełku w kształcie serca",
+      "shortDescription": "Róże w pudełku w kształcie serca – wyznanie miłości, które wystarczy postawić.",
+      "description": "W czerwonym pudełku w kształcie serca ułożono róże w czerwieni, różu i bieli z innymi kwiatami i gipsówką. Prezent na rocznicę, walentynki lub jako czuła niespodzianka.",
+      "flowers": [
+        "Róże",
+        "Gipsówka"
+      ],
+      "care": [
+        "Lekko zwilżaj róże.",
+        "Postaw w chłodnym miejscu.",
+        "Chroń przed bezpośrednim słońcem."
+      ],
+      "seo": {
+        "title": "Flower box w kształcie serca – róże",
+        "description": "Róże w czerwieni, różu i bieli w czerwonym pudełku w kształcie serca. Na rocznicę i walentynki – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Czerwony flower box w kształcie serca z różami w czerwieni, różu i bieli oraz gipsówką"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klasyczny flower box",
+      "tagline": "Czerwone róże w okrągłym pudełku",
+      "shortDescription": "Klasyczne róże w okrągłym pudełku – proste i wyraziste.",
+      "description": "Klasyczny flower box to okrągłe pudełko wypełnione gęsto ułożonymi różami. Minimalistyczny i ponadczasowy, pasuje na urodziny, jako podziękowanie lub na wyjątkowe chwile. Dostępny w kolorze czerwonym i białym.",
+      "flowers": [
+        "Róże"
+      ],
+      "care": [
+        "Regularnie lekko podlewaj róże.",
+        "Postaw w chłodnym miejscu.",
+        "Chroń przed bezpośrednim słońcem."
+      ],
+      "seo": {
+        "title": "Klasyczny flower box – róże w pudełku",
+        "description": "Gęsto ułożone róże w okrągłym pudełku, dostępne w kolorze czerwonym i białym. Prosty prezent – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Czerwone róże w okrągłym białym pudełku z różowym i złotym brzegiem",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Dwa czerwone aksamitne okrągłe pudełka z czerwonymi różami na białym postumencie"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Różowe anturium w doniczce",
+      "tagline": "Anturium z różowymi kwiatami",
+      "shortDescription": "Anturium z jasnoróżowymi kwiatami – eleganckie i dyskretne.",
+      "description": "Różowe anturium swoimi delikatnymi kwiatami i lśniąco zielonymi liśćmi wnosi do wnętrza kolor, nie dominując go. Pasuje zarówno do mieszkania, jak i do biura.",
+      "flowers": [
+        "Anturium"
+      ],
+      "care": [
+        "Postaw w jasnym miejscu, z dala od bezpośredniego słońca.",
+        "Podlewaj regularnie, unikaj zastoju wody.",
+        "Od czasu do czasu zraszaj liście wodą."
+      ],
+      "seo": {
+        "title": "Różowe anturium w doniczce – roślina pokojowa",
+        "description": "Anturium z jasnoróżowymi kwiatami i lśniącymi liśćmi. Elegancka roślina pokojowa na prezent – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Różowe anturium w ceramicznej doniczce w kolorze pudrowego różu na drewnianej komodzie",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anturium z różowymi kwiatami w doniczce w kolorze mauve obok świec"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Czerwone anturium w doniczce",
+      "tagline": "Anturium z czerwonymi kwiatami",
+      "shortDescription": "Anturium z intensywnie czerwonymi kwiatami i nowoczesnym charakterem.",
+      "description": "Czerwone anturium swoimi lśniącymi kwiatami tworzy mocne akcenty kolorystyczne. Jako dekoracyjna roślina pokojowa lub prezent przy dobrej pielęgnacji długo zachowuje urodę.",
+      "flowers": [
+        "Anturium"
+      ],
+      "care": [
+        "Jasne miejsce bez bezpośredniego słońca.",
+        "Utrzymuj ziemię równomiernie wilgotną.",
+        "Unikaj zastoju wody."
+      ],
+      "seo": {
+        "title": "Czerwone anturium w doniczce – roślina pokojowa",
+        "description": "Anturium z intensywnie czerwonymi kwiatami w doniczce. Dekoracyjna roślina pokojowa na prezent – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Czerwone anturium w czerwonej ceramicznej doniczce na drewnianej komodzie"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL czerwone anturium w doniczce",
+      "tagline": "Duże anturium z czerwonymi kwiatami",
+      "shortDescription": "Duże, bujne anturium z mnóstwem czerwonych kwiatów.",
+      "description": "To czerwone anturium ma ponad 80 cm wysokości i liczne czerwone kwiaty nad gęstymi, lśniącymi liśćmi. Wyrazisty akcent w mieszkaniu lub biurze.",
+      "flowers": [
+        "Anturium"
+      ],
+      "care": [
+        "Postaw w jasnym miejscu, z dala od bezpośredniego słońca.",
+        "Podlewaj regularnie, unikaj zastoju wody.",
+        "Od czasu do czasu ścieraj kurz z liści."
+      ],
+      "seo": {
+        "title": "XXL czerwone anturium w doniczce",
+        "description": "Duże anturium z licznymi czerwonymi kwiatami w doniczce. Przyciąga wzrok w mieszkaniu lub biurze – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Duże anturium z mnóstwem czerwonych kwiatów w czerwonej doniczce obok świec"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelia w doniczce",
+      "tagline": "Bromelia z czerwonym kwiatem",
+      "shortDescription": "Bromelia z intensywnie czerwonym kwiatem i tropikalnym klimatem.",
+      "description": "Bromelia swoją czerwoną rozetą kwiatową i smukłymi zielonymi liśćmi tworzy żywe akcenty. Dekoracyjna roślina pokojowa do mieszkania lub miejsca pracy i wyjątkowy prezent.",
+      "flowers": [
+        "Bromelia"
+      ],
+      "care": [
+        "Postaw w jasnym miejscu, z dala od bezpośredniego słońca.",
+        "Regularnie nalewaj wodę do lejka liściowego.",
+        "Utrzymuj ziemię tylko lekko wilgotną."
+      ],
+      "seo": {
+        "title": "Bromelia w doniczce – roślina pokojowa",
+        "description": "Bromelia z czerwonym kwiatem w doniczce: tropikalny klimat w mieszkaniu lub biurze – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelia z czerwonym kwiatem w czerwonej doniczce na drewnianej komodzie"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Fikus sprężysty w doniczce",
+      "tagline": "Fikus sprężysty z ciemnozielonymi liśćmi",
+      "shortDescription": "Łatwy w pielęgnacji fikus sprężysty z lśniącymi, ciemnozielonymi liśćmi.",
+      "description": "Fikus sprężysty swoimi dużymi, lśniącymi liśćmi wygląda nowocześnie i spokojnie. Jest łatwy w pielęgnacji i dobrze pasuje do mieszkania i biura.",
+      "flowers": [
+        "Fikus sprężysty"
+      ],
+      "care": [
+        "Miejsce jasne lub półcieniste.",
+        "Podlewaj oszczędnie, wystarczy mu niewiele wody.",
+        "Od czasu do czasu odkurzaj liście."
+      ],
+      "seo": {
+        "title": "Fikus sprężysty w doniczce – łatwa roślina",
+        "description": "Fikus sprężysty z lśniącymi, ciemnozielonymi liśćmi. Łatwa w pielęgnacji roślina pokojowa do mieszkania i biura – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Fikus sprężysty z ciemnozielonymi liśćmi w czerwonej doniczce na drewnianej komodzie"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Biały storczyk w doniczce",
+      "tagline": "Storczyk w doniczce, w kilku kolorach",
+      "shortDescription": "Storczyk w doniczce – spokojny, szlachetny i ponadczasowy.",
+      "description": "Storczyk to symbol elegancji i spokoju. Dzięki delikatnym kwiatostanom jest stylowym wyborem do mieszkania, biura lub na prezent. Dostępny w kolorze liliowym, różowym, żółtym, białym i niebieskim.",
+      "flowers": [
+        "Storczyk"
+      ],
+      "care": [
+        "Postaw w jasnym miejscu, z dala od bezpośredniego słońca.",
+        "Podlewaj oszczędnie, unikaj zastoju wody.",
+        "Przekwitłe pędy kwiatowe usuwaj dopiero, gdy zaschną."
+      ],
+      "seo": {
+        "title": "Storczyk w doniczce – w pięciu kolorach",
+        "description": "Storczyk w doniczce w kolorze białym, różowym, żółtym, liliowym lub niebieskim. Elegancka roślina pokojowa na prezent – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Biały storczyk z różowym środkiem kwiatu w kremowej ceramicznej doniczce",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Storczyk z jasnoróżowymi kwiatami w kremowej ceramicznej doniczce",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Żółty storczyk w kremowej ceramicznej doniczce",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Storczyk z fioletowymi kwiatami w różowej doniczce",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Storczyk z niebieskimi kwiatami w szarej doniczce obok świec"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Czerwona wiązanka pogrzebowa",
+      "tagline": "Czerwone róże, gerbery i goździki z gałązkami jodły",
+      "shortDescription": "Wiązanka pogrzebowa w czerwieni jako znak miłości i więzi.",
+      "description": "Czerwona wiązanka pogrzebowa łączy czerwone róże, gerbery i goździki z żółtymi różami, gipsówką i gałązkami jodły. Pełen godności gest pamięci, który w ciszy wyraża silne uczucia. Skład może się nieznacznie różnić w zależności od sezonu.",
+      "flowers": [
+        "Róże",
+        "Gerbery",
+        "Goździki",
+        "Gipsówka"
+      ],
+      "care": [
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca i kaloryfera.",
+        "W kompozycjach w gąbce florystycznej utrzymuj gąbkę wilgotną."
+      ],
+      "seo": {
+        "title": "Czerwona wiązanka pogrzebowa – róże i gerbery",
+        "description": "Wiązanka pogrzebowa w czerwieni z różami, gerberami i goździkami na gałązkach jodły, w trzech rozmiarach. Pełne godności pożegnanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Wiązanka pogrzebowa z czerwonymi różami, gerberami i goździkami, żółtymi różami i gałązkami jodły na kamiennym postumencie"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Różowa wiązanka pogrzebowa",
+      "tagline": "Różowe róże i fioletowe kwiaty",
+      "shortDescription": "Wiązanka pogrzebowa w delikatnych odcieniach różu, niosąca pocieszenie.",
+      "description": "Różowe róże, fioletowe i różowe kwiaty oraz gałązki jodły nadają tej wiązance łagodny, kojący charakter. Wyraża wdzięczność, bliskość i czułą pamięć – na ciche, osobiste pożegnanie.",
+      "flowers": [
+        "Róże"
+      ],
+      "care": [
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca i kaloryfera.",
+        "W kompozycjach w gąbce florystycznej utrzymuj gąbkę wilgotną."
+      ],
+      "seo": {
+        "title": "Różowa wiązanka pogrzebowa – delikatny róż",
+        "description": "Wiązanka pogrzebowa w delikatnych odcieniach różu z różowymi różami na gałązkach jodły, w trzech rozmiarach. Na ciche pożegnanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Wiązanka pogrzebowa z różowymi różami i fioletowymi kwiatami na gałązkach jodły, z białą szarfą, na kamiennym postumencie"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Pastelowa wiązanka pogrzebowa",
+      "tagline": "Lilie, róże i niebieskie kwiaty w pastelach",
+      "shortDescription": "Spokojna wiązanka pogrzebowa w delikatnych pastelowych odcieniach.",
+      "description": "Pastelowa wiązanka pogrzebowa łączy różowe lilie i róże z jasnoniebieskimi, białymi kwiatami i kwiatami w kolorze bzu. Subtelne przejścia kolorów wyrażają pocieszenie i współczucie. Kwiaty mogą się różnić w zależności od sezonu.",
+      "flowers": [
+        "Lilie",
+        "Róże"
+      ],
+      "care": [
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca i kaloryfera.",
+        "W kompozycjach w gąbce florystycznej utrzymuj gąbkę wilgotną."
+      ],
+      "seo": {
+        "title": "Pastelowa wiązanka pogrzebowa – spokojne barwy",
+        "description": "Pastelowa wiązanka pogrzebowa z liliami, różami i jasnoniebieskimi kwiatami, w trzech rozmiarach. Dyskretna i stylowa – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Pastelowa wiązanka pogrzebowa z różowymi liliami, różami i jasnoniebieskimi kwiatami, z czarną szarfą, na kamiennym postumencie"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Pomarańczowa wiązanka pogrzebowa",
+      "tagline": "Róże, gerbery i goździki w pomarańczu i żółci",
+      "shortDescription": "Wiązanka pogrzebowa w ciepłych odcieniach pomarańczu, wyrażająca szacunek.",
+      "description": "Róże, gerbery i goździki w pomarańczu, żółci i kolorze morelowym tworzą z gałązkami jodły ciepłą wiązankę pogrzebową. Wyraża wdzięczność i pamięć o spełnionym życiu, pasuje na wystawienie zwłok lub uroczystość żałobną.",
+      "flowers": [
+        "Róże",
+        "Gerbery",
+        "Goździki"
+      ],
+      "care": [
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca i kaloryfera.",
+        "W kompozycjach w gąbce florystycznej utrzymuj gąbkę wilgotną."
+      ],
+      "seo": {
+        "title": "Pomarańczowa wiązanka pogrzebowa – ciepłe barwy",
+        "description": "Wiązanka pogrzebowa w pomarańczu i żółci z różami, gerberami i goździkami, w trzech rozmiarach. Na czuwanie i uroczystość żałobną – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Wiązanka pogrzebowa z różami, gerberami i goździkami w pomarańczu i żółci na gałązkach jodły, na kamiennym postumencie"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Biała wiązanka pogrzebowa",
+      "tagline": "Białe lilie i chryzantemy",
+      "shortDescription": "Klasyczna wiązanka pogrzebowa w bieli – prosta i pełna godności.",
+      "description": "Białe lilie, chryzantemy i drobne białe kwiaty na gałązkach jodły sprawiają, że ta wiązanka jest prosta i ponadczasowa. Biel symbolizuje pokój i pożegnanie – pasuje na oficjalne uroczystości żałobne lub jako cichy wyraz współczucia.",
+      "flowers": [
+        "Lilie",
+        "Chryzantemy"
+      ],
+      "care": [
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca i kaloryfera.",
+        "W kompozycjach w gąbce florystycznej utrzymuj gąbkę wilgotną."
+      ],
+      "seo": {
+        "title": "Biała wiązanka pogrzebowa – lilie i chryzantemy",
+        "description": "Klasyczna biała wiązanka pogrzebowa z liliami i chryzantemami, w trzech rozmiarach. Prosta i pełna godności – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Wiązanka pogrzebowa z białych lilii, chryzantem i drobnych białych kwiatów na gałązkach jodły, na kamiennym postumencie"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Żółta wiązanka pogrzebowa",
+      "tagline": "Słoneczniki, żółte róże i goździki",
+      "shortDescription": "Wiązanka pogrzebowa w żółci – wspomnienie, nadzieja i wdzięczność.",
+      "description": "Słoneczniki, żółte róże i morelowe goździki na gałązkach jodły sprawiają, że ta wiązanka jest jasna i ciepła. Pasuje na pożegnania, w których w centrum jest życie. Dobór kwiatów zależy od sezonu.",
+      "flowers": [
+        "Słoneczniki",
+        "Róże",
+        "Goździki"
+      ],
+      "care": [
+        "Postaw w chłodnym miejscu, z dala od bezpośredniego słońca i kaloryfera.",
+        "W kompozycjach w gąbce florystycznej utrzymuj gąbkę wilgotną."
+      ],
+      "seo": {
+        "title": "Żółta wiązanka pogrzebowa – słoneczniki i róże",
+        "description": "Wiązanka pogrzebowa w żółci ze słonecznikami, różami i goździkami, w trzech rozmiarach. Jasne pożegnanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Wiązanka pogrzebowa ze słonecznikami, żółtymi różami i morelowymi goździkami na gałązkach jodły, na kamiennym postumencie"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Kolorowy wieniec pogrzebowy",
+      "tagline": "Gerbery, róże i kwiaty w różnych kolorach",
+      "shortDescription": "Kolorowy wieniec pogrzebowy na pożegnanie osoby pełnej radości życia.",
+      "description": "Kolorowy wieniec pogrzebowy łączy gerbery, róże i inne kwiaty w żółci, pomarańczu, różu i bieli na zielonym tle. Pełne godności, a zarazem barwne pożegnanie, wiązane ręcznie. Jeśli masz życzenia co do wyglądu, po prostu się z nami skontaktuj.",
+      "flowers": [
+        "Gerbery",
+        "Róże"
+      ],
+      "care": [
+        "Postaw w chłodnym, zacienionym miejscu.",
+        "W razie potrzeby lekko zwilż gąbkę florystyczną."
+      ],
+      "seo": {
+        "title": "Kolorowy wieniec pogrzebowy – barwne pożegnanie",
+        "description": "Kolorowy wieniec pogrzebowy z gerberami i różami, wiązany ręcznie. Barwne pożegnanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Kolorowy wieniec pogrzebowy z gerberami, liliami i białymi kwiatami, z czarną szarfą, na drewnianej sztaludze"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Różowy wieniec pogrzebowy",
+      "tagline": "Gerbery i róże w różu i czerwieni",
+      "shortDescription": "Wieniec pogrzebowy w różu i czerwieni jako czułe pożegnanie.",
+      "description": "Wieniec pogrzebowy w różu i czerwieni łączy różowe gerbery, róże i inne kwiaty z jasnymi akcentami i świeżą zielenią. Wyraz miłości i pamięci, wiązany ręcznie. Jeśli masz życzenia co do wyglądu, po prostu się z nami skontaktuj.",
+      "flowers": [
+        "Gerbery",
+        "Róże"
+      ],
+      "care": [
+        "Postaw w chłodnym, zacienionym miejscu.",
+        "W razie potrzeby lekko zwilż gąbkę florystyczną."
+      ],
+      "seo": {
+        "title": "Różowy wieniec pogrzebowy – róż i czerwień",
+        "description": "Wieniec pogrzebowy w różu i czerwieni z gerberami i różami, wiązany ręcznie. Czułe pożegnanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Wieniec pogrzebowy z różowymi gerberami, różami i czerwonymi kwiatami, z bordową szarfą, na drewnianej sztaludze"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Czerwono-żółty wieniec pogrzebowy",
+      "tagline": "Czerwone i żółte gerbery",
+      "shortDescription": "Promienny wieniec pogrzebowy w czerwieni i żółci.",
+      "description": "Czerwone i żółte gerbery, gęsto ułożone na zielonym tle, czynią ten wieniec promiennym pożegnaniem pełnym ciepła, wdzięczności i pięknych wspomnień. Wiązany ręcznie. Jeśli masz życzenia co do wyglądu, po prostu się z nami skontaktuj.",
+      "flowers": [
+        "Gerbery"
+      ],
+      "care": [
+        "Postaw w chłodnym, zacienionym miejscu.",
+        "W razie potrzeby lekko zwilż gąbkę florystyczną."
+      ],
+      "seo": {
+        "title": "Czerwono-żółty wieniec pogrzebowy – gerbery",
+        "description": "Wieniec pogrzebowy z czerwonych i żółtych gerber, wiązany ręcznie. Ciepłe, promienne pożegnanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Wieniec pogrzebowy z czerwonych i żółtych gerber ze srebrnoszarą szarfą na drewnianej sztaludze"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Czerwony wieniec pogrzebowy",
+      "tagline": "Czerwone gerbery i róże",
+      "shortDescription": "Klasyczny wieniec pogrzebowy w czerwieni – za miłość, która trwa.",
+      "description": "Czerwony wieniec pogrzebowy łączy czerwone gerbery i róże na gałązkach jodły. Klasyczne, pełne godności pożegnanie – za miłość, która trwa także po rozstaniu. Wiązany ręcznie. Jeśli masz życzenia co do wyglądu, po prostu się z nami skontaktuj.",
+      "flowers": [
+        "Gerbery",
+        "Róże"
+      ],
+      "care": [
+        "Postaw w chłodnym, zacienionym miejscu.",
+        "W razie potrzeby lekko zwilż gąbkę florystyczną."
+      ],
+      "seo": {
+        "title": "Czerwony wieniec pogrzebowy – gerbery i róże",
+        "description": "Czerwony wieniec pogrzebowy z gerberami i różami na gałązkach jodły, wiązany ręcznie. Klasyczne pożegnanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Wieniec pogrzebowy z czerwonych gerber i róż na gałązkach jodły z czarną szarfą na drewnianej sztaludze"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Biały wieniec pogrzebowy",
+      "tagline": "Białe róże, gerbery i goździki",
+      "shortDescription": "Prosty biały wieniec pogrzebowy jako wyraz cichego współczucia.",
+      "description": "Białe róże, gerbery i goździki z jasnozielonymi akcentami i zielenią tworzą ten prosty wieniec. Biel symbolizuje pokój i ciche współczucie. Wiązany ręcznie. Jeśli masz życzenia co do wyglądu, po prostu się z nami skontaktuj.",
+      "flowers": [
+        "Róże",
+        "Gerbery",
+        "Goździki"
+      ],
+      "care": [
+        "Postaw w chłodnym, zacienionym miejscu.",
+        "W razie potrzeby lekko zwilż gąbkę florystyczną."
+      ],
+      "seo": {
+        "title": "Biały wieniec pogrzebowy – prosty i godny",
+        "description": "Biały wieniec pogrzebowy z różami, gerberami i goździkami, wiązany ręcznie. Proste pożegnanie – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standardowy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Okrągły wieniec pogrzebowy z białych róż, gerber i goździków z białą szarfą na drewnianej sztaludze"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Wieńce adwentowe",
+      "tagline": "Gałązki jodły z czterema świecami, w siedmiu kolorach",
+      "shortDescription": "Ręcznie wiązany wieniec adwentowy z gałązek jodły z czterema świecami.",
+      "description": "Wieniec adwentowy jest ręcznie wiązany z pachnących gałązek jodły i ozdobiony czterema świecami, kokardami, bombkami, szyszkami i innymi detalami. Dostępny w kolorze czerwonym, szarym, liliowym, złotym, beżowym, winnej czerwieni i różowym.",
+      "flowers": [],
+      "care": [
+        "Nigdy nie zostawiaj palących się świec bez nadzoru.",
+        "Postaw w chłodnym miejscu, nie tuż przy kaloryferze.",
+        "Od czasu do czasu lekko zraszaj gałązki jodły wodą."
+      ],
+      "seo": {
+        "title": "Wieniec adwentowy – ręcznie wiązany ze świecami",
+        "description": "Ręcznie wiązany wieniec adwentowy z gałązek jodły z czterema świecami, w siedmiu kolorach i czterech rozmiarach – dostawa kwiatów w Wiedniu."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mały"
+        },
+        "m": {
+          "label": "Średni"
+        },
+        "l": {
+          "label": "Duży"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Czerwony",
+        "grau": "Szary",
+        "lila": "Liliowy",
+        "gold": "Złoty",
+        "beige": "Beżowy",
+        "weinrot": "Winna czerwień",
+        "rosa": "Różowy"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Wieniec adwentowy z gałązek jodły z czterema czerwonymi świecami, czerwonymi kokardami, bombkami i szyszkami",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Wieniec adwentowy z czterema jasnoszarymi świecami, kremowymi kokardami i plasterkami pomarańczy",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Wieniec adwentowy z liliowymi i różowymi świecami, fioletowymi kokardami i figurką anioła",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Wieniec adwentowy z czterema złotymi świecami, złotymi kokardami, laskami cynamonu i szyszkami",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Wieniec adwentowy z czterema różowymi świecami, bordowymi kokardami i figurką anioła",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Wieniec adwentowy z czterema świecami w kolorze winnej czerwieni, bombkami i kokardami w kolorze winnej czerwieni",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Wieniec adwentowy z czterema ciemnoszarymi świecami, kremowymi kokardami i czerwonymi bombkami",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Złoty wieniec adwentowy ze złotymi świecami i kokardami, z boku",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Różowy wieniec adwentowy z różowymi świecami i bordowymi kokardami, z boku"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Wszystkie kwiaty",
+      "headline": "Zamów kwiaty online",
+      "intro": "Ręcznie wiązane bukiety dla całego Wiednia. Wybierz bukiet i ustal datę dostawy.",
+      "seo": {
+        "title": "Kwiaty online z dostawą w Wiedniu",
+        "description": "Zamów kwiaty online z dostawą w Wiedniu. Ręcznie wiązane bukiety na wybraną datę – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Róże",
+      "headline": "Bukiety róż",
+      "intro": "Róże czerwone, różowe lub białe, w kilku rozmiarach. Wiązane ręcznie i dostarczane w Wiedniu.",
+      "seo": {
+        "title": "Bukiety róż online – róże z dostawą w Wiedniu",
+        "description": "Wszystkie bukiety róż w jednym miejscu: róże czerwone, różowe i białe w kilku rozmiarach. Wiązane ręcznie, z dostawą w Wiedniu na wybraną datę."
+      }
+    },
+    "saisonal": {
+      "name": "Kwiaty sezonowe",
+      "headline": "Kwiaty sezonowe",
+      "intro": "Bukiety dopasowane do pory roku. Wybór zmienia się razem z sezonem.",
+      "seo": {
+        "title": "Sezonowe bukiety kwiatów z dostawą w Wiedniu",
+        "description": "Sezonowe bukiety dopasowane do pory roku. Wiązane ręcznie i dostarczane w Wiedniu."
+      }
+    },
+    "pastell": {
+      "name": "Pastele",
+      "headline": "Bukiety w pastelach",
+      "intro": "Pudrowy róż, krem, bez: łagodne kolory na delikatne chwile.",
+      "seo": {
+        "title": "Pastelowe kwiaty z dostawą w Wiedniu",
+        "description": "Bukiety w łagodnych pastelowych odcieniach z dostawą w Wiedniu – świeżo wiązane, na wybraną datę."
+      }
+    },
+    "bunt": {
+      "name": "Kolorowe",
+      "headline": "Kolorowe bukiety",
+      "intro": "Kolory, które cieszą. Na urodziny, niespodzianki i dobry nastrój.",
+      "seo": {
+        "title": "Kolorowe bukiety kwiatów z dostawą w Wiedniu",
+        "description": "Kolorowe, radosne bukiety z dostawą w Wiedniu – świeżo wiązane, na wybraną datę."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegancka biel",
+      "headline": "Elegancka biel",
+      "intro": "Biel, krem i zieleń. Bukiety, które w każdym wnętrzu wyglądają spokojnie i szlachetnie.",
+      "seo": {
+        "title": "Eleganckie białe kwiaty z dostawą w Wiedniu",
+        "description": "Białe i kremowe bukiety z dostawą w Wiedniu – eleganckie, świeżo wiązane, na wybraną datę."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Bukiety premium",
+      "intro": "Okazałe bukiety na wyjątkowe chwile.",
+      "seo": {
+        "title": "Bukiety premium z dostawą w Wiedniu",
+        "description": "Bukiety premium na wyjątkowe okazje z dostawą w Wiedniu – wiązane ręcznie, na wybraną datę."
+      }
+    },
+    "unter-40": {
+      "name": "Do 40 €",
+      "headline": "Kwiaty do 40 €",
+      "intro": "Małe bukiety, które robią duże wrażenie – wszystkie poniżej 40 euro.",
+      "seo": {
+        "title": "Kwiaty do 40 € z dostawą w Wiedniu",
+        "description": "Niedrogie bukiety kwiatów do 40 € z dostawą w Wiedniu – świeżo wiązane, na wybraną datę."
+      }
+    },
+    "bestseller": {
+      "name": "Ulubione bukiety",
+      "headline": "Nasze ulubione bukiety",
+      "intro": "Bukiety, które szczególnie chętnie polecamy.",
+      "seo": {
+        "title": "Nasze ulubione bukiety – polecane w Wiedniu",
+        "description": "Bukiety, które szczególnie chętnie polecamy – wiązane ręcznie i dostarczane w Wiedniu."
+      }
+    },
+    "neu": {
+      "name": "Nowości",
+      "headline": "Nowości w Blumora",
+      "intro": "Świeżo w ofercie.",
+      "seo": {
+        "title": "Nowe bukiety kwiatów w Wiedniu",
+        "description": "Nowe bukiety w ofercie – świeżo wiązane i dostarczane w Wiedniu."
+      }
+    },
+    "blumenboxen": {
+      "name": "Flower boxy",
+      "headline": "Flower boxy",
+      "intro": "Róże ułożone w pudełku – prezent, który nie potrzebuje wazonu.",
+      "seo": {
+        "title": "Flower boxy z dostawą w Wiedniu",
+        "description": "Róże w flower boxie – w kształcie serca lub klasycznym. Dostawa kwiatów w Wiedniu na wybraną datę."
+      }
+    },
+    "pflanzen": {
+      "name": "Rośliny",
+      "headline": "Rośliny w doniczce",
+      "intro": "Storczyki, anturium i rośliny zielone – kwiaty, które zostają na dłużej.",
+      "seo": {
+        "title": "Rośliny w doniczce z dostawą w Wiedniu",
+        "description": "Storczyki, anturium i rośliny doniczkowe na prezent. Dostawa kwiatów w Wiedniu."
+      }
+    },
+    "trauer": {
+      "name": "Florystyka żałobna",
+      "headline": "Florystyka żałobna",
+      "intro": "Wieńce i wiązanki pogrzebowe, z godnością wiązane na ostatnie pożegnanie.",
+      "seo": {
+        "title": "Wieńce i wiązanki pogrzebowe w Wiedniu",
+        "description": "Wieńce i wiązanki pogrzebowe na pogrzeb i uroczystość żałobną – z dostawą w Wiedniu."
+      }
+    },
+    "advent": {
+      "name": "Wieńce adwentowe",
+      "headline": "Wieńce adwentowe",
+      "intro": "Jodłowe gałązki, świece i ozdoby – ręcznie wiązane na czas Adwentu.",
+      "seo": {
+        "title": "Wieńce adwentowe z dostawą w Wiedniu",
+        "description": "Ręcznie wiązane wieńce adwentowe w kilku kolorach i rozmiarach – z dostawą w Wiedniu."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Urodziny",
+      "headline": "Kwiaty na urodziny",
+      "intro": "Bukiet, który mówi: myślę o tobie. Wybierz kwiaty i datę dostawy.",
+      "imageAlt": "Kolorowy bukiet z czerwonymi różami, gerberami i żółtymi kwiatami w czerwonym opakowaniu",
+      "seo": {
+        "title": "Kwiaty na urodziny – bukiety urodzinowe w Wiedniu",
+        "description": "Bukiety na urodziny: kolorowe, radosne lub eleganckie. Wiązane ręcznie i dostarczane w Wiedniu – na wybraną datę."
+      }
+    },
+    "liebe": {
+      "name": "Miłość i romantyzm",
+      "headline": "Kwiaty z miłości",
+      "intro": "Czerwone róże albo coś zupełnie innego: kwiaty, które powiedzą to, co czujesz.",
+      "imageAlt": "Bukiet ciemnoczerwonych róż w szarym opakowaniu z czerwoną kokardą",
+      "seo": {
+        "title": "Romantyczne kwiaty z dostawą w Wiedniu",
+        "description": "Róże i romantyczne bukiety z dostawą w Wiedniu – świeżo wiązane, na wybraną datę."
+      }
+    },
+    "danke": {
+      "name": "Podziękowanie",
+      "headline": "Kwiaty na podziękowanie",
+      "intro": "Za pomoc, za czas, po prostu za wszystko. Bukiet powie to bez zbędnych słów.",
+      "imageAlt": "Bukiet z żółtych gerber i białych róż z żółtą kokardą",
+      "seo": {
+        "title": "Kwiaty na podziękowanie z dostawą w Wiedniu",
+        "description": "Podziękuj kwiatami: świeżo wiązane bukiety z dostawą w Wiedniu – na wybraną datę."
+      }
+    },
+    "gute-besserung": {
+      "name": "Powrót do zdrowia",
+      "headline": "Kwiaty na powrót do zdrowia",
+      "intro": "Łagodne kolory, spokojne formy i drobne pozdrowienie, które dobrze robi.",
+      "imageAlt": "Słoneczny bukiet w odcieniach pomarańczu i żółci w jasnym opakowaniu",
+      "seo": {
+        "title": "Kwiaty na powrót do zdrowia – dostawa w Wiedniu",
+        "description": "Kwiaty na powrót do zdrowia z dostawą w Wiedniu – łagodne bukiety, świeżo wiązane, na wybraną datę."
+      }
+    },
+    "jahrestag": {
+      "name": "Rocznica",
+      "headline": "Kwiaty na rocznicę",
+      "intro": "Na dzień, w którym wszystko się zaczęło. I na wszystkie kolejne.",
+      "imageAlt": "Bukiet z czerwonych i białych róż w białym opakowaniu",
+      "seo": {
+        "title": "Kwiaty na rocznicę z dostawą w Wiedniu",
+        "description": "Eleganckie bukiety na rocznicę z dostawą w Wiedniu – świeżo wiązane, na wybraną datę."
+      }
+    },
+    "geburt": {
+      "name": "Narodziny",
+      "headline": "Kwiaty z okazji narodzin",
+      "intro": "Witaj, mały człowieku. Delikatne kwiaty na wielką chwilę.",
+      "imageAlt": "Delikatny bukiet z róż w odcieniach różu i bzu z gipsówką",
+      "seo": {
+        "title": "Kwiaty z okazji narodzin – dostawa w Wiedniu",
+        "description": "Delikatne pastelowe bukiety z okazji narodzin z dostawą w Wiedniu – świeżo wiązane, na wybraną datę."
+      }
+    },
+    "hochzeit": {
+      "name": "Ślub",
+      "headline": "Kwiaty na ślub",
+      "intro": "Dla pary młodej albo po prostu z gratulacjami: eleganckie, jasne i odświętne.",
+      "imageAlt": "Bukiet białych róż w białym opakowaniu w wazonie",
+      "seo": {
+        "title": "Kwiaty na ślub z dostawą w Wiedniu",
+        "description": "Eleganckie kwiaty na ślub z dostawą w Wiedniu – z gratulacjami lub w prezencie, świeżo wiązane."
+      }
+    },
+    "einfach-so": {
+      "name": "Bez okazji",
+      "headline": "Kwiaty bez okazji",
+      "intro": "Bez okazji. Tylko myśl o kimś. Czasem to najlepszy powód.",
+      "imageAlt": "Żółte tulipany w szklanym wazonie przy oknie",
+      "seo": {
+        "title": "Kwiaty bez okazji – wysyłka w Wiedniu",
+        "description": "Wyślij kwiaty bez okazji: małe i duże bukiety z dostawą w Wiedniu – świeżo wiązane, na wybraną datę."
+      }
+    },
+    "trauer": {
+      "name": "Kondolencje",
+      "headline": "Kwiaty na pogrzeb",
+      "intro": "Współczucie w spokojnych kolorach. Wieńce, wiązanki i bukiety, wiązane ręcznie i dostarczane w Wiedniu.",
+      "imageAlt": "Biały wieniec pogrzebowy z białą szarfą na drewnianej sztaludze",
+      "seo": {
+        "title": "Kwiaty pogrzebowe z dostawą w Wiedniu",
+        "description": "Kwiaty pogrzebowe z dostawą w Wiedniu – wieńce, wiązanki i stonowane bukiety, wiązane ręcznie, na wybraną datę."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Świeca zapachowa",
+      "description": "Dekoracyjne świece zapachowe w opakowaniu prezentowym, w różnych kształtach i kolorach.",
+      "imageAlt": "Świece zapachowe w kształcie serca i kuli w przezroczystych pudełkach prezentowych"
+    },
+    "x-teddy": {
+      "name": "Miś",
+      "description": "Pluszowy miś z czerwonym serduszkiem – czuły dodatek do bukietu.",
+      "imageAlt": "Jasnobrązowy pluszowy miś z czerwonym serduszkiem"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Dokąd dostarczacie?",
+      "answer": "Dostarczamy do wszystkich 23 dzielnic Wiednia. W zależności od dzielnicy dostawa jest bezpłatna albo kosztuje 3,99 € lub 7,99 €. Wpisz kod pocztowy adresu odbiorcy – od razu zobaczysz, czy i kiedy możemy dostarczyć oraz ile kosztuje dostawa.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Czy mogę zamówić dostawę kwiatów jeszcze dziś?",
+      "answer": "Tak – jeśli zamówisz od poniedziałku do soboty do 18:30 lub w niedzielę do 17:45, dostarczymy kwiaty jeszcze tego samego dnia w całym Wiedniu, o ile jest wolny przedział czasowy. Najwcześniejszy termin dla twojego adresu zobaczysz po wpisaniu kodu pocztowego.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Czy mogę wybrać konkretną datę dostawy?",
+      "answer": "Tak. Na każdej stronie produktu i w kasie wybierasz datę w kalendarzu. Dni, w które nie dostarczamy, są wyszarzone.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Czy mogę wybrać godzinę dostawy?",
+      "answer": "Tak. W Wiedniu wybierasz w kasie godzinny przedział czasowy między 9:00 a 22:00 – przez wszystkie siedem dni w tygodniu.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Co się stanie, jeśli nikogo nie będzie w domu?",
+      "answer": "Kurier przekazuje kwiaty osobiście. Jeśli nikogo nie ma, w miarę możliwości zostawia je u sąsiadów. W kasie możesz dodać wskazówkę dla kuriera, na przykład kod do drzwi. O statusie zamówienia informujemy cię e-mailem.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Czy mogę wysłać kwiaty anonimowo?",
+      "answer": "Tak. Bez kartki z życzeniami twoje imię nigdzie nie pojawia się przy bukiecie, a rachunek trafia tylko do ciebie. Kartki z osobistą wiadomością już wkrótce.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Czy mogę dodać kartkę z życzeniami?",
+      "answer": "Jeszcze nie – kartki z życzeniami już wkrótce. Do tego czasu bukiet jest dostarczany bez kartki.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Czy kwiaty wyglądają dokładnie tak jak na zdjęciu?",
+      "answer": "Każdy bukiet jest wiązany indywidualnie, a kwiaty to produkty naturalne. Kolory, odmiany i wielkość kwiatów mogą się nieznacznie różnić w zależności od sezonu. Styl i kolorystyka pozostają takie same.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Jak sprawić, by kwiaty długo były świeże?",
+      "answer": "Każdy bukiet jest świeżo wiązany na twoje zamówienie i dostarczany bezpośrednio przez kuriera. Najdłużej postoi, jeśli: przytniesz łodygi ukośnie, nalejesz świeżej wody i postawisz bukiet w chłodnym miejscu, z dala od bezpośredniego słońca.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Jakie są metody płatności?",
+      "answer": "Dostępne metody płatności zobaczysz w ostatnim kroku zamówienia. Płatność odbywa się bezpiecznie przez operatora płatności – dane twojej karty nigdy do nas nie trafiają.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Czy mogę zmienić swoje zamówienie?",
+      "answer": "Dopóki bukiet nie został jeszcze związany, zwykle możemy zmienić datę dostawy lub adres. Napisz do nas jak najszybciej, podając numer zamówienia.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Czy mogę wysłać kwiaty do firmy lub hotelu?",
+      "answer": "Tak. W kasie podaj nazwę firmy lub hotelu oraz – jeśli je znasz – dział lub numer pokoju. Dostawa trafia do recepcji.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Kwiaty na wyjątkowe chwile.",
+      "intro": "Blumora to internetowa kwiaciarnia z dostawą w Wiedniu. Każdy bukiet jest wiązany ręcznie w wiedeńskiej kwiaciarni i dostarczany bezpośrednio przez kuriera.",
+      "seo": {
+        "title": "O nas – kwiaciarnia internetowa z Wiednia",
+        "description": "Blumora to internetowa kwiaciarnia z Wiednia: bukiety wiązane ręcznie i dostarczane przez kuriera do wszystkich 23 dzielnic."
+      },
+      "sections": [
+        {
+          "heading": "Jak pracujemy",
+          "paragraphs": [
+            "Blumora to wiedeńska kwiaciarnia internetowa. Bukiet wybierasz u nas – a wiąże go wiedeńska kwiaciarnia, z którą stale współpracujemy. Tam każdy bukiet powstaje ręcznie, specjalnie na twoje zamówienie.",
+            "Kartki z życzeniami z twoim tekstem już wkrótce."
+          ],
+          "imageAlt": "Bukiet z róż, dalii, hortensji i tulipanów na parapecie wiedeńskiej kamienicy, w tle katedra św. Szczepana w wieczornym świetle"
+        },
+        {
+          "heading": "Dostawa",
+          "paragraphs": [
+            "Kurier odbiera twój bukiet bezpośrednio z kwiaciarni i bez przystanków zawozi go pod adres odbiorcy. Dostarczamy do wszystkich 23 dzielnic Wiednia – w wybranym przez ciebie przedziale czasowym: rano, po południu lub wieczorem do 22:00."
+          ],
+          "imageAlt": "Bukiet Pure Liebe w szklanym wazonie"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Dostawa i wysyłka",
+      "intro": "Dostarczamy do wszystkich 23 dzielnic Wiednia. Koszty dostawy (bezpłatnie, 3,99 € lub 7,99 €), dni dostaw i przedziały czasowe zależą od adresu odbiorcy – wpisz kod pocztowy, a zobaczysz wszystko w jednym miejscu.",
+      "seo": {
+        "title": "Dostawa i wysyłka – kwiaty z dostawą w Wiedniu",
+        "description": "Obszary dostaw, koszty dostawy, dni dostaw i przedziały czasowe dla dostaw kwiatów w Wiedniu."
+      },
+      "sections": [
+        {
+          "heading": "Jak wygląda dostawa",
+          "paragraphs": [
+            "Twój bukiet jest świeżo wiązany na twoje zamówienie. Kurier odbiera go bezpośrednio z kwiaciarni i bez przystanków zawozi pod adres odbiorcy – w wybranym przez ciebie przedziale czasowym. Jeśli nikogo nie ma, bukiet w miarę możliwości zostaje u sąsiadów.",
+            "Do każdego zamówienia otrzymujesz potwierdzenie e-mailem oraz link, dzięki któremu możesz śledzić jego status."
+          ]
+        },
+        {
+          "heading": "Dostawa do firm, hoteli i szpitali",
+          "paragraphs": [
+            "W kasie podaj nazwę firmy lub hotelu oraz dział, oddział lub numer pokoju. Dostarczamy do recepcji. Pamiętaj, że niektóre placówki nie zezwalają na kwiaty na oddziałach."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Kontakt",
+      "intro": "Masz pytanie o zamówienie, datę dostawy albo szczególne życzenie? Jesteśmy do twojej dyspozycji.",
+      "seo": {
+        "title": "Kontakt – Blumora Wiedeń",
+        "description": "Skontaktuj się z Blumora w sprawie zamówienia, dostawy lub szczególnych życzeń."
+      },
+      "sections": [
+        {
+          "heading": "Jak się z nami skontaktować",
+          "paragraphs": [
+            "[Miejsce na dane: e-mail, telefon i godziny otwarcia są pobierane z ustawień i trzeba je tam uzupełnić.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Dostawa kwiatów Wiedeń",
+      "headline": "Kwiaty, które mówią więcej.",
+      "subheadline": "Świeżo wiązane kwiaty dla ludzi, którzy są dla ciebie ważni. Wybierz bukiet, ustal datę i podaruj radość.",
+      "primaryCta": {
+        "label": "Odkryj kwiaty"
+      },
+      "secondaryCta": {
+        "label": "Wybierz według okazji"
+      },
+      "imageAlt": "Kobieta w płaszczu w kolorze camel niesie duży bukiet z róż, jaskrów, dalii i tulipanów brukowaną wiedeńską ulicą, w tle jedzie tramwaj",
+      "deliveryCheck": {
+        "title": "Dokąd mamy dostarczyć?",
+        "placeholder": "Wpisz kod pocztowy",
+        "button": "Sprawdź dostawę"
+      }
+    },
+    "occasions": {
+      "headline": "Kwiaty na każdą chwilę",
+      "subheadline": "Czasem nie trzeba wielkiej okazji. Wystarczy właściwy gest."
+    },
+    "bestsellers": {
+      "headline": "Nasze ulubione bukiety",
+      "subheadline": "Wybór z naszej oferty."
+    },
+    "collections": {
+      "headline": "Znajdź swój idealny bukiet",
+      "subheadline": "Według koloru, stylu lub budżetu."
+    },
+    "howItWorks": {
+      "headline": "Sprawianie radości nigdy nie było tak proste.",
+      "steps": [
+        {
+          "title": "Wybierz ulubiony bukiet",
+          "text": "Odkryj kwiaty na każdy gust i każdą okazję."
+        },
+        {
+          "title": "Dodaj coś od siebie",
+          "text": "Wybierz rozmiar i drobne dodatki."
+        },
+        {
+          "title": "Wybierz datę dostawy",
+          "text": "Zdecyduj, kiedy twoja niespodzianka ma dotrzeć."
+        },
+        {
+          "title": "Podaruj radość",
+          "text": "Resztą zajmiemy się my."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Adwent",
+      "headline": "Wkrótce zapłonie pierwsza świeca.",
+      "text": "Wieńce adwentowe z jodłowych gałązek, ze świecami i ozdobami – w kilku kolorach i rozmiarach. A do tego bukiety w ciepłych, jesiennych barwach.",
+      "cta": {
+        "label": "Wieńce adwentowe"
+      },
+      "imageAlt": "Wieniec adwentowy z jodłowych gałązek z czterema czerwonymi świecami na drewnianej komodzie"
+    },
+    "editorial": {
+      "eyebrow": "Rzemiosło",
+      "headline": "Od florystów. Nie z taśmy produkcyjnej.",
+      "text": "Każdy bukiet jest wiązany ręcznie przez wiedeńską kwiaciarnię na twoje zamówienie i dostarczany bezpośrednio przez kuriera – bez pośredniego magazynu.",
+      "cta": {
+        "label": "Jak pracujemy"
+      },
+      "imageAlt": "Kurier przekazuje kolorowy bukiet z róż, dalii i jaskrów przy drzwiach wiedeńskiej kamienicy"
+    },
+    "extras": {
+      "headline": "Dopełnij swoją niespodziankę.",
+      "subheadline": "Drobne dodatki, które czynią chwilę jeszcze większą."
+    },
+    "subscription": {
+      "headline": "Więcej kwiatów na co dzień.",
+      "text": "Świeże sezonowe bukiety – co tydzień, co dwa tygodnie lub co miesiąc. Do domu, biura, recepcji lub gastronomii.",
+      "cta": {
+        "label": "Odkryj abonament kwiatowy"
+      }
+    },
+    "reviews": {
+      "headline": "Chwile, które dotarły.",
+      "subheadline": "Co klienci mówią o swoich zamówieniach."
+    },
+    "gallery": {
+      "headline": "Kwiaty na wyjątkowe chwile.",
+      "images": [
+        {
+          "alt": "Kolorowy bukiet róż w czerwieni, różu, kremie i morelowym kolorze w białym wazonie"
+        },
+        {
+          "alt": "Bukiet intensywnie niebieskich róż w białym wazonie"
+        },
+        {
+          "alt": "Bukiet w mocnych odcieniach różu z gerberami w wazonie przy oknie"
+        },
+        {
+          "alt": "Egzotyczny bukiet ze strelicjami, liliami i gerberami"
+        },
+        {
+          "alt": "Czerwony flower box w kształcie serca z różami na komodzie"
+        },
+        {
+          "alt": "Bukiet róż w pastelowych i różowych odcieniach w różowym opakowaniu"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Warto wiedzieć"
+    },
+    "newsletter": {
+      "headline": "Trochę więcej kwiatów w skrzynce.",
+      "text": "Nowości, sezonowe kolekcje i wyjątkowe akcje.",
+      "placeholder": "Twój adres e-mail",
+      "button": "Zapisz się",
+      "note": "Możesz wypisać się w każdej chwili. Informacje o ochronie danych znajdziesz w Polityce prywatności."
+    }
+  },
+  "settings": {
+    "claim": "Kwiaty, które mówią więcej.",
+    "seo": {
+      "defaultTitle": "Blumora – kwiaty z dostawą w Wiedniu",
+      "defaultDescription": "Świeżo wiązane kwiaty dostarczane prosto do ludzi, którzy są dla ciebie ważni. Wybierz datę, wyślij radość – dostawa kwiatów w Wiedniu."
+    },
+    "announcement": {
+      "messages": [
+        "Dostawa kwiatów w całym Wiedniu",
+        "Świeżo wiązane, dostarczane przez kuriera",
+        "Data dostawy do wyboru"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Świeżo wiązane",
+        "text": "Wiązane ręcznie na twoje zamówienie"
+      },
+      {
+        "title": "Dostawa kurierem",
+        "text": "Do wszystkich 23 dzielnic Wiednia"
+      },
+      {
+        "title": "Data do wyboru",
+        "text": "Ty decydujesz o dniu"
+      },
+      {
+        "title": "Kartki z życzeniami",
+        "text": "Już wkrótce"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Zamówienie przyjęte",
+        "description": "Otrzymaliśmy twoje zamówienie."
+      },
+      "paid": {
+        "label": "Płatność potwierdzona",
+        "description": "Twoja płatność do nas dotarła."
+      },
+      "preparing": {
+        "label": "W przygotowaniu",
+        "description": "Wybieramy kwiaty do twojego bukietu."
+      },
+      "arranging": {
+        "label": "Wiązanie bukietu",
+        "description": "Twój bukiet jest wiązany ręcznie."
+      },
+      "ready": {
+        "label": "Gotowe do dostawy",
+        "description": "Bukiet jest gotowy i czeka na odbiór przez kuriera."
+      },
+      "in_transit": {
+        "label": "W drodze",
+        "description": "Twój bukiet jest już w drodze."
+      },
+      "delivered": {
+        "label": "Dostarczone",
+        "description": "Kwiaty dotarły."
+      },
+      "undeliverable": {
+        "label": "Doręczenie niemożliwe",
+        "description": "Nie udało nam się doręczyć – skontaktujemy się z tobą."
+      },
+      "cancelled": {
+        "label": "Anulowane",
+        "description": "Zamówienie zostało anulowane."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Karta kredytowa",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Przelew online (eps)"
+    },
+    "headerCta": "Wyślij kwiaty",
+    "address": {
+      "city": "Wiedeń",
+      "country": "Austria"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Wiedeń – strefa 1",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Wiedeń – strefa 2",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Wiedeń – strefa 3",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Okolice Wiednia (Dolna Austria)",
+      "note": "Dostawa w okolice Wiednia we wtorki, czwartki i soboty.",
+      "windows": {
+        "day": "9:00–18:00"
+      }
+    }
+  }
+}

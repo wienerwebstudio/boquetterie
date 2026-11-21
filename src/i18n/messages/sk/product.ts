@@ -1,0 +1,195 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** sk – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Produkt sa nenašiel",
+  priceFrom: "od",
+
+  size: {
+    title: "Vyberte veľkosť",
+    recommended: "Odporúčané",
+    soldOut: "Vypredané",
+  },
+
+  color: {
+    title: "Vyberte farbu",
+    required: "(povinné)",
+    notChosen: "Zatiaľ nevybraná",
+    error: "Vyberte, prosím, farbu.",
+  },
+
+  delivery: {
+    title: "Kedy majú kvety doraziť?",
+    formLabel: "Overenie doručenia",
+    postalCodeLabel: "PSČ príjemcu",
+    postalCodePlaceholder: "PSČ príjemcu",
+    check: "Overiť",
+    prompt: "Zadajte PSČ a vyberte dátum doručenia",
+    notAvailable: "Na PSČ {plz} zatiaľ bohužiaľ nedoručujeme.",
+    notAvailableHint: "Všetky aktuálne oblasti nájdete v sekcii {link}. Pre inú adresu príjemcu jednoducho zadajte nové PSČ.",
+    deliveryLink: "Doručenie a doprava",
+    available: "Na túto adresu doručujeme.",
+    fee: "Doručenie do {plz} {region}: {fee}",
+    free: "zadarmo",
+    freeFrom: "zadarmo od {price}",
+    dateGroup: "Dátum doručenia",
+    today: "Dnes",
+    orderUntil: "objednajte do {time}",
+    tomorrow: "Zajtra",
+    chooseDate: "Vybrať dátum",
+    openCalendar: "Otvoriť kalendár",
+    deliveryOn: "Doručenie dňa {date}",
+    todaySuffix: "· dnes",
+    noDays: "Momentálne nie sú dostupné žiadne dni doručenia.",
+  },
+
+  calendar: {
+    previousMonth: "Predchádzajúci mesiac",
+    nextMonth: "Nasledujúci mesiac",
+    weekdays: {
+      mon: { short: "Po", long: "Pondelok" },
+      tue: { short: "Ut", long: "Utorok" },
+      wed: { short: "St", long: "Streda" },
+      thu: { short: "Št", long: "Štvrtok" },
+      fri: { short: "Pi", long: "Piatok" },
+      sat: { short: "So", long: "Sobota" },
+      sun: { short: "Ne", long: "Nedeľa" },
+    },
+    daySameDay: "{date}, doručenie ešte dnes",
+    dayAvailable: "{date}, doručenie možné",
+    dayUnavailable: "{date}, doručenie nie je možné",
+    legendSameDay: "Doručenie ešte dnes",
+    legendToday: "Dnes",
+    legendUnavailable: "V sivo označené dni nedoručujeme.",
+  },
+
+  card: {
+    unavailableTitle: "Osobná pozdravná kartička",
+    unavailableText: "Vaša kytica bude zatiaľ doručená bez kartičky.",
+    comingSoon: "Už čoskoro!",
+    addMessage: "Pridať osobnú správu",
+    included: "Pozdravná kartička v cene",
+    handwritten: "Ručne písaná pozdravná kartička",
+    saved: "Správa uložená",
+    messageLabel: "Vaša správa",
+    messagePlaceholder: "Všetko najlepšie k narodeninám …",
+    maxChars: "Najviac {max} znakov.",
+    senderGroup: "Odosielateľ",
+    showSender: "Uviesť odosielateľa",
+    anonymous: "Poslať bez mena",
+    senderName: "Vaše meno",
+    optional: "(nepovinné)",
+    senderPlaceholder: "napr. Anna",
+  },
+
+  extras: {
+    title: "Ešte niečo k tomu?",
+    deliveredTogether: "Doručíme spolu s kyticou",
+    addLabel: "Pridať {name} za {price}",
+    add: "Pridať",
+    quantity: "{name} – počet",
+    less: "{name}: o jeden menej",
+    more: "{name}: o jeden viac",
+  },
+
+  floristNote: {
+    title: "Želania pre našich floristov",
+    optional: "(nepovinné)",
+    hint: "Drobné zmeny kytice, napr. „namiesto žltých prosím biele ruže“. Zrealizujeme ich, ak sú kvety dostupné. Pokyny k doručeniu uvediete v pokladni.",
+    placeholder: "Vaše želanie pre kvetinárstvo",
+  },
+
+  cta: {
+    total: "Spolu",
+    comingSoon: "Čoskoro v predaji",
+    unavailable: "Momentálne nedostupné",
+    addToCart: "Do košíka",
+    fresh: "Čerstvo viazané",
+    cardIncluded: "Pozdravná kartička v cene",
+    securePayment: "Bezpečná platba",
+    added: "Do košíka sme pridali: {name} ({options}).",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Pohľad spredu",
+      detail: "Detail",
+      size: "Porovnanie veľkostí",
+      packaging: "Balenie",
+      lifestyle: "Atmosféra",
+    },
+    status: "Obrázok {index} z {total}: {alt}",
+    carousel: "Karusel",
+    imagesOf: "Obrázky – {name}",
+    slide: "Obrázok",
+    slideOf: "{index} z {total}",
+    choose: "Vybrať obrázok",
+    show: "Zobraziť: {label}",
+    thumb: "{label}: {alt}",
+    previous: "Predchádzajúci obrázok",
+    next: "Ďalší obrázok",
+    colorAlt: "{name} vo farbe {color}",
+    colorLabel: "Farba {color}",
+    sizeAlt: "{name} vo veľkosti {size}",
+    sizeDetailAlt: "{name} vo veľkosti {size}, detail",
+    sizeLabel: "Veľkosť {size}",
+    sizeDetailLabel: "Veľkosť {size} · detail",
+  },
+
+  details: {
+    eyebrow: "Dobré vedieť",
+    title: "Všetko o {name}",
+    description: "Popis",
+    plant: "Rastlina",
+    flowers: "Použité kvety",
+    care: "Starostlivosť",
+    delivery: "Doručenie",
+    deliveryText: "Vaše kvety pochádzajú z viedenského kvetinárstva, s ktorým stabilne spolupracujeme. Kytice sa tam pre vašu objednávku viažu ručne. Kuriér ich vyzdvihne a ide bez zastávky na adresu príjemcu.",
+    deliveryAreas: "Doručujeme do všetkých 23 viedenských obvodov. Poplatok za doručenie sa riadi obvodom a zobrazí sa po zadaní PSČ. Oblasti doručenia, časové okná a uzávierky objednávok nájdete v sekcii {link}.",
+    deliveryLink: "Doručenie a doprava",
+    looksPlant: "Vyzerá rastlina presne takto?",
+    looksBouquet: "Vyzerá kytica presne takto?",
+    looksOther: "Vyzerá to presne ako na fotografii?",
+    naturalPlant: "Takmer. Rastliny sú prírodné produkty: rast, veľkosť a kvitnutie sa môžu od fotografie líšiť. Aj obal na kvetináč môže podľa dostupnosti vyzerať inak.",
+    naturalFlowers: "Takmer. Kvety sú prírodné produkty: podľa sezóny sa môže niektorý druh alebo farebný odtieň líšiť. Naše partnerské kvetinárstvo dbá na to, aby sa zachoval štýl aj farebný svet.",
+  },
+
+  pricePending: {
+    status: "Cena bude doplnená",
+    sizes: "Veľkosti",
+    sizesLabel: "Dostupné veľkosti",
+    soonTitle: "Čoskoro v predaji",
+    soonText: "Práve stanovujeme ceny nášho sortimentu. Hneď ako budú známe, môžete si túto kyticu objednať priamo tu.",
+    contact: "Otázky? Napíšte nám",
+  },
+
+  related: {
+    eyebrow: "Prezerajte ďalej",
+    title: "Mohlo by sa vám páčiť aj",
+    allFlowers: "Zobraziť všetky kvety",
+  },
+
+  reviews: {
+    eyebrow: "Názory",
+    title: "Hodnotenia – {name}",
+    demoNote: "Ukážkové hodnotenia – skutočné hodnotenia doplníme",
+    quote: "„{text}“",
+    verified: "Overený nákup",
+    demo: "Ukážka",
+  },
+
+  reviewPhotos: {
+    photosOf: "Fotografie – {author}",
+    enlarge: "Zväčšiť {alt} – fotografia {index} z {total}",
+    dialogTitle: "Fotografia zákazníka – {author}",
+    dialogCount: "({index} z {total})",
+    close: "Zavrieť fotografiu",
+    show: "Zobraziť fotografiu {index}",
+  },
+  reviewVideo: {
+    videoOf: "Video od {author}",
+    caption: "Video zákazníka · {duration}",
+  },
+};
+
+export default product;

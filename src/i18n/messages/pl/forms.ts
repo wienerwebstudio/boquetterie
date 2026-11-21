@@ -1,0 +1,115 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** pl – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Imię i nazwisko",
+  email: "E-mail",
+  emailAddress: "Adres e-mail",
+  message: "Wiadomość",
+  orderNumber: "Numer zamówienia",
+  honeypot: "Strona internetowa",
+  charCount: "{count}/{max} znaków",
+  genericError: "Niestety coś poszło nie tak. Spróbuj ponownie później.",
+  invalidEmailEnter: "Wpisz prawidłowy adres e-mail.",
+
+  mailFallback: {
+    title: "Formularz jest w tej chwili niedostępny.",
+    text: "Twoja wiadomość nie przepadła: wyślij ją nam bezpośrednio e-mailem na adres {email}. Tekst jest już wstawiony.",
+    open: "Otwórz e-mail",
+  },
+
+  newsletter: {
+    honeypot: "Strona internetowa (pozostaw puste)",
+    successTitle: "Prawie gotowe – potwierdź swoją subskrypcję.",
+    successText: "Wysłaliśmy ci e-mail z linkiem potwierdzającym. Newsletter zaczniesz otrzymywać dopiero po potwierdzeniu.",
+  },
+
+  contact: {
+    formLabel: "Formularz kontaktowy",
+    subject: "Temat",
+    subjects: {
+      order: "Zamówienie",
+      delivery: "Dostawa",
+      business: "Klienci firmowi",
+      other: "Inne",
+    },
+    orderNumberHint: "Znajdziesz go w potwierdzeniu zamówienia.",
+    errors: {
+      name: "Podaj swoje imię i nazwisko.",
+      email: "Podaj prawidłowy adres e-mail.",
+      subject: "Wybierz temat.",
+      orderIdTooLong: "Numer zamówienia jest za długi.",
+      messageTooShort: "Opisz swoją sprawę (co najmniej 10 znaków).",
+      messageTooLong: "Wiadomość może mieć maksymalnie 2000 znaków.",
+    },
+    thanksTitle: "Dziękujemy za wiadomość.",
+    thanksText: "Otrzymaliśmy twoje zapytanie i odpowiemy tak szybko, jak to możliwe, e-mailem na adres {email}.",
+    sendAnother: "Wyślij kolejną wiadomość",
+    failed: "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz do nas bezpośrednio e-mailem.",
+    consent: "Wysyłając formularz, zgadzasz się, abyśmy wykorzystali twoje dane do obsługi zapytania. Szczegóły w Polityce prywatności.",
+    submit: "Wyślij wiadomość",
+    mailSubject: "Zapytanie kontaktowe: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Odstąpienie od umowy",
+    errors: {
+      name: "Podaj swoje imię i nazwisko.",
+      email: "Podaj prawidłowy adres e-mail.",
+      orderId: "Podaj numer zamówienia (np. BQ-7K2M9Q).",
+    },
+    emailHint: "Na ten adres wyślemy potwierdzenie otrzymania.",
+    orderNumberHint: "Znajduje się w potwierdzeniu zamówienia.",
+    items: "Od zakupu których towarów odstępujesz?",
+    itemsPlaceholder: "np. miś – pozostaw puste, jeśli dotyczy wszystkich towarów z zamówienia, od których można odstąpić",
+    declaration: "Niniejszym odstępuję od zawartej przeze mnie umowy kupna wyżej wymienionych towarów.",
+    receivedTitle: "Twoje odstąpienie od umowy zostało przyjęte.",
+    receivedText: "Otrzymano dnia {receivedAt} dla zamówienia {orderId}.",
+    receivedTextWithCase: "Otrzymano dnia {receivedAt} dla zamówienia {orderId} (sprawa {id}).",
+    confirmationSent: "Potwierdzenie otrzymania wysłaliśmy na adres {email}.",
+    confirmationNotSent: "Nie udało się teraz wysłać e-maila z potwierdzeniem – potwierdzimy otrzymanie osobiście tak szybko, jak to możliwe. Do tego czasu zachowaj tę stronę (np. jako zrzut ekranu).",
+    failed: "Nie udało się teraz przesłać odstąpienia od umowy. Spróbuj ponownie lub wyślij je e-mailem na adres {email}.",
+    submit: "Potwierdź odstąpienie",
+    mailSubject: "Odstąpienie od umowy – zamówienie {orderId}",
+    mailDeclaration: "Niniejszym odstępuję od zawartej przeze mnie umowy kupna następujących towarów: {items}",
+    mailAllItems: "wszystkie towary z zamówienia, od których można odstąpić",
+  },
+
+  business: {
+    formLabel: "Zapytanie dla klientów firmowych",
+    company: "Firma",
+    contact: "Osoba kontaktowa",
+    phone: "Telefon",
+    location: "Lokalizacja / kod pocztowy",
+    locationPlaceholder: "np. 1070 Wiedeń",
+    need: "Zapotrzebowanie",
+    pleaseChoose: "Wybierz",
+    needs: {
+      subscription: "Regularna dostawa (abonament)",
+      oneOff: "Jednorazowa dostawa",
+      event: "Wydarzenie",
+      gifts: "Prezenty dla pracowników lub klientów",
+    },
+    messagePlaceholder: "O co chodzi, na kiedy i w jakiej skali – i co jeszcze jest dla ciebie ważne.",
+    consent: "Zgadzam się na zapisanie i wykorzystanie moich danych w celu obsługi zapytania. Szczegóły w {privacyLink}.",
+    privacyLink: "Polityce prywatności",
+    errors: {
+      company: "Podaj nazwę swojej firmy.",
+      contact: "Podaj osobę kontaktową.",
+      email: "Podaj prawidłowy adres e-mail.",
+      phone: "Sprawdź numer telefonu.",
+      location: "Podaj lokalizację lub kod pocztowy.",
+      need: "Wybierz, czego potrzebujesz.",
+      message: "Opisz krótko swoje zapotrzebowanie (co najmniej 10 znaków).",
+      consent: "Potwierdź, że możemy wykorzystać twoje dane do obsługi zapytania.",
+    },
+    thanksTitle: "Dziękujemy za zapytanie.",
+    thanksText: "Otrzymaliśmy wszystko i odezwiemy się do: {contact}, e-mailem na adres {email}.",
+    sendAnother: "Wyślij kolejne zapytanie",
+    failed: "Nie udało się wysłać zapytania. Spróbuj ponownie lub napisz do nas bezpośrednio e-mailem.",
+    submit: "Wyślij zapytanie",
+    mailSubject: "Zapytanie firmowe: {company}",
+  },
+};
+
+export default forms;

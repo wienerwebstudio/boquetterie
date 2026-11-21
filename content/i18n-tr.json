@@ -1,0 +1,2520 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Pembe güller, pembe gerberalar ve beyaz zambaklar",
+      "shortDescription": "Her odaya neşe getiren, pembe ve beyaz tonlarında ferah, serbest bir buket.",
+      "description": "Rosé Dream, pembe gülleri ve pembe gerberaları beyaz zambaklar, narin cipso ve taze yeşilliklerle buluşturuyor. Serbest bağlanmış ve ferah görünümüyle doğum günü için, teşekkür olarak ya da sebepsiz yere çok yakışır.",
+      "flowers": [
+        "Güller",
+        "Gerbera",
+        "Zambaklar",
+        "Cipso"
+      ],
+      "care": [
+        "Vazoya her gün taze su koyun.",
+        "Gerekirse sapları yeniden kesin.",
+        "Solan çiçekleri düzenli olarak çıkarın."
+      ],
+      "seo": {
+        "title": "Rosé Dream – pembe ve beyaz buket",
+        "description": "Rosé Dream: pembe güller, pembe gerberalar ve beyaz zambaklar, serbest bağlanmış. Doğum günü ve teşekkür için ferah bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Ahşap bir şifonyer üzerinde cam vazoda pembe güller, pembe gerberalar ve beyaz zambaklardan oluşan buket"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Sarı Buket",
+      "tagline": "Sarı gerberalar, güller ve cipso",
+      "shortDescription": "Sarı kurdeleyle bağlanmış, sarı ve beyaz tonlarında güneşli bir buket.",
+      "description": "Parlak sarı gerberalar beyaz ve sarı güller, cipso ve taze yeşilliklerle buluşuyor. Açık renk ambalaja sarılıp sarı kurdeleyle bağlanmış – doğum günü için, tebrik, teşekkür ya da geçmiş olsun dileği olarak bir buket.",
+      "flowers": [
+        "Gerbera",
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Doğrudan güneş alan bir yere koymayın."
+      ],
+      "seo": {
+        "title": "Sarı Buket – sarı gerberalar ve güller",
+        "description": "Sarı gerberalar, beyaz ve sarı güller, cipso ve sarı kurdele. Doğum günü ya da geçmiş olsun için ferah bir selam – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Açık renk ambalajda, sarı kurdeleli; sarı gerberalar, beyaz ve sarı güllerden oluşan buket"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Beyaz Buket",
+      "tagline": "Açık renk güller, gerberalar ve zambaklar",
+      "shortDescription": "Narin pembe dokunuşlarla beyaz ve krem tonlarında ferah, sakin bir buket.",
+      "description": "Beyaz Buket, açık renk gülleri, gerberaları ve zambakları cipsoyla bir araya getirerek sade, zamansız bir buket oluşturuyor. Pembe ve kayısı rengindeki narin dokunuşlar görünüme hafiflik katıyor. Evlilik yıl dönümüne ya da yıl dönümüne, teşekkür olarak veya şık bir selam olarak çok uygun.",
+      "flowers": [
+        "Güller",
+        "Gerbera",
+        "Zambaklar",
+        "Cipso"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Gerekirse zambak polenlerini dikkatlice alın."
+      ],
+      "seo": {
+        "title": "Beyaz Buket – beyaz ve krem tonlarında",
+        "description": "Açık renk güller, gerberalar ve zambaklar, cipsoyla: yıl dönümü, evlilik yıl dönümü veya teşekkür için sade bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Beyaz ambalajda krem rengi güller, pembe gerberalar, zambaklar ve cipsodan oluşan açık renkli buket"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Mavi ambalajda mavi ve beyaz güller",
+      "shortDescription": "Açık mavi ambalajda mavi ve beyaz güller – dikkat çeken bir buket.",
+      "description": "Blue Bouquet, mavi ve beyaz gülleri cipso, bir beyaz zambak ve taze yeşilliklerle bir araya getiriyor. Açık mavi ambalaj çiçeklerin rengini tamamlıyor. Doğum günü, yıl dönümü için ya da farklı olanı sevenlere sıra dışı bir hediye.",
+      "flowers": [
+        "Güller",
+        "Zambaklar",
+        "Cipso"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – mavi ve beyaz güller",
+        "description": "Açık mavi ambalajda cipsolu mavi ve beyaz güller. Doğum günü veya yıl dönümü için sıra dışı bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Ahşap bir şifonyer üzerinde açık mavi ambalajda, cipsolu mavi ve beyaz güllerden oluşan buket"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Birçok renkte gökkuşağı gülleri",
+      "shortDescription": "Her çiçeği birden fazla renkte parlayan gökkuşağı güllerinden bir buket.",
+      "description": "Farbensinfonie gökkuşağı güllerinden oluşuyor: Her çiçek kırmızı ve turuncudan sarı ve yeşile, maviye ve mora kadar birkaç rengi yan yana gösteriyor. Sıkı bağlanan buket renkli bir top gibi görünüyor. Doğum günü ya da bir kutlama için neşeli bir sürpriz.",
+      "flowers": [
+        "Gökkuşağı gülleri"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – gökkuşağı gülleri",
+        "description": "Her çiçeği birden fazla renkte parlayan gökkuşağı gülleri. Doğum günü için neşeli bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Farbensinfonie (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Farbensinfonie (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Farbensinfonie (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Krem rengi bir vazoda gökkuşağı güllerinden oluşan sık bir buket",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Yakın plan gökkuşağı gülleri, her çiçek birkaç renkte"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Turuncu ve sarı tonlarında starliçe, zambak ve gerbera",
+      "shortDescription": "Göz alıcı cennet kuşu çiçekleriyle turuncu ve sarı tonlarında egzotik bir buket.",
+      "description": "Sonnenzauber, dikkat çekici cennet kuşu çiçeklerini beyaz zambaklar, sarı gerberalar ve taze yeşilliklerle buluşturuyor. Sıcak turuncu ve sarı tonlar bukete canlı, yazdan kalma bir hava veriyor.",
+      "flowers": [
+        "Starliçe (cennet kuşu çiçeği)",
+        "Zambaklar",
+        "Gerbera",
+        "Cipso"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazoyu temiz tutun ve suyu düzenli olarak yenileyin.",
+        "Doğrudan güneş alan bir yere koymayın."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – starliçe ve gerbera",
+        "description": "Sıcak turuncu ve sarı tonlarında cennet kuşu çiçekleri, zambaklar ve sarı gerberalar. Göz alıcı egzotik bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Şeffaf folyo içinde starliçe, beyaz zambak ve sarı gerberalardan oluşan egzotik buket",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Buketteki starliçe, zambak ve sarı gerberaya üstten bakış"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Gerbera ve zambaklarla fuşya ve pembe çiçekler",
+      "shortDescription": "Sarı dokunuşlarla fuşya ve pembe tonlarında yuvarlak, oyuncu bir buket.",
+      "description": "Pink Bouquet, aralarında zambak ve gerberaların da bulunduğu fuşya ve pembe çiçekleri yuvarlak, oyuncu bir bukette bir araya getiriyor. Sarı gerberalar taze dokunuşlar katıyor, pembe ambalaj görünümü tamamlıyor. Doğum günü, yıl dönümü, Anneler Günü için ya da sebepsiz yere çok güzel.",
+      "flowers": [
+        "Zambaklar",
+        "Gerbera"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Solan çiçekleri düzenli olarak çıkarın."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – fuşya ve pembe buket",
+        "description": "Zambak ve gerberalarla fuşya ve pembe tonlarında yuvarlak bir buket. Doğum günü, Anneler Günü veya sebepsiz yere – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Pembe ambalajda sarı gerberalı, fuşya ve pembe tonlarında yuvarlak buket",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Kurdeleli pembe ambalajda pembe zambaklar, sarı gerberalar ve fuşya çiçeklerden oluşan buket"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Turuncu ve kayısı rengi güller",
+      "shortDescription": "Turuncu ve kayısı rengi güller – gün batımı gibi sıcak bir buket.",
+      "description": "Orange Bouquet, narin yeşilliklerle tamamlanan ve açık renk ambalaja sarılan turuncu ve kayısı rengi güllerden oluşuyor. Sıcak ve neşeli görünümüyle doğum günü için, teşekkür olarak ya da birinin gününü aydınlatmak için çok uygun.",
+      "flowers": [
+        "Güller"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – turuncu güller",
+        "description": "Açık renk ambalajda turuncu ve kayısı rengi güller. Doğum günü veya teşekkür için sıcak bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Orange Bouquet (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Orange Bouquet (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Orange Bouquet (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Ahşap bir şifonyer üzerinde açık renk ambalajda turuncu ve kayısı rengi güllerden oluşan buket"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Koyu renk ambalajda koyu kırmızı güller",
+      "shortDescription": "Kırmızı saten kurdeleli, koyu kırmızı güllerden oluşan gösterişli bir buket.",
+      "description": "Red Rose Bouquet, koyu renk ambalaja sarılmış ve kırmızı saten kurdeleyle tutturulmuş, koyu kırmızı güllerden sıkı bağlanmış bir buket. Sevgililer Günü, yıl dönümü veya evlilik teklifi için klasik aşk ilanı.",
+      "flowers": [
+        "Güller"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – kırmızı güller",
+        "description": "Koyu renk ambalajda, kırmızı saten kurdeleli koyu kırmızı güller. Sevgililer Günü ve yıl dönümü için klasik gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Red Rose Bouquet (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Red Rose Bouquet (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Red Rose Bouquet (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Koyu gri ambalajda, kırmızı saten kurdeleli koyu kırmızı güllerden oluşan buket",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Mumların yanında, siyah-beyaz ambalajda yatırılmış kırmızı gül buketi"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Pembe, pastel ve leylak tonlarında güller ve gerberalar",
+      "shortDescription": "Pembe ve pastel tonlarında yumuşak, romantik bir buket.",
+      "description": "Rosa Bouquet, pembe ve pastel tonlarındaki gülleri gerberalar ve leylak rengi çiçeklerle buluşturuyor. Pembe kurdeleli beyaz ambalajda hafif ve sevgi dolu görünüyor. Doğum günü, Anneler Günü, yeni doğan bir bebek için ya da bir selam olarak çok güzel.",
+      "flowers": [
+        "Güller",
+        "Gerbera"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – pembe ve pastel güller",
+        "description": "Beyaz ambalajda pembe, pastel ve leylak tonlarında güller ve gerberalar. Doğum günü, Anneler Günü veya doğum için – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Pembe kurdeleli beyaz ambalajda pembe güller, gerberalar ve leylak rengi çiçeklerden oluşan buket"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Koyu renk ambalajda siyah güller",
+      "shortDescription": "Koyu renk ambalajda siyah güller – gizemli ve sıra dışı.",
+      "description": "Blackroses, koyu renk, şeffaf bir ambalaja sarılmış siyah güllerden oluşan bir buket. Farklı olanı takdir edenler için, örneğin doğum günü veya yıl dönümünde sıra dışı bir jest.",
+      "flowers": [
+        "Güller"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Blackroses – siyah güller",
+        "description": "Koyu renk ambalajda siyah güller: farklı olanı sevenler için sıra dışı bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Blackroses (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Blackroses (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Blackroses (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Cam vazoda siyah ambalajlı siyah güllerden oluşan buket",
+        "/images/products/sortiment/blackroses-2.jpg": "Pencere önünde cam vazoda ambalajsız siyah güller"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Cipsolu mavi güller",
+      "shortDescription": "Cipsolu parlak mavi güller – nadir ve gerçekten göz alıcı.",
+      "description": "Blaue Liebe, ince cipsoyla hafifletilmiş ve mavi bir ambalaja sarılmış parlak mavi güllerden oluşan bir buket. Doğum günü, yıl dönümü için ya da derin bir bağlılığın işareti olarak özel bir hediye.",
+      "flowers": [
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – mavi güller",
+        "description": "Mavi ambalajda cipsolu parlak mavi güller. Özel insanlar için nadir bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Blaue Liebe (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Blaue Liebe (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Blaue Liebe (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Beyaz bir vazoda, mavi ambalajda cipsolu mavi güllerden oluşan buket",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Mavi ambalajda cipsolu mavi güller, önden",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Ahşap bir şifonyer üzerinde mavi ambalajda yatırılmış mavi gül buketi"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Cipsolu pembe güller",
+      "shortDescription": "Narin bir ambalajda pembe güller – sevgi dolu ve zarif.",
+      "description": "Rosalie, cipsoyla hafifletilmiş ve açık pembe bir ambalaja sarılmış pembe güllerden oluşan bir buket. Feminen ve sakin görünümüyle Anneler Günü, doğum günü, yıl dönümü için ya da teşekkür olarak çok uygun.",
+      "flowers": [
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Rosalie – cipsolu pembe güller",
+        "description": "Açık pembe ambalajda cipsolu pembe güller. Anneler Günü, doğum günü veya teşekkür için – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Rosalie (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Rosalie (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Rosalie (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Beyaz bir vazoda, açık pembe ambalajda cipsolu pembe güllerden oluşan buket",
+        "/images/products/sortiment/rosalie-2.jpg": "Sade beyaz bir vazoda pembe ambalajlı Rosalie",
+        "/images/products/sortiment/rosalie-3.jpg": "Yivli beyaz bir vazoda cipsolu pembe güller",
+        "/images/products/sortiment/rosalie-4.jpg": "Yatırılmış Rosalie, pembe güllere ve cipsoya üstten bakış"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Kırmızı & Beyaz Karışık",
+      "tagline": "Kırmızı ve beyaz güller",
+      "shortDescription": "Kırmızı ve beyaz güllerden oluşan şık bir buket.",
+      "description": "Kırmızı & Beyaz Karışık, beyaz ambalajda kırmızı ve beyaz gülleri bir araya getiriyor; boyuta göre cipsoyla hafifletiliyor. Tutku ile şefkat buluşuyor: Sevgililer Günü, yıl dönümü, evlilik yıl dönümü için ya da zarif bir hediye olarak bir buket.",
+      "flowers": [
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Kırmızı & Beyaz Karışık – kırmızı ve beyaz güller",
+        "description": "Şık ambalajda kırmızı ve beyaz güller. Sevgililer Günü, yıl dönümü veya evlilik yıl dönümü için, altı boyda – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Kırmızı & Beyaz Karışık (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Kırmızı & Beyaz Karışık (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Kırmızı & Beyaz Karışık (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Beyaz ambalajda cipsolu kırmızı ve beyaz güllerden oluşan buket, yanında gül yaprakları",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Beyaz ambalajda sıkı bağlanmış kırmızı ve beyaz güller",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Ahşap bir şifonyer üzerinde beyaz ambalajda kırmızı-beyaz gül buketi",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Yatırılmış kırmızı ve beyaz gül buketi, üstten görünüm"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Lale Buketi",
+      "tagline": "Tek renk ya da karışık laleler",
+      "shortDescription": "Tek renk ya da rengârenk karışık lalelerden oluşan sade bir buket.",
+      "description": "Laleler, berrak renkleri ve ince formlarıyla eve bahar havası getirir. Buket tamamen lalelerden bağlanır; tercihinize göre tek renk ya da rengârenk karışık. Kırmızı, sarı, lila, pembe, turuncu, beyaz ve karışık olarak mevcuttur.",
+      "flowers": [
+        "Laleler"
+      ],
+      "care": [
+        "Sapları düz kesin ve soğuk suya koyun.",
+        "Az su yeterlidir, ancak düzenli olarak ekleyin.",
+        "Laleler vazoda büyümeye devam eder, gerekirse sapları yeniden kesin."
+      ],
+      "seo": {
+        "title": "Lale Buketi – birçok renkte laleler",
+        "description": "Kırmızı, sarı, lila, pembe, turuncu, beyaz ya da karışık lalelerden bir buket. Eve bahar havası – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "colorOptions": {
+        "rot": "Kırmızı",
+        "gelb": "Sarı",
+        "lila": "Lila",
+        "rosa": "Pembe",
+        "orange": "Turuncu",
+        "weiss": "Beyaz",
+        "mix": "Rengârenk karışık"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Cam vazoda sarı lalelerden oluşan buket",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Cam vazoda kraft kâğıda sarılı lila laleler",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Bej bir vazoda kırmızı laleler",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Cam vazoda turuncu laleler",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Keten bir örtü üzerinde cam vazoda pembe laleler",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Bej bir vazoda kırmızı, sarı, pembe, turuncu ve lila renklerde karışık laleler",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Beyaz bir vazoda beyaz laleler"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Cipsolu kırmızı güller",
+      "shortDescription": "Büyük duygular için koyu kırmızı tonlarında etkileyici bir gül buketi.",
+      "description": "Red Passion, kırmızı gülleri cipso ve koyu renk bir ambalajla çevrelenmiş sık, yuvarlak bir bukette bir araya getiriyor. Altı boyda mevcut – romantik jestler ve akılda kalması gereken anlar için.",
+      "flowers": [
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Sapları taze kesin.",
+        "Her gün taze su verin.",
+        "Doğrudan güneşten koruyun."
+      ],
+      "seo": {
+        "title": "Red Passion – kırmızı gül buketi",
+        "description": "Koyu renk ambalajda cipsolu kırmızı güller, altı boyda. Büyük duygular için bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Red Passion (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Red Passion (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Red Passion (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Siyah-altın rengi ambalajda cipsolu koyu kırmızı güllerden oluşan yatırılmış buket",
+        "/images/products/sortiment/red-passion-2.jpg": "Beyaz bir vazoda, koyu renk ambalajda cipsolu kırmızı güllerden oluşan büyük buket",
+        "/images/products/sortiment/red-passion-3.jpg": "Koyu renk ambalajda, cipso çemberli kırmızı güllerden oluşan çok büyük, yuvarlak buket"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Sıkı bağlanmış kırmızı güller",
+      "shortDescription": "Koyu renk ambalajda sıkı bağlanmış kırmızı güller – zamansız ve duygu dolu.",
+      "description": "Klassiker der Liebe, yuvarlak bir formda sıkıca bağlanmış ve siyah kurdeleli koyu renk ambalaja sarılmış kırmızı güllerden oluşuyor. Sevgililer Günü, yıl dönümü, evlilik teklifi ya da her türlü aşk ilanı için gül buketi.",
+      "flowers": [
+        "Güller"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – kırmızı güller",
+        "description": "Koyu renk ambalajda sıkı bağlanmış kırmızı güller. Sevgililer Günü, yıl dönümü veya evlilik teklifi için klasik gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Klassiker der Liebe (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Klassiker der Liebe (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Klassiker der Liebe (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Kurdeleli siyah ambalajda sıkı bağlanmış kırmızı güllerden oluşan yuvarlak buket",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Koyu renk ambalajda top şeklinde kırmızı güller, önden"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Cipsolu kırmızı güller",
+      "shortDescription": "Altı boyda gösterişli bir gül buketi.",
+      "description": "Königin der Herzen, kırmızı gülleri koyu renk, şeffaf bir ambalajda ince cipsoyla buluşturuyor. Altı boyda mevcut – küçük bir jestten büyük bir sürprize kadar.",
+      "flowers": [
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Serin bir yere koyun.",
+        "Solmuş çiçekleri zamanında çıkarın.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – gösterişli gül buketi",
+        "description": "Cipsolu kırmızı güller, altı boyda. Büyük anlar için gösterişli bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Königin der Herzen (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Königin der Herzen (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Königin der Herzen (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Beyaz bir vazoda, koyu renk ambalajda cipsolu kırmızı güllerden oluşan buket",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Siyah ambalajda kırmızı güller ve cipsodan oluşan büyük buket",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Siyah bir saksıda, koyu renk ambalajda cipsolu kırmızı güller",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Yıldız biçimli koyu renk ambalajda cipsolu kırmızı güllere üstten bakış"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Sıcak tonlarda gerbera, gül ve zambaklar",
+      "shortDescription": "Turuncu, pembe ve sarı tonlarında sıcak bir buket.",
+      "description": "Herbstzauber, turuncu, pembe ve sarı tonlarındaki gerbera, gül ve zambakları taze yeşilliklerle buluşturuyor. Serbest bağlanmış bu buket, özellikle günler kısalırken eve sıcak renkler getiriyor.",
+      "flowers": [
+        "Gerbera",
+        "Güller",
+        "Zambaklar"
+      ],
+      "care": [
+        "Meyvelerin yanına koymayın.",
+        "Düzenli olarak su ekleyin.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Herbstzauber – sıcak tonlarda buket",
+        "description": "Turuncu, pembe ve sarı tonlarında gerbera, gül ve zambaklar. Doğum günü veya teşekkür için sıcak bir sonbahar buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Cam vazoda turuncu gerberalar, kayısı ve pembe güller ve zambaklardan oluşan buket"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Kırmızı güller, gerbera ve yeşil dokunuşlar",
+      "shortDescription": "Taze yeşil dokunuşlarla kırmızı ve turuncu tonlarında canlı bir buket.",
+      "description": "Blütenfreude, kırmızı gülleri ve kırmızı ile turuncu gerberaları yeşil ponpon çiçekleri ve okaliptüs yeşilliğiyle buluşturuyor. Renkleri güçlü ama formu yuvarlak – doğum günü için, teşekkür olarak ya da sebepsiz yere çok güzel.",
+      "flowers": [
+        "Güller",
+        "Gerbera"
+      ],
+      "care": [
+        "Vazoya her gün taze su koyun.",
+        "Gerekirse sapları yeniden kesin.",
+        "Solan çiçekleri düzenli olarak çıkarın."
+      ],
+      "seo": {
+        "title": "Blütenfreude – kırmızı güller ve gerbera",
+        "description": "Kırmızı güller, kırmızı ve turuncu gerberalar ve taze yeşil dokunuşlar. Doğum günü için canlı bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Cam vazoda kırmızı güller, kırmızı ve turuncu gerberalar ve yeşil ponpon çiçeklerden oluşan buket",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Ahşap bir şifonyer üzerinde beyaz vazoda Blütenfreude"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Pembe güller, zambaklar ve cipso",
+      "shortDescription": "Zambaklarla yumuşak pembe tonlar – sakin, uyumlu ve zarif.",
+      "description": "Zartrosa Zauber, pembe gülleri pembe zambaklar ve cipsoyla pembe bir ambalajda buluşturuyor. Buket sakin ve uyumlu bir etki bırakıyor, zarif ve romantik bir dokunuşla.",
+      "flowers": [
+        "Güller",
+        "Zambaklar",
+        "Cipso"
+      ],
+      "care": [
+        "Suya değen yaprakları çıkarın.",
+        "Serin bir yere koyun.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – pembe güller ve zambaklar",
+        "description": "Narin ambalajda pembe güller, pembe zambaklar ve cipso. Sakin, romantik bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Beyaz bir vazoda, pembe ambalajda pembe güller, pembe zambaklar ve cipsodan oluşan buket",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Büyük kurdeleli pembe ambalajda Zartrosa Zauber"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Turuncu ve sarı tonlarında gerbera, zambak ve güller",
+      "shortDescription": "İyi haberler ve güneşli günler için parlak turuncu ve sarı.",
+      "description": "Strahlender Tag, turuncu gerberaları ve zambakları sarı güller, açık renk karanfiller ve cipsoyla buluşturuyor. Canlı renkler pozitif enerji getiriyor – tebrikler, başarılar ve güneşli günler için bir buket.",
+      "flowers": [
+        "Gerbera",
+        "Zambaklar",
+        "Güller",
+        "Karanfiller",
+        "Cipso"
+      ],
+      "care": [
+        "Hava akımından koruyun.",
+        "Suyu düzenli olarak değiştirin.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – turuncu ve sarı buket",
+        "description": "Sarı güller ve cipsoyla turuncu gerberalar ve zambaklar. Tebrikler için neşeli bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Beyaz-altın rengi ambalajda turuncu gerberalar, sarı güller ve cipsodan oluşan buket",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Beyaz bir vazoda turuncu gerberalar, zambaklar ve sarı gül",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Cam vazoda turuncu gerbera ve zambaklar, sarı güller ve açık renk karanfillerden oluşan yuvarlak buket"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Pembe, krem ve kayısı tonlarında güller",
+      "shortDescription": "Klasik güzellik ile modern tarz arasında uyumlu bir gül buketi.",
+      "description": "Rosentraum, pembe, krem ve kayısı tonlarındaki gülleri mor çiçekler, meyveli dallar ve taze yeşilliklerle buluşturuyor. Gül kurusu bir ambalaja sarılan buket hem gösterişli hem de modern görünüyor.",
+      "flowers": [
+        "Güller"
+      ],
+      "care": [
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazoyu temiz tutun.",
+        "Suyu düzenli olarak yenileyin."
+      ],
+      "seo": {
+        "title": "Rosentraum – pembe ve krem güller",
+        "description": "Gül kurusu ambalajda mor dokunuşlarla pembe, krem ve kayısı tonlarında güller. Uyumlu bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Gül kurusu ambalajda pembe, krem ve kayısı tonlarındaki güllerden bağlanmış buket",
+        "/images/products/sortiment/rosentraum-2.jpg": "Beyaz bir vazoda, gül kurusu ambalajda Rosentraum",
+        "/images/products/sortiment/rosentraum-3.jpg": "Buketteki güllere, mor çiçeklere ve meyveli dallara üstten bakış"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Cipsolu beyaz güller",
+      "shortDescription": "Cipsolu beyaz güller – narin, romantik ve ferah.",
+      "description": "Rosenkuss, ince cipsoyla hafifletilmiş ve beyaz bir ambalaja sarılmış beyazdan krem rengine uzanan güllerden oluşuyor. Sevgi, yakınlık ve küçük aşk mesajları için bir buket.",
+      "flowers": [
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Çok sıcak bir yere koymayın.",
+        "Su seviyesini her gün kontrol edin.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Rosenkuss – beyaz güller",
+        "description": "Beyaz ambalajda cipsolu beyaz güller. Narin, romantik bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Rosenkuss (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Rosenkuss (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Rosenkuss (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Beyaz bir vazoda, beyaz ambalajda cipsolu beyaz güllerden oluşan buket",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Beyaz bir vazoda, beyaz ambalajda beyaz güllerden oluşan büyük buket",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Ahşap bir şifonyer üzerinde cipsolu beyaz güllerden oluşan yatırılmış buket"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Pastel, fuşya ve bordo tonlarında güller",
+      "shortDescription": "Pastel ve fuşya tonlarında, zarifçe bir araya getirilmiş güller.",
+      "description": "Rosenglanz, pastel pembe, krem, fuşya ve bordo tonlarındaki gülleri pembe bir ambalajda cipsoyla buluşturuyor. Zamansız bir duruşa sahip, altı boyda mevcut.",
+      "flowers": [
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Sapları taze kesin.",
+        "Doğrudan güneşten kaçının.",
+        "Vazo suyunu düzenli olarak değiştirin."
+      ],
+      "seo": {
+        "title": "Rosenglanz – pastel ve fuşya güller",
+        "description": "Cipsolu pastel pembe, fuşya ve bordo güller, altı boyda. Zarif bir gül buketi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük",
+          "detailAlt": "Elde tutulan Rosenglanz (Küçük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "m": {
+          "label": "Orta",
+          "detailAlt": "Elde tutulan Rosenglanz (Orta), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "l": {
+          "label": "Büyük",
+          "detailAlt": "Elde tutulan Rosenglanz (Büyük), arka planda tramvaylı bir Viyana sokağı"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Cam vazoda, pembe ambalajda pastel pembe, fuşya ve bordo güllerden oluşan buket",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Pembe ambalajda cipsolu yuvarlak gül buketi, önden",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Ahşap bir şifonyer üzerinde pastel ve fuşya güllerden oluşan yatırılmış buket"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Pembe güller, gerbera, zambak ve karanfiller",
+      "shortDescription": "Pembe ve fuşya tonlarında, kelimesiz konuşan etkileyici bir buket.",
+      "description": "Pure Liebe, pembe gülleri fuşya gerbera, pembe zambaklar, karanfiller ve cipsoyla buluşturuyor. Yoğun pembe ve fuşya tonları açık renk dokunuşlarla hafifletilmiş – duygu dolu bir buket.",
+      "flowers": [
+        "Güller",
+        "Gerbera",
+        "Zambaklar",
+        "Karanfiller",
+        "Cipso"
+      ],
+      "care": [
+        "Düzenli olarak taze su verin.",
+        "Vazoyu temiz tutun.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Pure Liebe – pembe ve fuşya buket",
+        "description": "Pembe güller, fuşya gerbera, zambaklar ve karanfiller, cipsoyla. Duygu dolu bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Bej bir vazoda pembe güller, fuşya gerbera ve pembe zambaklardan oluşan buket",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Bej bir vazoda zambak, gerbera ve karanfillerle Pure Liebe",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Cam vazoda pembe güller, gerbera, karanfiller ve cipsodan oluşan yuvarlak buket"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Fuşya gerberalar, güller ve mor dokunuşlar",
+      "shortDescription": "Canlı fuşya tonlarından oluşan taze, modern bir buket.",
+      "description": "Pink Harmony, fuşya gerberaları ve gülleri beyaz ve leylak rengi çiçekler, mor dokunuşlar ve cipsoyla buluşturuyor. Canlı ve taze, bolca çekicilikle.",
+      "flowers": [
+        "Gerbera",
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Serin bir yere koyun.",
+        "Solmuş çiçekleri çıkarın.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Pink Harmony – fuşya gerbera ve güller",
+        "description": "Leylak rengi ve mor dokunuşlarla fuşya gerberalar ve güller. Taze, modern bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Bej bir vazoda fuşya gerberalar, güller ve leylak rengi çiçeklerden oluşan buket",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Fuşya gerberalar, güller ve mor dokunuşlarla yuvarlak buket"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Pembe, sarı, kayısı ve lila tonlarında rengârenk gül buketi",
+      "shortDescription": "Özel günler için cömert, rengârenk bir gül buketi.",
+      "description": "Love Deluxe birçok renkte bir gül buketi: pembe, krem, kayısı, sarı ve lila, pembe bir ambalaja sarılmış. Özel günler ve büyük jestler için, beş boyda mevcut.",
+      "flowers": [
+        "Güller"
+      ],
+      "care": [
+        "Sapları yeniden kesin.",
+        "Vazo suyunu her gün değiştirin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Love Deluxe – rengârenk gül buketi",
+        "description": "Pembe ambalajda pembe, krem, kayısı, sarı ve lila güller, beş boyda. Büyük jestler için – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Beyaz bir vazoda, pembe ambalajda pembe, sarı, kayısı ve lila tonlarında rengârenk gül buketi",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Pembe ambalajda büyük, rengârenk gül buketi, önden",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Ahşap bir şifonyer üzerinde pembe ambalajda yatırılmış rengârenk gül buketi"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Zambaklarla kırmızı ve yeşil güller",
+      "shortDescription": "“Seni seviyorum” demek için kırmızı tonlarında duygusal bir buket.",
+      "description": "Liebeserklärung, kırmızı gülleri açık yeşil güller, beyaz zambaklar, kırmızı dokunuş çiçekleri ve cipsoyla buluşturuyor. Güçlü ama taze bir etki – duyguları görünür kılan bir buket.",
+      "flowers": [
+        "Güller",
+        "Zambaklar",
+        "Cipso"
+      ],
+      "care": [
+        "Sıcaktan koruyun.",
+        "Suyu düzenli olarak yenileyin.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – kırmızı güller ve zambak",
+        "description": "Zambak ve cipsoyla kırmızı ve açık yeşil güller. “Seni seviyorum” demek için bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Cam vazoda zambak ve cipsolu kırmızı ve açık yeşil güllerden oluşan buket",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Ahşap bir şifonyer üzerinde beyaz vazoda Liebeserklärung"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Turuncu dokunuşlarla pembe güller ve gerbera",
+      "shortDescription": "Zarif ve dengeli – şık bir sadelikle bir buket.",
+      "description": "Klassische Schönheit, gül kurusu ve beyaz gülleri fuşya gerbera, küçük turuncu çiçekler ve cipsoyla buluşturuyor. Altın kenarlı koyu renk bir ambalaja sarılan buket dengeli ve zamansız görünüyor.",
+      "flowers": [
+        "Güller",
+        "Gerbera",
+        "Cipso"
+      ],
+      "care": [
+        "Doğrudan kaloriferin yanına koymayın.",
+        "Vazoya koymadan önce sapları çapraz kesin.",
+        "Vazo suyunu düzenli olarak değiştirin."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – güller ve gerbera",
+        "description": "Koyu renk ambalajda fuşya gerberayla gül kurusu ve beyaz güller. Dengeli, zamansız bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Altın kenarlı koyu renk ambalajda gül kurusu güller ve fuşya gerberadan oluşan buket",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Beyaz bir vazoda Klassische Schönheit",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Koyu renk ambalajda güllere, gerberaya ve cipsoya üstten bakış"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Pembe güller ve fuşya gerbera",
+      "shortDescription": "Oyuncu ve canlı: pembe güller fuşya gerberayla buluşuyor.",
+      "description": "Herzklopfen, açık pembe gülleri fuşya gerbera, küçük beyaz-yeşil çiçekler ve ince lila süs yeşillikleriyle buluşturuyor. Yuvarlak bağlanmış ve renk dolu – bol duygulu bir buket.",
+      "flowers": [
+        "Güller",
+        "Gerbera"
+      ],
+      "care": [
+        "Her gün taze su verin.",
+        "Sapları çapraz kesin.",
+        "Serin ve doğrudan güneş almayan bir yere koyun."
+      ],
+      "seo": {
+        "title": "Herzklopfen – pembe güller ve gerbera",
+        "description": "Açık pembe güller ve fuşya gerbera, yuvarlak bağlanmış. Duygu dolu, oyuncu bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Beyaz bir vazoda açık pembe güller ve fuşya gerberadan oluşan yuvarlak buket",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Beyaz bir vazoda Herzklopfen, yandan",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Cam vazoda pembe güller ve fuşya gerberadan oluşan buket"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Güller ve gerberayla rengârenk karışım",
+      "shortDescription": "Yaşam sevinci yayan rengârenk bir buket.",
+      "description": "Fröhlicher Blütenmix, kırmızı gülleri, sarı, pembe ve kırmızı gerberaları ve sarı, turuncu ve mor tonlarındaki diğer çiçeklerle buluşturuyor. Kırmızı bir ambalaja sarılmış – bir gülümseme hediye etmek için ideal.",
+      "flowers": [
+        "Güller",
+        "Gerbera"
+      ],
+      "care": [
+        "Serin bir yere koyun.",
+        "Suyu düzenli olarak değiştirin.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – rengârenk buket",
+        "description": "Kırmızı ambalajda kırmızı güller ve sarı, pembe ve kırmızı gerberalar. Yaşam sevinci dolu rengârenk bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Ahşap bir şifonyer üzerinde kırmızı ambalajda gerbera ve güllerden oluşan rengârenk buket",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Beyaz bir vazoda, kırmızı ambalajda Fröhlicher Blütenmix",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Kırmızı ambalajda kırmızı güllere, sarı ve pembe gerberalara üstten bakış"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Lila dokunuşlarla fuşya güller ve gerbera",
+      "shortDescription": "Fuşya, kayısı ve lila tonlarında canlı bir karışım.",
+      "description": "Farbtänzer, fuşya ve kayısı rengi gülleri ve dal gülleri pembe gerbera, lila çiçekler ve açık renk meyvelerle buluşturuyor. Sık ve canlı bağlanmış – modern ve etkileyici.",
+      "flowers": [
+        "Güller",
+        "Gerbera"
+      ],
+      "care": [
+        "Suya değen yaprakları çıkarın.",
+        "Vazoyu temiz tutun.",
+        "Vazoya koymadan önce sapları çapraz kesin."
+      ],
+      "seo": {
+        "title": "Farbtänzer – fuşya ve lila buket",
+        "description": "Lila dokunuşlarla fuşya ve kayısı rengi güller ve gerbera. Canlı, modern bir buket – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Açık pembe ambalajda fuşya ve lila tonlarında yatırılmış buket",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Krem rengi bir vazoda fuşya güller, gerbera ve lila çiçeklerden oluşan yuvarlak buket",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Yivli bir vazoda Farbtänzer, önden"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Kalp Şeklinde Çiçek Kutusu",
+      "tagline": "Kırmızı kalp kutuda güller",
+      "shortDescription": "Kalp şeklinde bir kutuda güller – masaya konulacak bir aşk ilanı.",
+      "description": "Kırmızı, kalp şeklindeki kutuda kırmızı, pembe ve beyaz güller diğer çiçekler ve cipsoyla düzenlenmiştir. Yıl dönümü, Sevgililer Günü için ya da sevgi dolu bir sürpriz olarak bir hediye.",
+      "flowers": [
+        "Güller",
+        "Cipso"
+      ],
+      "care": [
+        "Gülleri hafifçe nemlendirin.",
+        "Serin bir yere koyun.",
+        "Doğrudan güneşten koruyun."
+      ],
+      "seo": {
+        "title": "Kalp Şeklinde Çiçek Kutusu – kalp kutuda güller",
+        "description": "Kırmızı bir kalp kutuda kırmızı, pembe ve beyaz güller. Yıl dönümü ve Sevgililer Günü için – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Kırmızı, pembe ve beyaz güller ve cipsoyla kırmızı kalp şeklinde çiçek kutusu"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klasik Çiçek Kutusu",
+      "tagline": "Yuvarlak kutuda kırmızı güller",
+      "shortDescription": "Yuvarlak bir kutuda klasik güller – sade ve etkileyici.",
+      "description": "Klasik Çiçek Kutusu, yuvarlak bir kutuyu sık yerleştirilmiş güllerle dolduruyor. Minimalist ve zamansız; doğum günü için, teşekkür olarak ya da özel anlar için çok uygun. Kırmızı ve beyaz olarak mevcuttur.",
+      "flowers": [
+        "Güller"
+      ],
+      "care": [
+        "Gülleri düzenli olarak hafifçe sulayın.",
+        "Serin bir yere koyun.",
+        "Doğrudan güneşten koruyun."
+      ],
+      "seo": {
+        "title": "Klasik Çiçek Kutusu – kutuda güller",
+        "description": "Yuvarlak bir kutuda sık yerleştirilmiş güller, kırmızı ve beyaz olarak mevcut. Sade bir hediye – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Pembe ve altın kenarlı yuvarlak beyaz bir kutuda kırmızı güller",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Beyaz bir kaide üzerinde kırmızı güllerle iki kırmızı kadife yuvarlak kutu"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Saksıda Pembe Antoryum",
+      "tagline": "Pembe çiçekli antoryum",
+      "shortDescription": "Açık pembe çiçekli bir antoryum – zarif ve göze batmayan.",
+      "description": "Pembe antoryum, narin çiçekleri ve parlak yeşil yapraklarıyla odaya göze batmadan renk katar. Evin yaşam alanlarına olduğu kadar ofise de yakışır.",
+      "flowers": [
+        "Antoryum"
+      ],
+      "care": [
+        "Doğrudan güneş almayan aydınlık bir yere koyun.",
+        "Düzenli olarak sulayın, dipte su birikmesinden kaçının.",
+        "Yaprakları ara sıra suyla püskürtün."
+      ],
+      "seo": {
+        "title": "Saksıda Pembe Antoryum – salon bitkisi",
+        "description": "Açık pembe çiçekli ve parlak yapraklı antoryum. Hediye olarak zarif bir salon bitkisi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Ahşap bir şifonyer üzerinde gül kurusu seramik saksıda pembe antoryum",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Mumların yanında leylak-pembe bir saksıda pembe çiçekli antoryum"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Saksıda Kırmızı Antoryum",
+      "tagline": "Kırmızı çiçekli antoryum",
+      "shortDescription": "Parlak kırmızı çiçekli, modern görünümlü bir antoryum.",
+      "description": "Kırmızı antoryumlar parlak çiçekleriyle güçlü renk vurguları yapar. Dekoratif bir salon bitkisi ya da hediye olarak, iyi bakımla uzun süre güzel kalır.",
+      "flowers": [
+        "Antoryum"
+      ],
+      "care": [
+        "Doğrudan güneş almayan aydınlık bir yer.",
+        "Toprağı eşit şekilde nemli tutun.",
+        "Dipte su birikmesinden kaçının."
+      ],
+      "seo": {
+        "title": "Saksıda Kırmızı Antoryum – salon bitkisi",
+        "description": "Saksıda parlak kırmızı çiçekli antoryum. Hediye olarak dekoratif bir salon bitkisi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Ahşap bir şifonyer üzerinde kırmızı seramik saksıda kırmızı antoryum"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL Saksıda Kırmızı Antoryum",
+      "tagline": "Kırmızı çiçekli büyük antoryum",
+      "shortDescription": "Çok sayıda kırmızı çiçekli, büyük ve gür bir antoryum.",
+      "description": "Bu kırmızı antoryum 80 cm'den uzundur ve sık, parlak yapraklarının üzerinde çok sayıda kırmızı çiçek taşır. Ev ya da ofis için etkileyici bir göz alıcı.",
+      "flowers": [
+        "Antoryum"
+      ],
+      "care": [
+        "Doğrudan güneş almayan aydınlık bir yere koyun.",
+        "Düzenli olarak sulayın, dipte su birikmesinden kaçının.",
+        "Yapraklardaki tozu ara sıra silin."
+      ],
+      "seo": {
+        "title": "XXL Saksıda Kırmızı Antoryum",
+        "description": "Saksıda çok sayıda kırmızı çiçekli büyük antoryum. Ev veya ofis için göz alıcı – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Mumların yanında kırmızı bir saksıda çok sayıda kırmızı çiçekli büyük antoryum"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Saksıda Bromelya",
+      "tagline": "Kırmızı çiçekli bromelya",
+      "shortDescription": "Canlı kırmızı çiçekli, tropik havalı bir bromelya.",
+      "description": "Bromelya, kırmızı çiçek rozeti ve ince yeşil yapraklarıyla canlı vurgular yapar. Ev ya da çalışma alanları için dekoratif bir salon bitkisi ve özel bir hediye.",
+      "flowers": [
+        "Bromelya"
+      ],
+      "care": [
+        "Doğrudan güneş almayan aydınlık bir yere koyun.",
+        "Yaprak hunisine düzenli olarak su koyun.",
+        "Toprağı yalnızca hafif nemli tutun."
+      ],
+      "seo": {
+        "title": "Saksıda Bromelya – salon bitkisi",
+        "description": "Saksıda kırmızı çiçekli bromelya: ev veya ofis için tropik hava – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Ahşap bir şifonyer üzerinde kırmızı bir saksıda kırmızı çiçekli bromelya"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Saksıda Kauçuk Bitkisi",
+      "tagline": "Koyu yeşil yapraklı kauçuk bitkisi",
+      "shortDescription": "Parlak, koyu yeşil yapraklı, bakımı kolay bir kauçuk bitkisi.",
+      "description": "Kauçuk bitkisi, büyük ve parlak yapraklarıyla modern ve sakin bir görünüm sunar. Bakımı kolaydır; ev ve ofis alanlarına çok yakışır.",
+      "flowers": [
+        "Kauçuk bitkisi"
+      ],
+      "care": [
+        "Aydınlık ile yarı gölge arası bir yer.",
+        "Az sulayın, az suyla yetinir.",
+        "Yaprakların tozunu ara sıra alın."
+      ],
+      "seo": {
+        "title": "Saksıda Kauçuk Bitkisi – bakımı kolay",
+        "description": "Parlak, koyu yeşil yapraklı kauçuk bitkisi. Ev ve ofis için bakımı kolay bir salon bitkisi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Ahşap bir şifonyer üzerinde kırmızı bir saksıda koyu yeşil yapraklı kauçuk bitkisi"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Saksıda Beyaz Orkide",
+      "tagline": "Saksıda orkide, birkaç renkte",
+      "shortDescription": "Saksıda bir orkide – sakin, asil ve zamansız.",
+      "description": "Orkide, zarafeti ve huzuru simgeler. İnce çiçek salkımlarıyla ev, ofis ya da hediye için şık bir seçimdir. Lila, pembe, sarı, beyaz ve mavi olarak mevcuttur.",
+      "flowers": [
+        "Orkide"
+      ],
+      "care": [
+        "Doğrudan güneş almayan aydınlık bir yere koyun.",
+        "Az sulayın, dipte su birikmesinden kaçının.",
+        "Açması biten çiçek dallarını ancak kuruduklarında kesin."
+      ],
+      "seo": {
+        "title": "Saksıda Orkide – beş renkte",
+        "description": "Saksıda beyaz, pembe, sarı, lila veya mavi orkide. Hediye olarak zarif bir salon bitkisi – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Krem rengi seramik saksıda, çiçek boğazı pembe olan beyaz orkide",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Krem rengi seramik saksıda açık pembe çiçekli orkide",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Krem rengi seramik saksıda sarı orkide",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Pembe bir saksıda mor çiçekli orkide",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Mumların yanında gri bir saksıda mavi çiçekli orkide"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Kırmızı Taziye Buketi",
+      "tagline": "Çam yeşilliğiyle kırmızı güller, gerbera ve karanfiller",
+      "shortDescription": "Sevgi ve bağlılığın işareti olarak kırmızı bir taziye buketi.",
+      "description": "Kırmızı taziye buketi, kırmızı gülleri, gerberaları ve karanfilleri sarı güller, cipso ve çam yeşilliğiyle buluşturuyor. Güçlü duyguları sessizce ifade eden, onurlu bir anma jesti. Kompozisyon mevsime göre biraz değişebilir.",
+      "flowers": [
+        "Güller",
+        "Gerbera",
+        "Karanfiller",
+        "Cipso"
+      ],
+      "care": [
+        "Serin bir yere koyun; doğrudan güneşe veya kaloriferin yanına koymayın.",
+        "Aranjmanlarda çiçek süngerini nemli tutun."
+      ],
+      "seo": {
+        "title": "Kırmızı Taziye Buketi – güller ve gerbera",
+        "description": "Çam yeşilliği üzerinde güller, gerbera ve karanfillerle kırmızı taziye buketi, üç boyda. Onurlu bir veda – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Taş bir kaide üzerinde kırmızı güller, gerbera ve karanfiller, sarı güller ve çam yeşilliğiyle taziye buketi"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Pembe Taziye Buketi",
+      "tagline": "Pembe güller ve mor çiçekler",
+      "shortDescription": "Teselli veren, narin pembe tonlarında bir taziye buketi.",
+      "description": "Pembe güller, mor ve pembe çiçekler ve çam yeşilliği bu taziye buketine yumuşak, teselli edici bir etki veriyor. Minnet, yakınlık ve sevgi dolu bir anıyı simgeler – sessiz, kişisel bir veda için uygundur.",
+      "flowers": [
+        "Güller"
+      ],
+      "care": [
+        "Serin bir yere koyun; doğrudan güneşe veya kaloriferin yanına koymayın.",
+        "Aranjmanlarda çiçek süngerini nemli tutun."
+      ],
+      "seo": {
+        "title": "Pembe Taziye Buketi – narin pembe tonlar",
+        "description": "Çam yeşilliği üzerinde pembe güllerle narin pembe tonlarda taziye buketi, üç boyda. Sessiz bir veda için – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Taş bir kaide üzerinde, çam yeşilliği üzerinde pembe güller ve mor çiçeklerle beyaz kurdeleli taziye buketi"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Pastel Taziye Buketi",
+      "tagline": "Pastel tonlarda zambak, gül ve mavi çiçekler",
+      "shortDescription": "İnce pastel tonlarında sakin bir taziye buketi.",
+      "description": "Pastel taziye buketi, pembe zambakları ve gülleri açık mavi, leylak rengi ve beyaz çiçeklerle buluşturuyor. İnce renk geçişleri teselli ve başsağlığı duygusunu aktarır. Çiçekler mevsime göre değişebilir.",
+      "flowers": [
+        "Zambaklar",
+        "Güller"
+      ],
+      "care": [
+        "Serin bir yere koyun; doğrudan güneşe veya kaloriferin yanına koymayın.",
+        "Aranjmanlarda çiçek süngerini nemli tutun."
+      ],
+      "seo": {
+        "title": "Pastel Taziye Buketi – sakin renk tonları",
+        "description": "Zambak, gül ve açık mavi çiçeklerle pastel taziye buketi, üç boyda. Sade ve şık – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Taş bir kaide üzerinde pembe zambaklar, güller ve açık mavi çiçeklerle siyah kurdeleli pastel taziye buketi"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Turuncu Taziye Buketi",
+      "tagline": "Turuncu ve sarı tonlarında güller, gerbera ve karanfiller",
+      "shortDescription": "Takdiri ifade eden, sıcak turuncu tonlarında bir taziye buketi.",
+      "description": "Turuncu, sarı ve kayısı tonlarındaki güller, gerberalar ve karanfiller çam yeşilliğiyle birleşerek sıcak bir taziye buketi oluşturuyor. Minneti ve dolu dolu yaşanmış bir hayatın anısını simgeler; cenazenin teşhirinde veya anma törenlerinde kullanılmaya uygundur.",
+      "flowers": [
+        "Güller",
+        "Gerbera",
+        "Karanfiller"
+      ],
+      "care": [
+        "Serin bir yere koyun; doğrudan güneşe veya kaloriferin yanına koymayın.",
+        "Aranjmanlarda çiçek süngerini nemli tutun."
+      ],
+      "seo": {
+        "title": "Turuncu Taziye Buketi – sıcak tonlar",
+        "description": "Güller, gerbera ve karanfillerle turuncu ve sarı taziye buketi, üç boyda. Cenaze ve anma töreni için – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Taş bir kaide üzerinde, çam yeşilliği üzerinde turuncu ve sarı güller, gerbera ve karanfillerle taziye buketi"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Beyaz Taziye Buketi",
+      "tagline": "Beyaz zambaklar ve kasımpatılar",
+      "shortDescription": "Beyaz renkte klasik bir taziye buketi – sade ve onurlu.",
+      "description": "Çam yeşilliği üzerindeki beyaz zambaklar, kasımpatılar ve küçük beyaz çiçekler bu taziye buketini sade ve zamansız kılıyor. Beyaz huzuru ve vedayı simgeler – resmi cenaze törenleri için ya da sessiz bir başsağlığı işareti olarak uygundur.",
+      "flowers": [
+        "Zambaklar",
+        "Kasımpatılar"
+      ],
+      "care": [
+        "Serin bir yere koyun; doğrudan güneşe veya kaloriferin yanına koymayın.",
+        "Aranjmanlarda çiçek süngerini nemli tutun."
+      ],
+      "seo": {
+        "title": "Beyaz Taziye Buketi – zambak ve kasımpatı",
+        "description": "Zambak ve kasımpatılarla beyaz klasik taziye buketi, üç boyda. Sade ve onurlu – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Taş bir kaide üzerinde, çam yeşilliği üzerinde beyaz zambaklar, kasımpatılar ve küçük beyaz çiçeklerden taziye buketi"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Sarı Taziye Buketi",
+      "tagline": "Ayçiçekleri, sarı güller ve karanfiller",
+      "shortDescription": "Anı, umut ve minnet için sarı bir taziye buketi.",
+      "description": "Çam yeşilliği üzerindeki ayçiçekleri, sarı güller ve kayısı rengi karanfiller bu taziye buketini aydınlık ve sıcak kılıyor. Hayatın merkezde olduğu vedalara yakışır. Çiçekler mevsime bağlıdır.",
+      "flowers": [
+        "Ayçiçekleri",
+        "Güller",
+        "Karanfiller"
+      ],
+      "care": [
+        "Serin bir yere koyun; doğrudan güneşe veya kaloriferin yanına koymayın.",
+        "Aranjmanlarda çiçek süngerini nemli tutun."
+      ],
+      "seo": {
+        "title": "Sarı Taziye Buketi – ayçiçeği ve güller",
+        "description": "Ayçiçekleri, güller ve karanfillerle sarı taziye buketi, üç boyda. Aydınlık bir veda selamı – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Taş bir kaide üzerinde, çam yeşilliği üzerinde ayçiçekleri, sarı güller ve kayısı rengi karanfillerle taziye buketi"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Renkli Taziye Çelengi",
+      "tagline": "Rengârenk gerbera, gül ve çiçekler",
+      "shortDescription": "Hayat dolu birine veda için rengârenk bir taziye çelengi.",
+      "description": "Renkli taziye çelengi, gerberaları, gülleri ve sarı, turuncu, pembe ve beyaz tonlarındaki diğer çiçekleri yeşil bir zemin üzerinde buluşturuyor. Onurlu ve aynı zamanda renkli bir veda selamı, elde hazırlanır. Tasarımla ilgili istekleriniz için bize memnuniyetle ulaşabilirsiniz.",
+      "flowers": [
+        "Gerbera",
+        "Güller"
+      ],
+      "care": [
+        "Serin ve gölge bir yere koyun.",
+        "Gerekirse çiçek süngerini hafifçe nemlendirin."
+      ],
+      "seo": {
+        "title": "Renkli Taziye Çelengi – renkli bir veda",
+        "description": "Gerbera ve güllerle renkli taziye çelengi, elde hazırlanır. Renkli bir veda selamı – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Ahşap bir şövale üzerinde gerbera, zambak ve beyaz çiçeklerle siyah kurdeleli renkli taziye çelengi"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Fuşya Taziye Çelengi",
+      "tagline": "Fuşya ve kırmızı tonlarında gerbera ve güller",
+      "shortDescription": "Sevgi dolu bir veda selamı olarak fuşya ve kırmızı bir taziye çelengi.",
+      "description": "Fuşya ve kırmızı taziye çelengi, fuşya gerberaları, gülleri ve diğer çiçekleri açık renk dokunuşlar ve taze yeşilliklerle buluşturuyor. Sevginin ve anının ifadesi, elde hazırlanır. Tasarımla ilgili istekleriniz için bize memnuniyetle ulaşabilirsiniz.",
+      "flowers": [
+        "Gerbera",
+        "Güller"
+      ],
+      "care": [
+        "Serin ve gölge bir yere koyun.",
+        "Gerekirse çiçek süngerini hafifçe nemlendirin."
+      ],
+      "seo": {
+        "title": "Fuşya Taziye Çelengi – fuşya ve kırmızı",
+        "description": "Gerbera ve güllerle fuşya ve kırmızı taziye çelengi, elde hazırlanır. Sevgi dolu bir veda selamı – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Ahşap bir şövale üzerinde fuşya gerberalar, güller ve kırmızı çiçeklerle bordo kurdeleli taziye çelengi"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Kırmızı-Sarı Taziye Çelengi",
+      "tagline": "Kırmızı ve sarı gerberalar",
+      "shortDescription": "Kırmızı ve sarı renklerde parlak bir taziye çelengi.",
+      "description": "Yeşil bir zemine sık yerleştirilmiş kırmızı ve sarı gerberalar, bu taziye çelengini sıcaklık, minnet ve güzel anılarla dolu parlak bir veda selamına dönüştürüyor. Elde hazırlanır. Tasarımla ilgili istekleriniz için bize memnuniyetle ulaşabilirsiniz.",
+      "flowers": [
+        "Gerbera"
+      ],
+      "care": [
+        "Serin ve gölge bir yere koyun.",
+        "Gerekirse çiçek süngerini hafifçe nemlendirin."
+      ],
+      "seo": {
+        "title": "Kırmızı-Sarı Taziye Çelengi – gerbera",
+        "description": "Kırmızı ve sarı gerberalardan taziye çelengi, elde hazırlanır. Sıcak, parlak bir veda selamı – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Ahşap bir şövale üzerinde gümüş gri kurdeleli, kırmızı ve sarı gerberalardan taziye çelengi"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Kırmızı Taziye Çelengi",
+      "tagline": "Kırmızı gerbera ve güller",
+      "shortDescription": "Kalıcı sevgi için kırmızı renkte klasik bir taziye çelengi.",
+      "description": "Kırmızı taziye çelengi, kırmızı gerberaları ve gülleri çam yeşilliği üzerinde buluşturuyor. Vedadan sonra da süren sevgi için klasik, onurlu bir veda selamı. Elde hazırlanır. Tasarımla ilgili istekleriniz için bize memnuniyetle ulaşabilirsiniz.",
+      "flowers": [
+        "Gerbera",
+        "Güller"
+      ],
+      "care": [
+        "Serin ve gölge bir yere koyun.",
+        "Gerekirse çiçek süngerini hafifçe nemlendirin."
+      ],
+      "seo": {
+        "title": "Kırmızı Taziye Çelengi – gerbera ve güller",
+        "description": "Çam yeşilliği üzerinde gerbera ve güllerle kırmızı taziye çelengi, elde hazırlanır. Klasik bir veda selamı – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Ahşap bir şövale üzerinde, çam yeşilliği üzerinde kırmızı gerbera ve güllerden siyah kurdeleli taziye çelengi"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Beyaz Taziye Çelengi",
+      "tagline": "Beyaz güller, gerbera ve karanfiller",
+      "shortDescription": "Sessiz bir başsağlığı için beyaz renkte sade bir taziye çelengi.",
+      "description": "Açık yeşil dokunuşlar ve yeşilliklerle beyaz güller, gerberalar ve karanfiller bu sade çelengi oluşturuyor. Beyaz, huzuru ve sessiz başsağlığını simgeler. Elde hazırlanır. Tasarımla ilgili istekleriniz için bize memnuniyetle ulaşabilirsiniz.",
+      "flowers": [
+        "Güller",
+        "Gerbera",
+        "Karanfiller"
+      ],
+      "care": [
+        "Serin ve gölge bir yere koyun.",
+        "Gerekirse çiçek süngerini hafifçe nemlendirin."
+      ],
+      "seo": {
+        "title": "Beyaz Taziye Çelengi – sade ve onurlu",
+        "description": "Güller, gerbera ve karanfillerle beyaz taziye çelengi, elde hazırlanır. Sade bir veda selamı – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standart"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Ahşap bir şövale üzerinde beyaz güller, gerbera ve karanfillerden beyaz kurdeleli halka şeklinde taziye çelengi"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Advent Çelenkleri",
+      "tagline": "Dört mumlu çam yeşilliği, yedi renkte",
+      "shortDescription": "Çam yeşilliğinden, dört mumlu, elde hazırlanmış bir Advent çelengi.",
+      "description": "Advent çelengi, mis kokulu çam yeşilliğinden elde bağlanır ve dört mum, kurdeleler, toplar, kozalaklar ve başka detaylarla süslenir. Kırmızı, gri, lila, altın, bej, şarap kırmızısı ve pembe olarak mevcuttur.",
+      "flowers": [],
+      "care": [
+        "Mumları asla gözetimsiz yanık bırakmayın.",
+        "Serin bir yere koyun, doğrudan kaloriferin yanına koymayın.",
+        "Çam dallarını ara sıra hafifçe suyla püskürtün."
+      ],
+      "seo": {
+        "title": "Advent Çelengi – mumlu, elde hazırlanmış",
+        "description": "Çam yeşilliğinden, dört mumlu, elde hazırlanmış Advent çelengi; yedi renk ve dört boyda – Viyana'da çiçek teslimatı."
+      },
+      "sizes": {
+        "s": {
+          "label": "Küçük"
+        },
+        "m": {
+          "label": "Orta"
+        },
+        "l": {
+          "label": "Büyük"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Kırmızı",
+        "grau": "Gri",
+        "lila": "Lila",
+        "gold": "Altın",
+        "beige": "Bej",
+        "weinrot": "Şarap kırmızısı",
+        "rosa": "Pembe"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Dört kırmızı mumlu, kırmızı kurdeleler, toplar ve kozalaklarla çam yeşilliğinden Advent çelengi",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Dört açık gri mumlu, krem rengi kurdeleler ve portakal dilimleriyle Advent çelengi",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Lila ve pembe mumlu, mor kurdeleler ve melek figürüyle Advent çelengi",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Dört altın rengi mumlu, altın rengi kurdeleler, tarçın çubukları ve kozalaklarla Advent çelengi",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Dört pembe mumlu, bordo kurdeleler ve melek figürüyle Advent çelengi",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Dört şarap kırmızısı mumlu, toplar ve şarap kırmızısı kurdelelerle Advent çelengi",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Dört koyu gri mumlu, krem rengi kurdeleler ve kırmızı toplarla Advent çelengi",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Altın rengi mum ve kurdelelerle altın tonlarında Advent çelengi, yandan",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Pembe mumlar ve bordo kurdelelerle pembe tonlarında Advent çelengi, yandan"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Tüm çiçekler",
+      "headline": "Online çiçek siparişi",
+      "intro": "Viyana'nın her yerine elde hazırlanan buketler. Buketinizi seçin ve teslimat tarihini belirleyin.",
+      "seo": {
+        "title": "Viyana'da online çiçek siparişi ve teslimatı",
+        "description": "Online çiçek sipariş edin, Viyana'da teslim edilsin. İstediğiniz tarihte elde hazırlanan buketler – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Güller",
+      "headline": "Gül buketleri",
+      "intro": "Kırmızı, pembe veya beyaz güller, birkaç boyda. Elde hazırlanır ve Viyana'da teslim edilir.",
+      "seo": {
+        "title": "Online gül buketi siparişi – Viyana'ya güller",
+        "description": "Tüm gül buketlerine genel bakış: birkaç boyda kırmızı, pembe ve beyaz güller. Elde hazırlanır, istediğiniz tarihte Viyana'da teslim edilir."
+      }
+    },
+    "saisonal": {
+      "name": "Mevsimlik çiçekler",
+      "headline": "Mevsimlik çiçekler",
+      "intro": "Mevsime uygun buketler. Seçki yıl boyunca değişir.",
+      "seo": {
+        "title": "Viyana'da mevsimlik çiçek buketi teslimatı",
+        "description": "Mevsime uygun buketler. Elde hazırlanır ve Viyana'da teslim edilir."
+      }
+    },
+    "pastell": {
+      "name": "Pastel",
+      "headline": "Pastel buketler",
+      "intro": "Gül kurusu, krem, leylak: Narin anlar için yumuşak renkler.",
+      "seo": {
+        "title": "Viyana'da pastel çiçek teslimatı",
+        "description": "Yumuşak pastel tonlarda buketler Viyana'da kapınızda – taze hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "bunt": {
+      "name": "Rengârenk",
+      "headline": "Rengârenk buketler",
+      "intro": "Mutluluk veren renkler. Doğum günleri, sürprizler ve iyi bir ruh hali için.",
+      "seo": {
+        "title": "Viyana'da rengârenk çiçek buketi teslimatı",
+        "description": "Rengârenk, neşeli buketler Viyana'da kapınızda – taze hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Zarif & Beyaz",
+      "headline": "Zarif & Beyaz",
+      "intro": "Beyaz, krem ve yeşil. Her odada sakin ve asil duran buketler.",
+      "seo": {
+        "title": "Viyana'da zarif beyaz çiçek teslimatı",
+        "description": "Beyaz ve krem rengi buketler Viyana'da kapınızda – zarif, taze hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Premium buketler",
+      "intro": "Özel anlar için cömert buketler.",
+      "seo": {
+        "title": "Viyana'da premium çiçek buketi teslimatı",
+        "description": "Özel günler için premium buketler Viyana'da kapınızda – elde hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "unter-40": {
+      "name": "40 €'nun altında",
+      "headline": "40 €'nun altında çiçekler",
+      "intro": "Büyük etki bırakan küçük buketler – hepsi 40 euronun altında.",
+      "seo": {
+        "title": "Viyana'da 40 €'nun altında çiçek teslimatı",
+        "description": "40 €'nun altında uygun fiyatlı çiçek buketleri Viyana'da kapınızda – taze hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "bestseller": {
+      "name": "Favori buketler",
+      "headline": "Favori buketlerimiz",
+      "intro": "Özellikle severek önerdiğimiz buketler.",
+      "seo": {
+        "title": "Favori buketlerimiz – Viyana için öneriler",
+        "description": "Özellikle severek önerdiğimiz buketler – elde hazırlanır ve Viyana'da teslim edilir."
+      }
+    },
+    "neu": {
+      "name": "Yeni",
+      "headline": "Blumora'da yeni",
+      "intro": "Ürün yelpazemize yeni katılanlar.",
+      "seo": {
+        "title": "Viyana için yeni çiçek buketleri",
+        "description": "Ürün yelpazemizdeki yeni buketler – taze hazırlanır ve Viyana'da teslim edilir."
+      }
+    },
+    "blumenboxen": {
+      "name": "Çiçek kutuları",
+      "headline": "Çiçek kutuları",
+      "intro": "Bir kutuda düzenlenmiş güller – vazo gerektirmeyen bir hediye.",
+      "seo": {
+        "title": "Viyana'da çiçek kutusu teslimatı",
+        "description": "Çiçek kutusunda güller – kalp şeklinde ya da klasik. İstediğiniz tarihte Viyana'da çiçek teslimatı."
+      }
+    },
+    "pflanzen": {
+      "name": "Bitkiler",
+      "headline": "Saksı bitkileri",
+      "intro": "Orkideler, antoryumlar ve yeşil bitkiler – kalıcı çiçekler.",
+      "seo": {
+        "title": "Viyana'da saksı bitkisi teslimatı",
+        "description": "Hediye olarak saksıda orkideler, antoryumlar ve salon bitkileri. Viyana'da çiçek teslimatı."
+      }
+    },
+    "trauer": {
+      "name": "Taziye çiçekleri",
+      "headline": "Taziye çiçekleri",
+      "intro": "Son selam için onurlu bir şekilde hazırlanan taziye çelenkleri ve taziye buketleri.",
+      "seo": {
+        "title": "Viyana'da taziye çelengi ve taziye buketi",
+        "description": "Cenaze ve anma töreni için taziye çelenkleri ve taziye buketleri – Viyana'da teslim edilir."
+      }
+    },
+    "advent": {
+      "name": "Advent çelenkleri",
+      "headline": "Advent çelenkleri",
+      "intro": "Çam yeşilliği, mumlar ve süsler – Advent dönemi için elde hazırlanır.",
+      "seo": {
+        "title": "Viyana'da Advent çelengi teslimatı",
+        "description": "Birçok renk ve boyda elde hazırlanmış Advent çelenkleri – Viyana'da teslim edilir."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Doğum günü",
+      "headline": "Doğum günü için çiçekler",
+      "intro": "“Seni düşündüm” diyen bir buket. Çiçekleri ve istediğiniz tarihi seçin.",
+      "imageAlt": "Kırmızı ambalajda kırmızı güller, gerbera ve sarı çiçeklerle rengârenk buket",
+      "seo": {
+        "title": "Doğum günü çiçekleri – Viyana için buketler",
+        "description": "Doğum günü buketleri: rengârenk, neşeli ya da zarif. Elde hazırlanır ve Viyana'da teslim edilir – istediğiniz tarihte."
+      }
+    },
+    "liebe": {
+      "name": "Aşk & Romantizm",
+      "headline": "Aşk için çiçekler",
+      "intro": "Kırmızı güller ya da bambaşka bir şey: Ne demek istediğinizi söyleyen çiçekler.",
+      "imageAlt": "Gri ambalajda kırmızı kurdeleli koyu kırmızı güllerden oluşan buket",
+      "seo": {
+        "title": "Viyana'da romantik çiçek teslimatı",
+        "description": "Güller ve romantik buketler Viyana'da kapınızda – taze hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "danke": {
+      "name": "Teşekkür",
+      "headline": "Teşekkür etmek için çiçekler",
+      "intro": "Yardım için, ayrılan zaman için, kısacası her şey için. Bir buket bunu çok söz söylemeden anlatır.",
+      "imageAlt": "Sarı kurdeleli, sarı gerberalar ve beyaz güllerden oluşan buket",
+      "seo": {
+        "title": "Viyana'da teşekkür çiçekleri teslimatı",
+        "description": "Çiçeklerle teşekkür edin: Taze hazırlanan buketler Viyana'da kapınızda – istediğiniz tarihte."
+      }
+    },
+    "gute-besserung": {
+      "name": "Geçmiş olsun",
+      "headline": "İyileşme için çiçekler",
+      "intro": "Yumuşak renkler, sakin formlar ve iyi gelen küçük bir selam.",
+      "imageAlt": "Açık renk ambalajda turuncu ve sarı tonlarında güneşli bir buket",
+      "seo": {
+        "title": "Viyana'da geçmiş olsun çiçekleri teslimatı",
+        "description": "İyileşme dilekleri için çiçekler Viyana'da kapınızda – yumuşak buketler, taze hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "jahrestag": {
+      "name": "Yıl dönümü",
+      "headline": "Yıl dönümü için çiçekler",
+      "intro": "Her şeyin başladığı gün için. Ve ardından gelen tüm günler için.",
+      "imageAlt": "Beyaz ambalajda kırmızı ve beyaz güllerden oluşan buket",
+      "seo": {
+        "title": "Viyana'da yıl dönümü çiçekleri teslimatı",
+        "description": "Yıl dönümü için zarif buketler Viyana'da kapınızda – taze hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "geburt": {
+      "name": "Doğum",
+      "headline": "Yeni doğan için çiçekler",
+      "intro": "Hoş geldin, küçük insan. Büyük bir an için narin çiçekler.",
+      "imageAlt": "Cipsoyla pembe ve leylak rengi güllerden oluşan narin buket",
+      "seo": {
+        "title": "Viyana'da yeni doğan çiçekleri teslimatı",
+        "description": "Yeni doğan için narin pastel buketler Viyana'da kapınızda – taze hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "hochzeit": {
+      "name": "Düğün",
+      "headline": "Düğün için çiçekler",
+      "intro": "Gelin ve damat için ya da sadece bir tebrik olarak: zarif, ferah ve şık.",
+      "imageAlt": "Vazoda beyaz ambalajlı beyaz güllerden oluşan buket",
+      "seo": {
+        "title": "Viyana'da düğün çiçekleri teslimatı",
+        "description": "Düğün için zarif çiçekler Viyana'da kapınızda – tebrik ya da hediye olarak, taze hazırlanır."
+      }
+    },
+    "einfach-so": {
+      "name": "Sebepsiz yere",
+      "headline": "Sebepsiz yere çiçekler",
+      "intro": "Özel bir gün yok. Sadece düşünce. Bazen en güzel sebep budur.",
+      "imageAlt": "Pencere önünde cam vazoda sarı laleler",
+      "seo": {
+        "title": "Sebepsiz yere çiçek gönderin – Viyana",
+        "description": "Özel bir gün olmadan çiçek gönderin: Küçük ve büyük buketler Viyana'da kapınızda – taze hazırlanır, istediğiniz tarihte."
+      }
+    },
+    "trauer": {
+      "name": "Taziye",
+      "headline": "Taziye için çiçekler",
+      "intro": "Sakin renklerle başsağlığı. Elde hazırlanan ve Viyana'da teslim edilen çelenkler, taziye buketleri ve buketler.",
+      "imageAlt": "Ahşap bir şövale üzerinde beyaz kurdeleli beyaz taziye çelengi",
+      "seo": {
+        "title": "Viyana'da taziye çiçekleri teslimatı",
+        "description": "Taziye çiçekleri Viyana'da kapınızda – çelenkler, taziye buketleri ve sakin buketler, elde hazırlanır, istediğiniz tarihte."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Kokulu mum",
+      "description": "Hediye ambalajında, farklı şekil ve renklerde dekoratif kokulu mumlar.",
+      "imageAlt": "Şeffaf hediye kutularında kalp ve küre şeklinde kokulu mumlar"
+    },
+    "x-teddy": {
+      "name": "Oyuncak ayı",
+      "description": "Kırmızı kalpli peluş ayı – buketi sevgiyle tamamlayan bir ek.",
+      "imageAlt": "Kırmızı kalpli açık kahverengi peluş ayı"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Nereye teslimat yapıyorsunuz?",
+      "answer": "Viyana'nın 23 bölgesinin tamamına teslimat yapıyoruz. Bölgeye göre teslimat ücretsizdir ya da 3,99 € veya 7,99 € tutar. Alıcı adresinin posta kodunu girmeniz yeterli – teslimat yapıp yapamayacağımızı, ne zaman yapabileceğimizi ve teslimatın ne kadar tutacağını hemen görürsünüz.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Bugün hâlâ çiçek gönderebilir miyim?",
+      "answer": "Evet – pazartesiden cumartesiye 18:30'a kadar ya da pazar günleri 17:45'e kadar sipariş verirseniz, boş bir zaman aralığı olduğu sürece aynı gün Viyana'nın her yerine teslim ederiz. Adresiniz için en erken teslimat zamanını posta kodunu girer girmez görürsünüz.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Belirli bir teslimat tarihi seçebilir miyim?",
+      "answer": "Evet. Her ürün sayfasında ve ödeme adımında istediğiniz tarihi takvimden seçersiniz. Teslimat yapmadığımız günler gri görünür.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "İstediğim bir saati seçebilir miyim?",
+      "answer": "Evet. Viyana'da ödeme adımında 9:00 ile 22:00 arasında bir saatlik bir zaman aralığı seçersiniz – haftanın yedi günü.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Evde kimse yoksa ne olur?",
+      "answer": "Kurye çiçekleri bizzat teslim eder. Kimse yoksa mümkünse komşulara bırakılır. Ödeme adımında teslimat için bir not ekleyebilirsiniz, örneğin bir kapı kodu. Siparişinizin durumu hakkında sizi e-postayla bilgilendiririz.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Anonim olarak çiçek gönderebilir miyim?",
+      "answer": "Evet. Tebrik kartı olmadan adınız buketin hiçbir yerinde yer almaz ve fatura yalnızca size gönderilir. Kişisel mesajlı tebrik kartları yakında geliyor.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Tebrik kartı ekleyebilir miyim?",
+      "answer": "Henüz değil – tebrik kartları yakında geliyor. O zamana kadar buket kartsız teslim edilir.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Çiçekler fotoğraftakiyle birebir aynı mı görünür?",
+      "answer": "Her buket tek tek hazırlanır ve çiçekler doğal ürünlerdir. Renkler, türler ve çiçek büyüklüğü mevsime göre biraz farklı olabilir. Tarz ve renk dünyası korunur.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Çiçekler nasıl taze kalır?",
+      "answer": "Her buket siparişiniz için taze hazırlanır ve kurye tarafından doğrudan teslim edilir. En uzun süre şöyle dayanır: Sapları çapraz kesin, taze su verin ve buketi serin, doğrudan güneş almayan bir yere koyun.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Hangi ödeme seçenekleri var?",
+      "answer": "Kullanılabilir ödeme yöntemlerini siparişin son adımında görürsünüz. Ödeme, bir ödeme hizmeti sağlayıcısı üzerinden güvenli şekilde yapılır – kart bilgileriniz asla bize ulaşmaz.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Siparişimi değiştirebilir miyim?",
+      "answer": "Buket henüz hazırlanmadığı sürece teslimat tarihini veya adresi genellikle hâlâ değiştirebiliriz. Lütfen sipariş numaranızla mümkün olan en kısa sürede bize yazın.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Şirketlere veya otellere çiçek gönderebilir miyim?",
+      "answer": "Evet. Ödeme adımında şirket veya otel adını ve – biliyorsanız – departmanı ya da oda numarasını belirtin. Teslimat resepsiyona ya da danışmaya yapılır.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Özel anlar için çiçekler.",
+      "intro": "Blumora, Viyana merkezli bir online çiçek gönderim hizmetidir. Her buket Viyana'daki bir çiçekçide elde hazırlanır ve kuryeyle doğrudan teslim edilir.",
+      "seo": {
+        "title": "Hakkımızda – Viyana'dan çiçek gönderimi",
+        "description": "Blumora, Viyana merkezli bir online çiçek gönderim hizmetidir: Buketler elde hazırlanır ve kuryeyle 23 bölgenin tamamına teslim edilir."
+      },
+      "sections": [
+        {
+          "heading": "Nasıl çalışıyoruz",
+          "paragraphs": [
+            "Blumora, Viyanalı bir online çiçek gönderim hizmetidir. Buketinizi bizden seçersiniz – buketi, sürekli birlikte çalıştığımız Viyana'daki bir çiçekçi hazırlar. Orada her buket elde ve sizin siparişiniz için hazırlanır.",
+            "Kendi metninizi yazabileceğiniz tebrik kartları yakında geliyor."
+          ],
+          "imageAlt": "Eski bir Viyana binasının pencere pervazında güller, dalyalar, ortancalar ve lalelerden oluşan buket, arkada akşam ışığında Stephansdom (Aziz Stefan Katedrali)"
+        },
+        {
+          "heading": "Teslimat",
+          "paragraphs": [
+            "Bir kurye buketinizi doğrudan çiçekçiden alır ve hiç durmadan alıcı adresine götürür. Viyana'nın 23 bölgesinin tamamına, seçtiğiniz zaman aralığında teslimat yapıyoruz: öğleden önce, öğleden sonra ya da akşam 22:00'ye kadar."
+          ],
+          "imageAlt": "Cam vazoda Pure Liebe buketi"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Teslimat ve gönderim",
+      "intro": "Viyana'nın 23 bölgesinin tamamına teslimat yapıyoruz. Teslimat ücretleri (ücretsiz, 3,99 € veya 7,99 €), teslimat günleri ve zaman aralıkları alıcı adresine bağlıdır – posta kodunu girin, her şeyi bir bakışta görün.",
+      "seo": {
+        "title": "Teslimat ve gönderim – Viyana'da çiçek teslimatı",
+        "description": "Viyana'da çiçek teslimatı için teslimat bölgeleri, teslimat ücretleri, teslimat günleri ve zaman aralıkları."
+      },
+      "sections": [
+        {
+          "heading": "Teslimat nasıl işler",
+          "paragraphs": [
+            "Buketiniz siparişiniz için taze hazırlanır. Bir kurye onu doğrudan çiçekçiden alır ve hiç durmadan, seçtiğiniz zaman aralığında alıcı adresine götürür. Kimse yoksa buket mümkünse komşulara bırakılır.",
+            "Her sipariş için e-postayla bir onay ve durumu takip edebileceğiniz bir bağlantı alırsınız."
+          ]
+        },
+        {
+          "heading": "Şirketlere, otellere ve hastanelere teslimat",
+          "paragraphs": [
+            "Ödeme adımında şirket veya otel adını ve departmanı, servisi ya da oda numarasını belirtin. Resepsiyona veya danışmaya teslim ederiz. Lütfen bazı kurumların servislere çiçek alınmasına izin vermediğini dikkate alın."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "İletişim",
+      "intro": "Bir sipariş, teslimat tarihi veya özel bir isteğiniz hakkında sorunuz mu var? Size yardımcı olmak için buradayız.",
+      "seo": {
+        "title": "İletişim – Blumora Viyana",
+        "description": "Sipariş, teslimat veya özel istekleriniz hakkında sorularınız için Blumora ile iletişime geçin."
+      },
+      "sections": [
+        {
+          "heading": "Bize nasıl ulaşabilirsiniz",
+          "paragraphs": [
+            "[Yer tutucu: E-posta, telefon ve çalışma saatleri ayarlardan alınır ve orada tamamlanmalıdır.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Viyana'da çiçek gönderimi",
+      "headline": "Daha fazlasını anlatan çiçekler.",
+      "subheadline": "Sizin için önemli olan insanlara taze hazırlanmış çiçekler. Seçin, istediğiniz tarihi belirleyin ve mutluluğu kapılarına gönderin.",
+      "primaryCta": {
+        "label": "Çiçekleri keşfedin"
+      },
+      "secondaryCta": {
+        "label": "Özel güne göre seçin"
+      },
+      "imageAlt": "Deve tüyü paltolu bir kadın, güller, düğün çiçekleri, dalyalar ve lalelerden oluşan büyük bir buketi Viyana'da arnavut kaldırımlı bir sokakta taşıyor, arkasından bir tramvay geçiyor",
+      "deliveryCheck": {
+        "title": "Nereye teslim edelim?",
+        "placeholder": "Posta kodunu girin",
+        "button": "Teslimatı kontrol et"
+      }
+    },
+    "occasions": {
+      "headline": "Her an için çiçekler",
+      "subheadline": "Bazen büyük bir sebebe gerek yoktur. Sadece doğru jeste."
+    },
+    "bestsellers": {
+      "headline": "Favori buketlerimiz",
+      "subheadline": "Ürün yelpazemizden bir seçki."
+    },
+    "collections": {
+      "headline": "Mükemmel buketinizi bulun",
+      "subheadline": "Renge, tarza veya bütçeye göre."
+    },
+    "howItWorks": {
+      "headline": "Mutluluk hediye etmek hiç bu kadar kolay olmamıştı.",
+      "steps": [
+        {
+          "title": "Favori buketinizi seçin",
+          "text": "Her zevke ve her özel güne uygun çiçekleri keşfedin."
+        },
+        {
+          "title": "Kişiselleştirin",
+          "text": "Boyutu ve küçük ekstraları seçin."
+        },
+        {
+          "title": "Teslimat tarihini seçin",
+          "text": "Sürprizinizin ne zaman ulaşacağını belirleyin."
+        },
+        {
+          "title": "Mutluluğu gönderin",
+          "text": "Gerisini biz hallederiz."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Advent dönemi",
+      "headline": "İlk mum yakında yanıyor.",
+      "text": "Çam yeşilliği, mumlar ve süslerle Advent çelenkleri – birçok renk ve boyda. Yanında sıcak sonbahar tonlarında buketler.",
+      "cta": {
+        "label": "Advent çelenkleri"
+      },
+      "imageAlt": "Ahşap bir şifonyer üzerinde dört kırmızı mumlu, çam yeşilliğinden Advent çelengi"
+    },
+    "editorial": {
+      "eyebrow": "El işçiliği",
+      "headline": "Çiçekçilerden. Seri üretimden değil.",
+      "text": "Her buket, Viyana'daki bir çiçekçi tarafından siparişiniz için elde hazırlanır ve kuryeyle doğrudan teslim edilir – depoya uğramadan.",
+      "cta": {
+        "label": "Nasıl çalışıyoruz"
+      },
+      "imageAlt": "Bir kurye, eski bir Viyana binasının kapısında güller, dalyalar ve düğün çiçeklerinden oluşan rengârenk bir buketi teslim ediyor"
+    },
+    "extras": {
+      "headline": "Sürprizinizi tamamlayın.",
+      "subheadline": "Anı büyüten küçük ekstralar."
+    },
+    "subscription": {
+      "headline": "Günlük hayatta daha fazla çiçek.",
+      "text": "Taze mevsimlik buketler – haftalık, iki haftada bir ya da aylık. Ev, ofis, resepsiyon veya restoran ve kafeler için.",
+      "cta": {
+        "label": "Çiçek aboneliğini keşfedin"
+      }
+    },
+    "reviews": {
+      "headline": "Yerine ulaşan anlar.",
+      "subheadline": "Müşterilerimizin siparişleri hakkında söyledikleri."
+    },
+    "gallery": {
+      "headline": "Özel anlar için çiçekler.",
+      "images": [
+        {
+          "alt": "Beyaz bir vazoda kırmızı, pembe, krem ve kayısı tonlarında rengârenk gül buketi"
+        },
+        {
+          "alt": "Beyaz bir vazoda parlak mavi güllerden oluşan buket"
+        },
+        {
+          "alt": "Pencere önünde vazoda gerberalarla canlı fuşya tonlarında buket"
+        },
+        {
+          "alt": "Cennet kuşu çiçekleri, zambaklar ve gerberalarla egzotik buket"
+        },
+        {
+          "alt": "Bir şifonyer üzerinde güllerle kalp şeklinde kırmızı çiçek kutusu"
+        },
+        {
+          "alt": "Pembe ambalajda pastel ve fuşya güllerden oluşan buket"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Bilmeniz gerekenler"
+    },
+    "newsletter": {
+      "headline": "E-posta kutunuzda biraz daha fazla çiçek.",
+      "text": "Yenilikler, mevsimlik koleksiyonlar ve özel kampanyalar.",
+      "placeholder": "E-posta adresiniz",
+      "button": "Abone ol",
+      "note": "Aboneliğinizi istediğiniz zaman iptal edebilirsiniz. Veri koruma ile ilgili bilgileri gizlilik politikasında bulabilirsiniz."
+    }
+  },
+  "settings": {
+    "claim": "Daha fazlasını anlatan çiçekler.",
+    "seo": {
+      "defaultTitle": "Blumora – Viyana'da çiçek teslimatı",
+      "defaultDescription": "Taze hazırlanmış çiçekler, doğrudan sizin için önemli olan insanlara teslim edilir. İstediğiniz tarihi seçin, mutluluk gönderin – Viyana için çiçek gönderimi."
+    },
+    "announcement": {
+      "messages": [
+        "Viyana'nın her yerine çiçek teslimatı",
+        "Taze hazırlanır, kuryeyle teslim edilir",
+        "İstediğiniz tarihi seçebilirsiniz"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Taze hazırlanır",
+        "text": "Siparişiniz için elde hazırlanır"
+      },
+      {
+        "title": "Kuryeyle teslimat",
+        "text": "Viyana'nın 23 bölgesinin tamamına"
+      },
+      {
+        "title": "İstediğiniz tarih",
+        "text": "Günü siz belirlersiniz"
+      },
+      {
+        "title": "Tebrik kartları",
+        "text": "Yakında geliyor"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Sipariş alındı",
+        "description": "Siparişinizi aldık."
+      },
+      "paid": {
+        "label": "Ödeme onaylandı",
+        "description": "Ödeme tarafımıza ulaştı."
+      },
+      "preparing": {
+        "label": "Hazırlanıyor",
+        "description": "Buketiniz için çiçekler seçiliyor."
+      },
+      "arranging": {
+        "label": "Buket hazırlanıyor",
+        "description": "Buketiniz elde hazırlanıyor."
+      },
+      "ready": {
+        "label": "Teslimata hazır",
+        "description": "Buket hazır ve kurye tarafından teslim alınacak."
+      },
+      "in_transit": {
+        "label": "Yolda",
+        "description": "Buketiniz yolda."
+      },
+      "delivered": {
+        "label": "Teslim edildi",
+        "description": "Çiçekler ulaştı."
+      },
+      "undeliverable": {
+        "label": "Teslim edilemedi",
+        "description": "Teslimat yapamadık, sizinle iletişime geçeceğiz."
+      },
+      "cancelled": {
+        "label": "İptal edildi",
+        "description": "Sipariş iptal edildi."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Kredi kartı",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Online havale (eps)"
+    },
+    "headerCta": "Çiçek gönder",
+    "address": {
+      "city": "Viyana",
+      "country": "Avusturya"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Viyana Teslimat Alanı 1",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Viyana Teslimat Alanı 2",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Viyana Teslimat Alanı 3",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Viyana çevresi (Aşağı Avusturya)",
+      "note": "Viyana çevresine teslimat salı, perşembe ve cumartesi günleri yapılır.",
+      "windows": {
+        "day": "9:00–18:00"
+      }
+    }
+  }
+}

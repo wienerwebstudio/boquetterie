@@ -1,0 +1,181 @@
+{
+  "brand": {
+    "name": "Blumora",
+    "claim": "Blumen, die mehr sagen.",
+    "legalName": "Tunahan Ceylan",
+    "email": "office@blumora.at",
+    "phone": "+43 660 6795870",
+    "address": {
+      "street": "Am Langen Felde 51/18",
+      "zip": "1220",
+      "city": "Wien",
+      "country": "Österreich"
+    },
+    "openingHours": [],
+    "social": {
+      "instagram": "",
+      "facebook": "",
+      "pinterest": "",
+      "tiktok": ""
+    }
+  },
+  "announcement": {
+    "enabled": true,
+    "messages": [
+      "Blumenlieferung in ganz Wien",
+      "Frisch gebunden, per Kurier geliefert",
+      "Wunschdatum wählbar"
+    ]
+  },
+  "timezone": "Europe/Vienna",
+  "currency": "EUR",
+  "blackoutDates": [
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01"
+  ],
+  "sameDayEnabled": true,
+  "subscriptionEnabled": false,
+  "newsletterEnabled": true,
+  "favoritesEnabled": true,
+  "headerCta": {
+    "enabled": true,
+    "label": "Blumen senden",
+    "href": "/blumen"
+  },
+  "payments": [
+    {
+      "id": "apple_pay",
+      "label": "Apple Pay",
+      "enabled": true,
+      "provider": "mock"
+    },
+    {
+      "id": "google_pay",
+      "label": "Google Pay",
+      "enabled": true,
+      "provider": "mock"
+    },
+    {
+      "id": "card",
+      "label": "Kreditkarte",
+      "enabled": true,
+      "provider": "mock"
+    },
+    {
+      "id": "paypal",
+      "label": "PayPal",
+      "enabled": false,
+      "provider": "paypal"
+    },
+    {
+      "id": "klarna",
+      "label": "Klarna",
+      "enabled": true,
+      "provider": "stripe"
+    },
+    {
+      "id": "eps",
+      "label": "Online-Überweisung (eps)",
+      "enabled": true,
+      "provider": "stripe"
+    }
+  ],
+  "orderStatuses": [
+    {
+      "key": "received",
+      "label": "Bestellung eingegangen",
+      "description": "Wir haben deine Bestellung erhalten.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "paid",
+      "label": "Zahlung bestätigt",
+      "description": "Die Zahlung ist bei uns eingegangen.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "preparing",
+      "label": "In Vorbereitung",
+      "description": "Die Blumen für deinen Strauß werden ausgewählt.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "arranging",
+      "label": "Strauß wird gebunden",
+      "description": "Dein Strauß wird von Hand gebunden.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "ready",
+      "label": "Bereit zur Lieferung",
+      "description": "Der Strauß ist fertig und wird vom Kurier abgeholt.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "in_transit",
+      "label": "Unterwegs",
+      "description": "Dein Strauß ist auf dem Weg.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "delivered",
+      "label": "Zugestellt",
+      "description": "Die Blumen sind angekommen.",
+      "customerVisible": true,
+      "terminal": true
+    },
+    {
+      "key": "undeliverable",
+      "label": "Nicht zustellbar",
+      "description": "Wir konnten nicht zustellen und melden uns bei dir.",
+      "customerVisible": true,
+      "terminal": true
+    },
+    {
+      "key": "cancelled",
+      "label": "Storniert",
+      "description": "Die Bestellung wurde storniert.",
+      "customerVisible": true,
+      "terminal": true
+    }
+  ],
+  "seo": {
+    "siteUrl": "https://blumora.at",
+    "defaultTitle": "Blumora – Blumen liefern lassen in Wien",
+    "defaultDescription": "Frisch gebundene Blumen, direkt an die Menschen geliefert, die dir wichtig sind. Wunschdatum wählen, Freude schicken – Blumenversand für Wien."
+  },
+  "trust": [
+    {
+      "icon": "leaf",
+      "title": "Frisch gebunden",
+      "text": "Für deine Bestellung von Hand gebunden"
+    },
+    {
+      "icon": "truck",
+      "title": "Lieferung per Kurier",
+      "text": "In alle 23 Wiener Bezirke"
+    },
+    {
+      "icon": "calendar",
+      "title": "Wunschdatum wählbar",
+      "text": "Du bestimmst den Tag"
+    },
+    {
+      "icon": "mail",
+      "title": "Grußkarten",
+      "text": "Kommen bald"
+    }
+  ],
+  "greetingCard": {
+    "enabled": false,
+    "maxChars": 200,
+    "freeCardIncluded": true
+  }
+}

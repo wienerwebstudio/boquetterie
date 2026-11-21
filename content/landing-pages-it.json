@@ -1,0 +1,349 @@
+[
+  {
+    "slug": "consegna-fiori-vienna",
+    "title": "Consegna fiori a Vienna",
+    "headline": "Consegna fiori a Vienna, in tutti i 23 distretti",
+    "intro": "Bouquet composti a mano da un fiorista viennese e consegnati dal corriere, sette giorni su sette. Tu scegli il giorno e la fascia oraria, noi pensiamo al resto.",
+    "image": "/images/hero/hero-wien-tram-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "Come funziona la consegna fiori a Vienna",
+        "paragraphs": [
+          "Con Blumora la consegna fiori a Vienna è semplice: scegli un bouquet, inserisci il CAP del destinatario e vedi subito se e quando possiamo consegnare. Arriviamo in tutti i 23 distretti della città, dal lunedì alla domenica.",
+          "Nel calendario scegli la data che preferisci e nel checkout una fascia oraria di un'ora tra le 9:00 e le 22:00. Il costo di consegna dipende dal distretto e lo vedi dopo aver inserito il CAP, prima di pagare."
+        ]
+      },
+      {
+        "heading": "Composti per te, non presi da un magazzino",
+        "paragraphs": [
+          "Ogni bouquet viene composto a mano per il tuo ordine da un fiorista partner di Vienna e poi consegnato di persona dal corriere. I fiori sono prodotti naturali: varietà e sfumature possono cambiare leggermente con la stagione, lo stile e i colori restano quelli che hai scelto.",
+          "I bouquet partono da 36,90 €. Oltre ai mazzi di fiori trovi piante in vaso e, per i momenti di lutto, bouquet e corone funebri."
+        ]
+      },
+      {
+        "heading": "Hai fretta?",
+        "paragraphs": [
+          "Se ordini entro le 18:30 (la domenica entro le 17:45), consegniamo ancora in giornata, finché c'è una fascia oraria libera. Il primo orario disponibile per l'indirizzo lo vedi non appena inserisci il CAP."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Consegna fiori a Vienna – bouquet a domicilio | Blumora",
+      "description": "Consegna fiori a Vienna in tutti i 23 distretti, 7 giorni su 7, con fascia oraria di un'ora a scelta. Bouquet composti a mano da un fiorista viennese."
+    }
+  },
+  {
+    "slug": "inviare-fiori-a-vienna",
+    "title": "Inviare fiori a Vienna dall'Italia",
+    "headline": "Inviare fiori a Vienna dall'Italia",
+    "intro": "Un'amica che vive a Vienna, un figlio in Erasmus, un collega in Austria: da casa tua in Italia ordini online e un corriere consegna il bouquet a Vienna.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": { "occasions": ["geburtstag", "liebe", "danke", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Da Milano, Roma o Palermo fino a Vienna",
+        "paragraphs": [
+          "Vuoi inviare fiori a Vienna dall'Italia? Non serve conoscere un fiorista sul posto né parlare tedesco. Il sito, il checkout e le e-mail di conferma sono in italiano. Tu scegli il bouquet, il giorno e la fascia oraria; il fiorista partner a Vienna lo compone a mano e il corriere lo consegna all'indirizzo che indichi, in uno dei 23 distretti della città.",
+          "Vienna ha lo stesso fuso orario dell'Italia, quindi gli orari che vedi (fasce di consegna tra le 9:00 e le 22:00, orario limite per ordinare) valgono anche per te."
+        ]
+      },
+      {
+        "heading": "Pagare dall'Italia",
+        "paragraphs": [
+          "Puoi pagare con carta di credito o di debito, Apple Pay, Google Pay, Klarna o eps. Le carte italiane e internazionali funzionano senza problemi. Il costo di consegna dipende dal distretto e lo vedi dopo aver inserito il CAP del destinatario, prima di pagare.",
+          "Ti teniamo aggiornato via e-mail sullo stato dell'ordine, così sai quando i fiori sono arrivati."
+        ]
+      },
+      {
+        "heading": "Un consiglio sull'indirizzo",
+        "paragraphs": [
+          "A Vienna molti palazzi hanno un portone con citofono e numeri di scala e interno. Se li conosci, aggiungili nelle indicazioni per la consegna: per il corriere fanno la differenza."
+        ]
+      }
+    ],
+    "faqIds": ["f-payment", "f-where", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Inviare fiori a Vienna dall'Italia | Blumora",
+      "description": "Inviare fiori a Vienna dall'Italia: ordini in italiano, paghi con carta, Apple Pay o Google Pay e un fiorista viennese consegna il bouquet a domicilio."
+    }
+  },
+  {
+    "slug": "fiorista-vienna",
+    "title": "Fiorista a Vienna",
+    "headline": "Il tuo fiorista a Vienna, online",
+    "intro": "Bouquet freschi composti a mano da un fiorista viennese per ogni ordine e consegnati a domicilio in tutta la città.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Un fiorista a Vienna, senza uscire di casa",
+        "paragraphs": [
+          "Cerchi un fiorista a Vienna che consegni a domicilio? Blumora lavora con un fiorista partner viennese: ogni bouquet viene composto a mano solo dopo il tuo ordine, non prima. Così i fiori arrivano freschi e il mazzo è fatto davvero per te.",
+          "Scegli online tra bouquet colorati, delicati toni pastello, rose, piante in vaso e composizioni funebri. Ogni scheda prodotto mostra i fiori che compongono il bouquet e le diverse misure disponibili."
+        ]
+      },
+      {
+        "heading": "Fatto a mano, quindi mai identico",
+        "paragraphs": [
+          "Un bouquet legato a mano non è un prodotto in serie. A seconda della stagione, varietà e sfumature possono cambiare leggermente; stile e palette di colori restano quelli della foto.",
+          "Hai un desiderio particolare, per esempio un numero dispari di steli? Su richiesta: annotalo nelle indicazioni al momento dell'ordine e il fiorista ne terrà conto se possibile."
+        ]
+      },
+      {
+        "heading": "Consegna in tutta Vienna",
+        "paragraphs": [
+          "Consegniamo in tutti i 23 distretti, dal lunedì alla domenica, in una fascia oraria di un'ora tra le 9:00 e le 22:00. I bouquet partono da 36,90 €; il costo di consegna lo vedi dopo aver inserito il CAP."
+        ]
+      }
+    ],
+    "faqIds": ["f-fresh", "f-photo", "f-where", "f-window"],
+    "seo": {
+      "title": "Fiorista Vienna – bouquet a mano con consegna | Blumora",
+      "description": "Fiorista a Vienna online: bouquet composti a mano per ogni ordine da un fiorista viennese e consegnati in tutti i 23 distretti, 7 giorni su 7."
+    }
+  },
+  {
+    "slug": "consegna-fiori-in-giornata-vienna",
+    "title": "Consegna fiori in giornata",
+    "headline": "Consegna fiori in giornata a Vienna",
+    "intro": "Ordina entro le 18:30, la domenica entro le 17:45: il bouquet arriva ancora oggi, ovunque a Vienna.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Fiori oggi stesso, anche all'ultimo minuto",
+        "paragraphs": [
+          "Ti sei ricordato tardi di un compleanno? Con la consegna fiori in giornata a Vienna non è troppo tardi. Dal lunedì al sabato ordini entro le 18:30, la domenica entro le 17:45, e consegniamo in giornata in tutti i 23 distretti, finché c'è una fascia oraria libera.",
+          "Le fasce orarie disponibili per oggi finiscono almeno due ore dopo il tuo ordine: è il tempo che serve al fiorista per comporre il bouquet e al corriere per portarlo a destinazione."
+        ]
+      },
+      {
+        "heading": "Come vedere se oggi è ancora possibile",
+        "paragraphs": [
+          "Inserisci il CAP dell'indirizzo del destinatario: vedi subito il primo orario disponibile e il costo di consegna per quel distretto. Nel checkout scegli la data di oggi e una delle fasce orarie ancora libere.",
+          "Gli orari si riferiscono all'ora di Vienna, che è la stessa dell'Italia. Se ordini dall'estero, il pagamento con carta internazionale, Apple Pay o Google Pay funziona senza problemi."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-window", "f-where", "f-nobody"],
+    "seo": {
+      "title": "Consegna fiori in giornata a Vienna | Blumora",
+      "description": "Consegna fiori in giornata a Vienna: ordina entro le 18:30 (domenica 17:45) e il bouquet arriva oggi stesso, in tutti i 23 distretti."
+    }
+  },
+  {
+    "slug": "consegna-rose-vienna",
+    "title": "Consegna rose a Vienna",
+    "headline": "Consegna rose a Vienna",
+    "intro": "Rose rosse, rosa, bianche o in mix di colori: bouquet di rose composti a mano e consegnati a domicilio in tutta Vienna.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Rose per ogni messaggio",
+        "paragraphs": [
+          "Le rose rosse dicono amore senza bisogno di parole, quelle rosa tenerezza e gratitudine, quelle bianche eleganza. Con la nostra consegna rose a Vienna scegli il bouquet adatto: classico in rosso, delicato in rosa o vivace in più colori.",
+          "Ogni mazzo di rose viene composto a mano da un fiorista partner viennese per il tuo ordine e consegnato di persona dal corriere."
+        ]
+      },
+      {
+        "heading": "Un numero preciso di rose?",
+        "paragraphs": [
+          "In molti paesi si regala un numero dispari di rose. Se tieni a un numero preciso di steli, scrivilo nelle indicazioni al momento dell'ordine: su richiesta il fiorista ne tiene conto, se il bouquet lo permette."
+        ]
+      },
+      {
+        "heading": "Quando e dove",
+        "paragraphs": [
+          "Consegniamo in tutti i 23 distretti di Vienna, sette giorni su sette, in una fascia oraria di un'ora tra le 9:00 e le 22:00. Se ordini entro le 18:30 (la domenica entro le 17:45), le rose possono arrivare ancora in giornata. Vuoi fare una sorpresa? Senza biglietto il tuo nome non compare sul bouquet."
+        ]
+      }
+    ],
+    "faqIds": ["f-window", "f-anon", "f-where", "f-photo"],
+    "seo": {
+      "title": "Consegna rose a Vienna – bouquet di rose | Blumora",
+      "description": "Consegna rose a Vienna: rose rosse, rosa e bianche composte a mano e consegnate in tutti i 23 distretti, anche in giornata."
+    }
+  },
+  {
+    "slug": "fiori-funebri-vienna",
+    "title": "Fiori e corone funebri",
+    "headline": "Fiori e corone funebri a Vienna",
+    "intro": "Bouquet e corone funebri composti a mano da un fiorista viennese, per dire addio con dignità anche se non puoi essere presente.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "category": "trauer", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Un ultimo saluto, anche da lontano",
+        "paragraphs": [
+          "Quando una persona cara se ne va e non puoi essere a Vienna, i fiori parlano per te. Nel nostro assortimento di fiori e corone funebri a Vienna trovi bouquet e corone in diversi colori: dal bianco, simbolo di pace, ai toni più caldi in rosso, giallo o rosa.",
+          "Ogni composizione viene realizzata a mano da un fiorista partner viennese e consegnata dal corriere all'indirizzo che indichi, nel giorno e nella fascia oraria che scegli."
+        ]
+      },
+      {
+        "heading": "Nastro con dedica",
+        "paragraphs": [
+          "Desideri un nastro con una frase o i nomi di chi invia la corona? Su richiesta: scrivi il testo nelle indicazioni al momento dell'ordine e il fiorista lo terrà presente. Lo stesso vale per altri desideri sulla composizione."
+        ]
+      },
+      {
+        "heading": "Data e orario",
+        "paragraphs": [
+          "Scegli nel calendario la data della consegna e nel checkout una fascia oraria di un'ora tra le 9:00 e le 22:00, in tutti i 23 distretti di Vienna. Se ci sono indicazioni utili per il corriere, per esempio a chi consegnare sul posto, aggiungile nelle indicazioni per la consegna."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-change", "f-where"],
+    "seo": {
+      "title": "Fiori e corone funebri a Vienna | Blumora",
+      "description": "Fiori e corone funebri a Vienna: composizioni fatte a mano da un fiorista viennese, nastro con dedica su richiesta, consegna nel giorno che scegli."
+    }
+  },
+  {
+    "slug": "festa-della-donna-vienna",
+    "title": "Fiori per la Festa della Donna",
+    "headline": "Fiori per la Festa della Donna a Vienna",
+    "intro": "L'8 marzo è la Festa della Donna: un bouquet luminoso per la mamma, un'amica o una collega a Vienna, consegnato a domicilio.",
+    "image": "/images/products/sortiment/gelb-bouquet-1.jpg",
+    "productFilter": { "occasions": ["danke", "geburtstag", "einfach-so"], "colors": ["gelb"], "seasons": ["ganzjaehrig", "fruehling"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "L'8 marzo, anche a Vienna",
+        "paragraphs": [
+          "La Giornata internazionale della donna si celebra ogni anno l'8 marzo. In Italia il suo simbolo è la mimosa, con il suo giallo che annuncia la primavera. Se vuoi festeggiare una donna che vive a Vienna, puoi farle arrivare un bouquet di fiori direttamente a casa o in ufficio.",
+          "Nella selezione qui sopra trovi bouquet nei toni del giallo e altri fiori allegri, adatti per dire grazie o semplicemente per far sorridere qualcuno."
+        ]
+      },
+      {
+        "heading": "Ordinare per tempo",
+        "paragraphs": [
+          "Puoi ordinare anche con giorni di anticipo: nel calendario scegli l'8 marzo come data di consegna e nel checkout una fascia oraria di un'ora tra le 9:00 e le 22:00. Consegniamo in tutti i 23 distretti di Vienna, anche nel fine settimana.",
+          "Vuoi fare un pensiero alle colleghe? Indica nel checkout il nome dell'azienda e, se lo conosci, il reparto: consegniamo alla reception."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-business"],
+    "seo": {
+      "title": "Festa della Donna: fiori a Vienna | Blumora",
+      "description": "Fiori per la Festa della Donna a Vienna: bouquet allegri per l'8 marzo, composti a mano e consegnati a casa o in ufficio, con fascia oraria a scelta."
+    }
+  },
+  {
+    "slug": "festa-della-mamma-vienna",
+    "title": "Fiori per la Festa della Mamma",
+    "headline": "Fiori per la Festa della Mamma a Vienna",
+    "intro": "La seconda domenica di maggio è la Festa della Mamma: falle arrivare un bouquet a Vienna, anche se tu sei lontano.",
+    "image": "/images/products/sortiment/rosalie-1.jpg",
+    "productFilter": { "category": "pastell", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Lo stesso giorno in Italia e in Austria",
+        "paragraphs": [
+          "In Italia come in Austria la Festa della Mamma si celebra la seconda domenica di maggio. Se tua madre vive a Vienna, o se sei tu a vivere qui e vuoi sorprendere la mamma di qualcuno, un bouquet consegnato a casa è un abbraccio che arriva puntuale.",
+          "Rose rosa, toni pastello delicati, fiori freschi composti a mano da un fiorista viennese: nella selezione trovi bouquet pensati per dire grazie con dolcezza."
+        ]
+      },
+      {
+        "heading": "Domenica mattina? Si può",
+        "paragraphs": [
+          "Consegniamo anche la domenica. Nel calendario scegli la Festa della Mamma come data e nel checkout una fascia oraria di un'ora tra le 9:00 e le 22:00, per esempio prima del pranzo in famiglia.",
+          "Conviene ordinare con qualche giorno di anticipo, così trovi ancora la fascia oraria che preferisci. Se nessuno apre, il corriere lascia i fiori, se possibile, a un vicino."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Festa della Mamma: fiori a Vienna | Blumora",
+      "description": "Fiori per la Festa della Mamma a Vienna, la seconda domenica di maggio: bouquet composti a mano e consegnati anche di domenica, all'ora che scegli."
+    }
+  },
+  {
+    "slug": "san-valentino-fiori-vienna",
+    "title": "Fiori per San Valentino",
+    "headline": "Fiori per San Valentino a Vienna",
+    "intro": "Il 14 febbraio dillo con le rose: bouquet romantici composti a mano e consegnati alla persona che ami, ovunque a Vienna.",
+    "image": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+    "productFilter": { "occasions": ["liebe"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Il giorno degli innamorati",
+        "paragraphs": [
+          "San Valentino, il 14 febbraio, è la festa degli innamorati, e la rosa rossa ne è il simbolo più classico. Nella selezione trovi rose rosse, bouquet in rosa e bianco e scatole di fiori a forma di cuore, tutti composti a mano da un fiorista viennese.",
+          "Vivete lontani, tu in Italia e lei o lui a Vienna? Ordini online in italiano e il corriere consegna il bouquet a casa o in ufficio."
+        ]
+      },
+      {
+        "heading": "La sorpresa al momento giusto",
+        "paragraphs": [
+          "Scegli il 14 febbraio nel calendario e una fascia oraria di un'ora tra le 9:00 e le 22:00: la mattina per iniziare bene la giornata, oppure la sera prima di cena. Se ti accorgi all'ultimo momento, ordinando entro le 18:30 (la domenica entro le 17:45) è possibile anche la consegna in giornata, finché ci sono fasce libere.",
+          "Vuoi restare un ammiratore segreto? Senza biglietto il tuo nome non compare sul bouquet e la fattura arriva solo a te."
+        ]
+      }
+    ],
+    "faqIds": ["f-window", "f-anon", "f-date", "f-nobody"],
+    "seo": {
+      "title": "San Valentino: fiori e rose a Vienna | Blumora",
+      "description": "Fiori per San Valentino a Vienna: rose rosse e bouquet romantici composti a mano, consegnati il 14 febbraio nella fascia oraria che scegli."
+    }
+  },
+  {
+    "slug": "fiori-per-laurea-vienna",
+    "title": "Fiori per la laurea",
+    "headline": "Fiori per la laurea a Vienna",
+    "intro": "Tesi discussa, traguardo raggiunto: festeggia chi si laurea a Vienna con un bouquet consegnato a casa, il giorno che scegli.",
+    "image": "/images/products/sortiment/bluetenfreude-1.jpg",
+    "productFilter": { "occasions": ["geburtstag", "danke", "einfach-so"], "colors": ["rot"], "seasons": ["ganzjaehrig"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Un traguardo che merita i fiori",
+        "paragraphs": [
+          "In Italia la laurea si festeggia in grande: la corona d'alloro, da cui prende il nome, e il rosso, il colore tradizionale della festa di laurea. Se un figlio, una nipote o un amico ha studiato a Vienna, un bouquet di fiori è il modo più semplice per dire «sono fiero di te», anche se non puoi esserci.",
+          "Nella selezione trovi bouquet con fiori rossi e colori vivaci, composti a mano da un fiorista viennese per ogni ordine."
+        ]
+      },
+      {
+        "heading": "Consegna a casa, il giorno giusto",
+        "paragraphs": [
+          "Scegli nel calendario la data della festa e una fascia oraria di un'ora tra le 9:00 e le 22:00. Consegniamo in tutti i 23 distretti di Vienna, anche nel fine settimana. Il corriere consegna di persona all'indirizzo che indichi, per esempio la casa o lo studentato del neolaureato.",
+          "Ordini dall'Italia? Il sito e le e-mail sono in italiano e puoi pagare con carta, Apple Pay o Google Pay."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody", "f-payment"],
+    "seo": {
+      "title": "Fiori per la laurea a Vienna | Blumora",
+      "description": "Fiori per la laurea a Vienna: bouquet rossi e colorati composti a mano e consegnati a casa del neolaureato, nel giorno e nella fascia oraria che scegli."
+    }
+  },
+  {
+    "slug": "fiori-matrimonio-vienna",
+    "title": "Fiori per un matrimonio",
+    "headline": "Fiori per un matrimonio a Vienna",
+    "intro": "Gli sposi festeggiano a Vienna e tu vuoi far arrivare i tuoi auguri? Un bouquet elegante, composto a mano e consegnato il giorno che scegli.",
+    "image": "/images/products/sortiment/rosenkuss-1.jpg",
+    "productFilter": { "occasions": ["hochzeit"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Auguri agli sposi, con i fiori",
+        "paragraphs": [
+          "Un matrimonio a Vienna e tu non puoi esserci, oppure vuoi accompagnare il regalo con un gesto in più? Nella selezione trovi bouquet in bianco e crema, rose bianche e il classico abbinamento rosso e bianco: fiori eleganti, adatti per fare gli auguri agli sposi.",
+          "Ogni bouquet viene composto a mano da un fiorista partner viennese per il tuo ordine e consegnato di persona dal corriere."
+        ]
+      },
+      {
+        "heading": "A casa o in hotel",
+        "paragraphs": [
+          "Puoi far consegnare i fiori a casa degli sposi o della famiglia, oppure all'hotel dove alloggiano: indica nel checkout il nome dell'hotel e, se lo conosci, il numero della camera. In hotel consegniamo alla reception.",
+          "Scegli la data nel calendario e una fascia oraria di un'ora tra le 9:00 e le 22:00. Consegniamo in tutti i 23 distretti di Vienna, anche il sabato e la domenica."
+        ]
+      }
+    ],
+    "faqIds": ["f-business", "f-date", "f-window", "f-photo"],
+    "seo": {
+      "title": "Fiori per matrimonio a Vienna | Blumora",
+      "description": "Fiori per un matrimonio a Vienna: bouquet eleganti in bianco e rosso, composti a mano e consegnati agli sposi a casa o in hotel, il giorno che scegli."
+    }
+  }
+]

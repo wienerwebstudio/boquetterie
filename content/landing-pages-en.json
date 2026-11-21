@@ -1,0 +1,323 @@
+[
+  {
+    "slug": "send-flowers-vienna",
+    "title": "Send flowers to Vienna",
+    "headline": "Send flowers to Vienna, Austria – hand-tied and delivered by courier.",
+    "intro": "Flower delivery in Vienna to all 23 districts, seven days a week. Choose a bouquet, pick the delivery date and a one-hour time slot – we take care of the rest.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "How flower delivery in Vienna works",
+        "paragraphs": [
+          "Choose a bouquet and its size, pick the delivery date in the calendar, enter the recipient's address and pay. You'll then receive a confirmation e-mail with a link where you can follow the status of your order.",
+          "We deliver to all 23 districts of Vienna, Monday to Sunday. At checkout you choose a one-hour time slot between 9:00 and 22:00, so the flowers arrive when someone is there to receive them."
+        ]
+      },
+      {
+        "heading": "Hand-tied for each order",
+        "paragraphs": [
+          "Every bouquet is hand-tied for your order by a Viennese florist we work with on a permanent basis. A courier collects it from the florist and drives straight to the recipient's address without stopping on the way.",
+          "Bouquets start from €36.90. The delivery fee depends on the district and is shown as soon as you enter the postcode."
+        ]
+      },
+      {
+        "heading": "Need it today?",
+        "paragraphs": [
+          "Same-day delivery in Vienna is possible for orders placed by 18:30 (Sundays by 17:45), as long as a time slot is still free for the address. You'll see the earliest possible slot once you've entered the postcode."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Send Flowers to Vienna, Austria – Flower Delivery",
+      "description": "Flower delivery in Vienna: hand-tied bouquets, delivered by courier to all 23 districts, 7 days a week, with one-hour time slots from 9:00 to 22:00."
+    }
+  },
+  {
+    "slug": "send-flowers-from-abroad",
+    "title": "Send flowers to Vienna from abroad",
+    "headline": "Send flowers to Vienna from the UK, the USA or anywhere else.",
+    "intro": "Living in London, New York or elsewhere, with someone special in Vienna? Order online in English, pay with your usual card and have a hand-tied bouquet delivered to their door.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": { "occasions": ["geburtstag", "liebe", "danke", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Ordering from the UK or the USA",
+        "paragraphs": [
+          "The whole shop, the checkout and your order e-mails are in English. Prices are in euros, and you can pay by credit or debit card, Apple Pay, Google Pay, Klarna or eps – international cards work too.",
+          "All you need is the recipient's address in Vienna. Enter the postcode (Vienna postcodes run from 1010 to 1230) and you'll see straight away which delivery days and time slots are available, and what delivery to that district costs."
+        ]
+      },
+      {
+        "heading": "Mind the time difference",
+        "paragraphs": [
+          "All dates and times on the site are Vienna time. Vienna is usually one hour ahead of the UK and six hours ahead of New York. If you'd like the flowers to arrive on a particular day, choose that date in the calendar and a one-hour time slot between 9:00 and 22:00.",
+          "Ordering late in your evening for the same day? Same-day delivery is possible for orders placed by 18:30 Vienna time (Sundays by 17:45), as long as a slot is still free."
+        ]
+      },
+      {
+        "heading": "From a Viennese florist, not a parcel",
+        "paragraphs": [
+          "Your bouquet is hand-tied in Vienna by a local partner florist and taken to the door by courier – it doesn't travel across borders in a box. If no one is home, the courier will try to leave it with a neighbour, and you'll be kept up to date by e-mail."
+        ]
+      }
+    ],
+    "faqIds": ["f-payment", "f-date", "f-window", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Send Flowers to Vienna from the UK or USA",
+      "description": "Send flowers to Vienna, Austria from abroad: order in English, pay by international card, Apple Pay or Google Pay. Hand-tied, delivered by courier."
+    }
+  },
+  {
+    "slug": "florist-vienna",
+    "title": "Florist in Vienna",
+    "headline": "A florist in Vienna, online: bouquets hand-tied for every order.",
+    "intro": "Looking for a florist in Vienna who delivers? At Blumora you order online and a Viennese partner florist ties your bouquet fresh, ready for a courier to take it across the city.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Florist craft, ordered online",
+        "paragraphs": [
+          "Blumora works with a Viennese florist on a permanent basis. Each bouquet is hand-tied for the order it belongs to – not taken from a shelf. Flowers are a natural product, so varieties and shades may vary a little with the season, while the style and colour palette stay the same.",
+          "Any special wishes for the florist, such as an odd number of stems, can be noted in the order's note field. We'll pass them on and the florist will follow them where possible."
+        ]
+      },
+      {
+        "heading": "Delivered across the whole city",
+        "paragraphs": [
+          "A courier collects the finished bouquet and delivers it to all 23 districts of Vienna, from the Innere Stadt to Liesing, Monday to Sunday. You choose the date in the calendar and a one-hour time slot between 9:00 and 22:00.",
+          "Ordered by 18:30 (Sundays by 17:45)? Then delivery on the same day is possible, as long as a time slot is free for the address."
+        ]
+      },
+      {
+        "heading": "Bouquets, plants and funeral flowers",
+        "paragraphs": [
+          "Alongside bouquets for birthdays, love and thank-yous, you'll find potted plants such as orchids and anthuriums, flower boxes, and funeral bouquets and wreaths. Bouquets start from €36.90."
+        ]
+      }
+    ],
+    "faqIds": ["f-fresh", "f-photo", "f-where", "f-window"],
+    "seo": {
+      "title": "Florist Vienna – Hand-Tied Bouquets Delivered",
+      "description": "Florist in Vienna, ordered online: bouquets hand-tied for each order by a Viennese partner florist and delivered by courier to all 23 districts."
+    }
+  },
+  {
+    "slug": "same-day-flower-delivery-vienna",
+    "title": "Same-day flower delivery",
+    "headline": "Same-day flower delivery in Vienna.",
+    "intro": "Forgot a birthday, or simply want to brighten someone's day? Order by 18:30 (Sundays by 17:45) and your bouquet can still arrive in Vienna today.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Order deadlines",
+        "paragraphs": [
+          "Same-day flower delivery in Vienna is possible for orders placed Monday to Saturday by 18:30 and on Sundays by 17:45, as long as a time slot is still free for the address. The time slot you choose ends at least two hours after you order, so the florist has time to tie the bouquet and the courier time to bring it.",
+          "The later you order, the fewer slots remain. Enter the postcode and you'll see which slots are still possible today – before you pay. We can't promise same-day delivery, but you'll always know what's available."
+        ]
+      },
+      {
+        "heading": "Still hand-tied, even at short notice",
+        "paragraphs": [
+          "Every bouquet is tied for your order by a Viennese partner florist, even when it's needed quickly. A courier collects it and drives straight to the recipient.",
+          "No slot left for today? Choose tomorrow – we deliver on all seven days of the week. All times are Vienna time."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-where", "f-window"],
+    "seo": {
+      "title": "Same-Day Flower Delivery Vienna – Order by 18:30",
+      "description": "Same-day flower delivery in Vienna: order Mon–Sat by 18:30, Sun by 17:45, while time slots are free. Hand-tied bouquets, delivered by courier."
+    }
+  },
+  {
+    "slug": "roses-delivery-vienna",
+    "title": "Roses delivery",
+    "headline": "Roses delivered in Vienna – red, pink, white or something unexpected.",
+    "intro": "Roses delivery in Vienna, hand-tied for your order and brought to the door by courier. Choose the colour, the size and the moment.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "From nine to ninety-nine roses",
+        "paragraphs": [
+          "Many of our rose bouquets come in six sizes, from 9 roses up to 99. A small bouquet says a lot on a first date; an armful of red roses makes a grand gesture.",
+          "Red roses are the classic declaration of love. Pink and cream feel softer and suit birthdays or a thank-you, white roses are calm and elegant, and blue or black roses are for those who like something out of the ordinary."
+        ]
+      },
+      {
+        "heading": "Date, time slot and delivery",
+        "paragraphs": [
+          "Choose the delivery date in the calendar and a one-hour time slot between 9:00 and 22:00 – for breakfast or for dinner. We deliver to all 23 districts of Vienna, Monday to Sunday.",
+          "Your roses are hand-tied by a Viennese partner florist and taken straight to the recipient by courier. The delivery fee depends on the district and is shown once you enter the postcode.",
+          "Would you like an odd number of stems? Note it when ordering in the note field for the florist, and it will be passed on."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-anon", "f-photo"],
+    "seo": {
+      "title": "Roses Delivery Vienna – Hand-Tied Rose Bouquets",
+      "description": "Roses delivery in Vienna: red, pink, white or blue rose bouquets from 9 to 99 roses, hand-tied and delivered by courier to all 23 districts."
+    }
+  },
+  {
+    "slug": "funeral-flowers-vienna",
+    "title": "Funeral flowers and wreaths",
+    "headline": "Funeral flowers and wreaths in Vienna.",
+    "intro": "If you can't be there in person, flowers can say farewell for you. Funeral bouquets and wreaths, made with care by a Viennese florist and delivered by courier within Vienna.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "category": "trauer", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Bouquet or wreath",
+        "paragraphs": [
+          "Funeral bouquets lie on fir greenery and are placed by the coffin or the grave. Wreaths are a traditional sign of remembrance at funerals in Austria. White flowers feel quiet and calm; red stands for love, and warm or pastel shades can reflect the person you're remembering.",
+          "Would you like a ribbon with a short message on the wreath, such as a last greeting and your names? It's possible on request – note the wording in the order's note field for the florist."
+        ]
+      },
+      {
+        "heading": "Timing and the delivery address",
+        "paragraphs": [
+          "Choose the delivery date and a one-hour time slot well before the service begins, and enter the full address in Vienna. In the note for the courier, add the name of the deceased and the time of the service, so the flowers reach the right place.",
+          "We deliver to all 23 districts of Vienna, seven days a week. If you're ordering from abroad, all times shown are Vienna time."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-photo", "f-change"],
+    "seo": {
+      "title": "Funeral Flowers & Wreaths Vienna – Delivered",
+      "description": "Funeral flowers and wreaths in Vienna: bouquets and wreaths made by a Viennese florist, ribbon text on request, delivered by courier on your chosen date."
+    }
+  },
+  {
+    "slug": "valentines-day-flowers-vienna",
+    "title": "Valentine's Day flowers",
+    "headline": "Valentine's Day flowers in Vienna, delivered on 14 February.",
+    "intro": "Red roses, soft pinks or something unexpected – hand-tied and delivered by courier on Valentine's Day, even if you're sending them from the other side of Europe.",
+    "image": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+    "productFilter": { "occasions": ["liebe"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Red, pink or something different",
+        "paragraphs": [
+          "Red roses are the classic Valentine's gift and say exactly what you mean. Pink and cream are gentler, while blue or black roses suit someone who loves the unusual. Many rose bouquets come in six sizes, from 9 to 99 roses.",
+          "A heart-shaped flower box is another way to say it, with roses in red, pink and white arranged inside."
+        ]
+      },
+      {
+        "heading": "Order early, pick your moment",
+        "paragraphs": [
+          "Valentine's Day is one of the busiest days of the year for flowers. Order a few days ahead and you'll have the full choice of time slots. We deliver in Vienna on every day of the week, including weekends.",
+          "Choose a one-hour slot between 9:00 and 22:00: on the breakfast table, at the office or just before dinner – all times are Vienna time."
+        ]
+      },
+      {
+        "heading": "A secret admirer?",
+        "paragraphs": [
+          "If you'd rather stay anonymous, that's possible: your name doesn't appear on the bouquet and the invoice goes only to you."
+        ]
+      }
+    ],
+    "faqIds": ["f-window", "f-date", "f-anon", "f-nobody"],
+    "seo": {
+      "title": "Valentine's Day Flowers Vienna – Roses Delivered",
+      "description": "Valentine's Day flowers in Vienna: red roses and romantic bouquets, hand-tied and delivered by courier on 14 February in a one-hour time slot."
+    }
+  },
+  {
+    "slug": "mothers-day-flowers-vienna",
+    "title": "Mother's Day flowers",
+    "headline": "Mother's Day flowers in Vienna – for mums near and far.",
+    "intro": "Whether you celebrate in May or on Mothering Sunday, a hand-tied bouquet can reach your mum in Vienna on the day, even when you can't be there yourself.",
+    "image": "/images/products/sortiment/rosalie-1.jpg",
+    "productFilter": { "category": "pastell", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Which date?",
+        "paragraphs": [
+          "In Austria, as in the USA, Mother's Day falls on the second Sunday in May. In the UK, Mothering Sunday is celebrated earlier, on the fourth Sunday of Lent – usually in March.",
+          "Sending from the UK to a mum who lives in Vienna? Simply choose the date that matters to you both in the calendar. We deliver in Vienna on Sundays too, so the flowers can arrive on the day itself."
+        ]
+      },
+      {
+        "heading": "Flowers for mum",
+        "paragraphs": [
+          "Soft pinks, cream and lilac feel loving without being loud. Roses with lilies and gerberas make a full bouquet, and pure rose bouquets come in several sizes. If she prefers something that lasts, a potted orchid is a lovely alternative.",
+          "Mother's Day is a busy time, so order a few days ahead for the widest choice of one-hour time slots between 9:00 and 22:00. Our free reminder service can e-mail you in good time before the date."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody", "f-payment"],
+    "seo": {
+      "title": "Mother's Day Flowers Vienna – Delivered on Sundays",
+      "description": "Mother's Day flowers in Vienna: second Sunday in May, or Mothering Sunday for senders from the UK. Hand-tied bouquets, delivered on Sundays too."
+    }
+  },
+  {
+    "slug": "flowers-for-hotel-guests-vienna",
+    "title": "Flowers for hotel guests",
+    "headline": "Flowers for hotel guests in Vienna.",
+    "intro": "A friend on a city break, a partner away on business, or newlyweds on their honeymoon: welcome them to Vienna with a bouquet waiting at their hotel.",
+    "image": "/images/editorial/strauss-wiener-kaffeehaus.jpg",
+    "productFilter": { "occasions": ["jahrestag", "geburtstag", "liebe", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "How delivery to a hotel works",
+        "paragraphs": [
+          "At checkout, enter the hotel's name and address and the guest's full name as it appears on the booking. Add the room number if you know it. The courier hands the flowers to the reception desk; how they reach the room is up to the hotel.",
+          "Choose a delivery date on or after the day of arrival, so the guest is already checked in or expected. A note for the courier, for example \"guest arriving this evening\", helps the reception team."
+        ]
+      },
+      {
+        "heading": "Timing and choice",
+        "paragraphs": [
+          "We deliver to hotels in all 23 districts of Vienna, seven days a week, in one-hour time slots between 9:00 and 22:00 Vienna time. For a welcome, an afternoon slot often works well; for an anniversary dinner, perhaps the early evening.",
+          "Bouquets arrive hand-tied and ready to put in water. If you'd rather send something that lasts longer, a potted orchid or anthurium is a good alternative."
+        ]
+      }
+    ],
+    "faqIds": ["f-business", "f-window", "f-date", "f-anon"],
+    "seo": {
+      "title": "Flowers for Hotel Guests in Vienna – Delivered",
+      "description": "Send flowers to a hotel guest in Vienna: delivered to reception in all 23 districts, 7 days a week, in one-hour time slots from 9:00 to 22:00."
+    }
+  },
+  {
+    "slug": "corporate-flowers-vienna",
+    "title": "Corporate flowers",
+    "headline": "Corporate flowers in Vienna – for companies and international organisations.",
+    "intro": "Thank a client, welcome a new colleague or mark an anniversary: flowers delivered to offices, embassies and international organisations across Vienna.",
+    "image": "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg",
+    "productFilter": { "occasions": ["danke"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Delivered to the reception desk",
+        "paragraphs": [
+          "Vienna is home to many companies as well as international organisations. At checkout, enter the organisation's name, its street address with the district postcode (1010 to 1230) and, if known, the department and the recipient's name. Delivery is made to the reception or front desk.",
+          "Large sites often have security checks and several entrances. Add the building, gate or a contact person in the note for the courier so the flowers find their way."
+        ]
+      },
+      {
+        "heading": "The right time slot",
+        "paragraphs": [
+          "Choose a one-hour time slot when the office is staffed, ideally in the morning or early afternoon. We deliver Monday to Sunday between 9:00 and 22:00, but many offices are empty in the evening.",
+          "For a client or a farewell, white and cream bouquets look elegant; for a desk or a meeting room, an orchid or anthurium in a pot lasts for weeks. You can pay by card, Apple Pay, Google Pay, Klarna or eps."
+        ]
+      },
+      {
+        "heading": "Regular orders",
+        "paragraphs": [
+          "Would you like flowers for your reception on a regular basis, or several deliveries at once? Get in touch via our business customers page and we'll look at what's possible for your location."
+        ]
+      }
+    ],
+    "faqIds": ["f-business", "f-window", "f-payment", "f-change"],
+    "seo": {
+      "title": "Corporate Flowers Vienna – Office & Client Gifts",
+      "description": "Corporate flowers in Vienna for companies and international organisations: bouquets and plants delivered to reception, in one-hour time slots."
+    }
+  }
+]

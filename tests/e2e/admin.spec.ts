@@ -1,0 +1,63 @@
+import { expect, test } from "@playwright/test";
+import { ADMIN_PASSWORD } from "./helpers";
+
+test.describe("Admin", () => {
+  test("Budget-Export ohne Anmeldung ist gesperrt", async ({ request }) => {
+    const res = await request.get("/admin/floristen-budget/export", { maxRedirects: 0 });
+    expect([302, 303, 307, 401]).toContain(res.status());
+    expect(await res.text()).not.toContain("Max. Budget");
+  });
+
+  test("ohne Anmeldung wird auf das Login umgeleitet", async ({ page }) => {
+    await page.goto("/admin/bestellungen");
+    await expect(page).toHaveURL(/\/admin\/login\?next=%2Fadmin%2Fbestellungen/);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Verwaltung");
+  });
+
+  test("falsches Passwort wird abgelehnt", async ({ page }) => {
+    await page.goto("/admin/login");
+    await page.locator("input#password").fill("definitely-wrong");
+    await page.getByRole("button", { name: "Anmelden" }).click();
+    await expect(page).toHaveURL(/\/admin\/login\?error=invalid/);
+    await expect(page.getByText("Das Passwort ist nicht korrekt.")).toBeVisible();
+    await expect(page.getByRole("alert").filter({ hasText: "Das Passwort ist nicht korrekt." })).toContainText(/Noch \d Versuche?/);
+  });
+
+  test("Passwort lässt sich zum Prüfen anzeigen", async ({ page }) => {
+    await page.goto("/admin/login");
+    const input = page.locator("input#password");
+    await expect(input).toHaveAttribute("type", "password");
+    await page.getByRole("button", { name: "Passwort anzeigen" }).click();
+    await expect(input).toHaveAttribute("type", "text");
+  });
+
+  test("Login mit ADMIN_PASSWORD erreicht das Dashboard", async ({ page }) => {
+    await page.goto("/admin");
+    await expect(page).toHaveURL(/\/admin\/login/);
+    await page.locator("input#password").fill(ADMIN_PASSWORD);
+    await page.getByRole("button", { name: "Anmelden" }).click();
+    await expect(page).toHaveURL(/\/admin$/);
+    await expect(page.getByRole("heading", { level: 1, name: "Übersicht" })).toBeVisible();
+    // Session cookie set – a direct visit no longer redirects.
+    await page.goto("/admin/bestellungen");
+    await expect(page).toHaveURL(/\/admin\/bestellungen$/);
+
+    // Budget list as CSV (admin only).
+    const csv = await page.request.get("/admin/floristen-budget/export");
+    expect(csv.status()).toBe(200);
+    expect(csv.headers()["content-type"]).toContain("text/csv");
+    expect(await csv.text()).toContain("Produkt;Größe;Aktiv;Verkaufspreis (EUR);Max. Budget Floristik (EUR)");
+
+    // Partner florists: list with the first partner, linked from the navigation.
+    await page.goto("/admin/partner");
+    await expect(page.getByRole("heading", { level: 1, name: "Partner" })).toBeVisible();
+    await expect(page.getByText("Blumen Dody")).toBeVisible();
+
+    // Test mails: a recipient can be typed in; without a mail provider the admin is told so.
+    await page.goto("/admin");
+    await page.getByLabel("Welche Mail?").selectOption("partner");
+    await page.getByLabel(/Empfänger/).fill("test-empfaenger@example.com");
+    await page.getByRole("button", { name: "Test-Mails senden" }).click();
+    await expect(page.getByRole("status").filter({ hasText: /Kein Mailversand eingerichtet|gesendet/ })).toBeVisible();
+  });
+});

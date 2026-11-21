@@ -1,0 +1,534 @@
+[
+  {
+    "slug": "viragkuldes-becs",
+    "title": "Virágküldés Bécs",
+    "headline": "Virágküldés Bécsben – kézzel kötött csokrok házhoz.",
+    "intro": "Válassz csokrot, jelöld ki a kiszállítás napját, és mi Bécs mind a 23 kerületébe elvisszük. Hétfőtől vasárnapig, egyórás idősávokban.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": {
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Így működik a virágküldés Bécsben",
+        "paragraphs": [
+          "Válassz egy csokrot és a méretét, jelöld ki a kívánt napot a naptárban, add meg a címzett bécsi címét, majd fizess. Utána e-mailben visszaigazolást kapsz, benne egy linkkel, ahol követheted a rendelésed állapotát.",
+          "Bécs mind a 23 kerületébe kiszállítunk, hétfőtől vasárnapig. 9 és 22 óra között egyórás idősávok közül választhatsz. A kiszállítási díj a kerülettől függ – az irányítószám megadása után rögtön látod."
+        ]
+      },
+      {
+        "heading": "Kézzel kötve, egyenesen a címzetthez",
+        "paragraphs": [
+          "Minden csokrot a te rendelésedhez kötnek meg kézzel egy bécsi virágkötészetben, amellyel állandó partnerségben dolgozunk. Onnan futár viszi a virágokat megállás nélkül a címzett címére.",
+          "Ha a címzett nincs otthon, a futár lehetőség szerint egy szomszédnál adja le a virágokat. A pénztárban megjegyzést is hagyhatsz a kiszállításhoz, például a kapukódot."
+        ]
+      },
+      {
+        "heading": "Magyarul az elejétől a végéig",
+        "paragraphs": [
+          "Az oldal, a pénztár és a rendelésről szóló e-mailek magyarul érhetők el. Fizethetsz bank- vagy hitelkártyával, Apple Payjel, Google Payjel, Klarnával vagy eps-szel."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-date",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Virágküldés Bécs – kézzel kötött csokrok házhoz",
+      "description": "Virágküldés Bécsben: kézzel kötött csokrok a kívánt napra és idősávra. Kiszállítás Bécs mind a 23 kerületébe, hétfőtől vasárnapig."
+    }
+  },
+  {
+    "slug": "viragkuldes-magyarorszagrol-becsbe",
+    "title": "Virágküldés Magyarországról Bécsbe",
+    "headline": "Virágküldés Magyarországról Bécsbe.",
+    "intro": "Budapestről, Debrecenből vagy bárhonnan küldenél virágot valakinek Bécsbe? Rendeld meg online, magyarul – egy bécsi virágkötészet megköti, futár viszi házhoz.",
+    "image": "/images/editorial/delivery.jpg",
+    "productFilter": {
+      "occasions": [
+        "geburtstag",
+        "einfach-so"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Távolról is személyesen",
+        "paragraphs": [
+          "Ha a családod, a barátod vagy a párod Bécsben él, nem kell ott lenned ahhoz, hogy virággal lepd meg. A virágküldés Magyarországról Bécsbe ugyanúgy megy, mintha helyben rendelnél: válassz csokrot, add meg a címzett bécsi címét és a kívánt napot.",
+          "A csokrot egy bécsi partner-virágkötészet köti meg kézzel a rendelésedhez, és futár viszi házhoz. Az oldal, a pénztár és a visszaigazoló e-mailek magyarul érkeznek."
+        ]
+      },
+      {
+        "heading": "Bécsi cím, irányítószám, idősáv",
+        "paragraphs": [
+          "Bécs mind a 23 kerületébe szállítunk, hétfőtől vasárnapig. A bécsi irányítószámok 1-gyel kezdődnek, a középső két számjegy a kerületet jelöli: az 1070 például a 7. kerület. Az irányítószám megadása után látod a kiszállítási díjat és a szabad idősávokat 9 és 22 óra között.",
+          "Az időpontok bécsi idő szerint értendők – Magyarország és Ausztria ugyanabban az időzónában van."
+        ]
+      },
+      {
+        "heading": "Fizetés magyar kártyával",
+        "paragraphs": [
+          "Az árak euróban szerepelnek. Fizethetsz magyar bank- vagy hitelkártyával is, de Apple Payjel vagy Google Payjel is. Forintszámlához kötött kártyánál az átváltást a bankod végzi."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-payment",
+      "f-nobody",
+      "f-anon"
+    ],
+    "seo": {
+      "title": "Virágküldés Magyarországról Bécsbe – magyarul",
+      "description": "Virágküldés Magyarországról Bécsbe: rendelj magyarul, fizess magyar kártyával. Kézzel kötött csokrok Bécs mind a 23 kerületébe."
+    }
+  },
+  {
+    "slug": "viragbolt-becs",
+    "title": "Online virágbolt Bécs",
+    "headline": "Virágbolt Bécsben – online, kiszállítással.",
+    "intro": "Nem kell boltba menned: válaszd ki a csokrot online, egy bécsi virágkötészet megköti, és futár viszi házhoz. Csokrok 36,90 €-tól.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": {
+      "category": "bunt",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Online virágbolt bécsi virágkötőkkel",
+        "paragraphs": [
+          "A Blumora online virágbolt Bécsben: a kínálatot itt böngészed, a rendelést itt adod le. A csokrokat egy bécsi virágkötészet köti meg kézzel, amellyel állandó partnerségben dolgozunk – mindig a te rendelésedhez.",
+          "A kiszállítás hétfőtől vasárnapig történik, 9 és 22 óra között, egyórás idősávokban."
+        ]
+      },
+      {
+        "heading": "Mit találsz nálunk?",
+        "paragraphs": [
+          "Rózsacsokrokat, színes és pasztell csokrokat, elegáns fehér virágokat, virágdobozokat és cserepes növényeket, valamint gyászkoszorúkat és gyászcsokrokat. A legtöbb csokor több méretben kapható.",
+          "Apró kívánságokat – például fehér rózsát sárga helyett – a „Kívánságok a virágkötőinknek” mezőben írhatsz meg. Ha a virágok elérhetők, megvalósítjuk."
+        ]
+      },
+      {
+        "heading": "Kiszállítás egész Bécsben",
+        "paragraphs": [
+          "Bécs mind a 23 kerületébe szállítunk. A kiszállítási díj a kerülettől függ, és az irányítószám megadása után jelenik meg. Hétfőtől szombatig 18:30-ig, vasárnap 17:45-ig leadott rendelésnél még aznap kiszállítunk, amíg van szabad idősáv.",
+          "Fizethetsz bank- vagy hitelkártyával, Apple Payjel, Google Payjel, Klarnával vagy eps-szel."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-photo",
+      "f-fresh",
+      "f-payment"
+    ],
+    "seo": {
+      "title": "Virágbolt Bécs – online rendelés, kiszállítással",
+      "description": "Online virágbolt Bécsben: kézzel kötött csokrok, rózsák, növények és koszorúk, kiszállítva Bécs mind a 23 kerületébe. Csokrok 36,90 €-tól."
+    }
+  },
+  {
+    "slug": "aznapi-viragkuldes-becs",
+    "title": "Aznapi virágküldés Bécs",
+    "headline": "Aznapi virágküldés Bécsben – még ma kiszállítva.",
+    "intro": "Hétfőtől szombatig 18:30-ig, vasárnap 17:45-ig leadott rendelésnél még aznap kiszállítunk Bécsben, amíg van szabad idősáv.",
+    "image": "/images/products/sortiment/strahlender-tag-1.jpg",
+    "productFilter": {
+      "sameDayOnly": true,
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Meddig rendelhetsz aznapra?",
+        "paragraphs": [
+          "Aznapi virágküldéshez Bécsben hétfőtől szombatig 18:30-ig, vasárnap 17:45-ig kell leadnod a rendelést, bécsi idő szerint. A választható idősávok legalább két órával a rendelés után érnek véget – így marad idő a csokor megkötésére és az útra.",
+          "Hogy a címzett címére milyen korán lehetséges a kiszállítás, az irányítószám megadása után rögtön látod."
+        ]
+      },
+      {
+        "heading": "Gyorsan, mégis kézzel kötve",
+        "paragraphs": [
+          "Az aznapi csokrokat is a rendelésedhez köti meg kézzel bécsi partner-virágkötészetünk, és futár viszi egyenesen a címzetthez. Ezen az oldalon csak olyan csokrokat mutatunk, amelyek aznapi kiszállításra is rendelhetők.",
+          "Elfelejtett születésnap, váratlan jó hír vagy csak egy hirtelen ötlet: Bécs mind a 23 kerületébe kiszállítunk, a hét minden napján.",
+          "Fizethetsz bank- vagy hitelkártyával – külföldi kártyával is –, Apple Payjel vagy Google Payjel, így Magyarországról is rendelhetsz aznapra Bécsbe."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-today",
+      "f-where",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Aznapi virágküldés Bécs – rendelés 18:30-ig",
+      "description": "Aznapi virágküldés Bécsben: hétfőtől szombatig 18:30-ig, vasárnap 17:45-ig rendelve még aznap kiszállítjuk, Bécs mind a 23 kerületébe."
+    }
+  },
+  {
+    "slug": "rozsa-kuldes-becs",
+    "title": "Rózsa küldés Bécs",
+    "headline": "Rózsa küldés Bécsbe – kézzel kötött rózsacsokrok.",
+    "intro": "Vörös rózsa a szerelemnek, rózsaszín a köszönetnek, fehér az ünnepélyes pillanatoknak. Válassz, mi pedig Bécs bármely kerületébe elvisszük.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": {
+      "category": "rosen",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Melyik rózsa mit üzen?",
+        "paragraphs": [
+          "A vörös rózsa a szerelem klasszikus jele – évfordulóra, Valentin-napra vagy egy fontos kérdés előtt. A rózsaszín rózsa kedves és hálás, illik születésnapra vagy köszönetnek. A fehér rózsa letisztult és ünnepélyes, a kék vagy a szivárványszínű rózsa pedig igazi meglepetés.",
+          "A legtöbb rózsacsokor több méretben kapható, így a gesztushoz illő nagyságot is te választod meg."
+        ]
+      },
+      {
+        "heading": "Páratlan számú szál, kérésre",
+        "paragraphs": [
+          "Sokan ügyelnek rá, hogy ajándékba páratlan számú szál virágot adjanak. Ha ez neked is fontos, írd bele a rendelésnél a „Kívánságok a virágkötőinknek” mezőbe – kérésre a virágkötő páratlan számú szálból köti meg a csokrot."
+        ]
+      },
+      {
+        "heading": "Rózsa küldés egész Bécsben",
+        "paragraphs": [
+          "A rózsacsokrokat bécsi partner-virágkötészetünk köti meg kézzel, és futár viszi a címzetthez Bécs mind a 23 kerületébe, hétfőtől vasárnapig, 9 és 22 óra között egyórás idősávokban.",
+          "Ha sürgős: hétfőtől szombatig 18:30-ig, vasárnap 17:45-ig rendelve a rózsák még aznap megérkezhetnek."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-window",
+      "f-anon",
+      "f-today"
+    ],
+    "seo": {
+      "title": "Rózsa küldés Bécs – rózsacsokrok házhoz",
+      "description": "Rózsa küldés Bécsbe: vörös, rózsaszín, fehér és kék rózsacsokrok, kézzel kötve. Kiszállítás Bécs mind a 23 kerületébe, akár aznap."
+    }
+  },
+  {
+    "slug": "temetesi-virag-koszoru-becs",
+    "title": "Temetési virág és koszorú Bécs",
+    "headline": "Temetési virág és koszorú Bécsben.",
+    "intro": "Koszorúk és gyászcsokrok csendes színekben, kézzel kötve és Bécsben kiszállítva – a végső búcsúhoz akkor is, ha nem lehetsz ott személyesen.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "trauer"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Koszorú vagy gyászcsokor?",
+        "paragraphs": [
+          "A koszorú a temetés hagyományos virága, a búcsúztatáson a koporsó vagy az urna közelébe kerül. A gyászcsokor kisebb, egyszerűbb gesztus – a búcsúztatásra vagy a gyászoló családnak is küldheted, részvéted jeléül.",
+          "A fehér a béke és a csendes részvét színe, a liliom és a krizantém gyakori a gyászvirágok között. Ha az elhunyt egy színt különösen szeretett, színesebb koszorút is választhatsz."
+        ]
+      },
+      {
+        "heading": "Szalag felirattal, kérésre",
+        "paragraphs": [
+          "A koszorúra gyakran szalag kerül, rajta rövid búcsúszöveggel és a küldők nevével. Ha ilyet szeretnél, írd bele a pontos szöveget a rendelésnél a „Kívánságok a virágkötőinknek” mezőbe – kérésre a virágkötő szalaggal készíti el a koszorút."
+        ]
+      },
+      {
+        "heading": "Kiszállítás a búcsú napjára",
+        "paragraphs": [
+          "A koszorút vagy a gyászcsokrot a kívánt napon bármely bécsi címre kiszállítjuk, egyórás idősávban 9 és 22 óra között. Ha a búcsúztatás helyszínére küldenéd, előtte egyeztess a hozzátartozókkal vagy a temetkezési vállalkozóval arról, mikor és ki veszi át.",
+          "Magyarországról rendelve is mindent magyarul intézhetsz: az oldal, a pénztár és az e-mailek magyarul érkeznek."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-where",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Temetési virág és koszorú Bécs – kiszállítással",
+      "description": "Temetési virág és koszorú Bécsben: gyászkoszorúk és gyászcsokrok kézzel kötve, kérésre felirattal ellátott szalaggal. Kiszállítás a kívánt napra."
+    }
+  },
+  {
+    "slug": "nonapi-virag-becs",
+    "title": "Nőnapi virág",
+    "headline": "Nőnapi virág Bécsbe – március 8-ra.",
+    "intro": "Nőnapon virággal köszöntjük az anyukákat, a nagymamákat, a párunkat és a kolléganőket. Rendeld meg előre, és március 8-án kiszállítjuk Bécsben.",
+    "image": "/images/products/sortiment/tulpenstrauss-2.jpg",
+    "productFilter": {
+      "occasions": [
+        "danke",
+        "geburtstag",
+        "einfach-so"
+      ],
+      "colors": [
+        "lila",
+        "rosa"
+      ],
+      "seasons": [
+        "ganzjaehrig",
+        "fruehling"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Nőnap, március 8.",
+        "paragraphs": [
+          "A nemzetközi nőnapot minden évben március 8-án ünneplik. Magyarországon régi szokás, hogy ezen a napon virággal köszöntik a nőket a családban, a barátok között és a munkahelyen.",
+          "Régen a szegfű volt a klasszikus nőnapi virág, ma sokan tulipánt, rózsát vagy vegyes tavaszi csokrot adnak."
+        ]
+      },
+      {
+        "heading": "Előre megrendelve, pontosan időben",
+        "paragraphs": [
+          "A naptárban már most kiválaszthatod március 8-át, és egyórás idősávot is megadhatsz 9 és 22 óra között – reggel az irodába vagy este haza. Bécs mind a 23 kerületébe szállítunk.",
+          "Kolléganőknek munkahelyre is küldhetsz nőnapi virágot: a pénztárban add meg a cég nevét és, ha tudod, az osztályt is."
+        ]
+      },
+      {
+        "heading": "Magyarországról Bécsbe",
+        "paragraphs": [
+          "Ha anyukád, nagymamád vagy egy barátnőd Bécsben él, Magyarországról is egyszerűen megrendelheted neki a nőnapi csokrot. A csokrot bécsi partner-virágkötészetünk köti meg kézzel a rendelésedhez, és futár viszi a címzetthez. Magyarországról rendelve is mindent magyarul intézhetsz, és magyar bankkártyával is fizethetsz."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-business"
+    ],
+    "seo": {
+      "title": "Nőnapi virág Bécs – kiszállítás március 8-ra",
+      "description": "Nőnapi virág Bécsbe: tulipán, rózsa és tavaszi csokrok, kézzel kötve. Rendeld meg előre, és március 8-án idősávra kiszállítjuk."
+    }
+  },
+  {
+    "slug": "anyak-napja-virag-becs",
+    "title": "Anyák napja",
+    "headline": "Anyák napi virág Bécsbe.",
+    "intro": "Magyarországon május első vasárnapján köszöntjük az édesanyákat és a nagymamákat. Ha anyukád Bécsben él, mi elvisszük hozzá a csokrodat.",
+    "image": "/images/products/sortiment/rosalie-1.jpg",
+    "productFilter": {
+      "category": "pastell",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Május első vasárnapja – vagy a második?",
+        "paragraphs": [
+          "Magyarországon az anyák napja május első vasárnapja. Ausztriában a Muttertagot egy héttel később, május második vasárnapján tartják. Ha két kultúrában is otthon vagy, akár mindkét napon köszöntheted az anyukádat.",
+          "A naptárban kiválaszthatod a pontos napot – vasárnap is szállítunk, egyórás idősávokban 9 és 22 óra között."
+        ]
+      },
+      {
+        "heading": "Anyukáknak és nagymamáknak",
+        "paragraphs": [
+          "Anyák napján nemcsak az édesanyákat, hanem a nagymamákat is virággal köszöntjük. A pasztell csokrok – rózsaszín rózsák, liliomok, fátyolvirág – különösen jól illenek ehhez a naphoz.",
+          "Ha nem lehetsz ott, a csokor akkor is megérkezik: bécsi partner-virágkötészetünk kézzel köti meg, és futár viszi Bécs bármely kerületébe."
+        ]
+      },
+      {
+        "heading": "Magyarországról is egyszerű",
+        "paragraphs": [
+          "Ha te Magyarországon élsz, anyukád pedig Bécsben, néhány perc alatt megrendelheted neki a csokrot. Magyarországról rendelve is mindent magyarul intézhetsz, és magyar bankkártyával is fizethetsz. Ha a címzett nincs otthon, a futár lehetőség szerint egy szomszédnál adja le a virágokat."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Anyák napi virág Bécs – május első vasárnapjára",
+      "description": "Anyák napi virág Bécsbe: pasztell csokrok anyukáknak és nagymamáknak, kézzel kötve. Kiszállítás vasárnap is, Bécs mind a 23 kerületébe."
+    }
+  },
+  {
+    "slug": "nevnapi-virag-becs",
+    "title": "Névnapi virág",
+    "headline": "Névnapi virág Bécsbe – Boldog névnapot!",
+    "intro": "Magyarországon sokan a születésnaphoz hasonlóan megünneplik a névnapot. Ha az ünnepelt Bécsben él, egy csokorral idén is felköszöntheted.",
+    "image": "/images/products/sortiment/pink-harmony-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "einfach-so",
+        "geburtstag"
+      ],
+      "colors": [
+        "rosa",
+        "gelb",
+        "orange"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Mi a névnap?",
+        "paragraphs": [
+          "A magyar naptárban az év minden napjához tartozik egy vagy több keresztnév. Akinek aznap van a névnapja, azt a család, a barátok és a kollégák felköszöntik – sokan legalább annyira számon tartják, mint a születésnapot.",
+          "Ilyenkor szokás egy szál vagy egy csokor virággal, apró ajándékkal kedveskedni, főleg a nőknek. A köszöntés egyszerű: „Boldog névnapot!”"
+        ]
+      },
+      {
+        "heading": "Névnapi virág Bécsbe",
+        "paragraphs": [
+          "Ha a barátnőd, a nővéred vagy a kolléganőd Bécsben él, a csokrot a névnapján egyenesen hozzá visszük: válaszd ki a napot a naptárban és egy egyórás idősávot 9 és 22 óra között.",
+          "Ha csak az utolsó pillanatban jutott eszedbe: hétfőtől szombatig 18:30-ig, vasárnap 17:45-ig rendelve még aznap kiszállítunk.",
+          "A csokrot bécsi partner-virágkötészetünk köti meg kézzel a rendelésedhez, és futár viszi a címzetthez. Bécs mind a 23 kerületébe szállítunk."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-today",
+      "f-window"
+    ],
+    "seo": {
+      "title": "Névnapi virág Bécs – kiszállítás a névnapra",
+      "description": "Névnapi virág Bécsbe: színes csokrok, kézzel kötve, kiszállítva a névnapra – akár aznap. Bécs mind a 23 kerületébe."
+    }
+  },
+  {
+    "slug": "valentin-napi-virag-becs",
+    "title": "Valentin-napi virág",
+    "headline": "Valentin-napi virág Bécsbe – február 14.",
+    "intro": "Vörös rózsa, szív alakú virágdoboz vagy egy gyengéd rózsaszín csokor: küldd el a szerelmednek Bécsbe, pontosan február 14-re.",
+    "image": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "liebe"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Február 14., a szerelmesek napja",
+        "paragraphs": [
+          "Valentin-nap február 14-én van, és Magyarországon is a szerelmesek ünnepe. A klasszikus ajándék a vörös rózsa, de a rózsaszín és a fehér virágok is szerelmet üzennek.",
+          "Ha a párod Bécsben él, ti pedig távkapcsolatban vagytok, egy csokorral a távolság ellenére is ott lehetsz."
+        ]
+      },
+      {
+        "heading": "Időben, akár titokban",
+        "paragraphs": [
+          "Válaszd ki február 14-ét a naptárban, és adj meg egy egyórás idősávot 9 és 22 óra között – reggel az ébredéshez vagy este a vacsorához. Ha szeretnéd, névtelenül is küldhetsz virágot.",
+          "Ha fontos számodra, páratlan számú szál rózsát is kérhetsz: írd bele a rendelésnél a „Kívánságok a virágkötőinknek” mezőbe, és a virágkötő kérésre ennek megfelelően köti meg a csokrot."
+        ]
+      },
+      {
+        "heading": "Kézzel kötve, Bécsben",
+        "paragraphs": [
+          "A csokrot bécsi partner-virágkötészetünk köti meg kézzel a rendelésedhez, és futár viszi a címzetthez. Bécs mind a 23 kerületébe szállítunk. Ha elkéstél: hétfőtől szombatig 18:30-ig, vasárnap 17:45-ig rendelve még aznap kiszállítunk."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-window",
+      "f-date",
+      "f-anon",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Valentin-napi virág Bécs – rózsák február 14-re",
+      "description": "Valentin-napi virág Bécsbe: vörös rózsák, virágdobozok és romantikus csokrok, kézzel kötve, kiszállítva február 14-re, idősávra."
+    }
+  },
+  {
+    "slug": "ballagasi-virag-becs",
+    "title": "Ballagási virág",
+    "headline": "Ballagási virág Bécsbe – gratulálj virággal!",
+    "intro": "Ballagás, érettségi vagy diploma: ha az ünnepelt Bécsben él vagy ott tanul, csokorral gratulálhatsz neki, akkor is, ha nem lehetsz ott.",
+    "image": "/images/products/sortiment/gelb-bouquet-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "danke",
+        "geburtstag",
+        "einfach-so"
+      ],
+      "colors": [
+        "gelb",
+        "orange"
+      ],
+      "seasons": [
+        "ganzjaehrig"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Mi a ballagás?",
+        "paragraphs": [
+          "A ballagás magyar iskolai hagyomány: a végzős diákok utoljára vonulnak végig az iskolán, és elbúcsúznak tanáraiktól és társaiktól. A család és a barátok virággal köszöntik a ballagókat.",
+          "Középiskolában tavasszal, az érettségi előtt tartják, általános iskolában a tanév végén."
+        ]
+      },
+      {
+        "heading": "Ballagás, érettségi, diploma Bécsben",
+        "paragraphs": [
+          "Az osztrák iskolákban nem szokás a ballagás, de az érettségi (Matura) és a diplomaosztó ugyanúgy ünnep. Ha a gyereked, az unokád vagy a keresztgyereked Bécsben tanul, a ballagási virágot a kívánt napra bármely bécsi címre kiszállítjuk.",
+          "Mivel a csokrot általában személyesen adják át, érdemes a kiszállítást az ünnepség előtti napra vagy aznap reggelre kérni a lakásra. Egyórás idősávot választhatsz 9 és 22 óra között.",
+          "A csokrot bécsi partner-virágkötészetünk köti meg kézzel a rendelésedhez, és futár viszi a címzetthez. Magyarországról rendelve is mindent magyarul intézhetsz, és magyar bankkártyával is fizethetsz."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Ballagási virág Bécs – csokor ballagásra, diplomára",
+      "description": "Ballagási virág Bécsbe: színes csokrok ballagásra, érettségire és diplomaosztóra, kézzel kötve, kiszállítva a kívánt napra."
+    }
+  },
+  {
+    "slug": "eskuvoi-virag-becs",
+    "title": "Esküvői virág",
+    "headline": "Esküvői virág Bécsbe – csokor az ifjú párnak.",
+    "intro": "Ha esküvőre vagy hivatalos Bécsbe, vagy épp nem tudsz elmenni, küldj egy elegáns csokrot az ifjú párnak – fehérben, krémszínben vagy rózsákkal.",
+    "image": "/images/products/sortiment/rosenkuss-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "hochzeit"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Gratuláció virággal",
+        "paragraphs": [
+          "Esküvőre a fehér és a krémszínű virágok a legkedveltebbek: a fehér rózsa, a liliom és a fátyolvirág ünnepélyes, mégis könnyed. Aki egy kis színt is szeretne, választhat vörös-fehér rózsacsokrot.",
+          "Egy csokor akkor is jelzi, hogy gondolsz rájuk, ha a nagy napon nem lehetsz velük.",
+          "A csokrot bécsi partner-virágkötészetünk köti meg kézzel a rendelésedhez, és futár viszi a címzetthez. Magyarországról rendelve is mindent magyarul intézhetsz, és magyar bankkártyával is fizethetsz."
+        ]
+      },
+      {
+        "heading": "Kiszállítás a nagy napra",
+        "paragraphs": [
+          "A csokrot a kívánt napra, egyórás idősávban szállítjuk ki bármely bécsi címre, 9 és 22 óra között. Ha a lagzi helyszínére, például egy szállodába vagy étterembe küldenéd, a pénztárban add meg a hely nevét, és előtte egyeztesd, ki veszi át.",
+          "Az ifjú pár otthonába is küldheted, a nagy nap előtt vagy után – így nyugodtan gyönyörködhetnek benne."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-business",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Esküvői virág Bécs – csokor az ifjú párnak",
+      "description": "Esküvői virág Bécsbe: elegáns fehér és rózsás csokrok gratulációként az ifjú párnak, kézzel kötve, kiszállítva a kívánt napra."
+    }
+  }
+]

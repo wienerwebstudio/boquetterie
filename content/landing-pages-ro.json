@@ -1,0 +1,420 @@
+[
+  {
+    "slug": "livrare-flori-viena",
+    "title": "Livrare flori Viena",
+    "headline": "Livrare flori în Viena, legate de mână.",
+    "intro": "Buchete legate de mână pentru fiecare comandă și livrate prin curier în toate cele 23 de districte ale Vienei. Tu alegi buchetul, ziua și intervalul orar.",
+    "image": "/images/hero/hero-wien-tram-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "Livrare flori Viena – cum funcționează",
+        "paragraphs": [
+          "Alegi un buchet și mărimea, apoi ziua dorită în calendar și adresa destinatarului. Plătești cu cardul de credit sau de debit, cu Apple Pay, Google Pay, Klarna sau eps. După comandă primești un e-mail de confirmare cu un link spre statusul comenzii.",
+          "Livrăm în toate cele 23 de districte ale Vienei, de luni până duminică. Alegi un interval de o oră între 9:00 și 22:00. Taxa de livrare depinde de district și o vezi imediat ce introduci codul poștal."
+        ]
+      },
+      {
+        "heading": "Legate de mână, aduse direct",
+        "paragraphs": [
+          "Fiecare buchet este legat de mână pentru comanda ta, de o florărie din Viena cu care colaborăm permanent. Un curier îl ridică de acolo și merge fără opriri la adresa destinatarului.",
+          "Ai nevoie de flori chiar azi? Comenzile plasate până la 18:30 (duminica până la 17:45) pot fi livrate în aceeași zi, cât timp mai este liber un interval orar."
+        ]
+      },
+      {
+        "heading": "Comanzi din altă țară?",
+        "paragraphs": [
+          "Site-ul, comanda și e-mailurile sunt în limba română, iar cardurile emise în străinătate funcționează. Ține cont doar că toate orele afișate sunt ora Vienei."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Livrare flori Viena – buchete legate de mână",
+      "description": "Livrare flori în Viena: buchete legate de mână, cu zi și interval orar la alegere. Livrăm în toate cele 23 de districte, de luni până duminică."
+    }
+  },
+  {
+    "slug": "flori-din-romania-la-viena",
+    "title": "Flori din România la Viena",
+    "headline": "Trimite flori din România la Viena.",
+    "intro": "Ai pe cineva drag în Viena? Comanzi online din România, o florărie din Viena leagă buchetul, iar un curier îl duce la ușa destinatarului.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": { "occasions": ["geburtstag", "liebe", "danke", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Flori din România la Viena, fără griji",
+        "paragraphs": [
+          "Florile nu călătoresc din România: le comanzi online, iar buchetul este legat de mână în Viena, de o florărie cu care colaborăm permanent, și livrat prin curier. Așa ajunge proaspăt, chiar dacă tu ești la sute de kilometri distanță.",
+          "Site-ul, comanda și e-mailurile sunt în limba română. Plătești cu cardul tău de credit sau de debit, cu Apple Pay, Google Pay, Klarna sau eps – cardurile emise în România funcționează."
+        ]
+      },
+      {
+        "heading": "Ora Vienei, nu ora României",
+        "paragraphs": [
+          "Toate orele din magazin sunt ora Vienei – cu o oră în urma orei României. Pentru livrare în aceeași zi, comanda trebuie plasată până la 18:30 ora Vienei (duminica până la 17:45), adică până la 19:30, respectiv 18:45 ora României.",
+          "Alegi ziua în calendar și un interval de o oră între 9:00 și 22:00. Livrăm în toate cele 23 de districte ale Vienei, de luni până duminică."
+        ]
+      },
+      {
+        "heading": "Număr impar de flori",
+        "paragraphs": [
+          "În România, la ocaziile vesele se dăruiește de obicei un număr impar de flori. Dacă ții la acest obicei, scrie-l când comanzi în câmpul „Dorința ta pentru florărie” – la cerere, florăria leagă buchetul cu un număr impar de fire."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-payment", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Flori din România la Viena – livrare prin curier",
+      "description": "Trimite flori din România la Viena: comanzi online în română, buchetul e legat de mână în Viena și livrat prin curier în toate cele 23 de districte."
+    }
+  },
+  {
+    "slug": "florarie-viena",
+    "title": "Florărie Viena",
+    "headline": "Florăria ta online din Viena.",
+    "intro": "Buchete legate de mână de o florărie din Viena, comandate online în câteva minute și livrate prin curier la adresa dorită.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "O florărie din Viena, cu comandă online",
+        "paragraphs": [
+          "Blumora este un magazin online de flori pentru Viena. Buchetele nu stau gata făcute pe raft: o florărie din Viena cu care colaborăm permanent le leagă de mână pentru fiecare comandă în parte.",
+          "Nu trebuie să treci pe la florărie: alegi online buchetul și mărimea, ziua în calendar și un interval de o oră între 9:00 și 22:00. Un curier ridică florile și le duce direct la adresa destinatarului."
+        ]
+      },
+      {
+        "heading": "Dorințe speciale pentru florărie",
+        "paragraphs": [
+          "La comandă găsești câmpul „Dorința ta pentru florărie”. Acolo poți nota, de exemplu, că vrei un număr impar de fire – florăria ține cont de astfel de dorințe la cerere.",
+          "Florile sunt produse naturale: soiurile și nuanțele pot varia ușor în funcție de sezon, dar stilul și paleta de culori rămân aceleași."
+        ]
+      },
+      {
+        "heading": "Unde livrăm",
+        "paragraphs": [
+          "În toate cele 23 de districte ale Vienei, de luni până duminică. Taxa de livrare depinde de district – o vezi după ce introduci codul poștal."
+        ]
+      }
+    ],
+    "faqIds": ["f-photo", "f-fresh", "f-where", "f-change"],
+    "seo": {
+      "title": "Florărie Viena – flori legate de mână, livrate acasă",
+      "description": "Florărie online în Viena: buchete legate de mână de o florărie locală pentru fiecare comandă și livrate prin curier în toate cele 23 de districte."
+    }
+  },
+  {
+    "slug": "livrare-flori-aceeasi-zi-viena",
+    "title": "Livrare flori în aceeași zi",
+    "headline": "Livrare flori în aceeași zi în Viena.",
+    "intro": "Comanzi până la 18:30 (duminica până la 17:45), iar florile ajung încă azi, oriunde în Viena – cât timp mai este liber un interval orar.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Până când poți comanda",
+        "paragraphs": [
+          "De luni până sâmbătă, comenzile plasate până la 18:30 pot fi livrate în aceeași zi, duminica până la 17:45 – în toate cele 23 de districte ale Vienei, cât timp mai este liber un interval orar. Toate orele sunt ora Vienei.",
+          "Intervalele de livrare durează o oră; pentru livrarea în aceeași zi, intervalul se termină la cel puțin două ore după comandă. Cel mai devreme termen pentru adresa ta îl vezi imediat ce introduci codul poștal."
+        ]
+      },
+      {
+        "heading": "Cum ajunge buchetul atât de repede",
+        "paragraphs": [
+          "După comandă, o florărie din Viena cu care colaborăm permanent leagă buchetul de mână. Apoi un curier îl ridică și merge fără opriri la adresa destinatarului.",
+          "Taxa de livrare depinde de district și apare după introducerea codului poștal."
+        ]
+      },
+      {
+        "heading": "Comanzi din România?",
+        "paragraphs": [
+          "Viena este cu o oră în urma României: 18:30 la Viena înseamnă 19:30 în România, iar 17:45 înseamnă 18:45."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-window", "f-where", "f-nobody"],
+    "seo": {
+      "title": "Livrare flori în aceeași zi Viena – până la 18:30",
+      "description": "Livrare flori în aceeași zi în Viena: comandă până la 18:30, duminica până la 17:45. Buchete legate de mână, livrate prin curier în toată Viena."
+    }
+  },
+  {
+    "slug": "livrare-trandafiri-viena",
+    "title": "Livrare trandafiri Viena",
+    "headline": "Livrare trandafiri în Viena.",
+    "intro": "Trandafiri roșii, roz, albi sau colorați – legați de mână pentru comanda ta și livrați prin curier oriunde în Viena.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Trandafiri pentru fiecare mesaj",
+        "paragraphs": [
+          "Trandafirii roșii spun „te iubesc” fără cuvinte, cei roz transmit tandrețe și recunoștință, iar cei albi sunt eleganți și potriviți pentru momente festive. De ziua de naștere, un buchet colorat aduce voie bună.",
+          "Fiecare buchet este legat de mână de o florărie din Viena cu care colaborăm permanent și livrat direct prin curier."
+        ]
+      },
+      {
+        "heading": "Număr impar de trandafiri",
+        "paragraphs": [
+          "În România, la ocazii vesele se oferă de obicei un număr impar de flori. Dacă vrei ca buchetul să respecte acest obicei, notează-l în câmpul „Dorința ta pentru florărie” – la cerere, florăria leagă un număr impar de fire."
+        ]
+      },
+      {
+        "heading": "Livrare în toată Viena",
+        "paragraphs": [
+          "Livrăm în toate cele 23 de districte, de luni până duminică, în intervale de o oră între 9:00 și 22:00. Comenzile plasate până la 18:30 (duminica până la 17:45) pot ajunge chiar în aceeași zi."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-anon", "f-photo"],
+    "seo": {
+      "title": "Livrare trandafiri Viena – buchete legate de mână",
+      "description": "Livrare trandafiri în Viena: roșii, roz, albi sau colorați, legați de mână și livrați prin curier în toate cele 23 de districte, chiar și azi."
+    }
+  },
+  {
+    "slug": "flori-coroane-funerare-viena",
+    "title": "Flori și coroane funerare Viena",
+    "headline": "Flori și coroane funerare în Viena.",
+    "intro": "Coroane și buchete funerare în culori liniștite, legate de mână de o florărie din Viena și livrate prin curier. Un semn de compasiune când nu poți fi de față.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "occasions": ["trauer"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Un ultim omagiu, chiar și de departe",
+        "paragraphs": [
+          "Când un om drag din Viena nu mai este, nu poți fi întotdeauna alături de familie. Prin Blumora trimiți o coroană sau un buchet funerar, legat de mână de o florărie din Viena cu care colaborăm permanent și dus de un curier la adresa pe care o indici.",
+          "Alegi ziua în calendar și un interval de o oră între 9:00 și 22:00. Întreabă din timp familia unde și când pot fi primite florile – curierul le predă personal."
+        ]
+      },
+      {
+        "heading": "Număr par de flori și panglică cu text",
+        "paragraphs": [
+          "În tradiția românească, la înmormântări și la comemorări se duce un număr par de flori. Dacă vrei să respecți acest obicei, scrie-l în câmpul „Dorința ta pentru florărie” când comanzi – florăria îl ia în considerare la cerere.",
+          "Și o panglică cu text pe coroană este posibilă la cerere: notează textul dorit în același câmp."
+        ]
+      },
+      {
+        "heading": "Culori și flori",
+        "paragraphs": [
+          "Albul exprimă liniște și respect, roșul iubire și apropiere, iar nuanțele pastelate alinare. Toate aranjamentele funerare sunt legate pentru comanda ta; florile pot varia ușor în funcție de sezon."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody", "f-photo"],
+    "seo": {
+      "title": "Flori și coroane funerare Viena – livrare prin curier",
+      "description": "Flori și coroane funerare în Viena: legate de mână, livrate prin curier în toate districtele. Număr par de flori și panglică cu text, la cerere."
+    }
+  },
+  {
+    "slug": "flori-de-1-martie",
+    "title": "Flori de 1 Martie",
+    "headline": "Flori de 1 Martie, trimise în Viena.",
+    "intro": "Mărțișorul vestește primăvara. Dacă cei dragi sunt în Viena, le poți trimite de 1 Martie un buchet proaspăt, legat de mână și livrat prin curier.",
+    "image": "/images/products/sortiment/tulpenstrauss-1.jpg",
+    "productFilter": { "occasions": ["einfach-so", "danke"], "colors": ["rot", "weiss"], "seasons": ["fruehling", "ganzjaehrig"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Mărțișorul și primele flori ale primăverii",
+        "paragraphs": [
+          "Pe 1 martie, în România se dăruiește mărțișorul – un mic talisman prins de un șnur roșu cu alb, ca urare de sănătate și noroc pentru primăvara care vine. Ghioceii sunt floarea tradițională a acestei zile, prima care vestește primăvara.",
+          "Noi nu vindem mărțișoare, dar livrăm flori: de 1 Martie poți trimite celor dragi din Viena un buchet proaspăt, de exemplu în roșu și alb, culorile șnurului de mărțișor."
+        ]
+      },
+      {
+        "heading": "Livrare pe 1 martie în Viena",
+        "paragraphs": [
+          "Alege 1 martie ca zi de livrare în calendar și un interval de o oră între 9:00 și 22:00. Livrăm în toate cele 23 de districte, inclusiv în weekend.",
+          "Buchetul este legat de mână de o florărie din Viena cu care colaborăm permanent și dus de un curier direct la destinatar. Florile sunt produse naturale, așa că soiurile pot varia ușor în funcție de sezon."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-photo"],
+    "seo": {
+      "title": "Flori de 1 Martie Viena – buchete de Mărțișor",
+      "description": "Flori de 1 Martie în Viena: trimite celor dragi un buchet proaspăt de Mărțișor, legat de mână și livrat prin curier, în ziua și intervalul ales."
+    }
+  },
+  {
+    "slug": "flori-de-8-martie",
+    "title": "Flori de 8 Martie",
+    "headline": "Flori de 8 Martie pentru femeile din viața ta.",
+    "intro": "De Ziua Femeii, un buchet spune „mulțumesc” mamei, bunicii, soției, prietenei sau colegelor. Legat de mână și livrat oriunde în Viena.",
+    "image": "/images/products/sortiment/tulpenstrauss-2.jpg",
+    "productFilter": { "occasions": ["danke", "geburtstag", "einfach-so"], "colors": ["rosa", "lila", "gelb"], "seasons": ["ganzjaehrig", "fruehling"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Ziua Internațională a Femeii",
+        "paragraphs": [
+          "Pe 8 martie se sărbătorește Ziua Internațională a Femeii. În România este o zi în care se dăruiesc flori – mamelor, bunicilor, soțiilor, prietenelor, profesoarelor și colegelor. Multe familii sărbătoresc în această zi și mamele.",
+          "Lalelele, trandafirii și buchetele colorate sunt alegeri dragi la început de primăvară. Dacă mama, sora sau o prietenă bună locuiește în Viena, un buchet livrat la ușă îi arată că te-ai gândit la ea, chiar dacă tu ești în altă țară."
+        ]
+      },
+      {
+        "heading": "Flori acasă sau la birou",
+        "paragraphs": [
+          "Poți trimite flori și la birou: notează la comandă numele firmei și, dacă îl știi, departamentul – livrăm la recepție. Alegi 8 martie în calendar și un interval de o oră între 9:00 și 22:00.",
+          "Fiecare buchet este legat de mână de o florărie din Viena cu care colaborăm permanent și livrat prin curier în toate cele 23 de districte."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-business", "f-window"],
+    "seo": {
+      "title": "Flori de 8 Martie Viena – livrare de Ziua Femeii",
+      "description": "Flori de 8 Martie în Viena: buchete pentru mamă, soție, prietenă sau colege, legate de mână și livrate acasă sau la birou, în intervalul ales."
+    }
+  },
+  {
+    "slug": "flori-de-ziua-mamei",
+    "title": "Flori de Ziua Mamei",
+    "headline": "Flori de Ziua Mamei, livrate în Viena.",
+    "intro": "Mama ta locuiește în Viena? De Ziua Mamei îi poți trimite un buchet legat de mână, direct la ușă – chiar dacă tu ești departe.",
+    "image": "/images/products/sortiment/rose-dream-1.jpg",
+    "productFilter": { "category": "pastell", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Când este Ziua Mamei",
+        "paragraphs": [
+          "În România, Ziua Mamei se sărbătorește în prima duminică din mai. În Austria, Muttertag cade în a doua duminică din mai – așa că, dacă locuiești în Viena, ai două ocazii să-i spui mamei cât de mult contează pentru tine.",
+          "Livrăm și duminica: alegi ziua în calendar și un interval de o oră între 9:00 și 22:00."
+        ]
+      },
+      {
+        "heading": "Buchete pentru mama",
+        "paragraphs": [
+          "Trandafirii roz, nuanțele pastelate și buchetele delicate sunt printre cele mai iubite flori pentru mame. Fiecare buchet este legat de mână de o florărie din Viena cu care colaborăm permanent și livrat prin curier în toate cele 23 de districte.",
+          "Comanzi din România? Plătești cu cardul tău, cu Apple Pay, Google Pay, Klarna sau eps, iar orele afișate sunt ora Vienei – cu o oră în urma orei României."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Flori de Ziua Mamei Viena – livrare și duminica",
+      "description": "Flori de Ziua Mamei în Viena: buchete pastelate, legate de mână și livrate prin curier și duminica, în intervalul de o oră pe care îl alegi."
+    }
+  },
+  {
+    "slug": "flori-de-dragobete",
+    "title": "Flori de Dragobete",
+    "headline": "Flori de Dragobete, ziua românească a dragostei.",
+    "intro": "Pe 24 februarie, îndrăgostiții sărbătoresc Dragobetele. Trimite persoanei iubite din Viena un buchet legat de mână, livrat prin curier.",
+    "image": "/images/products/sortiment/herzklopfen-1.jpg",
+    "productFilter": { "occasions": ["liebe"], "category": "pastell", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Dragobete – pe 24 februarie",
+        "paragraphs": [
+          "Dragobetele este sărbătoarea tradițională românească a dragostei și se ține pe 24 februarie. Este legat de venirea primăverii și, pentru mulți români, este varianta autohtonă a Zilei Îndrăgostiților.",
+          "Dacă persoana iubită e în Viena, poți fi aproape și de departe: alegi 24 februarie ca zi de livrare și un interval de o oră între 9:00 și 22:00."
+        ]
+      },
+      {
+        "heading": "Flori pentru început de primăvară",
+        "paragraphs": [
+          "Nuanțele delicate de roz și alb se potrivesc unei sărbători care vestește primăvara. Fiecare buchet este legat de mână de o florărie din Viena cu care colaborăm permanent și dus de un curier direct la destinatar.",
+          "Vrei o surpriză? Fără felicitare, numele tău nu apare nicăieri pe buchet, iar factura ajunge doar la tine.",
+          "Livrăm în toate cele 23 de districte ale Vienei. Dacă 24 februarie cade într-un weekend, nu e nicio problemă: livrăm de luni până duminică."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-anon"],
+    "seo": {
+      "title": "Flori de Dragobete Viena – livrare pe 24 februarie",
+      "description": "Flori de Dragobete în Viena: buchete delicate pentru persoana iubită, legate de mână și livrate pe 24 februarie, în intervalul de o oră ales."
+    }
+  },
+  {
+    "slug": "flori-de-valentines-day",
+    "title": "Flori de Valentine’s Day",
+    "headline": "Flori de Valentine’s Day în Viena.",
+    "intro": "Pe 14 februarie, trandafirii roșii spun tot. Trimite flori de Ziua Îndrăgostiților persoanei iubite din Viena – legate de mână și livrate prin curier.",
+    "image": "/images/products/sortiment/koenigin-der-herzen-1.jpg",
+    "productFilter": { "occasions": ["liebe"], "colors": ["rot"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Ziua Îndrăgostiților, pe 14 februarie",
+        "paragraphs": [
+          "Valentine’s Day, Ziua Îndrăgostiților, se sărbătorește pe 14 februarie. Clasicul rămâne buchetul de trandafiri roșii – dar și o cutie cu flori în formă de inimă sau un buchet în roșu și alb spun „te iubesc”.",
+          "Pentru că 14 februarie e o zi aglomerată, comandă din timp și alege ziua în calendar. Vrei florile seara, după muncă? Intervalele de o oră merg până la 22:00."
+        ]
+      },
+      {
+        "heading": "Număr impar de trandafiri",
+        "paragraphs": [
+          "La români, persoanei iubite i se oferă de obicei un număr impar de flori. Scrie-ți dorința în câmpul „Dorința ta pentru florărie” – la cerere, florăria leagă un număr impar de fire."
+        ]
+      },
+      {
+        "heading": "Livrare în toată Viena",
+        "paragraphs": [
+          "Livrăm în toate cele 23 de districte, de luni până duminică. Comenzile plasate până la 18:30 (duminica până la 17:45) pot ajunge chiar în aceeași zi, cât timp mai este liber un interval orar."
+        ]
+      }
+    ],
+    "faqIds": ["f-window", "f-date", "f-anon", "f-nobody"],
+    "seo": {
+      "title": "Flori de Valentine’s Day Viena – trandafiri roșii",
+      "description": "Flori de Valentine’s Day în Viena: trandafiri roșii și buchete romantice, legate de mână și livrate pe 14 februarie, chiar și seara până la 22:00."
+    }
+  },
+  {
+    "slug": "flori-pentru-nunta",
+    "title": "Flori pentru nuntă",
+    "headline": "Flori pentru nuntă, trimise în Viena.",
+    "intro": "Felicită mirii cu un buchet elegant – legat de mână de o florărie din Viena și livrat prin curier acasă sau la hotel.",
+    "image": "/images/occasions/hochzeit.jpg",
+    "productFilter": { "occasions": ["hochzeit"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Un dar pentru miri",
+        "paragraphs": [
+          "Nunta este pentru multe familii românești una dintre cele mai mari sărbători, alături de nași, rude și prieteni. Dacă nu poți ajunge la o nuntă în Viena sau vrei să trimiți felicitări dinainte, un buchet ajunge acolo în locul tău.",
+          "Pentru nuntă se potrivesc buchetele în alb și crem sau trandafirii roșii cu albi. Și părinții sau nașii se bucură de un buchet ca mulțumire."
+        ]
+      },
+      {
+        "heading": "Livrare acasă sau la hotel",
+        "paragraphs": [
+          "Poți trimite florile acasă la miri sau la un hotel: notează la comandă numele hotelului și, dacă îl știi, numărul camerei – livrăm la recepție. Alegi ziua în calendar și un interval de o oră între 9:00 și 22:00, de luni până duminică.",
+          "Fiecare buchet este legat de mână pentru comanda ta și livrat în toate cele 23 de districte ale Vienei."
+        ]
+      }
+    ],
+    "faqIds": ["f-business", "f-date", "f-window", "f-photo"],
+    "seo": {
+      "title": "Flori pentru nuntă Viena – buchete pentru miri",
+      "description": "Flori pentru nuntă în Viena: buchete elegante pentru miri, părinți sau nași, legate de mână și livrate acasă sau la hotel, în ziua aleasă."
+    }
+  },
+  {
+    "slug": "flori-pentru-botez",
+    "title": "Flori pentru botez",
+    "headline": "Flori pentru botez, trimise în Viena.",
+    "intro": "Un botez, o familie fericită: trimite părinților din Viena un buchet delicat, legat de mână și livrat prin curier.",
+    "image": "/images/products/sortiment/rosa-bouquet-1.jpg",
+    "productFilter": { "category": "pastell", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Un buchet pentru o zi mare",
+        "paragraphs": [
+          "Botezul este pentru multe familii românești o sărbătoare importantă, la care se adună părinții, nașii, rudele și prietenii. Un buchet este un mod frumos de a-i felicita pe părinți – mai ales când nu poți fi de față.",
+          "Pentru botez se potrivesc nuanțele delicate: roz, alb, lila sau crem. Fiecare buchet este legat de mână de o florărie din Viena cu care colaborăm permanent."
+        ]
+      },
+      {
+        "heading": "Livrare acasă sau la locul petrecerii",
+        "paragraphs": [
+          "Poți trimite florile acasă la familie sau, dacă petrecerea are loc la un restaurant ori la un hotel, acolo – notează la comandă numele localului.",
+          "Alegi ziua în calendar și un interval de o oră între 9:00 și 22:00, de luni până duminică, în toate cele 23 de districte ale Vienei. Curierul predă florile personal, așa că alege un interval în care cineva le poate primi."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-business", "f-nobody"],
+    "seo": {
+      "title": "Flori pentru botez Viena – buchete delicate",
+      "description": "Flori pentru botez în Viena: buchete delicate în roz și alb pentru părinți și nași, legate de mână și livrate acasă sau la locul petrecerii."
+    }
+  }
+]
