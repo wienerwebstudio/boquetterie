@@ -6,6 +6,7 @@ import type {
   Occasion, Offer, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber, CheckoutDraft,
 } from "@/types";
 import type { OutreachContact, OutreachSend, OutreachTemplate, OutreachUnsubscribe } from "@/types/outreach";
+import type { PartnerLedgerEntry, PartnerPortalDoc } from "@/types/partner-portal";
 import { starterTemplates } from "@/lib/outreach/starter-templates";
 
 /**
@@ -293,4 +294,22 @@ export async function getOutreachUnsubscribed(): Promise<OutreachUnsubscribe[]> 
 }
 export async function saveOutreachUnsubscribed(list: OutreachUnsubscribe[]) {
   await getStore().set("data", "outreach-unsubscribed", list);
+}
+
+/* ---------------- Partner-Portal (runtime data, see docs/PARTNER-PORTAL.md) ---------------- */
+
+/** Portal settings per partner id (allow-listed login addresses, "Abrechnung ab"). */
+export async function getPartnerPortalSettings(): Promise<PartnerPortalDoc> {
+  return readDataDoc<PartnerPortalDoc>("partner-portal", {});
+}
+export async function savePartnerPortalSettings(doc: PartnerPortalDoc) {
+  await getStore().set("data", "partner-portal", doc);
+}
+
+/** Payments to partners and manual corrections. */
+export async function getPartnerLedgerEntries(): Promise<PartnerLedgerEntry[]> {
+  return readDataDoc<PartnerLedgerEntry[]>("partner-ledger", []);
+}
+export async function savePartnerLedgerEntries(list: PartnerLedgerEntry[]) {
+  await getStore().set("data", "partner-ledger", list);
 }

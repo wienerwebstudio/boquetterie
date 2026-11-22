@@ -29,6 +29,7 @@ Ist `ADMIN_PASSWORD` nicht gesetzt, zeigt die Login-Seite einen Hinweis und verw
 | Seiten (Über uns, Lieferung, Kontakt, Impressum, …) | `/admin/seiten` | `content/pages.json` |
 | Landingpages | `/admin/landingpages` | `content/landing-pages.json` |
 | Einstellungen (Marke/Kontakt, Ankündigung, Funktionen, Sperrtage, Zahlungsarten, Bestellstatus, SEO, Vertrauenselemente) | `/admin/einstellungen` | `content/settings.json` |
+| Partner-Abrechnung (Offen/bezahlt je Partner, Zahlungen & Korrekturen, „Abrechnung ab“, Portal-E-Mails, Aufträge ohne Partner zuordnen, CSV je Monat) – siehe `docs/PARTNER-PORTAL.md` | `/admin/partner-abrechnung` | `data/partner-portal.json`, `data/partner-ledger.json` |
 | Newsletter (Liste + CSV-Export) | `/admin/newsletter`, `/api/admin/newsletter.csv` | `data/newsletter.json` |
 
 ### Bedienung

@@ -37,6 +37,8 @@ Stand: 94 Tests, alle grün.
 
 Chromium, Desktop-Viewport 1280×900 (der Filter-Sheet-Test setzt 390×844). Die Journeys laufen gegen einen festen, bestellbaren Testkatalog: `CONTENT_OVERLAY_DIR=tests/fixtures/content` (gesetzt in `playwright.config.ts` und im CI-Job) lässt den JSON-Store `products.json`, `homepage.json`, `delivery-zones.json` und `reviews.json` (9 Test-Bewertungen, eine mit langem Text, Fotos, Video und Übersetzung) aus diesem Ordner lesen statt aus `content/`. Die Startseite wird beim Build vorgerendert – lokal deshalb mit gesetztem `CONTENT_OVERLAY_DIR` bauen (in CI ist die Variable für den ganzen Job gesetzt). So bleiben die Tests unabhängig vom Live-Sortiment (das z. B. noch auf „Preis folgt“ stehen kann). Die Unit-Tests nutzen dieselben Produkte und Lieferzonen. `baseURL` ist `http://localhost:3000`; mit `PLAYWRIGHT_BASE_URL` lässt sich ein anderer Server angeben. Lokal wird ein bereits laufender Dev-Server wiederverwendet (`reuseExistingServer`), sonst startet Playwright `npm run dev`. In CI wird vorher gebaut und `npm run start` verwendet.
 
+Mails gehen in den Tests nie raus (Konsolen-Provider). `playwright.config.ts` setzt `MAIL_CONSOLE_OUTBOX=true`, damit `tests/e2e/partner-portal.spec.ts` den Login-Link des Partner-Portals aus `data/mail-outbox.json` lesen kann; der Global-Teardown löscht diese Datei und die Partner-Portal-Laufzeitdaten wieder (siehe `docs/PARTNER-PORTAL.md`).
+
 | Spec | Was geprüft wird |
 | --- | --- |
 | `home.spec.ts` | H1 der Startseite, PLZ-Check: `1040` → „Lieferung verfügbar“, `8010` → „Leider liefern wir an 8010 noch nicht.“ |

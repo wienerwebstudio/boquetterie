@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { readCollection } from "@/lib/cms";
 import { PageHeader } from "@/components/admin/controls";
+import { Button } from "@/components/ui/button";
 import { EntityForm } from "@/components/admin/entity-form";
 import { loadOptions } from "@/components/admin/options";
 import { schemaBySlug, type AdminCollection } from "@/components/admin/schemas";
@@ -36,6 +37,7 @@ export default async function EntityEditPage({ params, searchParams }: { params:
         back={{ href: listHref, label: schema.plural }}
         title={label}
         description={isNew ? `${schema.singular} anlegen. Pflichtfelder sind mit * markiert.` : `${schema.singular} bearbeiten · ${schema.idKey}: ${id}`}
+        actions={schema.collection === "partners" && !isNew ? <Button href={`/admin/partner-abrechnung/${encodeURIComponent(id)}`} size="sm" variant="outline">Abrechnung & Portal-Zugang</Button> : undefined}
       />
       <EntityForm
         key={id}

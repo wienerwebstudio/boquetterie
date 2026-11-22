@@ -494,7 +494,7 @@ export function adminNewOrder(input: { order: Order; brand: MailBrand; adminUrl:
  * discount is settled separately – and when it is collected. Without the customer's prices and without the customer's or recipient's
  * contact data – the courier delivers, the florist only prepares (data minimisation).
  */
-export function floristOrder(input: { order: Order; brand: MailBrand; selfDelivery?: boolean; readyBy?: string | null; confirmUrl?: string; reminder?: number }): RenderedMail {
+export function floristOrder(input: { order: Order; brand: MailBrand; selfDelivery?: boolean; readyBy?: string | null; confirmUrl?: string; reminder?: number; portalUrl?: string }): RenderedMail {
   const { order, brand } = input;
   const first = order.lines[0];
   const card = order.lines.find((l) => l.message || l.senderName || l.anonymous);
@@ -537,6 +537,7 @@ export function floristOrder(input: { order: Order; brand: MailBrand; selfDelive
         ],
       },
       { type: "floristItems", order, siteUrl: brand.siteUrl },
+      ...(input.portalUrl ? [{ type: "link", label: "Alle Aufträge im Partner-Portal ansehen", url: input.portalUrl } as Block] : []),
     ],
     footerNotes: ["Auftrag von Blumora – bitte auf diese Mail antworten, wenn etwas nicht passt."],
   });
@@ -753,6 +754,21 @@ export function occasionReminder(input: { brand: MailBrand; occasionLabel: strin
     ],
     footerNotes: [t.footer, fmt(t.unsubscribe, { url: unsubscribeUrl })],
   }, L);
+}
+
+/** Login link of the Partner-Portal (German only – partners are local florists). */
+export function partnerPortalLogin(input: { url: string; brand: MailBrand; partnerName: string; validMinutes: number }): RenderedMail {
+  return layout({
+    brand: input.brand,
+    subject: `Dein Login-Link zum Partner-Portal von ${input.brand.name}`,
+    preheader: `Der Link ist ${input.validMinutes} Minuten gültig.`,
+    headline: "Partner-Portal",
+    blocks: [
+      { type: "p", text: `Hallo ${input.partnerName}, mit diesem Link meldest du dich im Partner-Portal an – dort siehst du alle Aufträge, kannst sie bestätigen und siehst, was offen und was bezahlt ist.` },
+      { type: "button", label: "Im Partner-Portal anmelden", url: input.url },
+      { type: "p", text: `Der Link ist ${input.validMinutes} Minuten gültig und funktioniert nur einmal. Falls du ihn nicht angefordert hast, kannst du diese Mail ignorieren.`, muted: true },
+    ],
+  });
 }
 
 export function magicLink(input: { url: string; brandName: string; siteUrl?: string; validMinutes?: number } & MailLang): RenderedMail {

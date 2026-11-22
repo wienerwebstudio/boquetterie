@@ -40,7 +40,8 @@ function cell(value: unknown): string {
   return /[;"\n\r]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v;
 }
 
-function toCsv(rows: unknown[][]): string {
+/** Rows → Excel (de-AT) CSV: semicolon, UTF-8 BOM, CRLF, formula-safe cells. */
+export function toCsv(rows: unknown[][]): string {
   return "﻿" + rows.map((r) => r.map(cell).join(";")).join("\r\n") + "\r\n";
 }
 

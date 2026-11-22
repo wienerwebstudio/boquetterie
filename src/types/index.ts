@@ -667,6 +667,11 @@ export interface OrderPartner {
   confirmedAt?: string;
   /** Reminder mails sent for this slip (ISO times), see partner-reminders.ts. */
   reminders?: string[];
+  /**
+   * Assigned afterwards in the partner billing ("Aufträge ohne Partner zuordnen") –
+   * no order slip, no mail, no courier booking. See docs/PARTNER-PORTAL.md.
+   */
+  manual?: boolean;
 }
 
 /* ---------------- Newsletter ---------------- */

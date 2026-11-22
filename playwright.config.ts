@@ -78,6 +78,9 @@ export default defineConfig({
       PAYMENTS_ALLOW_MOCK: "true",
       ADMIN_PASSWORD: process.env.ADMIN_PASSWORD ?? "test1234",
       ADMIN_SECRET: process.env.ADMIN_SECRET ?? "devsecret-devsecret",
+      // Console mail provider only: keep the last mails in data/mail-outbox.json so the
+      // Partner-Portal journey can follow its login link (src/lib/mail.ts).
+      MAIL_CONSOLE_OUTBOX: "true",
     },
   },
 });

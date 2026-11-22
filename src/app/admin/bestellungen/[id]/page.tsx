@@ -32,7 +32,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
   const [found, settings, partners] = await Promise.all([getOrderById(decodeURIComponent(id)), getSettings(), getPartners(true)]);
   if (!found) notFound();
   const order = withEffectivePartner(found);
-  const needsPartner = order.payment.status === "paid" && order.status !== "cancelled" && !(order.partner?.sentAt && !order.partner.cancelSentAt);
+  const needsPartner = order.payment.status === "paid" && order.status !== "cancelled" && !((order.partner?.sentAt || order.partner?.manual) && !order.partner.cancelSentAt);
   const review = await getReviewRequestStatus(order.id);
   const deliveredOn = order.status === "delivered" ? deliveredAt(order) : null;
   const cronActive = Boolean(process.env.CRON_SECRET);
@@ -159,6 +159,7 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
           <Card accent="emerald" icon={Store} title="Partner" description="Welche Floristik bindet diesen Strauß. Erst mit „Auftrag senden“ bekommt der Partner die Mail.">
             <dl className="mb-4 text-[14px]">
               <Row label="Partner">{order.partner ? order.partner.name : <span className="font-semibold text-burgundy">Noch keiner</span>}</Row>
+              {order.partner?.manual && !order.partner.sentAt && <Row label="Zuordnung">Nachträglich in der <Link href={`/admin/partner-abrechnung/${encodeURIComponent(order.partner.id)}`} className="underline underline-offset-4">Partner-Abrechnung</Link> – ohne Auftragsmail{order.partner.confirmedAt ? `, als bestätigt gezählt (${formatDateTime(order.partner.confirmedAt)})` : ""}</Row>}
               {order.partner?.sentAt && <Row label="Auftrag gesendet">{formatDateTime(order.partner.sentAt)}{order.partner.sentTo?.length ? <div className="text-[12.5px] text-ink-muted">{order.partner.sentTo.join(", ")}</div> : null}</Row>}
               {order.partner?.sentAt && !order.partner.cancelSentAt && (
                 <Row label="Bestätigt">{!order.partner.confirmedAt && order.partner.reminders?.length ? <div className="text-[12.5px] text-ink-muted">{order.partner.reminders.length} Erinnerung(en) gesendet, zuletzt {formatDateTime(order.partner.reminders[order.partner.reminders.length - 1])}</div> : null}{order.partner.confirmedAt ? <span className="font-semibold text-[#0a6644]">Ja, {formatDateTime(order.partner.confirmedAt)}</span> : order.partner.confirmToken ? <span className="font-semibold text-burgundy">Noch nicht – ggf. anrufen</span> : <span className="text-ink-muted">Ohne Bestätigungslink gesendet</span>}</Row>

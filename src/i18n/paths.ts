@@ -65,9 +65,9 @@ export function localizePath(locale: Locale, href: string): string {
   return `/${locale}${parts.length ? `/${parts.join("/")}` : ""}${rest}`;
 }
 
-/** Paths that are never language-prefixed: admin, API, media and files. */
+/** Paths that are never language-prefixed: admin, API, media, the Partner-Portal and files. */
 export function isUnprefixedSystemPath(path: string) {
-  return /^\/(admin|api|_next|media)(\/|$)/.test(path) || /\.[a-z0-9]+$/i.test(path);
+  return /^\/(admin|api|_next|media|partner)(\/|$)/.test(path) || /\.[a-z0-9]+$/i.test(path);
 }
 
 export interface ResolvedPath {

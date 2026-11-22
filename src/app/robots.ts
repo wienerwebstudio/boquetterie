@@ -6,7 +6,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   const settings = await getSettings();
   const base = settings.seo.siteUrl.replace(/\/$/, "");
   return {
-    rules: [{ userAgent: "*", allow: "/", disallow: [routes.admin, "/api", routes.checkout, routes.account, routes.cart] }],
+    rules: [{ userAgent: "*", allow: "/", disallow: [routes.admin, "/partner", "/api", routes.checkout, routes.account, routes.cart] }],
     sitemap: `${base}/sitemap.xml`,
   };
 }

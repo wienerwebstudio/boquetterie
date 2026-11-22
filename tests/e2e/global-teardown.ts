@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+import { rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 /**
@@ -15,5 +15,9 @@ export default async function globalTeardown() {
     } catch (err) {
       console.warn(`[e2e] could not reset data/${name}.json:`, err);
     }
+  }
+  // Runtime documents of the Partner-Portal journey and the console-mail outbox.
+  for (const name of ["partner-portal", "partner-ledger", "partner-auth-tokens", "mail-outbox"]) {
+    await rm(path.resolve(process.cwd(), "data", `${name}.json`), { force: true });
   }
 }

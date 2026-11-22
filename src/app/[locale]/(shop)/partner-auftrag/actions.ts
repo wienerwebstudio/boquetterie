@@ -2,9 +2,9 @@
 
 import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
-import { getOrderById, updateOrder } from "@/lib/cms";
+import { getOrderById } from "@/lib/cms";
 import { tokenMatches } from "@/lib/mail/reminders";
-import { sendPartnerConfirmedNotice } from "@/lib/mail";
+import { confirmOrderForPartner } from "@/lib/partner-portal";
 import { rateLimit } from "@/lib/rate-limit";
 
 export type ConfirmState = { ok: boolean; message: string } | null;
@@ -24,14 +24,8 @@ export async function confirmPartnerOrder(_prev: ConfirmState, formData: FormDat
   if (p.cancelSentAt || order.status === "cancelled") return { ok: false, message: "Dieser Auftrag wurde storniert – bitte nicht binden." };
   if (p.confirmedAt) return { ok: true, message: "Danke – der Auftrag war bereits bestätigt." };
 
-  const at = new Date().toISOString();
-  const updated = await updateOrder(order.id, (o) =>
-    o.partner && o.partner.confirmToken === p.confirmToken
-      ? { ...o, partner: { ...o.partner, confirmedAt: at }, history: [...o.history, { status: o.status, at, note: `Auftrag von ${o.partner.name} bestätigt` }] }
-      : o,
-  );
-  if (!updated?.partner?.confirmedAt) return { ok: false, message: "Der Link ist nicht mehr gültig." };
-  await sendPartnerConfirmedNotice(updated, updated.partner.name);
+  const r = await confirmOrderForPartner(order, { confirmToken: p.confirmToken });
+  if (!r.ok) return { ok: false, message: r.reason === "cancelled" ? "Dieser Auftrag wurde storniert – bitte nicht binden." : "Der Link ist nicht mehr gültig." };
   revalidatePath(`/admin/bestellungen/${order.id}`);
   revalidatePath("/admin/bestellungen");
   return { ok: true, message: "Danke – der Auftrag ist bestätigt. Blumora weiß jetzt, dass ihr ihn übernehmt." };

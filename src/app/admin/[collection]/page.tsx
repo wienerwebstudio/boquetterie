@@ -55,7 +55,12 @@ export default async function CollectionListPage({ params }: { params: Promise<{
       <PageHeader
         title={schema.plural}
         description={schema.description}
-        actions={<Button href={`/admin/${schema.slug}/neu`} size="sm" icon={<Plus className="size-4" aria-hidden />}>Neu</Button>}
+        actions={
+          <>
+            {schema.collection === "partners" && <Button href="/admin/partner-abrechnung" size="sm" variant="outline">Abrechnung & Partner-Portal</Button>}
+            <Button href={`/admin/${schema.slug}/neu`} size="sm" icon={<Plus className="size-4" aria-hidden />}>Neu</Button>
+          </>
+        }
       />
       {sorted.length === 0 ? (
         <EmptyState>Noch keine Einträge. <Link href={`/admin/${schema.slug}/neu`} className="font-semibold text-[#0a6644] underline underline-offset-4">Ersten Eintrag anlegen</Link>.</EmptyState>

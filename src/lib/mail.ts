@@ -3,7 +3,7 @@ import nodemailer, { type Transporter } from "nodemailer";
 import type { Offer, Order, Partner, SiteSettings } from "@/types";
 import { offerPreviewOrder } from "@/lib/offers-core";
 import type { Reminder } from "@/types/reminders";
-import { getAllProducts, getExtras, getOccasions, getPartners, getSettings } from "@/lib/cms";
+import { getAllProducts, getExtras, getOccasions, getPartners, getSettings, readData, writeData } from "@/lib/cms";
 import { getFloristBudgets } from "@/lib/florist-budget";
 import * as templates from "@/lib/mail/templates";
 import { floristReadyTime, getLocalNow, isSelfDeliveryDay } from "@/lib/delivery";
@@ -136,6 +136,21 @@ export function applyRedirect(to: string[], subject: string): { to: string[]; su
   return { to: [redirect], subject: `[TEST an ${to.join(", ")}] ${subject}` };
 }
 
+/**
+ * Test hook: with MAIL_CONSOLE_OUTBOX=true (and ONLY with the console provider, i.e. no
+ * real mail is configured) the last 50 mails are also kept in the runtime document
+ * `mail-outbox`, so the E2E suite can follow a login link. Never set it in production.
+ */
+async function writeConsoleOutbox(to: string[], subject: string, text: string, type?: string) {
+  if (process.env.MAIL_CONSOLE_OUTBOX !== "true") return;
+  try {
+    const list = await readData<{ at: string; to: string[]; subject: string; text: string; type?: string }[]>("mail-outbox", []);
+    await writeData("mail-outbox", [{ at: new Date().toISOString(), to, subject, text, type }, ...list].slice(0, 50));
+  } catch (err) {
+    console.warn("[mail] console outbox not written", err);
+  }
+}
+
 export async function sendMail(msg: MailMessage): Promise<MailResult> {
   const text = msg.text ?? htmlToText(msg.html);
   const recipients = Array.isArray(msg.to) ? msg.to : [msg.to];
@@ -152,6 +167,7 @@ export async function sendMail(msg: MailMessage): Promise<MailResult> {
       ];
       console.info(`[mail] (console provider) To: ${to.join(", ")}\n[mail] Subject: ${msg.subject}\n${extra.length ? `${extra.join("\n")}\n` : ""}${text.split("\n").map((l) => `[mail] ${l}`).join("\n")}`);
     }
+    await writeConsoleOutbox(to, msg.subject, text, msg.tags?.type);
     return { sent: false, provider };
   }
 
@@ -347,7 +363,7 @@ export async function sendOrderMails(order: Order, kinds: readonly OrderMailKind
   const render: Record<OrderMailKind, () => RenderedMail> = {
     customer: () => templates.orderConfirmation({ order: customerOrder, brand: customerBrand, trackingUrl: orderTrackingUrl(order, brand.siteUrl, lang.locale), ...lang }),
     internal: () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen/${encodeURIComponent(order.id)}`, selfDelivery, readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)) }),
-    partner: () => templates.floristOrder({ order, brand, selfDelivery, readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)) }),
+    partner: () => templates.floristOrder({ order, brand, selfDelivery, readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)), portalUrl: partnerPortalUrl(brand.siteUrl) }),
   };
   const types: Record<OrderMailKind, string> = { customer: "order_confirmation", internal: "admin_new_order", partner: "florist_order" };
   const settled = await Promise.allSettled(
@@ -384,8 +400,24 @@ export async function sendPartnerOrder(order: Order, partner: Partner, confirmTo
     readyBy: floristReadyTime(order.delivery, getLocalNow(settings.timezone)),
     confirmUrl: confirmToken ? `${brand.siteUrl}/partner-auftrag?order=${encodeURIComponent(order.id)}&token=${confirmToken}` : undefined,
     reminder,
+    portalUrl: partnerPortalUrl(brand.siteUrl),
   });
   return { to, result: await send(to.length === 1 ? to[0] : to, mail, "florist_order") };
+}
+
+/** Start page of the Partner-Portal (login / dashboard), see docs/PARTNER-PORTAL.md. */
+export function partnerPortalUrl(siteUrl: string) {
+  return `${siteUrl.replace(/\/$/, "")}/partner`;
+}
+
+/** Login link of the Partner-Portal. */
+export async function sendPartnerPortalLoginMail(input: { to: string; url: string; partnerName: string; validMinutes: number; siteUrl: string }): Promise<MailResult> {
+  const brand = { ...mailBrand(await getSettings()), siteUrl: input.siteUrl.replace(/\/$/, "") };
+  const mail = templates.partnerPortalLogin({ url: input.url, brand, partnerName: input.partnerName, validMinutes: input.validMinutes });
+  if (mailProvider() === "console" && process.env.NODE_ENV !== "test") {
+    console.info(`\n[partner] ───────── Portal login link for ${input.to} ─────────\n[partner] ${input.url}\n`);
+  }
+  return send(input.to, mail, "partner_portal_login");
 }
 
 /** Tells the team (MAIL_ADMIN) that a partner confirmed an order slip. Never throws. */
@@ -626,7 +658,7 @@ export async function sendTestOrderMails(recipient?: string, kind: TestMailKind 
   const all: [TestMailKind, string, () => RenderedMail][] = [
     ["customer", "Kundenbestellung", () => templates.orderConfirmation({ order, brand, trackingUrl: `${brand.siteUrl}/bestellung-verfolgen` })],
     ["internal", "Bestelleingang", () => templates.adminNewOrder({ order, brand, adminUrl: `${brand.siteUrl}/admin/bestellungen` })],
-    ["partner", "Partner-Auftrag", () => templates.floristOrder({ order, brand })],
+    ["partner", "Partner-Auftrag", () => templates.floristOrder({ order, brand, portalUrl: partnerPortalUrl(brand.siteUrl) })],
     // Links in the sample lead to "Link nicht gültig" – the sample order is not stored.
     ["review", "Bewertungsanfrage", () => templates.reviewRequest({ order, brand, reviewUrl: reviewUrl(order, brand.siteUrl) })],
   ];
