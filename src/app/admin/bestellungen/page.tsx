@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Filter, Search } from "lucide-react";
+import { Download, Filter, Search } from "lucide-react";
 import { getOrders, getSettings } from "@/lib/cms";
 import { formatDateShort, formatDateTime, formatPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import { cn } from "@/lib/format";
 import { listCheckoutDrafts } from "@/lib/checkout-drafts";
 import { AbandonedCheckouts } from "@/components/admin/abandoned-checkouts";
 import { ExpireStaleOrdersForm } from "@/components/admin/order-forms";
+import { filterOrders } from "@/lib/orders-export";
 
 export const dynamic = "force-dynamic";
 
@@ -22,20 +23,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
   const [orders, settings, drafts] = await Promise.all([getOrders(), getSettings(), listCheckoutDrafts()]);
   const abandoned = status === "abandoned";
 
-  const filtered = orders
-    .filter((o) => {
-      if (status === "open") return isOpenOrder(o, settings);
-      if (status === "unpaid") return isUnpaidOrder(o);
-      if (status === "abandoned") return false;
-      if (status && o.status !== status) return false;
-      return true;
-    })
-    .filter((o) => {
-      if (!q) return true;
-      const hay = [o.id, customerName(o), recipientName(o), o.customer.email, o.recipient.zip].join(" ").toLowerCase();
-      return hay.includes(q);
-    })
-    .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  const filtered = filterOrders(orders, { status, q }, settings);
 
   const sum = filtered.reduce((s, o) => s + o.totals.total, 0);
 
@@ -44,7 +32,10 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
       <PageHeader
         title="Bestellungen"
         description={`${orders.length} Bestellungen gesamt, ${orders.filter((o) => isOpenOrder(o, settings)).length} offen (bezahlt), ${orders.filter(isUnpaidOrder).length} nicht bezahlt – für nicht bezahlte Bestellungen nichts binden lassen. ${drafts.length} abgebrochene Kasse(n).`}
-        actions={<ExpireStaleOrdersForm />}
+        actions={<div className="flex flex-wrap items-center gap-2">
+          <ExportLinks status={status} q={q} />
+          <ExpireStaleOrdersForm />
+        </div>}
       />
 
       <nav aria-label="Schnellfilter" className="mb-4 flex flex-wrap gap-2 text-[13px]">
@@ -117,5 +108,23 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
         </Table>
       )}
     </>
+  );
+}
+
+/** Downloads with all data – same filter and search as the list. */
+function ExportLinks({ status, q }: { status: string; q: string }) {
+  const qs = (format: string) => {
+    const p = new URLSearchParams({ format });
+    if (status && status !== "abandoned") p.set("status", status);
+    if (q) p.set("q", q);
+    return `/admin/bestellungen/export?${p.toString()}`;
+  };
+  const cls = "inline-flex h-9 items-center gap-1.5 rounded-md border border-[#dcd8d0] bg-white px-3 text-[13px] font-semibold text-[#1f3a2d] hover:border-[#0a6644]";
+  return (
+    <div role="group" aria-label="Export" className="flex flex-wrap gap-2">
+      <a href={qs("orders")} className={cls} download><Download className="size-4" aria-hidden /> Export Bestellungen (CSV)</a>
+      <a href={qs("lines")} className={cls} download><Download className="size-4" aria-hidden /> Positionen (CSV)</a>
+      <a href={qs("json")} className={cls} download><Download className="size-4" aria-hidden /> Alles (JSON)</a>
+    </div>
   );
 }

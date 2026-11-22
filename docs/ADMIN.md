@@ -15,7 +15,7 @@ Ist `ADMIN_PASSWORD` nicht gesetzt, zeigt die Login-Seite einen Hinweis und verw
 | Bereich | URL | Datei |
 | --- | --- | --- |
 | Übersicht (Kennzahlen, neueste Bestellungen) | `/admin` | – |
-| Bestellungen (Liste, Detail, Status + Notiz, interne Notiz) | `/admin/bestellungen` | `data/orders.json` |
+| Bestellungen (Liste, Detail, Status + Notiz, interne Notiz; Export CSV/Positionen/JSON mit Filter, `/admin/bestellungen/export?format=orders\|lines\|json`) | `/admin/bestellungen` | `data/orders.json` |
 | Produkte (Größen/Preise, Bilder, Zuordnung, Lager, Same-Day, SEO) | `/admin/produkte` | `content/products.json` |
 | Kategorien (inkl. Regeln) | `/admin/kategorien` | `content/categories.json` |
 | Anlässe | `/admin/anlaesse` | `content/occasions.json` |
