@@ -1,6 +1,6 @@
 "use client";
 import Link from "@/components/ui/link";
-import { Checkbox, Input } from "@/components/ui/input";
+import { Checkbox, Input, PhoneInput } from "@/components/ui/input";
 import { routes } from "@/lib/urls";
 import type { FieldErrors } from "@/lib/order-payload";
 import { useI18n } from "@/i18n/client";
@@ -26,7 +26,7 @@ export function StepCustomer({ data, set, errors, onBlur, newsletterEnabled }: {
         <Input required id={id("lastName")} label={t.lastName} autoComplete="family-name" value={data.lastName} onChange={(e) => set({ lastName: e.target.value })} onBlur={() => onBlur("lastName")} error={errors.lastName} />
       </div>
       <Input required id={id("email")} label={t.email} type="email" inputMode="email" autoComplete="email" value={data.email} onChange={(e) => set({ email: e.target.value })} onBlur={() => onBlur("email")} error={errors.email} hint={t.emailHint} />
-      <Input required id={id("phone")} label={t.phone} type="tel" inputMode="tel" autoComplete="tel" value={data.phone} onChange={(e) => set({ phone: e.target.value })} onBlur={() => onBlur("phone")} error={errors.phone} hint={t.phoneHint} />
+      <PhoneInput required id={id("phone")} label={t.phone} autoComplete="tel" value={data.phone} onChange={(phone) => set({ phone })} onBlur={() => onBlur("phone")} error={errors.phone} hint={t.phoneHint} />
 
       <div className="mt-2 flex flex-col gap-4 border-t border-line pt-5">
         <div className="flex flex-col gap-1.5">

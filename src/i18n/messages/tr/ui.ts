@@ -7,6 +7,8 @@ const ui: NonNullable<PartialMessages["ui"]> = {
     home: "Ana sayfa",
   },
   optional: "(isteğe bağlı)",
+  /** Accessible name of the country-code select in phone fields. */
+  phoneCountry: "Ülke kodu",
   priceFromPrefix: "başlangıç fiyatı",
   starRating: "5 üzerinden {value} yıldız",
 };

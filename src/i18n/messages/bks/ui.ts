@@ -7,6 +7,8 @@ const ui: NonNullable<PartialMessages["ui"]> = {
     home: "Početna",
   },
   optional: "(neobavezno)",
+  /** Accessible name of the country-code select in phone fields. */
+  phoneCountry: "Pozivni broj države",
   priceFromPrefix: "od",
   starRating: "{value} od 5 zvjezdica",
 };

@@ -3,7 +3,7 @@ import { useState, type FormEvent } from "react";
 import Link from "@/components/ui/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Checkbox, Input, Select, Textarea } from "@/components/ui/input";
+import { Checkbox, Input, PhoneInput, Select, Textarea } from "@/components/ui/input";
 import { routes } from "@/lib/urls";
 import { MailFallback } from "@/components/content/mail-fallback";
 import { events, track } from "@/components/analytics/track";
@@ -109,7 +109,7 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
         <Input label={t.company} name="company" autoComplete="organization" maxLength={LIMITS.company} value={form.company} onChange={set("company")} error={errorText("company")} required />
         <Input label={t.contact} name="contact" autoComplete="name" maxLength={LIMITS.contact} value={form.contact} onChange={set("contact")} error={errorText("contact")} required />
         <Input label={m.forms.email} name="email" type="email" autoComplete="email" inputMode="email" maxLength={LIMITS.email} value={form.email} onChange={set("email")} error={errorText("email")} required />
-        <Input label={t.phone} name="phone" type="tel" optional autoComplete="tel" inputMode="tel" maxLength={LIMITS.phone} value={form.phone} onChange={set("phone")} error={errorText("phone")} />
+        <PhoneInput label={t.phone} optional autoComplete="tel" maxLength={LIMITS.phone} value={form.phone} onChange={(v) => set("phone")({ target: { value: v } })} error={errorText("phone")} />
         <Input label={t.location} name="location" autoComplete="postal-code" maxLength={LIMITS.location} placeholder={t.locationPlaceholder} value={form.location} onChange={set("location")} error={errorText("location")} required />
         <Select label={t.need} name="need" value={form.need} onChange={set("need")} error={errorText("need")} required>
           <option value="" disabled>{t.pleaseChoose}</option>

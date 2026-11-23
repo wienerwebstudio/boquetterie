@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "@/components/ui/link";
 import { ArrowRight, Check, ImagePlus, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Checkbox, Input, Select, Textarea } from "@/components/ui/input";
+import { Checkbox, Input, PhoneInput, Select, Textarea } from "@/components/ui/input";
 import { MailFallback } from "@/components/content/mail-fallback";
 import { fmtRich } from "@/components/content/rich-text";
 import { routes } from "@/lib/urls";
@@ -215,7 +215,7 @@ export function CustomRequestForm({ products, initialProduct, today }: { product
         <div className="grid gap-5 sm:grid-cols-2">
           <Input label={m.forms.name} name="name" autoComplete="name" required maxLength={CUSTOM_REQUEST_LIMITS.name} value={form.name} onChange={(e) => set("name", e.target.value)} error={err("name")} />
           <Input label={m.forms.email} name="email" type="email" inputMode="email" autoComplete="email" required dir="ltr" maxLength={CUSTOM_REQUEST_LIMITS.email} value={form.email} onChange={(e) => set("email", e.target.value)} error={err("email")} />
-          <Input label={t.phone} name="phone" type="tel" autoComplete="tel" optional dir="ltr" maxLength={CUSTOM_REQUEST_LIMITS.phone} value={form.phone} onChange={(e) => set("phone", e.target.value)} error={err("phone")} className="sm:col-span-2" />
+          <PhoneInput label={t.phone} autoComplete="tel" optional maxLength={CUSTOM_REQUEST_LIMITS.phone} value={form.phone} onChange={(v) => set("phone", v)} error={err("phone")} className="sm:col-span-2" />
         </div>
         {/* Honeypot – hidden from people, filled by bots. */}
         <div className="hidden" aria-hidden>

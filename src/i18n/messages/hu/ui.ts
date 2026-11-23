@@ -7,6 +7,8 @@ const ui: NonNullable<PartialMessages["ui"]> = {
     home: "Kezdőlap",
   },
   optional: "(nem kötelező)",
+  /** Accessible name of the country-code select in phone fields. */
+  phoneCountry: "Országhívó-szám",
   priceFromPrefix: "kezdőár",
   starRating: "{value} / 5 csillag",
 };

@@ -48,6 +48,8 @@ test.describe("Anfrage @slow", () => {
     await expect(page.getByRole("button", { name: "Foto entfernen" })).toBeVisible();
     await page.getByLabel(/^Name/).fill("Anna Maria Huber");
     await page.getByLabel(/^E-Mail/).fill("anna.huber@example.com");
+    // Country code: Austria by default, accessible select next to the number.
+    await expect(page.getByRole("combobox", { name: "Ländervorwahl" })).toHaveValue("+43");
     await page.getByLabel(/^Telefon/).fill("0664 1234567");
     await page.getByRole("checkbox", { name: /Ich bin einverstanden/ }).check();
     await expect(page.getByRole("link", { name: "Datenschutzerklärung" })).toHaveAttribute("href", "/datenschutz");
@@ -110,7 +112,7 @@ test.describe("Anfrage @slow", () => {
     await expect(page.locator("#c-first")).toHaveValue("Anna Maria");
     await expect(page.locator("#c-last")).toHaveValue("Huber");
     await expect(page.locator("#c-email")).toHaveValue("anna.huber@example.com");
-    await expect(page.locator("#c-phone")).toHaveValue("0664 1234567");
+    await expect(page.locator("#c-phone")).toHaveValue("+43 664 1234567");
     await expect(page.locator("#c-locale")).toHaveValue("de");
     await expect(page.locator("[id='items.0-product']")).toHaveValue("p-amour");
     await expect(page.locator("#d-date")).toHaveValue(day);

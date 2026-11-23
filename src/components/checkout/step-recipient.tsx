@@ -1,7 +1,7 @@
 "use client";
 import Link from "@/components/ui/link";
 import { Check, Loader2 } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Input, PhoneInput } from "@/components/ui/input";
 import { normalizePostalCode } from "@/lib/delivery";
 import { routes } from "@/lib/urls";
 import type { FieldErrors } from "@/lib/order-payload";
@@ -86,9 +86,9 @@ export function StepRecipient({ data, set, errors, onBlur, zone }: {
         {zone.error && <p className="text-danger">{zone.error}</p>}
       </div>
 
-      <Input required
-        id={id("phone")} label={t.phone} type="tel" inputMode="tel" autoComplete="off"
-        value={data.phone} onChange={(e) => set({ phone: e.target.value })} onBlur={() => onBlur("phone")} error={errors.phone}
+      <PhoneInput required
+        id={id("phone")} label={t.phone} autoComplete="off"
+        value={data.phone} onChange={(phone) => set({ phone })} onBlur={() => onBlur("phone")} error={errors.phone}
         hint={t.phoneHint}
       />
     </div>

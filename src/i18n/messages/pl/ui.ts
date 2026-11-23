@@ -7,6 +7,8 @@ const ui: NonNullable<PartialMessages["ui"]> = {
     home: "Start",
   },
   optional: "(opcjonalnie)",
+  /** Accessible name of the country-code select in phone fields. */
+  phoneCountry: "Numer kierunkowy kraju",
   priceFromPrefix: "od",
   starRating: "{value} na 5 gwiazdek",
 };

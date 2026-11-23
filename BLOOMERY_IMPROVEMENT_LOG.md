@@ -355,3 +355,8 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Kasse: PayPal öffnet unter dem Eintrag das Stripe Payment Element mit PayPal-Tab (Hinweis „Nach ‚Jetzt kaufen‘ bestätigst du die Zahlung bei PayPal“). Fortsetzen einer abgebrochenen Zahlung (`/api/orders/resume`) erlaubt PayPal.
 - Sichtbar erst, wenn PayPal im Admin → Zahlungsarten eingeschaltet wird.
 - Tests: Unit (Routing, Elements-Konfiguration), E2E `stripe-inline` mit echtem Stripe-Formular im Deferred-Modus (kein PaymentIntent, keine Zahlung) – PayPal-Tab sichtbar. Echte PayPal-Zahlung + Erstattung macht das Team.
+
+## 2026-11-23 – Telefonfelder mit Ländervorwahl
+- Neues `PhoneInput` (`src/components/ui/input.tsx`) + `src/lib/phone.ts`: Vorwahl-Auswahl (Standard Österreich +43, 47 Länder, Ländernamen in der Shop-Sprache via `Intl.DisplayNames`), Nummernfeld daneben. Gespeichert wird ein String „+43 660 1234567“ (führende 0 entfällt). Eingefügte „+49 …“/„0049 …“ schalten die Vorwahl um.
+- Eingesetzt in Kasse (Besteller + Empfänger), Anfrage, Firmenkunden, Kundenkonto. Neuer i18n-Key `ui.phoneCountry` in allen Sprachen.
+- Tests: `tests/unit/phone.test.ts`, `tests/e2e/phone-input.spec.ts`; Anfrage-/Abbruch-Tests erwarten jetzt „+43 664 …“. Volle Suite: 628 Unit, 72 E2E grün.

@@ -59,7 +59,7 @@ test.describe("Abgebrochene Kasse @slow", () => {
       const row = admin.getByTestId("abandoned-checkout").filter({ hasText: email });
       await expect(row).toHaveCount(1);
       await expect(row).toContainText("Paula Abbruch");
-      await expect(row).toContainText("0664 7654321");
+      await expect(row).toContainText("+43 664 7654321");
       await expect(row).toContainText("Amour");
       await expect(row).toContainText("Wiedner Hauptstraße 12");
       await expect(row).toContainText(/€/);
