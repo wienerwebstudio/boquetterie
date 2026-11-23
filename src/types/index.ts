@@ -267,8 +267,11 @@ export interface SiteSettings {
     phone: string;
     address: { street: string; zip: string; city: string; country: string };
     openingHours: string[];
-    social: { instagram?: string; facebook?: string; pinterest?: string; tiktok?: string };
+    /** Profile and chat links (full URLs). Empty or missing = the link is hidden everywhere. */
+    social: { whatsapp?: string; instagram?: string; x?: string; linkedin?: string; facebook?: string; pinterest?: string; tiktok?: string };
   };
+  /** The WhatsApp chat is answered around the clock – only then does the shop say "24/7" / "rund um die Uhr". */
+  whatsappSupport247?: boolean;
   announcement: {
     enabled: boolean;
     messages: string[];

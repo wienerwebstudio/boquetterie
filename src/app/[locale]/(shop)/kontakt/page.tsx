@@ -10,6 +10,9 @@ import { PageHeader } from "@/components/content/page-header";
 import { RichSections, cmsMetadata } from "@/components/content/cms-page";
 import { ContactForm } from "@/components/content/contact-form";
 import { getI18n } from "@/i18n/server";
+import { whatsappSupport } from "@/lib/social";
+import { buttonClasses } from "@/components/ui/button";
+import { SocialMark } from "@/components/icons/social";
 
 const SLUG = "kontakt";
 
@@ -35,12 +38,32 @@ export default async function ContactPage() {
   const quickFaqs = faqs.slice(0, 4);
   // Placeholder sections on this page only repeat that details come from settings – the block below already shows them.
   const extraSections = page.sections.filter((s) => !s.placeholder);
+  const wa = whatsappSupport(settings);
+  const ts = m.layout.social;
 
   return (
     <article>
       <PageHeader eyebrow={m.content.serviceEyebrow} title={page.title} intro={page.intro} crumbs={[{ label: page.title }]} />
 
       <div className="container-x py-14 sm:py-20 lg:py-24">
+        {wa && (
+          <section aria-labelledby="contact-whatsapp-heading" className="mb-14 flex flex-col items-start gap-5 rounded-md border border-line bg-ivory-100 p-6 sm:mb-20 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+            <div className="flex items-start gap-4">
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-forest" aria-hidden>
+                <SocialMark network="whatsapp" className="size-5" />
+              </span>
+              <div>
+                <h2 id="contact-whatsapp-heading" className="font-serif text-2xl text-ink">{wa.is247 ? ts.whatsappSupport247 : ts.whatsappSupport}</h2>
+                <p className="mt-1 text-[15px] leading-relaxed text-ink-muted">{wa.is247 ? ts.contactText247 : ts.contactText}</p>
+              </div>
+            </div>
+            <a href={wa.href} target="_blank" rel="noopener noreferrer" data-testid="contact-whatsapp" className={buttonClasses({ size: "lg", className: "w-full sm:w-auto" })}>
+              <SocialMark network="whatsapp" className="size-4" />
+              {ts.writeOnWhatsapp}
+              <span className="sr-only"> {ts.newTab}</span>
+            </a>
+          </section>
+        )}
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-20">
           {/* Contact details */}
           <div className="space-y-12">

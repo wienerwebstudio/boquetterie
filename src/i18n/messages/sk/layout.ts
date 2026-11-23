@@ -2,6 +2,26 @@ import type { PartialMessages } from "@/i18n/messages";
 
 /** sk – layout (translated from src/i18n/messages/de/layout.ts). */
 const layout: NonNullable<PartialMessages["layout"]> = {
+  social: {
+    navigation: "Sociálne siete",
+    profile: "{name} (otvorí sa na novej karte)",
+    whatsappButton: "Napíšte nám cez WhatsApp (otvorí sa na novej karte)",
+    whatsappSupport: "Podpora cez WhatsApp",
+    whatsappSupport247: "Podpora cez WhatsApp nonstop",
+    writeOnWhatsapp: "Napíšte nám cez WhatsApp",
+    contactText: "Jednoducho nám napíšte svoju otázku do chatu.",
+    contactText247: "Napíšte nám svoju otázku do chatu – nonstop.",
+    orderQuestions: "Máte otázky k objednávke? Napíšte nám cez {link}.",
+    orderQuestions247: "Máte otázky k objednávke? Napíšte nám cez {link} (24/7).",
+    faqMissing: "Nenašli ste svoju otázku? Napíšte nám cez {link}.",
+    faqMissing247: "Nenašli ste svoju otázku? Napíšte nám cez {link} – nonstop.",
+    checkoutQuestions: "Otázky?",
+    whatsapp247: "WhatsApp 24/7",
+    followInstagram: "Sledujte nás na Instagrame",
+    instagramText: "Nové kytice a kvetinové nápady z Viedne nájdete na Instagrame pod {handle}.",
+    instagramCta: "Na náš profil na Instagrame",
+    newTab: "(otvorí sa na novej karte)",
+  },
   skipToContent: "Preskočiť na obsah",
   nav: {
     flowers: "Kvety",

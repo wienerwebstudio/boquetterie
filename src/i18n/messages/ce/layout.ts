@@ -2,6 +2,26 @@ import type { PartialMessages } from "@/i18n/messages";
 
 /** ce – layout (translated from src/i18n/messages/de/layout.ts). */
 const layout: NonNullable<PartialMessages["layout"]> = {
+  social: {
+    navigation: "Социальни машенаш",
+    profile: "{name} (керла кийсакехь схьайоьлла)",
+    whatsappButton: "WhatsApp-ехь тхоьга яздейша (керла кийсакехь схьайоьлла)",
+    whatsappSupport: "WhatsApp-ехь гӀо",
+    whatsappSupport247: "WhatsApp-ехь гӀо дийнахь-буса",
+    writeOnWhatsapp: "WhatsApp-ехь яздан",
+    contactText: "Шайн хаттар чатехь тхоьга яздейша.",
+    contactText247: "Шайн хаттар чатехь тхоьга яздейша – дийнахь-буса.",
+    orderQuestions: "Шун заказах лаьцна хаттарш дуй? {link}-ехь тхоьга яздейша.",
+    orderQuestions247: "Шун заказах лаьцна хаттарш дуй? {link}-ехь тхоьга яздейша (24/7).",
+    faqMissing: "Шайн хаттар ца карийний? {link}-ехь тхоьга яздейша.",
+    faqMissing247: "Шайн хаттар ца карийний? {link}-ехь тхоьга яздейша – дийнахь-буса.",
+    checkoutQuestions: "Хаттарш дуй?",
+    whatsapp247: "WhatsApp 24/7",
+    followInstagram: "Instagram-ехь тхайх тӀаьхьабазийша",
+    instagramText: "Венан керла букеташ а, зезагийн идейш а Instagram-ехь {handle} тӀехь йу.",
+    instagramCta: "Тхан Instagram-профиле",
+    newTab: "(керла кийсакехь схьайоьлла)",
+  },
   skipToContent: "Чулацаме дехьа вала",
   nav: {
     flowers: "Зезагаш",

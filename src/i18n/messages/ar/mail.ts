@@ -2,6 +2,10 @@ import type { PartialMessages } from "@/i18n/messages";
 
 /** ar – e-mails to customers (translated from src/i18n/messages/de/mail.ts). */
 const mail: NonNullable<PartialMessages["mail"]> = {
+  whatsapp: {
+    orderQuestions: "لديكم أسئلة حول طلبكم؟ راسلونا عبر واتساب",
+    orderQuestions247: "لديكم أسئلة حول طلبكم؟ راسلونا عبر واتساب (24/7)",
+  },
   layout: {
     questions: "لديكم أسئلة؟ راسلونا على {email}.",
     hello: "مرحبًا {name}،",

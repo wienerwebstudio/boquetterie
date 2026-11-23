@@ -2,6 +2,26 @@ import type { PartialMessages } from "@/i18n/messages";
 
 /** bks – layout (translated from src/i18n/messages/de/layout.ts). */
 const layout: NonNullable<PartialMessages["layout"]> = {
+  social: {
+    navigation: "Društvene mreže",
+    profile: "{name} (otvara se u novoj kartici)",
+    whatsappButton: "Pišite nam na WhatsApp (otvara se u novoj kartici)",
+    whatsappSupport: "WhatsApp podrška",
+    whatsappSupport247: "WhatsApp podrška 0–24",
+    writeOnWhatsapp: "Pišite nam na WhatsApp",
+    contactText: "Jednostavno nam pošaljite pitanje u chatu.",
+    contactText247: "Pošaljite nam pitanje u chatu – 0–24.",
+    orderQuestions: "Imate pitanja o narudžbi? Pišite nam na {link}.",
+    orderQuestions247: "Imate pitanja o narudžbi? Pišite nam na {link} (24/7).",
+    faqMissing: "Niste pronašli svoje pitanje? Pišite nam na {link}.",
+    faqMissing247: "Niste pronašli svoje pitanje? Pišite nam na {link} – 0–24.",
+    checkoutQuestions: "Imate pitanja?",
+    whatsapp247: "WhatsApp 24/7",
+    followInstagram: "Pratite nas na Instagramu",
+    instagramText: "Nove bukete i ideje s cvijećem iz Beča pronaći ćete na Instagramu pod {handle}.",
+    instagramCta: "Na naš Instagram profil",
+    newTab: "(otvara se u novoj kartici)",
+  },
   skipToContent: "Preskoči na sadržaj",
   nav: {
     flowers: "Cvijeće",

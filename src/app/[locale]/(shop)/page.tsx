@@ -25,6 +25,8 @@ import { SubscriptionTeaser } from "@/components/home/subscription-teaser";
 import { Reviews } from "@/components/home/reviews";
 import { FaqTeaser } from "@/components/home/faq-teaser";
 import { Newsletter } from "@/components/home/newsletter";
+import { InstagramFollow } from "@/components/content/instagram-follow";
+import { profileLinks, whatsappSupport } from "@/lib/social";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();
@@ -51,6 +53,10 @@ export default async function HomePage() {
     ...(settings.greetingCard.enabled === true && settings.greetingCard.freeCardIncluded ? [m.home.heroFacts.greetingCardIncluded] : []),
   ];
   const sameDayNow = isSameDayPossibleNow(zones, settings);
+  // "rund um die Uhr" only when the owners say the chat is staffed 24/7.
+  const wa = whatsappSupport(settings);
+  const heroWhatsapp = wa ? { href: wa.href, label: wa.is247 ? m.layout.social.whatsappSupport247 : m.layout.social.whatsappSupport, newTab: m.layout.social.newTab } : undefined;
+  const instagram = profileLinks(settings).find((p) => p.key === "instagram")?.href ?? null;
 
   const pick = <T extends { slug: string }>(slugs: string[], all: T[]) =>
     slugs.map((s) => all.find((x) => x.slug === s)).filter((x): x is T => Boolean(x));
@@ -64,7 +70,7 @@ export default async function HomePage() {
   return (
     <>
       <JsonLd data={organizationLd(settings)} />
-      <Hero hero={home.hero} facts={heroFacts} />
+      <Hero hero={home.hero} facts={heroFacts} whatsapp={heroWhatsapp} />
       <TrustBar items={settings.trust} />
       {/* Products first: what it costs and what it looks like belongs right under the hero. */}
       <Bestsellers content={home.bestsellers} products={bestsellers.slice(0, 8)} showSameDay={sameDayNow} />
@@ -78,6 +84,7 @@ export default async function HomePage() {
       <Reviews content={home.reviews} reviews={homeReviews} />
       <FaqTeaser content={home.faq} faqs={faqs} />
       {settings.newsletterEnabled && <Newsletter content={home.newsletter} />}
+      <InstagramFollow href={instagram} />
     </>
   );
 }

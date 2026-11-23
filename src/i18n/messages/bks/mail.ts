@@ -2,6 +2,10 @@ import type { PartialMessages } from "@/i18n/messages";
 
 /** bks – e-mails to customers (translated from src/i18n/messages/de/mail.ts). */
 const mail: NonNullable<PartialMessages["mail"]> = {
+  whatsapp: {
+    orderQuestions: "Imate pitanja o narudžbi? Pišite nam na WhatsApp",
+    orderQuestions247: "Imate pitanja o narudžbi? Pišite nam na WhatsApp (24/7)",
+  },
   layout: {
     questions: "Imate pitanja? Pišite nam na {email}.",
     hello: "Dobar dan, {name},",

@@ -486,7 +486,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       </details>
 
       {/* ---------- CTA ---------- */}
-      <div ref={ctaRef} className="border-t border-line pt-6">
+      <div ref={ctaRef} className="border-t border-line pt-6" data-fab-avoid>
         <dl className="mb-4 space-y-1 text-[13.5px] text-ink-muted">
           <div className="flex justify-between"><dt>{lineLabel}</dt><dd className="tabular-nums text-ink">{price(size.price)}</dd></div>
           {chosenExtras.map((e) => (
@@ -507,6 +507,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
 
       {/* ---------- Sticky mobile bar ---------- */}
       <div
+        data-fab-lift
         className={cn(
           "fixed inset-x-0 bottom-0 z-40 border-t border-line bg-ivory/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_-10px_30px_-20px_rgba(35,35,31,0.3)] backdrop-blur-md transition-transform duration-300 ease-[var(--ease-soft)] lg:hidden",
           ctaVisible ? "translate-y-full" : "translate-y-0",

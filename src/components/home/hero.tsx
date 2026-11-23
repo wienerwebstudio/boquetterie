@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { PostalCodeCheck } from "@/components/shop/postal-code-check";
 import { HeroPreload } from "./hero-preload";
 import { HeroVideo } from "./hero-video";
+import { SocialMark } from "@/components/icons/social";
 
 const DESKTOP = "(min-width: 1024px)";
 const MOBILE = "(max-width: 1023px)";
@@ -17,7 +18,8 @@ const PORTRAIT_SIZES = "(min-width: 1440px) 640px, 50vw";
  * loop plays over the image; the image is cropped to the video's first frame.
  */
 /** `facts` – short, verifiable selling points (price anchor, delivery area …) computed by the page. */
-export function Hero({ hero, facts = [] }: { hero: HomepageContent["hero"]; facts?: string[] }) {
+/** `whatsapp` – chat link shown as the last item of that row (label already says "rund um die Uhr" only when that is set). */
+export function Hero({ hero, facts = [], whatsapp }: { hero: HomepageContent["hero"]; facts?: string[]; whatsapp?: { href: string; label: string; newTab: string } }) {
   const common = { alt: hero.imageAlt };
   const {
     props: { srcSet: portraitSet },
@@ -66,7 +68,7 @@ export function Hero({ hero, facts = [] }: { hero: HomepageContent["hero"]; fact
             <p className="mt-5 max-w-lg text-pretty text-[15.5px] leading-relaxed text-ink-muted sm:text-[17px] animate-fade-up [animation-delay:160ms]">
               {hero.subheadline}
             </p>
-            {facts.length > 0 && (
+            {(facts.length > 0 || whatsapp) && (
               <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[14px] text-ink animate-fade-up [animation-delay:200ms]">
                 {facts.map((fact) => (
                   <li key={fact} className="inline-flex items-center gap-2">
@@ -74,6 +76,21 @@ export function Hero({ hero, facts = [] }: { hero: HomepageContent["hero"]; fact
                     {fact}
                   </li>
                 ))}
+                {whatsapp && (
+                  <li>
+                    <a
+                      href={whatsapp.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid="hero-whatsapp"
+                      className="inline-flex min-h-6 items-center gap-2 text-ink underline decoration-line underline-offset-4 transition-colors hover:text-forest hover:decoration-forest"
+                    >
+                      <SocialMark network="whatsapp" className="size-4 text-forest" />
+                      {whatsapp.label}
+                      <span className="sr-only"> {whatsapp.newTab}</span>
+                    </a>
+                  </li>
+                )}
               </ul>
             )}
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center animate-fade-up [animation-delay:240ms]">

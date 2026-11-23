@@ -738,7 +738,17 @@ export const settingsSchema: SingletonSchema = {
         { key: "brand.address.city", label: "Ort", type: "text", required: true, span: "third" },
         { key: "brand.address.country", label: "Land", type: "text", required: true, span: "third" },
         { key: "brand.openingHours", label: "Öffnungszeiten", type: "lines", span: "full", rows: 3, hint: "Eine Zeile pro Eintrag." },
-        { key: "brand.social.instagram", label: "Instagram", type: "text" },
+      ],
+    },
+    {
+      title: "WhatsApp & Social Media",
+      description: "Vollständige Links (https://…). Ein leeres Feld blendet den Link überall aus – im Footer, im WhatsApp-Button, auf Kontakt-, FAQ- und Bestellseite, in der Bestellbestätigung und in den strukturierten Daten.",
+      fields: [
+        { key: "brand.social.whatsapp", label: "WhatsApp-Chat-Link", type: "text", span: "full", placeholder: "https://wa.me/…", hint: "Schwebender WhatsApp-Button (nicht im Checkout), Startseite, Kontakt, FAQ, Bestellstatus, Bestellbestätigung, Footer." },
+        { key: "whatsappSupport247", label: "WhatsApp-Support rund um die Uhr (24/7)", type: "boolean", span: "full", hint: "Nur einschalten, wenn der Chat wirklich rund um die Uhr betreut wird – sonst steht überall nur „WhatsApp-Support“." },
+        { key: "brand.social.instagram", label: "Instagram", type: "text", placeholder: "https://www.instagram.com/…" },
+        { key: "brand.social.x", label: "X (Twitter)", type: "text", placeholder: "https://x.com/…" },
+        { key: "brand.social.linkedin", label: "LinkedIn", type: "text", placeholder: "https://www.linkedin.com/…" },
         { key: "brand.social.facebook", label: "Facebook", type: "text" },
         { key: "brand.social.pinterest", label: "Pinterest", type: "text" },
         { key: "brand.social.tiktok", label: "TikTok", type: "text" },

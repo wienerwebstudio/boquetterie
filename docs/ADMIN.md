@@ -28,7 +28,7 @@ Ist `ADMIN_PASSWORD` nicht gesetzt, zeigt die Login-Seite einen Hinweis und verw
 | Startseite (alle Abschnitte) | `/admin/startseite` | `content/homepage.json` |
 | Seiten (Über uns, Lieferung, Kontakt, Impressum, …) | `/admin/seiten` | `content/pages.json` |
 | Landingpages | `/admin/landingpages` | `content/landing-pages.json` |
-| Einstellungen (Marke/Kontakt, Ankündigung, Funktionen, Sperrtage, Zahlungsarten, Bestellstatus, SEO, Vertrauenselemente) | `/admin/einstellungen` | `content/settings.json` |
+| Einstellungen (Marke/Kontakt, WhatsApp & Social Media, Ankündigung, Funktionen, Sperrtage, Zahlungsarten, Bestellstatus, SEO, Vertrauenselemente) | `/admin/einstellungen` | `content/settings.json` |
 | Partner-Abrechnung (Offen/bezahlt je Partner, Zahlungen & Korrekturen, „Abrechnung ab“, Portal-E-Mails, Aufträge ohne Partner zuordnen, CSV je Monat) – siehe `docs/PARTNER-PORTAL.md` | `/admin/partner-abrechnung` | `data/partner-portal.json`, `data/partner-ledger.json` |
 | Newsletter (Liste + CSV-Export) | `/admin/newsletter`, `/api/admin/newsletter.csv` | `data/newsletter.json` |
 
@@ -40,6 +40,7 @@ Ist `ADMIN_PASSWORD` nicht gesetzt, zeigt die Login-Seite einen Hinweis und verw
 - **JSON-Modus** (Schalter oben rechts): Rohdaten direkt bearbeiten – für Power-User. Ungültiges JSON wird abgewiesen.
 - Nach dem Speichern wird der Shop sofort aktualisiert (`revalidatePath("/", "layout")`).
 - Der Preis „ab“ eines Produkts wird automatisch aus der günstigsten Größe berechnet.
+- **WhatsApp & Social Media** (Einstellungen): `brand.social.whatsapp` (Chat-Link, z. B. `https://wa.me/message/…`), `brand.social.instagram`, `brand.social.x`, `brand.social.linkedin` (dazu weiter `facebook`, `pinterest`, `tiktok`) und der Schalter `whatsappSupport247`. Nur vollständige `https://`-Links zählen; ein leeres Feld blendet den Link überall aus. Der WhatsApp-Link erscheint als runder Button unten rechts (unten links auf Arabisch/Persisch; nicht in der Kasse und ihrer Zahlungsrückkehr, ausgeblendet bei offenem Warenkorb/Suche/Menü/Cookie-Hinweis, über der mobilen „In den Warenkorb“-Leiste), in der Vertrauenszeile der Startseite, oben auf `/kontakt`, am Ende der FAQ, auf der Bestellstatusseite, in der Bestellbestätigung (alle Sprachen), als kleine Zeile in der Kasse und im Footer. „24/7“ bzw. „rund um die Uhr“ steht nur bei eingeschaltetem `whatsappSupport247`. Instagram: Abschnitt „Folge uns auf Instagram“ vor dem Footer der Startseite und auf „Über uns“. Alle Profil-Links (ohne WhatsApp) stehen als `sameAs` im Organisations-JSON-LD. In Postgres setzt die Content-Migration `2026-11-23-whatsapp-social-links` die Links nur, wo noch nichts eingetragen ist.
 - **Landingpages:** Die Produktauswahl kombiniert Anlässe, Kategorie, Farben und Saisons (bei Farben/Saisons genügt eine Übereinstimmung). In Absatztexten wird `[Linktext](/pfad)` zu einem Link auf eine Shop-Seite, z. B. `[Firmenkunden](/firmenkunden)`. Unter jeder Landingpage stehen automatisch Links zu acht weiteren Landingpages („Weitere Anlässe & Themen“); die Gruppen dafür stehen in `src/lib/landing-links.ts`, neue Seiten ohne Gruppe laufen unter „weitere“.
 
 ## Wo liegen die Daten?

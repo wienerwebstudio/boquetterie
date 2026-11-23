@@ -4,6 +4,7 @@ import { ordersPaused } from "@/lib/orders-paused";
 import { getI18n } from "@/i18n/server";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/urls";
+import { whatsappSupport } from "@/lib/social";
 
 export const dynamic = "force-dynamic";
 
@@ -35,6 +36,7 @@ export default async function CheckoutPage({ searchParams }: Props) {
         freeCardIncluded: settings.greetingCard.freeCardIncluded,
         newsletterEnabled: settings.newsletterEnabled,
         cancelled: sp.cancelled === "1",
+        whatsapp: whatsappSupport(settings),
       }}
     />
   );

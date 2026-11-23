@@ -2,6 +2,26 @@ import type { PartialMessages } from "@/i18n/messages";
 
 /** fa – layout (translated from src/i18n/messages/de/layout.ts). */
 const layout: NonNullable<PartialMessages["layout"]> = {
+  social: {
+    navigation: "شبکه‌های اجتماعی",
+    profile: "{name} (در زبانه‌ی جدید باز می‌شود)",
+    whatsappButton: "در واتس‌اپ به ما پیام دهید (در زبانه‌ی جدید باز می‌شود)",
+    whatsappSupport: "پشتیبانی واتس‌اپ",
+    whatsappSupport247: "پشتیبانی واتس‌اپ شبانه‌روزی",
+    writeOnWhatsapp: "در واتس‌اپ به ما پیام دهید",
+    contactText: "کافی است پرسش خود را در گفتگو برای ما بنویسید.",
+    contactText247: "پرسش خود را در گفتگو برای ما بنویسید – شبانه‌روزی.",
+    orderQuestions: "درباره‌ی سفارش خود پرسشی دارید؟ در {link} به ما پیام دهید.",
+    orderQuestions247: "درباره‌ی سفارش خود پرسشی دارید؟ در {link} به ما پیام دهید (24/7).",
+    faqMissing: "پرسش خود را پیدا نکردید؟ در {link} به ما پیام دهید.",
+    faqMissing247: "پرسش خود را پیدا نکردید؟ در {link} به ما پیام دهید – شبانه‌روزی.",
+    checkoutQuestions: "پرسشی دارید؟",
+    whatsapp247: "واتس‌اپ 24/7",
+    followInstagram: "ما را در اینستاگرام دنبال کنید",
+    instagramText: "دسته‌گل‌های تازه و ایده‌های گل از وین را در اینستاگرام در {handle} پیدا می‌کنید.",
+    instagramCta: "به صفحه‌ی اینستاگرام ما",
+    newTab: "(در زبانه‌ی جدید باز می‌شود)",
+  },
   skipToContent: "رفتن به محتوای اصلی",
   nav: {
     flowers: "گل‌ها",

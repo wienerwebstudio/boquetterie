@@ -43,6 +43,8 @@ export interface MailBrand {
   claim?: string;
   email?: string; // only when it is a real address (no "[…]" placeholder)
   logoUrl?: string; // optional absolute URL, e.g. `${siteUrl}/images/brand/logo-horizontal.png`
+  /** WhatsApp chat link (settings `brand.social.whatsapp`) and whether it is staffed 24/7. */
+  whatsapp?: { href: string; is247: boolean };
 }
 
 export interface RenderedMail {
@@ -376,6 +378,7 @@ export function orderConfirmation(input: { order: Order; brand: MailBrand; track
       ...greetingBlocks(order, L),
       { type: "hr" },
       { type: "p", text: t.outro, muted: true },
+      ...(brand.whatsapp ? [{ type: "link", label: brand.whatsapp.is247 ? L.m.whatsapp.orderQuestions247 : L.m.whatsapp.orderQuestions, url: brand.whatsapp.href } as Block] : []),
     ],
     footerNotes: [t.footer],
   }, L);

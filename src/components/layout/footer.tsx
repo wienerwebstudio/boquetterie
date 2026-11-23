@@ -8,11 +8,14 @@ import { ConsentSettingsLink } from "@/components/consent/consent-link";
 import { GIFT_FINDER_PATH } from "@/components/giftfinder/config";
 import { SMALL_BUSINESS } from "@/lib/vat";
 import { getI18n } from "@/i18n/server";
+import { footerSocialLinks } from "@/lib/social";
+import { SocialMark } from "@/components/icons/social";
 
 type FooterLink = { label: string; href: string } | { label: string; consent: true };
 
 export async function Footer({ settings }: { settings: SiteSettings }) {
-  const { m } = await getI18n();
+  const { m, fmt } = await getI18n();
+  const social = footerSocialLinks(settings);
   const nav = m.layout.nav;
   const t = m.layout.footer;
   const cols: { title: string; links: FooterLink[] }[] = [
@@ -50,14 +53,27 @@ export async function Footer({ settings }: { settings: SiteSettings }) {
           <div className="max-w-xs">
             <Logo variant="stacked" />
             <p className="mt-4 text-[15px] leading-relaxed text-ink-muted">{settings.brand.claim} {t.claimSuffix}</p>
-            <div className="mt-6 flex gap-2">
-              {settings.brand.social.instagram && (
-                <a href={settings.brand.social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex size-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-forest hover:text-forest"><svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.3" cy="6.7" r="0.8" fill="currentColor"/></svg></a>
-              )}
-              {settings.brand.social.facebook && (
-                <a href={settings.brand.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="inline-flex size-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-forest hover:text-forest"><svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden><path d="M14 8h2.5V4.5H14a3.5 3.5 0 0 0-3.5 3.5v2H8v3.5h2.5V21H14v-7.5h2.5L17 10h-3V8.5c0-.3.2-.5.5-.5z"/></svg></a>
-              )}
-            </div>
+            {social.length > 0 && (
+              <nav aria-label={m.layout.social.navigation} className="mt-6">
+                <ul className="-ms-1.5 flex flex-wrap gap-1">
+                  {social.map((s) => (
+                    <li key={s.key}>
+                      <a
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={fmt(m.layout.social.profile, { name: s.name })}
+                        title={s.name}
+                        data-social={s.key}
+                        className="inline-flex size-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-ivory-200 hover:text-forest"
+                      >
+                        <SocialMark network={s.key} className="size-5" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
           </div>
           {cols.map((col) => (
             <nav key={col.title} aria-label={col.title}>

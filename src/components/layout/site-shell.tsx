@@ -11,10 +11,13 @@ import { ToastViewport } from "@/components/ui/toast-viewport";
 import { ConsentBanner } from "@/components/consent/consent-banner";
 import { Analytics } from "@/components/analytics/analytics";
 import { getI18n } from "@/i18n/server";
+import { whatsappSupport } from "@/lib/social";
+import { FloatingWhatsapp } from "./floating-whatsapp";
 
 export async function SiteShell({ settings, children }: { settings: SiteSettings; children: React.ReactNode }) {
   const [categories, occasions, { m }] = await Promise.all([getCategories(), getOccasions(), getI18n()]);
   const navCategories = categories.filter((c) => c.showInNav).map((c) => ({ slug: c.slug, name: c.name }));
+  const whatsapp = whatsappSupport(settings);
   const navOccasions = occasions.filter((o) => o.featured).map((o) => ({ slug: o.slug, name: o.name, image: o.image }));
 
   return (
@@ -33,6 +36,7 @@ export async function SiteShell({ settings, children }: { settings: SiteSettings
       </FooterSlot>
       <CartDrawer cardsEnabled={settings.greetingCard?.enabled === true} />
       <SearchOverlay />
+      {whatsapp && <FloatingWhatsapp href={whatsapp.href} />}
       <ToastViewport />
       <ConsentBanner />
       <Analytics />

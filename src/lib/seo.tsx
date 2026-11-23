@@ -1,5 +1,6 @@
 import type { FAQ, Product, SiteSettings } from "@/types";
 import { ordersPaused } from "@/lib/orders-paused";
+import { sameAsUrls } from "@/lib/social";
 
 /** JSON-LD helpers. Only emit data that actually exists in the content. */
 
@@ -28,6 +29,7 @@ export function organizationLd(settings: SiteSettings) {
     }),
     ...(!settings.brand.email.startsWith("[") && { email: settings.brand.email }),
     ...(!settings.brand.phone.startsWith("[") && { telephone: settings.brand.phone }),
+    ...(sameAsUrls(settings).length > 0 && { sameAs: sameAsUrls(settings) }),
   };
 }
 

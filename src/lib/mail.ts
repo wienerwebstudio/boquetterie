@@ -12,6 +12,7 @@ import { formatReminderDate } from "@/lib/mail/reminders";
 import { DEFAULT_LOCALE, isLocale, LOCALE_INFO, type Locale } from "@/i18n/config";
 import { loadMessages } from "@/i18n/messages";
 import { localizePath } from "@/i18n/paths";
+import { whatsappSupport } from "@/lib/social";
 
 /**
  * Transactional e-mail.
@@ -246,6 +247,7 @@ export function mailBrand(settings: SiteSettings): MailBrand {
     claim: real(settings.brand.claim),
     email: real(settings.brand.email),
     logoUrl: `${siteUrlOf(settings)}/images/brand/logo-horizontal.png`,
+    whatsapp: whatsappSupport(settings) ?? undefined,
   };
 }
 

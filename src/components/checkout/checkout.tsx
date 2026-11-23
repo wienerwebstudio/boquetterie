@@ -9,6 +9,7 @@ import type { CartItem, Coupon } from "@/types";
 import type { OrderCreateResponse } from "@/types/payments";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { SocialMark } from "@/components/icons/social";
 import { useCart } from "@/store/cart";
 import { useDeliveryContext } from "@/store/delivery";
 import { useDeliveryCheck } from "@/hooks/use-delivery-check";
@@ -72,6 +73,8 @@ export interface CheckoutConfig {
   newsletterEnabled: boolean;
   /** True when the customer came back from a cancelled/failed provider payment (`?cancelled=1`). */
   cancelled?: boolean;
+  /** WhatsApp chat for questions – one small line under the submit area (no floating button in the checkout). */
+  whatsapp?: { href: string; is247: boolean } | null;
 }
 
 type Scope = "recipient" | "delivery" | "greeting" | "customer" | "payment";
@@ -541,6 +544,16 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
               </p>
             )}
           </form>
+          {config.whatsapp && (
+            <p className="mt-4 flex items-center gap-1.5 text-[12.5px] text-ink-soft" data-testid="checkout-whatsapp">
+              {m.layout.social.checkoutQuestions}
+              <a href={config.whatsapp.href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-6 items-center gap-1 font-semibold text-forest underline underline-offset-2">
+                <SocialMark network="whatsapp" className="size-3.5" />
+                {config.whatsapp.is247 ? m.layout.social.whatsapp247 : "WhatsApp"}
+                <span className="sr-only"> {m.layout.social.newTab}</span>
+              </a>
+            </p>
+          )}
         </section>
 
         <p className="mt-6 flex items-center gap-2 text-[12.5px] text-ink-soft lg:hidden">

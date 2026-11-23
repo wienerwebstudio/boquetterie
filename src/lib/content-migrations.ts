@@ -347,7 +347,51 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-20-imprint-webdesign-credit",
     transform: { pages: (doc) => mapList(doc, (p) => (p.slug === "impressum" ? withImprintCredit(p) : p)) },
   },
+  {
+    // Inhaber: WhatsApp Business (Support rund um die Uhr) und die Social-Media-Profile verlinken.
+    id: "2026-11-23-whatsapp-social-links",
+    transform: { settings: (doc) => withSocialLinks(doc) },
+  },
 ];
+
+/** Links given by the owners (tracking parameters removed). */
+export const SOCIAL_LINKS = {
+  whatsapp: "https://wa.me/message/VAQJPN3JVT53A1",
+  instagram: "https://www.instagram.com/blumora.at/",
+  x: "https://x.com/blumora_at",
+  linkedin: "https://at.linkedin.com/in/blumora-at-b98149451",
+} as const;
+
+/**
+ * Fills the WhatsApp/social links and the 24/7 switch – only where nothing is set yet
+ * (missing or empty), so a link or switch chosen in the admin always stays. Only real
+ * settings documents (with `brand.social`) are touched. Same object when nothing changed.
+ */
+export function withSocialLinks<T>(doc: T): T {
+  if (!doc || typeof doc !== "object" || Array.isArray(doc)) return doc;
+  const settings = doc as Obj;
+  const brand = settings.brand as Obj | undefined;
+  const social = brand?.social as Obj | undefined;
+  if (!brand || !social || typeof social !== "object" || Array.isArray(social)) return doc;
+  const missing = (v: unknown) => v === undefined || v === null || (typeof v === "string" && v.trim() === "");
+  const fill = Object.fromEntries(Object.entries(SOCIAL_LINKS).filter(([k]) => missing(social[k])));
+  const add247 = typeof settings.whatsappSupport247 !== "boolean";
+  if (!Object.keys(fill).length && !add247) return doc;
+  return {
+    ...settings,
+    brand: Object.keys(fill).length ? { ...brand, social: orderedSocial(social, fill) } : brand,
+    ...(add247 && { whatsappSupport247: true }),
+  } as T;
+}
+
+/** Keeps the file's key order: WhatsApp, Instagram, X, LinkedIn, then whatever else is stored. */
+function orderedSocial(social: Obj, fill: Obj): Obj {
+  const merged: Obj = { ...social, ...fill };
+  const out: Obj = {};
+  for (const k of Object.keys(SOCIAL_LINKS)) if (k in merged) out[k] = merged[k];
+  for (const [k, v] of Object.entries(merged)) if (!(k in out)) out[k] = v;
+  return out;
+}
 
 const IMPRINT_CREDIT = { heading: "Webdesign & Umsetzung", paragraphs: ["Webshop umgesetzt von [Tetik Drwal Media GesbR](https://tdm-agency.at/)"] };
 

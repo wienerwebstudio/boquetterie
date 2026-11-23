@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { pageMetadata } from "@/lib/metadata";
 import { getI18n } from "@/i18n/server";
 import type { Messages } from "@/i18n/messages";
+import { whatsappSupport } from "@/lib/social";
+import { rich } from "@/components/checkout/rich-text";
 
 type GroupKey = keyof Messages["content"]["faq"]["groups"];
 
@@ -43,6 +45,18 @@ export default async function FaqPage() {
   const [faqs, settings, { m }] = await Promise.all([getFaqs(), getSettings(), getI18n()]);
   const t = m.content.faq;
   const groups = groupFaqs(faqs).map((g) => ({ ...g, label: t.groups[g.key] }));
+  const wa = whatsappSupport(settings);
+  const waLine = (className: string) => wa && (
+    <p className={`${className} max-w-3xl text-[15px] leading-relaxed text-ink-muted`} data-testid="faq-whatsapp">
+      {rich(wa.is247 ? m.layout.social.faqMissing247 : m.layout.social.faqMissing, {
+        link: (
+          <a href={wa.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-forest underline underline-offset-4">
+            WhatsApp<span className="sr-only"> {m.layout.social.newTab}</span>
+          </a>
+        ),
+      })}
+    </p>
+  );
 
   return (
     <article>
@@ -50,7 +64,10 @@ export default async function FaqPage() {
 
       <div className="container-x py-14 sm:py-20 lg:py-24">
         {faqs.length === 0 ? (
-          <p className="text-[15px] text-ink-muted">{t.empty}</p>
+          <>
+            <p className="text-[15px] text-ink-muted">{t.empty}</p>
+            {waLine("mt-10")}
+          </>
         ) : (
           <div className="grid gap-12 lg:grid-cols-[220px_1fr] lg:gap-20">
             {/* Sticky mini nav (desktop) */}
@@ -99,6 +116,7 @@ export default async function FaqPage() {
                   <Link href={routes.tracking} className="text-sm font-semibold text-ivory underline-offset-4 hover:underline">{t.ctaTracking}</Link>
                 </div>
               </section>
+              {waLine("-mt-8 sm:-mt-12")}
             </div>
           </div>
         )}

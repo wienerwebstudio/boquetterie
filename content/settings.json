@@ -13,12 +13,16 @@
     },
     "openingHours": [],
     "social": {
-      "instagram": "",
+      "whatsapp": "https://wa.me/message/VAQJPN3JVT53A1",
+      "instagram": "https://www.instagram.com/blumora.at/",
+      "x": "https://x.com/blumora_at",
+      "linkedin": "https://at.linkedin.com/in/blumora-at-b98149451",
       "facebook": "",
       "pinterest": "",
       "tiktok": ""
     }
   },
+  "whatsappSupport247": true,
   "announcement": {
     "enabled": true,
     "messages": [

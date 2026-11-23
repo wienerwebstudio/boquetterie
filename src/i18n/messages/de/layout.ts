@@ -1,6 +1,35 @@
 /** UI texts – layout (German source). */
 const layout = {
   skipToContent: "Zum Inhalt springen",
+  /** WhatsApp chat and social profiles. Brand names (WhatsApp, Instagram …) stay untranslated; "24/7" texts only show when the shop setting says so. */
+  social: {
+    /** Footer row of profile icons (navigation label). */
+    navigation: "Social Media",
+    /** Accessible name of an icon link; "{name}" is e.g. "Instagram". */
+    profile: "{name} (öffnet in neuem Tab)",
+    /** Floating chat button (accessible name). */
+    whatsappButton: "Per WhatsApp schreiben (öffnet in neuem Tab)",
+    whatsappSupport: "WhatsApp-Support",
+    whatsappSupport247: "WhatsApp-Support rund um die Uhr",
+    /** Contact page: prominent button at the top. */
+    writeOnWhatsapp: "Per WhatsApp schreiben",
+    contactText: "Schreib uns deine Frage einfach im Chat.",
+    contactText247: "Schreib uns deine Frage im Chat – rund um die Uhr.",
+    /** "{link}" is the link "WhatsApp". */
+    orderQuestions: "Fragen zu deiner Bestellung? Schreib uns auf {link}.",
+    orderQuestions247: "Fragen zu deiner Bestellung? Schreib uns auf {link} (24/7).",
+    faqMissing: "Deine Frage war nicht dabei? Schreib uns auf {link}.",
+    faqMissing247: "Deine Frage war nicht dabei? Schreib uns auf {link} – rund um die Uhr.",
+    /** Checkout: one small line under the submit area, followed by the link "WhatsApp" or "WhatsApp 24/7". */
+    checkoutQuestions: "Fragen?",
+    whatsapp247: "WhatsApp 24/7",
+    /** Instagram teaser (homepage, about page); "{handle}" is e.g. "@blumora.at". */
+    followInstagram: "Folge uns auf Instagram",
+    instagramText: "Neue Sträuße und Blumenideen aus Wien findest du auf Instagram unter {handle}.",
+    instagramCta: "Zum Instagram-Profil",
+    /** Screen-reader hint after visible links that open a new tab. */
+    newTab: "(öffnet in neuem Tab)",
+  },
   /** Main navigation (header) – also reused for matching footer links. */
   nav: {
     flowers: "Blumen",

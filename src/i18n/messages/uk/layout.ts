@@ -2,6 +2,26 @@ import type { PartialMessages } from "@/i18n/messages";
 
 /** uk – layout (translated from src/i18n/messages/de/layout.ts). */
 const layout: NonNullable<PartialMessages["layout"]> = {
+  social: {
+    navigation: "Соцмережі",
+    profile: "{name} (відкривається в новій вкладці)",
+    whatsappButton: "Напишіть нам у WhatsApp (відкривається в новій вкладці)",
+    whatsappSupport: "Підтримка у WhatsApp",
+    whatsappSupport247: "Підтримка у WhatsApp цілодобово",
+    writeOnWhatsapp: "Написати у WhatsApp",
+    contactText: "Просто напишіть нам своє запитання в чаті.",
+    contactText247: "Напишіть нам своє запитання в чаті – цілодобово.",
+    orderQuestions: "Маєте запитання щодо замовлення? Напишіть нам у {link}.",
+    orderQuestions247: "Маєте запитання щодо замовлення? Напишіть нам у {link} (24/7).",
+    faqMissing: "Не знайшли свого запитання? Напишіть нам у {link}.",
+    faqMissing247: "Не знайшли свого запитання? Напишіть нам у {link} – цілодобово.",
+    checkoutQuestions: "Маєте запитання?",
+    whatsapp247: "WhatsApp 24/7",
+    followInstagram: "Стежте за нами в Instagram",
+    instagramText: "Нові букети та квіткові ідеї з Відня – в Instagram на сторінці {handle}.",
+    instagramCta: "До нашого профілю в Instagram",
+    newTab: "(відкривається в новій вкладці)",
+  },
   skipToContent: "Перейти до вмісту",
   nav: {
     flowers: "Квіти",

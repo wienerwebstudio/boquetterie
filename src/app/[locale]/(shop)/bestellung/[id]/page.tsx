@@ -15,6 +15,7 @@ import { OrderTimeline } from "@/components/checkout/order-timeline";
 import { GreetingCardPreview } from "@/components/checkout/greeting-card-preview";
 import { OrderPlacedCleanup } from "@/components/checkout/order-placed-cleanup";
 import { SMALL_BUSINESS } from "@/lib/vat";
+import { whatsappSupport } from "@/lib/social";
 
 export const dynamic = "force-dynamic";
 
@@ -71,6 +72,7 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
   const greeting = order.lines.find((l) => l.message || l.senderName || l.anonymous);
   const contactEmail = settings.brand.email.startsWith("[") ? null : settings.brand.email;
   const contactPhone = settings.brand.phone.startsWith("[") ? null : settings.brand.phone;
+  const wa = whatsappSupport(settings);
 
   const paymentLabel = {
     paid: `${t.paymentPaid}${testMode ? t.testModeSuffix : ""}`,
@@ -225,6 +227,17 @@ export default async function OrderStatusPage({ params, searchParams }: Props) {
           {contactPhone && <>{contactEmail ? t.orCall : t.call} <a href={`tel:${contactPhone.replace(/\s/g, "")}`} className="text-forest underline underline-offset-2">{contactPhone}</a></>}
           {!contactEmail && !contactPhone && rich(t.contactPage, { link: <Link href={routes.contact} className="text-forest underline underline-offset-2">{t.contactLink}</Link> })}.
         </p>
+        {wa && (
+          <p className="mt-3" data-testid="order-whatsapp">
+            {rich(wa.is247 ? m.layout.social.orderQuestions247 : m.layout.social.orderQuestions, {
+              link: (
+                <a href={wa.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-forest underline underline-offset-2">
+                  WhatsApp<span className="sr-only"> {m.layout.social.newTab}</span>
+                </a>
+              ),
+            })}
+          </p>
+        )}
         <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
           <Link href={routes.shop} className="font-semibold text-forest">{t.continueShopping}</Link>
           <Link href={routes.legal.withdrawalForm} className="text-forest underline underline-offset-2">{t.withdraw}</Link>

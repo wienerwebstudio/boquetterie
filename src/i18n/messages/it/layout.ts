@@ -2,6 +2,26 @@ import type { PartialMessages } from "@/i18n/messages";
 
 /** it – layout (translated from src/i18n/messages/de/layout.ts). */
 const layout: NonNullable<PartialMessages["layout"]> = {
+  social: {
+    navigation: "Social media",
+    profile: "{name} (si apre in una nuova scheda)",
+    whatsappButton: "Scrivici su WhatsApp (si apre in una nuova scheda)",
+    whatsappSupport: "Assistenza WhatsApp",
+    whatsappSupport247: "Assistenza WhatsApp 24 ore su 24",
+    writeOnWhatsapp: "Scrivici su WhatsApp",
+    contactText: "Scrivici la tua domanda in chat.",
+    contactText247: "Scrivici la tua domanda in chat – 24 ore su 24.",
+    orderQuestions: "Domande sul tuo ordine? Scrivici su {link}.",
+    orderQuestions247: "Domande sul tuo ordine? Scrivici su {link} (24/7).",
+    faqMissing: "Non hai trovato la tua domanda? Scrivici su {link}.",
+    faqMissing247: "Non hai trovato la tua domanda? Scrivici su {link} – 24 ore su 24.",
+    checkoutQuestions: "Domande?",
+    whatsapp247: "WhatsApp 24/7",
+    followInstagram: "Seguici su Instagram",
+    instagramText: "Nuovi bouquet e idee floreali da Vienna li trovi su Instagram: {handle}.",
+    instagramCta: "Al nostro profilo Instagram",
+    newTab: "(si apre in una nuova scheda)",
+  },
   skipToContent: "Vai al contenuto",
   nav: {
     flowers: "Fiori",

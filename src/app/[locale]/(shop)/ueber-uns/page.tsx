@@ -10,6 +10,8 @@ import { routes } from "@/lib/urls";
 import { cn } from "@/lib/format";
 import { pageMetadata } from "@/lib/metadata";
 import { getI18n } from "@/i18n/server";
+import { InstagramFollow } from "@/components/content/instagram-follow";
+import { profileLinks } from "@/lib/social";
 
 const SLUG = "ueber-uns";
 
@@ -91,6 +93,9 @@ export default async function AboutPage() {
           })}
         </div>
       </div>
+
+      {/* Instagram – rendered here, not stored in the CMS text */}
+      <InstagramFollow href={profileLinks(settings).find((p) => p.key === "instagram")?.href ?? null} />
 
       {/* Closing CTA */}
       <section className="border-t border-line bg-ivory-100">

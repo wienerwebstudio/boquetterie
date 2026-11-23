@@ -11,6 +11,7 @@ import type {
 import { COLOR_OPTIONS, STYLE_OPTIONS } from "@/lib/catalog";
 import { routes } from "@/lib/urls";
 import { VAT_TEXT } from "@/lib/vat";
+import { profileLinks, whatsappSupport } from "@/lib/social";
 
 export interface LlmsData {
   settings: SiteSettings;
@@ -62,7 +63,9 @@ function contactLines(data: LlmsData): string[] {
   const lines: string[] = [];
   if (!isPlaceholder(brand.email)) lines.push(`- E-Mail: ${brand.email}`);
   if (!isPlaceholder(brand.phone)) lines.push(`- Telefon: ${brand.phone}`);
-  for (const [k, v] of Object.entries(brand.social)) if (v && !isPlaceholder(v)) lines.push(`- ${k[0].toUpperCase()}${k.slice(1)}: ${v}`);
+  const wa = whatsappSupport(data.settings);
+  if (wa) lines.push(`- WhatsApp${wa.is247 ? " (rund um die Uhr)" : ""}: ${wa.href}`);
+  for (const p of profileLinks(data.settings)) lines.push(`- ${p.name}: ${p.href}`);
   return lines;
 }
 

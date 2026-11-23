@@ -35,11 +35,16 @@ const sizes: Record<Size, string> = {
   xl: "h-14 px-8 text-base rounded-md",
 };
 
+/** Button look for elements that are not a `Button`, e.g. an external `<a target="_blank">`. */
+export function buttonClasses({ variant = "primary", size = "md", full, className }: { variant?: Variant; size?: Size; full?: boolean; className?: string } = {}) {
+  return cn(base, variants[variant], variant !== "link" && sizes[size], full && "w-full", className);
+}
+
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   { variant = "primary", size = "md", href, loading, full, icon, iconRight, className, children, ...rest },
   ref,
 ) {
-  const cls = cn(base, variants[variant], variant !== "link" && sizes[size], full && "w-full", className);
+  const cls = buttonClasses({ variant, size, full, className });
   const content = (
     <>
       {loading ? <Loader2 className="size-4 animate-spin" aria-hidden /> : icon}

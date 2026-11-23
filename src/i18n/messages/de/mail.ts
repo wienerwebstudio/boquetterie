@@ -6,6 +6,11 @@
  * Placeholders use `{name}`; `{ one, other }` objects are plurals (`{count}`).
  */
 const mail = {
+  /** Order confirmation: line with the WhatsApp chat link ("(24/7)" only when the shop setting says so). */
+  whatsapp: {
+    orderQuestions: "Fragen zu deiner Bestellung? Schreib uns auf WhatsApp",
+    orderQuestions247: "Fragen zu deiner Bestellung? Schreib uns auf WhatsApp (24/7)",
+  },
   /** Shared frame of every mail. */
   layout: {
     questions: "Fragen? Schreib uns an {email}.",

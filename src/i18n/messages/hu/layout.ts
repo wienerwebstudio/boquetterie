@@ -2,6 +2,26 @@ import type { PartialMessages } from "@/i18n/messages";
 
 /** hu – layout (translated from src/i18n/messages/de/layout.ts). */
 const layout: NonNullable<PartialMessages["layout"]> = {
+  social: {
+    navigation: "Közösségi média",
+    profile: "{name} (új lapon nyílik meg)",
+    whatsappButton: "Írj nekünk WhatsAppon (új lapon nyílik meg)",
+    whatsappSupport: "WhatsApp-ügyfélszolgálat",
+    whatsappSupport247: "WhatsApp-ügyfélszolgálat éjjel-nappal",
+    writeOnWhatsapp: "Írj nekünk WhatsAppon",
+    contactText: "Írd meg nekünk a kérdésed a chatben.",
+    contactText247: "Írd meg nekünk a kérdésed a chatben – éjjel-nappal.",
+    orderQuestions: "Kérdésed van a rendeléseddel kapcsolatban? Írj nekünk: {link}.",
+    orderQuestions247: "Kérdésed van a rendeléseddel kapcsolatban? Írj nekünk: {link} (24/7).",
+    faqMissing: "Nem találtad a kérdésed? Írj nekünk: {link}.",
+    faqMissing247: "Nem találtad a kérdésed? Írj nekünk: {link} – éjjel-nappal.",
+    checkoutQuestions: "Kérdésed van?",
+    whatsapp247: "WhatsApp 24/7",
+    followInstagram: "Kövess minket az Instagramon",
+    instagramText: "Új csokrokat és bécsi virágötleteket találsz az Instagramon: {handle}.",
+    instagramCta: "Instagram-profilunk",
+    newTab: "(új lapon nyílik meg)",
+  },
   skipToContent: "Ugrás a tartalomhoz",
   nav: {
     flowers: "Virágok",
