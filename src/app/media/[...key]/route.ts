@@ -1,7 +1,7 @@
 import { enforceRateLimit } from "@/lib/rate-limit";
 import { isAdminAuthenticated } from "@/lib/admin-session";
 import { clampRange, parseRange, REVIEW_VIDEO_EXT, REVIEW_VIDEO_KEY_RE } from "@/lib/review-video";
-import { isServableMediaKey, readReviewVideoChunk, readReviewVideoManifest, readReviewVideoRange, readStoredMedia } from "@/lib/uploads";
+import { isRequestPhotoKey, isServableMediaKey, readReviewVideoChunk, readReviewVideoManifest, readReviewVideoRange, readStoredMedia } from "@/lib/uploads";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -29,6 +29,9 @@ export async function GET(req: Request, { params }: { params: Promise<{ key: str
   const key = parts.join("/");
   if (REVIEW_VIDEO_KEY_RE.test(key)) return serveReviewVideo(req, key);
   if (!isServableMediaKey(key)) return notFound();
+  // Photos sent with a customer request (/anfrage) are private – team only, never cached publicly.
+  const isPrivate = isRequestPhotoKey(key);
+  if (isPrivate && !(await isAdminAuthenticated())) return notFound();
 
   try {
     const file = await readStoredMedia(key);
@@ -38,7 +41,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ key: str
       headers: {
         "Content-Type": file.contentType,
         "Content-Length": String(file.data.byteLength),
-        "Cache-Control": "public, max-age=31536000, immutable",
+        "Cache-Control": isPrivate ? "private, no-store" : "public, max-age=31536000, immutable",
         "X-Content-Type-Options": "nosniff",
       },
     });

@@ -2,7 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin-session";
-import { getAllProducts, getDeliveryZones, getExtras, getOfferById, getOrderById, getSettings } from "@/lib/cms";
+import { getAllProducts, getCustomRequestById, getDeliveryZones, getExtras, getOfferById, getOrderById, getSettings, updateCustomRequest } from "@/lib/cms";
+import { CUSTOM_REQUEST_ID_RE } from "@/lib/custom-requests-core";
 import { findZone } from "@/lib/delivery";
 import { markOrderPaymentFailed } from "@/lib/orders";
 import { cancelOpenPayment } from "@/lib/payments";
@@ -26,8 +27,12 @@ function mailOutcome(result: MailResult, to: string) {
   return { ok: false, message: `Mail an ${to} konnte nicht gesendet werden: ${result.error ?? "unbekannter Fehler"}.` };
 }
 
-/** Creates (id = null) or updates an offer from the admin form. Prices and names are re-validated here. */
-export async function saveOfferAction(id: string | null, input: OfferInput): Promise<OfferSaveResult> {
+/**
+ * Creates (id = null) or updates an offer from the admin form. Prices and names are re-validated here.
+ * `requestId`: the offer is created from a customer request (admin → Anfragen → „Angebot erstellen“) –
+ * the request gets the offer linked and the status "Angebot erstellt".
+ */
+export async function saveOfferAction(id: string | null, input: OfferInput, requestId?: string | null): Promise<OfferSaveResult> {
   try {
     await requireAdmin();
     const [products, extras, settings, zones] = await Promise.all([getAllProducts(true), getExtras(false), getSettings(), getDeliveryZones()]);
@@ -38,7 +43,17 @@ export async function saveOfferAction(id: string | null, input: OfferInput): Pro
     const withZone = { ...parsed.offer, delivery: { ...parsed.offer.delivery, ...(zone ? { zoneId: zone.id, zoneName: zone.name } : {}) } };
     const draft = settings.greetingCard?.enabled === true ? withZone : { ...withZone, greeting: undefined };
     if (!id) {
-      const offer = await createOffer(draft);
+      const request = requestId && CUSTOM_REQUEST_ID_RE.test(requestId) ? await getCustomRequestById(requestId) : null;
+      const offer = await createOffer(request ? { ...draft, requestId: request.id } : draft, request ? `Angebot angelegt (aus Anfrage ${request.id})` : undefined);
+      if (request) {
+        const at = new Date().toISOString();
+        await updateCustomRequest(request.id, (r) => ({
+          ...r, offerId: offer.id, status: "offer", updatedAt: at,
+          history: [...(r.history ?? []), { at, note: `Angebot ${offer.id} erstellt` }],
+        }));
+        revalidatePath("/admin/anfragen");
+        revalidatePath(`/admin/anfragen/${request.id}`);
+      }
       revalidateOffers(offer.id);
       return { ok: true, id: offer.id };
     }

@@ -14,8 +14,9 @@ import reminders from "./reminders";
 import mail from "./mail";
 import offer from "./offer";
 import pay from "./pay";
+import inquiry from "./inquiry";
 
 /** UI texts – hu. One file per namespace; missing keys fall back to German. */
-const messages: PartialMessages = { common, layout, ui, home, content, forms, shop, product, cart, checkout, account, reminders, mail, offer, pay };
+const messages: PartialMessages = { common, layout, ui, home, content, forms, shop, product, cart, checkout, account, reminders, mail, offer, pay, inquiry };
 
 export default messages;

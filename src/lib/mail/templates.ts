@@ -1,4 +1,4 @@
-import type { Order, OrderStatusDefinition } from "@/types";
+import type { CustomRequest, Order, OrderStatusDefinition } from "@/types";
 import { formatDateLong, formatPrice } from "@/lib/format";
 import { SMALL_BUSINESS } from "@/lib/vat";
 import { LOCALE_INFO, type Locale } from "@/i18n/config";
@@ -787,4 +787,85 @@ export function magicLink(input: { url: string; brandName: string; siteUrl?: str
       { type: "p", text: fmt(t.note, { minutes }), muted: true },
     ],
   }, L);
+}
+
+/* ---------------- Customer requests (/anfrage, see docs/INQUIRIES.md) ---------------- */
+
+/**
+ * Confirmation to the customer in the request's language. Promises an answer, never a
+ * response time or an offer. `labels` are the translated topic/budget names (namespace `inquiry`).
+ */
+export function customRequestConfirmation(input: {
+  brand: MailBrand;
+  request: Pick<CustomRequest, "id" | "name" | "date" | "time" | "flexible" | "place" | "message" | "photo">;
+  labels: { topics: string[]; product?: string; budget?: string };
+} & MailLang): RenderedMail {
+  const { brand, request: r, labels } = input;
+  const L = langOf(input);
+  const t = L.m.customRequest;
+  const date = r.date ? (L.locale === "de" ? formatDateLong(r.date) : formatDateLongIn(L.locale, r.date)) : "";
+  const when = [date, r.time, r.flexible ? t.flexible : ""].filter(Boolean).join(", ");
+  const rows: [string, string][] = [[t.rows.id, r.id]];
+  if (labels.topics.length) rows.push([t.rows.topics, labels.topics.join(", ")]);
+  if (labels.product) rows.push([t.rows.product, labels.product]);
+  if (when) rows.push([t.rows.date, when]);
+  if (r.place) rows.push([t.rows.place, r.place]);
+  if (labels.budget) rows.push([t.rows.budget, labels.budget]);
+  rows.push([t.rows.message, r.message]);
+  if (r.photo) rows.push([t.rows.photo, t.photoReceived]);
+  return layout({
+    brand,
+    subject: fmt(t.subject, { brand: brand.name, id: r.id }),
+    preheader: t.preheader,
+    headline: t.headline,
+    blocks: [
+      { type: "p", text: fmt(L.m.layout.hello, { name: r.name.trim().split(/\s+/)[0] || r.name }) },
+      { type: "p", text: t.intro },
+      { type: "h", text: t.summary },
+      { type: "kv", rows },
+    ],
+    footerNotes: [fmt(t.footer, { brand: brand.name })],
+  }, L);
+}
+
+/** Team notification (German) with every field, the photo (attached and linked) and the admin link. */
+export function adminCustomRequest(input: {
+  brand: MailBrand;
+  request: CustomRequest;
+  labels: { topics: string[]; product?: string; budget?: string; language: string };
+  adminUrl: string;
+  photoUrl?: string;
+}): RenderedMail {
+  const { brand, request: r, labels } = input;
+  const when = [r.date ? formatDateLong(r.date) : "", r.time, r.flexible ? "flexibel" : ""].filter(Boolean).join(", ");
+  const rows: [string, string][] = [
+    ["Nummer", r.id],
+    ["Worum geht es?", labels.topics.join(", ") || "–"],
+    ["Strauß aus dem Shop", labels.product ?? "–"],
+    ["Wunschtermin", when || "–"],
+    ["Lieferort", r.place ?? "–"],
+    ["Budget", labels.budget ?? "–"],
+    ["Name", r.name],
+    ["E-Mail", r.email],
+    ["Telefon/WhatsApp", r.phone ?? "–"],
+    ["Sprache", labels.language],
+  ];
+  const blocks: Block[] = [];
+  if (labels.topics.length) blocks.push({ type: "important", title: "Worum geht es?", text: labels.topics.join(" · ") });
+  blocks.push({ type: "kv", rows }, { type: "h", text: "Nachricht" }, { type: "quote", text: r.message });
+  if (input.photoUrl) {
+    blocks.push(
+      { type: "p", text: "Inspirationsfoto: im Anhang und im Admin (nur mit Admin-Anmeldung sichtbar)." },
+      { type: "link", label: "Foto im Admin öffnen", url: input.photoUrl },
+    );
+  }
+  blocks.push({ type: "button", label: "Anfrage im Admin öffnen", url: input.adminUrl });
+  return layout({
+    brand,
+    subject: `Neue Anfrage ${r.id} von ${r.name.replace(/\s+/g, " ")}${labels.topics.length ? ` – ${labels.topics.join(", ")}` : ""}`,
+    preheader: r.message.slice(0, 120),
+    headline: `Neue Anfrage ${r.id}`,
+    blocks,
+    footerNotes: ["Interne Benachrichtigung (MAIL_ADMIN). Eine Antwort auf diese Mail geht direkt an die Kund:in (Reply-To)."],
+  });
 }

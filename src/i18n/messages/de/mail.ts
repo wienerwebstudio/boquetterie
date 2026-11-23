@@ -186,6 +186,27 @@ const mail = {
     byArrangement: "Nach Absprache",
     confirmed: "Danke für deine Zahlung – deine Bestellung {id} zu deinem persönlichen Angebot ist bestätigt. Wir kümmern uns um alles Weitere und melden uns, falls noch etwas offen ist.",
   },
+  /** Request from the page /anfrage: confirmation to the customer (never promises an offer or a response time). */
+  customRequest: {
+    subject: "Deine Anfrage bei {brand} ({id})",
+    preheader: "Danke – wir melden uns in Kürze.",
+    headline: "Danke für deine Anfrage",
+    intro: "Wir haben deine Anfrage erhalten und melden uns in Kürze bei dir.",
+    summary: "Deine Angaben",
+    rows: {
+      id: "Anfrage-Nr.",
+      topics: "Worum geht es?",
+      product: "Strauß",
+      date: "Wunschtermin",
+      place: "Lieferort",
+      budget: "Budget",
+      message: "Deine Nachricht",
+      photo: "Foto",
+    },
+    photoReceived: "1 Foto erhalten",
+    flexible: "flexibel",
+    footer: "Du bekommst diese E-Mail, weil du auf {brand} eine Anfrage geschickt hast.",
+  },
 };
 
 export default mail;

@@ -36,6 +36,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "Za koga? Za koju priliku?",
     trackOrder: "Praćenje narudžbe",
     faq: "Česta pitanja",
+    customRequest: "Pošalji upit",
+    customRequestHint: "Vrijeme, mjesto, buket",
   },
   announcement: {
     listLabel: "Obavještenja",

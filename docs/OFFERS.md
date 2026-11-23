@@ -2,6 +2,8 @@
 
 Admin → **Angebote**: persönliche Angebote mit sofortiger Online-Zahlung – private Bezahlseiten, die nur die Kund:in kennt. Beispiel: ein Strauß nur aus rosa Tulpen, am 29.11. von 14–16 Uhr an einen Treffpunkt (Haupteingang Burgtheater) – Preis inkl. Lieferung, bezahlt per Link.
 
+Aus einer Kundenanfrage (Admin → **Anfragen**, Seite `/anfrage`) entsteht ein Angebot per „Angebot erstellen“ – das Formular ist dann vorausgefüllt und das Angebot wird mit der Anfrage verknüpft (`requestId`), siehe docs/INQUIRIES.md.
+
 ## Ablauf
 
 1. **Anlegen** (`/admin/angebote/neu`): Kund:in (Name, E-Mail, Telefon, Sprache = jede Live-Sprache), Positionen, Extras, Lieferung, Hinweise, „Gültig bis“ (Standard heute + 3 Tage, Wiener Zeit). Die Summe rechnet live mit.

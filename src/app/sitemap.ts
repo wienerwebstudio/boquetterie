@@ -16,6 +16,7 @@ const STATIC_PAGES: { path: string; priority: number; changeFrequency: Freq }[] 
   { path: routes.reminder, priority: 0.4, changeFrequency: "yearly" },
   { path: routes.about, priority: 0.5, changeFrequency: "monthly" },
   { path: routes.contact, priority: 0.5, changeFrequency: "yearly" },
+  { path: routes.customRequest, priority: 0.5, changeFrequency: "yearly" },
   { path: routes.faq, priority: 0.6, changeFrequency: "monthly" },
   { path: routes.legal.withdrawalForm, priority: 0.2, changeFrequency: "yearly" },
 ];

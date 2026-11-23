@@ -168,6 +168,26 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     byArrangement: "Po dogovoru",
     confirmed: "Hvala na uplati – Vaša narudžba {id} za Vašu ličnu ponudu je potvrđena. Za sve ostalo se brinemo mi i javit ćemo Vam se ako nešto bude otvoreno.",
   },
+  customRequest: {
+    subject: "Vaš upit kod {brand} ({id})",
+    preheader: "Hvala – uskoro ćemo vam se javiti.",
+    headline: "Hvala na upitu",
+    intro: "Primili smo vaš upit i uskoro ćemo vam se javiti.",
+    summary: "Vaši podaci",
+    rows: {
+      id: "Br. upita",
+      topics: "O čemu se radi?",
+      product: "Buket",
+      date: "Željeni termin",
+      place: "Mjesto dostave",
+      budget: "Budžet",
+      message: "Vaša poruka",
+      photo: "Fotografija",
+    },
+    photoReceived: "Primljena 1 fotografija",
+    flexible: "fleksibilno",
+    footer: "Ovaj e-mail dobijate jer ste poslali upit na {brand}.",
+  },
 };
 
 export default mail;

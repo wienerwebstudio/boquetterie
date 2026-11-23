@@ -36,6 +36,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "Для кого? По какому поводу?",
     trackOrder: "Отследить заказ",
     faq: "Вопросы и ответы",
+    customRequest: "Отправить запрос",
+    customRequestHint: "Время, место, букет",
   },
   announcement: {
     listLabel: "Объявления",

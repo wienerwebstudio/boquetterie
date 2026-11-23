@@ -168,6 +168,26 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     byArrangement: "Conform înțelegerii",
     confirmed: "Îți mulțumim pentru plată – comanda ta {id} pentru oferta personalizată este confirmată. Ne ocupăm noi de restul și te contactăm dacă mai e ceva de clarificat.",
   },
+  customRequest: {
+    subject: "Cererea ta la {brand} ({id})",
+    preheader: "Mulțumim – revenim în curând.",
+    headline: "Mulțumim pentru cerere",
+    intro: "Am primit cererea ta și revenim în curând.",
+    summary: "Datele tale",
+    rows: {
+      id: "Nr. cererii",
+      topics: "Despre ce este vorba?",
+      product: "Buchet",
+      date: "Data dorită",
+      place: "Locul livrării",
+      budget: "Buget",
+      message: "Mesajul tău",
+      photo: "Fotografie",
+    },
+    photoReceived: "1 fotografie primită",
+    flexible: "flexibil",
+    footer: "Primești acest e-mail pentru că ai trimis o cerere pe {brand}.",
+  },
 };
 
 export default mail;

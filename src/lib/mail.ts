@@ -1,6 +1,7 @@
 import "server-only";
 import nodemailer, { type Transporter } from "nodemailer";
-import type { Offer, Order, Partner, SiteSettings } from "@/types";
+import type { CustomRequest, Offer, Order, Partner, SiteSettings } from "@/types";
+import { BUDGET_LABELS, TOPIC_LABELS, type CustomRequestBudget, type CustomRequestTopic } from "@/lib/custom-requests-core";
 import { offerPreviewOrder } from "@/lib/offers-core";
 import type { Reminder } from "@/types/reminders";
 import { getAllProducts, getExtras, getOccasions, getPartners, getSettings, readData, writeData } from "@/lib/cms";
@@ -668,4 +669,62 @@ export async function sendTestOrderMails(recipient?: string, kind: TestMailKind 
     results.push({ mail, result: await sendMail({ to, subject: `[Beispiel] ${m.subject}`, html: m.html, text: m.text, tags: { type: "test" }, bypassRedirect: Boolean(chosen) }) });
   }
   return { to, provider, results };
+}
+
+/* ---------------- Customer requests (/anfrage, see docs/INQUIRIES.md) ---------------- */
+
+/**
+ * Confirmation to the customer (in the request's language) and the team notification
+ * (MAIL_ADMIN, German, photo attached). `photo` is the processed JPEG of the request.
+ */
+export async function sendCustomRequestMails(request: CustomRequest, opts: { siteUrl?: string; photo?: Buffer } = {}): Promise<{ customer: MailResult; admin: MailResult | null }> {
+  const lang = await customerMailLang(request.locale);
+  const [settings, messages] = await Promise.all([customerSettings(lang.locale), loadMessages(lang.locale)]);
+  const brand = mailBrand(settings);
+  const siteUrl = (opts.siteUrl ?? brand.siteUrl).replace(/\/$/, "");
+  const t = messages.inquiry;
+  let productName = request.product?.name;
+  if (request.product && lang.locale !== DEFAULT_LOCALE) {
+    try {
+      const { getProductsIn } = await import("@/lib/cms-localized");
+      productName = (await getProductsIn(lang.locale, true)).find((p) => p.slug === request.product?.slug)?.name ?? productName;
+    } catch { /* German name */ }
+  }
+  const budgetKey = request.budget as CustomRequestBudget | undefined;
+  const customer = await send(
+    request.email,
+    templates.customRequestConfirmation({
+      brand: { ...brand, siteUrl },
+      request,
+      labels: {
+        topics: request.topics.map((x) => t.topics[x as CustomRequestTopic] ?? x),
+        product: productName,
+        budget: budgetKey ? t.budgets[budgetKey] : undefined,
+      },
+      ...lang,
+    }),
+    "custom_request_confirmation",
+  );
+
+  const to = adminMailAddress();
+  if (!to) return { customer, admin: null };
+  const adminUrl = `${siteUrl}/admin/anfragen/${request.id}`;
+  const mail = templates.adminCustomRequest({
+    brand: { ...brand, siteUrl },
+    request,
+    labels: {
+      topics: request.topics.map((x) => TOPIC_LABELS[x as CustomRequestTopic] ?? x),
+      product: request.product?.name,
+      budget: budgetKey ? BUDGET_LABELS[budgetKey] : undefined,
+      language: lang.locale === DEFAULT_LOCALE ? "Deutsch" : `${LOCALE_INFO[lang.locale].name} (${lang.locale})`,
+    },
+    adminUrl,
+    photoUrl: request.photo ? (request.photo.url.startsWith("/") ? `${siteUrl}${request.photo.url}` : request.photo.url) : undefined,
+  });
+  const admin = await sendMail({
+    to, subject: mail.subject, html: mail.html, text: mail.text, replyTo: request.email,
+    tags: { type: "custom_request" },
+    ...(opts.photo ? { attachments: [{ filename: `${request.id}-foto.jpg`, content: opts.photo, contentType: "image/jpeg" }] } : {}),
+  });
+  return { customer, admin };
 }

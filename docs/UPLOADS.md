@@ -87,6 +87,10 @@ Die vollständigen Objekt-Schlüssel lauten `<S3_PREFIX>/<jahr>/<monat>/<name>`;
 - Schlüssel `reviews/<jahr>/<monat>/<produkt-slug>-<hash>.jpg`, URL `/media/reviews/…` (lokal und Netlify) bzw. die S3-URL. Die Bestellnummer steht nicht im Namen.
 - Kundenfotos erscheinen nicht in der Medienbibliothek. Verworfene Bewertungen und nicht freigegebene Fotos werden beim Übernehmen/Verwerfen gelöscht.
 
+## Fotos aus Anfragen
+
+`POST /api/custom-request` (Seite „Anfrage“) nimmt ein Foto an: `processRequestPhoto` / `storeRequestPhoto` – max. 15 MB, JPEG/PNG/WebP (HEIC → Hinweis), EXIF/GPS entfernt, max. 2000 px, JPEG q82, Schlüssel `anfragen/<jahr>/<monat>/<af-nummer>-<zufall>-<hash>.jpg`. `/media/anfragen/…` liefert nur an angemeldete Admins (`private, no-store`). Details: docs/INQUIRIES.md.
+
 ## Kundenvideos aus Bewertungen
 
 Zu einer Bewertung gehört höchstens **ein Video**: max. **15 Sekunden**, max. **60 MB**, `video/mp4`, `video/quicktime` (MOV) oder `video/webm`. Logik: `src/lib/review-video.ts` (Grenzen, Prüfungen, Range-Rechnung – rein, auch im Browser), Speicher in `src/lib/uploads.ts`, Browser-Teil in `src/lib/review-video-client.ts`.

@@ -31,6 +31,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "Kinek? Milyen alkalomra?",
     trackOrder: "Rendelés követése",
     faq: "GYIK",
+    customRequest: "Kérés küldése",
+    customRequestHint: "Időpont, hely, csokor",
   },
   announcement: {
     listLabel: "Tudnivalók",

@@ -31,6 +31,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "За кого? По какъв повод?",
     trackOrder: "Проследяване на поръчка",
     faq: "Въпроси",
+    customRequest: "Изпрати запитване",
+    customRequestHint: "Час, място, букет",
   },
   announcement: {
     listLabel: "Съобщения",

@@ -19,8 +19,10 @@ const num = (v: string) => {
 };
 const money = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(2));
 
-export function OfferForm({ id, initial, catalog, zones, blackoutDates, cardsEnabled, locales }: {
+export function OfferForm({ id, initial, catalog, zones, blackoutDates, cardsEnabled, locales, requestId }: {
   id: string | null;
+  /** Customer request this new offer is created from (linked after saving). */
+  requestId?: string;
   initial: OfferFormState;
   catalog: OfferFormCatalog;
   zones: DeliveryZone[];
@@ -67,7 +69,7 @@ export function OfferForm({ id, initial, catalog, zones, blackoutDates, cardsEna
   const submit = (send: boolean) => {
     setBanner(null);
     start(async () => {
-      const res = await saveOfferAction(id, payload());
+      const res = await saveOfferAction(id, payload(), requestId);
       if (!res.ok) {
         setErrors(res.errors ?? {});
         setBanner({ tone: "error", text: res.message });

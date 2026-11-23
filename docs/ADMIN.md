@@ -21,6 +21,7 @@ Ist `ADMIN_PASSWORD` nicht gesetzt, zeigt die Login-Seite einen Hinweis und verw
 | Anlässe | `/admin/anlaesse` | `content/occasions.json` |
 | Extras | `/admin/extras` | `content/extras.json` |
 | Liefergebiete (PLZ, Gebühren, Liefertage, Fristen, Zeitfenster) | `/admin/liefergebiete` | `content/delivery-zones.json` |
+| Anfragen (Sonderwünsche/Lieferfragen von `/anfrage` + Kontaktformular; Status, Notiz, „Angebot erstellen“ vorausgefüllt) – siehe `docs/INQUIRIES.md` | `/admin/anfragen` | `data/custom-requests.json`, `data/contact-messages.json` |
 | Gutscheine | `/admin/gutscheine` | `content/coupons.json` |
 | FAQ | `/admin/faq` | `content/faqs.json` |
 | Bewertungen | `/admin/bewertungen` | `content/reviews.json` |

@@ -168,6 +168,26 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     byArrangement: "Anlaşmaya göre",
     confirmed: "Ödemeniz için teşekkürler – kişisel teklifinize ait {id} numaralı siparişiniz onaylandı. Gerisini biz hallediyoruz; açık bir konu olursa size ulaşırız.",
   },
+  customRequest: {
+    subject: "{brand} talebin ({id})",
+    preheader: "Teşekkürler – kısa süre içinde döneceğiz.",
+    headline: "Talebin için teşekkürler",
+    intro: "Talebini aldık ve kısa süre içinde sana döneceğiz.",
+    summary: "Bilgilerin",
+    rows: {
+      id: "Talep no.",
+      topics: "Konu nedir?",
+      product: "Buket",
+      date: "İstenen tarih",
+      place: "Teslimat yeri",
+      budget: "Bütçe",
+      message: "Mesajın",
+      photo: "Fotoğraf",
+    },
+    photoReceived: "1 fotoğraf alındı",
+    flexible: "esnek",
+    footer: "Bu e-postayı {brand} üzerinden talep gönderdiğin için alıyorsun.",
+  },
 };
 
 export default mail;

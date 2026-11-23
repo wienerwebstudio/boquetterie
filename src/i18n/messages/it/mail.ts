@@ -168,6 +168,26 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     byArrangement: "Come concordato",
     confirmed: "Grazie per il pagamento – il tuo ordine {id} per la tua offerta personale è confermato. Pensiamo noi a tutto il resto e ti contattiamo se c'è ancora qualcosa da chiarire.",
   },
+  customRequest: {
+    subject: "La tua richiesta a {brand} ({id})",
+    preheader: "Grazie, ti risponderemo a breve.",
+    headline: "Grazie per la tua richiesta",
+    intro: "Abbiamo ricevuto la tua richiesta e ti risponderemo a breve.",
+    summary: "I tuoi dati",
+    rows: {
+      id: "N. richiesta",
+      topics: "Di cosa si tratta?",
+      product: "Bouquet",
+      date: "Data desiderata",
+      place: "Luogo di consegna",
+      budget: "Budget",
+      message: "Il tuo messaggio",
+      photo: "Foto",
+    },
+    photoReceived: "1 foto ricevuta",
+    flexible: "flessibile",
+    footer: "Ricevi questa e-mail perché hai inviato una richiesta su {brand}.",
+  },
 };
 
 export default mail;

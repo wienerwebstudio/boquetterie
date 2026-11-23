@@ -168,6 +168,26 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     byArrangement: "Egyeztetés szerint",
     confirmed: "Köszönjük a fizetést – a személyes ajánlatodhoz tartozó {id} rendelésed visszaigazolva. A többit mi intézzük, és jelentkezünk, ha valami még nyitott.",
   },
+  customRequest: {
+    subject: "Kérésed – {brand} ({id})",
+    preheader: "Köszönjük – hamarosan jelentkezünk.",
+    headline: "Köszönjük a kérésed",
+    intro: "Megkaptuk a kérésed, és hamarosan jelentkezünk.",
+    summary: "Adataid",
+    rows: {
+      id: "Kérés száma",
+      topics: "Miről van szó?",
+      product: "Csokor",
+      date: "Kívánt időpont",
+      place: "Szállítási hely",
+      budget: "Költségkeret",
+      message: "Üzeneted",
+      photo: "Fotó",
+    },
+    photoReceived: "1 fotó megérkezett",
+    flexible: "rugalmas",
+    footer: "Azért kapod ezt az e-mailt, mert kérést küldtél a(z) {brand} oldalon.",
+  },
 };
 
 export default mail;

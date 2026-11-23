@@ -18,6 +18,7 @@ import reminders from "./reminders";
 import mail from "./mail";
 import offer from "./offer";
 import pay from "./pay";
+import inquiry from "./inquiry";
 
 const de = {
   common,
@@ -35,6 +36,7 @@ const de = {
   mail,
   offer,
   pay,
+  inquiry,
 };
 
 export default de;

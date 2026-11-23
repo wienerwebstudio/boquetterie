@@ -31,6 +31,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "Pentru cine? Cu ce ocazie?",
     trackOrder: "Urmărește comanda",
     faq: "Întrebări frecvente",
+    customRequest: "Trimite o cerere",
+    customRequestHint: "Oră, loc, buchet",
   },
   announcement: {
     listLabel: "Anunțuri",
