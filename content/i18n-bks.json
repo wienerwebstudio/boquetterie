@@ -2185,6 +2185,11 @@
       "question": "Mogu li poslati cvijeće firmama ili hotelima?",
       "answer": "Da. Pri naplati navedite naziv firme ili hotela i – ako je poznato – odjel ili broj sobe. Dostava se vrši na recepciju.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Imate li ekspresnu dostavu?",
+      "answer": "Da – ekspresna dostava za 1–2 sata, bez doplate. Naručite kao i obično i na blagajni odaberite najraniji današnji termin – označen je s „Ekspres“. To je moguće ako naručite od ponedjeljka do subote do 18:30 sati ili nedjeljom do 17:45 sati i za Vašu adresu još ima slobodan termin.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Dostava cvijeća Beč",
+      "eyebrow": "Dostava cvijeća u cijelom Beču",
       "headline": "Cvijeće koje kaže više.",
       "subheadline": "Svježe aranžirano cvijeće za ljude koji su Vam važni. Jednostavno odaberite, odredite željeni datum i pošaljite radost.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Cvijeće koje kaže više.",
     "seo": {
       "defaultTitle": "Blumora – dostava cvijeća u Beču",
-      "defaultDescription": "Svježe aranžirano cvijeće, dostavljeno direktno ljudima koji su Vam važni. Odaberite željeni datum, pošaljite radost – dostava cvijeća za Beč."
+      "defaultDescription": "Dostava cvijeća u cijelom Beču: svježe aranžirani buketi u sva 23 okruga. Isti dan do 18:30 sati (nedjeljom do 17:45), ekspres za 1–2 sata bez doplate."
     },
     "announcement": {
       "messages": [
-        "Dostava cvijeća u cijelom Beču",
-        "Svježe aranžirano, dostavljeno kurirom",
-        "Željeni datum po izboru"
+        "Dostava u cijelom Beču – sva 23 okruga",
+        "Ekspres za 1–2 sata – bez doplate",
+        "Isti dan do 18:30, nedjeljom do 17:45",
+        "Svježe aranžirano, dostavljeno kurirom"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Dostava kurirom",
-        "text": "U sva 23 bečka okruga"
+        "text": "U cijelom Beču – sva 23 okruga"
       },
       {
         "title": "Željeni datum po izboru",
         "text": "Vi određujete dan"
       },
       {
-        "title": "Čestitke",
-        "text": "Stižu uskoro"
+        "title": "Ekspres za 1–2 sata",
+        "text": "Bez doplate, isti dan do 18:30"
       }
     ],
     "orderStatuses": {

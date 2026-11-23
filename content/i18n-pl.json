@@ -2185,6 +2185,11 @@
       "question": "Czy mogę wysłać kwiaty do firmy lub hotelu?",
       "answer": "Tak. W kasie podaj nazwę firmy lub hotelu oraz – jeśli je znasz – dział lub numer pokoju. Dostawa trafia do recepcji.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Czy jest dostawa ekspresowa?",
+      "answer": "Tak – dostawa ekspresowa w 1–2 godziny, bez dopłaty. Zamów jak zwykle i przy płatności wybierz najwcześniejszy dzisiejszy przedział czasowy – jest oznaczony jako „Ekspres”. Działa to, jeśli zamówisz od poniedziałku do soboty do 18:30 lub w niedzielę do 17:45 i dla twojego adresu jest jeszcze wolny przedział.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Dostawa kwiatów Wiedeń",
+      "eyebrow": "Dostawa kwiatów w całym Wiedniu",
       "headline": "Kwiaty, które mówią więcej.",
       "subheadline": "Świeżo wiązane kwiaty dla ludzi, którzy są dla ciebie ważni. Wybierz bukiet, ustal datę i podaruj radość.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Kwiaty, które mówią więcej.",
     "seo": {
       "defaultTitle": "Blumora – kwiaty z dostawą w Wiedniu",
-      "defaultDescription": "Świeżo wiązane kwiaty dostarczane prosto do ludzi, którzy są dla ciebie ważni. Wybierz datę, wyślij radość – dostawa kwiatów w Wiedniu."
+      "defaultDescription": "Dostawa kwiatów w całym Wiedniu: świeżo wiązane bukiety do wszystkich 23 dzielnic. Tego samego dnia do 18:30 (w niedzielę do 17:45), ekspres w 1–2 godziny bez dopłaty."
     },
     "announcement": {
       "messages": [
-        "Dostawa kwiatów w całym Wiedniu",
-        "Świeżo wiązane, dostarczane przez kuriera",
-        "Data dostawy do wyboru"
+        "Dostawa w całym Wiedniu – 23 dzielnice",
+        "Ekspres w 1–2 godziny – bez dopłaty",
+        "Tego samego dnia do 18:30, w niedzielę 17:45",
+        "Świeżo wiązane, dostarczane przez kuriera"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Dostawa kurierem",
-        "text": "Do wszystkich 23 dzielnic Wiednia"
+        "text": "W całym Wiedniu – wszystkie 23 dzielnice"
       },
       {
         "title": "Data do wyboru",
         "text": "Ty decydujesz o dniu"
       },
       {
-        "title": "Kartki z życzeniami",
-        "text": "Już wkrótce"
+        "title": "Ekspres w 1–2 godziny",
+        "text": "Bez dopłaty, tego samego dnia do 18:30"
       }
     ],
     "orderStatuses": {

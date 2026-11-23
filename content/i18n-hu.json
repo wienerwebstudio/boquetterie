@@ -2185,6 +2185,11 @@
       "question": "Küldhetek virágot cégekhez vagy szállodákba?",
       "answer": "Igen. A pénztárban add meg a cég vagy a szálloda nevét, és – ha ismered – az osztályt vagy a szobaszámot. A kézbesítés a recepcióra, illetve a portára történik.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Van expressz kiszállítás?",
+      "answer": "Igen – expressz kiszállítás 1–2 órán belül, felár nélkül. Rendelj a szokásos módon, és a pénztárnál válaszd a mai legkorábbi idősávot – „Expressz” jelöléssel szerepel. Ez akkor működik, ha hétfőtől szombatig 18:30-ig vagy vasárnap 17:45-ig rendelsz, és a címedre még van szabad idősáv.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Virágküldés Bécsben",
+      "eyebrow": "Virágküldés egész Bécsben",
       "headline": "Virágok, amelyek többet mondanak.",
       "subheadline": "Frissen kötött virágok azoknak, akik fontosak neked. Egyszerűen válassz, add meg a kívánt dátumot, és mi kiszállítjuk az örömöt.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Virágok, amelyek többet mondanak.",
     "seo": {
       "defaultTitle": "Blumora – virágküldés Bécsben",
-      "defaultDescription": "Frissen kötött virágok közvetlenül azoknak, akik fontosak neked. Válaszd ki a kívánt dátumot, küldj örömöt – virágküldés Bécsben."
+      "defaultDescription": "Virágkiszállítás egész Bécsben: frissen kötött csokrok mind a 23 kerületbe. Aznapi kiszállítás 18:30-ig (vasárnap 17:45-ig), expressz 1–2 órán belül felár nélkül."
     },
     "announcement": {
       "messages": [
-        "Virágkiszállítás egész Bécsben",
-        "Frissen kötve, futárral kiszállítva",
-        "Kívánt dátum választható"
+        "Kiszállítás egész Bécsben – mind a 23 kerület",
+        "Expressz 1–2 órán belül – felár nélkül",
+        "Aznap 18:30-ig, vasárnap 17:45-ig",
+        "Frissen kötve, futárral kiszállítva"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Kiszállítás futárral",
-        "text": "Bécs mind a 23 kerületébe"
+        "text": "Egész Bécsben – mind a 23 kerület"
       },
       {
         "title": "Kívánt dátum választható",
         "text": "Te döntöd el a napot"
       },
       {
-        "title": "Üdvözlőkártyák",
-        "text": "Hamarosan érkeznek"
+        "title": "Expressz 1–2 órán belül",
+        "text": "Felár nélkül, aznap 18:30-ig"
       }
     ],
     "orderStatuses": {

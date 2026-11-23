@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "Interval orar de livrare",
     windowHourly: "· livrare în ora aleasă",
+    /** Badge on today's earliest window (same day). */
+    express: "Express",
+    expressHint: "Livrare express în 1–2 ore – fără cost suplimentar.",
     chooseDateFirst: "Alege mai întâi o dată de livrare.",
     noWindowTitle: "Fără interval orar anume",
     noWindowText: "Livrăm pe parcursul zilei.",

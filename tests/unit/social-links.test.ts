@@ -32,7 +32,9 @@ function settingsBeforeLinks(): unknown {
 
 describe("WhatsApp/social links migration", () => {
   it("turns the stored settings from before the change into today's content/settings.json", () => {
-    expect(migrateDocument(MIGRATION, "settings", settingsBeforeLinks())).toEqual(repoSettings());
+    // This migration and every later one (e.g. the new phone number) lead to today's file.
+    const later = CONTENT_MIGRATIONS.slice(CONTENT_MIGRATIONS.indexOf(MIGRATION));
+    expect(later.reduce((d, m) => migrateDocument(m, "settings", d), settingsBeforeLinks())).toEqual(repoSettings());
   });
 
   it("is a no-op on today's settings (same object)", () => {

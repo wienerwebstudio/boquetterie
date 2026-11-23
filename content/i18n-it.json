@@ -2185,6 +2185,11 @@
       "question": "Posso inviare fiori ad aziende o hotel?",
       "answer": "Sì. Nel checkout indica il nome dell'azienda o dell'hotel e – se lo conosci – il reparto o il numero della camera. La consegna avviene alla reception o all'accoglienza.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "C'è una consegna express?",
+      "answer": "Sì – consegna express in 1–2 ore, senza sovrapprezzo. Ordina come al solito e al pagamento scegli la prima fascia oraria di oggi – è contrassegnata con «Express». Funziona se ordini dal lunedì al sabato entro le 18:30 o la domenica entro le 17:45 e c'è ancora una fascia libera per il tuo indirizzo.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Consegna fiori a Vienna",
+      "eyebrow": "Consegna fiori in tutta Vienna",
       "headline": "Fiori che dicono di più.",
       "subheadline": "Fiori composti freschi per le persone a cui tieni. Scegli, decidi la data che preferisci e fai consegnare un po' di gioia.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Fiori che dicono di più.",
     "seo": {
       "defaultTitle": "Blumora – consegna fiori a domicilio a Vienna",
-      "defaultDescription": "Fiori composti freschi, consegnati direttamente alle persone a cui tieni. Scegli la data che preferisci, invia gioia – consegna fiori a Vienna."
+      "defaultDescription": "Consegna fiori in tutta Vienna: bouquet composti freschi in tutti i 23 distretti. In giornata entro le 18:30 (domenica entro le 17:45), express in 1–2 ore senza sovrapprezzo."
     },
     "announcement": {
       "messages": [
-        "Consegna fiori in tutta Vienna",
-        "Composti freschi, consegnati tramite corriere",
-        "Data di consegna a scelta"
+        "Consegna in tutta Vienna – 23 distretti",
+        "Express in 1–2 ore – senza sovrapprezzo",
+        "In giornata entro le 18:30, domenica 17:45",
+        "Composti freschi, consegnati tramite corriere"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Consegna tramite corriere",
-        "text": "In tutti i 23 distretti di Vienna"
+        "text": "In tutta Vienna – tutti i 23 distretti"
       },
       {
         "title": "Data a scelta",
         "text": "Decidi tu il giorno"
       },
       {
-        "title": "Biglietti d'auguri",
-        "text": "In arrivo a breve"
+        "title": "Express in 1–2 ore",
+        "text": "Senza sovrapprezzo, in giornata entro le 18:30"
       }
     ],
     "orderStatuses": {

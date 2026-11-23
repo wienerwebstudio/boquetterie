@@ -2185,6 +2185,11 @@
       "question": "Môžem poslať kvety do firmy alebo hotela?",
       "answer": "Áno. V pokladni uveďte názov firmy alebo hotela a – ak ich poznáte – oddelenie alebo číslo izby. Doručujeme na recepciu.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Ponúkate expresné doručenie?",
+      "answer": "Áno – expresné doručenie do 1–2 hodín, bez príplatku. Objednajte ako zvyčajne a pri platbe zvoľte najskoršie dnešné časové okno – je označené ako „Expres“. Funguje to, ak objednáte od pondelka do soboty do 18:30 alebo v nedeľu do 17:45 a pre vašu adresu je ešte voľné okno.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Doručenie kvetov Viedeň",
+      "eyebrow": "Doručenie kvetov v celej Viedni",
       "headline": "Kvety, ktoré povedia viac.",
       "subheadline": "Čerstvo viazané kvety pre ľudí, na ktorých vám záleží. Jednoducho vyberte, určte želaný dátum a nechajte doručiť radosť.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Kvety, ktoré povedia viac.",
     "seo": {
       "defaultTitle": "Blumora – doručenie kvetov vo Viedni",
-      "defaultDescription": "Čerstvo viazané kvety, doručené priamo ľuďom, na ktorých vám záleží. Vyberte želaný dátum, pošlite radosť – doručenie kvetov vo Viedni."
+      "defaultDescription": "Doručenie kvetov v celej Viedni: čerstvo viazané kytice do všetkých 23 obvodov. V ten istý deň do 18:30 (v nedeľu do 17:45), expres do 1–2 hodín bez príplatku."
     },
     "announcement": {
       "messages": [
-        "Doručenie kvetov v celej Viedni",
-        "Čerstvo viazané, doručené kuriérom",
-        "Dátum doručenia podľa vášho výberu"
+        "Doručenie v celej Viedni – 23 obvodov",
+        "Expres do 1–2 hodín – bez príplatku",
+        "V ten istý deň do 18:30, v nedeľu do 17:45",
+        "Čerstvo viazané, doručené kuriérom"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Doručenie kuriérom",
-        "text": "Do všetkých 23 viedenských obvodov"
+        "text": "V celej Viedni – všetkých 23 obvodov"
       },
       {
         "title": "Želaný dátum",
         "text": "Deň určujete vy"
       },
       {
-        "title": "Pozdravné kartičky",
-        "text": "Už čoskoro"
+        "title": "Expres do 1–2 hodín",
+        "text": "Bez príplatku, v ten istý deň do 18:30"
       }
     ],
     "orderStatuses": {

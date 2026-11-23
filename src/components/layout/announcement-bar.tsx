@@ -14,7 +14,8 @@ function subscribeReducedMotion(onChange: () => void) {
 const prefersReducedMotion = () => window.matchMedia(REDUCED_MOTION).matches;
 const prefersReducedMotionOnServer = () => false;
 
-const textCls = "truncate text-[12px] font-medium tracking-[0.04em] sm:text-[13px]";
+// Two lines fit into the 36 px bar on narrow phones (longer languages); one line from sm on.
+const textCls = "line-clamp-2 text-[12px] font-medium leading-[1.2] tracking-[0.04em] sm:line-clamp-1 sm:text-[13px]";
 
 /**
  * Rotating announcements. The rotation is purely visual: assistive tech gets all

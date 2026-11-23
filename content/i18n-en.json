@@ -2185,6 +2185,11 @@
       "question": "Can I send flowers to companies or hotels?",
       "answer": "Yes. At checkout, enter the company or hotel name and – if known – the department or room number. Delivery is made to the reception desk.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Do you offer express delivery?",
+      "answer": "Yes – express delivery in 1–2 hours, at no extra cost. Just order as usual and choose today's earliest time slot at checkout – it is marked “Express”. This works if you order Monday to Saturday by 6:30 pm or on Sundays by 5:45 pm and a time slot is still free for your address.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Flower delivery Vienna",
+      "eyebrow": "Flower delivery across Vienna",
       "headline": "Flowers that say more.",
       "subheadline": "Freshly tied flowers for the people who matter to you. Simply choose, pick your date and have joy delivered.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Flowers that say more.",
     "seo": {
       "defaultTitle": "Blumora – Flower Delivery in Vienna, Austria",
-      "defaultDescription": "Freshly tied flowers delivered straight to the people who matter to you. Choose your date, send joy – flower delivery in Vienna, Austria."
+      "defaultDescription": "Flower delivery across all of Vienna: freshly tied bouquets to all 23 districts. Same day until 6:30 pm (Sundays until 5:45 pm), express in 1–2 hours at no extra cost."
     },
     "announcement": {
       "messages": [
-        "Flower delivery across Vienna",
-        "Freshly tied, delivered by courier",
-        "Choose your delivery date"
+        "Delivery across Vienna, all 23 districts",
+        "Express in 1–2 hours – no extra cost",
+        "Same day until 6:30 pm, Sundays 5:45 pm",
+        "Freshly tied, delivered by courier"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Delivery by courier",
-        "text": "To all 23 districts of Vienna"
+        "text": "Across Vienna – all 23 districts"
       },
       {
         "title": "Choose your date",
         "text": "You decide the day"
       },
       {
-        "title": "Greeting cards",
-        "text": "Coming soon"
+        "title": "Express in 1–2 hours",
+        "text": "No extra cost, same day until 6:30 pm"
       }
     ],
     "orderStatuses": {

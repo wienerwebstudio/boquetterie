@@ -360,3 +360,10 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Neues `PhoneInput` (`src/components/ui/input.tsx`) + `src/lib/phone.ts`: Vorwahl-Auswahl (Standard Österreich +43, 47 Länder, Ländernamen in der Shop-Sprache via `Intl.DisplayNames`), Nummernfeld daneben. Gespeichert wird ein String „+43 660 1234567“ (führende 0 entfällt). Eingefügte „+49 …“/„0049 …“ schalten die Vorwahl um.
 - Eingesetzt in Kasse (Besteller + Empfänger), Anfrage, Firmenkunden, Kundenkonto. Neuer i18n-Key `ui.phoneCountry` in allen Sprachen.
 - Tests: `tests/unit/phone.test.ts`, `tests/e2e/phone-input.spec.ts`; Anfrage-/Abbruch-Tests erwarten jetzt „+43 664 …“. Volle Suite: 628 Unit, 72 E2E grün.
+
+## 2026-11-24 – Texte: ganz Wien, Same Day, Express, neue Telefonnummer
+- Neue Nummer +43 670 2023515 (24/7 Telefon + WhatsApp) statt +43 660 6795870: Settings (Footer, Kontakt, Mails, JSON-LD) und Impressum/Datenschutz/AGB/Widerruf. Migration `2026-11-24-phone-0670`.
+- Alle 17 Sprachen (Migration `2026-11-24-vienna-same-day-express`, Texte in `src/lib/content-updates-vienna-express.ts`): SEO-Beschreibung mit „ganz Wien / alle 23 Bezirke / Same Day bis 18:30 (So 17:45) / Express 1–2 h ohne Aufpreis“, Ankündigungsleiste (4 Meldungen), Vorteil „Grußkarten – kommen bald“ → „Express in 1–2 Stunden“, Vorteil Lieferung „In ganz Wien – alle 23 Bezirke“, Hero-Eyebrow „Blumenversand in ganz Wien“, neue FAQ „Gibt es eine Express-Lieferung?“. Werte werden nur ersetzt, solange sie noch dem alten Text entsprechen (Admin-Änderungen bleiben).
+- Kasse: das früheste freie Zeitfenster von heute trägt das Abzeichen „Express“, darunter „Express-Lieferung in 1–2 Stunden – ohne Aufpreis.“ (i18n `checkout.delivery.express/expressHint`, alle Sprachen).
+- Ankündigungsleiste: auf schmalen Handys bis zu zwei Zeilen statt Abschneiden; alle Meldungen aller Sprachen bei 360 px geprüft.
+- Tests: Unit (Migration inkl. Admin-Änderungen, alte → neue Dateien geprüft), E2E `express-window.spec.ts` (Tagesdaten abgefangen, unabhängig von der Uhrzeit). Volle Suite: 630 Unit, 73 E2E grün.

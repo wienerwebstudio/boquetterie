@@ -2185,6 +2185,11 @@
       "question": "¿Puedo enviar flores a empresas u hoteles?",
       "answer": "Sí. En el proceso de pago indica el nombre de la empresa o del hotel y, si lo sabes, el departamento o el número de habitación. La entrega se hace en la recepción.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "¿Hay entrega exprés?",
+      "answer": "Sí: entrega exprés en 1–2 horas, sin coste adicional. Pide como siempre y elige en el pago la primera franja horaria de hoy; está marcada como «Exprés». Funciona si pides de lunes a sábado hasta las 18:30 o los domingos hasta las 17:45 y aún queda una franja libre para tu dirección.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Envío de flores en Viena",
+      "eyebrow": "Envío de flores en toda Viena",
       "headline": "Flores que dicen más.",
       "subheadline": "Flores recién atadas para las personas que te importan. Solo tienes que elegir, decidir la fecha y dejar que entreguemos la alegría.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Flores que dicen más.",
     "seo": {
       "defaultTitle": "Blumora – flores a domicilio en Viena",
-      "defaultDescription": "Flores recién atadas, entregadas directamente a las personas que te importan. Elige la fecha, envía alegría: envío de flores en Viena."
+      "defaultDescription": "Entrega de flores en toda Viena: ramos recién atados a los 23 distritos. En el mismo día hasta las 18:30 (domingos hasta las 17:45), exprés en 1–2 horas sin coste adicional."
     },
     "announcement": {
       "messages": [
-        "Entrega de flores en toda Viena",
-        "Recién atadas, entregadas por mensajero",
-        "Elige la fecha de entrega"
+        "Entrega en toda Viena – los 23 distritos",
+        "Exprés en 1–2 horas, sin coste adicional",
+        "Mismo día hasta las 18:30, domingos 17:45",
+        "Recién atadas, entregadas por mensajero"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Entrega por mensajero",
-        "text": "En los 23 distritos de Viena"
+        "text": "En toda Viena – los 23 distritos"
       },
       {
         "title": "Fecha a tu elección",
         "text": "Tú decides el día"
       },
       {
-        "title": "Tarjetas de dedicatoria",
-        "text": "Llegarán pronto"
+        "title": "Exprés en 1–2 horas",
+        "text": "Sin coste adicional, mismo día hasta las 18:30"
       }
     ],
     "orderStatuses": {

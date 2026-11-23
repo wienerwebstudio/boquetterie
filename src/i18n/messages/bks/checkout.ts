@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "Vremenski termin dostave",
     windowHourly: "· dostava unutar odabranog sata",
+    /** Badge on today's earliest window (same day). */
+    express: "Ekspres",
+    expressHint: "Ekspresna dostava za 1–2 sata – bez doplate.",
     chooseDateFirst: "Prvo odaberite datum dostave.",
     noWindowTitle: "Bez određenog vremenskog termina",
     noWindowText: "Dostavljamo tokom dana.",

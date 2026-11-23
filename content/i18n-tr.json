@@ -2185,6 +2185,11 @@
       "question": "Şirketlere veya otellere çiçek gönderebilir miyim?",
       "answer": "Evet. Ödeme adımında şirket veya otel adını ve – biliyorsanız – departmanı ya da oda numarasını belirtin. Teslimat resepsiyona ya da danışmaya yapılır.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Ekspres teslimat var mı?",
+      "answer": "Evet – 1–2 saat içinde ekspres teslimat, ek ücret yok. Her zamanki gibi sipariş verin ve ödeme adımında bugünün en erken zaman aralığını seçin – „Ekspres“ olarak işaretlidir. Pazartesiden cumartesiye 18:30'a kadar ya da pazar günleri 17:45'e kadar sipariş verirseniz ve adresiniz için hâlâ boş bir zaman aralığı varsa bu mümkündür.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Viyana'da çiçek gönderimi",
+      "eyebrow": "Viyana'nın her yerine çiçek gönderimi",
       "headline": "Daha fazlasını anlatan çiçekler.",
       "subheadline": "Sizin için önemli olan insanlara taze hazırlanmış çiçekler. Seçin, istediğiniz tarihi belirleyin ve mutluluğu kapılarına gönderin.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Daha fazlasını anlatan çiçekler.",
     "seo": {
       "defaultTitle": "Blumora – Viyana'da çiçek teslimatı",
-      "defaultDescription": "Taze hazırlanmış çiçekler, doğrudan sizin için önemli olan insanlara teslim edilir. İstediğiniz tarihi seçin, mutluluk gönderin – Viyana için çiçek gönderimi."
+      "defaultDescription": "Viyana'nın her yerine çiçek teslimatı: taze hazırlanmış buketler 23 bölgenin tamamına. Aynı gün 18:30'a kadar (pazar 17:45'e kadar), 1–2 saatte ekspres, ek ücret yok."
     },
     "announcement": {
       "messages": [
-        "Viyana'nın her yerine çiçek teslimatı",
-        "Taze hazırlanır, kuryeyle teslim edilir",
-        "İstediğiniz tarihi seçebilirsiniz"
+        "Viyana'nın her yerine – 23 bölgenin tamamı",
+        "1–2 saatte ekspres – ek ücret yok",
+        "Aynı gün 18:30'a, pazar 17:45'e kadar",
+        "Taze hazırlanır, kuryeyle teslim edilir"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Kuryeyle teslimat",
-        "text": "Viyana'nın 23 bölgesinin tamamına"
+        "text": "Viyana'nın her yerine – 23 bölgenin tamamı"
       },
       {
         "title": "İstediğiniz tarih",
         "text": "Günü siz belirlersiniz"
       },
       {
-        "title": "Tebrik kartları",
-        "text": "Yakında geliyor"
+        "title": "1–2 saatte ekspres",
+        "text": "Ek ücret yok, aynı gün 18:30'a kadar"
       }
     ],
     "orderStatuses": {

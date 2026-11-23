@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "Delivery time slot",
     windowHourly: "· Delivery within the chosen hour",
+    /** Badge on today's earliest window (same day). */
+    express: "Express",
+    expressHint: "Express delivery in 1–2 hours – at no extra cost.",
     chooseDateFirst: "Choose a delivery date first.",
     noWindowTitle: "No specific time slot",
     noWindowText: "We deliver during the course of the day.",

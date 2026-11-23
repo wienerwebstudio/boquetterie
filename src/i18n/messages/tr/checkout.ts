@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "Teslimat zaman aralığı",
     windowHourly: "· Seçilen saat içinde teslimat",
+    /** Badge on today's earliest window (same day). */
+    express: "Ekspres",
+    expressHint: "1–2 saat içinde ekspres teslimat – ek ücret yok.",
     chooseDateFirst: "Önce bir teslimat tarihi seçin.",
     noWindowTitle: "Belirli bir zaman aralığı yok",
     noWindowText: "Gün içinde teslim ediyoruz.",

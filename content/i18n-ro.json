@@ -2185,6 +2185,11 @@
       "question": "Pot trimite flori la firme sau hoteluri?",
       "answer": "Da. În checkout, indică numele firmei sau al hotelului și – dacă îl știi – departamentul sau numărul camerei. Livrarea se face la recepție.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Aveți livrare express?",
+      "answer": "Da – livrare express în 1–2 ore, fără cost suplimentar. Comandă ca de obicei și alege la plată cel mai devreme interval orar de azi – este marcat cu „Express”. Funcționează dacă comanzi de luni până sâmbătă până la ora 18:30 sau duminica până la ora 17:45 și mai este liber un interval pentru adresa ta.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Livrare flori Viena",
+      "eyebrow": "Livrare flori în toată Viena",
       "headline": "Flori care spun mai mult.",
       "subheadline": "Flori legate proaspăt pentru oamenii care contează pentru tine. Alege, stabilește data dorită și trimite bucurie.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Flori care spun mai mult.",
     "seo": {
       "defaultTitle": "Blumora – livrare de flori în Viena",
-      "defaultDescription": "Flori legate proaspăt, livrate direct oamenilor care contează pentru tine. Alege data dorită, trimite bucurie – livrare de flori în Viena."
+      "defaultDescription": "Livrare de flori în toată Viena: buchete legate proaspăt în toate cele 23 de districte. În aceeași zi până la 18:30 (duminica până la 17:45), express în 1–2 ore fără cost suplimentar."
     },
     "announcement": {
       "messages": [
-        "Livrare de flori în toată Viena",
-        "Legate proaspăt, livrate prin curier",
-        "Data dorită la alegere"
+        "Livrare în toată Viena – 23 de districte",
+        "Express în 1–2 ore – fără cost suplimentar",
+        "În aceeași zi până la 18:30, duminica 17:45",
+        "Legate proaspăt, livrate prin curier"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Livrare prin curier",
-        "text": "În toate cele 23 de districte ale Vienei"
+        "text": "În toată Viena – toate cele 23 de districte"
       },
       {
         "title": "Data dorită la alegere",
         "text": "Tu stabilești ziua"
       },
       {
-        "title": "Felicitări",
-        "text": "În curând"
+        "title": "Express în 1–2 ore",
+        "text": "Fără cost suplimentar, în aceeași zi până la 18:30"
       }
     ],
     "orderStatuses": {

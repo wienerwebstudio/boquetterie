@@ -139,6 +139,9 @@ const checkout = {
     suffix: ".",
     window: "Lieferzeitfenster",
     windowHourly: "· Zustellung innerhalb der gewählten Stunde",
+    /** Badge on today's earliest window (same day). */
+    express: "Express",
+    expressHint: "Express-Lieferung in 1–2 Stunden – ohne Aufpreis.",
     chooseDateFirst: "Wähle zuerst ein Lieferdatum.",
     noWindowTitle: "Kein bestimmtes Zeitfenster",
     noWindowText: "Wir liefern im Laufe des Tages.",

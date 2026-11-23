@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "Часовий інтервал доставки",
     windowHourly: "· доставка протягом обраної години",
+    /** Badge on today's earliest window (same day). */
+    express: "Експрес",
+    expressHint: "Експрес-доставка за 1–2 години – без доплати.",
     chooseDateFirst: "Спершу оберіть дату доставки.",
     noWindowTitle: "Без конкретного інтервалу",
     noWindowText: "Ми доставляємо протягом дня.",

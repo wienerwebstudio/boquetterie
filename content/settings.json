@@ -4,7 +4,7 @@
     "claim": "Blumen, die mehr sagen.",
     "legalName": "Tunahan Ceylan",
     "email": "office@blumora.at",
-    "phone": "+43 660 6795870",
+    "phone": "+43 670 2023515",
     "address": {
       "street": "Am Langen Felde 51/18",
       "zip": "1220",
@@ -26,9 +26,10 @@
   "announcement": {
     "enabled": true,
     "messages": [
-      "Blumenlieferung in ganz Wien",
-      "Frisch gebunden, per Kurier geliefert",
-      "Wunschdatum wählbar"
+      "Lieferung in ganz Wien, alle 23 Bezirke",
+      "Express in 1–2 Stunden – ohne Aufpreis",
+      "Same Day bis 18:30, sonntags bis 17:45",
+      "Frisch gebunden, per Kurier geliefert"
     ]
   },
   "timezone": "Europe/Vienna",
@@ -153,7 +154,7 @@
   "seo": {
     "siteUrl": "https://blumora.at",
     "defaultTitle": "Blumora – Blumen liefern lassen in Wien",
-    "defaultDescription": "Frisch gebundene Blumen, direkt an die Menschen geliefert, die dir wichtig sind. Wunschdatum wählen, Freude schicken – Blumenversand für Wien."
+    "defaultDescription": "Blumen liefern lassen in ganz Wien: frisch gebundene Sträuße in alle 23 Bezirke. Same Day bis 18:30 Uhr (sonntags bis 17:45), Express in 1–2 Stunden ohne Aufpreis."
   },
   "trust": [
     {
@@ -164,7 +165,7 @@
     {
       "icon": "truck",
       "title": "Lieferung per Kurier",
-      "text": "In alle 23 Wiener Bezirke"
+      "text": "In ganz Wien – alle 23 Bezirke"
     },
     {
       "icon": "calendar",
@@ -172,9 +173,9 @@
       "text": "Du bestimmst den Tag"
     },
     {
-      "icon": "mail",
-      "title": "Grußkarten",
-      "text": "Kommen bald"
+      "icon": "clock",
+      "title": "Express in 1–2 Stunden",
+      "text": "Ohne Aufpreis, Same Day bis 18:30 Uhr"
     }
   ],
   "greetingCard": {

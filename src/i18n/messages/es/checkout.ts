@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "Franja horaria de entrega",
     windowHourly: "· Entrega dentro de la hora elegida",
+    /** Badge on today's earliest window (same day). */
+    express: "Exprés",
+    expressHint: "Entrega exprés en 1–2 horas, sin coste adicional.",
     chooseDateFirst: "Primero elige una fecha de entrega.",
     noWindowTitle: "Sin franja horaria concreta",
     noWindowText: "Entregamos a lo largo del día.",

@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "Kiszállítási idősáv",
     windowHourly: "· kézbesítés a kiválasztott órán belül",
+    /** Badge on today's earliest window (same day). */
+    express: "Expressz",
+    expressHint: "Expressz kiszállítás 1–2 órán belül – felár nélkül.",
     chooseDateFirst: "Először válassz kiszállítási dátumot.",
     noWindowTitle: "Nincs meghatározott idősáv",
     noWindowText: "A nap folyamán szállítunk ki.",

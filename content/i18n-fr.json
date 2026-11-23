@@ -2185,6 +2185,11 @@
       "question": "Puis-je envoyer des fleurs à une entreprise ou à un hôtel ?",
       "answer": "Oui. Lors de la commande, indiquez le nom de l’entreprise ou de l’hôtel et – si vous les connaissez – le service ou le numéro de chambre. La livraison se fait à la réception ou à l’accueil.",
       "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Proposez-vous une livraison express ?",
+      "answer": "Oui – livraison express en 1 à 2 heures, sans supplément. Commandez comme d’habitude et choisissez au paiement le premier créneau du jour – il est marqué « Express ». C’est possible si vous commandez du lundi au samedi jusqu’à 18 h 30 ou le dimanche jusqu’à 17 h 45 et qu’un créneau est encore libre pour votre adresse.",
+      "category": "lieferung"
     }
   },
   "pages": {
@@ -2255,7 +2260,7 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "Livraison de fleurs à Vienne",
+      "eyebrow": "Livraison de fleurs dans tout Vienne",
       "headline": "Des fleurs qui en disent plus.",
       "subheadline": "Des fleurs fraîchement composées pour les personnes qui comptent pour vous. Il suffit de choisir, de fixer la date et de faire livrer un peu de bonheur.",
       "primaryCta": {
@@ -2375,13 +2380,14 @@
     "claim": "Des fleurs qui en disent plus.",
     "seo": {
       "defaultTitle": "Blumora – livraison de fleurs à Vienne",
-      "defaultDescription": "Des fleurs fraîchement composées, livrées directement à ceux qui comptent pour vous. Choisissez la date, offrez du bonheur – livraison de fleurs à Vienne."
+      "defaultDescription": "Livraison de fleurs dans tout Vienne : bouquets fraîchement composés dans les 23 arrondissements. Le jour même jusqu’à 18 h 30 (dimanche 17 h 45), express en 1 à 2 heures sans supplément."
     },
     "announcement": {
       "messages": [
-        "Livraison de fleurs dans tout Vienne",
-        "Fraîchement composées, livrées par coursier",
-        "Date de livraison au choix"
+        "Livraison dans tout Vienne – 23 arrondissements",
+        "Express en 1 à 2 h – sans supplément",
+        "Le jour même jusqu’à 18 h 30, dim. 17 h 45",
+        "Fraîchement composées, livrées par coursier"
       ]
     },
     "trust": [
@@ -2391,15 +2397,15 @@
       },
       {
         "title": "Livraison par coursier",
-        "text": "Dans les 23 arrondissements de Vienne"
+        "text": "Dans tout Vienne – les 23 arrondissements"
       },
       {
         "title": "Date au choix",
         "text": "Vous choisissez le jour"
       },
       {
-        "title": "Cartes message",
-        "text": "Bientôt disponibles"
+        "title": "Express en 1 à 2 heures",
+        "text": "Sans supplément, le jour même jusqu’à 18 h 30"
       }
     ],
     "orderStatuses": {

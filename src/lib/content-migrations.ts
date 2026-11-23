@@ -1,3 +1,4 @@
+import { NEW_PHONE, OLD_PHONE, VIENNA_EXPRESS_TEXTS, type ViennaExpressTexts } from "@/lib/content-updates-vienna-express";
 import { jsonStore, type DocumentStore } from "@/lib/store";
 import { LANDING_PAGES_WAVE1 } from "@/lib/landing-pages-wave1";
 
@@ -352,7 +353,88 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-23-whatsapp-social-links",
     transform: { settings: (doc) => withSocialLinks(doc) },
   },
+  {
+    // New phone number (24/7 by phone and WhatsApp) – settings, imprint, privacy, terms, withdrawal.
+    id: "2026-11-24-phone-0670",
+    replace: {
+      settings: [[OLD_PHONE, NEW_PHONE]],
+      pages: [[OLD_PHONE, NEW_PHONE]],
+    },
+  },
+  {
+    // "ganz Wien / alle 23 Bezirke", Same Day 18:30 (Sun 17:45), Express in 1–2 h at no extra cost – every language.
+    id: "2026-11-24-vienna-same-day-express",
+    transform: {
+      settings: (doc) => withViennaExpressSettings(doc, VIENNA_EXPRESS_TEXTS.de, true),
+      homepage: (doc) => withViennaExpressHomepage(doc, VIENNA_EXPRESS_TEXTS.de),
+      faqs: (doc) => withExpressFaq(doc),
+      ...Object.fromEntries(Object.keys(VIENNA_EXPRESS_TEXTS).filter((l) => l !== "de").map((l) => [`i18n-${l}`, (doc: unknown) => withViennaExpressTranslation(doc, VIENNA_EXPRESS_TEXTS[l])])),
+    },
+  },
 ];
+
+const sameJson = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
+
+/** Settings (German document or the `settings` part of a translation): only values still equal to the old text change. */
+export function withViennaExpressSettings<T>(doc: T, t: ViennaExpressTexts, german = false): T {
+  if (!doc || typeof doc !== "object" || Array.isArray(doc)) return doc;
+  const s = doc as Obj;
+  let changed = false;
+  const next: Obj = { ...s };
+  const seo = s.seo as Obj | undefined;
+  if (seo && seo.defaultDescription === t.seo.from) { next.seo = { ...seo, defaultDescription: t.seo.to }; changed = true; }
+  const ann = s.announcement as Obj | undefined;
+  if (ann && sameJson(ann.messages, t.announcement.from)) { next.announcement = { ...ann, messages: t.announcement.to }; changed = true; }
+  if (Array.isArray(s.trust)) {
+    let trustChanged = false;
+    const trust = (s.trust as Obj[]).map((item) => {
+      if (item && item.text === t.trustDistricts.from) { trustChanged = true; return { ...item, text: t.trustDistricts.to }; }
+      if (item && item.title === t.trustCard.from.title && item.text === t.trustCard.from.text) {
+        trustChanged = true;
+        return { ...item, ...(german ? { icon: "clock" } : {}), title: t.trustCard.to.title, text: t.trustCard.to.text };
+      }
+      return item;
+    });
+    if (trustChanged) { next.trust = trust; changed = true; }
+  }
+  return (changed ? next : doc) as T;
+}
+
+/** Homepage hero eyebrow ("Blumenversand Wien" → "Blumenversand in ganz Wien"). */
+export function withViennaExpressHomepage<T>(doc: T, t: ViennaExpressTexts): T {
+  if (!doc || typeof doc !== "object" || Array.isArray(doc)) return doc;
+  const hero = (doc as Obj).hero as Obj | undefined;
+  if (!hero || hero.eyebrow !== t.eyebrow.from) return doc;
+  return { ...(doc as Obj), hero: { ...hero, eyebrow: t.eyebrow.to } } as T;
+}
+
+/** Adds the German FAQ "Gibt es eine Express-Lieferung?" right after the same-day question (once). */
+export function withExpressFaq<T>(doc: T): T {
+  if (!Array.isArray(doc) || doc.some((f) => (f as Obj)?.id === "f-express")) return doc;
+  const t = VIENNA_EXPRESS_TEXTS.de.faq;
+  const list = doc as Obj[];
+  const at = list.findIndex((f) => f?.id === "f-today");
+  const today = at >= 0 ? list[at] : undefined;
+  const sortOrder = typeof today?.sortOrder === "number" ? today.sortOrder + 0.5 : list.length + 1;
+  const entry = { id: "f-express", question: t.question, answer: t.answer, category: "lieferung", sortOrder };
+  return (at >= 0 ? [...list.slice(0, at + 1), entry, ...list.slice(at + 1)] : [...list, entry]) as T;
+}
+
+/** One translation document `i18n-{locale}`: settings, homepage eyebrow and the express FAQ. */
+export function withViennaExpressTranslation<T>(doc: T, t: ViennaExpressTexts): T {
+  if (!doc || typeof doc !== "object" || Array.isArray(doc)) return doc;
+  const d = doc as Obj;
+  const next: Obj = { ...d };
+  let changed = false;
+  if (d.settings) { const s = withViennaExpressSettings(d.settings, t); if (s !== d.settings) { next.settings = s; changed = true; } }
+  if (d.homepage) { const h = withViennaExpressHomepage(d.homepage, t); if (h !== d.homepage) { next.homepage = h; changed = true; } }
+  const faqs = d.faqs as Obj | undefined;
+  if (faqs && typeof faqs === "object" && !faqs["f-express"]) {
+    next.faqs = { ...faqs, "f-express": { question: t.faq.question, answer: t.faq.answer, category: "lieferung" } };
+    changed = true;
+  }
+  return (changed ? next : doc) as T;
+}
 
 /** Links given by the owners (tracking parameters removed). */
 export const SOCIAL_LINKS = {

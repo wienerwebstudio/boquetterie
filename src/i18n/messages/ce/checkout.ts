@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "ДӀакхачоран хенан юкъ",
     windowHourly: "· харжинчу сахьтехь дӀакхачор",
+    /** Badge on today's earliest window (same day). */
+    express: "Экспресс",
+    expressHint: "Экспресс-дIакховдар 1–2 сахьтехь – тIе ахча доцуш.",
     chooseDateFirst: "Хьалха дӀакхачоран де харжийша.",
     noWindowTitle: "Билгала хенан юкъ йоцуш",
     noWindowText: "Оха дийнан чохь дӀакхачадо.",

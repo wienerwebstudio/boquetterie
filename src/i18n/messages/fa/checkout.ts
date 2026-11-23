@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "بازهٔ زمانی تحویل",
     windowHourly: "· تحویل در همان ساعت انتخاب‌شده",
+    /** Badge on today's earliest window (same day). */
+    express: "اکسپرس",
+    expressHint: "تحویل اکسپرس در ۱ تا ۲ ساعت – بدون هزینه اضافه.",
     chooseDateFirst: "ابتدا یک تاریخ تحویل انتخاب کنید.",
     noWindowTitle: "بدون بازهٔ زمانی مشخص",
     noWindowText: "در طول روز تحویل می‌دهیم.",

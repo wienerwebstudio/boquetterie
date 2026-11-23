@@ -45,7 +45,8 @@ describe("runContentMigrations", () => {
     await runContentMigrations(store);
     const s = store.docs.get("content/settings") as typeof settings;
     expect(s.announcement.messages).toEqual(["Blumenlieferung in ganz Wien"]);
-    expect(s.trust[0]).toEqual({ icon: "mail", title: "Grußkarten", text: "Kommen bald" });
+    // Greeting-card copy first became "Kommen bald", then (2026-11-24) the Express card.
+    expect(s.trust[0]).toEqual({ icon: "clock", title: "Express in 1–2 Stunden", text: "Ohne Aufpreis, Same Day bis 18:30 Uhr" });
     expect(s.seo.defaultDescription).toBe("Wunschdatum wählen, Freude schicken – Blumenversand für Wien.");
     expect(s.brand.name).toBe("Vom Admin geändert");
     expect(store.docs.get("data/content-migrations")).toEqual(CONTENT_MIGRATIONS.map((m) => m.id));
@@ -129,5 +130,54 @@ describe("review date fix", () => {
       { id: "c", name: "Emre Ünsal", date: "2026-11-20" },
     ]) as { date: string }[];
     expect(out.map((r) => r.date)).toEqual(["2026-11-16", "2026-11-17", "2026-11-20"]);
+  });
+});
+
+describe("ganz Wien / Same Day / Express + new phone (2026-11-24)", () => {
+  it("changes the seeded German texts, adds the FAQ once and keeps admin edits", async () => {
+    const { VIENNA_EXPRESS_TEXTS: T, OLD_PHONE, NEW_PHONE } = await import("@/lib/content-updates-vienna-express");
+    const de = T.de;
+    const store = memoryStore({
+      settings: {
+        brand: { phone: OLD_PHONE },
+        seo: { defaultTitle: "x", defaultDescription: de.seo.from },
+        announcement: { enabled: true, messages: de.announcement.from },
+        trust: [{ icon: "leaf", title: "Frisch", text: "t" }, { icon: "truck", title: "Kurier", text: de.trustDistricts.from }, { icon: "mail", ...de.trustCard.from }],
+      },
+      homepage: { hero: { eyebrow: de.eyebrow.from, headline: "h" } },
+      faqs: [{ id: "f-where", sortOrder: 1 }, { id: "f-today", sortOrder: 2 }, { id: "f-date", sortOrder: 3 }],
+      pages: [{ slug: "impressum", sections: [{ paragraphs: [`Telefon: ${OLD_PHONE}`] }] }],
+      "i18n-en": { settings: { seo: { defaultDescription: "edited in admin" }, announcement: { messages: T.en.announcement.from }, trust: [{ title: "a", text: T.en.trustDistricts.from }, T.en.trustCard.from] }, homepage: { hero: { eyebrow: T.en.eyebrow.from } }, faqs: { "f-today": { question: "q" } } },
+    });
+    await runContentMigrations(store, CONTENT_MIGRATIONS, memoryStore({}));
+    const s = store.docs.get("content/settings") as { brand: { phone: string }; seo: { defaultDescription: string }; announcement: { messages: string[] }; trust: { icon: string; title: string; text: string }[] };
+    expect(s.brand.phone).toBe(NEW_PHONE);
+    expect(s.seo.defaultDescription).toBe(de.seo.to);
+    expect(s.announcement.messages).toEqual(de.announcement.to);
+    expect(s.trust[1].text).toBe("In ganz Wien – alle 23 Bezirke");
+    expect(s.trust[2]).toEqual({ icon: "clock", title: "Express in 1–2 Stunden", text: "Ohne Aufpreis, Same Day bis 18:30 Uhr" });
+    expect((store.docs.get("content/homepage") as { hero: { eyebrow: string } }).hero.eyebrow).toBe("Blumenversand in ganz Wien");
+    const faqs = store.docs.get("content/faqs") as { id: string; sortOrder: number; question?: string }[];
+    expect(faqs.map((f) => f.id)).toEqual(["f-where", "f-today", "f-express", "f-date"]);
+    expect(faqs[2]).toMatchObject({ sortOrder: 2.5, question: "Gibt es eine Express-Lieferung?", category: "lieferung" });
+    expect(JSON.stringify(store.docs.get("content/pages"))).toContain(`Telefon: ${NEW_PHONE}`);
+    const en = store.docs.get("content/i18n-en") as { settings: { seo: { defaultDescription: string }; announcement: { messages: string[] }; trust: { title: string; text: string }[] }; homepage: { hero: { eyebrow: string } }; faqs: Record<string, { question: string }> };
+    expect(en.settings.seo.defaultDescription).toBe("edited in admin");
+    expect(en.settings.announcement.messages).toEqual(T.en.announcement.to);
+    expect(en.settings.trust[1]).toEqual(T.en.trustCard.to);
+    expect(en.homepage.hero.eyebrow).toBe("Flower delivery across Vienna");
+    expect(en.faqs["f-express"].question).toBe("Do you offer express delivery?");
+    // A second run changes nothing.
+    const { withExpressFaq } = await import("@/lib/content-migrations");
+    expect(withExpressFaq(faqs)).toBe(faqs);
+  });
+
+  it("has every language with four announcement messages", async () => {
+    const { VIENNA_EXPRESS_TEXTS: T } = await import("@/lib/content-updates-vienna-express");
+    expect(Object.keys(T).sort()).toEqual(["ar", "bg", "bks", "ce", "de", "en", "es", "fa", "fr", "hu", "it", "pl", "ro", "ru", "sk", "tr", "uk"]);
+    for (const [l, t] of Object.entries(T)) {
+      expect(t.announcement.to, l).toHaveLength(4);
+      expect(t.announcement.from, l).toHaveLength(3);
+    }
   });
 });

@@ -36,6 +36,7 @@ export function StepDelivery({ data, set, errors, onBlur, days, now, zone, loadi
   const showCustom = customOpen || (Boolean(data.date) && !inPills);
   const selectedDay = days.find((d) => d.date === data.date);
   const windows = selectedDay?.windows ?? [];
+  const expressId = selectedDay?.sameDay ? windows.find((w) => w.surcharge === 0)?.id : undefined;
   const tomorrow = now ? addDays(now.date, 1) : null;
 
   const dayLabel = (d: DeliveryDay) => (now && d.date === now.date ? t.today : d.date === tomorrow ? t.tomorrow : dateShort(d.date).replace(/\.$/, ""));
@@ -117,6 +118,7 @@ export function StepDelivery({ data, set, errors, onBlur, days, now, zone, loadi
       </fieldset>
 
       <fieldset>
+        {/* Express = today's earliest free window (same-day windows need ≥ 2 h lead, see delivery.ts) – no surcharge. */}
         <legend className="mb-3 text-[13px] font-semibold text-ink">{t.window} {windows.length > 4 && <span className="font-normal text-ink-muted">{t.windowHourly}</span>}</legend>
         {!selectedDay ? (
           <p className="text-[13px] text-ink-muted">{t.chooseDateFirst}</p>
@@ -124,7 +126,8 @@ export function StepDelivery({ data, set, errors, onBlur, days, now, zone, loadi
           <div id={id("windowId")} role="radiogroup" aria-label={t.window} aria-invalid={Boolean(errors.windowId) || undefined} className={windows.length > 4 ? "grid grid-cols-3 gap-2 sm:grid-cols-4" : "flex flex-col gap-2"}>
             {windows.length > 4 ? (
               windows.map((w) => (
-                <ChoicePill key={w.id} name="delivery-window" value={w.id} checked={data.windowId === w.id} onChange={(v) => set({ windowId: v })} sub={w.surcharge > 0 ? `+ ${price(w.surcharge)}` : undefined}>
+                <ChoicePill key={w.id} name="delivery-window" value={w.id} checked={data.windowId === w.id} onChange={(v) => set({ windowId: v })}
+                  sub={w.surcharge > 0 ? `+ ${price(w.surcharge)}` : w.id === expressId ? <span data-testid="express-badge" className={cn("font-semibold uppercase tracking-wide", data.windowId === w.id ? "text-sand" : "text-burgundy")}>{t.express}</span> : undefined}>
                   {w.label.replace(/ Uhr$/, "")}
                 </ChoicePill>
               ))
@@ -136,13 +139,14 @@ export function StepDelivery({ data, set, errors, onBlur, days, now, zone, loadi
                   key={w.id} name="delivery-window" value={w.id} checked={data.windowId === w.id} onChange={(v) => set({ windowId: v })}
                   title={w.label}
                   description={w.surcharge > 0 ? fmt(t.surcharge, { price: price(w.surcharge) }) : t.noSurcharge}
-                  meta={w.surcharge > 0 ? `+ ${price(w.surcharge)}` : undefined}
+                  meta={w.surcharge > 0 ? `+ ${price(w.surcharge)}` : w.id === expressId ? <span data-testid="express-badge" className="uppercase tracking-wide text-burgundy">{t.express}</span> : undefined}
                 />
               ))
             )}
             {errors.windowId && <p role="alert" className="col-span-full text-[13px] text-danger">{errors.windowId}</p>}
           </div>
         )}
+        {expressId && <p className="mt-2 text-[13px] text-ink-muted" data-testid="express-hint"><span className="font-semibold text-burgundy">{t.express}:</span> {t.expressHint}</p>}
       </fieldset>
 
       <Textarea

@@ -134,6 +134,9 @@ const checkout: NonNullable<PartialMessages["checkout"]> = {
     suffix: ".",
     window: "فترة التوصيل",
     windowHourly: "· التسليم خلال الساعة المختارة",
+    /** Badge on today's earliest window (same day). */
+    express: "سريع",
+    expressHint: "توصيل سريع خلال 1–2 ساعة – دون تكلفة إضافية.",
     chooseDateFirst: "اختاروا أولًا تاريخ التوصيل.",
     noWindowTitle: "دون فترة زمنية محددة",
     noWindowText: "نوصل خلال اليوم.",
