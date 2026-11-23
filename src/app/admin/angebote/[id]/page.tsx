@@ -43,6 +43,7 @@ export default async function OfferDetailPage({ params, searchParams }: { params
         title={<span className="flex flex-wrap items-center gap-3">Angebot {offer.id} <OfferStatusBadge status={status} /></span>}
         description={`Erstellt am ${formatDateTime(offer.createdAt)} · Sprache ${language} · gültig bis ${formatDateLong(offer.validUntil)}`}
       />
+      {offer.requestId && <p className="mb-4 text-[13.5px] text-[#5f5c56]">Erstellt aus <Link href={`/admin/anfragen/${offer.requestId}`} className="font-semibold text-[#0a6644] underline-offset-4 hover:underline">Anfrage {offer.requestId}</Link></p>}
       {sp.gesendet === "1" && <Banner tone="success" className="mb-5">Gespeichert und an {offer.customer.email} gesendet.</Banner>}
       {sp.gespeichert === "1" && <Banner tone="success" className="mb-5">Gespeichert{offer.sentAt ? " – zum Aktualisieren bei der Kund:in bitte erneut senden" : ""}.</Banner>}
       {status === "paid" && order && (

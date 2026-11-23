@@ -626,7 +626,61 @@ export interface Offer {
   orderId?: string;
   paidAt?: string;
   cancelledAt?: string;
+  /** Customer request ("Anfrage", AF-XXXXXX) this offer was created from. */
+  requestId?: string;
   history: { at: string; note: string }[];
+}
+
+/* ---------------- Customer requests ("Anfrage", see docs/INQUIRIES.md) ---------------- */
+
+export type CustomRequestStatus = "new" | "answered" | "offer" | "done";
+
+/** A request from the page /anfrage (runtime document `custom-requests`). */
+export interface CustomRequest {
+  id: string; // AF-XXXXXX
+  createdAt: string;
+  updatedAt?: string;
+  /** Shop language the request was sent in (`Locale`). */
+  locale: string;
+  status: CustomRequestStatus;
+  name: string;
+  email: string;
+  phone?: string;
+  /** "Worum geht es?" – see CUSTOM_REQUEST_TOPICS. */
+  topics: string[];
+  /** Shop product the customer asked about (slug and German name at the time). */
+  product?: { slug: string; name: string };
+  date?: ISODate;
+  /** Free text, e.g. "7:00" or "14–16 Uhr". */
+  time?: string;
+  flexible: boolean;
+  /** Free text: address, ZIP or venue. */
+  place?: string;
+  /** See CUSTOM_REQUEST_BUDGETS; only asked for larger orders and own designs. */
+  budget?: string;
+  message: string;
+  photo?: { url: string; key: string; width: number; height: number };
+  /** When the privacy consent was given (= createdAt). */
+  consentAt: string;
+  /** Internal note of the team. */
+  note?: string;
+  /** Offer created from this request (admin → Angebote). */
+  offerId?: string;
+  history: { at: string; note: string }[];
+}
+
+/** A message from the contact form (runtime document `contact-messages`). Status/note are set in admin → Anfragen. */
+export interface ContactMessage {
+  id: string;
+  createdAt: string;
+  name: string;
+  email: string;
+  subject: string;
+  orderId?: string;
+  message: string;
+  read: boolean;
+  status?: CustomRequestStatus;
+  note?: string;
 }
 
 /* ---------------- Partner florists ---------------- */

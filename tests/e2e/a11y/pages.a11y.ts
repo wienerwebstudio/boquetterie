@@ -18,6 +18,8 @@ const PAGES: { path: string; name: string; withCart?: boolean; prepare?: (page: 
   { path: "/widerruf", name: "Widerrufsbelehrung" },
   { path: "/vertrag-widerrufen", name: "Vertrag widerrufen" },
   { path: "/anlaesse/geburtstag", name: "Anlass Geburtstag" },
+  { path: "/anfrage", name: "Anfrage" },
+  { path: "/ar/enquiry", name: "Anfrage (Arabisch, RTL)" },
 ];
 
 const GATE = new Set(["serious", "critical"]);

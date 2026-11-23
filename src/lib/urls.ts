@@ -13,6 +13,7 @@ export const routes = {
   delivery: "/lieferung",
   about: "/ueber-uns",
   contact: "/kontakt",
+  customRequest: "/anfrage",
   faq: "/faq",
   tracking: "/bestellung-verfolgen",
   account: "/konto",

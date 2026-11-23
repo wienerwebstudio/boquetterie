@@ -4,7 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
-import { Search, User, ShoppingBag, Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Search, User, ShoppingBag, Menu, X, ChevronDown, ArrowRight, PenLine } from "lucide-react";
 import type { SiteSettings } from "@/types";
 import { Logo } from "@/components/icons/logo";
 import { Button } from "@/components/ui/button";
@@ -129,6 +129,7 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
                   {settings.sameDayEnabled && <li><Link href={`${routes.shop}?sameday=1`} className="text-[14px] leading-6 text-ink hover:text-forest">{t.sameDay}</Link></li>}
                   <li><Link href={routes.extras} className="text-[14px] leading-6 text-ink hover:text-forest">{t.extrasForBouquet}</Link></li>
                   {settings.subscriptionEnabled && <li><Link href={routes.subscription} className="text-[14px] leading-6 text-ink hover:text-forest">{nav.subscription}</Link></li>}
+                  <li><Link href={routes.customRequest} className="inline-flex items-center gap-1.5 text-[14px] leading-6 text-ink hover:text-forest"><PenLine className="size-3.5 text-forest" aria-hidden />{t.customRequest}</Link></li>
                 </ul>
               </div>
               <Link href={routes.shop} className="group relative block aspect-[16/9] max-h-[220px] w-full overflow-hidden rounded-md bg-ivory-200">
@@ -176,6 +177,17 @@ export function Header({ settings, categories, occasions }: { settings: SiteSett
                       <li key={o.slug}><Link href={routes.occasion(o.slug)} className="inline-flex rounded-full border border-line bg-white px-3 py-1.5 text-[13px] text-ink">{o.name}</Link></li>
                     ))}
                   </ul>
+                )}
+                {/* Right below the shop categories: special wishes and delivery questions. */}
+                {item.href === routes.category("pflanzen") && (
+                  <Link href={routes.customRequest} data-testid="mobile-custom-request" className="mb-4 flex items-center gap-3 rounded-md border border-forest/25 bg-forest/[0.06] px-4 py-3 text-ink transition-colors hover:bg-forest/10">
+                    <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-forest text-ivory"><PenLine className="size-4" strokeWidth={1.8} aria-hidden /></span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-[15px] font-semibold">{t.customRequest}</span>
+                      <span className="block text-[13px] text-ink-muted">{t.customRequestHint}</span>
+                    </span>
+                    <ArrowRight className="size-4 shrink-0 text-forest rtl:rotate-180" aria-hidden />
+                  </Link>
                 )}
               </li>
             ))}

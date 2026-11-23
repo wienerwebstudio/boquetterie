@@ -5,6 +5,7 @@ import { getSettings } from "@/lib/cms";
 import { getLocalNow } from "@/lib/delivery";
 import { formatDateLong } from "@/lib/format";
 import { AdminShell } from "@/components/admin/admin-shell";
+import { countNewInbox } from "@/lib/custom-requests";
 import "../globals.css";
 import "./admin.css";
 import { fontVariables } from "@/app/fonts";
@@ -27,13 +28,14 @@ function greetingFor(minutes: number) {
 /** Admin root layout – separate from the storefront (German only, no shop chrome). */
 export default async function AdminLayout({ children }: { children: ReactNode }) {
   const [authed, settings] = await Promise.all([isAdminAuthenticated(), getSettings()]);
+  const newRequests = authed ? await countNewInbox() : 0;
   const now = getLocalNow(settings.timezone);
   return (
     <html lang="de-AT" className={`${fontVariables} h-full`}>
       <body className="flex min-h-full flex-col">
         <div id="bl-admin" className="flex-1 font-sans">
           {authed ? (
-            <AdminShell brandName={settings.brand.name} greeting={greetingFor(now.minutes)} today={formatDateLong(now.date)}>
+            <AdminShell brandName={settings.brand.name} greeting={greetingFor(now.minutes)} today={formatDateLong(now.date)} badges={{ "/admin/anfragen": newRequests }}>
               {children}
             </AdminShell>
           ) : (

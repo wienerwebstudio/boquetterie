@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   LayoutDashboard, ShoppingBag, Flower2, Layers, Sparkles, Gift, Truck, Ticket, MessageCircleQuestionMark,
-  Star, MessageSquareText, Repeat, PanelsTopLeft, FileText, Globe, Images, Settings, Mail, BellRing, Menu, X, LogOut, ExternalLink, Wallet, Store, Send, FileSignature, HandCoins,
+  Star, MessageSquareText, Repeat, Inbox, PanelsTopLeft, FileText, Globe, Images, Settings, Mail, BellRing, Menu, X, LogOut, ExternalLink, Wallet, Store, Send, FileSignature, HandCoins,
 } from "lucide-react";
 import { cn } from "@/lib/format";
 
@@ -20,6 +20,7 @@ const NAV: { href: string; label: string; icon: typeof LayoutDashboard; group?: 
   { href: "/admin/partner-abrechnung", label: "Partner-Abrechnung", icon: HandCoins },
   { href: "/admin/floristen-budget", label: "Floristen-Budget", icon: Wallet },
   { href: "/admin/liefergebiete", label: "Liefergebiete", icon: Truck, group: "Verkauf" },
+  { href: "/admin/anfragen", label: "Anfragen", icon: Inbox },
   { href: "/admin/angebote", label: "Angebote", icon: FileSignature },
   { href: "/admin/gutscheine", label: "Gutscheine", icon: Ticket },
   { href: "/admin/outreach", label: "Outreach", icon: Send },
@@ -77,7 +78,7 @@ function BrandMark({ brandName }: { brandName: string }) {
   );
 }
 
-export function AdminShell({ children, brandName, greeting, today }: { children: ReactNode; brandName: string; greeting?: string; today?: string }) {
+export function AdminShell({ children, brandName, greeting, today, badges }: { children: ReactNode; brandName: string; greeting?: string; today?: string; /** Counts shown next to nav entries, e.g. new requests. */ badges?: Record<string, number> }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -114,7 +115,10 @@ export function AdminShell({ children, brandName, greeting, today }: { children:
               <span className="bl-nav-icon flex size-7 shrink-0 items-center justify-center rounded-lg">
                 <Icon className="size-4" aria-hidden />
               </span>
-              <span className="min-w-0 leading-snug">{item.label}</span>
+              <span className="min-w-0 flex-1 leading-snug">{item.label}</span>
+              {badges?.[item.href] ? (
+                <span className="ms-auto rounded-full bg-[#f59e0b] px-2 py-0.5 text-[11.5px] font-bold tabular-nums text-[#1f1300]" aria-label={`${badges[item.href]} neu`} data-testid={`nav-badge-${item.href.split("/").pop()}`}>{badges[item.href]}</span>
+              ) : null}
             </Link>
           </div>
         );

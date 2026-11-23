@@ -48,6 +48,8 @@ const KEY_RE = /^\d{4}\/\d{2}\/[a-z0-9-]{1,80}-[a-f0-9]{8}\.(jpg|png)$/;
 /** Customer review photos: `reviews/2026/11/red-passion-1a2b3c4d.jpg` (kept out of the admin media library). */
 const REVIEW_KEY_RE = /^reviews\/\d{4}\/\d{2}\/[a-z0-9-]{1,80}-[a-f0-9]{8}\.jpg$/;
 /** Outreach files (admin → Outreach): images, PDFs and videos, e.g. `outreach/2026/11/preisliste-1a2b3c4d.pdf`. */
+/** Inspiration photos of customer requests (/anfrage): `anfragen/2026/11/af-k3x9p2-<random>-1a2b3c4d.jpg`, served to admins only. */
+const REQUEST_KEY_RE = /^anfragen\/\d{4}\/\d{2}\/[a-z0-9-]{1,80}-[a-f0-9]{8}\.jpg$/;
 const OUTREACH_KEY_RE = /^outreach\/\d{4}\/\d{2}\/[a-z0-9-]{1,80}-[a-f0-9]{8}\.(jpg|png|pdf|mp4|webm|mov)$/;
 const STATIC_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif", ".svg"]);
 
@@ -148,7 +150,7 @@ function objectKey(key: string) {
 export function publicUrl(key: string) {
   const driver = getUploadDriver();
   if (driver === "s3") return `${s3Config().publicBase}/${objectKey(key)}`;
-  if (driver === "local" && !key.startsWith("reviews/") && !key.startsWith("outreach/")) return `/uploads/${key}`;
+  if (driver === "local" && !key.startsWith("reviews/") && !key.startsWith("outreach/") && !key.startsWith("anfragen/")) return `/uploads/${key}`;
   return `/media/${key}`;
 }
 
@@ -209,7 +211,12 @@ async function deleteObject(key: string) {
 
 /** Keys the `/media/<key>` route may serve: admin uploads and review photos. */
 export function isServableMediaKey(key: string) {
-  return KEY_RE.test(key) || REVIEW_KEY_RE.test(key) || OUTREACH_KEY_RE.test(key);
+  return KEY_RE.test(key) || REVIEW_KEY_RE.test(key) || OUTREACH_KEY_RE.test(key) || REQUEST_KEY_RE.test(key);
+}
+
+/** Request photos are private: `/media` serves them to a logged-in admin only. */
+export function isRequestPhotoKey(key: string) {
+  return REQUEST_KEY_RE.test(key);
 }
 
 export function isValidReviewPhotoKey(key: string) {
@@ -368,6 +375,40 @@ export async function storeReviewPhoto(photo: { data: Buffer; width: number; hei
 /** Removes a review photo (rejected review, or a photo the admin did not approve). Missing files are ignored. */
 export async function deleteReviewPhoto(key: string): Promise<void> {
   if (!isValidReviewPhotoKey(key)) throw new UploadError(400, "Ungültiger Dateischlüssel.");
+  try {
+    await deleteObject(key);
+  } catch (e) {
+    if (e instanceof UploadError && e.status === 404) return;
+    throw e;
+  }
+}
+
+/* ---------------- Request photos (/anfrage) ---------------- */
+
+const REQUEST_PROCESS: ProcessOptions = { ...REVIEW_PROCESS, maxSide: MAX_SIDE_PX, quality: JPEG_QUALITY };
+
+/**
+ * Inspiration photo of a customer request: up to 15 MB as received, decoded by its bytes
+ * (JPEG, PNG, WebP – HEIC is refused with HEIC_MESSAGE), rotated upright, EXIF/GPS dropped,
+ * at most 2000 px, JPEG q82.
+ */
+export async function processRequestPhoto(buffer: Buffer): Promise<{ data: Buffer; width: number; height: number }> {
+  if (!buffer.length) throw new UploadError(400, "Das Foto ist leer.");
+  if (buffer.length > MAX_UPLOAD_BYTES) throw new UploadError(413, "Das Foto ist zu groß (maximal 15 MB).");
+  const p = await processImage(buffer, REQUEST_PROCESS);
+  return { data: p.data, width: p.width, height: p.height };
+}
+
+/** Stores a processed request photo under `anfragen/…` with a random name part (not guessable, also on S3). */
+export async function storeRequestPhoto(photo: { data: Buffer; width: number; height: number }, requestId: string): Promise<SaveUploadResult> {
+  const processed: Processed = { data: photo.data, ext: "jpg", mime: "image/jpeg", width: photo.width, height: photo.height };
+  const key = buildKey(`${requestId}-${crypto.randomBytes(8).toString("hex")}`, processed, "anfragen/");
+  await putObject(key, processed.data, processed.mime);
+  return { url: publicUrl(key), key, width: photo.width, height: photo.height, bytes: photo.data.length };
+}
+
+export async function deleteRequestPhoto(key: string): Promise<void> {
+  if (!REQUEST_KEY_RE.test(key)) throw new UploadError(400, "Ungültiger Dateischlüssel.");
   try {
     await deleteObject(key);
   } catch (e) {

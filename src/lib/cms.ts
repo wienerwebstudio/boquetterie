@@ -3,7 +3,7 @@ import { getStore, jsonStore, type DocumentStore } from "@/lib/store";
 import { runContentMigrations } from "@/lib/content-migrations";
 import type {
   Category, CmsPage, Coupon, DeliveryZone, Extra, FAQ, HomepageContent, LandingPage,
-  Occasion, Offer, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber, CheckoutDraft,
+  Occasion, Offer, CustomRequest, ContactMessage, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber, CheckoutDraft,
 } from "@/types";
 import type { OutreachContact, OutreachSend, OutreachTemplate, OutreachUnsubscribe } from "@/types/outreach";
 import type { PartnerLedgerEntry, PartnerPortalDoc } from "@/types/partner-portal";
@@ -215,6 +215,41 @@ export async function getCheckoutDrafts(): Promise<CheckoutDraft[]> {
 }
 export async function saveCheckoutDrafts(list: CheckoutDraft[]) {
   await getStore().set("data", "checkout-drafts", list);
+}
+
+/* ---------------- Customer requests and contact messages (admin → Anfragen, see docs/INQUIRIES.md) ---------------- */
+
+export async function getCustomRequests(): Promise<CustomRequest[]> {
+  const list = await readDataDoc<CustomRequest[]>("custom-requests", []);
+  return Array.isArray(list) ? list : [];
+}
+export async function saveCustomRequests(list: CustomRequest[]) {
+  await getStore().set("data", "custom-requests", list);
+}
+export async function getCustomRequestById(id: string) {
+  return (await getCustomRequests()).find((r) => r.id === id) ?? null;
+}
+/** Read-modify-write of one request; null when it does not exist. */
+export async function updateCustomRequest(id: string, patch: (r: CustomRequest) => CustomRequest) {
+  const list = await getCustomRequests();
+  const idx = list.findIndex((r) => r.id === id);
+  if (idx === -1) return null;
+  list[idx] = patch(list[idx]);
+  await saveCustomRequests(list);
+  return list[idx];
+}
+/** Messages of the contact form (written by /api/contact). */
+export async function getContactMessages(): Promise<ContactMessage[]> {
+  const list = await readDataDoc<ContactMessage[]>("contact-messages", []);
+  return Array.isArray(list) ? list : [];
+}
+export async function updateContactMessage(id: string, patch: (m: ContactMessage) => ContactMessage) {
+  const list = await getContactMessages();
+  const idx = list.findIndex((m) => m.id === id);
+  if (idx === -1) return null;
+  list[idx] = patch(list[idx]);
+  await getStore().set("data", "contact-messages", list);
+  return list[idx];
 }
 
 /* ---------------- Generic runtime data (reminders, sessions, requests …) ---------------- */

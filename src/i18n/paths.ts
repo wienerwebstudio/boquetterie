@@ -13,33 +13,33 @@ import { DEFAULT_LOCALE, isLocale, type Locale } from "@/i18n/config";
 /** German first path segments that get a translated name. Everything else keeps its German name. */
 const SEGMENTS = [
   "blumen", "produkt", "anlaesse", "geschenksets", "geschenkfinder", "firmenkunden", "erinnerung",
-  "lieferung", "ueber-uns", "kontakt", "faq", "warenkorb", "suche", "bestellung-verfolgen",
+  "lieferung", "ueber-uns", "kontakt", "faq", "warenkorb", "suche", "bestellung-verfolgen", "anfrage",
 ] as const;
 type Segment = (typeof SEGMENTS)[number];
 
 const T = (...names: string[]) => Object.fromEntries(SEGMENTS.map((s, i) => [s, names[i]])) as Record<Segment, string>;
 
 // Order: blumen, produkt, anlaesse, geschenksets, geschenkfinder, firmenkunden, erinnerung,
-//        lieferung, ueber-uns, kontakt, faq, warenkorb, suche, bestellung-verfolgen
-const EN = T("flowers", "product", "occasions", "gift-sets", "gift-finder", "business", "reminder", "delivery", "about-us", "contact", "faq", "cart", "search", "track-order");
+//        lieferung, ueber-uns, kontakt, faq, warenkorb, suche, bestellung-verfolgen, anfrage
+const EN = T("flowers", "product", "occasions", "gift-sets", "gift-finder", "business", "reminder", "delivery", "about-us", "contact", "faq", "cart", "search", "track-order", "enquiry");
 
 export const SEGMENT_NAMES: Record<Exclude<Locale, "de">, Record<Segment, string>> = {
   en: EN,
-  tr: T("cicekler", "urun", "ozel-gunler", "hediye-setleri", "hediye-bulucu", "kurumsal", "hatirlatici", "teslimat", "hakkimizda", "iletisim", "sss", "sepet", "arama", "siparis-takibi"),
-  bks: T("cvijece", "proizvod", "prilike", "poklon-setovi", "izbor-poklona", "za-firme", "podsjetnik", "dostava", "o-nama", "kontakt", "cesta-pitanja", "korpa", "pretraga", "pracenje-narudzbe"),
-  uk: T("kvity", "tovar", "pryvody", "podarunkovi-nabory", "pidbir-podarunka", "dlia-biznesu", "nahaduvannia", "dostavka", "pro-nas", "kontakty", "pytannia", "koshyk", "poshuk", "vidstezhennia"),
-  ru: T("cvety", "tovar", "povody", "podarochnye-nabory", "podbor-podarka", "dlya-biznesa", "napominanie", "dostavka", "o-nas", "kontakty", "voprosy", "korzina", "poisk", "otslezhivanie"),
-  pl: T("kwiaty", "produkt", "okazje", "zestawy-prezentowe", "pomysl-na-prezent", "dla-firm", "przypomnienie", "dostawa", "o-nas", "kontakt", "pytania", "koszyk", "szukaj", "sledzenie-zamowienia"),
-  ro: T("flori", "produs", "ocazii", "seturi-cadou", "idei-cadou", "pentru-companii", "memento", "livrare", "despre-noi", "contact", "intrebari", "cos", "cautare", "urmarire-comanda"),
-  hu: T("viragok", "termek", "alkalmak", "ajandekcsomagok", "ajandekotlet", "cegeknek", "emlekezteto", "szallitas", "rolunk", "kapcsolat", "gyik", "kosar", "kereses", "rendeles-kovetes"),
+  tr: T("cicekler", "urun", "ozel-gunler", "hediye-setleri", "hediye-bulucu", "kurumsal", "hatirlatici", "teslimat", "hakkimizda", "iletisim", "sss", "sepet", "arama", "siparis-takibi", "talep"),
+  bks: T("cvijece", "proizvod", "prilike", "poklon-setovi", "izbor-poklona", "za-firme", "podsjetnik", "dostava", "o-nama", "kontakt", "cesta-pitanja", "korpa", "pretraga", "pracenje-narudzbe", "upit"),
+  uk: T("kvity", "tovar", "pryvody", "podarunkovi-nabory", "pidbir-podarunka", "dlia-biznesu", "nahaduvannia", "dostavka", "pro-nas", "kontakty", "pytannia", "koshyk", "poshuk", "vidstezhennia", "zapyt"),
+  ru: T("cvety", "tovar", "povody", "podarochnye-nabory", "podbor-podarka", "dlya-biznesa", "napominanie", "dostavka", "o-nas", "kontakty", "voprosy", "korzina", "poisk", "otslezhivanie", "zapros"),
+  pl: T("kwiaty", "produkt", "okazje", "zestawy-prezentowe", "pomysl-na-prezent", "dla-firm", "przypomnienie", "dostawa", "o-nas", "kontakt", "pytania", "koszyk", "szukaj", "sledzenie-zamowienia", "zapytanie"),
+  ro: T("flori", "produs", "ocazii", "seturi-cadou", "idei-cadou", "pentru-companii", "memento", "livrare", "despre-noi", "contact", "intrebari", "cos", "cautare", "urmarire-comanda", "cerere"),
+  hu: T("viragok", "termek", "alkalmak", "ajandekcsomagok", "ajandekotlet", "cegeknek", "emlekezteto", "szallitas", "rolunk", "kapcsolat", "gyik", "kosar", "kereses", "rendeles-kovetes", "egyedi-keres"),
   ar: EN,
-  bg: T("tsvetya", "produkt", "povodi", "podaracni-komplekti", "podbor-na-podarak", "za-firmi", "napomnyane", "dostavka", "za-nas", "kontakti", "vaprosi", "koshnitsa", "tarsene", "prosledyavane"),
+  bg: T("tsvetya", "produkt", "povodi", "podaracni-komplekti", "podbor-na-podarak", "za-firmi", "napomnyane", "dostavka", "za-nas", "kontakti", "vaprosi", "koshnitsa", "tarsene", "prosledyavane", "zapitvane"),
   fa: EN,
-  sk: T("kvety", "produkt", "prilezitosti", "darcekove-sady", "vyber-darceka", "pre-firmy", "pripomienka", "dorucenie", "o-nas", "kontakt", "otazky", "kosik", "hladat", "sledovanie-objednavky"),
-  it: T("fiori", "prodotto", "occasioni", "set-regalo", "idee-regalo", "aziende", "promemoria", "consegna", "chi-siamo", "contatti", "domande", "carrello", "cerca", "traccia-ordine"),
-  fr: T("fleurs", "produit", "occasions", "coffrets-cadeaux", "idees-cadeaux", "entreprises", "rappel", "livraison", "a-propos", "contact", "questions", "panier", "recherche", "suivi-commande"),
+  sk: T("kvety", "produkt", "prilezitosti", "darcekove-sady", "vyber-darceka", "pre-firmy", "pripomienka", "dorucenie", "o-nas", "kontakt", "otazky", "kosik", "hladat", "sledovanie-objednavky", "dopyt"),
+  it: T("fiori", "prodotto", "occasioni", "set-regalo", "idee-regalo", "aziende", "promemoria", "consegna", "chi-siamo", "contatti", "domande", "carrello", "cerca", "traccia-ordine", "richiesta"),
+  fr: T("fleurs", "produit", "occasions", "coffrets-cadeaux", "idees-cadeaux", "entreprises", "rappel", "livraison", "a-propos", "contact", "questions", "panier", "recherche", "suivi-commande", "demande"),
   ce: EN,
-  es: T("flores", "producto", "ocasiones", "sets-regalo", "ideas-regalo", "empresas", "recordatorio", "entrega", "sobre-nosotros", "contacto", "preguntas", "carrito", "buscar", "seguimiento-pedido"),
+  es: T("flores", "producto", "ocasiones", "sets-regalo", "ideas-regalo", "empresas", "recordatorio", "entrega", "sobre-nosotros", "contacto", "preguntas", "carrito", "buscar", "seguimiento-pedido", "solicitud"),
 };
 
 const REVERSE: Record<string, Record<string, Segment>> = Object.fromEntries(

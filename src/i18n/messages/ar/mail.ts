@@ -186,6 +186,26 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     byArrangement: "حسب الاتفاق",
     confirmed: "شكرًا على الدفع – تم تأكيد طلبكم {id} الخاص بعرضكم الشخصي. سنتولى كل ما تبقى وسنتواصل معكم إذا كان هناك ما يحتاج إلى توضيح.",
   },
+  customRequest: {
+    subject: "طلبك لدى {brand} ({id})",
+    preheader: "شكرًا – سنتواصل معك قريبًا.",
+    headline: "شكرًا على طلبك",
+    intro: "لقد استلمنا طلبك وسنتواصل معك قريبًا.",
+    summary: "بياناتك",
+    rows: {
+      id: "رقم الطلب",
+      topics: "بماذا يتعلق الأمر؟",
+      product: "الباقة",
+      date: "التاريخ المطلوب",
+      place: "مكان التوصيل",
+      budget: "الميزانية",
+      message: "رسالتك",
+      photo: "الصورة",
+    },
+    photoReceived: "تم استلام صورة واحدة",
+    flexible: "مرن",
+    footer: "تتلقى هذه الرسالة لأنك أرسلت طلبًا عبر {brand}.",
+  },
 };
 
 export default mail;

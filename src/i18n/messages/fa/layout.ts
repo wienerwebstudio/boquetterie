@@ -51,6 +51,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "برای چه کسی؟ به چه مناسبتی؟",
     trackOrder: "پیگیری سفارش",
     faq: "پرسش‌های متداول",
+    customRequest: "ارسال درخواست",
+    customRequestHint: "ساعت، مکان، دسته‌گل",
   },
   announcement: {
     listLabel: "اطلاعیه‌ها",

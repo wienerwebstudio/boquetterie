@@ -172,6 +172,26 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     byArrangement: "As arranged",
     confirmed: "Thank you for your payment – your order {id} for your personal offer is confirmed. We will take care of everything else and get in touch if anything is still open.",
   },
+  customRequest: {
+    subject: "Your enquiry at {brand} ({id})",
+    preheader: "Thank you – we will get back to you shortly.",
+    headline: "Thank you for your enquiry",
+    intro: "We have received your enquiry and will get back to you shortly.",
+    summary: "Your details",
+    rows: {
+      id: "Enquiry no.",
+      topics: "What is it about?",
+      product: "Bouquet",
+      date: "Preferred date",
+      place: "Delivery place",
+      budget: "Budget",
+      message: "Your message",
+      photo: "Photo",
+    },
+    photoReceived: "1 photo received",
+    flexible: "flexible",
+    footer: "You are receiving this email because you sent an enquiry on {brand}.",
+  },
 };
 
 export default mail;

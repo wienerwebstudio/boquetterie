@@ -58,6 +58,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "لمن؟ وبأي مناسبة؟",
     trackOrder: "تتبّع الطلب",
     faq: "الأسئلة الشائعة",
+    customRequest: "إرسال طلب",
+    customRequestHint: "الوقت، المكان، الباقة",
   },
   announcement: {
     listLabel: "تنبيهات",

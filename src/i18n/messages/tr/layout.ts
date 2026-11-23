@@ -51,6 +51,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "Kime? Hangi özel gün için?",
     trackOrder: "Sipariş takibi",
     faq: "SSS",
+    customRequest: "Talep gönder",
+    customRequestHint: "Saat, yer, buket",
   },
   announcement: {
     listLabel: "Duyurular",

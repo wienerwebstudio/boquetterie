@@ -182,6 +182,26 @@ const mail: NonNullable<PartialMessages["mail"]> = {
     byArrangement: "Podľa dohody",
     confirmed: "Ďakujeme za platbu – vaša objednávka {id} k osobnej ponuke je potvrdená. O všetko ostatné sa postaráme a ozveme sa, ak bude niečo otvorené.",
   },
+  customRequest: {
+    subject: "Váš dopyt v {brand} ({id})",
+    preheader: "Ďakujeme – čoskoro sa ozveme.",
+    headline: "Ďakujeme za váš dopyt",
+    intro: "Váš dopyt sme prijali a čoskoro sa vám ozveme.",
+    summary: "Vaše údaje",
+    rows: {
+      id: "Č. dopytu",
+      topics: "O čo ide?",
+      product: "Kytica",
+      date: "Želaný termín",
+      place: "Miesto doručenia",
+      budget: "Rozpočet",
+      message: "Vaša správa",
+      photo: "Fotka",
+    },
+    photoReceived: "Prijatá 1 fotka",
+    flexible: "flexibilný",
+    footer: "Tento e-mail dostávate, pretože ste poslali dopyt na {brand}.",
+  },
 };
 
 export default mail;

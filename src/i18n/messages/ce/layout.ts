@@ -51,6 +51,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "Хьанна? Муьлха бахьанехь?",
     trackOrder: "Заказ тергал ян",
     faq: "Хаттарш",
+    customRequest: "Дехар дӀахьажо",
+    customRequestHint: "Хан, меттиг, кочар",
   },
   announcement: {
     listLabel: "Хаамаш",

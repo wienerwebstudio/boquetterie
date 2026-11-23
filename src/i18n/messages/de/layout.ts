@@ -59,6 +59,8 @@ const layout = {
     occasionsTitle: "Für wen? Zu welchem Anlass?",
     trackOrder: "Bestellung verfolgen",
     faq: "FAQ",
+    customRequest: "Anfrage stellen",
+    customRequestHint: "Uhrzeit, Ort, Wunschstrauß",
   },
   announcement: {
     listLabel: "Hinweise",

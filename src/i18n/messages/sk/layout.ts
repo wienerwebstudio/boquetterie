@@ -56,6 +56,8 @@ const layout: NonNullable<PartialMessages["layout"]> = {
     occasionsTitle: "Pre koho? Pri akej príležitosti?",
     trackOrder: "Sledovať objednávku",
     faq: "Časté otázky",
+    customRequest: "Poslať dopyt",
+    customRequestHint: "Čas, miesto, kytica",
   },
   announcement: {
     listLabel: "Oznamy",
