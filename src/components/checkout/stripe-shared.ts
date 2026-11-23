@@ -48,7 +48,8 @@ export const STRIPE_APPEARANCE: Appearance = {
 /** Our languages → Stripe Elements locales (unsupported ones follow the browser). */
 export function stripeLocale(l: Locale): StripeElementsOptions["locale"] {
   if (l === "bks") return "hr";
-  if (l === "uk" || l === "fa" || l === "ce") return "auto";
+  if (l === "uk" || l === "fa" || l === "ce" || l === "sq") return "auto";
+  if (l === "no") return "nb";
   return l;
 }
 

@@ -39,6 +39,14 @@ export const SEGMENT_NAMES: Record<Exclude<Locale, "de">, Record<Segment, string
   it: T("fiori", "prodotto", "occasioni", "set-regalo", "idee-regalo", "aziende", "promemoria", "consegna", "chi-siamo", "contatti", "domande", "carrello", "cerca", "traccia-ordine", "richiesta"),
   fr: T("fleurs", "produit", "occasions", "coffrets-cadeaux", "idees-cadeaux", "entreprises", "rappel", "livraison", "a-propos", "contact", "questions", "panier", "recherche", "suivi-commande", "demande"),
   ce: EN,
+  sq: T("lule", "produkt", "rastet", "sete-dhuratash", "gjej-dhuraten", "per-biznese", "kujtese", "dergesa", "rreth-nesh", "kontakt", "pyetje", "shporta", "kerko", "gjurmo-porosine", "kerkese"),
+  sv: T("blommor", "produkt", "tillfallen", "presentset", "presenttips", "foretag", "paminnelse", "leverans", "om-oss", "kontakt", "fragor", "varukorg", "sok", "spara-bestallning", "forfragan"),
+  no: T("blomster", "produkt", "anledninger", "gavesett", "gavetips", "bedrift", "paminnelse", "levering", "om-oss", "kontakt", "sporsmal", "handlekurv", "sok", "spor-bestilling", "foresporsel"),
+  da: T("blomster", "produkt", "anledninger", "gavesaet", "gaveideer", "erhverv", "paamindelse", "levering", "om-os", "kontakt", "spoergsmaal", "kurv", "soeg", "spor-ordre", "forespoergsel"),
+  fi: T("kukat", "tuote", "tilaisuudet", "lahjasetit", "lahjaideat", "yrityksille", "muistutus", "toimitus", "meista", "yhteystiedot", "kysymykset", "ostoskori", "haku", "tilauksen-seuranta", "tiedustelu"),
+  nl: T("bloemen", "product", "gelegenheden", "cadeausets", "cadeautips", "zakelijk", "herinnering", "bezorging", "over-ons", "contact", "vragen", "winkelwagen", "zoeken", "bestelling-volgen", "aanvraag"),
+  cs: T("kvetiny", "produkt", "prilezitosti", "darkove-sady", "vyber-darku", "pro-firmy", "pripominka", "doruceni", "o-nas", "kontakt", "otazky", "kosik", "hledat", "sledovani-objednavky", "poptavka"),
+  sl: T("cvetje", "izdelek", "priloznosti", "darilni-seti", "izbira-darila", "za-podjetja", "opomnik", "dostava", "o-nas", "kontakt", "vprasanja", "kosarica", "iskanje", "sledenje-narocilu", "povprasevanje"),
   es: T("flores", "producto", "ocasiones", "sets-regalo", "ideas-regalo", "empresas", "recordatorio", "entrega", "sobre-nosotros", "contacto", "preguntas", "carrito", "buscar", "seguimiento-pedido", "solicitud"),
 };
 

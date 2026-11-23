@@ -7,7 +7,7 @@
  * Pure and client-safe.
  */
 
-export const LOCALES = ["de", "en", "tr", "bks", "uk", "ru", "pl", "ro", "hu", "ar", "bg", "fa", "sk", "it", "fr", "es", "ce"] as const;
+export const LOCALES = ["de", "en", "tr", "bks", "uk", "ru", "pl", "ro", "hu", "ar", "bg", "fa", "sk", "it", "fr", "es", "ce", "sq", "sv", "no", "da", "fi", "nl", "cs", "sl"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "de";
 
@@ -50,6 +50,14 @@ export const LOCALE_INFO: Record<Locale, LocaleInfo> = {
   fr: { name: "Français", short: "FR", htmlLang: "fr", hreflang: ["fr"], intl: "fr-FR", og: "fr_FR", dir: "ltr" },
   es: { name: "Español", short: "ES", htmlLang: "es", hreflang: ["es"], intl: "es-ES", og: "es_ES", dir: "ltr" },
   ce: { name: "Нохчийн", short: "CE", htmlLang: "ce", hreflang: ["ce"], intl: "ru-RU", og: "ce_RU", dir: "ltr" },
+  sq: { name: "Shqip", short: "SQ", htmlLang: "sq", hreflang: ["sq"], intl: "sq-AL", og: "sq_AL", dir: "ltr" },
+  sv: { name: "Svenska", short: "SV", htmlLang: "sv", hreflang: ["sv"], intl: "sv-SE", og: "sv_SE", dir: "ltr" },
+  no: { name: "Norsk", short: "NO", htmlLang: "nb", hreflang: ["no"], intl: "nb-NO", og: "nb_NO", dir: "ltr" },
+  da: { name: "Dansk", short: "DA", htmlLang: "da", hreflang: ["da"], intl: "da-DK", og: "da_DK", dir: "ltr" },
+  fi: { name: "Suomi", short: "FI", htmlLang: "fi", hreflang: ["fi"], intl: "fi-FI", og: "fi_FI", dir: "ltr" },
+  nl: { name: "Nederlands", short: "NL", htmlLang: "nl", hreflang: ["nl"], intl: "nl-NL", og: "nl_NL", dir: "ltr" },
+  cs: { name: "Čeština", short: "CS", htmlLang: "cs", hreflang: ["cs"], intl: "cs-CZ", og: "cs_CZ", dir: "ltr" },
+  sl: { name: "Slovenščina", short: "SL", htmlLang: "sl", hreflang: ["sl"], intl: "sl-SI", og: "sl_SI", dir: "ltr" },
 };
 
 export function isLocale(v: unknown): v is Locale {
@@ -61,7 +69,10 @@ export function isLocale(v: unknown): v is Locale {
  * sitemap and in hreflang. Any other locale answers 404 – a half-translated
  * language never goes public. Add a locale here once its texts are complete.
  */
-export const LIVE_LOCALES: readonly Locale[] = LOCALES;
+/** Languages being translated (added 24.11.2026) – reachable only with `I18N_PREVIEW=1` until finished. */
+export const UPCOMING_LOCALES: readonly Locale[] = ["sq", "sv", "no", "da", "fi", "nl", "cs", "sl"];
+
+export const LIVE_LOCALES: readonly Locale[] = LOCALES.filter((l) => !UPCOMING_LOCALES.includes(l));
 
 /** `I18N_PREVIEW=1` (local, tests, previews) switches every language on. Server only. */
 export function liveLocales(): readonly Locale[] {
@@ -91,6 +102,14 @@ export const LANGUAGE_HINTS: Record<Locale, { text: string; action: string }> = 
   fr: { text: "Ce site est également disponible en français.", action: "Voir en français" },
   es: { text: "Este sitio también está disponible en español.", action: "Ver en español" },
   ce: { text: "ХӀара сайт нохчийн маттахь а ю.", action: "Нохчийн маттахь хьажа" },
+  sq: { text: "Kjo faqe është e disponueshme edhe në shqip.", action: "Shiko në shqip" },
+  sv: { text: "Den här webbplatsen finns även på svenska.", action: "Visa på svenska" },
+  no: { text: "Dette nettstedet finnes også på norsk.", action: "Vis på norsk" },
+  da: { text: "Denne hjemmeside findes også på dansk.", action: "Vis på dansk" },
+  fi: { text: "Tämä sivusto on saatavilla myös suomeksi.", action: "Näytä suomeksi" },
+  nl: { text: "Deze website is ook beschikbaar in het Nederlands.", action: "Bekijk in het Nederlands" },
+  cs: { text: "Tento web je k dispozici také v češtině.", action: "Zobrazit česky" },
+  sl: { text: "Ta spletna stran je na voljo tudi v slovenščini.", action: "Prikaži v slovenščini" },
 };
 
 /** Browser language code (e.g. "hr-HR", "sr", "uk") → our locale. */
@@ -98,5 +117,6 @@ export function localeFromBrowser(code: string): Locale | null {
   const base = code.toLowerCase().split("-")[0];
   if (["bs", "hr", "sr", "sh", "cnr"].includes(base)) return "bks";
   if (base === "prs") return "fa"; // Dari
+  if (base === "nb" || base === "nn") return "no"; // Bokmål, Nynorsk
   return isLocale(base) ? base : null;
 }

@@ -1,4 +1,4 @@
-import { AT, BA, BG, ES, FR, GB, HR, HU, IT, PL, RO, RS, RU, SK, TR, UA } from "country-flag-icons/react/3x2";
+import { AL, AT, BA, BG, CZ, DK, ES, FI, FR, GB, HR, HU, IT, NL, NO, PL, RO, RS, RU, SE, SI, SK, TR, UA } from "country-flag-icons/react/3x2";
 import { Languages } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 
@@ -12,6 +12,7 @@ type Flag = typeof AT;
 const FLAGS: Record<Locale, Flag[]> = {
   de: [AT], en: [GB], tr: [TR], bks: [BA, HR, RS], uk: [UA], ru: [RU], pl: [PL], ro: [RO], hu: [HU],
   ar: [], bg: [BG], fa: [], sk: [SK], it: [IT], fr: [FR], es: [ES], ce: [],
+  sq: [AL], sv: [SE], no: [NO], da: [DK], fi: [FI], nl: [NL], cs: [CZ], sl: [SI],
 };
 
 export function LanguageFlag({ locale }: { locale: Locale }) {

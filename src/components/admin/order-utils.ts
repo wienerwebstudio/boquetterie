@@ -60,7 +60,8 @@ export const PAYMENT_STATUS_LABELS: Record<Order["payment"]["status"], string> =
 export const LANGUAGE_NAMES_DE: Record<string, string> = {
   de: "Deutsch", en: "Englisch", tr: "Türkisch", bks: "Bosnisch/Kroatisch/Serbisch", uk: "Ukrainisch", ru: "Russisch",
   pl: "Polnisch", ro: "Rumänisch", hu: "Ungarisch", ar: "Arabisch", bg: "Bulgarisch", fa: "Persisch", sk: "Slowakisch",
-  it: "Italienisch", fr: "Französisch", es: "Spanisch", ce: "Tschetschenisch",
+  it: "Italienisch", fr: "Französisch", es: "Spanisch", ce: "Tschetschenisch", sq: "Albanisch", sv: "Schwedisch",
+  no: "Norwegisch", da: "Dänisch", fi: "Finnisch", nl: "Niederländisch", cs: "Tschechisch", sl: "Slowenisch",
 };
 
 /** Shop language of an order in German ("Türkisch"); `null` for German orders (no `locale`). */

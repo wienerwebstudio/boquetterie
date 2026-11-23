@@ -48,7 +48,10 @@ describe("language URLs", () => {
     expect(localeFromBrowser("hr-HR")).toBe("bks");
     expect(localeFromBrowser("sr")).toBe("bks");
     expect(localeFromBrowser("uk-UA")).toBe("uk");
-    expect(localeFromBrowser("nl")).toBeNull();
+    expect(localeFromBrowser("nl")).toBe("nl");
+    expect(localeFromBrowser("nb-NO")).toBe("no");
+    expect(localeFromBrowser("nn")).toBe("no");
+    expect(localeFromBrowser("ja")).toBeNull();
   });
 });
 

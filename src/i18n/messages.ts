@@ -32,6 +32,14 @@ const loaders: Record<Exclude<Locale, "de">, () => Promise<{ default: PartialMes
   it: () => import("@/i18n/messages/it"),
   fr: () => import("@/i18n/messages/fr"),
   es: () => import("@/i18n/messages/es"),
+  sq: () => import("@/i18n/messages/sq"),
+  sv: () => import("@/i18n/messages/sv"),
+  no: () => import("@/i18n/messages/no"),
+  da: () => import("@/i18n/messages/da"),
+  fi: () => import("@/i18n/messages/fi"),
+  nl: () => import("@/i18n/messages/nl"),
+  cs: () => import("@/i18n/messages/cs"),
+  sl: () => import("@/i18n/messages/sl"),
 };
 
 function merge<T>(base: T, over: unknown): T {
