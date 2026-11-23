@@ -31,7 +31,7 @@ export async function Footer({ settings }: { settings: SiteSettings }) {
     ] },
     { title: t.columns.service, links: [
       { label: nav.delivery, href: routes.delivery }, { label: t.links.faq, href: routes.faq },
-      { label: t.links.contact, href: routes.contact }, { label: t.links.trackOrder, href: routes.tracking },
+      { label: t.links.contact, href: routes.contact }, { label: m.layout.header.customRequest, href: routes.customRequest }, { label: t.links.trackOrder, href: routes.tracking },
       { label: t.links.giftFinder, href: GIFT_FINDER_PATH }, { label: t.links.reminder, href: "/erinnerung" },
     ] },
     { title: t.columns.company, links: [

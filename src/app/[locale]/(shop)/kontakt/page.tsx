@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/ui/link";
 import { notFound } from "next/navigation";
-import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, ArrowRight, PenLine } from "lucide-react";
 import { getFaqs, getPageBySlug, getSettings } from "@/lib/content";
 import { routes } from "@/lib/urls";
 import { breadcrumbLd, JsonLd } from "@/lib/seo";
@@ -94,6 +94,17 @@ export default async function ContactPage() {
                 )}
               </address>
             </section>
+
+            <Link href={routes.customRequest} data-testid="contact-custom-request" className="group flex items-center justify-between gap-4 rounded-md border border-forest/25 bg-forest/[0.06] px-5 py-4 text-ink transition-colors hover:bg-forest/10">
+              <span className="flex items-center gap-3">
+                <PenLine className="size-4 shrink-0 text-forest" aria-hidden />
+                <span>
+                  <span className="block text-[15px] font-semibold">{m.layout.header.customRequest}</span>
+                  <span className="block text-[13px] text-ink-muted">{m.layout.header.customRequestHint}</span>
+                </span>
+              </span>
+              <ArrowRight className="size-4 shrink-0 text-stone transition-transform group-hover:translate-x-1 group-hover:text-forest" aria-hidden />
+            </Link>
 
             {quickFaqs.length > 0 && (
               <section aria-labelledby="quick-faq-heading" className="rounded-md bg-ivory-100 p-6 sm:p-8">

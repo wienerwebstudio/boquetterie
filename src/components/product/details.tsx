@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "@/components/ui/link";
-import { Info } from "lucide-react";
+import { Info, PenLine } from "lucide-react";
 import type { Product } from "@/types";
 import { Accordion, type AccordionItem } from "@/components/ui/accordion";
 import { routes } from "@/lib/urls";
@@ -50,6 +50,12 @@ export async function ProductDetails({ product }: { product: Product }) {
         <div className="space-y-3">
           <p>{t.deliveryText}</p>
           <p>{areasBefore}<Link href={routes.delivery} className="text-forest underline underline-offset-2">{t.deliveryLink}</Link>{areasAfter || null}</p>
+          <p>
+            <Link href={`${routes.customRequest}?produkt=${encodeURIComponent(product.slug)}`} data-testid="pdp-custom-request" className="inline-flex items-center gap-1.5 text-forest underline underline-offset-2">
+              <PenLine className="size-3.5" aria-hidden />{m.layout.header.customRequest}
+            </Link>
+            <span className="text-ink-muted"> – {m.layout.header.customRequestHint}</span>
+          </p>
         </div>
       ),
     },

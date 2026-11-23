@@ -113,6 +113,7 @@ export default async function FaqPage() {
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
                   <Button href={routes.contact} variant="light" size="lg" iconRight={<ArrowRight className="size-4" aria-hidden />}>{t.ctaContact}</Button>
+                  <Link href={routes.customRequest} data-testid="faq-custom-request" className="text-sm font-semibold text-ivory underline-offset-4 hover:underline">{m.layout.header.customRequest}</Link>
                   <Link href={routes.tracking} className="text-sm font-semibold text-ivory underline-offset-4 hover:underline">{t.ctaTracking}</Link>
                 </div>
               </section>

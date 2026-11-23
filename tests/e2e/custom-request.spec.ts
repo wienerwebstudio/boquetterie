@@ -183,4 +183,17 @@ test.describe("Anfrage @slow", () => {
       await expect(page.locator("header nav").first().locator("a[href*='anfrage'], a[href*='enquiry']")).toHaveCount(0);
     }
   });
+
+  test("Links zur Anfrage: Footer, Kontakt, FAQ, Produktseite (mit Produkt)", async ({ page }) => {
+    await gotoPage(page, "/kontakt");
+    await expect(page.getByTestId("contact-custom-request")).toHaveAttribute("href", "/anfrage");
+    await expect(page.locator("footer a[href='/anfrage']")).toHaveCount(1);
+    await gotoPage(page, "/faq");
+    await expect(page.getByTestId("faq-custom-request")).toHaveAttribute("href", "/anfrage");
+    await gotoPage(page, "/produkt/amour");
+    await expect(page.getByTestId("pdp-custom-request")).toHaveAttribute("href", "/anfrage?produkt=amour");
+    await gotoPage(page, "/en/product/amour");
+    await expect(page.getByTestId("pdp-custom-request")).toHaveAttribute("href", "/en/enquiry?produkt=amour");
+    await expect(page.locator("footer a[href='/en/enquiry']")).toHaveCount(1);
+  });
 });
