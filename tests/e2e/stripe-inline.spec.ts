@@ -137,7 +137,7 @@ test.describe("Stripe Payment Element inline @stripe", () => {
        order exists (the team sees the contact data) with the note "Kartenangaben unvollständig" ---- */
     await buy.click();
     await expect(page.getByRole("alert").first()).toBeVisible({ timeout: 15_000 });
-    expect(orderCalls).toHaveLength(1);
+    await expect.poll(() => orderCalls.length).toBe(1);
     await expect.poll(() => notes.length).toBe(1);
     expect(notes[0]).toMatchObject({ orderId: "BQ-E2EFAKE", reason: "incomplete", method: "card" });
 

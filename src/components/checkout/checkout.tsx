@@ -322,9 +322,9 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     setSubmitError(null);
     const draft = peekDraftId("checkout");
 
-    // Create the order – or continue the open Stripe order of these details. Runs in
-    // parallel with submit(): the order exists even when the customer never finishes the
-    // payment (fields left empty, wallet sheet closed), so the team sees the contact data.
+    // Create the order – or continue the open Stripe order of these details. Runs right after
+    // submit(), also when it stopped: the order exists even when the customer never finishes
+    // the payment (fields left empty, wallet sheet closed), so the team sees the contact data.
     const obtainOrder = async (): Promise<OrderAnswer> => {
       if (isStripe) {
         const memo = attemptRef.current?.key === reuseKey ? attemptRef.current : null;
@@ -356,11 +356,25 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     };
 
     try {
-      const [checked, answer] = await Promise.allSettled([submitted ?? Promise.resolve(null), obtainOrder()]);
-      if (answer.status === "rejected") throw answer.reason;
-      const body = answer.value;
+      // Stripe's documented order: finish submit() (validation, Apple/Google Pay sheet) BEFORE
+      // any request. Safari aborts requests started while the Apple Pay sheet opens (seen live:
+      // POST /api/orders → 499, the order existed but the page never confirmed the payment).
       /** Why Stripe's submit() stopped (null = fine or not Stripe). */
-      const submitError = checked.status === "rejected" ? { message: undefined, type: "api_error", code: undefined } : checked.value?.error ?? null;
+      let submitError: { message?: string; type: string; code?: string } | null = null;
+      if (submitted) {
+        try {
+          submitError = (await submitted)?.error ?? null;
+        } catch {
+          submitError = { message: undefined, type: "api_error", code: undefined };
+        }
+      }
+      let body: OrderAnswer;
+      try {
+        body = await obtainOrder();
+      } catch {
+        // Dropped connection: try once more (an order created by the lost request expires unpaid after 2 h).
+        body = await obtainOrder();
+      }
       if (!body.ok || !body.id || !body.token) {
         // Map server field errors ("recipient.zip") back to the step that owns them.
         const byStep = new Map<StepId, FieldErrors>();
