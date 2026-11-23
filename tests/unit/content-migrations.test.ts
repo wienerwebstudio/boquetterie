@@ -181,3 +181,17 @@ describe("ganz Wien / Same Day / Express + new phone (2026-11-24)", () => {
     }
   });
 });
+
+describe("Love Deluxe XXL (2026-11-24)", () => {
+  it("adds XXL once, only to Love Deluxe, keeping prices edited in the admin", async () => {
+    const { withLoveDeluxeXxl } = await import("@/lib/content-migrations");
+    const four = { id: "p-love-deluxe", sizes: [{ id: "s", price: 50 }, { id: "m" }, { id: "l" }, { id: "xl" }] };
+    const next = withLoveDeluxeXxl(four) as typeof four;
+    expect(next.sizes.map((s) => s.id)).toEqual(["s", "m", "l", "xl", "xxl"]);
+    expect(next.sizes[0]).toEqual({ id: "s", price: 50 });
+    expect(next.sizes[4]).toEqual({ id: "xxl", label: "XXL", price: 175.9 });
+    expect(withLoveDeluxeXxl(next)).toBe(next);
+    const other = { id: "p-red-passion", sizes: [{ id: "s" }] };
+    expect(withLoveDeluxeXxl(other)).toBe(other);
+  });
+});

@@ -2851,6 +2851,11 @@
         "id": "xl",
         "label": "XL",
         "price": 127.9
+      },
+      {
+        "id": "xxl",
+        "label": "XXL",
+        "price": 175.9
       }
     ],
     "basePrice": 48.9,

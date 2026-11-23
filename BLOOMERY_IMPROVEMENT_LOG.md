@@ -373,3 +373,6 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Je Sprache übersetzt (Agents, aus dem Deutschen): alle 16 UI-Namespaces inkl. Mails (1761 Schlüssel, vollständig per Test), alle Inhalte (`content/i18n-<l>.json`, 1249 Texte) und 6 eigene Themenseiten (`content/landing-pages-<l>.json`: Blumen nach Wien, aus dem Heimatland, Florist Wien, heute/Express, Rosen, Trauerfloristik).
 - Albanisch: Chrome hat keine albanischen Intl-Daten → Datum, Preis und Ländernamen im Telefonfeld werden von Hand formatiert (identisch zu CLDR/Node, `tests/unit/format-sq.test.ts`). Telefonfeld nutzt jetzt die Intl-Locale statt des Shop-Codes (bks/ce).
 - Geprüft: Crawl aller 432 Seiten der neuen Sprachen (Status 200, keine JS-/Hydration-Fehler, kein Überlauf bei 390 px); 657 Unit-Tests, 73 E2E grün.
+
+## 2026-11-24 – Love Deluxe: 5. Größe
+- Text sagte „in fünf Größen“, es gab nur S/M/L/XL. Neu XXL für 175,90 € (gleiche Preisstufe wie die Rosensträuße), Migration `2026-11-24-love-deluxe-xxl` (nur wenn noch keine XXL-Größe existiert). Floristen-Budget für XXL im Admin nachtragen. Kein eigenes Größenfoto.

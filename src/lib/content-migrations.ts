@@ -371,7 +371,20 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
       ...Object.fromEntries(Object.keys(VIENNA_EXPRESS_TEXTS).filter((l) => l !== "de").map((l) => [`i18n-${l}`, (doc: unknown) => withViennaExpressTranslation(doc, VIENNA_EXPRESS_TEXTS[l])])),
     },
   },
+  {
+    // Love Deluxe is described "in fünf Größen" but had four: add XXL at the rose price (owners: 24.11.2026).
+    id: "2026-11-24-love-deluxe-xxl",
+    transform: { products: (doc) => mapList(doc, withLoveDeluxeXxl) },
+  },
 ];
+
+/** Adds the XXL size (175,90 €, like the rose bouquets) to Love Deluxe once; other products unchanged. */
+export function withLoveDeluxeXxl(product: Obj): Obj {
+  if (product.id !== "p-love-deluxe" || !Array.isArray(product.sizes)) return product;
+  const sizes = product.sizes as Obj[];
+  if (sizes.some((s) => s.id === "xxl")) return product;
+  return { ...product, sizes: [...sizes, { id: "xxl", label: "XXL", price: 175.9 }] };
+}
 
 const sameJson = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
 
