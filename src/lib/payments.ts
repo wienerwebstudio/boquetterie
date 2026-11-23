@@ -20,7 +20,7 @@ export { stripeConfigured, stripePublishableKey, paypalConfigured, MOCK_REFERENC
  *
  * Method → provider mapping:
  *   card / apple_pay / google_pay / eps / klarna → stripe (fallback: mock where allowed, else unavailable)
- *   paypal                                       → paypal (no fallback – hidden when unconfigured)
+ *   paypal                                       → paypal when PAYPAL_* is set, else stripe (PayPal in the Stripe Dashboard), else hidden
  *
  * The shop never talks to a provider directly – everything goes through
  * `createPayment` / `verifyPayment` / `processWebhook`. Applying results to an
@@ -37,7 +37,9 @@ const STRIPE_METHODS: ReadonlySet<PaymentMethodId> = new Set(["card", "apple_pay
 
 /** Resolves which provider would handle a method right now; `null` = method unavailable. */
 export function providerForMethod(method: PaymentMethodId): PaymentProviderId | null {
-  if (method === "paypal") return paypalConfigured() ? "paypal" : null;
+  // PayPal: the direct PayPal app when its keys are set, otherwise PayPal as a Stripe payment method
+  // (switched on in the Stripe Dashboard; /api/payments/methods hides it while Stripe does not offer it).
+  if (method === "paypal") return paypalConfigured() ? "paypal" : stripeConfigured() ? "stripe" : null;
   if (STRIPE_METHODS.has(method)) return stripeConfigured() ? "stripe" : mockPaymentsAllowed() ? "mock" : null;
   return null;
 }

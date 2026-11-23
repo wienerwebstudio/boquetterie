@@ -37,6 +37,7 @@ test.describe("Stripe Payment Element inline @stripe", () => {
           { id: "card", label: "Kreditkarte", provider: "stripe" },
           { id: "klarna", label: "Klarna", provider: "stripe" },
           { id: "eps", label: "Online-Überweisung (eps)", provider: "stripe" },
+          { id: "paypal", label: "PayPal", provider: "stripe" },
         ],
         stripePublishableKey: publishableKey,
         subscriptionCheckout: false,
@@ -153,6 +154,16 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     await expect(buy).toBeEnabled({ timeout: 30_000 });
     await noHorizontalOverflow(page);
     await page.screenshot({ path: "test-results/stripe-inline-klarna.png", fullPage: true });
+    expect(orderCalls).toHaveLength(1);
+
+    /* ---- PayPal through Stripe: same inline flow, PayPal tab of the Payment Element ---- */
+    await choose("PayPal");
+    await expect(page.getByTestId("payment-inline")).toHaveCount(1);
+    expect(await placedUnder(page, "PayPal")).toBe(true);
+    await expect(page.getByTestId("payment-inline")).toContainText("PayPal");
+    await expect(buy).toBeEnabled({ timeout: 30_000 });
+    await noHorizontalOverflow(page);
+    await page.screenshot({ path: "test-results/stripe-inline-paypal.png", fullPage: true });
     expect(orderCalls).toHaveLength(1);
   });
 

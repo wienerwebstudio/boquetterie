@@ -8,7 +8,7 @@ import type { OrderCreateResponse, PaymentMethodId } from "@/types/payments";
 
 export const dynamic = "force-dynamic";
 
-const METHODS = new Set<PaymentMethodId>(["apple_pay", "google_pay", "card", "klarna", "eps"]);
+const METHODS = new Set<PaymentMethodId>(["apple_pay", "google_pay", "card", "klarna", "eps", "paypal"]);
 
 /**
  * POST /api/orders/resume { orderId, token, method }

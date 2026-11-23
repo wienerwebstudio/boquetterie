@@ -22,12 +22,14 @@ describe("inline Payment Element per list entry", () => {
     expect(google?.order?.[0]).toBe("google_pay");
   });
 
-  it("uses the redirect methods' own Stripe types and nothing for PayPal", () => {
+  it("uses the redirect methods' own Stripe types (PayPal via Stripe too)", () => {
     expect(inlineElementsFor("klarna")?.types).toEqual(["klarna"]);
     expect(inlineElementsFor("eps")?.types).toEqual(["eps"]);
     expect(inlineElementsFor("klarna")?.order).toEqual(["klarna"]);
     expect(inlineElementsFor("eps")?.order).toEqual(["eps"]);
-    expect(inlineElementsFor("paypal")).toBeNull();
+    expect(inlineElementsFor("paypal")?.types).toEqual(["paypal"]);
+    expect(inlineElementsFor("paypal")?.order).toEqual(["paypal"]);
+    expect(inlineElementsFor("paypal")?.wallets).toEqual({ applePay: "never", googlePay: "never", link: "never" });
   });
 });
 

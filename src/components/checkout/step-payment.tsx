@@ -37,7 +37,7 @@ export function StepPayment({ data, set, errors, methods, loading, loadError, in
   const selected = methods.find((m) => m.id === data.method);
   const hint = selected?.provider !== "stripe" ? null
     : selected.id === "apple_pay" || selected.id === "google_pay" ? fmt(messages.pay.inline.walletHint, { method: selected.label })
-    : selected.id === "klarna" || selected.id === "eps" ? fmt(messages.pay.inline.redirectHint, { method: selected.label })
+    : selected.id === "klarna" || selected.id === "eps" || selected.id === "paypal" ? fmt(messages.pay.inline.redirectHint, { method: selected.label })
     : null;
   return (
     <div className="flex flex-col gap-5">

@@ -21,7 +21,7 @@ export interface InlineElementsConfig {
  * What the Payment Element shows under a list entry. Apple Pay and Google Pay are card
  * payments in Stripe (type `card`): the entry shows only its own wallet (plus the card
  * fields as Stripe's second tab), "Kreditkarte" shows only the card fields.
- * `null` for methods that are not paid through Stripe (PayPal).
+ * PayPal is shown here only when it is paid through Stripe (the direct PayPal app redirects instead).
  */
 export function inlineElementsFor(method: PaymentMethodId): InlineElementsConfig | null {
   switch (method) {
@@ -35,6 +35,8 @@ export function inlineElementsFor(method: PaymentMethodId): InlineElementsConfig
       return { types: ["klarna"], wallets: { applePay: "never", googlePay: "never", link: "never" }, order: ["klarna"] };
     case "eps":
       return { types: ["eps"], wallets: { applePay: "never", googlePay: "never", link: "never" }, order: ["eps"] };
+    case "paypal":
+      return { types: ["paypal"], wallets: { applePay: "never", googlePay: "never", link: "never" }, order: ["paypal"] };
     default:
       return null;
   }

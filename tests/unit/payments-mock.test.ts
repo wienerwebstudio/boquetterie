@@ -28,6 +28,17 @@ describe("mock payments in production", () => {
     expect(providerForMethod("card")).toBe("stripe");
   });
 
+  it("routes PayPal to the direct app when its keys are set, else through Stripe, else hides it", () => {
+    vi.stubEnv("NODE_ENV", "production"); vi.stubEnv("PAYMENTS_ALLOW_MOCK", "true");
+    vi.stubEnv("PAYPAL_CLIENT_ID", ""); vi.stubEnv("PAYPAL_CLIENT_SECRET", "");
+    vi.stubEnv("STRIPE_SECRET_KEY", ""); vi.stubEnv("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY", "");
+    expect(providerForMethod("paypal")).toBeNull();
+    vi.stubEnv("STRIPE_SECRET_KEY", "rk_test_x"); vi.stubEnv("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY", "pk_test_x");
+    expect(providerForMethod("paypal")).toBe("stripe");
+    vi.stubEnv("PAYPAL_CLIENT_ID", "id"); vi.stubEnv("PAYPAL_CLIENT_SECRET", "secret");
+    expect(providerForMethod("paypal")).toBe("paypal");
+  });
+
   it("keeps the mock in development", () => {
     vi.stubEnv("NODE_ENV", "development");
     vi.stubEnv("STRIPE_SECRET_KEY", ""); vi.stubEnv("PAYMENTS_ALLOW_MOCK", "");

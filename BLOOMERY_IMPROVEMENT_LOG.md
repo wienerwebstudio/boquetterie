@@ -349,3 +349,9 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Footer (Service-Spalte), Kontaktseite (Kachel unter den Kontaktdaten), FAQ (Abschluss-Box) und Produktseite (Abschnitt „Lieferung“, mit `?produkt=<slug>` vorausgewählt) verlinken auf /anfrage.
 - Nutzt die vorhandenen Texte „Anfrage stellen“ / „Uhrzeit, Ort, Wunschstrauß“ – in allen Sprachen bereits übersetzt.
 - E2E: `custom-request.spec.ts` prüft alle vier Links (de + en). Volle Suite: 623 Unit, 71 E2E grün.
+
+## 2026-11-23 – PayPal über Stripe
+- PayPal ist im Stripe-Konto aktiviert. `providerForMethod("paypal")`: direkte PayPal-App, wenn `PAYPAL_*` gesetzt ist, sonst Stripe, sonst ausgeblendet.
+- Kasse: PayPal öffnet unter dem Eintrag das Stripe Payment Element mit PayPal-Tab (Hinweis „Nach ‚Jetzt kaufen‘ bestätigst du die Zahlung bei PayPal“). Fortsetzen einer abgebrochenen Zahlung (`/api/orders/resume`) erlaubt PayPal.
+- Sichtbar erst, wenn PayPal im Admin → Zahlungsarten eingeschaltet wird.
+- Tests: Unit (Routing, Elements-Konfiguration), E2E `stripe-inline` mit echtem Stripe-Formular im Deferred-Modus (kein PaymentIntent, keine Zahlung) – PayPal-Tab sichtbar. Echte PayPal-Zahlung + Erstattung macht das Team.

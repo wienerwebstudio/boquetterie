@@ -8,7 +8,7 @@ Bestellseite zeigen deutlich „Testmodus“.
 | Zahlungsart in `content/settings.json` | Provider mit Schlüsseln | Fallback ohne Schlüssel |
 |---|---|---|
 | `card`, `apple_pay`, `google_pay`, `eps`, `klarna` | Stripe (Payment Element) | Mock |
-| `paypal` | PayPal (Orders API v2) | wird **ausgeblendet** |
+| `paypal` | PayPal (Orders API v2), sonst **PayPal über Stripe** (Payment Element) | wird **ausgeblendet** |
 
 Eine Zahlungsart erscheint im Checkout nur, wenn sie in den Settings `enabled`
 ist **und** ihr Provider konfiguriert ist (`GET /api/payments/methods`).
@@ -258,6 +258,16 @@ Checkout Session im Modus `subscription` mit Inline-Preis: Planpreis aus
 Ohne Stripe bleibt das bisherige Anfrageformular.
 
 ## PayPal einrichten
+
+**Weg A – PayPal über Stripe (aktiv, keine eigenen Schlüssel):** PayPal im
+Stripe-Dashboard unter Zahlungsmethoden aktivieren, dann im Admin unter
+Einstellungen → Zahlungsarten „PayPal“ einschalten. Ohne `PAYPAL_CLIENT_ID`
+läuft PayPal dann wie Klarna/eps über das Stripe Payment Element (Weiterleitung
+zu PayPal, Rücksprung, Stripe-Webhook). `/api/payments/methods` blendet PayPal
+aus, solange Stripe es nicht anbietet. Erstattungen laufen im Stripe-Dashboard.
+
+**Weg B – direkte PayPal-REST-App** (hat Vorrang, sobald `PAYPAL_CLIENT_ID` und
+`PAYPAL_CLIENT_SECRET` gesetzt sind):
 
 1. developer.paypal.com → Apps & Credentials → REST-App anlegen (Sandbox zum
    Testen). `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `PAYPAL_ENV=sandbox`.
