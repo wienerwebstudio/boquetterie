@@ -12,8 +12,6 @@ import { CartSummary } from "./cart-summary";
 import { CartDeliveryProvider } from "./cart-delivery";
 import { useCartTotals } from "./use-cart-totals";
 import { useI18n } from "@/i18n/client";
-import { ExpressBuy } from "@/components/checkout/express-buy";
-import { ordersPaused } from "@/lib/orders-paused";
 
 export function CartTrustRow({ className }: { className?: string }) {
   const { m } = useI18n();
@@ -54,8 +52,6 @@ export function CartEmpty({ onClose, cardsEnabled = false }: { onClose?: () => v
  */
 function DrawerFooter({ onClose }: { onClose: () => void }) {
   const { totals, zone } = useCartTotals();
-  const items = useCart((s) => s.items);
-  const coupon = useCart((s) => s.coupon);
   const { m, price } = useI18n();
   const checkout = (
     <Link href={routes.checkout} onClick={onClose} className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-forest px-4 text-center text-[15px] font-semibold leading-tight tracking-wide text-ivory transition-colors hover:bg-forest-700">
@@ -68,7 +64,7 @@ function DrawerFooter({ onClose }: { onClose: () => void }) {
         <span className="text-[12.5px] text-ink-muted">{m.cart.drawer.total} · {zone ? m.cart.drawer.inclDelivery : m.cart.drawer.plusDelivery}</span>
         <span className="text-[18px] font-semibold tabular-nums text-ink">{price(totals.total)}</span>
       </p>
-      {ordersPaused() ? checkout : <ExpressBuy items={items} couponCode={coupon} source="cart" layout="drawer" primary={checkout} />}
+      {checkout}
     </div>
   );
 }

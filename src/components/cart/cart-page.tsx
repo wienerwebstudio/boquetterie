@@ -7,8 +7,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useCart, cartCount } from "@/store/cart";
 import { routes } from "@/lib/urls";
 import { useI18n } from "@/i18n/client";
-import { ExpressBuy } from "@/components/checkout/express-buy";
-import { ordersPaused } from "@/lib/orders-paused";
 import { CartLine } from "./cart-line";
 import { CartSurprise } from "./cart-surprise";
 import { CartUpsell } from "./cart-upsell";
@@ -20,7 +18,6 @@ import { CartDeliveryProvider } from "./cart-delivery";
 export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]; cardsEnabled?: boolean }) {
   const hydrated = useCart((s) => s.hydrated);
   const items = useCart((s) => s.items);
-  const couponCode = useCart((s) => s.coupon);
   const { m, fmt, plural } = useI18n();
 
   if (!hydrated) {
@@ -37,7 +34,7 @@ export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]
   }
 
   const count = cartCount(items);
-  const checkout = <Button href={routes.checkout} size="xl" full className={ordersPaused() ? "mt-6" : undefined} icon={<Lock className="size-4" aria-hidden />}>{m.cart.checkout}</Button>;
+  const checkout = <Button href={routes.checkout} size="xl" full icon={<Lock className="size-4" aria-hidden />}>{m.cart.checkout}</Button>;
 
   return (
     <CartDeliveryProvider items={items}>
@@ -63,7 +60,7 @@ export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]
         <div className="rounded-lg border border-line bg-white/60 p-5 sm:p-6 lg:sticky lg:top-28">
           <h2 className="font-serif text-2xl text-ink">{m.cart.summaryTitle}</h2>
           <CartSummary className="mt-5" />
-          {ordersPaused() ? checkout : <ExpressBuy items={items} couponCode={couponCode} source="cart" layout="page" primary={checkout} className="mt-6" />}
+          <div className="mt-6">{checkout}</div>
           <CartTrustRow className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11.5px] text-ink-muted" />
         </div>
       </aside>

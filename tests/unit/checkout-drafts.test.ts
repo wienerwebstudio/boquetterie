@@ -46,7 +46,6 @@ vi.mock("@/lib/payments", () => ({
 
 import { POST as saveDraft } from "@/app/api/checkout/draft/route";
 import { POST as createOrder } from "@/app/api/orders/route";
-import { POST as expressOrder } from "@/app/api/express/order/route";
 import { DRAFT_TTL_MS, MAX_DRAFTS, deleteCheckoutDraft, listCheckoutDrafts, parseDraftInput, pruneCheckoutDrafts, pruneDrafts } from "@/lib/checkout-drafts";
 
 const settings = settingsJson as unknown as SiteSettings;
@@ -152,18 +151,6 @@ describe("drafts disappear when an order is created from them", () => {
     expect(db.drafts).toHaveLength(1);
   });
 
-  it("POST /api/express/order with draftId deletes the express entry", async () => {
-    await saveDraft(post({ id: ID, source: "express", items, delivery: { date: day.date, windowId: day.windows[0].id }, express: { wallet: "google_pay", postalCode: "1040" } }));
-    expect(db.drafts[0]).toMatchObject({ source: "express", totalComplete: true });
-    const wallet = {
-      expressPaymentType: "google_pay",
-      billingDetails: { name: "Paul Maier", email: "paul.maier@example.com", phone: "+43 664 7654321" },
-      shippingAddress: { name: "Anna Huber", address: { line1: "Wiedner Hauptstraße 12", city: "Wien", postal_code: "1040", country: "AT" } },
-    };
-    const res = await expressOrder(post({ items, delivery: { date: day.date, windowId: day.windows[0].id }, wallet, acceptedTerms: true, draftId: ID }));
-    expect(res.status).toBe(201);
-    await vi.waitFor(() => expect(db.drafts).toHaveLength(0));
-  });
 });
 
 describe("retention", () => {

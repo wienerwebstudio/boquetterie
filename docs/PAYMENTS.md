@@ -99,46 +99,15 @@ Die Bestellbestätigung per E-Mail geht erst raus, wenn die Zahlung bestätigt i
 - **Kein doppelter Auftrag bei einem neuen Versuch:** Schlägt die Zahlung fehl, bricht die Kundin ab (auch nach einer Klarna-/EPS-Weiterleitung) oder wechselt sie nur die Zahlart, nutzt die Kasse dieselbe Bestellung und denselben PaymentIntent weiter, solange Warenkorb und Angaben gleich sind. Die Bestellung bleibt bis dahin `pending`. Die Sitzung merkt sich Bestellnummer + Token (sessionStorage `blumora-stripe-attempt:checkout`, ohne Client-Secret); nach einem Neuladen holt `POST /api/orders/resume` das Client-Secret desselben Intents (`resumeCheckoutOrder` in `src/lib/orders.ts`). Ist der Intent nicht mehr bezahlbar, wird die alte Bestellung als fehlgeschlagen markiert (Bestand frei) und eine neue angelegt. Angebote nutzen die eigene Wiederverwendung von `/api/offers/pay`.
 - **Fehler werden gemeldet:** Lädt das Zahlungsfeld bei einem erneuten Versuch einer bestehenden Bestellung nicht (`loaderror`) oder nach 20 s noch nicht, oder liefert „Jetzt kaufen“ einen Fehler (außer unvollständigen Eingaben), meldet der Browser das an `POST /api/payments/stripe/client-event`. Das steht als „Zahlungsproblem im Browser: …“ (mit Gerät) im Verlauf der Bestellung (max. 5 je Bestellung), und `MAIL_ADMIN` bekommt beim ersten Problem einer Bestellung die Mail „Zahlung hängt: BQ-… · Betrag“ mit den Kontaktdaten. Die Kundin sieht einen Hinweis mit ihrer Bestellnummer (neu laden, anderer Browser, uns kontaktieren).
 
-## Express-Kauf (Apple Pay, Google Pay, Link)
+## Express-Kauf (entfernt)
 
-Produktseite (unter „In den Warenkorb“, kauft genau diese Konfiguration, der Warenkorb
-bleibt unangetastet: Statusseite mit `&warenkorb=behalten`), Warenkorb-Schublade und
-Warenkorbseite (kauft den Warenkorb inkl. Gutschein) zeigen Stripes **Express Checkout
-Element**. Es erscheint nur, wenn Stripe konfiguriert ist **und** das Gerät mindestens eine
-Wallet anbietet (`ready` → `availablePaymentMethods`); sonst ist der Block weg. Apple Pay /
-Google Pay erscheinen nur, wenn sie in den Settings aktiv sind, Link nur mit „Kreditkarte“.
-Stripe.js lädt erst, wenn der Block in den Sichtbereich scrollt. Keine neuen Umgebungsvariablen.
-
-1. **Kompakte Auswahl** über den Buttons: PLZ (vorbelegt aus Produktseite/PLZ-Kontext),
-   Liefertag und Zeitfenster (Pflicht, wenn der Tag Fenster hat) – Tage aus
-   `/api/delivery/check` (Liefer-Engine). Grußkarten sind shopweit aus und werden nicht abgefragt.
-2. `POST /api/express/quote { items, couponCode?, postalCode, date, windowId? }` rechnet
-   serverseitig (`priceOrder` in `src/lib/orders.ts`, dieselbe Funktion wie die Bestellung):
-   Zone der PLZ, Tag/Fenster dieser Zone, Gutschein, Mindestbestellwert → `total`,
-   `delivery` (Versandposition im Wallet), `goods` (Blumen & Extras). Fehler mit `code`
-   (`zone`, `date`, `window`, `min_order`, `items`, `coupon`) → übersetzte Meldung.
-3. **Klick** auf einen Wallet-Button: fehlt etwas, öffnet sich das Fenster nicht
-   (`event.reject()`) und die Auswahl meldet, was fehlt. Sonst zeigt das Wallet den
-   Server-Betrag (Positionen + Lieferung = Summe).
-4. **Lieferadresse im Wallet** (`shippingaddresschange`, nur PLZ/Ort/Land bekannt):
-   erneute Quote für diese PLZ; nur Österreich (`allowedShippingCountries: ["AT"]`), PLZ
-   außerhalb der Zonen → `reject()` plus Hinweis auf der Seite.
-5. **Bezahlen** (`confirm`): `elements.submit()` → `POST /api/express/order` (eigener
-   Rate-Limit 10/10 min) – der Server bildet aus Wallet-Daten den Checkout-Payload
-   (Besteller = Rechnungskontakt, Empfänger = Lieferkontakt, Telefon für beide,
-   „Straße 12/3“ → Straße + Hausnummer, Zusatz aus Zeile 2; `src/lib/express.ts`) und
-   ruft **denselben** Code wie `POST /api/orders` (`src/lib/order-request.ts`). Fehlende
-   Hausnummer/Telefon → Wallet zeigt „Adresse ungültig“. Weicht der Server-Betrag vom
-   Wallet-Betrag ab, wird nicht bestätigt. Dann `stripe.confirmPayment` mit dem neuen
-   Client-Secret, `POST /api/payments/stripe/confirm`, Statusseite.
-   Ein erneuter Versuch mit denselben Daten (z. B. Karte abgelehnt) nutzt dieselbe Bestellung.
-
-Rechtliches: unter den Buttons steht „Mit Apple Pay, Google Pay oder Link gibst du eine
-zahlungspflichtige Bestellung auf. Es gelten unsere AGB und die Widerrufsbelehrung …“; der
-Browser sendet dafür `acceptedTerms: true`.
-
-Apple Pay braucht die verifizierte Domain (siehe „Stripe einrichten“, Punkt 3) – für das
-Payment Element und das Express Checkout Element gilt dieselbe Registrierung.
+Bis 23.11.2026 gab es im Warenkorb einen Express-Kauf (Stripe Express Checkout Element:
+Apple Pay / Google Pay / Link, Lieferadresse aus der Wallet). Entfernt auf Wunsch der Inhaber:
+Blumen sind fast immer Geschenke – die Empfängeradresse im Wallet-Fenster einzutippen ist
+umständlicher als im Checkout, landet dauerhaft im Apple-Konto der Kundin, und die Wallet
+liefert keine Empfänger-Telefonnummer, keinen Kartentext und keine Hinweise. Apple Pay und
+Google Pay bleiben in der Kasse (Schritt 5). Alte Einträge „Abgebrochene Kasse“ mit Quelle
+`express` werden im Admin weiter angezeigt.
 
 ## Abgebrochene Kasse
 
@@ -168,7 +137,7 @@ mit den Kontaktdaten, egal wie weit die Kundin gekommen ist.
   angelegt werden (Adresse ungültig, Verbindung), enthält der Eintrag die freigegebenen
   Kontaktdaten.
 - **Aufräumen:** Wird aus derselben Sitzung eine Bestellung angelegt, schickt der Browser
-  `draftId` mit (`/api/orders`, `/api/express/order`), und der Server löscht den Eintrag –
+  `draftId` mit (`/api/orders`), und der Server löscht den Eintrag –
   die Bestellung zeigt die Daten dann selbst. Einträge älter als **30 Tage** werden beim
   Öffnen der Liste und vom stündlichen Cron (`/api/cron/stale-orders`) gelöscht; höchstens
   1000 Einträge (die ältesten fallen weg). Im Admin: Bestellungen → Filter „Abgebrochene
@@ -321,8 +290,6 @@ Ohne Stripe bleibt das bisherige Anfrageformular.
 | `GET /api/payments/methods` | verfügbare Zahlungsarten + Publishable Key + Abo-Checkout-Flag |
 | `POST /api/orders` | Bestellung anlegen, Zahlung starten (Antwort mit Server-`total`) |
 | `POST /api/orders/resume` | offene Stripe-Bestellung derselben Sitzung fortsetzen (Token, Rate-Limit) |
-| `POST /api/express/quote` | Express-Kauf: Betrag/Zone/Tag für die Wallet-Adresse prüfen |
-| `POST /api/express/order` | Express-Kauf: Bestellung aus Warenkorb + Wallet-Daten anlegen |
 | `POST /api/payments/stripe/client-event` | Browser meldet Zahlungsproblem (Token, Rate-Limit) → Verlauf + Mail an `MAIL_ADMIN` |
 | `POST /api/payments/stripe/confirm` | Intent serverseitig prüfen, Bestellung als bezahlt markieren |
 | `POST /api/payments/stripe/subscription` | Checkout Session fürs Blumen-Abo |

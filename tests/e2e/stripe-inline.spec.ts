@@ -52,7 +52,6 @@ test.describe("Stripe Payment Element inline @stripe", () => {
       // A pending order as the server would create it – its secret is never confirmed here.
       return route.fulfill({ status: 201, json: { ok: true, id: "BQ-E2EFAKE", token: "f".repeat(24), status: "received", payment: { provider: "stripe", status: "pending", clientSecret: "pi_e2e_fake_secret_e2e" } } });
     });
-    await page.route("**/api/express/**", (route) => route.fulfill({ status: 500, json: { ok: false, code: "unavailable", message: "intercepted" } }));
     // Never create or confirm a real PaymentIntent.
     await page.route(/api\.stripe\.com\/v1\/payment_intents/, (route) => route.abort());
     return { orderCalls, notes };
@@ -169,18 +168,15 @@ test.describe("Stripe Payment Element inline @stripe", () => {
   const drawerFooter = (page: Page) => page.getByRole("dialog", { name: /Warenkorb/ }).getByTestId("cart-drawer-footer").locator("xpath=..");
   const VIEWPORT_HEIGHT = 844;
 
-  test("cart drawer: compact footer – total in one line, checkout + device wallet, no fields (≤ 40 % of 390×844)", async ({ page }) => {
+  test("cart drawer: compact footer – total in one line, checkout button, no fields, no express (≤ 40 % of 390×844)", async ({ page }) => {
     test.slow();
     test.skip(!publishableKey, "public publishable key not reachable");
     const stripeErrors = collectStripeErrors(page);
     await interceptPayments(page);
     await addAmourToCart(page);
-    // Not on the product page (owner's wish) – only in the cart.
     await expect(page.getByRole("main").getByTestId("express-buy")).toHaveCount(0);
     const drawer = page.getByRole("dialog", { name: /Warenkorb/ });
     const footer = drawerFooter(page);
-    // Stripe decides per device which wallet exists (the drawer never shows Link).
-    await page.waitForTimeout(8_000);
 
     const total = footer.getByText(/^Gesamt · (inkl|zzgl)\. Lieferung$/);
     await expect(total).toBeVisible();
@@ -194,17 +190,8 @@ test.describe("Stripe Payment Element inline @stripe", () => {
 
     const checkout = await footer.getByRole("link", { name: /Sicher zur Kasse/ }).boundingBox();
     expect(Math.round(checkout!.height)).toBe(48);
-    const wallets = footer.getByTestId("express-wallets");
-    if (await wallets.isVisible()) {
-      // From 360px: side by side, the wallet button narrower than the checkout button.
-      const w = await wallets.boundingBox();
-      expect(Math.abs(w!.y + w!.height / 2 - (checkout!.y + checkout!.height / 2))).toBeLessThan(6);
-      expect(w!.width).toBeLessThan(checkout!.width);
-      await expect(footer.getByTestId("express-legal")).toHaveText(/^Mit (Apple Pay|Google Pay) bestellst du zahlungspflichtig · AGB · Widerruf$/);
-      test.info().annotations.push({ type: "note", description: "wallet button visible next to the checkout button" });
-    } else {
-      test.info().annotations.push({ type: "note", description: "no wallet on this device – express block hidden" });
-    }
+    // Express-Kauf was removed (owners' decision): only the checkout button, no wallet block.
+    await expect(drawer.getByTestId("express-buy")).toHaveCount(0);
     const box = await footer.boundingBox();
     test.info().annotations.push({ type: "footer-height", description: `${Math.round(box!.height)}px of ${VIEWPORT_HEIGHT}px` });
     expect(box!.height).toBeLessThanOrEqual(VIEWPORT_HEIGHT * 0.4);
@@ -233,7 +220,6 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     await expect(notice).toContainText("Liefertermin abgelaufen – bitte neu wählen");
     const day = notice.getByRole("combobox", { name: "Liefertag" });
     await expect(day).toBeVisible();
-    await page.waitForTimeout(6_000); // express block (if any) settles
     const footer = drawerFooter(page);
     await expect(footer.locator("select, input")).toHaveCount(0);
     const box = await footer.boundingBox();
@@ -250,7 +236,7 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     expect(stripeErrors()).toEqual([]);
   });
 
-  test("cart page: same express block; a wallet tap with a missing window focuses the select at the line", async ({ page }) => {
+  test("cart page: checkout button only – no express block", async ({ page }) => {
     test.slow();
     test.skip(!publishableKey, "public publishable key not reachable");
     const stripeErrors = collectStripeErrors(page);
@@ -259,31 +245,10 @@ test.describe("Stripe Payment Element inline @stripe", () => {
     await gotoPage(page, "/warenkorb");
     const main = page.getByRole("main");
     await expect(main.getByRole("article", { name: /Amour, Large/ })).toBeVisible();
-    // The express block loads Stripe only once it scrolls into view.
-    await main.getByRole("link", { name: /Sicher zur Kasse/ }).scrollIntoViewIfNeeded();
-    await page.waitForTimeout(8_000);
+    await expect(main.getByRole("link", { name: /Sicher zur Kasse/ })).toBeVisible();
+    await expect(main.getByTestId("express-buy")).toHaveCount(0);
     await noHorizontalOverflow(page);
     expect(stripeErrors()).toEqual([]);
-    const express = main.getByTestId("express-buy");
-    const wallets = main.getByTestId("express-wallets");
-    if ((await express.count()) && (await wallets.isVisible())) {
-      await expect(main.getByTestId("express-legal")).toHaveText(/^Mit .+ bestellst du zahlungspflichtig · AGB · Widerruf$/);
-      await expect(express.locator("select, input")).toHaveCount(0);
-      // Amour's zone has several windows and the product page sets none: the line asks for it.
-      const line = main.getByTestId("cart-line-delivery");
-      await expect(line).toHaveAttribute("data-issue", "window");
-      await wallets.scrollIntoViewIfNeeded();
-      // Stripe ignores clicks on buttons that just moved – let the layout settle.
-      await page.waitForTimeout(1_500);
-      const button = wallets.frameLocator("iframe").first().getByRole("button").first();
-      await button.click();
-      await page.waitForTimeout(1500);
-      await expect(line.getByRole("combobox", { name: "Zeitfenster" })).toBeFocused({ timeout: 10_000 });
-      await expect(express.getByRole("alert")).toHaveCount(0);
-      test.info().annotations.push({ type: "note", description: "wallet tap without window focused the select at the line" });
-    } else {
-      test.info().annotations.push({ type: "note", description: "no wallet on this device – express block hidden" });
-    }
     await page.screenshot({ path: "test-results/cart-page-390.png", fullPage: true });
   });
 });
