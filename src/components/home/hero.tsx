@@ -93,7 +93,7 @@ export function Hero({ hero, facts = [], whatsapp }: { hero: HomepageContent["he
                 )}
               </ul>
             )}
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center animate-fade-up [animation-delay:240ms]">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center animate-fade-up [animation-delay:240ms]" data-fab-avoid>
               <Button href={hero.primaryCta.href} size="lg">{hero.primaryCta.label}</Button>
               <Button href={hero.secondaryCta.href} size="lg" variant="outline">{hero.secondaryCta.label}</Button>
             </div>
