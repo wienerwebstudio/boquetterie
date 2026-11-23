@@ -1,0 +1,261 @@
+[
+  {
+    "slug": "dostava-roz-dunaj",
+    "title": "Dostava rož na Dunaju",
+    "headline": "Dostava rož na Dunaju – ročno vezani šopki do vrat.",
+    "intro": "Izberite šopek, določite dan in časovno okno, kurir pa ga prinese na naslov prejemnika. Rože dostavljamo v vseh 23 dunajskih okrajev, od ponedeljka do nedelje.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": {
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Kako poteka dostava rož na Dunaju",
+        "paragraphs": [
+          "Izberete šopek in njegovo velikost, v koledarju določite datum dostave in enourno časovno okno med 9:00 in 22:00. Nato vnesete naslov prejemnika in plačate. Potrditev prejmete po e-pošti, skupaj s povezavo, prek katere lahko spremljate stanje naročila.",
+          "Strošek dostave je odvisen od okraja, v katerem je naslov prejemnika. Natančen znesek vidite takoj, ko vnesete poštno številko."
+        ]
+      },
+      {
+        "heading": "Ročno vezano za vsako naročilo",
+        "paragraphs": [
+          "Šopke veže dunajska cvetličarna, s katero stalno sodelujemo – vedno ročno in posebej za vaše naročilo, ne na zalogo. Kurir šopek prevzame v cvetličarni in ga brez vmesnih postankov odpelje na naslov prejemnika."
+        ]
+      },
+      {
+        "heading": "V slovenščini od izbire do e-pošte",
+        "paragraphs": [
+          "Spletna stran, blagajna in e-poštna sporočila o naročilu so v slovenščini. Plačate lahko s kartico, z Apple Pay, Google Pay, Klarna ali eps – delujejo tudi kartice, izdane zunaj Avstrije. Vsi časi so navedeni po dunajskem času."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-date",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Dostava rož Dunaj – ročno vezani šopki",
+      "description": "Dostava rož na Dunaju: ročno vezani šopki na izbrani datum in v izbranem časovnem oknu. V vseh 23 okrajev, od ponedeljka do nedelje."
+    }
+  },
+  {
+    "slug": "roze-iz-slovenije-na-dunaj",
+    "title": "Rože iz Slovenije na Dunaj",
+    "headline": "Rože iz Slovenije na Dunaj – pošljite šopek, ki ga ročno vežejo na Dunaju.",
+    "intro": "Ste v Sloveniji, vaši bližnji pa na Dunaju? Naročite na spletu v slovenščini, kurir pa šopek dostavi na njihov naslov v kateremkoli od 23 dunajskih okrajev.",
+    "image": "/images/hero/hero-wien-tram-wide.jpg",
+    "productFilter": {
+      "occasions": [
+        "geburtstag",
+        "danke",
+        "liebe",
+        "einfach-so"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Naročite iz Slovenije, rože prispejo na Dunaju",
+        "paragraphs": [
+          "Pošiljanje rož iz Slovenije na Dunaj je preprosto: izberite šopek, vnesite naslov prejemnika na Dunaju in v koledarju izberite datum dostave z enournim časovnim oknom med 9:00 in 22:00. Šopek ročno veže partnerska cvetličarna na Dunaju, kurir pa ga prinese naravnost do vrat.",
+          "Dostavljamo izključno na Dunaju, zato pa v vseh 23 okrajev in od ponedeljka do nedelje."
+        ]
+      },
+      {
+        "heading": "Plačilo in jezik",
+        "paragraphs": [
+          "Cene so v evrih, zato vam ni treba ničesar preračunavati. Plačate lahko s kreditno ali debetno kartico, z Apple Pay, Google Pay, Klarna ali eps; kartice iz Slovenije delujejo brez težav. Šopki so na voljo od 36,90 €, strošek dostave pa se prikaže, ko vnesete poštno številko prejemnika.",
+          "Spletna stran, blagajna ter e-poštna sporočila s potrditvijo in stanjem naročila so v slovenščini. Časi so navedeni po dunajskem času – ta je enak kot v Sloveniji."
+        ]
+      },
+      {
+        "heading": "Presenečenje tudi brez imena",
+        "paragraphs": [
+          "Če prejemnik ne sme vedeti, od koga so rože, jih lahko pošljete tudi anonimno: brez voščilnice vaše ime ni nikjer na šopku, račun pa prejmete samo vi."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-payment",
+      "f-anon",
+      "f-date"
+    ],
+    "seo": {
+      "title": "Rože iz Slovenije na Dunaj – dostava šopkov",
+      "description": "Pošljite rože iz Slovenije na Dunaj: naročilo v slovenščini, plačilo v evrih, dostava s kurirjem v vseh 23 dunajskih okrajev."
+    }
+  },
+  {
+    "slug": "cvetlicarna-dunaj",
+    "title": "Cvetličarna Dunaj",
+    "headline": "Cvetličarna na Dunaju – šopki, ki jih ročno vežejo za vas.",
+    "intro": "Blumora je spletna dostava rož z Dunaja. Vsak šopek ročno veže dunajska cvetličarna za vaše naročilo, kurir pa ga dostavi neposredno prejemniku.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": {
+      "category": "bunt",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Spletna cvetličarna z dunajsko delavnico",
+        "paragraphs": [
+          "Šopek izberete pri nas na spletu, veže pa ga dunajska cvetličarna, s katero stalno sodelujemo. Tam vsak šopek nastane ročno in šele po vašem naročilu – ne s tekočega traku in ne iz skladišča.",
+          "Ker so rože naravni izdelek, se lahko barve, vrste in velikost cvetov glede na sezono nekoliko razlikujejo od fotografije. Slog in barvni ton šopka ostaneta enaka."
+        ]
+      },
+      {
+        "heading": "Iz cvetličarne naravnost do vrat",
+        "paragraphs": [
+          "Ko je šopek vezan, ga kurir prevzame v cvetličarni in ga brez vmesnih postankov odpelje na naslov prejemnika – v katerikoli od 23 dunajskih okrajev, vse dni v tednu, v časovnem oknu po vaši izbiri med 9:00 in 22:00.",
+          "Če potrebujete posebno željo, na primer liho število stebel, jo lahko pri naročilu zapišete v opombo za cvetličarno; upoštevamo jo na željo."
+        ]
+      },
+      {
+        "heading": "Pomoč, ko jo potrebujete",
+        "paragraphs": [
+          "Imate vprašanje o naročilu ali dostavi? Po telefonu in prek WhatsAppa smo dosegljivi 24 ur na dan, 7 dni v tednu."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-photo",
+      "f-fresh",
+      "f-where",
+      "f-date"
+    ],
+    "seo": {
+      "title": "Cvetličarna Dunaj – spletna dostava rož",
+      "description": "Spletna cvetličarna na Dunaju: šopki, ki jih dunajska cvetličarna ročno veže po naročilu, dostava s kurirjem v vseh 23 okrajev."
+    }
+  },
+  {
+    "slug": "dostava-roz-isti-dan",
+    "title": "Dostava rož isti dan",
+    "headline": "Dostava rož isti dan na Dunaju – ali ekspresno v 1–2 urah.",
+    "intro": "Naročite od ponedeljka do sobote do 18:30 ali ob nedeljah do 17:45 in šopek prispe še danes. Z ekspresno dostavo v 1–2 urah, brez doplačila.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": {
+      "sameDayOnly": true,
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Rože še danes: roki za naročilo",
+        "paragraphs": [
+          "Dostava rož isti dan na Dunaju je mogoča, če naročite od ponedeljka do sobote do 18:30 ali ob nedeljah do 17:45 in je za naslov prejemnika še na voljo prosto časovno okno. Velja dunajski čas.",
+          "Najzgodnejši mogoči termin za naslov prejemnika vidite takoj, ko vnesete poštno številko."
+        ]
+      },
+      {
+        "heading": "Ekspresna dostava v 1–2 urah",
+        "paragraphs": [
+          "Ko se mudi, izberite ekspresno dostavo: naročite kot običajno in v blagajni izberite najzgodnejše današnje časovno okno – označeno je z »Express«. Šopek prispe v 1–2 urah, brez doplačila."
+        ]
+      },
+      {
+        "heading": "Kateri šopki so na voljo še danes",
+        "paragraphs": [
+          "Spodaj so šopki, ki jih naša partnerska cvetličarna lahko veže isti dan. Tudi ti so vezani ročno šele po prejemu naročila, zato za dostavo isti dan ni na voljo vsa ponudba. Ko je šopek pripravljen, ga kurir brez vmesnih postankov odpelje v katerikoli od 23 dunajskih okrajev, vi pa po e-pošti izveste, kdaj je na poti in kdaj je dostavljen."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-today",
+      "f-express",
+      "f-where",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Dostava rož isti dan Dunaj – ekspresno v 1–2 urah",
+      "description": "Dostava rož isti dan na Dunaju: naročite do 18:30, ob nedeljah do 17:45. Ekspresno v 1–2 urah brez doplačila, v vseh 23 okrajev."
+    }
+  },
+  {
+    "slug": "dostava-vrtnic-dunaj",
+    "title": "Dostava vrtnic na Dunaju",
+    "headline": "Dostava vrtnic na Dunaju – šopki vrtnic za vsako priložnost.",
+    "intro": "Rdeče, roza, bele ali pisane vrtnice, ročno vezane in dostavljene s kurirjem. Izberite dan in uro, mi poskrbimo za ostalo.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": {
+      "category": "rosen",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Vrtnice v mnogih barvah in velikostih",
+        "paragraphs": [
+          "V naši ponudbi so šopki rdečih vrtnic za ljubezen in obletnice, nežni roza šopki za rojstni dan ali materinski dan, bele vrtnice za elegantne priložnosti ter pisani in mavrični šopki vrtnic. Mnogi šopki so na voljo v več velikostih, od majhne geste do velikega šopka.",
+          "Šopki so na voljo od 36,90 €; strošek dostave se prikaže, ko vnesete poštno številko."
+        ]
+      },
+      {
+        "heading": "Liho število ali posebna želja",
+        "paragraphs": [
+          "Če vam je pomembno določeno število vrtnic, na primer liho število stebel, to pri naročilu zapišite v opombo za cvetličarno – upoštevamo ga na željo."
+        ]
+      },
+      {
+        "heading": "Dostava ob pravem trenutku",
+        "paragraphs": [
+          "Vrtnice dostavljamo v vseh 23 dunajskih okrajev, vse dni v tednu, v enournem časovnem oknu med 9:00 in 22:00. Če naročite od ponedeljka do sobote do 18:30 ali ob nedeljah do 17:45, lahko izbrani šopki prispejo še isti dan. Če želite, da ostane presenečenje, lahko vrtnice pošljete tudi anonimno."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-window",
+      "f-anon",
+      "f-fresh"
+    ],
+    "seo": {
+      "title": "Dostava vrtnic Dunaj – šopki vrtnic do vrat",
+      "description": "Dostava vrtnic na Dunaju: rdeče, roza in bele vrtnice, ročno vezane in dostavljene s kurirjem v izbranem časovnem oknu v vseh 23 okrajev."
+    }
+  },
+  {
+    "slug": "zalni-venci-in-cvetje",
+    "title": "Žalni venci in žalno cvetje",
+    "headline": "Žalni venci in žalno cvetje na Dunaju – dostojen zadnji pozdrav.",
+    "intro": "Žalni venci in žalni šopki, ročno vezani na Dunaju in dostavljeni na naslov, ki ga navedete. Za pogreb, slovo ali kot znak sočutja družini.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": {
+      "category": "trauer",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Žalni venci in žalni šopki",
+        "paragraphs": [
+          "Za pogreb in slovo ponujamo žalne vence in žalne šopke v beli, rdeči, roza, rumeni, oranžni in pisani izvedbi. Bela izraža mir in tiho sočutje, rdeča ljubezen, ki ostane tudi po slovesu.",
+          "Trak z napisom na vencu – na primer ime ali kratko besedilo v slovo – pripravimo na željo: želeno besedilo pri naročilu zapišite v opombo za cvetličarno."
+        ]
+      },
+      {
+        "heading": "Posebne želje",
+        "paragraphs": [
+          "Če želite žalni šopek z določenim številom stebel ali imate drugo željo glede oblikovanja, jo navedite v opombi za cvetličarno – upoštevamo jo na željo."
+        ]
+      },
+      {
+        "heading": "Dostavo načrtujte pravočasno",
+        "paragraphs": [
+          "Dostavljamo na naslov na Dunaju, ki ga navedete, v vseh 23 okrajev, vsak dan v enournih časovnih oknih med 9:00 in 22:00. Izberite termin z dovolj časa pred slovesom.",
+          "Če ste v Sloveniji ali drugje v tujini in ne morete priti osebno, lahko rože vaše sožalje izrazijo družini na Dunaju."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-change",
+      "f-business"
+    ],
+    "seo": {
+      "title": "Žalni venci Dunaj – žalno cvetje z dostavo",
+      "description": "Žalni venci in žalno cvetje na Dunaju: ročno vezani venci in žalni šopki, trak z napisom na željo. Dostava v vseh 23 okrajev."
+    }
+  }
+]

@@ -1,6 +1,101 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** fi – cart (to be translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+/** fi – cart (translated from src/i18n/messages/de/cart.ts). */
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Ostoskori",
+  metaDescription: "Valitsemasi kimput ja lisät – valmiina toimitukseen Wienissä.",
+  title: "Ostoskori",
+  eyebrow: "Melkein valmista",
+  loading: "Ostoskoria ladataan",
+  itemsHeading: "Ostoskorin tuotteet",
+  items: { one: "{count} tuote", other: "{count} tuotetta" },
+  liveCount: "Ostoskori: {count}",
+  continueShopping: "Jatka ostoksia",
+  summaryTitle: "Yhteenveto",
+  checkout: "Turvallisesti kassalle",
+  trust: {
+    securePayment: "Turvallinen maksu",
+    ssl: "SSL-salattu",
+    privacy: "Tietosuoja",
+  },
+  empty: {
+    eyebrow: "Ostoskorisi",
+    title: "Vielä aivan tyhjä.",
+    textWithCards: "Tuoreena sidotut kimput, toivepäivä ja henkilökohtainen kortti – kaikki odottaa vain sinua.",
+    text: "Tuoreena sidotut kimput ja toivepäiväsi – kaikki odottaa vain sinua.",
+    cta: "Tutustu kukkiin",
+  },
+  drawer: {
+    total: "Yhteensä",
+    inclDelivery: "sis. toimituksen",
+    plusDelivery: "+ toimitus",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Lopullinen hinta",
+      note: "§ 6 Abs. 1 Z 27 UStG:n mukaisesti arvonlisäveroa ei veloiteta (pienyrittäjäjärjestely).",
+    },
+    standard: {
+      short: "sis. ALV",
+      note: "Kaikki hinnat sisältävät ALV:n.",
+    },
+  },
+  line: {
+    color: "Väri {color}",
+    wish: "Toive: {note}",
+    delivery: "Toimitus",
+    chooseDateInCheckout: "Valitse toimituspäivä kassalla",
+    expired: "Toimitusajankohta on mennyt – valitse uusi",
+    chooseDate: "Valitse toimituspäivä",
+    chooseWindow: "Valitse aikaikkuna",
+    anonymous: "Ilman lähettäjää",
+    extras: "Lisät",
+    extraLess: "{name}: yksi vähemmän",
+    extraMore: "{name}: yksi lisää",
+    removeExtra: "Poista {name}",
+    quantity: "Määrä {name}",
+    decrease: "Vähennä määrää",
+    increase: "Lisää määrää",
+    remove: "Poista",
+  },
+  summary: {
+    bouquets: "Kimput",
+    extras: "Lisät",
+    delivery: "Toimitus",
+    free: "Ilmainen",
+    deliveryInCheckout: "lasketaan kassalla",
+    discount: "Alennus",
+    total: "Yhteensä",
+    missingForFreeDelivery: "Vielä {amount} ilmaiseen toimitukseen.",
+    minOrder: "Tämän osoitteen vähimmäistilausarvo on {amount}.",
+    removeCoupon: "Poista alennuskoodi",
+    couponCode: "Alennuskoodi",
+    redeem: "Käytä",
+    couponQuestion: "Alennuskoodi?",
+    couponCheckFailed: "Koodia ei juuri nyt voitu tarkistaa. Yritä hetken päästä uudelleen.",
+    couponMissing: "Anna alennuskoodi.",
+    couponUnknown: "Emme tunnista tätä koodia.",
+  },
+  surprise: {
+    title: "Yllätyksesi",
+    bouquet: "Kimppu",
+    card: "+ kortti",
+    extras: "+ lisät",
+    cardsSoon: "Tervehdyskortit tulossa pian",
+    cardIncluded: "Tervehdyskortti sisältyy – viestin voi lisätä milloin tahansa",
+    noExtras: "Ei vielä lisiä",
+  },
+  upsell: {
+    title: "Vielä jotain lisäksi?",
+    subtitle: "Tulee kimpun mukana",
+    add: "Lisää",
+    addAria: "Lisää {name} hintaan {price}",
+  },
+  cardPreview: {
+    label: "Tervehdyskortin esikatselu",
+    placeholder: "Viestisi näkyy tässä.",
+    anonymous: "Ilman lähettäjää",
+  },
+};
 
 export default cart;

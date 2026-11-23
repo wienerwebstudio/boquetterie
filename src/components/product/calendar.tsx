@@ -1,4 +1,5 @@
 "use client";
+import { dateFormatIn } from "@/i18n/format";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { ISODate } from "@/types";
@@ -6,7 +7,7 @@ import type { DeliveryDay } from "@/lib/delivery";
 import { addDays, weekdayOf } from "@/lib/delivery";
 import { cn } from "@/lib/format";
 import { useI18n } from "@/i18n/client";
-import { LOCALE_INFO, type Locale } from "@/i18n/config";
+import type { Locale } from "@/i18n/config";
 
 /** Monday first – keys of `product.calendar.weekdays`. */
 const WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
@@ -22,7 +23,7 @@ function shiftMonth(month: string, delta: number) {
 }
 function monthLabel(month: string, locale: Locale) {
   const [y, m] = month.split("-").map(Number);
-  return new Intl.DateTimeFormat(LOCALE_INFO[locale].intl, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, 1, 12)));
+  return dateFormatIn(locale, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, 1, 12)));
 }
 function monthCells(month: string): (ISODate | null)[] {
   const [y, m] = month.split("-").map(Number);

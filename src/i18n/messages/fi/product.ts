@@ -1,6 +1,195 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** fi – product (to be translated from src/i18n/messages/de/product.ts). */
-const product: NonNullable<PartialMessages["product"]> = {};
+/** fi – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Tuotetta ei löytynyt",
+  priceFrom: "alk.",
+
+  size: {
+    title: "Valitse koko",
+    recommended: "Suositeltu",
+    soldOut: "Loppuunmyyty",
+  },
+
+  color: {
+    title: "Valitse väri",
+    required: "(pakollinen)",
+    notChosen: "Ei vielä valittu",
+    error: "Valitse väri.",
+  },
+
+  delivery: {
+    title: "Milloin kukkien pitäisi saapua?",
+    formLabel: "Toimitustarkistus",
+    postalCodeLabel: "Vastaanottajan postinumero",
+    postalCodePlaceholder: "Vastaanottajan postinumero",
+    check: "Tarkista",
+    prompt: "Anna postinumero valitaksesi toimituspäivän",
+    notAvailable: "Valitettavasti emme vielä toimita postinumeroon {plz}.",
+    notAvailableHint: "Kaikki nykyiset alueet löydät sivulta {link}. Jos vastaanottajan osoite on toinen, anna vain uusi postinumero.",
+    deliveryLink: "Toimitus",
+    available: "Toimitamme tähän osoitteeseen.",
+    fee: "Toimitus postinumeroon {plz} {region}: {fee}",
+    free: "ilmainen",
+    freeFrom: "ilmainen alk. {price}",
+    dateGroup: "Toimituspäivä",
+    today: "Tänään",
+    orderUntil: "tilaa klo {time} mennessä",
+    tomorrow: "Huomenna",
+    chooseDate: "Valitse päivä",
+    openCalendar: "Avaa kalenteri",
+    deliveryOn: "Toimitus {date}",
+    todaySuffix: "· tänään",
+    noDays: "Toimituspäiviä ei ole tällä hetkellä saatavilla.",
+  },
+
+  calendar: {
+    previousMonth: "Edellinen kuukausi",
+    nextMonth: "Seuraava kuukausi",
+    weekdays: {
+      mon: { short: "ma", long: "maanantai" },
+      tue: { short: "ti", long: "tiistai" },
+      wed: { short: "ke", long: "keskiviikko" },
+      thu: { short: "to", long: "torstai" },
+      fri: { short: "pe", long: "perjantai" },
+      sat: { short: "la", long: "lauantai" },
+      sun: { short: "su", long: "sunnuntai" },
+    },
+    daySameDay: "{date}, toimitus vielä tänään",
+    dayAvailable: "{date}, toimitettavissa",
+    dayUnavailable: "{date}, ei toimitettavissa",
+    legendSameDay: "Toimitus vielä tänään",
+    legendToday: "Tänään",
+    legendUnavailable: "Harmaana näkyvinä päivinä ei toimiteta.",
+  },
+
+  card: {
+    unavailableTitle: "Henkilökohtainen tervehdyskortti",
+    unavailableText: "Kimppusi toimitetaan toistaiseksi ilman korttia.",
+    comingSoon: "Tulossa pian!",
+    addMessage: "Lisää henkilökohtainen viesti",
+    included: "Tervehdyskortti sisältyy",
+    handwritten: "Käsin kirjoitettu tervehdyskortti",
+    saved: "Viesti tallennettu",
+    messageLabel: "Viestisi",
+    messagePlaceholder: "Hyvää syntymäpäivää …",
+    maxChars: "Enintään {max} merkkiä.",
+    senderGroup: "Lähettäjä",
+    showSender: "Näytä lähettäjä",
+    anonymous: "Lähetä ilman nimeä",
+    senderName: "Nimesi",
+    optional: "(valinnainen)",
+    senderPlaceholder: "esim. Anna",
+  },
+
+  extras: {
+    title: "Vielä jotain lisäksi?",
+    deliveredTogether: "Toimitetaan yhdessä",
+    addLabel: "Lisää {name} hintaan {price}",
+    add: "Lisää",
+    quantity: "{name}, määrä",
+    less: "{name}: yksi vähemmän",
+    more: "{name}: yksi lisää",
+  },
+
+  floristNote: {
+    title: "Toiveet floristeillemme",
+    optional: "(valinnainen)",
+    hint: "Pieniä muutoksia kimppuun, esim. ”keltaisten sijaan valkoisia ruusuja”. Toteutamme ne, jos kukkia on saatavilla. Toimitusta koskevat ohjeet annat kassalla.",
+    placeholder: "Toiveesi kukkakaupalle",
+  },
+
+  cta: {
+    total: "Yhteensä",
+    comingSoon: "Pian tilattavissa",
+    unavailable: "Ei tällä hetkellä saatavilla",
+    addToCart: "Lisää ostoskoriin",
+    fresh: "Tuoreena sidottu",
+    cardIncluded: "Tervehdyskortti sisältyy",
+    securePayment: "Turvallinen maksu",
+    added: "{name} ({options}) lisättiin ostoskoriin.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Edestä",
+      detail: "Yksityiskohta",
+      size: "Kokovertailu",
+      packaging: "Pakkaus",
+      lifestyle: "Tunnelma",
+    },
+    status: "Kuva {index}/{total}: {alt}",
+    carousel: "Karuselli",
+    imagesOf: "Kuvat: {name}",
+    slide: "Kuva",
+    slideOf: "{index}/{total}",
+    choose: "Valitse kuva",
+    show: "Näytä {label}",
+    thumb: "{label}: {alt}",
+    previous: "Edellinen kuva",
+    next: "Seuraava kuva",
+    colorAlt: "{name}, väri {color}",
+    colorLabel: "Väri {color}",
+    sizeAlt: "{name}, koko {size}",
+    sizeDetailAlt: "{name}, koko {size}, lähikuva",
+    sizeLabel: "Koko {size}",
+    sizeDetailLabel: "Koko {size} · lähikuva",
+  },
+
+  details: {
+    eyebrow: "Hyvä tietää",
+    title: "Kaikki tuotteesta {name}",
+    description: "Kuvaus",
+    plant: "Kasvi",
+    flowers: "Kimpun kukat",
+    care: "Hoito-ohjeet",
+    delivery: "Toimitus",
+    deliveryText: "Kukkasi tulevat wieniläisestä kukkakaupasta, jonka kanssa teemme kiinteää yhteistyötä. Kimput sidotaan siellä käsin juuri sinun tilaustasi varten. Kuriiri noutaa ne ja ajaa ilman välipysähdyksiä vastaanottajan osoitteeseen.",
+    deliveryAreas: "Toimitamme kaikkiin Wienin 23 piiriin. Toimitusmaksu määräytyy piirin mukaan, ja se näytetään, kun olet antanut postinumeron. Toimitusalueet, aikaikkunat ja tilausajat löydät sivulta {link}.",
+    deliveryLink: "Toimitus",
+    looksPlant: "Näyttääkö kasvi täsmälleen tältä?",
+    looksBouquet: "Näyttääkö kimppu täsmälleen tältä?",
+    looksOther: "Näyttääkö se täsmälleen samalta kuin kuvassa?",
+    naturalPlant: "Melkein. Kasvit ovat luonnontuotteita: kasvutapa, koko ja kukinta voivat poiketa kuvasta. Myös ruukku voi näyttää erilaiselta saatavuuden mukaan.",
+    naturalFlowers: "Melkein. Kukat ovat luonnontuotteita: sesongista riippuen jokin lajike tai värisävy voi poiketa. Yhteistyökukkakauppamme huolehtii siitä, että tyyli ja värimaailma säilyvät.",
+  },
+
+  pricePending: {
+    status: "Hinta tulossa",
+    sizes: "Koot",
+    sizesLabel: "Saatavilla olevat koot",
+    soonTitle: "Pian tilattavissa",
+    soonText: "Määrittelemme parhaillaan valikoimamme hintoja. Heti kun ne ovat selvillä, voit tilata tämän kimpun suoraan täältä.",
+    contact: "Kysyttävää? Kirjoita meille",
+  },
+
+  related: {
+    eyebrow: "Selaa lisää",
+    title: "Saattaisit pitää myös näistä",
+    allFlowers: "Näytä kaikki kukat",
+  },
+
+  reviews: {
+    eyebrow: "Kokemuksia",
+    title: "Arvostelut: {name}",
+    demoNote: "Esimerkkiarvosteluja – oikeat arvostelut tulossa",
+    quote: "”{text}”",
+    verified: "Vahvistettu ostos",
+    demo: "Esimerkki",
+  },
+
+  reviewPhotos: {
+    photosOf: "Kuvat: {author}",
+    enlarge: "{alt} – suurenna kuva {index}/{total}",
+    dialogTitle: "Asiakkaan kuva: {author}",
+    dialogCount: "({index}/{total})",
+    close: "Sulje kuva",
+    show: "Näytä kuva {index}",
+  },
+  reviewVideo: {
+    videoOf: "Video: {author}",
+    caption: "Asiakasvideo · {duration}",
+  },
+};
 
 export default product;

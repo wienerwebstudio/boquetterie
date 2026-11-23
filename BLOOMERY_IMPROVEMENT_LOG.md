@@ -367,3 +367,9 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Kasse: das früheste freie Zeitfenster von heute trägt das Abzeichen „Express“, darunter „Express-Lieferung in 1–2 Stunden – ohne Aufpreis.“ (i18n `checkout.delivery.express/expressHint`, alle Sprachen).
 - Ankündigungsleiste: auf schmalen Handys bis zu zwei Zeilen statt Abschneiden; alle Meldungen aller Sprachen bei 360 px geprüft.
 - Tests: Unit (Migration inkl. Admin-Änderungen, alte → neue Dateien geprüft), E2E `express-window.spec.ts` (Tagesdaten abgefangen, unabhängig von der Uhrzeit). Volle Suite: 630 Unit, 73 E2E grün.
+
+## 2026-11-24 – 8 neue Sprachen live: Albanisch, Schwedisch, Norwegisch, Dänisch, Finnisch, Niederländisch, Tschechisch, Slowenisch
+- `sq sv no da fi nl cs sl` mit Flaggen (AL SE NO DK FI NL CZ SI) im Sprachmenü, übersetzten URL-Segmenten, hreflang, Sitemap, Sprachhinweis, Stripe-Locale (Albanisch → auto, Norwegisch → nb).
+- Je Sprache übersetzt (Agents, aus dem Deutschen): alle 16 UI-Namespaces inkl. Mails (1761 Schlüssel, vollständig per Test), alle Inhalte (`content/i18n-<l>.json`, 1249 Texte) und 6 eigene Themenseiten (`content/landing-pages-<l>.json`: Blumen nach Wien, aus dem Heimatland, Florist Wien, heute/Express, Rosen, Trauerfloristik).
+- Albanisch: Chrome hat keine albanischen Intl-Daten → Datum, Preis und Ländernamen im Telefonfeld werden von Hand formatiert (identisch zu CLDR/Node, `tests/unit/format-sq.test.ts`). Telefonfeld nutzt jetzt die Intl-Locale statt des Shop-Codes (bks/ce).
+- Geprüft: Crawl aller 432 Seiten der neuen Sprachen (Status 200, keine JS-/Hydration-Fehler, kein Überlauf bei 390 px); 657 Unit-Tests, 73 E2E grün.

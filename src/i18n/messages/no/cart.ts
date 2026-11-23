@@ -1,6 +1,101 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** no – cart (to be translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+/** no – cart (translated from src/i18n/messages/de/cart.ts). */
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Handlekurv",
+  metaDescription: "Bukettene og ekstraene du har valgt – klare for levering i Wien.",
+  title: "Handlekurv",
+  eyebrow: "Nesten ferdig",
+  loading: "Handlekurven lastes inn",
+  itemsHeading: "Varer i handlekurven",
+  items: { one: "{count} vare", other: "{count} varer" },
+  liveCount: "Handlekurv: {count}",
+  continueShopping: "Fortsett å handle",
+  summaryTitle: "Oppsummering",
+  checkout: "Trygt til kassen",
+  trust: {
+    securePayment: "Sikker betaling",
+    ssl: "SSL-kryptert",
+    privacy: "Personvern",
+  },
+  empty: {
+    eyebrow: "Din handlekurv",
+    title: "Helt tom ennå.",
+    textWithCards: "Ferskt bundne buketter, ønsket dato og et personlig kort – alt venter bare på deg.",
+    text: "Ferskt bundne buketter og ønsket dato – alt venter bare på deg.",
+    cta: "Utforsk blomster",
+  },
+  drawer: {
+    total: "Totalt",
+    inclDelivery: "inkl. levering",
+    plusDelivery: "pluss levering",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Sluttpris",
+      note: "I henhold til § 6 Abs. 1 Z 27 UStG beregnes ingen merverdiavgift (østerriksk ordning for småbedrifter).",
+    },
+    standard: {
+      short: "inkl. mva.",
+      note: "Alle priser inkl. mva.",
+    },
+  },
+  line: {
+    color: "Farge {color}",
+    wish: "Ønske: {note}",
+    delivery: "Levering",
+    chooseDateInCheckout: "Velg leveringsdato i kassen",
+    expired: "Leveringstidspunktet er utløpt – velg på nytt",
+    chooseDate: "Velg leveringsdag",
+    chooseWindow: "Velg tidsvindu",
+    anonymous: "Uten avsender",
+    extras: "Ekstra",
+    extraLess: "{name}: én mindre",
+    extraMore: "{name}: én til",
+    removeExtra: "Fjern {name}",
+    quantity: "Antall {name}",
+    decrease: "Reduser antall",
+    increase: "Øk antall",
+    remove: "Fjern",
+  },
+  summary: {
+    bouquets: "Buketter",
+    extras: "Ekstra",
+    delivery: "Levering",
+    free: "Gratis",
+    deliveryInCheckout: "beregnes i kassen",
+    discount: "Rabatt",
+    total: "Totalt",
+    missingForFreeDelivery: "{amount} igjen til gratis levering.",
+    minOrder: "For denne adressen gjelder en minste ordreverdi på {amount}.",
+    removeCoupon: "Fjern rabattkode",
+    couponCode: "Rabattkode",
+    redeem: "Løs inn",
+    couponQuestion: "Rabattkode?",
+    couponCheckFailed: "Rabattkoden kunne ikke sjekkes akkurat nå. Prøv igjen om et øyeblikk.",
+    couponMissing: "Skriv inn en rabattkode.",
+    couponUnknown: "Denne koden kjenner vi ikke.",
+  },
+  surprise: {
+    title: "Din overraskelse",
+    bouquet: "Bukett",
+    card: "+ kort",
+    extras: "+ ekstra",
+    cardsSoon: "Hilsenkort kommer snart",
+    cardIncluded: "Hilsenkort inkludert – meldingen kan legges til når som helst",
+    noExtras: "Ingen ekstra ennå",
+  },
+  upsell: {
+    title: "Noe mer i tillegg?",
+    subtitle: "Kommer sammen med buketten",
+    add: "Legg til",
+    addAria: "Legg til {name} for {price}",
+  },
+  cardPreview: {
+    label: "Forhåndsvisning av hilsenkortet",
+    placeholder: "Meldingen din vises her.",
+    anonymous: "Uten avsender",
+  },
+};
 
 export default cart;

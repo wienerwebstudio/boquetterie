@@ -69,8 +69,11 @@ export function isLocale(v: unknown): v is Locale {
  * sitemap and in hreflang. Any other locale answers 404 – a half-translated
  * language never goes public. Add a locale here once its texts are complete.
  */
-/** Languages being translated (added 24.11.2026) – reachable only with `I18N_PREVIEW=1` until finished. */
-export const UPCOMING_LOCALES: readonly Locale[] = ["sq", "sv", "no", "da", "fi", "nl", "cs", "sl"];
+/**
+ * Languages still being translated – reachable only with `I18N_PREVIEW=1` until finished.
+ * (sq sv no da fi nl cs sl were added on 24.11.2026 and are live.)
+ */
+export const UPCOMING_LOCALES: readonly Locale[] = [];
 
 export const LIVE_LOCALES: readonly Locale[] = LOCALES.filter((l) => !UPCOMING_LOCALES.includes(l));
 

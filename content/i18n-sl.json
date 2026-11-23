@@ -1,0 +1,2526 @@
+{
+  "categories": {
+    "alle": {
+      "name": "Vse rože",
+      "headline": "Naročite rože na spletu",
+      "intro": "Ročno vezani šopki za ves Dunaj. Izberite svoj šopek in določite datum dostave.",
+      "seo": {
+        "title": "Naročilo in dostava rož na Dunaju",
+        "description": "Naročite rože na spletu in jih dostavite na Dunaju. Ročno vezani šopki na želeni datum – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Vrtnice",
+      "headline": "Šopki vrtnic",
+      "intro": "Vrtnice v rdeči, roza ali beli barvi, v več velikostih. Ročno vezane in dostavljene na Dunaju.",
+      "seo": {
+        "title": "Šopki vrtnic na spletu – vrtnice za Dunaj",
+        "description": "Vsi šopki vrtnic na enem mestu: rdeče, roza in bele vrtnice v več velikostih. Ročno vezani, dostava na Dunaju na želeni datum."
+      }
+    },
+    "saisonal": {
+      "name": "Sezonske rože",
+      "headline": "Sezonske rože",
+      "intro": "Šopki, ki se ujemajo z letnim časom. Izbira se spreminja skozi leto.",
+      "seo": {
+        "title": "Dostava sezonskih šopkov na Dunaju",
+        "description": "Sezonski šopki, ki se ujemajo z letnim časom. Ročno vezani in dostavljeni na Dunaju."
+      }
+    },
+    "pastell": {
+      "name": "Pastelne",
+      "headline": "Pastelni šopki",
+      "intro": "Roza, krem, lila: nežne barve za nežne trenutke.",
+      "seo": {
+        "title": "Dostava pastelnih rož na Dunaju",
+        "description": "Šopki v nežnih pastelnih tonih z dostavo na Dunaju – sveže vezani, na želeni datum."
+      }
+    },
+    "bunt": {
+      "name": "Pisane",
+      "headline": "Pisani šopki",
+      "intro": "Barve, ki razveseljujejo. Za rojstne dneve, presenečenja in dobro voljo.",
+      "seo": {
+        "title": "Dostava pisanih šopkov na Dunaju",
+        "description": "Pisani, veseli šopki z dostavo na Dunaju – sveže vezani, na želeni datum."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegantno in belo",
+      "headline": "Elegantno in belo",
+      "intro": "Bela, krem in zelena. Šopki, ki v vsakem prostoru delujejo umirjeno in plemenito.",
+      "seo": {
+        "title": "Elegantna dostava belih rož na Dunaju",
+        "description": "Beli in krem šopki z dostavo na Dunaju – elegantni, sveže vezani, na želeni datum."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Premium šopki",
+      "intro": "Bogati šopki za posebne trenutke.",
+      "seo": {
+        "title": "Dostava premium šopkov na Dunaju",
+        "description": "Premium šopki za posebne priložnosti z dostavo na Dunaju – ročno vezani, na želeni datum."
+      }
+    },
+    "unter-40": {
+      "name": "Pod 40 €",
+      "headline": "Rože pod 40 €",
+      "intro": "Majhni šopki z velikim učinkom – vsi pod 40 evrov.",
+      "seo": {
+        "title": "Dostava rož pod 40 € na Dunaju",
+        "description": "Ugodni šopki pod 40 € z dostavo na Dunaju – sveže vezani, na želeni datum."
+      }
+    },
+    "bestseller": {
+      "name": "Najljubši šopki",
+      "headline": "Naši najljubši šopki",
+      "intro": "Šopki, ki jih še posebej radi priporočamo.",
+      "seo": {
+        "title": "Naši najljubši šopki – priporočila za Dunaj",
+        "description": "Šopki, ki jih še posebej radi priporočamo – ročno vezani in dostavljeni na Dunaju."
+      }
+    },
+    "neu": {
+      "name": "Novo",
+      "headline": "Novo pri Blumori",
+      "intro": "Sveže v ponudbi.",
+      "seo": {
+        "title": "Novi šopki za Dunaj",
+        "description": "Novi šopki v ponudbi – sveže vezani in dostavljeni na Dunaju."
+      }
+    },
+    "blumenboxen": {
+      "name": "Cvetlične škatle",
+      "headline": "Cvetlične škatle",
+      "intro": "Vrtnice, aranžirane v škatli – darilo, ki ne potrebuje vaze.",
+      "seo": {
+        "title": "Dostava cvetličnih škatel na Dunaju",
+        "description": "Vrtnice v cvetlični škatli – v obliki srca ali klasične. Dostava rož na Dunaju na želeni datum."
+      }
+    },
+    "pflanzen": {
+      "name": "Rastline",
+      "headline": "Lončnice",
+      "intro": "Orhideje, anturije in zelene rastline – rože, ki ostanejo.",
+      "seo": {
+        "title": "Dostava lončnic na Dunaju",
+        "description": "Orhideje, anturije in sobne rastline v loncu kot darilo. Dostava rož na Dunaju."
+      }
+    },
+    "trauer": {
+      "name": "Žalna floristika",
+      "headline": "Žalna floristika",
+      "intro": "Žalni venci in žalni šopki, dostojno vezani za zadnji pozdrav.",
+      "seo": {
+        "title": "Žalni venci in žalni šopki na Dunaju",
+        "description": "Žalni venci in žalni šopki za pogreb in spominsko slovesnost – z dostavo na Dunaju."
+      }
+    },
+    "advent": {
+      "name": "Adventni venci",
+      "headline": "Adventni venci",
+      "intro": "Jelkove veje, sveče in okraski – ročno vezano za adventni čas.",
+      "seo": {
+        "title": "Dostava adventnih vencev na Dunaju",
+        "description": "Ročno vezani adventni venci v več barvah in velikostih – z dostavo na Dunaju."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Rojstni dan",
+      "headline": "Rože za rojstni dan",
+      "intro": "Šopek, ki pove: mislim nate. Izberite rože in želeni datum.",
+      "imageAlt": "Pisan šopek z rdečimi vrtnicami, gerberami in rumenimi cvetovi v rdečem ovoju",
+      "seo": {
+        "title": "Rože za rojstni dan – rojstnodnevni šopki za Dunaj",
+        "description": "Šopki za rojstni dan: pisani, veseli ali elegantni. Ročno vezani in dostavljeni na Dunaju – na želeni datum."
+      }
+    },
+    "liebe": {
+      "name": "Ljubezen in romantika",
+      "headline": "Rože za ljubezen",
+      "intro": "Rdeče vrtnice ali nekaj povsem drugega: rože, ki povedo, kar mislite.",
+      "imageAlt": "Šopek temno rdečih vrtnic v sivem ovoju z rdečo pentljo",
+      "seo": {
+        "title": "Dostava romantičnih rož na Dunaju",
+        "description": "Vrtnice in romantični šopki z dostavo na Dunaju – sveže vezani, na želeni datum."
+      }
+    },
+    "danke": {
+      "name": "Hvala",
+      "headline": "Rože za zahvalo",
+      "intro": "Za pomoč, za čas, preprosto za vse. Šopek to pove brez veliko besed.",
+      "imageAlt": "Šopek rumenih gerber in belih vrtnic z rumeno pentljo",
+      "seo": {
+        "title": "Dostava rož za zahvalo na Dunaju",
+        "description": "Zahvalite se z rožami: sveže vezani šopki z dostavo na Dunaju – na želeni datum."
+      }
+    },
+    "gute-besserung": {
+      "name": "Hitro okrevanje",
+      "headline": "Rože za okrevanje",
+      "intro": "Nežne barve, umirjene oblike in majhen pozdrav, ki dobro dene.",
+      "imageAlt": "Sončen šopek v oranžni in rumeni barvi v svetlem ovoju",
+      "seo": {
+        "title": "Dostava rož za hitro okrevanje na Dunaju",
+        "description": "Rože za okrevanje z dostavo na Dunaju – nežni šopki, sveže vezani, na želeni datum."
+      }
+    },
+    "jahrestag": {
+      "name": "Obletnica",
+      "headline": "Rože za obletnico",
+      "intro": "Za dan, ko se je vse začelo. In za vse, ki so sledili.",
+      "imageAlt": "Šopek rdečih in belih vrtnic v belem ovoju",
+      "seo": {
+        "title": "Dostava rož za obletnico na Dunaju",
+        "description": "Elegantni šopki za obletnico z dostavo na Dunaju – sveže vezani, na želeni datum."
+      }
+    },
+    "geburt": {
+      "name": "Rojstvo",
+      "headline": "Rože ob rojstvu",
+      "intro": "Dobrodošel, mali človek. Nežne rože za velik trenutek.",
+      "imageAlt": "Nežen šopek vrtnic v roza in lila barvi z gipsofilo",
+      "seo": {
+        "title": "Dostava rož ob rojstvu otroka na Dunaju",
+        "description": "Nežni pastelni šopki ob rojstvu z dostavo na Dunaju – sveže vezani, na želeni datum."
+      }
+    },
+    "hochzeit": {
+      "name": "Poroka",
+      "headline": "Rože za poroko",
+      "intro": "Za mladoporočenca ali preprosto kot čestitka: elegantno, svetlo in praznično.",
+      "imageAlt": "Šopek belih vrtnic v belem ovoju v vazi",
+      "seo": {
+        "title": "Dostava poročnih rož na Dunaju",
+        "description": "Elegantne rože za poroko z dostavo na Dunaju – kot čestitka ali darilo, sveže vezane."
+      }
+    },
+    "einfach-so": {
+      "name": "Kar tako",
+      "headline": "Rože kar tako",
+      "intro": "Brez priložnosti. Samo misel. Včasih je to najboljši razlog.",
+      "imageAlt": "Rumeni tulipani v stekleni vazi ob oknu",
+      "seo": {
+        "title": "Pošljite rože kar tako – Dunaj",
+        "description": "Pošljite rože brez posebnega razloga: majhni in veliki šopki z dostavo na Dunaju – sveže vezani, na želeni datum."
+      }
+    },
+    "trauer": {
+      "name": "Žalovanje",
+      "headline": "Žalno cvetje",
+      "intro": "Sočutje v umirjenih barvah. Venci, žalni šopki in šopki, ročno vezani in dostavljeni na Dunaju.",
+      "imageAlt": "Bel žalni venec z belim trakom na lesenem stojalu",
+      "seo": {
+        "title": "Dostava žalnega cvetja na Dunaju",
+        "description": "Žalno cvetje z dostavo na Dunaju – venci, žalni šopki in umirjeni šopki, ročno vezani, na želeni datum."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Dišeča sveča",
+      "description": "Dekorativne dišeče sveče v darilni embalaži, v različnih oblikah in barvah.",
+      "imageAlt": "Dišeče sveče v obliki srca in krogle v prozornih darilnih škatlicah"
+    },
+    "x-teddy": {
+      "name": "Medvedek",
+      "description": "Plišasti medvedek z rdečim srcem – ljubek dodatek k šopku.",
+      "imageAlt": "Svetlo rjav plišasti medvedek z rdečim srcem"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Kam dostavljate?",
+      "answer": "Dostavljamo v vseh 23 dunajskih okrajev. Odvisno od okraja je dostava brezplačna ali stane 3,99 € oziroma 7,99 €. Preprosto vnesite poštno številko naslova prejemnika – takoj boste videli, ali in kdaj lahko dostavimo ter koliko stane dostava.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Ali lahko rože dostavite še danes?",
+      "answer": "Da – če naročite od ponedeljka do sobote do 18:30 ali ob nedeljah do 17:45, dostavimo še isti dan po vsem Dunaju, dokler je na voljo prosto časovno okno. Najzgodnejši termin za vaš naslov vidite takoj, ko vnesete poštno številko.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Ali imate ekspresno dostavo?",
+      "answer": "Da – ekspresna dostava v 1–2 urah, brez doplačila. Naročite kot običajno in v blagajni izberite najzgodnejše današnje časovno okno – označeno je z »Express«. To je mogoče, če naročite od ponedeljka do sobote do 18:30 ali ob nedeljah do 17:45 in je za vaš naslov še na voljo prosto časovno okno.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Ali lahko izberem določen datum dostave?",
+      "answer": "Da. Na vsaki strani izdelka in v blagajni izberete želeni datum v koledarju. Dnevi, ko ne dostavljamo, so posiveli.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Ali lahko izberem želeni čas?",
+      "answer": "Da. Na Dunaju v blagajni izberete enourno časovno okno med 9. in 22. uro – vseh sedem dni v tednu.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Kaj se zgodi, če nikogar ni doma?",
+      "answer": "Kurir rože izroči osebno. Če nikogar ni, jih po možnosti pusti pri sosedih. V blagajni lahko dodate napotek za dostavo, na primer kodo za vrata. O stanju vašega naročila vas obveščamo po e-pošti.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Ali lahko rože pošljem anonimno?",
+      "answer": "Da. Brez voščilnice vaše ime ni nikjer na šopku, račun pa prejmete samo vi. Voščilnice z osebnim sporočilom bodo kmalu na voljo.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Ali lahko dodam voščilnico?",
+      "answer": "Še ne – voščilnice bodo kmalu na voljo. Do takrat šopek dostavimo brez voščilnice.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Ali so rože videti natanko tako kot na fotografiji?",
+      "answer": "Vsak šopek je vezan posebej, rože pa so naravni izdelek. Barve, vrste in velikost cvetov se lahko glede na sezono nekoliko razlikujejo. Slog in barvni ton ostaneta enaka.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Kako rože ostanejo sveže?",
+      "answer": "Vsak šopek je sveže vezan za vaše naročilo in ga kurir dostavi neposredno. Tako zdrži najdlje: stebla poševno prirežite, dodajte svežo vodo in šopek postavite na hladno mesto brez neposrednega sonca.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Kakšne so možnosti plačila?",
+      "answer": "Razpoložljive načine plačila vidite v zadnjem koraku naročila. Plačilo poteka varno prek ponudnika plačilnih storitev – podatki vaše kartice nikoli ne pridejo do nas.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Ali lahko spremenim naročilo?",
+      "answer": "Dokler šopek še ni vezan, lahko datum dostave ali naslov običajno še prilagodimo. Pišite nam čim prej in navedite številko naročila.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Ali lahko rože pošljem podjetju ali hotelu?",
+      "answer": "Da. V blagajni navedite ime podjetja ali hotela in – če ju poznate – oddelek ali številko sobe. Dostavimo na recepcijo oziroma sprejemno pisarno.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Rože za posebne trenutke.",
+      "intro": "Blumora je spletna dostava rož z Dunaja. Vsak šopek je ročno vezan v dunajski cvetličarni in ga kurir dostavi neposredno.",
+      "seo": {
+        "title": "O nas – dostava rož z Dunaja",
+        "description": "Blumora je spletna dostava rož z Dunaja: ročno vezani šopki, ki jih kurir dostavi v vseh 23 okrajev."
+      },
+      "sections": [
+        {
+          "heading": "Kako delamo",
+          "paragraphs": [
+            "Blumora je dunajska spletna dostava rož. Šopek izberete pri nas – veže pa ga dunajska cvetličarna, s katero stalno sodelujemo. Tam vsak šopek nastane ročno in posebej za vaše naročilo.",
+            "Voščilnice z vašim besedilom bodo kmalu na voljo."
+          ],
+          "imageAlt": "Šopek vrtnic, dalij, hortenzij in tulipanov na okenski polici stare dunajske hiše, zadaj stolnica sv. Štefana v večerni svetlobi"
+        },
+        {
+          "heading": "Dostava",
+          "paragraphs": [
+            "Kurir šopek prevzame neposredno v cvetličarni in ga brez vmesnih postankov odpelje na naslov prejemnika. Dostavljamo v vseh 23 dunajskih okrajev – v časovnem oknu po vaši izbiri: dopoldne, popoldne ali zvečer do 22. ure."
+          ],
+          "imageAlt": "Šopek Pure Liebe v stekleni vazi"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Dostava in pošiljanje",
+      "intro": "Dostavljamo v vseh 23 dunajskih okrajev. Stroški dostave (brezplačno, 3,99 € ali 7,99 €), dnevi dostave in časovna okna so odvisni od naslova prejemnika – vnesite poštno številko in vse boste videli na prvi pogled.",
+      "seo": {
+        "title": "Dostava in pošiljanje – dostava rož na Dunaju",
+        "description": "Območja dostave, stroški dostave, dnevi dostave in časovna okna za dostavo rož na Dunaju."
+      },
+      "sections": [
+        {
+          "heading": "Kako poteka dostava",
+          "paragraphs": [
+            "Vaš šopek je sveže vezan za vaše naročilo. Kurir ga prevzame neposredno v cvetličarni in ga brez vmesnih postankov odpelje na naslov prejemnika – v časovnem oknu, ki ste ga izbrali. Če nikogar ni, šopek po možnosti pusti pri sosedih.",
+            "Za vsako naročilo prejmete potrditev po e-pošti in povezavo, s katero lahko spremljate stanje."
+          ]
+        },
+        {
+          "heading": "Dostava podjetjem, hotelom in bolnišnicam",
+          "paragraphs": [
+            "V blagajni navedite ime podjetja ali hotela ter oddelek, bolniški oddelek ali številko sobe. Dostavimo na recepcijo ali v sprejemno pisarno. Upoštevajte, da nekatere ustanove ne dovolijo rož na bolniških oddelkih."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Kontakt",
+      "intro": "Imate vprašanje o naročilu, datumu dostave ali posebni želji? Tu smo za vas.",
+      "seo": {
+        "title": "Kontakt – Blumora Dunaj",
+        "description": "Obrnite se na Blumoro z vprašanji o naročilu, dostavi ali posebnih željah."
+      },
+      "sections": [
+        {
+          "heading": "Kako nas dosežete",
+          "paragraphs": [
+            "[Nadomestno besedilo: e-pošta, telefon in delovni čas se prevzamejo iz nastavitev in jih je treba tam dopolniti.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Dostava rož po vsem Dunaju",
+      "headline": "Rože, ki povedo več.",
+      "subheadline": "Sveže vezane rože za ljudi, ki so vam pomembni. Preprosto izberite, določite želeni datum in pošljite veselje.",
+      "primaryCta": {
+        "label": "Odkrijte rože"
+      },
+      "secondaryCta": {
+        "label": "Izberite po priložnosti"
+      },
+      "imageAlt": "Ženska v plašču kamele barve nosi velik šopek vrtnic, zlatic, dalij in tulipanov po tlakovani dunajski ulici, za njo pelje tramvaj",
+      "deliveryCheck": {
+        "title": "Kam naj dostavimo?",
+        "placeholder": "Vnesite poštno številko",
+        "button": "Preverite dostavo"
+      }
+    },
+    "occasions": {
+      "headline": "Rože za vsak trenutek",
+      "subheadline": "Včasih ni treba velike priložnosti. Le pravo gesto."
+    },
+    "bestsellers": {
+      "headline": "Naši najljubši šopki",
+      "subheadline": "Izbor iz naše ponudbe."
+    },
+    "collections": {
+      "headline": "Poiščite svoj popoln šopek",
+      "subheadline": "Po barvi, slogu ali proračunu."
+    },
+    "howItWorks": {
+      "headline": "Podariti veselje še nikoli ni bilo tako preprosto.",
+      "steps": [
+        {
+          "title": "Izberite najljubši šopek",
+          "text": "Odkrijte rože za vsak okus in priložnost."
+        },
+        {
+          "title": "Dodajte osebno noto",
+          "text": "Izberite velikost in majhne dodatke."
+        },
+        {
+          "title": "Izberite datum dostave",
+          "text": "Določite, kdaj naj presenečenje prispe."
+        },
+        {
+          "title": "Pošljite veselje",
+          "text": "Za vse ostalo poskrbimo mi."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Adventni čas",
+      "headline": "Kmalu zagori prva sveča.",
+      "text": "Adventni venci z jelkovimi vejami, svečami in okraski – v več barvah in velikostih. Poleg tega šopki v toplih jesenskih tonih.",
+      "cta": {
+        "label": "Adventni venci"
+      },
+      "imageAlt": "Adventni venec iz jelkovih vej s štirimi rdečimi svečami na leseni komodi"
+    },
+    "editorial": {
+      "eyebrow": "Ročno delo",
+      "headline": "Od cvetličarjev. Ne s tekočega traku.",
+      "text": "Vsak šopek ročno veže dunajska cvetličarna posebej za vaše naročilo, kurir pa ga dostavi neposredno – brez ovinka prek skladišča.",
+      "cta": {
+        "label": "Kako delamo"
+      },
+      "imageAlt": "Kurir pred vrati stare dunajske hiše izroča pisan šopek vrtnic, dalij in zlatic"
+    },
+    "extras": {
+      "headline": "Dopolnite svoje presenečenje.",
+      "subheadline": "Majhni dodatki, ki trenutek naredijo večji."
+    },
+    "subscription": {
+      "headline": "Več rož v vsakdanu.",
+      "text": "Sveži sezonski šopki – tedensko, vsaka dva tedna ali mesečno. Za dom, pisarno, recepcijo ali gostinski lokal.",
+      "cta": {
+        "label": "Odkrijte naročnino na rože"
+      }
+    },
+    "reviews": {
+      "headline": "Trenutki, ki so prispeli.",
+      "subheadline": "Kaj stranke pravijo o svojem naročilu."
+    },
+    "gallery": {
+      "headline": "Rože za posebne trenutke.",
+      "images": [
+        {
+          "alt": "Pisan šopek vrtnic v rdeči, roza, krem in marelični barvi v beli vazi"
+        },
+        {
+          "alt": "Šopek živo modrih vrtnic v beli vazi"
+        },
+        {
+          "alt": "Šopek v močnih roza tonih z gerberami v vazi ob oknu"
+        },
+        {
+          "alt": "Eksotičen šopek s strelicijami, lilijami in gerberami"
+        },
+        {
+          "alt": "Rdeča cvetlična škatla v obliki srca z vrtnicami na komodi"
+        },
+        {
+          "alt": "Šopek vrtnic v pastelnih in roza tonih v roza ovoju"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Dobro je vedeti"
+    },
+    "newsletter": {
+      "headline": "Malo več rož v vašem nabiralniku.",
+      "text": "Novosti, sezonske kolekcije in posebne akcije.",
+      "placeholder": "Vaš e-poštni naslov",
+      "button": "Prijava",
+      "note": "Odjava je mogoča kadar koli. Informacije o varstvu podatkov najdete v izjavi o varstvu osebnih podatkov."
+    }
+  },
+  "settings": {
+    "claim": "Rože, ki povedo več.",
+    "seo": {
+      "defaultTitle": "Blumora – dostava rož na Dunaju",
+      "defaultDescription": "Dostava rož po vsem Dunaju: sveže vezani šopki v vseh 23 okrajev. Isti dan do 18:30 (ob nedeljah do 17:45), ekspresno v 1–2 urah brez doplačila."
+    },
+    "announcement": {
+      "messages": [
+        "Dostava po vsem Dunaju, vseh 23 okrajev",
+        "Ekspresno v 1–2 urah – brez doplačila",
+        "Isti dan do 18:30, ob nedeljah do 17:45",
+        "Sveže vezano, dostava s kurirjem"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Sveže vezano",
+        "text": "Ročno vezano za vaše naročilo"
+      },
+      {
+        "title": "Dostava s kurirjem",
+        "text": "Po vsem Dunaju – vseh 23 okrajev"
+      },
+      {
+        "title": "Želeni datum",
+        "text": "Dan določite vi"
+      },
+      {
+        "title": "Ekspresno v 1–2 urah",
+        "text": "Brez doplačila, isti dan do 18:30"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Naročilo prejeto",
+        "description": "Vaše naročilo smo prejeli."
+      },
+      "paid": {
+        "label": "Plačilo potrjeno",
+        "description": "Plačilo smo prejeli."
+      },
+      "preparing": {
+        "label": "V pripravi",
+        "description": "Izbiramo rože za vaš šopek."
+      },
+      "arranging": {
+        "label": "Šopek se veže",
+        "description": "Vaš šopek se ročno veže."
+      },
+      "ready": {
+        "label": "Pripravljeno za dostavo",
+        "description": "Šopek je pripravljen in ga bo prevzel kurir."
+      },
+      "in_transit": {
+        "label": "Na poti",
+        "description": "Vaš šopek je na poti."
+      },
+      "delivered": {
+        "label": "Dostavljeno",
+        "description": "Rože so prispele."
+      },
+      "undeliverable": {
+        "label": "Dostava ni mogoča",
+        "description": "Dostava ni uspela, oglasili se vam bomo."
+      },
+      "cancelled": {
+        "label": "Preklicano",
+        "description": "Naročilo je bilo preklicano."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Kreditna kartica",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Spletno nakazilo (eps)"
+    },
+    "headerCta": "Pošljite rože",
+    "address": {
+      "city": "Dunaj",
+      "country": "Avstrija"
+    }
+  },
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Roza vrtnice, roza gerbere in bele lilije",
+      "shortDescription": "Svetel, rahlo vezan šopek v roza in beli barvi, ki v vsak prostor prinese dobro voljo.",
+      "description": "Rosé Dream združuje roza vrtnice in živo roza gerbere z belimi lilijami, nežno gipsofilo in svežim zelenjem. Rahlo vezan in svetel je primeren za rojstni dan, kot zahvala ali kar tako.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere",
+        "Lilije",
+        "Gipsofila"
+      ],
+      "care": [
+        "Vsak dan v vazo nalijte svežo vodo.",
+        "Stebla po potrebi prirežite.",
+        "Ovenele cvetove redno odstranjujte."
+      ],
+      "seo": {
+        "title": "Rosé Dream – šopek v roza in beli",
+        "description": "Rosé Dream: roza vrtnice, živo roza gerbere in bele lilije, rahlo vezane. Svetel šopek za rojstni dan in zahvalo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Šopek roza vrtnic, živo roza gerber in belih lilij v stekleni vazi na leseni komodi"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Rumeni šopek",
+      "tagline": "Rumene gerbere, vrtnice in gipsofila",
+      "shortDescription": "Sončen šopek v rumeni in beli barvi, vezan z rumeno pentljo.",
+      "description": "Živo rumene gerbere se srečajo z belimi in rumenimi vrtnicami, gipsofilo in svežim zelenjem. V svetlem ovoju z rumeno pentljo – šopek za rojstni dan, kot čestitka, zahvala ali pozdrav za hitro okrevanje.",
+      "flowers": [
+        "Gerbere",
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Ne postavljajte na močno sonce."
+      ],
+      "seo": {
+        "title": "Rumeni šopek – gerbere in vrtnice v rumeni",
+        "description": "Rumene gerbere, bele in rumene vrtnice z gipsofilo in rumeno pentljo. Svetel pozdrav za rojstni dan ali okrevanje – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Šopek rumenih gerber ter belih in rumenih vrtnic v svetlem ovoju z rumeno pentljo"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Beli šopek",
+      "tagline": "Svetle vrtnice, gerbere in lilije",
+      "shortDescription": "Svetel, umirjen šopek v beli in krem barvi z nežnimi roza poudarki.",
+      "description": "Beli šopek združuje svetle vrtnice, gerbere in lilije z gipsofilo v preprost, brezčasen šopek. Nežni poudarki v roza in marelični barvi poživijo celoto. Primeren za obletnico poroke ali drugo obletnico, kot zahvala ali eleganten pozdrav.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere",
+        "Lilije",
+        "Gipsofila"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Cvetni prah lilij po potrebi previdno odstranite."
+      ],
+      "seo": {
+        "title": "Beli šopek – šopek v beli in krem",
+        "description": "Svetle vrtnice, gerbere in lilije z gipsofilo: preprost šopek za obletnico, obletnico poroke ali zahvalo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Svetel šopek krem vrtnic, roza gerber, lilij in gipsofile v belem ovoju"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Modre in bele vrtnice v modrem ovoju",
+      "shortDescription": "Modre in bele vrtnice v svetlo modrem ovoju – šopek, ki pritegne pogled.",
+      "description": "Blue Bouquet združuje modre in bele vrtnice z gipsofilo, belo lilijo in svežim zelenjem. Svetlo modri ovoj povzame barvo cvetov. Nenavadno darilo za rojstni dan, obletnico ali za ljudi, ki imajo radi nekaj posebnega.",
+      "flowers": [
+        "Vrtnice",
+        "Lilije",
+        "Gipsofila"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – modre in bele vrtnice",
+        "description": "Modre in bele vrtnice z gipsofilo v svetlo modrem ovoju. Nenavaden šopek vrtnic za rojstni dan ali obletnico – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Šopek modrih in belih vrtnic z gipsofilo v svetlo modrem ovoju na leseni komodi"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Mavrične vrtnice v mnogih barvah",
+      "shortDescription": "Šopek mavričnih vrtnic, pri katerih vsak cvet žari v več barvah.",
+      "description": "Farbensinfonie sestavljajo mavrične vrtnice: vsak cvet kaže več barv drugo ob drugi, od rdeče in oranžne prek rumene in zelene do modre in lila. Gosto vezan šopek deluje kot barvita krogla. Veselo presenečenje za rojstni dan ali praznovanje.",
+      "flowers": [
+        "Mavrične vrtnice"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – mavrične vrtnice",
+        "description": "Mavrične vrtnice, pri katerih vsak cvet žari v več barvah. Vesel šopek vrtnic za rojstni dan – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Farbensinfonie – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Farbensinfonie – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Farbensinfonie – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Gost šopek mavričnih vrtnic v krem vazi",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Mavrične vrtnice od blizu, vsak cvet v več barvah"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelicije, lilije in gerbere v oranžni in rumeni",
+      "shortDescription": "Eksotičen šopek v oranžni in rumeni barvi s strelicijami kot poudarkom.",
+      "description": "Sonnenzauber združuje opazne strelicije (rajske ptice) z belimi lilijami, rumenimi gerberami in svežim zelenjem. Topli oranžni in rumeni toni dajejo šopku živahen, poletni značaj.",
+      "flowers": [
+        "Strelicije (rajske ptice)",
+        "Lilije",
+        "Gerbere",
+        "Gipsofila"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vazo vzdržujte čisto in vodo redno menjajte.",
+        "Ne postavljajte na močno sonce."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelicije in gerbere",
+        "description": "Strelicije, lilije in rumene gerbere v topli oranžni in rumeni. Eksotičen šopek, ki pritegne pogled – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Eksotičen šopek strelicij, belih lilij in rumenih gerber v prozorni foliji",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Pogled od zgoraj na strelicije, lilijo in rumene gerbere v šopku"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Cvetovi v živo roza in roza z gerberami in lilijami",
+      "shortDescription": "Okrogel, igriv šopek v živo roza in roza z rumenimi poudarki.",
+      "description": "Pink Bouquet združuje cvetove v živo roza in roza, med njimi lilije in gerbere, v okrogel, igriv šopek. Rumene gerbere dodajo sveže poudarke, roza ovoj pa zaokroži celoto. Lep za rojstni dan, obletnico, materinski dan ali kar tako.",
+      "flowers": [
+        "Lilije",
+        "Gerbere"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Ovenele cvetove redno odstranjujte."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – šopek v živo roza in roza",
+        "description": "Okrogel šopek v živo roza in roza z lilijami in gerberami. Za rojstni dan, materinski dan ali kar tako – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Okrogel šopek v živo roza in roza z rumenimi gerberami v roza ovoju",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Šopek z roza lilijami, rumenimi gerberami in živo roza cvetovi v roza ovoju s pentljo"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Vrtnice v oranžni in marelični barvi",
+      "shortDescription": "Vrtnice v oranžni in marelični barvi – topel šopek kot sončni zahod.",
+      "description": "Orange Bouquet sestavljajo vrtnice v oranžni in marelični barvi, dopolnjene z nežnim zelenjem in zavite v svetel ovoj. Topel in vesel šopek je primeren za rojstni dan, kot zahvala ali da nekomu polepšate dan.",
+      "flowers": [
+        "Vrtnice"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – vrtnice v oranžni",
+        "description": "Vrtnice v oranžni in marelični barvi v svetlem ovoju. Topel šopek vrtnic za rojstni dan ali zahvalo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Orange Bouquet – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Orange Bouquet – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Orange Bouquet – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Šopek oranžnih in marelično obarvanih vrtnic v svetlem ovoju na leseni komodi"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Temno rdeče vrtnice v temnem ovoju",
+      "shortDescription": "Bogat šopek temno rdečih vrtnic z rdečo satenasto pentljo.",
+      "description": "Red Rose Bouquet je gosto vezan šopek temno rdečih vrtnic v temnem ovoju, ki ga drži rdeča satenasta pentlja. Klasična ljubezenska izpoved za valentinovo, obletnico ali zaroko.",
+      "flowers": [
+        "Vrtnice"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – rdeče vrtnice",
+        "description": "Temno rdeče vrtnice v temnem ovoju z rdečo satenasto pentljo. Klasičen šopek vrtnic za valentinovo in obletnico – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Red Rose Bouquet – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Red Rose Bouquet – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Red Rose Bouquet – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Šopek temno rdečih vrtnic v temno sivem ovoju z rdečo satenasto pentljo",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Ležeč šopek rdečih vrtnic v črno-belem ovoju poleg sveč"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Vrtnice in gerbere v roza, pastelni in lila barvi",
+      "shortDescription": "Nežen, romantičen šopek v roza in pastelnih tonih.",
+      "description": "Rosa Bouquet združuje vrtnice v roza in pastelnih tonih z gerberami in lila cvetovi. V belem ovoju z roza pentljo deluje lahkotno in ljubeče. Lep za rojstni dan, materinski dan, ob rojstvu otroka ali kot pozdrav.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – vrtnice v roza in pastelni",
+        "description": "Vrtnice in gerbere v roza, pastelni in lila barvi v belem ovoju. Za rojstni dan, materinski dan ali rojstvo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Šopek roza vrtnic, gerber in lila cvetov v belem ovoju z roza pentljo"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Črne vrtnice v temnem ovoju",
+      "shortDescription": "Črne vrtnice v temnem ovoju – skrivnostne in izjemne.",
+      "description": "Blackroses je šopek črnih vrtnic v temnem, prosojnem ovoju. Nenavadna izjava za ljudi, ki cenijo posebno, na primer za rojstni dan ali obletnico.",
+      "flowers": [
+        "Vrtnice"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Blackroses – črne vrtnice",
+        "description": "Črne vrtnice v temnem ovoju: nenavaden šopek vrtnic za ljudi, ki imajo radi nekaj posebnega – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Blackroses – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Blackroses – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Blackroses – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Šopek črnih vrtnic v črnem ovoju v stekleni vazi",
+        "/images/products/sortiment/blackroses-2.jpg": "Črne vrtnice brez ovoja v stekleni vazi pred oknom"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Modre vrtnice z gipsofilo",
+      "shortDescription": "Živo modre vrtnice z gipsofilo – redkost, ki resnično pritegne pogled.",
+      "description": "Blaue Liebe je šopek živo modrih vrtnic, poživljen z drobno gipsofilo in zavit v moder ovoj. Posebno darilo za rojstni dan, obletnico ali kot znak globoke povezanosti.",
+      "flowers": [
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – modre vrtnice",
+        "description": "Živo modre vrtnice z gipsofilo v modrem ovoju. Redek šopek vrtnic za posebne ljudi – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Blaue Liebe – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Blaue Liebe – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Blaue Liebe – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Šopek modrih vrtnic z gipsofilo v modrem ovoju v beli vazi",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Modre vrtnice z gipsofilo v modrem ovoju, od spredaj",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Ležeč šopek modrih vrtnic v modrem ovoju na leseni komodi"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Roza vrtnice z gipsofilo",
+      "shortDescription": "Roza vrtnice v nežnem ovoju – ljubeče in elegantno.",
+      "description": "Rosalie je šopek roza vrtnic, poživljen z gipsofilo in zavit v nežno roza ovoj. Ženstven in umirjen je primeren za materinski dan, rojstni dan, obletnico ali kot zahvala.",
+      "flowers": [
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Rosalie – roza vrtnice z gipsofilo",
+        "description": "Roza vrtnice z gipsofilo v nežno roza ovoju. Za materinski dan, rojstni dan ali kot zahvala – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Rosalie – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Rosalie – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Rosalie – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Šopek roza vrtnic z gipsofilo v nežno roza ovoju v beli vazi",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie v roza ovoju v preprosti beli vazi",
+        "/images/products/sortiment/rosalie-3.jpg": "Roza vrtnice z gipsofilo v rebrasti beli vazi",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie leže, pogled od zgoraj na roza vrtnice in gipsofilo"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Rdeče-beli mix",
+      "tagline": "Rdeče in bele vrtnice",
+      "shortDescription": "Rdeče in bele vrtnice v prazničnem šopku.",
+      "description": "Rdeče-beli mix združuje rdeče in bele vrtnice v belem ovoju, odvisno od velikosti poživljene z gipsofilo. Strast se sreča z nežnostjo: šopek za valentinovo, obletnico, obletnico poroke ali kot elegantno darilo.",
+      "flowers": [
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Rdeče-beli mix – rdeče in bele vrtnice",
+        "description": "Rdeče in bele vrtnice v prazničnem ovoju. Za valentinovo, obletnico ali obletnico poroke, v šestih velikostih – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Rdeče-beli mix – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Rdeče-beli mix – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Rdeče-beli mix – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Šopek rdečih in belih vrtnic z gipsofilo v belem ovoju, ob njem cvetni listi vrtnic",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Rdeče in bele vrtnice, gosto vezane v belem ovoju",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Rdeče-bel šopek vrtnic v belem ovoju na leseni komodi",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Ležeč šopek rdečih in belih vrtnic, pogled od zgoraj"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Šopek tulipanov",
+      "tagline": "Tulipani v eni barvi ali mešani",
+      "shortDescription": "Preprost šopek tulipanov, enobarven ali pisano mešan.",
+      "description": "Tulipani s svojimi jasnimi barvami in vitko obliko prinesejo v dom pomladno razpoloženje. Šopek je vezan samo iz tulipanov, po izbiri v eni barvi ali kot pisan mix. Na voljo v rdeči, rumeni, lila, roza, oranžni, beli barvi in kot mix.",
+      "flowers": [
+        "Tulipani"
+      ],
+      "care": [
+        "Stebla prirežite naravnost in jih postavite v hladno vodo.",
+        "Dovolj je malo vode, zato pa jo redno dolivajte.",
+        "Tulipani v vazi še rastejo, zato jih po potrebi prirežite."
+      ],
+      "seo": {
+        "title": "Šopek tulipanov – tulipani v mnogih barvah",
+        "description": "Šopek tulipanov v rdeči, rumeni, lila, roza, oranžni, beli barvi ali mešan. Pomladno razpoloženje za dom – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rdeča",
+        "gelb": "Rumena",
+        "lila": "Lila",
+        "rosa": "Roza",
+        "orange": "Oranžna",
+        "weiss": "Bela",
+        "mix": "Pisan mix"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Šopek rumenih tulipanov v stekleni vazi",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Lila tulipani v rjavem papirju v stekleni vazi",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Rdeči tulipani v bež vazi",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Oranžni tulipani v stekleni vazi",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Roza tulipani v stekleni vazi na laneni tkanini",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Pisan mix tulipanov v rdeči, rumeni, roza, oranžni in lila barvi v bež vazi",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Beli tulipani v beli vazi"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Rdeče vrtnice z gipsofilo",
+      "shortDescription": "Izrazit šopek vrtnic v globoki rdeči za velika čustva.",
+      "description": "Red Passion združuje rdeče vrtnice v gost, okrogel šopek, obdan z gipsofilo in temnim ovojem. Na voljo v šestih velikostih – za romantične geste in trenutke, ki naj ostanejo v spominu.",
+      "flowers": [
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Stebla sveže prirežite.",
+        "Vsak dan dodajte svežo vodo.",
+        "Zaščitite pred neposrednim soncem."
+      ],
+      "seo": {
+        "title": "Red Passion – šopek rdečih vrtnic",
+        "description": "Rdeče vrtnice z gipsofilo v temnem ovoju, v šestih velikostih. Šopek vrtnic za velika čustva – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Red Passion – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Red Passion – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Red Passion – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Ležeč šopek temno rdečih vrtnic z gipsofilo v črno-zlatem ovoju",
+        "/images/products/sortiment/red-passion-2.jpg": "Velik šopek rdečih vrtnic z gipsofilo v temnem ovoju v beli vazi",
+        "/images/products/sortiment/red-passion-3.jpg": "Zelo velik, okrogel šopek rdečih vrtnic z vencem gipsofile v temnem ovoju"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Gosto vezane rdeče vrtnice",
+      "shortDescription": "Gosto vezane rdeče vrtnice v temnem ovoju – brezčasno in polno čustev.",
+      "description": "Klassiker der Liebe sestavljajo rdeče vrtnice, gosto vezane v okroglo obliko in zavite v temen ovoj s črno pentljo. Šopek vrtnic za valentinovo, obletnico, zaroko ali vsako ljubezensko izpoved.",
+      "flowers": [
+        "Vrtnice"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – rdeče vrtnice",
+        "description": "Gosto vezane rdeče vrtnice v temnem ovoju. Klasičen šopek vrtnic za valentinovo, obletnico ali zaroko – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Klassiker der Liebe – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Klassiker der Liebe – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Klassiker der Liebe – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Okrogel šopek gosto vezanih rdečih vrtnic v črnem ovoju s pentljo",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Rdeče vrtnice v obliki krogle v temnem ovoju, od spredaj"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Rdeče vrtnice z gipsofilo",
+      "shortDescription": "Bogat šopek vrtnic v šestih velikostih.",
+      "description": "Königin der Herzen združuje rdeče vrtnice z drobno gipsofilo v temnem, prosojnem ovoju. Na voljo v šestih velikostih – od male geste do velikega nastopa.",
+      "flowers": [
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Postavite na hladno mesto.",
+        "Ovenele cvetove pravočasno odstranite.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – bogat šopek vrtnic",
+        "description": "Rdeče vrtnice z gipsofilo, v šestih velikostih. Bogat šopek vrtnic za velike trenutke – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Königin der Herzen – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Königin der Herzen – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Königin der Herzen – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Šopek rdečih vrtnic z gipsofilo v temnem ovoju v beli vazi",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Velik šopek rdečih vrtnic in gipsofile v črnem ovoju",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Rdeče vrtnice z gipsofilo v temnem ovoju v črnem loncu",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Pogled od zgoraj na rdeče vrtnice z gipsofilo v zvezdasto oblikovanem temnem ovoju"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbere, vrtnice in lilije v toplih tonih",
+      "shortDescription": "Topel šopek v oranžni, roza in rumeni barvi.",
+      "description": "Herbstzauber združuje gerbere, vrtnice in lilije v oranžnih, roza in rumenih tonih s svežim zelenjem. Rahlo vezan prinese v dom tople barve, prav takrat, ko se dnevi krajšajo.",
+      "flowers": [
+        "Gerbere",
+        "Vrtnice",
+        "Lilije"
+      ],
+      "care": [
+        "Ne postavljajte poleg sadja.",
+        "Redno dolivajte vodo.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Herbstzauber – šopek v toplih tonih",
+        "description": "Gerbere, vrtnice in lilije v oranžni, roza in rumeni. Topel jesenski šopek za rojstni dan ali zahvalo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Šopek oranžnih gerber, vrtnic v marelični in roza barvi ter lilij v stekleni vazi"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Rdeče vrtnice, gerbere in zeleni poudarki",
+      "shortDescription": "Živahen šopek v rdeči in oranžni s svežimi zelenimi poudarki.",
+      "description": "Blütenfreude združuje rdeče vrtnice in gerbere v rdeči in oranžni z zelenimi pompon cvetovi in zelenjem evkaliptusa. Močnih barv, a okrogle oblike – lep za rojstni dan, kot zahvala ali kar tako.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere"
+      ],
+      "care": [
+        "Vsak dan v vazo nalijte svežo vodo.",
+        "Stebla po potrebi prirežite.",
+        "Ovenele cvetove redno odstranjujte."
+      ],
+      "seo": {
+        "title": "Blütenfreude – vrtnice in gerbere v rdeči",
+        "description": "Rdeče vrtnice, gerbere v rdeči in oranžni ter sveži zeleni poudarki. Živahen šopek za rojstni dan – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Šopek rdečih vrtnic, rdečih in oranžnih gerber ter zelenih pompon cvetov v stekleni vazi",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude v beli vazi na leseni komodi"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Roza vrtnice, lilije in gipsofila",
+      "shortDescription": "Nežni roza toni z lilijami – umirjeno, skladno in prefinjeno.",
+      "description": "Zartrosa Zauber združuje roza vrtnice z roza lilijami in gipsofilo v roza ovoju. Šopek deluje umirjeno in skladno, s prefinjeno romantično noto.",
+      "flowers": [
+        "Vrtnice",
+        "Lilije",
+        "Gipsofila"
+      ],
+      "care": [
+        "Odstranite liste, ki segajo v vodo.",
+        "Postavite na hladno mesto.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – vrtnice in lilije v roza",
+        "description": "Roza vrtnice, roza lilije in gipsofila v nežnem ovoju. Umirjen, romantičen šopek – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Šopek roza vrtnic, roza lilij in gipsofile v roza ovoju v beli vazi",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber v roza ovoju z veliko pentljo"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbere, lilije in vrtnice v oranžni in rumeni",
+      "shortDescription": "Žareča oranžna in rumena za dobre novice in sončne priložnosti.",
+      "description": "Strahlender Tag združuje oranžne gerbere in lilije z rumenimi vrtnicami, svetlimi nageljni in gipsofilo. Močne barve prinašajo pozitivno energijo – šopek za čestitke, uspehe in sončne priložnosti.",
+      "flowers": [
+        "Gerbere",
+        "Lilije",
+        "Vrtnice",
+        "Nageljni",
+        "Gipsofila"
+      ],
+      "care": [
+        "Zaščitite pred prepihom.",
+        "Vodo redno menjajte.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – šopek v oranžni in rumeni",
+        "description": "Oranžne gerbere in lilije z rumenimi vrtnicami in gipsofilo. Vesel šopek za čestitke – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Šopek oranžnih gerber, rumenih vrtnic in gipsofile v belo-zlatem ovoju",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Oranžne gerbere, lilije in rumena vrtnica v beli vazi",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Okrogel šopek oranžnih gerber in lilij, rumenih vrtnic in svetlih nageljnov v stekleni vazi"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Vrtnice v roza, krem in marelični barvi",
+      "shortDescription": "Skladen šopek vrtnic med klasično lepoto in sodobnim slogom.",
+      "description": "Rosentraum združuje vrtnice v roza, krem in marelični barvi z vijoličnimi cvetovi, vejicami z jagodami in svežim zelenjem. V starorožnatem ovoju šopek deluje bogato in hkrati sodobno.",
+      "flowers": [
+        "Vrtnice"
+      ],
+      "care": [
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vazo vzdržujte čisto.",
+        "Vodo redno obnavljajte."
+      ],
+      "seo": {
+        "title": "Rosentraum – vrtnice v roza in krem",
+        "description": "Vrtnice v roza, krem in marelični barvi z vijoličnimi poudarki v starorožnatem ovoju. Skladen šopek vrtnic – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Vezan šopek vrtnic v roza, krem in marelični barvi v starorožnatem ovoju",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum v starorožnatem ovoju v beli vazi",
+        "/images/products/sortiment/rosentraum-3.jpg": "Pogled od zgoraj na vrtnice, vijolične cvetove in vejice z jagodami v šopku"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Bele vrtnice z gipsofilo",
+      "shortDescription": "Bele vrtnice z gipsofilo – nežno, romantično in svetlo.",
+      "description": "Rosenkuss sestavljajo bele do krem vrtnice, poživljene z drobno gipsofilo in zavite v bel ovoj. Šopek za naklonjenost, bližino in majhna ljubezenska sporočila.",
+      "flowers": [
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Ne postavljajte na pretoplo mesto.",
+        "Vsak dan preverite gladino vode.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Rosenkuss – bele vrtnice",
+        "description": "Bele vrtnice z gipsofilo v belem ovoju. Nežen, romantičen šopek vrtnic – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Rosenkuss – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Rosenkuss – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Rosenkuss – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Šopek belih vrtnic z gipsofilo v belem ovoju v beli vazi",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Velik šopek belih vrtnic v belem ovoju v beli vazi",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Ležeč šopek belih vrtnic z gipsofilo na leseni komodi"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Vrtnice v pastelni, živo roza in bordo barvi",
+      "shortDescription": "Vrtnice v pastelnih in živo roza tonih, elegantno sestavljene.",
+      "description": "Rosenglanz združuje vrtnice v pastelno roza, krem, živo roza in bordo barvi z gipsofilo v roza ovoju. Brezčasnega videza, na voljo v šestih velikostih.",
+      "flowers": [
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Stebla sveže prirežite.",
+        "Izogibajte se neposrednemu soncu.",
+        "Vodo za rože redno menjajte."
+      ],
+      "seo": {
+        "title": "Rosenglanz – vrtnice v pastelni in roza",
+        "description": "Vrtnice v pastelno roza, živo roza in bordo barvi z gipsofilo, v šestih velikostih. Eleganten šopek vrtnic – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen",
+          "detailAlt": "Rosenglanz – majhen šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Rosenglanz – srednji šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "l": {
+          "label": "Velik",
+          "detailAlt": "Rosenglanz – velik šopek v roki, zadaj dunajska ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Šopek vrtnic v pastelno roza, živo roza in bordo barvi v roza ovoju v stekleni vazi",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Okrogel šopek vrtnic z gipsofilo v roza ovoju, od spredaj",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Ležeč šopek pastelnih in živo roza vrtnic na leseni komodi"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Roza vrtnice, gerbere, lilije in nageljni",
+      "shortDescription": "Izrazit šopek v roza in živo roza, ki govori brez besed.",
+      "description": "Pure Liebe združuje roza vrtnice z živo roza gerbero, roza lilijami, nageljni in gipsofilo. Intenzivnih roza tonov, poživljen s svetlimi poudarki – šopek, poln čustev.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere",
+        "Lilije",
+        "Nageljni",
+        "Gipsofila"
+      ],
+      "care": [
+        "Redno dodajajte svežo vodo.",
+        "Vazo vzdržujte čisto.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Pure Liebe – šopek v roza in živo roza",
+        "description": "Roza vrtnice, živo roza gerbere, lilije in nageljni z gipsofilo. Šopek, poln čustev – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Šopek roza vrtnic, živo roza gerbere in roza lilij v bež vazi",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe z lilijami, gerberami in nageljni v bež vazi",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Okrogel šopek roza vrtnic, gerber, nageljnov in gipsofile v stekleni vazi"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Živo roza gerbere, vrtnice in vijolični poudarki",
+      "shortDescription": "Močni roza toni, združeni v svež, sodoben šopek.",
+      "description": "Pink Harmony združuje živo roza gerbere in vrtnice z belimi in lila cvetovi, vijoličnimi poudarki in gipsofilo. Živahen in svež, z veliko šarma.",
+      "flowers": [
+        "Gerbere",
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Postavite na hladno mesto.",
+        "Ovenele cvetove odstranite.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbere in vrtnice v roza",
+        "description": "Živo roza gerbere in vrtnice z lila in vijoličnimi poudarki. Svež, sodoben šopek – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Šopek živo roza gerber, vrtnic in lila cvetov v bež vazi",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Okrogel šopek z živo roza gerberami, vrtnicami in vijoličnimi poudarki"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Pisan šopek vrtnic v roza, rumeni, marelični in lila",
+      "shortDescription": "Bogat, pisan šopek vrtnic za posebne priložnosti.",
+      "description": "Love Deluxe je šopek vrtnic v mnogih barvah: roza, krem, marelični, rumeni in lila, zavit v roza ovoj. Za posebne priložnosti in velike geste, na voljo v petih velikostih.",
+      "flowers": [
+        "Vrtnice"
+      ],
+      "care": [
+        "Stebla prirežite.",
+        "Vodo za rože menjajte vsak dan.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Love Deluxe – pisan šopek vrtnic",
+        "description": "Vrtnice v roza, krem, marelični, rumeni in lila barvi v roza ovoju, v petih velikostih. Za velike geste – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Pisan šopek vrtnic v roza, rumeni, marelični in lila barvi v roza ovoju v beli vazi",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Velik pisan šopek vrtnic v roza ovoju, od spredaj",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Ležeč pisan šopek vrtnic v roza ovoju na leseni komodi"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Rdeče in zelene vrtnice z lilijami",
+      "shortDescription": "Čustven šopek v rdeči, s katerim poveste »Ljubim te«.",
+      "description": "Liebeserklärung združuje rdeče vrtnice s svetlo zelenimi vrtnicami, belimi lilijami, rdečimi poudarnimi cvetovi in gipsofilo. Močan, a hkrati svež – šopek, ki čustva naredi vidna.",
+      "flowers": [
+        "Vrtnice",
+        "Lilije",
+        "Gipsofila"
+      ],
+      "care": [
+        "Zaščitite pred vročino.",
+        "Vodo redno obnavljajte.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – rdeče vrtnice in lilije",
+        "description": "Rdeče in svetlo zelene vrtnice z lilijami in gipsofilo. Šopek, s katerim poveste »Ljubim te« – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Šopek rdečih in svetlo zelenih vrtnic z lilijami in gipsofilo v stekleni vazi",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung v beli vazi na leseni komodi"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Vrtnice in gerbere v roza z oranžnimi poudarki",
+      "shortDescription": "Elegantno in uravnoteženo – šopek z elegantno zadržanostjo.",
+      "description": "Klassische Schönheit združuje vrtnice v starorožnati in beli barvi z živo roza gerbero, drobnimi oranžnimi cvetovi in gipsofilo. V temnem ovoju z zlatim robom šopek deluje uravnoteženo in brezčasno.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere",
+        "Gipsofila"
+      ],
+      "care": [
+        "Ne postavljajte neposredno ob radiator.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite.",
+        "Vodo za rože redno menjajte."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – vrtnice in gerbere",
+        "description": "Vrtnice v starorožnati in beli barvi z živo roza gerbero v temnem ovoju. Uravnotežen, brezčasen šopek – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Šopek starorožnatih vrtnic in živo roza gerbere v temnem ovoju z zlatim robom",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit v beli vazi",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Pogled od zgoraj na vrtnice, gerbere in gipsofilo v temnem ovoju"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Roza vrtnice in živo roza gerbere",
+      "shortDescription": "Igrivo in živahno: roza vrtnice se srečajo z živo roza gerberami.",
+      "description": "Herzklopfen združuje nežno roza vrtnice z živo roza gerbero, drobnimi belo-zelenimi cvetovi in finim lila zelenjem. Okroglo vezan in poln barv – šopek z veliko čustva.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere"
+      ],
+      "care": [
+        "Vsak dan dodajte svežo vodo.",
+        "Stebla poševno prirežite.",
+        "Postavite na hladno mesto brez neposrednega sonca."
+      ],
+      "seo": {
+        "title": "Herzklopfen – roza vrtnice in gerbere",
+        "description": "Nežno roza vrtnice in živo roza gerbere, okroglo vezane. Igriv šopek, poln čustev – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Okrogel šopek nežno roza vrtnic in živo roza gerbere v beli vazi",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen v beli vazi, s strani",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Šopek roza vrtnic in živo roza gerbere v stekleni vazi"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Pisan mix z vrtnicami in gerberami",
+      "shortDescription": "Pisan šopek, ki izžareva veselje do življenja.",
+      "description": "Fröhlicher Blütenmix združuje rdeče vrtnice, gerbere v rumeni, roza in rdeči ter druge cvetove v rumeni, oranžni in vijolični barvi. V rdečem ovoju – idealen, da podarite nasmeh.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere"
+      ],
+      "care": [
+        "Postavite na hladno mesto.",
+        "Vodo redno menjajte.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – pisan šopek",
+        "description": "Rdeče vrtnice in gerbere v rumeni, roza in rdeči v rdečem ovoju. Pisan šopek, poln veselja do življenja – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Pisan šopek z gerberami in vrtnicami v rdečem ovoju na leseni komodi",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix v rdečem ovoju v beli vazi",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Pogled od zgoraj na rdeče vrtnice ter rumene in roza gerbere v rdečem ovoju"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Vrtnice in gerbere v roza z lila poudarki",
+      "shortDescription": "Živahen mix v živo roza, marelični in lila barvi.",
+      "description": "Farbtänzer združuje vrtnice in grmičaste vrtnice v živo roza in marelični barvi z roza gerberami, lila cvetovi in svetlimi jagodami. Gosto in živahno vezan – sodoben in izrazit.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere"
+      ],
+      "care": [
+        "Odstranite liste, ki segajo v vodo.",
+        "Vazo vzdržujte čisto.",
+        "Preden šopek postavite v vazo, stebla poševno prirežite."
+      ],
+      "seo": {
+        "title": "Farbtänzer – šopek v roza in lila",
+        "description": "Vrtnice in gerbere v živo roza in marelični barvi z lila poudarki. Živahen, sodoben šopek – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Ležeč šopek v živo roza in lila v nežno roza ovoju",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Okrogel šopek živo roza vrtnic, gerber in lila cvetov v krem vazi",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer v rebrasti vazi, od spredaj"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Cvetlična škatla v obliki srca",
+      "tagline": "Vrtnice v rdeči škatli v obliki srca",
+      "shortDescription": "Vrtnice v škatli v obliki srca – ljubezenska izpoved, ki jo preprosto postavite.",
+      "description": "V rdeči škatli v obliki srca so aranžirane vrtnice v rdeči, roza in beli barvi z drugimi cvetovi in gipsofilo. Darilo za obletnico, valentinovo ali kot ljubeče presenečenje.",
+      "flowers": [
+        "Vrtnice",
+        "Gipsofila"
+      ],
+      "care": [
+        "Vrtnice rahlo navlažite.",
+        "Postavite na hladno mesto.",
+        "Zaščitite pred neposrednim soncem."
+      ],
+      "seo": {
+        "title": "Cvetlična škatla v obliki srca – vrtnice",
+        "description": "Vrtnice v rdeči, roza in beli barvi v rdeči škatli v obliki srca. Za obletnico in valentinovo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Rdeča cvetlična škatla v obliki srca z vrtnicami v rdeči, roza in beli barvi ter gipsofilo"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klasična cvetlična škatla",
+      "tagline": "Rdeče vrtnice v okrogli škatli",
+      "shortDescription": "Klasične vrtnice v okrogli škatli – preprosto in izrazito.",
+      "description": "Klasična cvetlična škatla je okrogla škatla, gosto napolnjena z vrtnicami. Minimalistična in brezčasna je primerna za rojstni dan, kot zahvala ali za posebne trenutke. Na voljo v rdeči in beli barvi.",
+      "flowers": [
+        "Vrtnice"
+      ],
+      "care": [
+        "Vrtnice redno rahlo zalivajte.",
+        "Postavite na hladno mesto.",
+        "Zaščitite pred neposrednim soncem."
+      ],
+      "seo": {
+        "title": "Klasična cvetlična škatla – vrtnice v škatli",
+        "description": "Gosto posajene vrtnice v okrogli škatli, na voljo v rdeči in beli barvi. Preprosto darilo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Rdeče vrtnice v okrogli beli škatli z roza in zlatim robom",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Dve rdeči žametni okrogli škatli z rdečimi vrtnicami na belem podstavku"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Roza anturija v loncu",
+      "tagline": "Anturija z roza cvetovi",
+      "shortDescription": "Anturija z nežno roza cvetovi – elegantna in nevsiljiva.",
+      "description": "Roza anturija s svojimi nežnimi cvetovi in svetlečimi zelenimi listi prinese v prostor barvo, ne da bi delovala glasno. Primerna je za dom in prav tako za pisarno.",
+      "flowers": [
+        "Anturija"
+      ],
+      "care": [
+        "Postavite na svetlo mesto brez neposrednega sonca.",
+        "Redno zalivajte, a preprečite zastajanje vode.",
+        "Liste občasno poškropite z vodo."
+      ],
+      "seo": {
+        "title": "Roza anturija v loncu – sobna rastlina",
+        "description": "Anturija z nežno roza cvetovi in svetlečimi listi. Elegantna sobna rastlina kot darilo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Roza anturija v starorožnatem keramičnem loncu na leseni komodi",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anturija z roza cvetovi v sivkasto vijoličnem loncu poleg sveč"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Rdeča anturija v loncu",
+      "tagline": "Anturija z rdečimi cvetovi",
+      "shortDescription": "Anturija z živo rdečimi cvetovi in sodobnim videzom.",
+      "description": "Rdeče anturije s svojimi svetlečimi cvetovi ustvarjajo močne barvne poudarke. Kot dekorativna sobna rastlina ali darilo ob dobri negi dolgo ostane lepa.",
+      "flowers": [
+        "Anturija"
+      ],
+      "care": [
+        "Svetlo mesto brez neposrednega sonca.",
+        "Zemljo vzdržujte enakomerno vlažno.",
+        "Preprečite zastajanje vode."
+      ],
+      "seo": {
+        "title": "Rdeča anturija v loncu – sobna rastlina",
+        "description": "Anturija z živo rdečimi cvetovi v loncu. Dekorativna sobna rastlina kot darilo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Rdeča anturija v rdečem keramičnem loncu na leseni komodi"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL rdeča anturija v loncu",
+      "tagline": "Velika anturija z rdečimi cvetovi",
+      "shortDescription": "Velika, bujna anturija z veliko rdečimi cvetovi.",
+      "description": "Ta rdeča anturija je visoka več kot 80 cm in ima številne rdeče cvetove nad gostim, svetlečim listjem. Izrazit poudarek za dom ali pisarno.",
+      "flowers": [
+        "Anturija"
+      ],
+      "care": [
+        "Postavite na svetlo mesto brez neposrednega sonca.",
+        "Redno zalivajte, a preprečite zastajanje vode.",
+        "Z listov občasno obrišite prah."
+      ],
+      "seo": {
+        "title": "XXL rdeča anturija v loncu",
+        "description": "Velika anturija s številnimi rdečimi cvetovi v loncu. Poudarek za dom ali pisarno – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Velika anturija z veliko rdečimi cvetovi v rdečem loncu poleg sveč"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelija v loncu",
+      "tagline": "Bromelija z rdečim cvetom",
+      "shortDescription": "Bromelija z živo rdečim cvetom in tropskim pridihom.",
+      "description": "Bromelija s svojo rdečo cvetno rozeto in vitkimi zelenimi listi ustvarja živahne poudarke. Dekorativna sobna rastlina za bivalne ali delovne prostore in posebno darilo.",
+      "flowers": [
+        "Bromelija"
+      ],
+      "care": [
+        "Postavite na svetlo mesto brez neposrednega sonca.",
+        "Vodo redno nalivajte v listni lijak.",
+        "Zemljo vzdržujte le rahlo vlažno."
+      ],
+      "seo": {
+        "title": "Bromelija v loncu – sobna rastlina",
+        "description": "Bromelija z rdečim cvetom v loncu: tropski pridih za dom ali pisarno – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelija z rdečim cvetom v rdečem loncu na leseni komodi"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Gumijevec v loncu",
+      "tagline": "Gumijevec s temno zelenimi listi",
+      "shortDescription": "Gumijevec, ki ne zahteva veliko nege, s svetlečimi temno zelenimi listi.",
+      "description": "Gumijevec s svojimi velikimi, svetlečimi listi deluje sodobno in umirjeno. Ne zahteva veliko nege in se lepo poda v stanovanje in pisarno.",
+      "flowers": [
+        "Gumijevec"
+      ],
+      "care": [
+        "Svetlo do polsenčno mesto.",
+        "Zalivajte zmerno, zadostuje mu malo vode.",
+        "Z listov občasno obrišite prah."
+      ],
+      "seo": {
+        "title": "Gumijevec v loncu – rastlina za lahko nego",
+        "description": "Gumijevec s svetlečimi temno zelenimi listi. Sobna rastlina, ki ne zahteva veliko nege, za stanovanje in pisarno – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Gumijevec s temno zelenimi listi v rdečem loncu na leseni komodi"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Bela orhideja v loncu",
+      "tagline": "Orhideja v loncu, v več barvah",
+      "shortDescription": "Orhideja v loncu – umirjena, plemenita in brezčasna.",
+      "description": "Orhideja pomeni eleganco in mir. S svojimi finimi cvetnimi latmi je eleganten izbor za dom, pisarno ali kot darilo. Na voljo v lila, roza, rumeni, beli in modri barvi.",
+      "flowers": [
+        "Orhideja"
+      ],
+      "care": [
+        "Postavite na svetlo mesto brez neposrednega sonca.",
+        "Zalivajte zmerno in preprečite zastajanje vode.",
+        "Odcvetele lati odstranite šele, ko se posušijo."
+      ],
+      "seo": {
+        "title": "Orhideja v loncu – v petih barvah",
+        "description": "Orhideja v loncu v beli, roza, rumeni, lila ali modri barvi. Elegantna sobna rastlina kot darilo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Bela orhideja z živo roza žrelom cveta v krem keramičnem loncu",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orhideja z nežno roza cvetovi v krem keramičnem loncu",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Rumena orhideja v krem keramičnem loncu",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orhideja z vijoličnimi cvetovi v živo roza loncu",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orhideja z modrimi cvetovi v sivem loncu poleg sveč"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Rdeč žalni šopek",
+      "tagline": "Rdeče vrtnice, gerbere in nageljni z jelkovimi vejami",
+      "shortDescription": "Žalni šopek v rdeči kot znak ljubezni in povezanosti.",
+      "description": "Rdeč žalni šopek združuje rdeče vrtnice, gerbere in nageljne z rumenimi vrtnicami, gipsofilo in jelkovimi vejami. Dostojna gesta spomina, ki tiho izraža močna čustva. Sestava se lahko glede na sezono nekoliko razlikuje.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere",
+        "Nageljni",
+        "Gipsofila"
+      ],
+      "care": [
+        "Postavite na hladno mesto, ne na neposredno sonce ali ob radiator.",
+        "Pri aranžmajih gobo za aranžiranje vzdržujte vlažno."
+      ],
+      "seo": {
+        "title": "Rdeč žalni šopek – vrtnice in gerbere",
+        "description": "Žalni šopek v rdeči z vrtnicami, gerberami in nageljni na jelkovih vejah, v treh velikostih. Dostojen zadnji pozdrav – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Žalni šopek z rdečimi vrtnicami, gerberami in nageljni, rumenimi vrtnicami in jelkovimi vejami na kamnitem podstavku"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Roza žalni šopek",
+      "tagline": "Roza vrtnice in vijolični cvetovi",
+      "shortDescription": "Žalni šopek v nežnih roza tonih s tolažilnim izrazom.",
+      "description": "Roza vrtnice, vijolični in roza cvetovi ter jelkove veje dajejo temu žalnemu šopku nežen, tolažilen značaj. Pomeni hvaležnost, bližino in ljubeč spomin – primeren za tiho, osebno slovo.",
+      "flowers": [
+        "Vrtnice"
+      ],
+      "care": [
+        "Postavite na hladno mesto, ne na neposredno sonce ali ob radiator.",
+        "Pri aranžmajih gobo za aranžiranje vzdržujte vlažno."
+      ],
+      "seo": {
+        "title": "Roza žalni šopek – nežni roza toni",
+        "description": "Žalni šopek v nežnih roza tonih z roza vrtnicami na jelkovih vejah, v treh velikostih. Za tiho slovo – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Žalni šopek z roza vrtnicami in vijoličnimi cvetovi na jelkovih vejah, z belim trakom, na kamnitem podstavku"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Pastelni žalni šopek",
+      "tagline": "Lilije, vrtnice in modri cvetovi v pastelnih tonih",
+      "shortDescription": "Umirjen žalni šopek v nežnih pastelnih tonih.",
+      "description": "Pastelni žalni šopek združuje roza lilije in vrtnice s svetlo modrimi, lila in belimi cvetovi. Nežni barvni prelivi izražajo tolažbo in sočutje. Cvetje se lahko glede na sezono razlikuje.",
+      "flowers": [
+        "Lilije",
+        "Vrtnice"
+      ],
+      "care": [
+        "Postavite na hladno mesto, ne na neposredno sonce ali ob radiator.",
+        "Pri aranžmajih gobo za aranžiranje vzdržujte vlažno."
+      ],
+      "seo": {
+        "title": "Pastelni žalni šopek – umirjeni toni",
+        "description": "Pastelni žalni šopek z lilijami, vrtnicami in svetlo modrimi cvetovi, v treh velikostih. Diskretno in elegantno – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Pastelni žalni šopek z roza lilijami, vrtnicami in svetlo modrimi cvetovi, s črnim trakom, na kamnitem podstavku"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Oranžen žalni šopek",
+      "tagline": "Vrtnice, gerbere in nageljni v oranžni in rumeni",
+      "shortDescription": "Žalni šopek v toplih oranžnih tonih, ki izraža spoštovanje.",
+      "description": "Vrtnice, gerbere in nageljni v oranžni, rumeni in marelični barvi se z jelkovimi vejami povežejo v topel žalni šopek. Pomeni hvaležnost in spomin na izpolnjeno življenje ter je primeren za mrliško vežico ali spominsko slovesnost.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere",
+        "Nageljni"
+      ],
+      "care": [
+        "Postavite na hladno mesto, ne na neposredno sonce ali ob radiator.",
+        "Pri aranžmajih gobo za aranžiranje vzdržujte vlažno."
+      ],
+      "seo": {
+        "title": "Oranžen žalni šopek – topli toni",
+        "description": "Žalni šopek v oranžni in rumeni z vrtnicami, gerberami in nageljni, v treh velikostih. Za mrliško vežico in spominsko slovesnost – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Žalni šopek z vrtnicami, gerberami in nageljni v oranžni in rumeni na jelkovih vejah, na kamnitem podstavku"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Bel žalni šopek",
+      "tagline": "Bele lilije in krizanteme",
+      "shortDescription": "Klasičen žalni šopek v beli – preprost in dostojanstven.",
+      "description": "Bele lilije, krizanteme in drobni beli cvetovi na jelkovih vejah naredijo ta žalni šopek preprost in brezčasen. Bela pomeni mir in slovo – primerna za uradne žalne slovesnosti ali kot tih znak sočutja.",
+      "flowers": [
+        "Lilije",
+        "Krizanteme"
+      ],
+      "care": [
+        "Postavite na hladno mesto, ne na neposredno sonce ali ob radiator.",
+        "Pri aranžmajih gobo za aranžiranje vzdržujte vlažno."
+      ],
+      "seo": {
+        "title": "Bel žalni šopek – lilije in krizanteme",
+        "description": "Klasičen bel žalni šopek z lilijami in krizantemami, v treh velikostih. Preprost in dostojanstven – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Žalni šopek iz belih lilij, krizantem in drobnih belih cvetov na jelkovih vejah, na kamnitem podstavku"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Rumen žalni šopek",
+      "tagline": "Sončnice, rumene vrtnice in nageljni",
+      "shortDescription": "Žalni šopek v rumeni za spomin, upanje in hvaležnost.",
+      "description": "Sončnice, rumene vrtnice in marelično obarvani nageljni na jelkovih vejah naredijo ta žalni šopek svetel in topel. Primeren je za slovesa, pri katerih je v ospredju življenje. Cvetje je odvisno od sezone.",
+      "flowers": [
+        "Sončnice",
+        "Vrtnice",
+        "Nageljni"
+      ],
+      "care": [
+        "Postavite na hladno mesto, ne na neposredno sonce ali ob radiator.",
+        "Pri aranžmajih gobo za aranžiranje vzdržujte vlažno."
+      ],
+      "seo": {
+        "title": "Rumen žalni šopek – sončnice in vrtnice",
+        "description": "Žalni šopek v rumeni s sončnicami, vrtnicami in nageljni, v treh velikostih. Svetel zadnji pozdrav – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Žalni šopek s sončnicami, rumenimi vrtnicami in marelično obarvanimi nageljni na jelkovih vejah, na kamnitem podstavku"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Pisan žalni venec",
+      "tagline": "Gerbere, vrtnice in cvetovi v pisanih barvah",
+      "shortDescription": "Pisan žalni venec za slovo od človeka, polnega življenja.",
+      "description": "Pisan žalni venec združuje gerbere, vrtnice in druge cvetove v rumeni, oranžni, roza in beli barvi na zeleni podlagi. Dostojen in hkrati barvit zadnji pozdrav, ročno vezan. Za želje glede oblikovanja se nam lahko obrnete.",
+      "flowers": [
+        "Gerbere",
+        "Vrtnice"
+      ],
+      "care": [
+        "Postavite na hladno in senčno mesto.",
+        "Gobo za aranžiranje po potrebi rahlo navlažite."
+      ],
+      "seo": {
+        "title": "Pisan žalni venec – barvito slovo",
+        "description": "Pisan žalni venec z gerberami in vrtnicami, ročno vezan. Barvit zadnji pozdrav – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Pisan žalni venec z gerberami, lilijami in belimi cvetovi, s črnim trakom, na lesenem stojalu"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Roza žalni venec",
+      "tagline": "Gerbere in vrtnice v živo roza in rdeči",
+      "shortDescription": "Žalni venec v živo roza in rdeči kot ljubeč zadnji pozdrav.",
+      "description": "Žalni venec v živo roza in rdeči združuje živo roza gerbere, vrtnice in druge cvetove s svetlimi poudarki in svežim zelenjem. Izraz ljubezni in spomina, ročno vezan. Za želje glede oblikovanja se nam lahko obrnete.",
+      "flowers": [
+        "Gerbere",
+        "Vrtnice"
+      ],
+      "care": [
+        "Postavite na hladno in senčno mesto.",
+        "Gobo za aranžiranje po potrebi rahlo navlažite."
+      ],
+      "seo": {
+        "title": "Roza žalni venec – živo roza in rdeča",
+        "description": "Žalni venec v živo roza in rdeči z gerberami in vrtnicami, ročno vezan. Ljubeč zadnji pozdrav – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Žalni venec z živo roza gerberami, vrtnicami in rdečimi cvetovi, z bordo trakom, na lesenem stojalu"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Rdeče-rumen žalni venec",
+      "tagline": "Rdeče in rumene gerbere",
+      "shortDescription": "Žareč žalni venec v rdeči in rumeni.",
+      "description": "Rdeče in rumene gerbere, gosto zataknjene na zeleno podlago, naredijo ta žalni venec žareč zadnji pozdrav, poln topline, hvaležnosti in lepih spominov. Ročno vezan. Za želje glede oblikovanja se nam lahko obrnete.",
+      "flowers": [
+        "Gerbere"
+      ],
+      "care": [
+        "Postavite na hladno in senčno mesto.",
+        "Gobo za aranžiranje po potrebi rahlo navlažite."
+      ],
+      "seo": {
+        "title": "Rdeče-rumen žalni venec – gerbere",
+        "description": "Žalni venec iz rdečih in rumenih gerber, ročno vezan. Topel, žareč zadnji pozdrav – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Žalni venec iz rdečih in rumenih gerber s srebrno sivim trakom na lesenem stojalu"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Rdeč žalni venec",
+      "tagline": "Rdeče gerbere in vrtnice",
+      "shortDescription": "Klasičen žalni venec v rdeči za ljubezen, ki ostane.",
+      "description": "Rdeč žalni venec združuje rdeče gerbere in vrtnice na jelkovih vejah. Klasičen, dostojen zadnji pozdrav za ljubezen, ki ostane tudi po slovesu. Ročno vezan. Za želje glede oblikovanja se nam lahko obrnete.",
+      "flowers": [
+        "Gerbere",
+        "Vrtnice"
+      ],
+      "care": [
+        "Postavite na hladno in senčno mesto.",
+        "Gobo za aranžiranje po potrebi rahlo navlažite."
+      ],
+      "seo": {
+        "title": "Rdeč žalni venec – gerbere in vrtnice",
+        "description": "Žalni venec v rdeči z gerberami in vrtnicami na jelkovih vejah, ročno vezan. Klasičen zadnji pozdrav – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Žalni venec iz rdečih gerber in vrtnic na jelkovih vejah s črnim trakom na lesenem stojalu"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Bel žalni venec",
+      "tagline": "Bele vrtnice, gerbere in nageljni",
+      "shortDescription": "Preprost žalni venec v beli za tiho sočutje.",
+      "description": "Bele vrtnice, gerbere in nageljni s svetlo zelenimi poudarki in zelenjem sestavljajo ta preprost venec. Bela pomeni mir in tiho sočutje. Ročno vezan. Za želje glede oblikovanja se nam lahko obrnete.",
+      "flowers": [
+        "Vrtnice",
+        "Gerbere",
+        "Nageljni"
+      ],
+      "care": [
+        "Postavite na hladno in senčno mesto.",
+        "Gobo za aranžiranje po potrebi rahlo navlažite."
+      ],
+      "seo": {
+        "title": "Bel žalni venec – preprost in dostojanstven",
+        "description": "Žalni venec v beli z vrtnicami, gerberami in nageljni, ročno vezan. Preprost zadnji pozdrav – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Okrogel žalni venec iz belih vrtnic, gerber in nageljnov z belim trakom na lesenem stojalu"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Adventni venci",
+      "tagline": "Jelkove veje s štirimi svečami, v sedmih barvah",
+      "shortDescription": "Ročno vezan adventni venec iz jelkovih vej s štirimi svečami.",
+      "description": "Adventni venec je ročno vezan iz dišečih jelkovih vej in okrašen s štirimi svečami, pentljami, kroglicami, storži in drugimi podrobnostmi. Na voljo v rdeči, sivi, lila, zlati, bež, vinsko rdeči in roza barvi.",
+      "flowers": [],
+      "care": [
+        "Sveč nikoli ne pustite goreti brez nadzora.",
+        "Postavite na hladno mesto, ne neposredno ob radiator.",
+        "Jelkove veje občasno rahlo poškropite z vodo."
+      ],
+      "seo": {
+        "title": "Adventni venec – ročno vezan s svečami",
+        "description": "Ročno vezan adventni venec iz jelkovih vej s štirimi svečami, v sedmih barvah in štirih velikostih – dostava rož na Dunaju."
+      },
+      "sizes": {
+        "s": {
+          "label": "Majhen"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Velik"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rdeča",
+        "grau": "Siva",
+        "lila": "Lila",
+        "gold": "Zlata",
+        "beige": "Bež",
+        "weinrot": "Vinsko rdeča",
+        "rosa": "Roza"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Adventni venec iz jelkovih vej s štirimi rdečimi svečami, rdečimi pentljami, kroglicami in storži",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Adventni venec s štirimi svetlo sivimi svečami, krem pentljami in rezinami pomaranče",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Adventni venec z lila in roza svečami, vijoličnimi pentljami in figuro angela",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Adventni venec s štirimi zlatimi svečami, zlatimi pentljami, cimetovimi palčkami in storži",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Adventni venec s štirimi roza svečami, bordo pentljami in figuro angela",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Adventni venec s štirimi vinsko rdečimi svečami, kroglicami in vinsko rdečimi pentljami",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Adventni venec s štirimi temno sivimi svečami, krem pentljami in rdečimi kroglicami",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Adventni venec v zlati z zlatimi svečami in pentljami, s strani",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Adventni venec v roza z roza svečami in bordo pentljami, s strani"
+      }
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Dunaj, cona 1",
+      "windows": {
+        "h09": "09:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Dunaj, cona 2",
+      "windows": {
+        "h09": "09:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Dunaj, cona 3",
+      "windows": {
+        "h09": "09:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Okolica Dunaja (Spodnja Avstrija)",
+      "note": "Dostava v okolico Dunaja ob torkih, četrtkih in sobotah.",
+      "windows": {
+        "day": "09:00–18:00"
+      }
+    }
+  }
+}

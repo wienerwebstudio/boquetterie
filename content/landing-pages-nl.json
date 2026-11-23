@@ -1,0 +1,229 @@
+[
+  {
+    "slug": "bloemen-versturen-wenen",
+    "title": "Bloemen versturen naar Wenen",
+    "headline": "Bloemen versturen naar Wenen – met de hand gebonden en per koerier bezorgd.",
+    "intro": "Bloemen bezorgen in heel Wenen, in alle 23 districten en zeven dagen per week. Kies een boeket, de bezorgdatum en een tijdvak van één uur – wij zorgen voor de rest.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": {
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Zo werkt bloemen bezorgen in Wenen",
+        "paragraphs": [
+          "Wil je bloemen versturen naar Wenen? Kies een boeket en het formaat, selecteer de bezorgdatum in de kalender, vul het adres van de ontvanger in en betaal. Daarna ontvang je een bevestiging per e-mail met een link waarmee je de status van je bestelling kunt volgen.",
+          "We bezorgen in alle 23 districten van Wenen, van maandag tot en met zondag. Bij het afrekenen kies je een tijdvak van één uur tussen 9:00 en 22:00 uur, zodat de bloemen aankomen wanneer er iemand thuis is."
+        ]
+      },
+      {
+        "heading": "Voor elke bestelling met de hand gebonden",
+        "paragraphs": [
+          "Elk boeket wordt voor jouw bestelling met de hand gebonden door een Weense bloemenwinkel waarmee we vast samenwerken. Een koerier haalt het daar op en rijdt zonder tussenstop naar het bezorgadres.",
+          "Boeketten zijn er vanaf € 36,90. De bezorgkosten hangen af van het district en zie je zodra je de postcode invult."
+        ]
+      },
+      {
+        "heading": "Vandaag nog nodig?",
+        "paragraphs": [
+          "Bezorging op dezelfde dag is in heel Wenen mogelijk als je van maandag tot en met zaterdag vóór 18:30 uur of op zondag vóór 17:45 uur bestelt, zolang er voor het adres nog een tijdvak vrij is. Met express kunnen de bloemen binnen 1–2 uur aankomen, zonder meerprijs: kies bij het afrekenen het vroegste tijdvak van vandaag, gemarkeerd met „Express”."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Bloemen versturen naar Wenen – bloemen bezorgen",
+      "description": "Bloemen bezorgen in Wenen: met de hand gebonden boeketten, per koerier in alle 23 districten, 7 dagen per week, met tijdvakken van 9:00 tot 22:00 uur."
+    }
+  },
+  {
+    "slug": "bloemen-vanuit-nederland-en-belgie",
+    "title": "Bloemen naar Wenen vanuit Nederland en België",
+    "headline": "Bloemen naar Wenen sturen vanuit Nederland of België",
+    "intro": "Woont je moeder, vriendin of collega in Wenen? Je bestelt hier in het Nederlands, betaalt met je eigen kaart en een Weense bloemist bindt het boeket vers voor je.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": {
+      "occasions": ["geburtstag", "liebe", "danke", "einfach-so"],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Van Amsterdam of Antwerpen naar Wenen",
+        "paragraphs": [
+          "Bloemen naar Oostenrijk versturen vanuit Nederland of België hoeft niet ingewikkeld te zijn. De website, het afrekenen en de e-mails over je bestelling zijn in het Nederlands. Je kiest een boeket, de bezorgdatum en een tijdvak van één uur tussen 9:00 en 22:00 uur, en vult het adres in Wenen in.",
+          "Het boeket wordt niet over de grens verstuurd: een bloemenwinkel in Wenen bindt het met de hand voor jouw bestelling, en een koerier brengt het rechtstreeks naar de ontvanger. We bezorgen in alle 23 districten van Wenen."
+        ]
+      },
+      {
+        "heading": "Betalen en tijden",
+        "paragraphs": [
+          "Je betaalt met creditcard of debetkaart, Apple Pay, Google Pay, Klarna of eps. Kaarten uit het buitenland worden geaccepteerd. Alle tijden op de site zijn Weense tijd – Wenen ligt in dezelfde tijdzone als Nederland en België, dus je hoeft niet te rekenen.",
+          "Wil je dat de bloemen nog vandaag aankomen? Bestel van maandag tot en met zaterdag vóór 18:30 uur of op zondag vóór 17:45 uur, zolang er voor het adres nog een tijdvak vrij is."
+        ]
+      },
+      {
+        "heading": "Een verrassing op afstand",
+        "paragraphs": [
+          "Voor een verjaardag, om bedankt te zeggen of gewoon zomaar: kies de datum vooruit in de kalender, dan wordt het boeket precies op die dag bezorgd. Wie liever anoniem blijft, kan zonder naam versturen – de factuur gaat alleen naar jou."
+        ]
+      }
+    ],
+    "faqIds": ["f-payment", "f-date", "f-window", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Bloemen naar Wenen vanuit Nederland en België",
+      "description": "Bloemen versturen naar Oostenrijk: bestel in het Nederlands, een Weense bloemist bindt het boeket en een koerier bezorgt het in heel Wenen."
+    }
+  },
+  {
+    "slug": "bloemist-wenen",
+    "title": "Bloemist in Wenen",
+    "headline": "Bloemist in Wenen – vers gebonden boeketten, online besteld",
+    "intro": "Op zoek naar een bloemist in Wenen? Bij Blumora kies je online, en een Weense bloemenwinkel bindt je boeket met de hand voor jouw bestelling.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": {
+      "category": "bunt",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Vakwerk van een Weense bloemenwinkel",
+        "paragraphs": [
+          "Blumora is een online bloemenbezorger uit Wenen. Je kiest je boeket bij ons – gebonden wordt het door een bloemenwinkel in Wenen waarmee we vast samenwerken. Daar ontstaat elk boeket met de hand en pas na je bestelling, niet in een magazijn.",
+          "Omdat bloemen natuurproducten zijn, kunnen kleuren, soorten en bloemgrootte per seizoen licht afwijken van de foto. Stijl en kleurenpalet blijven behouden."
+        ]
+      },
+      {
+        "heading": "Van de bloemist rechtstreeks naar de deur",
+        "paragraphs": [
+          "Een koerier haalt het boeket op bij de bloemenwinkel en brengt het zonder tussenstop naar het bezorgadres – in alle 23 districten van Wenen, op het tijdvak van één uur dat je zelf kiest tussen 9:00 en 22:00 uur.",
+          "Heb je een bijzondere wens voor de bloemist, zoals een oneven aantal stelen? Dat kan op verzoek: vermeld het bij je bestelling in de opmerking voor de bloemist."
+        ]
+      },
+      {
+        "heading": "Hulp nodig?",
+        "paragraphs": [
+          "Twijfel je tussen twee boeketten of heb je een vraag over je bestelling? Je bereikt ons dag en nacht per telefoon en WhatsApp."
+        ]
+      }
+    ],
+    "faqIds": ["f-fresh", "f-photo", "f-where", "f-window"],
+    "seo": {
+      "title": "Bloemist Wenen – vers gebonden boeketten online",
+      "description": "Bloemist in Wenen: boeketten met de hand gebonden door een Weense bloemenwinkel en per koerier bezorgd in alle 23 districten."
+    }
+  },
+  {
+    "slug": "bloemen-vandaag-bezorgd-wenen",
+    "title": "Bloemen vandaag bezorgd in Wenen",
+    "headline": "Bloemen vandaag nog bezorgd in Wenen – ook met express",
+    "intro": "Vergeten, of gewoon spontaan? Bestel van maandag tot en met zaterdag vóór 18:30 uur of op zondag vóór 17:45 uur en we bezorgen dezelfde dag nog in heel Wenen.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": {
+      "sameDayOnly": true,
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Same day in heel Wenen",
+        "paragraphs": [
+          "Bloemen vandaag bezorgen in Wenen kan in alle 23 districten. Bestel je van maandag tot en met zaterdag vóór 18:30 uur of op zondag vóór 17:45 uur, dan komt het boeket dezelfde dag nog aan, zolang er voor het adres een tijdvak vrij is.",
+          "Het vroegst mogelijke tijdstip voor jouw adres zie je zodra je de postcode invult. Het boeket wordt ook bij een bestelling voor vandaag met de hand gebonden en per koerier rechtstreeks bezorgd."
+        ]
+      },
+      {
+        "heading": "Express binnen 1–2 uur, zonder meerprijs",
+        "paragraphs": [
+          "Moet het nog sneller? Bestel gewoon zoals altijd en kies bij het afrekenen het vroegste tijdvak van vandaag – dat is gemarkeerd met „Express”. De bloemen kunnen dan binnen 1–2 uur aankomen, zonder extra kosten.",
+          "Express is mogelijk binnen dezelfde besteltijden als same day en zolang er voor het adres nog een tijdvak vrij is."
+        ]
+      },
+      {
+        "heading": "Ook vanuit het buitenland",
+        "paragraphs": [
+          "Alle tijden zijn Weense tijd. Je betaalt met creditcard of debetkaart, Apple Pay, Google Pay, Klarna of eps, en kaarten uit het buitenland worden geaccepteerd."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-express", "f-where", "f-window"],
+    "seo": {
+      "title": "Bloemen vandaag bezorgd in Wenen – same day & express",
+      "description": "Bloemen vandaag bezorgen in Wenen: bestel ma–za vóór 18:30, zo vóór 17:45. Express binnen 1–2 uur zonder meerprijs, in alle 23 districten."
+    }
+  },
+  {
+    "slug": "rozen-bezorgen-wenen",
+    "title": "Rozen bezorgen in Wenen",
+    "headline": "Rozen bezorgen in Wenen – rood, roze, wit en meer",
+    "intro": "Een bos rode rozen, een zacht roze boeket of iets bijzonders zoals blauwe rozen: met de hand gebonden en per koerier bezorgd in heel Wenen.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": {
+      "category": "rosen",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Rozen voor elk moment",
+        "paragraphs": [
+          "Rode rozen zijn de klassieke liefdesverklaring – voor Valentijnsdag op 14 februari, een jubileum of een aanzoek. Roze rozen passen bij een verjaardag of als bedankje, witte rozen zijn ingetogen en elegant.",
+          "Veel rozenboeketten zijn er in meerdere formaten, van een klein gebaar tot een royale bos. Op elke productpagina zie je welke formaten er zijn."
+        ]
+      },
+      {
+        "heading": "Zo worden je rozen bezorgd",
+        "paragraphs": [
+          "Je rozen worden voor jouw bestelling met de hand gebonden door een Weense bloemenwinkel en per koerier rechtstreeks bezorgd in alle 23 districten van Wenen. Je kiest de datum in de kalender en een tijdvak van één uur tussen 9:00 en 22:00 uur.",
+          "Wil je een oneven aantal rozen? Dat kan op verzoek: vermeld het bij je bestelling in de opmerking voor de bloemist."
+        ]
+      },
+      {
+        "heading": "Anoniem rozen versturen",
+        "paragraphs": [
+          "Een geheime aanbidder? Zonder wenskaart staat je naam nergens bij het boeket en gaat de factuur alleen naar jou."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-anon", "f-photo"],
+    "seo": {
+      "title": "Rozen bezorgen in Wenen – rozenboeketten",
+      "description": "Rozen bezorgen in Wenen: rode, roze en witte rozenboeketten, met de hand gebonden en per koerier bezorgd in alle 23 districten."
+    }
+  },
+  {
+    "slug": "rouwbloemen-wenen",
+    "title": "Rouwbloemen en rouwkransen in Wenen",
+    "headline": "Rouwbloemen en rouwkransen in Wenen",
+    "intro": "Rouwkransen en rouwboeketten in rustige kleuren, waardig met de hand gebonden en bezorgd in heel Wenen – ook als je zelf niet bij de uitvaart kunt zijn.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": {
+      "category": "trauer",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Een laatste groet uit de verte",
+        "paragraphs": [
+          "Als iemand in Wenen overlijdt en je de afstand niet kunt overbruggen, kun je met rouwbloemen toch je medeleven tonen. Kies een rouwkrans of rouwboeket, de datum en een tijdvak van één uur tussen 9:00 en 22:00 uur, en vul het bezorgadres in.",
+          "Wit staat voor vrede en stil medeleven; warme tinten zoals geel of oranje passen bij een afscheid waarbij het leven centraal staat. De rouwboeketten zijn er in drie formaten."
+        ]
+      },
+      {
+        "heading": "Lint met tekst en bijzondere wensen",
+        "paragraphs": [
+          "Een rouwkrans met een lint met tekst is mogelijk op verzoek: vermeld de gewenste tekst bij je bestelling in de opmerking voor de bloemist. Heb je andere wensen voor de vormgeving, neem dan gerust contact met ons op.",
+          "Elke krans en elk boeket wordt voor jouw bestelling met de hand gebonden door een Weense bloemenwinkel en per koerier bezorgd in alle 23 districten van Wenen."
+        ]
+      },
+      {
+        "heading": "Tijdig plannen",
+        "paragraphs": [
+          "Bestel bij voorkeur ruim voor de uitvaart en kies het tijdvak zo, dat de bloemen er op tijd zijn. Zolang de krans nog niet gebonden is, kunnen we datum of adres meestal nog aanpassen."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-photo", "f-change"],
+    "seo": {
+      "title": "Rouwbloemen en rouwkransen Wenen – bezorging",
+      "description": "Rouwbloemen in Wenen laten bezorgen: rouwkransen en rouwboeketten, met de hand gebonden, met lint met tekst op verzoek. In alle 23 districten."
+    }
+  }
+]

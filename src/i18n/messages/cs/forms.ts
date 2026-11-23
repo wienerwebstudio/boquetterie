@@ -1,6 +1,115 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** cs – forms (to be translated from src/i18n/messages/de/forms.ts). */
-const forms: NonNullable<PartialMessages["forms"]> = {};
+/** cs – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Jméno",
+  email: "E-mail",
+  emailAddress: "E-mailová adresa",
+  message: "Zpráva",
+  orderNumber: "Číslo objednávky",
+  honeypot: "Webová stránka",
+  charCount: "{count}/{max} znaků",
+  genericError: "To se bohužel nepovedlo. Zkuste to prosím později.",
+  invalidEmailEnter: "Zadejte prosím platnou e-mailovou adresu.",
+
+  mailFallback: {
+    title: "Formulář je teď nedostupný.",
+    text: "Vaše zpráva se neztratila: Pošlete nám ji prosím přímo e-mailem na {email}. Text je už vložený.",
+    open: "Otevřít e-mail",
+  },
+
+  newsletter: {
+    honeypot: "Webová stránka (nechte prosím prázdné)",
+    successTitle: "Skoro hotovo – potvrďte prosím své přihlášení.",
+    successText: "Poslali jsme vám e-mail s potvrzovacím odkazem. Teprve poté budete dostávat náš newsletter.",
+  },
+
+  contact: {
+    formLabel: "Kontaktní formulář",
+    subject: "Téma",
+    subjects: {
+      order: "Objednávka",
+      delivery: "Doručení",
+      business: "Firemní zákazníci",
+      other: "Ostatní",
+    },
+    orderNumberHint: "Najdete ho v potvrzení objednávky.",
+    errors: {
+      name: "Zadejte prosím své jméno.",
+      email: "Zadejte prosím platnou e-mailovou adresu.",
+      subject: "Vyberte prosím téma.",
+      orderIdTooLong: "Číslo objednávky je příliš dlouhé.",
+      messageTooShort: "Popište prosím svůj požadavek (alespoň 10 znaků).",
+      messageTooLong: "Zpráva smí mít nejvýše 2000 znaků.",
+    },
+    thanksTitle: "Děkujeme za vaši zprávu.",
+    thanksText: "Váš dotaz jsme obdrželi a co nejdříve se vám ozveme e-mailem na {email}.",
+    sendAnother: "Poslat další zprávu",
+    failed: "Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo nám napište přímo e-mailem.",
+    consent: "Odesláním souhlasíte s tím, že vaše údaje použijeme ke zpracování dotazu. Podrobnosti najdete v zásadách ochrany osobních údajů.",
+    submit: "Odeslat zprávu",
+    mailSubject: "Kontaktní dotaz: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Odstoupit od smlouvy",
+    errors: {
+      name: "Zadejte prosím své jméno.",
+      email: "Zadejte prosím platnou e-mailovou adresu.",
+      orderId: "Zadejte prosím číslo objednávky (např. BQ-7K2M9Q).",
+    },
+    emailHint: "Sem vám pošleme potvrzení o přijetí.",
+    orderNumberHint: "Najdete ho v potvrzení objednávky.",
+    items: "Od koupě kterého zboží odstupujete?",
+    itemsPlaceholder: "např. medvídek – nechte prázdné pro veškeré zboží z objednávky, u kterého lze odstoupit",
+    declaration: "Tímto odstupuji od mnou uzavřené smlouvy o koupi výše uvedeného zboží.",
+    receivedTitle: "Vaše odstoupení bylo přijato.",
+    receivedText: "Přijato dne {receivedAt} k objednávce {orderId}.",
+    receivedTextWithCase: "Přijato dne {receivedAt} k objednávce {orderId} (případ {id}).",
+    confirmationSent: "Potvrzení o přijetí jsme poslali na {email}.",
+    confirmationNotSent: "Potvrzovací e-mail se teď nepodařilo odeslat – přijetí vám co nejdříve potvrdíme osobně. Do té doby si prosím tuto stránku uschovejte (např. jako snímek obrazovky).",
+    failed: "Odstoupení se teď nepodařilo odeslat. Zkuste to prosím znovu, nebo ho pošlete e-mailem na {email}.",
+    submit: "Potvrdit odstoupení",
+    mailSubject: "Odstoupení – objednávka {orderId}",
+    mailDeclaration: "Tímto odstupuji od mnou uzavřené smlouvy o koupi následujícího zboží: {items}",
+    mailAllItems: "veškeré zboží z objednávky, u kterého lze odstoupit",
+  },
+
+  business: {
+    formLabel: "Poptávka pro firemní zákazníky",
+    company: "Firma",
+    contact: "Kontaktní osoba",
+    phone: "Telefon",
+    location: "Místo / PSČ",
+    locationPlaceholder: "např. 1070 Vídeň",
+    need: "Požadavek",
+    pleaseChoose: "Vyberte prosím",
+    needs: {
+      subscription: "Pravidelné doručování (předplatné)",
+      oneOff: "Jednorázové doručení",
+      event: "Akce",
+      gifts: "Dárky pro zaměstnance nebo zákazníky",
+    },
+    messagePlaceholder: "O co jde, na kdy a v jakém rozsahu – a co dalšího je pro vás důležité.",
+    consent: "Souhlasím s tím, že mé údaje budou uloženy a použity ke zpracování poptávky. Podrobnosti najdete v {privacyLink}.",
+    privacyLink: "zásadách ochrany osobních údajů",
+    errors: {
+      company: "Zadejte prosím název své firmy.",
+      contact: "Zadejte prosím kontaktní osobu.",
+      email: "Zadejte prosím platnou e-mailovou adresu.",
+      phone: "Zkontrolujte prosím telefonní číslo.",
+      location: "Zadejte prosím místo nebo PSČ.",
+      need: "Vyberte prosím, co potřebujete.",
+      message: "Popište prosím krátce svůj požadavek (alespoň 10 znaků).",
+      consent: "Potvrďte prosím, že smíme vaše údaje použít ke zpracování.",
+    },
+    thanksTitle: "Děkujeme za vaši poptávku.",
+    thanksText: "Vše jsme obdrželi a ozveme se osobě {contact} e-mailem na {email}.",
+    sendAnother: "Poslat další poptávku",
+    failed: "Poptávku se nepodařilo odeslat. Zkuste to prosím znovu, nebo nám napište přímo e-mailem.",
+    submit: "Odeslat poptávku",
+    mailSubject: "Firemní poptávka: {company}",
+  },
+};
 
 export default forms;

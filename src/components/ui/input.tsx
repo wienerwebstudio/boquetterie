@@ -2,7 +2,8 @@
 import { forwardRef, useId, useMemo, useState, type InputHTMLAttributes, type TextareaHTMLAttributes, type SelectHTMLAttributes } from "react";
 import { cn } from "@/lib/format";
 import { useI18n } from "@/i18n/client";
-import { PHONE_COUNTRIES, joinPhone, normalizePhone, splitPhone } from "@/lib/phone";
+import { LOCALE_INFO, type Locale } from "@/i18n/config";
+import { PHONE_COUNTRIES, PHONE_COUNTRY_NAMES_SQ, joinPhone, normalizePhone, splitPhone } from "@/lib/phone";
 
 /**
  * Shared look of text fields. The resting border (`line-strong`) has >= 3:1 against
@@ -128,8 +129,11 @@ export function Checkbox({ label, className, id, ...rest }: InputHTMLAttributes<
   );
 }
 
-function regionNames(locale: string): Intl.DisplayNames | null {
-  for (const l of [locale, "de"]) {
+function regionNames(locale: Locale): { of(region: string): string | undefined } | null {
+  // Albanian: fixed names (no Albanian data in Chrome – see PHONE_COUNTRY_NAMES_SQ).
+  if (locale === "sq") return { of: (region) => PHONE_COUNTRY_NAMES_SQ[region] };
+  // The Intl locale (not the shop code: "bks"/"ce" have no data in browsers) – same text on server and client.
+  for (const l of [LOCALE_INFO[locale].intl, "de"]) {
     try { return new Intl.DisplayNames([l], { type: "region" }); } catch { /* unknown locale tag */ }
   }
   return null;

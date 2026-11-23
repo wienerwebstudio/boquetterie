@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Roze rozen, roze gerbera's & witte lelies",
+      "shortDescription": "Een licht, losjes gebonden boeket in roze en wit dat elke ruimte opvrolijkt.",
+      "description": "Rosé Dream combineert roze rozen en felroze gerbera's met witte lelies, fijn gipskruid en fris groen. Losjes gebonden en licht van uitstraling past het bij een verjaardag, als bedankje of gewoon zomaar.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's",
+        "Lelies",
+        "Gipskruid"
+      ],
+      "care": [
+        "Geef dagelijks vers water in de vaas.",
+        "Snijd de stelen indien nodig bij.",
+        "Verwijder verwelkte bloemen regelmatig."
+      ],
+      "seo": {
+        "title": "Rosé Dream – boeket in roze & wit",
+        "description": "Rosé Dream: roze rozen, felroze gerbera's en witte lelies, losjes gebonden. Een licht boeket voor verjaardag en bedankje – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Boeket van roze rozen, felroze gerbera's en witte lelies in een glazen vaas op een houten ladekast"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Geel boeket",
+      "tagline": "Gele gerbera's, rozen & gipskruid",
+      "shortDescription": "Een zonnig boeket in geel en wit, gebonden met een gele strik.",
+      "description": "Stralend gele gerbera's ontmoeten witte en gele rozen, gipskruid en fris groen. In een lichte manchet met gele strik – een boeket voor een verjaardag, als felicitatie, bedankje of beterschapsgroet.",
+      "flowers": [
+        "Gerbera's",
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Niet in de volle zon zetten."
+      ],
+      "seo": {
+        "title": "Geel boeket – gerbera's & rozen in geel",
+        "description": "Gele gerbera's, witte en gele rozen met gipskruid en een gele strik. Een vrolijke groet voor verjaardag of beterschap – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Boeket van gele gerbera's, witte en gele rozen in een lichte manchet met gele strik"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Wit boeket",
+      "tagline": "Lichte rozen, gerbera's & lelies",
+      "shortDescription": "Een licht, rustig boeket in wit en crème met tere roze accenten.",
+      "description": "Het witte boeket combineert lichte rozen, gerbera's en lelies met gipskruid tot een sober, tijdloos boeket. Tere accenten in roze en abrikoos maken het geheel luchtig. Mooi voor een trouwdag of jubileum, als bedankje of stijlvolle groet.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's",
+        "Lelies",
+        "Gipskruid"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Verwijder het stuifmeel van de lelies indien nodig voorzichtig."
+      ],
+      "seo": {
+        "title": "Wit boeket – boeket in wit & crème",
+        "description": "Lichte rozen, gerbera's en lelies met gipskruid: een sober boeket voor jubileum, trouwdag of bedankje – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Licht boeket van crèmekleurige rozen, roze gerbera's, lelies en gipskruid in een witte manchet"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Blauwe & witte rozen in een blauwe manchet",
+      "shortDescription": "Blauwe en witte rozen in een lichtblauwe manchet – een boeket dat opvalt.",
+      "description": "Het Blue Bouquet combineert blauwe en witte rozen met gipskruid, een witte lelie en fris groen. De lichtblauwe manchet neemt de kleur van de bloemen over. Een bijzonder cadeau voor een verjaardag, jubileum of voor mensen die van het uitzonderlijke houden.",
+      "flowers": [
+        "Rozen",
+        "Lelies",
+        "Gipskruid"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – blauwe & witte rozen",
+        "description": "Blauwe en witte rozen met gipskruid in een lichtblauwe manchet. Een bijzonder rozenboeket voor verjaardag of jubileum – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Boeket van blauwe en witte rozen met gipskruid in een lichtblauwe manchet op een houten ladekast"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Regenboogrozen in vele kleuren",
+      "shortDescription": "Een boeket van regenboogrozen, waarbij elke bloem in meerdere kleuren straalt.",
+      "description": "Farbensinfonie bestaat uit regenboogrozen: elke bloem toont meerdere kleuren naast elkaar, van rood en oranje via geel en groen tot blauw en paars. Dicht gebonden lijkt het boeket op een kleurrijke bal. Een vrolijke verrassing voor een verjaardag of een feest.",
+      "flowers": [
+        "Regenboogrozen"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – regenboogrozen",
+        "description": "Regenboogrozen waarbij elke bloem in meerdere kleuren straalt. Een vrolijk rozenboeket voor een verjaardag – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Farbensinfonie (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Farbensinfonie (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Farbensinfonie (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Dicht boeket van regenboogrozen in een crèmekleurige vaas",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Regenboogrozen van dichtbij, elke bloem in meerdere kleuren"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelitzia's, lelies & gerbera's in oranje en geel",
+      "shortDescription": "Een exotisch boeket in oranje en geel met paradijsvogelbloemen als blikvanger.",
+      "description": "Sonnenzauber combineert opvallende paradijsvogelbloemen met witte lelies, gele gerbera's en fris groen. De warme oranje en gele tinten geven het boeket een levendige, zomerse uitstraling.",
+      "flowers": [
+        "Strelitzia's (paradijsvogelbloemen)",
+        "Lelies",
+        "Gerbera's",
+        "Gipskruid"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Houd de vaas schoon en ververs het water regelmatig.",
+        "Niet in de volle zon zetten."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelitzia's & gerbera's",
+        "description": "Paradijsvogelbloemen, lelies en gele gerbera's in warm oranje en geel. Een exotisch boeket als blikvanger – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Exotisch boeket van strelitzia's, witte lelies en gele gerbera's in doorzichtige folie",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Bovenaanzicht van de strelitzia's, lelie en gele gerbera's van het boeket"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Bloemen in felroze en roze met gerbera's & lelies",
+      "shortDescription": "Een rond, speels boeket in felroze en roze met gele accenten.",
+      "description": "Het Pink Bouquet brengt bloemen in felroze en roze samen, waaronder lelies en gerbera's, tot een rond, speels boeket. Gele gerbera's zorgen voor frisse accenten, de roze manchet maakt het geheel af. Mooi voor een verjaardag, jubileum, Moederdag of gewoon zomaar.",
+      "flowers": [
+        "Lelies",
+        "Gerbera's"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Verwijder verwelkte bloemen regelmatig."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – boeket in felroze & roze",
+        "description": "Een rond boeket in felroze en roze met lelies en gerbera's. Voor verjaardag, Moederdag of zomaar – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Rond boeket in felroze en roze met gele gerbera's in een roze manchet",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Boeket met roze lelies, gele gerbera's en felroze bloemen in een roze manchet met strik"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Rozen in oranje en abrikoos",
+      "shortDescription": "Rozen in oranje en abrikoos – een warm boeket als een zonsondergang.",
+      "description": "Het Orange Bouquet bestaat uit rozen in oranje en abrikoos, aangevuld met teer groen en in een lichte manchet gevat. Warm en vrolijk van uitstraling past het bij een verjaardag, als bedankje of om iemands dag op te fleuren.",
+      "flowers": [
+        "Rozen"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – rozen in oranje",
+        "description": "Rozen in oranje en abrikoos in een lichte manchet. Een warm rozenboeket voor verjaardag of als bedankje – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Orange Bouquet (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Orange Bouquet (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Orange Bouquet (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Boeket van oranje en abrikooskleurige rozen in een lichte manchet op een houten ladekast"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Dieprode rozen in een donkere manchet",
+      "shortDescription": "Een weelderig boeket van dieprode rozen met een rode satijnen strik.",
+      "description": "Het Red Rose Bouquet is een dicht gebonden boeket van dieprode rozen in een donkere manchet, bijeengehouden door een rode satijnen strik. De klassieke liefdesverklaring voor Valentijnsdag, een jubileum of een aanzoek.",
+      "flowers": [
+        "Rozen"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – rode rozen",
+        "description": "Dieprode rozen in een donkere manchet met rode satijnen strik. Het klassieke rozenboeket voor Valentijnsdag en jubileum – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Red Rose Bouquet (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Red Rose Bouquet (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Red Rose Bouquet (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Boeket van dieprode rozen in een donkergrijze manchet met rode satijnen strik",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Liggend boeket van rode rozen in een zwart-witte manchet naast kaarsen"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Rozen en gerbera's in roze, pastel & lila",
+      "shortDescription": "Een zacht, romantisch boeket in roze en pastel.",
+      "description": "Het Rosa Bouquet combineert rozen in roze en pastel met gerbera's en lila bloemen. In een witte manchet met roze strik oogt het licht en liefdevol. Mooi voor een verjaardag, Moederdag, een geboorte of als groet.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – rozen in roze & pastel",
+        "description": "Rozen en gerbera's in roze, pastel en lila in een witte manchet. Voor verjaardag, Moederdag of geboorte – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Boeket van roze rozen, gerbera's en lila bloemen in een witte manchet met roze strik"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Zwarte rozen in een donkere manchet",
+      "shortDescription": "Zwarte rozen in een donkere manchet – geheimzinnig en uitzonderlijk.",
+      "description": "Blackroses is een boeket van zwarte rozen in een donkere, transparante manchet. Een bijzonder statement voor mensen die het uitzonderlijke waarderen, bijvoorbeeld voor een verjaardag of jubileum.",
+      "flowers": [
+        "Rozen"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Blackroses – zwarte rozen",
+        "description": "Zwarte rozen in een donkere manchet: een bijzonder rozenboeket voor mensen die van het uitzonderlijke houden – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Blackroses (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Blackroses (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Blackroses (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Boeket van zwarte rozen in een zwarte manchet in een glazen vaas",
+        "/images/products/sortiment/blackroses-2.jpg": "Zwarte rozen zonder manchet in een glazen vaas voor een raam"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Blauwe rozen met gipskruid",
+      "shortDescription": "Stralend blauwe rozen met gipskruid – zeldzaam en een echte blikvanger.",
+      "description": "Blaue Liebe is een boeket van stralend blauwe rozen, luchtig gemaakt met fijn gipskruid en gevat in een blauwe manchet. Een bijzonder cadeau voor een verjaardag, jubileum of als teken van diepe verbondenheid.",
+      "flowers": [
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – blauwe rozen",
+        "description": "Stralend blauwe rozen met gipskruid in een blauwe manchet. Een zeldzaam rozenboeket voor bijzondere mensen – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Blaue Liebe (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Blaue Liebe (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Blaue Liebe (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Boeket van blauwe rozen met gipskruid in een blauwe manchet in een witte vaas",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Blauwe rozen met gipskruid in een blauwe manchet, van voren",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Liggend boeket van blauwe rozen in een blauwe manchet op een houten ladekast"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Roze rozen met gipskruid",
+      "shortDescription": "Roze rozen in een tere manchet – liefdevol en elegant.",
+      "description": "Rosalie is een boeket van roze rozen, luchtig gemaakt met gipskruid en gevat in een zachtroze manchet. Vrouwelijk en rustig van uitstraling past het bij Moederdag, een verjaardag, een jubileum of als bedankje.",
+      "flowers": [
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Rosalie – roze rozen met gipskruid",
+        "description": "Roze rozen met gipskruid in een zachtroze manchet. Voor Moederdag, verjaardag of als bedankje – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Rosalie (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Rosalie (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Rosalie (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Boeket van roze rozen met gipskruid in een zachtroze manchet in een witte vaas",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie in een roze manchet in een eenvoudige witte vaas",
+        "/images/products/sortiment/rosalie-3.jpg": "Roze rozen met gipskruid in een geribbelde witte vaas",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie liggend, bovenaanzicht van de roze rozen en het gipskruid"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Rood & wit mix",
+      "tagline": "Rode en witte rozen",
+      "shortDescription": "Rode en witte rozen in een feestelijk boeket.",
+      "description": "De rood & wit mix brengt rode en witte rozen samen in een witte manchet, afhankelijk van het formaat luchtig gemaakt met gipskruid. Passie ontmoet tederheid: een boeket voor Valentijnsdag, een jubileum, een trouwdag of als elegant cadeau.",
+      "flowers": [
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Rood & wit mix – rode en witte rozen",
+        "description": "Rode en witte rozen in een feestelijke manchet. Voor Valentijnsdag, jubileum of trouwdag, in zes formaten – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Rood & wit mix (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Rood & wit mix (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Rood & wit mix (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Boeket van rode en witte rozen met gipskruid in een witte manchet, ernaast rozenblaadjes",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Rode en witte rozen dicht gebonden in een witte manchet",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Rood-wit rozenboeket in een witte manchet op een houten ladekast",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Liggend boeket van rode en witte rozen, bovenaanzicht"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Tulpenboeket",
+      "tagline": "Tulpen in één kleur of gemengd",
+      "shortDescription": "Een eenvoudig boeket van tulpen, in één kleur of kleurrijk gemengd.",
+      "description": "Tulpen brengen met hun heldere kleuren en slanke vorm lentesfeer in huis. Het boeket wordt volledig van tulpen gebonden, naar keuze in één kleur of als kleurrijke mix. Verkrijgbaar in rood, geel, paars, roze, oranje, wit en mix.",
+      "flowers": [
+        "Tulpen"
+      ],
+      "care": [
+        "Snijd de stelen recht af en zet ze in koud water.",
+        "Een laagje water is genoeg, maar vul regelmatig bij.",
+        "Tulpen groeien in de vaas door; snijd ze indien nodig bij."
+      ],
+      "seo": {
+        "title": "Tulpenboeket – tulpen in vele kleuren",
+        "description": "Een boeket tulpen in rood, geel, paars, roze, oranje, wit of gemengd. Lentesfeer voor thuis – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rood",
+        "gelb": "Geel",
+        "lila": "Paars",
+        "rosa": "Roze",
+        "orange": "Oranje",
+        "weiss": "Wit",
+        "mix": "Kleurrijke mix"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Boeket van gele tulpen in een glazen vaas",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Paarse tulpen in kraftpapier in een glazen vaas",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Rode tulpen in een beige vaas",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Oranje tulpen in een glazen vaas",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Roze tulpen in een glazen vaas op een linnen doek",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Kleurrijke tulpenmix in rood, geel, roze, oranje en paars in een beige vaas",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Witte tulpen in een witte vaas"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Rode rozen met gipskruid",
+      "shortDescription": "Een expressief rozenboeket in diep rood voor grote gevoelens.",
+      "description": "Red Passion brengt rode rozen samen in een dicht, rond boeket, omlijst door gipskruid en een donkere manchet. Verkrijgbaar in zes formaten – voor romantische gebaren en momenten die bijblijven.",
+      "flowers": [
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Snijd de stelen vers aan.",
+        "Geef dagelijks vers water.",
+        "Beschermen tegen direct zonlicht."
+      ],
+      "seo": {
+        "title": "Red Passion – rood rozenboeket",
+        "description": "Rode rozen met gipskruid in een donkere manchet, in zes formaten. Een rozenboeket voor grote gevoelens – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Red Passion (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Red Passion (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Red Passion (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Liggend boeket van donkerrode rozen met gipskruid in een zwart-gouden manchet",
+        "/images/products/sortiment/red-passion-2.jpg": "Groot boeket van rode rozen met gipskruid in een donkere manchet in een witte vaas",
+        "/images/products/sortiment/red-passion-3.jpg": "Zeer groot, rond boeket van rode rozen met een krans van gipskruid in een donkere manchet"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Dicht gebonden rode rozen",
+      "shortDescription": "Dicht gebonden rode rozen in een donkere manchet – tijdloos en vol gevoel.",
+      "description": "Klassiker der Liebe bestaat uit rode rozen, dicht tot een ronde vorm gebonden en gevat in een donkere manchet met zwarte strik. Het rozenboeket voor Valentijnsdag, een jubileum, een aanzoek of elke liefdesverklaring.",
+      "flowers": [
+        "Rozen"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – rode rozen",
+        "description": "Dicht gebonden rode rozen in een donkere manchet. Het klassieke rozenboeket voor Valentijnsdag, jubileum of aanzoek – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Klassiker der Liebe (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Klassiker der Liebe (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Klassiker der Liebe (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Rond boeket van dicht gebonden rode rozen in een zwarte manchet met strik",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Rode rozen in bolvorm in een donkere manchet, van voren"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Rode rozen met gipskruid",
+      "shortDescription": "Een weelderig rozenboeket in zes formaten.",
+      "description": "Königin der Herzen combineert rode rozen met fijn gipskruid in een donkere, transparante manchet. Verkrijgbaar in zes formaten – van klein gebaar tot grootse entree.",
+      "flowers": [
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Op een koele plek zetten.",
+        "Verwijder verwelkte bloemen op tijd.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – weelderig rozenboeket",
+        "description": "Rode rozen met gipskruid, in zes formaten. Een weelderig rozenboeket voor grote momenten – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Königin der Herzen (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Königin der Herzen (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Königin der Herzen (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Boeket van rode rozen met gipskruid in een donkere manchet in een witte vaas",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Groot boeket van rode rozen en gipskruid in een zwarte manchet",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Rode rozen met gipskruid in een donkere manchet in een zwarte pot",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Bovenaanzicht van rode rozen met gipskruid in een stervormige donkere manchet"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbera's, rozen & lelies in warme tinten",
+      "shortDescription": "Een warm boeket in oranje, roze en geel.",
+      "description": "Herbstzauber combineert gerbera's, rozen en lelies in oranje, roze en gele tinten met fris groen. Losjes gebonden brengt het warme kleuren in huis, juist als de dagen korter worden.",
+      "flowers": [
+        "Gerbera's",
+        "Rozen",
+        "Lelies"
+      ],
+      "care": [
+        "Niet naast fruit zetten.",
+        "Vul regelmatig water bij.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Herbstzauber – boeket in warme tinten",
+        "description": "Gerbera's, rozen en lelies in oranje, roze en geel. Een warm herfstboeket voor verjaardag of bedankje – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Boeket van oranje gerbera's, rozen in abrikoos en roze en lelies in een glazen vaas"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Rode rozen, gerbera's & groene accenten",
+      "shortDescription": "Een levendig boeket in rood en oranje met frisse groene accenten.",
+      "description": "Blütenfreude combineert rode rozen en gerbera's in rood en oranje met groene pomponbloemen en eucalyptusgroen. Krachtig van kleur en toch rond van vorm – mooi voor een verjaardag, als bedankje of gewoon zomaar.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's"
+      ],
+      "care": [
+        "Geef dagelijks vers water in de vaas.",
+        "Snijd de stelen indien nodig bij.",
+        "Verwijder verwelkte bloemen regelmatig."
+      ],
+      "seo": {
+        "title": "Blütenfreude – rozen & gerbera's in rood",
+        "description": "Rode rozen, gerbera's in rood en oranje en frisse groene accenten. Een levendig boeket voor een verjaardag – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Boeket van rode rozen, rode en oranje gerbera's en groene pomponbloemen in een glazen vaas",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude in een witte vaas op een houten ladekast"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Roze rozen, lelies & gipskruid",
+      "shortDescription": "Zachte roze tinten met lelies – rustig, harmonieus en verfijnd.",
+      "description": "Zartrosa Zauber combineert roze rozen met roze lelies en gipskruid in een roze manchet. Het boeket oogt rustig en harmonieus, met een fijne, romantische toets.",
+      "flowers": [
+        "Rozen",
+        "Lelies",
+        "Gipskruid"
+      ],
+      "care": [
+        "Verwijder bladeren die in het water hangen.",
+        "Op een koele plek zetten.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – rozen & lelies in roze",
+        "description": "Roze rozen, roze lelies en gipskruid in een tere manchet. Een rustig, romantisch boeket – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Boeket van roze rozen, roze lelies en gipskruid in een roze manchet in een witte vaas",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber in een roze manchet met grote strik"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbera's, lelies & rozen in oranje en geel",
+      "shortDescription": "Stralend oranje en geel voor goed nieuws en zonnige gelegenheden.",
+      "description": "Strahlender Tag combineert oranje gerbera's en lelies met gele rozen, lichte anjers en gipskruid. De krachtige kleuren brengen positieve energie – een boeket voor felicitaties, successen en zonnige gelegenheden.",
+      "flowers": [
+        "Gerbera's",
+        "Lelies",
+        "Rozen",
+        "Anjers",
+        "Gipskruid"
+      ],
+      "care": [
+        "Beschermen tegen tocht.",
+        "Ververs het water regelmatig.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – boeket in oranje & geel",
+        "description": "Oranje gerbera's en lelies met gele rozen en gipskruid. Een vrolijk boeket voor felicitaties – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Boeket van oranje gerbera's, gele rozen en gipskruid in een wit-gouden manchet",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Oranje gerbera's, lelies en een gele roos in een witte vaas",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Rond boeket van oranje gerbera's en lelies, gele rozen en lichte anjers in een glazen vaas"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Rozen in roze, crème & abrikoos",
+      "shortDescription": "Een harmonieus rozenboeket tussen klassieke schoonheid en moderne stijl.",
+      "description": "Rosentraum combineert rozen in roze, crème en abrikoos met violette bloemen, bessentakjes en fris groen. Gevat in een oudroze manchet oogt het boeket weelderig en tegelijk modern.",
+      "flowers": [
+        "Rozen"
+      ],
+      "care": [
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Houd de vaas schoon.",
+        "Ververs het water regelmatig."
+      ],
+      "seo": {
+        "title": "Rosentraum – rozen in roze & crème",
+        "description": "Rozen in roze, crème en abrikoos met violette accenten in een oudroze manchet. Een harmonieus rozenboeket – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Gebonden boeket van rozen in roze, crème en abrikoos in een oudroze manchet",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum in een oudroze manchet in een witte vaas",
+        "/images/products/sortiment/rosentraum-3.jpg": "Bovenaanzicht van de rozen, violette bloemen en bessentakjes van het boeket"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Witte rozen met gipskruid",
+      "shortDescription": "Witte rozen met gipskruid – teder, romantisch en licht.",
+      "description": "Rosenkuss bestaat uit witte tot crèmekleurige rozen, luchtig gemaakt met fijn gipskruid en gevat in een witte manchet. Een boeket voor genegenheid, nabijheid en kleine liefdesboodschappen.",
+      "flowers": [
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Niet te warm zetten.",
+        "Controleer dagelijks het waterpeil.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Rosenkuss – witte rozen",
+        "description": "Witte rozen met gipskruid in een witte manchet. Een teder, romantisch rozenboeket – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Rosenkuss (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Rosenkuss (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Rosenkuss (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Boeket van witte rozen met gipskruid in een witte manchet in een witte vaas",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Groot boeket van witte rozen in een witte manchet in een witte vaas",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Liggend boeket van witte rozen met gipskruid op een houten ladekast"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Rozen in pastel, felroze & bordeaux",
+      "shortDescription": "Rozen in pastel en felroze, elegant samengesteld.",
+      "description": "Rosenglanz brengt rozen in pastelroze, crème, felroze en bordeaux samen met gipskruid in een roze manchet. Tijdloos van uitstraling, verkrijgbaar in zes formaten.",
+      "flowers": [
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Snijd de stelen vers aan.",
+        "Vermijd direct zonlicht.",
+        "Ververs het vaaswater regelmatig."
+      ],
+      "seo": {
+        "title": "Rosenglanz – rozen in pastel & felroze",
+        "description": "Rozen in pastelroze, felroze en bordeaux met gipskruid, in zes formaten. Een elegant rozenboeket – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein",
+          "detailAlt": "Rosenglanz (klein) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "m": {
+          "label": "Middel",
+          "detailAlt": "Rosenglanz (middel) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "l": {
+          "label": "Groot",
+          "detailAlt": "Rosenglanz (groot) in de hand, met op de achtergrond een Weense straat met een tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Boeket van rozen in pastelroze, felroze en bordeaux in een roze manchet in een glazen vaas",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Rond rozenboeket met gipskruid in een roze manchet, van voren",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Liggend boeket van pastelkleurige en felroze rozen op een houten ladekast"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Roze rozen, gerbera's, lelies & anjers",
+      "shortDescription": "Een expressief boeket in roze en felroze dat zonder woorden spreekt.",
+      "description": "Pure Liebe combineert roze rozen met een felroze gerbera, roze lelies, anjers en gipskruid. Intens in de roze tinten, luchtig gemaakt met lichte accenten – een boeket vol gevoel.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's",
+        "Lelies",
+        "Anjers",
+        "Gipskruid"
+      ],
+      "care": [
+        "Geef regelmatig vers water.",
+        "Houd de vaas schoon.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Pure Liebe – boeket in roze & felroze",
+        "description": "Roze rozen, felroze gerbera's, lelies en anjers met gipskruid. Een boeket vol gevoel – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Boeket van roze rozen, felroze gerbera en roze lelies in een beige vaas",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe met lelies, gerbera's en anjers in een beige vaas",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Rond boeket van roze rozen, gerbera's, anjers en gipskruid in een glazen vaas"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Felroze gerbera's, rozen & violette accenten",
+      "shortDescription": "Krachtige roze tinten gecombineerd tot een fris, modern boeket.",
+      "description": "Pink Harmony combineert felroze gerbera's en rozen met witte en lila bloemen, violette accenten en gipskruid. Levendig en fris, met veel charme.",
+      "flowers": [
+        "Gerbera's",
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Op een koele plek zetten.",
+        "Verwijder verwelkte bloemen.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbera's & rozen in roze",
+        "description": "Felroze gerbera's en rozen met lila en violette accenten. Een fris, modern boeket – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Boeket van felroze gerbera's, rozen en lila bloemen in een beige vaas",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Rond boeket met felroze gerbera's, rozen en violette accenten"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Kleurrijk rozenboeket in roze, geel, abrikoos & lila",
+      "shortDescription": "Een royaal, kleurrijk rozenboeket voor bijzondere gelegenheden.",
+      "description": "Love Deluxe is een rozenboeket in vele kleuren: roze, crème, abrikoos, geel en lila, gevat in een roze manchet. Voor bijzondere gelegenheden en grote gebaren, verkrijgbaar in vijf formaten.",
+      "flowers": [
+        "Rozen"
+      ],
+      "care": [
+        "Snijd de stelen bij.",
+        "Ververs het vaaswater dagelijks.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Love Deluxe – kleurrijk rozenboeket",
+        "description": "Rozen in roze, crème, abrikoos, geel en lila in een roze manchet, in vijf formaten. Voor grote gebaren – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Kleurrijk rozenboeket in roze, geel, abrikoos en lila in een roze manchet in een witte vaas",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Groot kleurrijk rozenboeket in een roze manchet, van voren",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Liggend kleurrijk rozenboeket in een roze manchet op een houten ladekast"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Rode & groene rozen met lelies",
+      "shortDescription": "Een emotioneel boeket in rood om „Ik hou van je” te zeggen.",
+      "description": "Liebeserklärung combineert rode rozen met lichtgroene rozen, witte lelies, rode accentbloemen en gipskruid. Krachtig en toch fris van uitstraling – een boeket dat gevoelens zichtbaar maakt.",
+      "flowers": [
+        "Rozen",
+        "Lelies",
+        "Gipskruid"
+      ],
+      "care": [
+        "Beschermen tegen hitte.",
+        "Ververs het water regelmatig.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – rode rozen & lelies",
+        "description": "Rode en lichtgroene rozen met lelies en gipskruid. Een boeket om „Ik hou van je” te zeggen – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Boeket van rode en lichtgroene rozen met lelies en gipskruid in een glazen vaas",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung in een witte vaas op een houten ladekast"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Rozen & gerbera's in roze met oranje accenten",
+      "shortDescription": "Elegant en evenwichtig – een boeket met stijlvolle ingetogenheid.",
+      "description": "Klassische Schönheit combineert rozen in oudroze en wit met een felroze gerbera, kleine oranje bloemen en gipskruid. Gevat in een donkere manchet met gouden rand oogt het boeket evenwichtig en tijdloos.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's",
+        "Gipskruid"
+      ],
+      "care": [
+        "Niet direct naast de verwarming zetten.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet.",
+        "Ververs het vaaswater regelmatig."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – rozen & gerbera's",
+        "description": "Rozen in oudroze en wit met felroze gerbera in een donkere manchet. Een evenwichtig, tijdloos boeket – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Boeket van oudroze rozen en felroze gerbera in een donkere manchet met gouden rand",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit in een witte vaas",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Bovenaanzicht van rozen, gerbera en gipskruid in een donkere manchet"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Roze rozen & felroze gerbera's",
+      "shortDescription": "Speels en levendig: roze rozen ontmoeten felroze gerbera's.",
+      "description": "Herzklopfen combineert zachtroze rozen met felroze gerbera's, kleine wit-groene bloemen en fijn lila groen. Rond gebonden en vol kleur – een boeket met veel gevoel.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's"
+      ],
+      "care": [
+        "Geef dagelijks vers water.",
+        "Snijd de stelen schuin aan.",
+        "Op een koele plek zetten, uit de directe zon."
+      ],
+      "seo": {
+        "title": "Herzklopfen – roze rozen & gerbera's",
+        "description": "Zachtroze rozen en felroze gerbera's, rond gebonden. Een speels boeket vol gevoel – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Rond boeket van zachtroze rozen en felroze gerbera's in een witte vaas",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen in een witte vaas, van opzij",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Boeket van roze rozen en felroze gerbera's in een glazen vaas"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Kleurrijke mix met rozen & gerbera's",
+      "shortDescription": "Een kleurrijk boeket dat levensvreugde uitstraalt.",
+      "description": "De Fröhlicher Blütenmix combineert rode rozen, gerbera's in geel, roze en rood en andere bloemen in geel, oranje en violet. Gevat in een rode manchet – ideaal om een glimlach cadeau te doen.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's"
+      ],
+      "care": [
+        "Op een koele plek zetten.",
+        "Ververs het water regelmatig.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – kleurrijk boeket",
+        "description": "Rode rozen en gerbera's in geel, roze en rood in een rode manchet. Een kleurrijk boeket vol levensvreugde – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Kleurrijk boeket met gerbera's en rozen in een rode manchet op een houten ladekast",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix in een rode manchet in een witte vaas",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Bovenaanzicht van rode rozen, gele en roze gerbera's in een rode manchet"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Rozen & gerbera's in felroze met lila accenten",
+      "shortDescription": "Een levendige mix in felroze, abrikoos en lila.",
+      "description": "Farbtänzer combineert rozen en trosrozen in felroze en abrikoos met roze gerbera's, lila bloemen en lichte bessen. Dicht en levendig gebonden – modern en expressief.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's"
+      ],
+      "care": [
+        "Verwijder bladeren die in het water hangen.",
+        "Houd de vaas schoon.",
+        "Snijd de stelen schuin aan voordat je ze in de vaas zet."
+      ],
+      "seo": {
+        "title": "Farbtänzer – boeket in felroze & lila",
+        "description": "Rozen en gerbera's in felroze en abrikoos met lila accenten. Een levendig, modern boeket – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Liggend boeket in felroze en lila in een zachtroze manchet",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Rond boeket van felroze rozen, gerbera's en lila bloemen in een crèmekleurige vaas",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer in een geribbelde vaas, van voren"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Hartvormige flowerbox",
+      "tagline": "Rozen in een rode hartbox",
+      "shortDescription": "Rozen in een hartvormige box – een liefdesverklaring om neer te zetten.",
+      "description": "In de rode, hartvormige box zijn rozen in rood, roze en wit met andere bloemen en gipskruid geschikt. Een cadeau voor een jubileum, Valentijnsdag of als liefdevolle verrassing.",
+      "flowers": [
+        "Rozen",
+        "Gipskruid"
+      ],
+      "care": [
+        "Bevochtig de rozen licht.",
+        "Op een koele plek zetten.",
+        "Beschermen tegen direct zonlicht."
+      ],
+      "seo": {
+        "title": "Hartvormige flowerbox – rozen in hartbox",
+        "description": "Rozen in rood, roze en wit in een rode hartbox. Voor jubileum en Valentijnsdag – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Rode hartvormige flowerbox met rozen in rood, roze en wit en gipskruid"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klassieke flowerbox",
+      "tagline": "Rode rozen in een ronde box",
+      "shortDescription": "Klassieke rozen in een ronde box – eenvoudig en expressief.",
+      "description": "De klassieke flowerbox vult een ronde box met dicht op elkaar geschikte rozen. Minimalistisch en tijdloos, past ze bij een verjaardag, als bedankje of bij bijzondere momenten. Verkrijgbaar in rood en wit.",
+      "flowers": [
+        "Rozen"
+      ],
+      "care": [
+        "Geef de rozen regelmatig een beetje water.",
+        "Op een koele plek zetten.",
+        "Beschermen tegen direct zonlicht."
+      ],
+      "seo": {
+        "title": "Klassieke flowerbox – rozen in een box",
+        "description": "Dicht geschikte rozen in een ronde box, verkrijgbaar in rood en wit. Een eenvoudig cadeau – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Rode rozen in een ronde witte box met roze en gouden rand",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Twee rode fluwelen ronde boxen met rode rozen op een witte sokkel"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Roze anthurium in pot",
+      "tagline": "Anthurium met roze bloemen",
+      "shortDescription": "Een anthurium met zachtroze bloemen – elegant en ingetogen.",
+      "description": "De roze anthurium brengt met zijn tere bloemen en glanzend groene blad kleur in de ruimte, zonder schreeuwerig te zijn. Hij past in de woonkamer net zo goed als op kantoor.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Op een lichte plek zetten, zonder directe zon.",
+        "Regelmatig water geven, maar voorkom dat de wortels in het water staan.",
+        "Besproei de bladeren af en toe met water."
+      ],
+      "seo": {
+        "title": "Roze anthurium in pot – kamerplant",
+        "description": "Anthurium met zachtroze bloemen en glanzend blad. Een elegante kamerplant als cadeau – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Roze anthurium in een oudroze keramische pot op een houten ladekast",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anthurium met roze bloemen in een mauvekleurige pot naast kaarsen"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Rode anthurium in pot",
+      "tagline": "Anthurium met rode bloemen",
+      "shortDescription": "Een anthurium met stralend rode bloemen en een moderne uitstraling.",
+      "description": "Rode anthuriums zetten met hun glanzende bloemen krachtige kleuraccenten. Als decoratieve kamerplant of cadeau blijft hij bij goede verzorging lang mooi.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Lichte standplaats zonder directe zon.",
+        "Houd de aarde gelijkmatig vochtig.",
+        "Voorkom dat de wortels in het water staan."
+      ],
+      "seo": {
+        "title": "Rode anthurium in pot – kamerplant",
+        "description": "Anthurium met stralend rode bloemen in pot. Een decoratieve kamerplant als cadeau – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Rode anthurium in een rode keramische pot op een houten ladekast"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL rode anthurium in pot",
+      "tagline": "Grote anthurium met rode bloemen",
+      "shortDescription": "Een grote, weelderige anthurium met veel rode bloemen.",
+      "description": "Deze rode anthurium is meer dan 80 cm hoog en draagt talrijke rode bloemen boven dicht, glanzend blad. Een expressieve blikvanger voor woonkamer of kantoor.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Op een lichte plek zetten, zonder directe zon.",
+        "Regelmatig water geven, maar voorkom dat de wortels in het water staan.",
+        "Veeg af en toe het stof van de bladeren."
+      ],
+      "seo": {
+        "title": "XXL rode anthurium in pot",
+        "description": "Grote anthurium met talrijke rode bloemen in pot. Een blikvanger voor woonkamer of kantoor – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Grote anthurium met veel rode bloemen in een rode pot naast kaarsen"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelia in pot",
+      "tagline": "Bromelia met rode bloem",
+      "shortDescription": "Een bromelia met een krachtig rode bloem en tropische flair.",
+      "description": "De bromelia zet met haar rode bloemrozet en slanke groene blad levendige accenten. Een decoratieve kamerplant voor woon- of werkruimtes en een bijzonder cadeau.",
+      "flowers": [
+        "Bromelia"
+      ],
+      "care": [
+        "Op een lichte plek zetten, zonder directe zon.",
+        "Giet regelmatig water in de bladkoker.",
+        "Houd de aarde slechts licht vochtig."
+      ],
+      "seo": {
+        "title": "Bromelia in pot – kamerplant",
+        "description": "Bromelia met rode bloem in pot: tropische flair voor woonkamer of kantoor – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelia met rode bloem in een rode pot op een houten ladekast"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Rubberplant in pot",
+      "tagline": "Rubberplant met donkergroen blad",
+      "shortDescription": "Een makkelijke rubberplant met glanzende, donkergroene bladeren.",
+      "description": "De rubberplant oogt met zijn grote, glanzende bladeren modern en rustig. Hij vraagt weinig verzorging en past goed in woon- en kantoorruimtes.",
+      "flowers": [
+        "Rubberplant"
+      ],
+      "care": [
+        "Lichte tot halfschaduwrijke standplaats.",
+        "Geef spaarzaam water, hij heeft weinig nodig.",
+        "Stof de bladeren af en toe af."
+      ],
+      "seo": {
+        "title": "Rubberplant in pot – makkelijke plant",
+        "description": "Rubberplant met glanzende, donkergroene bladeren. Een makkelijke kamerplant voor huis en kantoor – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Rubberplant met donkergroene bladeren in een rode pot op een houten ladekast"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Witte orchidee in pot",
+      "tagline": "Orchidee in pot, in meerdere kleuren",
+      "shortDescription": "Een orchidee in pot – rustig, edel en tijdloos.",
+      "description": "De orchidee staat voor elegantie en rust. Met haar fijne bloemtrossen is ze een stijlvolle keuze voor woonruimtes, kantoren of als cadeau. Verkrijgbaar in paars, roze, geel, wit en blauw.",
+      "flowers": [
+        "Orchidee"
+      ],
+      "care": [
+        "Op een lichte plek zetten, zonder directe zon.",
+        "Geef spaarzaam water en voorkom dat de wortels in het water staan.",
+        "Verwijder uitgebloeide bloemtrossen pas als ze verdroogd zijn."
+      ],
+      "seo": {
+        "title": "Orchidee in pot – in vijf kleuren",
+        "description": "Orchidee in pot in wit, roze, geel, paars of blauw. Een elegante kamerplant als cadeau – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Witte orchidee met felroze bloemhart in een crèmekleurige keramische pot",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orchidee met zachtroze bloemen in een crèmekleurige keramische pot",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Gele orchidee in een crèmekleurige keramische pot",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orchidee met violette bloemen in een felroze pot",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orchidee met blauwe bloemen in een grijze pot naast kaarsen"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Rood rouwboeket",
+      "tagline": "Rode rozen, gerbera's & anjers met dennengroen",
+      "shortDescription": "Een rouwboeket in rood als teken van liefde en verbondenheid.",
+      "description": "Het rouwboeket in rood combineert rode rozen, gerbera's en anjers met gele rozen, gipskruid en dennengroen. Een waardig gebaar van herdenking dat sterke gevoelens in stilte uitdrukt. De samenstelling kan per seizoen licht variëren.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's",
+        "Anjers",
+        "Gipskruid"
+      ],
+      "care": [
+        "Op een koele plek zetten, niet in de directe zon of naast de verwarming.",
+        "Houd bij bloemstukken het steekschuim vochtig."
+      ],
+      "seo": {
+        "title": "Rood rouwboeket – rozen & gerbera's",
+        "description": "Rouwboeket in rood met rozen, gerbera's en anjers op dennengroen, in drie formaten. Een waardige afscheidsgroet – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Rouwboeket met rode rozen, gerbera's en anjers, gele rozen en dennengroen op een stenen sokkel"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Roze rouwboeket",
+      "tagline": "Roze rozen & violette bloemen",
+      "shortDescription": "Een rouwboeket in zachte roze tinten met een troostende uitstraling.",
+      "description": "Roze rozen, violette en roze bloemen en dennengroen geven dit rouwboeket een zachte, troostende uitstraling. Het staat voor dankbaarheid, nabijheid en liefdevolle herinnering – passend bij een stil, persoonlijk afscheid.",
+      "flowers": [
+        "Rozen"
+      ],
+      "care": [
+        "Op een koele plek zetten, niet in de directe zon of naast de verwarming.",
+        "Houd bij bloemstukken het steekschuim vochtig."
+      ],
+      "seo": {
+        "title": "Roze rouwboeket – zachte roze tinten",
+        "description": "Rouwboeket in zachte roze tinten met roze rozen op dennengroen, in drie formaten. Voor een stil afscheid – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Rouwboeket met roze rozen en violette bloemen op dennengroen, met wit lint, op een stenen sokkel"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Pastel rouwboeket",
+      "tagline": "Lelies, rozen & blauwe bloemen in pastel",
+      "shortDescription": "Een rustig rouwboeket in fijne pasteltinten.",
+      "description": "Het rouwboeket in pastel combineert roze lelies en rozen met lichtblauwe, lila en witte bloemen. De fijne kleurschakeringen brengen troost en medeleven over. De bloemen kunnen per seizoen variëren.",
+      "flowers": [
+        "Lelies",
+        "Rozen"
+      ],
+      "care": [
+        "Op een koele plek zetten, niet in de directe zon of naast de verwarming.",
+        "Houd bij bloemstukken het steekschuim vochtig."
+      ],
+      "seo": {
+        "title": "Pastel rouwboeket – rustige tinten",
+        "description": "Rouwboeket in pastel met lelies, rozen en lichtblauwe bloemen, in drie formaten. Ingetogen en stijlvol – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Rouwboeket in pastel met roze lelies, rozen en lichtblauwe bloemen, met zwart lint, op een stenen sokkel"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Oranje rouwboeket",
+      "tagline": "Rozen, gerbera's & anjers in oranje en geel",
+      "shortDescription": "Een rouwboeket in warme oranje tinten dat waardering uitdrukt.",
+      "description": "Rozen, gerbera's en anjers in oranje, geel en abrikoos vormen samen met dennengroen een warm rouwboeket. Het staat voor dankbaarheid en de herinnering aan een vervuld leven en is geschikt voor een opbaring of herdenkingsdienst.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's",
+        "Anjers"
+      ],
+      "care": [
+        "Op een koele plek zetten, niet in de directe zon of naast de verwarming.",
+        "Houd bij bloemstukken het steekschuim vochtig."
+      ],
+      "seo": {
+        "title": "Oranje rouwboeket – warme tinten",
+        "description": "Rouwboeket in oranje en geel met rozen, gerbera's en anjers, in drie formaten. Voor opbaring en herdenking – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Rouwboeket met rozen, gerbera's en anjers in oranje en geel op dennengroen, op een stenen sokkel"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Wit rouwboeket",
+      "tagline": "Witte lelies & chrysanten",
+      "shortDescription": "Een klassiek rouwboeket in wit – sober en waardig.",
+      "description": "Witte lelies, chrysanten en kleine witte bloemen op dennengroen maken dit rouwboeket sober en tijdloos. Wit staat voor vrede en afscheid – passend bij formele uitvaarten of als stil teken van medeleven.",
+      "flowers": [
+        "Lelies",
+        "Chrysanten"
+      ],
+      "care": [
+        "Op een koele plek zetten, niet in de directe zon of naast de verwarming.",
+        "Houd bij bloemstukken het steekschuim vochtig."
+      ],
+      "seo": {
+        "title": "Wit rouwboeket – lelies & chrysanten",
+        "description": "Klassiek rouwboeket in wit met lelies en chrysanten, in drie formaten. Sober en waardig – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Rouwboeket van witte lelies, chrysanten en kleine witte bloemen op dennengroen, op een stenen sokkel"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Geel rouwboeket",
+      "tagline": "Zonnebloemen, gele rozen & anjers",
+      "shortDescription": "Een rouwboeket in geel voor herinnering, hoop en dankbaarheid.",
+      "description": "Zonnebloemen, gele rozen en abrikooskleurige anjers op dennengroen maken dit rouwboeket licht en warm. Het past bij een afscheid waarbij het leven centraal staat. De bloemen zijn afhankelijk van het seizoen.",
+      "flowers": [
+        "Zonnebloemen",
+        "Rozen",
+        "Anjers"
+      ],
+      "care": [
+        "Op een koele plek zetten, niet in de directe zon of naast de verwarming.",
+        "Houd bij bloemstukken het steekschuim vochtig."
+      ],
+      "seo": {
+        "title": "Geel rouwboeket – zonnebloemen & rozen",
+        "description": "Rouwboeket in geel met zonnebloemen, rozen en anjers, in drie formaten. Een lichte afscheidsgroet – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Rouwboeket met zonnebloemen, gele rozen en abrikooskleurige anjers op dennengroen, op een stenen sokkel"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Kleurrijke rouwkrans",
+      "tagline": "Gerbera's, rozen & bloemen in vrolijke kleuren",
+      "shortDescription": "Een kleurrijke rouwkrans voor het afscheid van een levenslustig mens.",
+      "description": "De kleurrijke rouwkrans combineert gerbera's, rozen en andere bloemen in geel, oranje, roze en wit op een groene ondergrond. Een waardige en tegelijk kleurrijke afscheidsgroet, met de hand gebonden. Heb je wensen voor de vormgeving, neem dan gerust contact met ons op.",
+      "flowers": [
+        "Gerbera's",
+        "Rozen"
+      ],
+      "care": [
+        "Op een koele, schaduwrijke plek zetten.",
+        "Bevochtig het steekschuim indien nodig licht."
+      ],
+      "seo": {
+        "title": "Kleurrijke rouwkrans – kleurrijk afscheid",
+        "description": "Kleurrijke rouwkrans met gerbera's en rozen, met de hand gebonden. Een kleurrijke afscheidsgroet – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Kleurrijke rouwkrans met gerbera's, lelies en witte bloemen, met zwart lint, op een houten ezel"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Roze rouwkrans",
+      "tagline": "Gerbera's & rozen in felroze en rood",
+      "shortDescription": "Een rouwkrans in felroze en rood als liefdevolle afscheidsgroet.",
+      "description": "De rouwkrans in felroze en rood combineert felroze gerbera's, rozen en andere bloemen met lichte accenten en fris groen. Een uiting van liefde en herinnering, met de hand gebonden. Heb je wensen voor de vormgeving, neem dan gerust contact met ons op.",
+      "flowers": [
+        "Gerbera's",
+        "Rozen"
+      ],
+      "care": [
+        "Op een koele, schaduwrijke plek zetten.",
+        "Bevochtig het steekschuim indien nodig licht."
+      ],
+      "seo": {
+        "title": "Roze rouwkrans – felroze & rood",
+        "description": "Rouwkrans in felroze en rood met gerbera's en rozen, met de hand gebonden. Een liefdevolle afscheidsgroet – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Rouwkrans met felroze gerbera's, rozen en rode bloemen, met bordeauxrood lint, op een houten ezel"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Rood-gele rouwkrans",
+      "tagline": "Rode en gele gerbera's",
+      "shortDescription": "Een stralende rouwkrans in rood en geel.",
+      "description": "Rode en gele gerbera's, dicht op een groene ondergrond gestoken, maken deze rouwkrans tot een stralende afscheidsgroet vol warmte, dankbaarheid en mooie herinneringen. Met de hand gebonden. Heb je wensen voor de vormgeving, neem dan gerust contact met ons op.",
+      "flowers": [
+        "Gerbera's"
+      ],
+      "care": [
+        "Op een koele, schaduwrijke plek zetten.",
+        "Bevochtig het steekschuim indien nodig licht."
+      ],
+      "seo": {
+        "title": "Rood-gele rouwkrans – gerbera's",
+        "description": "Rouwkrans van rode en gele gerbera's, met de hand gebonden. Een warme, stralende afscheidsgroet – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Rouwkrans van rode en gele gerbera's met zilvergrijs lint op een houten ezel"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Rode rouwkrans",
+      "tagline": "Rode gerbera's & rozen",
+      "shortDescription": "Een klassieke rouwkrans in rood voor liefde die blijft.",
+      "description": "De rouwkrans in rood combineert rode gerbera's en rozen op dennengroen. Een klassieke, waardige afscheidsgroet voor liefde die ook na het afscheid blijft. Met de hand gebonden. Heb je wensen voor de vormgeving, neem dan gerust contact met ons op.",
+      "flowers": [
+        "Gerbera's",
+        "Rozen"
+      ],
+      "care": [
+        "Op een koele, schaduwrijke plek zetten.",
+        "Bevochtig het steekschuim indien nodig licht."
+      ],
+      "seo": {
+        "title": "Rode rouwkrans – gerbera's & rozen",
+        "description": "Rouwkrans in rood met gerbera's en rozen op dennengroen, met de hand gebonden. Een klassieke afscheidsgroet – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Rouwkrans van rode gerbera's en rozen op dennengroen met zwart lint op een houten ezel"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Witte rouwkrans",
+      "tagline": "Witte rozen, gerbera's & anjers",
+      "shortDescription": "Een sobere rouwkrans in wit voor stil medeleven.",
+      "description": "Witte rozen, gerbera's en anjers met lichtgroene accenten en groen vormen deze sobere krans. Wit staat voor vrede en stil medeleven. Met de hand gebonden. Heb je wensen voor de vormgeving, neem dan gerust contact met ons op.",
+      "flowers": [
+        "Rozen",
+        "Gerbera's",
+        "Anjers"
+      ],
+      "care": [
+        "Op een koele, schaduwrijke plek zetten.",
+        "Bevochtig het steekschuim indien nodig licht."
+      ],
+      "seo": {
+        "title": "Witte rouwkrans – sober & waardig",
+        "description": "Rouwkrans in wit met rozen, gerbera's en anjers, met de hand gebonden. Een sobere afscheidsgroet – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standaard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Ronde rouwkrans van witte rozen, gerbera's en anjers met wit lint op een houten ezel"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Adventskransen",
+      "tagline": "Dennengroen met vier kaarsen, in zeven kleuren",
+      "shortDescription": "Een met de hand gebonden adventskrans van dennengroen met vier kaarsen.",
+      "description": "De adventskrans wordt met de hand gebonden van geurig dennengroen en versierd met vier kaarsen, strikken, kerstballen, dennenappels en andere details. Verkrijgbaar in rood, grijs, paars, goud, beige, wijnrood en roze.",
+      "flowers": [],
+      "care": [
+        "Laat kaarsen nooit onbeheerd branden.",
+        "Op een koele plek zetten, niet direct naast de verwarming.",
+        "Besproei het dennengroen af en toe licht met water."
+      ],
+      "seo": {
+        "title": "Adventskrans – handgebonden met kaarsen",
+        "description": "Met de hand gebonden adventskrans van dennengroen met vier kaarsen, in zeven kleuren en vier formaten – bloemen bezorgen in Wenen."
+      },
+      "sizes": {
+        "s": {
+          "label": "Klein"
+        },
+        "m": {
+          "label": "Middel"
+        },
+        "l": {
+          "label": "Groot"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rood",
+        "grau": "Grijs",
+        "lila": "Paars",
+        "gold": "Goud",
+        "beige": "Beige",
+        "weinrot": "Wijnrood",
+        "rosa": "Roze"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Adventskrans van dennengroen met vier rode kaarsen, rode strikken, kerstballen en dennenappels",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Adventskrans met vier lichtgrijze kaarsen, crèmekleurige strikken en sinaasappelschijfjes",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Adventskrans met paarse en roze kaarsen, violette strikken en een engelenbeeldje",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Adventskrans met vier gouden kaarsen, gouden strikken, kaneelstokjes en dennenappels",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Adventskrans met vier roze kaarsen, bordeauxrode strikken en een engelenbeeldje",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Adventskrans met vier wijnrode kaarsen, kerstballen en wijnrode strikken",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Adventskrans met vier donkergrijze kaarsen, crèmekleurige strikken en rode kerstballen",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Adventskrans in goud met gouden kaarsen en strikken, van opzij",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Adventskrans in roze met roze kaarsen en bordeauxrode strikken, van opzij"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Alle bloemen",
+      "headline": "Bloemen online bestellen",
+      "intro": "Met de hand gebonden boeketten voor heel Wenen. Kies je boeket en bepaal de bezorgdatum.",
+      "seo": {
+        "title": "Bloemen online bestellen en laten bezorgen in Wenen",
+        "description": "Bloemen online bestellen en laten bezorgen in Wenen. Met de hand gebonden boeketten op je gewenste datum – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Rozen",
+      "headline": "Rozenboeketten",
+      "intro": "Rozen in rood, roze of wit, in verschillende formaten. Met de hand gebonden en bezorgd in Wenen.",
+      "seo": {
+        "title": "Rozenboeketten online bestellen – rozen voor Wenen",
+        "description": "Alle rozenboeketten op een rij: rode, roze en witte rozen in verschillende formaten. Met de hand gebonden, op je gewenste datum bezorgd in Wenen."
+      }
+    },
+    "saisonal": {
+      "name": "Seizoensbloemen",
+      "headline": "Seizoensbloemen",
+      "intro": "Boeketten die bij het seizoen passen. Het aanbod wisselt met het jaar mee.",
+      "seo": {
+        "title": "Seizoensboeketten laten bezorgen in Wenen",
+        "description": "Seizoensboeketten die bij de tijd van het jaar passen. Met de hand gebonden en bezorgd in Wenen."
+      }
+    },
+    "pastell": {
+      "name": "Pastel",
+      "headline": "Pastelboeketten",
+      "intro": "Oudroze, crème, lila: zachte kleuren voor tedere momenten.",
+      "seo": {
+        "title": "Pastelbloemen laten bezorgen in Wenen",
+        "description": "Boeketten in zachte pasteltinten laten bezorgen in Wenen – vers gebonden, op je gewenste datum."
+      }
+    },
+    "bunt": {
+      "name": "Kleurrijk",
+      "headline": "Kleurrijke boeketten",
+      "intro": "Kleur die blij maakt. Voor verjaardagen, verrassingen en een goed humeur.",
+      "seo": {
+        "title": "Kleurrijke boeketten laten bezorgen in Wenen",
+        "description": "Kleurrijke, vrolijke boeketten laten bezorgen in Wenen – vers gebonden, op je gewenste datum."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegant & wit",
+      "headline": "Elegant & wit",
+      "intro": "Wit, crème en groen. Boeketten die in elke ruimte rustig en stijlvol overkomen.",
+      "seo": {
+        "title": "Witte bloemen elegant laten bezorgen in Wenen",
+        "description": "Witte en crèmekleurige boeketten laten bezorgen in Wenen – elegant, vers gebonden, op je gewenste datum."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Premium boeketten",
+      "intro": "Royale boeketten voor bijzondere momenten.",
+      "seo": {
+        "title": "Premium boeketten laten bezorgen in Wenen",
+        "description": "Premium boeketten voor bijzondere gelegenheden laten bezorgen in Wenen – met de hand gebonden, op je gewenste datum."
+      }
+    },
+    "unter-40": {
+      "name": "Onder 40 €",
+      "headline": "Bloemen onder 40 €",
+      "intro": "Kleine boeketten met groot effect – allemaal onder 40 euro.",
+      "seo": {
+        "title": "Bloemen onder 40 € laten bezorgen in Wenen",
+        "description": "Voordelige boeketten onder 40 € laten bezorgen in Wenen – vers gebonden, op je gewenste datum."
+      }
+    },
+    "bestseller": {
+      "name": "Favorieten",
+      "headline": "Onze favoriete boeketten",
+      "intro": "Boeketten die we extra graag aanraden.",
+      "seo": {
+        "title": "Onze favoriete boeketten – tips voor Wenen",
+        "description": "Boeketten die we extra graag aanraden – met de hand gebonden en bezorgd in Wenen."
+      }
+    },
+    "neu": {
+      "name": "Nieuw",
+      "headline": "Nieuw bij Blumora",
+      "intro": "Vers in het assortiment.",
+      "seo": {
+        "title": "Nieuwe boeketten voor Wenen",
+        "description": "Nieuwe boeketten in het assortiment – vers gebonden en bezorgd in Wenen."
+      }
+    },
+    "blumenboxen": {
+      "name": "Flowerboxen",
+      "headline": "Flowerboxen",
+      "intro": "Rozen, geschikt in een box – een cadeau zonder vaas.",
+      "seo": {
+        "title": "Flowerboxen laten bezorgen in Wenen",
+        "description": "Rozen in een flowerbox – hartvormig of klassiek. Bloemen bezorgen in Wenen op je gewenste datum."
+      }
+    },
+    "pflanzen": {
+      "name": "Planten",
+      "headline": "Planten in pot",
+      "intro": "Orchideeën, anthuriums en groene planten – bloemen die blijven.",
+      "seo": {
+        "title": "Planten in pot laten bezorgen in Wenen",
+        "description": "Orchideeën, anthuriums en kamerplanten in pot als cadeau. Bloemen bezorgen in Wenen."
+      }
+    },
+    "trauer": {
+      "name": "Rouwbloemen",
+      "headline": "Rouwbloemen",
+      "intro": "Rouwkransen en rouwboeketten, waardig gebonden voor een laatste groet.",
+      "seo": {
+        "title": "Rouwkransen & rouwboeketten in Wenen",
+        "description": "Rouwkransen en rouwboeketten voor uitvaart en herdenking – laten bezorgen in Wenen."
+      }
+    },
+    "advent": {
+      "name": "Adventskransen",
+      "headline": "Adventskransen",
+      "intro": "Dennengroen, kaarsen en decoratie – met de hand gebonden voor de adventstijd.",
+      "seo": {
+        "title": "Adventskransen laten bezorgen in Wenen",
+        "description": "Met de hand gebonden adventskransen in verschillende kleuren en formaten – laten bezorgen in Wenen."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Verjaardag",
+      "headline": "Bloemen voor een verjaardag",
+      "intro": "Een boeket dat zegt: ik heb aan je gedacht. Kies bloemen en je gewenste datum.",
+      "imageAlt": "Kleurrijk boeket met rode rozen, gerbera's en gele bloemen in een rode manchet",
+      "seo": {
+        "title": "Bloemen voor een verjaardag – verjaardagsboeketten Wenen",
+        "description": "Boeketten voor een verjaardag: kleurrijk, vrolijk of elegant. Met de hand gebonden en bezorgd in Wenen – op je gewenste datum."
+      }
+    },
+    "liebe": {
+      "name": "Liefde & romantiek",
+      "headline": "Bloemen voor de liefde",
+      "intro": "Rode rozen of iets heel anders: bloemen die zeggen wat je bedoelt.",
+      "imageAlt": "Boeket van dieprode rozen in een grijze manchet met een rode strik",
+      "seo": {
+        "title": "Romantische bloemen laten bezorgen in Wenen",
+        "description": "Rozen en romantische boeketten laten bezorgen in Wenen – vers gebonden, op je gewenste datum."
+      }
+    },
+    "danke": {
+      "name": "Bedankt",
+      "headline": "Bloemen om bedankt te zeggen",
+      "intro": "Voor hulp, voor tijd, voor gewoon alles. Een boeket zegt het zonder veel woorden.",
+      "imageAlt": "Boeket van gele gerbera's en witte rozen met een gele strik",
+      "seo": {
+        "title": "Bedankbloemen laten bezorgen in Wenen",
+        "description": "Bedankt zeggen met bloemen: vers gebonden boeketten laten bezorgen in Wenen – op je gewenste datum."
+      }
+    },
+    "gute-besserung": {
+      "name": "Beterschap",
+      "headline": "Bloemen voor beterschap",
+      "intro": "Zachte kleuren, rustige vormen en een kleine groet die goeddoet.",
+      "imageAlt": "Zonnig boeket in oranje en geel in een lichte manchet",
+      "seo": {
+        "title": "Beterschapsbloemen laten bezorgen in Wenen",
+        "description": "Bloemen voor beterschap laten bezorgen in Wenen – zachte boeketten, vers gebonden, op je gewenste datum."
+      }
+    },
+    "jahrestag": {
+      "name": "Jubileum",
+      "headline": "Bloemen voor een jubileum",
+      "intro": "Voor de dag waarop alles begon. En voor alle dagen daarna.",
+      "imageAlt": "Boeket van rode en witte rozen in een witte manchet",
+      "seo": {
+        "title": "Bloemen voor een jubileum laten bezorgen in Wenen",
+        "description": "Elegante boeketten voor een jubileum laten bezorgen in Wenen – vers gebonden, op je gewenste datum."
+      }
+    },
+    "geburt": {
+      "name": "Geboorte",
+      "headline": "Bloemen voor een geboorte",
+      "intro": "Welkom, klein mensje. Tere bloemen voor een groot moment.",
+      "imageAlt": "Teer boeket van rozen in roze en lila met gipskruid",
+      "seo": {
+        "title": "Bloemen voor een geboorte laten bezorgen in Wenen",
+        "description": "Tere pastelboeketten voor een geboorte laten bezorgen in Wenen – vers gebonden, op je gewenste datum."
+      }
+    },
+    "hochzeit": {
+      "name": "Bruiloft",
+      "headline": "Bloemen voor een bruiloft",
+      "intro": "Voor het bruidspaar of gewoon als felicitatie: elegant, licht en feestelijk.",
+      "imageAlt": "Boeket van witte rozen in een witte manchet in een vaas",
+      "seo": {
+        "title": "Bruiloftsbloemen laten bezorgen in Wenen",
+        "description": "Elegante bloemen voor een bruiloft laten bezorgen in Wenen – als felicitatie of cadeau, vers gebonden."
+      }
+    },
+    "einfach-so": {
+      "name": "Zomaar",
+      "headline": "Zomaar bloemen",
+      "intro": "Geen gelegenheid. Alleen de gedachte. Soms is dat de beste reden.",
+      "imageAlt": "Gele tulpen in een glazen vaas bij het raam",
+      "seo": {
+        "title": "Zomaar bloemen versturen – Wenen",
+        "description": "Bloemen versturen zonder aanleiding: kleine en grote boeketten laten bezorgen in Wenen – vers gebonden, op je gewenste datum."
+      }
+    },
+    "trauer": {
+      "name": "Rouw",
+      "headline": "Bloemen bij rouw",
+      "intro": "Medeleven in rustige kleuren. Kransen, rouwboeketten en boeketten, met de hand gebonden en bezorgd in Wenen.",
+      "imageAlt": "Witte rouwkrans met een wit lint op een houten ezel",
+      "seo": {
+        "title": "Rouwbloemen laten bezorgen in Wenen",
+        "description": "Rouwbloemen laten bezorgen in Wenen – kransen, rouwboeketten en ingetogen boeketten, met de hand gebonden, op je gewenste datum."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Geurkaars",
+      "description": "Decoratieve geurkaarsen in cadeauverpakking, in verschillende vormen en kleuren.",
+      "imageAlt": "Geurkaarsen in hart- en bolvorm in transparante cadeaudoosjes"
+    },
+    "x-teddy": {
+      "name": "Teddybeer",
+      "description": "Knuffelbeer met een rood hart – de liefdevolle aanvulling op het boeket.",
+      "imageAlt": "Lichtbruine knuffelbeer met een rood hart"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Waar bezorgen jullie?",
+      "answer": "We bezorgen in alle 23 districten van Wenen. Afhankelijk van het district is de bezorging gratis of kost ze 3,99 € of 7,99 €. Vul gewoon de postcode van het bezorgadres in – je ziet meteen of en wanneer we kunnen bezorgen en wat de bezorging kost.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Kan ik vandaag nog bloemen laten bezorgen?",
+      "answer": "Ja – bestel je van maandag tot en met zaterdag vóór 18:30 uur of op zondag vóór 17:45 uur, dan bezorgen we nog dezelfde dag in heel Wenen, zolang er een tijdvak vrij is. Het vroegste moment voor jouw adres zie je zodra je de postcode invult.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Is er een expreslevering?",
+      "answer": "Ja – expreslevering binnen 1–2 uur, zonder meerprijs. Bestel gewoon zoals altijd en kies bij het afrekenen het vroegste tijdvak van vandaag – dat is gemarkeerd met „Express”. Dat lukt als je van maandag tot en met zaterdag vóór 18:30 uur of op zondag vóór 17:45 uur bestelt en er voor jouw adres nog een tijdvak vrij is.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Kan ik een bepaalde bezorgdatum kiezen?",
+      "answer": "Ja. Op elke productpagina en bij het afrekenen kies je je gewenste datum in de kalender. Dagen waarop we niet bezorgen, zijn grijs.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Kan ik een gewenst tijdstip kiezen?",
+      "answer": "Ja. In Wenen kies je bij het afrekenen een tijdvak van één uur tussen 9 en 22 uur – op alle zeven dagen van de week.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Wat gebeurt er als er niemand thuis is?",
+      "answer": "De koerier overhandigt de bloemen persoonlijk. Is er niemand, dan worden ze indien mogelijk bij de buren afgegeven. Bij het afrekenen kun je een opmerking voor de bezorging achterlaten, bijvoorbeeld een deurcode. Over de status van je bestelling houden we je per e-mail op de hoogte.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Kan ik anoniem bloemen versturen?",
+      "answer": "Ja. Zonder wenskaart staat je naam nergens bij het boeket, en de factuur gaat alleen naar jou. Wenskaarten met een persoonlijke boodschap komen binnenkort.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Kan ik een wenskaart toevoegen?",
+      "answer": "Nog niet – wenskaarten komen binnenkort. Tot dan wordt het boeket zonder kaart bezorgd.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Zien de bloemen er precies zo uit als op de foto?",
+      "answer": "Elk boeket wordt individueel gebonden, en bloemen zijn natuurproducten. Kleuren, soorten en bloemgrootte kunnen per seizoen licht afwijken. Stijl en kleurenpalet blijven behouden.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Hoe blijven de bloemen vers?",
+      "answer": "Elk boeket wordt voor jouw bestelling vers gebonden en door de koerier rechtstreeks bezorgd. Zo blijft het het langst mooi: stelen schuin aansnijden, vers water geven en het boeket koel en uit de directe zon zetten.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Welke betaalmogelijkheden zijn er?",
+      "answer": "De beschikbare betaalmethoden zie je in de laatste stap van je bestelling. Je betaalt veilig via een betaaldienstverlener – je kaartgegevens komen nooit bij ons terecht.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Kan ik mijn bestelling wijzigen?",
+      "answer": "Zolang het boeket nog niet gebonden is, kunnen we de bezorgdatum of het adres meestal nog aanpassen. Stuur ons zo snel mogelijk een bericht met je bestelnummer.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Kan ik bloemen naar bedrijven of hotels sturen?",
+      "answer": "Ja. Vul bij het afrekenen de naam van het bedrijf of hotel in en – als je die weet – de afdeling of het kamernummer. Er wordt bezorgd bij de receptie of balie.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Bloemen voor bijzondere momenten.",
+      "intro": "Blumora is een online bloemenbezorger uit Wenen. Elk boeket wordt in een Weense bloemenwinkel met de hand gebonden en per koerier rechtstreeks bezorgd.",
+      "seo": {
+        "title": "Over ons – bloemenbezorging uit Wenen",
+        "description": "Blumora is een online bloemenbezorger uit Wenen: boeketten met de hand gebonden en per koerier bezorgd in alle 23 districten."
+      },
+      "sections": [
+        {
+          "heading": "Hoe we werken",
+          "paragraphs": [
+            "Blumora is een Weense online bloemenbezorger. Je kiest je boeket bij ons uit – gebonden wordt het door een bloemenwinkel in Wenen waarmee we vast samenwerken. Daar wordt elk boeket met de hand en speciaal voor jouw bestelling gemaakt.",
+            "Wenskaarten met jouw tekst komen binnenkort."
+          ],
+          "imageAlt": "Boeket van rozen, dahlia's, hortensia's en tulpen op de vensterbank van een oud Weens herenhuis, met daarachter de Stephansdom in het avondlicht"
+        },
+        {
+          "heading": "De bezorging",
+          "paragraphs": [
+            "Een koerier haalt je boeket rechtstreeks op bij de bloemenwinkel en brengt het zonder tussenstop naar het bezorgadres. We bezorgen in alle 23 districten van Wenen – in het tijdvak van jouw keuze: 's ochtends, 's middags of 's avonds tot 22 uur."
+          ],
+          "imageAlt": "Boeket Pure Liebe in een glazen vaas"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Bezorging & verzending",
+      "intro": "We bezorgen in alle 23 districten van Wenen. Bezorgkosten (gratis, 3,99 € of 7,99 €), bezorgdagen en tijdvakken hangen af van het bezorgadres – vul de postcode in en je ziet alles in één oogopslag.",
+      "seo": {
+        "title": "Bezorging & verzending – bloemen bezorgen in Wenen",
+        "description": "Bezorggebieden, bezorgkosten, bezorgdagen en tijdvakken voor bloemenbezorging in Wenen."
+      },
+      "sections": [
+        {
+          "heading": "Zo verloopt de bezorging",
+          "paragraphs": [
+            "Je boeket wordt voor jouw bestelling vers gebonden. Een koerier haalt het rechtstreeks op bij de bloemenwinkel en brengt het zonder tussenstop naar het bezorgadres – in het tijdvak dat je hebt gekozen. Is er niemand, dan wordt het boeket indien mogelijk bij de buren afgegeven.",
+            "Bij elke bestelling ontvang je een bevestiging per e-mail en een link waarmee je de status kunt volgen."
+          ]
+        },
+        {
+          "heading": "Bezorging bij bedrijven, hotels en ziekenhuizen",
+          "paragraphs": [
+            "Vul bij het afrekenen de naam van het bedrijf of hotel in, en de afdeling, de verpleegafdeling of het kamernummer. We bezorgen bij de receptie of balie. Houd er rekening mee dat sommige instellingen geen bloemen op de afdelingen toestaan."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Contact",
+      "intro": "Vragen over een bestelling, een bezorgdatum of een bijzondere wens? We staan voor je klaar.",
+      "seo": {
+        "title": "Contact – Blumora Wenen",
+        "description": "Neem contact op met Blumora bij vragen over je bestelling, de bezorging of bijzondere wensen."
+      },
+      "sections": [
+        {
+          "heading": "Zo bereik je ons",
+          "paragraphs": [
+            "[Placeholder: e-mail, telefoon en openingstijden worden uit de instellingen overgenomen en moeten daar nog worden aangevuld.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Bloemenbezorging in heel Wenen",
+      "headline": "Bloemen die meer zeggen.",
+      "subheadline": "Vers gebonden bloemen voor de mensen die belangrijk voor je zijn. Gewoon kiezen, je gewenste datum bepalen en blijdschap laten bezorgen.",
+      "primaryCta": {
+        "label": "Ontdek bloemen"
+      },
+      "secondaryCta": {
+        "label": "Kies op gelegenheid"
+      },
+      "imageAlt": "Een vrouw in een camelkleurige jas draagt een grote bos rozen, ranonkels, dahlia's en tulpen over een Weense kasseienstraat, op de achtergrond rijdt een tram",
+      "deliveryCheck": {
+        "title": "Waar mogen we bezorgen?",
+        "placeholder": "Postcode invullen",
+        "button": "Bezorging controleren"
+      }
+    },
+    "occasions": {
+      "headline": "Bloemen voor elk moment",
+      "subheadline": "Soms is er geen grote aanleiding nodig. Alleen het juiste gebaar."
+    },
+    "bestsellers": {
+      "headline": "Onze favoriete boeketten",
+      "subheadline": "Een selectie uit ons assortiment."
+    },
+    "collections": {
+      "headline": "Vind jouw perfecte boeket",
+      "subheadline": "Op kleur, stijl of budget."
+    },
+    "howItWorks": {
+      "headline": "Iemand blij maken was nog nooit zo eenvoudig.",
+      "steps": [
+        {
+          "title": "Kies je favoriete boeket",
+          "text": "Ontdek bloemen voor elke smaak en gelegenheid."
+        },
+        {
+          "title": "Maak het persoonlijk",
+          "text": "Kies het formaat en kleine extra's."
+        },
+        {
+          "title": "Kies de bezorgdatum",
+          "text": "Bepaal wanneer je verrassing moet aankomen."
+        },
+        {
+          "title": "Laat blijdschap bezorgen",
+          "text": "Wij zorgen voor de rest."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Adventstijd",
+      "headline": "Straks brandt de eerste kaars.",
+      "text": "Adventskransen met dennengroen, kaarsen en decoratie – in verschillende kleuren en formaten. Daarbij boeketten in warme herfsttinten.",
+      "cta": {
+        "label": "Adventskransen"
+      },
+      "imageAlt": "Adventskrans van dennengroen met vier rode kaarsen op een houten ladekast"
+    },
+    "editorial": {
+      "eyebrow": "Vakmanschap",
+      "headline": "Van floristen. Niet van de lopende band.",
+      "text": "Elk boeket wordt door een Weense bloemenwinkel voor jouw bestelling met de hand gebonden en per koerier rechtstreeks bezorgd – zonder omweg via een magazijn.",
+      "cta": {
+        "label": "Zo werken we"
+      },
+      "imageAlt": "Een koerier overhandigt bij de deur van een oud Weens herenhuis een kleurrijk boeket van rozen, dahlia's en ranonkels"
+    },
+    "extras": {
+      "headline": "Maak je verrassing compleet.",
+      "subheadline": "Kleine extra's die het moment groter maken."
+    },
+    "subscription": {
+      "headline": "Meer bloemen in het dagelijks leven.",
+      "text": "Verse seizoensboeketten – wekelijks, om de twee weken of maandelijks. Voor thuis, kantoor, receptie of horeca.",
+      "cta": {
+        "label": "Ontdek het bloemenabonnement"
+      }
+    },
+    "reviews": {
+      "headline": "Momenten die zijn aangekomen.",
+      "subheadline": "Wat klanten over hun bestelling zeggen."
+    },
+    "gallery": {
+      "headline": "Bloemen voor bijzondere momenten.",
+      "images": [
+        {
+          "alt": "Kleurrijk rozenboeket in rood, roze, crème en abrikoos in een witte vaas"
+        },
+        {
+          "alt": "Boeket van felblauwe rozen in een witte vaas"
+        },
+        {
+          "alt": "Boeket in krachtige roze tinten met gerbera's in een vaas bij het raam"
+        },
+        {
+          "alt": "Exotisch boeket met paradijsvogelbloemen, lelies en gerbera's"
+        },
+        {
+          "alt": "Hartvormige rode flowerbox met rozen op een ladekast"
+        },
+        {
+          "alt": "Boeket van rozen in pastel en roze in een roze manchet"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Goed om te weten"
+    },
+    "newsletter": {
+      "headline": "Wat meer bloemen in je inbox.",
+      "text": "Nieuwigheden, seizoenscollecties en bijzondere acties.",
+      "placeholder": "Je e-mailadres",
+      "button": "Aanmelden",
+      "note": "Afmelden kan altijd. Informatie over gegevensbescherming vind je in de privacyverklaring."
+    }
+  },
+  "settings": {
+    "claim": "Bloemen die meer zeggen.",
+    "seo": {
+      "defaultTitle": "Blumora – bloemen laten bezorgen in Wenen",
+      "defaultDescription": "Bloemen laten bezorgen in heel Wenen: vers gebonden boeketten in alle 23 districten. Same day tot 18:30 uur (zondag tot 17:45), express binnen 1–2 uur zonder meerprijs."
+    },
+    "announcement": {
+      "messages": [
+        "Bezorging in heel Wenen, alle 23 districten",
+        "Express binnen 1–2 uur – zonder meerprijs",
+        "Same day tot 18:30, zondag tot 17:45",
+        "Vers gebonden, per koerier bezorgd"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Vers gebonden",
+        "text": "Met de hand gebonden voor jouw bestelling"
+      },
+      {
+        "title": "Bezorging per koerier",
+        "text": "In heel Wenen – alle 23 districten"
+      },
+      {
+        "title": "Gewenste datum kiezen",
+        "text": "Jij bepaalt de dag"
+      },
+      {
+        "title": "Express binnen 1–2 uur",
+        "text": "Zonder meerprijs, same day tot 18:30 uur"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Bestelling ontvangen",
+        "description": "We hebben je bestelling ontvangen."
+      },
+      "paid": {
+        "label": "Betaling bevestigd",
+        "description": "Je betaling is bij ons binnengekomen."
+      },
+      "preparing": {
+        "label": "In voorbereiding",
+        "description": "De bloemen voor je boeket worden uitgekozen."
+      },
+      "arranging": {
+        "label": "Boeket wordt gebonden",
+        "description": "Je boeket wordt met de hand gebonden."
+      },
+      "ready": {
+        "label": "Klaar voor bezorging",
+        "description": "Het boeket is klaar en wordt door de koerier opgehaald."
+      },
+      "in_transit": {
+        "label": "Onderweg",
+        "description": "Je boeket is onderweg."
+      },
+      "delivered": {
+        "label": "Bezorgd",
+        "description": "De bloemen zijn aangekomen."
+      },
+      "undeliverable": {
+        "label": "Niet bezorgbaar",
+        "description": "We konden niet bezorgen en nemen contact met je op."
+      },
+      "cancelled": {
+        "label": "Geannuleerd",
+        "description": "De bestelling is geannuleerd."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Creditcard",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Online overboeking (eps)"
+    },
+    "headerCta": "Bloemen versturen",
+    "address": {
+      "city": "Wenen",
+      "country": "Oostenrijk"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Wenen zone 1",
+      "windows": {
+        "h09": "9–10 uur",
+        "h10": "10–11 uur",
+        "h11": "11–12 uur",
+        "h12": "12–13 uur",
+        "h13": "13–14 uur",
+        "h14": "14–15 uur",
+        "h15": "15–16 uur",
+        "h16": "16–17 uur",
+        "h17": "17–18 uur",
+        "h18": "18–19 uur",
+        "h19": "19–20 uur",
+        "h20": "20–21 uur",
+        "h21": "21–22 uur"
+      }
+    },
+    "wien-mitte": {
+      "name": "Wenen zone 2",
+      "windows": {
+        "h09": "9–10 uur",
+        "h10": "10–11 uur",
+        "h11": "11–12 uur",
+        "h12": "12–13 uur",
+        "h13": "13–14 uur",
+        "h14": "14–15 uur",
+        "h15": "15–16 uur",
+        "h16": "16–17 uur",
+        "h17": "17–18 uur",
+        "h18": "18–19 uur",
+        "h19": "19–20 uur",
+        "h20": "20–21 uur",
+        "h21": "21–22 uur"
+      }
+    },
+    "wien-fern": {
+      "name": "Wenen zone 3",
+      "windows": {
+        "h09": "9–10 uur",
+        "h10": "10–11 uur",
+        "h11": "11–12 uur",
+        "h12": "12–13 uur",
+        "h13": "13–14 uur",
+        "h14": "14–15 uur",
+        "h15": "15–16 uur",
+        "h16": "16–17 uur",
+        "h17": "17–18 uur",
+        "h18": "18–19 uur",
+        "h19": "19–20 uur",
+        "h20": "20–21 uur",
+        "h21": "21–22 uur"
+      }
+    },
+    "noe-umland": {
+      "name": "Omgeving Wenen (Neder-Oostenrijk)",
+      "note": "Bezorging in de omgeving van Wenen op dinsdag, donderdag en zaterdag.",
+      "windows": {
+        "day": "9–18 uur"
+      }
+    }
+  }
+}

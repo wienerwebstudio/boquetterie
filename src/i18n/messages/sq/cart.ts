@@ -1,6 +1,101 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** sq – cart (to be translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+/** sq – cart (translated from src/i18n/messages/de/cart.ts). */
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Shporta",
+  metaDescription: "Buqetat dhe shtesat që keni zgjedhur – gati për dërgesë në Vjenë.",
+  title: "Shporta",
+  eyebrow: "Pothuajse gati",
+  loading: "Shporta po ngarkohet",
+  itemsHeading: "Artikujt në shportë",
+  items: { one: "{count} artikull", other: "{count} artikuj" },
+  liveCount: "Shporta: {count}",
+  continueShopping: "Vazhdoni blerjet",
+  summaryTitle: "Përmbledhja",
+  checkout: "Vazhdo te pagesa e sigurt",
+  trust: {
+    securePayment: "Pagesë e sigurt",
+    ssl: "E enkriptuar me SSL",
+    privacy: "Privatësia",
+  },
+  empty: {
+    eyebrow: "Shporta juaj",
+    title: "Ende krejt bosh.",
+    textWithCards: "Buqeta të sapolidhura, data e dëshiruar dhe një kartolinë personale – gjithçka ju pret vetëm juve.",
+    text: "Buqeta të sapolidhura dhe data e dëshiruar – gjithçka ju pret vetëm juve.",
+    cta: "Zbuloni lulet",
+  },
+  drawer: {
+    total: "Gjithsej",
+    inclDelivery: "përfshirë dërgesën",
+    plusDelivery: "plus dërgesa",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Çmimi përfundimtar",
+      note: "Sipas § 6 Abs. 1 Z 27 UStG nuk llogaritet TVSH (rregulli për bizneset e vogla).",
+    },
+    standard: {
+      short: "me TVSH",
+      note: "Të gjitha çmimet përfshijnë TVSH-në.",
+    },
+  },
+  line: {
+    color: "Ngjyra {color}",
+    wish: "Dëshira: {note}",
+    delivery: "Dërgesa",
+    chooseDateInCheckout: "Zgjidhni datën e dërgesës gjatë përfundimit të porosisë",
+    expired: "Data e dërgesës ka skaduar – ju lutemi zgjidhni përsëri",
+    chooseDate: "Zgjidhni ditën e dërgesës",
+    chooseWindow: "Zgjidhni intervalin kohor",
+    anonymous: "Pa dërgues",
+    extras: "Shtesa",
+    extraLess: "{name}: një më pak",
+    extraMore: "{name}: një më shumë",
+    removeExtra: "Hiqni {name}",
+    quantity: "Sasia e {name}",
+    decrease: "Zvogëlo sasinë",
+    increase: "Rrit sasinë",
+    remove: "Hiq",
+  },
+  summary: {
+    bouquets: "Buqeta",
+    extras: "Shtesa",
+    delivery: "Dërgesa",
+    free: "Falas",
+    deliveryInCheckout: "llogaritet gjatë përfundimit të porosisë",
+    discount: "Zbritje",
+    total: "Gjithsej",
+    missingForFreeDelivery: "Edhe {amount} deri te dërgesa falas.",
+    minOrder: "Për këtë adresë vlen një vlerë minimale porosie prej {amount}.",
+    removeCoupon: "Hiqni kuponin",
+    couponCode: "Kodi i kuponit",
+    redeem: "Përdor",
+    couponQuestion: "Keni kod kuponi?",
+    couponCheckFailed: "Kuponi nuk mund të kontrollohej për momentin. Ju lutemi provoni përsëri pas pak.",
+    couponMissing: "Ju lutemi shkruani një kod kuponi.",
+    couponUnknown: "Ky kod nuk na është i njohur.",
+  },
+  surprise: {
+    title: "Surpriza juaj",
+    bouquet: "Buqeta",
+    card: "+ kartolinë",
+    extras: "+ shtesa",
+    cardsSoon: "Kartolinat e urimit vijnë së shpejti",
+    cardIncluded: "Kartolina e urimit e përfshirë – mesazhin mund ta shtoni në çdo kohë",
+    noExtras: "Ende pa shtesa",
+  },
+  upsell: {
+    title: "Diçka tjetër bashkë me të?",
+    subtitle: "Vjen bashkë me buqetën",
+    add: "Shto",
+    addAria: "Shtoni {name} për {price}",
+  },
+  cardPreview: {
+    label: "Parapamja e kartolinës",
+    placeholder: "Mesazhi juaj shfaqet këtu.",
+    anonymous: "Pa dërgues",
+  },
+};
 
 export default cart;

@@ -1,6 +1,101 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** nl – cart (to be translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+/** nl – cart (translated from src/i18n/messages/de/cart.ts). */
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Winkelmandje",
+  metaDescription: "Je gekozen boeketten en extra's – klaar voor bezorging in Wenen.",
+  title: "Winkelmandje",
+  eyebrow: "Bijna klaar",
+  loading: "Winkelmandje wordt geladen",
+  itemsHeading: "Artikelen in het winkelmandje",
+  items: { one: "{count} artikel", other: "{count} artikelen" },
+  liveCount: "Winkelmandje: {count}",
+  continueShopping: "Verder winkelen",
+  summaryTitle: "Overzicht",
+  checkout: "Veilig afrekenen",
+  trust: {
+    securePayment: "Veilig betalen",
+    ssl: "SSL-versleuteld",
+    privacy: "Privacy",
+  },
+  empty: {
+    eyebrow: "Je winkelmandje",
+    title: "Nog helemaal leeg.",
+    textWithCards: "Vers gebonden boeketten, een datum naar keuze en een persoonlijk kaartje – alles wacht alleen nog op jou.",
+    text: "Vers gebonden boeketten en een datum naar keuze – alles wacht alleen nog op jou.",
+    cta: "Bloemen ontdekken",
+  },
+  drawer: {
+    total: "Totaal",
+    inclDelivery: "incl. bezorging",
+    plusDelivery: "excl. bezorging",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Eindprijs",
+      note: "Volgens § 6 Abs. 1 Z 27 UStG wordt geen btw berekend (kleineondernemersregeling).",
+    },
+    standard: {
+      short: "incl. btw",
+      note: "Alle prijzen incl. btw.",
+    },
+  },
+  line: {
+    color: "Kleur {color}",
+    wish: "Wens: {note}",
+    delivery: "Bezorging",
+    chooseDateInCheckout: "Bezorgdatum kiezen bij het afrekenen",
+    expired: "Bezorgdatum verlopen – kies een nieuwe",
+    chooseDate: "Bezorgdag kiezen",
+    chooseWindow: "Tijdvak kiezen",
+    anonymous: "Zonder afzender",
+    extras: "Extra's",
+    extraLess: "{name}: één minder",
+    extraMore: "{name}: één meer",
+    removeExtra: "{name} verwijderen",
+    quantity: "Aantal {name}",
+    decrease: "Aantal verlagen",
+    increase: "Aantal verhogen",
+    remove: "Verwijderen",
+  },
+  summary: {
+    bouquets: "Boeketten",
+    extras: "Extra's",
+    delivery: "Bezorging",
+    free: "Gratis",
+    deliveryInCheckout: "wordt bij het afrekenen berekend",
+    discount: "Korting",
+    total: "Totaal",
+    missingForFreeDelivery: "Nog {amount} tot gratis bezorging.",
+    minOrder: "Voor dit adres geldt een minimaal bestelbedrag van {amount}.",
+    removeCoupon: "Kortingscode verwijderen",
+    couponCode: "Kortingscode",
+    redeem: "Inwisselen",
+    couponQuestion: "Kortingscode?",
+    couponCheckFailed: "De kortingscode kon op dit moment niet worden gecontroleerd. Probeer het zo nog een keer.",
+    couponMissing: "Vul een kortingscode in.",
+    couponUnknown: "Deze code kennen we niet.",
+  },
+  surprise: {
+    title: "Je verrassing",
+    bouquet: "Boeket",
+    card: "+ kaartje",
+    extras: "+ extra's",
+    cardsSoon: "Kaartjes volgen binnenkort",
+    cardIncluded: "Kaartje inbegrepen – bericht altijd aan te vullen",
+    noExtras: "Nog geen extra's",
+  },
+  upsell: {
+    title: "Nog iets erbij?",
+    subtitle: "Komt mee met het boeket",
+    add: "Toevoegen",
+    addAria: "{name} voor {price} toevoegen",
+  },
+  cardPreview: {
+    label: "Voorbeeld van het kaartje",
+    placeholder: "Je bericht verschijnt hier.",
+    anonymous: "Zonder afzender",
+  },
+};
 
 export default cart;

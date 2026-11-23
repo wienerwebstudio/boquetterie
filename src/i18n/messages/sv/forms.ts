@@ -1,6 +1,115 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** sv – forms (to be translated from src/i18n/messages/de/forms.ts). */
-const forms: NonNullable<PartialMessages["forms"]> = {};
+/** sv – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Namn",
+  email: "E-post",
+  emailAddress: "E-postadress",
+  message: "Meddelande",
+  orderNumber: "Ordernummer",
+  honeypot: "Webbplats",
+  charCount: "{count}/{max} tecken",
+  genericError: "Det fungerade tyvärr inte. Försök igen senare.",
+  invalidEmailEnter: "Ange en giltig e-postadress.",
+
+  mailFallback: {
+    title: "Formuläret går inte att nå just nu.",
+    text: "Ditt meddelande har inte gått förlorat: skicka det direkt till oss via e-post till {email}. Texten är redan infogad.",
+    open: "Öppna e-post",
+  },
+
+  newsletter: {
+    honeypot: "Webbplats (lämna tomt)",
+    successTitle: "Nästan klart – bekräfta din anmälan.",
+    successText: "Vi har skickat ett e-postmeddelande med en bekräftelselänk till dig. Först därefter får du vårt nyhetsbrev.",
+  },
+
+  contact: {
+    formLabel: "Kontaktformulär",
+    subject: "Ämne",
+    subjects: {
+      order: "Beställning",
+      delivery: "Leverans",
+      business: "Företagskunder",
+      other: "Övrigt",
+    },
+    orderNumberHint: "Finns i din orderbekräftelse.",
+    errors: {
+      name: "Ange ditt namn.",
+      email: "Ange en giltig e-postadress.",
+      subject: "Välj ett ämne.",
+      orderIdTooLong: "Ordernumret är för långt.",
+      messageTooShort: "Beskriv ditt ärende (minst 10 tecken).",
+      messageTooLong: "Meddelandet får vara högst 2000 tecken långt.",
+    },
+    thanksTitle: "Tack för ditt meddelande.",
+    thanksText: "Vi har tagit emot din förfrågan och hör av oss så snart som möjligt via e-post till {email}.",
+    sendAnother: "Skicka ett till meddelande",
+    failed: "Meddelandet kunde inte skickas. Försök igen eller skriv direkt till oss via e-post.",
+    consent: "Genom att skicka godkänner du att vi använder dina uppgifter för att hantera förfrågan. Detaljer finns i integritetspolicyn.",
+    submit: "Skicka meddelande",
+    mailSubject: "Kontaktförfrågan: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Frånträd avtalet",
+    errors: {
+      name: "Ange ditt namn.",
+      email: "Ange en giltig e-postadress.",
+      orderId: "Ange ordernumret (t.ex. BQ-7K2M9Q).",
+    },
+    emailHint: "Hit skickar vi mottagningsbekräftelsen.",
+    orderNumberHint: "Står i din orderbekräftelse.",
+    items: "Vilka varor vill du ångra köpet av?",
+    itemsPlaceholder: "t.ex. nallen – lämna tomt för alla varor i beställningen som omfattas av ångerrätten",
+    declaration: "Härmed frånträder jag det avtal jag ingått om köp av ovan nämnda varor.",
+    receivedTitle: "Ditt meddelande om att ångra köpet har kommit fram.",
+    receivedText: "Mottaget den {receivedAt} för beställning {orderId}.",
+    receivedTextWithCase: "Mottaget den {receivedAt} för beställning {orderId} (ärende {id}).",
+    confirmationSent: "Vi har skickat mottagningsbekräftelsen till {email}.",
+    confirmationNotSent: "Bekräftelsemejlet kunde inte skickas just nu – vi bekräftar mottagandet personligen så snart som möjligt. Spara den här sidan tills dess (t.ex. som skärmbild).",
+    failed: "Meddelandet om att ångra köpet kunde inte skickas just nu. Försök igen eller skicka det via e-post till {email}.",
+    submit: "Bekräfta att du ångrar köpet",
+    mailSubject: "Ångrat köp – beställning {orderId}",
+    mailDeclaration: "Härmed frånträder jag det avtal jag ingått om köp av följande varor: {items}",
+    mailAllItems: "alla varor i beställningen som omfattas av ångerrätten",
+  },
+
+  business: {
+    formLabel: "Förfrågan för företagskunder",
+    company: "Företag",
+    contact: "Kontaktperson",
+    phone: "Telefon",
+    location: "Plats / postnummer",
+    locationPlaceholder: "t.ex. 1070 Wien",
+    need: "Behov",
+    pleaseChoose: "Välj",
+    needs: {
+      subscription: "Regelbunden leverans (prenumeration)",
+      oneOff: "Engångsleverans",
+      event: "Evenemang",
+      gifts: "Presenter till medarbetare eller kunder",
+    },
+    messagePlaceholder: "Vad det gäller, till när och i vilken omfattning – och vad som annars är viktigt för dig.",
+    consent: "Jag godkänner att mina uppgifter sparas och används för att hantera förfrågan. Detaljer finns i {privacyLink}.",
+    privacyLink: "integritetspolicyn",
+    errors: {
+      company: "Ange namnet på ditt företag.",
+      contact: "Ange en kontaktperson.",
+      email: "Ange en giltig e-postadress.",
+      phone: "Kontrollera telefonnumret.",
+      location: "Ange plats eller postnummer.",
+      need: "Välj vad du behöver.",
+      message: "Beskriv kort ditt behov (minst 10 tecken).",
+      consent: "Bekräfta att vi får använda dina uppgifter för att hantera förfrågan.",
+    },
+    thanksTitle: "Tack för din förfrågan.",
+    thanksText: "Vi har tagit emot allt och hör av oss till {contact} via e-post till {email}.",
+    sendAnother: "Skicka en till förfrågan",
+    failed: "Förfrågan kunde inte skickas. Försök igen eller skriv direkt till oss via e-post.",
+    submit: "Skicka förfrågan",
+    mailSubject: "Företagsförfrågan: {company}",
+  },
+};
 
 export default forms;

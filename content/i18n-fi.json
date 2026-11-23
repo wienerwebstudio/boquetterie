@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Vaaleanpunaisia ruusuja, pinkkejä gerberoita ja valkoisia liljoja",
+      "shortDescription": "Vaalea, ilmava kimppu vaaleanpunaisen ja valkoisen sävyissä – tuo hyvän mielen mihin tahansa huoneeseen.",
+      "description": "Rosé Dream yhdistää vaaleanpunaiset ruusut ja pinkit gerberat valkoisiin liljoihin, hentoon harsoon ja raikkaaseen vihreään. Väljästi sidottu ja vaalea kimppu sopii syntymäpäivälle, kiitokseksi tai ihan muuten vain.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat",
+        "Liljat",
+        "Harso"
+      ],
+      "care": [
+        "Vaihda maljakkoon raikas vesi päivittäin.",
+        "Leikkaa varsia tarvittaessa lisää.",
+        "Poista lakastuneet kukat säännöllisesti."
+      ],
+      "seo": {
+        "title": "Rosé Dream – kimppu vaaleanpunaisessa ja valkoisessa",
+        "description": "Rosé Dream: vaaleanpunaisia ruusuja, pinkkejä gerberoita ja valkoisia liljoja väljästi sidottuna. Vaalea kimppu syntymäpäivälle ja kiitokseksi – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Kimppu vaaleanpunaisista ruusuista, pinkeistä gerberoista ja valkoisista liljoista lasimaljakossa puisen lipaston päällä"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Keltainen kimppu",
+      "tagline": "Keltaisia gerberoita, ruusuja ja harsoa",
+      "shortDescription": "Aurinkoinen kimppu keltaisen ja valkoisen sävyissä, sidottu keltaisella rusetilla.",
+      "description": "Hehkuvan keltaiset gerberat kohtaavat valkoiset ja keltaiset ruusut, harson ja raikkaan vihreän. Vaaleaan kääreeseen ja keltaiseen rusettiin puettu kimppu syntymäpäivälle, onnitteluksi, kiitokseksi tai paranemisen toivotukseksi.",
+      "flowers": [
+        "Gerberat",
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Älä sijoita paahtavaan aurinkoon."
+      ],
+      "seo": {
+        "title": "Keltainen kimppu – gerberat ja ruusut",
+        "description": "Keltaisia gerberoita, valkoisia ja keltaisia ruusuja, harsoa ja keltainen rusetti. Valoisa tervehdys syntymäpäivälle tai paranemiseen – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Kimppu keltaisista gerberoista sekä valkoisista ja keltaisista ruusuista vaaleassa kääreessä keltaisella rusetilla"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Valkoinen kimppu",
+      "tagline": "Vaaleita ruusuja, gerberoita ja liljoja",
+      "shortDescription": "Vaalea, rauhallinen kimppu valkoisen ja kerman sävyissä hennoin vaaleanpunaisin vivahtein.",
+      "description": "Valkoinen kimppu yhdistää vaaleat ruusut, gerberat ja liljat harsoon yksinkertaiseksi, ajattomaksi kimpuksi. Hennot vaaleanpunaiset ja aprikoosinsävyiset yksityiskohdat keventävät kokonaisuutta. Sopii hääpäivälle tai vuosipäivälle, kiitokseksi tai tyylikkääksi tervehdykseksi.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat",
+        "Liljat",
+        "Harso"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Poista liljojen siitepöly tarvittaessa varovasti."
+      ],
+      "seo": {
+        "title": "Valkoinen kimppu – valkoisen ja kerman sävyt",
+        "description": "Vaaleita ruusuja, gerberoita ja liljoja harson kera: yksinkertainen kimppu vuosipäivälle, hääpäivälle tai kiitokseksi – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Vaalea kimppu kermanvärisistä ruusuista, vaaleanpunaisista gerberoista, liljoista ja harsosta valkoisessa kääreessä"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Sinisiä ja valkoisia ruusuja sinisessä kääreessä",
+      "shortDescription": "Sinisiä ja valkoisia ruusuja vaaleansinisessä kääreessä – kimppu, joka huomataan.",
+      "description": "Blue Bouquet yhdistää siniset ja valkoiset ruusut harsoon, valkoiseen liljaan ja raikkaaseen vihreään. Vaaleansininen kääre toistaa kukkien värin. Erikoinen lahja syntymäpäivälle, vuosipäivälle tai ihmiselle, joka pitää erityisestä.",
+      "flowers": [
+        "Ruusut",
+        "Liljat",
+        "Harso"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – siniset ja valkoiset ruusut",
+        "description": "Sinisiä ja valkoisia ruusuja harson kera vaaleansinisessä kääreessä. Erikoinen ruusukimppu syntymäpäivälle tai vuosipäivälle – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Kimppu sinisistä ja valkoisista ruusuista harson kera vaaleansinisessä kääreessä puisen lipaston päällä"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Sateenkaariruusuja monissa väreissä",
+      "shortDescription": "Kimppu sateenkaariruusuista – jokainen kukka hehkuu monessa värissä.",
+      "description": "Farbensinfonie koostuu sateenkaariruusuista: jokaisessa kukassa näkyy useita värejä rinnakkain, punaisesta ja oranssista keltaiseen ja vihreään, siniseen ja liilaan. Tiiviisti sidottuna kimppu näyttää värikkäältä pallolta. Iloinen yllätys syntymäpäivälle tai juhliin.",
+      "flowers": [
+        "Sateenkaariruusut"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – sateenkaariruusut",
+        "description": "Sateenkaariruusuja, joiden jokainen kukka hehkuu monessa värissä. Iloinen ruusukimppu syntymäpäivälle – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Farbensinfonie, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Farbensinfonie, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Farbensinfonie, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Tiivis kimppu sateenkaariruusuista kermanvärisessä maljakossa",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Sateenkaariruusuja lähikuvassa, jokainen kukka monivärinen"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelitsioita, liljoja ja gerberoita oranssissa ja keltaisessa",
+      "shortDescription": "Eksoottinen kimppu oranssin ja keltaisen sävyissä, katseenvangitsijana paratiisilintukukat.",
+      "description": "Sonnenzauber yhdistää näyttävät paratiisilintukukat valkoisiin liljoihin, keltaisiin gerberoihin ja raikkaaseen vihreään. Lämpimät oranssin ja keltaisen sävyt antavat kimpulle eloisan, kesäisen tunnelman.",
+      "flowers": [
+        "Paratiisilintukukat (strelitsiat)",
+        "Liljat",
+        "Gerberat",
+        "Harso"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Pidä maljakko puhtaana ja vaihda vesi säännöllisesti.",
+        "Älä sijoita paahtavaan aurinkoon."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelitsiat ja gerberat",
+        "description": "Paratiisilintukukkia, liljoja ja keltaisia gerberoita lämpimässä oranssissa ja keltaisessa. Eksoottinen katseenvangitsija – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Eksoottinen kimppu strelitsioista, valkoisista liljoista ja keltaisista gerberoista läpinäkyvässä kalvossa",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Strelitsiat, lilja ja keltaiset gerberat ylhäältä kuvattuna"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Kukkia pinkissä ja vaaleanpunaisessa, gerberoita ja liljoja",
+      "shortDescription": "Pyöreä, leikkisä kimppu pinkin ja vaaleanpunaisen sävyissä keltaisin yksityiskohdin.",
+      "description": "Pink Bouquet kokoaa pinkit ja vaaleanpunaiset kukat, muun muassa liljat ja gerberat, pyöreäksi, leikkisäksi kimpuksi. Keltaiset gerberat tuovat raikkaita yksityiskohtia, ja vaaleanpunainen kääre viimeistelee kokonaisuuden. Kaunis syntymäpäivälle, vuosipäivälle, äitienpäivälle tai ihan muuten vain.",
+      "flowers": [
+        "Liljat",
+        "Gerberat"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Poista lakastuneet kukat säännöllisesti."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – kimppu pinkissä ja roosassa",
+        "description": "Pyöreä kimppu pinkin ja vaaleanpunaisen sävyissä, liljoja ja gerberoita. Syntymäpäivälle, äitienpäivälle tai muuten vain – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Pyöreä kimppu pinkin ja vaaleanpunaisen sävyissä keltaisin gerberoin vaaleanpunaisessa kääreessä",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Kimppu vaaleanpunaisin liljoin, keltaisin gerberoin ja pinkein kukin vaaleanpunaisessa kääreessä rusetilla"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Ruusuja oranssissa ja aprikoosissa",
+      "shortDescription": "Ruusuja oranssin ja aprikoosin sävyissä – lämmin kimppu kuin auringonlasku.",
+      "description": "Orange Bouquet koostuu oranssin ja aprikoosin sävyisistä ruusuista, joita täydentää hento vihreä vaaleassa kääreessä. Lämmin ja iloinen kimppu sopii syntymäpäivälle, kiitokseksi tai piristämään jonkun päivää.",
+      "flowers": [
+        "Ruusut"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – oranssit ruusut",
+        "description": "Ruusuja oranssin ja aprikoosin sävyissä vaaleassa kääreessä. Lämmin ruusukimppu syntymäpäivälle tai kiitokseksi – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Orange Bouquet, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Orange Bouquet, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Orange Bouquet, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Kimppu oransseista ja aprikoosinvärisistä ruusuista vaaleassa kääreessä puisen lipaston päällä"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Syvänpunaisia ruusuja tummassa kääreessä",
+      "shortDescription": "Runsas kimppu syvänpunaisista ruusuista punaisella satiinirusetilla.",
+      "description": "Red Rose Bouquet on tiiviisti sidottu kimppu syvänpunaisista ruusuista tummassa kääreessä, koossa punainen satiinirusetti. Klassinen rakkaudentunnustus ystävänpäivänä, vuosipäivänä tai kosiessa.",
+      "flowers": [
+        "Ruusut"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – punaiset ruusut",
+        "description": "Syvänpunaisia ruusuja tummassa kääreessä punaisella satiinirusetilla. Klassinen ruusukimppu ystävänpäivään ja vuosipäivään – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Red Rose Bouquet, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Red Rose Bouquet, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Red Rose Bouquet, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Kimppu syvänpunaisista ruusuista tummanharmaassa kääreessä punaisella satiinirusetilla",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Makaava punaisten ruusujen kimppu mustavalkoisessa kääreessä kynttilöiden vieressä"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Ruusuja ja gerberoita vaaleanpunaisessa, pastellissa ja liilassa",
+      "shortDescription": "Pehmeä, romanttinen kimppu vaaleanpunaisen ja pastellin sävyissä.",
+      "description": "Rosa Bouquet yhdistää vaaleanpunaiset ja pastellinsävyiset ruusut gerberoihin ja liiloihin kukkiin. Valkoiseen kääreeseen ja vaaleanpunaiseen rusettiin puettuna se on kevyt ja lämmin. Kaunis syntymäpäivälle, äitienpäivälle, vauvan syntymän kunniaksi tai tervehdykseksi.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – ruusut roosassa ja pastellissa",
+        "description": "Ruusuja ja gerberoita vaaleanpunaisessa, pastellissa ja liilassa valkoisessa kääreessä. Syntymäpäivälle, äitienpäivälle tai vauvalle – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Kimppu vaaleanpunaisista ruusuista, gerberoista ja liiloista kukista valkoisessa kääreessä vaaleanpunaisella rusetilla"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Mustia ruusuja tummassa kääreessä",
+      "shortDescription": "Mustia ruusuja tummassa kääreessä – salaperäinen ja poikkeuksellinen.",
+      "description": "Blackroses on kimppu mustista ruusuista tummassa, läpikuultavassa kääreessä. Erikoinen kannanotto ihmiselle, joka arvostaa erityistä, esimerkiksi syntymäpäivänä tai vuosipäivänä.",
+      "flowers": [
+        "Ruusut"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Blackroses – mustat ruusut",
+        "description": "Mustia ruusuja tummassa kääreessä: erikoinen ruusukimppu ihmisille, jotka pitävät erityisestä – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Blackroses, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Blackroses, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Blackroses, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Kimppu mustista ruusuista mustassa kääreessä lasimaljakossa",
+        "/images/products/sortiment/blackroses-2.jpg": "Mustia ruusuja ilman käärettä lasimaljakossa ikkunan edessä"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Sinisiä ruusuja ja harsoa",
+      "shortDescription": "Hehkuvan sinisiä ruusuja ja harsoa – harvinainen ja todellinen katseenvangitsija.",
+      "description": "Blaue Liebe on kimppu hehkuvan sinisistä ruusuista, joita keventää hento harso, sinisessä kääreessä. Erityinen lahja syntymäpäivälle, vuosipäivälle tai syvän yhteyden merkiksi.",
+      "flowers": [
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – siniset ruusut",
+        "description": "Hehkuvan sinisiä ruusuja ja harsoa sinisessä kääreessä. Harvinainen ruusukimppu erityisille ihmisille – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Blaue Liebe, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Blaue Liebe, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Blaue Liebe, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Kimppu sinisistä ruusuista ja harsosta sinisessä kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Sinisiä ruusuja ja harsoa sinisessä kääreessä edestä kuvattuna",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Makaava kimppu sinisistä ruusuista sinisessä kääreessä puisen lipaston päällä"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Vaaleanpunaisia ruusuja ja harsoa",
+      "shortDescription": "Vaaleanpunaisia ruusuja hennossa kääreessä – lämmin ja tyylikäs.",
+      "description": "Rosalie on kimppu vaaleanpunaisista ruusuista, joita keventää harso, hennon roosassa kääreessä. Naisellinen ja rauhallinen kimppu sopii äitienpäivälle, syntymäpäivälle, vuosipäivälle tai kiitokseksi.",
+      "flowers": [
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Rosalie – vaaleanpunaiset ruusut ja harso",
+        "description": "Vaaleanpunaisia ruusuja ja harsoa hennon roosassa kääreessä. Äitienpäivälle, syntymäpäivälle tai kiitokseksi – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Rosalie, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Rosalie, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Rosalie, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Kimppu vaaleanpunaisista ruusuista ja harsosta hennon roosassa kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie vaaleanpunaisessa kääreessä yksinkertaisessa valkoisessa maljakossa",
+        "/images/products/sortiment/rosalie-3.jpg": "Vaaleanpunaisia ruusuja ja harsoa uurteisessa valkoisessa maljakossa",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie makaamassa, ylhäältä kuvattuna vaaleanpunaiset ruusut ja harso"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Puna-valkoinen mix",
+      "tagline": "Punaisia ja valkoisia ruusuja",
+      "shortDescription": "Punaisia ja valkoisia ruusuja juhlavassa kimpussa.",
+      "description": "Puna-valkoinen mix yhdistää punaiset ja valkoiset ruusut valkoisessa kääreessä, koosta riippuen harsolla kevennettynä. Intohimo kohtaa hellyyden: kimppu ystävänpäivään, vuosipäivään, hääpäivään tai tyylikkääksi lahjaksi.",
+      "flowers": [
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Puna-valkoinen mix – punaiset ja valkoiset ruusut",
+        "description": "Punaisia ja valkoisia ruusuja juhlavassa kääreessä. Ystävänpäivään, vuosipäivään tai hääpäivään, kuutena kokona – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Puna-valkoinen mix, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Puna-valkoinen mix, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Puna-valkoinen mix, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Kimppu punaisista ja valkoisista ruusuista ja harsosta valkoisessa kääreessä, vieressä ruusun terälehtiä",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Punaisia ja valkoisia ruusuja tiiviisti sidottuna valkoisessa kääreessä",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Puna-valkoinen ruusukimppu valkoisessa kääreessä puisen lipaston päällä",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Makaava kimppu punaisista ja valkoisista ruusuista ylhäältä kuvattuna"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Tulppaanikimppu",
+      "tagline": "Tulppaaneja yhdessä värissä tai sekaisin",
+      "shortDescription": "Yksinkertainen kimppu tulppaaneista, yksivärisenä tai värikkäänä sekoituksena.",
+      "description": "Tulppaanit tuovat kirkkailla väreillään ja hoikalla muodollaan kevättunnelman kotiin. Kimppu sidotaan kokonaan tulppaaneista, valintasi mukaan yhdessä värissä tai värikkäänä sekoituksena. Saatavana punaisena, keltaisena, liilana, vaaleanpunaisena, oranssina, valkoisena ja sekoituksena.",
+      "flowers": [
+        "Tulppaanit"
+      ],
+      "care": [
+        "Leikkaa varret suoraan ja laita ne kylmään veteen.",
+        "Vähäinen vesimäärä riittää, kunhan lisäät vettä säännöllisesti.",
+        "Tulppaanit kasvavat maljakossa edelleen – lyhennä varsia tarvittaessa."
+      ],
+      "seo": {
+        "title": "Tulppaanikimppu – tulppaaneja monessa värissä",
+        "description": "Kimppu tulppaaneista punaisena, keltaisena, liilana, vaaleanpunaisena, oranssina, valkoisena tai sekaisin. Kevättunnelmaa kotiin – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "colorOptions": {
+        "rot": "Punainen",
+        "gelb": "Keltainen",
+        "lila": "Liila",
+        "rosa": "Vaaleanpunainen",
+        "orange": "Oranssi",
+        "weiss": "Valkoinen",
+        "mix": "Värikäs sekoitus"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Kimppu keltaisista tulppaaneista lasimaljakossa",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Liiloja tulppaaneja voimapaperissa lasimaljakossa",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Punaisia tulppaaneja beigessä maljakossa",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Oransseja tulppaaneja lasimaljakossa",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Vaaleanpunaisia tulppaaneja lasimaljakossa pellavaliinan päällä",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Värikäs tulppaanisekoitus punaisena, keltaisena, vaaleanpunaisena, oranssina ja liilana beigessä maljakossa",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Valkoisia tulppaaneja valkoisessa maljakossa"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Punaisia ruusuja ja harsoa",
+      "shortDescription": "Ilmeikäs ruusukimppu syvässä punaisessa suurille tunteille.",
+      "description": "Red Passion kokoaa punaiset ruusut tiiviiksi, pyöreäksi kimpuksi, jota kehystävät harso ja tumma kääre. Saatavana kuutena kokona – romanttisiin eleisiin ja hetkiin, joiden halutaan jäävän mieleen.",
+      "flowers": [
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Leikkaa varsiin tuore leikkauspinta.",
+        "Vaihda raikas vesi päivittäin.",
+        "Suojaa suoralta auringonvalolta."
+      ],
+      "seo": {
+        "title": "Red Passion – punainen ruusukimppu",
+        "description": "Punaisia ruusuja ja harsoa tummassa kääreessä, kuutena kokona. Ruusukimppu suurille tunteille – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Red Passion, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Red Passion, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Red Passion, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Makaava kimppu tummanpunaisista ruusuista ja harsosta musta-kultaisessa kääreessä",
+        "/images/products/sortiment/red-passion-2.jpg": "Suuri kimppu punaisista ruusuista ja harsosta tummassa kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/red-passion-3.jpg": "Hyvin suuri, pyöreä kimppu punaisista ruusuista harsoreunuksella tummassa kääreessä"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Tiiviisti sidottuja punaisia ruusuja",
+      "shortDescription": "Tiiviisti sidottuja punaisia ruusuja tummassa kääreessä – ajaton ja täynnä tunnetta.",
+      "description": "Klassiker der Liebe koostuu punaisista ruusuista, jotka on sidottu tiiviisti pyöreään muotoon ja puettu tummaan kääreeseen mustalla rusetilla. Ruusukimppu ystävänpäivään, vuosipäivään, kosintaan tai mihin tahansa rakkaudentunnustukseen.",
+      "flowers": [
+        "Ruusut"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – punaiset ruusut",
+        "description": "Tiiviisti sidottuja punaisia ruusuja tummassa kääreessä. Klassinen ruusukimppu ystävänpäivään, vuosipäivään tai kosintaan – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Klassiker der Liebe, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Klassiker der Liebe, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Klassiker der Liebe, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Pyöreä kimppu tiiviisti sidotuista punaisista ruusuista mustassa kääreessä rusetilla",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Punaisia ruusuja pallon muodossa tummassa kääreessä edestä kuvattuna"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Punaisia ruusuja ja harsoa",
+      "shortDescription": "Runsas ruusukimppu kuutena kokona.",
+      "description": "Königin der Herzen yhdistää punaiset ruusut hentoon harsoon tummassa, läpikuultavassa kääreessä. Saatavana kuutena kokona – pienestä eleestä suureen esiintymiseen.",
+      "flowers": [
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Sijoita viileään paikkaan.",
+        "Poista lakastuneet kukat ajoissa.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – runsas ruusukimppu",
+        "description": "Punaisia ruusuja ja harsoa, kuutena kokona. Runsas ruusukimppu suuriin hetkiin – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Königin der Herzen, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Königin der Herzen, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Königin der Herzen, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Kimppu punaisista ruusuista ja harsosta tummassa kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Suuri kimppu punaisista ruusuista ja harsosta mustassa kääreessä",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Punaisia ruusuja ja harsoa tummassa kääreessä mustassa ruukussa",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Ylhäältä kuvattuna punaisia ruusuja ja harsoa tähdenmuotoisessa tummassa kääreessä"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerberoita, ruusuja ja liljoja lämpimissä sävyissä",
+      "shortDescription": "Lämmin kimppu oranssin, vaaleanpunaisen ja keltaisen sävyissä.",
+      "description": "Herbstzauber yhdistää gerberat, ruusut ja liljat oranssin, vaaleanpunaisen ja keltaisen sävyissä raikkaaseen vihreään. Väljästi sidottu kimppu tuo lämpimiä värejä kotiin juuri silloin, kun päivät lyhenevät.",
+      "flowers": [
+        "Gerberat",
+        "Ruusut",
+        "Liljat"
+      ],
+      "care": [
+        "Älä sijoita hedelmien viereen.",
+        "Lisää vettä säännöllisesti.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Herbstzauber – kimppu lämpimissä sävyissä",
+        "description": "Gerberoita, ruusuja ja liljoja oranssissa, vaaleanpunaisessa ja keltaisessa. Lämmin syyskimppu syntymäpäivälle tai kiitokseksi – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Kimppu oransseista gerberoista, aprikoosin ja vaaleanpunaisen sävyisistä ruusuista ja liljoista lasimaljakossa"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Punaisia ruusuja, gerberoita ja vihreitä yksityiskohtia",
+      "shortDescription": "Eloisa kimppu punaisen ja oranssin sävyissä raikkain vihrein yksityiskohdin.",
+      "description": "Blütenfreude yhdistää punaiset ruusut sekä punaiset ja oranssit gerberat vihreisiin pomppakukkiin ja eukalyptuksen vihreään. Väreiltään voimakas mutta muodoltaan pyöreä – kaunis syntymäpäivälle, kiitokseksi tai ihan muuten vain.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat"
+      ],
+      "care": [
+        "Vaihda maljakkoon raikas vesi päivittäin.",
+        "Leikkaa varsia tarvittaessa lisää.",
+        "Poista lakastuneet kukat säännöllisesti."
+      ],
+      "seo": {
+        "title": "Blütenfreude – ruusut ja gerberat punaisena",
+        "description": "Punaisia ruusuja, gerberoita punaisena ja oranssina sekä raikkaita vihreitä yksityiskohtia. Eloisa kimppu syntymäpäivälle – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Kimppu punaisista ruusuista, punaisista ja oransseista gerberoista ja vihreistä pomppakukista lasimaljakossa",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude valkoisessa maljakossa puisen lipaston päällä"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Vaaleanpunaisia ruusuja, liljoja ja harsoa",
+      "shortDescription": "Pehmeitä roosan sävyjä ja liljoja – rauhallinen, harmoninen ja hienostunut.",
+      "description": "Zartrosa Zauber yhdistää vaaleanpunaiset ruusut vaaleanpunaisiin liljoihin ja harsoon vaaleanpunaisessa kääreessä. Kimppu on rauhallinen ja harmoninen, ja siinä on hienostunut, romanttinen vivahde.",
+      "flowers": [
+        "Ruusut",
+        "Liljat",
+        "Harso"
+      ],
+      "care": [
+        "Poista lehdet, jotka ulottuvat veteen.",
+        "Sijoita viileään paikkaan.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – roosat ruusut ja liljat",
+        "description": "Vaaleanpunaisia ruusuja, vaaleanpunaisia liljoja ja harsoa hennossa kääreessä. Rauhallinen, romanttinen kimppu – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Kimppu vaaleanpunaisista ruusuista, vaaleanpunaisista liljoista ja harsosta vaaleanpunaisessa kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber vaaleanpunaisessa kääreessä isolla rusetilla"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerberoita, liljoja ja ruusuja oranssissa ja keltaisessa",
+      "shortDescription": "Hehkuvaa oranssia ja keltaista hyville uutisille ja aurinkoisille hetkille.",
+      "description": "Strahlender Tag yhdistää oranssit gerberat ja liljat keltaisiin ruusuihin, vaaleisiin neilikoihin ja harsoon. Voimakkaat värit tuovat positiivista energiaa – kimppu onnitteluihin, onnistumisiin ja aurinkoisiin hetkiin.",
+      "flowers": [
+        "Gerberat",
+        "Liljat",
+        "Ruusut",
+        "Neilikat",
+        "Harso"
+      ],
+      "care": [
+        "Suojaa vedolta.",
+        "Vaihda vesi säännöllisesti.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – kimppu oranssissa ja keltaisessa",
+        "description": "Oransseja gerberoita ja liljoja, keltaisia ruusuja ja harsoa. Iloinen kimppu onnitteluihin – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Kimppu oransseista gerberoista, keltaisista ruusuista ja harsosta valko-kultaisessa kääreessä",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Oransseja gerberoita, liljoja ja keltainen ruusu valkoisessa maljakossa",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Pyöreä kimppu oransseista gerberoista ja liljoista, keltaisista ruusuista ja vaaleista neilikoista lasimaljakossa"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Ruusuja vaaleanpunaisessa, kermassa ja aprikoosissa",
+      "shortDescription": "Harmoninen ruusukimppu klassisen kauneuden ja modernin tyylin välillä.",
+      "description": "Rosentraum yhdistää vaaleanpunaiset, kermanväriset ja aprikoosinsävyiset ruusut violetteihin kukkiin, marjaoksiin ja raikkaaseen vihreään. Vanhan roosan sävyisessä kääreessä kimppu on yhtä aikaa runsas ja moderni.",
+      "flowers": [
+        "Ruusut"
+      ],
+      "care": [
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Pidä maljakko puhtaana.",
+        "Vaihda vesi säännöllisesti."
+      ],
+      "seo": {
+        "title": "Rosentraum – ruusut roosassa ja kermassa",
+        "description": "Ruusuja vaaleanpunaisessa, kermassa ja aprikoosissa violetein yksityiskohdin vanhan roosan kääreessä. Harmoninen ruusukimppu – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Sidottu kimppu vaaleanpunaisista, kermanvärisistä ja aprikoosinsävyisistä ruusuista vanhan roosan kääreessä",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum vanhan roosan kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/rosentraum-3.jpg": "Ylhäältä kuvattuna kimpun ruusut, violetit kukat ja marjaoksat"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Valkoisia ruusuja ja harsoa",
+      "shortDescription": "Valkoisia ruusuja ja harsoa – hento, romanttinen ja vaalea.",
+      "description": "Rosenkuss koostuu valkoisista ja kermanvärisistä ruusuista, joita keventää hento harso, valkoisessa kääreessä. Kimppu kiintymykselle, läheisyydelle ja pienille rakkauden viesteille.",
+      "flowers": [
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Älä sijoita liian lämpimään paikkaan.",
+        "Tarkista veden määrä päivittäin.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Rosenkuss – valkoiset ruusut",
+        "description": "Valkoisia ruusuja ja harsoa valkoisessa kääreessä. Hento, romanttinen ruusukimppu – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Rosenkuss, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Rosenkuss, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Rosenkuss, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Kimppu valkoisista ruusuista ja harsosta valkoisessa kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Suuri kimppu valkoisista ruusuista valkoisessa kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Makaava kimppu valkoisista ruusuista ja harsosta puisen lipaston päällä"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Ruusuja pastellissa, pinkissä ja viininpunaisessa",
+      "shortDescription": "Ruusuja pastellin ja pinkin sävyissä tyylikkäästi koottuna.",
+      "description": "Rosenglanz kokoaa pastellinroosat, kermanväriset, pinkit ja viininpunaiset ruusut harson kera vaaleanpunaiseen kääreeseen. Ajaton olemukseltaan, saatavana kuutena kokona.",
+      "flowers": [
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Leikkaa varsiin tuore leikkauspinta.",
+        "Vältä suoraa auringonvaloa.",
+        "Vaihda maljakon vesi säännöllisesti."
+      ],
+      "seo": {
+        "title": "Rosenglanz – ruusut pastellissa ja pinkissä",
+        "description": "Ruusuja pastellinroosassa, pinkissä ja viininpunaisessa harson kera, kuutena kokona. Tyylikäs ruusukimppu – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni",
+          "detailAlt": "Rosenglanz, koko Pieni, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "m": {
+          "label": "Keskikokoinen",
+          "detailAlt": "Rosenglanz, koko Keskikokoinen, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "l": {
+          "label": "Suuri",
+          "detailAlt": "Rosenglanz, koko Suuri, kädessä wieniläisen kadun ja raitiovaunun edessä"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Kimppu pastellinroosista, pinkeistä ja viininpunaisista ruusuista vaaleanpunaisessa kääreessä lasimaljakossa",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Pyöreä ruusukimppu harson kera vaaleanpunaisessa kääreessä edestä kuvattuna",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Makaava kimppu pastellinsävyisistä ja pinkeistä ruusuista puisen lipaston päällä"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Vaaleanpunaisia ruusuja, gerberoita, liljoja ja neilikoita",
+      "shortDescription": "Ilmeikäs kimppu vaaleanpunaisessa ja pinkissä, joka puhuu ilman sanoja.",
+      "description": "Pure Liebe yhdistää vaaleanpunaiset ruusut pinkkiin gerberaan, vaaleanpunaisiin liljoihin, neilikoihin ja harsoon. Voimakkaat roosan ja pinkin sävyt, vaaleilla yksityiskohdilla kevennettynä – kimppu täynnä tunnetta.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat",
+        "Liljat",
+        "Neilikat",
+        "Harso"
+      ],
+      "care": [
+        "Vaihda raikas vesi säännöllisesti.",
+        "Pidä maljakko puhtaana.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Pure Liebe – kimppu roosassa ja pinkissä",
+        "description": "Vaaleanpunaisia ruusuja, pinkkejä gerberoita, liljoja ja neilikoita harson kera. Kimppu täynnä tunnetta – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Kimppu vaaleanpunaisista ruusuista, pinkistä gerberasta ja vaaleanpunaisista liljoista beigessä maljakossa",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe liljoineen, gerberoineen ja neilikoineen beigessä maljakossa",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Pyöreä kimppu vaaleanpunaisista ruusuista, gerberoista, neilikoista ja harsosta lasimaljakossa"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Pinkkejä gerberoita, ruusuja ja violetteja yksityiskohtia",
+      "shortDescription": "Voimakkaat pinkin sävyt koottuna raikkaaksi, moderniksi kimpuksi.",
+      "description": "Pink Harmony yhdistää pinkit gerberat ja ruusut valkoisiin ja liiloihin kukkiin, violetteihin yksityiskohtiin ja harsoon. Eloisa ja raikas, täynnä viehätysvoimaa.",
+      "flowers": [
+        "Gerberat",
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Sijoita viileään paikkaan.",
+        "Poista lakastuneet kukat.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Pink Harmony – pinkit gerberat ja ruusut",
+        "description": "Pinkkejä gerberoita ja ruusuja liiloin ja violetein yksityiskohdin. Raikas, moderni kimppu – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Kimppu pinkeistä gerberoista, ruusuista ja liiloista kukista beigessä maljakossa",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Pyöreä kimppu pinkein gerberoin, ruusuin ja violetein yksityiskohdin"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Värikäs ruusukimppu vaaleanpunaisessa, keltaisessa, aprikoosissa ja liilassa",
+      "shortDescription": "Runsas, värikäs ruusukimppu erityisiin hetkiin.",
+      "description": "Love Deluxe on ruusukimppu monissa väreissä: vaaleanpunainen, kerma, aprikoosi, keltainen ja liila, vaaleanpunaisessa kääreessä. Erityisiin tilaisuuksiin ja suuriin eleisiin, saatavana viitenä kokona.",
+      "flowers": [
+        "Ruusut"
+      ],
+      "care": [
+        "Lyhennä varsia välillä.",
+        "Vaihda maljakon vesi päivittäin.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Love Deluxe – värikäs ruusukimppu",
+        "description": "Ruusuja vaaleanpunaisessa, kermassa, aprikoosissa, keltaisessa ja liilassa, viitenä kokona. Suuriin eleisiin – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Värikäs ruusukimppu vaaleanpunaisessa, keltaisessa, aprikoosissa ja liilassa vaaleanpunaisessa kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Suuri värikäs ruusukimppu vaaleanpunaisessa kääreessä edestä kuvattuna",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Makaava värikäs ruusukimppu vaaleanpunaisessa kääreessä puisen lipaston päällä"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Punaisia ja vihreitä ruusuja liljojen kera",
+      "shortDescription": "Tunteikas kimppu punaisessa sanomaan ”Minä rakastan sinua”.",
+      "description": "Liebeserklärung yhdistää punaiset ruusut vaaleanvihreisiin ruusuihin, valkoisiin liljoihin, punaisiin korostekukkiin ja harsoon. Voimakas mutta raikas – kimppu, joka tekee tunteet näkyviksi.",
+      "flowers": [
+        "Ruusut",
+        "Liljat",
+        "Harso"
+      ],
+      "care": [
+        "Suojaa kuumuudelta.",
+        "Vaihda vesi säännöllisesti.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – punaiset ruusut ja liljat",
+        "description": "Punaisia ja vaaleanvihreitä ruusuja liljojen ja harson kera. Kimppu, jolla sanoa ”Minä rakastan sinua” – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Kimppu punaisista ja vaaleanvihreistä ruusuista liljojen ja harson kera lasimaljakossa",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung valkoisessa maljakossa puisen lipaston päällä"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Ruusuja ja gerberoita vaaleanpunaisessa oranssein yksityiskohdin",
+      "shortDescription": "Tyylikäs ja tasapainoinen – kimppu hienostuneen hillitysti.",
+      "description": "Klassische Schönheit yhdistää vanhan roosan sävyiset ja valkoiset ruusut pinkkiin gerberaan, pieniin oransseihin kukkiin ja harsoon. Tummassa, kultareunaisessa kääreessä kimppu on tasapainoinen ja ajaton.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat",
+        "Harso"
+      ],
+      "care": [
+        "Älä sijoita aivan lämpöpatterin viereen.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista.",
+        "Vaihda maljakon vesi säännöllisesti."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – ruusut ja gerberat",
+        "description": "Vanhan roosan sävyisiä ja valkoisia ruusuja pinkin gerberan kera tummassa kääreessä. Tasapainoinen, ajaton kimppu – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Kimppu vanhan roosan sävyisistä ruusuista ja pinkistä gerberasta tummassa, kultareunaisessa kääreessä",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit valkoisessa maljakossa",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Ylhäältä kuvattuna ruusut, gerberat ja harso tummassa kääreessä"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Vaaleanpunaisia ruusuja ja pinkkejä gerberoita",
+      "shortDescription": "Leikkisä ja eloisa: vaaleanpunaiset ruusut kohtaavat pinkit gerberat.",
+      "description": "Herzklopfen yhdistää hennon roosat ruusut pinkkiin gerberaan, pieniin valko-vihreisiin kukkiin ja hentoon liilaan täytevihreään. Pyöreäksi sidottu ja täynnä väriä – kimppu, jossa on paljon tunnetta.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat"
+      ],
+      "care": [
+        "Vaihda raikas vesi päivittäin.",
+        "Leikkaa varret vinosti.",
+        "Sijoita viileään paikkaan suoralta auringolta suojaan."
+      ],
+      "seo": {
+        "title": "Herzklopfen – roosat ruusut ja gerberat",
+        "description": "Hennon roosia ruusuja ja pinkkejä gerberoita pyöreäksi sidottuna. Leikkisä kimppu täynnä tunnetta – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Pyöreä kimppu hennon roosista ruusuista ja pinkistä gerberasta valkoisessa maljakossa",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen valkoisessa maljakossa sivulta kuvattuna",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Kimppu vaaleanpunaisista ruusuista ja pinkistä gerberasta lasimaljakossa"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Värikäs sekoitus ruusuja ja gerberoita",
+      "shortDescription": "Värikäs kimppu, joka säteilee elämäniloa.",
+      "description": "Fröhlicher Blütenmix yhdistää punaiset ruusut, keltaiset, vaaleanpunaiset ja punaiset gerberat sekä muita kukkia keltaisessa, oranssissa ja violetissa. Punaisessa kääreessä – ihanteellinen tapa lahjoittaa hymy.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat"
+      ],
+      "care": [
+        "Sijoita viileään paikkaan.",
+        "Vaihda vesi säännöllisesti.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – värikäs kimppu",
+        "description": "Punaisia ruusuja ja gerberoita keltaisena, vaaleanpunaisena ja punaisena punaisessa kääreessä. Värikäs kimppu täynnä elämäniloa – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Värikäs kimppu gerberoista ja ruusuista punaisessa kääreessä puisen lipaston päällä",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix punaisessa kääreessä valkoisessa maljakossa",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Ylhäältä kuvattuna punaiset ruusut sekä keltaiset ja vaaleanpunaiset gerberat punaisessa kääreessä"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Ruusuja ja gerberoita pinkissä liiloin yksityiskohdin",
+      "shortDescription": "Eloisa sekoitus pinkkiä, aprikoosia ja liilaa.",
+      "description": "Farbtänzer yhdistää pinkit ja aprikoosinsävyiset ruusut ja tertturuusut vaaleanpunaisiin gerberoihin, liiloihin kukkiin ja vaaleisiin marjoihin. Tiiviisti ja eloisasti sidottu – moderni ja ilmeikäs.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat"
+      ],
+      "care": [
+        "Poista lehdet, jotka ulottuvat veteen.",
+        "Pidä maljakko puhtaana.",
+        "Leikkaa varret vinosti ennen maljakkoon laittamista."
+      ],
+      "seo": {
+        "title": "Farbtänzer – kimppu pinkissä ja liilassa",
+        "description": "Ruusuja ja gerberoita pinkissä ja aprikoosissa liiloin yksityiskohdin. Eloisa, moderni kimppu – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Makaava kimppu pinkissä ja liilassa hennon roosassa kääreessä",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Pyöreä kimppu pinkeistä ruusuista, gerberoista ja liiloista kukista kermanvärisessä maljakossa",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer uurteisessa maljakossa edestä kuvattuna"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Sydämenmuotoinen kukkalaatikko",
+      "tagline": "Ruusuja punaisessa sydänlaatikossa",
+      "shortDescription": "Ruusuja sydämenmuotoisessa laatikossa – rakkaudentunnustus pöydälle.",
+      "description": "Punaiseen, sydämenmuotoiseen laatikkoon on aseteltu punaisia, vaaleanpunaisia ja valkoisia ruusuja muiden kukkien ja harson kera. Lahja vuosipäivälle, ystävänpäivälle tai lämpimäksi yllätykseksi.",
+      "flowers": [
+        "Ruusut",
+        "Harso"
+      ],
+      "care": [
+        "Kostuta ruusuja kevyesti.",
+        "Sijoita viileään paikkaan.",
+        "Suojaa suoralta auringonvalolta."
+      ],
+      "seo": {
+        "title": "Sydämenmuotoinen kukkalaatikko – ruusut",
+        "description": "Ruusuja punaisena, vaaleanpunaisena ja valkoisena punaisessa sydänlaatikossa. Vuosipäivälle ja ystävänpäivälle – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Punainen sydämenmuotoinen kukkalaatikko, jossa punaisia, vaaleanpunaisia ja valkoisia ruusuja ja harsoa"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klassinen kukkalaatikko",
+      "tagline": "Punaisia ruusuja pyöreässä laatikossa",
+      "shortDescription": "Klassisia ruusuja pyöreässä laatikossa – yksinkertainen ja ilmeikäs.",
+      "description": "Klassinen kukkalaatikko täyttää pyöreän laatikon tiheään asetelluilla ruusuilla. Minimalistinen ja ajaton, se sopii syntymäpäivälle, kiitokseksi tai erityisiin hetkiin. Saatavana punaisena ja valkoisena.",
+      "flowers": [
+        "Ruusut"
+      ],
+      "care": [
+        "Kastele ruusuja kevyesti säännöllisesti.",
+        "Sijoita viileään paikkaan.",
+        "Suojaa suoralta auringonvalolta."
+      ],
+      "seo": {
+        "title": "Klassinen kukkalaatikko – ruusut laatikossa",
+        "description": "Tiheään aseteltuja ruusuja pyöreässä laatikossa, saatavana punaisena ja valkoisena. Yksinkertainen lahja – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Punaisia ruusuja pyöreässä valkoisessa laatikossa, jossa vaaleanpunainen ja kultainen reunus",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Kaksi punaista samettista pyöreää laatikkoa punaisin ruusuin valkoisella jalustalla"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Vaaleanpunainen flamingonkukka ruukussa",
+      "tagline": "Flamingonkukka vaaleanpunaisin kukin",
+      "shortDescription": "Flamingonkukka hennon roosin kukin – tyylikäs ja hillitty.",
+      "description": "Vaaleanpunainen flamingonkukka tuo hennoilla kukillaan ja kiiltävän vihreillä lehdillään väriä huoneeseen olematta äänekäs. Se sopii yhtä hyvin kotiin kuin toimistoon.",
+      "flowers": [
+        "Flamingonkukka"
+      ],
+      "care": [
+        "Sijoita valoisaan paikkaan, ei suoraan aurinkoon.",
+        "Kastele säännöllisesti, mutta vältä liikamärkyyttä.",
+        "Suihkuta lehtiä välillä vedellä."
+      ],
+      "seo": {
+        "title": "Vaaleanpunainen flamingonkukka ruukussa",
+        "description": "Flamingonkukka hennon roosin kukin ja kiiltävin lehdin. Tyylikäs huonekasvi lahjaksi – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Vaaleanpunainen flamingonkukka vanhan roosan sävyisessä keraamisessa ruukussa puisen lipaston päällä",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Flamingonkukka vaaleanpunaisin kukin malvanvärisessä ruukussa kynttilöiden vieressä"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Punainen flamingonkukka ruukussa",
+      "tagline": "Flamingonkukka punaisin kukin",
+      "shortDescription": "Flamingonkukka hehkuvan punaisin kukin ja modernein ottein.",
+      "description": "Punaiset flamingonkukat tuovat kiiltävillä kukillaan voimakkaita värikorostuksia. Koristeellisena huonekasvina tai lahjana se pysyy hyvällä hoidolla pitkään kauniina.",
+      "flowers": [
+        "Flamingonkukka"
+      ],
+      "care": [
+        "Valoisa paikka ilman suoraa aurinkoa.",
+        "Pidä multa tasaisen kosteana.",
+        "Vältä liikamärkyyttä."
+      ],
+      "seo": {
+        "title": "Punainen flamingonkukka ruukussa",
+        "description": "Flamingonkukka hehkuvan punaisin kukin ruukussa. Koristeellinen huonekasvi lahjaksi – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Punainen flamingonkukka punaisessa keraamisessa ruukussa puisen lipaston päällä"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL punainen flamingonkukka ruukussa",
+      "tagline": "Suuri flamingonkukka punaisin kukin",
+      "shortDescription": "Suuri, runsas flamingonkukka, jossa on paljon punaisia kukkia.",
+      "description": "Tämä punainen flamingonkukka on yli 80 cm korkea, ja sen tiheän, kiiltävän lehvästön yllä on lukuisia punaisia kukkia. Ilmeikäs katseenvangitsija kotiin tai toimistoon.",
+      "flowers": [
+        "Flamingonkukka"
+      ],
+      "care": [
+        "Sijoita valoisaan paikkaan, ei suoraan aurinkoon.",
+        "Kastele säännöllisesti, mutta vältä liikamärkyyttä.",
+        "Pyyhi pölyt lehdiltä silloin tällöin."
+      ],
+      "seo": {
+        "title": "XXL punainen flamingonkukka ruukussa",
+        "description": "Suuri flamingonkukka, jossa lukuisia punaisia kukkia, ruukussa. Katseenvangitsija kotiin tai toimistoon – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Suuri flamingonkukka, jossa paljon punaisia kukkia, punaisessa ruukussa kynttilöiden vieressä"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelia ruukussa",
+      "tagline": "Bromelia punaisella kukalla",
+      "shortDescription": "Bromelia voimakkaan punaisella kukalla ja trooppisella tunnelmalla.",
+      "description": "Bromelia tuo punaisella kukintoruusukkeellaan ja hoikilla vihreillä lehdillään eloisia korostuksia. Koristeellinen huonekasvi kotiin tai työtiloihin ja erityinen lahja.",
+      "flowers": [
+        "Bromelia"
+      ],
+      "care": [
+        "Sijoita valoisaan paikkaan, ei suoraan aurinkoon.",
+        "Kaada vettä säännöllisesti lehtisuppiloon.",
+        "Pidä multa vain hieman kosteana."
+      ],
+      "seo": {
+        "title": "Bromelia ruukussa – huonekasvi",
+        "description": "Bromelia punaisella kukalla ruukussa: trooppista tunnelmaa kotiin tai toimistoon – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelia punaisella kukalla punaisessa ruukussa puisen lipaston päällä"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Kumipuu ruukussa",
+      "tagline": "Kumipuu tummanvihrein lehdin",
+      "shortDescription": "Helppohoitoinen kumipuu kiiltävin, tummanvihrein lehdin.",
+      "description": "Kumipuu on suurine, kiiltävine lehtineen moderni ja rauhallinen. Se on helppohoitoinen ja sopii hyvin koteihin ja toimistoihin.",
+      "flowers": [
+        "Kumipuu"
+      ],
+      "care": [
+        "Valoisa tai puolivarjoinen paikka.",
+        "Kastele säästeliäästi – kasvi pärjää vähällä vedellä.",
+        "Pyyhi lehdet pölystä silloin tällöin."
+      ],
+      "seo": {
+        "title": "Kumipuu ruukussa – helppohoitoinen kasvi",
+        "description": "Kumipuu kiiltävin, tummanvihrein lehdin. Helppohoitoinen huonekasvi kotiin ja toimistoon – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Kumipuu tummanvihrein lehdin punaisessa ruukussa puisen lipaston päällä"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Valkoinen orkidea ruukussa",
+      "tagline": "Orkidea ruukussa, useita värejä",
+      "shortDescription": "Orkidea ruukussa – rauhallinen, ylellinen ja ajaton.",
+      "description": "Orkidea on tyylikkyyden ja rauhan symboli. Hennoine kukkavanoineen se on tyylikäs valinta kotiin, toimistoon tai lahjaksi. Saatavana liilana, vaaleanpunaisena, keltaisena, valkoisena ja sinisenä.",
+      "flowers": [
+        "Orkidea"
+      ],
+      "care": [
+        "Sijoita valoisaan paikkaan, ei suoraan aurinkoon.",
+        "Kastele säästeliäästi ja vältä liikamärkyyttä.",
+        "Poista kukinnan päättäneet kukkavanat vasta, kun ne ovat kuivuneet."
+      ],
+      "seo": {
+        "title": "Orkidea ruukussa – viitenä värinä",
+        "description": "Orkidea ruukussa valkoisena, vaaleanpunaisena, keltaisena, liilana tai sinisenä. Tyylikäs huonekasvi lahjaksi – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Valkoinen orkidea pinkein kukkanielun kera kermanvärisessä keraamisessa ruukussa",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orkidea hennon roosin kukin kermanvärisessä keraamisessa ruukussa",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Keltainen orkidea kermanvärisessä keraamisessa ruukussa",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orkidea violetein kukin pinkissä ruukussa",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orkidea sinisin kukin harmaassa ruukussa kynttilöiden vieressä"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Punainen surukimppu",
+      "tagline": "Punaisia ruusuja, gerberoita ja neilikoita havujen kera",
+      "shortDescription": "Punainen surukimppu rakkauden ja yhteyden merkiksi.",
+      "description": "Punainen surukimppu yhdistää punaiset ruusut, gerberat ja neilikat keltaisiin ruusuihin, harsoon ja havuihin. Arvokas muistamisen ele, joka ilmaisee vahvat tunteet hiljaa. Kokoonpano voi vaihdella hieman vuodenajan mukaan.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat",
+        "Neilikat",
+        "Harso"
+      ],
+      "care": [
+        "Sijoita viileään paikkaan, ei suoraan aurinkoon eikä lämpöpatterin viereen.",
+        "Pidä asetelmien sidesieni kosteana."
+      ],
+      "seo": {
+        "title": "Punainen surukimppu – ruusut ja gerberat",
+        "description": "Punainen surukimppu ruusuin, gerberoin ja neilikoin havujen päällä, kolmena kokona. Arvokas jäähyväistervehdys – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Surukimppu punaisin ruusuin, gerberoin ja neilikoin, keltaisin ruusuin ja havuin kivijalustalla"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Vaaleanpunainen surukimppu",
+      "tagline": "Vaaleanpunaisia ruusuja ja violetteja kukkia",
+      "shortDescription": "Surukimppu hennoissa roosan sävyissä, lohdullinen olemukseltaan.",
+      "description": "Vaaleanpunaiset ruusut, violetit ja vaaleanpunaiset kukat sekä havut antavat tälle surukimpulle pehmeän, lohdullisen tunnelman. Se kertoo kiitollisuudesta, läheisyydestä ja lämpimästä muistosta – sopii hiljaisiin, henkilökohtaisiin jäähyväisiin.",
+      "flowers": [
+        "Ruusut"
+      ],
+      "care": [
+        "Sijoita viileään paikkaan, ei suoraan aurinkoon eikä lämpöpatterin viereen.",
+        "Pidä asetelmien sidesieni kosteana."
+      ],
+      "seo": {
+        "title": "Vaaleanpunainen surukimppu – hennot sävyt",
+        "description": "Surukimppu hennoissa roosan sävyissä, vaaleanpunaisia ruusuja havujen päällä, kolmena kokona. Hiljaisiin jäähyväisiin – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Surukimppu vaaleanpunaisin ruusuin ja violetein kukin havujen päällä, valkoisella nauhalla, kivijalustalla"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Pastellinen surukimppu",
+      "tagline": "Liljoja, ruusuja ja sinisiä kukkia pastellissa",
+      "shortDescription": "Rauhallinen surukimppu hienovaraisissa pastellin sävyissä.",
+      "description": "Pastellinen surukimppu yhdistää vaaleanpunaiset liljat ja ruusut vaaleansinisiin, liiloihin ja valkoisiin kukkiin. Hienovaraiset sävyerot välittävät lohtua ja osanottoa. Kukat voivat vaihdella vuodenajan mukaan.",
+      "flowers": [
+        "Liljat",
+        "Ruusut"
+      ],
+      "care": [
+        "Sijoita viileään paikkaan, ei suoraan aurinkoon eikä lämpöpatterin viereen.",
+        "Pidä asetelmien sidesieni kosteana."
+      ],
+      "seo": {
+        "title": "Pastellinen surukimppu – rauhalliset sävyt",
+        "description": "Surukimppu pastellissa liljoin, ruusuin ja vaaleansinisin kukin, kolmena kokona. Hillitty ja tyylikäs – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Pastellinen surukimppu vaaleanpunaisin liljoin, ruusuin ja vaaleansinisin kukin, mustalla nauhalla, kivijalustalla"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Oranssi surukimppu",
+      "tagline": "Ruusuja, gerberoita ja neilikoita oranssissa ja keltaisessa",
+      "shortDescription": "Surukimppu lämpimissä oranssin sävyissä, joka ilmaisee arvostusta.",
+      "description": "Ruusut, gerberat ja neilikat oranssin, keltaisen ja aprikoosin sävyissä yhdistyvät havujen kanssa lämpimäksi surukimpuksi. Se kertoo kiitollisuudesta ja täyden elämän muistamisesta, ja se sopii arkun äärelle tai muistotilaisuuteen.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat",
+        "Neilikat"
+      ],
+      "care": [
+        "Sijoita viileään paikkaan, ei suoraan aurinkoon eikä lämpöpatterin viereen.",
+        "Pidä asetelmien sidesieni kosteana."
+      ],
+      "seo": {
+        "title": "Oranssi surukimppu – lämpimät sävyt",
+        "description": "Surukimppu oranssissa ja keltaisessa ruusuin, gerberoin ja neilikoin, kolmena kokona. Arkun äärelle ja muistotilaisuuteen – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Surukimppu ruusuin, gerberoin ja neilikoin oranssissa ja keltaisessa havujen päällä kivijalustalla"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Valkoinen surukimppu",
+      "tagline": "Valkoisia liljoja ja krysanteemeja",
+      "shortDescription": "Klassinen surukimppu valkoisessa – yksinkertainen ja arvokas.",
+      "description": "Valkoiset liljat, krysanteemit ja pienet valkoiset kukat havujen päällä tekevät tästä surukimpusta yksinkertaisen ja ajattoman. Valkoinen kertoo rauhasta ja jäähyväisistä – sopii muodollisiin hautajaisiin tai hiljaiseksi osanoton merkiksi.",
+      "flowers": [
+        "Liljat",
+        "Krysanteemit"
+      ],
+      "care": [
+        "Sijoita viileään paikkaan, ei suoraan aurinkoon eikä lämpöpatterin viereen.",
+        "Pidä asetelmien sidesieni kosteana."
+      ],
+      "seo": {
+        "title": "Valkoinen surukimppu – liljat ja krysanteemit",
+        "description": "Klassinen valkoinen surukimppu liljoin ja krysanteemein, kolmena kokona. Yksinkertainen ja arvokas – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Surukimppu valkoisista liljoista, krysanteemeista ja pienistä valkoisista kukista havujen päällä kivijalustalla"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Keltainen surukimppu",
+      "tagline": "Auringonkukkia, keltaisia ruusuja ja neilikoita",
+      "shortDescription": "Keltainen surukimppu muistolle, toivolle ja kiitollisuudelle.",
+      "description": "Auringonkukat, keltaiset ruusut ja aprikoosinsävyiset neilikat havujen päällä tekevät tästä surukimpusta valoisan ja lämpimän. Se sopii jäähyväisiin, joissa elämä on keskiössä. Kukat vaihtelevat vuodenajan mukaan.",
+      "flowers": [
+        "Auringonkukat",
+        "Ruusut",
+        "Neilikat"
+      ],
+      "care": [
+        "Sijoita viileään paikkaan, ei suoraan aurinkoon eikä lämpöpatterin viereen.",
+        "Pidä asetelmien sidesieni kosteana."
+      ],
+      "seo": {
+        "title": "Keltainen surukimppu – auringonkukat ja ruusut",
+        "description": "Keltainen surukimppu auringonkukin, ruusuin ja neilikoin, kolmena kokona. Valoisa jäähyväistervehdys – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Surukimppu auringonkukin, keltaisin ruusuin ja aprikoosinsävyisin neilikoin havujen päällä kivijalustalla"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Värikäs suruseppele",
+      "tagline": "Gerberoita, ruusuja ja kukkia monissa väreissä",
+      "shortDescription": "Värikäs suruseppele jäähyväisiksi elämäniloiselle ihmiselle.",
+      "description": "Värikäs suruseppele yhdistää gerberat, ruusut ja muut kukat keltaisessa, oranssissa, vaaleanpunaisessa ja valkoisessa vihreälle pohjalle. Arvokas ja samalla värikäs jäähyväistervehdys, käsin sidottu. Jos sinulla on toiveita seppeleen suhteen, ota rohkeasti yhteyttä.",
+      "flowers": [
+        "Gerberat",
+        "Ruusut"
+      ],
+      "care": [
+        "Sijoita viileään ja varjoisaan paikkaan.",
+        "Kostuta sidesientä tarvittaessa kevyesti."
+      ],
+      "seo": {
+        "title": "Värikäs suruseppele – värikkäät jäähyväiset",
+        "description": "Värikäs suruseppele gerberoin ja ruusuin, käsin sidottu. Värikäs jäähyväistervehdys – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Värikäs suruseppele gerberoin, liljoin ja valkoisin kukin, mustalla nauhalla, puisella telineellä"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Pinkki suruseppele",
+      "tagline": "Gerberoita ja ruusuja pinkissä ja punaisessa",
+      "shortDescription": "Suruseppele pinkissä ja punaisessa lämpimäksi jäähyväistervehdykseksi.",
+      "description": "Pinkki ja punainen suruseppele yhdistää pinkit gerberat, ruusut ja muut kukat vaaleisiin yksityiskohtiin ja raikkaaseen vihreään. Rakkauden ja muiston ilmaus, käsin sidottu. Jos sinulla on toiveita seppeleen suhteen, ota rohkeasti yhteyttä.",
+      "flowers": [
+        "Gerberat",
+        "Ruusut"
+      ],
+      "care": [
+        "Sijoita viileään ja varjoisaan paikkaan.",
+        "Kostuta sidesientä tarvittaessa kevyesti."
+      ],
+      "seo": {
+        "title": "Pinkki suruseppele – pinkki ja punainen",
+        "description": "Suruseppele pinkissä ja punaisessa gerberoin ja ruusuin, käsin sidottu. Lämmin jäähyväistervehdys – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Suruseppele pinkein gerberoin, ruusuin ja punaisin kukin, viininpunaisella nauhalla, puisella telineellä"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Puna-keltainen suruseppele",
+      "tagline": "Punaisia ja keltaisia gerberoita",
+      "shortDescription": "Hehkuva suruseppele punaisessa ja keltaisessa.",
+      "description": "Punaiset ja keltaiset gerberat tiiviisti vihreälle pohjalle asetettuina tekevät tästä suruseppeleestä hehkuvan jäähyväistervehdyksen, täynnä lämpöä, kiitollisuutta ja kauniita muistoja. Käsin sidottu. Jos sinulla on toiveita seppeleen suhteen, ota rohkeasti yhteyttä.",
+      "flowers": [
+        "Gerberat"
+      ],
+      "care": [
+        "Sijoita viileään ja varjoisaan paikkaan.",
+        "Kostuta sidesientä tarvittaessa kevyesti."
+      ],
+      "seo": {
+        "title": "Puna-keltainen suruseppele – gerberat",
+        "description": "Suruseppele punaisista ja keltaisista gerberoista, käsin sidottu. Lämmin, hehkuva jäähyväistervehdys – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Suruseppele punaisista ja keltaisista gerberoista hopeanharmaalla nauhalla puisella telineellä"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Punainen suruseppele",
+      "tagline": "Punaisia gerberoita ja ruusuja",
+      "shortDescription": "Klassinen punainen suruseppele rakkaudelle, joka jää.",
+      "description": "Punainen suruseppele yhdistää punaiset gerberat ja ruusut havujen päälle. Klassinen, arvokas jäähyväistervehdys rakkaudelle, joka jää jäähyväisten jälkeenkin. Käsin sidottu. Jos sinulla on toiveita seppeleen suhteen, ota rohkeasti yhteyttä.",
+      "flowers": [
+        "Gerberat",
+        "Ruusut"
+      ],
+      "care": [
+        "Sijoita viileään ja varjoisaan paikkaan.",
+        "Kostuta sidesientä tarvittaessa kevyesti."
+      ],
+      "seo": {
+        "title": "Punainen suruseppele – gerberat ja ruusut",
+        "description": "Punainen suruseppele gerberoin ja ruusuin havujen päällä, käsin sidottu. Klassinen jäähyväistervehdys – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Suruseppele punaisista gerberoista ja ruusuista havujen päällä mustalla nauhalla puisella telineellä"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Valkoinen suruseppele",
+      "tagline": "Valkoisia ruusuja, gerberoita ja neilikoita",
+      "shortDescription": "Yksinkertainen valkoinen suruseppele hiljaiseen osanottoon.",
+      "description": "Valkoiset ruusut, gerberat ja neilikat vaaleanvihrein yksityiskohdin ja vihreän kera muodostavat tämän yksinkertaisen seppeleen. Valkoinen kertoo rauhasta ja hiljaisesta osanotosta. Käsin sidottu. Jos sinulla on toiveita seppeleen suhteen, ota rohkeasti yhteyttä.",
+      "flowers": [
+        "Ruusut",
+        "Gerberat",
+        "Neilikat"
+      ],
+      "care": [
+        "Sijoita viileään ja varjoisaan paikkaan.",
+        "Kostuta sidesientä tarvittaessa kevyesti."
+      ],
+      "seo": {
+        "title": "Valkoinen suruseppele – yksinkertainen ja arvokas",
+        "description": "Valkoinen suruseppele ruusuin, gerberoin ja neilikoin, käsin sidottu. Yksinkertainen jäähyväistervehdys – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "m": {
+          "label": "Vakio"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Renkaanmuotoinen suruseppele valkoisista ruusuista, gerberoista ja neilikoista valkoisella nauhalla puisella telineellä"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Adventtikranssit",
+      "tagline": "Havuja ja neljä kynttilää, seitsemänä värinä",
+      "shortDescription": "Käsin sidottu adventtikranssi havuista ja neljästä kynttilästä.",
+      "description": "Adventtikranssi sidotaan käsin tuoksuvista havuista ja koristellaan neljällä kynttilällä, rusetein, palloin, kävyin ja muin yksityiskohdin. Saatavana punaisena, harmaana, liilana, kultaisena, beigenä, viininpunaisena ja vaaleanpunaisena.",
+      "flowers": [],
+      "care": [
+        "Älä koskaan jätä kynttilöitä palamaan valvomatta.",
+        "Sijoita viileään paikkaan, ei aivan lämpöpatterin viereen.",
+        "Suihkuta havuja välillä kevyesti vedellä."
+      ],
+      "seo": {
+        "title": "Adventtikranssi – käsin sidottu, kynttilöin",
+        "description": "Käsin sidottu adventtikranssi havuista ja neljästä kynttilästä, seitsemänä värinä ja neljänä kokona – kukkalähetys Wienissä."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pieni"
+        },
+        "m": {
+          "label": "Keskikokoinen"
+        },
+        "l": {
+          "label": "Suuri"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Punainen",
+        "grau": "Harmaa",
+        "lila": "Liila",
+        "gold": "Kulta",
+        "beige": "Beige",
+        "weinrot": "Viininpunainen",
+        "rosa": "Vaaleanpunainen"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Adventtikranssi havuista, neljä punaista kynttilää, punaiset rusetit, pallot ja kävyt",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Adventtikranssi, neljä vaaleanharmaata kynttilää, kermanväriset rusetit ja appelsiininviipaleet",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Adventtikranssi, liilat ja vaaleanpunaiset kynttilät, violetit rusetit ja enkelihahmo",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Adventtikranssi, neljä kultaista kynttilää, kultaiset rusetit, kanelitangot ja kävyt",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Adventtikranssi, neljä vaaleanpunaista kynttilää, viininpunaiset rusetit ja enkelihahmo",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Adventtikranssi, neljä viininpunaista kynttilää, pallot ja viininpunaiset rusetit",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Adventtikranssi, neljä tummanharmaata kynttilää, kermanväriset rusetit ja punaiset pallot",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Kultainen adventtikranssi kultaisin kynttilöin ja rusetein sivulta kuvattuna",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Vaaleanpunainen adventtikranssi vaaleanpunaisin kynttilöin ja viininpunaisin rusetein sivulta kuvattuna"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Kaikki kukat",
+      "headline": "Tilaa kukat verkosta",
+      "intro": "Käsin sidottuja kimppuja koko Wieniin. Valitse kimppusi ja päätä toimituspäivä.",
+      "seo": {
+        "title": "Tilaa kukat verkosta – kukkatoimitus Wienissä",
+        "description": "Tilaa kukat verkosta ja anna toimittaa ne Wienissä. Käsin sidottuja kimppuja haluamanasi päivänä – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Ruusut",
+      "headline": "Ruusukimput",
+      "intro": "Ruusuja punaisena, vaaleanpunaisena tai valkoisena, useana kokona. Käsin sidottu ja toimitettu Wienissä.",
+      "seo": {
+        "title": "Tilaa ruusukimppu verkosta – ruusut Wieniin",
+        "description": "Kaikki ruusukimput yhdellä silmäyksellä: punaisia, vaaleanpunaisia ja valkoisia ruusuja useana kokona. Käsin sidottu, toimitus Wienissä haluamanasi päivänä."
+      }
+    },
+    "saisonal": {
+      "name": "Kauden kukat",
+      "headline": "Kauden kukat",
+      "intro": "Kimppuja, jotka sopivat vuodenaikaan. Valikoima vaihtuu vuoden mittaan.",
+      "seo": {
+        "title": "Kauden kukkakimput toimitettuna Wienissä",
+        "description": "Vuodenaikaan sopivia kimppuja. Käsin sidottu ja toimitettu Wienissä."
+      }
+    },
+    "pastell": {
+      "name": "Pastelli",
+      "headline": "Pastellikimput",
+      "intro": "Roosa, kerma, liila: pehmeitä värejä herkkiin hetkiin.",
+      "seo": {
+        "title": "Pastellikukat toimitettuna Wienissä",
+        "description": "Kimppuja pehmeissä pastellin sävyissä toimitettuna Wienissä – tuoreeltaan sidottu, haluamanasi päivänä."
+      }
+    },
+    "bunt": {
+      "name": "Värikäs",
+      "headline": "Värikkäät kimput",
+      "intro": "Väriä, joka ilahduttaa. Syntymäpäiville, yllätyksiin ja hyvälle mielelle.",
+      "seo": {
+        "title": "Värikkäät kukkakimput toimitettuna Wienissä",
+        "description": "Värikkäitä, iloisia kimppuja toimitettuna Wienissä – tuoreeltaan sidottu, haluamanasi päivänä."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Tyylikäs & valkoinen",
+      "headline": "Tyylikäs & valkoinen",
+      "intro": "Valkoista, kermaa ja vihreää. Kimppuja, jotka ovat rauhallisia ja ylellisiä missä tahansa huoneessa.",
+      "seo": {
+        "title": "Tyylikkäät valkoiset kukat toimitettuna Wienissä",
+        "description": "Valkoisia ja kermanvärisiä kimppuja toimitettuna Wienissä – tyylikkäitä, tuoreeltaan sidottuja, haluamanasi päivänä."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Premium-kimput",
+      "intro": "Runsaita kimppuja erityisiin hetkiin.",
+      "seo": {
+        "title": "Premium-kukkakimput toimitettuna Wienissä",
+        "description": "Premium-kimppuja erityisiin tilaisuuksiin toimitettuna Wienissä – käsin sidottu, haluamanasi päivänä."
+      }
+    },
+    "unter-40": {
+      "name": "Alle 40 €",
+      "headline": "Kukat alle 40 €",
+      "intro": "Pieniä kimppuja, suuri vaikutus – kaikki alle 40 euroa.",
+      "seo": {
+        "title": "Kukat alle 40 € toimitettuna Wienissä",
+        "description": "Edullisia kukkakimppuja alle 40 € toimitettuna Wienissä – tuoreeltaan sidottu, haluamanasi päivänä."
+      }
+    },
+    "bestseller": {
+      "name": "Suosikkikimput",
+      "headline": "Suosikkikimppumme",
+      "intro": "Kimppuja, joita suosittelemme erityisen mielellämme.",
+      "seo": {
+        "title": "Suosikkikimppumme – suositukset Wieniin",
+        "description": "Kimppuja, joita suosittelemme erityisen mielellämme – käsin sidottu ja toimitettu Wienissä."
+      }
+    },
+    "neu": {
+      "name": "Uutuudet",
+      "headline": "Uutta Blumoralla",
+      "intro": "Tuoreena valikoimassa.",
+      "seo": {
+        "title": "Uudet kukkakimput Wieniin",
+        "description": "Uusia kimppuja valikoimassa – tuoreeltaan sidottu ja toimitettu Wienissä."
+      }
+    },
+    "blumenboxen": {
+      "name": "Kukkalaatikot",
+      "headline": "Kukkalaatikot",
+      "intro": "Ruusut laatikkoon aseteltuna – lahja, joka ei tarvitse maljakkoa.",
+      "seo": {
+        "title": "Kukkalaatikot toimitettuna Wienissä",
+        "description": "Ruusuja kukkalaatikossa – sydämenmuotoisena tai klassisena. Kukkalähetys Wienissä haluamanasi päivänä."
+      }
+    },
+    "pflanzen": {
+      "name": "Kasvit",
+      "headline": "Ruukkukasvit",
+      "intro": "Orkideoita, flamingonkukkia ja viherkasveja – kukkia, jotka jäävät.",
+      "seo": {
+        "title": "Ruukkukasvit toimitettuna Wienissä",
+        "description": "Orkideoita, flamingonkukkia ja huonekasveja ruukussa lahjaksi. Kukkalähetys Wienissä."
+      }
+    },
+    "trauer": {
+      "name": "Surukukat",
+      "headline": "Surukukat",
+      "intro": "Suruseppeleitä ja surukimppuja, arvokkaasti sidottuja viimeiseksi tervehdykseksi.",
+      "seo": {
+        "title": "Suruseppeleet ja surukimput Wienissä",
+        "description": "Suruseppeleitä ja surukimppuja hautajaisiin ja muistotilaisuuteen – toimitus Wienissä."
+      }
+    },
+    "advent": {
+      "name": "Adventtikranssit",
+      "headline": "Adventtikranssit",
+      "intro": "Havuja, kynttilöitä ja koristeita – käsin sidottu adventin aikaan.",
+      "seo": {
+        "title": "Adventtikranssit toimitettuna Wienissä",
+        "description": "Käsin sidottuja adventtikransseja useina väreinä ja kokoina – toimitus Wienissä."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Syntymäpäivä",
+      "headline": "Kukat syntymäpäivälle",
+      "intro": "Kimppu, joka sanoo: ajattelin sinua. Valitse kukat ja toivottu päivä.",
+      "imageAlt": "Värikäs kimppu punaisin ruusuin, gerberoin ja keltaisin kukin punaisessa kääreessä",
+      "seo": {
+        "title": "Kukat syntymäpäivälle – syntymäpäiväkimput Wieniin",
+        "description": "Kimppuja syntymäpäivälle: värikkäitä, iloisia tai tyylikkäitä. Käsin sidottu ja toimitettu Wienissä – haluamanasi päivänä."
+      }
+    },
+    "liebe": {
+      "name": "Rakkaus & romantiikka",
+      "headline": "Kukat rakkaudelle",
+      "intro": "Punaisia ruusuja tai jotain aivan muuta: kukkia, jotka sanovat, mitä tarkoitat.",
+      "imageAlt": "Kimppu syvänpunaisista ruusuista harmaassa kääreessä punaisella rusetilla",
+      "seo": {
+        "title": "Romanttiset kukat toimitettuna Wienissä",
+        "description": "Ruusuja ja romanttisia kimppuja toimitettuna Wienissä – tuoreeltaan sidottu, haluamanasi päivänä."
+      }
+    },
+    "danke": {
+      "name": "Kiitos",
+      "headline": "Kukat kiitokseksi",
+      "intro": "Avusta, ajasta, ihan kaikesta. Kimppu sanoo sen ilman montaa sanaa.",
+      "imageAlt": "Kimppu keltaisista gerberoista ja valkoisista ruusuista keltaisella rusetilla",
+      "seo": {
+        "title": "Kiitoskukat toimitettuna Wienissä",
+        "description": "Kiitä kukilla: tuoreeltaan sidottuja kimppuja toimitettuna Wienissä – haluamanasi päivänä."
+      }
+    },
+    "gute-besserung": {
+      "name": "Pikaista paranemista",
+      "headline": "Kukat paranemiseen",
+      "intro": "Pehmeitä värejä, rauhallisia muotoja ja pieni tervehdys, joka tekee hyvää.",
+      "imageAlt": "Aurinkoinen kimppu oranssissa ja keltaisessa vaaleassa kääreessä",
+      "seo": {
+        "title": "Pikaista paranemista -kukat Wienissä",
+        "description": "Kukat paranemisen toivotukseksi toimitettuna Wienissä – pehmeitä kimppuja, tuoreeltaan sidottu, haluamanasi päivänä."
+      }
+    },
+    "jahrestag": {
+      "name": "Vuosipäivä",
+      "headline": "Kukat vuosipäivälle",
+      "intro": "Päivälle, jona kaikki alkoi. Ja kaikille niille, jotka tulivat sen jälkeen.",
+      "imageAlt": "Kimppu punaisista ja valkoisista ruusuista valkoisessa kääreessä",
+      "seo": {
+        "title": "Kukat vuosipäivälle toimitettuna Wienissä",
+        "description": "Tyylikkäitä kimppuja vuosipäivälle toimitettuna Wienissä – tuoreeltaan sidottu, haluamanasi päivänä."
+      }
+    },
+    "geburt": {
+      "name": "Vauvan syntymä",
+      "headline": "Kukat vauvan syntymän kunniaksi",
+      "intro": "Tervetuloa, pieni ihminen. Herkkiä kukkia suureen hetkeen.",
+      "imageAlt": "Herkkä kimppu vaaleanpunaisista ja liiloista ruusuista harson kera",
+      "seo": {
+        "title": "Kukat vauvan syntymään Wienissä",
+        "description": "Herkkiä pastellikimppuja vauvan syntymän kunniaksi toimitettuna Wienissä – tuoreeltaan sidottu, haluamanasi päivänä."
+      }
+    },
+    "hochzeit": {
+      "name": "Häät",
+      "headline": "Kukat häihin",
+      "intro": "Hääparille tai onnitteluksi: tyylikästä, valoisaa ja juhlavaa.",
+      "imageAlt": "Kimppu valkoisista ruusuista valkoisessa kääreessä maljakossa",
+      "seo": {
+        "title": "Hääkukat toimitettuna Wienissä",
+        "description": "Tyylikkäitä kukkia häihin toimitettuna Wienissä – onnitteluksi tai lahjaksi, tuoreeltaan sidottu."
+      }
+    },
+    "einfach-so": {
+      "name": "Muuten vain",
+      "headline": "Kukat ihan muuten vain",
+      "intro": "Ei syytä. Vain ajatus. Joskus se on paras syy.",
+      "imageAlt": "Keltaisia tulppaaneja lasimaljakossa ikkunalla",
+      "seo": {
+        "title": "Lähetä kukkia muuten vain – Wien",
+        "description": "Lähetä kukkia ilman syytä: pieniä ja suuria kimppuja toimitettuna Wienissä – tuoreeltaan sidottu, haluamanasi päivänä."
+      }
+    },
+    "trauer": {
+      "name": "Suru",
+      "headline": "Kukat suruun",
+      "intro": "Osanottoa rauhallisin värein. Seppeleitä ja kimppuja, käsin sidottu ja toimitettu Wienissä.",
+      "imageAlt": "Valkoinen suruseppele valkoisella nauhalla puisella telineellä",
+      "seo": {
+        "title": "Surukukat toimitettuna Wienissä",
+        "description": "Surukukat toimitettuna Wienissä – seppeleitä, surukimppuja ja rauhallisia kimppuja, käsin sidottu, haluamanasi päivänä."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Tuoksukynttilä",
+      "description": "Koristeellisia tuoksukynttilöitä lahjapakkauksessa, eri muotoja ja värejä.",
+      "imageAlt": "Sydämen- ja pallonmuotoisia tuoksukynttilöitä läpinäkyvissä lahjarasioissa"
+    },
+    "x-teddy": {
+      "name": "Nalle",
+      "description": "Pehmonalle punaisella sydämellä – lämmin lisä kimpun rinnalle.",
+      "imageAlt": "Vaaleanruskea pehmonalle punaisella sydämellä"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Minne toimitatte?",
+      "answer": "Toimitamme kaikkiin Wienin 23 kaupunginosaan. Kaupunginosasta riippuen toimitus on ilmainen tai maksaa 3,99 € tai 7,99 €. Syötä vain vastaanottajan osoitteen postinumero – näet heti, voimmeko toimittaa, milloin ja mitä toimitus maksaa.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Voinko saada kukat perille vielä tänään?",
+      "answer": "Kyllä – kun tilaat maanantaista lauantaihin klo 18:30 mennessä tai sunnuntaisin klo 17:45 mennessä, toimitamme vielä samana päivänä koko Wieniin, kunhan vapaita aikaikkunoita on jäljellä. Näet osoitteesi aikaisimman toimitusajan heti, kun syötät postinumeron.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Onko teillä pikatoimitusta?",
+      "answer": "Kyllä – pikatoimitus 1–2 tunnissa ilman lisämaksua. Tilaa tavalliseen tapaan ja valitse kassalla tämän päivän aikaisin aikaikkuna – se on merkitty ”Express”. Tämä onnistuu, kun tilaat maanantaista lauantaihin klo 18:30 mennessä tai sunnuntaisin klo 17:45 mennessä ja osoitteellesi on vielä vapaa aikaikkuna.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Voinko valita tietyn toimituspäivän?",
+      "answer": "Kyllä. Valitset toivotun päivän kalenterista jokaisella tuotesivulla ja kassalla. Päivät, joina emme toimita, näkyvät harmaina.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Voinko valita toivotun kellonajan?",
+      "answer": "Kyllä. Wienissä valitset kassalla tunnin mittaisen aikaikkunan klo 9 ja 22 välillä – viikon kaikkina seitsemänä päivänä.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Mitä tapahtuu, jos kukaan ei ole kotona?",
+      "answer": "Kuriiri luovuttaa kukat henkilökohtaisesti. Jos kukaan ei ole paikalla, ne jätetään mahdollisuuksien mukaan naapurille. Kassalla voit lisätä toimitusta koskevan ohjeen, esimerkiksi ovikoodin. Kerromme tilauksesi tilasta sähköpostitse.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Voinko lähettää kukat nimettömänä?",
+      "answer": "Kyllä. Ilman tervehdyskorttia nimesi ei näy missään kimpussa, ja lasku lähetetään vain sinulle. Tervehdyskortit henkilökohtaisella viestillä tulevat pian.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Voinko lisätä tervehdyskortin?",
+      "answer": "Ei vielä – tervehdyskortit tulevat pian. Siihen asti kimppu toimitetaan ilman korttia.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Näyttävätkö kukat täsmälleen samalta kuin kuvassa?",
+      "answer": "Jokainen kimppu sidotaan yksilöllisesti, ja kukat ovat luonnontuotteita. Värit, lajikkeet ja kukkien koko voivat vaihdella hieman vuodenajan mukaan. Tyyli ja värimaailma säilyvät.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Miten kukat pysyvät tuoreina?",
+      "answer": "Jokainen kimppu sidotaan tuoreeltaan tilaustasi varten, ja kuriiri toimittaa sen suoraan perille. Näin se kestää pisimpään: leikkaa varret vinosti, vaihda raikas vesi ja sijoita kimppu viileään paikkaan suoralta auringolta suojaan.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Mitä maksutapoja on käytössä?",
+      "answer": "Näet käytettävissä olevat maksutavat tilauksen viimeisessä vaiheessa. Maksu tapahtuu turvallisesti maksupalveluntarjoajan kautta – korttitietosi eivät koskaan päädy meille.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Voinko muuttaa tilaustani?",
+      "answer": "Niin kauan kuin kimppua ei ole vielä sidottu, voimme yleensä vielä muuttaa toimituspäivää tai osoitetta. Kirjoita meille mahdollisimman pian ja mainitse tilausnumerosi.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Voinko lähettää kukkia yrityksiin tai hotelleihin?",
+      "answer": "Kyllä. Kirjoita kassalla yrityksen tai hotellin nimi ja – jos tiedossa – osasto tai huoneen numero. Toimitus tehdään vastaanottoon.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Kukkia erityisiin hetkiin.",
+      "intro": "Blumora on wieniläinen verkkokukkakauppa. Jokainen kimppu sidotaan käsin wieniläisessä kukkakaupassa ja kuriiri toimittaa sen suoraan perille.",
+      "seo": {
+        "title": "Meistä – kukkalähetykset Wienistä",
+        "description": "Blumora on wieniläinen verkkokukkakauppa: käsin sidottuja kimppuja, jotka kuriiri toimittaa kaikkiin 23 kaupunginosaan."
+      },
+      "sections": [
+        {
+          "heading": "Miten työskentelemme",
+          "paragraphs": [
+            "Blumora on wieniläinen verkkokukkakauppa. Valitset kimppusi meiltä – sen sitoo wieniläinen kukkakauppa, jonka kanssa teemme kiinteää yhteistyötä. Siellä jokainen kimppu syntyy käsin ja juuri sinun tilaustasi varten.",
+            "Tervehdyskortit omalla tekstilläsi tulevat pian."
+          ],
+          "imageAlt": "Kimppu ruusuista, dahlioista, hortensioista ja tulppaaneista wieniläisen vanhan talon ikkunalaudalla, taustalla Tapanin tuomiokirkko iltavalossa"
+        },
+        {
+          "heading": "Toimitus",
+          "paragraphs": [
+            "Kuriiri noutaa kimppusi suoraan kukkakaupasta ja vie sen ilman välipysähdyksiä vastaanottajan osoitteeseen. Toimitamme kaikkiin Wienin 23 kaupunginosaan – valitsemassasi aikaikkunassa: aamupäivällä, iltapäivällä tai illalla klo 22 asti."
+          ],
+          "imageAlt": "Pure Liebe -kimppu lasimaljakossa"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Toimitus",
+      "intro": "Toimitamme kaikkiin Wienin 23 kaupunginosaan. Toimituskulut (ilmainen, 3,99 € tai 7,99 €), toimituspäivät ja aikaikkunat riippuvat vastaanottajan osoitteesta – syötä postinumero, niin näet kaiken yhdellä silmäyksellä.",
+      "seo": {
+        "title": "Toimitus – kukkatoimitus Wienissä",
+        "description": "Toimitusalueet, toimituskulut, toimituspäivät ja aikaikkunat kukkatoimituksille Wienissä."
+      },
+      "sections": [
+        {
+          "heading": "Näin toimitus etenee",
+          "paragraphs": [
+            "Kimppusi sidotaan tuoreeltaan tilaustasi varten. Kuriiri noutaa sen suoraan kukkakaupasta ja vie sen ilman välipysähdyksiä vastaanottajan osoitteeseen – valitsemassasi aikaikkunassa. Jos kukaan ei ole paikalla, kimppu jätetään mahdollisuuksien mukaan naapurille.",
+            "Jokaisesta tilauksesta saat vahvistuksen sähköpostitse sekä linkin, jolla voit seurata tilauksen tilaa."
+          ]
+        },
+        {
+          "heading": "Toimitus yrityksiin, hotelleihin ja sairaaloihin",
+          "paragraphs": [
+            "Kirjoita kassalla yrityksen tai hotellin nimi sekä osasto tai huoneen numero. Toimitamme vastaanottoon. Huomaa, että kaikki laitokset eivät salli kukkia osastoilla."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Yhteystiedot",
+      "intro": "Kysyttävää tilauksesta, toimituspäivästä tai erityisestä toiveesta? Olemme täällä sinua varten.",
+      "seo": {
+        "title": "Yhteystiedot – Blumora Wien",
+        "description": "Ota yhteyttä Blumoraan, jos sinulla on kysyttävää tilauksesta, toimituksesta tai erityisistä toiveista."
+      },
+      "sections": [
+        {
+          "heading": "Näin tavoitat meidät",
+          "paragraphs": [
+            "[Paikkamerkki: sähköposti, puhelin ja aukioloajat haetaan asetuksista, ja ne on täydennettävä siellä.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Kukkalähetykset koko Wieniin",
+      "headline": "Kukkia, jotka sanovat enemmän.",
+      "subheadline": "Tuoreeltaan sidottuja kukkia ihmisille, jotka ovat sinulle tärkeitä. Valitse, päätä toivottu päivä ja anna meidän toimittaa ilo perille.",
+      "primaryCta": {
+        "label": "Tutustu kukkiin"
+      },
+      "secondaryCta": {
+        "label": "Valitse tilaisuuden mukaan"
+      },
+      "imageAlt": "Kamelinvärisessä takissa oleva nainen kantaa suurta kimppua ruusuista, leinikeistä, dahlioista ja tulppaaneista wieniläisellä mukulakivikadulla, taustalla kulkee raitiovaunu",
+      "deliveryCheck": {
+        "title": "Minne saamme toimittaa?",
+        "placeholder": "Syötä postinumero",
+        "button": "Tarkista toimitus"
+      }
+    },
+    "occasions": {
+      "headline": "Kukkia jokaiseen hetkeen",
+      "subheadline": "Aina ei tarvita suurta syytä. Vain oikea ele."
+    },
+    "bestsellers": {
+      "headline": "Suosikkikimppumme",
+      "subheadline": "Valikoima tuotteistamme."
+    },
+    "collections": {
+      "headline": "Löydä täydellinen kimppusi",
+      "subheadline": "Värin, tyylin tai budjetin mukaan."
+    },
+    "howItWorks": {
+      "headline": "Ilon lahjoittaminen ei ole koskaan ollut näin helppoa.",
+      "steps": [
+        {
+          "title": "Valitse suosikkikimppusi",
+          "text": "Löydä kukkia jokaiseen makuun ja tilaisuuteen."
+        },
+        {
+          "title": "Tee siitä henkilökohtainen",
+          "text": "Valitse koko ja pienet lisät."
+        },
+        {
+          "title": "Valitse toimituspäivä",
+          "text": "Päätä, milloin yllätyksesi saapuu."
+        },
+        {
+          "title": "Anna ilon tulla perille",
+          "text": "Me hoidamme loput."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Adventin aika",
+      "headline": "Pian syttyy ensimmäinen kynttilä.",
+      "text": "Adventtikransseja havuista, kynttilöistä ja koristeista – useina väreinä ja kokoina. Lisäksi kimppuja lämpimissä syksyn sävyissä.",
+      "cta": {
+        "label": "Adventtikranssit"
+      },
+      "imageAlt": "Adventtikranssi havuista ja neljästä punaisesta kynttilästä puisen lipaston päällä"
+    },
+    "editorial": {
+      "eyebrow": "Käsityötä",
+      "headline": "Floristien tekemää. Ei liukuhihnalta.",
+      "text": "Jokainen kimppu sidotaan käsin wieniläisessä kukkakaupassa juuri sinun tilaustasi varten, ja kuriiri toimittaa sen suoraan perille – ilman kiertoa varaston kautta.",
+      "cta": {
+        "label": "Näin työskentelemme"
+      },
+      "imageAlt": "Kuriiri ojentaa wieniläisen vanhan talon ovella värikkään kimpun ruusuista, dahlioista ja leinikeistä"
+    },
+    "extras": {
+      "headline": "Tee yllätyksestäsi täydellinen.",
+      "subheadline": "Pieniä lisiä, jotka tekevät hetkestä suuremman."
+    },
+    "subscription": {
+      "headline": "Lisää kukkia arkeen.",
+      "text": "Tuoreita kauden kimppuja – viikoittain, joka toinen viikko tai kuukausittain. Kotiin, toimistoon, vastaanottoon tai ravintolaan.",
+      "cta": {
+        "label": "Tutustu kukkatilaukseen"
+      }
+    },
+    "reviews": {
+      "headline": "Hetkiä, jotka tulivat perille.",
+      "subheadline": "Mitä asiakkaat kertovat tilauksestaan."
+    },
+    "gallery": {
+      "headline": "Kukkia erityisiin hetkiin.",
+      "images": [
+        {
+          "alt": "Värikäs ruusukimppu punaisessa, vaaleanpunaisessa, kermassa ja aprikoosissa valkoisessa maljakossa"
+        },
+        {
+          "alt": "Kimppu hehkuvan sinisistä ruusuista valkoisessa maljakossa"
+        },
+        {
+          "alt": "Kimppu voimakkaissa pinkin sävyissä gerberoin maljakossa ikkunalla"
+        },
+        {
+          "alt": "Eksoottinen kimppu paratiisilintukukin, liljoin ja gerberoin"
+        },
+        {
+          "alt": "Sydämenmuotoinen punainen kukkalaatikko ruusuin lipaston päällä"
+        },
+        {
+          "alt": "Kimppu pastellinsävyisistä ja pinkeistä ruusuista vaaleanpunaisessa kääreessä"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Hyvä tietää"
+    },
+    "newsletter": {
+      "headline": "Vähän enemmän kukkia sähköpostiisi.",
+      "text": "Uutuuksia, kauden kokoelmia ja erityisiä kampanjoita.",
+      "placeholder": "Sähköpostiosoitteesi",
+      "button": "Tilaa",
+      "note": "Voit perua tilauksen milloin tahansa. Tietoa tietosuojasta löydät tietosuojaselosteesta."
+    }
+  },
+  "settings": {
+    "claim": "Kukkia, jotka sanovat enemmän.",
+    "seo": {
+      "defaultTitle": "Blumora – kukkatoimitus Wienissä",
+      "defaultDescription": "Kukkatoimitus koko Wieniin: tuoreeltaan sidottuja kimppuja kaikkiin 23 kaupunginosaan. Samana päivänä klo 18:30 asti (sunnuntaisin 17:45), pikatoimitus 1–2 tunnissa ilman lisämaksua."
+    },
+    "announcement": {
+      "messages": [
+        "Toimitus koko Wieniin, kaikkiin 23 kaupunginosaan",
+        "Pikatoimitus 1–2 tunnissa – ilman lisämaksua",
+        "Samana päivänä klo 18:30 asti, sunnuntaisin 17:45 asti",
+        "Tuoreeltaan sidottu, kuriirin toimittama"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Tuoreeltaan sidottu",
+        "text": "Käsin sidottu juuri sinun tilaustasi varten"
+      },
+      {
+        "title": "Kuriiritoimitus",
+        "text": "Koko Wieniin – kaikkiin 23 kaupunginosaan"
+      },
+      {
+        "title": "Valitse toimituspäivä",
+        "text": "Sinä päätät päivän"
+      },
+      {
+        "title": "Pikatoimitus 1–2 tunnissa",
+        "text": "Ilman lisämaksua, samana päivänä klo 18:30 asti"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Tilaus vastaanotettu",
+        "description": "Olemme vastaanottaneet tilauksesi."
+      },
+      "paid": {
+        "label": "Maksu vahvistettu",
+        "description": "Maksusi on vastaanotettu."
+      },
+      "preparing": {
+        "label": "Valmistelussa",
+        "description": "Kimppusi kukkia valitaan."
+      },
+      "arranging": {
+        "label": "Kimppua sidotaan",
+        "description": "Kimppuasi sidotaan käsin."
+      },
+      "ready": {
+        "label": "Valmis toimitettavaksi",
+        "description": "Kimppu on valmis, ja kuriiri noutaa sen."
+      },
+      "in_transit": {
+        "label": "Matkalla",
+        "description": "Kimppusi on matkalla."
+      },
+      "delivered": {
+        "label": "Toimitettu",
+        "description": "Kukat ovat perillä."
+      },
+      "undeliverable": {
+        "label": "Ei voitu toimittaa",
+        "description": "Emme voineet toimittaa tilausta ja otamme sinuun yhteyttä."
+      },
+      "cancelled": {
+        "label": "Peruttu",
+        "description": "Tilaus on peruttu."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Luottokortti",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Verkkopankkisiirto (eps)"
+    },
+    "headerCta": "Lähetä kukkia",
+    "address": {
+      "city": "Wien",
+      "country": "Itävalta"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Wien, vyöhyke 1",
+      "windows": {
+        "h09": "klo 9–10",
+        "h10": "klo 10–11",
+        "h11": "klo 11–12",
+        "h12": "klo 12–13",
+        "h13": "klo 13–14",
+        "h14": "klo 14–15",
+        "h15": "klo 15–16",
+        "h16": "klo 16–17",
+        "h17": "klo 17–18",
+        "h18": "klo 18–19",
+        "h19": "klo 19–20",
+        "h20": "klo 20–21",
+        "h21": "klo 21–22"
+      }
+    },
+    "wien-mitte": {
+      "name": "Wien, vyöhyke 2",
+      "windows": {
+        "h09": "klo 9–10",
+        "h10": "klo 10–11",
+        "h11": "klo 11–12",
+        "h12": "klo 12–13",
+        "h13": "klo 13–14",
+        "h14": "klo 14–15",
+        "h15": "klo 15–16",
+        "h16": "klo 16–17",
+        "h17": "klo 17–18",
+        "h18": "klo 18–19",
+        "h19": "klo 19–20",
+        "h20": "klo 20–21",
+        "h21": "klo 21–22"
+      }
+    },
+    "wien-fern": {
+      "name": "Wien, vyöhyke 3",
+      "windows": {
+        "h09": "klo 9–10",
+        "h10": "klo 10–11",
+        "h11": "klo 11–12",
+        "h12": "klo 12–13",
+        "h13": "klo 13–14",
+        "h14": "klo 14–15",
+        "h15": "klo 15–16",
+        "h16": "klo 16–17",
+        "h17": "klo 17–18",
+        "h18": "klo 18–19",
+        "h19": "klo 19–20",
+        "h20": "klo 20–21",
+        "h21": "klo 21–22"
+      }
+    },
+    "noe-umland": {
+      "name": "Wienin ympäristö (Ala-Itävalta)",
+      "note": "Toimitus Wienin ympäristöön tiistaisin, torstaisin ja lauantaisin.",
+      "windows": {
+        "day": "klo 9–18"
+      }
+    }
+  }
+}

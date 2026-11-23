@@ -1,0 +1,255 @@
+[
+  {
+    "slug": "laheta-kukkia-wieniin",
+    "title": "Lähetä kukkia Wieniin",
+    "headline": "Lähetä kukkia Wieniin – kaikkiin 23 kaupunginosaan",
+    "intro": "Wieniläisen kukkakaupan käsin sitomia kimppuja, jotka kuriiri tuo perille viikon jokaisena päivänä. Sinä valitset päivän ja aikaikkunan, me hoidamme loput.",
+    "image": "/images/hero/hero-wien-tram-wide.jpg",
+    "productFilter": {
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Näin kukkalähetys Wieniin toimii",
+        "paragraphs": [
+          "Kun haluat lähettää kukkia Wieniin, valitse kimppu, syötä vastaanottajan postinumero ja näet heti, voimmeko toimittaa ja milloin. Toimitamme kaikkiin Wienin 23 kaupunginosaan maanantaista sunnuntaihin.",
+          "Valitse toivottu päivä kalenterista ja kassalla tunnin mittainen aikaikkuna klo 9:00 ja 22:00 välillä. Toimituskulut riippuvat kaupunginosasta, ja näet ne heti postinumeron syötettyäsi – ennen kuin maksat."
+        ]
+      },
+      {
+        "heading": "Sidottu sinulle, ei haettu varastosta",
+        "paragraphs": [
+          "Jokaisen kimpun sitoo käsin juuri sinun tilaustasi varten wieniläinen yhteistyökukkakauppamme, ja kuriiri ojentaa sen henkilökohtaisesti. Kukat ovat luonnontuotteita: lajikkeet ja sävyt voivat vaihdella hieman vuodenajan mukaan, mutta tyyli ja värimaailma säilyvät.",
+          "Kimput alkaen 36,90 €. Kimppujen lisäksi valikoimassa on ruukkukasveja sekä surukimppuja ja suruseppeleitä."
+        ]
+      },
+      {
+        "heading": "Kiire?",
+        "paragraphs": [
+          "Kun tilaat maanantaista lauantaihin klo 18:30 mennessä tai sunnuntaina klo 17:45 mennessä, toimitamme vielä samana päivänä, kunhan vapaa aikaikkuna löytyy. Pikatoimitus 1–2 tunnissa ei maksa lisää: valitse kassalla tämän päivän aikaisin aikaikkuna, joka on merkitty ”Express”."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-date",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Lähetä kukkia Wieniin – kukkalähetys | Blumora",
+      "description": "Lähetä kukkia Wieniin: toimitus kaikkiin 23 kaupunginosaan 7 päivänä viikossa, tunnin aikaikkuna valintasi mukaan. Wieniläisen kukkakaupan sitomat kimput."
+    }
+  },
+  {
+    "slug": "kukat-suomesta-wieniin",
+    "title": "Kukat Suomesta Wieniin",
+    "headline": "Lähetä kukkia Suomesta Wieniin.",
+    "intro": "Asutko Helsingissä, Tampereella tai Oulussa, ja rakas ihminen on Wienissä? Tilaa verkossa suomeksi, maksa tutulla kortillasi ja anna kuriirin tuoda käsin sidottu kimppu suoraan ovelle.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": {
+      "occasions": [
+        "geburtstag",
+        "liebe",
+        "danke",
+        "einfach-so"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Tilaus Suomesta käy helposti",
+        "paragraphs": [
+          "Koko kauppa, kassa ja tilaukseen liittyvät sähköpostit ovat suomeksi. Hinnat ovat euroina, joten valuuttamuunnoksia ei tarvita. Voit maksaa luotto- tai pankkikortilla, Apple Paylla, Google Paylla, Klarnalla tai eps:llä – myös suomalaiset kortit käyvät.",
+          "Tarvitset vain vastaanottajan wieniläisen osoitteen. Syötä postinumero (Wienin postinumerot ovat välillä 1010–1230), niin näet heti käytettävissä olevat toimituspäivät ja aikaikkunat sekä toimituksen hinnan kyseiseen kaupunginosaan."
+        ]
+      },
+      {
+        "heading": "Muista aikaero",
+        "paragraphs": [
+          "Kaikki sivuston päivämäärät ja kellonajat ovat Wienin aikaa. Wien on tunnin Suomea jäljessä: kun Suomessa kello on 19:30, Wienissä se on 18:30. Valitse kalenterista päivä, jona kukkien pitäisi olla perillä, ja tunnin aikaikkuna klo 9:00 ja 22:00 välillä.",
+          "Samana päivänä toimitus onnistuu, kun tilaat maanantaista lauantaihin klo 18:30 mennessä tai sunnuntaina klo 17:45 mennessä Wienin aikaa – eli Suomen aikaa klo 19:30 tai 18:45 mennessä – kunhan vapaa aikaikkuna löytyy."
+        ]
+      },
+      {
+        "heading": "Wieniläisestä kukkakaupasta, ei pakettina",
+        "paragraphs": [
+          "Kimppusi sitoo Wienissä paikallinen yhteistyökukkakauppa, ja kuriiri vie sen ovelle – se ei matkusta rajojen yli laatikossa. Jos kukaan ei ole kotona, kuriiri yrittää jättää sen naapurille, ja saat tiedon tilanteesta sähköpostitse. Kysyttävää? Tavoitat meidät puhelimitse ja WhatsAppilla ympäri vuorokauden."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-payment",
+      "f-date",
+      "f-window",
+      "f-nobody",
+      "f-anon"
+    ],
+    "seo": {
+      "title": "Lähetä kukkia Suomesta Wieniin | Blumora",
+      "description": "Kukat Suomesta Wieniin: tilaa suomeksi, maksa kortilla, Apple Paylla tai Google Paylla. Käsin sidottu kimppu, kuriiritoimitus koko Wieniin."
+    }
+  },
+  {
+    "slug": "kukkakauppa-wien",
+    "title": "Kukkakauppa Wienissä",
+    "headline": "Kukkakauppa Wienissä – käsin sidotut kimput verkosta.",
+    "intro": "Etsitkö hyvää kukkakauppaa Wienistä? Blumoran kimput sitoo käsin wieniläinen floristi juuri sinun tilaustasi varten, ja kuriiri tuo ne suoraan perille.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": {
+      "category": "bunt",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Floristin käsityötä",
+        "paragraphs": [
+          "Blumora on wieniläinen verkkokukkakauppa. Sinä valitset kimpun verkossa, ja sen sitoo wieniläinen kukkakauppa, jonka kanssa teemme kiinteää yhteistyötä. Jokainen kimppu syntyy käsin ja vasta, kun olet tilannut – ei liukuhihnalta eikä varastosta.",
+          "Valikoimassa on ruusukimppuja, värikkäitä ja pastellinsävyisiä kimppuja, kukkalaatikoita, ruukkukasveja sekä surukimppuja ja suruseppeleitä. Kimput alkaen 36,90 €."
+        ]
+      },
+      {
+        "heading": "Erityistoiveet floristille",
+        "paragraphs": [
+          "Haluatko kimppuun esimerkiksi parittoman määrän varsia? Floristi voi toteuttaa sen pyynnöstä – kirjoita toiveesi tilauksen huomautukseen floristille.",
+          "Kukat ovat luonnontuotteita, joten lajikkeet ja sävyt voivat vaihdella hieman vuodenajan mukaan. Tyyli ja värimaailma säilyvät."
+        ]
+      },
+      {
+        "heading": "Kukkakaupasta suoraan ovelle",
+        "paragraphs": [
+          "Kuriiri noutaa kimpun kukkakaupasta ja vie sen ilman välipysähdyksiä vastaanottajalle – kaikkiin Wienin 23 kaupunginosaan, viikon jokaisena päivänä ja valitsemassasi tunnin aikaikkunassa klo 9:00 ja 22:00 välillä.",
+          "Jos et osaa päättää kahden kimpun välillä tai sinulla on kysyttävää tilauksesta, tavoitat meidät puhelimitse ja WhatsAppilla ympäri vuorokauden."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-fresh",
+      "f-photo",
+      "f-where",
+      "f-window"
+    ],
+    "seo": {
+      "title": "Kukkakauppa Wien – floristin sitomat kimput",
+      "description": "Kukkakauppa Wienissä verkossa: wieniläisen floristin käsin sitomat kimput, kuriiritoimitus kaikkiin 23 kaupunginosaan 7 päivänä viikossa."
+    }
+  },
+  {
+    "slug": "kukat-samana-paivana-wien",
+    "title": "Kukat samana päivänä",
+    "headline": "Kukat perille vielä tänään – kukkalähetys samana päivänä Wienissä.",
+    "intro": "Unohtuiko syntymäpäivä, vai haluatko vain ilahduttaa jotakuta? Tilaa klo 18:30 mennessä (sunnuntaisin 17:45 mennessä), niin kimppusi voi olla perillä Wienissä vielä tänään.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": {
+      "sameDayOnly": true,
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Tilausajat samana päivänä",
+        "paragraphs": [
+          "Kukkalähetys samana päivänä onnistuu Wienissä, kun tilaat maanantaista lauantaihin klo 18:30 mennessä tai sunnuntaina klo 17:45 mennessä ja osoitteelle on vielä vapaa aikaikkuna. Valitsemasi aikaikkuna päättyy aikaisintaan kaksi tuntia tilauksesi jälkeen, jotta floristi ehtii sitoa kimpun ja kuriiri tuoda sen.",
+          "Mitä myöhemmin tilaat, sitä vähemmän aikaikkunoita on jäljellä. Syötä postinumero, niin näet ennen maksua, mitkä ajat ovat vielä mahdollisia tänään."
+        ]
+      },
+      {
+        "heading": "Pikatoimitus 1–2 tunnissa ilman lisämaksua",
+        "paragraphs": [
+          "Kun on todella kiire, valitse kassalla tämän päivän aikaisin aikaikkuna – se on merkitty ”Express”. Silloin kimppu on perillä 1–2 tunnissa, eikä pikatoimitus maksa mitään ylimääräistä."
+        ]
+      },
+      {
+        "heading": "Käsin sidottu lyhyelläkin varoitusajalla",
+        "paragraphs": [
+          "Wieniläinen yhteistyökukkakauppamme sitoo jokaisen kimpun tilaustasi varten, vaikka sitä tarvittaisiin nopeasti. Kuriiri noutaa sen ja vie suoraan vastaanottajalle.",
+          "Eikö tälle päivälle ole enää aikaikkunoita? Valitse huominen – toimitamme viikon kaikkina seitsemänä päivänä. Kaikki ajat ovat Wienin aikaa."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-today",
+      "f-express",
+      "f-where",
+      "f-window"
+    ],
+    "seo": {
+      "title": "Kukat samana päivänä Wien – pikatoimitus 1–2 h",
+      "description": "Kukat perille tänään Wienissä: tilaa ma–la klo 18:30 tai su klo 17:45 mennessä. Pikatoimitus 1–2 tunnissa ilman lisämaksua, kun aikaikkuna on vapaana."
+    }
+  },
+  {
+    "slug": "ruusut-wien",
+    "title": "Ruusulähetys Wienissä",
+    "headline": "Lähetä ruusuja Wieniin.",
+    "intro": "Punaisia ruusuja rakkaudelle, valkoisia hiljaiselle kiintymykselle tai vaaleanpunaisia kiitokseksi: ruusukimput useana kokona, käsin sidottu ja toimitettu kaikkialle Wieniin.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": {
+      "category": "rosen",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Väri ja koko",
+        "paragraphs": [
+          "Punaiset ruusut ovat klassinen rakkaudentunnustus ystävänpäivänä, vuosipäivänä tai kosiessa. Valkoiset ja kermanväriset ruusut ovat rauhallisia ja tyylikkäitä, vaaleanpunaiset ja pastellinsävyiset lämpimiä – ne sopivat hyvin syntymäpäivälle tai kiitokseksi. Valikoimassa on myös sinisiä, mustia ja sateenkaariruusuja.",
+          "Monia ruusukimppuja on saatavana kuutena kokona, pienestä eleestä suureen kimppuun. Jos haluat tietyn määrän varsia, esimerkiksi parittoman, kirjoita se pyyntönä tilauksen huomautukseen floristille."
+        ]
+      },
+      {
+        "heading": "Tuoreeltaan sidottu, suoraan perille",
+        "paragraphs": [
+          "Wieniläinen yhteistyökukkakauppamme sitoo ruusut tilaustasi varten, ja kuriiri ojentaa ne henkilökohtaisesti. Valitse kalenterista päivä ja tunnin aikaikkuna klo 9:00 ja 22:00 välillä – toimitamme kaikkiin 23 kaupunginosaan maanantaista sunnuntaihin.",
+          "Jos haluat yllättää nimettömänä, jätä tervehdyskortti pois: nimesi ei näy kimpussa, ja lasku lähetetään vain sinulle. Jos haluat yllätyksen perille vielä tänään, tilaa maanantaista lauantaihin klo 18:30 tai sunnuntaina klo 17:45 mennessä."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-window",
+      "f-anon",
+      "f-photo"
+    ],
+    "seo": {
+      "title": "Ruusut Wieniin – ruusulähetys kotiovelle",
+      "description": "Lähetä ruusuja Wieniin: punaisia, valkoisia ja vaaleanpunaisia ruusukimppuja useana kokona, käsin sidottu ja kuriirin toimittama kaikkiin 23 kaupunginosaan."
+    }
+  },
+  {
+    "slug": "hautajaiskukat-wien",
+    "title": "Hautajaiskukat ja suruseppeleet",
+    "headline": "Hautajaiskukat ja suruseppeleet Wienissä.",
+    "intro": "Kun et pääse paikalle itse, kukat voivat jättää jäähyväiset puolestasi. Wieniläisen floristin huolella sitomat surukimput ja suruseppeleet, kuriirin toimittamina Wienissä.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": {
+      "category": "trauer",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Surukimppu vai seppele",
+        "paragraphs": [
+          "Surukimput sidotaan havujen päälle, ja ne asetetaan arkun tai haudan äärelle. Seppele on Itävallassa perinteinen muistamisen merkki hautajaisissa. Valkoiset kukat ovat hiljaisia ja rauhallisia, punainen kertoo rakkaudesta, ja lämpimät tai pastelliset sävyt voivat heijastaa muistettavan ihmisen luonnetta.",
+          "Haluatko seppeleeseen nauhan, jossa on lyhyt teksti, esimerkiksi viimeinen tervehdys ja nimenne? Se onnistuu pyynnöstä – kirjoita teksti tilauksen huomautukseen floristille."
+        ]
+      },
+      {
+        "heading": "Ajoitus ja toimitusosoite",
+        "paragraphs": [
+          "Valitse toimituspäivä ja tunnin aikaikkuna hyvissä ajoin ennen tilaisuuden alkua ja syötä koko osoite Wienissä. Lisää kuriirille tarkoitettuun huomautukseen vainajan nimi ja tilaisuuden kellonaika, jotta kukat löytävät oikeaan paikkaan.",
+          "Toimitamme kaikkiin Wienin 23 kaupunginosaan viikon jokaisena päivänä. Jos tilaat Suomesta, muista, että kaikki näytetyt ajat ovat Wienin aikaa – tunnin Suomen aikaa jäljessä.",
+          "Maksaa voit kortilla, Apple Paylla, Google Paylla, Klarnalla tai eps:llä. Jos sinulla on kysyttävää, tavoitat meidät puhelimitse ja WhatsAppilla ympäri vuorokauden."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-photo",
+      "f-change"
+    ],
+    "seo": {
+      "title": "Hautajaiskukat Wien – suruseppeleet ja surukimput",
+      "description": "Hautajaiskukat ja suruseppeleet Wienissä: wieniläisen floristin sitomat, nauhateksti pyynnöstä, kuriiritoimitus haluamanasi päivänä."
+    }
+  }
+]

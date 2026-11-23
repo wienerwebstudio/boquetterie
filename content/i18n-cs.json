@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Růžové růže, růžové gerbery a bílé lilie",
+      "shortDescription": "Světlá, volně vázaná kytice v růžové a bílé, která vnese dobrou náladu do každé místnosti.",
+      "description": "Rosé Dream spojuje růžové růže a sytě růžové gerbery s bílými liliemi, jemnou gypsofilou a svěží zelení. Volně vázaná a světlá se hodí k narozeninám, jako poděkování nebo jen tak.",
+      "flowers": [
+        "Růže",
+        "Gerbery",
+        "Lilie",
+        "Gypsofila"
+      ],
+      "care": [
+        "Denně dolévejte do vázy čerstvou vodu.",
+        "Stonky podle potřeby zastřihněte.",
+        "Uvadlé květy pravidelně odstraňujte."
+      ],
+      "seo": {
+        "title": "Rosé Dream – kytice v růžové a bílé",
+        "description": "Rosé Dream: růžové růže, růžové gerbery a bílé lilie, volně vázané. Světlá kytice k narozeninám i jako poděkování – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Kytice z růžových růží, růžových gerber a bílých lilií ve skleněné váze na dřevěné komodě"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Žlutá kytice",
+      "tagline": "Žluté gerbery, růže a gypsofila",
+      "shortDescription": "Slunečná kytice ve žluté a bílé, převázaná žlutou stuhou.",
+      "description": "Zářivě žluté gerbery se setkávají s bílými a žlutými růžemi, gypsofilou a svěží zelení. Ve světlé manžetě se žlutou stuhou – kytice k narozeninám, jako blahopřání, poděkování nebo přání brzkého uzdravení.",
+      "flowers": [
+        "Gerbery",
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Nestavte kytici na přímé slunce."
+      ],
+      "seo": {
+        "title": "Žlutá kytice – gerbery a růže ve žluté",
+        "description": "Žluté gerbery, bílé a žluté růže s gypsofilou a žlutou stuhou. Světlý pozdrav k narozeninám nebo pro brzké uzdravení – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Kytice ze žlutých gerber, bílých a žlutých růží ve světlé manžetě se žlutou stuhou"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Bílá kytice",
+      "tagline": "Světlé růže, gerbery a lilie",
+      "shortDescription": "Světlá, klidná kytice v bílé a krémové s jemnými růžovými akcenty.",
+      "description": "Bílá kytice spojuje světlé růže, gerbery a lilie s gypsofilou v prostou, nadčasovou kytici. Jemné akcenty v růžové a meruňkové ji oživují. Hodí se k výročí svatby nebo jinému výročí, jako poděkování či stylový pozdrav.",
+      "flowers": [
+        "Růže",
+        "Gerbery",
+        "Lilie",
+        "Gypsofila"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Pyl lilií podle potřeby opatrně odstraňte."
+      ],
+      "seo": {
+        "title": "Bílá kytice – v bílé a krémové",
+        "description": "Světlé růže, gerbery a lilie s gypsofilou: prostá kytice k výročí, výročí svatby nebo jako poděkování – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Světlá kytice z krémových růží, růžových gerber, lilií a gypsofily v bílé manžetě"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Modré a bílé růže v modré manžetě",
+      "shortDescription": "Modré a bílé růže ve světle modré manžetě – kytice, která neujde pozornosti.",
+      "description": "Blue Bouquet kombinuje modré a bílé růže s gypsofilou, bílou lilií a svěží zelení. Světle modrá manžeta navazuje na barvu květů. Neobvyklý dárek k narozeninám, výročí nebo pro ty, kdo mají rádi něco zvláštního.",
+      "flowers": [
+        "Růže",
+        "Lilie",
+        "Gypsofila"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – modré a bílé růže",
+        "description": "Modré a bílé růže s gypsofilou ve světle modré manžetě. Neobvyklá kytice růží k narozeninám nebo výročí – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Kytice z modrých a bílých růží s gypsofilou ve světle modré manžetě na dřevěné komodě"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Duhové růže v mnoha barvách",
+      "shortDescription": "Kytice z duhových růží, u nichž každý květ září několika barvami.",
+      "description": "Farbensinfonie se skládá z duhových růží: každý květ ukazuje několik barev vedle sebe, od červené a oranžové přes žlutou a zelenou až po modrou a fialovou. Hustě vázaná kytice působí jako barevná koule. Radostné překvapení k narozeninám nebo na oslavu.",
+      "flowers": [
+        "Duhové růže"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – duhové růže",
+        "description": "Duhové růže, u nichž každý květ září několika barvami. Veselá kytice růží k narozeninám – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Farbensinfonie (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Farbensinfonie (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Farbensinfonie (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Hustá kytice z duhových růží v krémové váze",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Duhové růže zblízka, každý květ v několika barvách"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelície, lilie a gerbery v oranžové a žluté",
+      "shortDescription": "Exotická kytice v oranžové a žluté se strelíciemi jako poutavým prvkem.",
+      "description": "Sonnenzauber spojuje nápadné strelície s bílými liliemi, žlutými gerberami a svěží zelení. Teplé oranžové a žluté tóny dodávají kytici živý, letní výraz.",
+      "flowers": [
+        "Strelície (rajka)",
+        "Lilie",
+        "Gerbery",
+        "Gypsofila"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Udržujte vázu čistou a vodu pravidelně měňte.",
+        "Nestavte kytici na přímé slunce."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelície a gerbery",
+        "description": "Strelície, lilie a žluté gerbery v teplé oranžové a žluté. Exotická kytice, která upoutá pozornost – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Exotická kytice ze strelícií, bílých lilií a žlutých gerber v průhledné fólii",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Pohled shora na strelície, lilii a žluté gerbery v kytici"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Květy v sytě růžové a růžové s gerberami a liliemi",
+      "shortDescription": "Kulatá, hravá kytice v sytě růžové a růžové se žlutými akcenty.",
+      "description": "Pink Bouquet spojuje květy v sytě růžové a růžové, mezi nimi lilie a gerbery, do kulaté, hravé kytice. Žluté gerbery přidávají svěží akcenty, růžová manžeta celek doplňuje. Krásná k narozeninám, výročí, Dni matek nebo jen tak.",
+      "flowers": [
+        "Lilie",
+        "Gerbery"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Uvadlé květy pravidelně odstraňujte."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – kytice v sytě růžové a růžové",
+        "description": "Kulatá kytice v sytě růžové a růžové s liliemi a gerberami. K narozeninám, Dni matek nebo jen tak – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Kulatá kytice v sytě růžové a růžové se žlutými gerberami v růžové manžetě",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Kytice s růžovými liliemi, žlutými gerberami a sytě růžovými květy v růžové manžetě se stuhou"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Růže v oranžové a meruňkové",
+      "shortDescription": "Růže v oranžové a meruňkové – teplá kytice jako západ slunce.",
+      "description": "Orange Bouquet tvoří růže v oranžové a meruňkové barvě, doplněné jemnou zelení a zasazené do světlé manžety. Působí teple a vesele a hodí se k narozeninám, jako poděkování nebo pro zpříjemnění něčího dne.",
+      "flowers": [
+        "Růže"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – oranžové růže",
+        "description": "Růže v oranžové a meruňkové ve světlé manžetě. Teplá kytice růží k narozeninám nebo jako poděkování – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Orange Bouquet (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Orange Bouquet (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Orange Bouquet (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Kytice z oranžových a meruňkových růží ve světlé manžetě na dřevěné komodě"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Tmavě červené růže v tmavé manžetě",
+      "shortDescription": "Bohatá kytice z tmavě červených růží s červenou saténovou stuhou.",
+      "description": "Red Rose Bouquet je hustě vázaná kytice z tmavě červených růží v tmavé manžetě, převázaná červenou saténovou stuhou. Klasické vyznání lásky na Valentýna, k výročí nebo k žádosti o ruku.",
+      "flowers": [
+        "Růže"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – červené růže",
+        "description": "Tmavě červené růže v tmavé manžetě s červenou saténovou stuhou. Klasická kytice růží na Valentýna a k výročí – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Red Rose Bouquet (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Red Rose Bouquet (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Red Rose Bouquet (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Kytice z tmavě červených růží v tmavě šedé manžetě s červenou saténovou stuhou",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Ležící kytice z červených růží v černobílé manžetě vedle svíček"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Růže a gerbery v růžové, pastelové a šeříkové",
+      "shortDescription": "Jemná, romantická kytice v růžové a pastelových tónech.",
+      "description": "Rosa Bouquet spojuje růže v růžové a pastelových tónech s gerberami a květy šeříkové barvy. V bílé manžetě s růžovou stuhou působí lehce a laskavě. Krásná k narozeninám, Dni matek, narození dítěte nebo jako pozdrav.",
+      "flowers": [
+        "Růže",
+        "Gerbery"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – růže v růžové a pastelové",
+        "description": "Růže a gerbery v růžové, pastelové a šeříkové v bílé manžetě. K narozeninám, Dni matek nebo narození dítěte – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Kytice z růžových růží, gerber a květů šeříkové barvy v bílé manžetě s růžovou stuhou"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Černé růže v tmavé manžetě",
+      "shortDescription": "Černé růže v tmavé manžetě – tajemné a výjimečné.",
+      "description": "Blackroses je kytice z černých růží v tmavé, průhledné manžetě. Neobvyklé gesto pro ty, kdo oceňují něco zvláštního, třeba k narozeninám nebo výročí.",
+      "flowers": [
+        "Růže"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Blackroses – černé růže",
+        "description": "Černé růže v tmavé manžetě: neobvyklá kytice růží pro ty, kdo mají rádi něco zvláštního – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Blackroses (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Blackroses (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Blackroses (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Kytice z černých růží v černé manžetě ve skleněné váze",
+        "/images/products/sortiment/blackroses-2.jpg": "Černé růže bez manžety ve skleněné váze před oknem"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Modré růže s gypsofilou",
+      "shortDescription": "Zářivě modré růže s gypsofilou – vzácné a skutečně poutavé.",
+      "description": "Blaue Liebe je kytice ze zářivě modrých růží, odlehčená jemnou gypsofilou a zasazená do modré manžety. Zvláštní dárek k narozeninám, výročí nebo jako projev hlubokého pouta.",
+      "flowers": [
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – modré růže",
+        "description": "Zářivě modré růže s gypsofilou v modré manžetě. Vzácná kytice růží pro výjimečné lidi – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Blaue Liebe (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Blaue Liebe (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Blaue Liebe (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Kytice z modrých růží s gypsofilou v modré manžetě v bílé váze",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Modré růže s gypsofilou v modré manžetě, zepředu",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Ležící kytice z modrých růží v modré manžetě na dřevěné komodě"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Růžové růže s gypsofilou",
+      "shortDescription": "Růžové růže v jemné manžetě – laskavé a elegantní.",
+      "description": "Rosalie je kytice z růžových růží, odlehčená gypsofilou a zasazená do jemně růžové manžety. Působí žensky a klidně a hodí se ke Dni matek, narozeninám, výročí nebo jako poděkování.",
+      "flowers": [
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Rosalie – růžové růže s gypsofilou",
+        "description": "Růžové růže s gypsofilou v jemně růžové manžetě. Ke Dni matek, narozeninám nebo jako poděkování – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Rosalie (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Rosalie (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Rosalie (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Kytice z růžových růží s gypsofilou v jemně růžové manžetě v bílé váze",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie v růžové manžetě v jednoduché bílé váze",
+        "/images/products/sortiment/rosalie-3.jpg": "Růžové růže s gypsofilou v žebrované bílé váze",
+        "/images/products/sortiment/rosalie-4.jpg": "Ležící Rosalie, pohled shora na růžové růže a gypsofilu"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Červeno-bílý mix",
+      "tagline": "Červené a bílé růže",
+      "shortDescription": "Červené a bílé růže ve slavnostní kytici.",
+      "description": "Červeno-bílý mix spojuje červené a bílé růže v bílé manžetě, podle velikosti odlehčené gypsofilou. Vášeň se setkává s něhou: kytice na Valentýna, k výročí, výročí svatby nebo jako elegantní dárek.",
+      "flowers": [
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Červeno-bílý mix – červené a bílé růže",
+        "description": "Červené a bílé růže ve slavnostní manžetě. Na Valentýna, k výročí nebo výročí svatby, v šesti velikostech – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Červeno-bílý mix (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Červeno-bílý mix (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Červeno-bílý mix (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Kytice z červených a bílých růží s gypsofilou v bílé manžetě, vedle okvětní lístky růží",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Červené a bílé růže hustě vázané v bílé manžetě",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Červeno-bílá kytice růží v bílé manžetě na dřevěné komodě",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Ležící kytice z červených a bílých růží, pohled shora"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Kytice tulipánů",
+      "tagline": "Tulipány v jedné barvě nebo v mixu",
+      "shortDescription": "Prostá kytice z tulipánů, jednobarevná nebo pestře namíchaná.",
+      "description": "Tulipány svými čistými barvami a štíhlým tvarem přinášejí do domova jarní náladu. Kytice je vázaná jen z tulipánů, podle volby v jedné barvě nebo jako pestrý mix. K dispozici v červené, žluté, fialové, růžové, oranžové, bílé a v mixu.",
+      "flowers": [
+        "Tulipány"
+      ],
+      "care": [
+        "Stonky seřízněte rovně a vložte do studené vody.",
+        "Stačí málo vody, ale pravidelně ji dolévejte.",
+        "Tulipány ve váze dál rostou, podle potřeby je zastřihněte."
+      ],
+      "seo": {
+        "title": "Kytice tulipánů – tulipány v mnoha barvách",
+        "description": "Kytice tulipánů v červené, žluté, fialové, růžové, oranžové, bílé nebo v mixu. Jarní nálada domů – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Červená",
+        "gelb": "Žlutá",
+        "lila": "Fialová",
+        "rosa": "Růžová",
+        "orange": "Oranžová",
+        "weiss": "Bílá",
+        "mix": "Pestrý mix"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Kytice žlutých tulipánů ve skleněné váze",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Fialové tulipány v kraftovém papíře ve skleněné váze",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Červené tulipány v béžové váze",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Oranžové tulipány ve skleněné váze",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Růžové tulipány ve skleněné váze na lněném ubrusu",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Pestrý mix tulipánů v červené, žluté, růžové, oranžové a fialové v béžové váze",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Bílé tulipány v bílé váze"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Červené růže s gypsofilou",
+      "shortDescription": "Výrazná kytice růží v sytě červené pro velké city.",
+      "description": "Red Passion spojuje červené růže do husté, kulaté kytice, orámované gypsofilou a tmavou manžetou. K dispozici v šesti velikostech – pro romantická gesta a chvíle, které mají zůstat v paměti.",
+      "flowers": [
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Stonky čerstvě seřízněte.",
+        "Denně dolévejte čerstvou vodu.",
+        "Chraňte před přímým sluncem."
+      ],
+      "seo": {
+        "title": "Red Passion – kytice červených růží",
+        "description": "Červené růže s gypsofilou v tmavé manžetě, v šesti velikostech. Kytice růží pro velké city – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Red Passion (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Red Passion (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Red Passion (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Ležící kytice z tmavě červených růží s gypsofilou v černozlaté manžetě",
+        "/images/products/sortiment/red-passion-2.jpg": "Velká kytice z červených růží s gypsofilou v tmavé manžetě v bílé váze",
+        "/images/products/sortiment/red-passion-3.jpg": "Velmi velká kulatá kytice z červených růží s věncem z gypsofily v tmavé manžetě"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Hustě vázané červené růže",
+      "shortDescription": "Hustě vázané červené růže v tmavé manžetě – nadčasové a plné citu.",
+      "description": "Klassiker der Liebe tvoří červené růže hustě vázané do kulatého tvaru v tmavé manžetě s černou stuhou. Kytice růží na Valentýna, k výročí, k žádosti o ruku nebo ke každému vyznání lásky.",
+      "flowers": [
+        "Růže"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – červené růže",
+        "description": "Hustě vázané červené růže v tmavé manžetě. Klasická kytice růží na Valentýna, k výročí nebo k žádosti o ruku – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Klassiker der Liebe (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Klassiker der Liebe (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Klassiker der Liebe (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Kulatá kytice z hustě vázaných červených růží v černé manžetě se stuhou",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Červené růže v kulovitém tvaru v tmavé manžetě, zepředu"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Červené růže s gypsofilou",
+      "shortDescription": "Bohatá kytice růží v šesti velikostech.",
+      "description": "Königin der Herzen spojuje červené růže s jemnou gypsofilou v tmavé, průhledné manžetě. K dispozici v šesti velikostech – od malého gesta po velké vystoupení.",
+      "flowers": [
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Umístěte na chladné místo.",
+        "Uvadlé květy včas odstraňte.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – bohatá kytice růží",
+        "description": "Červené růže s gypsofilou v šesti velikostech. Bohatá kytice růží pro velké chvíle – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Königin der Herzen (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Königin der Herzen (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Königin der Herzen (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Kytice z červených růží s gypsofilou v tmavé manžetě v bílé váze",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Velká kytice z červených růží a gypsofily v černé manžetě",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Červené růže s gypsofilou v tmavé manžetě v černém květináči",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Pohled shora na červené růže s gypsofilou v tmavé manžetě ve tvaru hvězdy"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbery, růže a lilie v teplých tónech",
+      "shortDescription": "Teplá kytice v oranžové, růžové a žluté.",
+      "description": "Herbstzauber spojuje gerbery, růže a lilie v oranžových, růžových a žlutých tónech se svěží zelení. Volně vázaná přináší do domova teplé barvy, právě když se dny krátí.",
+      "flowers": [
+        "Gerbery",
+        "Růže",
+        "Lilie"
+      ],
+      "care": [
+        "Nestavte kytici vedle ovoce.",
+        "Pravidelně dolévejte vodu.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Herbstzauber – kytice v teplých tónech",
+        "description": "Gerbery, růže a lilie v oranžové, růžové a žluté. Teplá podzimní kytice k narozeninám nebo jako poděkování – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Kytice z oranžových gerber, růží v meruňkové a růžové a lilií ve skleněné váze"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Červené růže, gerbery a zelené akcenty",
+      "shortDescription": "Živá kytice v červené a oranžové se svěžími zelenými akcenty.",
+      "description": "Blütenfreude spojuje červené růže a gerbery v červené a oranžové se zelenými pomponovými květy a eukalyptem. Sytá v barvách, a přesto kulatá ve tvaru – krásná k narozeninám, jako poděkování nebo jen tak.",
+      "flowers": [
+        "Růže",
+        "Gerbery"
+      ],
+      "care": [
+        "Denně dolévejte do vázy čerstvou vodu.",
+        "Stonky podle potřeby zastřihněte.",
+        "Uvadlé květy pravidelně odstraňujte."
+      ],
+      "seo": {
+        "title": "Blütenfreude – růže a gerbery v červené",
+        "description": "Červené růže, gerbery v červené a oranžové a svěží zelené akcenty. Živá kytice k narozeninám – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Kytice z červených růží, červených a oranžových gerber a zelených pomponových květů ve skleněné váze",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude v bílé váze na dřevěné komodě"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Růžové růže, lilie a gypsofila",
+      "shortDescription": "Jemné růžové tóny s liliemi – klidné, harmonické a něžné.",
+      "description": "Zartrosa Zauber spojuje růžové růže s růžovými liliemi a gypsofilou v růžové manžetě. Kytice působí klidně a harmonicky, s jemným romantickým nádechem.",
+      "flowers": [
+        "Růže",
+        "Lilie",
+        "Gypsofila"
+      ],
+      "care": [
+        "Odstraňte listy, které zasahují do vody.",
+        "Umístěte na chladné místo.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – růže a lilie v růžové",
+        "description": "Růžové růže, růžové lilie a gypsofila v jemné manžetě. Klidná, romantická kytice – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Kytice z růžových růží, růžových lilií a gypsofily v růžové manžetě v bílé váze",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber v růžové manžetě s velkou mašlí"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbery, lilie a růže v oranžové a žluté",
+      "shortDescription": "Zářivá oranžová a žlutá pro dobré zprávy a slunečné příležitosti.",
+      "description": "Strahlender Tag spojuje oranžové gerbery a lilie se žlutými růžemi, světlými karafiáty a gypsofilou. Syté barvy přinášejí pozitivní energii – kytice pro blahopřání, úspěchy a slunečné příležitosti.",
+      "flowers": [
+        "Gerbery",
+        "Lilie",
+        "Růže",
+        "Karafiáty",
+        "Gypsofila"
+      ],
+      "care": [
+        "Chraňte před průvanem.",
+        "Vodu pravidelně měňte.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – kytice v oranžové a žluté",
+        "description": "Oranžové gerbery a lilie se žlutými růžemi a gypsofilou. Veselá kytice pro blahopřání – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Kytice z oranžových gerber, žlutých růží a gypsofily v bílozlaté manžetě",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Oranžové gerbery, lilie a žlutá růže v bílé váze",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Kulatá kytice z oranžových gerber a lilií, žlutých růží a světlých karafiátů ve skleněné váze"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Růže v růžové, krémové a meruňkové",
+      "shortDescription": "Harmonická kytice růží mezi klasickou krásou a moderním stylem.",
+      "description": "Rosentraum spojuje růže v růžové, krémové a meruňkové s fialovými květy, větvičkami s bobulemi a svěží zelení. Ve starorůžové manžetě působí kytice bohatě a zároveň moderně.",
+      "flowers": [
+        "Růže"
+      ],
+      "care": [
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Udržujte vázu čistou.",
+        "Vodu pravidelně obnovujte."
+      ],
+      "seo": {
+        "title": "Rosentraum – růže v růžové a krémové",
+        "description": "Růže v růžové, krémové a meruňkové s fialovými akcenty ve starorůžové manžetě. Harmonická kytice růží – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Vázaná kytice z růží v růžové, krémové a meruňkové ve starorůžové manžetě",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum ve starorůžové manžetě v bílé váze",
+        "/images/products/sortiment/rosentraum-3.jpg": "Pohled shora na růže, fialové květy a větvičky s bobulemi v kytici"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Bílé růže s gypsofilou",
+      "shortDescription": "Bílé růže s gypsofilou – něžné, romantické a světlé.",
+      "description": "Rosenkuss tvoří bílé až krémové růže, odlehčené jemnou gypsofilou a zasazené do bílé manžety. Kytice pro náklonnost, blízkost a malá vyznání lásky.",
+      "flowers": [
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Nestavte kytici na příliš teplé místo.",
+        "Denně kontrolujte hladinu vody.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Rosenkuss – bílé růže",
+        "description": "Bílé růže s gypsofilou v bílé manžetě. Něžná, romantická kytice růží – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Rosenkuss (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Rosenkuss (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Rosenkuss (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Kytice z bílých růží s gypsofilou v bílé manžetě v bílé váze",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Velká kytice z bílých růží v bílé manžetě v bílé váze",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Ležící kytice z bílých růží s gypsofilou na dřevěné komodě"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Růže v pastelové, sytě růžové a bordó",
+      "shortDescription": "Růže v pastelových a sytě růžových tónech, elegantně sestavené.",
+      "description": "Rosenglanz spojuje růže v pastelově růžové, krémové, sytě růžové a bordó s gypsofilou v růžové manžetě. Nadčasová kytice, k dispozici v šesti velikostech.",
+      "flowers": [
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Stonky čerstvě seřízněte.",
+        "Vyhněte se přímému slunci.",
+        "Vodu ve váze pravidelně měňte."
+      ],
+      "seo": {
+        "title": "Rosenglanz – růže v pastelové a sytě růžové",
+        "description": "Růže v pastelově růžové, sytě růžové a bordó s gypsofilou, v šesti velikostech. Elegantní kytice růží – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá",
+          "detailAlt": "Rosenglanz (malá) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "m": {
+          "label": "Střední",
+          "detailAlt": "Rosenglanz (střední) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "l": {
+          "label": "Velká",
+          "detailAlt": "Rosenglanz (velká) v ruce, v pozadí vídeňská ulice s tramvají"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Kytice z růží v pastelově růžové, sytě růžové a bordó v růžové manžetě ve skleněné váze",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Kulatá kytice růží s gypsofilou v růžové manžetě, zepředu",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Ležící kytice z pastelových a sytě růžových růží na dřevěné komodě"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Růžové růže, gerbery, lilie a karafiáty",
+      "shortDescription": "Výrazná kytice v růžové a sytě růžové, která mluví beze slov.",
+      "description": "Pure Liebe spojuje růžové růže se sytě růžovou gerberou, růžovými liliemi, karafiáty a gypsofilou. Intenzivní v růžových tónech, odlehčená světlými akcenty – kytice plná citu.",
+      "flowers": [
+        "Růže",
+        "Gerbery",
+        "Lilie",
+        "Karafiáty",
+        "Gypsofila"
+      ],
+      "care": [
+        "Pravidelně dolévejte čerstvou vodu.",
+        "Udržujte vázu čistou.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Pure Liebe – kytice v růžové a sytě růžové",
+        "description": "Růžové růže, sytě růžové gerbery, lilie a karafiáty s gypsofilou. Kytice plná citu – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Kytice z růžových růží, sytě růžové gerbery a růžových lilií v béžové váze",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe s liliemi, gerberami a karafiáty v béžové váze",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Kulatá kytice z růžových růží, gerber, karafiátů a gypsofily ve skleněné váze"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Sytě růžové gerbery, růže a fialové akcenty",
+      "shortDescription": "Výrazné růžové tóny spojené do svěží, moderní kytice.",
+      "description": "Pink Harmony spojuje sytě růžové gerbery a růže s bílými a šeříkovými květy, fialovými akcenty a gypsofilou. Živá a svěží, s velkým kouzlem.",
+      "flowers": [
+        "Gerbery",
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Umístěte na chladné místo.",
+        "Odstraňujte uvadlé květy.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbery a růže v sytě růžové",
+        "description": "Sytě růžové gerbery a růže se šeříkovými a fialovými akcenty. Svěží, moderní kytice – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Kytice ze sytě růžových gerber, růží a šeříkových květů v béžové váze",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Kulatá kytice se sytě růžovými gerberami, růžemi a fialovými akcenty"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Pestrá kytice růží v růžové, žluté, meruňkové a fialové",
+      "shortDescription": "Velkorysá, pestrá kytice růží pro zvláštní příležitosti.",
+      "description": "Love Deluxe je kytice růží v mnoha barvách: růžové, krémové, meruňkové, žluté a fialové, v růžové manžetě. Pro zvláštní příležitosti a velká gesta, k dispozici v pěti velikostech.",
+      "flowers": [
+        "Růže"
+      ],
+      "care": [
+        "Stonky zastřihněte.",
+        "Vodu ve váze denně měňte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Love Deluxe – pestrá kytice růží",
+        "description": "Růže v růžové, krémové, meruňkové, žluté a fialové v růžové manžetě, v pěti velikostech. Pro velká gesta – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Pestrá kytice růží v růžové, žluté, meruňkové a fialové v růžové manžetě v bílé váze",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Velká pestrá kytice růží v růžové manžetě, zepředu",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Ležící pestrá kytice růží v růžové manžetě na dřevěné komodě"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Červené a zelené růže s liliemi",
+      "shortDescription": "Emotivní kytice v červené, která řekne „Miluji tě“.",
+      "description": "Liebeserklärung spojuje červené růže se světle zelenými růžemi, bílými liliemi, červenými doplňkovými květy a gypsofilou. Výrazná, a přesto svěží – kytice, která dává citům viditelnou podobu.",
+      "flowers": [
+        "Růže",
+        "Lilie",
+        "Gypsofila"
+      ],
+      "care": [
+        "Chraňte před horkem.",
+        "Vodu pravidelně obnovujte.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – červené růže a lilie",
+        "description": "Červené a světle zelené růže s liliemi a gypsofilou. Kytice, která řekne „Miluji tě“ – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Kytice z červených a světle zelených růží s liliemi a gypsofilou ve skleněné váze",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung v bílé váze na dřevěné komodě"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Růže a gerbery v růžové s oranžovými akcenty",
+      "shortDescription": "Elegantní a vyvážená – kytice se stylovou zdrženlivostí.",
+      "description": "Klassische Schönheit spojuje růže ve starorůžové a bílé se sytě růžovou gerberou, drobnými oranžovými květy a gypsofilou. V tmavé manžetě se zlatým okrajem působí kytice vyváženě a nadčasově.",
+      "flowers": [
+        "Růže",
+        "Gerbery",
+        "Gypsofila"
+      ],
+      "care": [
+        "Nestavte kytici přímo k topení.",
+        "Stonky před vložením do vody šikmo seřízněte.",
+        "Vodu ve váze pravidelně měňte."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – růže a gerbery",
+        "description": "Růže ve starorůžové a bílé se sytě růžovou gerberou v tmavé manžetě. Vyvážená, nadčasová kytice – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Kytice ze starorůžových růží a sytě růžové gerbery v tmavé manžetě se zlatým okrajem",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit v bílé váze",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Pohled shora na růže, gerbery a gypsofilu v tmavé manžetě"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Růžové růže a sytě růžové gerbery",
+      "shortDescription": "Hravá a živá: růžové růže se setkávají se sytě růžovými gerberami.",
+      "description": "Herzklopfen spojuje jemně růžové růže se sytě růžovou gerberou, drobnými bílozelenými květy a jemnou fialovou zelení. Kulatě vázaná a plná barev – kytice s velkým citem.",
+      "flowers": [
+        "Růže",
+        "Gerbery"
+      ],
+      "care": [
+        "Denně dolévejte čerstvou vodu.",
+        "Stonky šikmo seřízněte.",
+        "Umístěte na chladné místo mimo přímé slunce."
+      ],
+      "seo": {
+        "title": "Herzklopfen – růžové růže a gerbery",
+        "description": "Jemně růžové růže a sytě růžové gerbery, kulatě vázané. Hravá kytice plná citu – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Kulatá kytice z jemně růžových růží a sytě růžové gerbery v bílé váze",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen v bílé váze, z boku",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Kytice z růžových růží a sytě růžové gerbery ve skleněné váze"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Pestrý mix s růžemi a gerberami",
+      "shortDescription": "Pestrá kytice, která vyzařuje radost ze života.",
+      "description": "Fröhlicher Blütenmix spojuje červené růže, gerbery ve žluté, růžové a červené a další květy ve žluté, oranžové a fialové. V červené manžetě – ideální, když chcete darovat úsměv.",
+      "flowers": [
+        "Růže",
+        "Gerbery"
+      ],
+      "care": [
+        "Umístěte na chladné místo.",
+        "Vodu pravidelně měňte.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – pestrá kytice",
+        "description": "Červené růže a gerbery ve žluté, růžové a červené v červené manžetě. Pestrá kytice plná radosti ze života – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Pestrá kytice s gerberami a růžemi v červené manžetě na dřevěné komodě",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix v červené manžetě v bílé váze",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Pohled shora na červené růže, žluté a růžové gerbery v červené manžetě"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Růže a gerbery v sytě růžové s fialovými akcenty",
+      "shortDescription": "Živý mix v sytě růžové, meruňkové a fialové.",
+      "description": "Farbtänzer spojuje růže a trsové růže v sytě růžové a meruňkové s růžovými gerberami, fialovými květy a světlými bobulemi. Hustě a živě vázaná – moderní a výrazná.",
+      "flowers": [
+        "Růže",
+        "Gerbery"
+      ],
+      "care": [
+        "Odstraňte listy, které zasahují do vody.",
+        "Udržujte vázu čistou.",
+        "Stonky před vložením do vody šikmo seřízněte."
+      ],
+      "seo": {
+        "title": "Farbtänzer – kytice v sytě růžové a fialové",
+        "description": "Růže a gerbery v sytě růžové a meruňkové s fialovými akcenty. Živá, moderní kytice – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Ležící kytice v sytě růžové a fialové v jemně růžové manžetě",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Kulatá kytice ze sytě růžových růží, gerber a fialových květů v krémové váze",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer v žebrované váze, zepředu"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Květinový box ve tvaru srdce",
+      "tagline": "Růže v červeném boxu ve tvaru srdce",
+      "shortDescription": "Růže v boxu ve tvaru srdce – vyznání lásky, které stačí postavit na stůl.",
+      "description": "V červeném boxu ve tvaru srdce jsou naaranžované růže v červené, růžové a bílé s dalšími květy a gypsofilou. Dárek k výročí, na Valentýna nebo jako laskavé překvapení.",
+      "flowers": [
+        "Růže",
+        "Gypsofila"
+      ],
+      "care": [
+        "Růže lehce zvlhčujte.",
+        "Umístěte na chladné místo.",
+        "Chraňte před přímým sluncem."
+      ],
+      "seo": {
+        "title": "Květinový box ve tvaru srdce – růže v boxu",
+        "description": "Růže v červené, růžové a bílé v červeném boxu ve tvaru srdce. K výročí a na Valentýna – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Červený květinový box ve tvaru srdce s růžemi v červené, růžové a bílé a gypsofilou"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klasický květinový box",
+      "tagline": "Červené růže v kulatém boxu",
+      "shortDescription": "Klasické růže v kulatém boxu – prosté a výrazné.",
+      "description": "Klasický květinový box tvoří kulatý box plný hustě usazených růží. Minimalistický a nadčasový, hodí se k narozeninám, jako poděkování nebo pro zvláštní chvíle. K dispozici v červené a bílé.",
+      "flowers": [
+        "Růže"
+      ],
+      "care": [
+        "Růže pravidelně lehce zalévejte.",
+        "Umístěte na chladné místo.",
+        "Chraňte před přímým sluncem."
+      ],
+      "seo": {
+        "title": "Klasický květinový box – růže v boxu",
+        "description": "Hustě usazené růže v kulatém boxu, k dispozici v červené a bílé. Prostý dárek – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Červené růže v kulatém bílém boxu s růžovým a zlatým okrajem",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Dva červené sametové kulaté boxy s červenými růžemi na bílém podstavci"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Růžová anturie v květináči",
+      "tagline": "Anturie s růžovými květy",
+      "shortDescription": "Anturie s jemně růžovými květy – elegantní a nenápadná.",
+      "description": "Růžová anturie vnáší svými jemnými květy a lesklými zelenými listy do prostoru barvu, aniž by působila křiklavě. Hodí se do bytu stejně jako do kanceláře.",
+      "flowers": [
+        "Anturie"
+      ],
+      "care": [
+        "Umístěte na světlé místo mimo přímé slunce.",
+        "Pravidelně zalévejte, ale nepřelévejte.",
+        "Listy občas orošte vodou."
+      ],
+      "seo": {
+        "title": "Růžová anturie v květináči – pokojová rostlina",
+        "description": "Anturie s jemně růžovými květy a lesklými listy. Elegantní pokojová rostlina jako dárek – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Růžová anturie ve starorůžovém keramickém květináči na dřevěné komodě",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anturie s růžovými květy ve fialovorůžovém květináči vedle svíček"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Červená anturie v květináči",
+      "tagline": "Anturie s červenými květy",
+      "shortDescription": "Anturie se zářivě červenými květy a moderním vzhledem.",
+      "description": "Červená anturie dodává svými lesklými květy výrazné barevné akcenty. Jako dekorativní pokojová rostlina nebo dárek vydrží při dobré péči dlouho krásná.",
+      "flowers": [
+        "Anturie"
+      ],
+      "care": [
+        "Světlé stanoviště bez přímého slunce.",
+        "Udržujte zeminu rovnoměrně vlhkou.",
+        "Nepřelévejte."
+      ],
+      "seo": {
+        "title": "Červená anturie v květináči – pokojová rostlina",
+        "description": "Anturie se zářivě červenými květy v květináči. Dekorativní pokojová rostlina jako dárek – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Červená anturie v červeném keramickém květináči na dřevěné komodě"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL červená anturie v květináči",
+      "tagline": "Velká anturie s červenými květy",
+      "shortDescription": "Velká, bohatá anturie s mnoha červenými květy.",
+      "description": "Tato červená anturie je vysoká přes 80 cm a nese četné červené květy nad hustými lesklými listy. Výrazný poutač pro byt nebo kancelář.",
+      "flowers": [
+        "Anturie"
+      ],
+      "care": [
+        "Umístěte na světlé místo mimo přímé slunce.",
+        "Pravidelně zalévejte, ale nepřelévejte.",
+        "Listy občas otřete od prachu."
+      ],
+      "seo": {
+        "title": "XXL červená anturie v květináči",
+        "description": "Velká anturie s četnými červenými květy v květináči. Poutač pro byt nebo kancelář – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Velká anturie s mnoha červenými květy v červeném květináči vedle svíček"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromélie v květináči",
+      "tagline": "Bromélie s červeným květem",
+      "shortDescription": "Bromélie se sytě červeným květem a tropickou atmosférou.",
+      "description": "Bromélie dodává svou červenou květní růžicí a štíhlými zelenými listy živé akcenty. Dekorativní pokojová rostlina do bytu nebo pracovny a zvláštní dárek.",
+      "flowers": [
+        "Bromélie"
+      ],
+      "care": [
+        "Umístěte na světlé místo mimo přímé slunce.",
+        "Vodu pravidelně nalévejte do listové nálevky.",
+        "Zeminu udržujte jen mírně vlhkou."
+      ],
+      "seo": {
+        "title": "Bromélie v květináči – pokojová rostlina",
+        "description": "Bromélie s červeným květem v květináči: tropická atmosféra pro byt nebo kancelář – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromélie s červeným květem v červeném květináči na dřevěné komodě"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Fíkus v květináči",
+      "tagline": "Fíkus s tmavě zelenými listy",
+      "shortDescription": "Nenáročný fíkus s lesklými tmavě zelenými listy.",
+      "description": "Fíkus působí svými velkými lesklými listy moderně a klidně. Je nenáročný na péči a dobře se hodí do bytu i kanceláře.",
+      "flowers": [
+        "Fíkus"
+      ],
+      "care": [
+        "Světlé až polostinné stanoviště.",
+        "Zalévejte střídmě, vystačí si s málem vody.",
+        "Listy občas otřete od prachu."
+      ],
+      "seo": {
+        "title": "Fíkus v květináči – nenáročná rostlina",
+        "description": "Fíkus s lesklými tmavě zelenými listy. Nenáročná pokojová rostlina do bytu i kanceláře – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Fíkus s tmavě zelenými listy v červeném květináči na dřevěné komodě"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Bílá orchidej v květináči",
+      "tagline": "Orchidej v květináči, v několika barvách",
+      "shortDescription": "Orchidej v květináči – klidná, ušlechtilá a nadčasová.",
+      "description": "Orchidej symbolizuje eleganci a klid. Se svými jemnými květními latami je stylovou volbou do bytu, kanceláře nebo jako dárek. K dispozici ve fialové, růžové, žluté, bílé a modré.",
+      "flowers": [
+        "Orchidej"
+      ],
+      "care": [
+        "Umístěte na světlé místo mimo přímé slunce.",
+        "Zalévejte střídmě, nepřelévejte.",
+        "Odkvetlé laty odstraňte až po jejich zaschnutí."
+      ],
+      "seo": {
+        "title": "Orchidej v květináči – v pěti barvách",
+        "description": "Orchidej v květináči v bílé, růžové, žluté, fialové nebo modré. Elegantní pokojová rostlina jako dárek – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Bílá orchidej se sytě růžovým středem květu v krémovém keramickém květináči",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orchidej s jemně růžovými květy v krémovém keramickém květináči",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Žlutá orchidej v krémovém keramickém květináči",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orchidej s fialovými květy v sytě růžovém květináči",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orchidej s modrými květy v šedém květináči vedle svíček"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Červená smuteční kytice",
+      "tagline": "Červené růže, gerbery a karafiáty s jedlovou zelení",
+      "shortDescription": "Smuteční kytice v červené jako projev lásky a sounáležitosti.",
+      "description": "Červená smuteční kytice spojuje červené růže, gerbery a karafiáty se žlutými růžemi, gypsofilou a jedlovou zelení. Důstojné gesto vzpomínky, které tiše vyjadřuje silné city. Složení se může podle sezóny mírně lišit.",
+      "flowers": [
+        "Růže",
+        "Gerbery",
+        "Karafiáty",
+        "Gypsofila"
+      ],
+      "care": [
+        "Umístěte na chladné místo, ne na přímé slunce ani k topení.",
+        "U aranžmá udržujte aranžovací hmotu vlhkou."
+      ],
+      "seo": {
+        "title": "Červená smuteční kytice – růže a gerbery",
+        "description": "Smuteční kytice v červené s růžemi, gerberami a karafiáty na jedlové zeleni, ve třech velikostech. Důstojné rozloučení – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Smuteční kytice s červenými růžemi, gerberami a karafiáty, žlutými růžemi a jedlovou zelení na kamenném podstavci"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Růžová smuteční kytice",
+      "tagline": "Růžové růže a fialové květy",
+      "shortDescription": "Smuteční kytice v jemných růžových tónech s utěšujícím výrazem.",
+      "description": "Růžové růže, fialové a růžové květy a jedlová zeleň dávají této smuteční kytici jemný, utěšující výraz. Vyjadřuje vděčnost, blízkost a laskavou vzpomínku – hodí se k tichému, osobnímu rozloučení.",
+      "flowers": [
+        "Růže"
+      ],
+      "care": [
+        "Umístěte na chladné místo, ne na přímé slunce ani k topení.",
+        "U aranžmá udržujte aranžovací hmotu vlhkou."
+      ],
+      "seo": {
+        "title": "Růžová smuteční kytice – jemné růžové tóny",
+        "description": "Smuteční kytice v jemných růžových tónech s růžovými růžemi na jedlové zeleni, ve třech velikostech. Pro tiché rozloučení – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Smuteční kytice s růžovými růžemi a fialovými květy na jedlové zeleni, s bílou stuhou, na kamenném podstavci"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Pastelová smuteční kytice",
+      "tagline": "Lilie, růže a modré květy v pastelových tónech",
+      "shortDescription": "Klidná smuteční kytice v jemných pastelových tónech.",
+      "description": "Pastelová smuteční kytice spojuje růžové lilie a růže se světle modrými, šeříkovými a bílými květy. Jemné barevné odstíny vyjadřují útěchu a soustrast. Květiny se mohou podle sezóny lišit.",
+      "flowers": [
+        "Lilie",
+        "Růže"
+      ],
+      "care": [
+        "Umístěte na chladné místo, ne na přímé slunce ani k topení.",
+        "U aranžmá udržujte aranžovací hmotu vlhkou."
+      ],
+      "seo": {
+        "title": "Pastelová smuteční kytice – klidné tóny",
+        "description": "Smuteční kytice v pastelových tónech s liliemi, růžemi a světle modrými květy, ve třech velikostech. Decentní a stylová – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Pastelová smuteční kytice s růžovými liliemi, růžemi a světle modrými květy, s černou stuhou, na kamenném podstavci"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Oranžová smuteční kytice",
+      "tagline": "Růže, gerbery a karafiáty v oranžové a žluté",
+      "shortDescription": "Smuteční kytice v teplých oranžových tónech, která vyjadřuje úctu.",
+      "description": "Růže, gerbery a karafiáty v oranžové, žluté a meruňkové se spojují s jedlovou zelení v teplou smuteční kytici. Vyjadřuje vděčnost a vzpomínku na naplněný život a hodí se k vystavení zesnulého nebo na vzpomínkový obřad.",
+      "flowers": [
+        "Růže",
+        "Gerbery",
+        "Karafiáty"
+      ],
+      "care": [
+        "Umístěte na chladné místo, ne na přímé slunce ani k topení.",
+        "U aranžmá udržujte aranžovací hmotu vlhkou."
+      ],
+      "seo": {
+        "title": "Oranžová smuteční kytice – teplé tóny",
+        "description": "Smuteční kytice v oranžové a žluté s růžemi, gerberami a karafiáty, ve třech velikostech. K vystavení zesnulého a na vzpomínkový obřad – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Smuteční kytice s růžemi, gerberami a karafiáty v oranžové a žluté na jedlové zeleni, na kamenném podstavci"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Bílá smuteční kytice",
+      "tagline": "Bílé lilie a chryzantémy",
+      "shortDescription": "Klasická smuteční kytice v bílé – prostá a důstojná.",
+      "description": "Bílé lilie, chryzantémy a drobné bílé květy na jedlové zeleni činí tuto smuteční kytici prostou a nadčasovou. Bílá symbolizuje mír a rozloučení – hodí se na formální smuteční obřady nebo jako tichý projev soustrasti.",
+      "flowers": [
+        "Lilie",
+        "Chryzantémy"
+      ],
+      "care": [
+        "Umístěte na chladné místo, ne na přímé slunce ani k topení.",
+        "U aranžmá udržujte aranžovací hmotu vlhkou."
+      ],
+      "seo": {
+        "title": "Bílá smuteční kytice – lilie a chryzantémy",
+        "description": "Klasická smuteční kytice v bílé s liliemi a chryzantémami, ve třech velikostech. Prostá a důstojná – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Smuteční kytice z bílých lilií, chryzantém a drobných bílých květů na jedlové zeleni, na kamenném podstavci"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Žlutá smuteční kytice",
+      "tagline": "Slunečnice, žluté růže a karafiáty",
+      "shortDescription": "Smuteční kytice ve žluté pro vzpomínku, naději a vděčnost.",
+      "description": "Slunečnice, žluté růže a meruňkové karafiáty na jedlové zeleni činí tuto smuteční kytici světlou a teplou. Hodí se k rozloučení, při kterém je v popředí život. Květiny závisí na sezóně.",
+      "flowers": [
+        "Slunečnice",
+        "Růže",
+        "Karafiáty"
+      ],
+      "care": [
+        "Umístěte na chladné místo, ne na přímé slunce ani k topení.",
+        "U aranžmá udržujte aranžovací hmotu vlhkou."
+      ],
+      "seo": {
+        "title": "Žlutá smuteční kytice – slunečnice a růže",
+        "description": "Smuteční kytice ve žluté se slunečnicemi, růžemi a karafiáty, ve třech velikostech. Světlé rozloučení – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Smuteční kytice se slunečnicemi, žlutými růžemi a meruňkovými karafiáty na jedlové zeleni, na kamenném podstavci"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Pestrý smuteční věnec",
+      "tagline": "Gerbery, růže a květy v pestrých barvách",
+      "shortDescription": "Pestrý smuteční věnec na rozloučenou s člověkem, který měl rád život.",
+      "description": "Pestrý smuteční věnec spojuje gerbery, růže a další květy ve žluté, oranžové, růžové a bílé na zeleném podkladu. Důstojné a zároveň barevné rozloučení, ručně vázané. S přáními ohledně podoby se na nás klidně obraťte.",
+      "flowers": [
+        "Gerbery",
+        "Růže"
+      ],
+      "care": [
+        "Umístěte na chladné a stinné místo.",
+        "Aranžovací hmotu podle potřeby lehce navlhčete."
+      ],
+      "seo": {
+        "title": "Pestrý smuteční věnec – barevné rozloučení",
+        "description": "Pestrý smuteční věnec s gerberami a růžemi, ručně vázaný. Barevné rozloučení – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Pestrý smuteční věnec s gerberami, liliemi a bílými květy, s černou stuhou, na dřevěném stojanu"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Růžový smuteční věnec",
+      "tagline": "Gerbery a růže v sytě růžové a červené",
+      "shortDescription": "Smuteční věnec v sytě růžové a červené jako laskavé rozloučení.",
+      "description": "Smuteční věnec v sytě růžové a červené spojuje sytě růžové gerbery, růže a další květy se světlými akcenty a svěží zelení. Výraz lásky a vzpomínky, ručně vázaný. S přáními ohledně podoby se na nás klidně obraťte.",
+      "flowers": [
+        "Gerbery",
+        "Růže"
+      ],
+      "care": [
+        "Umístěte na chladné a stinné místo.",
+        "Aranžovací hmotu podle potřeby lehce navlhčete."
+      ],
+      "seo": {
+        "title": "Růžový smuteční věnec – sytě růžová a červená",
+        "description": "Smuteční věnec v sytě růžové a červené s gerberami a růžemi, ručně vázaný. Laskavé rozloučení – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Smuteční věnec se sytě růžovými gerberami, růžemi a červenými květy, s bordó stuhou, na dřevěném stojanu"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Červeno-žlutý smuteční věnec",
+      "tagline": "Červené a žluté gerbery",
+      "shortDescription": "Zářivý smuteční věnec v červené a žluté.",
+      "description": "Červené a žluté gerbery, hustě zapíchané na zeleném podkladu, dělají z tohoto smutečního věnce zářivé rozloučení plné tepla, vděčnosti a krásných vzpomínek. Ručně vázaný. S přáními ohledně podoby se na nás klidně obraťte.",
+      "flowers": [
+        "Gerbery"
+      ],
+      "care": [
+        "Umístěte na chladné a stinné místo.",
+        "Aranžovací hmotu podle potřeby lehce navlhčete."
+      ],
+      "seo": {
+        "title": "Červeno-žlutý smuteční věnec – gerbery",
+        "description": "Smuteční věnec z červených a žlutých gerber, ručně vázaný. Teplé, zářivé rozloučení – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Smuteční věnec z červených a žlutých gerber se stříbrošedou stuhou na dřevěném stojanu"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Červený smuteční věnec",
+      "tagline": "Červené gerbery a růže",
+      "shortDescription": "Klasický smuteční věnec v červené pro lásku, která zůstává.",
+      "description": "Červený smuteční věnec spojuje červené gerbery a růže na jedlové zeleni. Klasické, důstojné rozloučení pro lásku, která trvá i po odchodu. Ručně vázaný. S přáními ohledně podoby se na nás klidně obraťte.",
+      "flowers": [
+        "Gerbery",
+        "Růže"
+      ],
+      "care": [
+        "Umístěte na chladné a stinné místo.",
+        "Aranžovací hmotu podle potřeby lehce navlhčete."
+      ],
+      "seo": {
+        "title": "Červený smuteční věnec – gerbery a růže",
+        "description": "Smuteční věnec v červené s gerberami a růžemi na jedlové zeleni, ručně vázaný. Klasické rozloučení – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Smuteční věnec z červených gerber a růží na jedlové zeleni s černou stuhou na dřevěném stojanu"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Bílý smuteční věnec",
+      "tagline": "Bílé růže, gerbery a karafiáty",
+      "shortDescription": "Prostý smuteční věnec v bílé pro tichou soustrast.",
+      "description": "Bílé růže, gerbery a karafiáty se světle zelenými akcenty a zelení tvoří tento prostý věnec. Bílá symbolizuje mír a tichou soustrast. Ručně vázaný. S přáními ohledně podoby se na nás klidně obraťte.",
+      "flowers": [
+        "Růže",
+        "Gerbery",
+        "Karafiáty"
+      ],
+      "care": [
+        "Umístěte na chladné a stinné místo.",
+        "Aranžovací hmotu podle potřeby lehce navlhčete."
+      ],
+      "seo": {
+        "title": "Bílý smuteční věnec – prostý a důstojný",
+        "description": "Smuteční věnec v bílé s růžemi, gerberami a karafiáty, ručně vázaný. Prosté rozloučení – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Kruhový smuteční věnec z bílých růží, gerber a karafiátů s bílou stuhou na dřevěném stojanu"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Adventní věnce",
+      "tagline": "Jedlová zeleň se čtyřmi svíčkami, v sedmi barvách",
+      "shortDescription": "Ručně vázaný adventní věnec z jedlové zeleně se čtyřmi svíčkami.",
+      "description": "Adventní věnec se ručně váže z vonné jedlové zeleně a zdobí se čtyřmi svíčkami, stuhami, ozdobnými koulemi, šiškami a dalšími detaily. K dispozici v červené, šedé, fialové, zlaté, béžové, vínové a růžové.",
+      "flowers": [],
+      "care": [
+        "Nikdy nenechávejte svíčky hořet bez dozoru.",
+        "Umístěte na chladné místo, ne přímo k topení.",
+        "Jedlovou zeleň občas lehce orošte vodou."
+      ],
+      "seo": {
+        "title": "Adventní věnec – ručně vázaný se svíčkami",
+        "description": "Ručně vázaný adventní věnec z jedlové zeleně se čtyřmi svíčkami, v sedmi barvách a čtyřech velikostech – rozvoz květin ve Vídni."
+      },
+      "sizes": {
+        "s": {
+          "label": "Malá"
+        },
+        "m": {
+          "label": "Střední"
+        },
+        "l": {
+          "label": "Velká"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Červená",
+        "grau": "Šedá",
+        "lila": "Fialová",
+        "gold": "Zlatá",
+        "beige": "Béžová",
+        "weinrot": "Vínová",
+        "rosa": "Růžová"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Adventní věnec z jedlové zeleně se čtyřmi červenými svíčkami, červenými stuhami, koulemi a šiškami",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Adventní věnec se čtyřmi světle šedými svíčkami, krémovými stuhami a plátky pomeranče",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Adventní věnec s fialovými a růžovými svíčkami, fialovými stuhami a figurkou anděla",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Adventní věnec se čtyřmi zlatými svíčkami, zlatými stuhami, skořicí a šiškami",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Adventní věnec se čtyřmi růžovými svíčkami, bordó stuhami a figurkou anděla",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Adventní věnec se čtyřmi vínovými svíčkami, koulemi a vínovými stuhami",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Adventní věnec se čtyřmi tmavě šedými svíčkami, krémovými stuhami a červenými koulemi",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Adventní věnec ve zlaté se zlatými svíčkami a stuhami, z boku",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Adventní věnec v růžové s růžovými svíčkami a bordó stuhami, z boku"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Všechny květiny",
+      "headline": "Objednejte květiny online",
+      "intro": "Ručně vázané kytice pro celou Vídeň. Vyberte si kytici a určete datum doručení.",
+      "seo": {
+        "title": "Objednávka a rozvoz květin ve Vídni online",
+        "description": "Objednejte květiny online a nechte je doručit ve Vídni. Ručně vázané kytice s doručením v termínu podle přání – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Růže",
+      "headline": "Kytice růží",
+      "intro": "Růže v červené, růžové nebo bílé, v několika velikostech. Ručně vázané a doručené ve Vídni.",
+      "seo": {
+        "title": "Kytice růží online – růže do Vídně",
+        "description": "Všechny kytice růží na jednom místě: červené, růžové a bílé růže v několika velikostech. Ručně vázané, doručené ve Vídni v termínu podle přání."
+      }
+    },
+    "saisonal": {
+      "name": "Sezónní květiny",
+      "headline": "Sezónní květiny",
+      "intro": "Kytice, které ladí s ročním obdobím. Nabídka se během roku mění.",
+      "seo": {
+        "title": "Sezónní kytice s doručením ve Vídni",
+        "description": "Sezónní kytice, které ladí s ročním obdobím. Ručně vázané a doručené ve Vídni."
+      }
+    },
+    "pastell": {
+      "name": "Pastelové",
+      "headline": "Pastelové kytice",
+      "intro": "Starorůžová, krémová, šeříková: jemné barvy pro něžné chvíle.",
+      "seo": {
+        "title": "Pastelové květiny s doručením ve Vídni",
+        "description": "Kytice v jemných pastelových tónech s doručením ve Vídni – čerstvě vázané, v termínu podle přání."
+      }
+    },
+    "bunt": {
+      "name": "Pestré",
+      "headline": "Pestré kytice",
+      "intro": "Barvy, které dělají radost. K narozeninám, pro překvapení a dobrou náladu.",
+      "seo": {
+        "title": "Pestré kytice s doručením ve Vídni",
+        "description": "Pestré, veselé kytice s doručením ve Vídni – čerstvě vázané, v termínu podle přání."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegantní a bílé",
+      "headline": "Elegantní a bílé",
+      "intro": "Bílá, krémová a zelená. Kytice, které v každém prostoru působí klidně a ušlechtile.",
+      "seo": {
+        "title": "Elegantní bílé květiny s doručením ve Vídni",
+        "description": "Bílé a krémové kytice s doručením ve Vídni – elegantní, čerstvě vázané, v termínu podle přání."
+      }
+    },
+    "premium": {
+      "name": "Prémiové",
+      "headline": "Prémiové kytice",
+      "intro": "Velkorysé kytice pro zvláštní chvíle.",
+      "seo": {
+        "title": "Prémiové kytice s doručením ve Vídni",
+        "description": "Prémiové kytice pro zvláštní příležitosti s doručením ve Vídni – ručně vázané, v termínu podle přání."
+      }
+    },
+    "unter-40": {
+      "name": "Do 40 €",
+      "headline": "Květiny do 40 €",
+      "intro": "Malé kytice s velkým účinkem – všechny do 40 eur.",
+      "seo": {
+        "title": "Květiny do 40 € s doručením ve Vídni",
+        "description": "Cenově dostupné kytice do 40 € s doručením ve Vídni – čerstvě vázané, v termínu podle přání."
+      }
+    },
+    "bestseller": {
+      "name": "Oblíbené kytice",
+      "headline": "Naše oblíbené kytice",
+      "intro": "Kytice, které obzvlášť rádi doporučujeme.",
+      "seo": {
+        "title": "Naše oblíbené kytice – tipy pro Vídeň",
+        "description": "Kytice, které obzvlášť rádi doporučujeme – ručně vázané a doručené ve Vídni."
+      }
+    },
+    "neu": {
+      "name": "Novinky",
+      "headline": "Novinky v Blumora",
+      "intro": "Čerstvě v nabídce.",
+      "seo": {
+        "title": "Nové kytice pro Vídeň",
+        "description": "Nové kytice v nabídce – čerstvě vázané a doručené ve Vídni."
+      }
+    },
+    "blumenboxen": {
+      "name": "Květinové boxy",
+      "headline": "Květinové boxy",
+      "intro": "Růže naaranžované v boxu – dárek, který se obejde bez vázy.",
+      "seo": {
+        "title": "Květinové boxy s doručením ve Vídni",
+        "description": "Růže v květinovém boxu – ve tvaru srdce nebo klasické. Rozvoz květin ve Vídni v termínu podle přání."
+      }
+    },
+    "pflanzen": {
+      "name": "Rostliny",
+      "headline": "Rostliny v květináči",
+      "intro": "Orchideje, anturie a zelené rostliny – květiny, které zůstanou.",
+      "seo": {
+        "title": "Rostliny v květináči s doručením ve Vídni",
+        "description": "Orchideje, anturie a pokojové rostliny v květináči jako dárek. Rozvoz květin ve Vídni."
+      }
+    },
+    "trauer": {
+      "name": "Smuteční floristika",
+      "headline": "Smuteční floristika",
+      "intro": "Smuteční věnce a smuteční kytice, důstojně vázané pro poslední rozloučení.",
+      "seo": {
+        "title": "Smuteční věnce a smuteční kytice ve Vídni",
+        "description": "Smuteční věnce a smuteční kytice na pohřeb a vzpomínkový obřad – s doručením ve Vídni."
+      }
+    },
+    "advent": {
+      "name": "Adventní věnce",
+      "headline": "Adventní věnce",
+      "intro": "Jedlová zeleň, svíčky a ozdoby – ručně vázané pro adventní čas.",
+      "seo": {
+        "title": "Adventní věnce s doručením ve Vídni",
+        "description": "Ručně vázané adventní věnce v několika barvách a velikostech – s doručením ve Vídni."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Narozeniny",
+      "headline": "Květiny k narozeninám",
+      "intro": "Kytice, která říká: Myslím na tebe. Vyberte květiny a datum doručení.",
+      "imageAlt": "Pestrá kytice s červenými růžemi, gerberami a žlutými květy v červené manžetě",
+      "seo": {
+        "title": "Květiny k narozeninám – kytice do Vídně",
+        "description": "Kytice k narozeninám: pestré, veselé nebo elegantní. Ručně vázané a doručené ve Vídni – v termínu podle přání."
+      }
+    },
+    "liebe": {
+      "name": "Láska a romantika",
+      "headline": "Květiny pro lásku",
+      "intro": "Rudé růže, nebo něco úplně jiného: květiny, které řeknou, co cítíte.",
+      "imageAlt": "Kytice z tmavě červených růží v šedé manžetě s červenou stuhou",
+      "seo": {
+        "title": "Romantické květiny s doručením ve Vídni",
+        "description": "Růže a romantické kytice s doručením ve Vídni – čerstvě vázané, v termínu podle přání."
+      }
+    },
+    "danke": {
+      "name": "Poděkování",
+      "headline": "Květiny jako poděkování",
+      "intro": "Za pomoc, za čas, prostě za všechno. Kytice to řekne i bez mnoha slov.",
+      "imageAlt": "Kytice ze žlutých gerber a bílých růží se žlutou stuhou",
+      "seo": {
+        "title": "Květiny jako poděkování s doručením ve Vídni",
+        "description": "Poděkujte květinami: čerstvě vázané kytice s doručením ve Vídni – v termínu podle přání."
+      }
+    },
+    "gute-besserung": {
+      "name": "Brzké uzdravení",
+      "headline": "Květiny pro brzké uzdravení",
+      "intro": "Jemné barvy, klidné tvary a malý pozdrav, který udělá dobře.",
+      "imageAlt": "Slunečná kytice v oranžové a žluté ve světlé manžetě",
+      "seo": {
+        "title": "Květiny pro brzké uzdravení – rozvoz ve Vídni",
+        "description": "Květiny pro brzké uzdravení s doručením ve Vídni – jemné kytice, čerstvě vázané, v termínu podle přání."
+      }
+    },
+    "jahrestag": {
+      "name": "Výročí",
+      "headline": "Květiny k výročí",
+      "intro": "Pro den, kdy to všechno začalo. A pro všechny, které přišly potom.",
+      "imageAlt": "Kytice z červených a bílých růží v bílé manžetě",
+      "seo": {
+        "title": "Květiny k výročí s doručením ve Vídni",
+        "description": "Elegantní kytice k výročí s doručením ve Vídni – čerstvě vázané, v termínu podle přání."
+      }
+    },
+    "geburt": {
+      "name": "Narození dítěte",
+      "headline": "Květiny k narození dítěte",
+      "intro": "Vítej, malý človíčku. Jemné květiny pro velkou chvíli.",
+      "imageAlt": "Jemná kytice z růží v růžové a šeříkové s gypsofilou",
+      "seo": {
+        "title": "Květiny k narození dítěte – doručení ve Vídni",
+        "description": "Jemné pastelové kytice k narození dítěte s doručením ve Vídni – čerstvě vázané, v termínu podle přání."
+      }
+    },
+    "hochzeit": {
+      "name": "Svatba",
+      "headline": "Květiny ke svatbě",
+      "intro": "Pro novomanžele nebo jen jako blahopřání: elegantní, světlé a slavnostní.",
+      "imageAlt": "Kytice z bílých růží v bílé manžetě ve váze",
+      "seo": {
+        "title": "Svatební květiny s doručením ve Vídni",
+        "description": "Elegantní květiny ke svatbě s doručením ve Vídni – jako blahopřání nebo dárek, čerstvě vázané."
+      }
+    },
+    "einfach-so": {
+      "name": "Jen tak",
+      "headline": "Květiny jen tak",
+      "intro": "Žádná příležitost. Jen myšlenka. Někdy je to ten nejlepší důvod.",
+      "imageAlt": "Žluté tulipány ve skleněné váze u okna",
+      "seo": {
+        "title": "Květiny jen tak – poslat do Vídně",
+        "description": "Pošlete květiny bez příležitosti: malé i velké kytice s doručením ve Vídni – čerstvě vázané, v termínu podle přání."
+      }
+    },
+    "trauer": {
+      "name": "Smutek",
+      "headline": "Smuteční květiny",
+      "intro": "Soustrast v klidných barvách. Věnce, smuteční kytice a kytice, ručně vázané a doručené ve Vídni.",
+      "imageAlt": "Bílý smuteční věnec s bílou stuhou na dřevěném stojanu",
+      "seo": {
+        "title": "Smuteční květiny s doručením ve Vídni",
+        "description": "Smuteční květiny s doručením ve Vídni – věnce, smuteční kytice a klidné kytice, ručně vázané, v termínu podle přání."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Vonná svíčka",
+      "description": "Dekorativní vonné svíčky v dárkovém balení, v různých tvarech a barvách.",
+      "imageAlt": "Vonné svíčky ve tvaru srdce a koule v průhledných dárkových krabičkách"
+    },
+    "x-teddy": {
+      "name": "Medvídek",
+      "description": "Plyšový medvídek s červeným srdcem – laskavý doplněk ke kytici.",
+      "imageAlt": "Světle hnědý plyšový medvídek s červeným srdcem"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Kam doručujete?",
+      "answer": "Doručujeme do všech 23 vídeňských okresů. Podle okresu je doručení zdarma, nebo stojí 3,99 € či 7,99 €. Stačí zadat PSČ adresy příjemce – hned uvidíte, zda a kdy můžeme doručit a kolik doručení stojí.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Mohu nechat květiny doručit ještě dnes?",
+      "answer": "Ano – pokud objednáte od pondělí do soboty do 18:30 nebo v neděli do 17:45, doručíme ještě týž den po celé Vídni, dokud je volné časové okno. Nejbližší termín pro vaši adresu uvidíte, jakmile zadáte PSČ.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Nabízíte expresní doručení?",
+      "answer": "Ano – expresní doručení do 1–2 hodin bez příplatku. Objednejte jako obvykle a v pokladně zvolte nejbližší časové okno dnešního dne – je označené jako „Express“. Funguje to, pokud objednáte od pondělí do soboty do 18:30 nebo v neděli do 17:45 a pro vaši adresu je ještě volné časové okno.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Mohu si vybrat konkrétní datum doručení?",
+      "answer": "Ano. Na každé stránce produktu i v pokladně si v kalendáři vyberete požadované datum. Dny, kdy nedoručujeme, jsou zašedlé.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Mohu si vybrat čas doručení?",
+      "answer": "Ano. Ve Vídni si v pokladně vyberete hodinové časové okno mezi 9:00 a 22:00 – všech sedm dní v týdnu.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Co když nikdo nebude doma?",
+      "answer": "Kurýr předává květiny osobně. Pokud nikdo není doma, předá je podle možnosti sousedům. V pokladně můžete zadat poznámku pro doručení, například kód ke dveřím. O stavu objednávky vás budeme informovat e-mailem.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Mohu poslat květiny anonymně?",
+      "answer": "Ano. Bez přáníčka nebude vaše jméno nikde u kytice a faktura půjde jen vám. Přáníčka s osobním vzkazem připravujeme.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Mohu přidat přáníčko?",
+      "answer": "Zatím ne – přáníčka připravujeme. Do té doby doručujeme kytici bez přáníčka.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Vypadají květiny přesně jako na fotce?",
+      "answer": "Každá kytice se váže individuálně a květiny jsou přírodní produkt. Barvy, druhy a velikost květů se mohou podle sezóny mírně lišit. Styl a barevné ladění zůstávají zachovány.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Jak zůstanou květiny čerstvé?",
+      "answer": "Každá kytice se váže čerstvě pro vaši objednávku a kurýr ji doručí přímo. Nejdéle vydrží takto: stonky šikmo seřízněte, dejte čerstvou vodu a postavte kytici na chladné místo mimo přímé slunce.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Jaké jsou možnosti platby?",
+      "answer": "Dostupné způsoby platby uvidíte v posledním kroku objednávky. Platí se bezpečně přes poskytovatele platebních služeb – údaje o vaší kartě se k nám nikdy nedostanou.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Mohu svou objednávku změnit?",
+      "answer": "Dokud kytice ještě není uvázaná, můžeme datum doručení nebo adresu většinou ještě upravit. Napište nám co nejdříve a uveďte číslo objednávky.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Mohu poslat květiny do firmy nebo hotelu?",
+      "answer": "Ano. V pokladně uveďte název firmy nebo hotelu a – pokud je znáte – oddělení nebo číslo pokoje. Doručujeme na recepci.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Květiny pro výjimečné chvíle.",
+      "intro": "Blumora je online květinářství z Vídně. Každou kytici ručně váže vídeňské květinářství a kurýr ji doručí přímo.",
+      "seo": {
+        "title": "O nás – rozvoz květin z Vídně",
+        "description": "Blumora je online květinářství z Vídně: kytice vázané ručně a doručené kurýrem do všech 23 okresů."
+      },
+      "sections": [
+        {
+          "heading": "Jak pracujeme",
+          "paragraphs": [
+            "Blumora je vídeňské online květinářství. Kytici si vyberete u nás – váže ji květinářství ve Vídni, se kterým pevně spolupracujeme. Tam vzniká každá kytice ručně a pro vaši objednávku.",
+            "Přáníčka s vaším textem připravujeme."
+          ],
+          "imageAlt": "Kytice z růží, jiřin, hortenzií a tulipánů na parapetu staré vídeňské budovy, v pozadí katedrála svatého Štěpána ve večerním světle"
+        },
+        {
+          "heading": "Doručení",
+          "paragraphs": [
+            "Kurýr vyzvedne vaši kytici přímo v květinářství a doveze ji bez zastávek na adresu příjemce. Doručujeme do všech 23 vídeňských okresů – v časovém okně podle vašeho výběru: dopoledne, odpoledne nebo večer do 22:00."
+          ],
+          "imageAlt": "Kytice Pure Liebe ve skleněné váze"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Doručení a doprava",
+      "intro": "Doručujeme do všech 23 vídeňských okresů. Cena doručení (zdarma, 3,99 € nebo 7,99 €), dny doručení a časová okna závisí na adrese příjemce – zadejte PSČ a uvidíte vše na první pohled.",
+      "seo": {
+        "title": "Doručení a doprava – rozvoz květin ve Vídni",
+        "description": "Oblasti doručení, ceny doručení, dny doručení a časová okna pro rozvoz květin ve Vídni."
+      },
+      "sections": [
+        {
+          "heading": "Jak doručení probíhá",
+          "paragraphs": [
+            "Vaše kytice se váže čerstvě pro vaši objednávku. Kurýr ji vyzvedne přímo v květinářství a doveze ji bez zastávek na adresu příjemce – v časovém okně, které jste si vybrali. Pokud nikdo není doma, předá se kytice podle možnosti sousedům.",
+            "Ke každé objednávce dostanete potvrzení e-mailem a odkaz, kde můžete sledovat její stav."
+          ]
+        },
+        {
+          "heading": "Doručení do firem, hotelů a nemocnic",
+          "paragraphs": [
+            "V pokladně uveďte název firmy nebo hotelu a oddělení, stanici nebo číslo pokoje. Doručujeme na recepci. Mějte prosím na paměti, že některá zařízení nepovolují květiny na odděleních."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Kontakt",
+      "intro": "Máte dotaz k objednávce, datu doručení nebo zvláštnímu přání? Jsme tu pro vás.",
+      "seo": {
+        "title": "Kontakt – Blumora Vídeň",
+        "description": "Kontaktujte Blumora s dotazy k objednávce, doručení nebo zvláštním přáním."
+      },
+      "sections": [
+        {
+          "heading": "Jak nás zastihnete",
+          "paragraphs": [
+            "[Zástupný text: e-mail, telefon a otevírací doba se přebírají z nastavení a musí se tam doplnit.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Rozvoz květin po celé Vídni",
+      "headline": "Květiny, které řeknou víc.",
+      "subheadline": "Čerstvě vázané květiny pro lidi, na kterých vám záleží. Stačí vybrat, určit datum doručení a nechat doručit radost.",
+      "primaryCta": {
+        "label": "Prohlédnout květiny"
+      },
+      "secondaryCta": {
+        "label": "Vybrat podle příležitosti"
+      },
+      "imageAlt": "Žena v kabátě velbloudí barvy nese vídeňskou dlážděnou ulicí velkou kytici z růží, pryskyřníků, jiřin a tulipánů, za ní projíždí tramvaj",
+      "deliveryCheck": {
+        "title": "Kam máme doručit?",
+        "placeholder": "Zadejte PSČ",
+        "button": "Ověřit doručení"
+      }
+    },
+    "occasions": {
+      "headline": "Květiny pro každou chvíli",
+      "subheadline": "Někdy není potřeba velká příležitost. Jen to správné gesto."
+    },
+    "bestsellers": {
+      "headline": "Naše oblíbené kytice",
+      "subheadline": "Výběr z naší nabídky."
+    },
+    "collections": {
+      "headline": "Najděte svou dokonalou kytici",
+      "subheadline": "Podle barvy, stylu nebo rozpočtu."
+    },
+    "howItWorks": {
+      "headline": "Darovat radost ještě nikdy nebylo tak snadné.",
+      "steps": [
+        {
+          "title": "Vyberte si kytici",
+          "text": "Objevte květiny pro každý vkus a příležitost."
+        },
+        {
+          "title": "Dodejte osobní nádech",
+          "text": "Zvolte velikost a drobné doplňky."
+        },
+        {
+          "title": "Vyberte datum doručení",
+          "text": "Určete, kdy má vaše překvapení dorazit."
+        },
+        {
+          "title": "Nechte doručit radost",
+          "text": "O vše ostatní se postaráme my."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Advent",
+      "headline": "Brzy se rozsvítí první svíčka.",
+      "text": "Adventní věnce s jedlovou zelení, svíčkami a ozdobami – v několika barvách a velikostech. K tomu kytice v teplých podzimních tónech.",
+      "cta": {
+        "label": "Adventní věnce"
+      },
+      "imageAlt": "Adventní věnec z jedlové zeleně se čtyřmi červenými svíčkami na dřevěné komodě"
+    },
+    "editorial": {
+      "eyebrow": "Řemeslo",
+      "headline": "Od floristů. Ne z výrobní linky.",
+      "text": "Každou kytici ručně váže vídeňské květinářství pro vaši objednávku a kurýr ji doručí přímo – bez oklik přes sklad.",
+      "cta": {
+        "label": "Jak pracujeme"
+      },
+      "imageAlt": "Kurýr předává u dveří staré vídeňské budovy pestrou kytici z růží, jiřin a pryskyřníků"
+    },
+    "extras": {
+      "headline": "Dokončete své překvapení.",
+      "subheadline": "Drobné doplňky, které chvíli udělají větší."
+    },
+    "subscription": {
+      "headline": "Více květin ve všedních dnech.",
+      "text": "Čerstvé sezónní kytice – každý týden, jednou za dva týdny nebo jednou měsíčně. Domů, do kanceláře, na recepci nebo do restaurace.",
+      "cta": {
+        "label": "Objevte předplatné květin"
+      }
+    },
+    "reviews": {
+      "headline": "Chvíle, které dorazily.",
+      "subheadline": "Co zákazníci říkají o své objednávce."
+    },
+    "gallery": {
+      "headline": "Květiny pro výjimečné chvíle.",
+      "images": [
+        {
+          "alt": "Pestrá kytice růží v červené, růžové, krémové a meruňkové v bílé váze"
+        },
+        {
+          "alt": "Kytice ze zářivě modrých růží v bílé váze"
+        },
+        {
+          "alt": "Kytice v sytých růžových tónech s gerberami ve váze u okna"
+        },
+        {
+          "alt": "Exotická kytice se strelíciemi, liliemi a gerberami"
+        },
+        {
+          "alt": "Červený květinový box ve tvaru srdce s růžemi na komodě"
+        },
+        {
+          "alt": "Kytice z růží v pastelových a sytě růžových tónech v růžové manžetě"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Dobré vědět"
+    },
+    "newsletter": {
+      "headline": "Trochu více květin ve vaší schránce.",
+      "text": "Novinky, sezónní kolekce a zvláštní akce.",
+      "placeholder": "Váš e-mail",
+      "button": "Přihlásit se",
+      "note": "Odhlásit se můžete kdykoli. Informace o ochraně osobních údajů najdete v zásadách ochrany osobních údajů."
+    }
+  },
+  "settings": {
+    "claim": "Květiny, které řeknou víc.",
+    "seo": {
+      "defaultTitle": "Blumora – rozvoz květin ve Vídni",
+      "defaultDescription": "Rozvoz květin po celé Vídni: čerstvě vázané kytice do všech 23 okresů. Doručení týž den při objednávce do 18:30 (v neděli do 17:45), expres do 1–2 hodin bez příplatku."
+    },
+    "announcement": {
+      "messages": [
+        "Doručení po celé Vídni, všech 23 okresů",
+        "Expres do 1–2 hodin – bez příplatku",
+        "Doručení týž den do 18:30, v neděli do 17:45",
+        "Čerstvě vázané, doručené kurýrem"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Čerstvě vázané",
+        "text": "Ručně vázané pro vaši objednávku"
+      },
+      {
+        "title": "Doručení kurýrem",
+        "text": "Po celé Vídni – všech 23 okresů"
+      },
+      {
+        "title": "Datum podle přání",
+        "text": "Den určujete vy"
+      },
+      {
+        "title": "Expres do 1–2 hodin",
+        "text": "Bez příplatku, týž den do 18:30"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Objednávka přijata",
+        "description": "Vaši objednávku jsme obdrželi."
+      },
+      "paid": {
+        "label": "Platba potvrzena",
+        "description": "Platba k nám dorazila."
+      },
+      "preparing": {
+        "label": "Připravuje se",
+        "description": "Vybíráme květiny pro vaši kytici."
+      },
+      "arranging": {
+        "label": "Kytice se váže",
+        "description": "Vaše kytice se ručně váže."
+      },
+      "ready": {
+        "label": "Připraveno k doručení",
+        "description": "Kytice je hotová a kurýr si ji vyzvedne."
+      },
+      "in_transit": {
+        "label": "Na cestě",
+        "description": "Vaše kytice je na cestě."
+      },
+      "delivered": {
+        "label": "Doručeno",
+        "description": "Květiny dorazily."
+      },
+      "undeliverable": {
+        "label": "Nelze doručit",
+        "description": "Doručení se nezdařilo, ozveme se vám."
+      },
+      "cancelled": {
+        "label": "Zrušeno",
+        "description": "Objednávka byla zrušena."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Platební karta",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Online převod (eps)"
+    },
+    "headerCta": "Poslat květiny",
+    "address": {
+      "city": "Vídeň",
+      "country": "Rakousko"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Vídeň zóna 1",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Vídeň zóna 2",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Vídeň zóna 3",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Okolí Vídně (Dolní Rakousko)",
+      "note": "Doručení do okolí Vídně v úterý, ve čtvrtek a v sobotu.",
+      "windows": {
+        "day": "9:00–18:00"
+      }
+    }
+  }
+}

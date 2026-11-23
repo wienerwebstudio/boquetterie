@@ -68,3 +68,9 @@ export function normalizePhone(value: string): string {
   const { dial, national } = splitPhone(value ?? "");
   return joinPhone(dial, national);
 }
+
+/**
+ * Albanian country names for the select (CLDR, as Node renders them). Chrome has no Albanian
+ * data and would show English names – server and browser must render the same text.
+ */
+export const PHONE_COUNTRY_NAMES_SQ: Record<string, string> = {"AT":"Austri","DE":"Gjermani","CH":"Zvicër","LI":"Lihtenshtajn","IT":"Itali","SI":"Slloveni","HU":"Hungari","SK":"Sllovaki","CZ":"Çeki","PL":"Poloni","HR":"Kroaci","BA":"Bosnjë-Hercegovinë","RS":"Serbi","ME":"Mal i Zi","MK":"Maqedonia e Veriut","AL":"Shqipëri","XK":"Kosovë","RO":"Rumani","BG":"Bullgari","GR":"Greqi","TR":"Turqi","UA":"Ukrainë","RU":"Rusi","FR":"Francë","ES":"Spanjë","PT":"Portugali","NL":"Holandë","BE":"Belgjikë","LU":"Luksemburg","GB":"Mbretëria e Bashkuar","IE":"Irlandë","DK":"Danimarkë","SE":"Suedi","NO":"Norvegji","FI":"Finlandë","US":"SHBA","AE":"Emiratet e Bashkuara Arabe","SA":"Arabi Saudite","IR":"Iran","AF":"Afganistan","SY":"Siri","IQ":"Irak","EG":"Egjipt","IL":"Izrael","IN":"Indi","CN":"Kinë","AU":"Australi"};

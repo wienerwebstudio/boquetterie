@@ -1,7 +1,7 @@
 "use client";
+import { dateFormatIn } from "@/i18n/format";
 import { X } from "lucide-react";
 import { useI18n } from "@/i18n/client";
-import { LOCALE_INFO } from "@/i18n/config";
 import type { I18n } from "@/i18n/shared";
 import { filterChips, removeChip, resetFilters, type FilterChip, type FilterKey, type FilterOptions } from "@/lib/shop-filters";
 import { useShopParams } from "./use-shop-params";
@@ -18,7 +18,7 @@ function chipLabel(chip: FilterChip, { m, fmt, locale }: I18n) {
     case "plz": return fmt(m.shop.filters.chipPostalCode, { plz: chip.value });
     case "datum": {
       const [y, mo, d] = chip.value.split("-").map(Number);
-      const date = new Intl.DateTimeFormat(LOCALE_INFO[locale].intl, { day: "numeric", month: "short", timeZone: "UTC" }).format(new Date(Date.UTC(y, mo - 1, d, 12)));
+      const date = dateFormatIn(locale, { day: "numeric", month: "short", timeZone: "UTC" }).format(new Date(Date.UTC(y, mo - 1, d, 12)));
       return fmt(m.shop.filters.chipDate, { date });
     }
     default: return dict[chip.key]?.[chip.value] ?? chip.label;

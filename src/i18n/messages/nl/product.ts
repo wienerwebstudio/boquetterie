@@ -1,6 +1,195 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** nl – product (to be translated from src/i18n/messages/de/product.ts). */
-const product: NonNullable<PartialMessages["product"]> = {};
+/** nl – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Product niet gevonden",
+  priceFrom: "vanaf",
+
+  size: {
+    title: "Kies een formaat",
+    recommended: "Aanbevolen",
+    soldOut: "Uitverkocht",
+  },
+
+  color: {
+    title: "Kies een kleur",
+    required: "(verplicht)",
+    notChosen: "Nog niet gekozen",
+    error: "Kies een kleur.",
+  },
+
+  delivery: {
+    title: "Wanneer moeten de bloemen aankomen?",
+    formLabel: "Bezorgcheck",
+    postalCodeLabel: "Postcode van de ontvanger",
+    postalCodePlaceholder: "Postcode van de ontvanger",
+    check: "Controleren",
+    prompt: "Voer een postcode in om de bezorgdatum te kiezen",
+    notAvailable: "Op {plz} bezorgen we helaas nog niet.",
+    notAvailableHint: "Alle actuele gebieden vind je onder {link}. Voor een ander adres van de ontvanger voer je gewoon een nieuwe postcode in.",
+    deliveryLink: "Bezorging & verzending",
+    available: "We bezorgen op dit adres.",
+    fee: "Bezorging naar {plz} {region}: {fee}",
+    free: "gratis",
+    freeFrom: "gratis vanaf {price}",
+    dateGroup: "Bezorgdatum",
+    today: "Vandaag",
+    orderUntil: "bestellen tot {time} uur",
+    tomorrow: "Morgen",
+    chooseDate: "Datum kiezen",
+    openCalendar: "Kalender openen",
+    deliveryOn: "Bezorging op {date}",
+    todaySuffix: "· vandaag",
+    noDays: "Er zijn op dit moment geen bezorgdagen beschikbaar.",
+  },
+
+  calendar: {
+    previousMonth: "Vorige maand",
+    nextMonth: "Volgende maand",
+    weekdays: {
+      mon: { short: "ma", long: "maandag" },
+      tue: { short: "di", long: "dinsdag" },
+      wed: { short: "wo", long: "woensdag" },
+      thu: { short: "do", long: "donderdag" },
+      fri: { short: "vr", long: "vrijdag" },
+      sat: { short: "za", long: "zaterdag" },
+      sun: { short: "zo", long: "zondag" },
+    },
+    daySameDay: "{date}, vandaag leverbaar",
+    dayAvailable: "{date}, leverbaar",
+    dayUnavailable: "{date}, niet leverbaar",
+    legendSameDay: "Vandaag leverbaar",
+    legendToday: "Vandaag",
+    legendUnavailable: "Grijze dagen zijn niet leverbaar.",
+  },
+
+  card: {
+    unavailableTitle: "Persoonlijk kaartje",
+    unavailableText: "Je boeket wordt voorlopig zonder kaartje bezorgd.",
+    comingSoon: "Binnenkort!",
+    addMessage: "Persoonlijk bericht toevoegen",
+    included: "Kaartje inbegrepen",
+    handwritten: "Handgeschreven kaartje",
+    saved: "Bericht opgeslagen",
+    messageLabel: "Je bericht",
+    messagePlaceholder: "Gefeliciteerd met je verjaardag …",
+    maxChars: "Maximaal {max} tekens.",
+    senderGroup: "Afzender",
+    showSender: "Afzender tonen",
+    anonymous: "Zonder naam versturen",
+    senderName: "Je naam",
+    optional: "(optioneel)",
+    senderPlaceholder: "bijv. Anna",
+  },
+
+  extras: {
+    title: "Nog iets erbij?",
+    deliveredTogether: "Wordt samen bezorgd",
+    addLabel: "{name} voor {price} toevoegen",
+    add: "Toevoegen",
+    quantity: "{name} aantal",
+    less: "{name}: één minder",
+    more: "{name}: één meer",
+  },
+
+  floristNote: {
+    title: "Wensen voor onze bloemisten",
+    optional: "(optioneel)",
+    hint: "Kleine aanpassingen aan het boeket, bijv. „liever witte dan gele rozen”. We voeren ze uit als de bloemen beschikbaar zijn. Instructies voor de bezorging geef je op bij het afrekenen.",
+    placeholder: "Je wens voor de bloemist",
+  },
+
+  cta: {
+    total: "Totaal",
+    comingSoon: "Binnenkort te bestellen",
+    unavailable: "Op dit moment niet beschikbaar",
+    addToCart: "In winkelmandje",
+    fresh: "Vers gebonden",
+    cardIncluded: "Kaartje inbegrepen",
+    securePayment: "Veilig betalen",
+    added: "{name} ({options}) is aan je winkelmandje toegevoegd.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Vooraanzicht",
+      detail: "Detail",
+      size: "Formaatvergelijking",
+      packaging: "Verpakking",
+      lifestyle: "Sfeer",
+    },
+    status: "Afbeelding {index} van {total}: {alt}",
+    carousel: "Carrousel",
+    imagesOf: "Afbeeldingen van {name}",
+    slide: "Afbeelding",
+    slideOf: "{index} van {total}",
+    choose: "Afbeelding kiezen",
+    show: "{label} tonen",
+    thumb: "{label}: {alt}",
+    previous: "Vorige afbeelding",
+    next: "Volgende afbeelding",
+    colorAlt: "{name} in {color}",
+    colorLabel: "Kleur {color}",
+    sizeAlt: "{name} in formaat {size}",
+    sizeDetailAlt: "{name} in formaat {size}, close-up",
+    sizeLabel: "Formaat {size}",
+    sizeDetailLabel: "Formaat {size} · close-up",
+  },
+
+  details: {
+    eyebrow: "Goed om te weten",
+    title: "Alles over {name}",
+    description: "Beschrijving",
+    plant: "Plant",
+    flowers: "Bloemen in dit boeket",
+    care: "Verzorgingstips",
+    delivery: "Bezorging",
+    deliveryText: "Je bloemen komen van een Weense bloemist met wie we vast samenwerken. Boeketten worden daar voor jouw bestelling met de hand gebonden. Een koerier haalt ze op en rijdt zonder tussenstop naar het adres van de ontvanger.",
+    deliveryAreas: "We bezorgen in alle 23 districten van Wenen. De bezorgkosten hangen af van het district en worden getoond nadat je de postcode hebt ingevoerd. Bezorggebieden, tijdvakken en besteltermijnen vind je onder {link}.",
+    deliveryLink: "Bezorging & verzending",
+    looksPlant: "Ziet de plant er precies zo uit?",
+    looksBouquet: "Ziet het boeket er precies zo uit?",
+    looksOther: "Ziet het er precies zo uit als op de foto?",
+    naturalPlant: "Bijna. Planten zijn natuurproducten: groei, grootte en bloei kunnen afwijken van de foto. Ook de sierpot kan er afhankelijk van de beschikbaarheid anders uitzien.",
+    naturalFlowers: "Bijna. Bloemen zijn natuurproducten: afhankelijk van het seizoen kan een soort of kleurnuance afwijken. Onze partnerbloemist zorgt ervoor dat stijl en kleurenpalet behouden blijven.",
+  },
+
+  pricePending: {
+    status: "Prijs volgt",
+    sizes: "Formaten",
+    sizesLabel: "Beschikbare formaten",
+    soonTitle: "Binnenkort te bestellen",
+    soonText: "We stellen op dit moment de prijzen voor ons assortiment vast. Zodra ze bekend zijn, kun je dit boeket hier direct bestellen.",
+    contact: "Vragen? Stuur ons een bericht",
+  },
+
+  related: {
+    eyebrow: "Verder bladeren",
+    title: "Misschien vind je dit ook mooi",
+    allFlowers: "Alle bloemen bekijken",
+  },
+
+  reviews: {
+    eyebrow: "Ervaringen",
+    title: "Beoordelingen van {name}",
+    demoNote: "Voorbeeldbeoordelingen – echte beoordelingen volgen",
+    quote: "„{text}”",
+    verified: "Geverifieerde aankoop",
+    demo: "Voorbeeld",
+  },
+
+  reviewPhotos: {
+    photosOf: "Foto's van {author}",
+    enlarge: "{alt} – foto {index} van {total} vergroten",
+    dialogTitle: "Klantfoto van {author}",
+    dialogCount: "({index} van {total})",
+    close: "Foto sluiten",
+    show: "Foto {index} tonen",
+  },
+  reviewVideo: {
+    videoOf: "Video van {author}",
+    caption: "Klantvideo · {duration}",
+  },
+};
 
 export default product;

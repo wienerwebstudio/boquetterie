@@ -1,3 +1,4 @@
+import { dateFormatIn } from "@/i18n/format";
 import type { Review } from "@/types";
 import { StarRating } from "@/components/ui/star-rating";
 import { ReviewPhotos } from "@/components/reviews/review-photos";
@@ -6,11 +7,11 @@ import { ReviewLanguageNote } from "@/components/reviews/review-language";
 import { publicReviewPhotos } from "@/lib/review-submission";
 import { publicReviewVideo } from "@/lib/review-video";
 import { getI18n } from "@/i18n/server";
-import { LOCALE_INFO, type Locale } from "@/i18n/config";
+import type { Locale } from "@/i18n/config";
 
 function formatMonth(iso: string, locale: Locale) {
   const [y, m, d] = iso.split("-").map(Number);
-  return new Intl.DateTimeFormat(LOCALE_INFO[locale].intl, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, d, 12)));
+  return dateFormatIn(locale, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, d, 12)));
 }
 
 /**

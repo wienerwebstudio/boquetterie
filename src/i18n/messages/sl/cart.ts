@@ -1,6 +1,106 @@
 import type { PartialMessages } from "@/i18n/messages";
 
-/** sl – cart (to be translated from src/i18n/messages/de/cart.ts). */
-const cart: NonNullable<PartialMessages["cart"]> = {};
+/** sl – cart (translated from src/i18n/messages/de/cart.ts). */
+const cart: NonNullable<PartialMessages["cart"]> = {
+  metaTitle: "Košarica",
+  metaDescription: "Vaši izbrani šopki in dodatki – pripravljeni za dostavo na Dunaju.",
+  title: "Košarica",
+  eyebrow: "Skoraj končano",
+  loading: "Košarica se nalaga",
+  itemsHeading: "Izdelki v košarici",
+  items: {
+    one: "{count} izdelek",
+    two: "{count} izdelka",
+    few: "{count} izdelki",
+    other: "{count} izdelkov",
+  },
+  liveCount: "Košarica: {count}",
+  continueShopping: "Nadaljujte z nakupovanjem",
+  summaryTitle: "Povzetek",
+  checkout: "Varno na blagajno",
+  trust: {
+    securePayment: "Varno plačilo",
+    ssl: "Šifrirano s SSL",
+    privacy: "Varstvo podatkov",
+  },
+  empty: {
+    eyebrow: "Vaša košarica",
+    title: "Še čisto prazna.",
+    textWithCards: "Sveže povezani šopki, želeni datum in osebna voščilnica – vse čaka samo na vas.",
+    text: "Sveže povezani šopki in vaš želeni datum – vse čaka samo na vas.",
+    cta: "Odkrijte cvetje",
+  },
+  drawer: {
+    total: "Skupaj",
+    inclDelivery: "z dostavo",
+    plusDelivery: "plus dostava",
+  },
+  vat: {
+    smallBusiness: {
+      short: "Končna cena",
+      note: "V skladu s § 6 Abs. 1 Z 27 UStG se DDV ne obračuna (ureditev za male podjetnike).",
+    },
+    standard: {
+      short: "z DDV",
+      note: "Vse cene vključujejo DDV.",
+    },
+  },
+  line: {
+    color: "Barva {color}",
+    wish: "Želja: {note}",
+    delivery: "Dostava",
+    chooseDateInCheckout: "Datum dostave izberite v blagajni",
+    expired: "Termin dostave je potekel – izberite ga znova",
+    chooseDate: "Izberite dan dostave",
+    chooseWindow: "Izberite časovno okno",
+    anonymous: "Brez pošiljatelja",
+    extras: "Dodatki",
+    extraLess: "{name}: eno manj",
+    extraMore: "{name}: eno več",
+    removeExtra: "Odstrani {name}",
+    quantity: "Količina {name}",
+    decrease: "Zmanjšaj količino",
+    increase: "Povečaj količino",
+    remove: "Odstrani",
+  },
+  summary: {
+    bouquets: "Šopki",
+    extras: "Dodatki",
+    delivery: "Dostava",
+    free: "Brezplačno",
+    deliveryInCheckout: "izračunano v blagajni",
+    discount: "Popust",
+    total: "Skupaj",
+    missingForFreeDelivery: "Še {amount} do brezplačne dostave.",
+    minOrder: "Za ta naslov velja najnižja vrednost naročila {amount}.",
+    removeCoupon: "Odstrani kupon",
+    couponCode: "Koda kupona",
+    redeem: "Unovči",
+    couponQuestion: "Imate kodo kupona?",
+    couponCheckFailed: "Kupona trenutno ni bilo mogoče preveriti. Poskusite znova čez trenutek.",
+    couponMissing: "Vnesite kodo kupona.",
+    couponUnknown: "Ta koda nam ni znana.",
+  },
+  surprise: {
+    title: "Vaše presenečenje",
+    bouquet: "Šopek",
+    card: "+ voščilnica",
+    extras: "+ dodatki",
+    cardsSoon: "Voščilnice kmalu na voljo",
+    cardIncluded: "Voščilnica vključena – sporočilo lahko dodate kadar koli",
+    noExtras: "Še ni dodatkov",
+  },
+  upsell: {
+    title: "Še kaj zraven?",
+    subtitle: "Pride skupaj s šopkom",
+    add: "Dodaj",
+    addAria: "Dodaj {name} za {price}",
+  },
+  cardPreview: {
+    label: "Predogled voščilnice",
+    placeholder: "Tukaj se bo prikazalo vaše sporočilo.",
+    anonymous: "Brez pošiljatelja",
+  },
+};
 
 export default cart;
