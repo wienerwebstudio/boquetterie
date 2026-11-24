@@ -398,7 +398,29 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     id: "2026-11-24-love-deluxe-xxl",
     transform: { products: (doc) => mapList(doc, withLoveDeluxeXxl) },
   },
+  {
+    // Imprint completed from the trade licence (GISA) and the UID notice (owners, 24.11.2026).
+    id: "2026-11-24-imprint-company-data",
+    transform: { pages: (doc) => mapList(doc, withImprintCompanyData) },
+  },
 ];
+
+export const IMPRINT_OWNER = ["Tunahan Ceylan – Blumora", "Einzelunternehmen", "Bachgasse 22/11, 1160 Wien, Österreich"];
+export const IMPRINT_COMPANY_DATA = ["Unternehmensgegenstand: Online-Handel mit Blumen und Pflanzen", "UID-Nummer: ATU78696902", "GISA-Zahl: 35336518", "Gewerbewortlaut: Handelsgewerbe mit Ausnahme der reglementierten Handelsgewerbe (freies Gewerbe)", "Gewerbebehörde: Magistrat der Stadt Wien", "Kammer: Wirtschaftskammer Wien", "Blattlinie: Information über das Sortiment und die Leistungen des Onlineshops Blumora."];
+
+/**
+ * Imprint: the bare operator section ("Tunahan Ceylan" + address) becomes the operator with legal form
+ * plus a section with UID, GISA number, trade wording and authority. Only while the section is unchanged.
+ */
+export function withImprintCompanyData(page: Obj): Obj {
+  if (page.slug !== "impressum" || !Array.isArray(page.sections)) return page;
+  const sections = page.sections as Obj[];
+  const i = sections.findIndex((x) => x.heading === "Webseitenbetreiber" && JSON.stringify(x.paragraphs) === JSON.stringify(["Tunahan Ceylan", "Bachgasse 22/11, 1160 Wien"]));
+  if (i < 0) return page;
+  const next = [...sections];
+  next.splice(i, 1, { heading: "Webseitenbetreiber und Medieninhaber", paragraphs: [...IMPRINT_OWNER] }, { heading: "Unternehmensdaten", paragraphs: [...IMPRINT_COMPANY_DATA] });
+  return { ...page, sections: next };
+}
 
 /** German topic pages that name the free districts (were 1070, 1150, 1160). */
 const FREE_DISTRICT_TEXTS: [string, string][] = [

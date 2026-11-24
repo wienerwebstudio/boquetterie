@@ -383,3 +383,6 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 
 ## 2026-11-24 – Neue Firmenadresse
 - Bachgasse 22/11, 1160 Wien statt Am Langen Felde 51/18, 1220 Wien: Impressum, Datenschutz, AGB, Widerrufsbelehrung + Formular und `settings.brand.address` (Kontaktseite, JSON-LD). Migration `2026-11-24-address-bachgasse`.
+
+## 2026-11-24 – Impressum vervollständigt
+- Aus GISA-Auszug und UID-Bescheid: Einzelunternehmen, UID ATU78696902, GISA-Zahl 35336518, Gewerbewortlaut „Handelsgewerbe mit Ausnahme der reglementierten Handelsgewerbe“ (freies Gewerbe), Gewerbebehörde Magistrat der Stadt Wien, Kammer WK Wien, Unternehmensgegenstand, Blattlinie (§ 25 MedienG). Kein Geburtsdatum, keine Steuernummer. Migration `2026-11-24-imprint-company-data` (nur wenn der Betreiber-Abschnitt unverändert ist).

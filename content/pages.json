@@ -33,7 +33,8 @@
     "title": "Impressum",
     "intro": "Informationen und Offenlegung gemäß § 5 (1) ECG, § 25 MedienG, § 63 GewO und § 14 UGB.",
     "sections": [
-      {"heading": "Webseitenbetreiber", "paragraphs": ["Tunahan Ceylan", "Bachgasse 22/11, 1160 Wien"]},
+      {"heading": "Webseitenbetreiber und Medieninhaber", "paragraphs": ["Tunahan Ceylan – Blumora", "Einzelunternehmen", "Bachgasse 22/11, 1160 Wien, Österreich"]},
+      {"heading": "Unternehmensdaten", "paragraphs": ["Unternehmensgegenstand: Online-Handel mit Blumen und Pflanzen", "UID-Nummer: ATU78696902", "GISA-Zahl: 35336518", "Gewerbewortlaut: Handelsgewerbe mit Ausnahme der reglementierten Handelsgewerbe (freies Gewerbe)", "Gewerbebehörde: Magistrat der Stadt Wien", "Kammer: Wirtschaftskammer Wien", "Blattlinie: Information über das Sortiment und die Leistungen des Onlineshops Blumora."]},
       {"heading": "Kontakt", "paragraphs": ["Telefon: +43 670 2023515", "E-Mail: office@blumora.at"]},
       {"heading": "Webdesign & Umsetzung", "paragraphs": ["Webshop umgesetzt von [Tetik Drwal Media GesbR](https://tdm-agency.at/)"]},
       {"heading": "Anwendbare Rechtsvorschriften", "paragraphs": ["www.ris.bka.gv.at"]},

@@ -221,3 +221,17 @@ describe("new address Bachgasse (2026-11-24)", () => {
     expect(withNewAddress(next)).toBe(next);
   });
 });
+
+describe("imprint company data (2026-11-24)", () => {
+  it("turns the old imprint (old address) into the complete one, and leaves edited imprints alone", async () => {
+    const { withImprintCompanyData, IMPRINT_COMPANY_DATA } = await import("@/lib/content-migrations");
+    const old = [{ slug: "impressum", sections: [{ heading: "Webseitenbetreiber", paragraphs: ["Tunahan Ceylan", "Am Langen Felde 51/18, 1220 Wien"] }, { heading: "Kontakt", paragraphs: ["x"] }] }];
+    const ids = ["2026-11-24-address-bachgasse", "2026-11-24-imprint-company-data"];
+    const out = CONTENT_MIGRATIONS.filter((m) => ids.includes(m.id)).reduce((d, m) => migrateDocument(m, "pages", d), old as unknown) as { sections: { heading: string; paragraphs: string[] }[] }[];
+    expect(out[0].sections.map((s) => s.heading)).toEqual(["Webseitenbetreiber und Medieninhaber", "Unternehmensdaten", "Kontakt"]);
+    expect(out[0].sections[1].paragraphs).toEqual(IMPRINT_COMPANY_DATA);
+    expect(out[0].sections[1].paragraphs).toContain("UID-Nummer: ATU78696902");
+    const edited = { slug: "impressum", sections: [{ heading: "Webseitenbetreiber", paragraphs: ["Eigene Angaben"] }] };
+    expect(withImprintCompanyData(edited)).toBe(edited);
+  });
+});
