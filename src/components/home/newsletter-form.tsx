@@ -3,6 +3,7 @@ import { useId, useState } from "react";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/i18n/client";
+import { events, track } from "@/components/analytics/track";
 
 type State = { status: "idle" | "loading" | "success" | "error"; message?: string };
 
@@ -34,6 +35,7 @@ export function NewsletterForm({ placeholder, button, note }: { placeholder: str
         return;
       }
       setState({ status: "success" });
+      track(events.newsletterSignup, { locale });
     } catch {
       setState({ status: "error", message: m.forms.genericError });
     }

@@ -7,6 +7,7 @@ import { cn } from "@/lib/format";
 import { useI18n } from "@/i18n/client";
 import { rich } from "@/components/checkout/rich-text";
 import type { Messages } from "@/i18n/messages";
+import { events, track } from "@/components/analytics/track";
 
 export interface OccasionOption { slug: string; name: string }
 
@@ -88,6 +89,8 @@ export function ReminderForm({ occasions, className }: { occasions: OccasionOpti
         return;
       }
       setStatus("sent");
+      // The slug of the chosen occasion, or "eigener" – never the free text of a custom occasion.
+      track(events.reminderCreated, { occasion_type: form.occasion });
     } catch {
       setStatus("failed");
     }

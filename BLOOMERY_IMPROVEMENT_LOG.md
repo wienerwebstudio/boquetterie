@@ -386,3 +386,10 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 
 ## 2026-11-24 – Impressum vervollständigt
 - Aus GISA-Auszug und UID-Bescheid: Einzelunternehmen, UID ATU78696902, GISA-Zahl 35336518, Gewerbewortlaut „Handelsgewerbe mit Ausnahme der reglementierten Handelsgewerbe“ (freies Gewerbe), Gewerbebehörde Magistrat der Stadt Wien, Kammer WK Wien, Unternehmensgegenstand, Blattlinie (§ 25 MedienG). Kein Geburtsdatum, keine Steuernummer. Migration `2026-11-24-imprint-company-data` (nur wenn der Betreiber-Abschnitt unverändert ist).
+
+## 2026-11-24 – Analytics-Events (Umami) + serverseitiger Umsatz
+- Event-Katalog in `src/components/analytics/track.ts` (Produkte/Warenkorb, Checkout/Zahlung, Marketing/Sprachen, Lieferung), verdrahtet in PDP, Warenkorb, Suche, Filtern, Sprachwahl, Formularen, Geschenkfinder, Erinnerung, PLZ-Prüfung, Checkout; WhatsApp-/Bewertungs-Klicks per Klick-Delegation. Keine personenbezogenen Daten in Props.
+- `track()` hält Events zurück, bis die gespeicherte Zustimmung gelesen ist (vorher ging z. B. `view_item` beim Direktaufruf verloren).
+- Kanal-Zuordnung (`src/lib/attribution.ts`, `visit.ts`): Kanal je Besuch, mit Zustimmung Besuchs-ID als Umami-`id`; Bestellung speichert `order.analytics`. `purchase`/`refund`/`order_delivered`/`order_delayed`/`order_cancelled` serverseitig (`src/lib/analytics-server.ts`), genau einmal per atomarem `claimOnce` (neu: `createIfAbsent` im Store). Express-Wahl als `order.delivery.express`.
+- Nicht gebaut (Feature fehlt): `complaint_submitted`, `reorder_started`.
+- Tests: Unit (Attribution, Checkout-Helfer, Server-Events inkl. genau-einmal, Event-Props), E2E `tracking.spec.ts` (Events + Kanal/Besuchs-ID in der Bestellung, nichts ohne Zustimmung). 681 Unit, 75 E2E grün.

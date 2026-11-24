@@ -10,6 +10,7 @@ import { SearchOverlay } from "@/components/layout/search-overlay";
 import { ToastViewport } from "@/components/ui/toast-viewport";
 import { ConsentBanner } from "@/components/consent/consent-banner";
 import { Analytics } from "@/components/analytics/analytics";
+import { ClickTracking } from "@/components/analytics/click-tracking";
 import { getI18n } from "@/i18n/server";
 import { whatsappSupport } from "@/lib/social";
 import { FloatingWhatsapp } from "./floating-whatsapp";
@@ -40,6 +41,7 @@ export async function SiteShell({ settings, children }: { settings: SiteSettings
       <ToastViewport />
       <ConsentBanner />
       <Analytics />
+      <ClickTracking />
     </>
   );
 }

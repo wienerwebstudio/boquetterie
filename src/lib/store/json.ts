@@ -79,6 +79,19 @@ export class JsonStore implements DocumentStore {
     return this.writable;
   }
 
+  async createIfAbsent(kind: StoreKind, name: string, value: unknown): Promise<boolean> {
+    const file = this.file(kind, name);
+    await fs.mkdir(path.dirname(file), { recursive: true });
+    try {
+      // "wx": fails when the file exists – the OS makes this atomic.
+      await fs.writeFile(file, JSON.stringify(value, null, 2) + "\n", { encoding: "utf8", flag: "wx" });
+      return true;
+    } catch (err) {
+      if ((err as NodeJS.ErrnoException).code === "EEXIST") return false;
+      throw err;
+    }
+  }
+
   async set(kind: StoreKind, name: string, value: unknown): Promise<void> {
     const file = this.file(kind, name);
     await fs.mkdir(path.dirname(file), { recursive: true });

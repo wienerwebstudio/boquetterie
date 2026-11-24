@@ -13,12 +13,14 @@ import { CartUpsell } from "./cart-upsell";
 import { CartSummary } from "./cart-summary";
 import { CartEmpty, CartTrustRow } from "./cart-drawer";
 import { CartDeliveryProvider } from "./cart-delivery";
+import { useViewCartTracking } from "./use-view-cart";
 
 /** Full-page cart. Lines left, sticky summary right. */
 export function CartPageView({ extras, cardsEnabled = false }: { extras: Extra[]; cardsEnabled?: boolean }) {
   const hydrated = useCart((s) => s.hydrated);
   const items = useCart((s) => s.items);
   const { m, fmt, plural } = useI18n();
+  useViewCartTracking(true);
 
   if (!hydrated) {
     return (

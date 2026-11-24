@@ -10,6 +10,7 @@ import { routes } from "@/lib/urls";
 import { getI18n } from "@/i18n/server";
 import { ProductGrid } from "@/components/shop/product-grid";
 import { Button } from "@/components/ui/button";
+import { SearchResultsTracker } from "@/components/analytics/search-tracking";
 
 export async function generateMetadata({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }): Promise<Metadata> {
   const q = readQuery((await searchParams).q);
@@ -38,6 +39,7 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
 
   return (
     <div className="container-x pb-20 pt-8 sm:pt-12 lg:pb-28">
+      {q.length >= 2 && <SearchResultsTracker query={q} resultCount={total} />}
       <header className="max-w-3xl">
         <p className="eyebrow mb-3">{t.eyebrow}</p>
         <h1 className="display-2 text-balance text-ink">

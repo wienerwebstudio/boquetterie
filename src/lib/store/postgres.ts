@@ -163,6 +163,18 @@ export class PostgresStore implements DocumentStore {
     return inflight;
   }
 
+  async createIfAbsent(kind: StoreKind, name: string, value: unknown): Promise<boolean> {
+    await this.ensureSchema();
+    const rows = await this.db().query<{ name: string }>(
+      `insert into documents (kind, name, data, updated_at)
+       values ($1, $2, $3::text::jsonb, now())
+       on conflict (kind, name) do nothing
+       returning name`,
+      [kind, name, JSON.stringify(value)],
+    );
+    return rows.length === 1;
+  }
+
   async set(kind: StoreKind, name: string, value: unknown): Promise<void> {
     await this.ensureSchema();
     // The document goes over the wire as JSON text and Postgres parses it (`::text::jsonb`):

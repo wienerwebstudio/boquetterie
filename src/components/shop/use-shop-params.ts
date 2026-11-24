@@ -2,6 +2,8 @@
 import { useCallback, useMemo, useTransition } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { parseShopParams, shopHref, type ShopParams } from "@/lib/shop-filters";
+import { events, track } from "@/components/analytics/track";
+import { filterChanges } from "@/components/analytics/event-props";
 
 /**
  * Reads the shop filter state from the URL and pushes updates without scrolling.
@@ -17,10 +19,12 @@ export function useShopParams() {
   const params = useMemo(() => parseShopParams(searchParams), [searchParams]);
 
   const apply = useCallback((next: ShopParams) => {
+    // One filter_used per newly chosen value (ids/slugs only; the PLZ filter is reported as "set").
+    for (const change of filterChanges(params, next)) track(events.filterUsed, { ...change });
     startTransition(() => {
       router.push(shopHref(pathname, next), { scroll: false });
     });
-  }, [router, pathname]);
+  }, [router, pathname, params]);
 
   const update = useCallback((patch: Partial<ShopParams> | ((current: ShopParams) => ShopParams)) => {
     const next = typeof patch === "function" ? patch(params) : { ...params, ...patch };

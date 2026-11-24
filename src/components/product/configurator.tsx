@@ -23,6 +23,8 @@ import { deliveryErrorText } from "@/components/shop/postal-code-check";
 import { routes } from "@/lib/urls";
 import { onRadioGroupKeyDown } from "@/lib/roving-radio";
 import { SMALL_BUSINESS } from "@/lib/vat";
+import { events, track } from "@/components/analytics/track";
+import { cartLineValue } from "@/components/analytics/event-props";
 
 export function ProductConfigurator({ product, extras, greetingCard, onSizeChange, onColorChange }: {
   product: Product;
@@ -46,7 +48,12 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   /* ---------- size ---------- */
   const [sizeId, setSizeId] = useState(() => defaultSize(product).id);
   const size = findSize(product, sizeId);
-  const selectSize = (id: SizeId) => { setSizeId(id); onSizeChange?.(findSize(product, id)); };
+  const selectSize = (id: SizeId) => {
+    setSizeId(id);
+    const next = findSize(product, id);
+    onSizeChange?.(next);
+    if (id !== sizeId) track(events.selectVariant, { product_id: product.id, size: next.id, price: next.price });
+  };
 
   /* ---------- colour (required when offered) ---------- */
   const colors = product.colorOptions ?? [];
@@ -120,7 +127,14 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
   const activeExtras = useMemo(() => extras.filter((e) => e.active), [extras]);
   const chosenExtras = activeExtras.map((e) => ({ extra: e, quantity: extraQty[e.id] ?? 0 })).filter((e) => e.quantity > 0);
   const extrasSum = chosenExtras.reduce((s, e) => s + e.extra.price * e.quantity, 0);
-  const setQty = (id: string, q: number) => setExtraQty((m) => ({ ...m, [id]: Math.max(0, Math.min(9, q)) }));
+  const setQty = (id: string, q: number) => {
+    const before = extraQty[id] ?? 0;
+    const after = Math.max(0, Math.min(9, q));
+    setExtraQty((m) => ({ ...m, [id]: after }));
+    const extra = activeExtras.find((e) => e.id === id);
+    if (after > before) track(events.addExtra, { extra_id: id, value: Math.round((extra?.price ?? 0) * (after - before) * 100) / 100 });
+    else if (after === 0 && before > 0) track(events.removeExtra, { extra_id: id });
+  };
 
   /* ---------- totals & CTA ---------- */
   const total = Math.round((size.price + extrasSum) * 100) / 100;
@@ -154,6 +168,7 @@ export function ProductConfigurator({ product, extras, greetingCard, onSizeChang
       extras: chosenExtras,
     });
     addItem(item);
+    track(events.addToCart, { product_id: product.id, size: size.id, quantity: item.quantity, value: cartLineValue(item) });
     setAnnounce(fmt(t.cta.added, { name: product.name, options: `${size.label}${color ? `, ${color.label}` : ""}` }));
     // The drawer that opens is the confirmation – a toast on top of it would only cover its buttons.
     openCart();

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getSettings } from "@/lib/cms";
 import { findOfferByToken } from "@/lib/offers";
 import { createOrderFromOffer } from "@/lib/orders";
+import { orderAnalyticsFromRequest } from "@/lib/analytics-server";
 import { resolveSiteUrl } from "@/lib/payments";
 import { enforceRateLimit } from "@/lib/rate-limit";
 import { ORDERS_PAUSED_MESSAGE, ordersPaused } from "@/lib/orders-paused";
@@ -40,7 +41,10 @@ export async function POST(req: Request) {
 
   try {
     const settings = await getSettings();
-    const result = await createOrderFromOffer(offer.id, method, { siteUrl: resolveSiteUrl(req, settings) });
+    const result = await createOrderFromOffer(offer.id, method, {
+      siteUrl: resolveSiteUrl(req, settings),
+      analytics: orderAnalyticsFromRequest(body.analytics, req.headers.get("user-agent")),
+    });
     if (!result.ok) {
       return NextResponse.json({ ok: false, code: result.code, message: result.message } satisfies OfferPayResponse, { status: result.status });
     }

@@ -80,24 +80,104 @@ Er ist ein No-op ohne Statistik-Zustimmung und ohne geladenes Tool – gefahrlos
 ```ts
 import { events, track } from "@/components/analytics/track";
 
-track(events.addToCart, { product: product.slug, size: sizeId, value: unitPrice, currency: "EUR" });
+track(events.addToCart, { product_id: product.id, size: size.id, quantity: 1, value: 45.9 });
 ```
 
-Standard-Events (`events`):
+Event-Katalog (`events` in `track.ts`; die serverseitigen Namen stehen in `ServerEvent` in `src/lib/analytics-server.ts`). Props: snake_case, nur `string`/`number`/`boolean`, Beträge in EUR als Zahl (z. B. `45.9`),
+`locale` = Shop-Sprache (`useI18n().locale`). **Keine personenbezogenen Daten**: keine Namen, E-Mails, Telefonnummern, Adressen,
+Postleitzahlen, Freitexte oder Kartentexte.
 
-| Name                    | Wo aufrufen                                                                                     | Props                                   |
-|-------------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------|
-| `add_to_cart`           | In der Komponente, die `useCart().addItem()` aufruft (PDP-Kaufbox / Quick-Add). **Nicht** im Store selbst – der Store ist tool-agnostisch. | `product`, `size`, `quantity`, `value`, `currency` |
-| `gift_finder_complete`  | Bereits eingebaut in `src/components/giftfinder/gift-finder.tsx`                               | `for`, `occasion`, `budget`, `results`  |
-| `business_inquiry`      | Bereits eingebaut in `src/app/(shop)/firmenkunden/business-inquiry-form.tsx`                   | `need`                                  |
-| `delivery_check`        | In `src/components/shop/postal-code-check.tsx` nach erfolgreicher Prüfung (noch nicht eingebaut) | `zone`, `sameDay`                       |
-| `newsletter_signup`     | In `src/components/home/newsletter-form.tsx` nach `ok` (noch nicht eingebaut)                  | –                                       |
+Quelle: **Client** = `track()` im Browser (nur mit Statistik-Zustimmung) · **Checkout** = `track()` in `src/components/checkout/*` ·
+**Server** = `src/lib/analytics-server.ts` (Umami-API, genau einmal pro Bestellung, nur wenn die Bestellung mit Zustimmung angelegt wurde; zusätzlich `locale`, `channel`).
 
-Neue Events: Name in `events` ergänzen (snake_case, stabil halten – die Namen landen in Dashboards), dann `track()` an der Stelle aufrufen, an der die Handlung tatsächlich abgeschlossen ist (nach `ok` der API, nicht beim Klick).
+### Produkte & Warenkorb
+
+| Event | Bedeutung | Wo ausgelöst | Props |
+|-------|-----------|--------------|-------|
+| `view_item` | Produktseite angesehen | Client · `src/components/product/product-hero.tsx` (einmal pro Produkt-Mount) | `product_id`, `category`, `price` (vorausgewählte Größe; fehlt bei „Preis auf Anfrage“), `locale` |
+| `select_variant` | Größe gewechselt | Client · `src/components/product/configurator.tsx` (nur bei Wechsel, nicht beim ersten Render) | `product_id`, `size`, `price` |
+| `add_to_cart` | Strauß in den Warenkorb gelegt | Client · `configurator.tsx` nach `useCart().addItem()` | `product_id`, `size`, `quantity`, `value` (Zeile inkl. Extras) |
+| `remove_from_cart` | Warenkorb-Zeile entfernt | Client · `src/components/cart/cart-line.tsx` („Entfernen“ oder Menge auf 0) | `product_id`, `value` (Zeile inkl. Extras) |
+| `view_cart` | Warenkorb angesehen | Client · `cart-drawer.tsx` (bei jedem Öffnen) und `cart-page.tsx` (Mount), über `use-view-cart.ts` | `cart_value` (Zwischensumme), `item_count` |
+| `add_extra` | Extra hinzugefügt | Client · `configurator.tsx`, `cart-upsell.tsx`, `cart-line.tsx` (Menge +) | `extra_id`, `value` (hinzugefügter Betrag) |
+| `remove_extra` | Extra entfernt | Client · `configurator.tsx` (Menge auf 0), `cart-line.tsx` (X oder Menge auf 0) | `extra_id` |
+| `product_search` | Suche mit Ergebnis | Client · `src/components/layout/search-overlay.tsx` (Live-Ergebnis) und `/suche` (`SearchResultsTracker`); nur Suchbegriffe ab 2 Zeichen, einmal pro Begriff und Tab, Begriff selbst wird nie gesendet (`search-tracking.tsx`) | `result_count` (Produkte + Anlässe + Kategorien), `locale` |
+| `search_no_results` | Suche ohne Treffer | Client · wie `product_search`, zusätzlich bei `result_count = 0` | `locale` |
+| `filter_used` | Shop-Filter gesetzt | Client · `src/components/shop/use-shop-params.ts` (Rail, Sheet, Sortierung); ein Event pro neu gewähltem Wert, Entfernen zählt nicht | `filter_type` (`anlass`, `blume`, `farbe`, `groesse`, `stil`, `saison`, `preis`, `verfuegbarkeit`, `datum`, `plz`, `sort`), `filter_value` (Id/Slug; bei `plz` nur `"set"`) |
+
+### Checkout & Zahlung
+
+| Event | Bedeutung | Wo ausgelöst | Props |
+|-------|-----------|--------------|-------|
+| `begin_checkout` | Checkout geöffnet | Checkout · `checkout.tsx` | `cart_value`, `item_count`, `locale` |
+| `address_completed` | Adress-Schritt abgeschlossen | Checkout | `delivery_zone` |
+| `address_validation_failed` | Adresse ungültig | Checkout | `error_code` |
+| `delivery_slot_selected` | Liefertermin gewählt | Checkout | `slot_type`, `days_ahead` |
+| `delivery_slot_unavailable` | Kein Termin verfügbar | Checkout | `delivery_zone` |
+| `delivery_fee_shown` | Liefergebühr angezeigt | Checkout | `shipping_fee`, `cart_value`, `delivery_zone` |
+| `express_selected` | Express-/Same-Day-Zustellung gewählt | Checkout | `delivery_zone`, `fee` |
+| `coupon_applied` | Gutschein eingelöst | Checkout | `campaign_code`, `discount_value` |
+| `coupon_invalid` | Gutschein ungültig | Checkout | `reason_code` |
+| `payment_method_selected` | Zahlungsart gewählt | Checkout | `payment_method` |
+| `payment_started` | Zahlung gestartet | Checkout | `payment_method`, `value` |
+| `payment_failed` | Zahlung fehlgeschlagen | Checkout | `payment_method`, `safe_error_code` |
+| `payment_cancelled` | Zahlung abgebrochen | Checkout | `payment_method` |
+
+Die Checkout-Props sind der Stand von `src/components/checkout/checkout.tsx` – maßgeblich ist der Code.
+
+### Bestellung (serverseitig)
+
+| Event | Bedeutung | Wo ausgelöst | Props |
+|-------|-----------|--------------|-------|
+| `purchase` | Zahlung bestätigt | Server · `trackPurchase` (aus `markOrderPaid`) | `revenue`, `currency`, `payment_method`, `delivery_type`, `delivery_zone`, `item_count`, `order_type`, `coupon` |
+| `refund` | Rückerstattung | Server · `trackRefund` | `refund_value`, `currency`, `reason_code`, `payment_method` |
+| `order_delivered` | Als zugestellt markiert | Server · `trackDelivered` (Admin) | `delivery_type`, `on_time`, `delivery_zone` |
+| `order_delayed` | Zustellung nach dem Zeitfenster | Server · `trackDelivered` (zusätzlich) | `delay_bucket`, `delivery_zone` |
+| `order_cancelled` | Storniert | Server · `trackCancelled` (Admin) | `reason_code`, `payment_status` |
+
+### Marketing & Sprachen
+
+| Event | Bedeutung | Wo ausgelöst | Props |
+|-------|-----------|--------------|-------|
+| `language_changed` | Andere Sprache gewählt | Client · `src/components/layout/language-switcher.tsx` (nur bei anderer Sprache) und Link im `language-hint.tsx` | `from_locale`, `to_locale` |
+| `language_suggested` | Sprachhinweis angezeigt | Client · `src/components/layout/language-hint.tsx` (einmal pro Seitenaufruf) | `suggested_locale` |
+| `whatsapp_clicked` | WhatsApp-Link geklickt | Client · `src/components/analytics/click-tracking.tsx` (ein delegierter Klick-Listener in `site-shell.tsx`, Links zu `wa.me` / `api.whatsapp.com`) | `page_type` (`home`, `product`, `category`, `occasion`, `checkout`, `contact`, `faq`, `landing`, `other`), `locale` |
+| `review_clicked` | Bewertungs-Link geklickt bzw. Bewertungsseite geöffnet | Client · `click-tracking.tsx` (Trustpilot, Google Maps / `g.page` / `search.google.com/local/writereview`); `/bewertung` (Link aus der Bewertungs-Mail) über `TrackOnMount` im Layout | `platform` (`trustpilot`, `google`, `blumora`) |
+| `contact_submitted` | Kontaktanfrage gesendet | Client · `src/components/content/contact-form.tsx` und `/anfrage` (`custom-request-form.tsx`) nach `ok` | `topic` (Betreff-Id, z. B. `Bestellung`; bei `/anfrage` `custom_request`), `locale` |
+| `gift_finder_started` | Geschenkfinder begonnen | Client · `src/components/giftfinder/gift-finder.tsx` (erste Antwort) | `locale` |
+| `gift_finder_completed` | Geschenkfinder mit Ergebnis | Client · `gift-finder.tsx` nach Antwort der API | `occasion`, `budget_range`, `recipient`, `result_count` |
+| `business_lead` | Firmenanfrage gesendet | Client · `src/app/[locale]/(shop)/firmenkunden/business-inquiry-form.tsx` nach `ok` | `service_type` |
+| `reminder_created` | Erinnerung angelegt | Client · `src/components/reminders/reminder-form.tsx` nach `ok` | `occasion_type` (Anlass-Slug bzw. `eigener`, nie der Freitext) |
+| `newsletter_signup` | Newsletter angemeldet | Client · `src/components/home/newsletter-form.tsx` nach `ok` | `locale` |
+| `complaint_submitted` | Reklamation gesendet | **Noch nicht eingebaut** – es gibt noch kein Reklamationsformular (Name noch nicht in `events`) | – |
+| `reorder_started` | Nachbestellung begonnen | **Noch nicht eingebaut** – es gibt noch keine „Nochmal bestellen“-Funktion (Name noch nicht in `events`) | – |
+
+### Lieferung
+
+| Event | Bedeutung | Wo ausgelöst | Props |
+|-------|-----------|--------------|-------|
+| `postcode_checked` | PLZ geprüft | Client · `src/hooks/use-delivery-check.ts` nach Antwort der API (Hero, Produktseite, Lieferseite, Warenkorb, Checkout); dieselbe PLZ wird pro Tab nur einmal gezählt | `delivery_zone` (Zonen-Id, `none` außerhalb), `available` |
+| `outside_delivery_area` | PLZ außerhalb des Liefergebiets | Client · wie `postcode_checked`, zusätzlich bei `available = false` | `region_group` (`wien` = PLZ beginnt mit 1, `noe` = 2/3, sonst `other`; nie die PLZ) |
+
+Reine Helfer (Seitentyp, Region, Zeilenwert, Filter-Änderungen) liegen in `src/components/analytics/event-props.ts`
+(Tests: `tests/unit/analytics-event-props.test.ts`). Server-Komponenten importieren `track` nicht: Links erfasst
+`click-tracking.tsx` per Delegation, Seitenaufrufe `TrackOnMount` (`src/components/analytics/track-on-mount.tsx`).
+
+Neue Events: Name in `events` ergänzen (snake_case, stabil halten – die Namen landen in Dashboards; der Katalog ist abgestimmt, Änderungen nur gemeinsam), dann `track()` an der Stelle aufrufen, an der die Handlung tatsächlich abgeschlossen ist (nach `ok` der API, nicht beim Klick).
 Keine personenbezogenen Daten in Props (keine E-Mails, Namen, PLZ).
 
 Hinweis GA4: Für E-Commerce-Berichte erwartet GA4 bei `add_to_cart` ein `items`-Array. `track()` reicht Props 1:1 durch; wer die Standardberichte nutzen will, übergibt z. B.
 `{ currency: "EUR", value: 44.9, items: [...] }` – Plausible ignoriert verschachtelte Werte.
+
+## Umsatz & Kanal-Zuordnung (Revenue)
+
+- **Kanal des Besuchs** (`src/lib/attribution.ts`, im Browser `src/components/analytics/visit.ts`): Aus Referrer und `utm_*` der Einstiegsseite wird ein grober Kanal (`chatgpt`, `google`, `google_ads`, `instagram`, `trustpilot`, `email`, `referral`, `direct` …). Ohne Zustimmung bleibt er nur im Speicher der aktuellen Seite; **mit** Statistik-Zustimmung wird er zusammen mit einer zufälligen **Besuchs-ID** in `localStorage["bl-visit"]` (30 Tage, letzter Nicht-Direkt-Kontakt gewinnt) gespeichert. Widerruf löscht `bl-visit`.
+- **Bestellung**: Checkout und Angebots-Zahlung schicken `analytics: { attribution, visitorId? }` mit. Der Server prüft es (`sanitizeAttribution`, `sanitizeVisitorId`) und speichert `order.analytics` (Kanal, Referrer-Domain, utm, Einstiegsseite; Besuchs-ID + Browser nur mit Zustimmung). Das Dashboard `/admin/analytics` rechnet mit diesem Kanal – für **jede** Bestellung, auch ohne Zustimmung (keine Gerätespeicherung nötig, nur Daten des Bestell-Requests).
+- **Umami-Sitzung**: Mit Zustimmung hängt der `before-send`-Hook die Besuchs-ID als Umamis `id` (distinct id) an jedes Event. Dadurch gehören alle Events des Besuchers zur selben Umami-Sitzung.
+- **`purchase` serverseitig** (`src/lib/analytics-server.ts`): nach bestätigter Zahlung (`markOrderPaid`, Webhook oder Bestätigung) per `POST <Umami>/api/send` mit `revenue`, `currency: "EUR"`, `locale`, `channel`, `payment_method`, `delivery_type`, `delivery_zone`, `item_count`, `order_type`, `coupon` und derselben `id` → Umsatz landet beim richtigen Kanal und bei der richtigen Sprache. **Genau einmal**: atomarer Claim `claimOnce("analytics-<Bestellung>-purchaseSentAt")` (Postgres `insert … on conflict do nothing`, JSON-Datei exklusiv angelegt), zusätzlich Zeitstempel in `order.analytics.purchaseSentAt`. Ohne Besuchs-ID (keine Zustimmung) oder ohne `NEXT_PUBLIC_UMAMI_WEBSITE_ID` wird nichts gesendet.
+- **`refund`** bei gemeldeter Erstattung (`markOrderRefunded`), **`order_delivered`/`order_delayed`** und **`order_cancelled`** bei Statuswechsel im Admin – jeweils ebenfalls genau einmal.
+- Keine neuen Umgebungsvariablen: Endpunkt = Host von `NEXT_PUBLIC_UMAMI_SRC` (Standard `https://cloud.umami.is/api/send`), Hostname = erster Eintrag von `NEXT_PUBLIC_UMAMI_DOMAINS` (Standard `blumora.at`).
+- Datenschutzerklärung: den Umami-Abschnitt um „pseudonyme Besuchs-ID (30 Tage im Browser), Zuordnung von Bestellumsatz und Kanal zur Besuchsstatistik, serverseitige Übermittlung des Bestellwerts an Umami – nur mit Einwilligung“ ergänzen.
 
 ## Page Views
 

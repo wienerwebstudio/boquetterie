@@ -75,7 +75,7 @@ export function BusinessInquiryForm({ className }: { className?: string }) {
         return;
       }
       setStatus("sent");
-      track(events.businessInquiry, { need: form.need });
+      track(events.businessLead, { service_type: form.need });
     } catch {
       setStatus("failed");
     }

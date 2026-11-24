@@ -11,6 +11,7 @@ import { CartUpsell } from "./cart-upsell";
 import { CartSummary } from "./cart-summary";
 import { CartDeliveryProvider } from "./cart-delivery";
 import { useCartTotals } from "./use-cart-totals";
+import { useViewCartTracking } from "./use-view-cart";
 import { useI18n } from "@/i18n/client";
 
 export function CartTrustRow({ className }: { className?: string }) {
@@ -75,6 +76,7 @@ export function CartDrawer({ cardsEnabled = false }: { cardsEnabled?: boolean })
   const hydrated = useCart((s) => s.hydrated);
   const items = useCart((s) => s.items);
   const { m, fmt, plural } = useI18n();
+  useViewCartTracking(cartOpen);
   if (!hydrated) return null;
   const count = cartCount(items);
   const countLabel = plural(count, m.cart.items);

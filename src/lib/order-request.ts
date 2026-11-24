@@ -1,3 +1,4 @@
+import { orderAnalyticsFromRequest } from "@/lib/analytics-server";
 import "server-only";
 import { after, NextResponse } from "next/server";
 import { getSettings } from "@/lib/cms";
@@ -37,7 +38,13 @@ export async function createOrderResponse(req: Request, body: unknown, opts: { d
     : { ...parsed.payload, items: parsed.payload.items.map((i) => ({ ...i, message: undefined, anonymous: undefined, senderName: undefined })) };
 
   try {
-    const result = await createOrderFromPayload(payload, { siteUrl: resolveSiteUrl(req, settings), locale: isLocale(requested) ? requested : undefined });
+    const raw = body as { analytics?: unknown; delivery?: { express?: unknown } };
+    const result = await createOrderFromPayload(payload, {
+      siteUrl: resolveSiteUrl(req, settings),
+      locale: isLocale(requested) ? requested : undefined,
+      analytics: orderAnalyticsFromRequest(raw.analytics, req.headers.get("user-agent")),
+      express: raw.delivery?.express === true,
+    });
     if (!result.ok) {
       return NextResponse.json({ ok: false, message: result.message, errors: result.errors ?? {} }, { status: result.status });
     }

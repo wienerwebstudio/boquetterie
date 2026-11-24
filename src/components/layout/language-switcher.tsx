@@ -8,6 +8,7 @@ import { LOCALE_INFO, type Locale } from "@/i18n/config";
 import { switchLocalePath } from "@/i18n/paths";
 import { cn } from "@/lib/format";
 import dynamic from "next/dynamic";
+import { events, track } from "@/components/analytics/track";
 
 /** Flags (~14 KB) are only loaded when the menu is opened. */
 const LanguageFlag = dynamic(() => import("@/components/layout/language-flag").then((m) => m.LanguageFlag), {
@@ -60,7 +61,11 @@ export function LanguageSwitcher() {
                 hrefLang={LOCALE_INFO[l].htmlLang}
                 lang={LOCALE_INFO[l].htmlLang}
                 aria-current={l === locale ? "true" : undefined}
-                onClick={() => { rememberChoice(l); setOpen(false); }}
+                onClick={() => {
+                  rememberChoice(l);
+                  setOpen(false);
+                  if (l !== locale) track(events.languageChanged, { from_locale: locale, to_locale: l });
+                }}
                 className={cn("flex items-center gap-3 rounded-md px-3 py-2 text-[14px] transition-colors hover:bg-ivory-100", l === locale ? "font-semibold text-forest" : "text-ink")}
               >
                 <LanguageFlag locale={l} />

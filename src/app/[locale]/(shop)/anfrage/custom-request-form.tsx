@@ -13,6 +13,7 @@ import {
   validateCustomRequest, type CustomRequestBudget, type CustomRequestErrors, type CustomRequestTopic,
 } from "@/lib/custom-requests-core";
 import { useI18n } from "@/i18n/client";
+import { events, track } from "@/components/analytics/track";
 
 interface FormState {
   topics: CustomRequestTopic[];
@@ -127,6 +128,7 @@ export function CustomRequestForm({ products, initialProduct, today }: { product
       }
       setSentId(data.id ?? "");
       setStatus("sent");
+      track(events.contactSubmitted, { topic: "custom_request", locale });
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
       setStatus("failed");

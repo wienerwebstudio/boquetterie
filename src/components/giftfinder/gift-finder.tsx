@@ -71,7 +71,7 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
       if (!res.ok || !data?.ok || !data.products) throw new Error(data?.message || "giftfinder failed");
       setResult({ products: data.products, fallback: Boolean(data.fallback), occasionHits: data.occasionHits ?? 0 });
       setStatus("idle");
-      track(events.giftFinderComplete, { for: q.for, occasion: q.occasion, budget: q.budget, results: data.products.length });
+      track(events.giftFinderCompleted, { occasion: q.occasion, budget_range: q.budget, recipient: q.for, result_count: data.products.length });
       if (scrollOnResult.current) {
         scrollOnResult.current = false;
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -90,7 +90,12 @@ export function GiftFinder({ occasions, initialQuery, initialResult }: {
     groupRef.current?.querySelector<HTMLElement>('[role="radio"][tabindex="0"]')?.focus({ preventScroll: true });
   }, [activeStep]);
 
+  const started = useRef(false);
   const select = (step: Step, value: string) => {
+    if (!started.current) {
+      started.current = true;
+      track(events.giftFinderStarted, { locale });
+    }
     const next = { ...query, [step]: value } as GiftFinderQuery;
     const nextStep = nextOpenStep(next);
     focusNextStep.current = nextStep !== null && nextStep !== activeStep;

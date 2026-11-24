@@ -1,4 +1,4 @@
-import { hasAnalyticsConsent } from "@/components/consent/store";
+import { hasAnalyticsConsent, useConsent } from "@/components/consent/store";
 
 /**
  * Tiny event helper. No-ops without statistics consent and when no tool is loaded,
@@ -10,14 +10,55 @@ import { hasAnalyticsConsent } from "@/components/consent/store";
 
 export type TrackProps = Record<string, string | number | boolean | null | undefined>;
 
-/** Event names used across the shop – keep them stable, they show up in dashboards. */
+/**
+ * Event catalogue (snake_case, stable – the names show up in dashboards). Props: no personal data
+ * (no names, e-mails, phone numbers, street addresses, postal codes, free text). See docs/ANALYTICS.md.
+ * `purchase`, `refund`, `order_delivered`, `order_delayed`, `order_cancelled` are sent by the SERVER
+ * (src/lib/analytics-server.ts), never from the browser.
+ */
 export const events = {
+  // Products & cart
+  viewItem: "view_item",
+  selectVariant: "select_variant",
   addToCart: "add_to_cart",
-  giftFinderComplete: "gift_finder_complete",
-  businessInquiry: "business_inquiry",
-  deliveryCheck: "delivery_check",
+  removeFromCart: "remove_from_cart",
+  viewCart: "view_cart",
+  addExtra: "add_extra",
+  removeExtra: "remove_extra",
+  productSearch: "product_search",
+  filterUsed: "filter_used",
+  searchNoResults: "search_no_results",
+  // Checkout & payments
+  beginCheckout: "begin_checkout",
+  addressCompleted: "address_completed",
+  addressValidationFailed: "address_validation_failed",
+  deliverySlotSelected: "delivery_slot_selected",
+  deliverySlotUnavailable: "delivery_slot_unavailable",
+  deliveryFeeShown: "delivery_fee_shown",
+  paymentMethodSelected: "payment_method_selected",
+  paymentStarted: "payment_started",
+  paymentFailed: "payment_failed",
+  paymentCancelled: "payment_cancelled",
+  // Marketing & languages
+  languageChanged: "language_changed",
+  languageSuggested: "language_suggested",
+  couponApplied: "coupon_applied",
+  couponInvalid: "coupon_invalid",
+  whatsappClicked: "whatsapp_clicked",
+  contactSubmitted: "contact_submitted",
+  giftFinderStarted: "gift_finder_started",
+  giftFinderCompleted: "gift_finder_completed",
+  businessLead: "business_lead",
+  reminderCreated: "reminder_created",
+  reviewClicked: "review_clicked",
   newsletterSignup: "newsletter_signup",
+  // Delivery & service
+  expressSelected: "express_selected",
+  postcodeChecked: "postcode_checked",
+  outsideDeliveryArea: "outside_delivery_area",
 } as const;
+
+export type EventName = (typeof events)[keyof typeof events];
 
 declare global {
   interface Window {
@@ -31,9 +72,33 @@ declare global {
   }
 }
 
-export function track(event: string, props: TrackProps = {}) {
+/**
+ * Events fired before the stored consent was read (first render, e.g. view_item on a direct
+ * visit) wait here and go out once the choice is known – only if statistics are allowed.
+ */
+let waiting: [EventName, TrackProps][] | null = null;
+function queueUntilConsentKnown(event: EventName, props: TrackProps) {
+  if (!waiting) {
+    waiting = [];
+    const unsubscribe = useConsent.subscribe((s) => {
+      if (!s.hydrated) return;
+      unsubscribe();
+      const queued = waiting ?? [];
+      waiting = null;
+      if (hasAnalyticsConsent()) for (const [e, p] of queued) send(e, p);
+    });
+  }
+  if (waiting.length < 50) waiting.push([event, props]);
+}
+
+export function track(event: EventName, props: TrackProps = {}) {
   if (typeof window === "undefined") return;
+  if (!useConsent.getState().hydrated) return queueUntilConsentKnown(event, props);
   if (!hasAnalyticsConsent()) return;
+  send(event, props);
+}
+
+function send(event: EventName, props: TrackProps) {
 
   const clean: Record<string, string | number | boolean> = {};
   for (const [k, v] of Object.entries(props)) {

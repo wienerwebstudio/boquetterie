@@ -165,6 +165,20 @@ export async function addOrder(order: Order) {
   await saveOrders(orders);
   return order;
 }
+/**
+ * One-time claim (e.g. "analytics-BQ-ABC123-purchase"): true for exactly one caller, also across
+ * server instances (atomic insert in Postgres, exclusive create for JSON files).
+ */
+export async function claimOnce(name: string): Promise<boolean> {
+  const safe = `claim-${name.toLowerCase().replace(/[^a-z0-9-]/g, "-")}`;
+  const store = getStore();
+  const value = { at: new Date().toISOString() };
+  if (store.createIfAbsent) return store.createIfAbsent("data", safe, value);
+  if (await store.get("data", safe)) return false;
+  await store.set("data", safe, value);
+  return true;
+}
+
 export async function updateOrder(id: string, patch: (o: Order) => Order) {
   const orders = await getOrders();
   const idx = orders.findIndex((o) => o.id === id);

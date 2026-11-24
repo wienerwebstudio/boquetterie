@@ -1,8 +1,9 @@
+import { trackPurchase, trackRefund } from "@/lib/analytics-server";
 import "server-only";
 import { after } from "next/server";
 import { bookCourierSafely } from "@/lib/courier";
 import { randomBytes, randomInt, timingSafeEqual } from "node:crypto";
-import type { CartItem, Coupon, DeliveryZone, Extra, Order, OrderLine, OrderStatus, Product, SizeId } from "@/types";
+import type { CartItem, Coupon, DeliveryZone, Extra, Order, OrderAnalytics, OrderLine, OrderStatus, Product, SizeId } from "@/types";
 import type { CreatePaymentResult, PaymentMethodId, PaymentProviderId } from "@/types/payments";
 import { addOrder, getAllProducts, getCoupons, getDeliveryZones, getExtras, getOfferById, getOrderById, getOrders, getSettings, readCollection, updateOffer, updateOrder, writeCollection } from "@/lib/cms";
 import { findZone, getAvailableDays, getLocalNow, normalizePostalCode } from "@/lib/delivery";
@@ -405,7 +406,7 @@ export async function priceOrder(input: { items: OrderPayloadItem[]; zip: string
   return { ok: true, lines, zone, window, coupon, totals };
 }
 
-export async function createOrderFromPayload(payload: OrderPayload, opts: { siteUrl: string; locale?: Locale }): Promise<CreateOrderOutcome> {
+export async function createOrderFromPayload(payload: OrderPayload, opts: { siteUrl: string; locale?: Locale; analytics?: OrderAnalytics; express?: boolean }): Promise<CreateOrderOutcome> {
   const settings = await getSettings();
   const paymentConfig = settings.payments.find((p) => p.id === payload.payment.method && p.enabled);
   const provider = paymentConfig ? providerForMethod(paymentConfig.id) : null;
@@ -438,6 +439,8 @@ export async function createOrderFromPayload(payload: OrderPayload, opts: { site
     delivery: {
       date: payload.delivery.date, windowId: payload.delivery.windowId, windowLabel, windowFrom, windowTo, note: payload.delivery.note,
       zoneId: zone.id, zoneName: zone.name, fee: totals.delivery,
+      // "Express" = today's earliest window (checkout badge); only believed for a delivery today.
+      ...(opts.express && payload.delivery.date === getLocalNow(settings.timezone).date ? { express: true } : {}),
     },
     customer: { firstName: payload.customer.firstName, lastName: payload.customer.lastName, email: payload.customer.email, phone: payload.customer.phone },
     lines: orderLines,
@@ -446,6 +449,7 @@ export async function createOrderFromPayload(payload: OrderPayload, opts: { site
     payment: { method: paymentConfig.id, status: "pending", provider },
     // Shop language for the customer mails; German orders carry none (as before).
     ...(opts.locale && opts.locale !== "de" ? { locale: opts.locale } : {}),
+    ...(opts.analytics ? { analytics: opts.analytics } : {}),
   };
 
   try {
@@ -557,7 +561,7 @@ export type OfferPaymentOutcome =
  * rules. The order carries the offer's language, the free window ("14:00–16:00 Uhr"),
  * the zone of the ZIP, the billing address, the florist note and `offerId`.
  */
-export async function createOrderFromOffer(offerId: string, method: PaymentMethodId, opts: { siteUrl: string }): Promise<OfferPaymentOutcome> {
+export async function createOrderFromOffer(offerId: string, method: PaymentMethodId, opts: { siteUrl: string; analytics?: OrderAnalytics }): Promise<OfferPaymentOutcome> {
   return withOfferLock(offerId, async () => {
     const [offer, settings, zones] = await Promise.all([getOfferById(offerId), getSettings(), getDeliveryZones()]);
     if (!offer) return { ok: false, status: 404, code: "not_found", message: "Angebot nicht gefunden." };
@@ -639,6 +643,7 @@ export async function createOrderFromOffer(offerId: string, method: PaymentMetho
       payment: { method: paymentConfig.id, status: "pending", provider },
       ...(locale !== "de" ? { locale } : {}),
       offerId: offer.id,
+      ...(opts.analytics ? { analytics: opts.analytics } : {}),
       ...(offer.floristNote ? { floristNote: offer.floristNote } : {}),
       ...(offer.billing ? { billing: offer.billing } : {}),
     };
@@ -710,6 +715,8 @@ export async function markOrderPaid(id: string, info: PaidInfo): Promise<Order |
   // (scripts, tests) `after` is unavailable – then run inline. Never throws.
   const followUp = async () => {
     await sendOrderConfirmation(updated).catch((err) => console.error("[mail] confirmation failed", err));
+    // Revenue for analytics – server-side, exactly once (only with the customer's statistics consent).
+    await trackPurchase(updated.id);
     // Orders from individual offers are handled by the team by hand: never an automatic rider.
     if (!updated.offerId) await bookCourierSafely(updated.id);
   };
@@ -741,7 +748,7 @@ export async function markOrderPaymentFailed(id: string, info: { note?: string; 
 
 /** Records a (full or partial) refund reported by the provider. The order status is left to the staff. */
 export async function markOrderRefunded(id: string, info: { note?: string; reference?: string }): Promise<Order | null> {
-  return updateOrder(id, (o) => {
+  const updated = await updateOrder(id, (o) => {
     if (o.payment.status === "refunded") return o;
     return {
       ...o,
@@ -749,6 +756,11 @@ export async function markOrderRefunded(id: string, info: { note?: string; refer
       payment: { ...o.payment, status: "refunded", reference: info.reference ?? o.payment.reference },
     };
   });
+  if (updated?.payment.status === "refunded") {
+    const report = () => trackRefund(updated.id);
+    try { after(report); } catch { await report(); }
+  }
+  return updated;
 }
 
 /** Finds the order a provider event belongs to – by our id (metadata) or by the provider-side id. */

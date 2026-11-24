@@ -7,6 +7,7 @@ import { MailFallback } from "./mail-fallback";
 import { fmtRich } from "./rich-text";
 import { useI18n } from "@/i18n/client";
 import type { Messages } from "@/i18n/messages";
+import { events, track } from "@/components/analytics/track";
 
 export const CONTACT_SUBJECTS = ["Bestellung", "Lieferung", "Firmenkunden", "Sonstiges"] as const;
 export type ContactSubject = (typeof CONTACT_SUBJECTS)[number];
@@ -41,7 +42,7 @@ export function ContactForm({ defaultSubject = "Bestellung", className }: { defa
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   /** Set when the server could neither store nor mail the message (503 `unavailable`). */
   const [fallbackEmail, setFallbackEmail] = useState<string | null>(null);
-  const { m, fmt } = useI18n();
+  const { m, fmt, locale } = useI18n();
   const t = m.forms.contact;
 
   const set = <K extends keyof FormState>(key: K) => (e: { target: { value: string } }) => {
@@ -75,6 +76,7 @@ export function ContactForm({ defaultSubject = "Bestellung", className }: { defa
         return;
       }
       setStatus("sent");
+      track(events.contactSubmitted, { topic: form.subject || "general", locale });
     } catch {
       setStatus("failed");
     }

@@ -1,5 +1,6 @@
 "use server";
 
+import { trackCancelled, trackDelivered } from "@/lib/analytics-server";
 import { randomBytes } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { getPartners, getSettings, updateOrder } from "@/lib/cms";
@@ -45,6 +46,10 @@ export async function updateOrderStatus(_prev: OrderActionState, formData: FormD
       };
     });
     if (!updated) return { ok: false, message: "Bestellung nicht gefunden." };
+
+    // Analytics (server-side, once per order, only with the customer's statistics consent).
+    if (status === "delivered" && prev.status !== "delivered") await trackDelivered(id);
+    if (status === "cancelled" && prev.status !== "cancelled") await trackCancelled(id);
 
     // A cancellation gives reserved units back – unless a failed payment already did.
     if (status === "cancelled" && prev.status !== "cancelled" && updated.payment.status !== "failed") {

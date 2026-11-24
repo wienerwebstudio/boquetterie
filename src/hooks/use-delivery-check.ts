@@ -4,6 +4,21 @@ import type { DeliveryZone } from "@/types";
 import type { DeliveryDay, LocalNow } from "@/lib/delivery";
 import { useDeliveryContext } from "@/store/delivery";
 import { useI18n } from "@/i18n/client";
+import { events, track } from "@/components/analytics/track";
+import { regionGroup } from "@/components/analytics/event-props";
+
+/**
+ * Last postal code reported in this tab: automatic re-checks of the same code (prefill on the
+ * product page, cart drawer, checkout) do not count again. The code itself is never sent.
+ */
+let lastTracked: string | null = null;
+
+function trackCheck(data: DeliveryCheckResult) {
+  if (data.postalCode === lastTracked) return;
+  lastTracked = data.postalCode;
+  track(events.postcodeChecked, { delivery_zone: data.zone?.id ?? "none", available: data.available });
+  if (!data.available) track(events.outsideDeliveryArea, { region_group: regionGroup(data.postalCode) });
+}
 
 export interface DeliveryCheckResult {
   ok: boolean;
@@ -42,6 +57,7 @@ export function useDeliveryCheck(productSlug?: string) {
       }
       setResult(data);
       setContext(data.postalCode, data.zone);
+      trackCheck(data);
       return data;
     } catch {
       setError(t.unreachable);

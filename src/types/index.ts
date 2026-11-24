@@ -476,6 +476,26 @@ export interface OrderCourier {
   error?: string;
 }
 
+/**
+ * Where the order came from and which server-side analytics events were sent (exactly once each).
+ * `visitorId` exists only when the customer agreed to statistics (Umami distinct id).
+ */
+export interface OrderAnalytics {
+  channel: string;
+  referrerDomain?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  landing?: string;
+  visitorId?: string;
+  /** Browser of the checkout (Umami needs one for server events). Only with `visitorId`. */
+  userAgent?: string;
+  purchaseSentAt?: string;
+  refundSentAt?: string;
+  deliveredSentAt?: string;
+  cancelledSentAt?: string;
+}
+
 export interface Order {
   id: string; // BQ-XXXXXX
   token: string; // tracking token
@@ -496,6 +516,8 @@ export interface Order {
     fee: number;
     /** No delivery at all (individual offer: pickup or as agreed) – mails show "Nach Absprache". */
     none?: boolean;
+    /** Today's earliest window, chosen as "Express" in the checkout (1–2 h, no surcharge). */
+    express?: boolean;
   };
   customer: { firstName: string; lastName: string; email: string; phone: string };
   lines: OrderLine[];
@@ -524,6 +546,8 @@ export interface Order {
   locale?: string;
   /** Individual offer this order was created from (admin → Angebote). */
   offerId?: string;
+  /** Marketing attribution and analytics bookkeeping (see src/lib/analytics-server.ts). */
+  analytics?: OrderAnalytics;
   /** Team note to the florist from the offer – prefilled as partner note when the order is assigned. */
   floristNote?: string;
   /** Invoice address, when the customer asked for one (offers). */

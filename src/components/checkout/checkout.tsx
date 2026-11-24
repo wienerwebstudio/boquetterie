@@ -34,6 +34,9 @@ import { rich } from "./rich-text";
 import { usePaymentMethods } from "./use-payment-methods";
 import { clearDraftId, draftId, peekDraftId, postDraft } from "./checkout-draft";
 import { submitFailureReason, type SubmitFailureReason } from "@/lib/payment-note";
+import { events, track } from "@/components/analytics/track";
+import { currentVisit } from "@/components/analytics/visit";
+import { addressErrorCode, safeErrorCode, slotInfo } from "./checkout-analytics";
 
 // Stripe.js (and its script from js.stripe.com) is only needed once a Stripe method is
 // selected in step 5 – keep it out of the checkout bundle until then.
@@ -187,9 +190,16 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
     let alive = true;
     fetch("/api/coupons/validate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ code: couponCode, subtotal }) })
       .then((r) => r.json() as Promise<{ ok: boolean; coupon?: Coupon; error?: string }>)
-      .then((r) => { if (alive) setCouponState({ code: couponCode, coupon: r.ok && r.coupon ? r.coupon : null, error: r.ok ? undefined : r.error ?? t.errors.couponInvalid }); })
+      .then((r) => {
+        if (!alive) return;
+        setCouponState({ code: couponCode, coupon: r.ok && r.coupon ? r.coupon : null, error: r.ok ? undefined : r.error ?? t.errors.couponInvalid });
+        if (r.ok && r.coupon) track(events.couponApplied, { campaign_code: couponCode.toUpperCase().slice(0, 30), discount_value: computeTotals({ items, coupon: r.coupon }).discount });
+        else track(events.couponInvalid, { reason_code: "invalid" });
+      })
       .catch(() => { if (alive) setCouponState({ code: couponCode, coupon: null, error: t.errors.couponCheckFailed }); });
     return () => { alive = false; };
+    // `items` only feeds the discount value of the analytics event.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [couponCode, subtotal, t]);
   const coupon = couponCode && couponState?.code === couponCode ? couponState.coupon : null;
   const couponError = couponCode && couponState?.code === couponCode ? couponState.error : undefined;
@@ -211,6 +221,37 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
 
   const selectedDay = days.find((d) => d.date === data.delivery.date);
   const windowLabel = selectedDay?.windows.find((w) => w.id === data.delivery.windowId)?.label;
+
+  /* ---- Analytics (no personal data; see docs/ANALYTICS.md) ---- */
+  const tracked = useRef<{ begin?: boolean; zoneFee?: string; unavailable?: string; method?: string }>({});
+  useEffect(() => {
+    if (tracked.current.begin) return;
+    tracked.current.begin = true;
+    track(events.beginCheckout, { cart_value: subtotal, locale, item_count: items.reduce((n, i) => n + i.quantity, 0) });
+    if (config.cancelled) track(events.paymentCancelled, { payment_method: data.payment.method || "unknown" });
+    // Once per checkout visit.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    if (!zone || tracked.current.zoneFee === zone.id) return;
+    tracked.current.zoneFee = zone.id;
+    track(events.deliveryFeeShown, { shipping_fee: totals.delivery, cart_value: totals.subtotal, delivery_zone: zone.id });
+    // Once per zone; the totals of that moment are what the customer saw.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [zone?.id]);
+  useEffect(() => {
+    if (!result?.available || days.length > 0 || tracked.current.unavailable === result.postalCode) return;
+    tracked.current.unavailable = result.postalCode;
+    track(events.deliverySlotUnavailable, { delivery_zone: result.zone?.id ?? "unknown" });
+  }, [result, days.length]);
+  useEffect(() => {
+    const method = selectedMethod?.id;
+    if (!method || tracked.current.method === method) return;
+    const first = tracked.current.method === undefined;
+    tracked.current.method = method;
+    // A method restored from an earlier visit is not a choice made now.
+    if (!first || data.step === 5) track(events.paymentMethodSelected, { payment_method: method });
+  }, [selectedMethod?.id, data.step]);
 
   /* ---- Focus management on step change ---- */
   const step = data.step;
@@ -287,7 +328,16 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
 
   const goNext = () => {
     const e = validate(step, data);
-    if (Object.keys(e).length) { setErrors(e); requestAnimationFrame(() => focusFirstError(step, e)); return; }
+    if (Object.keys(e).length) {
+      if (step === 1) track(events.addressValidationFailed, { error_code: addressErrorCode(e, result ? result.available : null) });
+      setErrors(e); requestAnimationFrame(() => focusFirstError(step, e)); return;
+    }
+    if (step === 1) track(events.addressCompleted, { delivery_zone: zone?.id ?? "unknown" });
+    if (step === 2) {
+      const slot = slotInfo(days, data.delivery.date, data.delivery.windowId, result?.now?.date);
+      track(events.deliverySlotSelected, { slot_type: slot.slot_type, days_ahead: slot.days_ahead });
+      if (slot.express) track(events.expressSelected, { delivery_zone: zone?.id ?? "unknown", fee: totals.delivery });
+    }
     const next = Math.min(5, step + 1) as StepId;
     setMaxReached((m) => (next > m ? next : m));
     goTo(next);
@@ -351,7 +401,13 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         method: "POST", headers: { "Content-Type": "application/json" },
         // The locale picks the language of the server's messages and of the customer mails;
         // the draft id removes this session's "Abgebrochene Kasse" entry.
-        body: JSON.stringify({ ...payload, locale, ...(draft ? { draftId: draft } : {}) }),
+        body: JSON.stringify({
+          ...payload, locale, ...(draft ? { draftId: draft } : {}),
+          // "Express" badge window (server re-checks the date) and where the visit came from
+          // (channel always, visitor id only with statistics consent – see analytics/visit.ts).
+          delivery: { ...payload.delivery, express: slotInfo(days, data.delivery.date, data.delivery.windowId, result?.now?.date).express },
+          analytics: currentVisit(),
+        }),
       });
       const created = (await res.json()) as OrderAnswer;
       if (!res.ok) created.ok = undefined;
@@ -417,6 +473,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         // submit() stopped (fields incomplete, wallet sheet closed): the order stays pending
         // (a retry continues it), the team sees why in its history, the customer the reason.
         if (submitError) {
+          if (submitError.type !== "validation_error") track(events.paymentCancelled, { payment_method: selectedMethod.id });
           notePaymentNotFinished(order, submitFailureReason(selectedMethod.id, submitError), selectedMethod.id, [submitError.type, submitError.code].filter(Boolean).join(" · "));
           setSubmitError(submitError.message ?? t.errors.orderFailed);
           return;
@@ -427,11 +484,13 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
           setSubmitError(fmt(m.pay.inline.amountChanged, { total: price(serverTotal) }));
           return;
         }
+        track(events.paymentStarted, { payment_method: selectedMethod.id, value: serverTotal });
         const returnUrl = `${window.location.origin}${href("/checkout/rueckkehr")}?orderId=${encodeURIComponent(order.id)}&token=${encodeURIComponent(order.token)}`;
         const result = await handle.confirm({ clientSecret: payment.clientSecret, returnUrl, email: data.customer.email });
         if (result.error) {
           // Incomplete fields are normal typing mistakes – everything else is worth knowing.
           if (result.error.type !== "validation_error") {
+            track(events.paymentFailed, { payment_method: selectedMethod.id, safe_error_code: safeErrorCode(result.error) });
             reportProblem(order, selectedMethod.id, "confirm_error", [result.error.type, result.error.code, result.error.decline_code, result.error.message].filter(Boolean).join(" · "));
           }
           // Not the customer's input but our integration: offer Stripe's own form for this intent.
@@ -454,6 +513,7 @@ function CheckoutForm({ config, items }: { config: CheckoutConfig; items: CartIt
         return;
       }
       if (payment?.provider === "paypal" && payment.approveUrl) {
+        track(events.paymentStarted, { payment_method: selectedMethod.id, value: typeof body.total === "number" ? body.total : shownTotal });
         // Cart + form state are cleared on the status page after PayPal returns.
         window.location.assign(payment.approveUrl);
         return;

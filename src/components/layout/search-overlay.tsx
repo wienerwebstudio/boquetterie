@@ -11,6 +11,7 @@ import { routes } from "@/lib/urls";
 import { cn } from "@/lib/format";
 import { useFocusTrap } from "@/lib/use-focus-trap";
 import type { SearchResponse } from "@/app/api/search/route";
+import { trackSearch } from "@/components/analytics/search-tracking";
 
 const DEBOUNCE_MS = 150;
 
@@ -90,7 +91,11 @@ export function SearchOverlay() {
         const res = await fetch(`/api/search?q=${encodeURIComponent(trimmed)}${locale === "de" ? "" : `&locale=${locale}`}`, { signal: ctrl.signal });
         if (!res.ok) throw new Error("search failed");
         const data = (await res.json()) as SearchResponse;
-        if (!ctrl.signal.aborted) { setResults(data); setLoading(false); }
+        if (!ctrl.signal.aborted) {
+          setResults(data);
+          setLoading(false);
+          trackSearch(trimmed, data.products.length + data.occasions.length + data.categories.length, locale);
+        }
       } catch (err) {
         if ((err as Error).name !== "AbortError") { setResults({ query: trimmed, products: [], occasions: [], categories: [] }); setLoading(false); }
       }

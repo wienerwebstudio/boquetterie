@@ -10,12 +10,27 @@ import { routes } from "@/lib/urls";
 import { truncateMessage } from "@/lib/cart-helpers";
 import { useCartDelivery } from "./cart-delivery";
 import { CartLineDelivery } from "./cart-line-delivery";
+import { events, track } from "@/components/analytics/track";
+import { cartLineValue } from "@/components/analytics/event-props";
 
 export function CartLine({ item, compact = true, className }: { item: CartItem; compact?: boolean; className?: string }) {
   const setQuantity = useCart((s) => s.setQuantity);
   const removeItem = useCart((s) => s.removeItem);
   const removeExtra = useCart((s) => s.removeExtra);
   const setExtraQuantity = useCart((s) => s.setExtraQuantity);
+  const removeLine = () => {
+    removeItem(item.id);
+    track(events.removeFromCart, { product_id: item.productId, value: cartLineValue(item) });
+  };
+  const changeQuantity = (quantity: number) => {
+    if (quantity <= 0) { removeLine(); return; }
+    setQuantity(item.id, quantity);
+  };
+  const changeExtra = (extra: CartItem["extras"][number], quantity: number) => {
+    if (quantity <= 0) { removeExtra(item.id, extra.extraId); track(events.removeExtra, { extra_id: extra.extraId }); return; }
+    setExtraQuantity(item.id, extra.extraId, quantity);
+    if (quantity > extra.quantity) track(events.addExtra, { extra_id: extra.extraId, value: Math.round(extra.price * (quantity - extra.quantity) * 100) / 100 });
+  };
   const { m, fmt, price, dateShort } = useI18n();
   const t = m.cart.line;
   const { snapshot } = item;
@@ -78,12 +93,12 @@ export function CartLine({ item, compact = true, className }: { item: CartItem; 
                 </span>
                 {!compact && (
                   <span className="inline-flex items-center rounded-md border border-line">
-                    <button type="button" onClick={() => setExtraQuantity(item.id, e.extraId, e.quantity - 1)} aria-label={fmt(t.extraLess, { name: e.name })} className="grid size-7 place-items-center text-ink-muted hover:text-ink"><Minus className="size-3" /></button>
-                    <button type="button" onClick={() => setExtraQuantity(item.id, e.extraId, e.quantity + 1)} aria-label={fmt(t.extraMore, { name: e.name })} className="grid size-7 place-items-center text-ink-muted hover:text-ink"><Plus className="size-3" /></button>
+                    <button type="button" onClick={() => changeExtra(e, e.quantity - 1)} aria-label={fmt(t.extraLess, { name: e.name })} className="grid size-7 place-items-center text-ink-muted hover:text-ink"><Minus className="size-3" /></button>
+                    <button type="button" onClick={() => changeExtra(e, e.quantity + 1)} aria-label={fmt(t.extraMore, { name: e.name })} className="grid size-7 place-items-center text-ink-muted hover:text-ink"><Plus className="size-3" /></button>
                   </span>
                 )}
                 <span className="shrink-0 tabular-nums text-ink">{price(e.price * e.quantity)}</span>
-                <button type="button" onClick={() => removeExtra(item.id, e.extraId)} aria-label={fmt(t.removeExtra, { name: e.name })} className="grid size-7 shrink-0 place-items-center rounded-full text-ink-soft transition-colors hover:bg-ivory-200 hover:text-ink">
+                <button type="button" onClick={() => changeExtra(e, 0)} aria-label={fmt(t.removeExtra, { name: e.name })} className="grid size-7 shrink-0 place-items-center rounded-full text-ink-soft transition-colors hover:bg-ivory-200 hover:text-ink">
                   <X className="size-3.5" />
                 </button>
               </li>
@@ -93,15 +108,15 @@ export function CartLine({ item, compact = true, className }: { item: CartItem; 
 
         <div className="mt-3 flex items-center justify-between gap-3">
           <div className="inline-flex h-10 items-center rounded-md border border-line bg-white/70" role="group" aria-label={fmt(t.quantity, { name: snapshot.name })}>
-            <button type="button" onClick={() => setQuantity(item.id, item.quantity - 1)} aria-label={t.decrease} className="grid size-10 place-items-center text-ink-muted transition-colors hover:text-ink">
+            <button type="button" onClick={() => changeQuantity(item.quantity - 1)} aria-label={t.decrease} className="grid size-10 place-items-center text-ink-muted transition-colors hover:text-ink">
               <Minus className="size-3.5" />
             </button>
             <span className="min-w-8 text-center text-sm font-semibold tabular-nums text-ink" aria-live="polite">{item.quantity}</span>
-            <button type="button" onClick={() => setQuantity(item.id, item.quantity + 1)} aria-label={t.increase} className="grid size-10 place-items-center text-ink-muted transition-colors hover:text-ink">
+            <button type="button" onClick={() => changeQuantity(item.quantity + 1)} aria-label={t.increase} className="grid size-10 place-items-center text-ink-muted transition-colors hover:text-ink">
               <Plus className="size-3.5" />
             </button>
           </div>
-          <button type="button" onClick={() => removeItem(item.id)} className="inline-flex h-10 items-center text-[13px] text-ink-muted underline-offset-4 transition-colors hover:text-danger hover:underline">
+          <button type="button" onClick={removeLine} className="inline-flex h-10 items-center text-[13px] text-ink-muted underline-offset-4 transition-colors hover:text-danger hover:underline">
             {t.remove}
           </button>
         </div>

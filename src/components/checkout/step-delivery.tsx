@@ -5,6 +5,7 @@ import type { DeliveryZone } from "@/types";
 import type { DeliveryDay, LocalNow } from "@/lib/delivery";
 import { addDays } from "@/lib/delivery";
 import { cn } from "@/lib/format";
+import { expressWindowId } from "./checkout-analytics";
 import { useI18n } from "@/i18n/client";
 import { rich } from "./rich-text";
 import { Textarea } from "@/components/ui/input";
@@ -36,7 +37,7 @@ export function StepDelivery({ data, set, errors, onBlur, days, now, zone, loadi
   const showCustom = customOpen || (Boolean(data.date) && !inPills);
   const selectedDay = days.find((d) => d.date === data.date);
   const windows = selectedDay?.windows ?? [];
-  const expressId = selectedDay?.sameDay ? windows.find((w) => w.surcharge === 0)?.id : undefined;
+  const expressId = expressWindowId(selectedDay);
   const tomorrow = now ? addDays(now.date, 1) : null;
 
   const dayLabel = (d: DeliveryDay) => (now && d.date === now.date ? t.today : d.date === tomorrow ? t.tomorrow : dateShort(d.date).replace(/\.$/, ""));

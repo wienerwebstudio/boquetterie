@@ -15,6 +15,7 @@ import type { FieldErrors } from "@/lib/order-payload";
 import { routes } from "@/lib/urls";
 import { useI18n, useLocalizedRouter } from "@/i18n/client";
 import type { OfferPayResponse } from "@/types/offers";
+import { currentVisit } from "@/components/analytics/visit";
 
 // Stripe.js only loads once a Stripe method is selected (as in the checkout).
 const StripeInline = dynamic(() => import("@/components/checkout/stripe-inline").then((m) => m.StripeInline), { ssr: false });
@@ -76,7 +77,7 @@ export function OfferPayment({ token, total, email, name, cancelled }: { token: 
         const checked = await submitted;
         if (checked.error) { setMessage(checked.error.message ?? t.failed); return; }
       }
-      const res = await fetch("/api/offers/pay", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ token, method: selected.id, acceptedTerms: true }) });
+      const res = await fetch("/api/offers/pay", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ token, method: selected.id, acceptedTerms: true, analytics: currentVisit() }) });
       const body = (await res.json()) as OfferPayResponse;
       if (!body.ok) {
         // Paid meanwhile or no longer valid: the page shows the current state.

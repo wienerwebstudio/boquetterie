@@ -1,4 +1,5 @@
 "use client";
+import { currentVisit, forgetVisit } from "@/components/analytics/visit";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { hasAnalyticsConsent, useConsent } from "@/components/consent/store";
@@ -45,6 +46,8 @@ export function Analytics() {
 
   useEffect(() => {
     if (analytics) {
+      // Keep this visit's first touch (channel) for the order, whatever tool is configured.
+      currentVisit();
       if (PLAUSIBLE_DOMAIN && !loaded.current.plausible) {
         loadPlausible(PLAUSIBLE_DOMAIN);
         loaded.current.plausible = true;
@@ -75,6 +78,9 @@ export function Analytics() {
     if (loaded.current.ga && GA_ID) disableGa(GA_ID);
     if (loaded.current.plausible) unloadPlausible();
     // Umami needs no unloading: its before-send hook checks consent on every event.
+    // Only a real "no" (consent loaded and statistics off) removes the visitor id – not the first
+    // render before the stored choice is read.
+    if (useConsent.getState().hydrated && !hasAnalyticsConsent()) forgetVisit();
     if (loaded.current.clarity) disableClarity();
     loaded.current = { ...nothingLoaded, umami: loaded.current.umami, clarity: loaded.current.clarity };
     sentPath.current = null;
@@ -126,7 +132,13 @@ function loadUmami(websiteId: string) {
   if (document.querySelector('script[data-bl-analytics="umami"]')) return;
   // Must exist before the tracker loads. Drops every event once consent is withdrawn,
   // because the already running tracker keeps its history hook until the next page load.
-  window.blUmamiBeforeSend = (_type: string, payload: unknown) => (hasAnalyticsConsent() ? payload : false);
+  // With consent every event carries the visitor id as Umami's distinct id (`id`), so the server-side
+  // `purchase` (src/lib/analytics-server.ts) lands in the same session – revenue by channel.
+  window.blUmamiBeforeSend = (_type: string, payload: unknown) => {
+    if (!hasAnalyticsConsent()) return false;
+    const { visitorId } = currentVisit();
+    return visitorId && payload && typeof payload === "object" ? { ...(payload as Record<string, unknown>), id: visitorId } : payload;
+  };
   const s = document.createElement("script");
   s.defer = true;
   s.src = UMAMI_SRC;

@@ -7,8 +7,11 @@ import { useI18n } from "@/i18n/client";
 import { LANGUAGE_HINTS, LOCALE_INFO, localeFromBrowser, type Locale } from "@/i18n/config";
 import { switchLocalePath } from "@/i18n/paths";
 import { LANGUAGE_CHOICE_KEY } from "@/components/layout/language-switcher";
+import { events, track } from "@/components/analytics/track";
 
 const DISMISS_KEY = "bl_lang_hint_dismissed";
+/** The hint already reported as `language_suggested` in this page load. */
+let suggestedLocale: Locale | null = null;
 
 /**
  * Small bar for visitors whose browser prefers another live language – written in that
@@ -35,6 +38,13 @@ export function LanguageHint() {
     }
   }, [live, locale]);
 
+  // Once per page load and suggested language (the bar only appears until a language was chosen or it was closed).
+  useEffect(() => {
+    if (!target || suggestedLocale === target) return;
+    suggestedLocale = target;
+    track(events.languageSuggested, { suggested_locale: target });
+  }, [target]);
+
   if (!target) return null;
   const hint = LANGUAGE_HINTS[target];
   const close = () => {
@@ -47,7 +57,10 @@ export function LanguageHint() {
         <span>{hint.text}</span>
         <NextLink
           href={switchLocalePath(pathname, target)}
-          onClick={() => { try { window.localStorage.setItem(LANGUAGE_CHOICE_KEY, target); } catch { /* ignore */ } }}
+          onClick={() => {
+            try { window.localStorage.setItem(LANGUAGE_CHOICE_KEY, target); } catch { /* ignore */ }
+            track(events.languageChanged, { from_locale: locale, to_locale: target });
+          }}
           className="font-semibold underline underline-offset-4"
         >
           {hint.action}
