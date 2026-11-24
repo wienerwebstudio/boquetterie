@@ -383,6 +383,17 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     },
   },
   {
+    // New company address (owners, 24.11.2026): Bachgasse 22/11, 1160 Wien – imprint, privacy, terms, withdrawal, settings.
+    id: "2026-11-24-address-bachgasse",
+    replace: {
+      pages: [
+        ["Am Langen Felde 51/18, 1220 Wien", "Bachgasse 22/11, 1160 Wien"],
+        ["Am Langen Felde 51/18\n1220 Wien", "Bachgasse 22/11\n1160 Wien"],
+      ],
+    },
+    transform: { settings: (doc) => withNewAddress(doc) },
+  },
+  {
     // Love Deluxe is described "in fünf Größen" but had four: add XXL at the rose price (owners: 24.11.2026).
     id: "2026-11-24-love-deluxe-xxl",
     transform: { products: (doc) => mapList(doc, withLoveDeluxeXxl) },
@@ -418,6 +429,15 @@ export function withNewFeeAmounts<T>(value: T): T {
     return (changed ? next : value) as T;
   }
   return value;
+}
+
+/** Settings: the old street address → Bachgasse 22/11, 1160 Wien (only while the old one is still set). */
+export function withNewAddress<T>(doc: T): T {
+  const s = doc as Obj;
+  const brand = s?.brand as Obj | undefined;
+  const address = brand?.address as Obj | undefined;
+  if (!address || address.street !== "Am Langen Felde 51/18" || address.zip !== "1220") return doc;
+  return { ...s, brand: { ...brand, address: { ...address, street: "Bachgasse 22/11", zip: "1160" } } } as T;
 }
 
 /** Adds the XXL size (175,90 €, like the rose bouquets) to Love Deluxe once; other products unchanged. */

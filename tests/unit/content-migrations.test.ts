@@ -208,3 +208,16 @@ describe("delivery fees 4,90 / 7,90 (2026-11-24)", () => {
     expect(withNewFeeAmounts(next)).toBe(next);
   });
 });
+
+describe("new address Bachgasse (2026-11-24)", () => {
+  it("moves the address in the legal pages and the settings, once", async () => {
+    const { withNewAddress } = await import("@/lib/content-migrations");
+    const m = CONTENT_MIGRATIONS.find((x) => x.id === "2026-11-24-address-bachgasse")!;
+    const pages = [{ slug: "impressum", sections: [{ paragraphs: ["Tunahan Ceylan", "Am Langen Felde 51/18, 1220 Wien"] }] }, { slug: "agb", sections: [{ paragraphs: ["Blumora\nAm Langen Felde 51/18\n1220 Wien, Österreich"] }] }];
+    expect(JSON.stringify(migrateDocument(m, "pages", pages))).toBe(JSON.stringify([{ slug: "impressum", sections: [{ paragraphs: ["Tunahan Ceylan", "Bachgasse 22/11, 1160 Wien"] }] }, { slug: "agb", sections: [{ paragraphs: ["Blumora\nBachgasse 22/11\n1160 Wien, Österreich"] }] }]));
+    const s = { brand: { name: "Blumora", address: { street: "Am Langen Felde 51/18", zip: "1220", city: "Wien", country: "Österreich" } } };
+    const next = withNewAddress(s);
+    expect(next.brand.address).toEqual({ street: "Bachgasse 22/11", zip: "1160", city: "Wien", country: "Österreich" });
+    expect(withNewAddress(next)).toBe(next);
+  });
+});
