@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Dove consegnate?",
-      "answer": "Consegniamo in tutti i 23 distretti di Vienna. A seconda del distretto, la consegna è gratuita oppure costa 3,99 € o 7,99 €. Inserisci semplicemente il CAP dell'indirizzo del destinatario: vedrai subito se e quando possiamo consegnare e quanto costa la consegna.",
+      "answer": "Consegniamo in tutti i 23 distretti di Vienna. A seconda del distretto, la consegna è gratuita oppure costa 4,90 € o 7,90 €. Inserisci semplicemente il CAP dell'indirizzo del destinatario: vedrai subito se e quando possiamo consegnare e quanto costa la consegna.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Consegna e spedizione",
-      "intro": "Consegniamo in tutti i 23 distretti di Vienna. Costi di consegna (gratuita, 3,99 € o 7,99 €), giorni di consegna e fasce orarie dipendono dall'indirizzo del destinatario – inserisci il CAP e vedrai tutto a colpo d'occhio.",
+      "intro": "Consegniamo in tutti i 23 distretti di Vienna. Costi di consegna (gratuita, 4,90 € o 7,90 €), giorni di consegna e fasce orarie dipendono dall'indirizzo del destinatario – inserisci il CAP e vedrai tutto a colpo d'occhio.",
       "seo": {
         "title": "Consegna e spedizione – fiori a domicilio a Vienna",
         "description": "Zone di consegna, costi di consegna, giorni di consegna e fasce orarie per la consegna di fiori a Vienna."

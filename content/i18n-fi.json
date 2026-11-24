@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Minne toimitatte?",
-      "answer": "Toimitamme kaikkiin Wienin 23 kaupunginosaan. Kaupunginosasta riippuen toimitus on ilmainen tai maksaa 3,99 € tai 7,99 €. Syötä vain vastaanottajan osoitteen postinumero – näet heti, voimmeko toimittaa, milloin ja mitä toimitus maksaa.",
+      "answer": "Toimitamme kaikkiin Wienin 23 kaupunginosaan. Kaupunginosasta riippuen toimitus on ilmainen tai maksaa 4,90 € tai 7,90 €. Syötä vain vastaanottajan osoitteen postinumero – näet heti, voimmeko toimittaa, milloin ja mitä toimitus maksaa.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Toimitus",
-      "intro": "Toimitamme kaikkiin Wienin 23 kaupunginosaan. Toimituskulut (ilmainen, 3,99 € tai 7,99 €), toimituspäivät ja aikaikkunat riippuvat vastaanottajan osoitteesta – syötä postinumero, niin näet kaiken yhdellä silmäyksellä.",
+      "intro": "Toimitamme kaikkiin Wienin 23 kaupunginosaan. Toimituskulut (ilmainen, 4,90 € tai 7,90 €), toimituspäivät ja aikaikkunat riippuvat vastaanottajan osoitteesta – syötä postinumero, niin näet kaiken yhdellä silmäyksellä.",
       "seo": {
         "title": "Toimitus – kukkatoimitus Wienissä",
         "description": "Toimitusalueet, toimituskulut, toimituspäivät ja aikaikkunat kukkatoimituksille Wienissä."

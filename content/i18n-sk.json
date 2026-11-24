@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Kam doručujete?",
-      "answer": "Doručujeme do všetkých 23 viedenských obvodov. Podľa obvodu je doručenie zadarmo alebo stojí 3,99 €, resp. 7,99 €. Jednoducho zadajte PSČ adresy príjemcu – hneď uvidíte, či a kedy môžeme doručiť a koľko doručenie stojí.",
+      "answer": "Doručujeme do všetkých 23 viedenských obvodov. Podľa obvodu je doručenie zadarmo alebo stojí 4,90 €, resp. 7,90 €. Jednoducho zadajte PSČ adresy príjemcu – hneď uvidíte, či a kedy môžeme doručiť a koľko doručenie stojí.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Doručenie a doprava",
-      "intro": "Doručujeme do všetkých 23 viedenských obvodov. Cena doručenia (zadarmo, 3,99 € alebo 7,99 €), dni doručenia a časové okná závisia od adresy príjemcu – zadajte PSČ a všetko uvidíte na prvý pohľad.",
+      "intro": "Doručujeme do všetkých 23 viedenských obvodov. Cena doručenia (zadarmo, 4,90 € alebo 7,90 €), dni doručenia a časové okná závisia od adresy príjemcu – zadajte PSČ a všetko uvidíte na prvý pohľad.",
       "seo": {
         "title": "Doručenie a doprava – doručenie kvetov vo Viedni",
         "description": "Oblasti doručenia, ceny doručenia, dni doručenia a časové okná pri doručovaní kvetov vo Viedni."

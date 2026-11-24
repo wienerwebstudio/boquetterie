@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "¿A qué zonas se hacen entregas?",
-      "answer": "Entregamos en los 23 distritos de Viena. Según el distrito, la entrega es gratuita o cuesta 3,99 € o 7,99 €. Solo tienes que introducir el código postal de la dirección del destinatario: verás al momento si podemos entregar, cuándo y cuánto cuesta la entrega.",
+      "answer": "Entregamos en los 23 distritos de Viena. Según el distrito, la entrega es gratuita o cuesta 4,90 € o 7,90 €. Solo tienes que introducir el código postal de la dirección del destinatario: verás al momento si podemos entregar, cuándo y cuánto cuesta la entrega.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Entrega y envío",
-      "intro": "Entregamos en los 23 distritos de Viena. Los gastos de entrega (gratis, 3,99 € o 7,99 €), los días de entrega y las franjas horarias dependen de la dirección del destinatario: introduce el código postal y lo verás todo de un vistazo.",
+      "intro": "Entregamos en los 23 distritos de Viena. Los gastos de entrega (gratis, 4,90 € o 7,90 €), los días de entrega y las franjas horarias dependen de la dirección del destinatario: introduce el código postal y lo verás todo de un vistazo.",
       "seo": {
         "title": "Entrega y envío – flores a domicilio en Viena",
         "description": "Zonas de entrega, gastos de entrega, días de entrega y franjas horarias para el envío de flores en Viena."

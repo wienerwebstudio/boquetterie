@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Where do you deliver?",
-      "answer": "We deliver to all 23 districts of Vienna. Depending on the district, delivery is free or costs €3.99 or €7.99. Just enter the postcode of the recipient's address – you'll see straight away whether and when we can deliver and what delivery costs.",
+      "answer": "We deliver to all 23 districts of Vienna. Depending on the district, delivery is free or costs €4.90 or €7.90. Just enter the postcode of the recipient's address – you'll see straight away whether and when we can deliver and what delivery costs.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Delivery & shipping",
-      "intro": "We deliver to all 23 districts of Vienna. Delivery costs (free, €3.99 or €7.99), delivery days and time slots depend on the recipient's address – enter the postcode and you'll see everything at a glance.",
+      "intro": "We deliver to all 23 districts of Vienna. Delivery costs (free, €4.90 or €7.90), delivery days and time slots depend on the recipient's address – enter the postcode and you'll see everything at a glance.",
       "seo": {
         "title": "Delivery – Flower Delivery in Vienna, Austria",
         "description": "Delivery areas, delivery costs, delivery days and time slots for flower deliveries in Vienna, Austria."

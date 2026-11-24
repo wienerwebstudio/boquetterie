@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Ku dërgoni?",
-      "answer": "Dërgojmë në të 23 rrethet e Vjenës. Sipas rrethit, dërgesa është falas ose kushton 3,99 € ose 7,99 €. Thjesht shkruani kodin postar të adresës së marrësit – shihni menjëherë nëse dhe kur mund të dërgojmë dhe sa kushton dërgesa.",
+      "answer": "Dërgojmë në të 23 rrethet e Vjenës. Sipas rrethit, dërgesa është falas ose kushton 4,90 € ose 7,90 €. Thjesht shkruani kodin postar të adresës së marrësit – shihni menjëherë nëse dhe kur mund të dërgojmë dhe sa kushton dërgesa.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Dërgesa & transporti",
-      "intro": "Dërgojmë në të 23 rrethet e Vjenës. Kostot e dërgesës (falas, 3,99 € ose 7,99 €), ditët e dërgesës dhe intervalet kohore varen nga adresa e marrësit – shkruani kodin postar dhe i shihni të gjitha me një shikim.",
+      "intro": "Dërgojmë në të 23 rrethet e Vjenës. Kostot e dërgesës (falas, 4,90 € ose 7,90 €), ditët e dërgesës dhe intervalet kohore varen nga adresa e marrësit – shkruani kodin postar dhe i shihni të gjitha me një shikim.",
       "seo": {
         "title": "Dërgesa & transporti – lule me dërgesë në Vjenë",
         "description": "Zonat e dërgesës, kostot, ditët e dërgesës dhe intervalet kohore për dërgesat e luleve në Vjenë."

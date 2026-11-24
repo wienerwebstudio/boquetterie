@@ -9,7 +9,7 @@ import type { LandingPage } from "@/types";
  * Facts used here come from the shop's own content and settings: delivery to all
  * 23 districts Monday to Sunday, hourly windows 9–22 Uhr, same-day while a window is
  * free (order Mon–Sat until 18:30, Sun until 17:45), fees by district (free in 1070,
- * 1150, 1160; otherwise 3,99 € or 7,99 €), no greeting cards yet.
+ * 1150, 1160 at the time; fees changed on 24.11.2026 – see migration 2026-11-24-delivery-fees-490-790), no greeting cards yet.
  */
 export const LANDING_PAGES_WAVE1: LandingPage[] = [
   /* ---------------- Feste Termine ---------------- */
@@ -1196,20 +1196,20 @@ export const LANDING_PAGES_WAVE1: LandingPage[] = [
     slug: "gratis-blumenlieferung-wien",
     title: "Gratis Blumenlieferung",
     headline: "Gratis Blumenlieferung in Wien – wo sie gilt.",
-    intro: "In drei Wiener Bezirken liefern wir ohne Liefergebühr. Überall sonst in Wien kostet die Lieferung 3,99 € oder 7,99 €. Hier steht, was für welche Adresse gilt.",
+    intro: "In acht Wiener Bezirken liefern wir ohne Liefergebühr. Überall sonst in Wien kostet die Lieferung 4,90 € oder 7,90 €. Hier steht, was für welche Adresse gilt.",
     image: "/images/products/sortiment/rosa-bouquet-1.jpg",
     productFilter: { category: "elegant-weiss", limit: 8 },
     sections: [
       {
         heading: "Ohne Liefergebühr",
         paragraphs: [
-          "Gratis liefern wir in den 7. Bezirk Neubau (1070), den 15. Bezirk Rudolfsheim-Fünfhaus (1150) und den 16. Bezirk Ottakring (1160). Es zählt die Adresse der Person, die die Blumen bekommt – nicht deine eigene.",
+          "Gratis liefern wir in den 4. Bezirk Wieden (1040), den 5. Bezirk Margareten (1050), den 6. Bezirk Mariahilf (1060), den 7. Bezirk Neubau (1070), den 8. Bezirk Josefstadt (1080), den 14. Bezirk Penzing (1140), den 15. Bezirk Rudolfsheim-Fünfhaus (1150) und den 16. Bezirk Ottakring (1160). Es zählt die Adresse der Person, die die Blumen bekommt – nicht deine eigene.",
         ],
       },
       {
         heading: "Alle anderen Bezirke",
         paragraphs: [
-          "In den übrigen 20 Bezirken kostet die Lieferung je nach Bezirk 3,99 € oder 7,99 €. Den genauen Betrag siehst du, sobald du die Postleitzahl eingibst – noch bevor du bezahlst.",
+          "In den übrigen 15 Bezirken kostet die Lieferung je nach Bezirk 4,90 € oder 7,90 €. Den genauen Betrag siehst du, sobald du die Postleitzahl eingibst – noch bevor du bezahlst.",
         ],
       },
       {
@@ -1222,7 +1222,7 @@ export const LANDING_PAGES_WAVE1: LandingPage[] = [
     faqIds: ["f-where", "f-window", "f-payment"],
     seo: {
       title: "Gratis Blumenlieferung in Wien – Bezirke",
-      description: "Kostenlose Blumenlieferung in Wien 1070, 1150 und 1160. In allen anderen Bezirken 3,99 € oder 7,99 € – angezeigt nach Eingabe der PLZ.",
+      description: "Kostenlose Blumenlieferung in Wien 1040–1080 und 1140–1160. In allen anderen Bezirken 4,90 € oder 7,90 € – angezeigt nach Eingabe der PLZ.",
     },
   },
   {
@@ -1242,7 +1242,7 @@ export const LANDING_PAGES_WAVE1: LandingPage[] = [
       {
         heading: "Liefergebühr mitdenken",
         paragraphs: [
-          "Zum Strauß kommt je nach Bezirk eine Liefergebühr: gratis in 1070, 1150 und 1160, sonst 3,99 € oder 7,99 €. Mehr dazu unter [Gratis Blumenlieferung](/gratis-blumenlieferung-wien).",
+          "Zum Strauß kommt je nach Bezirk eine Liefergebühr: gratis in 1040–1080 und 1140–1160, sonst 4,90 € oder 7,90 €. Mehr dazu unter [Gratis Blumenlieferung](/gratis-blumenlieferung-wien).",
         ],
       },
       {
@@ -1255,7 +1255,7 @@ export const LANDING_PAGES_WAVE1: LandingPage[] = [
     faqIds: ["f-where", "f-photo", "f-payment"],
     seo: {
       title: "Günstige Blumen in Wien – unter 40 €",
-      description: "Günstige Blumen in Wien: Sträuße und Pflanzen ab höchstens 40 €, von Hand gebunden. Liefergebühr je nach Bezirk gratis, 3,99 € oder 7,99 €.",
+      description: "Günstige Blumen in Wien: Sträuße und Pflanzen ab höchstens 40 €, von Hand gebunden. Liefergebühr je nach Bezirk gratis, 4,90 € oder 7,90 €.",
     },
   },
 ];

@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Hová szállítotok ki?",
-      "answer": "Bécs mind a 23 kerületébe kiszállítunk. Kerülettől függően a kiszállítás ingyenes, vagy 3,99 €, illetve 7,99 € díjba kerül. Egyszerűen add meg a címzett címének irányítószámát – azonnal látod, hogy ki tudunk-e szállítani, mikor, és mennyibe kerül a kiszállítás.",
+      "answer": "Bécs mind a 23 kerületébe kiszállítunk. Kerülettől függően a kiszállítás ingyenes, vagy 4,90 €, illetve 7,90 € díjba kerül. Egyszerűen add meg a címzett címének irányítószámát – azonnal látod, hogy ki tudunk-e szállítani, mikor, és mennyibe kerül a kiszállítás.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Kiszállítás és szállítás",
-      "intro": "Bécs mind a 23 kerületébe kiszállítunk. A kiszállítási díj (ingyenes, 3,99 € vagy 7,99 €), a kiszállítási napok és az idősávok a címzett címétől függnek – add meg az irányítószámot, és mindent egy pillantással látsz.",
+      "intro": "Bécs mind a 23 kerületébe kiszállítunk. A kiszállítási díj (ingyenes, 4,90 € vagy 7,90 €), a kiszállítási napok és az idősávok a címzett címétől függnek – add meg az irányítószámot, és mindent egy pillantással látsz.",
       "seo": {
         "title": "Kiszállítás és szállítás – virágküldés Bécsben",
         "description": "Kiszállítási területek, kiszállítási díjak, kiszállítási napok és idősávok a bécsi virágkiszállításhoz."

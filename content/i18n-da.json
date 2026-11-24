@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Hvor leverer I?",
-      "answer": "Vi leverer til alle 23 bydele i Wien. Afhængigt af bydelen er leveringen gratis eller koster 3,99 € eller 7,99 €. Indtast blot postnummeret på modtagerens adresse – så ser du med det samme, om og hvornår vi kan levere, og hvad leveringen koster.",
+      "answer": "Vi leverer til alle 23 bydele i Wien. Afhængigt af bydelen er leveringen gratis eller koster 4,90 € eller 7,90 €. Indtast blot postnummeret på modtagerens adresse – så ser du med det samme, om og hvornår vi kan levere, og hvad leveringen koster.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Levering & forsendelse",
-      "intro": "Vi leverer til alle 23 bydele i Wien. Leveringspris (gratis, 3,99 € eller 7,99 €), leveringsdage og tidsrum afhænger af modtagerens adresse – indtast postnummeret, så ser du det hele på én gang.",
+      "intro": "Vi leverer til alle 23 bydele i Wien. Leveringspris (gratis, 4,90 € eller 7,90 €), leveringsdage og tidsrum afhænger af modtagerens adresse – indtast postnummeret, så ser du det hele på én gang.",
       "seo": {
         "title": "Levering – få blomster leveret i Wien",
         "description": "Leveringsområder, leveringspriser, leveringsdage og tidsrum for blomsterlevering i Wien."

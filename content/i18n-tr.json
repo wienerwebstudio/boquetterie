@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Nereye teslimat yapıyorsunuz?",
-      "answer": "Viyana'nın 23 bölgesinin tamamına teslimat yapıyoruz. Bölgeye göre teslimat ücretsizdir ya da 3,99 € veya 7,99 € tutar. Alıcı adresinin posta kodunu girmeniz yeterli – teslimat yapıp yapamayacağımızı, ne zaman yapabileceğimizi ve teslimatın ne kadar tutacağını hemen görürsünüz.",
+      "answer": "Viyana'nın 23 bölgesinin tamamına teslimat yapıyoruz. Bölgeye göre teslimat ücretsizdir ya da 4,90 € veya 7,90 € tutar. Alıcı adresinin posta kodunu girmeniz yeterli – teslimat yapıp yapamayacağımızı, ne zaman yapabileceğimizi ve teslimatın ne kadar tutacağını hemen görürsünüz.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Teslimat ve gönderim",
-      "intro": "Viyana'nın 23 bölgesinin tamamına teslimat yapıyoruz. Teslimat ücretleri (ücretsiz, 3,99 € veya 7,99 €), teslimat günleri ve zaman aralıkları alıcı adresine bağlıdır – posta kodunu girin, her şeyi bir bakışta görün.",
+      "intro": "Viyana'nın 23 bölgesinin tamamına teslimat yapıyoruz. Teslimat ücretleri (ücretsiz, 4,90 € veya 7,90 €), teslimat günleri ve zaman aralıkları alıcı adresine bağlıdır – posta kodunu girin, her şeyi bir bakışta görün.",
       "seo": {
         "title": "Teslimat ve gönderim – Viyana'da çiçek teslimatı",
         "description": "Viyana'da çiçek teslimatı için teslimat bölgeleri, teslimat ücretleri, teslimat günleri ve zaman aralıkları."

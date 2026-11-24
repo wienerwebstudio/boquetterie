@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Gdje dostavljate?",
-      "answer": "Dostavljamo u sva 23 bečka okruga. Zavisno od okruga, dostava je besplatna ili košta 3,99 € odnosno 7,99 €. Jednostavno unesite poštanski broj adrese primaoca – odmah ćete vidjeti da li i kada možemo dostaviti i koliko košta dostava.",
+      "answer": "Dostavljamo u sva 23 bečka okruga. Zavisno od okruga, dostava je besplatna ili košta 4,90 € odnosno 7,90 €. Jednostavno unesite poštanski broj adrese primaoca – odmah ćete vidjeti da li i kada možemo dostaviti i koliko košta dostava.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Dostava i slanje",
-      "intro": "Dostavljamo u sva 23 bečka okruga. Cijena dostave (besplatno, 3,99 € ili 7,99 €), dani dostave i vremenski termini zavise od adrese primaoca – unesite poštanski broj i sve ćete vidjeti na prvi pogled.",
+      "intro": "Dostavljamo u sva 23 bečka okruga. Cijena dostave (besplatno, 4,90 € ili 7,90 €), dani dostave i vremenski termini zavise od adrese primaoca – unesite poštanski broj i sve ćete vidjeti na prvi pogled.",
       "seo": {
         "title": "Dostava i slanje – dostava cvijeća u Beču",
         "description": "Područja dostave, cijene dostave, dani dostave i vremenski termini za dostavu cvijeća u Beču."

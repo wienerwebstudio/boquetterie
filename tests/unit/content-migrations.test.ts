@@ -195,3 +195,16 @@ describe("Love Deluxe XXL (2026-11-24)", () => {
     expect(withLoveDeluxeXxl(other)).toBe(other);
   });
 });
+
+describe("delivery fees 4,90 / 7,90 (2026-11-24)", () => {
+  it("rewrites old fee amounts in every number format, but no other numbers", async () => {
+    const { withNewFeeAmounts } = await import("@/lib/content-migrations");
+    expect(withNewFeeAmounts("gratis, 3,99 € oder 7,99 €")).toBe("gratis, 4,90 € oder 7,90 €");
+    expect(withNewFeeAmounts("free, €3.99 or €7.99")).toBe("free, €4.90 or €7.90");
+    expect(withNewFeeAmounts("43,99 € · 3,990 · 17.99")).toBe("43,99 € · 3,990 · 17.99");
+    const doc = { a: ["x 3,99 €"], b: "unchanged" };
+    const next = withNewFeeAmounts(doc);
+    expect(next).toEqual({ a: ["x 4,90 €"], b: "unchanged" });
+    expect(withNewFeeAmounts(next)).toBe(next);
+  });
+});

@@ -376,3 +376,7 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 
 ## 2026-11-24 – Love Deluxe: 5. Größe
 - Text sagte „in fünf Größen“, es gab nur S/M/L/XL. Neu XXL für 175,90 € (gleiche Preisstufe wie die Rosensträuße), Migration `2026-11-24-love-deluxe-xxl` (nur wenn noch keine XXL-Größe existiert). Floristen-Budget für XXL im Admin nachtragen. Kein eigenes Größenfoto.
+
+## 2026-11-24 – Neue Liefergebühren in allen Texten
+- Owners haben die Zonen im Admin geändert: gratis 1040–1080 und 1140–1160, Zone 2 4,90 €, Zone 3 7,90 €, Umland (NÖ) aktiv mit 20 €. Kasse und Lieferseiten-Tabelle lesen das direkt aus der DB.
+- Feste Texte nachgezogen (Migration `2026-11-24-delivery-fees-490-790`): FAQ „Wohin liefert ihr?“, Lieferseite, deutsche Themenseiten (u. a. „Gratis Blumenlieferung“ mit den 8 Gratis-Bezirken) und die Übersetzungen in allen 24 Sprachen (3,99/7,99 → 4,90/7,90 in jedem Zahlenformat). `content/delivery-zones.json` an die Admin-Werte angeglichen (nur Seed).

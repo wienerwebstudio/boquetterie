@@ -7,7 +7,7 @@
     "image": "/images/hero/hero-wide.jpg",
     "productFilter": {"limit": 8},
     "sections": [
-      {"heading": "Blumen in Wien verschicken – so geht’s", "paragraphs": ["Strauß auswählen, Größe bestimmen, Lieferdatum im Kalender wählen, Empfängeradresse eingeben, bezahlen. Danach bekommst du eine Bestätigung per E-Mail mit einem Link zum Status deiner Bestellung.", "Wir liefern in alle 23 Wiener Bezirke, von Montag bis Sonntag. Die Liefergebühr hängt vom Bezirk ab: gratis, 3,99 € oder 7,99 €. Welche Stufe für deine Adresse gilt, siehst du nach Eingabe der Postleitzahl. Zur Wahl stehen einstündige Zeitfenster zwischen 9 und 22 Uhr."]},
+      {"heading": "Blumen in Wien verschicken – so geht’s", "paragraphs": ["Strauß auswählen, Größe bestimmen, Lieferdatum im Kalender wählen, Empfängeradresse eingeben, bezahlen. Danach bekommst du eine Bestätigung per E-Mail mit einem Link zum Status deiner Bestellung.", "Wir liefern in alle 23 Wiener Bezirke, von Montag bis Sonntag. Die Liefergebühr hängt vom Bezirk ab: gratis, 4,90 € oder 7,90 €. Welche Stufe für deine Adresse gilt, siehst du nach Eingabe der Postleitzahl. Zur Wahl stehen einstündige Zeitfenster zwischen 9 und 22 Uhr."]},
       {"heading": "Von Hand gebunden, direkt geliefert", "paragraphs": ["Jeder Strauß wird für deine Bestellung von Hand gebunden – von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Ein Kurier holt ihn dort ab und fährt ohne Zwischenstopp zur Empfängeradresse."]}
     ],
     "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
@@ -21,7 +21,7 @@
     "productFilter": {"occasions": ["geburtstag"], "limit": 8},
     "sections": [
       {"heading": "Lieferung am Geburtstag", "paragraphs": ["Wähle das Lieferdatum im Kalender und ein einstündiges Zeitfenster zwischen 9 und 22 Uhr. Geliefert wird von Montag bis Sonntag – auch an einem Geburtstag am Wochenende kann der Strauß am Tag selbst ankommen."]},
-      {"heading": "Lieferkosten", "paragraphs": ["Die Liefergebühr hängt vom Bezirk ab – gratis, 3,99 € oder 7,99 € – und wird nach Eingabe der Postleitzahl angezeigt."]},
+      {"heading": "Lieferkosten", "paragraphs": ["Die Liefergebühr hängt vom Bezirk ab – gratis, 4,90 € oder 7,90 € – und wird nach Eingabe der Postleitzahl angezeigt."]},
       {"heading": "Wenn das Geburtstagskind nicht zu Hause ist", "paragraphs": ["Ist niemand da, wird der Strauß nach Möglichkeit bei Nachbar:innen abgegeben. Du bekommst eine E-Mail, sobald der Strauß unterwegs ist, und eine weitere, wenn er zugestellt wurde."]}
     ],
     "faqIds": ["f-date", "f-window", "f-card", "f-nobody"],
@@ -36,7 +36,7 @@
     "sections": [
       {"heading": "So kommen die Rosen an", "paragraphs": ["Dein Strauß wird für deine Bestellung von Hand gebunden – von einer Wiener Floristik, mit der wir fest zusammenarbeiten. Ein Kurier holt ihn dort ab und fährt direkt zur Empfängeradresse, ohne Zwischenstopp."]},
       {"heading": "Größe, Tag und Zeitfenster", "paragraphs": ["Die meisten Rosensträuße gibt es in sechs Größen, von Klein mit 9 bis XXXL mit 99 Rosen. Das Lieferdatum wählst du im Kalender, dazu ein einstündiges Zeitfenster zwischen 9 und 22 Uhr. Geliefert wird von Montag bis Sonntag."]},
-      {"heading": "Was die Lieferung kostet", "paragraphs": ["Wir liefern in alle 23 Wiener Bezirke. Je nach Bezirk ist die Lieferung gratis oder kostet 3,99 € bzw. 7,99 €. Den Betrag für deine Adresse siehst du nach Eingabe der Postleitzahl."]}
+      {"heading": "Was die Lieferung kostet", "paragraphs": ["Wir liefern in alle 23 Wiener Bezirke. Je nach Bezirk ist die Lieferung gratis oder kostet 4,90 € bzw. 7,90 €. Den Betrag für deine Adresse siehst du nach Eingabe der Postleitzahl."]}
     ],
     "faqIds": ["f-where", "f-window", "f-nobody", "f-anon"],
     "seo": {"title": "Rosen liefern lassen in Wien – Ablauf, Zeitfenster und Kosten", "description": "Rosen in Wien liefern lassen: So laufen Bestellung und Kurierlieferung ab – mit Wunschdatum, stündlichen Zeitfenstern und Lieferkosten nach Bezirk."}
@@ -579,16 +579,16 @@
     "slug": "gratis-blumenlieferung-wien",
     "title": "Gratis Blumenlieferung",
     "headline": "Gratis Blumenlieferung in Wien – wo sie gilt.",
-    "intro": "In drei Wiener Bezirken liefern wir ohne Liefergebühr. Überall sonst in Wien kostet die Lieferung 3,99 € oder 7,99 €. Hier steht, was für welche Adresse gilt.",
+    "intro": "In acht Wiener Bezirken liefern wir ohne Liefergebühr. Überall sonst in Wien kostet die Lieferung 4,90 € oder 7,90 €. Hier steht, was für welche Adresse gilt.",
     "image": "/images/products/sortiment/rosa-bouquet-1.jpg",
     "productFilter": {"category": "elegant-weiss", "limit": 8},
     "sections": [
-      {"heading": "Ohne Liefergebühr", "paragraphs": ["Gratis liefern wir in den 7. Bezirk Neubau (1070), den 15. Bezirk Rudolfsheim-Fünfhaus (1150) und den 16. Bezirk Ottakring (1160). Es zählt die Adresse der Person, die die Blumen bekommt – nicht deine eigene."]},
-      {"heading": "Alle anderen Bezirke", "paragraphs": ["In den übrigen 20 Bezirken kostet die Lieferung je nach Bezirk 3,99 € oder 7,99 €. Den genauen Betrag siehst du, sobald du die Postleitzahl eingibst – noch bevor du bezahlst."]},
+      {"heading": "Ohne Liefergebühr", "paragraphs": ["Gratis liefern wir in den 4. Bezirk Wieden (1040), den 5. Bezirk Margareten (1050), den 6. Bezirk Mariahilf (1060), den 7. Bezirk Neubau (1070), den 8. Bezirk Josefstadt (1080), den 14. Bezirk Penzing (1140), den 15. Bezirk Rudolfsheim-Fünfhaus (1150) und den 16. Bezirk Ottakring (1160). Es zählt die Adresse der Person, die die Blumen bekommt – nicht deine eigene."]},
+      {"heading": "Alle anderen Bezirke", "paragraphs": ["In den übrigen 15 Bezirken kostet die Lieferung je nach Bezirk 4,90 € oder 7,90 €. Den genauen Betrag siehst du, sobald du die Postleitzahl eingibst – noch bevor du bezahlst."]},
       {"heading": "Alles andere bleibt gleich", "paragraphs": ["Ob gratis oder nicht: Jeder Strauß wird von Hand gebunden, und du wählst Datum und ein stündliches Zeitfenster zwischen 9 und 22 Uhr. Geliefert wird an allen sieben Tagen der Woche."]}
     ],
     "faqIds": ["f-where", "f-window", "f-payment"],
-    "seo": {"title": "Gratis Blumenlieferung in Wien – Bezirke", "description": "Kostenlose Blumenlieferung in Wien 1070, 1150 und 1160. In allen anderen Bezirken 3,99 € oder 7,99 € – angezeigt nach Eingabe der PLZ."}
+    "seo": {"title": "Gratis Blumenlieferung in Wien – Bezirke", "description": "Kostenlose Blumenlieferung in Wien 1040–1080 und 1140–1160. In allen anderen Bezirken 4,90 € oder 7,90 € – angezeigt nach Eingabe der PLZ."}
   },
   {
     "slug": "guenstige-blumen-wien",
@@ -599,10 +599,10 @@
     "productFilter": {"category": "unter-40", "limit": 8},
     "sections": [
       {"heading": "Was „unter 40 €“ heißt", "paragraphs": ["In dieser Auswahl kostet die kleinste Größe höchstens 40 €. Viele Sträuße gibt es zusätzlich in Mittel und Groß – dann steigt der Preis mit der Größe. Den Preis jeder Größe siehst du auf der Produktseite."]},
-      {"heading": "Liefergebühr mitdenken", "paragraphs": ["Zum Strauß kommt je nach Bezirk eine Liefergebühr: gratis in 1070, 1150 und 1160, sonst 3,99 € oder 7,99 €. Mehr dazu unter [Gratis Blumenlieferung](/gratis-blumenlieferung-wien)."]},
+      {"heading": "Liefergebühr mitdenken", "paragraphs": ["Zum Strauß kommt je nach Bezirk eine Liefergebühr: gratis in 1040–1080 und 1140–1160, sonst 4,90 € oder 7,90 €. Mehr dazu unter [Gratis Blumenlieferung](/gratis-blumenlieferung-wien)."]},
       {"heading": "Klein, aber genauso frisch", "paragraphs": ["Auch der kleinste Strauß wird für deine Bestellung gebunden und per Kurier direkt zugestellt. Für ein Danke, einen Gruß an die Nachbarin oder als Mitbringsel ist eine kleine Größe oft genau richtig."]}
     ],
     "faqIds": ["f-where", "f-photo", "f-payment"],
-    "seo": {"title": "Günstige Blumen in Wien – unter 40 €", "description": "Günstige Blumen in Wien: Sträuße und Pflanzen ab höchstens 40 €, von Hand gebunden. Liefergebühr je nach Bezirk gratis, 3,99 € oder 7,99 €."}
+    "seo": {"title": "Günstige Blumen in Wien – unter 40 €", "description": "Günstige Blumen in Wien: Sträuße und Pflanzen ab höchstens 40 €, von Hand gebunden. Liefergebühr je nach Bezirk gratis, 4,90 € oder 7,90 €."}
   }
 ]

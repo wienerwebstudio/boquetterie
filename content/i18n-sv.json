@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Vart levererar ni?",
-      "answer": "Vi levererar till alla 23 distrikt i Wien. Beroende på distrikt är leveransen gratis eller kostar 3,99 € resp. 7,99 €. Ange bara mottagaradressens postnummer – då ser du direkt om och när vi kan leverera och vad leveransen kostar.",
+      "answer": "Vi levererar till alla 23 distrikt i Wien. Beroende på distrikt är leveransen gratis eller kostar 4,90 € resp. 7,90 €. Ange bara mottagaradressens postnummer – då ser du direkt om och när vi kan leverera och vad leveransen kostar.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Leverans & frakt",
-      "intro": "Vi levererar till alla 23 distrikt i Wien. Leveranskostnad (gratis, 3,99 € eller 7,99 €), leveransdagar och tidsfönster beror på mottagarens adress – ange postnumret så ser du allt på en gång.",
+      "intro": "Vi levererar till alla 23 distrikt i Wien. Leveranskostnad (gratis, 4,90 € eller 7,90 €), leveransdagar och tidsfönster beror på mottagarens adress – ange postnumret så ser du allt på en gång.",
       "seo": {
         "title": "Leverans & frakt – blomsterleverans i Wien",
         "description": "Leveransområden, leveranskostnader, leveransdagar och tidsfönster för blomsterleveranser i Wien."

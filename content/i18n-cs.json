@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Kam doručujete?",
-      "answer": "Doručujeme do všech 23 vídeňských okresů. Podle okresu je doručení zdarma, nebo stojí 3,99 € či 7,99 €. Stačí zadat PSČ adresy příjemce – hned uvidíte, zda a kdy můžeme doručit a kolik doručení stojí.",
+      "answer": "Doručujeme do všech 23 vídeňských okresů. Podle okresu je doručení zdarma, nebo stojí 4,90 € či 7,90 €. Stačí zadat PSČ adresy příjemce – hned uvidíte, zda a kdy můžeme doručit a kolik doručení stojí.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Doručení a doprava",
-      "intro": "Doručujeme do všech 23 vídeňských okresů. Cena doručení (zdarma, 3,99 € nebo 7,99 €), dny doručení a časová okna závisí na adrese příjemce – zadejte PSČ a uvidíte vše na první pohled.",
+      "intro": "Doručujeme do všech 23 vídeňských okresů. Cena doručení (zdarma, 4,90 € nebo 7,90 €), dny doručení a časová okna závisí na adrese příjemce – zadejte PSČ a uvidíte vše na první pohled.",
       "seo": {
         "title": "Doručení a doprava – rozvoz květin ve Vídni",
         "description": "Oblasti doručení, ceny doručení, dny doručení a časová okna pro rozvoz květin ve Vídni."

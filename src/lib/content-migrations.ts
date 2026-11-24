@@ -372,11 +372,53 @@ export const CONTENT_MIGRATIONS: ContentMigration[] = [
     },
   },
   {
+    // New delivery fees (owners, 24.11.2026): free in 1040–1080 and 1140–1160, else 4,90 € / 7,90 € – texts in every language.
+    id: "2026-11-24-delivery-fees-490-790",
+    transform: {
+      faqs: (doc) => withNewFeeAmounts(doc),
+      pages: (doc) => withNewFeeAmounts(doc),
+      "landing-pages": (doc) => withNewFeeAmounts(replaceTextDeep(doc, FREE_DISTRICT_TEXTS)),
+      ...Object.fromEntries(Object.keys(VIENNA_EXPRESS_TEXTS).filter((l) => l !== "de").map((l) => [`i18n-${l}`, (doc: unknown) => withNewFeeAmounts(doc)])),
+      ...Object.fromEntries(["sq", "sv", "no", "da", "fi", "nl", "cs", "sl"].map((l) => [`i18n-${l}`, (doc: unknown) => withNewFeeAmounts(doc)])),
+    },
+  },
+  {
     // Love Deluxe is described "in fünf Größen" but had four: add XXL at the rose price (owners: 24.11.2026).
     id: "2026-11-24-love-deluxe-xxl",
     transform: { products: (doc) => mapList(doc, withLoveDeluxeXxl) },
   },
 ];
+
+/** German topic pages that name the free districts (were 1070, 1150, 1160). */
+const FREE_DISTRICT_TEXTS: [string, string][] = [
+  ["In drei Wiener Bezirken liefern wir ohne Liefergebühr. Überall sonst in Wien kostet die Lieferung 3,99 € oder 7,99 €.",
+    "In acht Wiener Bezirken liefern wir ohne Liefergebühr. Überall sonst in Wien kostet die Lieferung 4,90 € oder 7,90 €."],
+  ["Gratis liefern wir in den 7. Bezirk Neubau (1070), den 15. Bezirk Rudolfsheim-Fünfhaus (1150) und den 16. Bezirk Ottakring (1160).",
+    "Gratis liefern wir in den 4. Bezirk Wieden (1040), den 5. Bezirk Margareten (1050), den 6. Bezirk Mariahilf (1060), den 7. Bezirk Neubau (1070), den 8. Bezirk Josefstadt (1080), den 14. Bezirk Penzing (1140), den 15. Bezirk Rudolfsheim-Fünfhaus (1150) und den 16. Bezirk Ottakring (1160)."],
+  ["In den übrigen 20 Bezirken", "In den übrigen 15 Bezirken"],
+  ["Kostenlose Blumenlieferung in Wien 1070, 1150 und 1160.", "Kostenlose Blumenlieferung in Wien 1040–1080 und 1140–1160."],
+  ["gratis in 1070, 1150 und 1160, sonst", "gratis in 1040–1080 und 1140–1160, sonst"],
+];
+
+/** Old fee amounts in any language's number format → new ones: 3,99/3.99 → 4,90/4.90 and 7,99/7.99 → 7,90/7.90. */
+export function withNewFeeAmounts<T>(value: T): T {
+  if (typeof value === "string") {
+    const next = value.replace(/(?<![\d.,])([37])([.,])99(?!\d)/g, (_m, euro: string, sep: string) => `${euro === "3" ? "4" : "7"}${sep}90`);
+    return (next === value ? value : next) as T;
+  }
+  if (Array.isArray(value)) {
+    let changed = false;
+    const next = value.map((v) => { const r = withNewFeeAmounts(v); if (r !== v) changed = true; return r; });
+    return (changed ? next : value) as T;
+  }
+  if (value && typeof value === "object") {
+    let changed = false;
+    const next: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(value)) { const r = withNewFeeAmounts(v); if (r !== v) changed = true; next[k] = r; }
+    return (changed ? next : value) as T;
+  }
+  return value;
+}
 
 /** Adds the XXL size (175,90 €, like the rose bouquets) to Love Deluxe once; other products unchanged. */
 export function withLoveDeluxeXxl(product: Obj): Obj {

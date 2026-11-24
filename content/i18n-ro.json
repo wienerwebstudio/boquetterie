@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Unde livrați?",
-      "answer": "Livrăm în toate cele 23 de districte ale Vienei. În funcție de district, livrarea este gratuită sau costă 3,99 €, respectiv 7,99 €. Introdu pur și simplu codul poștal al adresei destinatarului – vezi imediat dacă și când putem livra și cât costă livrarea.",
+      "answer": "Livrăm în toate cele 23 de districte ale Vienei. În funcție de district, livrarea este gratuită sau costă 4,90 €, respectiv 7,90 €. Introdu pur și simplu codul poștal al adresei destinatarului – vezi imediat dacă și când putem livra și cât costă livrarea.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Livrare și expediere",
-      "intro": "Livrăm în toate cele 23 de districte ale Vienei. Costurile de livrare (gratuit, 3,99 € sau 7,99 €), zilele de livrare și intervalele orare depind de adresa destinatarului – introdu codul poștal și vezi totul dintr-o privire.",
+      "intro": "Livrăm în toate cele 23 de districte ale Vienei. Costurile de livrare (gratuit, 4,90 € sau 7,90 €), zilele de livrare și intervalele orare depind de adresa destinatarului – introdu codul poștal și vezi totul dintr-o privire.",
       "seo": {
         "title": "Livrare și expediere – livrare de flori în Viena",
         "description": "Zone de livrare, costuri de livrare, zile de livrare și intervale orare pentru livrarea de flori în Viena."

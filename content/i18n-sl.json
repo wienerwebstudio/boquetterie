@@ -234,7 +234,7 @@
   "faqs": {
     "f-where": {
       "question": "Kam dostavljate?",
-      "answer": "Dostavljamo v vseh 23 dunajskih okrajev. Odvisno od okraja je dostava brezplačna ali stane 3,99 € oziroma 7,99 €. Preprosto vnesite poštno številko naslova prejemnika – takoj boste videli, ali in kdaj lahko dostavimo ter koliko stane dostava.",
+      "answer": "Dostavljamo v vseh 23 dunajskih okrajev. Odvisno od okraja je dostava brezplačna ali stane 4,90 € oziroma 7,90 €. Preprosto vnesite poštno številko naslova prejemnika – takoj boste videli, ali in kdaj lahko dostavimo ter koliko stane dostava.",
       "category": "lieferung"
     },
     "f-today": {
@@ -326,7 +326,7 @@
     },
     "lieferung": {
       "title": "Dostava in pošiljanje",
-      "intro": "Dostavljamo v vseh 23 dunajskih okrajev. Stroški dostave (brezplačno, 3,99 € ali 7,99 €), dnevi dostave in časovna okna so odvisni od naslova prejemnika – vnesite poštno številko in vse boste videli na prvi pogled.",
+      "intro": "Dostavljamo v vseh 23 dunajskih okrajev. Stroški dostave (brezplačno, 4,90 € ali 7,90 €), dnevi dostave in časovna okna so odvisni od naslova prejemnika – vnesite poštno številko in vse boste videli na prvi pogled.",
       "seo": {
         "title": "Dostava in pošiljanje – dostava rož na Dunaju",
         "description": "Območja dostave, stroški dostave, dnevi dostave in časovna okna za dostavo rož na Dunaju."

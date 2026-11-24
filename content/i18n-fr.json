@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Où livrez-vous ?",
-      "answer": "Nous livrons dans les 23 arrondissements de Vienne. Selon l’arrondissement, la livraison est gratuite ou coûte 3,99 € ou 7,99 €. Saisissez simplement le code postal de l’adresse de livraison – vous voyez aussitôt si et quand nous pouvons livrer, et ce que coûte la livraison.",
+      "answer": "Nous livrons dans les 23 arrondissements de Vienne. Selon l’arrondissement, la livraison est gratuite ou coûte 4,90 € ou 7,90 €. Saisissez simplement le code postal de l’adresse de livraison – vous voyez aussitôt si et quand nous pouvons livrer, et ce que coûte la livraison.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Livraison & expédition",
-      "intro": "Nous livrons dans les 23 arrondissements de Vienne. Les frais de livraison (gratuite, 3,99 € ou 7,99 €), les jours de livraison et les créneaux horaires dépendent de l’adresse de livraison – saisissez le code postal et vous voyez tout d’un coup d’œil.",
+      "intro": "Nous livrons dans les 23 arrondissements de Vienne. Les frais de livraison (gratuite, 4,90 € ou 7,90 €), les jours de livraison et les créneaux horaires dépendent de l’adresse de livraison – saisissez le code postal et vous voyez tout d’un coup d’œil.",
       "seo": {
         "title": "Livraison & expédition – fleurs livrées à Vienne",
         "description": "Zones, frais, jours et créneaux de livraison pour vos livraisons de fleurs à Vienne (Autriche)."

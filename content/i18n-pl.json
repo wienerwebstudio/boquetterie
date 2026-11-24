@@ -2128,7 +2128,7 @@
   "faqs": {
     "f-where": {
       "question": "Dokąd dostarczacie?",
-      "answer": "Dostarczamy do wszystkich 23 dzielnic Wiednia. W zależności od dzielnicy dostawa jest bezpłatna albo kosztuje 3,99 € lub 7,99 €. Wpisz kod pocztowy adresu odbiorcy – od razu zobaczysz, czy i kiedy możemy dostarczyć oraz ile kosztuje dostawa.",
+      "answer": "Dostarczamy do wszystkich 23 dzielnic Wiednia. W zależności od dzielnicy dostawa jest bezpłatna albo kosztuje 4,90 € lub 7,90 €. Wpisz kod pocztowy adresu odbiorcy – od razu zobaczysz, czy i kiedy możemy dostarczyć oraz ile kosztuje dostawa.",
       "category": "lieferung"
     },
     "f-today": {
@@ -2220,7 +2220,7 @@
     },
     "lieferung": {
       "title": "Dostawa i wysyłka",
-      "intro": "Dostarczamy do wszystkich 23 dzielnic Wiednia. Koszty dostawy (bezpłatnie, 3,99 € lub 7,99 €), dni dostaw i przedziały czasowe zależą od adresu odbiorcy – wpisz kod pocztowy, a zobaczysz wszystko w jednym miejscu.",
+      "intro": "Dostarczamy do wszystkich 23 dzielnic Wiednia. Koszty dostawy (bezpłatnie, 4,90 € lub 7,90 €), dni dostaw i przedziały czasowe zależą od adresu odbiorcy – wpisz kod pocztowy, a zobaczysz wszystko w jednym miejscu.",
       "seo": {
         "title": "Dostawa i wysyłka – kwiaty z dostawą w Wiedniu",
         "description": "Obszary dostaw, koszty dostawy, dni dostaw i przedziały czasowe dla dostaw kwiatów w Wiedniu."
