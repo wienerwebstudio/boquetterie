@@ -2,7 +2,9 @@ import "server-only";
 import type { Order, OrderAnalytics } from "@/types";
 import { claimOnce, getOrderById, updateOrder } from "@/lib/cms";
 import { sanitizeAttribution, sanitizeVisitorId, type Attribution } from "@/lib/attribution";
-import { getLocalNow } from "@/lib/delivery";
+import { deliveryPunctuality, deliveryType } from "@/lib/order-metrics";
+
+export { deliveryPunctuality, deliveryType };
 
 /**
  * Server-side analytics events (Umami): `purchase`, `refund`, `order_delivered`, `order_delayed`,
@@ -43,25 +45,6 @@ export function orderAnalyticsFromRequest(input: unknown, userAgent: string | nu
     ...(attribution?.landing ? { landing: attribution.landing } : {}),
     ...(visitorId ? { visitorId, ...(userAgent ? { userAgent: userAgent.slice(0, 300) } : {}) } : {}),
   };
-}
-
-/** "express" | "same_day" | "scheduled" | "none" – from the stored delivery. */
-export function deliveryType(order: Pick<Order, "delivery" | "createdAt">): string {
-  if (order.delivery.none) return "none";
-  if (order.delivery.express) return "express";
-  return order.delivery.date === getLocalNow("Europe/Vienna", new Date(order.createdAt)).date ? "same_day" : "scheduled";
-}
-
-/** Delivered within its window (+15 min grace)? Late deliveries also get a delay bucket. */
-export function deliveryPunctuality(order: Pick<Order, "delivery">, deliveredAt: Date): { onTime: boolean; delayBucket?: string } {
-  const { date, windowTo } = order.delivery;
-  if (!windowTo) return { onTime: true };
-  const now = getLocalNow("Europe/Vienna", deliveredAt);
-  const [h, m] = windowTo.split(":").map(Number);
-  const late = now.date > date ? 24 * 60 : now.date < date ? -1 : now.minutes - (h * 60 + m);
-  if (late <= 15) return { onTime: true };
-  const bucket = late <= 30 ? "15-30m" : late <= 60 ? "30-60m" : late <= 120 ? "1-2h" : "2h+";
-  return { onTime: false, delayBucket: bucket };
 }
 
 function endpoint(): string {

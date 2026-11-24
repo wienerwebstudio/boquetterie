@@ -179,6 +179,20 @@ Hinweis GA4: Für E-Commerce-Berichte erwartet GA4 bei `add_to_cart` ein `items`
 - Keine neuen Umgebungsvariablen: Endpunkt = Host von `NEXT_PUBLIC_UMAMI_SRC` (Standard `https://cloud.umami.is/api/send`), Hostname = erster Eintrag von `NEXT_PUBLIC_UMAMI_DOMAINS` (Standard `blumora.at`).
 - Datenschutzerklärung: den Umami-Abschnitt um „pseudonyme Besuchs-ID (30 Tage im Browser), Zuordnung von Bestellumsatz und Kanal zur Besuchsstatistik, serverseitige Übermittlung des Bestellwerts an Umami – nur mit Einwilligung“ ergänzen.
 
+## Dashboards (/admin/analytics)
+
+Admin → **Analytics**: sechs Reiter (`?tab=ceo|marketing|checkout|i18n|produkte|lieferung`) und Zeitraum (`?range=7|30|90|all`, Standard 30 Tage). Berechnung rein und getestet in `src/lib/analytics-dashboard.ts` (Kennzahlen pro Bestellung: `src/lib/order-metrics.ts`), Test `tests/unit/analytics-dashboard.test.ts`, E2E `tests/e2e/admin-analytics.spec.ts`.
+
+- Basis sind die eigenen Daten: Bestellungen (Eingangstag, Wiener Zeit), abgebrochene Kassen, Floristen-Budget je Position. **Umsatz** = bezahlte Bestellungen (Erstattungen separat), **Testzahlungen (mock)** zählen nie. **Rohertrag** = Umsatz − Floristen-Einkauf netto (vor Kurier, Stripe-Gebühren, USt.); Bestellungen ohne Budget fließen nicht in die Marge ein.
+1. **CEO**: Umsatz, Ø Bestellwert, Rohertrag/Marge, Zahlungserfolg, Umsatz pro Tag, Umsatz nach Kanal, Hinweise (unbestätigte/unzugeordnete Partner-Aufträge, schwache Margen, niedriger Zahlungserfolg).
+2. **Marketing & Attribution**: Kanal (`order.analytics.channel`; ältere Bestellungen = „Unbekannt“), Referrer, UTM-Kampagnen, Einstiegsseiten, Gutscheine, „Wie hast du uns gefunden?“.
+3. **Checkout & Conversion**: abgebrochene Kassen → Bestellversuche → bezahlt (auch pro Kund:in), Zahlarten mit Erfolgsquote, Gründe nicht bezahlter Bestellungen (Codes aus dem Verlauf, z. B. `card_declined`).
+4. **Internationalisierung**: Umsatz, Anteil, Ø Bestellwert und Zahlungserfolg pro Shop-Sprache, Live-Sprachen ohne Bestellung.
+5. **Produktperformance**: Stück, Umsatz, Rohertrag und Marge pro Produkt (< 15 % rot), Größen, Extras inkl. Anteil der Bestellungen mit Extra.
+6. **Lieferungen & Operations**: Pünktlichkeit (Zeitpunkt „Zugestellt“ vs. Fensterende + 15 Min.), Verspätungsklassen, Partner-Bestätigungszeit (Median), offene Aufträge ohne Bestätigung/Partner, Lieferart (Express/Same Day/Vorlauf), Wochentage, Zeitfenster, Partner, Zonen, Bezirke.
+
+**Optional Umami** (`UMAMI_API_KEY`, server-only, `src/lib/umami-api.ts`): zusätzlich Besucher und Conversion-Rate (CEO), Besuche pro Kanal (Marketing, Referrer → Kanal), der Event-Trichter `view_item → … → purchase` (Checkout) und Besuche nach Browser-Sprache (Internationalisierung). Ohne Schlüssel oder wenn Umami nicht antwortet, zeigt die Seite nur die eigenen Zahlen. `UMAMI_API_URL` nur für Self-Hosting (Standard `https://api.umami.is/v1`).
+
 ## Page Views
 
 - Plausible: automatisch, inkl. Client-Navigation (das Script hängt sich an `history.pushState`).

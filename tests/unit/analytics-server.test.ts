@@ -70,8 +70,8 @@ describe("server-side analytics", () => {
     const { deliveryPunctuality, deliveryType } = await import("@/lib/analytics-server");
     const o = baseOrder();
     expect(deliveryPunctuality(o, new Date("2026-11-24T12:05:00Z"))).toEqual({ onTime: true }); // 13:05 Vienna
-    expect(deliveryPunctuality(o, new Date("2026-11-24T12:40:00Z"))).toEqual({ onTime: false, delayBucket: "30-60m" });
-    expect(deliveryPunctuality(o, new Date("2026-11-24T16:00:00Z"))).toEqual({ onTime: false, delayBucket: "2h+" });
+    expect(deliveryPunctuality(o, new Date("2026-11-24T12:40:00Z"))).toMatchObject({ onTime: false, delayBucket: "30-60m" });
+    expect(deliveryPunctuality(o, new Date("2026-11-24T16:00:00Z"))).toMatchObject({ onTime: false, delayBucket: "2h+" });
     expect(deliveryType(o)).toBe("same_day");
     expect(deliveryType({ ...o, delivery: { ...o.delivery, express: true } })).toBe("express");
     expect(deliveryType({ ...o, delivery: { ...o.delivery, date: "2026-11-27" } })).toBe("scheduled");

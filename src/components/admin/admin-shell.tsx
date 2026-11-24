@@ -5,13 +5,14 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   LayoutDashboard, ShoppingBag, Flower2, Layers, Sparkles, Gift, Truck, Ticket, MessageCircleQuestionMark,
-  Star, MessageSquareText, Repeat, Inbox, PanelsTopLeft, FileText, Globe, Images, Settings, Mail, BellRing, Menu, X, LogOut, ExternalLink, Wallet, Store, Send, FileSignature, HandCoins,
+  Star, MessageSquareText, Repeat, Inbox, PanelsTopLeft, FileText, Globe, Images, Settings, Mail, BellRing, Menu, X, LogOut, ExternalLink, Wallet, Store, Send, FileSignature, HandCoins, BarChart3,
 } from "lucide-react";
 import { cn } from "@/lib/format";
 
 const NAV: { href: string; label: string; icon: typeof LayoutDashboard; group?: string }[] = [
   { href: "/admin", label: "Übersicht", icon: LayoutDashboard },
   { href: "/admin/bestellungen", label: "Bestellungen", icon: ShoppingBag },
+  { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/admin/produkte", label: "Produkte", icon: Flower2, group: "Sortiment" },
   { href: "/admin/kategorien", label: "Kategorien", icon: Layers },
   { href: "/admin/anlaesse", label: "Anlässe", icon: Sparkles },

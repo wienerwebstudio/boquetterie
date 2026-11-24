@@ -393,3 +393,9 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Kanal-Zuordnung (`src/lib/attribution.ts`, `visit.ts`): Kanal je Besuch, mit Zustimmung Besuchs-ID als Umami-`id`; Bestellung speichert `order.analytics`. `purchase`/`refund`/`order_delivered`/`order_delayed`/`order_cancelled` serverseitig (`src/lib/analytics-server.ts`), genau einmal per atomarem `claimOnce` (neu: `createIfAbsent` im Store). Express-Wahl als `order.delivery.express`.
 - Nicht gebaut (Feature fehlt): `complaint_submitted`, `reorder_started`.
 - Tests: Unit (Attribution, Checkout-Helfer, Server-Events inkl. genau-einmal, Event-Props), E2E `tracking.spec.ts` (Events + Kanal/Besuchs-ID in der Bestellung, nichts ohne Zustimmung). 681 Unit, 75 E2E grün.
+
+## 2026-11-24 – Admin → Analytics: sechs Dashboards
+- Neue Seite `/admin/analytics` (Navigation unter „Bestellungen“): CEO, Marketing & Attribution, Checkout & Conversion, Internationalisierung, Produktperformance, Lieferungen & Operations; Zeitraum 7/30/90 Tage oder gesamt. Details in `docs/ANALYTICS.md` → „Dashboards“.
+- Rechnet mit den eigenen Daten (Bestellungen, Kanal je Bestellung, abgebrochene Kassen, Floristen-Budget); Testzahlungen ausgeschlossen. Umami-Zahlen (Besucher, Trichter, Referrer, Sprachen) erscheinen zusätzlich, sobald `UMAMI_API_KEY` gesetzt ist.
+- Kennzahlen pro Bestellung in `src/lib/order-metrics.ts` gebündelt (auch von den Server-Events genutzt).
+
