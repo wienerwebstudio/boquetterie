@@ -18,6 +18,10 @@ Aus einer Kundenanfrage (Admin → **Anfragen**, Seite `/anfrage`) entsteht ein 
 
 Status: Entwurf · Gesendet · Angesehen · Bezahlt · Abgelaufen · Storniert.
 
+## Extern bezahlt
+
+Hat die Kund:in außerhalb des Shops bezahlt (z. B. über einen Stripe-Zahlungslink aus dem Dashboard oder per Überweisung), im Angebot unter Aktionen **„Extern bezahlt – als bezahlt markieren“**: Zahlart, optional Zahlungs-ID (`pi_…`/`ch_…`) und Notiz. Der Server (`markOfferPaidManually` in `src/lib/orders.ts`) legt die Bestellung genau wie bei der Online-Zahlung an und markiert sie bezahlt (`payment.provider = "manual"`): Bestätigungsmails, Angebot „Bezahlt“, Analytics wie gewohnt, kein automatischer Kurier. Geht auch bei abgelaufenen Angeboten, nie zweimal, nicht bei stornierten. Eine offene Online-Zahlung desselben Angebots wird vorher abgebrochen; ist sie doch durchgegangen, zählt diese und es entsteht nichts Neues. Vorher im Stripe-Dashboard prüfen, dass das Geld wirklich da ist – der Shop kann externe Zahlungen nicht prüfen.
+
 ## Bestellungen aus Angeboten
 
 - Erscheinen unter *Bestellungen* wie jede andere Bestellung, mit Verweis auf das Angebot, Rechnungsadresse und Hinweis an die Floristik.

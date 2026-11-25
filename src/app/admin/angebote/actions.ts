@@ -5,7 +5,7 @@ import { requireAdmin } from "@/lib/admin-session";
 import { getAllProducts, getCustomRequestById, getDeliveryZones, getExtras, getOfferById, getOrderById, getSettings, updateCustomRequest } from "@/lib/cms";
 import { CUSTOM_REQUEST_ID_RE } from "@/lib/custom-requests-core";
 import { findZone } from "@/lib/delivery";
-import { markOrderPaymentFailed } from "@/lib/orders";
+import { markOfferPaidManually, markOrderPaymentFailed } from "@/lib/orders";
 import { cancelOpenPayment } from "@/lib/payments";
 import { cancelOffer, createOffer, editOffer, markOfferSent, noteOffer, offerUrl, publicSiteUrl } from "@/lib/offers";
 import { parseOfferInput, type OfferInput } from "@/lib/offers-core";
@@ -137,6 +137,25 @@ export async function cancelOfferAction(id: string): Promise<OfferActionResult> 
     await cancelOffer(id);
     revalidateOffers(id);
     return { ok: true, message: "Angebot storniert – der Link zeigt nur noch „nicht mehr verfügbar“." };
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Fehlgeschlagen." };
+  }
+}
+
+const MANUAL_METHODS = ["card", "apple_pay", "google_pay", "paypal", "klarna", "eps"] as const;
+
+/**
+ * "Extern bezahlt": the customer paid outside the shop (Stripe payment link, transfer …).
+ * Creates the order and marks it paid – the usual mails go out, the offer becomes "Bezahlt".
+ */
+export async function markOfferPaidAction(id: string, input: { method: string; reference?: string; note?: string }): Promise<OfferActionResult> {
+  try {
+    await requireAdmin();
+    const method = (MANUAL_METHODS as readonly string[]).includes(input.method) ? (input.method as (typeof MANUAL_METHODS)[number]) : "card";
+    const res = await markOfferPaidManually(id, { method, reference: input.reference, note: input.note });
+    revalidateOffers(id);
+    revalidatePath("/admin/bestellungen");
+    return res.ok ? { ok: true, message: res.message, url: `/admin/bestellungen/${res.order.id}` } : { ok: false, message: res.message };
   } catch (e) {
     return { ok: false, message: e instanceof Error ? e.message : "Fehlgeschlagen." };
   }

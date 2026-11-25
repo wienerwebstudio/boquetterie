@@ -128,4 +128,38 @@ test.describe("Angebote @slow", () => {
     const res = await page.request.post("/api/offers/pay", { data: { token, method: "card", acceptedTerms: true } });
     expect(res.ok()).toBe(false);
   });
+
+  test("Extern bezahlt: Angebot im Admin als bezahlt markieren", async ({ page }) => {
+    test.slow();
+    const day = new Date(Date.now() + 9 * 86_400_000).toISOString().slice(0, 10);
+    await page.goto("/admin/login?next=%2Fadmin%2Fangebote%2Fneu");
+    await page.locator("input#password").fill(ADMIN_PASSWORD);
+    await page.getByRole("button", { name: "Anmelden" }).click();
+    await expect(page).toHaveURL(/\/admin\/angebote\/neu$/);
+    await page.locator("#c-first").fill("Lea");
+    await page.locator("#c-last").fill("Berger");
+    await page.locator("#c-email").fill("lea.berger@example.com");
+    await page.locator("[id^='items.0-title']").fill("Strauß nach Wunsch");
+    await page.locator("[id^='items.0-price']").fill("60");
+    await page.locator("#d-date").fill(day);
+    await page.locator("#d-from").fill("10:00");
+    await page.locator("#d-to").fill("12:00");
+    await page.locator("#r-street").fill("Wiedner Hauptstraße");
+    await page.locator("#r-no").fill("12");
+    await page.locator("#r-zip").fill("1040");
+    await page.locator("#r-first").fill("Lea");
+    await page.locator("#r-phone").fill("+43 664 1234567");
+    await page.getByRole("button", { name: "Speichern & senden" }).click();
+    await expect(page).toHaveURL(/\/admin\/angebote\/AN-[A-Z0-9]+\?gesendet=1/, { timeout: 30_000 });
+
+    await page.getByRole("button", { name: /Extern bezahlt/ }).click();
+    await page.getByLabel("Zahlungs-ID (optional)").fill("pi_test_external");
+    page.once("dialog", (d) => d.accept());
+    await page.getByRole("button", { name: "Als bezahlt markieren" }).click();
+    await expect(page.getByText(/Als bezahlt markiert – Bestellung BQ-/)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText("Bezahlt", { exact: true }).first()).toBeVisible();
+    await page.getByRole("link", { name: "Zur Bestellung" }).first().click();
+    await expect(page).toHaveURL(/\/admin\/bestellungen\/BQ-/);
+    await expect(page.getByText("pi_test_external", { exact: true })).toBeVisible();
+  });
 });

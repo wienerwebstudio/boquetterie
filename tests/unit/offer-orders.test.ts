@@ -52,7 +52,7 @@ vi.mock("@/lib/florist-budget", () => ({
   attachFloristBudgets: (l: unknown) => l,
 }));
 
-import { createOrderFromOffer } from "@/lib/orders";
+import { createOrderFromOffer, markOfferPaidManually } from "@/lib/orders";
 import { findOfferByToken, newOfferToken, OFFER_TOKEN_PATTERN } from "@/lib/offers";
 import { POST as pay } from "@/app/api/offers/pay/route";
 import { rateLimitInternals } from "@/lib/rate-limit";
@@ -140,6 +140,39 @@ describe("createOrderFromOffer", () => {
     expect(res.ok).toBe(true);
     expect(db.orders[0].delivery).toMatchObject({ none: true, windowLabel: "Abholung im Atelier", fee: 0, zoneId: "angebot" });
     expect(db.orders[0].totals.total).toBe(88);
+  });
+});
+
+describe("markOfferPaidManually (extern bezahlt)", () => {
+  it("creates the paid order like an online payment, provider manual, with the reference", async () => {
+    const res = await markOfferPaidManually("AN-TULIP1", { method: "card", reference: "pi_123", note: "Stripe-Zahlungslink" });
+    expect(res.ok).toBe(true);
+    const order = db.orders[0];
+    expect(order.payment).toMatchObject({ status: "paid", provider: "manual", method: "card", reference: "pi_123" });
+    expect(order.status).toBe("paid");
+    expect(order.totals.total).toBe(97.9);
+    expect(order.history.at(-1)?.note).toContain("Extern bezahlt");
+    expect(order.history.at(-1)?.note).toContain("Stripe-Zahlungslink");
+    expect(db.offers[0]).toMatchObject({ status: "paid", orderId: order.id });
+    expect(mails.confirmation).toHaveBeenCalledTimes(1);
+    expect(courier.book).not.toHaveBeenCalled();
+  });
+
+  it("works for expired offers, but never twice or for cancelled ones", async () => {
+    db.offers = [offer({ validUntil: "2020-01-01" })];
+    expect((await markOfferPaidManually("AN-TULIP1", { method: "card" })).ok).toBe(true);
+    expect(await markOfferPaidManually("AN-TULIP1", { method: "card" })).toMatchObject({ ok: false });
+    expect(db.orders).toHaveLength(1);
+    db.offers = [offer({ status: "cancelled" })];
+    db.orders = [];
+    expect(await markOfferPaidManually("AN-TULIP1", { method: "card" })).toMatchObject({ ok: false });
+    expect(db.orders).toHaveLength(0);
+  });
+
+  it("is refused once the offer was paid online", async () => {
+    await createOrderFromOffer("AN-TULIP1", "card", { siteUrl: "x" });
+    expect(await markOfferPaidManually("AN-TULIP1", { method: "card" })).toMatchObject({ ok: false });
+    expect(db.orders).toHaveLength(1);
   });
 });
 

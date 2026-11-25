@@ -399,3 +399,8 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Rechnet mit den eigenen Daten (Bestellungen, Kanal je Bestellung, abgebrochene Kassen, Floristen-Budget); Testzahlungen ausgeschlossen. Umami-Zahlen (Besucher, Trichter, Referrer, Sprachen) erscheinen zusätzlich, sobald `UMAMI_API_KEY` gesetzt ist.
 - Kennzahlen pro Bestellung in `src/lib/order-metrics.ts` gebündelt (auch von den Server-Events genutzt).
 
+## 2026-11-25 – Angebote: „Extern bezahlt“
+- Angebot wurde über einen direkten Stripe-Zahlungslink bezahlt, im Admin gab es keine Möglichkeit, es als bezahlt zu markieren. Neu im Angebot: „Extern bezahlt – als bezahlt markieren“ (Zahlart, Zahlungs-ID, Notiz) → Bestellung wie bei Online-Zahlung, Zahlung „manual“, Mails, Angebot „Bezahlt“. Details in `docs/OFFERS.md`.
+- Bestellaufbau aus dem Angebot in `addOfferOrder` gebündelt (Online-Zahlung und extern bezahlt nutzen denselben Code).
+- Tests: Unit `offer-orders.test.ts` (3 neue Fälle), E2E `offers.spec.ts` „Extern bezahlt“. 690 Unit, 77 E2E grün.
+

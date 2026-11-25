@@ -619,45 +619,112 @@ export async function createOrderFromOffer(offerId: string, method: PaymentMetho
       }
     }
 
-    // Lines: custom items as entered; shop products and extras get the stored florist budget when none was entered.
-    const budgets = await getFloristBudgets().catch(() => EMPTY_BUDGETS);
-    const lines = offerOrderLines(offer, { cardsEnabled: settings.greetingCard.enabled === true }).map((l) => ({
-      ...l,
-      ...(l.custom ? {} : { floristBudget: l.floristBudget ?? budgets.products[l.productId]?.[l.sizeId] }),
-      extras: l.extras.map((e) => ({ ...e, floristBudget: budgets.extras[e.extraId] })),
-    }));
-    const reserved = await reserveStock(lines);
-    if (!reserved.ok) return { ok: false, status: 409, code: "unavailable", message: reserved.message };
-
-    const zone = findZone(offer.recipient.zip, zones);
-    const id = await generateOrderId();
-    const createdAt = new Date().toISOString();
-    const locale = offerLocale(offer);
-    const order: Order = {
-      id, token: randomBytes(12).toString("hex"), createdAt, status: "received",
-      history: [{ status: "received", at: createdAt, note: `Aus Angebot ${offer.id} – Partner und Zustellung von Hand organisieren` }],
-      ...offerOrderParts(offer, offer.delivery.enabled ? zone : null, today),
-      customer: { firstName: offer.customer.firstName, lastName: offer.customer.lastName, email: offer.customer.email, phone: offer.customer.phone ?? "" },
-      lines,
-      totals: { subtotal: totals.items, extras: totals.extras, delivery: totals.delivery, discount: 0, total: totals.total },
-      payment: { method: paymentConfig.id, status: "pending", provider },
-      ...(locale !== "de" ? { locale } : {}),
-      offerId: offer.id,
-      ...(opts.analytics ? { analytics: opts.analytics } : {}),
-      ...(offer.floristNote ? { floristNote: offer.floristNote } : {}),
-      ...(offer.billing ? { billing: offer.billing } : {}),
-    };
-
-    try {
-      await addOrder(order);
-    } catch (err) {
-      await releaseStock(lines);
-      throw err;
-    }
-    await updateOffer(offer.id, (o) => ({ ...o, orderId: id, history: [...o.history, { at: createdAt, note: `Zahlung gestartet (${paymentConfig.label}) – Bestellung ${id}` }] }));
+    const created = await addOfferOrder(offer, {
+      method: paymentConfig.id, provider, today, analytics: opts.analytics, cardsEnabled: settings.greetingCard.enabled === true, zones,
+      historyNote: `Zahlung gestartet (${paymentConfig.label})`,
+    });
+    if (!created.ok) return { ok: false, status: 409, code: "unavailable", message: created.message };
+    const order = created.order;
 
     const started = await startPayment(order, opts.siteUrl);
     return started.ok ? { ...started, reused: false } : { ok: false, status: started.status, code: "payment", message: started.message };
+  });
+}
+
+/**
+ * Builds the order of an offer (payment "pending"), reserves stock, stores it and links it to the
+ * offer. Shared by the online payment (createOrderFromOffer) and "extern bezahlt" in the admin.
+ */
+async function addOfferOrder(
+  offer: NonNullable<Awaited<ReturnType<typeof getOfferById>>>,
+  o: { method: PaymentMethodId; provider: string; today: string; analytics?: OrderAnalytics; cardsEnabled: boolean; zones: DeliveryZone[]; historyNote: string },
+): Promise<{ ok: true; order: Order } | { ok: false; message: string }> {
+  // Lines: custom items as entered; shop products and extras get the stored florist budget when none was entered.
+  const budgets = await getFloristBudgets().catch(() => EMPTY_BUDGETS);
+  const lines = offerOrderLines(offer, { cardsEnabled: o.cardsEnabled }).map((l) => ({
+    ...l,
+    ...(l.custom ? {} : { floristBudget: l.floristBudget ?? budgets.products[l.productId]?.[l.sizeId] }),
+    extras: l.extras.map((e) => ({ ...e, floristBudget: budgets.extras[e.extraId] })),
+  }));
+  const reserved = await reserveStock(lines);
+  if (!reserved.ok) return { ok: false, message: reserved.message };
+
+  const totals = offerTotals(offer);
+  const zone = findZone(offer.recipient.zip, o.zones);
+  const id = await generateOrderId();
+  const createdAt = new Date().toISOString();
+  const locale = offerLocale(offer);
+  const order: Order = {
+    id, token: randomBytes(12).toString("hex"), createdAt, status: "received",
+    history: [{ status: "received", at: createdAt, note: `Aus Angebot ${offer.id} – Partner und Zustellung von Hand organisieren` }],
+    ...offerOrderParts(offer, offer.delivery.enabled ? zone : null, o.today),
+    customer: { firstName: offer.customer.firstName, lastName: offer.customer.lastName, email: offer.customer.email, phone: offer.customer.phone ?? "" },
+    lines,
+    totals: { subtotal: totals.items, extras: totals.extras, delivery: totals.delivery, discount: 0, total: totals.total },
+    payment: { method: o.method, status: "pending", provider: o.provider },
+    ...(locale !== "de" ? { locale } : {}),
+    offerId: offer.id,
+    ...(o.analytics ? { analytics: o.analytics } : {}),
+    ...(offer.floristNote ? { floristNote: offer.floristNote } : {}),
+    ...(offer.billing ? { billing: offer.billing } : {}),
+  };
+
+  try {
+    await addOrder(order);
+  } catch (err) {
+    await releaseStock(lines);
+    throw err;
+  }
+  await updateOffer(offer.id, (x) => ({ ...x, orderId: id, history: [...x.history, { at: createdAt, note: `${o.historyNote} – Bestellung ${id}` }] }));
+  return { ok: true, order };
+}
+
+/**
+ * Admin: the customer paid the offer outside the shop (e.g. a Stripe payment link, bank transfer).
+ * Creates the order like an online payment and marks it paid ("manual") – confirmation mails,
+ * offer "Bezahlt", analytics as usual; never a courier booking (offer orders are handled by hand).
+ * An open online payment of the same offer is cancelled first (or, when it went through after all,
+ * that payment counts and nothing new is created).
+ */
+export async function markOfferPaidManually(offerId: string, info: { method: PaymentMethodId; reference?: string; note?: string }): Promise<{ ok: true; order: Order; message: string } | { ok: false; message: string }> {
+  return withOfferLock(offerId, async () => {
+    const [offer, settings, zones] = await Promise.all([getOfferById(offerId), getSettings(), getDeliveryZones()]);
+    if (!offer) return { ok: false, message: "Angebot nicht gefunden." };
+    if (offer.status === "paid") return { ok: false, message: "Dieses Angebot ist schon bezahlt." };
+    if (offer.status === "cancelled") return { ok: false, message: "Das Angebot ist storniert." };
+
+    const previous = offer.orderId ? await getOrderById(offer.orderId) : null;
+    if (previous?.payment.status === "paid") {
+      await markOfferPaidForOrder(previous);
+      return { ok: false, message: `Schon bezahlt über die Angebotsseite (Bestellung ${previous.id}).` };
+    }
+    if (previous?.payment.status === "pending") {
+      try {
+        const verified = await verifyPayment(previous);
+        if (verified.status === "paid") {
+          const paid = await markOrderPaid(previous.id, { reference: verified.reference, intentId: verified.intentId, note: "Zahlung nachträglich bestätigt" });
+          return { ok: true, order: paid ?? previous, message: `Die Zahlung über die Angebotsseite ist doch durchgegangen – Bestellung ${previous.id}. Bitte die externe Zahlung prüfen/erstatten.` };
+        }
+        await cancelOpenPayment(previous);
+      } catch (err) {
+        console.error(`[offers] could not cancel the open payment of ${previous.id}`, err);
+        return { ok: false, message: `Die offene Online-Zahlung (${previous.id}) konnte nicht abgebrochen werden – bitte gleich noch einmal versuchen.` };
+      }
+      await markOrderPaymentFailed(previous.id, { note: "Extern bezahlt – neue Bestellung angelegt" });
+    }
+
+    const reference = info.reference?.trim().slice(0, 120) || undefined;
+    const note = info.note?.trim().slice(0, 200) || undefined;
+    const created = await addOfferOrder(offer, {
+      method: info.method, provider: "manual", today: getLocalNow(settings.timezone).date, cardsEnabled: settings.greetingCard.enabled === true, zones,
+      historyNote: "Extern bezahlt (von Hand markiert)",
+    });
+    if (!created.ok) return { ok: false, message: created.message };
+    const paid = await markOrderPaid(created.order.id, {
+      provider: "manual", reference,
+      note: ["Extern bezahlt – im Admin als bezahlt markiert", reference, note].filter(Boolean).join(" · "),
+    });
+    return { ok: true, order: paid ?? created.order, message: `Als bezahlt markiert – Bestellung ${created.order.id} angelegt.` };
   });
 }
 
