@@ -24,6 +24,8 @@ Hat die Kund:in außerhalb des Shops bezahlt (z. B. über einen Stripe-Zahlungsl
 
 ## Bestellungen aus Angeboten
 
+- **Partner-Budget**: Shop-Produkte im Angebot bekommen das Budget aus der Budget-Liste (Größe), unabhängig vom Angebotspreis/Rabatt; individuelle Positionen nur das im Angebot eingetragene. In jeder Bestellung steht es pro Strauß (rot, wenn es fehlt) und ist rechts unter „Partner-Budget“ änderbar (`saveLineBudgetsAction`); danach den Auftrag erneut senden. Die Bestellliste zeigt es als Spalte „Budget“.
+
 - Erscheinen unter *Bestellungen* wie jede andere Bestellung, mit Verweis auf das Angebot, Rechnungsadresse und Hinweis an die Floristik.
 - **Es wird nie automatisch ein Partner beauftragt oder ein Kurier gebucht** – Ware und Zustellung organisiert das Team selbst (bei Bedarf Partner/Kurier von Hand im Admin).
 - Freie Positionen sind `custom`-Zeilen ohne Lager; sie zeigen ihre Beschreibung in Mails, Partner-Auftrag, Bestellseite und Admin.

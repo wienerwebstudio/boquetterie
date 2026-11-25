@@ -2,16 +2,18 @@ import { foundViaLabel } from "@/lib/found-via";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Bike, CreditCard, Flower2, History, MapPin, RefreshCw, Send, Star, StickyNote, Store } from "lucide-react";
+import { Bike, CreditCard, Wallet, Flower2, History, MapPin, RefreshCw, Send, Star, StickyNote, Store } from "lucide-react";
 import { getOrderById, getPartners, getSettings } from "@/lib/cms";
 import { partnerMailAddresses } from "@/lib/mail";
 import { withEffectivePartner } from "@/lib/partners";
 import { formatDateLong, formatDateTime, formatPrice } from "@/lib/format";
 import { Banner, Card, PageHeader } from "@/components/admin/controls";
 import { StatusBadge } from "@/components/admin/status-badge";
-import { CourierForm, InternalNoteForm, OrderStatusForm, PartnerForm, ResendMailsForm, ReviewRequestForm } from "@/components/admin/order-forms";
+import { CourierForm, InternalNoteForm, LineBudgetForm, OrderStatusForm, PartnerForm, ResendMailsForm, ReviewRequestForm } from "@/components/admin/order-forms";
 import { deliveredAt, getReviewRequestStatus, MAX_DAYS_AFTER_DELIVERY, MIN_DAYS_AFTER_DELIVERY } from "@/lib/mail/review-requests";
 import { courierEnabled } from "@/lib/courier";
+import { getFloristBudgets, EMPTY_BUDGETS } from "@/lib/florist-budget";
+import { lineCost, orderCost } from "@/lib/order-metrics";
 import { isSelfDeliveryDay } from "@/lib/delivery";
 import { RIDERX_STATUS_LABELS } from "@/lib/courier/riderx-core";
 import { PAYMENT_LABELS, PAYMENT_STATUS_LABELS, customerName, orderLanguage, recipientName, statusLabel, isUnpaidOrder } from "@/components/admin/order-utils";
@@ -29,7 +31,7 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 
 export default async function OrderDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const [found, settings, partners] = await Promise.all([getOrderById(decodeURIComponent(id)), getSettings(), getPartners(true)]);
+  const [found, settings, partners, budgets] = await Promise.all([getOrderById(decodeURIComponent(id)), getSettings(), getPartners(true), getFloristBudgets().catch(() => EMPTY_BUDGETS)]);
   if (!found) notFound();
   const order = withEffectivePartner(found);
   const needsPartner = order.payment.status === "paid" && order.status !== "cancelled" && !((order.partner?.sentAt || order.partner?.manual) && !order.partner.cancelSentAt);
@@ -40,6 +42,16 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
   const r = order.recipient;
   const selfDelivery = isSelfDeliveryDay(settings, order.delivery.date);
   const linesTotal = order.lines.reduce((s, l) => s + l.unitPrice * l.quantity, 0);
+  // Partner budget (purchase price, net) – what the florist may spend.
+  const budget = orderCost(order);
+  const goods = order.totals.total - order.totals.delivery;
+  const budgetRows = order.lines.map((l) => ({
+    name: l.custom ? l.productName : `${l.productName} (${l.sizeLabel})`,
+    quantity: l.quantity,
+    value: l.floristBudget,
+    suggested: l.custom ? undefined : budgets.products[l.productId]?.[l.sizeId],
+    extras: l.extras.map((e) => ({ name: e.name, quantity: e.quantity, value: e.floristBudget, suggested: budgets.extras[e.extraId] })),
+  }));
 
   return (
     <>
@@ -78,6 +90,17 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                       <p className="font-semibold">{line.quantity} × {line.productName} <span className="font-normal text-ink-muted">({line.custom ? "individuell" : line.sizeLabel}{line.stems ? ` · ${line.stems} Stiele` : ""}{line.color ? ` · Farbe ${line.color}` : ""})</span></p>
                       <p className="whitespace-nowrap font-semibold">{formatPrice(line.unitPrice * line.quantity)}</p>
                     </div>
+                    {(() => {
+                      const c = lineCost(line);
+                      const missingExtra = line.extras.some((x) => x.floristBudget === undefined);
+                      return c === undefined ? (
+                        <p className="mt-1 inline-flex rounded-full bg-[#fdecea] px-2.5 py-0.5 text-[12.5px] font-semibold text-[#b42318]" data-testid="line-budget">Partner-Budget: nicht hinterlegt</p>
+                      ) : (
+                        <p className="mt-1 inline-flex rounded-full bg-[#fff4dc] px-2.5 py-0.5 text-[12.5px] font-semibold text-[#8a5300]" data-testid="line-budget">
+                          Partner-Budget: {formatPrice(c)}{line.quantity > 1 ? ` (${line.quantity} × ${formatPrice(line.floristBudget!)})` : ""}{missingExtra ? " · Extra ohne Budget" : ""}
+                        </p>
+                      );
+                    })()}
                     {line.extras.length > 0 && (
                       <ul className="mt-1 text-[13px] text-ink-muted">
                         {line.extras.map((x) => (
@@ -108,6 +131,8 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
                 <div className="flex justify-between py-1"><dt className="text-ink-muted">Rabatt{order.coupon ? ` (${order.coupon.code})` : ""}</dt><dd>−{formatPrice(order.totals.discount)}</dd></div>
               )}
               <div className="mt-2 flex justify-between rounded-xl bg-[linear-gradient(90deg,#fde8ee,#fff5f0)] px-3 py-2.5 text-[16px] font-bold"><dt>Gesamt</dt><dd className="tabular-nums text-[#a92a52]">{formatPrice(order.totals.total)}</dd></div>
+              <div className="mt-2 flex justify-between px-3 py-1"><dt className="font-semibold text-[#8a5300]">Partner-Budget gesamt</dt><dd className="font-semibold tabular-nums text-[#8a5300]" data-testid="order-budget">{budget.complete ? formatPrice(budget.cost) : budget.cost > 0 ? `${formatPrice(budget.cost)} (unvollständig)` : "nicht hinterlegt"}</dd></div>
+              {budget.complete && <div className="flex justify-between px-3 py-1 text-[13px]"><dt className="text-ink-muted">Bleibt (Ware − Budget, vor Kurier/Gebühren)</dt><dd className="tabular-nums">{formatPrice(goods - budget.cost)}</dd></div>}
             </dl>
           </Card>
 
@@ -175,6 +200,9 @@ export default async function OrderDetailPage({ params }: { params: Promise<{ id
               note={order.partner ? order.partner.note : order.floristNote}
             />
             {partners.length === 0 && <p className="mt-3 text-[13px] text-ink-muted">Noch kein aktiver Partner – unter <Link href="/admin/partner" className="text-[#0a6644] underline-offset-4 hover:underline">Partner</Link> anlegen.</p>}
+          </Card>
+          <Card accent="amber" icon={Wallet} title="Partner-Budget" description="Was der Partner pro Strauß maximal ausgeben darf (Einkauf netto). Steht im Auftrag an den Partner.">
+            <LineBudgetForm orderId={order.id} rows={budgetRows} />
           </Card>
           <Card title="Status ändern" accent="amber" icon={RefreshCw}>
             <OrderStatusForm orderId={order.id} current={order.status} statuses={settings.orderStatuses} canRequestReview={Boolean(order.customer.email) && !review.sentAt && !review.submittedAt} />

@@ -161,5 +161,16 @@ test.describe("Angebote @slow", () => {
     await page.getByRole("link", { name: "Zur Bestellung" }).first().click();
     await expect(page).toHaveURL(/\/admin\/bestellungen\/BQ-/);
     await expect(page.getByText("pi_test_external", { exact: true })).toBeVisible();
+
+    // Individual item without budget: shown as missing, then entered in the order.
+    await expect(page.getByTestId("line-budget")).toHaveText("Partner-Budget: nicht hinterlegt");
+    await expect(page.getByTestId("order-budget")).toHaveText("nicht hinterlegt");
+    await page.getByLabel(/Strauß nach Wunsch – pro Stück/).fill("30");
+    await page.getByRole("button", { name: "Budget speichern" }).click();
+    await expect(page.getByText(/Budget gespeichert/)).toBeVisible();
+    await expect(page.getByTestId("order-budget")).toHaveText(/30,00/);
+    await expect(page.getByTestId("line-budget")).toHaveText(/Partner-Budget: €\s30,00/);
+    await page.goto("/admin/bestellungen");
+    await expect(page.getByRole("columnheader", { name: "Budget" })).toBeVisible();
   });
 });

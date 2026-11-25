@@ -13,6 +13,7 @@ import { listCheckoutDrafts } from "@/lib/checkout-drafts";
 import { AbandonedCheckouts } from "@/components/admin/abandoned-checkouts";
 import { ExpireStaleOrdersForm } from "@/components/admin/order-forms";
 import { filterOrders } from "@/lib/orders-export";
+import { orderCost } from "@/lib/order-metrics";
 
 export const dynamic = "force-dynamic";
 
@@ -80,7 +81,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
         <Table>
           <thead>
             <tr>
-              <Th>Nr.</Th><Th>Eingang</Th><Th>Kund:in</Th><Th>Empfänger:in</Th><Th>Lieferdatum</Th><Th>Zahlung</Th><Th>Partner</Th><Th>Status</Th><Th className="text-right">Summe</Th>
+              <Th>Nr.</Th><Th>Eingang</Th><Th>Kund:in</Th><Th>Empfänger:in</Th><Th>Lieferdatum</Th><Th>Zahlung</Th><Th>Partner</Th><Th className="text-right">Budget</Th><Th>Status</Th><Th className="text-right">Summe</Th>
             </tr>
           </thead>
           <tbody>
@@ -93,6 +94,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
                 <Td className="whitespace-nowrap">{formatDateShort(o.delivery.date)}{o.delivery.windowLabel ? <div className="text-[12px] text-ink-soft">{o.delivery.windowLabel}</div> : null}{isSelfDeliveryDay(settings, o.delivery.date) ? <div className="mt-0.5 inline-flex rounded-full bg-[#dff5f4] px-2 py-0.5 text-[11.5px] font-semibold text-[#0c6467]">Selbst ausliefern</div> : null}</Td>
                 <Td className="whitespace-nowrap text-[13px]">{o.payment.status === "paid" ? <span className="inline-flex items-center gap-1.5 font-medium text-[#0a6644]"><span className="size-1.5 rounded-full bg-[#0f9466]" aria-hidden />Bezahlt</span> : o.payment.status === "refunded" ? <span className="inline-flex items-center gap-1.5 font-medium text-[#4a5160]"><span className="size-1.5 rounded-full bg-[#9aa1ad]" aria-hidden />Erstattet</span> : <span className="inline-flex items-center gap-1.5 rounded-full bg-[#fdecea] px-2 py-0.5 font-semibold text-[#b42318]"><span className="size-1.5 rounded-full bg-[#c0392b]" aria-hidden />Nicht bezahlt</span>}</Td>
                 <Td className="whitespace-nowrap text-[13px]">{effectivePartner(o)?.sentAt && !effectivePartner(o)?.cancelSentAt ? <>{effectivePartner(o)?.name}{o.partner?.confirmToken ? <div className={o.partner.confirmedAt ? "text-[12px] text-[#0a6644]" : "text-[12px] font-semibold text-burgundy"}>{o.partner.confirmedAt ? "bestätigt" : "nicht bestätigt"}</div> : null}</> : o.payment.status === "paid" && o.status !== "cancelled" ? <span className="inline-flex items-center gap-1.5 rounded-full bg-[#fdecea] px-2 py-0.5 font-semibold text-[#b42318]"><span className="size-1.5 rounded-full bg-[#c0392b]" aria-hidden />Kein Partner</span> : <span className="text-ink-soft">–</span>}</Td>
+                <Td className="whitespace-nowrap text-right text-[13px] tabular-nums">{(() => { const b = orderCost(o); return b.complete ? <span className="font-semibold text-[#8a5300]">{formatPrice(b.cost)}</span> : <span className="inline-flex rounded-full bg-[#fdecea] px-2 py-0.5 font-semibold text-[#b42318]">{b.cost > 0 ? `${formatPrice(b.cost)} + ?` : "fehlt"}</span>; })()}</Td>
                 <Td><StatusBadge status={o.status} label={statusLabel(settings, o.status)} /></Td>
                 <Td className="whitespace-nowrap text-right font-semibold tabular-nums">{formatPrice(o.totals.total)}</Td>
               </tr>
@@ -101,7 +103,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
           <tfoot>
             <tr>
               <Td className="whitespace-nowrap text-[13px] font-semibold text-[#4f4c47]">{filtered.length} Bestellung(en)</Td>
-              <Td /><Td /><Td /><Td /><Td /><Td /><Td />
+              <Td /><Td /><Td /><Td /><Td /><Td /><Td /><Td />
               <Td className="whitespace-nowrap text-right text-[15px] font-bold tabular-nums">{formatPrice(sum)}</Td>
             </tr>
           </tfoot>

@@ -377,3 +377,53 @@ export async function deleteCheckoutDraftAction(_prev: OrderActionState, formDat
     return { ok: false, message: e instanceof Error ? e.message : "Löschen fehlgeschlagen." };
   }
 }
+
+/** "12,5" / "12.50" → 12.5; empty → undefined; invalid → NaN. */
+function parseBudget(v: FormDataEntryValue | null): number | undefined {
+  const s = String(v ?? "").trim().replace(/\s|€/g, "").replace(",", ".");
+  if (!s) return undefined;
+  const n = Number(s);
+  return Number.isFinite(n) && n >= 0 && n <= 10_000 ? Math.round(n * 100) / 100 : NaN;
+}
+
+/**
+ * Partner budget per line (and extra) of one order – e.g. for individual offers, where nobody entered
+ * one. Fields: `line-<i>` and `extra-<i>-<j>` (EUR, net). Empty = no budget.
+ */
+export async function saveLineBudgetsAction(_prev: OrderActionState, formData: FormData): Promise<OrderActionState> {
+  try {
+    await requireAdmin();
+    const id = String(formData.get("id") ?? "");
+    let invalid = false;
+    const read = (key: string) => {
+      const n = parseBudget(formData.get(key));
+      if (Number.isNaN(n)) invalid = true;
+      return n;
+    };
+    const values = { lines: [] as (number | undefined)[], extras: [] as (number | undefined)[][] };
+    let i = 0;
+    while (formData.has(`line-${i}`)) {
+      values.lines.push(read(`line-${i}`));
+      const ex: (number | undefined)[] = [];
+      let j = 0;
+      while (formData.has(`extra-${i}-${j}`)) ex.push(read(`extra-${i}-${j++}`));
+      values.extras.push(ex);
+      i++;
+    }
+    if (invalid) return { ok: false, message: "Bitte nur Beträge zwischen 0 und 10.000 € eingeben." };
+    const updated = await updateOrder(id, (o) => ({
+      ...o,
+      lines: o.lines.map((l, li) => li >= values.lines.length ? l : {
+        ...l,
+        floristBudget: values.lines[li],
+        extras: l.extras.map((e, ei) => ({ ...e, floristBudget: values.extras[li]?.[ei] })),
+      }),
+    }));
+    if (!updated) return { ok: false, message: "Bestellung nicht gefunden." };
+    revalidateOrder(id);
+    const sent = updated.partner?.sentAt && !updated.partner.cancelSentAt;
+    return { ok: true, message: sent ? "Budget gespeichert. Der Auftrag ging schon an den Partner – „Auftrag erneut senden“, damit er das neue Budget sieht." : "Budget gespeichert – es steht im Auftrag an den Partner." };
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : "Fehler beim Speichern." };
+  }
+}

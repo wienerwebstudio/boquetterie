@@ -404,3 +404,7 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Bestellaufbau aus dem Angebot in `addOfferOrder` gebündelt (Online-Zahlung und extern bezahlt nutzen denselben Code).
 - Tests: Unit `offer-orders.test.ts` (3 neue Fälle), E2E `offers.spec.ts` „Extern bezahlt“. 690 Unit, 77 E2E grün.
 
+## 2026-11-25 – Partner-Budget immer sichtbar
+- Bestellung: pro Strauß „Partner-Budget“ (rot „nicht hinterlegt“, wenn es fehlt), Summe + „Bleibt (Ware − Budget)“ unter Gesamt, neue Karte „Partner-Budget“ zum Eintragen/Ändern pro Strauß und Extra (Vorschlag aus der Budget-Liste). Bestellliste: Spalte „Budget“ („fehlt“ rot).
+- Anlass: individuelles Angebot – Budget war in der Bestellung nicht zu sehen. Tests: E2E `offers.spec.ts` (fehlendes Budget anzeigen, eintragen, Liste). 690 Unit, 77 E2E grün.
+

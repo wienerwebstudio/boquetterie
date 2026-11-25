@@ -3,7 +3,7 @@
 import { useActionState, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { OrderStatus, OrderStatusDefinition } from "@/types";
-import { assignPartnerAction, bookCourierAction, cancelCourierAction, deleteCheckoutDraftAction, expireStaleOrdersAction, resendOrderMailsAction, saveInternalNote, sendPartnerCancellationAction, sendReviewRequestAction, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
+import { assignPartnerAction, bookCourierAction, cancelCourierAction, deleteCheckoutDraftAction, expireStaleOrdersAction, resendOrderMailsAction, saveInternalNote, saveLineBudgetsAction, sendPartnerCancellationAction, sendReviewRequestAction, updateOrderStatus, type OrderActionState } from "@/app/admin/bestellungen/actions";
 import { Banner, Field, inputCls } from "./controls";
 import { cn } from "@/lib/format";
 
@@ -201,6 +201,42 @@ export function DeleteDraftForm({ draftId }: { draftId: string }) {
       <input type="hidden" name="id" value={draftId} />
       <Button type="submit" size="sm" variant="ghost" loading={pending}>Löschen</Button>
       {state && !state.ok && <Banner tone="error" className="mt-2">{state.message}</Banner>}
+    </form>
+  );
+}
+
+export interface BudgetFormRow {
+  name: string;
+  quantity: number;
+  /** Stored budget per piece (EUR, net). */
+  value?: number;
+  /** Current value from the budget list – placeholder when nothing is stored. */
+  suggested?: number;
+  extras: { name: string; quantity: number; value?: number; suggested?: number }[];
+}
+
+const euro = (n?: number) => (n === undefined ? "" : String(n).replace(".", ","));
+
+/** Partner budget per bouquet (and extra) of one order, editable – e.g. for individual offers. */
+export function LineBudgetForm({ orderId, rows }: { orderId: string; rows: BudgetFormRow[] }) {
+  const [state, action, pending] = useActionState<OrderActionState, FormData>(saveLineBudgetsAction, null);
+  return (
+    <form action={action} className="space-y-3">
+      <input type="hidden" name="id" value={orderId} />
+      {state && <Banner tone={state.ok ? "success" : "error"}>{state.message}</Banner>}
+      {rows.map((r, i) => (
+        <div key={i} className="space-y-2">
+          <Field label={`${r.quantity > 1 ? `${r.quantity} × ` : ""}${r.name} – pro Stück (€)`} htmlFor={`line-${i}`} hint={r.value === undefined && r.suggested !== undefined ? `Laut Budget-Liste ${euro(r.suggested)} € – zum Übernehmen eintragen.` : undefined}>
+            <input id={`line-${i}`} name={`line-${i}`} inputMode="decimal" defaultValue={euro(r.value)} placeholder={r.suggested !== undefined ? euro(r.suggested) : "z. B. 30"} className={inputCls} />
+          </Field>
+          {r.extras.map((e, j) => (
+            <Field key={j} label={`+ ${e.quantity > 1 ? `${e.quantity} × ` : ""}${e.name} – pro Stück (€)`} htmlFor={`extra-${i}-${j}`}>
+              <input id={`extra-${i}-${j}`} name={`extra-${i}-${j}`} inputMode="decimal" defaultValue={euro(e.value)} placeholder={e.suggested !== undefined ? euro(e.suggested) : ""} className={inputCls} />
+            </Field>
+          ))}
+        </div>
+      ))}
+      <Button type="submit" size="sm" variant="outline" loading={pending}>Budget speichern</Button>
     </form>
   );
 }
