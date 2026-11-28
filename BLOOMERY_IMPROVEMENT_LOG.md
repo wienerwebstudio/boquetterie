@@ -413,3 +413,4 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Tests: Unit (mehrere Partner, nur offene), E2E `partner-portal.spec.ts` (Download). 691 Unit, 78 E2E grün (ein Mobile-Menü-Test war im Gesamtlauf langsam, einzeln grün).
 - Danach auf Wunsch PDF statt Excel: „Abrechnung als PDF“ (Bestellnummer, Liefertag, Status, Budget netto, Summe; ein Abschnitt je Partner, Seitenumbruch bei vielen Aufträgen). Excel bleibt als kleiner Link. Neue Abhängigkeit `pdf-lib`. Tests: Unit `partner-pdf.test.ts`, E2E Download. 693 Unit, 78 E2E grün.
 
+- PDF zusätzlich mit Bestelldatum und Akzeptiert-Datum (Partner-Bestätigung, Wiener Zeit; Altbestand „vor Portal-Start“).

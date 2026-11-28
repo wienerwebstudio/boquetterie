@@ -1,6 +1,8 @@
 import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFPage } from "pdf-lib";
 import type { PartnerLedger } from "@/lib/partner-ledger";
 import type { PartnerExportScope } from "@/lib/partner-ledger";
+import { viennaDateTime } from "@/lib/orders-export";
+import { effectivePartner } from "@/lib/partners";
 
 /**
  * Partner statement as PDF (admin → Partner-Abrechnung): per partner a list of the owed orders
@@ -30,6 +32,16 @@ const LINE = rgb(0.86, 0.84, 0.8);
 export const pdfEuro = (n: number) => `€ ${n.toFixed(2).replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
 /** "2026-11-29" → "29.11.2026" */
 const date = (d: string) => (/^\d{4}-\d{2}-\d{2}$/.test(d) ? `${d.slice(8, 10)}.${d.slice(5, 7)}.${d.slice(0, 4)}` : d);
+/** ISO time → "28.11.2026 14:05" (Vienna); "" when missing. */
+const dateTime = (iso: string | undefined) => {
+  const v = viennaDateTime(iso);
+  return v ? `${date(v.slice(0, 10))} ${v.slice(11)}` : "";
+};
+/** When the partner accepted the order slip ("Auftrag bestätigen"). */
+export function acceptedLabel(item: { order: Parameters<typeof effectivePartner>[0]; owed: string | null }) {
+  if (item.owed === "legacy") return "vor Portal-Start";
+  return dateTime(effectivePartner(item.order)?.confirmedAt) || "–";
+}
 /** Standard fonts only know WinAnsi – drop anything else (e.g. emoji in a partner name). */
 const safe = (s: string) => s.replace(/[^\x20-\x7E -ÿ€–—„“”‚‘’…•]/g, "").replace(/ /g, " ");
 
@@ -54,7 +66,7 @@ export async function partnerStatementPdf(input: PartnerPdfInput): Promise<Uint8
   const partners = input.partners.length > 1 ? input.partners.filter((p) => partnerItems(p.ledger, input.scope).length) : input.partners;
   if (!partners.length) partners.push(...input.partners.slice(0, 1));
 
-  const cols = { id: M, day: M + 150, status: M + 260, budget: A4.w - M };
+  const cols = { id: M, ordered: M + 82, accepted: M + 178, day: M + 274, status: M + 334, budget: A4.w - M };
 
   for (const { name, ledger } of partners) {
     const items = partnerItems(ledger, input.scope);
@@ -75,10 +87,12 @@ export async function partnerStatementPdf(input: PartnerPdfInput): Promise<Uint8
     y -= 28;
 
     const head = () => {
-      text(page, "Bestellnummer", cols.id, y, { size: 9, f: bold, color: MUTED });
-      text(page, "Liefertag", cols.day, y, { size: 9, f: bold, color: MUTED });
-      text(page, "Status", cols.status, y, { size: 9, f: bold, color: MUTED });
-      text(page, "Budget (netto)", cols.budget, y, { size: 9, f: bold, color: MUTED, right: true });
+      text(page, "Bestellnummer", cols.id, y, { size: 8.5, f: bold, color: MUTED });
+      text(page, "Bestellt", cols.ordered, y, { size: 8.5, f: bold, color: MUTED });
+      text(page, "Akzeptiert", cols.accepted, y, { size: 8.5, f: bold, color: MUTED });
+      text(page, "Liefertag", cols.day, y, { size: 8.5, f: bold, color: MUTED });
+      text(page, "Status", cols.status, y, { size: 8.5, f: bold, color: MUTED });
+      text(page, "Budget (netto)", cols.budget, y, { size: 8.5, f: bold, color: MUTED, right: true });
       y -= 7;
       page.drawLine({ start: { x: M, y }, end: { x: A4.w - M, y }, thickness: 0.8, color: LINE });
       y -= 15;
@@ -97,10 +111,12 @@ export async function partnerStatementPdf(input: PartnerPdfInput): Promise<Uint8
         y -= 24;
         head();
       }
-      text(page, i.order.id, cols.id, y);
-      text(page, date(i.order.delivery.date), cols.day, y);
-      text(page, i.order.status === "cancelled" ? "storniert" : i.paid ? "bezahlt" : "offen", cols.status, y, { color: MUTED });
-      text(page, i.missing ? `${pdfEuro(i.amount)} (fehlt)` : pdfEuro(i.amount), cols.budget, y, { right: true });
+      text(page, i.order.id, cols.id, y, { size: 9 });
+      text(page, dateTime(i.order.createdAt), cols.ordered, y, { size: 9 });
+      text(page, acceptedLabel(i), cols.accepted, y, { size: 9 });
+      text(page, date(i.order.delivery.date), cols.day, y, { size: 9 });
+      text(page, i.order.status === "cancelled" ? "storniert" : i.paid ? "bezahlt" : "offen", cols.status, y, { size: 9, color: MUTED });
+      text(page, i.missing ? `${pdfEuro(i.amount)} (fehlt)` : pdfEuro(i.amount), cols.budget, y, { size: 9, right: true });
       y -= 16;
     }
 
@@ -111,7 +127,7 @@ export async function partnerStatementPdf(input: PartnerPdfInput): Promise<Uint8
     text(page, `Summe (${items.length} ${items.length === 1 ? "Auftrag" : "Aufträge"})`, M, y, { size: 11, f: bold });
     text(page, pdfEuro(total), cols.budget, y, { size: 11, f: bold, right: true });
     y -= 26;
-    const notes = ["Beträge netto (Floristen-Budget laut Auftrag), ohne USt."];
+    const notes = ["Beträge netto (Floristen-Budget laut Auftrag), ohne USt. Zeiten: Wien. Akzeptiert = Auftrag vom Partner bestätigt."];
     if (items.some((i) => i.missing)) notes.push("(fehlt) = für diesen Auftrag ist kein vollständiges Budget hinterlegt – bitte mit Blumora klären.");
     for (const n of notes) {
       text(page, n, M, y, { size: 8.5, color: MUTED });
