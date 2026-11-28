@@ -408,3 +408,7 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 - Bestellung: pro Strauß „Partner-Budget“ (rot „nicht hinterlegt“, wenn es fehlt), Summe + „Bleibt (Ware − Budget)“ unter Gesamt, neue Karte „Partner-Budget“ zum Eintragen/Ändern pro Strauß und Extra (Vorschlag aus der Budget-Liste). Bestellliste: Spalte „Budget“ („fehlt“ rot).
 - Anlass: individuelles Angebot – Budget war in der Bestellung nicht zu sehen. Tests: E2E `offers.spec.ts` (fehlendes Budget anzeigen, eintragen, Liste). 690 Unit, 77 E2E grün.
 
+## 2026-11-28 – Export für Partner-Rechnungen
+- Partner-Abrechnung: neuer Export-Block oben (Partner oder alle, Liefermonat oder alles, „nur offene“) → Excel-CSV mit Summe je Partner und Gesamt, ohne Kundendaten. Pro Partner zusätzlich „Alle offenen“ und „Gesamt“. `partnerCsv` in `src/lib/partner-ledger.ts`.
+- Tests: Unit (mehrere Partner, nur offene), E2E `partner-portal.spec.ts` (Download). 691 Unit, 78 E2E grün (ein Mobile-Menü-Test war im Gesamtlauf langsam, einzeln grün).
+

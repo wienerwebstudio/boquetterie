@@ -3,7 +3,7 @@ import type { Order, OrderLine } from "@/types";
 import type { PartnerLedgerEntry } from "@/types/partner-portal";
 import {
   buildPartnerLedger, countsAsPaid, inBillingPeriod, ledgerMonths, monthLabel, orderPartnerAmount, owedReason, partnerCanAccessOrder,
-  partnerCanConfirm, partnerMonthCsv, PORTAL_LAUNCH, toPartnerView,
+  partnerCanConfirm, partnerCsv, partnerMonthCsv, PORTAL_LAUNCH, toPartnerView,
 } from "@/lib/partner-ledger";
 
 const BUDGETS = { products: { "p-amour": { m: 30, l: 40 } }, extras: { "x-card": 2, "x-vase": 8 } };
@@ -150,6 +150,18 @@ describe("ledger", () => {
     expect(csv).toMatch(new RegExp(`${missing.id};.*;0,00;ja;`));
     expect(csv).toContain("Summe;4 Aufträge;;;;;;120,00");
     expect(csv).not.toContain("bernd@example.com");
+  });
+
+  it("CSV for several partners and only open orders", () => {
+    const dody = buildPartnerLedger({ orders, partnerId: "dody", budgets: BUDGETS, entries: [payment(30)], settings });
+    const rosen = buildPartnerLedger({ orders, partnerId: "rosen", budgets: BUDGETS, entries: [], settings: undefined });
+    const all = partnerCsv([{ ledger: dody, partnerName: "Blumen Dody" }, { ledger: rosen, partnerName: "Rosen" }], {});
+    expect(all).toContain("Summe Blumen Dody;");
+    expect(all).toContain("Summe Rosen;1 Aufträge");
+    expect(all).toMatch(/Gesamt;\d+ Aufträge/);
+    const open = partnerCsv([{ ledger: dody, partnerName: "Blumen Dody" }], { open: true });
+    expect(open).not.toContain(";bezahlt\r\n");
+    expect(open.split("\r\n").filter((r) => r.includes(";offen")).length).toBe(dody.owed.filter((i) => !i.paid).length);
   });
 
   it("month labels", () => {

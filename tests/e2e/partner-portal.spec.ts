@@ -115,6 +115,18 @@ test.describe("Partner-Portal", () => {
     await page.screenshot({ path: path.join(SHOTS, "partner-admin-390.png"), fullPage: true });
   });
 
+  test("Admin exportiert Partner-Abrechnung (alle Partner, nur offene)", async ({ page }) => {
+    await ensureOrders();
+    await adminLogin(page, "/admin/partner-abrechnung");
+    await page.getByLabel("Zeitraum").selectOption("");
+    await page.getByLabel(/nur offene/).check();
+    const [download] = await Promise.all([page.waitForEvent("download"), page.getByRole("button", { name: "Exportieren" }).click()]);
+    expect(download.suggestedFilename()).toBe("blumora-partner-alle-gesamt-offen.csv");
+    const csv = await page.request.get(`/admin/partner-abrechnung/export?partner=${PARTNER}&scope=open`);
+    expect(csv.headers()["content-type"]).toContain("text/csv");
+    expect((await csv.text()).replace(/^\uFEFF/, "")).toMatch(/^Partner;Bestellnummer;/);
+  });
+
   test("Partner meldet sich per Link an, sieht „Offen“ und bestätigt", async ({ page, request }) => {
     await ensureOrders();
     // Unknown addresses get exactly the same answer (no enumeration).

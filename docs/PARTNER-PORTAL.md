@@ -8,7 +8,7 @@ Ein schlichter Bereich für Partner-Floristiken unter **`/partner`**: anstehende
 2. **„Abrechnung ab“**: die Bestellung wählen, NACH der abgerechnet wird (die gewählte selbst zählt nicht). Ohne Einstellung zählen alle Bestellungen.
 3. **„Aufträge ohne Partner zuordnen“**: bezahlte Bestellungen ohne Partner (nach „Abrechnung ab“) ankreuzen → werden dem Partner zugeordnet, **ohne** Auftragsmail und **ohne** Kurierbuchung. Mit „Gleich als bestätigt zählen“ (Standard) zählen sie sofort in der Abrechnung.
 4. **„Zahlung erfassen“** (Betrag, Datum, Notiz) nach jeder Überweisung; **„Korrektur“** (+/−, mit Grund) für alles andere. Beides lässt sich bearbeiten und (mit Rückfrage) löschen.
-5. **Export (Excel)**: geschuldete Aufträge je Liefermonat als CSV (Semikolon, UTF-8 BOM, Dezimalkomma).
+5. **Export (Excel)**: geschuldete Aufträge als CSV (Semikolon, UTF-8 BOM, Dezimalkomma) – zum Abgleich mit den Partner-Rechnungen. Oben in Partner-Abrechnung: „Export für Partner-Rechnungen“ (ein Partner oder alle, Liefermonat oder alles, optional nur offene; Summe je Partner + Gesamt). Pro Partner zusätzlich „Alle offenen“, „Gesamt“ und je Liefermonat. Route `/admin/partner-abrechnung/export?partner=<id|all>&month=YYYY-MM&scope=open`.
 
 Jede Auftragsmail an den Partner enthält unten „Alle Aufträge im Partner-Portal ansehen“ → `https://<site>/partner`.
 

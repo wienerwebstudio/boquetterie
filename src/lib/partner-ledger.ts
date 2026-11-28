@@ -308,19 +308,42 @@ export function ledgerMonths(ledger: Pick<PartnerLedger, "owed">): string[] {
  * comma. Internal (admin) – no customer data, but the "Betrag fehlt" flag.
  */
 export function partnerMonthCsv(ledger: PartnerLedger, month: string, partnerName: string): string {
-  const items = ledger.owed.filter((i) => i.order.delivery.date.startsWith(month));
+  return partnerCsv([{ ledger, partnerName }], { month });
+}
+
+/** What a partner export contains: one delivery month (else all) and optionally only the still open (unpaid, FIFO) orders. */
+export interface PartnerExportScope { month?: string; open?: boolean }
+
+/**
+ * Owed orders of one or more partners as Excel (de-AT) CSV: semicolon, UTF-8 BOM, decimal comma.
+ * Internal (admin) – no customer data, but the "Betrag fehlt" flag. A sum per partner, and a
+ * grand total when several partners are exported.
+ */
+export function partnerCsv(list: { ledger: PartnerLedger; partnerName: string }[], scope: PartnerExportScope): string {
   const header = ["Partner", "Bestellnummer", "Bestellt", "Liefertag", "Zeitfenster", "Strauß", "Extras", "Betrag netto", "Betrag fehlt", "Aus aktueller Budgetliste", "Bestätigt", "Status", "Bezahlt (FIFO)"];
-  const rows = items.map((i) => {
-    const o = i.order;
-    return [
-      partnerName, o.id, viennaDateTime(o.createdAt), o.delivery.date, o.delivery.windowLabel ?? "",
-      o.lines.map((l) => `${l.quantity} × ${l.productName}${l.custom ? "" : ` (${floristSize(l)}${l.color ? `, ${l.color}` : ""})`}`).join(" | "),
-      o.lines.flatMap((l) => l.extras.map((e) => `${e.quantity} × ${e.name}`)).join(", "),
-      euro(i.amount), i.missing ? "ja" : "", i.computed ? "ja" : "",
-      i.owed === "legacy" ? "geliefert vor Portal-Start" : viennaDateTime(effectivePartner(o)?.confirmedAt),
-      o.status, i.paid ? "bezahlt" : "offen",
-    ];
-  });
-  const total = r2(items.reduce((s, i) => s + i.amount, 0));
-  return toCsv([header, ...rows, [], ["Summe", `${items.length} Aufträge`, "", "", "", "", "", euro(total)]]);
+  const rows: string[][] = [header];
+  let grandCount = 0;
+  let grand = 0;
+  for (const { ledger, partnerName } of list) {
+    const items = ledger.owed.filter((i) => (!scope.month || i.order.delivery.date.startsWith(scope.month)) && (!scope.open || !i.paid));
+    if (!items.length && list.length > 1) continue;
+    for (const i of items) {
+      const o = i.order;
+      rows.push([
+        partnerName, o.id, viennaDateTime(o.createdAt), o.delivery.date, o.delivery.windowLabel ?? "",
+        o.lines.map((l) => `${l.quantity} × ${l.productName}${l.custom ? "" : ` (${floristSize(l)}${l.color ? `, ${l.color}` : ""})`}`).join(" | "),
+        o.lines.flatMap((l) => l.extras.map((e) => `${e.quantity} × ${e.name}`)).join(", "),
+        euro(i.amount), i.missing ? "ja" : "", i.computed ? "ja" : "",
+        i.owed === "legacy" ? "geliefert vor Portal-Start" : viennaDateTime(effectivePartner(o)?.confirmedAt),
+        o.status, i.paid ? "bezahlt" : "offen",
+      ]);
+    }
+    const total = r2(items.reduce((sum, i) => sum + i.amount, 0));
+    grandCount += items.length;
+    grand = r2(grand + total);
+    rows.push([], [list.length > 1 ? `Summe ${partnerName}` : "Summe", `${items.length} Aufträge`, "", "", "", "", "", euro(total)]);
+    if (list.length > 1) rows.push([]);
+  }
+  if (list.length > 1) rows.push(["Gesamt", `${grandCount} Aufträge`, "", "", "", "", "", euro(grand)]);
+  return toCsv(rows);
 }
