@@ -411,4 +411,5 @@ Nicht ausgeführt: Tests mit echten Zahlungen, RiderX-Livebuchung, Mailversand �
 ## 2026-11-28 – Export für Partner-Rechnungen
 - Partner-Abrechnung: neuer Export-Block oben (Partner oder alle, Liefermonat oder alles, „nur offene“) → Excel-CSV mit Summe je Partner und Gesamt, ohne Kundendaten. Pro Partner zusätzlich „Alle offenen“ und „Gesamt“. `partnerCsv` in `src/lib/partner-ledger.ts`.
 - Tests: Unit (mehrere Partner, nur offene), E2E `partner-portal.spec.ts` (Download). 691 Unit, 78 E2E grün (ein Mobile-Menü-Test war im Gesamtlauf langsam, einzeln grün).
+- Danach auf Wunsch PDF statt Excel: „Abrechnung als PDF“ (Bestellnummer, Liefertag, Status, Budget netto, Summe; ein Abschnitt je Partner, Seitenumbruch bei vielen Aufträgen). Excel bleibt als kleiner Link. Neue Abhängigkeit `pdf-lib`. Tests: Unit `partner-pdf.test.ts`, E2E Download. 693 Unit, 78 E2E grün.
 

@@ -115,13 +115,16 @@ test.describe("Partner-Portal", () => {
     await page.screenshot({ path: path.join(SHOTS, "partner-admin-390.png"), fullPage: true });
   });
 
-  test("Admin exportiert Partner-Abrechnung (alle Partner, nur offene)", async ({ page }) => {
+  test("Admin exportiert Partner-Abrechnung als PDF (alle Partner, nur offene) und Excel", async ({ page }) => {
     await ensureOrders();
     await adminLogin(page, "/admin/partner-abrechnung");
     await page.getByLabel("Zeitraum").selectOption("");
     await page.getByLabel(/nur offene/).check();
-    const [download] = await Promise.all([page.waitForEvent("download"), page.getByRole("button", { name: "Exportieren" }).click()]);
-    expect(download.suggestedFilename()).toBe("blumora-partner-alle-gesamt-offen.csv");
+    const [download] = await Promise.all([page.waitForEvent("download"), page.getByRole("button", { name: "PDF herunterladen" }).click()]);
+    expect(download.suggestedFilename()).toBe("blumora-abrechnung-alle-gesamt-offen.pdf");
+    const pdf = await page.request.get(`/admin/partner-abrechnung/export?partner=${PARTNER}&format=pdf`);
+    expect(pdf.headers()["content-type"]).toBe("application/pdf");
+    expect((await pdf.body()).subarray(0, 5).toString()).toBe("%PDF-");
     const csv = await page.request.get(`/admin/partner-abrechnung/export?partner=${PARTNER}&scope=open`);
     expect(csv.headers()["content-type"]).toContain("text/csv");
     expect((await csv.text()).replace(/^\uFEFF/, "")).toMatch(/^Partner;Bestellnummer;/);

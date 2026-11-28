@@ -27,7 +27,7 @@ export default async function PartnerBillingOverview() {
         <EmptyState>Noch keine Partner angelegt.</EmptyState>
       ) : (
         <>
-        <Card accent="teal" icon={Download} title="Export für Partner-Rechnungen (Excel)" description="Geschuldete Aufträge mit Betrag netto, Liefertag und Status – zum Abgleich mit der Rechnung des Partners. Ohne Kundendaten." className="mb-5">
+        <Card accent="teal" icon={Download} title="Abrechnung als PDF" description="Pro Partner: Bestellnummer, Liefertag und sein Budget (netto) mit Summe – zum Schicken an den Partner oder zum Abgleich seiner Rechnung. Ohne Kundendaten." className="mb-5">
           <form method="get" action="/admin/partner-abrechnung/export" className="flex flex-wrap items-end gap-3">
             <label className="grid gap-1 text-[13px] font-semibold text-[#4f4c47]">Partner
               <select name="partner" defaultValue="all" className={`${inputCls} min-w-48`}>
@@ -44,7 +44,8 @@ export default async function PartnerBillingOverview() {
             <label className="flex items-center gap-2 pb-2.5 text-[13px] text-[#4f4c47]">
               <input type="checkbox" name="scope" value="open" className="size-4 accent-[#0f9466]" /> nur offene (noch nicht bezahlt)
             </label>
-            <button type="submit" className="inline-flex h-10 items-center gap-1.5 rounded-md bg-[#17301f] px-4 text-[14px] font-semibold text-white hover:bg-[#1f4a37]"><Download className="size-4" aria-hidden />Exportieren</button>
+            <button type="submit" name="format" value="pdf" className="inline-flex h-10 items-center gap-1.5 rounded-md bg-[#17301f] px-4 text-[14px] font-semibold text-white hover:bg-[#1f4a37]"><Download className="size-4" aria-hidden />PDF herunterladen</button>
+            <button type="submit" name="format" value="csv" className="inline-flex h-10 items-center px-2 text-[13px] font-semibold text-[#0a6644] underline-offset-4 hover:underline">Excel</button>
           </form>
         </Card>
         <div className="grid gap-5 lg:grid-cols-2">

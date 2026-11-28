@@ -125,13 +125,13 @@ export default async function PartnerBillingPage({ params }: { params: Promise<{
           <Card accent="rose" icon={Wallet} title="Abrechnung ab" description={ps?.billingFrom ? `Derzeit: nach ${ps.billingFrom.orderId} (${formatDateTime(ps.billingFrom.createdAt)}).` : "Derzeit zählen alle Bestellungen."}>
             <BillingFromForm partnerId={partner.id} current={ps?.billingFrom?.orderId} options={cutoffOptions} />
           </Card>
-          <Card accent="teal" icon={Download} title="Export (Excel)" description="Geschuldete Aufträge eines Liefermonats als CSV.">
+          <Card accent="teal" icon={Download} title="Abrechnung (PDF)" description="Bestellnummer, Liefertag und Budget (netto) mit Summe. Excel-Liste: /admin/partner-abrechnung → Excel.">
             {months.length === 0 ? <p className="text-[14px] text-ink-muted">Noch nichts zu exportieren.</p> : (
               <ul className="flex flex-wrap gap-2">
-                <li><a href={`/admin/partner-abrechnung/export?partner=${encodeURIComponent(partner.id)}&scope=open`} download className="inline-flex h-9 items-center gap-1.5 rounded-md border border-[#0f9466] bg-[#e2f6ec] px-3 text-[13px] font-semibold text-[#0a6644]"><Download className="size-3.5" aria-hidden />Alle offenen</a></li>
-                <li><a href={`/admin/partner-abrechnung/export?partner=${encodeURIComponent(partner.id)}`} download className="inline-flex h-9 items-center gap-1.5 rounded-md border border-line bg-white px-3 text-[13px] font-semibold text-ink hover:border-forest/50"><Download className="size-3.5" aria-hidden />Gesamt</a></li>
+                <li><a href={`/admin/partner-abrechnung/export?partner=${encodeURIComponent(partner.id)}&scope=open&format=pdf`} download className="inline-flex h-9 items-center gap-1.5 rounded-md border border-[#0f9466] bg-[#e2f6ec] px-3 text-[13px] font-semibold text-[#0a6644]"><Download className="size-3.5" aria-hidden />Alle offenen</a></li>
+                <li><a href={`/admin/partner-abrechnung/export?partner=${encodeURIComponent(partner.id)}&format=pdf`} download className="inline-flex h-9 items-center gap-1.5 rounded-md border border-line bg-white px-3 text-[13px] font-semibold text-ink hover:border-forest/50"><Download className="size-3.5" aria-hidden />Gesamt</a></li>
                 {months.map((m) => (
-                  <li key={m}><a href={`/admin/partner-abrechnung/export?partner=${encodeURIComponent(partner.id)}&month=${m}`} download className="inline-flex h-9 items-center gap-1.5 rounded-md border border-line bg-white px-3 text-[13px] font-semibold text-ink hover:border-forest/50"><Download className="size-3.5" aria-hidden />{monthLabel(m, year)}</a></li>
+                  <li key={m}><a href={`/admin/partner-abrechnung/export?partner=${encodeURIComponent(partner.id)}&month=${m}&format=pdf`} download className="inline-flex h-9 items-center gap-1.5 rounded-md border border-line bg-white px-3 text-[13px] font-semibold text-ink hover:border-forest/50"><Download className="size-3.5" aria-hidden />{monthLabel(m, year)}</a></li>
                 ))}
               </ul>
             )}
