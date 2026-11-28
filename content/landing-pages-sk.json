@@ -1,0 +1,348 @@
+[
+  {
+    "slug": "dorucenie-kvetov-viden",
+    "title": "Doručenie kvetov Viedeň",
+    "headline": "Doručenie kvetov vo Viedni – ručne viazané kytice až k dverám.",
+    "intro": "Vyberte si kyticu, určte deň a časové okno a kuriér ju prinesie na adresu príjemcu. Doručujeme do všetkých 23 viedenských obvodov, od pondelka do nedele.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "Ako funguje doručenie kvetov vo Viedni",
+        "paragraphs": [
+          "Vyberiete si kyticu a jej veľkosť, v kalendári zvolíte dátum doručenia a hodinové časové okno medzi 9:00 a 22:00. Potom zadáte adresu príjemcu, prípadne text na pohľadnicu, a zaplatíte. Potvrdenie dostanete e-mailom spolu s odkazom, cez ktorý môžete sledovať stav objednávky.",
+          "Poplatok za doručenie závisí od obvodu, v ktorom je adresa príjemcu. Presnú sumu uvidíte hneď po zadaní PSČ."
+        ]
+      },
+      {
+        "heading": "Ručne viazané pre každú objednávku",
+        "paragraphs": [
+          "Kytice viaže viedenské kvetinárstvo, s ktorým stabilne spolupracujeme – vždy ručne pre konkrétnu objednávku, nie do zásoby. Kuriér kyticu vyzdvihne v kvetinárstve a ide bez zastávky na adresu príjemcu."
+        ]
+      },
+      {
+        "heading": "Po slovensky od výberu až po e-mail",
+        "paragraphs": [
+          "Stránka, pokladňa aj e-maily k objednávke sú v slovenčine. Zaplatiť môžete kartou, cez Apple Pay, Google Pay, Klarna alebo eps – fungujú aj karty vydané mimo Rakúska. Všetky časy sú uvedené vo viedenskom čase."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Doručenie kvetov Viedeň – ručne viazané kytice",
+      "description": "Doručenie kvetov vo Viedni: ručne viazané kytice s vybraným dátumom a časovým oknom. Do všetkých 23 obvodov, od pondelka do nedele."
+    }
+  },
+  {
+    "slug": "kvety-zo-slovenska-do-viedne",
+    "title": "Kvety zo Slovenska do Viedne",
+    "headline": "Kvety zo Slovenska do Viedne – poslané na diaľku, doručené osobne.",
+    "intro": "Máte rodinu, priateľov alebo kolegov vo Viedni? Kyticu objednáte online zo Slovenska a kuriér ju vo Viedni doručí v deň a časové okno, ktoré si vyberiete.",
+    "image": "/images/hero/hero-wien-tram-wide.jpg",
+    "productFilter": { "occasions": ["geburtstag", "danke", "liebe", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Objednáte zo Slovenska, kvety prídu vo Viedni",
+        "paragraphs": [
+          "Posielať kvety zo Slovenska do Viedne je jednoduché: vyberte kyticu, zadajte adresu príjemcu vo Viedni a v kalendári zvoľte dátum doručenia s hodinovým časovým oknom medzi 9:00 a 22:00. Kyticu ručne uviaže viedenské partnerské kvetinárstvo a kuriér ju prinesie priamo k dverám.",
+          "Doručujeme výhradne vo Viedni, zato do všetkých 23 obvodov a od pondelka do nedele."
+        ]
+      },
+      {
+        "heading": "Platba a jazyk",
+        "paragraphs": [
+          "Ceny sú v eurách, takže nič neprepočítavate. Zaplatiť môžete kreditnou alebo debetnou kartou, cez Apple Pay, Google Pay, Klarna alebo eps; karty zo Slovenska fungujú bez problémov. Kytice sú od 36,90 €, poplatok za doručenie sa zobrazí po zadaní PSČ príjemcu.",
+          "Stránka, pokladňa aj e-maily s potvrdením a stavom objednávky sú po slovensky. Časy sú vo viedenskom čase – ten je rovnaký ako na Slovensku."
+        ]
+      },
+      {
+        "heading": "Pár slov k tomu",
+        "paragraphs": [
+          "Ku kytici môžete pridať pohľadnicu s vlastným textom. Ak príjemca nemá vedieť, od koho kvety sú, môžete ich poslať aj anonymne."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-payment", "f-card", "f-anon"],
+    "seo": {
+      "title": "Kvety zo Slovenska do Viedne – doručenie kytíc",
+      "description": "Pošlite kvety zo Slovenska do Viedne: objednávka po slovensky, platba v eurách, doručenie kuriérom do všetkých 23 viedenských obvodov."
+    }
+  },
+  {
+    "slug": "kvetinarstvo-viden",
+    "title": "Kvetinárstvo Viedeň",
+    "headline": "Kvetinárstvo vo Viedni – online, s kyticami viazanými na objednávku.",
+    "intro": "Blumora je online kvetinárstvo pre Viedeň. Vaše kytice ručne viaže viedenské partnerské kvetinárstvo a kuriér ich doručí na adresu, ktorú zadáte.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Kvetinárstvo bez pultu",
+        "paragraphs": [
+          "Nemáme kamennú predajňu – kvetinárstvo vo Viedni k vám prichádza online. Kytice si vyberiete na stránke a viedenské kvetinárstvo, s ktorým stabilne spolupracujeme, ich ručne uviaže až pre vašu objednávku. Potom ich kuriér vyzdvihne a ide bez zastávky na adresu príjemcu.",
+          "Na fotografiách vidíte štýl a farby kytice. Keďže ide o živé kvety, môže sa niektorý druh alebo odtieň podľa sezóny mierne líšiť; kvetinárstvo dbá na to, aby sa zachoval celkový charakter."
+        ]
+      },
+      {
+        "heading": "Vaše želanie pre kvetinárstvo",
+        "paragraphs": [
+          "Pri objednávke môžete kvetinárstvu nechať poznámku. Ak si želáte napríklad nepárny počet stoniek, ako je na Slovensku pri radostných príležitostiach zvykom, napíšte to do poznámky – kvetinárstvo to zohľadní na požiadanie."
+        ]
+      },
+      {
+        "heading": "Doručenie po celej Viedni",
+        "paragraphs": [
+          "Doručujeme do všetkých 23 obvodov, každý deň v hodinových časových oknách medzi 9:00 a 22:00. Poplatok za doručenie závisí od obvodu a zobrazí sa po zadaní PSČ."
+        ]
+      }
+    ],
+    "faqIds": ["f-photo", "f-fresh", "f-where", "f-date"],
+    "seo": {
+      "title": "Kvetinárstvo Viedeň – online kvety s doručením",
+      "description": "Online kvetinárstvo vo Viedni: kytice ručne viazané na objednávku viedenským kvetinárstvom a doručené kuriérom do všetkých 23 obvodov."
+    }
+  },
+  {
+    "slug": "kvety-v-ten-isty-den",
+    "title": "Doručenie kvetov v ten istý deň",
+    "headline": "Doručenie kvetov v ten istý deň vo Viedni.",
+    "intro": "Spomenuli ste si na poslednú chvíľu? Pri objednávke do 18:30 (v nedeľu do 17:45) doručíme kyticu vo Viedni ešte dnes.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Uzávierky objednávok",
+        "paragraphs": [
+          "Doručenie kvetov v ten istý deň vo Viedni je možné pri objednávke od pondelka do soboty do 18:30 a v nedeľu do 17:45, pokiaľ je ešte voľné časové okno. Na výber sú časové okná, ktoré sa končia najskôr dve hodiny po vašej objednávke. Rozhoduje viedenský čas.",
+          "Najskorší možný termín pre adresu príjemcu uvidíte hneď po zadaní PSČ."
+        ]
+      },
+      {
+        "heading": "Ktoré kytice idú ešte dnes",
+        "paragraphs": [
+          "Nižšie sú kytice, ktoré dokáže naše partnerské kvetinárstvo uviazať v ten istý deň. Aj tie sa viažu ručne až po prijatí objednávky, preto pri doručení v ten istý deň nie sú k dispozícii všetky kytice zo sortimentu."
+        ]
+      },
+      {
+        "heading": "Z kvetinárstva rovno k dverám",
+        "paragraphs": [
+          "Keď je kytica hotová, kuriér ju vyzdvihne a ide bez zastávky na adresu príjemcu – do ktoréhokoľvek z 23 viedenských obvodov. O tom, že je kytica na ceste a že bola doručená, vám pošleme e-mail."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-where", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Doručenie kvetov v ten istý deň Viedeň – ešte dnes",
+      "description": "Doručenie kvetov v ten istý deň vo Viedni: objednajte do 18:30, v nedeľu do 17:45. Ručne viazané kytice do všetkých 23 obvodov."
+    }
+  },
+  {
+    "slug": "dorucenie-ruzi-viden",
+    "title": "Doručenie ruží Viedeň",
+    "headline": "Doručenie ruží vo Viedni – červené, ružové aj biele.",
+    "intro": "Kytice ruží, ručne viazané na objednávku a doručené kuriérom. Nižšie nájdete výber ružových kytíc, ktoré vo Viedni doručíme v deň, ktorý si zvolíte.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Ruže pre každú príležitosť",
+        "paragraphs": [
+          "Červené ruže hovoria o láske, ružové o nežnosti a vďake, biele pôsobia pokojne a slávnostne. Okrem klasických kytíc nájdete aj modré, viacfarebné či kombinované kytice – k výročiu, narodeninám alebo len tak.",
+          "Ak chcete nepárny počet ruží, ako je na Slovensku pri radostných príležitostiach zvykom, napíšte to pri objednávke do poznámky pre kvetinárstvo – zohľadníme to na požiadanie."
+        ]
+      },
+      {
+        "heading": "Ako sa ruže dostanú k príjemcovi",
+        "paragraphs": [
+          "Kyticu ruží ručne uviaže viedenské kvetinárstvo, s ktorým stabilne spolupracujeme, a kuriér ju prinesie priamo na adresu príjemcu. Dátum vyberiete v kalendári, k nemu hodinové časové okno medzi 9:00 a 22:00 – od pondelka do nedele, do všetkých 23 obvodov.",
+          "Poplatok za doručenie závisí od obvodu a uvidíte ho po zadaní PSČ."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-card", "f-anon"],
+    "seo": {
+      "title": "Doručenie ruží Viedeň – kytice ruží s doručením",
+      "description": "Doručenie ruží vo Viedni: červené, ružové a biele ruže, ručne viazané a doručené kuriérom v zvolenom časovom okne do všetkých 23 obvodov."
+    }
+  },
+  {
+    "slug": "smutocne-kvety-a-vence",
+    "title": "Smútočné kvety a vence",
+    "headline": "Smútočné kvety a vence vo Viedni.",
+    "intro": "Keď chýbajú slová, kvety vyjadria posledný pozdrav. Smútočné vence a kytice, dôstojne aranžované a doručené vo Viedni.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "category": "trauer", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Smútočné vence a kytice",
+        "paragraphs": [
+          "Na pohreb a na rozlúčku ponúkame smútočné vence a smútočné kytice v bielej, červenej, ružovej, žltej, oranžovej aj pestrej podobe. Biela vyjadruje pokoj a tichú účasť, červená lásku, ktorá zostáva aj po rozlúčke.",
+          "Stuhu s nápisom na veniec – napríklad meno alebo krátky text na rozlúčku – pripravíme na požiadanie: požadovaný text napíšte pri objednávke do poznámky pre kvetinárstvo."
+        ]
+      },
+      {
+        "heading": "Párny počet kvetov",
+        "paragraphs": [
+          "Na Slovensku sa na pohreb tradične nosí párny počet kvetov. Ak si želáte smútočnú kyticu s párnym počtom stoniek, uveďte to v poznámke pre kvetinárstvo – zohľadníme to na požiadanie."
+        ]
+      },
+      {
+        "heading": "Doručenie naplánujte včas",
+        "paragraphs": [
+          "Doručujeme na adresu vo Viedni, ktorú zadáte, do všetkých 23 obvodov, každý deň v hodinových časových oknách medzi 9:00 a 22:00. Zvoľte termín s dostatočnou rezervou pred rozlúčkou.",
+          "Ak ste na Slovensku alebo inde v zahraničí a nemôžete prísť osobne, kvety môžu odovzdať vašu sústrasť rodine vo Viedni."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-change", "f-card"],
+    "seo": {
+      "title": "Smútočné kvety a vence Viedeň – doručenie",
+      "description": "Smútočné kvety a vence vo Viedni: smútočné vence a kytice, ručne aranžované, stuha s nápisom na požiadanie. Doručenie do všetkých 23 obvodov."
+    }
+  },
+  {
+    "slug": "kvety-na-mdz",
+    "title": "Kvety na MDŽ",
+    "headline": "Kvety na MDŽ – k Medzinárodnému dňu žien 8. marca vo Viedni.",
+    "intro": "Na Slovensku patrí 8. marec ženám – mamám, babkám, kolegyniam aj kamarátkam. Pošlite im kyticu, ktorú vo Viedni doručíme presne v tento deň.",
+    "image": "/images/products/sortiment/tulpenstrauss-2.jpg",
+    "productFilter": { "occasions": ["danke", "geburtstag", "einfach-so"], "colors": ["rosa", "lila", "gelb"], "seasons": ["ganzjaehrig", "fruehling"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "MDŽ a kvety",
+        "paragraphs": [
+          "Medzinárodný deň žien sa slávi každý rok 8. marca. Na Slovensku k nemu neodmysliteľne patria kvety – kedysi to býval klinček, dnes skôr tulipány, ruže a jarné kytice v ružovej, fialovej či žltej.",
+          "Či je to mama, sestra, priateľka alebo kolegyňa, ktorá žije vo Viedni – kyticou jej dáte najavo, že na ňu myslíte, aj keď nie ste spolu."
+        ]
+      },
+      {
+        "heading": "Doručenie presne 8. marca",
+        "paragraphs": [
+          "V kalendári zvoľte 8. marec a hodinové časové okno medzi 9:00 a 22:00. Doručujeme do všetkých 23 viedenských obvodov, aj keď MDŽ pripadne na víkend. Kyticu ručne uviaže viedenské partnerské kvetinárstvo a kuriér ju prinesie priamo k dverám.",
+          "Posielate kvety viacerým kolegyniam do kancelárie? Aj na firemnú adresu vo Viedni doručíme bez problémov. Ku každej kytici môžete pridať pohľadnicu s osobným pozdravom."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-business", "f-card"],
+    "seo": {
+      "title": "Kvety na MDŽ – doručenie 8. marca vo Viedni",
+      "description": "Kvety na MDŽ: kytice k Medzinárodnému dňu žien, ručne viazané a doručené 8. marca do všetkých 23 viedenských obvodov."
+    }
+  },
+  {
+    "slug": "kvety-na-den-matiek",
+    "title": "Kvety na Deň matiek",
+    "headline": "Kvety na Deň matiek – kytica pre mamu vo Viedni.",
+    "intro": "Deň matiek sa na Slovensku aj v Rakúsku oslavuje druhú májovú nedeľu. Kyticu pre mamu vo Viedni doručíme aj v nedeľu.",
+    "image": "/images/products/sortiment/rosalie-1.jpg",
+    "productFilter": { "category": "pastell", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Druhá nedeľa v máji",
+        "paragraphs": [
+          "Deň matiek pripadá na Slovensku na druhú nedeľu v máji – rovnako ako v Rakúsku. Ak teda vaša mama žije vo Viedni, oslavuje sa tam v ten istý deň. Kvety sú k tomuto dňu najobľúbenejším darčekom: ruže, jemné pastelové kytice, tulipány alebo kvety v črepníku, ktoré vydržia dlhšie.",
+          "Ku kytici môžete pridať pohľadnicu s vlastnými slovami."
+        ]
+      },
+      {
+        "heading": "Doručenie aj v nedeľu",
+        "paragraphs": [
+          "Doručujeme od pondelka do nedele, takže kytica môže prísť priamo na Deň matiek. V kalendári vyberte dátum a hodinové časové okno medzi 9:00 a 22:00 – napríklad doobeda, ešte pred rodinným obedom.",
+          "Kyticu ručne uviaže viedenské partnerské kvetinárstvo a kuriér ju prinesie do ktoréhokoľvek z 23 viedenských obvodov. Keďže ide o obľúbený termín, odporúčame objednať s predstihom."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-card", "f-nobody"],
+    "seo": {
+      "title": "Kvety na Deň matiek – doručenie vo Viedni",
+      "description": "Kvety na Deň matiek, druhú májovú nedeľu: ručne viazané kytice pre mamu, doručené vo Viedni aj v nedeľu, v zvolenom časovom okne."
+    }
+  },
+  {
+    "slug": "kvety-na-meniny",
+    "title": "Kvety na meniny",
+    "headline": "Kvety na meniny – blahoželanie do Viedne.",
+    "intro": "Na Slovensku má každý deň v kalendári svoje meno a meniny sa oslavujú takmer ako narodeniny. Pošlite oslávencovi vo Viedni kyticu presne v deň jeho mien.",
+    "image": "/images/products/sortiment/rose-dream-1.jpg",
+    "productFilter": { "occasions": ["geburtstag", "danke", "einfach-so"], "colors": ["rosa", "gelb", "orange"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Čo sú meniny",
+        "paragraphs": [
+          "Slovenský kalendár mien priraďuje každému dňu v roku jedno alebo viac mien. V deň, keď má svoje meno, oslavuje človek meniny: rodina, priatelia a kolegovia mu blahoželajú a často prinesú kvety, sladkosť alebo malý darček. Na Slovensku sa tento zvyk drží dodnes a pre mnohých sú meniny rovnako dôležité ako narodeniny.",
+          "Ak váš blízky žije vo Viedni, kytica k meninám mu pripomenie domov – a ukáže, že ste nezabudli."
+        ]
+      },
+      {
+        "heading": "Kytica v správny deň",
+        "paragraphs": [
+          "Pozrite si v kalendári mien, kedy má oslávenec meniny, a tento dátum vyberte pri objednávke spolu s hodinovým časovým oknom medzi 9:00 a 22:00. Doručujeme od pondelka do nedele do všetkých 23 viedenských obvodov.",
+          "Aby ste na budúci rok nezabudli, môžete si u nás nastaviť pripomienku. Ak chcete nepárny počet kvetov, napíšte to do poznámky pre kvetinárstvo – zohľadníme to na požiadanie."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-card", "f-nobody"],
+    "seo": {
+      "title": "Kvety na meniny – doručenie do Viedne",
+      "description": "Kvety na meniny: pošlite blahoželanie s kyticou do Viedne presne v deň mien. Ručne viazané kytice, doručenie do všetkých 23 obvodov."
+    }
+  },
+  {
+    "slug": "kvety-na-valentina",
+    "title": "Kvety na Valentína",
+    "headline": "Kvety na Valentína – ruže pre lásku vo Viedni.",
+    "intro": "14. február je deň zamilovaných. Kyticu červených ruží alebo inú kyticu z lásky doručíme vo Viedni v časovom okne, ktoré si vyberiete.",
+    "image": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+    "productFilter": { "occasions": ["liebe"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Valentín a ruže",
+        "paragraphs": [
+          "Na Valentína, 14. februára, sú najčastejším darčekom červené ruže – symbol lásky. Rovnako dobre však poteší aj nežná ružová kytica, ruže v darčekovom boxe alebo kombinácia červenej a bielej.",
+          "Ak chcete nepárny počet ruží, ako je na Slovensku zvykom, napíšte to pri objednávke do poznámky pre kvetinárstvo – zohľadníme to na požiadanie."
+        ]
+      },
+      {
+        "heading": "Prekvapenie v pravú chvíľu",
+        "paragraphs": [
+          "V kalendári zvoľte 14. február a hodinové časové okno medzi 9:00 a 22:00 – ráno pred prácou, na obed do kancelárie alebo večer domov. Ku kytici môžete pridať pohľadnicu s vlastným vyznaním; ak chcete zostať tajným ctiteľom, pošlite kvety anonymne.",
+          "Valentín je jeden z najrušnejších dní v roku, preto odporúčame objednať s predstihom. Doručujeme do všetkých 23 viedenských obvodov, kytice ručne viaže viedenské partnerské kvetinárstvo."
+        ]
+      }
+    ],
+    "faqIds": ["f-window", "f-date", "f-anon", "f-nobody"],
+    "seo": {
+      "title": "Kvety na Valentína – ruže s doručením vo Viedni",
+      "description": "Kvety na Valentína: červené ruže a romantické kytice, ručne viazané a doručené 14. februára vo Viedni, aj anonymne a s pohľadnicou."
+    }
+  },
+  {
+    "slug": "kvety-na-svadbu",
+    "title": "Kvety na svadbu",
+    "headline": "Kvety na svadbu – blahoželanie novomanželom vo Viedni.",
+    "intro": "Nemôžete byť na svadbe osobne alebo chcete novomanželov prekvapiť? Svetlú, slávnostnú kyticu doručíme na adresu vo Viedni v deň, ktorý si zvolíte.",
+    "image": "/images/products/sortiment/rosenkuss-1.jpg",
+    "productFilter": { "occasions": ["hochzeit"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Kytica ako svadobné blahoželanie",
+        "paragraphs": [
+          "K svadbe sa najčastejšie hodia svetlé kytice – biele a krémové ruže, jemné ružové tóny alebo kombinácia červenej a bielej. Pôsobia slávnostne a ladia k svadobnej výzdobe.",
+          "Ku kytici pridajte pohľadnicu s vlastným blahoželaním, aby novomanželia vedeli, kto na nich myslí. Kvety v črepníku sú zasa pekným darčekom, ktorý im zostane aj po svadbe."
+        ]
+      },
+      {
+        "heading": "Doručenie v deň svadby",
+        "paragraphs": [
+          "Vyberte v kalendári dátum a hodinové časové okno medzi 9:00 a 22:00 a zadajte adresu vo Viedni – domov novomanželom alebo na miesto oslavy. Doručujeme od pondelka do nedele, teda aj na sobotňajšiu svadbu, do všetkých 23 obvodov.",
+          "Kyticu ručne uviaže viedenské partnerské kvetinárstvo a kuriér ju prinesie priamo na adresu. Ak sa niečo zmení, napríklad čas alebo miesto, ozvite sa nám čo najskôr."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-business", "f-change"],
+    "seo": {
+      "title": "Kvety na svadbu – doručenie vo Viedni",
+      "description": "Kvety na svadbu: svetlé, slávnostné kytice ako blahoželanie novomanželom, doručené vo Viedni v zvolený deň a časové okno."
+    }
+  }
+]

@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Ružičaste ruže, pink gerbere i bijeli ljiljani",
+      "shortDescription": "Svijetao, prozračan buket u ružičastoj i bijeloj boji koji u svaki prostor unosi dobro raspoloženje.",
+      "description": "Rosé Dream spaja ružičaste ruže i pink gerbere s bijelim ljiljanima, nježnom gipsofilom i svježim zelenilom. Prozračno aranžiran i svijetao, pristaje za rođendan, kao zahvala ili jednostavno bez povoda.",
+      "flowers": [
+        "Ruže",
+        "Gerbere",
+        "Ljiljani",
+        "Gipsofila"
+      ],
+      "care": [
+        "Svaki dan sipajte svježu vodu u vazu.",
+        "Po potrebi ponovo podrežite stabljike.",
+        "Redovno uklanjajte uvele cvjetove."
+      ],
+      "seo": {
+        "title": "Rosé Dream – buket u ružičastoj i bijeloj",
+        "description": "Rosé Dream: ružičaste ruže, pink gerbere i bijeli ljiljani, prozračno aranžirani. Svijetao buket za rođendan i zahvalu – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Buket ružičastih ruža, pink gerbera i bijelih ljiljana u staklenoj vazi na drvenoj komodi"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Žuti buket",
+      "tagline": "Žute gerbere, ruže i gipsofila",
+      "shortDescription": "Sunčan buket u žutoj i bijeloj boji, vezan žutom mašnom.",
+      "description": "Jarko žute gerbere susreću se s bijelim i žutim ružama, gipsofilom i svježim zelenilom. U svijetlom omotu sa žutom mašnom – buket za rođendan, kao čestitka, zahvala ili želja za brzo ozdravljenje.",
+      "flowers": [
+        "Gerbere",
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Ne stavljajte na jako sunce."
+      ],
+      "seo": {
+        "title": "Žuti buket – gerbere i ruže u žutoj",
+        "description": "Žute gerbere, bijele i žute ruže s gipsofilom i žutom mašnom. Vedar pozdrav za rođendan ili ozdravljenje – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Buket žutih gerbera te bijelih i žutih ruža u svijetlom omotu sa žutom mašnom"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Bijeli buket",
+      "tagline": "Svijetle ruže, gerbere i ljiljani",
+      "shortDescription": "Svijetao, smiren buket u bijeloj i krem boji s nježnim ružičastim detaljima.",
+      "description": "Bijeli buket spaja svijetle ruže, gerbere i ljiljane s gipsofilom u jednostavan, bezvremenski buket. Nježni detalji u ružičastoj boji i boji kajsije unose lakoću. Pristaje za godišnjicu braka ili drugu godišnjicu, kao zahvala ili kao elegantan pozdrav.",
+      "flowers": [
+        "Ruže",
+        "Gerbere",
+        "Ljiljani",
+        "Gipsofila"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Po potrebi pažljivo uklonite polen ljiljana."
+      ],
+      "seo": {
+        "title": "Bijeli buket – buket u bijeloj i krem boji",
+        "description": "Svijetle ruže, gerbere i ljiljani s gipsofilom: jednostavan buket za godišnjicu, godišnjicu braka ili zahvalu – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Svijetao buket krem ruža, ružičastih gerbera, ljiljana i gipsofile u bijelom omotu"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Plave i bijele ruže u plavom omotu",
+      "shortDescription": "Plave i bijele ruže u svijetloplavom omotu – buket koji se ističe.",
+      "description": "Blue Bouquet kombinuje plave i bijele ruže s gipsofilom, jednim bijelim ljiljanom i svježim zelenilom. Svijetloplavi omot preuzima boju cvjetova. Neobičan poklon za rođendan, godišnjicu ili za ljude koji vole nešto posebno.",
+      "flowers": [
+        "Ruže",
+        "Ljiljani",
+        "Gipsofila"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – plave i bijele ruže",
+        "description": "Plave i bijele ruže s gipsofilom u svijetloplavom omotu. Neobičan buket ruža za rođendan ili godišnjicu – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Buket plavih i bijelih ruža s gipsofilom u svijetloplavom omotu na drvenoj komodi"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Ruže duginih boja u mnogo nijansi",
+      "shortDescription": "Buket ruža duginih boja kod kojih svaki cvijet blista u više boja.",
+      "description": "Farbensinfonie se sastoji od ruža duginih boja: svaki cvijet pokazuje više boja jednu uz drugu, od crvene i narandžaste preko žute i zelene do plave i ljubičaste. Gusto aranžiran, buket djeluje poput šarene lopte. Veselo iznenađenje za rođendan ili proslavu.",
+      "flowers": [
+        "Ruže duginih boja"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – ruže duginih boja",
+        "description": "Ruže duginih boja kod kojih svaki cvijet blista u više boja. Veseo buket ruža za rođendan – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Farbensinfonie (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Farbensinfonie (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Farbensinfonie (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Gust buket ruža duginih boja u krem vazi",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Ruže duginih boja izbliza, svaki cvijet u više boja"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelicije, ljiljani i gerbere u narandžastoj i žutoj",
+      "shortDescription": "Egzotičan buket u narandžastoj i žutoj boji sa strelicijama (rajskim pticama) kao glavnim detaljem.",
+      "description": "Sonnenzauber spaja upečatljive strelicije (rajske ptice) s bijelim ljiljanima, žutim gerberama i svježim zelenilom. Tople narandžaste i žute nijanse daju buketu živahan, ljetni karakter.",
+      "flowers": [
+        "Strelicije (rajske ptice)",
+        "Ljiljani",
+        "Gerbere",
+        "Gipsofila"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Održavajte vazu čistom i redovno mijenjajte vodu.",
+        "Ne stavljajte na jako sunce."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelicije i gerbere",
+        "description": "Strelicije, ljiljani i žute gerbere u toploj narandžastoj i žutoj boji. Egzotičan buket koji privlači pogled – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Egzotičan buket strelicija, bijelih ljiljana i žutih gerbera u prozirnoj foliji",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Pogled odozgo na strelicije, ljiljan i žute gerbere iz buketa"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Cvjetovi u pink i ružičastoj s gerberama i ljiljanima",
+      "shortDescription": "Okrugao, razigran buket u pink i ružičastoj boji sa žutim detaljima.",
+      "description": "Pink Bouquet spaja cvjetove u pink i ružičastoj boji, među njima ljiljane i gerbere, u okrugao, razigran buket. Žute gerbere unose svježinu, a ružičasti omot zaokružuje cjelinu. Lijep za rođendan, godišnjicu, Majčin dan ili jednostavno bez povoda.",
+      "flowers": [
+        "Ljiljani",
+        "Gerbere"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Redovno uklanjajte uvele cvjetove."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – buket u pink i ružičastoj",
+        "description": "Okrugao buket u pink i ružičastoj boji s ljiljanima i gerberama. Za rođendan, Majčin dan ili bez povoda – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Okrugao buket u pink i ružičastoj boji sa žutim gerberama u ružičastom omotu",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Buket s ružičastim ljiljanima, žutim gerberama i pink cvjetovima u ružičastom omotu s mašnom"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Ruže u narandžastoj boji i boji kajsije",
+      "shortDescription": "Ruže u narandžastoj boji i boji kajsije – topao buket poput zalaska sunca.",
+      "description": "Orange Bouquet se sastoji od ruža u narandžastoj boji i boji kajsije, upotpunjenih nježnim zelenilom i umotanih u svijetli omot. Topao i veseo, pristaje za rođendan, kao zahvala ili da nekome uljepša dan.",
+      "flowers": [
+        "Ruže"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – narandžaste ruže",
+        "description": "Ruže u narandžastoj boji i boji kajsije u svijetlom omotu. Topao buket ruža za rođendan ili kao zahvala – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Orange Bouquet (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Orange Bouquet (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Orange Bouquet (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Buket narandžastih ruža i ruža boje kajsije u svijetlom omotu na drvenoj komodi"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Tamnocrvene ruže u tamnom omotu",
+      "shortDescription": "Raskošan buket tamnocrvenih ruža s crvenom satenskom mašnom.",
+      "description": "Red Rose Bouquet je gusto aranžiran buket tamnocrvenih ruža u tamnom omotu, povezan crvenom satenskom mašnom. Klasična ljubavna izjava za Valentinovo, godišnjicu ili prosidbu.",
+      "flowers": [
+        "Ruže"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – crvene ruže",
+        "description": "Tamnocrvene ruže u tamnom omotu s crvenom satenskom mašnom. Klasičan buket ruža za Valentinovo i godišnjicu – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Red Rose Bouquet (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Red Rose Bouquet (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Red Rose Bouquet (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Buket tamnocrvenih ruža u tamnosivom omotu s crvenom satenskom mašnom",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Položen buket crvenih ruža u crno-bijelom omotu pored svijeća"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Ružičasti buket",
+      "tagline": "Ruže i gerbere u ružičastoj, pastelnoj i boji jorgovana",
+      "shortDescription": "Nježan, romantičan buket u ružičastoj i pastelnim bojama.",
+      "description": "Ružičasti buket spaja ruže u ružičastoj i pastelnim bojama s gerberama i cvjetovima boje jorgovana. U bijelom omotu s ružičastom mašnom djeluje lagano i nježno. Lijep za rođendan, Majčin dan, rođenje djeteta ili kao pozdrav.",
+      "flowers": [
+        "Ruže",
+        "Gerbere"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Ružičasti buket – ruže u ružičastoj i pastelnoj",
+        "description": "Ruže i gerbere u ružičastoj, pastelnoj i boji jorgovana, u bijelom omotu. Za rođendan, Majčin dan ili rođenje djeteta – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Buket ružičastih ruža, gerbera i cvjetova boje jorgovana u bijelom omotu s ružičastom mašnom"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Crne ruže u tamnom omotu",
+      "shortDescription": "Crne ruže u tamnom omotu – tajanstveno i neobično.",
+      "description": "Blackroses je buket crnih ruža u tamnom, prozirnom omotu. Neobična poruka za ljude koji cijene nešto posebno, na primjer za rođendan ili godišnjicu.",
+      "flowers": [
+        "Ruže"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Blackroses – crne ruže",
+        "description": "Crne ruže u tamnom omotu: neobičan buket ruža za ljude koji vole nešto posebno – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Blackroses (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Blackroses (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Blackroses (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Buket crnih ruža u crnom omotu u staklenoj vazi",
+        "/images/products/sortiment/blackroses-2.jpg": "Crne ruže bez omota u staklenoj vazi ispred prozora"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Plave ruže s gipsofilom",
+      "shortDescription": "Jarko plave ruže s gipsofilom – rijetkost koja privlači pogled.",
+      "description": "Blaue Liebe je buket jarko plavih ruža, prozračno upotpunjenih nježnom gipsofilom i umotanih u plavi omot. Poseban poklon za rođendan, godišnjicu ili kao znak duboke povezanosti.",
+      "flowers": [
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – plave ruže",
+        "description": "Jarko plave ruže s gipsofilom u plavom omotu. Rijedak buket ruža za posebne ljude – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Blaue Liebe (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Blaue Liebe (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Blaue Liebe (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Buket plavih ruža s gipsofilom u plavom omotu u bijeloj vazi",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Plave ruže s gipsofilom u plavom omotu, sprijeda",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Položen buket plavih ruža u plavom omotu na drvenoj komodi"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Ružičaste ruže s gipsofilom",
+      "shortDescription": "Ružičaste ruže u nježnom omotu – puno ljubavi i elegancije.",
+      "description": "Rosalie je buket ružičastih ruža, prozračno upotpunjenih gipsofilom i umotanih u nježnoružičasti omot. Ženstven i smiren, pristaje za Majčin dan, rođendan, godišnjicu ili kao zahvala.",
+      "flowers": [
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Rosalie – ružičaste ruže s gipsofilom",
+        "description": "Ružičaste ruže s gipsofilom u nježnoružičastom omotu. Za Majčin dan, rođendan ili kao zahvala – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Rosalie (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Rosalie (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Rosalie (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Buket ružičastih ruža s gipsofilom u nježnoružičastom omotu u bijeloj vazi",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie u ružičastom omotu u jednostavnoj bijeloj vazi",
+        "/images/products/sortiment/rosalie-3.jpg": "Ružičaste ruže s gipsofilom u bijeloj rebrastoj vazi",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie položena, pogled odozgo na ružičaste ruže i gipsofilu"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Crveno-bijeli miks",
+      "tagline": "Crvene i bijele ruže",
+      "shortDescription": "Crvene i bijele ruže u svečanom buketu.",
+      "description": "Crveno-bijeli miks spaja crvene i bijele ruže u bijelom omotu, zavisno od veličine prozračno upotpunjene gipsofilom. Strast i nježnost zajedno: buket za Valentinovo, godišnjicu, godišnjicu braka ili kao elegantan poklon.",
+      "flowers": [
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Crveno-bijeli miks – crvene i bijele ruže",
+        "description": "Crvene i bijele ruže u svečanom omotu. Za Valentinovo, godišnjicu ili godišnjicu braka, u šest veličina – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Crveno-bijeli miks (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Crveno-bijeli miks (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Crveno-bijeli miks (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Buket crvenih i bijelih ruža s gipsofilom u bijelom omotu, pored latice ruža",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Crvene i bijele ruže gusto aranžirane u bijelom omotu",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Crveno-bijeli buket ruža u bijelom omotu na drvenoj komodi",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Položen buket crvenih i bijelih ruža, pogled odozgo"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Buket tulipana",
+      "tagline": "Tulipani u jednoj boji ili miješani",
+      "shortDescription": "Jednostavan buket tulipana, jednobojan ili šareno miješan.",
+      "description": "Tulipani svojim jasnim bojama i vitkim oblikom unose proljetno raspoloženje u dom. Buket je u potpunosti od tulipana, po izboru u jednoj boji ili kao šareni miks. Dostupan u crvenoj, žutoj, ljubičastoj, ružičastoj, narandžastoj, bijeloj boji i kao miks.",
+      "flowers": [
+        "Tulipani"
+      ],
+      "care": [
+        "Stabljike ravno podrežite i stavite u hladnu vodu.",
+        "Dovoljno je malo vode, ali je redovno dolijevajte.",
+        "Tulipani u vazi nastavljaju rasti, po potrebi ih ponovo podrežite."
+      ],
+      "seo": {
+        "title": "Buket tulipana – tulipani u mnogo boja",
+        "description": "Buket tulipana u crvenoj, žutoj, ljubičastoj, ružičastoj, narandžastoj, bijeloj boji ili miješano. Proljeće za Vaš dom – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Crvena",
+        "gelb": "Žuta",
+        "lila": "Ljubičasta",
+        "rosa": "Ružičasta",
+        "orange": "Narandžasta",
+        "weiss": "Bijela",
+        "mix": "Šareni miks"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Buket žutih tulipana u staklenoj vazi",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Ljubičasti tulipani u kraft papiru u staklenoj vazi",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Crveni tulipani u bež vazi",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Narandžasti tulipani u staklenoj vazi",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Ružičasti tulipani u staklenoj vazi na lanenoj tkanini",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Šareni miks tulipana u crvenoj, žutoj, ružičastoj, narandžastoj i ljubičastoj boji u bež vazi",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Bijeli tulipani u bijeloj vazi"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Crvene ruže s gipsofilom",
+      "shortDescription": "Izražajan buket ruža u dubokoj crvenoj boji za velike osjećaje.",
+      "description": "Red Passion spaja crvene ruže u gust, okrugao buket, uokviren gipsofilom i tamnim omotom. Dostupan u šest veličina – za romantične geste i trenutke koji trebaju ostati u sjećanju.",
+      "flowers": [
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Stabljike svježe podrežite.",
+        "Svaki dan sipajte svježu vodu.",
+        "Zaštitite od direktnog sunca."
+      ],
+      "seo": {
+        "title": "Red Passion – buket crvenih ruža",
+        "description": "Crvene ruže s gipsofilom u tamnom omotu, u šest veličina. Buket ruža za velike osjećaje – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Red Passion (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Red Passion (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Red Passion (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Položen buket tamnocrvenih ruža s gipsofilom u crno-zlatnom omotu",
+        "/images/products/sortiment/red-passion-2.jpg": "Veliki buket crvenih ruža s gipsofilom u tamnom omotu u bijeloj vazi",
+        "/images/products/sortiment/red-passion-3.jpg": "Vrlo velik, okrugao buket crvenih ruža s gipsofilom u tamnom omotu"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Gusto aranžirane crvene ruže",
+      "shortDescription": "Gusto aranžirane crvene ruže u tamnom omotu – bezvremenski i puni osjećaja.",
+      "description": "Klassiker der Liebe se sastoji od crvenih ruža, gusto aranžiranih u okrugao oblik i umotanih u tamni omot s crnom mašnom. Buket ruža za Valentinovo, godišnjicu, prosidbu ili svaku ljubavnu izjavu.",
+      "flowers": [
+        "Ruže"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – crvene ruže",
+        "description": "Gusto aranžirane crvene ruže u tamnom omotu. Klasičan buket ruža za Valentinovo, godišnjicu ili prosidbu – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Klassiker der Liebe (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Klassiker der Liebe (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Klassiker der Liebe (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Okrugao buket gusto aranžiranih crvenih ruža u crnom omotu s mašnom",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Crvene ruže u obliku kugle u tamnom omotu, sprijeda"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Crvene ruže s gipsofilom",
+      "shortDescription": "Raskošan buket ruža u šest veličina.",
+      "description": "Königin der Herzen spaja crvene ruže s nježnom gipsofilom u tamnom, prozirnom omotu. Dostupan u šest veličina – od male geste do velikog nastupa.",
+      "flowers": [
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Držite na hladnom mjestu.",
+        "Uvele cvjetove uklonite na vrijeme.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – raskošan buket ruža",
+        "description": "Crvene ruže s gipsofilom, u šest veličina. Raskošan buket ruža za velike trenutke – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Königin der Herzen (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Königin der Herzen (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Königin der Herzen (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Buket crvenih ruža s gipsofilom u tamnom omotu u bijeloj vazi",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Veliki buket crvenih ruža i gipsofile u crnom omotu",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Crvene ruže s gipsofilom u tamnom omotu u crnoj posudi",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Pogled odozgo na crvene ruže s gipsofilom u tamnom omotu u obliku zvijezde"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbere, ruže i ljiljani u toplim tonovima",
+      "shortDescription": "Topao buket u narandžastoj, ružičastoj i žutoj boji.",
+      "description": "Herbstzauber spaja gerbere, ruže i ljiljane u narandžastim, ružičastim i žutim tonovima sa svježim zelenilom. Prozračno aranžiran, unosi tople boje u dom, baš kad dani postaju kraći.",
+      "flowers": [
+        "Gerbere",
+        "Ruže",
+        "Ljiljani"
+      ],
+      "care": [
+        "Ne stavljajte pored voća.",
+        "Redovno dolijevajte vodu.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Herbstzauber – buket u toplim tonovima",
+        "description": "Gerbere, ruže i ljiljani u narandžastoj, ružičastoj i žutoj. Topao jesenji buket za rođendan ili zahvalu – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Buket narandžastih gerbera, ruža u boji kajsije i ružičastoj boji te ljiljana u staklenoj vazi"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Crvene ruže, gerbere i zeleni detalji",
+      "shortDescription": "Živahan buket u crvenoj i narandžastoj boji sa svježim zelenim detaljima.",
+      "description": "Blütenfreude spaja crvene ruže i gerbere u crvenoj i narandžastoj boji sa zelenim pompon cvjetovima i zelenilom eukaliptusa. Snažnih boja, a ipak okruglog oblika – lijep za rođendan, kao zahvala ili jednostavno bez povoda.",
+      "flowers": [
+        "Ruže",
+        "Gerbere"
+      ],
+      "care": [
+        "Svaki dan sipajte svježu vodu u vazu.",
+        "Po potrebi ponovo podrežite stabljike.",
+        "Redovno uklanjajte uvele cvjetove."
+      ],
+      "seo": {
+        "title": "Blütenfreude – ruže i gerbere u crvenoj",
+        "description": "Crvene ruže, gerbere u crvenoj i narandžastoj te svježi zeleni detalji. Živahan buket za rođendan – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Buket crvenih ruža, crvenih i narandžastih gerbera i zelenih pompon cvjetova u staklenoj vazi",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude u bijeloj vazi na drvenoj komodi"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Ružičaste ruže, ljiljani i gipsofila",
+      "shortDescription": "Nježne ružičaste nijanse s ljiljanima – smireno, skladno i fino.",
+      "description": "Zartrosa Zauber spaja ružičaste ruže s ružičastim ljiljanima i gipsofilom u ružičastom omotu. Buket djeluje smireno i skladno, s finom, romantičnom notom.",
+      "flowers": [
+        "Ruže",
+        "Ljiljani",
+        "Gipsofila"
+      ],
+      "care": [
+        "Uklonite listove koji dopiru do vode.",
+        "Držite na hladnom mjestu.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – ruže i ljiljani u ružičastoj",
+        "description": "Ružičaste ruže, ružičasti ljiljani i gipsofila u nježnom omotu. Smiren, romantičan buket – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Buket ružičastih ruža, ružičastih ljiljana i gipsofile u ružičastom omotu u bijeloj vazi",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber u ružičastom omotu s velikom mašnom"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbere, ljiljani i ruže u narandžastoj i žutoj",
+      "shortDescription": "Blistava narandžasta i žuta za dobre vijesti i sunčane prilike.",
+      "description": "Strahlender Tag spaja narandžaste gerbere i ljiljane sa žutim ružama, svijetlim karanfilima i gipsofilom. Snažne boje donose pozitivnu energiju – buket za čestitke, uspjehe i sunčane prilike.",
+      "flowers": [
+        "Gerbere",
+        "Ljiljani",
+        "Ruže",
+        "Karanfili",
+        "Gipsofila"
+      ],
+      "care": [
+        "Zaštitite od propuha.",
+        "Redovno mijenjajte vodu.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – buket u narandžastoj i žutoj",
+        "description": "Narandžaste gerbere i ljiljani sa žutim ružama i gipsofilom. Veseo buket za čestitke – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Buket narandžastih gerbera, žutih ruža i gipsofile u bijelo-zlatnom omotu",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Narandžaste gerbere, ljiljani i žuta ruža u bijeloj vazi",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Okrugao buket narandžastih gerbera i ljiljana, žutih ruža i svijetlih karanfila u staklenoj vazi"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Ruže u ružičastoj, krem i boji kajsije",
+      "shortDescription": "Skladan buket ruža između klasične ljepote i modernog stila.",
+      "description": "Rosentraum spaja ruže u ružičastoj, krem i boji kajsije s ljubičastim cvjetovima, grančicama s bobicama i svježim zelenilom. U omotu boje stare ruže buket djeluje raskošno, a ujedno moderno.",
+      "flowers": [
+        "Ruže"
+      ],
+      "care": [
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Održavajte vazu čistom.",
+        "Redovno obnavljajte vodu."
+      ],
+      "seo": {
+        "title": "Rosentraum – ruže u ružičastoj i krem",
+        "description": "Ruže u ružičastoj, krem i boji kajsije s ljubičastim detaljima u omotu boje stare ruže. Skladan buket ruža – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Aranžiran buket ruža u ružičastoj, krem i boji kajsije u omotu boje stare ruže",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum u omotu boje stare ruže u bijeloj vazi",
+        "/images/products/sortiment/rosentraum-3.jpg": "Pogled odozgo na ruže, ljubičaste cvjetove i grančice s bobicama iz buketa"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Bijele ruže s gipsofilom",
+      "shortDescription": "Bijele ruže s gipsofilom – nježno, romantično i svijetlo.",
+      "description": "Rosenkuss se sastoji od bijelih do krem ruža, prozračno upotpunjenih nježnom gipsofilom i umotanih u bijeli omot. Buket za naklonost, bliskost i male ljubavne poruke.",
+      "flowers": [
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Ne držite na pretoplom mjestu.",
+        "Svaki dan provjerite nivo vode.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Rosenkuss – bijele ruže",
+        "description": "Bijele ruže s gipsofilom u bijelom omotu. Nježan, romantičan buket ruža – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Rosenkuss (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Rosenkuss (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Rosenkuss (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Buket bijelih ruža s gipsofilom u bijelom omotu u bijeloj vazi",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Veliki buket bijelih ruža u bijelom omotu u bijeloj vazi",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Položen buket bijelih ruža s gipsofilom na drvenoj komodi"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Ruže u pastelnoj, pink i bordo boji",
+      "shortDescription": "Ruže u pastelnoj i pink boji, elegantno složene.",
+      "description": "Rosenglanz spaja ruže u pastelnoružičastoj, krem, pink i bordo boji s gipsofilom u ružičastom omotu. Bezvremenskog izgleda, dostupan u šest veličina.",
+      "flowers": [
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Stabljike svježe podrežite.",
+        "Izbjegavajte direktno sunce.",
+        "Redovno mijenjajte vodu u vazi."
+      ],
+      "seo": {
+        "title": "Rosenglanz – ruže u pastelnoj i pink boji",
+        "description": "Ruže u pastelnoružičastoj, pink i bordo boji s gipsofilom, u šest veličina. Elegantan buket ruža – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali",
+          "detailAlt": "Rosenglanz (mali) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "m": {
+          "label": "Srednji",
+          "detailAlt": "Rosenglanz (srednji) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "l": {
+          "label": "Veliki",
+          "detailAlt": "Rosenglanz (veliki) u ruci, u pozadini bečka ulica s tramvajem"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Buket ruža u pastelnoružičastoj, pink i bordo boji u ružičastom omotu u staklenoj vazi",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Okrugao buket ruža s gipsofilom u ružičastom omotu, sprijeda",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Položen buket pastelnih i pink ruža na drvenoj komodi"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Ružičaste ruže, gerbera, ljiljani i karanfili",
+      "shortDescription": "Izražajan buket u ružičastoj i pink boji koji govori bez riječi.",
+      "description": "Pure Liebe spaja ružičaste ruže s pink gerberom, ružičastim ljiljanima, karanfilima i gipsofilom. Intenzivnih ružičastih i pink tonova, s laganim svijetlim detaljima – buket pun osjećaja.",
+      "flowers": [
+        "Ruže",
+        "Gerbere",
+        "Ljiljani",
+        "Karanfili",
+        "Gipsofila"
+      ],
+      "care": [
+        "Redovno sipajte svježu vodu.",
+        "Održavajte vazu čistom.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Pure Liebe – buket u ružičastoj i pink boji",
+        "description": "Ružičaste ruže, pink gerbere, ljiljani i karanfili s gipsofilom. Buket pun osjećaja – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Buket ružičastih ruža, pink gerbere i ružičastih ljiljana u bež vazi",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe s ljiljanima, gerberama i karanfilima u bež vazi",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Okrugao buket ružičastih ruža, gerbera, karanfila i gipsofile u staklenoj vazi"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Pink gerbere, ruže i ljubičasti detalji",
+      "shortDescription": "Snažni pink tonovi složeni u svjež, moderan buket.",
+      "description": "Pink Harmony spaja pink gerbere i ruže s bijelim cvjetovima i cvjetovima boje jorgovana, ljubičastim detaljima i gipsofilom. Živahan i svjež, s mnogo šarma.",
+      "flowers": [
+        "Gerbere",
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Držite na hladnom mjestu.",
+        "Uklonite uvele cvjetove.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbere i ruže u pink boji",
+        "description": "Pink gerbere i ruže s detaljima boje jorgovana i ljubičastim detaljima. Svjež, moderan buket – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Buket pink gerbera, ruža i cvjetova boje jorgovana u bež vazi",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Okrugao buket s pink gerberama, ružama i ljubičastim detaljima"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Šareni buket ruža u ružičastoj, žutoj, boji kajsije i ljubičastoj",
+      "shortDescription": "Velikodušan, šaren buket ruža za posebne prilike.",
+      "description": "Love Deluxe je buket ruža u mnogo boja: ružičastoj, krem, boji kajsije, žutoj i ljubičastoj, umotan u ružičasti omot. Za posebne prilike i velike geste, dostupan u pet veličina.",
+      "flowers": [
+        "Ruže"
+      ],
+      "care": [
+        "Ponovo podrežite stabljike.",
+        "Svaki dan mijenjajte vodu u vazi.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Love Deluxe – šareni buket ruža",
+        "description": "Ruže u ružičastoj, krem, boji kajsije, žutoj i ljubičastoj u ružičastom omotu, u pet veličina. Za velike geste – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Šareni buket ruža u ružičastoj, žutoj, boji kajsije i ljubičastoj u ružičastom omotu u bijeloj vazi",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Veliki šareni buket ruža u ružičastom omotu, sprijeda",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Položen šareni buket ruža u ružičastom omotu na drvenoj komodi"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Crvene i zelene ruže s ljiljanima",
+      "shortDescription": "Emotivan buket u crvenoj boji kojim kažete „Volim te“.",
+      "description": "Liebeserklärung spaja crvene ruže sa svijetlozelenim ružama, bijelim ljiljanima, crvenim cvjetovima kao detaljima i gipsofilom. Snažan, a ipak svjež – buket koji osjećaje čini vidljivim.",
+      "flowers": [
+        "Ruže",
+        "Ljiljani",
+        "Gipsofila"
+      ],
+      "care": [
+        "Zaštitite od vrućine.",
+        "Redovno obnavljajte vodu.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – crvene ruže i ljiljani",
+        "description": "Crvene i svijetlozelene ruže s ljiljanima i gipsofilom. Buket kojim kažete „Volim te“ – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Buket crvenih i svijetlozelenih ruža s ljiljanima i gipsofilom u staklenoj vazi",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung u bijeloj vazi na drvenoj komodi"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Ruže i gerbere u ružičastoj s narandžastim detaljima",
+      "shortDescription": "Elegantan i uravnotežen – buket profinjene suzdržanosti.",
+      "description": "Klassische Schönheit spaja ruže u boji stare ruže i bijeloj s pink gerberom, sitnim narandžastim cvjetovima i gipsofilom. U tamnom omotu sa zlatnim rubom buket djeluje uravnoteženo i bezvremenski.",
+      "flowers": [
+        "Ruže",
+        "Gerbere",
+        "Gipsofila"
+      ],
+      "care": [
+        "Ne stavljajte direktno pored grijanja.",
+        "Prije stavljanja u vazu stabljike koso podrežite.",
+        "Redovno mijenjajte vodu u vazi."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – ruže i gerbere",
+        "description": "Ruže u boji stare ruže i bijeloj s pink gerberom u tamnom omotu. Uravnotežen, bezvremenski buket – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Buket ruža boje stare ruže i pink gerbere u tamnom omotu sa zlatnim rubom",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit u bijeloj vazi",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Pogled odozgo na ruže, gerberu i gipsofilu u tamnom omotu"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Ružičaste ruže i pink gerbere",
+      "shortDescription": "Razigrano i živahno: ružičaste ruže susreću pink gerbere.",
+      "description": "Herzklopfen spaja nježnoružičaste ruže s pink gerberom, sitnim bijelo-zelenim cvjetovima i finim ljubičastim dodacima. Okruglo aranžiran i pun boja – buket s mnogo osjećaja.",
+      "flowers": [
+        "Ruže",
+        "Gerbere"
+      ],
+      "care": [
+        "Svaki dan sipajte svježu vodu.",
+        "Stabljike koso podrežite.",
+        "Držite na hladnom mjestu, bez direktnog sunca."
+      ],
+      "seo": {
+        "title": "Herzklopfen – ružičaste ruže i gerbere",
+        "description": "Nježnoružičaste ruže i pink gerbere, okruglo aranžirane. Razigran buket pun osjećaja – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Okrugao buket nježnoružičastih ruža i pink gerbere u bijeloj vazi",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen u bijeloj vazi, sa strane",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Buket ružičastih ruža i pink gerbere u staklenoj vazi"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Šareni miks s ružama i gerberama",
+      "shortDescription": "Šaren buket koji zrači radošću života.",
+      "description": "Fröhlicher Blütenmix spaja crvene ruže, gerbere u žutoj, ružičastoj i crvenoj boji te druge cvjetove u žutoj, narandžastoj i ljubičastoj. U crvenom omotu – idealan da nekome poklonite osmijeh.",
+      "flowers": [
+        "Ruže",
+        "Gerbere"
+      ],
+      "care": [
+        "Držite na hladnom mjestu.",
+        "Redovno mijenjajte vodu.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – šaren buket",
+        "description": "Crvene ruže i gerbere u žutoj, ružičastoj i crvenoj u crvenom omotu. Šaren buket pun radosti – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Šaren buket s gerberama i ružama u crvenom omotu na drvenoj komodi",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix u crvenom omotu u bijeloj vazi",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Pogled odozgo na crvene ruže te žute i ružičaste gerbere u crvenom omotu"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Ruže i gerbere u pink boji s ljubičastim detaljima",
+      "shortDescription": "Živahan miks u pink, boji kajsije i ljubičastoj.",
+      "description": "Farbtänzer spaja ruže i grmolike ruže u pink boji i boji kajsije s ružičastim gerberama, ljubičastim cvjetovima i svijetlim bobicama. Gusto i živahno aranžiran – moderan i izražajan.",
+      "flowers": [
+        "Ruže",
+        "Gerbere"
+      ],
+      "care": [
+        "Uklonite listove koji dopiru do vode.",
+        "Održavajte vazu čistom.",
+        "Prije stavljanja u vazu stabljike koso podrežite."
+      ],
+      "seo": {
+        "title": "Farbtänzer – buket u pink i ljubičastoj",
+        "description": "Ruže i gerbere u pink boji i boji kajsije s ljubičastim detaljima. Živahan, moderan buket – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Položen buket u pink i ljubičastoj boji u nježnoružičastom omotu",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Okrugao buket pink ruža, gerbera i ljubičastih cvjetova u krem vazi",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer u rebrastoj vazi, sprijeda"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Kutija cvijeća u obliku srca",
+      "tagline": "Ruže u crvenoj kutiji u obliku srca",
+      "shortDescription": "Ruže u kutiji u obliku srca – ljubavna izjava koju samo treba postaviti.",
+      "description": "U crvenoj kutiji u obliku srca aranžirane su ruže u crvenoj, ružičastoj i bijeloj boji s drugim cvjetovima i gipsofilom. Poklon za godišnjicu, Valentinovo ili kao iznenađenje puno ljubavi.",
+      "flowers": [
+        "Ruže",
+        "Gipsofila"
+      ],
+      "care": [
+        "Ruže lagano navlažite.",
+        "Držite na hladnom mjestu.",
+        "Zaštitite od direktnog sunca."
+      ],
+      "seo": {
+        "title": "Kutija cvijeća u obliku srca – ruže",
+        "description": "Ruže u crvenoj, ružičastoj i bijeloj u crvenoj kutiji u obliku srca. Za godišnjicu i Valentinovo – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Crvena kutija cvijeća u obliku srca s ružama u crvenoj, ružičastoj i bijeloj boji i gipsofilom"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klasična kutija cvijeća",
+      "tagline": "Crvene ruže u okrugloj kutiji",
+      "shortDescription": "Klasične ruže u okrugloj kutiji – jednostavno i izražajno.",
+      "description": "Klasična kutija cvijeća ispunjava okruglu kutiju gusto složenim ružama. Minimalistička i bezvremenska, pristaje za rođendan, kao zahvala ili za posebne trenutke. Dostupna u crvenoj i bijeloj boji.",
+      "flowers": [
+        "Ruže"
+      ],
+      "care": [
+        "Ruže redovno lagano zalijevajte.",
+        "Držite na hladnom mjestu.",
+        "Zaštitite od direktnog sunca."
+      ],
+      "seo": {
+        "title": "Klasična kutija cvijeća – ruže u kutiji",
+        "description": "Gusto složene ruže u okrugloj kutiji, dostupne u crvenoj i bijeloj. Jednostavan poklon – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Crvene ruže u okrugloj bijeloj kutiji s ružičastim i zlatnim rubom",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Dvije crvene baršunaste okrugle kutije s crvenim ružama na bijelom postolju"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Ružičasti anturijum u posudi",
+      "tagline": "Anturijum s ružičastim cvjetovima",
+      "shortDescription": "Anturijum s nježnoružičastim cvjetovima – elegantan i nenametljiv.",
+      "description": "Ružičasti anturijum svojim nježnim cvjetovima i sjajnim zelenim lišćem unosi boju u prostor, a da ne djeluje napadno. Pristaje u stambeni prostor jednako kao i u ured.",
+      "flowers": [
+        "Anturijum"
+      ],
+      "care": [
+        "Držite na svijetlom mjestu, bez direktnog sunca.",
+        "Redovno zalijevajte, ali izbjegavajte zadržavanje vode.",
+        "Povremeno poprskajte listove vodom."
+      ],
+      "seo": {
+        "title": "Ružičasti anturijum u posudi – sobna biljka",
+        "description": "Anturijum s nježnoružičastim cvjetovima i sjajnim lišćem. Elegantna sobna biljka kao poklon – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Ružičasti anturijum u keramičkoj posudi boje stare ruže na drvenoj komodi",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anturijum s ružičastim cvjetovima u posudi boje sljeza pored svijeća"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Crveni anturijum u posudi",
+      "tagline": "Anturijum s crvenim cvjetovima",
+      "shortDescription": "Anturijum s jarkocrvenim cvjetovima i modernim izgledom.",
+      "description": "Crveni anturijumi svojim sjajnim cvjetovima daju snažne akcente boje. Kao dekorativna sobna biljka ili poklon, uz dobru njegu dugo ostaje lijep.",
+      "flowers": [
+        "Anturijum"
+      ],
+      "care": [
+        "Svijetlo mjesto bez direktnog sunca.",
+        "Zemlju održavajte ravnomjerno vlažnom.",
+        "Izbjegavajte zadržavanje vode."
+      ],
+      "seo": {
+        "title": "Crveni anturijum u posudi – sobna biljka",
+        "description": "Anturijum s jarkocrvenim cvjetovima u posudi. Dekorativna sobna biljka kao poklon – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Crveni anturijum u crvenoj keramičkoj posudi na drvenoj komodi"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL crveni anturijum u posudi",
+      "tagline": "Veliki anturijum s crvenim cvjetovima",
+      "shortDescription": "Velik, bujan anturijum s mnogo crvenih cvjetova.",
+      "description": "Ovaj crveni anturijum visok je preko 80 cm i ima brojne crvene cvjetove iznad gustog, sjajnog lišća. Izražajan detalj koji privlači pogled u stambenom prostoru ili uredu.",
+      "flowers": [
+        "Anturijum"
+      ],
+      "care": [
+        "Držite na svijetlom mjestu, bez direktnog sunca.",
+        "Redovno zalijevajte, ali izbjegavajte zadržavanje vode.",
+        "Povremeno obrišite prašinu s listova."
+      ],
+      "seo": {
+        "title": "XXL crveni anturijum u posudi",
+        "description": "Veliki anturijum s brojnim crvenim cvjetovima u posudi. Privlači pogled u stanu ili uredu – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Veliki anturijum s mnogo crvenih cvjetova u crvenoj posudi pored svijeća"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelija u posudi",
+      "tagline": "Bromelija s crvenim cvijetom",
+      "shortDescription": "Bromelija s jarkocrvenim cvijetom i tropskim šarmom.",
+      "description": "Bromelija svojom crvenom cvjetnom rozetom i vitkim zelenim lišćem daje živahne akcente. Dekorativna sobna biljka za stambeni ili radni prostor i poseban poklon.",
+      "flowers": [
+        "Bromelija"
+      ],
+      "care": [
+        "Držite na svijetlom mjestu, bez direktnog sunca.",
+        "Redovno sipajte vodu u lijevak od listova.",
+        "Zemlju održavajte samo blago vlažnom."
+      ],
+      "seo": {
+        "title": "Bromelija u posudi – sobna biljka",
+        "description": "Bromelija s crvenim cvijetom u posudi: tropski šarm za stan ili ured – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelija s crvenim cvijetom u crvenoj posudi na drvenoj komodi"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Gumijevac (fikus) u posudi",
+      "tagline": "Gumijevac s tamnozelenim lišćem",
+      "shortDescription": "Gumijevac jednostavan za njegu, sa sjajnim tamnozelenim listovima.",
+      "description": "Gumijevac svojim velikim, sjajnim listovima djeluje moderno i smireno. Jednostavan je za njegu i dobro se uklapa u stambene i uredske prostore.",
+      "flowers": [
+        "Gumijevac (fikus)"
+      ],
+      "care": [
+        "Svijetlo do polusjenovito mjesto.",
+        "Zalijevajte umjereno, dovoljno mu je malo vode.",
+        "Povremeno obrišite prašinu s listova."
+      ],
+      "seo": {
+        "title": "Gumijevac (fikus) u posudi – lagana njega",
+        "description": "Gumijevac sa sjajnim tamnozelenim listovima. Sobna biljka jednostavna za njegu, za stan i ured – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Gumijevac s tamnozelenim listovima u crvenoj posudi na drvenoj komodi"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Bijela orhideja u posudi",
+      "tagline": "Orhideja u posudi, u više boja",
+      "shortDescription": "Orhideja u posudi – smirena, otmjena i bezvremenska.",
+      "description": "Orhideja je simbol elegancije i mira. Svojim finim cvjetnim granama otmjen je izbor za stambeni prostor, ured ili kao poklon. Dostupna u ljubičastoj, ružičastoj, žutoj, bijeloj i plavoj boji.",
+      "flowers": [
+        "Orhideja"
+      ],
+      "care": [
+        "Držite na svijetlom mjestu, bez direktnog sunca.",
+        "Zalijevajte umjereno, izbjegavajte zadržavanje vode.",
+        "Ocvale cvjetne grane uklonite tek kada se osuše."
+      ],
+      "seo": {
+        "title": "Orhideja u posudi – u pet boja",
+        "description": "Orhideja u posudi u bijeloj, ružičastoj, žutoj, ljubičastoj ili plavoj boji. Elegantna sobna biljka kao poklon – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Bijela orhideja s pink grlom cvijeta u krem keramičkoj posudi",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orhideja s nježnoružičastim cvjetovima u krem keramičkoj posudi",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Žuta orhideja u krem keramičkoj posudi",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orhideja s ljubičastim cvjetovima u pink posudi",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orhideja s plavim cvjetovima u sivoj posudi pored svijeća"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Žalobni buket, crveni",
+      "tagline": "Crvene ruže, gerbere i karanfili s jelovim granama",
+      "shortDescription": "Žalobni buket u crvenoj boji kao znak ljubavi i povezanosti.",
+      "description": "Crveni žalobni buket spaja crvene ruže, gerbere i karanfile sa žutim ružama, gipsofilom i jelovim granama. Dostojanstven gest sjećanja koji tiho izražava snažne osjećaje. Sastav se može neznatno razlikovati zavisno od sezone.",
+      "flowers": [
+        "Ruže",
+        "Gerbere",
+        "Karanfili",
+        "Gipsofila"
+      ],
+      "care": [
+        "Držite na hladnom mjestu, ne na direktnom suncu niti pored grijanja.",
+        "Kod aranžmana spužvu za cvijeće održavajte vlažnom."
+      ],
+      "seo": {
+        "title": "Žalobni buket, crveni – ruže i gerbere",
+        "description": "Žalobni buket u crvenoj boji s ružama, gerberama i karanfilima na jelovim granama, u tri veličine. Dostojanstven posljednji pozdrav – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Žalobni buket s crvenim ružama, gerberama i karanfilima, žutim ružama i jelovim granama na kamenom postolju"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Žalobni buket, ružičasti",
+      "tagline": "Ružičaste ruže i ljubičasti cvjetovi",
+      "shortDescription": "Žalobni buket u nježnim ružičastim tonovima koji pruža utjehu.",
+      "description": "Ružičaste ruže, ljubičasti i ružičasti cvjetovi i jelove grane daju ovom žalobnom buketu blag, utješan izgled. Simbolizuje zahvalnost, bliskost i sjećanje puno ljubavi – prikladan za tih, lični oproštaj.",
+      "flowers": [
+        "Ruže"
+      ],
+      "care": [
+        "Držite na hladnom mjestu, ne na direktnom suncu niti pored grijanja.",
+        "Kod aranžmana spužvu za cvijeće održavajte vlažnom."
+      ],
+      "seo": {
+        "title": "Žalobni buket, ružičasti – nježni tonovi",
+        "description": "Žalobni buket u nježnim ružičastim tonovima s ružičastim ružama na jelovim granama, u tri veličine. Za tih oproštaj – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Žalobni buket s ružičastim ružama i ljubičastim cvjetovima na jelovim granama, s bijelom mašnom, na kamenom postolju"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Žalobni buket, pastelni",
+      "tagline": "Ljiljani, ruže i plavi cvjetovi u pastelnim bojama",
+      "shortDescription": "Smiren žalobni buket u finim pastelnim tonovima.",
+      "description": "Pastelni žalobni buket spaja ružičaste ljiljane i ruže sa svijetloplavim, bijelim cvjetovima i cvjetovima boje jorgovana. Fine nijanse boja prenose utjehu i saučešće. Cvijeće se može razlikovati zavisno od sezone.",
+      "flowers": [
+        "Ljiljani",
+        "Ruže"
+      ],
+      "care": [
+        "Držite na hladnom mjestu, ne na direktnom suncu niti pored grijanja.",
+        "Kod aranžmana spužvu za cvijeće održavajte vlažnom."
+      ],
+      "seo": {
+        "title": "Žalobni buket, pastelni – smireni tonovi",
+        "description": "Pastelni žalobni buket s ljiljanima, ružama i svijetloplavim cvjetovima, u tri veličine. Diskretan i otmjen – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Pastelni žalobni buket s ružičastim ljiljanima, ružama i svijetloplavim cvjetovima, s crnom mašnom, na kamenom postolju"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Žalobni buket, narandžasti",
+      "tagline": "Ruže, gerbere i karanfili u narandžastoj i žutoj",
+      "shortDescription": "Žalobni buket u toplim narandžastim tonovima koji izražava poštovanje.",
+      "description": "Ruže, gerbere i karanfili u narandžastoj, žutoj i boji kajsije spajaju se s jelovim granama u topao žalobni buket. Simbolizuje zahvalnost i sjećanje na ispunjen život i prikladan je za odar ili komemoraciju.",
+      "flowers": [
+        "Ruže",
+        "Gerbere",
+        "Karanfili"
+      ],
+      "care": [
+        "Držite na hladnom mjestu, ne na direktnom suncu niti pored grijanja.",
+        "Kod aranžmana spužvu za cvijeće održavajte vlažnom."
+      ],
+      "seo": {
+        "title": "Žalobni buket, narandžasti – topli tonovi",
+        "description": "Žalobni buket u narandžastoj i žutoj s ružama, gerberama i karanfilima, u tri veličine. Za odar i komemoraciju – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Žalobni buket s ružama, gerberama i karanfilima u narandžastoj i žutoj boji na jelovim granama, na kamenom postolju"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Žalobni buket, bijeli",
+      "tagline": "Bijeli ljiljani i hrizanteme",
+      "shortDescription": "Klasičan žalobni buket u bijeloj boji – jednostavan i dostojanstven.",
+      "description": "Bijeli ljiljani, hrizanteme i sitni bijeli cvjetovi na jelovim granama čine ovaj žalobni buket jednostavnim i bezvremenskim. Bijela boja simbolizuje mir i oproštaj – prikladno za formalne komemoracije ili kao tihi znak saučešća.",
+      "flowers": [
+        "Ljiljani",
+        "Hrizanteme"
+      ],
+      "care": [
+        "Držite na hladnom mjestu, ne na direktnom suncu niti pored grijanja.",
+        "Kod aranžmana spužvu za cvijeće održavajte vlažnom."
+      ],
+      "seo": {
+        "title": "Žalobni buket, bijeli – ljiljani i hrizanteme",
+        "description": "Klasičan žalobni buket u bijeloj boji s ljiljanima i hrizantemama, u tri veličine. Jednostavan i dostojanstven – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Žalobni buket od bijelih ljiljana, hrizantema i sitnih bijelih cvjetova na jelovim granama, na kamenom postolju"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Žalobni buket, žuti",
+      "tagline": "Suncokreti, žute ruže i karanfili",
+      "shortDescription": "Žalobni buket u žutoj boji za sjećanje, nadu i zahvalnost.",
+      "description": "Suncokreti, žute ruže i karanfili boje kajsije na jelovim granama čine ovaj žalobni buket svijetlim i toplim. Prikladan je za oproštaje u čijem je središtu život. Cvijeće zavisi od sezone.",
+      "flowers": [
+        "Suncokreti",
+        "Ruže",
+        "Karanfili"
+      ],
+      "care": [
+        "Držite na hladnom mjestu, ne na direktnom suncu niti pored grijanja.",
+        "Kod aranžmana spužvu za cvijeće održavajte vlažnom."
+      ],
+      "seo": {
+        "title": "Žalobni buket, žuti – suncokreti i ruže",
+        "description": "Žalobni buket u žutoj boji sa suncokretima, ružama i karanfilima, u tri veličine. Svijetao posljednji pozdrav – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Žalobni buket sa suncokretima, žutim ružama i karanfilima boje kajsije na jelovim granama, na kamenom postolju"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Žalobni vijenac, šareni",
+      "tagline": "Gerbere, ruže i cvjetovi u šarenim bojama",
+      "shortDescription": "Šaren žalobni vijenac za oproštaj od osobe koja je voljela život.",
+      "description": "Šareni žalobni vijenac spaja gerbere, ruže i druge cvjetove u žutoj, narandžastoj, ružičastoj i bijeloj boji na zelenoj podlozi. Dostojanstven, a ujedno živopisan posljednji pozdrav, ručno aranžiran. Ako imate želje u vezi s izgledom, slobodno nam se javite.",
+      "flowers": [
+        "Gerbere",
+        "Ruže"
+      ],
+      "care": [
+        "Držite na hladnom i sjenovitom mjestu.",
+        "Spužvu za cvijeće po potrebi lagano navlažite."
+      ],
+      "seo": {
+        "title": "Žalobni vijenac, šareni – živopisan oproštaj",
+        "description": "Šaren žalobni vijenac s gerberama i ružama, ručno aranžiran. Živopisan posljednji pozdrav – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Šaren žalobni vijenac s gerberama, ljiljanima i bijelim cvjetovima, s crnom mašnom, na drvenom stalku"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Žalobni vijenac, pink",
+      "tagline": "Gerbere i ruže u pink i crvenoj",
+      "shortDescription": "Žalobni vijenac u pink i crvenoj boji kao posljednji pozdrav pun ljubavi.",
+      "description": "Žalobni vijenac u pink i crvenoj boji spaja pink gerbere, ruže i druge cvjetove sa svijetlim detaljima i svježim zelenilom. Izraz ljubavi i sjećanja, ručno aranžiran. Ako imate želje u vezi s izgledom, slobodno nam se javite.",
+      "flowers": [
+        "Gerbere",
+        "Ruže"
+      ],
+      "care": [
+        "Držite na hladnom i sjenovitom mjestu.",
+        "Spužvu za cvijeće po potrebi lagano navlažite."
+      ],
+      "seo": {
+        "title": "Žalobni vijenac, pink – pink i crvena",
+        "description": "Žalobni vijenac u pink i crvenoj boji s gerberama i ružama, ručno aranžiran. Posljednji pozdrav pun ljubavi – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Žalobni vijenac s pink gerberama, ružama i crvenim cvjetovima, s bordo mašnom, na drvenom stalku"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Žalobni vijenac, crveno-žuti",
+      "tagline": "Crvene i žute gerbere",
+      "shortDescription": "Blistav žalobni vijenac u crvenoj i žutoj boji.",
+      "description": "Crvene i žute gerbere, gusto aranžirane na zelenoj podlozi, čine ovaj žalobni vijenac blistavim posljednjim pozdravom punim topline, zahvalnosti i lijepih sjećanja. Ručno aranžiran. Ako imate želje u vezi s izgledom, slobodno nam se javite.",
+      "flowers": [
+        "Gerbere"
+      ],
+      "care": [
+        "Držite na hladnom i sjenovitom mjestu.",
+        "Spužvu za cvijeće po potrebi lagano navlažite."
+      ],
+      "seo": {
+        "title": "Žalobni vijenac, crveno-žuti – gerbere",
+        "description": "Žalobni vijenac od crvenih i žutih gerbera, ručno aranžiran. Topao, blistav posljednji pozdrav – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Žalobni vijenac od crvenih i žutih gerbera sa srebrnosivom mašnom na drvenom stalku"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Žalobni vijenac, crveni",
+      "tagline": "Crvene gerbere i ruže",
+      "shortDescription": "Klasičan žalobni vijenac u crvenoj boji za ljubav koja ostaje.",
+      "description": "Crveni žalobni vijenac spaja crvene gerbere i ruže na jelovim granama. Klasičan, dostojanstven posljednji pozdrav za ljubav koja ostaje i nakon oproštaja. Ručno aranžiran. Ako imate želje u vezi s izgledom, slobodno nam se javite.",
+      "flowers": [
+        "Gerbere",
+        "Ruže"
+      ],
+      "care": [
+        "Držite na hladnom i sjenovitom mjestu.",
+        "Spužvu za cvijeće po potrebi lagano navlažite."
+      ],
+      "seo": {
+        "title": "Žalobni vijenac, crveni – gerbere i ruže",
+        "description": "Žalobni vijenac u crvenoj boji s gerberama i ružama na jelovim granama, ručno aranžiran. Klasičan posljednji pozdrav – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Žalobni vijenac od crvenih gerbera i ruža na jelovim granama s crnom mašnom na drvenom stalku"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Žalobni vijenac, bijeli",
+      "tagline": "Bijele ruže, gerbere i karanfili",
+      "shortDescription": "Jednostavan žalobni vijenac u bijeloj boji za tiho saučešće.",
+      "description": "Bijele ruže, gerbere i karanfili sa svijetlozelenim detaljima i zelenilom čine ovaj jednostavan vijenac. Bijela boja simbolizuje mir i tiho saučešće. Ručno aranžiran. Ako imate želje u vezi s izgledom, slobodno nam se javite.",
+      "flowers": [
+        "Ruže",
+        "Gerbere",
+        "Karanfili"
+      ],
+      "care": [
+        "Držite na hladnom i sjenovitom mjestu.",
+        "Spužvu za cvijeće po potrebi lagano navlažite."
+      ],
+      "seo": {
+        "title": "Žalobni vijenac, bijeli – jednostavan",
+        "description": "Žalobni vijenac u bijeloj boji s ružama, gerberama i karanfilima, ručno aranžiran. Jednostavan posljednji pozdrav – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Okrugao žalobni vijenac od bijelih ruža, gerbera i karanfila s bijelom mašnom na drvenom stalku"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Adventski vijenci",
+      "tagline": "Jelove grane s četiri svijeće, u sedam boja",
+      "shortDescription": "Ručno aranžiran adventski vijenac od jelovih grana s četiri svijeće.",
+      "description": "Adventski vijenac ručno se aranžira od mirisnih jelovih grana i ukrašava s četiri svijeće, mašnama, kuglicama, šiškama i drugim detaljima. Dostupan u crvenoj, sivoj, ljubičastoj, zlatnoj, bež, boji vina i ružičastoj boji.",
+      "flowers": [],
+      "care": [
+        "Nikada ne ostavljajte upaljene svijeće bez nadzora.",
+        "Držite na hladnom mjestu, ne direktno pored grijanja.",
+        "Jelove grane povremeno lagano poprskajte vodom."
+      ],
+      "seo": {
+        "title": "Adventski vijenac – ručno aranžiran, sa svijećama",
+        "description": "Ručno aranžiran adventski vijenac od jelovih grana s četiri svijeće, u sedam boja i četiri veličine – dostava cvijeća u Beču."
+      },
+      "sizes": {
+        "s": {
+          "label": "Mali"
+        },
+        "m": {
+          "label": "Srednji"
+        },
+        "l": {
+          "label": "Veliki"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Crvena",
+        "grau": "Siva",
+        "lila": "Ljubičasta",
+        "gold": "Zlatna",
+        "beige": "Bež",
+        "weinrot": "Boja vina",
+        "rosa": "Ružičasta"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Adventski vijenac od jelovih grana s četiri crvene svijeće, crvenim mašnama, kuglicama i šiškama",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Adventski vijenac s četiri svijetlosive svijeće, krem mašnama i kriškama narandže",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Adventski vijenac s ljubičastim i ružičastim svijećama, ljubičastim mašnama i figuricom anđela",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Adventski vijenac s četiri zlatne svijeće, zlatnim mašnama, štapićima cimeta i šiškama",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Adventski vijenac s četiri ružičaste svijeće, bordo mašnama i figuricom anđela",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Adventski vijenac s četiri svijeće boje vina, kuglicama i mašnama boje vina",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Adventski vijenac s četiri tamnosive svijeće, krem mašnama i crvenim kuglicama",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Adventski vijenac u zlatnoj boji sa zlatnim svijećama i mašnama, sa strane",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Adventski vijenac u ružičastoj boji s ružičastim svijećama i bordo mašnama, sa strane"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Sve cvijeće",
+      "headline": "Naručite cvijeće online",
+      "intro": "Ručno aranžirani buketi za cijeli Beč. Odaberite svoj buket i odredite datum dostave.",
+      "seo": {
+        "title": "Naručite cvijeće online uz dostavu u Beču",
+        "description": "Naručite cvijeće online uz dostavu u Beču. Ručno aranžirani buketi na željeni datum – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Ruže",
+      "headline": "Buketi ruža",
+      "intro": "Ruže u crvenoj, ružičastoj ili bijeloj boji, u više veličina. Ručno aranžirane i dostavljene u Beču.",
+      "seo": {
+        "title": "Naručite buket ruža online – ruže za Beč",
+        "description": "Svi buketi ruža na jednom mjestu: crvene, ružičaste i bijele ruže u više veličina. Ručno aranžirani, dostavljeni u Beču na željeni datum."
+      }
+    },
+    "saisonal": {
+      "name": "Sezonsko cvijeće",
+      "headline": "Sezonsko cvijeće",
+      "intro": "Buketi koji pristaju godišnjem dobu. Izbor se mijenja tokom godine.",
+      "seo": {
+        "title": "Sezonski buketi cvijeća uz dostavu u Beču",
+        "description": "Sezonski buketi u skladu s godišnjim dobom. Ručno aranžirani i dostavljeni u Beču."
+      }
+    },
+    "pastell": {
+      "name": "Pastelno",
+      "headline": "Pastelni buketi",
+      "intro": "Puderasto ružičasta, krem, boja jorgovana: nježne boje za nježne trenutke.",
+      "seo": {
+        "title": "Dostava pastelnog cvijeća u Beču",
+        "description": "Buketi u nježnim pastelnim tonovima uz dostavu u Beču – svježe aranžirani, na željeni datum."
+      }
+    },
+    "bunt": {
+      "name": "Šareno",
+      "headline": "Šareni buketi",
+      "intro": "Boje koje raduju. Za rođendane, iznenađenja i dobro raspoloženje.",
+      "seo": {
+        "title": "Dostava šarenih buketa cvijeća u Beču",
+        "description": "Šareni, veseli buketi uz dostavu u Beču – svježe aranžirani, na željeni datum."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegantno i bijelo",
+      "headline": "Elegantno i bijelo",
+      "intro": "Bijela, krem i zelena. Buketi koji u svakom prostoru djeluju smireno i otmjeno.",
+      "seo": {
+        "title": "Elegantno bijelo cvijeće uz dostavu u Beču",
+        "description": "Bijeli i krem buketi uz dostavu u Beču – elegantni, svježe aranžirani, na željeni datum."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Premium buketi",
+      "intro": "Bogati buketi za posebne trenutke.",
+      "seo": {
+        "title": "Dostava premium buketa cvijeća u Beču",
+        "description": "Premium buketi za posebne prilike uz dostavu u Beču – ručno aranžirani, na željeni datum."
+      }
+    },
+    "unter-40": {
+      "name": "Do 40 €",
+      "headline": "Cvijeće do 40 €",
+      "intro": "Mali buketi s velikim efektom – svi do 40 eura.",
+      "seo": {
+        "title": "Cvijeće do 40 € uz dostavu u Beču",
+        "description": "Povoljni buketi cvijeća do 40 € uz dostavu u Beču – svježe aranžirani, na željeni datum."
+      }
+    },
+    "bestseller": {
+      "name": "Omiljeni buketi",
+      "headline": "Naši omiljeni buketi",
+      "intro": "Buketi koje posebno rado preporučujemo.",
+      "seo": {
+        "title": "Naši omiljeni buketi – preporuke za Beč",
+        "description": "Buketi koje posebno rado preporučujemo – ručno aranžirani i dostavljeni u Beču."
+      }
+    },
+    "neu": {
+      "name": "Novo",
+      "headline": "Novo u ponudi Blumora",
+      "intro": "Svježe u ponudi.",
+      "seo": {
+        "title": "Novi buketi cvijeća za Beč",
+        "description": "Novi buketi u ponudi – svježe aranžirani i dostavljeni u Beču."
+      }
+    },
+    "blumenboxen": {
+      "name": "Kutije cvijeća",
+      "headline": "Kutije cvijeća",
+      "intro": "Ruže aranžirane u kutiji – poklon kojem nije potrebna vaza.",
+      "seo": {
+        "title": "Kutije cvijeća uz dostavu u Beču",
+        "description": "Ruže u kutiji cvijeća – u obliku srca ili klasične. Dostava cvijeća u Beču na željeni datum."
+      }
+    },
+    "pflanzen": {
+      "name": "Biljke",
+      "headline": "Biljke u posudi",
+      "intro": "Orhideje, anturijumi i zelene biljke – cvijeće koje ostaje.",
+      "seo": {
+        "title": "Biljke u posudi uz dostavu u Beču",
+        "description": "Orhideje, anturijumi i sobne biljke u posudi kao poklon. Dostava cvijeća u Beču."
+      }
+    },
+    "trauer": {
+      "name": "Žalobna floristika",
+      "headline": "Žalobna floristika",
+      "intro": "Žalobni vijenci i žalobni buketi, dostojanstveno aranžirani za posljednji pozdrav.",
+      "seo": {
+        "title": "Žalobni vijenci i žalobni buketi u Beču",
+        "description": "Žalobni vijenci i žalobni buketi za sahranu i komemoraciju – uz dostavu u Beču."
+      }
+    },
+    "advent": {
+      "name": "Adventski vijenci",
+      "headline": "Adventski vijenci",
+      "intro": "Jelove grane, svijeće i ukrasi – ručno aranžirano za vrijeme adventa.",
+      "seo": {
+        "title": "Adventski vijenci uz dostavu u Beču",
+        "description": "Ručno aranžirani adventski vijenci u više boja i veličina – uz dostavu u Beču."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Rođendan",
+      "headline": "Cvijeće za rođendan",
+      "intro": "Buket koji kaže: mislim na tebe. Odaberite cvijeće i željeni datum.",
+      "imageAlt": "Šaren buket s crvenim ružama, gerberama i žutim cvjetovima u crvenom omotu",
+      "seo": {
+        "title": "Cvijeće za rođendan – rođendanski buketi za Beč",
+        "description": "Buketi za rođendan: šareni, veseli ili elegantni. Ručno aranžirani i dostavljeni u Beču – na željeni datum."
+      }
+    },
+    "liebe": {
+      "name": "Ljubav i romantika",
+      "headline": "Cvijeće za ljubav",
+      "intro": "Crvene ruže ili nešto sasvim drugo: cvijeće koje kaže ono što mislite.",
+      "imageAlt": "Buket tamnocrvenih ruža u sivom omotu s crvenom mašnom",
+      "seo": {
+        "title": "Dostava romantičnog cvijeća u Beču",
+        "description": "Ruže i romantični buketi uz dostavu u Beču – svježe aranžirani, na željeni datum."
+      }
+    },
+    "danke": {
+      "name": "Hvala",
+      "headline": "Cvijeće za zahvalu",
+      "intro": "Za pomoć, za vrijeme, za baš sve. Buket to kaže bez mnogo riječi.",
+      "imageAlt": "Buket žutih gerbera i bijelih ruža sa žutom mašnom",
+      "seo": {
+        "title": "Cvijeće za zahvalu uz dostavu u Beču",
+        "description": "Zahvalite se cvijećem: svježe aranžirani buketi uz dostavu u Beču – na željeni datum."
+      }
+    },
+    "gute-besserung": {
+      "name": "Brzo ozdravljenje",
+      "headline": "Cvijeće za ozdravljenje",
+      "intro": "Nježne boje, mirni oblici i mali pozdrav koji prija.",
+      "imageAlt": "Sunčan buket u narandžastoj i žutoj boji u svijetlom omotu",
+      "seo": {
+        "title": "Cvijeće za brzo ozdravljenje u Beču",
+        "description": "Cvijeće za ozdravljenje uz dostavu u Beču – nježni buketi, svježe aranžirani, na željeni datum."
+      }
+    },
+    "jahrestag": {
+      "name": "Godišnjica",
+      "headline": "Cvijeće za godišnjicu",
+      "intro": "Za dan kada je sve počelo. I za sve one koji su došli poslije.",
+      "imageAlt": "Buket crvenih i bijelih ruža u bijelom omotu",
+      "seo": {
+        "title": "Cvijeće za godišnjicu uz dostavu u Beču",
+        "description": "Elegantni buketi za godišnjicu uz dostavu u Beču – svježe aranžirani, na željeni datum."
+      }
+    },
+    "geburt": {
+      "name": "Rođenje djeteta",
+      "headline": "Cvijeće za rođenje djeteta",
+      "intro": "Dobro došao, mali čovječe. Nježno cvijeće za veliki trenutak.",
+      "imageAlt": "Nježan buket ruža u ružičastoj boji i boji jorgovana s gipsofilom",
+      "seo": {
+        "title": "Cvijeće za rođenje djeteta uz dostavu u Beču",
+        "description": "Nježni pastelni buketi za rođenje djeteta uz dostavu u Beču – svježe aranžirani, na željeni datum."
+      }
+    },
+    "hochzeit": {
+      "name": "Vjenčanje",
+      "headline": "Cvijeće za vjenčanje",
+      "intro": "Za mladence ili jednostavno kao čestitka: elegantno, svijetlo i svečano.",
+      "imageAlt": "Buket bijelih ruža u bijelom omotu u vazi",
+      "seo": {
+        "title": "Cvijeće za vjenčanje uz dostavu u Beču",
+        "description": "Elegantno cvijeće za vjenčanje uz dostavu u Beču – kao čestitka ili poklon, svježe aranžirano."
+      }
+    },
+    "einfach-so": {
+      "name": "Bez povoda",
+      "headline": "Cvijeće bez povoda",
+      "intro": "Bez povoda. Samo misao. Ponekad je to najbolji razlog.",
+      "imageAlt": "Žuti tulipani u staklenoj vazi na prozoru",
+      "seo": {
+        "title": "Pošaljite cvijeće bez povoda – Beč",
+        "description": "Pošaljite cvijeće bez posebnog povoda: mali i veliki buketi uz dostavu u Beču – svježe aranžirani, na željeni datum."
+      }
+    },
+    "trauer": {
+      "name": "Žalost",
+      "headline": "Cvijeće za izraz saučešća",
+      "intro": "Saučešće u mirnim bojama. Vijenci, žalobni buketi i buketi, ručno aranžirani i dostavljeni u Beču.",
+      "imageAlt": "Bijeli žalobni vijenac s bijelom mašnom na drvenom stalku",
+      "seo": {
+        "title": "Žalobno cvijeće uz dostavu u Beču",
+        "description": "Žalobno cvijeće uz dostavu u Beču – vijenci, žalobni buketi i mirni buketi, ručno aranžirani, na željeni datum."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Mirisna svijeća",
+      "description": "Dekorativne mirisne svijeće u poklon-pakovanju, u različitim oblicima i bojama.",
+      "imageAlt": "Mirisne svijeće u obliku srca i kugle u prozirnim poklon-kutijama"
+    },
+    "x-teddy": {
+      "name": "Medvjedić",
+      "description": "Plišani medvjedić s crvenim srcem – dodatak buketu pun ljubavi.",
+      "imageAlt": "Svijetlosmeđi plišani medvjedić s crvenim srcem"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Gdje dostavljate?",
+      "answer": "Dostavljamo u sva 23 bečka okruga. Zavisno od okruga, dostava je besplatna ili košta 4,90 € odnosno 7,90 €. Jednostavno unesite poštanski broj adrese primaoca – odmah ćete vidjeti da li i kada možemo dostaviti i koliko košta dostava.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Mogu li još danas poslati cvijeće?",
+      "answer": "Da – ako naručite od ponedjeljka do subote do 18:30 sati ili nedjeljom do 17:45 sati, dostavljamo isti dan u cijelom Beču, dok god ima slobodnih vremenskih termina. Najraniji termin za Vašu adresu vidjet ćete čim unesete poštanski broj.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Mogu li odabrati određeni datum dostave?",
+      "answer": "Da. Na svakoj stranici proizvoda i pri naplati birate željeni datum u kalendaru. Dani kada ne dostavljamo prikazani su sivo.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Mogu li odabrati željeno vrijeme?",
+      "answer": "Da. U Beču pri naplati birate vremenski termin od jednog sata između 9 i 22 sata – svih sedam dana u sedmici.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Šta ako niko nije kod kuće?",
+      "answer": "Kurir lično predaje cvijeće. Ako niko nije tu, cvijeće se po mogućnosti ostavlja kod komšija. Pri naplati možete ostaviti napomenu za dostavu, na primjer šifru ulaznih vrata. O statusu Vaše narudžbe obavještavamo Vas e-mailom.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Mogu li cvijeće poslati anonimno?",
+      "answer": "Da. Bez čestitke Vaše ime nigdje ne stoji uz buket, a račun ide samo Vama. Čestitke s ličnom porukom stižu uskoro.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Mogu li dodati čestitku?",
+      "answer": "Još ne – čestitke stižu uskoro. Do tada se buket dostavlja bez kartice.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Da li cvijeće izgleda tačno kao na fotografiji?",
+      "answer": "Svaki buket se aranžira pojedinačno, a cvijeće je prirodni proizvod. Boje, vrste i veličina cvjetova mogu se neznatno razlikovati zavisno od sezone. Stil i paleta boja ostaju isti.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Kako cvijeće ostaje svježe?",
+      "answer": "Svaki buket se svježe aranžira za Vašu narudžbu i kurir ga direktno dostavlja. Ovako najduže traje: stabljike koso podrežite, sipajte svježu vodu i buket držite na hladnom mjestu, bez direktnog sunca.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Koje su mogućnosti plaćanja?",
+      "answer": "Dostupne načine plaćanja vidjet ćete u posljednjem koraku narudžbe. Plaća se sigurno preko pružaoca platnih usluga – podaci Vaše kartice nikada ne dolaze do nas.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Mogu li promijeniti svoju narudžbu?",
+      "answer": "Dok buket još nije aranžiran, datum dostave ili adresu obično još možemo prilagoditi. Pišite nam što prije i navedite broj narudžbe.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Mogu li poslati cvijeće firmama ili hotelima?",
+      "answer": "Da. Pri naplati navedite naziv firme ili hotela i – ako je poznato – odjel ili broj sobe. Dostava se vrši na recepciju.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Imate li ekspresnu dostavu?",
+      "answer": "Da – ekspresna dostava za 1–2 sata, bez doplate. Naručite kao i obično i na blagajni odaberite najraniji današnji termin – označen je s „Ekspres“. To je moguće ako naručite od ponedjeljka do subote do 18:30 sati ili nedjeljom do 17:45 sati i za Vašu adresu još ima slobodan termin.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Cvijeće za posebne trenutke.",
+      "intro": "Blumora je online dostava cvijeća iz Beča. Svaki buket ručno se aranžira u jednoj bečkoj cvjećarnici i kurir ga direktno dostavlja.",
+      "seo": {
+        "title": "O nama – dostava cvijeća iz Beča",
+        "description": "Blumora je online dostava cvijeća iz Beča: buketi ručno aranžirani i dostavljeni kurirom u sva 23 okruga."
+      },
+      "sections": [
+        {
+          "heading": "Kako radimo",
+          "paragraphs": [
+            "Blumora je bečka online dostava cvijeća. Svoj buket birate kod nas – aranžira ga cvjećarnica u Beču s kojom stalno sarađujemo. Tamo se svaki buket izrađuje ručno i za Vašu narudžbu.",
+            "Čestitke s Vašim tekstom stižu uskoro."
+          ],
+          "imageAlt": "Buket ruža, dalija, hortenzija i tulipana na prozorskoj dasci stare bečke zgrade, u pozadini katedrala Svetog Stefana u večernjem svjetlu"
+        },
+        {
+          "heading": "Dostava",
+          "paragraphs": [
+            "Kurir preuzima Vaš buket direktno u cvjećarnici i bez usputnih zaustavljanja ga nosi na adresu primaoca. Dostavljamo u sva 23 bečka okruga – u vremenskom terminu po Vašem izboru: prijepodne, poslijepodne ili navečer do 22 sata."
+          ],
+          "imageAlt": "Buket Pure Liebe u staklenoj vazi"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Dostava i slanje",
+      "intro": "Dostavljamo u sva 23 bečka okruga. Cijena dostave (besplatno, 4,90 € ili 7,90 €), dani dostave i vremenski termini zavise od adrese primaoca – unesite poštanski broj i sve ćete vidjeti na prvi pogled.",
+      "seo": {
+        "title": "Dostava i slanje – dostava cvijeća u Beču",
+        "description": "Područja dostave, cijene dostave, dani dostave i vremenski termini za dostavu cvijeća u Beču."
+      },
+      "sections": [
+        {
+          "heading": "Kako izgleda dostava",
+          "paragraphs": [
+            "Vaš buket se svježe aranžira za Vašu narudžbu. Kurir ga preuzima direktno u cvjećarnici i bez usputnih zaustavljanja nosi na adresu primaoca – u vremenskom terminu koji ste odabrali. Ako niko nije tu, buket se po mogućnosti ostavlja kod komšija.",
+            "Za svaku narudžbu dobijate potvrdu e-mailom i link putem kojeg možete pratiti status."
+          ]
+        },
+        {
+          "heading": "Dostava firmama, hotelima i bolnicama",
+          "paragraphs": [
+            "Pri naplati navedite naziv firme ili hotela te odjel, bolničko odjeljenje ili broj sobe. Dostavljamo na recepciju. Imajte u vidu da neke ustanove ne dozvoljavaju cvijeće na bolničkim odjeljenjima."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Kontakt",
+      "intro": "Imate pitanja o narudžbi, datumu dostave ili posebnoj želji? Tu smo za Vas.",
+      "seo": {
+        "title": "Kontakt – Blumora Beč",
+        "description": "Kontaktirajte Blumoru za pitanja o narudžbi, dostavi ili posebnim željama."
+      },
+      "sections": [
+        {
+          "heading": "Kako nas možete kontaktirati",
+          "paragraphs": [
+            "[Rezervisano mjesto: e-mail, telefon i radno vrijeme preuzimaju se iz postavki i tamo ih treba dopuniti.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Dostava cvijeća u cijelom Beču",
+      "headline": "Cvijeće koje kaže više.",
+      "subheadline": "Svježe aranžirano cvijeće za ljude koji su Vam važni. Jednostavno odaberite, odredite željeni datum i pošaljite radost.",
+      "primaryCta": {
+        "label": "Pogledajte cvijeće"
+      },
+      "secondaryCta": {
+        "label": "Odaberite po prilici"
+      },
+      "imageAlt": "Žena u kaputu kamel boje nosi veliki buket ruža, ranunkula, dalija i tulipana bečkom kaldrmisanom ulicom, iza nje prolazi tramvaj",
+      "deliveryCheck": {
+        "title": "Gdje da dostavimo?",
+        "placeholder": "Unesite poštanski broj",
+        "button": "Provjerite dostavu"
+      }
+    },
+    "occasions": {
+      "headline": "Cvijeće za svaki trenutak",
+      "subheadline": "Ponekad nije potreban veliki povod. Samo pravi gest."
+    },
+    "bestsellers": {
+      "headline": "Naši omiljeni buketi",
+      "subheadline": "Izbor iz naše ponude."
+    },
+    "collections": {
+      "headline": "Pronađite svoj savršeni buket",
+      "subheadline": "Po boji, stilu ili budžetu."
+    },
+    "howItWorks": {
+      "headline": "Pokloniti radost nikada nije bilo jednostavnije.",
+      "steps": [
+        {
+          "title": "Odaberite omiljeni buket",
+          "text": "Otkrijte cvijeće za svaki ukus i svaku priliku."
+        },
+        {
+          "title": "Dodajte lični pečat",
+          "text": "Odaberite veličinu i male dodatke."
+        },
+        {
+          "title": "Odaberite datum dostave",
+          "text": "Odredite kada Vaše iznenađenje treba stići."
+        },
+        {
+          "title": "Pošaljite radost",
+          "text": "Mi se brinemo za ostalo."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Vrijeme adventa",
+      "headline": "Uskoro gori prva svijeća.",
+      "text": "Adventski vijenci s jelovim granama, svijećama i ukrasima – u više boja i veličina. Uz to buketi u toplim jesenjim tonovima.",
+      "cta": {
+        "label": "Adventski vijenci"
+      },
+      "imageAlt": "Adventski vijenac od jelovih grana s četiri crvene svijeće na drvenoj komodi"
+    },
+    "editorial": {
+      "eyebrow": "Zanat",
+      "headline": "Od cvjećara. Ne s pokretne trake.",
+      "text": "Svaki buket ručno aranžira bečka cvjećarnica za Vašu narudžbu, a kurir ga direktno dostavlja – bez zaobilaska preko skladišta.",
+      "cta": {
+        "label": "Kako radimo"
+      },
+      "imageAlt": "Kurir na vratima stare bečke zgrade predaje šaren buket ruža, dalija i ranunkula"
+    },
+    "extras": {
+      "headline": "Upotpunite svoje iznenađenje.",
+      "subheadline": "Mali dodaci koji trenutak čine većim."
+    },
+    "subscription": {
+      "headline": "Više cvijeća u svakodnevici.",
+      "text": "Svježi sezonski buketi – sedmično, svake dvije sedmice ili mjesečno. Za dom, ured, recepciju ili ugostiteljstvo.",
+      "cta": {
+        "label": "Pogledajte pretplatu na cvijeće"
+      }
+    },
+    "reviews": {
+      "headline": "Trenuci koji su stigli.",
+      "subheadline": "Šta kupci kažu o svojoj narudžbi."
+    },
+    "gallery": {
+      "headline": "Cvijeće za posebne trenutke.",
+      "images": [
+        {
+          "alt": "Šaren buket ruža u crvenoj, ružičastoj, krem i boji kajsije u bijeloj vazi"
+        },
+        {
+          "alt": "Buket jarko plavih ruža u bijeloj vazi"
+        },
+        {
+          "alt": "Buket u snažnim pink tonovima s gerberama u vazi na prozoru"
+        },
+        {
+          "alt": "Egzotičan buket sa strelicijama, ljiljanima i gerberama"
+        },
+        {
+          "alt": "Crvena kutija cvijeća u obliku srca s ružama na komodi"
+        },
+        {
+          "alt": "Buket ruža u pastelnoj i pink boji u ružičastom omotu"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Dobro je znati"
+    },
+    "newsletter": {
+      "headline": "Malo više cvijeća u Vašem sandučetu.",
+      "text": "Novosti, sezonske kolekcije i posebne akcije.",
+      "placeholder": "Vaša e-mail adresa",
+      "button": "Prijavite se",
+      "note": "Odjava je moguća u svakom trenutku. Informacije o zaštiti podataka pronaći ćete u Izjavi o zaštiti podataka."
+    }
+  },
+  "settings": {
+    "claim": "Cvijeće koje kaže više.",
+    "seo": {
+      "defaultTitle": "Blumora – dostava cvijeća u Beču",
+      "defaultDescription": "Dostava cvijeća u cijelom Beču: svježe aranžirani buketi u sva 23 okruga. Isti dan do 18:30 sati (nedjeljom do 17:45), ekspres za 1–2 sata bez doplate."
+    },
+    "announcement": {
+      "messages": [
+        "Dostava u cijelom Beču – sva 23 okruga",
+        "Ekspres za 1–2 sata – bez doplate",
+        "Isti dan do 18:30, nedjeljom do 17:45",
+        "Svježe aranžirano, dostavljeno kurirom"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Svježe aranžirano",
+        "text": "Ručno aranžirano za Vašu narudžbu"
+      },
+      {
+        "title": "Dostava kurirom",
+        "text": "U cijelom Beču – sva 23 okruga"
+      },
+      {
+        "title": "Željeni datum po izboru",
+        "text": "Vi određujete dan"
+      },
+      {
+        "title": "Ekspres za 1–2 sata",
+        "text": "Bez doplate, isti dan do 18:30"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Narudžba primljena",
+        "description": "Primili smo Vašu narudžbu."
+      },
+      "paid": {
+        "label": "Plaćanje potvrđeno",
+        "description": "Primili smo uplatu."
+      },
+      "preparing": {
+        "label": "U pripremi",
+        "description": "Biramo cvijeće za Vaš buket."
+      },
+      "arranging": {
+        "label": "Buket se aranžira",
+        "description": "Vaš buket se ručno aranžira."
+      },
+      "ready": {
+        "label": "Spremno za dostavu",
+        "description": "Buket je gotov i kurir ga preuzima."
+      },
+      "in_transit": {
+        "label": "Na putu",
+        "description": "Vaš buket je na putu."
+      },
+      "delivered": {
+        "label": "Dostavljeno",
+        "description": "Cvijeće je stiglo."
+      },
+      "undeliverable": {
+        "label": "Dostava nije moguća",
+        "description": "Nismo uspjeli dostaviti i javit ćemo Vam se."
+      },
+      "cancelled": {
+        "label": "Otkazano",
+        "description": "Narudžba je otkazana."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Kreditna kartica",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Online bankovni transfer (eps)"
+    },
+    "headerCta": "Pošaljite cvijeće",
+    "address": {
+      "city": "Beč",
+      "country": "Austrija"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Beč, zona 1",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Beč, zona 2",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Beč, zona 3",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Okolina Beča (Donja Austrija)",
+      "note": "Dostava u okolini Beča utorkom, četvrtkom i subotom.",
+      "windows": {
+        "day": "9:00–18:00"
+      }
+    }
+  }
+}

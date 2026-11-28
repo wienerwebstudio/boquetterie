@@ -1,0 +1,29 @@
+import type { SiteSettings } from "@/types";
+import { TrustIcon } from "@/components/icons/trust-icon";
+import { accentChip } from "@/lib/accents";
+import { cn } from "@/lib/format";
+import { getI18n } from "@/i18n/server";
+
+export async function TrustBar({ items }: { items: SiteSettings["trust"] }) {
+  if (!items.length) return null;
+  const { m } = await getI18n();
+  return (
+    <section aria-label={m.home.trustBarLabel} className="border-y border-line bg-white">
+      <div className="container-x">
+        <ul className="grid grid-cols-2 gap-x-6 gap-y-5 py-6 sm:py-7 lg:grid-cols-4 lg:gap-x-10">
+          {items.map((t, i) => (
+            <li key={t.title} className="flex items-start gap-3.5">
+              <span className={cn("mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-full", accentChip(i))}>
+                <TrustIcon name={t.icon} className="size-[18px]" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-[13.5px] font-semibold leading-snug text-ink sm:text-sm">{t.title}</p>
+                <p className="mt-0.5 text-[12.5px] leading-snug text-ink-muted sm:text-[13px]">{t.text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}

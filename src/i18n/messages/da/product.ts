@@ -1,0 +1,195 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** da – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Produktet blev ikke fundet",
+  priceFrom: "fra",
+
+  size: {
+    title: "Vælg størrelse",
+    recommended: "Anbefalet",
+    soldOut: "Udsolgt",
+  },
+
+  color: {
+    title: "Vælg farve",
+    required: "(påkrævet)",
+    notChosen: "Endnu ikke valgt",
+    error: "Vælg venligst en farve.",
+  },
+
+  delivery: {
+    title: "Hvornår skal blomsterne frem?",
+    formLabel: "Leveringstjek",
+    postalCodeLabel: "Modtagerens postnummer",
+    postalCodePlaceholder: "Modtagerens postnummer",
+    check: "Tjek",
+    prompt: "Indtast postnummer for at vælge leveringsdato",
+    notAvailable: "Vi leverer desværre ikke til {plz} endnu.",
+    notAvailableHint: "Alle aktuelle områder finder du under {link}. Til en anden modtageradresse skal du bare indtaste et nyt postnummer.",
+    deliveryLink: "Levering og forsendelse",
+    available: "Vi leverer til denne adresse.",
+    fee: "Levering til {plz} {region}: {fee}",
+    free: "gratis",
+    freeFrom: "gratis fra {price}",
+    dateGroup: "Leveringsdato",
+    today: "I dag",
+    orderUntil: "bestil senest kl. {time}",
+    tomorrow: "I morgen",
+    chooseDate: "Vælg dato",
+    openCalendar: "Åbn kalender",
+    deliveryOn: "Levering den {date}",
+    todaySuffix: "· i dag",
+    noDays: "Der er ingen ledige leveringsdage i øjeblikket.",
+  },
+
+  calendar: {
+    previousMonth: "Forrige måned",
+    nextMonth: "Næste måned",
+    weekdays: {
+      mon: { short: "Ma", long: "mandag" },
+      tue: { short: "Ti", long: "tirsdag" },
+      wed: { short: "On", long: "onsdag" },
+      thu: { short: "To", long: "torsdag" },
+      fri: { short: "Fr", long: "fredag" },
+      sat: { short: "Lø", long: "lørdag" },
+      sun: { short: "Sø", long: "søndag" },
+    },
+    daySameDay: "{date}, kan leveres i dag",
+    dayAvailable: "{date}, kan leveres",
+    dayUnavailable: "{date}, kan ikke leveres",
+    legendSameDay: "Kan leveres i dag",
+    legendToday: "I dag",
+    legendUnavailable: "Gråtonede dage kan ikke leveres.",
+  },
+
+  card: {
+    unavailableTitle: "Personligt hilsenkort",
+    unavailableText: "Din buket leveres indtil videre uden kort.",
+    comingSoon: "Kommer snart!",
+    addMessage: "Tilføj en personlig besked",
+    included: "Hilsenkort inkluderet",
+    handwritten: "Håndskrevet hilsenkort",
+    saved: "Besked gemt",
+    messageLabel: "Din besked",
+    messagePlaceholder: "Kærligst tillykke med fødselsdagen …",
+    maxChars: "Højst {max} tegn.",
+    senderGroup: "Afsender",
+    showSender: "Vis afsender",
+    anonymous: "Send uden navn",
+    senderName: "Dit navn",
+    optional: "(valgfrit)",
+    senderPlaceholder: "f.eks. Anna",
+  },
+
+  extras: {
+    title: "Lidt ekstra?",
+    deliveredTogether: "Leveres sammen",
+    addLabel: "Tilføj {name} for {price}",
+    add: "Tilføj",
+    quantity: "Antal {name}",
+    less: "{name}: én mindre",
+    more: "{name}: én mere",
+  },
+
+  floristNote: {
+    title: "Ønsker til vores blomsterbindere",
+    optional: "(valgfrit)",
+    hint: "Små ændringer af buketten, f.eks. „hvide roser i stedet for gule“. Vi imødekommer dem, hvis blomsterne er tilgængelige. Bemærkninger til leveringen angiver du i kassen.",
+    placeholder: "Dit ønske til blomsterbinderen",
+  },
+
+  cta: {
+    total: "I alt",
+    comingSoon: "Kan snart bestilles",
+    unavailable: "Ikke tilgængelig i øjeblikket",
+    addToCart: "Læg i kurven",
+    fresh: "Friskbundet",
+    cardIncluded: "Hilsenkort inkluderet",
+    securePayment: "Sikker betaling",
+    added: "{name} ({options}) er lagt i kurven.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Forfra",
+      detail: "Detalje",
+      size: "Størrelsessammenligning",
+      packaging: "Indpakning",
+      lifestyle: "Stemning",
+    },
+    status: "Billede {index} af {total}: {alt}",
+    carousel: "Karrusel",
+    imagesOf: "Billeder af {name}",
+    slide: "Billede",
+    slideOf: "{index} af {total}",
+    choose: "Vælg billede",
+    show: "Vis {label}",
+    thumb: "{label}: {alt}",
+    previous: "Forrige billede",
+    next: "Næste billede",
+    colorAlt: "{name} i {color}",
+    colorLabel: "Farve {color}",
+    sizeAlt: "{name} i størrelse {size}",
+    sizeDetailAlt: "{name} i størrelse {size}, nærbillede",
+    sizeLabel: "Størrelse {size}",
+    sizeDetailLabel: "Størrelse {size} · nærbillede",
+  },
+
+  details: {
+    eyebrow: "Godt at vide",
+    title: "Alt om {name}",
+    description: "Beskrivelse",
+    plant: "Plante",
+    flowers: "Blomster i buketten",
+    care: "Plejeråd",
+    delivery: "Levering",
+    deliveryText: "Dine blomster kommer fra en blomsterbinder i Wien, som vi har et fast samarbejde med. Her bindes buketterne i hånden til din bestilling. Et bud henter dem og kører uden stop direkte til modtagerens adresse.",
+    deliveryAreas: "Vi leverer til alle 23 bydele i Wien. Leveringsgebyret afhænger af bydelen og vises, når du har indtastet postnummeret. Leveringsområder, tidsrum og bestillingsfrister finder du under {link}.",
+    deliveryLink: "Levering og forsendelse",
+    looksPlant: "Ser planten præcis sådan ud?",
+    looksBouquet: "Ser buketten præcis sådan ud?",
+    looksOther: "Ser det præcis ud som på billedet?",
+    naturalPlant: "Næsten. Planter er naturprodukter: Vækst, størrelse og blomstring kan afvige fra billedet. Også urtepotteskjulet kan se anderledes ud afhængigt af, hvad der er tilgængeligt.",
+    naturalFlowers: "Næsten. Blomster er naturprodukter: Afhængigt af sæsonen kan en sort eller en farvenuance afvige. Vores partnerblomsterbinder sørger for, at stil og farveunivers bevares.",
+  },
+
+  pricePending: {
+    status: "Pris følger",
+    sizes: "Størrelser",
+    sizesLabel: "Tilgængelige størrelser",
+    soonTitle: "Kan snart bestilles",
+    soonText: "Vi er ved at fastlægge priserne for vores sortiment. Så snart de er klar, kan du bestille denne buket direkte her.",
+    contact: "Spørgsmål? Skriv til os",
+  },
+
+  related: {
+    eyebrow: "Kig videre",
+    title: "Måske kan du også lide",
+    allFlowers: "Se alle blomster",
+  },
+
+  reviews: {
+    eyebrow: "Anmeldelser",
+    title: "Anmeldelser af {name}",
+    demoNote: "Eksempler på anmeldelser – ægte anmeldelser følger",
+    quote: "„{text}“",
+    verified: "Verificeret køb",
+    demo: "Eksempel",
+  },
+
+  reviewPhotos: {
+    photosOf: "Billeder fra {author}",
+    enlarge: "{alt} – forstør billede {index} af {total}",
+    dialogTitle: "Kundebillede fra {author}",
+    dialogCount: "({index} af {total})",
+    close: "Luk billede",
+    show: "Vis billede {index}",
+  },
+  reviewVideo: {
+    videoOf: "Video fra {author}",
+    caption: "Kundevideo · {duration}",
+  },
+};
+
+export default product;

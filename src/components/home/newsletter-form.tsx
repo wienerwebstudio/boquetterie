@@ -1,0 +1,86 @@
+"use client";
+import { useId, useState } from "react";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useI18n } from "@/i18n/client";
+import { events, track } from "@/components/analytics/track";
+
+type State = { status: "idle" | "loading" | "success" | "error"; message?: string };
+
+export function NewsletterForm({ placeholder, button, note }: { placeholder: string; button: string; note: string }) {
+  const [email, setEmail] = useState("");
+  /** Honeypot – stays empty for humans; the field is hidden and excluded from the tab order. */
+  const [website, setWebsite] = useState("");
+  const [state, setState] = useState<State>({ status: "idle" });
+  const id = useId();
+  const { m, locale } = useI18n();
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const value = email.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
+      setState({ status: "error", message: m.forms.invalidEmailEnter });
+      return;
+    }
+    setState({ status: "loading" });
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: value, website, locale }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; message?: string };
+      if (!res.ok || !data.ok) {
+        setState({ status: "error", message: data.message ?? m.forms.genericError });
+        return;
+      }
+      setState({ status: "success" });
+      track(events.newsletterSignup, { locale });
+    } catch {
+      setState({ status: "error", message: m.forms.genericError });
+    }
+  };
+
+  if (state.status === "success") {
+    return (
+      <div role="status" className="flex items-start gap-3 rounded-md bg-white p-5 shadow-soft animate-fade-up">
+        <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-success text-ivory"><Check className="size-3.5" strokeWidth={3} aria-hidden /></span>
+        <div>
+          <p className="text-[15px] font-semibold text-ink">{m.forms.newsletter.successTitle}</p>
+          <p className="mt-1 text-[13.5px] text-ink-muted">{m.forms.newsletter.successText}</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={submit} noValidate className="relative flex flex-col gap-3" aria-describedby={`${id}-note`}>
+      <label htmlFor={`${id}-email`} className="sr-only">{m.forms.emailAddress}</label>
+      <div aria-hidden className="hidden">
+        <label htmlFor={`${id}-website`}>{m.forms.newsletter.honeypot}</label>
+        <input id={`${id}-website`} type="text" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+      </div>
+      <div className="flex flex-col gap-2 sm:flex-row">
+        <input
+          id={`${id}-email`}
+          type="email"
+          name="email"
+          autoComplete="email"
+          inputMode="email"
+          required
+          value={email}
+          onChange={(e) => { setEmail(e.target.value); if (state.status === "error") setState({ status: "idle" }); }}
+          placeholder={placeholder}
+          aria-invalid={state.status === "error" || undefined}
+          aria-describedby={state.status === "error" ? `${id}-error` : undefined}
+          className="h-12 w-full min-w-0 flex-none rounded-md sm:w-auto sm:flex-1 border border-line-strong bg-white px-4 text-[15px] text-ink placeholder:text-ink-soft transition-colors focus:border-forest focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-forest"
+        />
+        <Button type="submit" size="lg" loading={state.status === "loading"} className="shrink-0">{button}</Button>
+      </div>
+      <div aria-live="polite" className="min-h-[1rem]">
+        {state.status === "error" && <p id={`${id}-error`} className="text-[13px] text-danger">{state.message}</p>}
+      </div>
+      <p id={`${id}-note`} className="text-[12.5px] leading-relaxed text-ink-soft">{note}</p>
+    </form>
+  );
+}

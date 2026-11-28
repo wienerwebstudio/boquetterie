@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Rosa rosor, cerise gerbera & vita liljor",
+      "shortDescription": "En ljus, luftig bukett i rosa och vitt som sprider glädje i varje rum.",
+      "description": "Rosé Dream förenar rosa rosor och cerise gerbera med vita liljor, skir brudslöja och friskt grönt. Löst bunden och ljus i uttrycket passar den till födelsedagen, som ett tack eller bara för att.",
+      "flowers": [
+        "Rosor",
+        "Gerbera",
+        "Liljor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Fyll på med färskt vatten i vasen varje dag.",
+        "Snitta stjälkarna på nytt vid behov.",
+        "Ta bort vissna blommor regelbundet."
+      ],
+      "seo": {
+        "title": "Rosé Dream – bukett i rosa & vitt",
+        "description": "Rosé Dream: rosa rosor, cerise gerbera och vita liljor, löst bundna. En ljus bukett till födelsedag och tack – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Bukett med rosa rosor, cerise gerbera och vita liljor i en glasvas på en träbyrå"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Gul bukett",
+      "tagline": "Gula gerbera, rosor & brudslöja",
+      "shortDescription": "En solig bukett i gult och vitt, bunden med ett gult band.",
+      "description": "Lysande gula gerbera möter vita och gula rosor, brudslöja och friskt grönt. Omsluten av en ljus manschett med gult band – en bukett till födelsedagen, som gratulation, tack eller krya på dig-hälsning.",
+      "flowers": [
+        "Gerbera",
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Ställ inte buketten i stark sol."
+      ],
+      "seo": {
+        "title": "Gul bukett – gerbera & rosor i gult",
+        "description": "Gula gerbera, vita och gula rosor med brudslöja och gult band. En ljus hälsning till födelsedag eller krya på dig – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Bukett med gula gerbera, vita och gula rosor i ljus manschett med gult band"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Vit bukett",
+      "tagline": "Ljusa rosor, gerbera & liljor",
+      "shortDescription": "En ljus, lugn bukett i vitt och krämvitt med skira rosa inslag.",
+      "description": "Vit bukett förenar ljusa rosor, gerbera och liljor med brudslöja till en enkel, tidlös bukett. Skira inslag i rosa och aprikos lättar upp helheten. Passar till bröllopsdag eller årsdag, som tack eller stilfull hälsning.",
+      "flowers": [
+        "Rosor",
+        "Gerbera",
+        "Liljor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Ta försiktigt bort liljornas pollen vid behov."
+      ],
+      "seo": {
+        "title": "Vit bukett – bukett i vitt & krämvitt",
+        "description": "Ljusa rosor, gerbera och liljor med brudslöja: en enkel bukett till årsdag, bröllopsdag eller som tack – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Ljus bukett med krämvita rosor, rosa gerbera, liljor och brudslöja i vit manschett"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Blå & vita rosor i blå manschett",
+      "shortDescription": "Blå och vita rosor i ljusblå manschett – en bukett som syns.",
+      "description": "Blue Bouquet kombinerar blå och vita rosor med brudslöja, en vit lilja och friskt grönt. Den ljusblå manschetten tar upp blommornas färg. En ovanlig present till födelsedag, årsdag eller till den som gillar något särskilt.",
+      "flowers": [
+        "Rosor",
+        "Liljor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – blå & vita rosor",
+        "description": "Blå och vita rosor med brudslöja i ljusblå manschett. En ovanlig rosbukett till födelsedag eller årsdag – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Bukett med blå och vita rosor och brudslöja i ljusblå manschett på en träbyrå"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Regnbågsrosor i många färger",
+      "shortDescription": "En bukett med regnbågsrosor där varje blomma lyser i flera färger.",
+      "description": "Farbensinfonie består av regnbågsrosor: varje blomma visar flera färger sida vid sida, från rött och orange via gult och grönt till blått och lila. Tätt bunden ser buketten ut som en färgglad boll. En glad överraskning till födelsedagen eller en fest.",
+      "flowers": [
+        "Regnbågsrosor"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – regnbågsrosor",
+        "description": "Regnbågsrosor där varje blomma lyser i flera färger. En glad rosbukett till födelsedagen – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Farbensinfonie, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Farbensinfonie, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Farbensinfonie, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Tät bukett med regnbågsrosor i en krämvit vas",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Regnbågsrosor i närbild, varje blomma i flera färger"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelitzior, liljor & gerbera i orange och gult",
+      "shortDescription": "En exotisk bukett i orange och gult med paradisfågelblommor som blickfång.",
+      "description": "Sonnenzauber förenar iögonfallande paradisfågelblommor med vita liljor, gula gerbera och friskt grönt. De varma orange och gula tonerna ger buketten en livfull, somrig utstrålning.",
+      "flowers": [
+        "Strelitzior (paradisfågelblommor)",
+        "Liljor",
+        "Gerbera",
+        "Brudslöja"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Håll vasen ren och byt vattnet regelbundet.",
+        "Ställ inte buketten i stark sol."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelitzior & gerbera",
+        "description": "Paradisfågelblommor, liljor och gula gerbera i varmt orange och gult. En exotisk bukett som blickfång – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Exotisk bukett med strelitzior, vita liljor och gula gerbera i genomskinlig folie",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Buketten ovanifrån med strelitzior, lilja och gul gerbera"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Blommor i cerise och rosa med gerbera & liljor",
+      "shortDescription": "En rund, lekfull bukett i cerise och rosa med gula inslag.",
+      "description": "Pink Bouquet samlar blommor i cerise och rosa, bland dem liljor och gerbera, till en rund, lekfull bukett. Gula gerbera ger friska inslag och den rosa manschetten fullbordar helheten. Fin till födelsedag, årsdag, Mors dag eller bara för att.",
+      "flowers": [
+        "Liljor",
+        "Gerbera"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Ta bort vissna blommor regelbundet."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – bukett i cerise & rosa",
+        "description": "En rund bukett i cerise och rosa med liljor och gerbera. Till födelsedag, Mors dag eller bara för att – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Rund bukett i cerise och rosa med gula gerbera i rosa manschett",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Bukett med rosa liljor, gula gerbera och cerise blommor i rosa manschett med rosett"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Rosor i orange och aprikos",
+      "shortDescription": "Rosor i orange och aprikos – en varm bukett som en solnedgång.",
+      "description": "Orange Bouquet består av rosor i orange och aprikos, kompletterade med skirt grönt och omslutna av en ljus manschett. Varm och glad i uttrycket passar den till födelsedagen, som tack eller för att lysa upp någons dag.",
+      "flowers": [
+        "Rosor"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – rosor i orange",
+        "description": "Rosor i orange och aprikos i ljus manschett. En varm rosbukett till födelsedag eller som tack – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Orange Bouquet, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Orange Bouquet, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Orange Bouquet, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Bukett med orange och aprikosfärgade rosor i ljus manschett på en träbyrå"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Djupröda rosor i mörk manschett",
+      "shortDescription": "En frodig bukett med djupröda rosor och rött satinband.",
+      "description": "Red Rose Bouquet är en tätt bunden bukett med djupröda rosor i mörk manschett, hållen samman av ett rött satinband. Den klassiska kärleksförklaringen till alla hjärtans dag, årsdag eller ett frieri.",
+      "flowers": [
+        "Rosor"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – röda rosor",
+        "description": "Djupröda rosor i mörk manschett med rött satinband. Den klassiska rosbuketten till alla hjärtans dag och årsdag – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Red Rose Bouquet, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Red Rose Bouquet, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Red Rose Bouquet, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Bukett med djupröda rosor i mörkgrå manschett med rött satinband",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Liggande bukett med röda rosor i svartvit manschett bredvid ljus"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa bukett",
+      "tagline": "Rosor och gerbera i rosa, pastell & syren",
+      "shortDescription": "En mjuk, romantisk bukett i rosa och pastell.",
+      "description": "Rosa bukett förenar rosor i rosa och pastell med gerbera och syrenfärgade blommor. Omsluten av vit manschett med rosa rosett känns den lätt och kärleksfull. Fin till födelsedag, Mors dag, en födsel eller som hälsning.",
+      "flowers": [
+        "Rosor",
+        "Gerbera"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Rosa bukett – rosor i rosa & pastell",
+        "description": "Rosor och gerbera i rosa, pastell och syren i vit manschett. Till födelsedag, Mors dag eller födsel – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Bukett med rosa rosor, gerbera och syrenfärgade blommor i vit manschett med rosa rosett"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Svarta rosor i mörk manschett",
+      "shortDescription": "Svarta rosor i mörk manschett – mystiska och ovanliga.",
+      "description": "Blackroses är en bukett med svarta rosor, omsluten av en mörk, genomskinlig manschett. Ett ovanligt statement för den som uppskattar något särskilt, till exempel till födelsedag eller årsdag.",
+      "flowers": [
+        "Rosor"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Blackroses – svarta rosor",
+        "description": "Svarta rosor i mörk manschett: en ovanlig rosbukett för den som gillar något särskilt – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Blackroses, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Blackroses, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Blackroses, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Bukett med svarta rosor i svart manschett i en glasvas",
+        "/images/products/sortiment/blackroses-2.jpg": "Svarta rosor utan manschett i en glasvas framför ett fönster"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Blå rosor med brudslöja",
+      "shortDescription": "Lysande blå rosor med brudslöja – sällsynta och ett riktigt blickfång.",
+      "description": "Blaue Liebe är en bukett med lysande blå rosor, upplättad med fin brudslöja och omsluten av en blå manschett. En särskild present till födelsedag, årsdag eller som tecken på djup samhörighet.",
+      "flowers": [
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – blå rosor",
+        "description": "Lysande blå rosor med brudslöja i blå manschett. En sällsynt rosbukett för särskilda människor – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Blaue Liebe, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Blaue Liebe, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Blaue Liebe, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Bukett med blå rosor och brudslöja i blå manschett i en vit vas",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Blå rosor med brudslöja i blå manschett, framifrån",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Liggande bukett med blå rosor i blå manschett på en träbyrå"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Rosa rosor med brudslöja",
+      "shortDescription": "Rosa rosor i skir manschett – kärleksfull och elegant.",
+      "description": "Rosalie är en bukett med rosa rosor, upplättad med brudslöja och omsluten av en ljusrosa manschett. Feminin och lugn i uttrycket passar den till Mors dag, födelsedag, årsdag eller som tack.",
+      "flowers": [
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Rosalie – rosa rosor med brudslöja",
+        "description": "Rosa rosor med brudslöja i ljusrosa manschett. Till Mors dag, födelsedag eller som tack – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Rosalie, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Rosalie, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Rosalie, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Bukett med rosa rosor och brudslöja i ljusrosa manschett i en vit vas",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie i rosa manschett i en enkel vit vas",
+        "/images/products/sortiment/rosalie-3.jpg": "Rosa rosor med brudslöja i en räfflad vit vas",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie liggande, de rosa rosorna och brudslöjan ovanifrån"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Röd & vit mix",
+      "tagline": "Röda och vita rosor",
+      "shortDescription": "Röda och vita rosor i en festlig bukett.",
+      "description": "Röd & vit mix förenar röda och vita rosor i vit manschett, beroende på storlek upplättad med brudslöja. Passion möter ömhet: en bukett till alla hjärtans dag, årsdag, bröllopsdag eller som elegant present.",
+      "flowers": [
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Röd & vit mix – röda och vita rosor",
+        "description": "Röda och vita rosor i festlig manschett. Till alla hjärtans dag, årsdag eller bröllopsdag, i sex storlekar – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Röd & vit mix, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Röd & vit mix, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Röd & vit mix, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Bukett med röda och vita rosor och brudslöja i vit manschett, bredvid rosenblad",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Röda och vita rosor tätt bundna i vit manschett",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Röd och vit rosbukett i vit manschett på en träbyrå",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Liggande bukett med röda och vita rosor, ovanifrån"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Tulpanbukett",
+      "tagline": "Tulpaner i en färg eller blandade",
+      "shortDescription": "En enkel bukett med tulpaner, i en färg eller färgglatt blandade.",
+      "description": "Med sina klara färger och sin smala form tar tulpaner in vårkänsla i hemmet. Buketten binds helt av tulpaner, i en färg eller som färgglad mix. Finns i rött, gult, lila, rosa, orange, vitt och mix.",
+      "flowers": [
+        "Tulpaner"
+      ],
+      "care": [
+        "Snitta stjälkarna rakt och ställ dem i kallt vatten.",
+        "Lite vatten räcker, men fyll på regelbundet.",
+        "Tulpaner fortsätter att växa i vasen – snitta på nytt vid behov."
+      ],
+      "seo": {
+        "title": "Tulpanbukett – tulpaner i många färger",
+        "description": "En bukett med tulpaner i rött, gult, lila, rosa, orange, vitt eller blandat. Vårkänsla för hemmet – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Röd",
+        "gelb": "Gul",
+        "lila": "Lila",
+        "rosa": "Rosa",
+        "orange": "Orange",
+        "weiss": "Vit",
+        "mix": "Färgglad mix"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Bukett med gula tulpaner i en glasvas",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Lila tulpaner i kraftpapper i en glasvas",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Röda tulpaner i en beige vas",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Orange tulpaner i en glasvas",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Rosa tulpaner i en glasvas på en linneduk",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Färgglad tulpanmix i rött, gult, rosa, orange och lila i en beige vas",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Vita tulpaner i en vit vas"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Röda rosor med brudslöja",
+      "shortDescription": "En uttrycksfull rosbukett i djupt rött för stora känslor.",
+      "description": "Red Passion samlar röda rosor i en tät, rund bukett, inramad av brudslöja och en mörk manschett. Finns i sex storlekar – för romantiska gester och stunder som ska bli ihågkomna.",
+      "flowers": [
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Snitta stjälkarna på nytt.",
+        "Ge färskt vatten varje dag.",
+        "Skydda mot direkt solljus."
+      ],
+      "seo": {
+        "title": "Red Passion – röd rosbukett",
+        "description": "Röda rosor med brudslöja i mörk manschett, i sex storlekar. En rosbukett för stora känslor – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Red Passion, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Red Passion, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Red Passion, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Liggande bukett med mörkröda rosor och brudslöja i svart och guld manschett",
+        "/images/products/sortiment/red-passion-2.jpg": "Stor bukett med röda rosor och brudslöja i mörk manschett i en vit vas",
+        "/images/products/sortiment/red-passion-3.jpg": "Mycket stor, rund bukett med röda rosor och en krans av brudslöja i mörk manschett"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Tätt bundna röda rosor",
+      "shortDescription": "Tätt bundna röda rosor i mörk manschett – tidlösa och fulla av känsla.",
+      "description": "Klassiker der Liebe består av röda rosor, tätt bundna till en rund form och omslutna av mörk manschett med svart rosett. Rosbuketten till alla hjärtans dag, årsdag, frieri eller varje kärleksförklaring.",
+      "flowers": [
+        "Rosor"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – röda rosor",
+        "description": "Tätt bundna röda rosor i mörk manschett. Den klassiska rosbuketten till alla hjärtans dag, årsdag eller frieri – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Klassiker der Liebe, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Klassiker der Liebe, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Klassiker der Liebe, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Rund bukett med tätt bundna röda rosor i svart manschett med rosett",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Röda rosor i klotform i mörk manschett, framifrån"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Röda rosor med brudslöja",
+      "shortDescription": "En frodig rosbukett i sex storlekar.",
+      "description": "Königin der Herzen förenar röda rosor med fin brudslöja i en mörk, genomskinlig manschett. Finns i sex storlekar – från den lilla gesten till det stora framträdandet.",
+      "flowers": [
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Placera svalt.",
+        "Ta bort vissna blommor i tid.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – frodig rosbukett",
+        "description": "Röda rosor med brudslöja, i sex storlekar. En frodig rosbukett för stora stunder – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Königin der Herzen, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Königin der Herzen, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Königin der Herzen, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Bukett med röda rosor och brudslöja i mörk manschett i en vit vas",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Stor bukett med röda rosor och brudslöja i svart manschett",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Röda rosor med brudslöja i mörk manschett i en svart kruka",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Röda rosor med brudslöja i stjärnformad mörk manschett, ovanifrån"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbera, rosor & liljor i varma toner",
+      "shortDescription": "En varm bukett i orange, rosa och gult.",
+      "description": "Herbstzauber förenar gerbera, rosor och liljor i orange, rosa och gula toner med friskt grönt. Löst bunden tar den in varma färger i hemmet, just när dagarna blir kortare.",
+      "flowers": [
+        "Gerbera",
+        "Rosor",
+        "Liljor"
+      ],
+      "care": [
+        "Ställ inte buketten bredvid frukt.",
+        "Fyll på vatten regelbundet.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Herbstzauber – bukett i varma toner",
+        "description": "Gerbera, rosor och liljor i orange, rosa och gult. En varm höstbukett till födelsedag eller som tack – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Bukett med orange gerbera, rosor i aprikos och rosa samt liljor i en glasvas"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Röda rosor, gerbera & gröna inslag",
+      "shortDescription": "En livfull bukett i rött och orange med friska gröna inslag.",
+      "description": "Blütenfreude förenar röda rosor och gerbera i rött och orange med gröna pomponblommor och eukalyptus. Starka färger men ändå rund i formen – fin till födelsedagen, som tack eller bara för att.",
+      "flowers": [
+        "Rosor",
+        "Gerbera"
+      ],
+      "care": [
+        "Fyll på med färskt vatten i vasen varje dag.",
+        "Snitta stjälkarna på nytt vid behov.",
+        "Ta bort vissna blommor regelbundet."
+      ],
+      "seo": {
+        "title": "Blütenfreude – rosor & gerbera i rött",
+        "description": "Röda rosor, gerbera i rött och orange och friska gröna inslag. En livfull bukett till födelsedagen – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Bukett med röda rosor, röda och orange gerbera och gröna pomponblommor i en glasvas",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude i en vit vas på en träbyrå"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Rosa rosor, liljor & brudslöja",
+      "shortDescription": "Mjuka rosa toner med liljor – lugn, harmonisk och fin.",
+      "description": "Zartrosa Zauber förenar rosa rosor med rosa liljor och brudslöja i en rosa manschett. Buketten känns lugn och harmonisk, med en fin, romantisk ton.",
+      "flowers": [
+        "Rosor",
+        "Liljor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Ta bort blad som hamnar under vattenytan.",
+        "Placera svalt.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – rosor & liljor i rosa",
+        "description": "Rosa rosor, rosa liljor och brudslöja i skir manschett. En lugn, romantisk bukett – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Bukett med rosa rosor, rosa liljor och brudslöja i rosa manschett i en vit vas",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber i rosa manschett med stor rosett"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbera, liljor & rosor i orange och gult",
+      "shortDescription": "Lysande orange och gult för goda nyheter och soliga tillfällen.",
+      "description": "Strahlender Tag förenar orange gerbera och liljor med gula rosor, ljusa nejlikor och brudslöja. De starka färgerna ger positiv energi – en bukett för gratulationer, framgångar och soliga tillfällen.",
+      "flowers": [
+        "Gerbera",
+        "Liljor",
+        "Rosor",
+        "Nejlikor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Skydda mot drag.",
+        "Byt vatten regelbundet.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – bukett i orange & gult",
+        "description": "Orange gerbera och liljor med gula rosor och brudslöja. En glad bukett för gratulationer – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Bukett med orange gerbera, gula rosor och brudslöja i vit och guld manschett",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Orange gerbera, liljor och gul ros i en vit vas",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Rund bukett med orange gerbera och liljor, gula rosor och ljusa nejlikor i en glasvas"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Rosor i rosa, krämvitt & aprikos",
+      "shortDescription": "En harmonisk rosbukett mellan klassisk skönhet och modern stil.",
+      "description": "Rosentraum förenar rosor i rosa, krämvitt och aprikos med violetta blommor, bärkvistar och friskt grönt. Omsluten av en gammalrosa manschett känns buketten frodig och samtidigt modern.",
+      "flowers": [
+        "Rosor"
+      ],
+      "care": [
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Håll vasen ren.",
+        "Byt vattnet regelbundet."
+      ],
+      "seo": {
+        "title": "Rosentraum – rosor i rosa & krämvitt",
+        "description": "Rosor i rosa, krämvitt och aprikos med violetta inslag i gammalrosa manschett. En harmonisk rosbukett – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Bunden bukett med rosor i rosa, krämvitt och aprikos i gammalrosa manschett",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum i gammalrosa manschett i en vit vas",
+        "/images/products/sortiment/rosentraum-3.jpg": "Buketten ovanifrån med rosor, violetta blommor och bärkvistar"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Vita rosor med brudslöja",
+      "shortDescription": "Vita rosor med brudslöja – skira, romantiska och ljusa.",
+      "description": "Rosenkuss består av vita till krämvita rosor, upplättade med fin brudslöja och omslutna av en vit manschett. En bukett för ömhet, närhet och små kärleksbudskap.",
+      "flowers": [
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Placera inte för varmt.",
+        "Kontrollera vattennivån varje dag.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Rosenkuss – vita rosor",
+        "description": "Vita rosor med brudslöja i vit manschett. En skir, romantisk rosbukett – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Rosenkuss, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Rosenkuss, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Rosenkuss, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Bukett med vita rosor och brudslöja i vit manschett i en vit vas",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Stor bukett med vita rosor i vit manschett i en vit vas",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Liggande bukett med vita rosor och brudslöja på en träbyrå"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Rosor i pastell, cerise & bordeaux",
+      "shortDescription": "Rosor i pastell och cerise, elegant sammansatta.",
+      "description": "Rosenglanz förenar rosor i pastellrosa, krämvitt, cerise och bordeaux med brudslöja i en rosa manschett. Tidlös i utstrålningen, finns i sex storlekar.",
+      "flowers": [
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Snitta stjälkarna på nytt.",
+        "Undvik direkt solljus.",
+        "Byt vattnet i vasen regelbundet."
+      ],
+      "seo": {
+        "title": "Rosenglanz – rosor i pastell & cerise",
+        "description": "Rosor i pastellrosa, cerise och bordeaux med brudslöja, i sex storlekar. En elegant rosbukett – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Rosenglanz, storlek Liten, i handen framför en gata i Wien med spårvagn"
+        },
+        "m": {
+          "label": "Mellan",
+          "detailAlt": "Rosenglanz, storlek Mellan, i handen framför en gata i Wien med spårvagn"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Rosenglanz, storlek Stor, i handen framför en gata i Wien med spårvagn"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Bukett med rosor i pastellrosa, cerise och bordeaux i rosa manschett i en glasvas",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Rund rosbukett med brudslöja i rosa manschett, framifrån",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Liggande bukett med pastellfärgade och cerise rosor på en träbyrå"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Rosa rosor, gerbera, liljor & nejlikor",
+      "shortDescription": "En uttrycksfull bukett i rosa och cerise som talar utan ord.",
+      "description": "Pure Liebe förenar rosa rosor med cerise gerbera, rosa liljor, nejlikor och brudslöja. Intensiv i de rosa och cerise tonerna, upplättad med ljusa inslag – en bukett full av känsla.",
+      "flowers": [
+        "Rosor",
+        "Gerbera",
+        "Liljor",
+        "Nejlikor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Ge färskt vatten regelbundet.",
+        "Håll vasen ren.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Pure Liebe – bukett i rosa & cerise",
+        "description": "Rosa rosor, cerise gerbera, liljor och nejlikor med brudslöja. En bukett full av känsla – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Bukett med rosa rosor, cerise gerbera och rosa liljor i en beige vas",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe med liljor, gerbera och nejlikor i en beige vas",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Rund bukett med rosa rosor, gerbera, nejlikor och brudslöja i en glasvas"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Cerise gerbera, rosor & violetta inslag",
+      "shortDescription": "Starka cerise toner i en frisk, modern bukett.",
+      "description": "Pink Harmony förenar cerise gerbera och rosor med vita och syrenfärgade blommor, violetta inslag och brudslöja. Livfull och frisk, med mycket charm.",
+      "flowers": [
+        "Gerbera",
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Placera svalt.",
+        "Ta bort vissna blommor.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbera & rosor i cerise",
+        "description": "Cerise gerbera och rosor med syrenfärgade och violetta inslag. En frisk, modern bukett – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Bukett med cerise gerbera, rosor och syrenfärgade blommor i en beige vas",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Rund bukett med cerise gerbera, rosor och violetta inslag"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Färgglad rosbukett i rosa, gult, aprikos & lila",
+      "shortDescription": "En generös, färgglad rosbukett för särskilda tillfällen.",
+      "description": "Love Deluxe är en rosbukett i många färger: rosa, krämvitt, aprikos, gult och lila, omsluten av en rosa manschett. För särskilda tillfällen och stora gester, finns i fem storlekar.",
+      "flowers": [
+        "Rosor"
+      ],
+      "care": [
+        "Snitta stjälkarna på nytt.",
+        "Byt vattnet i vasen varje dag.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Love Deluxe – färgglad rosbukett",
+        "description": "Rosor i rosa, krämvitt, aprikos, gult och lila i rosa manschett, i fem storlekar. För stora gester – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Färgglad rosbukett i rosa, gult, aprikos och lila i rosa manschett i en vit vas",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Stor färgglad rosbukett i rosa manschett, framifrån",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Liggande färgglad rosbukett i rosa manschett på en träbyrå"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Röda & gröna rosor med liljor",
+      "shortDescription": "En känslosam bukett i rött för att säga ”jag älskar dig”.",
+      "description": "Liebeserklärung förenar röda rosor med ljusgröna rosor, vita liljor, röda accentblommor och brudslöja. Kraftfull men ändå frisk i uttrycket – en bukett som gör känslor synliga.",
+      "flowers": [
+        "Rosor",
+        "Liljor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Skydda mot värme.",
+        "Byt vattnet regelbundet.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – röda rosor & liljor",
+        "description": "Röda och ljusgröna rosor med liljor och brudslöja. En bukett för att säga ”jag älskar dig” – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Bukett med röda och ljusgröna rosor, liljor och brudslöja i en glasvas",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung i en vit vas på en träbyrå"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Rosor & gerbera i rosa med orange inslag",
+      "shortDescription": "Elegant och balanserad – en bukett med stilfull återhållsamhet.",
+      "description": "Klassische Schönheit förenar rosor i gammalrosa och vitt med cerise gerbera, små orange blommor och brudslöja. Omsluten av en mörk manschett med guldkant känns buketten balanserad och tidlös.",
+      "flowers": [
+        "Rosor",
+        "Gerbera",
+        "Brudslöja"
+      ],
+      "care": [
+        "Ställ inte direkt bredvid ett element.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen.",
+        "Byt vattnet i vasen regelbundet."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – rosor & gerbera",
+        "description": "Rosor i gammalrosa och vitt med cerise gerbera i mörk manschett. En balanserad, tidlös bukett – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Bukett med gammalrosa rosor och cerise gerbera i mörk manschett med guldkant",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit i en vit vas",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Rosor, gerbera och brudslöja i mörk manschett, ovanifrån"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Rosa rosor & cerise gerbera",
+      "shortDescription": "Lekfull och livfull: rosa rosor möter cerise gerbera.",
+      "description": "Herzklopfen förenar ljusrosa rosor med cerise gerbera, små vitgröna blommor och fint lila grönt. Runt bunden och full av färg – en bukett med mycket känsla.",
+      "flowers": [
+        "Rosor",
+        "Gerbera"
+      ],
+      "care": [
+        "Ge färskt vatten varje dag.",
+        "Snitta stjälkarna snett.",
+        "Placera svalt och utan direkt solljus."
+      ],
+      "seo": {
+        "title": "Herzklopfen – rosa rosor & gerbera",
+        "description": "Ljusrosa rosor och cerise gerbera, runt bundna. En lekfull bukett full av känsla – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Rund bukett med ljusrosa rosor och cerise gerbera i en vit vas",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen i en vit vas, från sidan",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Bukett med rosa rosor och cerise gerbera i en glasvas"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Färgglad mix med rosor & gerbera",
+      "shortDescription": "En färgglad bukett som utstrålar livsglädje.",
+      "description": "Fröhlicher Blütenmix förenar röda rosor, gerbera i gult, rosa och rött och fler blommor i gult, orange och violett. Omsluten av en röd manschett – perfekt för att ge bort ett leende.",
+      "flowers": [
+        "Rosor",
+        "Gerbera"
+      ],
+      "care": [
+        "Placera svalt.",
+        "Byt vatten regelbundet.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – färgglad bukett",
+        "description": "Röda rosor och gerbera i gult, rosa och rött i röd manschett. En färgglad bukett full av livsglädje – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Färgglad bukett med gerbera och rosor i röd manschett på en träbyrå",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix i röd manschett i en vit vas",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Röda rosor, gula och rosa gerbera i röd manschett, ovanifrån"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Rosor & gerbera i cerise med lila inslag",
+      "shortDescription": "En livfull mix i cerise, aprikos och lila.",
+      "description": "Farbtänzer förenar rosor och grenrosor i cerise och aprikos med rosa gerbera, lila blommor och ljusa bär. Tätt och livfullt bunden – modern och uttrycksfull.",
+      "flowers": [
+        "Rosor",
+        "Gerbera"
+      ],
+      "care": [
+        "Ta bort blad som hamnar under vattenytan.",
+        "Håll vasen ren.",
+        "Snitta stjälkarna snett innan du sätter dem i vasen."
+      ],
+      "seo": {
+        "title": "Farbtänzer – bukett i cerise & lila",
+        "description": "Rosor och gerbera i cerise och aprikos med lila inslag. En livfull, modern bukett – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Liggande bukett i cerise och lila i ljusrosa manschett",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Rund bukett med cerise rosor, gerbera och lila blommor i en krämvit vas",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer i en räfflad vas, framifrån"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Hjärtformad blomsterbox",
+      "tagline": "Rosor i en röd hjärtbox",
+      "shortDescription": "Rosor i en hjärtformad box – en kärleksförklaring att ställa fram.",
+      "description": "I den röda, hjärtformade boxen är rosor i rött, rosa och vitt arrangerade med fler blommor och brudslöja. En present till årsdag, alla hjärtans dag eller som kärleksfull överraskning.",
+      "flowers": [
+        "Rosor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Fukta rosorna lätt.",
+        "Placera svalt.",
+        "Skydda mot direkt solljus."
+      ],
+      "seo": {
+        "title": "Hjärtformad blomsterbox – rosor i hjärtbox",
+        "description": "Rosor i rött, rosa och vitt i en röd hjärtbox. Till årsdag och alla hjärtans dag – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Röd hjärtformad blomsterbox med rosor i rött, rosa och vitt och brudslöja"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klassisk blomsterbox",
+      "tagline": "Röda rosor i rund box",
+      "shortDescription": "Klassiska rosor i en rund box – enkel och uttrycksfull.",
+      "description": "Den klassiska blomsterboxen fyller en rund box med tätt placerade rosor. Minimalistisk och tidlös passar den till födelsedagen, som tack eller till särskilda stunder. Finns i rött och vitt.",
+      "flowers": [
+        "Rosor"
+      ],
+      "care": [
+        "Vattna rosorna lätt och regelbundet.",
+        "Placera svalt.",
+        "Skydda mot direkt solljus."
+      ],
+      "seo": {
+        "title": "Klassisk blomsterbox – rosor i box",
+        "description": "Tätt placerade rosor i en rund box, finns i rött och vitt. En enkel present – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Röda rosor i en rund vit box med rosa och guldfärgad kant",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Två röda sammetsklädda runda boxar med röda rosor på en vit sockel"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Rosa anthurium i kruka",
+      "tagline": "Anthurium med rosa blommor",
+      "shortDescription": "Ett anthurium med ljusrosa blommor – elegant och diskret.",
+      "description": "Det rosa anthuriumet ger med sina skira blommor och sitt blanka gröna bladverk färg åt rummet utan att ta över. Det passar lika bra i hemmet som på kontoret.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Placera ljust, men utan direkt solljus.",
+        "Vattna regelbundet, men undvik stående vatten.",
+        "Spraya bladen med vatten då och då."
+      ],
+      "seo": {
+        "title": "Rosa anthurium i kruka – krukväxt",
+        "description": "Anthurium med ljusrosa blommor och blanka blad. En elegant krukväxt som present – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Rosa anthurium i en gammalrosa keramikkruka på en träbyrå",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anthurium med rosa blommor i en malvafärgad kruka bredvid ljus"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Rött anthurium i kruka",
+      "tagline": "Anthurium med röda blommor",
+      "shortDescription": "Ett anthurium med lysande röda blommor och modern utstrålning.",
+      "description": "Röda anthurium ger starka färgaccenter med sina blanka blommor. Som dekorativ krukväxt eller present håller det sig vackert länge med rätt skötsel.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Ljus placering utan direkt solljus.",
+        "Håll jorden jämnt fuktig.",
+        "Undvik stående vatten."
+      ],
+      "seo": {
+        "title": "Rött anthurium i kruka – krukväxt",
+        "description": "Anthurium med lysande röda blommor i kruka. En dekorativ krukväxt som present – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Rött anthurium i en röd keramikkruka på en träbyrå"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "Rött anthurium XXL i kruka",
+      "tagline": "Stort anthurium med röda blommor",
+      "shortDescription": "Ett stort, frodigt anthurium med många röda blommor.",
+      "description": "Detta röda anthurium är över 80 cm högt och bär många röda blommor över tätt, blankt bladverk. Ett uttrycksfullt blickfång för hemmet eller kontoret.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Placera ljust, men utan direkt solljus.",
+        "Vattna regelbundet, men undvik stående vatten.",
+        "Torka av damm från bladen då och då."
+      ],
+      "seo": {
+        "title": "Rött anthurium XXL i kruka",
+        "description": "Stort anthurium med många röda blommor i kruka. Ett blickfång för hemmet eller kontoret – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Stort anthurium med många röda blommor i en röd kruka bredvid ljus"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelia i kruka",
+      "tagline": "Bromelia med röd blomma",
+      "shortDescription": "En bromelia med klarröd blomma och tropisk känsla.",
+      "description": "Bromelian ger livfulla accenter med sin röda blomrosett och sina smala gröna blad. En dekorativ krukväxt för hem eller arbetsplats och en särskild present.",
+      "flowers": [
+        "Bromelia"
+      ],
+      "care": [
+        "Placera ljust, men utan direkt solljus.",
+        "Häll regelbundet vatten i bladrosettens mitt.",
+        "Håll jorden bara lätt fuktig."
+      ],
+      "seo": {
+        "title": "Bromelia i kruka – krukväxt",
+        "description": "Bromelia med röd blomma i kruka: tropisk känsla för hemmet eller kontoret – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelia med röd blomma i en röd kruka på en träbyrå"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Gummifikus i kruka",
+      "tagline": "Gummifikus med mörkgröna blad",
+      "shortDescription": "En lättskött gummifikus med blanka, mörkgröna blad.",
+      "description": "Med sina stora, blanka blad känns gummifikusen modern och lugn. Den är lättskött och passar bra i hem och på kontor.",
+      "flowers": [
+        "Gummifikus"
+      ],
+      "care": [
+        "Ljus till halvskuggig placering.",
+        "Vattna sparsamt – den klarar sig med lite vatten.",
+        "Damma av bladen då och då."
+      ],
+      "seo": {
+        "title": "Gummifikus i kruka – lättskött växt",
+        "description": "Gummifikus med blanka, mörkgröna blad. En lättskött krukväxt för hemmet och kontoret – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Gummifikus med mörkgröna blad i en röd kruka på en träbyrå"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Vit orkidé i kruka",
+      "tagline": "Orkidé i kruka, i flera färger",
+      "shortDescription": "En orkidé i kruka – lugn, elegant och tidlös.",
+      "description": "Orkidén står för elegans och lugn. Med sina fina blomstänglar är den ett stilfullt val för hemmet, kontoret eller som present. Finns i lila, rosa, gult, vitt och blått.",
+      "flowers": [
+        "Orkidé"
+      ],
+      "care": [
+        "Placera ljust, men utan direkt solljus.",
+        "Vattna sparsamt och undvik stående vatten.",
+        "Ta bort överblommade blomstänglar först när de har torkat."
+      ],
+      "seo": {
+        "title": "Orkidé i kruka – i fem färger",
+        "description": "Orkidé i kruka i vitt, rosa, gult, lila eller blått. En elegant krukväxt som present – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Vit orkidé med cerise blomsvalg i en krämvit keramikkruka",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orkidé med ljusrosa blommor i en krämvit keramikkruka",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Gul orkidé i en krämvit keramikkruka",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orkidé med violetta blommor i en cerise kruka",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orkidé med blå blommor i en grå kruka bredvid ljus"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Röd sorgbukett",
+      "tagline": "Röda rosor, gerbera & nejlikor med granris",
+      "shortDescription": "En sorgbukett i rött som tecken på kärlek och samhörighet.",
+      "description": "Den röda sorgbuketten förenar röda rosor, gerbera och nejlikor med gula rosor, brudslöja och granris. En värdig gest till minne, som stilla uttrycker starka känslor. Sammansättningen kan variera något beroende på säsong.",
+      "flowers": [
+        "Rosor",
+        "Gerbera",
+        "Nejlikor",
+        "Brudslöja"
+      ],
+      "care": [
+        "Placera svalt, inte i direkt sol eller bredvid ett element.",
+        "Håll oasisen fuktig i arrangemang."
+      ],
+      "seo": {
+        "title": "Röd sorgbukett – rosor & gerbera",
+        "description": "Sorgbukett i rött med rosor, gerbera och nejlikor på granris, i tre storlekar. En värdig sista hälsning – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Sorgbukett med röda rosor, gerbera och nejlikor, gula rosor och granris på en stensockel"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Rosa sorgbukett",
+      "tagline": "Rosa rosor & violetta blommor",
+      "shortDescription": "En sorgbukett i skira rosa toner med tröstande utstrålning.",
+      "description": "Rosa rosor, violetta och rosa blommor och granris ger denna sorgbukett ett mjukt, tröstande uttryck. Den står för tacksamhet, närhet och kärleksfulla minnen – passande för ett stilla, personligt farväl.",
+      "flowers": [
+        "Rosor"
+      ],
+      "care": [
+        "Placera svalt, inte i direkt sol eller bredvid ett element.",
+        "Håll oasisen fuktig i arrangemang."
+      ],
+      "seo": {
+        "title": "Rosa sorgbukett – skira rosa toner",
+        "description": "Sorgbukett i skira rosa toner med rosa rosor på granris, i tre storlekar. För ett stilla farväl – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Sorgbukett med rosa rosor och violetta blommor på granris, med vitt band, på en stensockel"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Sorgbukett i pastell",
+      "tagline": "Liljor, rosor & blå blommor i pastell",
+      "shortDescription": "En lugn sorgbukett i fina pasteller.",
+      "description": "Sorgbuketten i pastell förenar rosa liljor och rosor med ljusblå, syrenfärgade och vita blommor. De fina färgnyanserna förmedlar tröst och medkänsla. Blommorna kan variera efter säsong.",
+      "flowers": [
+        "Liljor",
+        "Rosor"
+      ],
+      "care": [
+        "Placera svalt, inte i direkt sol eller bredvid ett element.",
+        "Håll oasisen fuktig i arrangemang."
+      ],
+      "seo": {
+        "title": "Sorgbukett i pastell – lugna färger",
+        "description": "Sorgbukett i pastell med liljor, rosor och ljusblå blommor, i tre storlekar. Diskret och stilfull – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Sorgbukett i pastell med rosa liljor, rosor och ljusblå blommor, med svart band, på en stensockel"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Orange sorgbukett",
+      "tagline": "Rosor, gerbera & nejlikor i orange och gult",
+      "shortDescription": "En sorgbukett i varma orange toner som uttrycker uppskattning.",
+      "description": "Rosor, gerbera och nejlikor i orange, gult och aprikos förenas med granris till en varm sorgbukett. Den står för tacksamhet och minnet av ett rikt liv och passar till visning eller minnesstund.",
+      "flowers": [
+        "Rosor",
+        "Gerbera",
+        "Nejlikor"
+      ],
+      "care": [
+        "Placera svalt, inte i direkt sol eller bredvid ett element.",
+        "Håll oasisen fuktig i arrangemang."
+      ],
+      "seo": {
+        "title": "Orange sorgbukett – varma toner",
+        "description": "Sorgbukett i orange och gult med rosor, gerbera och nejlikor, i tre storlekar. Till visning och minnesstund – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Sorgbukett med rosor, gerbera och nejlikor i orange och gult på granris, på en stensockel"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Vit sorgbukett",
+      "tagline": "Vita liljor & krysantemum",
+      "shortDescription": "En klassisk sorgbukett i vitt – enkel och värdig.",
+      "description": "Vita liljor, krysantemum och små vita blommor på granris gör denna sorgbukett enkel och tidlös. Vitt står för frid och farväl – passande för formella begravningar eller som ett stilla tecken på deltagande.",
+      "flowers": [
+        "Liljor",
+        "Krysantemum"
+      ],
+      "care": [
+        "Placera svalt, inte i direkt sol eller bredvid ett element.",
+        "Håll oasisen fuktig i arrangemang."
+      ],
+      "seo": {
+        "title": "Vit sorgbukett – liljor & krysantemum",
+        "description": "Klassisk sorgbukett i vitt med liljor och krysantemum, i tre storlekar. Enkel och värdig – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Sorgbukett med vita liljor, krysantemum och små vita blommor på granris, på en stensockel"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Gul sorgbukett",
+      "tagline": "Solrosor, gula rosor & nejlikor",
+      "shortDescription": "En sorgbukett i gult för minne, hopp och tacksamhet.",
+      "description": "Solrosor, gula rosor och aprikosfärgade nejlikor på granris gör denna sorgbukett ljus och varm. Den passar till avsked där livet står i centrum. Blommorna beror på säsong.",
+      "flowers": [
+        "Solrosor",
+        "Rosor",
+        "Nejlikor"
+      ],
+      "care": [
+        "Placera svalt, inte i direkt sol eller bredvid ett element.",
+        "Håll oasisen fuktig i arrangemang."
+      ],
+      "seo": {
+        "title": "Gul sorgbukett – solrosor & rosor",
+        "description": "Sorgbukett i gult med solrosor, rosor och nejlikor, i tre storlekar. En ljus sista hälsning – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Sorgbukett med solrosor, gula rosor och aprikosfärgade nejlikor på granris, på en stensockel"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Färgglad begravningskrans",
+      "tagline": "Gerbera, rosor & blommor i glada färger",
+      "shortDescription": "En färgglad begravningskrans som farväl till en livsglad människa.",
+      "description": "Den färgglada begravningskransen förenar gerbera, rosor och fler blommor i gult, orange, rosa och vitt på grön botten. En värdig och samtidigt färgstark sista hälsning, bunden för hand. Har du önskemål om utformningen är du välkommen att höra av dig.",
+      "flowers": [
+        "Gerbera",
+        "Rosor"
+      ],
+      "care": [
+        "Placera svalt och skuggigt.",
+        "Fukta oasisen lätt vid behov."
+      ],
+      "seo": {
+        "title": "Färgglad begravningskrans – färgstarkt farväl",
+        "description": "Färgglad begravningskrans med gerbera och rosor, bunden för hand. En färgstark sista hälsning – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Färgglad begravningskrans med gerbera, liljor och vita blommor, med svart band, på ett staffli av trä"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Cerise begravningskrans",
+      "tagline": "Gerbera & rosor i cerise och rött",
+      "shortDescription": "En begravningskrans i cerise och rött som kärleksfull sista hälsning.",
+      "description": "Begravningskransen i cerise och rött förenar cerise gerbera, rosor och fler blommor med ljusa inslag och friskt grönt. Ett uttryck för kärlek och minne, bunden för hand. Har du önskemål om utformningen är du välkommen att höra av dig.",
+      "flowers": [
+        "Gerbera",
+        "Rosor"
+      ],
+      "care": [
+        "Placera svalt och skuggigt.",
+        "Fukta oasisen lätt vid behov."
+      ],
+      "seo": {
+        "title": "Cerise begravningskrans – cerise & rött",
+        "description": "Begravningskrans i cerise och rött med gerbera och rosor, bunden för hand. En kärleksfull sista hälsning – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Begravningskrans med cerise gerbera, rosor och röda blommor, med bordeauxfärgat band, på ett staffli av trä"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Röd och gul begravningskrans",
+      "tagline": "Röda och gula gerbera",
+      "shortDescription": "En lysande begravningskrans i rött och gult.",
+      "description": "Röda och gula gerbera, tätt placerade på grön botten, gör denna begravningskrans till en lysande sista hälsning full av värme, tacksamhet och fina minnen. Bunden för hand. Har du önskemål om utformningen är du välkommen att höra av dig.",
+      "flowers": [
+        "Gerbera"
+      ],
+      "care": [
+        "Placera svalt och skuggigt.",
+        "Fukta oasisen lätt vid behov."
+      ],
+      "seo": {
+        "title": "Röd och gul begravningskrans – gerbera",
+        "description": "Begravningskrans med röda och gula gerbera, bunden för hand. En varm, lysande sista hälsning – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Begravningskrans med röda och gula gerbera och silvergrått band på ett staffli av trä"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Röd begravningskrans",
+      "tagline": "Röda gerbera & rosor",
+      "shortDescription": "En klassisk begravningskrans i rött för kärlek som består.",
+      "description": "Den röda begravningskransen förenar röda gerbera och rosor på granris. En klassisk, värdig sista hälsning för kärlek som består bortom avskedet. Bunden för hand. Har du önskemål om utformningen är du välkommen att höra av dig.",
+      "flowers": [
+        "Gerbera",
+        "Rosor"
+      ],
+      "care": [
+        "Placera svalt och skuggigt.",
+        "Fukta oasisen lätt vid behov."
+      ],
+      "seo": {
+        "title": "Röd begravningskrans – gerbera & rosor",
+        "description": "Begravningskrans i rött med gerbera och rosor på granris, bunden för hand. En klassisk sista hälsning – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Begravningskrans med röda gerbera och rosor på granris med svart band på ett staffli av trä"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Vit begravningskrans",
+      "tagline": "Vita rosor, gerbera & nejlikor",
+      "shortDescription": "En enkel begravningskrans i vitt för stilla deltagande.",
+      "description": "Vita rosor, gerbera och nejlikor med ljusgröna inslag och grönt bildar denna enkla krans. Vitt står för frid och stilla deltagande. Bunden för hand. Har du önskemål om utformningen är du välkommen att höra av dig.",
+      "flowers": [
+        "Rosor",
+        "Gerbera",
+        "Nejlikor"
+      ],
+      "care": [
+        "Placera svalt och skuggigt.",
+        "Fukta oasisen lätt vid behov."
+      ],
+      "seo": {
+        "title": "Vit begravningskrans – enkel & värdig",
+        "description": "Begravningskrans i vitt med rosor, gerbera och nejlikor, bunden för hand. En enkel sista hälsning – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Ringformad begravningskrans med vita rosor, gerbera och nejlikor och vitt band på ett staffli av trä"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Adventskransar",
+      "tagline": "Granris med fyra ljus, i sju färger",
+      "shortDescription": "En handbunden adventskrans av granris med fyra ljus.",
+      "description": "Adventskransen binds för hand av doftande granris och dekoreras med fyra ljus, band, kulor, kottar och fler detaljer. Finns i rött, grått, lila, guld, beige, vinrött och rosa.",
+      "flowers": [],
+      "care": [
+        "Låt aldrig ljusen brinna utan tillsyn.",
+        "Placera svalt, inte direkt bredvid ett element.",
+        "Spraya granriset lätt med vatten då och då."
+      ],
+      "seo": {
+        "title": "Adventskrans – handbunden med ljus",
+        "description": "Handbunden adventskrans av granris med fyra ljus, i sju färger och fyra storlekar – blomsterleverans i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Mellan"
+        },
+        "l": {
+          "label": "Stor"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Röd",
+        "grau": "Grå",
+        "lila": "Lila",
+        "gold": "Guld",
+        "beige": "Beige",
+        "weinrot": "Vinröd",
+        "rosa": "Rosa"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Adventskrans av granris med fyra röda ljus, röda band, kulor och kottar",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Adventskrans med fyra ljusgrå ljus, krämvita band och apelsinskivor",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Adventskrans med lila och rosa ljus, violetta band och änglafigur",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Adventskrans med fyra guldfärgade ljus, guldband, kanelstänger och kottar",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Adventskrans med fyra rosa ljus, bordeauxfärgade band och änglafigur",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Adventskrans med fyra vinröda ljus, kulor och vinröda band",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Adventskrans med fyra mörkgrå ljus, krämvita band och röda kulor",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Adventskrans i guld med guldfärgade ljus och band, från sidan",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Adventskrans i rosa med rosa ljus och bordeauxfärgade band, från sidan"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Alla blommor",
+      "headline": "Beställ blommor online",
+      "intro": "Handbundna buketter till hela Wien. Välj din bukett och bestäm leveransdatum.",
+      "seo": {
+        "title": "Beställ blommor online med leverans i Wien",
+        "description": "Beställ blommor online och få dem levererade i Wien. Handbundna buketter med önskat datum – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Rosor",
+      "headline": "Rosbuketter",
+      "intro": "Rosor i rött, rosa eller vitt, i flera storlekar. Bundna för hand och levererade i Wien.",
+      "seo": {
+        "title": "Beställ rosbuketter online – rosor i Wien",
+        "description": "Alla rosbuketter på ett ställe: röda, rosa och vita rosor i flera storlekar. Bundna för hand och levererade i Wien på önskat datum."
+      }
+    },
+    "saisonal": {
+      "name": "Säsongens blommor",
+      "headline": "Säsongens blommor",
+      "intro": "Buketter som passar årstiden. Urvalet skiftar under året.",
+      "seo": {
+        "title": "Säsongsbuketter med leverans i Wien",
+        "description": "Säsongsbuketter som passar årstiden. Bundna för hand och levererade i Wien."
+      }
+    },
+    "pastell": {
+      "name": "Pastell",
+      "headline": "Pastellbuketter",
+      "intro": "Rosé, krämvitt, syren: mjuka färger för ömma stunder.",
+      "seo": {
+        "title": "Pastellblommor med leverans i Wien",
+        "description": "Buketter i mjuka pasteller levererade i Wien – nybundna, på önskat datum."
+      }
+    },
+    "bunt": {
+      "name": "Färgglatt",
+      "headline": "Färgglada buketter",
+      "intro": "Färg som gör glad. Till födelsedagar, överraskningar och gott humör.",
+      "seo": {
+        "title": "Färgglada buketter med leverans i Wien",
+        "description": "Färgglada, glada buketter levererade i Wien – nybundna, på önskat datum."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegant & vitt",
+      "headline": "Elegant & vitt",
+      "intro": "Vitt, krämvitt och grönt. Buketter som känns lugna och exklusiva i varje rum.",
+      "seo": {
+        "title": "Eleganta vita blommor med leverans i Wien",
+        "description": "Vita och krämvita buketter levererade i Wien – eleganta, nybundna, på önskat datum."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Premiumbuketter",
+      "intro": "Generösa buketter för särskilda stunder.",
+      "seo": {
+        "title": "Premiumbuketter med leverans i Wien",
+        "description": "Premiumbuketter för särskilda tillfällen levererade i Wien – bundna för hand, på önskat datum."
+      }
+    },
+    "unter-40": {
+      "name": "Under 40 €",
+      "headline": "Blommor under 40 €",
+      "intro": "Små buketter med stor verkan – alla under 40 euro.",
+      "seo": {
+        "title": "Blommor under 40 € med leverans i Wien",
+        "description": "Prisvärda buketter under 40 € levererade i Wien – nybundna, på önskat datum."
+      }
+    },
+    "bestseller": {
+      "name": "Favoritbuketter",
+      "headline": "Våra favoritbuketter",
+      "intro": "Buketter som vi särskilt gärna rekommenderar.",
+      "seo": {
+        "title": "Våra favoritbuketter – tips för Wien",
+        "description": "Buketter som vi särskilt gärna rekommenderar – bundna för hand och levererade i Wien."
+      }
+    },
+    "neu": {
+      "name": "Nyheter",
+      "headline": "Nytt hos Blumora",
+      "intro": "Nytt i sortimentet.",
+      "seo": {
+        "title": "Nya buketter för Wien",
+        "description": "Nya buketter i sortimentet – nybundna och levererade i Wien."
+      }
+    },
+    "blumenboxen": {
+      "name": "Blomsterboxar",
+      "headline": "Blomsterboxar",
+      "intro": "Rosor arrangerade i en box – en present som klarar sig utan vas.",
+      "seo": {
+        "title": "Blomsterboxar med leverans i Wien",
+        "description": "Rosor i blomsterbox – hjärtformad eller klassisk. Blomsterleverans i Wien på önskat datum."
+      }
+    },
+    "pflanzen": {
+      "name": "Växter",
+      "headline": "Krukväxter",
+      "intro": "Orkidéer, anthurium och gröna växter – blommor som stannar.",
+      "seo": {
+        "title": "Krukväxter med leverans i Wien",
+        "description": "Orkidéer, anthurium och krukväxter som present. Blomsterleverans i Wien."
+      }
+    },
+    "trauer": {
+      "name": "Sorgbinderi",
+      "headline": "Sorgbinderi",
+      "intro": "Begravningskransar och sorgbuketter, värdigt bundna som en sista hälsning.",
+      "seo": {
+        "title": "Begravningskransar & sorgbuketter i Wien",
+        "description": "Begravningskransar och sorgbuketter till begravning och minnesstund – med leverans i Wien."
+      }
+    },
+    "advent": {
+      "name": "Adventskransar",
+      "headline": "Adventskransar",
+      "intro": "Granris, ljus och dekorationer – handbundna för adventstiden.",
+      "seo": {
+        "title": "Adventskransar med leverans i Wien",
+        "description": "Handbundna adventskransar i flera färger och storlekar – med leverans i Wien."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Födelsedag",
+      "headline": "Blommor till födelsedagen",
+      "intro": "En bukett som säger: jag tänkte på dig. Välj blommor och önskat datum.",
+      "imageAlt": "Färgglad bukett med röda rosor, gerbera och gula blommor i röd manschett",
+      "seo": {
+        "title": "Födelsedagsblommor – buketter i Wien",
+        "description": "Buketter till födelsedagen: färgglada, glada eller eleganta. Bundna för hand och levererade i Wien – på önskat datum."
+      }
+    },
+    "liebe": {
+      "name": "Kärlek & romantik",
+      "headline": "Blommor för kärleken",
+      "intro": "Röda rosor eller något helt annat: blommor som säger det du menar.",
+      "imageAlt": "Bukett med djupröda rosor i grå manschett med rött band",
+      "seo": {
+        "title": "Romantiska blommor med leverans i Wien",
+        "description": "Rosor och romantiska buketter levererade i Wien – nybundna, på önskat datum."
+      }
+    },
+    "danke": {
+      "name": "Tack",
+      "headline": "Blommor för att säga tack",
+      "intro": "För hjälpen, för tiden, för allt. En bukett säger det utan många ord.",
+      "imageAlt": "Bukett med gula gerbera och vita rosor med gult band",
+      "seo": {
+        "title": "Tackblommor med leverans i Wien",
+        "description": "Säg tack med blommor: nybundna buketter levererade i Wien – på önskat datum."
+      }
+    },
+    "gute-besserung": {
+      "name": "Krya på dig",
+      "headline": "Blommor för att krya på sig",
+      "intro": "Mjuka färger, lugna former och en liten hälsning som gör gott.",
+      "imageAlt": "Solig bukett i orange och gult i ljus manschett",
+      "seo": {
+        "title": "Krya på dig-blommor med leverans i Wien",
+        "description": "Blommor för att krya på sig levererade i Wien – mjuka buketter, nybundna, på önskat datum."
+      }
+    },
+    "jahrestag": {
+      "name": "Årsdag",
+      "headline": "Blommor till årsdagen",
+      "intro": "För dagen då allt började. Och för alla dagar som kom efter.",
+      "imageAlt": "Bukett med röda och vita rosor i vit manschett",
+      "seo": {
+        "title": "Blommor till årsdagen med leverans i Wien",
+        "description": "Eleganta buketter till årsdagen levererade i Wien – nybundna, på önskat datum."
+      }
+    },
+    "geburt": {
+      "name": "Födsel",
+      "headline": "Blommor till en nyfödd",
+      "intro": "Välkommen, lilla människa. Skira blommor för ett stort ögonblick.",
+      "imageAlt": "Skir bukett med rosor i rosa och syren med brudslöja",
+      "seo": {
+        "title": "Blommor till en nyfödd med leverans i Wien",
+        "description": "Skira pastellbuketter till en nyfödd levererade i Wien – nybundna, på önskat datum."
+      }
+    },
+    "hochzeit": {
+      "name": "Bröllop",
+      "headline": "Blommor till bröllopet",
+      "intro": "Till brudparet eller bara som gratulation: elegant, ljust och festligt.",
+      "imageAlt": "Bukett med vita rosor i vit manschett i en vas",
+      "seo": {
+        "title": "Bröllopsblommor med leverans i Wien",
+        "description": "Eleganta blommor till bröllopet levererade i Wien – som gratulation eller present, nybundna."
+      }
+    },
+    "einfach-so": {
+      "name": "Bara för att",
+      "headline": "Blommor bara för att",
+      "intro": "Ingen anledning. Bara tanken. Ibland är det den bästa anledningen.",
+      "imageAlt": "Gula tulpaner i en glasvas vid fönstret",
+      "seo": {
+        "title": "Skicka blommor bara för att – Wien",
+        "description": "Skicka blommor utan anledning: små och stora buketter levererade i Wien – nybundna, på önskat datum."
+      }
+    },
+    "trauer": {
+      "name": "Sorg",
+      "headline": "Blommor vid sorg",
+      "intro": "Deltagande i lugna färger. Kransar, sorgbuketter och buketter, bundna för hand och levererade i Wien.",
+      "imageAlt": "Vit begravningskrans med vitt band på ett staffli av trä",
+      "seo": {
+        "title": "Sorgblommor med leverans i Wien",
+        "description": "Sorgblommor levererade i Wien – kransar, sorgbuketter och lugna buketter, bundna för hand, på önskat datum."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Doftljus",
+      "description": "Dekorativa doftljus i presentförpackning, i olika former och färger.",
+      "imageAlt": "Doftljus formade som hjärtan och klot i genomskinliga presentaskar"
+    },
+    "x-teddy": {
+      "name": "Nalle",
+      "description": "Gosebjörn med rött hjärta – det kärleksfulla tillägget till buketten.",
+      "imageAlt": "Ljusbrun gosebjörn med rött hjärta"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Vart levererar ni?",
+      "answer": "Vi levererar till alla 23 distrikt i Wien. Beroende på distrikt är leveransen gratis eller kostar 4,90 € resp. 7,90 €. Ange bara mottagaradressens postnummer – då ser du direkt om och när vi kan leverera och vad leveransen kostar.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Kan jag få blommor levererade redan i dag?",
+      "answer": "Ja – beställer du måndag till lördag senast kl. 18.30 eller på söndagar senast kl. 17.45 levererar vi samma dag i hela Wien, så länge det finns ett ledigt tidsfönster. Den tidigaste tiden för din adress ser du så snart du anger postnumret.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Finns det expressleverans?",
+      "answer": "Ja – expressleverans inom 1–2 timmar, utan extra kostnad. Beställ som vanligt och välj dagens tidigaste tidsfönster i kassan – det är märkt med ”Express”. Det fungerar när du beställer måndag till lördag senast kl. 18.30 eller på söndagar senast kl. 17.45 och det fortfarande finns ett ledigt tidsfönster för din adress.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Kan jag välja ett visst leveransdatum?",
+      "answer": "Ja. På varje produktsida och i kassan väljer du önskat datum i kalendern. Dagar då vi inte levererar är gråmarkerade.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Kan jag välja en önskad tid?",
+      "answer": "Ja. I Wien väljer du i kassan ett tidsfönster på en timme mellan kl. 9 och 22 – alla veckans sju dagar.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Vad händer om ingen är hemma?",
+      "answer": "Budet lämnar över blommorna personligen. Är ingen hemma lämnas de om möjligt hos en granne. I kassan kan du lägga till en anvisning för leveransen, till exempel en portkod. Vi informerar dig om din beställnings status via e-post.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Kan jag skicka blommor anonymt?",
+      "answer": "Ja. Utan hälsningskort står ditt namn ingenstans på buketten, och fakturan går bara till dig. Hälsningskort med personligt meddelande kommer snart.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Kan jag lägga till ett hälsningskort?",
+      "answer": "Inte ännu – hälsningskort kommer snart. Fram till dess levereras buketten utan kort.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Ser blommorna exakt ut som på bilden?",
+      "answer": "Varje bukett binds individuellt och blommor är naturprodukter. Färger, sorter och blomstorlek kan avvika något beroende på säsong. Stilen och färgskalan behålls.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Hur håller sig blommorna fräscha?",
+      "answer": "Varje bukett binds färsk för din beställning och levereras direkt av budet. Så håller den längst: snitta stjälkarna snett, ge färskt vatten och placera buketten svalt och utan direkt solljus.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Vilka betalningssätt finns det?",
+      "answer": "De tillgängliga betalningssätten ser du i beställningens sista steg. Betalningen sker säkert via en betaltjänstleverantör – dina kortuppgifter når aldrig oss.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Kan jag ändra min beställning?",
+      "answer": "Så länge buketten inte har bundits kan vi oftast fortfarande ändra leveransdatum eller adress. Skriv till oss så snart som möjligt och ange ditt ordernummer.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Kan jag skicka blommor till företag eller hotell?",
+      "answer": "Ja. Ange företagets eller hotellets namn i kassan och – om du vet det – avdelning eller rumsnummer. Leveransen sker till receptionen.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Blommor för särskilda stunder.",
+      "intro": "Blumora är en blomsterleverantör online från Wien. Varje bukett binds för hand hos en florist i Wien och levereras direkt med bud.",
+      "seo": {
+        "title": "Om oss – blomsterleverans från Wien",
+        "description": "Blumora är en blomsterleverantör online från Wien: buketter bundna för hand och levererade med bud till alla 23 distrikt."
+      },
+      "sections": [
+        {
+          "heading": "Så arbetar vi",
+          "paragraphs": [
+            "Blumora är en blomsterleverantör online i Wien. Du väljer din bukett hos oss – den binds av en florist i Wien som vi har ett fast samarbete med. Där skapas varje bukett för hand och för din beställning.",
+            "Hälsningskort med din text kommer snart."
+          ],
+          "imageAlt": "Bukett med rosor, dahlior, hortensior och tulpaner på fönsterbrädan i ett äldre Wienhus, i bakgrunden Stephansdomen i kvällsljus"
+        },
+        {
+          "heading": "Leveransen",
+          "paragraphs": [
+            "Ett bud hämtar din bukett direkt hos floristen och kör den utan mellanstopp till mottagarens adress. Vi levererar till alla 23 distrikt i Wien – i det tidsfönster du väljer: förmiddag, eftermiddag eller kväll fram till kl. 22."
+          ],
+          "imageAlt": "Buketten Pure Liebe i en glasvas"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Leverans & frakt",
+      "intro": "Vi levererar till alla 23 distrikt i Wien. Leveranskostnad (gratis, 4,90 € eller 7,90 €), leveransdagar och tidsfönster beror på mottagarens adress – ange postnumret så ser du allt på en gång.",
+      "seo": {
+        "title": "Leverans & frakt – blomsterleverans i Wien",
+        "description": "Leveransområden, leveranskostnader, leveransdagar och tidsfönster för blomsterleveranser i Wien."
+      },
+      "sections": [
+        {
+          "heading": "Så går leveransen till",
+          "paragraphs": [
+            "Din bukett binds färsk för din beställning. Ett bud hämtar den direkt hos floristen och kör den utan mellanstopp till mottagarens adress – i det tidsfönster du har valt. Är ingen hemma lämnas buketten om möjligt hos en granne.",
+            "För varje beställning får du en bekräftelse via e-post och en länk där du kan följa statusen."
+          ]
+        },
+        {
+          "heading": "Leverans till företag, hotell och sjukhus",
+          "paragraphs": [
+            "Ange i kassan företagets eller hotellets namn samt avdelning, vårdavdelning eller rumsnummer. Vi levererar till receptionen. Observera att vissa inrättningar inte tillåter blommor på vårdavdelningarna."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Kontakt",
+      "intro": "Frågor om en beställning, ett leveransdatum eller ett särskilt önskemål? Vi finns här för dig.",
+      "seo": {
+        "title": "Kontakt – Blumora Wien",
+        "description": "Kontakta Blumora om du har frågor om beställning, leverans eller särskilda önskemål."
+      },
+      "sections": [
+        {
+          "heading": "Så når du oss",
+          "paragraphs": [
+            "[Platshållare: e-post, telefon och öppettider hämtas från inställningarna och måste kompletteras där.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Blomsterleverans i hela Wien",
+      "headline": "Blommor som säger mer.",
+      "subheadline": "Nybundna blommor till de människor som betyder något för dig. Välj bara, bestäm datum och låt glädjen levereras.",
+      "primaryCta": {
+        "label": "Upptäck blommor"
+      },
+      "secondaryCta": {
+        "label": "Välj efter tillfälle"
+      },
+      "imageAlt": "En kvinna i kamelfärgad kappa bär en stor bukett med rosor, ranunkler, dahlior och tulpaner längs en kullerstensgata i Wien, i bakgrunden kör en spårvagn",
+      "deliveryCheck": {
+        "title": "Vart får vi leverera?",
+        "placeholder": "Ange postnummer",
+        "button": "Kontrollera leverans"
+      }
+    },
+    "occasions": {
+      "headline": "Blommor för varje stund",
+      "subheadline": "Ibland behövs ingen stor anledning. Bara rätt gest."
+    },
+    "bestsellers": {
+      "headline": "Våra favoritbuketter",
+      "subheadline": "Ett urval ur vårt sortiment."
+    },
+    "collections": {
+      "headline": "Hitta din perfekta bukett",
+      "subheadline": "Efter färg, stil eller budget."
+    },
+    "howItWorks": {
+      "headline": "Att ge bort glädje har aldrig varit enklare.",
+      "steps": [
+        {
+          "title": "Välj din favoritbukett",
+          "text": "Upptäck blommor för varje smak och tillfälle."
+        },
+        {
+          "title": "Gör den personlig",
+          "text": "Välj storlek och små extra tillägg."
+        },
+        {
+          "title": "Välj leveransdatum",
+          "text": "Bestäm när din överraskning ska komma fram."
+        },
+        {
+          "title": "Låt glädjen levereras",
+          "text": "Vi tar hand om resten."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Advent",
+      "headline": "Snart brinner det första ljuset.",
+      "text": "Adventskransar med granris, ljus och dekorationer – i flera färger och storlekar. Dessutom buketter i varma höstfärger.",
+      "cta": {
+        "label": "Adventskransar"
+      },
+      "imageAlt": "Adventskrans av granris med fyra röda ljus på en träbyrå"
+    },
+    "editorial": {
+      "eyebrow": "Hantverk",
+      "headline": "Av florister. Inte från ett löpande band.",
+      "text": "Varje bukett binds för hand av en florist i Wien för din beställning och levereras direkt med bud – utan omväg via ett lager.",
+      "cta": {
+        "label": "Så arbetar vi"
+      },
+      "imageAlt": "Ett bud lämnar över en färgglad bukett med rosor, dahlior och ranunkler vid dörren till ett äldre hus i Wien"
+    },
+    "extras": {
+      "headline": "Gör din överraskning komplett.",
+      "subheadline": "Små extra tillägg som gör stunden större."
+    },
+    "subscription": {
+      "headline": "Mer blommor i vardagen.",
+      "text": "Färska säsongsbuketter – varje vecka, varannan vecka eller varje månad. För hemmet, kontoret, receptionen eller restaurangen.",
+      "cta": {
+        "label": "Upptäck blomsterprenumeration"
+      }
+    },
+    "reviews": {
+      "headline": "Stunder som kom fram.",
+      "subheadline": "Vad kunder säger om sin beställning."
+    },
+    "gallery": {
+      "headline": "Blommor för särskilda stunder.",
+      "images": [
+        {
+          "alt": "Färgglad rosbukett i rött, rosa, krämvitt och aprikos i en vit vas"
+        },
+        {
+          "alt": "Bukett med lysande blå rosor i en vit vas"
+        },
+        {
+          "alt": "Bukett i starka cerise toner med gerbera i en vas vid fönstret"
+        },
+        {
+          "alt": "Exotisk bukett med paradisfågelblommor, liljor och gerbera"
+        },
+        {
+          "alt": "Hjärtformad röd blomsterbox med rosor på en byrå"
+        },
+        {
+          "alt": "Bukett med rosor i pastell och cerise i rosa manschett"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Bra att veta"
+    },
+    "newsletter": {
+      "headline": "Lite mer blommor i inkorgen.",
+      "text": "Nyheter, säsongskollektioner och särskilda erbjudanden.",
+      "placeholder": "Din e-postadress",
+      "button": "Prenumerera",
+      "note": "Du kan avsluta prenumerationen när som helst. Information om dataskydd hittar du i integritetspolicyn."
+    }
+  },
+  "settings": {
+    "claim": "Blommor som säger mer.",
+    "seo": {
+      "defaultTitle": "Blumora – blomsterleverans i Wien",
+      "defaultDescription": "Blomsterleverans i hela Wien: nybundna buketter till alla 23 distrikt. Samma dag vid beställning före kl. 18.30 (söndagar 17.45), express inom 1–2 timmar utan extra kostnad."
+    },
+    "announcement": {
+      "messages": [
+        "Leverans i hela Wien, alla 23 distrikt",
+        "Express inom 1–2 timmar – utan extra kostnad",
+        "Samma dag till kl. 18.30, söndagar till 17.45",
+        "Nybundet, levererat med bud"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Nybundet",
+        "text": "Bundet för hand för din beställning"
+      },
+      {
+        "title": "Leverans med bud",
+        "text": "I hela Wien – alla 23 distrikt"
+      },
+      {
+        "title": "Välj önskat datum",
+        "text": "Du bestämmer dagen"
+      },
+      {
+        "title": "Express inom 1–2 timmar",
+        "text": "Utan extra kostnad, samma dag till kl. 18.30"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Beställning mottagen",
+        "description": "Vi har tagit emot din beställning."
+      },
+      "paid": {
+        "label": "Betalning bekräftad",
+        "description": "Vi har tagit emot betalningen."
+      },
+      "preparing": {
+        "label": "Förbereds",
+        "description": "Blommorna till din bukett väljs ut."
+      },
+      "arranging": {
+        "label": "Buketten binds",
+        "description": "Din bukett binds för hand."
+      },
+      "ready": {
+        "label": "Redo för leverans",
+        "description": "Buketten är klar och hämtas av budet."
+      },
+      "in_transit": {
+        "label": "På väg",
+        "description": "Din bukett är på väg."
+      },
+      "delivered": {
+        "label": "Levererad",
+        "description": "Blommorna har kommit fram."
+      },
+      "undeliverable": {
+        "label": "Kunde inte levereras",
+        "description": "Vi kunde inte leverera och hör av oss till dig."
+      },
+      "cancelled": {
+        "label": "Avbeställd",
+        "description": "Beställningen har avbeställts."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Kreditkort",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Banköverföring online (eps)"
+    },
+    "headerCta": "Skicka blommor",
+    "address": {
+      "city": "Wien",
+      "country": "Österrike"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Wien zon 1",
+      "windows": {
+        "h09": "kl. 9–10",
+        "h10": "kl. 10–11",
+        "h11": "kl. 11–12",
+        "h12": "kl. 12–13",
+        "h13": "kl. 13–14",
+        "h14": "kl. 14–15",
+        "h15": "kl. 15–16",
+        "h16": "kl. 16–17",
+        "h17": "kl. 17–18",
+        "h18": "kl. 18–19",
+        "h19": "kl. 19–20",
+        "h20": "kl. 20–21",
+        "h21": "kl. 21–22"
+      }
+    },
+    "wien-mitte": {
+      "name": "Wien zon 2",
+      "windows": {
+        "h09": "kl. 9–10",
+        "h10": "kl. 10–11",
+        "h11": "kl. 11–12",
+        "h12": "kl. 12–13",
+        "h13": "kl. 13–14",
+        "h14": "kl. 14–15",
+        "h15": "kl. 15–16",
+        "h16": "kl. 16–17",
+        "h17": "kl. 17–18",
+        "h18": "kl. 18–19",
+        "h19": "kl. 19–20",
+        "h20": "kl. 20–21",
+        "h21": "kl. 21–22"
+      }
+    },
+    "wien-fern": {
+      "name": "Wien zon 3",
+      "windows": {
+        "h09": "kl. 9–10",
+        "h10": "kl. 10–11",
+        "h11": "kl. 11–12",
+        "h12": "kl. 12–13",
+        "h13": "kl. 13–14",
+        "h14": "kl. 14–15",
+        "h15": "kl. 15–16",
+        "h16": "kl. 16–17",
+        "h17": "kl. 17–18",
+        "h18": "kl. 18–19",
+        "h19": "kl. 19–20",
+        "h20": "kl. 20–21",
+        "h21": "kl. 21–22"
+      }
+    },
+    "noe-umland": {
+      "name": "Wiens omland (Niederösterreich)",
+      "note": "Leverans i Wiens omland tisdagar, torsdagar och lördagar.",
+      "windows": {
+        "day": "kl. 9–18"
+      }
+    }
+  }
+}

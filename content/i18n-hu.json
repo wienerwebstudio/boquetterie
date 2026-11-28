@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Rózsaszín rózsák, pink gerberák és fehér liliomok",
+      "shortDescription": "Világos, laza csokor rózsaszínben és fehérben, amely jókedvet visz minden helyiségbe.",
+      "description": "A Rosé Dream rózsaszín rózsákat és pink gerberákat párosít fehér liliomokkal, finom fátyolvirággal és friss zölddel. Lazán kötve, világos hatásával illik születésnaphoz, köszönetként vagy csak úgy.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák",
+        "Liliomok",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Naponta tölts friss vizet a vázába.",
+        "Szükség esetén vágd vissza a szárakat.",
+        "A hervadt virágokat rendszeresen távolítsd el."
+      ],
+      "seo": {
+        "title": "Rosé Dream – csokor rózsaszínben és fehérben",
+        "description": "Rosé Dream: rózsaszín rózsák, pink gerberák és fehér liliomok, lazán kötve. Világos csokor születésnapra és köszönetre – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Rózsaszín rózsákból, pink gerberákból és fehér liliomokból álló csokor üvegvázában egy fa komódon"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Sárga csokor",
+      "tagline": "Sárga gerberák, rózsák és fátyolvirág",
+      "shortDescription": "Napfényes csokor sárgában és fehérben, sárga masnival kötve.",
+      "description": "Ragyogó sárga gerberák találkoznak fehér és sárga rózsákkal, fátyolvirággal és friss zölddel. Világos csomagolásban, sárga masnival – csokor születésnapra, gratulációként, köszönetként vagy jobbulást kívánva.",
+      "flowers": [
+        "Gerberák",
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Ne tedd tűző napra."
+      ],
+      "seo": {
+        "title": "Sárga csokor – gerberák és rózsák sárgában",
+        "description": "Sárga gerberák, fehér és sárga rózsák fátyolvirággal és sárga masnival. Derűs üdvözlet születésnapra vagy gyógyulásra – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Sárga gerberákból, fehér és sárga rózsákból álló csokor világos csomagolásban, sárga masnival"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Fehér csokor",
+      "tagline": "Világos rózsák, gerberák és liliomok",
+      "shortDescription": "Világos, nyugodt csokor fehérben és krémszínben, finom rózsaszín hangsúlyokkal.",
+      "description": "A Fehér csokor világos rózsákat, gerberákat és liliomokat köt egybe fátyolvirággal – egyszerű, időtlen csokor. Finom rózsaszín és barackszínű hangsúlyok lazítják a képet. Illik házassági évfordulóra vagy évfordulóra, köszönetként vagy elegáns üdvözletként.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák",
+        "Liliomok",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Szükség esetén óvatosan távolítsd el a liliomok virágporát."
+      ],
+      "seo": {
+        "title": "Fehér csokor – csokor fehérben és krémszínben",
+        "description": "Világos rózsák, gerberák és liliomok fátyolvirággal: egyszerű csokor évfordulóra, házassági évfordulóra vagy köszönetre – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Világos csokor krémszínű rózsákból, rózsaszín gerberákból, liliomokból és fátyolvirágból fehér csomagolásban"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Kék és fehér rózsák kék csomagolásban",
+      "shortDescription": "Kék és fehér rózsák világoskék csomagolásban – feltűnő csokor.",
+      "description": "A Blue Bouquet kék és fehér rózsákat párosít fátyolvirággal, egy fehér liliommal és friss zölddel. A világoskék csomagolás a virágok színét veszi fel. Különleges ajándék születésnapra, évfordulóra vagy azoknak, akik szeretik a különlegeset.",
+      "flowers": [
+        "Rózsák",
+        "Liliomok",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – kék és fehér rózsák",
+        "description": "Kék és fehér rózsák fátyolvirággal, világoskék csomagolásban. Különleges rózsacsokor születésnapra vagy évfordulóra – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Kék és fehér rózsákból álló csokor fátyolvirággal, világoskék csomagolásban egy fa komódon"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Szivárványrózsák sokféle színben",
+      "shortDescription": "Szivárványrózsákból álló csokor, amelyben minden virág több színben ragyog.",
+      "description": "A Farbensinfonie szivárványrózsákból áll: minden virágon több szín látható egymás mellett, a pirostól és narancssárgától a sárgán és zöldön át a kékig és liláig. Sűrűn kötve a csokor olyan, mint egy színes gömb. Vidám meglepetés születésnapra vagy ünnepre.",
+      "flowers": [
+        "Szivárványrózsák"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – szivárványrózsák",
+        "description": "Szivárványrózsák, amelyekben minden virág több színben ragyog. Vidám rózsacsokor születésnapra – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Farbensinfonie, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Farbensinfonie, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Farbensinfonie, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Sűrű csokor szivárványrózsákból krémszínű vázában",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Szivárványrózsák közelről, minden virág több színben"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelitziák, liliomok és gerberák narancssárgában és sárgában",
+      "shortDescription": "Egzotikus csokor narancssárgában és sárgában, papagájvirágokkal mint szemet gyönyörködtető középponttal.",
+      "description": "A Sonnenzauber feltűnő papagájvirágokat párosít fehér liliomokkal, sárga gerberákkal és friss zölddel. A meleg narancssárga és sárga árnyalatok élénk, nyári kisugárzást adnak a csokornak.",
+      "flowers": [
+        "Strelitziák (papagájvirágok)",
+        "Liliomok",
+        "Gerberák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Tartsd tisztán a vázát, és rendszeresen frissítsd a vizet.",
+        "Ne tedd tűző napra."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelitziák és gerberák",
+        "description": "Papagájvirágok, liliomok és sárga gerberák meleg narancssárgában és sárgában. Szemet gyönyörködtető egzotikus csokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Egzotikus csokor strelitziákból, fehér liliomokból és sárga gerberákból átlátszó fóliában",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "A csokor strelitziái, liliomja és sárga gerberái felülnézetből"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Pink és rózsaszín virágok gerberákkal és liliomokkal",
+      "shortDescription": "Kerek, játékos csokor pinkben és rózsaszínben, sárga hangsúlyokkal.",
+      "description": "A Pink Bouquet pink és rózsaszín virágokat – köztük liliomokat és gerberákat – köt egy kerek, játékos csokorba. Sárga gerberák adnak friss hangsúlyt, a rózsaszín csomagolás teszi teljessé a képet. Szép születésnapra, évfordulóra, anyák napjára vagy csak úgy.",
+      "flowers": [
+        "Liliomok",
+        "Gerberák"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "A hervadt virágokat rendszeresen távolítsd el."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – csokor pinkben és rózsaszínben",
+        "description": "Kerek csokor pinkben és rózsaszínben, liliomokkal és gerberákkal. Születésnapra, anyák napjára vagy csak úgy – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Kerek csokor pinkben és rózsaszínben, sárga gerberákkal, rózsaszín csomagolásban",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Csokor rózsaszín liliomokkal, sárga gerberákkal és pink virágokkal rózsaszín csomagolásban, masnival"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Rózsák narancssárgában és barackszínben",
+      "shortDescription": "Rózsák narancssárgában és barackszínben – meleg csokor, mint egy naplemente.",
+      "description": "Az Orange Bouquet narancssárga és barackszínű rózsákból áll, finom zölddel kiegészítve, világos csomagolásban. Meleg és vidám hatású – illik születésnapra, köszönetként, vagy hogy valakinek bearanyozd a napját.",
+      "flowers": [
+        "Rózsák"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – narancssárga rózsák",
+        "description": "Rózsák narancssárgában és barackszínben, világos csomagolásban. Meleg rózsacsokor születésnapra vagy köszönetként – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Orange Bouquet, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Orange Bouquet, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Orange Bouquet, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Narancssárga és barackszínű rózsákból álló csokor világos csomagolásban egy fa komódon"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Mélyvörös rózsák sötét csomagolásban",
+      "shortDescription": "Dús csokor mélyvörös rózsákból, piros szatén masnival.",
+      "description": "A Red Rose Bouquet sűrűn kötött csokor mélyvörös rózsákból sötét csomagolásban, piros szatén masnival összefogva. A klasszikus szerelmi vallomás Valentin-napra, évfordulóra vagy lánykéréshez.",
+      "flowers": [
+        "Rózsák"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – vörös rózsák",
+        "description": "Mélyvörös rózsák sötét csomagolásban, piros szatén masnival. A klasszikus rózsacsokor Valentin-napra és évfordulóra – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Red Rose Bouquet, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Red Rose Bouquet, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Red Rose Bouquet, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Mélyvörös rózsákból álló csokor sötétszürke csomagolásban, piros szatén masnival",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Fekvő vörösrózsa-csokor fekete-fehér csomagolásban, gyertyák mellett"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Rózsák és gerberák rózsaszínben, pasztellben és orgonaszínben",
+      "shortDescription": "Lágy, romantikus csokor rózsaszínben és pasztellben.",
+      "description": "A Rosa Bouquet rózsaszín és pasztell rózsákat párosít gerberákkal és orgonaszínű virágokkal. Fehér csomagolásban, rózsaszín masnival könnyed és szeretetteljes hatású. Szép születésnapra, anyák napjára, babaérkezésre vagy üdvözletként.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – rózsák rózsaszínben és pasztellben",
+        "description": "Rózsák és gerberák rózsaszínben, pasztellben és orgonaszínben, fehér csomagolásban. Születésnapra, anyák napjára vagy babaérkezésre – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Rózsaszín rózsákból, gerberákból és orgonaszínű virágokból álló csokor fehér csomagolásban, rózsaszín masnival"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Fekete rózsák sötét csomagolásban",
+      "shortDescription": "Fekete rózsák sötét csomagolásban – titokzatos és rendkívüli.",
+      "description": "A Blackroses fekete rózsákból álló csokor sötét, áttetsző csomagolásban. Szokatlan gesztus azoknak, akik értékelik a különlegeset, például születésnapra vagy évfordulóra.",
+      "flowers": [
+        "Rózsák"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Blackroses – fekete rózsák",
+        "description": "Fekete rózsák sötét csomagolásban: szokatlan rózsacsokor azoknak, akik szeretik a különlegeset – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Blackroses, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Blackroses, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Blackroses, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Fekete rózsákból álló csokor fekete csomagolásban, üvegvázában",
+        "/images/products/sortiment/blackroses-2.jpg": "Fekete rózsák csomagolás nélkül üvegvázában, egy ablak előtt"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Kék rózsák fátyolvirággal",
+      "shortDescription": "Ragyogó kék rózsák fátyolvirággal – ritka és igazi szemet gyönyörködtető látvány.",
+      "description": "A Blaue Liebe ragyogó kék rózsákból álló csokor, finom fátyolvirággal lazítva, kék csomagolásban. Különleges ajándék születésnapra, évfordulóra vagy a mély összetartozás jeleként.",
+      "flowers": [
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – kék rózsák",
+        "description": "Ragyogó kék rózsák fátyolvirággal, kék csomagolásban. Ritka rózsacsokor különleges embereknek – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Blaue Liebe, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Blaue Liebe, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Blaue Liebe, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Kék rózsákból álló csokor fátyolvirággal, kék csomagolásban, fehér vázában",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Kék rózsák fátyolvirággal kék csomagolásban, szemből",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Fekvő csokor kék rózsákból kék csomagolásban egy fa komódon"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Rózsaszín rózsák fátyolvirággal",
+      "shortDescription": "Rózsaszín rózsák finom csomagolásban – szeretetteljes és elegáns.",
+      "description": "A Rosalie rózsaszín rózsákból álló csokor, fátyolvirággal lazítva, halvány rózsaszín csomagolásban. Nőies és nyugodt hatású – illik anyák napjára, születésnapra, évfordulóra vagy köszönetként.",
+      "flowers": [
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Rosalie – rózsaszín rózsák fátyolvirággal",
+        "description": "Rózsaszín rózsák fátyolvirággal, halvány rózsaszín csomagolásban. Anyák napjára, születésnapra vagy köszönetként – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Rosalie, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Rosalie, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Rosalie, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Rózsaszín rózsákból álló csokor fátyolvirággal, halvány rózsaszín csomagolásban, fehér vázában",
+        "/images/products/sortiment/rosalie-2.jpg": "A Rosalie rózsaszín csomagolásban, egyszerű fehér vázában",
+        "/images/products/sortiment/rosalie-3.jpg": "Rózsaszín rózsák fátyolvirággal bordázott fehér vázában",
+        "/images/products/sortiment/rosalie-4.jpg": "A Rosalie fekve, felülnézet a rózsaszín rózsákra és a fátyolvirágra"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Piros-fehér mix",
+      "tagline": "Vörös és fehér rózsák",
+      "shortDescription": "Vörös és fehér rózsák egy ünnepi csokorban.",
+      "description": "A Piros-fehér mix vörös és fehér rózsákat egyesít fehér csomagolásban, mérettől függően fátyolvirággal lazítva. Szenvedély és gyengédség találkozása: csokor Valentin-napra, évfordulóra, házassági évfordulóra vagy elegáns ajándékként.",
+      "flowers": [
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Piros-fehér mix – vörös és fehér rózsák",
+        "description": "Vörös és fehér rózsák ünnepi csomagolásban. Valentin-napra, évfordulóra vagy házassági évfordulóra, hat méretben – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Piros-fehér mix, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Piros-fehér mix, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Piros-fehér mix, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Vörös és fehér rózsákból álló csokor fátyolvirággal fehér csomagolásban, mellette rózsaszirmok",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Vörös és fehér rózsák sűrűn kötve, fehér csomagolásban",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Piros-fehér rózsacsokor fehér csomagolásban egy fa komódon",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Fekvő csokor vörös és fehér rózsákból, felülnézetből"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Tulipáncsokor",
+      "tagline": "Tulipánok egy színben vagy vegyesen",
+      "shortDescription": "Egyszerű csokor tulipánokból, egyszínűen vagy színesen vegyítve.",
+      "description": "A tulipánok tiszta színeikkel és karcsú formájukkal tavaszi hangulatot hoznak az otthonba. A csokor teljes egészében tulipánokból készül, választásod szerint egy színben vagy színes mixként. Kapható pirosban, sárgában, lilában, rózsaszínben, narancssárgában, fehérben és mixként.",
+      "flowers": [
+        "Tulipánok"
+      ],
+      "care": [
+        "Vágd le egyenesen a szárakat, és tedd hideg vízbe.",
+        "Kevés víz is elég, de rendszeresen töltsd utána.",
+        "A tulipánok a vázában tovább nőnek – szükség esetén vágd vissza őket."
+      ],
+      "seo": {
+        "title": "Tulipáncsokor – tulipánok sokféle színben",
+        "description": "Tulipáncsokor pirosban, sárgában, lilában, rózsaszínben, narancssárgában, fehérben vagy vegyesen. Tavaszi hangulat otthonra – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Piros",
+        "gelb": "Sárga",
+        "lila": "Lila",
+        "rosa": "Rózsaszín",
+        "orange": "Narancssárga",
+        "weiss": "Fehér",
+        "mix": "Színes mix"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Sárga tulipánokból álló csokor üvegvázában",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Lila tulipánok csomagolópapírban, üvegvázában",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Piros tulipánok bézs vázában",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Narancssárga tulipánok üvegvázában",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Rózsaszín tulipánok üvegvázában egy lenvásznon",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Színes tulipánmix pirosban, sárgában, rózsaszínben, narancssárgában és lilában bézs vázában",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Fehér tulipánok fehér vázában"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Vörös rózsák fátyolvirággal",
+      "shortDescription": "Kifejező rózsacsokor mélyvörösben, nagy érzelmekhez.",
+      "description": "A Red Passion vörös rózsákat köt sűrű, kerek csokorba, fátyolvirággal és sötét csomagolással keretezve. Hat méretben kapható – romantikus gesztusokhoz és pillanatokhoz, amelyekre sokáig emlékezni szeretnél.",
+      "flowers": [
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Vágd frissen a szárakat.",
+        "Naponta adj neki friss vizet.",
+        "Óvd a közvetlen napfénytől."
+      ],
+      "seo": {
+        "title": "Red Passion – vörös rózsacsokor",
+        "description": "Vörös rózsák fátyolvirággal, sötét csomagolásban, hat méretben. Rózsacsokor nagy érzelmekhez – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Red Passion, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Red Passion, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Red Passion, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Fekvő csokor sötétvörös rózsákból fátyolvirággal, fekete-arany csomagolásban",
+        "/images/products/sortiment/red-passion-2.jpg": "Nagy csokor vörös rózsákból fátyolvirággal, sötét csomagolásban, fehér vázában",
+        "/images/products/sortiment/red-passion-3.jpg": "Nagyon nagy, kerek csokor vörös rózsákból fátyolvirággal, sötét csomagolásban"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Sűrűn kötött vörös rózsák",
+      "shortDescription": "Sűrűn kötött vörös rózsák sötét csomagolásban – időtlen és érzelemmel teli.",
+      "description": "A Klassiker der Liebe vörös rózsákból áll, sűrűn, kerek formára kötve, sötét csomagolásban fekete masnival. A rózsacsokor Valentin-napra, évfordulóra, lánykéréshez vagy bármilyen szerelmi vallomáshoz.",
+      "flowers": [
+        "Rózsák"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – vörös rózsák",
+        "description": "Sűrűn kötött vörös rózsák sötét csomagolásban. A klasszikus rózsacsokor Valentin-napra, évfordulóra vagy lánykéréshez – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Klassiker der Liebe, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Klassiker der Liebe, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Klassiker der Liebe, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Kerek csokor sűrűn kötött vörös rózsákból fekete csomagolásban, masnival",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Gömb formájú vörös rózsák sötét csomagolásban, szemből"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Vörös rózsák fátyolvirággal",
+      "shortDescription": "Dús rózsacsokor hat méretben.",
+      "description": "A Königin der Herzen vörös rózsákat párosít finom fátyolvirággal, sötét, áttetsző csomagolásban. Hat méretben kapható – a kis gesztustól a nagy belépőig.",
+      "flowers": [
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Tartsd hűvös helyen.",
+        "Az elhervadt virágokat időben távolítsd el.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – dús rózsacsokor",
+        "description": "Vörös rózsák fátyolvirággal, hat méretben. Dús rózsacsokor nagy pillanatokhoz – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Königin der Herzen, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Königin der Herzen, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Königin der Herzen, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Vörös rózsákból álló csokor fátyolvirággal, sötét csomagolásban, fehér vázában",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Nagy csokor vörös rózsákból és fátyolvirágból fekete csomagolásban",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Vörös rózsák fátyolvirággal sötét csomagolásban, fekete kaspóban",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Felülnézet a vörös rózsákra fátyolvirággal, csillag alakú sötét csomagolásban"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerberák, rózsák és liliomok meleg árnyalatokban",
+      "shortDescription": "Meleg csokor narancssárgában, rózsaszínben és sárgában.",
+      "description": "A Herbstzauber gerberákat, rózsákat és liliomokat párosít narancssárga, rózsaszín és sárga árnyalatokban friss zölddel. Lazán kötve meleg színeket visz az otthonba, épp amikor rövidülnek a napok.",
+      "flowers": [
+        "Gerberák",
+        "Rózsák",
+        "Liliomok"
+      ],
+      "care": [
+        "Ne tedd gyümölcs mellé.",
+        "Rendszeresen töltsd utána a vizet.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Herbstzauber – csokor meleg árnyalatokban",
+        "description": "Gerberák, rózsák és liliomok narancssárgában, rózsaszínben és sárgában. Meleg őszi csokor születésnapra vagy köszönetre – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Csokor narancssárga gerberákból, barackszínű és rózsaszín rózsákból és liliomokból üvegvázában"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Vörös rózsák, gerberák és zöld hangsúlyok",
+      "shortDescription": "Élénk csokor pirosban és narancssárgában, friss zöld hangsúlyokkal.",
+      "description": "A Blütenfreude vörös rózsákat és piros, narancssárga gerberákat párosít zöld pompon virágokkal és eukaliptusszal. Erőteljes színek, mégis kerek forma – szép születésnapra, köszönetként vagy csak úgy.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák"
+      ],
+      "care": [
+        "Naponta tölts friss vizet a vázába.",
+        "Szükség esetén vágd vissza a szárakat.",
+        "A hervadt virágokat rendszeresen távolítsd el."
+      ],
+      "seo": {
+        "title": "Blütenfreude – rózsák és gerberák pirosban",
+        "description": "Vörös rózsák, piros és narancssárga gerberák friss zöld hangsúlyokkal. Élénk csokor születésnapra – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Csokor vörös rózsákból, piros és narancssárga gerberákból és zöld pompon virágokból üvegvázában",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "A Blütenfreude fehér vázában egy fa komódon"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Rózsaszín rózsák, liliomok és fátyolvirág",
+      "shortDescription": "Lágy rózsaszín árnyalatok liliomokkal – nyugodt, harmonikus és finom.",
+      "description": "A Zartrosa Zauber rózsaszín rózsákat párosít rózsaszín liliomokkal és fátyolvirággal, rózsaszín csomagolásban. A csokor nyugodt és harmonikus, finom, romantikus jelleggel.",
+      "flowers": [
+        "Rózsák",
+        "Liliomok",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Távolítsd el a vízbe érő leveleket.",
+        "Tartsd hűvös helyen.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – rózsák és liliomok rózsaszínben",
+        "description": "Rózsaszín rózsák, rózsaszín liliomok és fátyolvirág finom csomagolásban. Nyugodt, romantikus csokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Csokor rózsaszín rózsákból, rózsaszín liliomokból és fátyolvirágból rózsaszín csomagolásban, fehér vázában",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "A Zartrosa Zauber rózsaszín csomagolásban, nagy masnival"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerberák, liliomok és rózsák narancssárgában és sárgában",
+      "shortDescription": "Ragyogó narancssárga és sárga jó hírekhez és napfényes alkalmakhoz.",
+      "description": "A Strahlender Tag narancssárga gerberákat és liliomokat párosít sárga rózsákkal, világos szegfűkkel és fátyolvirággal. Az erőteljes színek pozitív energiát hoznak – csokor jókívánságokhoz, sikerekhez és napfényes alkalmakhoz.",
+      "flowers": [
+        "Gerberák",
+        "Liliomok",
+        "Rózsák",
+        "Szegfűk",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Óvd a huzattól.",
+        "Rendszeresen cseréld a vizet.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – csokor narancssárgában és sárgában",
+        "description": "Narancssárga gerberák és liliomok sárga rózsákkal és fátyolvirággal. Vidám csokor jókívánságokhoz – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Csokor narancssárga gerberákból, sárga rózsákból és fátyolvirágból fehér-arany csomagolásban",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Narancssárga gerberák, liliomok és egy sárga rózsa fehér vázában",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Kerek csokor narancssárga gerberákból és liliomokból, sárga rózsákból és világos szegfűkből üvegvázában"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Rózsák rózsaszínben, krémszínben és barackszínben",
+      "shortDescription": "Harmonikus rózsacsokor a klasszikus szépség és a modern stílus között.",
+      "description": "A Rosentraum rózsaszín, krémszínű és barackszínű rózsákat párosít lila virágokkal, bogyós ágakkal és friss zölddel. Fáradt rózsaszín csomagolásban a csokor dús és egyben modern hatású.",
+      "flowers": [
+        "Rózsák"
+      ],
+      "care": [
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Tartsd tisztán a vázát.",
+        "Rendszeresen frissítsd a vizet."
+      ],
+      "seo": {
+        "title": "Rosentraum – rózsák rózsaszínben és krémszínben",
+        "description": "Rózsák rózsaszínben, krémszínben és barackszínben, lila hangsúlyokkal, fáradt rózsaszín csomagolásban. Harmonikus rózsacsokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Kötött csokor rózsaszín, krémszínű és barackszínű rózsákból fáradt rózsaszín csomagolásban",
+        "/images/products/sortiment/rosentraum-2.jpg": "A Rosentraum fáradt rózsaszín csomagolásban, fehér vázában",
+        "/images/products/sortiment/rosentraum-3.jpg": "Felülnézet a csokor rózsáira, lila virágaira és bogyós ágaira"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Fehér rózsák fátyolvirággal",
+      "shortDescription": "Fehér rózsák fátyolvirággal – finom, romantikus és világos.",
+      "description": "A Rosenkuss fehér és krémszínű rózsákból áll, finom fátyolvirággal lazítva, fehér csomagolásban. Csokor a szeretet, a közelség és a kis szerelmes üzenetek kifejezésére.",
+      "flowers": [
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Ne tartsd túl meleg helyen.",
+        "Naponta ellenőrizd a vízszintet.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Rosenkuss – fehér rózsák",
+        "description": "Fehér rózsák fátyolvirággal, fehér csomagolásban. Finom, romantikus rózsacsokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Rosenkuss, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Rosenkuss, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Rosenkuss, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Fehér rózsákból álló csokor fátyolvirággal fehér csomagolásban, fehér vázában",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Nagy csokor fehér rózsákból fehér csomagolásban, fehér vázában",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Fekvő csokor fehér rózsákból fátyolvirággal egy fa komódon"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Rózsák pasztellben, pinkben és bordóban",
+      "shortDescription": "Rózsák pasztellben és pinkben, elegánsan összeállítva.",
+      "description": "A Rosenglanz pasztell rózsaszín, krémszínű, pink és bordó rózsákat egyesít fátyolvirággal, rózsaszín csomagolásban. Időtlen kisugárzású, hat méretben kapható.",
+      "flowers": [
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Vágd frissen a szárakat.",
+        "Kerüld a közvetlen napfényt.",
+        "Rendszeresen cseréld a vizet a vázában."
+      ],
+      "seo": {
+        "title": "Rosenglanz – rózsák pasztellben és pinkben",
+        "description": "Rózsák pasztell rózsaszínben, pinkben és bordóban fátyolvirággal, hat méretben. Elegáns rózsacsokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi",
+          "detailAlt": "Rosenglanz, kicsi méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "m": {
+          "label": "Közepes",
+          "detailAlt": "Rosenglanz, közepes méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "l": {
+          "label": "Nagy",
+          "detailAlt": "Rosenglanz, nagy méret, kézben tartva – a háttérben bécsi utca villamossal"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Csokor pasztell rózsaszín, pink és bordó rózsákból rózsaszín csomagolásban, üvegvázában",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Kerek rózsacsokor fátyolvirággal rózsaszín csomagolásban, szemből",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Fekvő csokor pasztell és pink rózsákból egy fa komódon"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Rózsaszín rózsák, gerberák, liliomok és szegfűk",
+      "shortDescription": "Kifejező csokor rózsaszínben és pinkben, amely szavak nélkül is beszél.",
+      "description": "A Pure Liebe rózsaszín rózsákat párosít pink gerberával, rózsaszín liliomokkal, szegfűkkel és fátyolvirággal. Intenzív rózsaszín és pink árnyalatok, világos hangsúlyokkal lazítva – érzelmekkel teli csokor.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák",
+        "Liliomok",
+        "Szegfűk",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Rendszeresen adj neki friss vizet.",
+        "Tartsd tisztán a vázát.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Pure Liebe – csokor rózsaszínben és pinkben",
+        "description": "Rózsaszín rózsák, pink gerbera, liliomok és szegfűk fátyolvirággal. Érzelmekkel teli csokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Csokor rózsaszín rózsákból, pink gerberából és rózsaszín liliomokból bézs vázában",
+        "/images/products/sortiment/pure-liebe-2.jpg": "A Pure Liebe liliomokkal, gerberákkal és szegfűkkel bézs vázában",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Kerek csokor rózsaszín rózsákból, gerberákból, szegfűkből és fátyolvirágból üvegvázában"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Pink gerberák, rózsák és lila hangsúlyok",
+      "shortDescription": "Erőteljes pink árnyalatok friss, modern csokorrá kombinálva.",
+      "description": "A Pink Harmony pink gerberákat és rózsákat párosít fehér és orgonaszínű virágokkal, lila hangsúlyokkal és fátyolvirággal. Élénk és friss, sok bájjal.",
+      "flowers": [
+        "Gerberák",
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Tartsd hűvös helyen.",
+        "Távolítsd el az elhervadt virágokat.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerberák és rózsák pinkben",
+        "description": "Pink gerberák és rózsák orgonaszínű és lila hangsúlyokkal. Friss, modern csokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Csokor pink gerberákból, rózsákból és orgonaszínű virágokból bézs vázában",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Kerek csokor pink gerberákkal, rózsákkal és lila hangsúlyokkal"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Színes rózsacsokor rózsaszínben, sárgában, barackszínben és lilában",
+      "shortDescription": "Bőkezű, színes rózsacsokor különleges alkalmakra.",
+      "description": "A Love Deluxe sokszínű rózsacsokor: rózsaszín, krémszín, barackszín, sárga és lila, rózsaszín csomagolásban. Különleges alkalmakra és nagy gesztusokhoz, öt méretben kapható.",
+      "flowers": [
+        "Rózsák"
+      ],
+      "care": [
+        "Vágd vissza a szárakat.",
+        "Naponta cseréld a vizet a vázában.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Love Deluxe – színes rózsacsokor",
+        "description": "Rózsák rózsaszínben, krémszínben, barackszínben, sárgában és lilában, rózsaszín csomagolásban, öt méretben. Nagy gesztusokhoz – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Színes rózsacsokor rózsaszínben, sárgában, barackszínben és lilában, rózsaszín csomagolásban, fehér vázában",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Nagy színes rózsacsokor rózsaszín csomagolásban, szemből",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Fekvő színes rózsacsokor rózsaszín csomagolásban egy fa komódon"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Vörös és zöld rózsák liliomokkal",
+      "shortDescription": "Érzelmes csokor pirosban, hogy kimondd: „Szeretlek”.",
+      "description": "A Liebeserklärung vörös rózsákat párosít világoszöld rózsákkal, fehér liliomokkal, piros hangsúlyvirágokkal és fátyolvirággal. Erőteljes, mégis friss hatású – csokor, amely láthatóvá teszi az érzéseket.",
+      "flowers": [
+        "Rózsák",
+        "Liliomok",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Óvd a hőségtől.",
+        "Rendszeresen frissítsd a vizet.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – vörös rózsák és liliomok",
+        "description": "Vörös és világoszöld rózsák liliomokkal és fátyolvirággal. Csokor, hogy kimondd: „Szeretlek” – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Csokor vörös és világoszöld rózsákból liliomokkal és fátyolvirággal üvegvázában",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "A Liebeserklärung fehér vázában egy fa komódon"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Rózsák és gerberák rózsaszínben, narancssárga hangsúlyokkal",
+      "shortDescription": "Elegáns és kiegyensúlyozott – csokor stílusos visszafogottsággal.",
+      "description": "A Klassische Schönheit fáradt rózsaszín és fehér rózsákat párosít pink gerberával, apró narancssárga virágokkal és fátyolvirággal. Arany szélű sötét csomagolásban a csokor kiegyensúlyozott és időtlen hatású.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Ne tedd közvetlenül a fűtőtest mellé.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat.",
+        "Rendszeresen cseréld a vizet a vázában."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – rózsák és gerberák",
+        "description": "Fáradt rózsaszín és fehér rózsák pink gerberával, sötét csomagolásban. Kiegyensúlyozott, időtlen csokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Csokor fáradt rózsaszín rózsákból és pink gerberából arany szélű sötét csomagolásban",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "A Klassische Schönheit fehér vázában",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Felülnézet a rózsákra, gerberákra és fátyolvirágra sötét csomagolásban"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Rózsaszín rózsák és pink gerberák",
+      "shortDescription": "Játékos és élénk: rózsaszín rózsák találkoznak pink gerberákkal.",
+      "description": "A Herzklopfen halvány rózsaszín rózsákat párosít pink gerberával, apró fehér-zöld virágokkal és finom lila díszítőzölddel. Kerekre kötve, színekben gazdag – érzelmekkel teli csokor.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák"
+      ],
+      "care": [
+        "Naponta adj neki friss vizet.",
+        "Vágd le ferdén a szárakat.",
+        "Tartsd hűvös helyen, közvetlen napfénytől védve."
+      ],
+      "seo": {
+        "title": "Herzklopfen – rózsaszín rózsák és gerberák",
+        "description": "Halvány rózsaszín rózsák és pink gerberák, kerekre kötve. Játékos, érzelmekkel teli csokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Kerek csokor halvány rózsaszín rózsákból és pink gerberából fehér vázában",
+        "/images/products/sortiment/herzklopfen-2.jpg": "A Herzklopfen fehér vázában, oldalról",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Csokor rózsaszín rózsákból és pink gerberából üvegvázában"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Színes mix rózsákkal és gerberákkal",
+      "shortDescription": "Színes csokor, amely életörömöt sugároz.",
+      "description": "A Fröhlicher Blütenmix vörös rózsákat, sárga, rózsaszín és piros gerberákat, valamint további sárga, narancssárga és lila virágokat párosít. Piros csomagolásban – ideális, hogy egy mosolyt ajándékozz.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák"
+      ],
+      "care": [
+        "Tartsd hűvös helyen.",
+        "Rendszeresen cseréld a vizet.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – színes csokor",
+        "description": "Vörös rózsák és sárga, rózsaszín, piros gerberák piros csomagolásban. Életörömmel teli színes csokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Színes csokor gerberákkal és rózsákkal piros csomagolásban egy fa komódon",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "A Fröhlicher Blütenmix piros csomagolásban, fehér vázában",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Felülnézet vörös rózsákra, sárga és rózsaszín gerberákra piros csomagolásban"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Rózsák és gerberák pinkben, lila hangsúlyokkal",
+      "shortDescription": "Élénk mix pinkben, barackszínben és lilában.",
+      "description": "A Farbtänzer pink és barackszínű rózsákat és bokorrózsákat párosít rózsaszín gerberával, lila virágokkal és világos bogyókkal. Sűrűn és élénken kötve – modern és kifejező.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák"
+      ],
+      "care": [
+        "Távolítsd el a vízbe érő leveleket.",
+        "Tartsd tisztán a vázát.",
+        "Mielőtt vázába teszed, vágd le ferdén a szárakat."
+      ],
+      "seo": {
+        "title": "Farbtänzer – csokor pinkben és lilában",
+        "description": "Rózsák és gerberák pinkben és barackszínben, lila hangsúlyokkal. Élénk, modern csokor – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Fekvő csokor pinkben és lilában, halvány rózsaszín csomagolásban",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Kerek csokor pink rózsákból, gerberákból és lila virágokból krémszínű vázában",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "A Farbtänzer bordázott vázában, szemből"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Szív alakú virágdoboz",
+      "tagline": "Rózsák piros szív alakú dobozban",
+      "shortDescription": "Rózsák szív alakú dobozban – szerelmi vallomás, amit ki lehet tenni.",
+      "description": "A piros, szív alakú dobozban vörös, rózsaszín és fehér rózsák vannak elrendezve további virágokkal és fátyolvirággal. Ajándék évfordulóra, Valentin-napra vagy szeretetteljes meglepetésként.",
+      "flowers": [
+        "Rózsák",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "A rózsákat enyhén nedvesítsd meg.",
+        "Tartsd hűvös helyen.",
+        "Óvd a közvetlen napfénytől."
+      ],
+      "seo": {
+        "title": "Szív alakú virágdoboz – rózsák szívdobozban",
+        "description": "Vörös, rózsaszín és fehér rózsák piros szív alakú dobozban. Évfordulóra és Valentin-napra – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Piros szív alakú virágdoboz vörös, rózsaszín és fehér rózsákkal és fátyolvirággal"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klasszikus virágdoboz",
+      "tagline": "Vörös rózsák kerek dobozban",
+      "shortDescription": "Klasszikus rózsák kerek dobozban – egyszerű és kifejező.",
+      "description": "A Klasszikus virágdoboz egy kerek dobozt tölt meg sűrűn elhelyezett rózsákkal. Minimalista és időtlen – illik születésnapra, köszönetként vagy különleges pillanatokhoz. Pirosban és fehérben kapható.",
+      "flowers": [
+        "Rózsák"
+      ],
+      "care": [
+        "A rózsákat rendszeresen, kevés vízzel öntözd.",
+        "Tartsd hűvös helyen.",
+        "Óvd a közvetlen napfénytől."
+      ],
+      "seo": {
+        "title": "Klasszikus virágdoboz – rózsák dobozban",
+        "description": "Sűrűn elhelyezett rózsák kerek dobozban, pirosban és fehérben. Egyszerű ajándék – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Vörös rózsák kerek fehér dobozban, rózsaszín és arany szegéllyel",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Két piros bársony kerek doboz vörös rózsákkal egy fehér talapzaton"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Rózsaszín anthurium cserépben",
+      "tagline": "Anthurium rózsaszín virágokkal",
+      "shortDescription": "Anthurium halvány rózsaszín virágokkal – elegáns és visszafogott.",
+      "description": "A rózsaszín anthurium finom virágaival és fényes zöld lombjával színt visz a térbe, anélkül hogy harsány lenne. Lakótérbe és irodába egyaránt illik.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Tartsd világos helyen, közvetlen napfény nélkül.",
+        "Rendszeresen öntözd, de kerüld a pangó vizet.",
+        "Időnként permetezd meg a leveleit vízzel."
+      ],
+      "seo": {
+        "title": "Rózsaszín anthurium cserépben – szobanövény",
+        "description": "Anthurium halvány rózsaszín virágokkal és fényes lombbal. Elegáns szobanövény ajándékba – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Rózsaszín anthurium fáradt rózsaszín kerámiakaspóban egy fa komódon",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anthurium rózsaszín virágokkal mályvaszínű kaspóban, gyertyák mellett"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Piros anthurium cserépben",
+      "tagline": "Anthurium piros virágokkal",
+      "shortDescription": "Anthurium ragyogó piros virágokkal és modern kisugárzással.",
+      "description": "A piros anthurium fényes virágaival erőteljes színhangsúlyt ad. Dekoratív szobanövényként vagy ajándékként megfelelő ápolással sokáig szép marad.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Világos hely, közvetlen napfény nélkül.",
+        "Tartsd a földet egyenletesen nedvesen.",
+        "Kerüld a pangó vizet."
+      ],
+      "seo": {
+        "title": "Piros anthurium cserépben – szobanövény",
+        "description": "Anthurium ragyogó piros virágokkal, cserépben. Dekoratív szobanövény ajándékba – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Piros anthurium piros kerámiakaspóban egy fa komódon"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL piros anthurium cserépben",
+      "tagline": "Nagy anthurium piros virágokkal",
+      "shortDescription": "Nagy, dús anthurium sok piros virággal.",
+      "description": "Ez a piros anthurium több mint 80 cm magas, és számos piros virágot hoz sűrű, fényes lombja fölött. Kifejező, szemet gyönyörködtető darab lakótérbe vagy irodába.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Tartsd világos helyen, közvetlen napfény nélkül.",
+        "Rendszeresen öntözd, de kerüld a pangó vizet.",
+        "Időnként töröld le a port a levelekről."
+      ],
+      "seo": {
+        "title": "XXL piros anthurium cserépben",
+        "description": "Nagy anthurium számos piros virággal, cserépben. Szemet gyönyörködtető darab lakásba vagy irodába – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Nagy anthurium sok piros virággal piros kaspóban, gyertyák mellett"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromélia cserépben",
+      "tagline": "Bromélia piros virággal",
+      "shortDescription": "Bromélia erőteljes piros virággal és trópusi hangulattal.",
+      "description": "A bromélia piros virágrozettájával és karcsú zöld lombjával élénk hangsúlyt ad. Dekoratív szobanövény lakó- vagy munkaterekbe és különleges ajándék.",
+      "flowers": [
+        "Bromélia"
+      ],
+      "care": [
+        "Tartsd világos helyen, közvetlen napfény nélkül.",
+        "Rendszeresen önts vizet a levéltölcsérbe.",
+        "A földet csak enyhén tartsd nedvesen."
+      ],
+      "seo": {
+        "title": "Bromélia cserépben – szobanövény",
+        "description": "Bromélia piros virággal, cserépben: trópusi hangulat lakásba vagy irodába – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromélia piros virággal piros kaspóban egy fa komódon"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Gumifa cserépben",
+      "tagline": "Gumifa sötétzöld lombbal",
+      "shortDescription": "Könnyen gondozható gumifa fényes, sötétzöld levelekkel.",
+      "description": "A gumifa nagy, fényes leveleivel modern és nyugodt hatású. Könnyen gondozható, és jól illik lakó- és irodaterekbe.",
+      "flowers": [
+        "Gumifa"
+      ],
+      "care": [
+        "Világos vagy félárnyékos hely.",
+        "Takarékosan öntözd, kevés vízzel is beéri.",
+        "Időnként portalanítsd a leveleit."
+      ],
+      "seo": {
+        "title": "Gumifa cserépben – könnyen gondozható növény",
+        "description": "Gumifa fényes, sötétzöld levelekkel. Könnyen gondozható szobanövény lakásba és irodába – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Gumifa sötétzöld levelekkel piros kaspóban egy fa komódon"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Fehér orchidea cserépben",
+      "tagline": "Orchidea cserépben, több színben",
+      "shortDescription": "Orchidea cserépben – nyugodt, nemes és időtlen.",
+      "description": "Az orchidea az elegancia és a nyugalom jelképe. Finom virágfürtjeivel stílusos választás lakótérbe, irodába vagy ajándékba. Kapható lilában, rózsaszínben, sárgában, fehérben és kékben.",
+      "flowers": [
+        "Orchidea"
+      ],
+      "care": [
+        "Tartsd világos helyen, közvetlen napfény nélkül.",
+        "Takarékosan öntözd, kerüld a pangó vizet.",
+        "Az elvirágzott virágszárakat csak akkor távolítsd el, ha már kiszáradtak."
+      ],
+      "seo": {
+        "title": "Orchidea cserépben – öt színben",
+        "description": "Orchidea cserépben fehérben, rózsaszínben, sárgában, lilában vagy kékben. Elegáns szobanövény ajándékba – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Fehér orchidea pink virágtorokkal krémszínű kerámiakaspóban",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orchidea halvány rózsaszín virágokkal krémszínű kerámiakaspóban",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Sárga orchidea krémszínű kerámiakaspóban",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orchidea lila virágokkal pink kaspóban",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orchidea kék virágokkal szürke kaspóban, gyertyák mellett"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Piros gyászcsokor",
+      "tagline": "Vörös rózsák, gerberák és szegfűk fenyőággal",
+      "shortDescription": "Piros gyászcsokor a szeretet és az összetartozás jeleként.",
+      "description": "A piros gyászcsokor vörös rózsákat, gerberákat és szegfűket párosít sárga rózsákkal, fátyolvirággal és fenyőággal. Méltóságteljes gesztus az emlékezésre, amely csendben fejez ki erős érzéseket. Az összeállítás évszaktól függően kissé eltérhet.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák",
+        "Szegfűk",
+        "Fátyolvirág"
+      ],
+      "care": [
+        "Tartsd hűvös helyen, ne tedd közvetlen napfényre vagy a fűtőtest mellé.",
+        "Tűzött kompozícióknál tartsd nedvesen a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Piros gyászcsokor – rózsák és gerberák",
+        "description": "Piros gyászcsokor rózsákkal, gerberákkal és szegfűkkel fenyőágon, három méretben. Méltóságteljes búcsú – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Gyászcsokor vörös rózsákkal, gerberákkal és szegfűkkel, sárga rózsákkal és fenyőággal egy kőtalapzaton"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Rózsaszín gyászcsokor",
+      "tagline": "Rózsaszín rózsák és lila virágok",
+      "shortDescription": "Gyászcsokor finom rózsaszín árnyalatokban, vigasztaló kisugárzással.",
+      "description": "Rózsaszín rózsák, lila és rózsaszín virágok és fenyőág adnak ennek a gyászcsokornak lágy, vigasztaló hatást. A hálát, a közelséget és a szeretetteljes emlékezést jelképezi – illik egy csendes, személyes búcsúhoz.",
+      "flowers": [
+        "Rózsák"
+      ],
+      "care": [
+        "Tartsd hűvös helyen, ne tedd közvetlen napfényre vagy a fűtőtest mellé.",
+        "Tűzött kompozícióknál tartsd nedvesen a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Rózsaszín gyászcsokor – finom rózsaszín árnyalatok",
+        "description": "Gyászcsokor finom rózsaszín árnyalatokban, rózsaszín rózsákkal fenyőágon, három méretben. Csendes búcsúhoz – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Gyászcsokor rózsaszín rózsákkal és lila virágokkal fenyőágon, fehér szalaggal, egy kőtalapzaton"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Pasztell gyászcsokor",
+      "tagline": "Liliomok, rózsák és kék virágok pasztellben",
+      "shortDescription": "Nyugodt gyászcsokor finom pasztell árnyalatokban.",
+      "description": "A pasztell gyászcsokor rózsaszín liliomokat és rózsákat párosít világoskék, orgonaszínű és fehér virágokkal. A finom színátmenetek vigaszt és együttérzést fejeznek ki. A virágok évszaktól függően eltérhetnek.",
+      "flowers": [
+        "Liliomok",
+        "Rózsák"
+      ],
+      "care": [
+        "Tartsd hűvös helyen, ne tedd közvetlen napfényre vagy a fűtőtest mellé.",
+        "Tűzött kompozícióknál tartsd nedvesen a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Pasztell gyászcsokor – nyugodt árnyalatok",
+        "description": "Pasztell gyászcsokor liliomokkal, rózsákkal és világoskék virágokkal, három méretben. Visszafogott és stílusos – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Pasztell gyászcsokor rózsaszín liliomokkal, rózsákkal és világoskék virágokkal, fekete szalaggal, egy kőtalapzaton"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Narancssárga gyászcsokor",
+      "tagline": "Rózsák, gerberák és szegfűk narancssárgában és sárgában",
+      "shortDescription": "Gyászcsokor meleg narancssárga árnyalatokban, amely megbecsülést fejez ki.",
+      "description": "Narancssárga, sárga és barackszínű rózsák, gerberák és szegfűk fenyőággal együtt alkotnak meleg gyászcsokrot. A hálát és egy teljes élet emlékét jelképezi, ravatalhoz vagy megemlékezésre is alkalmas.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák",
+        "Szegfűk"
+      ],
+      "care": [
+        "Tartsd hűvös helyen, ne tedd közvetlen napfényre vagy a fűtőtest mellé.",
+        "Tűzött kompozícióknál tartsd nedvesen a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Narancssárga gyászcsokor – meleg árnyalatok",
+        "description": "Gyászcsokor narancssárgában és sárgában rózsákkal, gerberákkal és szegfűkkel, három méretben. Ravatalhoz és megemlékezésre – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Gyászcsokor narancssárga és sárga rózsákkal, gerberákkal és szegfűkkel fenyőágon, egy kőtalapzaton"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Fehér gyászcsokor",
+      "tagline": "Fehér liliomok és krizantémok",
+      "shortDescription": "Klasszikus fehér gyászcsokor – egyszerű és méltóságteljes.",
+      "description": "Fehér liliomok, krizantémok és apró fehér virágok fenyőágon teszik ezt a gyászcsokrot egyszerűvé és időtlenné. A fehér a békét és a búcsút jelképezi – illik hivatalos gyászszertartásra vagy az együttérzés csendes jeleként.",
+      "flowers": [
+        "Liliomok",
+        "Krizantémok"
+      ],
+      "care": [
+        "Tartsd hűvös helyen, ne tedd közvetlen napfényre vagy a fűtőtest mellé.",
+        "Tűzött kompozícióknál tartsd nedvesen a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Fehér gyászcsokor – liliomok és krizantémok",
+        "description": "Klasszikus fehér gyászcsokor liliomokkal és krizantémokkal, három méretben. Egyszerű és méltóságteljes – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Gyászcsokor fehér liliomokból, krizantémokból és apró fehér virágokból fenyőágon, egy kőtalapzaton"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Sárga gyászcsokor",
+      "tagline": "Napraforgók, sárga rózsák és szegfűk",
+      "shortDescription": "Sárga gyászcsokor az emlékezés, a remény és a hála jeleként.",
+      "description": "Napraforgók, sárga rózsák és barackszínű szegfűk fenyőágon teszik ezt a gyászcsokrot világossá és meleggé. Olyan búcsúkhoz illik, amelyek középpontjában az élet áll. A virágok évszaktól függenek.",
+      "flowers": [
+        "Napraforgók",
+        "Rózsák",
+        "Szegfűk"
+      ],
+      "care": [
+        "Tartsd hűvös helyen, ne tedd közvetlen napfényre vagy a fűtőtest mellé.",
+        "Tűzött kompozícióknál tartsd nedvesen a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Sárga gyászcsokor – napraforgók és rózsák",
+        "description": "Sárga gyászcsokor napraforgókkal, rózsákkal és szegfűkkel, három méretben. Világos búcsúüdvözlet – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Gyászcsokor napraforgókkal, sárga rózsákkal és barackszínű szegfűkkel fenyőágon, egy kőtalapzaton"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Színes gyászkoszorú",
+      "tagline": "Gerberák, rózsák és virágok színes árnyalatokban",
+      "shortDescription": "Színes gyászkoszorú egy életvidám ember búcsúztatására.",
+      "description": "A színes gyászkoszorú gerberákat, rózsákat és további sárga, narancssárga, rózsaszín és fehér virágokat párosít zöld alapon. Méltóságteljes és egyben színes búcsú, kézzel kötve. Ha a kialakítással kapcsolatban kérésed van, nyugodtan jelentkezz nálunk.",
+      "flowers": [
+        "Gerberák",
+        "Rózsák"
+      ],
+      "care": [
+        "Tartsd hűvös, árnyékos helyen.",
+        "Szükség esetén enyhén nedvesítsd meg a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Színes gyászkoszorú – színes búcsú",
+        "description": "Színes gyászkoszorú gerberákkal és rózsákkal, kézzel kötve. Színes búcsúüdvözlet – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Színes gyászkoszorú gerberákkal, liliomokkal és fehér virágokkal, fekete szalaggal, egy fa állványon"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Pink gyászkoszorú",
+      "tagline": "Gerberák és rózsák pinkben és pirosban",
+      "shortDescription": "Gyászkoszorú pinkben és pirosban, szeretetteljes búcsúként.",
+      "description": "A pink és piros gyászkoszorú pink gerberákat, rózsákat és további virágokat párosít világos hangsúlyokkal és friss zölddel. A szeretet és az emlékezés kifejezése, kézzel kötve. Ha a kialakítással kapcsolatban kérésed van, nyugodtan jelentkezz nálunk.",
+      "flowers": [
+        "Gerberák",
+        "Rózsák"
+      ],
+      "care": [
+        "Tartsd hűvös, árnyékos helyen.",
+        "Szükség esetén enyhén nedvesítsd meg a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Pink gyászkoszorú – pink és piros",
+        "description": "Gyászkoszorú pinkben és pirosban gerberákkal és rózsákkal, kézzel kötve. Szeretetteljes búcsúüdvözlet – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Gyászkoszorú pink gerberákkal, rózsákkal és piros virágokkal, bordó szalaggal, egy fa állványon"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Piros-sárga gyászkoszorú",
+      "tagline": "Piros és sárga gerberák",
+      "shortDescription": "Ragyogó gyászkoszorú pirosban és sárgában.",
+      "description": "Piros és sárga gerberák, sűrűn tűzve zöld alapra, teszik ezt a gyászkoszorút melegséggel, hálával és szép emlékekkel teli, ragyogó búcsúvá. Kézzel kötve. Ha a kialakítással kapcsolatban kérésed van, nyugodtan jelentkezz nálunk.",
+      "flowers": [
+        "Gerberák"
+      ],
+      "care": [
+        "Tartsd hűvös, árnyékos helyen.",
+        "Szükség esetén enyhén nedvesítsd meg a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Piros-sárga gyászkoszorú – gerberák",
+        "description": "Gyászkoszorú piros és sárga gerberákból, kézzel kötve. Meleg, ragyogó búcsúüdvözlet – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Gyászkoszorú piros és sárga gerberákból ezüstszürke szalaggal, egy fa állványon"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Piros gyászkoszorú",
+      "tagline": "Piros gerberák és rózsák",
+      "shortDescription": "Klasszikus piros gyászkoszorú a megmaradó szeretetért.",
+      "description": "A piros gyászkoszorú piros gerberákat és rózsákat párosít fenyőágon. Klasszikus, méltóságteljes búcsú a szeretetért, amely a búcsún túl is megmarad. Kézzel kötve. Ha a kialakítással kapcsolatban kérésed van, nyugodtan jelentkezz nálunk.",
+      "flowers": [
+        "Gerberák",
+        "Rózsák"
+      ],
+      "care": [
+        "Tartsd hűvös, árnyékos helyen.",
+        "Szükség esetén enyhén nedvesítsd meg a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Piros gyászkoszorú – gerberák és rózsák",
+        "description": "Piros gyászkoszorú gerberákkal és rózsákkal fenyőágon, kézzel kötve. Klasszikus búcsúüdvözlet – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Gyászkoszorú piros gerberákból és rózsákból fenyőágon, fekete szalaggal, egy fa állványon"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Fehér gyászkoszorú",
+      "tagline": "Fehér rózsák, gerberák és szegfűk",
+      "shortDescription": "Egyszerű fehér gyászkoszorú a csendes együttérzés kifejezésére.",
+      "description": "Fehér rózsák, gerberák és szegfűk világoszöld hangsúlyokkal és zölddel alkotják ezt az egyszerű koszorút. A fehér a békét és a csendes együttérzést jelképezi. Kézzel kötve. Ha a kialakítással kapcsolatban kérésed van, nyugodtan jelentkezz nálunk.",
+      "flowers": [
+        "Rózsák",
+        "Gerberák",
+        "Szegfűk"
+      ],
+      "care": [
+        "Tartsd hűvös, árnyékos helyen.",
+        "Szükség esetén enyhén nedvesítsd meg a virágtűzőszivacsot."
+      ],
+      "seo": {
+        "title": "Fehér gyászkoszorú – egyszerű és méltóságteljes",
+        "description": "Fehér gyászkoszorú rózsákkal, gerberákkal és szegfűkkel, kézzel kötve. Egyszerű búcsúüdvözlet – virágküldés Bécsben."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Kör alakú gyászkoszorú fehér rózsákból, gerberákból és szegfűkből fehér szalaggal, egy fa állványon"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Adventi koszorúk",
+      "tagline": "Fenyőág négy gyertyával, hét színben",
+      "shortDescription": "Kézzel kötött adventi koszorú fenyőágból, négy gyertyával.",
+      "description": "Az adventi koszorút illatos fenyőágból kötik kézzel, és négy gyertyával, szalagokkal, gömbökkel, tobozokkal és további részletekkel díszítik. Kapható pirosban, szürkében, lilában, aranyban, bézsben, bordóban és rózsaszínben.",
+      "flowers": [],
+      "care": [
+        "A gyertyákat soha ne hagyd felügyelet nélkül égni.",
+        "Tartsd hűvös helyen, ne közvetlenül a fűtőtest mellett.",
+        "A fenyőágakat időnként permetezd meg enyhén vízzel."
+      ],
+      "seo": {
+        "title": "Adventi koszorú – kézzel kötve, gyertyákkal",
+        "description": "Kézzel kötött adventi koszorú fenyőágból négy gyertyával, hét színben és négy méretben – virágküldés Bécsben."
+      },
+      "sizes": {
+        "s": {
+          "label": "Kicsi"
+        },
+        "m": {
+          "label": "Közepes"
+        },
+        "l": {
+          "label": "Nagy"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Piros",
+        "grau": "Szürke",
+        "lila": "Lila",
+        "gold": "Arany",
+        "beige": "Bézs",
+        "weinrot": "Bordó",
+        "rosa": "Rózsaszín"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Adventi koszorú fenyőágból négy piros gyertyával, piros szalagokkal, gömbökkel és tobozokkal",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Adventi koszorú négy világosszürke gyertyával, krémszínű szalagokkal és narancskarikákkal",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Adventi koszorú lila és rózsaszín gyertyákkal, lila szalagokkal és angyalfigurával",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Adventi koszorú négy arany gyertyával, arany szalagokkal, fahéjrudakkal és tobozokkal",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Adventi koszorú négy rózsaszín gyertyával, bordó szalagokkal és angyalfigurával",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Adventi koszorú négy bordó gyertyával, gömbökkel és bordó szalagokkal",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Adventi koszorú négy sötétszürke gyertyával, krémszínű szalagokkal és piros gömbökkel",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Arany adventi koszorú arany gyertyákkal és szalagokkal, oldalról",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Rózsaszín adventi koszorú rózsaszín gyertyákkal és bordó szalagokkal, oldalról"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Összes virág",
+      "headline": "Virágrendelés online",
+      "intro": "Kézzel kötött csokrok egész Bécsbe. Válaszd ki a csokrodat, és add meg a kiszállítás dátumát.",
+      "seo": {
+        "title": "Virágrendelés online és kiszállítás Bécsben",
+        "description": "Rendelj virágot online, kiszállítással Bécsben. Kézzel kötött csokrok a kívánt napra – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Rózsák",
+      "headline": "Rózsacsokrok",
+      "intro": "Rózsák pirosban, rózsaszínben vagy fehérben, több méretben. Kézzel kötve és Bécsben kiszállítva.",
+      "seo": {
+        "title": "Rózsacsokor rendelés online – rózsák Bécsbe",
+        "description": "Az összes rózsacsokor egy helyen: vörös, rózsaszín és fehér rózsák több méretben. Kézzel kötve, a kívánt napra kiszállítva Bécsben."
+      }
+    },
+    "saisonal": {
+      "name": "Szezonális virágok",
+      "headline": "Szezonális virágok",
+      "intro": "Csokrok, amelyek illenek az évszakhoz. A kínálat az évvel együtt változik.",
+      "seo": {
+        "title": "Szezonális virágcsokrok kiszállítással Bécsben",
+        "description": "Szezonális csokrok az évszakhoz illően. Kézzel kötve és Bécsben kiszállítva."
+      }
+    },
+    "pastell": {
+      "name": "Pasztell",
+      "headline": "Pasztell csokrok",
+      "intro": "Rosé, krém, orgona: lágy színek gyengéd pillanatokhoz.",
+      "seo": {
+        "title": "Pasztell virágok kiszállítással Bécsben",
+        "description": "Csokrok lágy pasztell árnyalatokban, kiszállítással Bécsben – frissen kötve, a kívánt napra."
+      }
+    },
+    "bunt": {
+      "name": "Színes",
+      "headline": "Színes csokrok",
+      "intro": "Színek, amelyek örömet szereznek. Születésnapokra, meglepetésekhez és a jókedvért.",
+      "seo": {
+        "title": "Színes virágcsokrok kiszállítással Bécsben",
+        "description": "Színes, vidám csokrok kiszállítással Bécsben – frissen kötve, a kívánt napra."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegáns és fehér",
+      "headline": "Elegáns és fehér",
+      "intro": "Fehér, krém és zöld. Csokrok, amelyek minden térben nyugodt és nemes hatásúak.",
+      "seo": {
+        "title": "Elegáns fehér virágok kiszállítással Bécsben",
+        "description": "Fehér és krémszínű csokrok kiszállítással Bécsben – elegánsak, frissen kötve, a kívánt napra."
+      }
+    },
+    "premium": {
+      "name": "Prémium",
+      "headline": "Prémium csokrok",
+      "intro": "Bőkezű csokrok különleges pillanatokra.",
+      "seo": {
+        "title": "Prémium virágcsokrok kiszállítással Bécsben",
+        "description": "Prémium csokrok különleges alkalmakra, kiszállítással Bécsben – kézzel kötve, a kívánt napra."
+      }
+    },
+    "unter-40": {
+      "name": "40 € alatt",
+      "headline": "Virágok 40 € alatt",
+      "intro": "Kis csokrok nagy hatással – mind 40 euró alatt.",
+      "seo": {
+        "title": "Virágok 40 € alatt kiszállítással Bécsben",
+        "description": "Kedvező árú virágcsokrok 40 € alatt, kiszállítással Bécsben – frissen kötve, a kívánt napra."
+      }
+    },
+    "bestseller": {
+      "name": "Kedvenc csokrok",
+      "headline": "Kedvenc csokraink",
+      "intro": "Csokrok, amelyeket különösen szívesen ajánlunk.",
+      "seo": {
+        "title": "Kedvenc csokraink – ajánlatok Bécsbe",
+        "description": "Csokrok, amelyeket különösen szívesen ajánlunk – kézzel kötve és Bécsben kiszállítva."
+      }
+    },
+    "neu": {
+      "name": "Újdonságok",
+      "headline": "Újdonságok a Blumoránál",
+      "intro": "Frissen a kínálatban.",
+      "seo": {
+        "title": "Új virágcsokrok Bécsbe",
+        "description": "Új csokrok a kínálatban – frissen kötve és Bécsben kiszállítva."
+      }
+    },
+    "blumenboxen": {
+      "name": "Virágdobozok",
+      "headline": "Virágdobozok",
+      "intro": "Dobozba rendezett rózsák – ajándék, amelyhez nem kell váza.",
+      "seo": {
+        "title": "Virágdobozok kiszállítással Bécsben",
+        "description": "Rózsák virágdobozban – szív alakú vagy klasszikus. Virágküldés Bécsben a kívánt napra."
+      }
+    },
+    "pflanzen": {
+      "name": "Növények",
+      "headline": "Cserepes növények",
+      "intro": "Orchideák, anthuriumok és zöld növények – virágok, amelyek maradnak.",
+      "seo": {
+        "title": "Cserepes növények kiszállítással Bécsben",
+        "description": "Orchideák, anthuriumok és cserepes szobanövények ajándékba. Virágküldés Bécsben."
+      }
+    },
+    "trauer": {
+      "name": "Gyászvirágok",
+      "headline": "Gyászvirágok",
+      "intro": "Gyászkoszorúk és gyászcsokrok, méltóságteljesen kötve az utolsó búcsúhoz.",
+      "seo": {
+        "title": "Gyászkoszorúk és gyászcsokrok Bécsben",
+        "description": "Gyászkoszorúk és gyászcsokrok temetésre és megemlékezésre – kiszállítással Bécsben."
+      }
+    },
+    "advent": {
+      "name": "Adventi koszorúk",
+      "headline": "Adventi koszorúk",
+      "intro": "Fenyőág, gyertyák és díszek – kézzel kötve az adventi időszakra.",
+      "seo": {
+        "title": "Adventi koszorúk kiszállítással Bécsben",
+        "description": "Kézzel kötött adventi koszorúk több színben és méretben – kiszállítással Bécsben."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Születésnap",
+      "headline": "Virágok születésnapra",
+      "intro": "Egy csokor, amely azt mondja: gondoltam rád. Válassz virágot és kívánt dátumot.",
+      "imageAlt": "Színes csokor vörös rózsákkal, gerberákkal és sárga virágokkal piros csomagolásban",
+      "seo": {
+        "title": "Virágok születésnapra – születésnapi csokrok Bécsbe",
+        "description": "Csokrok születésnapra: színesek, vidámak vagy elegánsak. Kézzel kötve és Bécsben kiszállítva – a kívánt napra."
+      }
+    },
+    "liebe": {
+      "name": "Szerelem és romantika",
+      "headline": "Virágok szerelemből",
+      "intro": "Vörös rózsák vagy valami egészen más: virágok, amelyek kimondják, amit érzel.",
+      "imageAlt": "Mélyvörös rózsákból álló csokor szürke csomagolásban, piros masnival",
+      "seo": {
+        "title": "Romantikus virágok kiszállítással Bécsben",
+        "description": "Rózsák és romantikus csokrok kiszállítással Bécsben – frissen kötve, a kívánt napra."
+      }
+    },
+    "danke": {
+      "name": "Köszönet",
+      "headline": "Virágok köszönetképpen",
+      "intro": "A segítségért, az időért, egyszerűen mindenért. Egy csokor sok szó nélkül is kifejezi.",
+      "imageAlt": "Csokor sárga gerberákból és fehér rózsákból sárga masnival",
+      "seo": {
+        "title": "Köszönő virágok kiszállítással Bécsben",
+        "description": "Mondj köszönetet virágokkal: frissen kötött csokrok kiszállítással Bécsben – a kívánt napra."
+      }
+    },
+    "gute-besserung": {
+      "name": "Jobbulást",
+      "headline": "Virágok gyógyulásra",
+      "intro": "Lágy színek, nyugodt formák és egy kis üdvözlet, amely jólesik.",
+      "imageAlt": "Napfényes csokor narancssárgában és sárgában világos csomagolásban",
+      "seo": {
+        "title": "Jobbulást kívánó virágok kiszállítással Bécsben",
+        "description": "Virágok gyógyulásra, kiszállítással Bécsben – lágy csokrok, frissen kötve, a kívánt napra."
+      }
+    },
+    "jahrestag": {
+      "name": "Évforduló",
+      "headline": "Virágok évfordulóra",
+      "intro": "Arra a napra, amikor minden elkezdődött. És mindazokra, amelyek utána jöttek.",
+      "imageAlt": "Csokor vörös és fehér rózsákból fehér csomagolásban",
+      "seo": {
+        "title": "Virágok évfordulóra kiszállítással Bécsben",
+        "description": "Elegáns csokrok évfordulóra, kiszállítással Bécsben – frissen kötve, a kívánt napra."
+      }
+    },
+    "geburt": {
+      "name": "Születés",
+      "headline": "Virágok babaérkezésre",
+      "intro": "Isten hozott, kis ember. Finom virágok egy nagy pillanatra.",
+      "imageAlt": "Finom csokor rózsaszín és orgonaszínű rózsákból fátyolvirággal",
+      "seo": {
+        "title": "Virágok babaérkezésre kiszállítással Bécsben",
+        "description": "Finom pasztell csokrok babaérkezésre, kiszállítással Bécsben – frissen kötve, a kívánt napra."
+      }
+    },
+    "hochzeit": {
+      "name": "Esküvő",
+      "headline": "Virágok esküvőre",
+      "intro": "A jegyespárnak vagy egyszerűen gratulációként: elegáns, világos és ünnepi.",
+      "imageAlt": "Fehér rózsákból álló csokor fehér csomagolásban, vázában",
+      "seo": {
+        "title": "Esküvői virágok kiszállítással Bécsben",
+        "description": "Elegáns virágok esküvőre, kiszállítással Bécsben – gratulációként vagy ajándékként, frissen kötve."
+      }
+    },
+    "einfach-so": {
+      "name": "Csak úgy",
+      "headline": "Virágok csak úgy",
+      "intro": "Nincs alkalom. Csak a gondolat. Néha ez a legjobb ok.",
+      "imageAlt": "Sárga tulipánok üvegvázában az ablaknál",
+      "seo": {
+        "title": "Virágküldés csak úgy – Bécs",
+        "description": "Küldj virágot alkalom nélkül: kis és nagy csokrok kiszállítással Bécsben – frissen kötve, a kívánt napra."
+      }
+    },
+    "trauer": {
+      "name": "Gyász",
+      "headline": "Virágok gyászhoz",
+      "intro": "Együttérzés nyugodt színekben. Koszorúk, gyászcsokrok és csokrok, kézzel kötve és Bécsben kiszállítva.",
+      "imageAlt": "Fehér gyászkoszorú fehér szalaggal egy fa állványon",
+      "seo": {
+        "title": "Gyászvirágok kiszállítással Bécsben",
+        "description": "Gyászvirágok kiszállítással Bécsben – koszorúk, gyászcsokrok és nyugodt csokrok, kézzel kötve, a kívánt napra."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Illatgyertya",
+      "description": "Dekoratív illatgyertyák ajándékcsomagolásban, különböző formákban és színekben.",
+      "imageAlt": "Szív és gömb alakú illatgyertyák átlátszó ajándékdobozokban"
+    },
+    "x-teddy": {
+      "name": "Plüssmaci",
+      "description": "Plüssmackó piros szívvel – a csokor szeretetteljes kiegészítője.",
+      "imageAlt": "Világosbarna plüssmackó piros szívvel"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Hová szállítotok ki?",
+      "answer": "Bécs mind a 23 kerületébe kiszállítunk. Kerülettől függően a kiszállítás ingyenes, vagy 4,90 €, illetve 7,90 € díjba kerül. Egyszerűen add meg a címzett címének irányítószámát – azonnal látod, hogy ki tudunk-e szállítani, mikor, és mennyibe kerül a kiszállítás.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Kérhetek még ma virágkiszállítást?",
+      "answer": "Igen – ha hétfőtől szombatig 18:30-ig vagy vasárnap 17:45-ig rendelsz, még aznap kiszállítunk egész Bécsben, amíg van szabad idősáv. A címedre vonatkozó legkorábbi időpontot azonnal látod, amint megadod az irányítószámot.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Kiválaszthatok egy konkrét kiszállítási dátumot?",
+      "answer": "Igen. Minden termékoldalon és a pénztárban a naptárban választod ki a kívánt dátumot. Azok a napok, amelyeken nem szállítunk ki, szürkével jelennek meg.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Kiválaszthatok egy kívánt időpontot?",
+      "answer": "Igen. Bécsben a pénztárban egyórás idősávot választhatsz 9:00 és 22:00 között – a hét mind a hét napján.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Mi történik, ha senki sincs otthon?",
+      "answer": "A futár személyesen adja át a virágokat. Ha senki sincs ott, lehetőség szerint egy szomszédnál adja le őket. A pénztárban megjegyzést hagyhatsz a kézbesítéshez, például egy kapukódot. A rendelésed állapotáról e-mailben tájékoztatunk.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Küldhetek virágot névtelenül?",
+      "answer": "Igen. Üdvözlőkártya nélkül a neved sehol sem szerepel a csokron, a számlát pedig csak te kapod meg. A személyes üzenettel ellátott üdvözlőkártyák hamarosan érkeznek.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Csatolhatok üdvözlőkártyát?",
+      "answer": "Még nem – az üdvözlőkártyák hamarosan érkeznek. Addig a csokrot kártya nélkül szállítjuk ki.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Pontosan úgy néznek ki a virágok, mint a fotón?",
+      "answer": "Minden csokrot egyedileg kötünk, és a virágok természetes termékek. A színek, a fajták és a virágok mérete évszaktól függően kissé eltérhetnek. A stílus és a színvilág megmarad.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Hogyan maradnak frissek a virágok?",
+      "answer": "Minden csokrot frissen kötünk a rendelésedhez, és a futár közvetlenül kézbesíti. Így marad a legtovább szép: vágd le ferdén a szárakat, adj neki friss vizet, és tartsd hűvös helyen, közvetlen napfénytől védve.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Milyen fizetési lehetőségek vannak?",
+      "answer": "Az elérhető fizetési módokat a rendelés utolsó lépésében látod. A fizetés biztonságosan, egy fizetési szolgáltatón keresztül történik – a kártyaadataid soha nem jutnak el hozzánk.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Módosíthatom a rendelésemet?",
+      "answer": "Amíg a csokor még nincs megkötve, a kiszállítás dátumát vagy a címet többnyire még módosítani tudjuk. Írj nekünk minél hamarabb, a rendelésszámod megadásával.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Küldhetek virágot cégekhez vagy szállodákba?",
+      "answer": "Igen. A pénztárban add meg a cég vagy a szálloda nevét, és – ha ismered – az osztályt vagy a szobaszámot. A kézbesítés a recepcióra, illetve a portára történik.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Van expressz kiszállítás?",
+      "answer": "Igen – expressz kiszállítás 1–2 órán belül, felár nélkül. Rendelj a szokásos módon, és a pénztárnál válaszd a mai legkorábbi idősávot – „Expressz” jelöléssel szerepel. Ez akkor működik, ha hétfőtől szombatig 18:30-ig vagy vasárnap 17:45-ig rendelsz, és a címedre még van szabad idősáv.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Virágok különleges pillanatokra.",
+      "intro": "A Blumora bécsi online virágküldő szolgáltatás. Minden csokrot egy bécsi virágkötészetben kötnek kézzel, és futár kézbesíti közvetlenül.",
+      "seo": {
+        "title": "Rólunk – virágküldés Bécsből",
+        "description": "A Blumora bécsi online virágküldő: kézzel kötött csokrok, futárral kiszállítva mind a 23 kerületbe."
+      },
+      "sections": [
+        {
+          "heading": "Hogyan dolgozunk",
+          "paragraphs": [
+            "A Blumora bécsi online virágküldő szolgáltatás. A csokrodat nálunk választod ki – megkötni pedig egy bécsi virágkötészet fogja, amellyel állandó partnerségben dolgozunk. Ott minden csokor kézzel, a te rendelésedhez készül.",
+            "A saját szövegeddel ellátott üdvözlőkártyák hamarosan érkeznek."
+          ],
+          "imageAlt": "Csokor rózsákból, dáliákból, hortenziákból és tulipánokból egy bécsi régi bérház ablakpárkányán, a háttérben a Szent István-székesegyház az esti fényben"
+        },
+        {
+          "heading": "A kiszállítás",
+          "paragraphs": [
+            "A futár közvetlenül a virágkötészetben veszi át a csokrodat, és megállás nélkül viszi a címzett címére. Bécs mind a 23 kerületébe kiszállítunk – az általad választott idősávban: délelőtt, délután vagy este 22:00-ig."
+          ],
+          "imageAlt": "A Pure Liebe csokor üvegvázában"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Kiszállítás és szállítás",
+      "intro": "Bécs mind a 23 kerületébe kiszállítunk. A kiszállítási díj (ingyenes, 4,90 € vagy 7,90 €), a kiszállítási napok és az idősávok a címzett címétől függnek – add meg az irányítószámot, és mindent egy pillantással látsz.",
+      "seo": {
+        "title": "Kiszállítás és szállítás – virágküldés Bécsben",
+        "description": "Kiszállítási területek, kiszállítási díjak, kiszállítási napok és idősávok a bécsi virágkiszállításhoz."
+      },
+      "sections": [
+        {
+          "heading": "Így zajlik a kiszállítás",
+          "paragraphs": [
+            "A csokrodat frissen kötjük a rendelésedhez. A futár közvetlenül a virágkötészetben veszi át, és megállás nélkül viszi a címzett címére – az általad választott idősávban. Ha senki sincs ott, a csokrot lehetőség szerint egy szomszédnál adja le.",
+            "Minden rendelésről e-mailes visszaigazolást kapsz, valamint egy linket, amellyel követheted az állapotát."
+          ]
+        },
+        {
+          "heading": "Kiszállítás cégekhez, szállodákba és kórházakba",
+          "paragraphs": [
+            "A pénztárban add meg a cég vagy a szálloda nevét, valamint a részleget, a kórházi osztályt vagy a szobaszámot. A recepcióra vagy a portára szállítunk. Kérjük, vedd figyelembe, hogy egyes intézmények nem engedélyezik a virágokat a kórházi osztályokon."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Kapcsolat",
+      "intro": "Kérdésed van egy rendeléssel, egy kiszállítási dátummal vagy egy különleges kívánsággal kapcsolatban? Itt vagyunk neked.",
+      "seo": {
+        "title": "Kapcsolat – Blumora Bécs",
+        "description": "Lépj kapcsolatba a Blumorával, ha kérdésed van rendeléssel, kiszállítással vagy különleges kívánságokkal kapcsolatban."
+      },
+      "sections": [
+        {
+          "heading": "Így érsz el minket",
+          "paragraphs": [
+            "[Helykitöltő: az e-mail-cím, a telefonszám és a nyitvatartás a beállításokból kerül át, és ott kell kiegészíteni.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Virágküldés egész Bécsben",
+      "headline": "Virágok, amelyek többet mondanak.",
+      "subheadline": "Frissen kötött virágok azoknak, akik fontosak neked. Egyszerűen válassz, add meg a kívánt dátumot, és mi kiszállítjuk az örömöt.",
+      "primaryCta": {
+        "label": "Virágok felfedezése"
+      },
+      "secondaryCta": {
+        "label": "Válassz alkalom szerint"
+      },
+      "imageAlt": "Teveszőr kabátos nő egy nagy csokrot visz rózsákból, boglárkákból, dáliákból és tulipánokból egy bécsi macskaköves utcán, mögötte villamos halad",
+      "deliveryCheck": {
+        "title": "Hová szállíthatunk?",
+        "placeholder": "Irányítószám megadása",
+        "button": "Kiszállítás ellenőrzése"
+      }
+    },
+    "occasions": {
+      "headline": "Virágok minden pillanatra",
+      "subheadline": "Néha nem kell nagy alkalom. Csak a megfelelő gesztus."
+    },
+    "bestsellers": {
+      "headline": "Kedvenc csokraink",
+      "subheadline": "Válogatás a kínálatunkból."
+    },
+    "collections": {
+      "headline": "Találd meg a tökéletes csokrot",
+      "subheadline": "Szín, stílus vagy költségkeret szerint."
+    },
+    "howItWorks": {
+      "headline": "Örömet szerezni még sosem volt ilyen egyszerű.",
+      "steps": [
+        {
+          "title": "Válaszd ki a kedvenc csokrod",
+          "text": "Fedezz fel virágokat minden ízléshez és alkalomhoz."
+        },
+        {
+          "title": "Tedd személyessé",
+          "text": "Válassz méretet és apró extrákat."
+        },
+        {
+          "title": "Válaszd ki a kiszállítás dátumát",
+          "text": "Döntsd el, mikor érkezzen meg a meglepetésed."
+        },
+        {
+          "title": "Küldd el az örömöt",
+          "text": "A többit mi intézzük."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Adventi időszak",
+      "headline": "Hamarosan ég az első gyertya.",
+      "text": "Adventi koszorúk fenyőággal, gyertyákkal és díszekkel – több színben és méretben. Mellé csokrok meleg őszi árnyalatokban.",
+      "cta": {
+        "label": "Adventi koszorúk"
+      },
+      "imageAlt": "Adventi koszorú fenyőágból négy piros gyertyával egy fa komódon"
+    },
+    "editorial": {
+      "eyebrow": "Kézművesség",
+      "headline": "Virágkötőktől. Nem futószalagról.",
+      "text": "Minden csokrot egy bécsi virágkötészet köt kézzel a rendelésedhez, és futár kézbesíti közvetlenül – raktári kitérő nélkül.",
+      "cta": {
+        "label": "Így dolgozunk"
+      },
+      "imageAlt": "Egy futár színes csokrot ad át rózsákból, dáliákból és boglárkákból egy bécsi régi bérház ajtajában"
+    },
+    "extras": {
+      "headline": "Tedd teljessé a meglepetésedet.",
+      "subheadline": "Apró extrák, amelyek nagyobbá teszik a pillanatot."
+    },
+    "subscription": {
+      "headline": "Több virág a hétköznapokban.",
+      "text": "Friss szezonális csokrok – hetente, kéthetente vagy havonta. Otthonra, irodába, recepcióra vagy vendéglátóhelyre.",
+      "cta": {
+        "label": "Virág-előfizetés felfedezése"
+      }
+    },
+    "reviews": {
+      "headline": "Pillanatok, amelyek célba értek.",
+      "subheadline": "Amit a vásárlóink a rendelésükről mondanak."
+    },
+    "gallery": {
+      "headline": "Virágok különleges pillanatokra.",
+      "images": [
+        {
+          "alt": "Színes rózsacsokor pirosban, rózsaszínben, krémszínben és barackszínben fehér vázában"
+        },
+        {
+          "alt": "Ragyogó kék rózsákból álló csokor fehér vázában"
+        },
+        {
+          "alt": "Csokor erőteljes pink árnyalatokban gerberákkal, vázában az ablaknál"
+        },
+        {
+          "alt": "Egzotikus csokor papagájvirágokkal, liliomokkal és gerberákkal"
+        },
+        {
+          "alt": "Szív alakú piros virágdoboz rózsákkal egy komódon"
+        },
+        {
+          "alt": "Pasztell és pink rózsákból álló csokor rózsaszín csomagolásban"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Jó tudni"
+    },
+    "newsletter": {
+      "headline": "Egy kicsivel több virág a postafiókodban.",
+      "text": "Újdonságok, szezonális kollekciók és különleges akciók.",
+      "placeholder": "E-mail-címed",
+      "button": "Feliratkozás",
+      "note": "Bármikor leiratkozhatsz. Az adatvédelemmel kapcsolatos tudnivalókat az adatvédelmi tájékoztatóban találod."
+    }
+  },
+  "settings": {
+    "claim": "Virágok, amelyek többet mondanak.",
+    "seo": {
+      "defaultTitle": "Blumora – virágküldés Bécsben",
+      "defaultDescription": "Virágkiszállítás egész Bécsben: frissen kötött csokrok mind a 23 kerületbe. Aznapi kiszállítás 18:30-ig (vasárnap 17:45-ig), expressz 1–2 órán belül felár nélkül."
+    },
+    "announcement": {
+      "messages": [
+        "Kiszállítás egész Bécsben – mind a 23 kerület",
+        "Expressz 1–2 órán belül – felár nélkül",
+        "Aznap 18:30-ig, vasárnap 17:45-ig",
+        "Frissen kötve, futárral kiszállítva"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Frissen kötve",
+        "text": "Kézzel kötve a rendelésedhez"
+      },
+      {
+        "title": "Kiszállítás futárral",
+        "text": "Egész Bécsben – mind a 23 kerület"
+      },
+      {
+        "title": "Kívánt dátum választható",
+        "text": "Te döntöd el a napot"
+      },
+      {
+        "title": "Expressz 1–2 órán belül",
+        "text": "Felár nélkül, aznap 18:30-ig"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Rendelés beérkezett",
+        "description": "Megkaptuk a rendelésedet."
+      },
+      "paid": {
+        "label": "Fizetés visszaigazolva",
+        "description": "A fizetés beérkezett hozzánk."
+      },
+      "preparing": {
+        "label": "Előkészítés alatt",
+        "description": "Kiválasztjuk a virágokat a csokrodhoz."
+      },
+      "arranging": {
+        "label": "A csokor készül",
+        "description": "A csokrodat kézzel kötjük."
+      },
+      "ready": {
+        "label": "Kiszállításra kész",
+        "description": "A csokor elkészült, és a futár hamarosan átveszi."
+      },
+      "in_transit": {
+        "label": "Úton",
+        "description": "A csokrod úton van."
+      },
+      "delivered": {
+        "label": "Kézbesítve",
+        "description": "A virágok megérkeztek."
+      },
+      "undeliverable": {
+        "label": "Nem kézbesíthető",
+        "description": "Nem tudtuk kézbesíteni, és jelentkezünk nálad."
+      },
+      "cancelled": {
+        "label": "Törölve",
+        "description": "A rendelést töröltük."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Hitelkártya",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Online átutalás (eps)"
+    },
+    "headerCta": "Virágküldés",
+    "address": {
+      "city": "Bécs",
+      "country": "Ausztria"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Bécs – 1. zóna",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Bécs – 2. zóna",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Bécs – 3. zóna",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Bécs környéke (Alsó-Ausztria)",
+      "note": "Kiszállítás Bécs környékére kedden, csütörtökön és szombaton.",
+      "windows": {
+        "day": "9:00–18:00"
+      }
+    }
+  }
+}

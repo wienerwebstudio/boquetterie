@@ -1,0 +1,458 @@
+[
+  {
+    "id": "wien-nah",
+    "name": "Wien Zone 1",
+    "region": "Wien",
+    "postalCodes": [
+      "1070",
+      "1150",
+      "1160",
+      "1140",
+      "1040",
+      "1050",
+      "1060",
+      "1080"
+    ],
+    "fee": 0,
+    "freeFrom": null,
+    "minOrder": 0,
+    "deliveryDays": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "cutoff": "23:59",
+    "leadDays": 1,
+    "sameDay": true,
+    "sameDayCutoff": "18:30",
+    "sameDayCutoffSunday": "17:45",
+    "windows": [
+      {
+        "id": "h09",
+        "label": "9–10 Uhr",
+        "from": "09:00",
+        "to": "10:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h10",
+        "label": "10–11 Uhr",
+        "from": "10:00",
+        "to": "11:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h11",
+        "label": "11–12 Uhr",
+        "from": "11:00",
+        "to": "12:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h12",
+        "label": "12–13 Uhr",
+        "from": "12:00",
+        "to": "13:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h13",
+        "label": "13–14 Uhr",
+        "from": "13:00",
+        "to": "14:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h14",
+        "label": "14–15 Uhr",
+        "from": "14:00",
+        "to": "15:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h15",
+        "label": "15–16 Uhr",
+        "from": "15:00",
+        "to": "16:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h16",
+        "label": "16–17 Uhr",
+        "from": "16:00",
+        "to": "17:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h17",
+        "label": "17–18 Uhr",
+        "from": "17:00",
+        "to": "18:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h18",
+        "label": "18–19 Uhr",
+        "from": "18:00",
+        "to": "19:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h19",
+        "label": "19–20 Uhr",
+        "from": "19:00",
+        "to": "20:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h20",
+        "label": "20–21 Uhr",
+        "from": "20:00",
+        "to": "21:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h21",
+        "label": "21–22 Uhr",
+        "from": "21:00",
+        "to": "22:00",
+        "surcharge": 0,
+        "active": true
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "wien-mitte",
+    "name": "Wien Zone 2",
+    "region": "Wien",
+    "postalCodes": [
+      "1010",
+      "1030",
+      "1090",
+      "1120",
+      "1130",
+      "1170",
+      "1180",
+      "1200",
+      "1230"
+    ],
+    "fee": 4.9,
+    "freeFrom": null,
+    "minOrder": 0,
+    "deliveryDays": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "cutoff": "23:59",
+    "leadDays": 1,
+    "sameDay": true,
+    "sameDayCutoff": "18:30",
+    "sameDayCutoffSunday": "17:45",
+    "windows": [
+      {
+        "id": "h09",
+        "label": "9–10 Uhr",
+        "from": "09:00",
+        "to": "10:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h10",
+        "label": "10–11 Uhr",
+        "from": "10:00",
+        "to": "11:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h11",
+        "label": "11–12 Uhr",
+        "from": "11:00",
+        "to": "12:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h12",
+        "label": "12–13 Uhr",
+        "from": "12:00",
+        "to": "13:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h13",
+        "label": "13–14 Uhr",
+        "from": "13:00",
+        "to": "14:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h14",
+        "label": "14–15 Uhr",
+        "from": "14:00",
+        "to": "15:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h15",
+        "label": "15–16 Uhr",
+        "from": "15:00",
+        "to": "16:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h16",
+        "label": "16–17 Uhr",
+        "from": "16:00",
+        "to": "17:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h17",
+        "label": "17–18 Uhr",
+        "from": "17:00",
+        "to": "18:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h18",
+        "label": "18–19 Uhr",
+        "from": "18:00",
+        "to": "19:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h19",
+        "label": "19–20 Uhr",
+        "from": "19:00",
+        "to": "20:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h20",
+        "label": "20–21 Uhr",
+        "from": "20:00",
+        "to": "21:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h21",
+        "label": "21–22 Uhr",
+        "from": "21:00",
+        "to": "22:00",
+        "surcharge": 0,
+        "active": true
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "wien-fern",
+    "name": "Wien Zone 3",
+    "region": "Wien",
+    "postalCodes": [
+      "1020",
+      "1100",
+      "1110",
+      "1190",
+      "1210",
+      "1220"
+    ],
+    "fee": 7.9,
+    "freeFrom": null,
+    "minOrder": 0,
+    "deliveryDays": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "cutoff": "23:59",
+    "leadDays": 1,
+    "sameDay": true,
+    "sameDayCutoff": "18:30",
+    "sameDayCutoffSunday": "17:45",
+    "windows": [
+      {
+        "id": "h09",
+        "label": "9–10 Uhr",
+        "from": "09:00",
+        "to": "10:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h10",
+        "label": "10–11 Uhr",
+        "from": "10:00",
+        "to": "11:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h11",
+        "label": "11–12 Uhr",
+        "from": "11:00",
+        "to": "12:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h12",
+        "label": "12–13 Uhr",
+        "from": "12:00",
+        "to": "13:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h13",
+        "label": "13–14 Uhr",
+        "from": "13:00",
+        "to": "14:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h14",
+        "label": "14–15 Uhr",
+        "from": "14:00",
+        "to": "15:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h15",
+        "label": "15–16 Uhr",
+        "from": "15:00",
+        "to": "16:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h16",
+        "label": "16–17 Uhr",
+        "from": "16:00",
+        "to": "17:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h17",
+        "label": "17–18 Uhr",
+        "from": "17:00",
+        "to": "18:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h18",
+        "label": "18–19 Uhr",
+        "from": "18:00",
+        "to": "19:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h19",
+        "label": "19–20 Uhr",
+        "from": "19:00",
+        "to": "20:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h20",
+        "label": "20–21 Uhr",
+        "from": "20:00",
+        "to": "21:00",
+        "surcharge": 0,
+        "active": true
+      },
+      {
+        "id": "h21",
+        "label": "21–22 Uhr",
+        "from": "21:00",
+        "to": "22:00",
+        "surcharge": 0,
+        "active": true
+      }
+    ],
+    "active": true
+  },
+  {
+    "id": "noe-umland",
+    "name": "Wien Umland (NÖ)",
+    "region": "Niederösterreich",
+    "postalCodes": [
+      "2000-2100",
+      "2201",
+      "2301",
+      "2320-2345",
+      "2380",
+      "2391",
+      "2401",
+      "2500-2504",
+      "3400-3402"
+    ],
+    "fee": 20,
+    "freeFrom": null,
+    "minOrder": 39,
+    "deliveryDays": [
+      2,
+      4,
+      6
+    ],
+    "cutoff": "12:00",
+    "leadDays": 1,
+    "sameDay": true,
+    "sameDayCutoff": "10:00",
+    "windows": [
+      {
+        "id": "day",
+        "label": "9–18 Uhr",
+        "from": "09:00",
+        "to": "18:00",
+        "surcharge": 0,
+        "active": true
+      }
+    ],
+    "active": true,
+    "note": "Lieferung im Wiener Umland dienstags, donnerstags und samstags."
+  }
+]

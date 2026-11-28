@@ -1,0 +1,364 @@
+import "server-only";
+import { getStore, jsonStore, type DocumentStore } from "@/lib/store";
+import { runContentMigrations } from "@/lib/content-migrations";
+import type {
+  Category, CmsPage, Coupon, DeliveryZone, Extra, FAQ, HomepageContent, LandingPage,
+  Occasion, Offer, CustomRequest, ContactMessage, Partner, Product, Review, SiteSettings, SubscriptionConfig, Order, NewsletterSubscriber, CheckoutDraft,
+} from "@/types";
+import type { OutreachContact, OutreachSend, OutreachTemplate, OutreachUnsubscribe } from "@/types/outreach";
+import type { PartnerLedgerEntry, PartnerPortalDoc } from "@/types/partner-portal";
+import { starterTemplates } from "@/lib/outreach/starter-templates";
+
+/**
+ * Content repository.
+ *
+ * All editable content lives as JSON documents in `/content` (versioned) and
+ * transactional data in `/data` (not versioned). This module is the ONLY place
+ * pages, components and actions read or write persisted data. The physical
+ * storage is a `DocumentStore` (`src/lib/store`): JSON files by default, or
+ * Postgres when `DATABASE_URL` is set – see docs/DATABASE.md.
+ */
+type Collection =
+  | "products" | "occasions" | "categories" | "extras" | "delivery-zones" | "coupons"
+  | "faqs" | "reviews" | "subscription" | "settings" | "homepage" | "pages" | "landing-pages" | "partners"
+  /** Content translations per language (src/lib/i18n-content.ts). */
+  | `i18n-${string}`
+  /** Topic pages of other languages. */
+  | `landing-pages-${string}`
+  /** Translations of customer reviews (src/lib/review-translations.ts). */
+  | "review-translations";
+
+/**
+ * Reads an editorial document. With the Postgres store a document that is not yet
+ * in the database (fresh deployment) is served from `/content/<name>.json` and
+ * seeded into the database on first read, so no manual import is required.
+ */
+const g = globalThis as unknown as { __blumoraContentMigrations?: Promise<void> };
+
+/** Runs pending content migrations once per process before the first content read (see content-migrations.ts). */
+function contentMigrations(store: DocumentStore) {
+  if (store.name === "json") return Promise.resolve();
+  g.__blumoraContentMigrations ??= runContentMigrations(store)
+    .then((applied) => {
+      // Pages rendered before the change (static pages, CDN cache) must not keep the old text.
+      if (applied.length) void import("next/cache").then((m) => m.revalidatePath("/", "layout")).catch(() => undefined);
+    })
+    .catch((err: unknown) => {
+      console.warn("[blumora] content migrations failed – retrying on the next request:", err);
+      g.__blumoraContentMigrations = undefined;
+    });
+  return g.__blumoraContentMigrations;
+}
+
+async function readContent<T>(name: string): Promise<T> {
+  const store = getStore();
+  await contentMigrations(store);
+  const value = await store.get<T>("content", name);
+  if (value !== null) return value;
+
+  if (store.name !== "json") {
+    const seed = await jsonStore.get<T>("content", name);
+    if (seed !== null) {
+      await store.set("content", name, seed).catch((err: unknown) => {
+        console.warn(`[blumora] could not seed content "${name}" into ${store.name}:`, err);
+      });
+      return seed;
+    }
+  }
+  throw new Error(`Content document "${name}" not found`);
+}
+
+/** Reads a runtime document; `fallback` when it does not exist yet. Storage errors propagate. */
+async function readDataDoc<T>(name: string, fallback: T): Promise<T> {
+  const value = await getStore().get<T>("data", name);
+  return value === null ? fallback : value;
+}
+
+export async function readCollection<T>(name: Collection): Promise<T> {
+  return readContent<T>(name);
+}
+export async function writeCollection(name: Collection, value: unknown) {
+  return getStore().set("content", name, value);
+}
+
+/* ---------------- Typed accessors ---------------- */
+
+export const getSettings = () => readCollection<SiteSettings>("settings");
+export const getHomepage = () => readCollection<HomepageContent>("homepage");
+export const getSubscription = () => readCollection<SubscriptionConfig>("subscription");
+export const getOccasions = async () =>
+  (await readCollection<Occasion[]>("occasions")).sort((a, b) => a.sortOrder - b.sortOrder);
+export const getCategories = async () =>
+  (await readCollection<Category[]>("categories")).sort((a, b) => a.sortOrder - b.sortOrder);
+export const getExtras = async (onlyActive = true) =>
+  (await readCollection<Extra[]>("extras"))
+    .filter((e) => !onlyActive || e.active)
+    .sort((a, b) => a.sortOrder - b.sortOrder);
+export const getDeliveryZones = async (onlyActive = true) =>
+  (await readCollection<DeliveryZone[]>("delivery-zones")).filter((z) => !onlyActive || z.active);
+export const getCoupons = () => readCollection<Coupon[]>("coupons");
+export const getFaqs = async () =>
+  (await readCollection<FAQ[]>("faqs")).sort((a, b) => a.sortOrder - b.sortOrder);
+export const getReviews = () => readCollection<Review[]>("reviews");
+/** Partner florists, sorted; `onlyActive` drops inactive ones. */
+export const getPartners = async (onlyActive = false) =>
+  (await readCollection<Partner[]>("partners")).filter((p) => !onlyActive || p.active).sort((a, b) => a.sortOrder - b.sortOrder);
+export const getPages = () => readCollection<CmsPage[]>("pages");
+/**
+ * Topic pages of one language. German: `landing-pages`; every other language has
+ * its own document `landing-pages-{locale}` (content/landing-pages-{locale}.json) –
+ * pages written for that language, not translations of the German ones.
+ */
+export const getLandingPages = async (locale: string = "de"): Promise<LandingPage[]> => {
+  if (locale === "de") return (await readCollection<LandingPage[]>("landing-pages")).filter((p) => !p.locale || p.locale === "de");
+  try {
+    return (await readCollection<LandingPage[]>(`landing-pages-${locale}`)).map((p) => ({ ...p, locale }));
+  } catch {
+    return [];
+  }
+};
+
+export async function getAllProducts(includeInactive = false): Promise<Product[]> {
+  const products = await readCollection<Product[]>("products");
+  return products
+    .filter((p) => includeInactive || p.active)
+    .sort((a, b) => (a.sortOrder ?? 999) - (b.sortOrder ?? 999));
+}
+export async function getProductBySlug(slug: string) {
+  return (await getAllProducts()).find((p) => p.slug === slug) ?? null;
+}
+export async function getProductsBySlugs(slugs: string[]) {
+  const all = await getAllProducts();
+  return slugs.map((s) => all.find((p) => p.slug === s)).filter((p): p is Product => Boolean(p));
+}
+export async function getOccasionBySlug(slug: string) {
+  return (await getOccasions()).find((o) => o.slug === slug) ?? null;
+}
+export async function getCategoryBySlug(slug: string) {
+  return (await getCategories()).find((c) => c.slug === slug) ?? null;
+}
+export async function getPageBySlug(slug: string) {
+  return (await getPages()).find((p) => p.slug === slug) ?? null;
+}
+export async function getLandingPageBySlug(slug: string, locale: string = "de") {
+  return (await getLandingPages(locale)).find((p) => p.slug === slug) ?? null;
+}
+export async function getFaqsByIds(ids: string[]) {
+  const all = await getFaqs();
+  return ids.map((id) => all.find((f) => f.id === id)).filter((f): f is FAQ => Boolean(f));
+}
+
+/* ---------------- Orders & newsletter (runtime data) ---------------- */
+
+export async function getOrders(): Promise<Order[]> {
+  return readDataDoc<Order[]>("orders", []);
+}
+export async function saveOrders(orders: Order[]) {
+  return getStore().set("data", "orders", orders);
+}
+export async function getOrderById(id: string) {
+  return (await getOrders()).find((o) => o.id === id) ?? null;
+}
+export async function addOrder(order: Order) {
+  const orders = await getOrders();
+  orders.unshift(order);
+  await saveOrders(orders);
+  return order;
+}
+/**
+ * One-time claim (e.g. "analytics-BQ-ABC123-purchase"): true for exactly one caller, also across
+ * server instances (atomic insert in Postgres, exclusive create for JSON files).
+ */
+export async function claimOnce(name: string): Promise<boolean> {
+  const safe = `claim-${name.toLowerCase().replace(/[^a-z0-9-]/g, "-")}`;
+  const store = getStore();
+  const value = { at: new Date().toISOString() };
+  if (store.createIfAbsent) return store.createIfAbsent("data", safe, value);
+  if (await store.get("data", safe)) return false;
+  await store.set("data", safe, value);
+  return true;
+}
+
+export async function updateOrder(id: string, patch: (o: Order) => Order) {
+  const orders = await getOrders();
+  const idx = orders.findIndex((o) => o.id === id);
+  if (idx === -1) return null;
+  orders[idx] = patch(orders[idx]);
+  await saveOrders(orders);
+  return orders[idx];
+}
+
+/* ---------------- Individual offers (runtime data, see docs/OFFERS.md) ---------------- */
+
+export async function getOffers(): Promise<Offer[]> {
+  return readDataDoc<Offer[]>("offers", []);
+}
+export async function saveOffers(offers: Offer[]) {
+  await getStore().set("data", "offers", offers);
+}
+export async function getOfferById(id: string) {
+  return (await getOffers()).find((o) => o.id === id) ?? null;
+}
+/** Read-modify-write of one offer; null when it does not exist. */
+export async function updateOffer(id: string, patch: (o: Offer) => Offer) {
+  const offers = await getOffers();
+  const idx = offers.findIndex((o) => o.id === id);
+  if (idx === -1) return null;
+  offers[idx] = patch(offers[idx]);
+  await saveOffers(offers);
+  return offers[idx];
+}
+export async function addOffer(offer: Offer) {
+  const offers = await getOffers();
+  offers.unshift(offer);
+  await saveOffers(offers);
+  return offer;
+}
+
+export async function getNewsletterSubscribers(): Promise<NewsletterSubscriber[]> {
+  return readDataDoc<NewsletterSubscriber[]>("newsletter", []);
+}
+export async function saveNewsletterSubscribers(list: NewsletterSubscriber[]) {
+  await getStore().set("data", "newsletter", list);
+}
+
+/* ---------------- Abandoned checkouts (runtime data, see docs/PAYMENTS.md) ---------------- */
+
+export async function getCheckoutDrafts(): Promise<CheckoutDraft[]> {
+  return readDataDoc<CheckoutDraft[]>("checkout-drafts", []);
+}
+export async function saveCheckoutDrafts(list: CheckoutDraft[]) {
+  await getStore().set("data", "checkout-drafts", list);
+}
+
+/* ---------------- Customer requests and contact messages (admin → Anfragen, see docs/INQUIRIES.md) ---------------- */
+
+export async function getCustomRequests(): Promise<CustomRequest[]> {
+  const list = await readDataDoc<CustomRequest[]>("custom-requests", []);
+  return Array.isArray(list) ? list : [];
+}
+export async function saveCustomRequests(list: CustomRequest[]) {
+  await getStore().set("data", "custom-requests", list);
+}
+export async function getCustomRequestById(id: string) {
+  return (await getCustomRequests()).find((r) => r.id === id) ?? null;
+}
+/** Read-modify-write of one request; null when it does not exist. */
+export async function updateCustomRequest(id: string, patch: (r: CustomRequest) => CustomRequest) {
+  const list = await getCustomRequests();
+  const idx = list.findIndex((r) => r.id === id);
+  if (idx === -1) return null;
+  list[idx] = patch(list[idx]);
+  await saveCustomRequests(list);
+  return list[idx];
+}
+/** Messages of the contact form (written by /api/contact). */
+export async function getContactMessages(): Promise<ContactMessage[]> {
+  const list = await readDataDoc<ContactMessage[]>("contact-messages", []);
+  return Array.isArray(list) ? list : [];
+}
+export async function updateContactMessage(id: string, patch: (m: ContactMessage) => ContactMessage) {
+  const list = await getContactMessages();
+  const idx = list.findIndex((m) => m.id === id);
+  if (idx === -1) return null;
+  list[idx] = patch(list[idx]);
+  await getStore().set("data", "contact-messages", list);
+  return list[idx];
+}
+
+/* ---------------- Generic runtime data (reminders, sessions, requests …) ---------------- */
+
+/**
+ * Small JSON documents that are NOT editorial content: reminders, auth tokens,
+ * business inquiries, contact messages … Stored under `/data` (git-ignored).
+ * Callers must treat the value as opaque and write back the whole document.
+ */
+export async function readData<T>(name: string, fallback: T): Promise<T> {
+  return readDataDoc<T>(name, fallback);
+}
+export async function writeData(name: string, value: unknown) {
+  return getStore().set("data", name, value);
+}
+/** False when the datastore cannot persist runtime data (JSON store on a read-only filesystem). */
+export function canPersistData(): Promise<boolean> {
+  return getStore().canWriteData();
+}
+
+export async function getOrdersByEmail(email: string) {
+  const needle = email.trim().toLowerCase();
+  return (await getOrders()).filter((o) => o.customer.email.toLowerCase() === needle);
+}
+
+/* ---------------- Outreach (runtime data, see docs/OUTREACH.md) ---------------- */
+
+/** Business contacts for one-to-one outreach mails. */
+export async function getOutreachContacts(): Promise<OutreachContact[]> {
+  return readDataDoc<OutreachContact[]>("outreach-contacts", []);
+}
+export async function saveOutreachContacts(list: OutreachContact[]) {
+  await getStore().set("data", "outreach-contacts", list);
+}
+/** Read-modify-write of one contact; null when it does not exist. */
+export async function updateOutreachContact(id: string, patch: (c: OutreachContact) => OutreachContact) {
+  const list = await getOutreachContacts();
+  const idx = list.findIndex((c) => c.id === id);
+  if (idx === -1) return null;
+  list[idx] = patch(list[idx]);
+  await saveOutreachContacts(list);
+  return list[idx];
+}
+
+/** Mail templates; the starter templates are seeded when the document does not exist yet. */
+export async function getOutreachTemplates(): Promise<OutreachTemplate[]> {
+  const store = getStore();
+  const value = await store.get<OutreachTemplate[]>("data", "outreach-templates");
+  if (value !== null) return value;
+  const seeded = starterTemplates(new Date().toISOString());
+  await store.set("data", "outreach-templates", seeded).catch((err: unknown) => {
+    console.warn("[blumora] could not seed outreach templates:", err);
+  });
+  return seeded;
+}
+export async function saveOutreachTemplates(list: OutreachTemplate[]) {
+  await getStore().set("data", "outreach-templates", list);
+}
+
+/** Outreach queue and send log (incl. open/click tracking). */
+export async function getOutreachSends(): Promise<OutreachSend[]> {
+  return readDataDoc<OutreachSend[]>("outreach-sends", []);
+}
+export async function saveOutreachSends(list: OutreachSend[]) {
+  await getStore().set("data", "outreach-sends", list);
+}
+/** Read-modify-write of the send log; `fn` returns the new list. */
+export async function updateOutreachSends(fn: (list: OutreachSend[]) => OutreachSend[]) {
+  const next = fn(await getOutreachSends());
+  await saveOutreachSends(next);
+  return next;
+}
+
+/** Addresses that unsubscribed from outreach mails – never mailed again. */
+export async function getOutreachUnsubscribed(): Promise<OutreachUnsubscribe[]> {
+  return readDataDoc<OutreachUnsubscribe[]>("outreach-unsubscribed", []);
+}
+export async function saveOutreachUnsubscribed(list: OutreachUnsubscribe[]) {
+  await getStore().set("data", "outreach-unsubscribed", list);
+}
+
+/* ---------------- Partner-Portal (runtime data, see docs/PARTNER-PORTAL.md) ---------------- */
+
+/** Portal settings per partner id (allow-listed login addresses, "Abrechnung ab"). */
+export async function getPartnerPortalSettings(): Promise<PartnerPortalDoc> {
+  return readDataDoc<PartnerPortalDoc>("partner-portal", {});
+}
+export async function savePartnerPortalSettings(doc: PartnerPortalDoc) {
+  await getStore().set("data", "partner-portal", doc);
+}
+
+/** Payments to partners and manual corrections. */
+export async function getPartnerLedgerEntries(): Promise<PartnerLedgerEntry[]> {
+  return readDataDoc<PartnerLedgerEntry[]>("partner-ledger", []);
+}
+export async function savePartnerLedgerEntries(list: PartnerLedgerEntry[]) {
+  await getStore().set("data", "partner-ledger", list);
+}

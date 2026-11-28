@@ -1,0 +1,707 @@
+[
+  {
+    "slug": "viyanaya-cicek-gonder",
+    "title": "Viyana'ya çiçek gönder",
+    "headline": "Viyana'ya çiçek gönderin.",
+    "intro": "Viyana çiçek siparişi birkaç adımda: Elde hazırlanan buketler Viyana'nın 23 bölgesinin tamamına, istediğiniz gün ve saatte teslim edilir.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": {
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Viyana çiçek siparişi nasıl yapılır?",
+        "paragraphs": [
+          "Viyana'ya çiçek göndermek için buketinizi ve boyunu seçin, takvimden teslimat tarihini belirleyin, alıcının adresini girin ve ödemeyi yapın. Ardından siparişinizin durumunu gösteren bir bağlantıyla birlikte e-postayla onay alırsınız.",
+          "Viyana'nın 23 bölgesinin tamamına pazartesiden pazara teslimat yapıyoruz. Ödeme adımında 9:00 ile 22:00 arasında bir saatlik bir zaman aralığı seçersiniz. Teslimat ücreti bölgeye göre değişir ve alıcının posta kodunu girdiğinizde gösterilir."
+        ]
+      },
+      {
+        "heading": "Elde hazırlanır, kuryeyle teslim edilir",
+        "paragraphs": [
+          "Her buket, sürekli birlikte çalıştığımız Viyanalı bir çiçekçi tarafından siparişiniz için elde hazırlanır. Bir kurye buketi çiçekçiden alır ve doğrudan alıcı adresine götürür. Buketler 36,90 €'dan başlayan fiyatlarla sunulur."
+        ]
+      },
+      {
+        "heading": "Türkçe sipariş, güvenli ödeme",
+        "paragraphs": [
+          "Site, ödeme adımı ve sipariş e-postaları Türkçe olarak sunulur. Kredi veya banka kartı, Apple Pay, Google Pay, Klarna ya da eps ile ödeyebilirsiniz; yurt dışında çıkarılmış kartlar da kabul edilir. Tüm saatler Viyana saatine göredir."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-date",
+      "f-window",
+      "f-nobody",
+      "f-payment"
+    ],
+    "seo": {
+      "title": "Viyana'ya çiçek gönder – Viyana çiçek siparişi",
+      "description": "Viyana'ya çiçek gönderin: elde hazırlanan buketler, istediğiniz tarih ve bir saatlik zaman aralığı. Viyana'nın 23 bölgesine teslimat."
+    }
+  },
+  {
+    "slug": "turkiyeden-viyanaya-cicek-gonder",
+    "title": "Türkiye'den Viyana'ya çiçek",
+    "headline": "Türkiye'den Avusturya'ya, Viyana'ya çiçek gönderin.",
+    "intro": "İstanbul'dan, Ankara'dan ya da İzmir'den: Viyana'daki sevdiklerinize online sipariş verin, buket elde hazırlanıp kapılarına getirilsin.",
+    "image": "/images/hero/hero-wien-tram-wide.jpg",
+    "productFilter": {
+      "occasions": [
+        "geburtstag",
+        "jahrestag",
+        "liebe"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Türkiye'den Viyana'ya çiçek göndermek",
+        "paragraphs": [
+          "Türkiye'den Avusturya'ya çiçek göndermek mi istiyorsunuz? Blumora yalnızca Viyana'ya teslimat yapar – ama Viyana'nın 23 bölgesinin tamamına. Avusturya'nın diğer şehirlerine teslimat yapmıyoruz. Alıcının posta kodunu girdiğinizde teslimatın mümkün olup olmadığını ve ücretini hemen görürsünüz.",
+          "Siteyi, ödeme adımını ve sipariş e-postalarını Türkçe kullanırsınız. Buketi sürekli birlikte çalıştığımız Viyanalı bir çiçekçi hazırlar, bir kurye doğrudan alıcıya götürür."
+        ]
+      },
+      {
+        "heading": "Saat farkı ve ödeme",
+        "paragraphs": [
+          "Tüm teslimat saatleri ve son sipariş saatleri Viyana saatine göredir. Türkiye, Viyana'dan kışın iki saat, yazın bir saat ileridedir. Aynı gün teslimat için Viyana saatiyle pazartesiden cumartesiye 18:30'a, pazar günü 17:45'e kadar sipariş verin.",
+          "Fiyatlar euro cinsindendir. Kredi veya banka kartı, Apple Pay ya da Google Pay ile ödeyebilirsiniz; yurt dışında çıkarılmış kartlar da kabul edilir."
+        ]
+      },
+      {
+        "heading": "Sorunsuz bir sürpriz için",
+        "paragraphs": [
+          "Alıcının tam adresini ve mümkünse telefon numarasını girin; telefon numarası yalnızca teslimat sırasında bir soru olursa kullanılır. Kapı kodu ya da kat bilgisi gibi ayrıntıları ödeme adımındaki teslimat notuna yazabilirsiniz."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-where",
+      "f-today",
+      "f-payment",
+      "f-nobody",
+      "f-anon"
+    ],
+    "seo": {
+      "title": "Türkiye'den Viyana'ya çiçek gönder – Avusturya",
+      "description": "Türkiye'den Avusturya'ya, Viyana'ya çiçek gönderin: Türkçe sipariş, yurt dışı kartlarla ödeme, Viyana'nın 23 bölgesine elde hazırlanan buketler."
+    }
+  },
+  {
+    "slug": "viyana-cicekci",
+    "title": "Viyana çiçekçi",
+    "headline": "Viyana çiçekçi: elde hazırlanan buketler, online sipariş.",
+    "intro": "Viyana'da çiçekçi mi arıyorsunuz? Buketinizi Blumora'da online seçin – Viyanalı partner çiçekçimiz siparişiniz için elde hazırlar.",
+    "image": "/images/editorial/studio.jpg",
+    "productFilter": {
+      "category": "bunt",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Online sipariş, Viyanalı el işçiliği",
+        "paragraphs": [
+          "Blumora bir online çiçek mağazasıdır. Buketleri, sürekli birlikte çalıştığımız Viyanalı bir çiçekçi hazırlar – her birini tek bir sipariş için, teslimat günü taze olarak. Bir kurye buketi çiçekçiden alır ve hiç durmadan alıcı adresine götürür."
+        ]
+      },
+      {
+        "heading": "Çiçekçiye özel istekleriniz",
+        "paragraphs": [
+          "Ürün sayfasındaki “Çiçekçilerimize istekleriniz” alanına küçük değişiklikler yazabilirsiniz, örneğin “sarı yerine beyaz gül lütfen”. Çiçekler mevcutsa isteğiniz uygulanır.",
+          "Tek sayıda sap gibi istekleri de bu alana not edebilirsiniz. Her buket tek tek hazırlandığı için renkler ve türler mevsime göre biraz farklı olabilir; tarz ve renk dünyası korunur."
+        ]
+      },
+      {
+        "heading": "Viyana'nın her bölgesine",
+        "paragraphs": [
+          "Viyana'nın 23 bölgesinin tamamına, haftanın yedi günü teslimat yapıyoruz. 9:00 ile 22:00 arasında bir saatlik zaman aralığı seçersiniz; teslimat ücretini alıcının posta kodunu girdikten sonra görürsünüz. Aynı gün teslimat için pazartesiden cumartesiye 18:30'a, pazar günü 17:45'e kadar sipariş verin."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-photo",
+      "f-fresh",
+      "f-where",
+      "f-date"
+    ],
+    "seo": {
+      "title": "Viyana çiçekçi – elde hazırlanan buketler online",
+      "description": "Viyana çiçekçi arıyorsanız: Viyanalı partner çiçekçimizin elde hazırladığı buketleri online sipariş edin, Viyana'nın her bölgesine teslim edilsin."
+    }
+  },
+  {
+    "slug": "viyana-ayni-gun-cicek-teslimati",
+    "title": "Viyana aynı gün çiçek teslimatı",
+    "headline": "Viyana'da aynı gün çiçek teslimatı.",
+    "intro": "Pazartesiden cumartesiye 18:30'a, pazar günü 17:45'e kadar sipariş verin – buket aynı gün Viyana'da kapıda.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": {
+      "sameDayOnly": true,
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Bugün sipariş, bugün teslimat",
+        "paragraphs": [
+          "Viyana aynı gün çiçek teslimatı için pazartesiden cumartesiye saat 18:30'a, pazar günü 17:45'e kadar sipariş vermeniz yeterli. Boş bir zaman aralığı olduğu sürece buket aynı gün Viyana'nın her bölgesine teslim edilir.",
+          "Seçebileceğiniz en erken zaman aralığı, sipariş saatinizden en az iki saat sonra sona erer. Böylece çiçekçinin buketi hazırlamasına ve kuryenin yola çıkmasına zaman kalır. Tüm saatler Viyana saatidir."
+        ]
+      },
+      {
+        "heading": "Nasıl çalışır?",
+        "paragraphs": [
+          "Bu sayfadaki buketler aynı gün teslim edilebilir. Alıcının posta kodunu girin; bu adres için en erken teslimat zamanını hemen görürsünüz. Ardından ödeme adımında 22:00'ye kadar bir saatlik zaman aralığı seçin. Teslimat ücreti bölgeye göre değişir ve posta kodunu girdiğinizde gösterilir."
+        ]
+      },
+      {
+        "heading": "Son dakikada da özenle",
+        "paragraphs": [
+          "Aynı gün verilen siparişler de diğerleri gibi Viyanalı partner çiçekçimiz tarafından elde hazırlanır ve kuryeyle doğrudan teslim edilir. Kart, Apple Pay, Google Pay, Klarna veya eps ile ödeyebilirsiniz."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-today",
+      "f-where",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Viyana aynı gün çiçek teslimatı – 18:30'a kadar",
+      "description": "Viyana'da aynı gün çiçek teslimatı: pazartesi–cumartesi 18:30'a, pazar 17:45'e kadar sipariş verin. Elde hazırlanan buketler, tüm Viyana'ya."
+    }
+  },
+  {
+    "slug": "viyana-gul-gonder",
+    "title": "Viyana gül gönder",
+    "headline": "Viyana'ya gül gönderin.",
+    "intro": "Kırmızı, pembe, beyaz ya da mavi: Gül buketleri elde hazırlanır ve Viyana'da istediğiniz gün teslim edilir.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": {
+      "category": "rosen",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Her duyguya bir gül",
+        "paragraphs": [
+          "Kırmızı gül genellikle aşkla, pembe gül sevgi ve incelikle, beyaz gül ise saflık ve yeni başlangıçlarla ilişkilendirilir. Viyana'ya gül göndermek için doğum günü, yıl dönümü ya da sadece özlem yeterli bir sebeptir.",
+          "Seçkide klasik kırmızı güllerin yanında gökkuşağı renklerinde, mavi ve siyah güllerden buketler de bulunur. Her buket Viyanalı partner çiçekçimiz tarafından siparişiniz için elde hazırlanır ve kuryeyle doğrudan alıcıya götürülür."
+        ]
+      },
+      {
+        "heading": "Boy ve gül sayısı",
+        "paragraphs": [
+          "Buketlerin çoğu birkaç boyda sunulur. Belirli bir gül sayısı ya da tek sayıda gül istiyorsanız ürün sayfasındaki “Çiçekçilerimize istekleriniz” alanına yazın; çiçekler mevcutsa isteğiniz uygulanır."
+        ]
+      },
+      {
+        "heading": "Viyana'da gül teslimatı",
+        "paragraphs": [
+          "Viyana'nın 23 bölgesinin tamamına haftanın yedi günü, 9:00 ile 22:00 arasında bir saatlik zaman aralıklarında teslimat yapıyoruz. Pazartesiden cumartesiye 18:30'a, pazar günü 17:45'e kadar verilen siparişler, boş bir zaman aralığı varsa aynı gün teslim edilir. Türkiye'den sipariş veriyorsanız tüm saatlerin Viyana saatine göre olduğunu unutmayın."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-window",
+      "f-photo",
+      "f-anon",
+      "f-date"
+    ],
+    "seo": {
+      "title": "Viyana gül gönder – gül buketi teslimatı",
+      "description": "Viyana'ya gül gönderin: kırmızı, pembe, beyaz ve mavi gül buketleri, elde hazırlanır. İstediğiniz gün ve saatte Viyana'da teslimat."
+    }
+  },
+  {
+    "slug": "viyana-cenaze-cicegi",
+    "title": "Viyana cenaze çiçeği ve taziye çelengi",
+    "headline": "Viyana'da cenaze çiçeği ve taziye çelengi.",
+    "intro": "Başsağlığı için sakin renklerde taziye çelenkleri ve taziye buketleri – elde hazırlanır, Viyana'da istediğiniz gün teslim edilir.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": {
+      "category": "trauer",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Son selam için çiçekler",
+        "paragraphs": [
+          "Viyana'da cenaze çiçeği olarak bir taziye çelengi ya da taziye buketi gönderebilirsiniz. Beyaz, pastel ve sıcak tonlarda seçenekler var; hepsi Viyanalı partner çiçekçimiz tarafından siparişiniz için elde hazırlanır."
+        ]
+      },
+      {
+        "heading": "Kurdele yazısı",
+        "paragraphs": [
+          "Çelengin kurdelesine bir yazı, örneğin adınızı ya da kısa bir taziye cümlesi istiyorsanız, sipariş verirken ürün sayfasındaki “Çiçekçilerimize istekleriniz” alanına not edin – talep üzerine mümkündür. Tebrik kartları henüz sunulmadığından, çiçeklerin kimden geldiğinin bilinmesini istiyorsanız kurdele yazısı iyi bir yoldur."
+        ]
+      },
+      {
+        "heading": "Teslimat yeri ve zamanı",
+        "paragraphs": [
+          "Teslimat adresi olarak törenin yapılacağı yeri ya da yas tutan ailenin Viyana'daki adresini girin. Takvimden tarihi ve törenden önceki bir saatlik zaman aralığını seçin; salon adı veya bir iletişim kişisi gibi bilgileri teslimat notuna yazabilirsiniz.",
+          "Türkiye'den ya da başka bir ülkeden cenazeye katılamıyorsanız, çiçeklerle yakınlarınızın yanında olduğunuzu gösterebilirsiniz. Teslimat yalnızca Viyana içinde yapılır."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-photo",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Viyana cenaze çiçeği – taziye çelengi ve buketi",
+      "description": "Viyana cenaze çiçeği: taziye çelengi ve taziye buketi, elde hazırlanır. Kurdele yazısı talep üzerine, istediğiniz gün ve saatte teslimat."
+    }
+  },
+  {
+    "slug": "anneler-gunu-cicek",
+    "title": "Anneler Günü çiçekleri",
+    "headline": "Anneler Günü için Viyana'ya çiçek.",
+    "intro": "Anneler Günü mayıs ayının ikinci pazarıdır – hem Türkiye'de hem Avusturya'da. Annenize Viyana'da elde hazırlanmış bir buket gönderin.",
+    "image": "/images/products/sortiment/rose-dream-1.jpg",
+    "productFilter": {
+      "category": "pastell",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Anneler Günü ne zaman?",
+        "paragraphs": [
+          "Anneler Günü Türkiye'de de Avusturya'da da mayıs ayının ikinci pazar günü kutlanır. Yani Viyana'da yaşayan annenizi Türkiye'den ya da Viyana'nın içinden kutlasanız da gün aynıdır.",
+          "Pazar günleri de teslimat yapıyoruz. Zaman aralıkları dolabileceği için siparişinizi birkaç gün önceden verip tarihi takvimden seçmenizi öneririz."
+        ]
+      },
+      {
+        "heading": "Anneler için buketler",
+        "paragraphs": [
+          "Pembe güller, zambaklar ve pastel tonlar Anneler Günü'ne çok yakışır. Bu sayfadaki buketler yumuşak renkleriyle her odaya uyar ve çoğu birkaç boyda sunulur. Her buket Viyanalı partner çiçekçimiz tarafından siparişiniz için elde hazırlanır."
+        ]
+      },
+      {
+        "heading": "Teslimat",
+        "paragraphs": [
+          "Viyana'nın 23 bölgesinin tamamına, 9:00 ile 22:00 arasında bir saatlik zaman aralıklarında teslimat yapıyoruz. Anneniz evde değilse çiçekler mümkünse komşulara bırakılır; ödeme adımında teslimat için bir not ekleyebilirsiniz.",
+          "Türkiye'den ya da başka bir ülkeden sipariş veriyorsanız siteyi ve ödeme adımını Türkçe kullanabilirsiniz; yurt dışında çıkarılmış kartlar da kabul edilir. Tüm saatler Viyana saatine göredir."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Anneler Günü çiçekleri – Viyana'ya teslimat",
+      "description": "Anneler Günü (mayısın ikinci pazarı) için Viyana'ya çiçek gönderin: pastel buketler, elde hazırlanır, pazar günü de teslimat."
+    }
+  },
+  {
+    "slug": "sevgililer-gunu-cicek",
+    "title": "Sevgililer Günü çiçekleri",
+    "headline": "Sevgililer Günü'nde Viyana'ya çiçek gönderin.",
+    "intro": "14 Şubat'ta kırmızı güller ya da bambaşka bir buket: Sevgilinize Viyana'da istediğiniz saatte teslim edilsin.",
+    "image": "/images/products/sortiment/klassiker-der-liebe-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "liebe"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "14 Şubat",
+        "paragraphs": [
+          "Sevgililer Günü her yıl 14 Şubat'ta kutlanır. En klasik hediye kırmızı güldür; pembe tonlarda bir buket ya da kalp şeklinde bir çiçek kutusu da aynı şeyi söyler.",
+          "Uzaktan mı seviyorsunuz? Türkiye'den ya da başka bir ülkeden Türkçe sipariş verebilirsiniz. Tüm saatler Viyana saatine göredir."
+        ]
+      },
+      {
+        "heading": "Doğru zamanda sürpriz",
+        "paragraphs": [
+          "Ödeme adımında 9:00 ile 22:00 arasında bir saatlik zaman aralığı seçersiniz – akşam sürprizi için de. 14 Şubat hafta içine denk gelirse buketi iş yerine de gönderebilirsiniz: Şirket adını ve varsa departmanı belirtin, teslimat resepsiyona yapılır.",
+          "Zaman aralıkları dolabileceği için siparişinizi birkaç gün önceden vermenizi öneririz."
+        ]
+      },
+      {
+        "heading": "Kartsız da kişisel",
+        "paragraphs": [
+          "Tebrik kartları henüz sunulmuyor. Kart olmadan adınız buketin hiçbir yerinde yer almaz ve fatura yalnızca size gönderilir – gizli bir hayran için de uygun. Her buket Viyanalı partner çiçekçimiz tarafından elde hazırlanır ve kuryeyle doğrudan teslim edilir."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-window",
+      "f-date",
+      "f-anon",
+      "f-business"
+    ],
+    "seo": {
+      "title": "Sevgililer Günü çiçekleri – Viyana'ya güller",
+      "description": "Sevgililer Günü'nde (14 Şubat) Viyana'ya çiçek gönderin: kırmızı güller, romantik buketler, istediğiniz saatte teslimat."
+    }
+  },
+  {
+    "slug": "kadinlar-gunu-cicek",
+    "title": "Kadınlar Günü çiçekleri",
+    "headline": "8 Mart Kadınlar Günü için çiçek.",
+    "intro": "Dünya Kadınlar Günü'nde annenize, kız kardeşinize, arkadaşınıza ya da iş arkadaşlarınıza Viyana'da çiçek gönderin.",
+    "image": "/images/products/sortiment/tulpenstrauss-2.jpg",
+    "productFilter": {
+      "occasions": [
+        "danke",
+        "einfach-so"
+      ],
+      "seasons": [
+        "ganzjaehrig",
+        "fruehling"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "8 Mart",
+        "paragraphs": [
+          "Dünya Kadınlar Günü her yıl 8 Mart'ta kutlanır. Hayatınızdaki kadınlara teşekkür etmek ve onları kutlamak için güzel bir fırsattır – Türkiye'de olduğu gibi Viyana'da da.",
+          "Mart ayında seçkide baharın ilk laleleri de yer alabilir. Rengârenk ya da pastel buketler bu güne çok yakışır."
+        ]
+      },
+      {
+        "heading": "Uzaktan kutlamak",
+        "paragraphs": [
+          "Türkiye'den ya da başka bir ülkeden Viyana'daki annenizi, kız kardeşinizi veya bir arkadaşınızı kutlamak mı istiyorsunuz? Siteyi ve ödeme adımını Türkçe kullanabilirsiniz; tüm saatler Viyana saatidir. Her buket Viyanalı partner çiçekçimiz tarafından elde hazırlanır."
+        ]
+      },
+      {
+        "heading": "İş yerine teslimat",
+        "paragraphs": [
+          "Kadın çalışma arkadaşlarınıza ya da bir ekibe çiçek mi göndermek istiyorsunuz? Ödeme adımında şirket adını ve varsa departmanı yazın; teslimat resepsiyona yapılır. Mesai saatlerine uygun bir zaman aralığı seçin.",
+          "Viyana'nın 23 bölgesinin tamamına, 9:00 ile 22:00 arasında bir saatlik zaman aralıklarında teslimat yapıyoruz."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-business",
+      "f-window"
+    ],
+    "seo": {
+      "title": "Kadınlar Günü çiçekleri – 8 Mart, Viyana",
+      "description": "8 Mart Dünya Kadınlar Günü için Viyana'ya çiçek gönderin: rengârenk ve bahar buketleri, eve ya da iş yerine teslimat."
+    }
+  },
+  {
+    "slug": "babalar-gunu-cicek",
+    "title": "Babalar Günü çiçekleri",
+    "headline": "Babalar Günü'nde babanıza Viyana'ya çiçek.",
+    "intro": "Türkiye'de Babalar Günü haziranın üçüncü pazarı kutlanır. Babanıza Viyana'da bir buket ya da saksı bitkisi gönderin.",
+    "image": "/images/products/sortiment/sonnenzauber-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "danke"
+      ],
+      "colors": [
+        "gelb",
+        "orange",
+        "gruen"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Hangi pazar?",
+        "paragraphs": [
+          "Türkiye'de Babalar Günü haziran ayının üçüncü pazar günü kutlanır. Avusturya'da ise Babalar Günü (Vatertag) haziranın ikinci pazarıdır. Viyana'da yaşayan babanızı hangi gün kutlayacağınıza siz karar verin.",
+          "Pazar günleri de teslimat yapıyoruz; uygun teslimat günlerini ürün sayfasındaki takvimde görürsünüz."
+        ]
+      },
+      {
+        "heading": "Babalar için çiçek",
+        "paragraphs": [
+          "Güneş sarısı buketler, egzotik starliçeler ya da uzun süre kalan bir saksı bitkisi – örneğin bir kauçuk ağacı – babalar için de güzel bir hediyedir. Seçkide sarı, turuncu ve yeşil tonlarda buketler ile saksı bitkileri bulunur. Her buket Viyanalı partner çiçekçimiz tarafından elde hazırlanır ve kuryeyle teslim edilir.",
+          "Ödeme adımında 9:00 ile 22:00 arasında bir saatlik zaman aralığı seçersiniz."
+        ]
+      },
+      {
+        "heading": "Uzaktan sipariş",
+        "paragraphs": [
+          "Babanız Viyana'da, siz Türkiye'de ya da başka bir ülkede misiniz? Siteyi ve ödeme adımını Türkçe kullanabilir, yurt dışında çıkarılmış kartlarla ödeyebilirsiniz. Teslimat Viyana'nın 23 bölgesinin tamamına yapılır; ücret posta kodunu girdiğinizde gösterilir."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-fresh"
+    ],
+    "seo": {
+      "title": "Babalar Günü çiçekleri – Viyana'ya teslimat",
+      "description": "Babalar Günü için Viyana'ya çiçek ya da saksı bitkisi gönderin. Türkiye'de haziranın üçüncü, Avusturya'da ikinci pazarı."
+    }
+  },
+  {
+    "slug": "ogretmenler-gunu-cicek",
+    "title": "Öğretmenler Günü çiçekleri",
+    "headline": "24 Kasım Öğretmenler Günü için çiçek.",
+    "intro": "Türkiye'de 24 Kasım Öğretmenler Günü'dür. Viyana'daki öğretmeninize ya da hocanıza küçük bir buketle teşekkür edin.",
+    "image": "/images/products/sortiment/rosentraum-1.jpg",
+    "productFilter": {
+      "category": "unter-40",
+      "occasions": [
+        "danke"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Neden 24 Kasım?",
+        "paragraphs": [
+          "Türkiye'de Öğretmenler Günü her yıl 24 Kasım'da kutlanır. Tarih, Atatürk'ün 24 Kasım 1928'de Millet Mektepleri'nin Başöğretmenliğini kabul ettiği güne dayanır.",
+          "Avusturya'da bu tarih resmî bir gün değildir. Yine de Viyana'daki okul öğretmenleri, Türkçe dersi veren öğretmenler ya da sizi yetiştiren bir hoca için güzel bir teşekkür vesilesidir."
+        ]
+      },
+      {
+        "heading": "Okula ya da eve teslimat",
+        "paragraphs": [
+          "Okula göndermek istiyorsanız ödeme adımında okulun adını firma alanına, öğretmenin adını ve sınıfı teslimat notuna yazın. Ders saatlerine uygun bir sabah zaman aralığı seçin; teslimat günü olarak 24 Kasım'ı ya da ona yakın bir okul gününü takvimden belirleyin.",
+          "40 €'nun altındaki küçük buketler bir teşekkür için çoğu zaman yeterlidir. Her buket Viyanalı partner çiçekçimiz tarafından elde hazırlanır."
+        ]
+      },
+      {
+        "heading": "Eve teslimat",
+        "paragraphs": [
+          "Öğretmeninizin ev adresini biliyorsanız buketi doğrudan eve de gönderebilirsiniz. Akşam saatleri için 22:00'ye kadar bir zaman aralığı seçin; kimse evde değilse çiçekler mümkünse komşulara bırakılır."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-business",
+      "f-window"
+    ],
+    "seo": {
+      "title": "Öğretmenler Günü çiçekleri – 24 Kasım, Viyana",
+      "description": "24 Kasım Öğretmenler Günü için Viyana'daki öğretmeninize çiçek gönderin: 40 €'nun altında küçük buketler, okula ya da eve teslimat."
+    }
+  },
+  {
+    "slug": "soz-nisan-cicegi",
+    "title": "Söz ve nişan çiçeği",
+    "headline": "Viyana'da söz ve nişan çiçeği.",
+    "intro": "Kız istemeden söze ve nişana: Büyük adımlar için zarif buketler, Viyana'da istediğiniz gün ve saatte teslim edilir.",
+    "image": "/images/products/sortiment/rot-und-weiss-mix-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "hochzeit",
+        "liebe"
+      ],
+      "colors": [
+        "weiss",
+        "rot",
+        "rosa"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Gelenekte çiçek",
+        "paragraphs": [
+          "Türk geleneğinde kız istemeye çiçek ve çikolatayla gidilir. Söz ve nişan törenlerinde de çiçek, günün en güzel parçalarından biridir. Viyana'da yaşayan aileler için de bu gelenek sürüyor; çiçeği kapıya teslim ettirmek size zaman kazandırır.",
+          "Beyaz ve kırmızı güller, zarif beyaz buketler ya da pembe tonlar bu günlere çok yakışır. Daha gösterişli bir etki için buketlerin büyük boylarını seçebilirsiniz."
+        ]
+      },
+      {
+        "heading": "Zamanlama ve istekler",
+        "paragraphs": [
+          "Buketin tören gününde, misafirler gelmeden önce teslim edilmesi için takvimden tarihi ve bir saatlik zaman aralığını seçin – 9:00 ile 22:00 arasında, haftanın yedi günü.",
+          "Belirli bir renk ya da tek sayıda gül istiyorsanız sipariş verirken ürün sayfasındaki “Çiçekçilerimize istekleriniz” alanına yazın; çiçekler mevcutsa isteğiniz uygulanır."
+        ]
+      },
+      {
+        "heading": "Uzaktan tebrik",
+        "paragraphs": [
+          "Törende bulunamıyorsanız Türkiye'den ya da başka bir ülkeden Türkçe sipariş verebilirsiniz. Buket Viyanalı partner çiçekçimiz tarafından elde hazırlanır ve kuryeyle doğrudan teslim edilir; tüm saatler Viyana saatidir."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-photo"
+    ],
+    "seo": {
+      "title": "Söz ve nişan çiçeği – Viyana'ya teslimat",
+      "description": "Kız isteme, söz ve nişan için Viyana'da çiçek: beyaz ve kırmızı güller, zarif buketler, istediğiniz gün ve saatte teslimat."
+    }
+  },
+  {
+    "slug": "dugun-cicegi",
+    "title": "Düğün çiçeği",
+    "headline": "Viyana'da düğün için çiçek gönderin.",
+    "intro": "Düğüne katılamıyor musunuz ya da tebriklerinizi çiçekle iletmek mi istiyorsunuz? Zarif buketler Viyana'da istediğiniz gün teslim edilir.",
+    "image": "/images/products/sortiment/rosenkuss-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "hochzeit"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Tebrik olarak çiçek",
+        "paragraphs": [
+          "Nikâh, düğün ya da kına gecesi: Gelin ve damada tebriklerinizi beyaz ve krem tonlarındaki zarif buketlerle ya da kırmızı-beyaz güllerle iletin. Her buket Viyanalı partner çiçekçimiz tarafından siparişiniz için elde hazırlanır.",
+          "Belirli bir renk ya da tek sayıda gül istiyorsanız ürün sayfasındaki “Çiçekçilerimize istekleriniz” alanına yazın; çiçekler mevcutsa isteğiniz uygulanır. Buketlerin çoğunu birkaç boyda seçebilirsiniz."
+        ]
+      },
+      {
+        "heading": "Eve ya da salona",
+        "paragraphs": [
+          "Buketi çiftin evine ya da düğünün yapılacağı salona gönderebilirsiniz. Salona gönderirken salonun adını ödeme adımında firma alanına, çiftin adını ve gerekirse bir iletişim kişisini teslimat notuna yazın.",
+          "Takvimden tarihi ve 9:00 ile 22:00 arasında bir saatlik zaman aralığını seçin. Kına gecesi ya da düğün akşamı için buketin tören başlamadan önce teslim edilmesini planlayın; zaman aralıkları dolabileceği için birkaç gün önceden sipariş vermenizi öneririz. Türkiye'den ya da başka bir ülkeden de sipariş verebilirsiniz; tüm saatler Viyana saatidir."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-business",
+      "f-nobody"
+    ],
+    "seo": {
+      "title": "Düğün çiçeği – Viyana'ya tebrik buketi",
+      "description": "Düğün, nikâh ya da kına gecesi için Viyana'ya çiçek gönderin: zarif beyaz buketler ve güller, eve ya da salona teslimat."
+    }
+  },
+  {
+    "slug": "yeni-dogan-cicegi",
+    "title": "Yeni doğan bebek çiçeği",
+    "headline": "Viyana'da yeni doğan bebek için çiçek.",
+    "intro": "Hoş geldin bebek! Anne ve bebeğe narin pastel buketler – elde hazırlanır, Viyana'da istediğiniz gün teslim edilir.",
+    "image": "/images/products/sortiment/rosa-bouquet-1.jpg",
+    "productFilter": {
+      "category": "pastell",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Bebek çiçeği",
+        "paragraphs": [
+          "Yeni doğan bir bebeği ve anneyi tebrik etmek için pembe, beyaz ve leylak tonlarında narin buketler çok uygundur. Pastel renkler kız bebek için de erkek bebek için de yakışır. Her buket Viyanalı partner çiçekçimiz tarafından siparişiniz için elde hazırlanır ve kuryeyle doğrudan teslim edilir."
+        ]
+      },
+      {
+        "heading": "Hastaneye mi, eve mi?",
+        "paragraphs": [
+          "Bazı hastaneler ya da bölümler çiçek kabul etmez. Emin değilseniz önceden sorun ya da buketi anne ve bebek eve döndükten sonra ev adresine gönderin.",
+          "Hastaneye gönderirken hastanenin adını ödeme adımında firma alanına, bölümü ve oda numarasını teslimat notuna yazın. Alıcının telefon numarası yalnızca teslimat sırasında bir soru olursa kullanılır."
+        ]
+      },
+      {
+        "heading": "Teslimat",
+        "paragraphs": [
+          "Viyana'nın 23 bölgesinin tamamına, haftanın yedi günü 9:00 ile 22:00 arasında bir saatlik zaman aralıklarında teslimat yapıyoruz. Pazartesiden cumartesiye 18:30'a, pazar günü 17:45'e kadar verilen siparişler, boş bir zaman aralığı varsa aynı gün teslim edilir."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-nobody",
+      "f-business",
+      "f-today"
+    ],
+    "seo": {
+      "title": "Yeni doğan bebek çiçeği – Viyana'ya teslimat",
+      "description": "Yeni doğan bebek ve anne için Viyana'ya çiçek gönderin: narin pastel buketler, elde hazırlanır, eve ya da hastaneye teslimat."
+    }
+  },
+  {
+    "slug": "acilis-cicegi",
+    "title": "Açılış çiçeği",
+    "headline": "Viyana'da açılış çiçeği gönderin.",
+    "intro": "Yeni bir dükkân, ofis ya da restoran mı açılıyor? Açılış için saksı bitkileri ve buketler Viyana'da istediğiniz gün teslim edilir.",
+    "image": "/images/products/sortiment/bromelie-im-topf-1.jpg",
+    "productFilter": {
+      "category": "pflanzen",
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Hayırlı olsun",
+        "paragraphs": [
+          "Türkiye'de bir iş yerinin açılışına çiçek göndermek, “hayırlı olsun” demenin en bilinen yollarından biridir. Viyana'da yeni bir iş açan arkadaşınız, akrabanız ya da iş ortağınız için de güzel bir jesttir. Bir dükkân, kafe, kuaför ya da muayenehane: Çiçek, yeni başlangıca iyi dileklerinizi taşır."
+        ]
+      },
+      {
+        "heading": "Saksı bitkisi mi, buket mi?",
+        "paragraphs": [
+          "Orkide, antoryum ya da kauçuk ağacı gibi saksı bitkileri uzun süre kalır ve yeni mekânı süsler. Kısa süreli ama gösterişli bir etki için rengârenk bir buket de seçebilirsiniz.",
+          "Saksı bitkileri de buketler gibi Viyanalı partner çiçekçimizden gelir ve kuryeyle doğrudan teslim edilir. Türkiye'den ya da başka bir ülkeden sipariş verirken tüm saatlerin Viyana saatine göre olduğunu unutmayın."
+        ]
+      },
+      {
+        "heading": "İş yerine teslimat",
+        "paragraphs": [
+          "İş yerinin adını ödeme adımında firma alanına yazın; teslimat resepsiyona ya da çalışanlara yapılır. Açılış saatine göre 9:00 ile 22:00 arasında bir saatlik zaman aralığı seçin – haftanın yedi günü."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-business",
+      "f-date",
+      "f-window"
+    ],
+    "seo": {
+      "title": "Açılış çiçeği – Viyana'da iş yerine teslimat",
+      "description": "Viyana'da açılış çiçeği gönderin: orkide, antoryum ve diğer saksı bitkileri ya da buketler, istediğiniz gün iş yerine teslimat."
+    }
+  },
+  {
+    "slug": "bayram-cicegi",
+    "title": "Bayram ziyareti çiçeği",
+    "headline": "Bayram ziyareti için çiçek – Viyana.",
+    "intro": "Ramazan Bayramı'nda ya da Kurban Bayramı'nda aile büyüklerinizi ziyarete giderken ya da uzaktan bayramlaşırken: Viyana'ya çiçek gönderin.",
+    "image": "/images/products/sortiment/klassische-schoenheit-1.jpg",
+    "productFilter": {
+      "occasions": [
+        "danke",
+        "einfach-so"
+      ],
+      "limit": 8
+    },
+    "sections": [
+      {
+        "heading": "Bayram ne zaman?",
+        "paragraphs": [
+          "Ramazan Bayramı ramazan ayının bitiminde, Kurban Bayramı ise yaklaşık yetmiş gün sonra başlar. Tarihler Hicri takvime göre belirlendiği için bayramlar her yıl yaklaşık on bir gün öne kayar. Bayram günlerinde zaman aralıkları dolabileceğinden siparişinizi birkaç gün önceden vermenizi öneririz."
+        ]
+      },
+      {
+        "heading": "Bayram ziyareti",
+        "paragraphs": [
+          "Bayramda aile büyüklerini, akrabaları ve komşuları ziyaret etmek yaygın bir gelenektir. Ziyarete bir hediyeyle gitmek de sık görülür – bir buket ya da bir saksı bitkisi bunun için güzel bir seçenektir. Her buket Viyanalı partner çiçekçimiz tarafından siparişiniz için elde hazırlanır ve kuryeyle teslim edilir."
+        ]
+      },
+      {
+        "heading": "Uzaktan bayramlaşmak",
+        "paragraphs": [
+          "Bu bayram Viyana'daki ailenizin yanında olamıyor musunuz? Bayramın ilk günü ya da istediğiniz bir gün için tarihi takvimden seçin; buket elde hazırlanır ve bir saatlik zaman aralığında kapıya teslim edilir.",
+          "Türkiye'den ya da başka bir ülkeden Türkçe sipariş verebilirsiniz. Tüm saatler Viyana saatine göredir."
+        ]
+      }
+    ],
+    "faqIds": [
+      "f-date",
+      "f-window",
+      "f-nobody",
+      "f-payment"
+    ],
+    "seo": {
+      "title": "Bayram ziyareti çiçeği – Viyana'ya teslimat",
+      "description": "Ramazan Bayramı ve Kurban Bayramı için Viyana'daki ailenize çiçek gönderin: elde hazırlanan buketler, istediğiniz gün kapıda."
+    }
+  }
+]

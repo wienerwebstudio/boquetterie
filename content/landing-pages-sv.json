@@ -1,0 +1,200 @@
+[
+  {
+    "slug": "skicka-blommor-till-wien",
+    "title": "Skicka blommor till Wien",
+    "headline": "Skicka blommor till Wien – handbundna och levererade med bud.",
+    "intro": "Blomsterleverans i Wien till alla 23 distrikt, alla dagar i veckan. Välj en bukett, leveransdatum och ett tidsfönster på en timme – vi tar hand om resten.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "Så skickar du blommor till Wien",
+        "paragraphs": [
+          "Vill du skicka blommor till Wien? Välj bukett och storlek, välj leveransdatum i kalendern, ange mottagarens adress och betala. Därefter får du en orderbekräftelse via e-post med en länk där du kan följa din beställnings status.",
+          "Vi levererar till alla 23 distrikt i Wien, måndag till söndag. I kassan väljer du ett tidsfönster på en timme mellan kl. 9 och 22, så att blommorna kommer fram när någon är hemma och kan ta emot dem."
+        ]
+      },
+      {
+        "heading": "Bunden för hand för varje beställning",
+        "paragraphs": [
+          "Varje bukett binds för hand för din beställning av en florist i Wien som vi har ett fast samarbete med. Ett bud hämtar den hos floristen och kör den direkt till mottagarens adress, utan mellanstopp.",
+          "Buketterna kostar från 36,90 €. Leveranskostnaden beror på distriktet och visas så snart du har angett postnumret."
+        ]
+      },
+      {
+        "heading": "Behöver du blommorna i dag?",
+        "paragraphs": [
+          "Leverans samma dag i Wien är möjlig för beställningar senast kl. 18.30 (söndagar senast kl. 17.45), så länge det finns ett ledigt tidsfönster för adressen. Med express kan blommorna vara framme inom 1–2 timmar utan extra kostnad – välj bara dagens tidigaste tidsfönster i kassan."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Skicka blommor till Wien – blomsterleverans",
+      "description": "Skicka blommor till Wien: handbundna buketter, levererade med bud till alla 23 distrikt, alla dagar, med tidsfönster på en timme kl. 9–22."
+    }
+  },
+  {
+    "slug": "skicka-blommor-fran-sverige",
+    "title": "Skicka blommor från Sverige till Wien",
+    "headline": "Skicka blommor från Sverige till Wien.",
+    "intro": "Bor du i Stockholm, Göteborg, Malmö eller någon annanstans och har någon särskild i Wien? Beställ online på svenska, betala med ditt vanliga kort och låt en handbunden bukett levereras ända fram till dörren.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": { "occasions": ["geburtstag", "liebe", "danke", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Beställ från Sverige",
+        "paragraphs": [
+          "Hela butiken, kassan och e-posten om din beställning finns på svenska. Priserna anges i euro och du kan betala med kort, Apple Pay, Google Pay, Klarna eller eps – internationella kort fungerar också.",
+          "Allt du behöver är mottagarens adress i Wien. Ange postnumret (postnumren i Wien går från 1010 till 1230) så ser du direkt vilka leveransdagar och tidsfönster som finns och vad leveransen till distriktet kostar."
+        ]
+      },
+      {
+        "heading": "Samma tid i Stockholm och Wien",
+        "paragraphs": [
+          "Sverige och Österrike ligger i samma tidszon, så klockan är densamma i Stockholm och Wien. Alla datum och tider på sidan anges i Wiens tid. Vill du att blommorna ska komma fram en viss dag väljer du datumet i kalendern och ett tidsfönster på en timme mellan kl. 9 och 22.",
+          "Har du bråttom? Leverans samma dag är möjlig för beställningar senast kl. 18.30 (söndagar senast kl. 17.45), så länge det finns ett ledigt tidsfönster. Express inom 1–2 timmar kostar inget extra."
+        ]
+      },
+      {
+        "heading": "Från en florist i Wien, inte ett paket",
+        "paragraphs": [
+          "Din bukett binds för hand i Wien av en lokal partnerflorist och körs fram till dörren med bud – den skickas inte över gränser i en kartong. Så kommer blommorna fram färska, och du följer leveransen via länken i din bekräftelse."
+        ]
+      }
+    ],
+    "faqIds": ["f-payment", "f-date", "f-window", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Skicka blommor från Sverige till Wien",
+      "description": "Skicka blommor från Sverige till Wien: beställ på svenska, betala med kort eller Klarna. Handbundna buketter levererade med bud i hela Wien."
+    }
+  },
+  {
+    "slug": "florist-i-wien",
+    "title": "Florist i Wien",
+    "headline": "Florist i Wien – buketter bundna för hand för varje beställning.",
+    "intro": "Hos Blumora väljer du buketten online, och en florist i Wien binder den för hand för just din beställning. Därefter kör ett bud den direkt till mottagaren.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Floristhantverk i stället för lager",
+        "paragraphs": [
+          "Letar du efter en florist i Wien som också levererar? Våra buketter binds av en florist i Wien som vi har ett fast samarbete med. Varje bukett skapas för hand när du har beställt – inte i förväg och inte på ett lager.",
+          "Eftersom blommor är naturprodukter kan färger och sorter variera något beroende på säsong. Buketten behåller alltid sin stil och sin färgskala."
+        ]
+      },
+      {
+        "heading": "Från floristen direkt till dörren",
+        "paragraphs": [
+          "När buketten är klar hämtar ett bud den hos floristen och kör den utan mellanstopp till mottagarens adress. Vi levererar till alla 23 distrikt i Wien, måndag till söndag, i ett tidsfönster på en timme mellan kl. 9 och 22.",
+          "Har du ett särskilt önskemål, till exempel ett udda antal stjälkar? Skriv det i beställningens meddelande till floristen – vi tar hänsyn till det om det är möjligt."
+        ]
+      },
+      {
+        "heading": "Buketter för varje tillfälle",
+        "paragraphs": [
+          "I sortimentet finns färgglada buketter, rosor, pastellbuketter, krukväxter, blomsterboxar och sorgbinderi. Buketterna kostar från 36,90 €, och leveranskostnaden visas när du har angett postnumret."
+        ]
+      }
+    ],
+    "faqIds": ["f-fresh", "f-photo", "f-where", "f-window"],
+    "seo": {
+      "title": "Florist i Wien – handbundna buketter med bud",
+      "description": "Florist i Wien: buketter bundna för hand för varje beställning och levererade med bud till alla 23 distrikt, alla dagar kl. 9–22."
+    }
+  },
+  {
+    "slug": "blommor-samma-dag-wien",
+    "title": "Blommor samma dag i Wien",
+    "headline": "Blommor levererade i dag – samma dag och express i Wien.",
+    "intro": "Beställer du måndag till lördag senast kl. 18.30 eller på söndagar senast kl. 17.45 levererar vi samma dag i hela Wien. Med express är buketten framme inom 1–2 timmar, utan extra kostnad.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Blomsterleverans samma dag i Wien",
+        "paragraphs": [
+          "Behöver du få blommor levererade i dag? Leverans samma dag är möjlig i alla 23 distrikt i Wien för beställningar måndag till lördag senast kl. 18.30 och på söndagar senast kl. 17.45 – så länge det finns ett ledigt tidsfönster för adressen.",
+          "Ange mottagarens postnummer så ser du direkt den tidigaste möjliga leveranstiden för just den adressen."
+        ]
+      },
+      {
+        "heading": "Express inom 1–2 timmar",
+        "paragraphs": [
+          "Beställ som vanligt och välj dagens tidigaste tidsfönster i kassan – det är märkt med ”Express”. Då är buketten framme inom 1–2 timmar, och expressleveransen kostar inget extra.",
+          "Även när det går snabbt binds buketten för hand för din beställning av en florist i Wien och körs direkt till mottagaren med bud."
+        ]
+      },
+      {
+        "heading": "Hellre ett visst datum?",
+        "paragraphs": [
+          "Du kan också välja vilket datum som helst i kalendern och ett tidsfönster på en timme mellan kl. 9 och 22. Alla tider anges i Wiens tid."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-express", "f-where", "f-window"],
+    "seo": {
+      "title": "Blommor samma dag i Wien – express 1–2 timmar",
+      "description": "Blommor levererade i dag i hela Wien: beställ senast kl. 18.30 (sön 17.45). Express inom 1–2 timmar utan extra kostnad."
+    }
+  },
+  {
+    "slug": "skicka-rosor-wien",
+    "title": "Skicka rosor i Wien",
+    "headline": "Skicka rosor i Wien – rosbuketter med leverans hem till dörren.",
+    "intro": "Röda rosor för kärleken, rosa och vita för ömhet och tack, blå och svarta för den som gillar något ovanligt. Bundna för hand och levererade med bud i hela Wien.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Rosor med leverans i Wien",
+        "paragraphs": [
+          "Vill du skicka rosor i Wien? I vårt sortiment finns rosbuketter i rött, rosa, vitt, orange och blandade färger, men också regnbågsrosor, blå och svarta rosor samt rosor i blomsterbox. Många buketter finns i flera storlekar, från den lilla gesten till den riktigt stora buketten.",
+          "Önskar du ett visst antal rosor, till exempel ett udda antal? Skriv det i beställningens meddelande till floristen – vi tar hänsyn till det om det är möjligt."
+        ]
+      },
+      {
+        "heading": "Till årsdag, alla hjärtans dag eller bara för att",
+        "paragraphs": [
+          "Rosor passar till årsdagen, födelsedagen, ett frieri eller som tack. Välj önskat datum i kalendern och ett tidsfönster på en timme mellan kl. 9 och 22 – alla dagar i veckan, i alla 23 distrikt.",
+          "Vill du vara anonym? Utan hälsningskort står ditt namn ingenstans på buketten, och fakturan går bara till dig."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-anon", "f-photo"],
+    "seo": {
+      "title": "Skicka rosor i Wien – rosbuketter med leverans",
+      "description": "Skicka rosor i Wien: röda, rosa, vita och blå rosbuketter, bundna för hand och levererade med bud till alla 23 distrikt på önskat datum."
+    }
+  },
+  {
+    "slug": "begravningsblommor-wien",
+    "title": "Begravningsblommor i Wien",
+    "headline": "Begravningsblommor och kransar i Wien.",
+    "intro": "Begravningskransar och sorgbuketter i lugna färger, värdigt bundna för hand av en florist i Wien och levererade med bud – som en sista hälsning, även när du själv inte kan vara på plats.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "category": "trauer", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Kransar och sorgbuketter",
+        "paragraphs": [
+          "I sortimentet finns begravningskransar och sorgbuketter i vitt, rött, rosa, gult, orange och pastell. Vitt står för frid och stilla deltagande, rött för kärlek som består. Alla arrangemang binds för hand av en florist i Wien.",
+          "Önskar du ett band med text på kransen? Skriv texten i beställningens meddelande till floristen – vi tar hänsyn till det om det är möjligt."
+        ]
+      },
+      {
+        "heading": "Leverans till begravningen",
+        "paragraphs": [
+          "Välj leveransdatum i kalendern och ett tidsfönster på en timme mellan kl. 9 och 22, så att blommorna kommer fram i tid. Ange adressen dit blommorna ska levereras och skriv gärna en anvisning för budet i kassan.",
+          "Bor du utomlands och kan inte resa till begravningen i Wien? Du kan beställa och betala online på svenska, och e-posten om din beställning kommer också på svenska."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-photo", "f-change"],
+    "seo": {
+      "title": "Begravningsblommor & kransar i Wien",
+      "description": "Begravningsblommor i Wien: kransar och sorgbuketter, värdigt bundna för hand och levererade med bud på önskat datum och i önskat tidsfönster."
+    }
+  }
+]

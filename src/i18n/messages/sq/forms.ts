@@ -1,0 +1,115 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** sq – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Emri",
+  email: "E-mail",
+  emailAddress: "Adresa e e-mailit",
+  message: "Mesazhi",
+  orderNumber: "Numri i porosisë",
+  honeypot: "Faqja e internetit",
+  charCount: "{count}/{max} karaktere",
+  genericError: "Fatkeqësisht nuk funksionoi. Ju lutemi provoni përsëri më vonë.",
+  invalidEmailEnter: "Ju lutemi shkruani një adresë të vlefshme e-maili.",
+
+  mailFallback: {
+    title: "Formulari nuk është i arritshëm për momentin.",
+    text: "Mesazhi juaj nuk ka humbur: ju lutemi na e dërgoni direkt me e-mail në {email}. Teksti është futur tashmë.",
+    open: "Hap e-mailin",
+  },
+
+  newsletter: {
+    honeypot: "Faqja e internetit (ju lutemi lëreni bosh)",
+    successTitle: "Pothuajse gati – ju lutemi konfirmoni regjistrimin tuaj.",
+    successText: "Ju dërguam një e-mail me një lidhje konfirmimi. Vetëm pas kësaj do të merrni buletinin tonë.",
+  },
+
+  contact: {
+    formLabel: "Formulari i kontaktit",
+    subject: "Tema",
+    subjects: {
+      order: "Porosia",
+      delivery: "Dërgesa",
+      business: "Klientë biznesi",
+      other: "Të tjera",
+    },
+    orderNumberHint: "E gjeni në konfirmimin e porosisë suaj.",
+    errors: {
+      name: "Ju lutemi shkruani emrin tuaj.",
+      email: "Ju lutemi shkruani një adresë të vlefshme e-maili.",
+      subject: "Ju lutemi zgjidhni një temë.",
+      orderIdTooLong: "Numri i porosisë është shumë i gjatë.",
+      messageTooShort: "Ju lutemi përshkruani kërkesën tuaj (të paktën 10 karaktere).",
+      messageTooLong: "Mesazhi mund të ketë më së shumti 2000 karaktere.",
+    },
+    thanksTitle: "Faleminderit për mesazhin tuaj.",
+    thanksText: "E morëm kërkesën tuaj dhe do t'ju përgjigjemi sa më shpejt të jetë e mundur me e-mail në {email}.",
+    sendAnother: "Dërgoni një mesazh tjetër",
+    failed: "Mesazhi nuk mund të dërgohej. Ju lutemi provoni përsëri ose na shkruani direkt me e-mail.",
+    consent: "Duke e dërguar, pranoni që t'i përdorim të dhënat tuaja për trajtimin e kërkesës. Detaje në deklaratën e privatësisë.",
+    submit: "Dërgo mesazhin",
+    mailSubject: "Kërkesë kontakti: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Tërhiquni nga kontrata",
+    errors: {
+      name: "Ju lutemi shkruani emrin tuaj.",
+      email: "Ju lutemi shkruani një adresë të vlefshme e-maili.",
+      orderId: "Ju lutemi shkruani numrin e porosisë (p.sh. BQ-7K2M9Q).",
+    },
+    emailHint: "Këtu ju dërgojmë konfirmimin e marrjes.",
+    orderNumberHint: "Gjendet në konfirmimin e porosisë suaj.",
+    items: "Nga cilat mallra tërhiqeni?",
+    itemsPlaceholder: "p.sh. arushi pelushi – lëreni bosh për të gjitha mallrat e porosisë që mund të kthehen",
+    declaration: "Me anë të kësaj tërhiqem nga kontrata që kam lidhur për blerjen e mallrave të përmendura më sipër.",
+    receivedTitle: "Tërheqja juaj u mor.",
+    receivedText: "Marrë më {receivedAt} për porosinë {orderId}.",
+    receivedTextWithCase: "Marrë më {receivedAt} për porosinë {orderId} (rasti {id}).",
+    confirmationSent: "Konfirmimin e marrjes e dërguam në {email}.",
+    confirmationNotSent: "E-maili i konfirmimit nuk mund të dërgohej për momentin – do ta konfirmojmë marrjen personalisht sa më shpejt të jetë e mundur. Deri atëherë ju lutemi ruajeni këtë faqe (p.sh. si pamje ekrani).",
+    failed: "Tërheqja nuk mund të dërgohej për momentin. Ju lutemi provoni përsëri ose dërgojeni me e-mail në {email}.",
+    submit: "Konfirmo tërheqjen",
+    mailSubject: "Tërheqje – porosia {orderId}",
+    mailDeclaration: "Me anë të kësaj tërhiqem nga kontrata që kam lidhur për blerjen e mallrave të mëposhtme: {items}",
+    mailAllItems: "të gjitha mallrat e porosisë që mund të kthehen",
+  },
+
+  business: {
+    formLabel: "Kërkesë për klientë biznesi",
+    company: "Kompania",
+    contact: "Personi i kontaktit",
+    phone: "Telefoni",
+    location: "Vendndodhja / kodi postar",
+    locationPlaceholder: "p.sh. 1070 Vjenë",
+    need: "Nevoja",
+    pleaseChoose: "Ju lutemi zgjidhni",
+    needs: {
+      subscription: "Dërgesë e rregullt (abonim)",
+      oneOff: "Dërgesë e njëhershme",
+      event: "Event",
+      gifts: "Dhurata për punonjësit ose klientët",
+    },
+    messagePlaceholder: "Për çfarë bëhet fjalë, për kur dhe në çfarë vëllimi – dhe çfarë tjetër është e rëndësishme për ju.",
+    consent: "Pranoj që të dhënat e mia të ruhen dhe të përdoren për trajtimin e kërkesës. Detaje në {privacyLink}.",
+    privacyLink: "deklaratën e privatësisë",
+    errors: {
+      company: "Ju lutemi shkruani emrin e kompanisë suaj.",
+      contact: "Ju lutemi shkruani një person kontakti.",
+      email: "Ju lutemi shkruani një adresë të vlefshme e-maili.",
+      phone: "Ju lutemi kontrolloni numrin e telefonit.",
+      location: "Ju lutemi shkruani vendndodhjen ose kodin postar.",
+      need: "Ju lutemi zgjidhni çfarë ju nevojitet.",
+      message: "Ju lutemi përshkruani shkurt nevojën tuaj (të paktën 10 karaktere).",
+      consent: "Ju lutemi konfirmoni që mund t'i përdorim të dhënat tuaja për trajtimin e kërkesës.",
+    },
+    thanksTitle: "Faleminderit për kërkesën tuaj.",
+    thanksText: "I morëm të gjitha dhe do ta kontaktojmë {contact} me e-mail në {email}.",
+    sendAnother: "Dërgoni një kërkesë tjetër",
+    failed: "Kërkesa nuk mund të dërgohej. Ju lutemi provoni përsëri ose na shkruani direkt me e-mail.",
+    submit: "Dërgo kërkesën",
+    mailSubject: "Kërkesë biznesi: {company}",
+  },
+};
+
+export default forms;

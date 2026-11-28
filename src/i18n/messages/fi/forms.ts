@@ -1,0 +1,115 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** fi – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Nimi",
+  email: "Sähköposti",
+  emailAddress: "Sähköpostiosoite",
+  message: "Viesti",
+  orderNumber: "Tilausnumero",
+  honeypot: "Verkkosivusto",
+  charCount: "{count}/{max} merkkiä",
+  genericError: "Valitettavasti se ei onnistunut. Yritä myöhemmin uudelleen.",
+  invalidEmailEnter: "Anna kelvollinen sähköpostiosoite.",
+
+  mailFallback: {
+    title: "Lomake ei ole juuri nyt käytettävissä.",
+    text: "Viestisi ei ole kadonnut: lähetä se meille suoraan sähköpostitse osoitteeseen {email}. Teksti on jo valmiiksi lisätty.",
+    open: "Avaa sähköposti",
+  },
+
+  newsletter: {
+    honeypot: "Verkkosivusto (jätä tyhjäksi)",
+    successTitle: "Melkein valmista – vahvista vielä tilauksesi.",
+    successText: "Lähetimme sinulle sähköpostin, jossa on vahvistuslinkki. Vasta sen jälkeen saat uutiskirjeemme.",
+  },
+
+  contact: {
+    formLabel: "Yhteydenottolomake",
+    subject: "Aihe",
+    subjects: {
+      order: "Tilaus",
+      delivery: "Toimitus",
+      business: "Yritysasiakkaat",
+      other: "Muu",
+    },
+    orderNumberHint: "Löydät sen tilausvahvistuksestasi.",
+    errors: {
+      name: "Anna nimesi.",
+      email: "Anna kelvollinen sähköpostiosoite.",
+      subject: "Valitse aihe.",
+      orderIdTooLong: "Tilausnumero on liian pitkä.",
+      messageTooShort: "Kuvaile asiaasi (vähintään 10 merkkiä).",
+      messageTooLong: "Viesti saa olla enintään 2000 merkkiä pitkä.",
+    },
+    thanksTitle: "Kiitos viestistäsi.",
+    thanksText: "Olemme vastaanottaneet viestisi ja vastaamme mahdollisimman pian sähköpostitse osoitteeseen {email}.",
+    sendAnother: "Lähetä uusi viesti",
+    failed: "Viestiä ei voitu lähettää. Yritä uudelleen tai kirjoita meille suoraan sähköpostitse.",
+    consent: "Lähettämällä viestin hyväksyt, että käytämme tietojasi yhteydenottosi käsittelyyn. Lisätietoja tietosuojaselosteessa.",
+    submit: "Lähetä viesti",
+    mailSubject: "Yhteydenotto: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Peru sopimus",
+    errors: {
+      name: "Anna nimesi.",
+      email: "Anna kelvollinen sähköpostiosoite.",
+      orderId: "Anna tilausnumero (esim. BQ-7K2M9Q).",
+    },
+    emailHint: "Lähetämme vastaanottovahvistuksen tähän osoitteeseen.",
+    orderNumberHint: "Löytyy tilausvahvistuksestasi.",
+    items: "Mitkä tuotteet perut?",
+    itemsPlaceholder: "esim. nalle – jätä tyhjäksi, jos perut kaikki tilauksen peruttavissa olevat tuotteet",
+    declaration: "Peruutan täten tekemäni sopimuksen edellä mainittujen tuotteiden ostosta.",
+    receivedTitle: "Peruutuksesi on vastaanotettu.",
+    receivedText: "Vastaanotettu {receivedAt} tilaukseen {orderId}.",
+    receivedTextWithCase: "Vastaanotettu {receivedAt} tilaukseen {orderId} (asia {id}).",
+    confirmationSent: "Lähetimme vastaanottovahvistuksen osoitteeseen {email}.",
+    confirmationNotSent: "Vahvistussähköpostia ei juuri nyt voitu lähettää – vahvistamme vastaanoton henkilökohtaisesti mahdollisimman pian. Säilytä tämä sivu siihen asti (esim. kuvakaappauksena).",
+    failed: "Peruutusta ei juuri nyt voitu lähettää. Yritä uudelleen tai lähetä se sähköpostitse osoitteeseen {email}.",
+    submit: "Vahvista peruutus",
+    mailSubject: "Peruutus – tilaus {orderId}",
+    mailDeclaration: "Peruutan täten tekemäni sopimuksen seuraavien tuotteiden ostosta: {items}",
+    mailAllItems: "kaikki tilauksen peruttavissa olevat tuotteet",
+  },
+
+  business: {
+    formLabel: "Yritysasiakkaan tiedustelu",
+    company: "Yritys",
+    contact: "Yhteyshenkilö",
+    phone: "Puhelin",
+    location: "Toimipaikka / postinumero",
+    locationPlaceholder: "esim. 1070 Wien",
+    need: "Tarve",
+    pleaseChoose: "Valitse",
+    needs: {
+      subscription: "Säännöllinen toimitus (tilaus)",
+      oneOff: "Kertatoimitus",
+      event: "Tapahtuma",
+      gifts: "Lahjat työntekijöille tai asiakkaille",
+    },
+    messagePlaceholder: "Mistä on kyse, mihin aikaan ja missä laajuudessa – ja mitä muuta pidät tärkeänä.",
+    consent: "Hyväksyn, että tietojani tallennetaan ja käytetään tiedustelun käsittelyyn. Lisätietoja: {privacyLink}.",
+    privacyLink: "tietosuojaseloste",
+    errors: {
+      company: "Anna yrityksesi nimi.",
+      contact: "Anna yhteyshenkilö.",
+      email: "Anna kelvollinen sähköpostiosoite.",
+      phone: "Tarkista puhelinnumero.",
+      location: "Anna toimipaikka tai postinumero.",
+      need: "Valitse, mitä tarvitset.",
+      message: "Kuvaile lyhyesti tarpeesi (vähintään 10 merkkiä).",
+      consent: "Vahvista, että saamme käyttää tietojasi käsittelyyn.",
+    },
+    thanksTitle: "Kiitos tiedustelustasi.",
+    thanksText: "Saimme kaiken ja otamme yhteyttä henkilöön {contact} sähköpostitse osoitteeseen {email}.",
+    sendAnother: "Lähetä uusi tiedustelu",
+    failed: "Tiedustelua ei voitu lähettää. Yritä uudelleen tai kirjoita meille suoraan sähköpostitse.",
+    submit: "Lähetä tiedustelu",
+    mailSubject: "Yritystiedustelu: {company}",
+  },
+};
+
+export default forms;

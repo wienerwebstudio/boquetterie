@@ -1,0 +1,115 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { getPageBySlug, getSettings } from "@/lib/content";
+import { JsonLd, breadcrumbLd } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/ui/reveal";
+import { routes } from "@/lib/urls";
+import { cn } from "@/lib/format";
+import { pageMetadata } from "@/lib/metadata";
+import { getI18n } from "@/i18n/server";
+import { InstagramFollow } from "@/components/content/instagram-follow";
+import { profileLinks } from "@/lib/social";
+
+const SLUG = "ueber-uns";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPageBySlug(SLUG);
+  if (!page) return {};
+  const image = page.sections.find((s) => s.image)?.image;
+  return pageMetadata({
+    title: page.seo.title,
+    description: page.seo.description,
+    path: routes.about,
+    image: image && { url: image.src, alt: image.alt },
+  });
+}
+
+export default async function AboutPage() {
+  const [page, settings, { m }] = await Promise.all([getPageBySlug(SLUG), getSettings(), getI18n()]);
+  if (!page) notFound();
+  const t = m.content.about;
+
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([{ name: t.title, url: routes.about }], settings)} />
+
+      {/* Intro */}
+      <section className="container-x pt-6 sm:pt-8">
+        <Breadcrumbs items={[{ label: t.title }]} />
+        <div className="grid gap-8 py-10 sm:py-14 lg:grid-cols-12 lg:gap-12 lg:py-20">
+          <div className="lg:col-span-7">
+            <p className="eyebrow mb-4">{t.title}</p>
+            <h1 className="display-1 max-w-[14ch] text-balance text-ink">{page.title}</h1>
+          </div>
+          {page.intro && (
+            <div className="lg:col-span-5 lg:self-end">
+              <p className="max-w-md text-pretty text-[17px] leading-relaxed text-ink-muted sm:text-[18px]">{page.intro}</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Sections */}
+      <div className="container-x pb-16 sm:pb-20 lg:pb-28">
+        <div className="flex flex-col gap-16 sm:gap-20 lg:gap-28">
+          {page.sections.map((s, i) => {
+            const flip = i % 2 === 1;
+            if (s.placeholder) {
+              return (
+                <section key={s.heading ?? i} aria-labelledby={`about-s-${i}`} className="mx-auto w-full max-w-3xl">
+                  {s.heading && <h2 id={`about-s-${i}`} className="display-3 text-ink">{s.heading}</h2>}
+                  <div className="mt-6 rounded-md border border-dashed border-stone bg-ivory-100/70 p-6 sm:p-8" role="note">
+                    <p className="eyebrow mb-3 text-warn">{t.placeholder}</p>
+                    {s.paragraphs.map((p, j) => (
+                      <p key={j} className="text-[15px] leading-relaxed text-ink-muted">{p}</p>
+                    ))}
+                  </div>
+                </section>
+              );
+            }
+            return (
+              <section key={s.heading ?? i} aria-labelledby={`about-s-${i}`} className="grid items-center gap-8 lg:grid-cols-12 lg:gap-14">
+                {s.image && (
+                  <Reveal className={cn("lg:col-span-6", flip ? "lg:order-2" : "lg:order-1")}>
+                    <div className={cn("relative overflow-hidden rounded-md bg-ivory-200", i === 0 ? "aspect-[4/5] sm:aspect-[5/6]" : "aspect-[4/3] sm:aspect-[5/4]")}>
+                      <Image src={s.image.src} alt={s.image.alt} fill sizes="(min-width: 1440px) 640px, (min-width: 1024px) 50vw, 100vw" className="object-cover" />
+                    </div>
+                  </Reveal>
+                )}
+                <div className={s.image ? cn("lg:col-span-5", flip ? "lg:order-1 lg:col-start-1" : "lg:order-2 lg:col-start-8") : "lg:col-span-8 lg:col-start-3"}>
+                  <p className="font-serif text-[15px] italic tracking-[0.04em] text-ink-soft">{String(i + 1).padStart(2, "0")}</p>
+                  {s.heading && <h2 id={`about-s-${i}`} className="display-2 mt-3 text-balance text-ink">{s.heading}</h2>}
+                  <div className="mt-5 flex flex-col gap-4">
+                    {s.paragraphs.map((p, j) => (
+                      <p key={j} className="max-w-md text-pretty text-[15.5px] leading-relaxed text-ink-muted sm:text-base">{p}</p>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Instagram – rendered here, not stored in the CMS text */}
+      <InstagramFollow href={profileLinks(settings).find((p) => p.key === "instagram")?.href ?? null} />
+
+      {/* Closing CTA */}
+      <section className="border-t border-line bg-ivory-100">
+        <div className="container-x flex flex-col items-start gap-6 py-14 sm:flex-row sm:items-center sm:justify-between lg:py-20">
+          <div>
+            <p className="eyebrow mb-3">{m.content.ready}</p>
+            <h2 className="display-3 text-balance text-ink">{t.ctaTitle}</h2>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button href={routes.shop} size="lg">{m.content.discoverFlowers}</Button>
+            <Button href={routes.contact} size="lg" variant="outline">{m.content.contact}</Button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

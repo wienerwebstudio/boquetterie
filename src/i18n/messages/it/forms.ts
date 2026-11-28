@@ -1,0 +1,115 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** it – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Nome",
+  email: "E-mail",
+  emailAddress: "Indirizzo e-mail",
+  message: "Messaggio",
+  orderNumber: "Numero d'ordine",
+  honeypot: "Sito web",
+  charCount: "{count}/{max} caratteri",
+  genericError: "Purtroppo non ha funzionato. Riprova più tardi.",
+  invalidEmailEnter: "Inserisci un indirizzo e-mail valido.",
+
+  mailFallback: {
+    title: "Il modulo al momento non è raggiungibile.",
+    text: "Il tuo messaggio non è perso: inviacelo direttamente via e-mail a {email}. Il testo è già inserito.",
+    open: "Apri l'e-mail",
+  },
+
+  newsletter: {
+    honeypot: "Sito web (lascia vuoto)",
+    successTitle: "Quasi fatto – conferma la tua iscrizione.",
+    successText: "Ti abbiamo inviato un'e-mail con un link di conferma. Solo dopo riceverai la nostra newsletter.",
+  },
+
+  contact: {
+    formLabel: "Modulo di contatto",
+    subject: "Argomento",
+    subjects: {
+      order: "Ordine",
+      delivery: "Consegna",
+      business: "Clienti aziendali",
+      other: "Altro",
+    },
+    orderNumberHint: "Lo trovi nella conferma d'ordine.",
+    errors: {
+      name: "Inserisci il tuo nome.",
+      email: "Inserisci un indirizzo e-mail valido.",
+      subject: "Scegli un argomento.",
+      orderIdTooLong: "Il numero d'ordine è troppo lungo.",
+      messageTooShort: "Descrivi la tua richiesta (almeno 10 caratteri).",
+      messageTooLong: "Il messaggio può contenere al massimo 2000 caratteri.",
+    },
+    thanksTitle: "Grazie per il tuo messaggio.",
+    thanksText: "Abbiamo ricevuto la tua richiesta e ti risponderemo il prima possibile via e-mail a {email}.",
+    sendAnother: "Invia un altro messaggio",
+    failed: "Non è stato possibile inviare il messaggio. Riprova o scrivici direttamente via e-mail.",
+    consent: "Inviando il modulo acconsenti all'uso dei tuoi dati per gestire la richiesta. Dettagli nell'informativa sulla privacy.",
+    submit: "Invia il messaggio",
+    mailSubject: "Richiesta di contatto: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Recedi dal contratto",
+    errors: {
+      name: "Inserisci il tuo nome.",
+      email: "Inserisci un indirizzo e-mail valido.",
+      orderId: "Inserisci il numero d'ordine (ad es. BQ-7K2M9Q).",
+    },
+    emailHint: "A questo indirizzo inviamo la conferma di ricezione.",
+    orderNumberHint: "Si trova nella conferma d'ordine.",
+    items: "Per quali prodotti eserciti il recesso?",
+    itemsPlaceholder: "ad es. l'orsetto – lascia vuoto per tutti i prodotti dell'ordine soggetti a recesso",
+    declaration: "Con la presente recedo dal contratto da me concluso per l'acquisto dei prodotti sopra indicati.",
+    receivedTitle: "Il tuo recesso è stato ricevuto.",
+    receivedText: "Ricevuto il {receivedAt} per l'ordine {orderId}.",
+    receivedTextWithCase: "Ricevuto il {receivedAt} per l'ordine {orderId} (pratica {id}).",
+    confirmationSent: "Abbiamo inviato la conferma di ricezione a {email}.",
+    confirmationNotSent: "Al momento non è stato possibile inviare l'e-mail di conferma – confermeremo personalmente la ricezione il prima possibile. Fino ad allora conserva questa pagina (ad es. come screenshot).",
+    failed: "Al momento non è stato possibile trasmettere il recesso. Riprova o invialo via e-mail a {email}.",
+    submit: "Conferma il recesso",
+    mailSubject: "Recesso – ordine {orderId}",
+    mailDeclaration: "Con la presente recedo dal contratto da me concluso per l'acquisto dei seguenti prodotti: {items}",
+    mailAllItems: "tutti i prodotti dell'ordine soggetti a recesso",
+  },
+
+  business: {
+    formLabel: "Richiesta per clienti aziendali",
+    company: "Azienda",
+    contact: "Referente",
+    phone: "Telefono",
+    location: "Sede / CAP",
+    locationPlaceholder: "es. 1070 Vienna",
+    need: "Esigenza",
+    pleaseChoose: "Seleziona",
+    needs: {
+      subscription: "Consegna regolare (abbonamento)",
+      oneOff: "Consegna singola",
+      event: "Evento",
+      gifts: "Regali per collaboratori o clienti",
+    },
+    messagePlaceholder: "Di cosa si tratta, per quando e in che misura – e cos'altro è importante per te.",
+    consent: "Acconsento alla memorizzazione e all'uso dei miei dati per gestire la richiesta. Dettagli nell'{privacyLink}.",
+    privacyLink: "informativa sulla privacy",
+    errors: {
+      company: "Inserisci il nome della tua azienda.",
+      contact: "Indica un referente.",
+      email: "Inserisci un indirizzo e-mail valido.",
+      phone: "Controlla il numero di telefono.",
+      location: "Indica la sede o il CAP.",
+      need: "Scegli di cosa hai bisogno.",
+      message: "Descrivi in breve la tua esigenza (almeno 10 caratteri).",
+      consent: "Conferma che possiamo usare i tuoi dati per gestire la richiesta.",
+    },
+    thanksTitle: "Grazie per la tua richiesta.",
+    thanksText: "Abbiamo ricevuto tutto e contatteremo {contact} via e-mail a {email}.",
+    sendAnother: "Invia un'altra richiesta",
+    failed: "Non è stato possibile inviare la richiesta. Riprova o scrivici direttamente via e-mail.",
+    submit: "Invia la richiesta",
+    mailSubject: "Richiesta aziendale: {company}",
+  },
+};
+
+export default forms;

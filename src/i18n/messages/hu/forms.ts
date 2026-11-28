@@ -1,0 +1,115 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** hu – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Név",
+  email: "E-mail",
+  emailAddress: "E-mail-cím",
+  message: "Üzenet",
+  orderNumber: "Rendelésszám",
+  honeypot: "Weboldal",
+  charCount: "{count}/{max} karakter",
+  genericError: "Ez sajnos nem sikerült. Kérjük, próbáld újra később.",
+  invalidEmailEnter: "Kérjük, adj meg egy érvényes e-mail-címet.",
+
+  mailFallback: {
+    title: "Az űrlap jelenleg nem érhető el.",
+    text: "Az üzeneted nem veszett el: kérjük, küldd el nekünk közvetlenül e-mailben ide: {email}. A szöveg már be van illesztve.",
+    open: "E-mail megnyitása",
+  },
+
+  newsletter: {
+    honeypot: "Weboldal (kérjük, hagyd üresen)",
+    successTitle: "Majdnem kész – kérjük, erősítsd meg a feliratkozásodat.",
+    successText: "Küldtünk egy e-mailt egy megerősítő linkkel. Csak ezután kapod meg a hírlevelünket.",
+  },
+
+  contact: {
+    formLabel: "Kapcsolatfelvételi űrlap",
+    subject: "Téma",
+    subjects: {
+      order: "Rendelés",
+      delivery: "Kiszállítás",
+      business: "Céges ügyfelek",
+      other: "Egyéb",
+    },
+    orderNumberHint: "A rendelés visszaigazolásában találod.",
+    errors: {
+      name: "Kérjük, add meg a neved.",
+      email: "Kérjük, adj meg egy érvényes e-mail-címet.",
+      subject: "Kérjük, válassz egy témát.",
+      orderIdTooLong: "A rendelésszám túl hosszú.",
+      messageTooShort: "Kérjük, írd le, miben segíthetünk (legalább 10 karakter).",
+      messageTooLong: "Az üzenet legfeljebb 2000 karakter hosszú lehet.",
+    },
+    thanksTitle: "Köszönjük az üzenetedet.",
+    thanksText: "Megkaptuk a megkeresésedet, és a lehető leghamarabb válaszolunk e-mailben ide: {email}.",
+    sendAnother: "Újabb üzenet küldése",
+    failed: "Az üzenetet nem sikerült elküldeni. Kérjük, próbáld újra, vagy írj nekünk közvetlenül e-mailben.",
+    consent: "Az elküldéssel hozzájárulsz, hogy az adataidat a megkeresés feldolgozására használjuk. Részletek az Adatvédelmi tájékoztatóban.",
+    submit: "Üzenet küldése",
+    mailSubject: "Kapcsolatfelvétel: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Elállás a szerződéstől",
+    errors: {
+      name: "Kérjük, add meg a neved.",
+      email: "Kérjük, adj meg egy érvényes e-mail-címet.",
+      orderId: "Kérjük, add meg a rendelésszámot (pl. BQ-7K2M9Q).",
+    },
+    emailHint: "Ide küldjük a beérkezési visszaigazolást.",
+    orderNumberHint: "A rendelés visszaigazolásában szerepel.",
+    items: "Mely termékektől állsz el?",
+    itemsPlaceholder: "pl. a mackótól – hagyd üresen a rendelés összes elállással érintett termékéhez",
+    declaration: "Ezennel elállok az általam megkötött, a fent megnevezett termékek megvásárlására vonatkozó szerződéstől.",
+    receivedTitle: "Az elállásod beérkezett.",
+    receivedText: "Beérkezett: {receivedAt}, a(z) {orderId} rendeléshez.",
+    receivedTextWithCase: "Beérkezett: {receivedAt}, a(z) {orderId} rendeléshez (ügyszám: {id}).",
+    confirmationSent: "A beérkezési visszaigazolást elküldtük ide: {email}.",
+    confirmationNotSent: "A visszaigazoló e-mailt most nem sikerült elküldeni – a beérkezést a lehető leghamarabb személyesen igazoljuk vissza. Kérjük, addig őrizd meg ezt az oldalt (pl. képernyőképként).",
+    failed: "Az elállást most nem sikerült továbbítani. Kérjük, próbáld újra, vagy küldd el e-mailben ide: {email}.",
+    submit: "Elállás megerősítése",
+    mailSubject: "Elállás – {orderId} rendelés",
+    mailDeclaration: "Ezennel elállok az általam megkötött, a következő termékek megvásárlására vonatkozó szerződéstől: {items}",
+    mailAllItems: "a rendelés összes elállással érintett terméke",
+  },
+
+  business: {
+    formLabel: "Érdeklődés céges ügyfeleknek",
+    company: "Cég",
+    contact: "Kapcsolattartó",
+    phone: "Telefon",
+    location: "Helyszín / irányítószám",
+    locationPlaceholder: "pl. 1070 Bécs",
+    need: "Igény",
+    pleaseChoose: "Kérjük, válassz",
+    needs: {
+      subscription: "Rendszeres kiszállítás (előfizetés)",
+      oneOff: "Egyszeri kiszállítás",
+      event: "Rendezvény",
+      gifts: "Ajándék munkatársaknak vagy ügyfeleknek",
+    },
+    messagePlaceholder: "Miről van szó, mikorra és milyen mennyiségben – és minden más, ami fontos neked.",
+    consent: "Hozzájárulok, hogy az adataimat a megkeresés feldolgozása céljából tárolják és felhasználják. Részletek: {privacyLink}.",
+    privacyLink: "Adatvédelmi tájékoztató",
+    errors: {
+      company: "Kérjük, add meg a vállalkozásod nevét.",
+      contact: "Kérjük, adj meg egy kapcsolattartót.",
+      email: "Kérjük, adj meg egy érvényes e-mail-címet.",
+      phone: "Kérjük, ellenőrizd a telefonszámot.",
+      location: "Kérjük, add meg a helyszínt vagy az irányítószámot.",
+      need: "Kérjük, válaszd ki, mire van szükséged.",
+      message: "Kérjük, írd le röviden az igényedet (legalább 10 karakter).",
+      consent: "Kérjük, erősítsd meg, hogy az adataidat a feldolgozáshoz felhasználhatjuk.",
+    },
+    thanksTitle: "Köszönjük az érdeklődésed.",
+    thanksText: "Mindent megkaptunk, és e-mailben jelentkezünk {contact} részére ide: {email}.",
+    sendAnother: "Újabb érdeklődés küldése",
+    failed: "Az érdeklődést nem sikerült elküldeni. Kérjük, próbáld újra, vagy írj nekünk közvetlenül e-mailben.",
+    submit: "Érdeklődés elküldése",
+    mailSubject: "Céges érdeklődés: {company}",
+  },
+};
+
+export default forms;

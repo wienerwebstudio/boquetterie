@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Trëndafila rozë, gerbera pink & zambakë të bardhë",
+      "shortDescription": "Një buqetë e çelët dhe e lirshme në rozë dhe të bardhë, që sjell humor të mirë në çdo dhomë.",
+      "description": "Rosé Dream bashkon trëndafila rozë dhe gerbera pink me zambakë të bardhë, gjipsofilë të brishtë dhe gjelbërim të freskët. E lidhur lirshëm dhe e çelët në pamje, i shkon për ditëlindje, si falënderim ose thjesht pa arsye.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera",
+        "Zambakë",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Hidhni çdo ditë ujë të freskët në vazo.",
+        "Shkurtoni kërcejtë sipas nevojës.",
+        "Hiqni rregullisht lulet e vyshkura."
+      ],
+      "seo": {
+        "title": "Rosé Dream – buqetë në rozë & të bardhë",
+        "description": "Rosé Dream: trëndafila rozë, gerbera pink dhe zambakë të bardhë, të lidhur lirshëm. Buqetë e çelët për ditëlindje dhe falënderim – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Buqetë me trëndafila rozë, gerbera pink dhe zambakë të bardhë në një vazo qelqi mbi një komo druri"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Buqetë e Verdhë",
+      "tagline": "Gerbera të verdha, trëndafila & gjipsofilë",
+      "shortDescription": "Një buqetë me diell në të verdhë dhe të bardhë, e lidhur me fjongo të verdhë.",
+      "description": "Gerbera të verdha të ndritshme takohen me trëndafila të bardhë dhe të verdhë, gjipsofilë dhe gjelbërim të freskët. E mbështjellë me mbështjellëse të çelët dhe fjongo të verdhë – buqetë për ditëlindje, urime, falënderim ose shërim të shpejtë.",
+      "flowers": [
+        "Gerbera",
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Mos e vendosni në diell të fortë."
+      ],
+      "seo": {
+        "title": "Buqetë e Verdhë – gerbera & trëndafila",
+        "description": "Gerbera të verdha, trëndafila të bardhë e të verdhë me gjipsofilë dhe fjongo të verdhë. Përshëndetje e çelët për ditëlindje ose shërim – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Buqetë me gerbera të verdha, trëndafila të bardhë e të verdhë në mbështjellëse të çelët me fjongo të verdhë"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Buqetë e Bardhë",
+      "tagline": "Trëndafila të çelët, gerbera & zambakë",
+      "shortDescription": "Një buqetë e çelët dhe e qetë në të bardhë dhe krem, me nuanca të lehta rozë.",
+      "description": "Buqeta e Bardhë bashkon trëndafila të çelët, gerbera dhe zambakë me gjipsofilë në një buqetë të thjeshtë e të përjetshme. Nuancat e lehta rozë dhe kajsi e gjallërojnë pamjen. E përshtatshme për përvjetor martese ose përvjetor, si falënderim ose përshëndetje me stil.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera",
+        "Zambakë",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Hiqni me kujdes polenin e zambakëve sipas nevojës."
+      ],
+      "seo": {
+        "title": "Buqetë e Bardhë – në të bardhë & krem",
+        "description": "Trëndafila të çelët, gerbera dhe zambakë me gjipsofilë: buqetë e thjeshtë për përvjetor, përvjetor martese ose falënderim – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Buqetë e çelët me trëndafila ngjyrë krem, gerbera rozë, zambakë dhe gjipsofilë në mbështjellëse të bardhë"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Trëndafila blu & të bardhë në mbështjellëse blu",
+      "shortDescription": "Trëndafila blu dhe të bardhë në mbështjellëse blu të çelët – një buqetë që bie në sy.",
+      "description": "Blue Bouquet kombinon trëndafila blu dhe të bardhë me gjipsofilë, një zambak të bardhë dhe gjelbërim të freskët. Mbështjellësja blu e çelët përsërit ngjyrën e luleve. Një dhuratë e veçantë për ditëlindje, përvjetor ose për njerëz që e duan të veçantën.",
+      "flowers": [
+        "Trëndafila",
+        "Zambakë",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – trëndafila blu & të bardhë",
+        "description": "Trëndafila blu dhe të bardhë me gjipsofilë në mbështjellëse blu të çelët. Buqetë e veçantë për ditëlindje ose përvjetor – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Buqetë me trëndafila blu dhe të bardhë me gjipsofilë në mbështjellëse blu të çelët mbi një komo druri"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Trëndafila ylber në shumë ngjyra",
+      "shortDescription": "Buqetë me trëndafila ylber, ku çdo lule shkëlqen në disa ngjyra.",
+      "description": "Farbensinfonie përbëhet nga trëndafila ylber: çdo lule ka disa ngjyra njëra pranë tjetrës, nga e kuqja dhe portokallia te e verdha dhe jeshilja, deri te bluja dhe vjollca. E lidhur dendur, buqeta duket si një top me ngjyra. Një surprizë e gëzueshme për ditëlindje ose për një festë.",
+      "flowers": [
+        "Trëndafila ylber"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – trëndafila ylber",
+        "description": "Trëndafila ylber, ku çdo lule shkëlqen në disa ngjyra. Buqetë e gëzueshme trëndafilash për ditëlindje – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Farbensinfonie, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Farbensinfonie, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Farbensinfonie, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Buqetë e dendur me trëndafila ylber në një vazo ngjyrë krem",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Trëndafila ylber nga afër, çdo lule në disa ngjyra"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelicia, zambakë & gerbera në portokalli dhe të verdhë",
+      "shortDescription": "Buqetë ekzotike në portokalli dhe të verdhë, me lulen zog i parajsës si pikë tërheqëse.",
+      "description": "Sonnenzauber bashkon lulet e spikatura zog i parajsës me zambakë të bardhë, gerbera të verdha dhe gjelbërim të freskët. Tonet e ngrohta portokalli dhe të verdhë i japin buqetës një frymë të gjallë veror.",
+      "flowers": [
+        "Strelicia (lulja zog i parajsës)",
+        "Zambakë",
+        "Gerbera",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Mbajeni vazon të pastër dhe ndërroni rregullisht ujin.",
+        "Mos e vendosni në diell të fortë."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelicia & gerbera",
+        "description": "Lule zog i parajsës, zambakë dhe gerbera të verdha në portokalli dhe të verdhë të ngrohtë. Buqetë ekzotike që bie në sy – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Buqetë ekzotike me strelicia, zambakë të bardhë dhe gerbera të verdha në celofan transparent",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Pamje nga lart e strelicias, zambakut dhe gerberave të verdha të buqetës"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Lule pink dhe rozë me gerbera & zambakë",
+      "shortDescription": "Buqetë e rrumbullakët dhe lozonjare në pink dhe rozë, me nuanca të verdha.",
+      "description": "Pink Bouquet bashkon lule pink dhe rozë, mes tyre zambakë dhe gerbera, në një buqetë të rrumbullakët dhe lozonjare. Gerberat e verdha japin nuanca të freskëta, mbështjellësja rozë e plotëson pamjen. E bukur për ditëlindje, përvjetor, Ditën e Nënës ose thjesht pa arsye.",
+      "flowers": [
+        "Zambakë",
+        "Gerbera"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Hiqni rregullisht lulet e vyshkura."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – buqetë në pink & rozë",
+        "description": "Buqetë e rrumbullakët në pink dhe rozë me zambakë dhe gerbera. Për ditëlindje, Ditën e Nënës ose pa arsye – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Buqetë e rrumbullakët në pink dhe rozë me gerbera të verdha në mbështjellëse rozë",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Buqetë me zambakë rozë, gerbera të verdha dhe lule pink në mbështjellëse rozë me fjongo"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Trëndafila në portokalli dhe kajsi",
+      "shortDescription": "Trëndafila në portokalli dhe kajsi – buqetë e ngrohtë si një perëndim dielli.",
+      "description": "Orange Bouquet përbëhet nga trëndafila në portokalli dhe kajsi, të plotësuar me gjelbërim të brishtë dhe në mbështjellëse të çelët. E ngrohtë dhe e gëzueshme në pamje, i shkon për ditëlindje, si falënderim ose për t'ia ndriçuar dikujt ditën.",
+      "flowers": [
+        "Trëndafila"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – trëndafila portokalli",
+        "description": "Trëndafila në portokalli dhe kajsi në mbështjellëse të çelët. Buqetë e ngrohtë për ditëlindje ose falënderim – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Orange Bouquet, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Orange Bouquet, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Orange Bouquet, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Buqetë me trëndafila portokalli dhe ngjyrë kajsi në mbështjellëse të çelët mbi një komo druri"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Trëndafila të kuq të thellë në mbështjellëse të errët",
+      "shortDescription": "Buqetë e harlisur me trëndafila të kuq të thellë dhe fjongo të kuqe prej sateni.",
+      "description": "Red Rose Bouquet është një buqetë e lidhur dendur me trëndafila të kuq të thellë në mbështjellëse të errët, e mbajtur nga një fjongo e kuqe sateni. Deklarata klasike e dashurisë për Shën Valentin, përvjetor ose propozim martese.",
+      "flowers": [
+        "Trëndafila"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – trëndafila të kuq",
+        "description": "Trëndafila të kuq të thellë në mbështjellëse të errët me fjongo sateni. Buqeta klasike për Shën Valentin dhe përvjetor – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Red Rose Bouquet, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Red Rose Bouquet, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Red Rose Bouquet, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Buqetë me trëndafila të kuq të thellë në mbështjellëse gri të errët me fjongo të kuqe sateni",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Buqetë trëndafilash të kuq e shtrirë, në mbështjellëse bardh e zi, pranë qirinjve"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Trëndafila dhe gerbera në rozë, pastel & jargavan",
+      "shortDescription": "Buqetë e butë dhe romantike në rozë dhe pastel.",
+      "description": "Rosa Bouquet bashkon trëndafila në rozë dhe pastel me gerbera dhe lule ngjyrë jargavani. Në mbështjellëse të bardhë me fjongo rozë, duket e lehtë dhe plot dashuri. E bukur për ditëlindje, Ditën e Nënës, lindje fëmije ose si përshëndetje.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – trëndafila në rozë & pastel",
+        "description": "Trëndafila dhe gerbera në rozë, pastel dhe jargavan, në mbështjellëse të bardhë. Për ditëlindje, Ditën e Nënës ose lindje – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Buqetë me trëndafila rozë, gerbera dhe lule ngjyrë jargavani në mbështjellëse të bardhë me fjongo rozë"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Trëndafila të zinj në mbështjellëse të errët",
+      "shortDescription": "Trëndafila të zinj në mbështjellëse të errët – misterioze dhe të jashtëzakonshme.",
+      "description": "Blackroses është një buqetë me trëndafila të zinj, në mbështjellëse të errët e transparente. Një deklaratë e pazakontë për njerëz që e vlerësojnë të veçantën, p.sh. për ditëlindje ose përvjetor.",
+      "flowers": [
+        "Trëndafila"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Blackroses – trëndafila të zinj",
+        "description": "Trëndafila të zinj në mbështjellëse të errët: buqetë e pazakontë trëndafilash për njerëz që e duan të veçantën – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Blackroses, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Blackroses, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Blackroses, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Buqetë me trëndafila të zinj në mbështjellëse të zezë në një vazo qelqi",
+        "/images/products/sortiment/blackroses-2.jpg": "Trëndafila të zinj pa mbështjellëse në një vazo qelqi para një dritareje"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Trëndafila blu me gjipsofilë",
+      "shortDescription": "Trëndafila blu të ndritshëm me gjipsofilë – të rrallë dhe që bien vërtet në sy.",
+      "description": "Blaue Liebe është një buqetë me trëndafila blu të ndritshëm, e gjallëruar me gjipsofilë të imët dhe në mbështjellëse blu. Një dhuratë e veçantë për ditëlindje, përvjetor ose si shenjë e një lidhjeje të thellë.",
+      "flowers": [
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – trëndafila blu",
+        "description": "Trëndafila blu të ndritshëm me gjipsofilë në mbështjellëse blu. Buqetë e rrallë trëndafilash për njerëz të veçantë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Blaue Liebe, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Blaue Liebe, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Blaue Liebe, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Buqetë me trëndafila blu me gjipsofilë në mbështjellëse blu në një vazo të bardhë",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Trëndafila blu me gjipsofilë në mbështjellëse blu, nga përpara",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Buqetë trëndafilash blu e shtrirë, në mbështjellëse blu, mbi një komo druri"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Trëndafila rozë me gjipsofilë",
+      "shortDescription": "Trëndafila rozë në mbështjellëse të brishtë – plot dashuri dhe elegancë.",
+      "description": "Rosalie është një buqetë me trëndafila rozë, e gjallëruar me gjipsofilë dhe në mbështjellëse rozë të zbehtë. Femërore dhe e qetë në pamje, i shkon Ditës së Nënës, ditëlindjes, përvjetorit ose si falënderim.",
+      "flowers": [
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Rosalie – trëndafila rozë me gjipsofilë",
+        "description": "Trëndafila rozë me gjipsofilë në mbështjellëse rozë të zbehtë. Për Ditën e Nënës, ditëlindje ose si falënderim – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Rosalie, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Rosalie, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Rosalie, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Buqetë me trëndafila rozë me gjipsofilë në mbështjellëse rozë të zbehtë në një vazo të bardhë",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie në mbështjellëse rozë në një vazo të thjeshtë të bardhë",
+        "/images/products/sortiment/rosalie-3.jpg": "Trëndafila rozë me gjipsofilë në një vazo të bardhë me brinjë",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie e shtrirë, pamje nga lart e trëndafilave rozë dhe gjipsofilës"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Miks i Kuq & i Bardhë",
+      "tagline": "Trëndafila të kuq dhe të bardhë",
+      "shortDescription": "Trëndafila të kuq dhe të bardhë në një buqetë festive.",
+      "description": "Miksi i Kuq & i Bardhë bashkon trëndafila të kuq dhe të bardhë në mbështjellëse të bardhë, sipas madhësisë i gjallëruar me gjipsofilë. Pasioni takon butësinë: buqetë për Shën Valentin, përvjetor, përvjetor martese ose si dhuratë elegante.",
+      "flowers": [
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Miks i Kuq & i Bardhë – trëndafila",
+        "description": "Trëndafila të kuq dhe të bardhë në mbështjellëse festive. Për Shën Valentin, përvjetor ose përvjetor martese, në gjashtë madhësi – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Miks i Kuq & i Bardhë, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Miks i Kuq & i Bardhë, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Miks i Kuq & i Bardhë, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Buqetë me trëndafila të kuq dhe të bardhë me gjipsofilë në mbështjellëse të bardhë, pranë saj petale trëndafili",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Trëndafila të kuq dhe të bardhë të lidhur dendur në mbështjellëse të bardhë",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Buqetë trëndafilash kuq e bardhë në mbështjellëse të bardhë mbi një komo druri",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Buqetë e shtrirë me trëndafila të kuq dhe të bardhë, pamje nga lart"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Buqetë me tulipanë",
+      "tagline": "Tulipanë në një ngjyrë ose të përzier",
+      "shortDescription": "Buqetë e thjeshtë me tulipanë, njëngjyrëshe ose me ngjyra të përziera.",
+      "description": "Me ngjyrat e tyre të qarta dhe formën e hollë, tulipanët sjellin frymën e pranverës në shtëpi. Buqeta lidhet vetëm me tulipanë, sipas dëshirës në një ngjyrë ose si miks shumëngjyrësh. E disponueshme në të kuqe, të verdhë, lejla, rozë, portokalli, të bardhë dhe miks.",
+      "flowers": [
+        "Tulipanë"
+      ],
+      "care": [
+        "Priteni kërcellin drejt dhe vendoseni në ujë të ftohtë.",
+        "Mjafton pak ujë, por shtojeni rregullisht.",
+        "Tulipanët vazhdojnë të rriten në vazo – shkurtojini sipas nevojës."
+      ],
+      "seo": {
+        "title": "Buqetë me tulipanë – në shumë ngjyra",
+        "description": "Buqetë me tulipanë në të kuqe, të verdhë, lejla, rozë, portokalli, të bardhë ose të përzier. Pranverë në shtëpi – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "colorOptions": {
+        "rot": "E kuqe",
+        "gelb": "E verdhë",
+        "lila": "Lejla",
+        "rosa": "Rozë",
+        "orange": "Portokalli",
+        "weiss": "E bardhë",
+        "mix": "Miks shumëngjyrësh"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Buqetë me tulipanë të verdhë në një vazo qelqi",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Tulipanë lejla në letër kraft në një vazo qelqi",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Tulipanë të kuq në një vazo bezhë",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Tulipanë portokalli në një vazo qelqi",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Tulipanë rozë në një vazo qelqi mbi një pëlhurë liri",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Miks tulipanësh në të kuqe, të verdhë, rozë, portokalli dhe lejla në një vazo bezhë",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Tulipanë të bardhë në një vazo të bardhë"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Trëndafila të kuq me gjipsofilë",
+      "shortDescription": "Buqetë trëndafilash ekspresive në të kuqe të thellë, për ndjenja të mëdha.",
+      "description": "Red Passion bashkon trëndafila të kuq në një buqetë të dendur e të rrumbullakët, të rrethuar nga gjipsofila dhe një mbështjellëse e errët. E disponueshme në gjashtë madhësi – për gjeste romantike dhe momente që duhet të mbeten në kujtesë.",
+      "flowers": [
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Pritini kërcejtë rishtas.",
+        "Jepini çdo ditë ujë të freskët.",
+        "Mbrojeni nga dielli i drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Red Passion – buqetë trëndafilash të kuq",
+        "description": "Trëndafila të kuq me gjipsofilë në mbështjellëse të errët, në gjashtë madhësi. Buqetë për ndjenja të mëdha – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Red Passion, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Red Passion, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Red Passion, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Buqetë e shtrirë me trëndafila të kuq të errët me gjipsofilë në mbështjellëse të zezë me ar",
+        "/images/products/sortiment/red-passion-2.jpg": "Buqetë e madhe me trëndafila të kuq me gjipsofilë në mbështjellëse të errët në një vazo të bardhë",
+        "/images/products/sortiment/red-passion-3.jpg": "Buqetë shumë e madhe e rrumbullakët me trëndafila të kuq dhe kurorë gjipsofile në mbështjellëse të errët"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Trëndafila të kuq të lidhur dendur",
+      "shortDescription": "Trëndafila të kuq të lidhur dendur në mbështjellëse të errët – të përjetshëm dhe plot ndjenjë.",
+      "description": "Klassiker der Liebe përbëhet nga trëndafila të kuq, të lidhur dendur në formë të rrumbullakët dhe në mbështjellëse të errët me fjongo të zezë. Buqeta e trëndafilave për Shën Valentin, përvjetor, propozim martese ose çdo deklaratë dashurie.",
+      "flowers": [
+        "Trëndafila"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – trëndafila të kuq",
+        "description": "Trëndafila të kuq të lidhur dendur në mbështjellëse të errët. Buqeta klasike për Shën Valentin, përvjetor ose propozim – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Klassiker der Liebe, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Klassiker der Liebe, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Klassiker der Liebe, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Buqetë e rrumbullakët me trëndafila të kuq të lidhur dendur në mbështjellëse të zezë me fjongo",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Trëndafila të kuq në formë sfere në mbështjellëse të errët, nga përpara"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Trëndafila të kuq me gjipsofilë",
+      "shortDescription": "Buqetë e harlisur trëndafilash në gjashtë madhësi.",
+      "description": "Königin der Herzen bashkon trëndafila të kuq me gjipsofilë të imët në një mbështjellëse të errët e transparente. E disponueshme në gjashtë madhësi – nga gjesti i vogël deri te hyrja e madhe.",
+      "flowers": [
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët.",
+        "Hiqni me kohë lulet e vyshkura.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – buqetë e harlisur",
+        "description": "Trëndafila të kuq me gjipsofilë, në gjashtë madhësi. Buqetë e harlisur trëndafilash për momente të mëdha – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Königin der Herzen, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Königin der Herzen, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Königin der Herzen, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Buqetë me trëndafila të kuq me gjipsofilë në mbështjellëse të errët në një vazo të bardhë",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Buqetë e madhe me trëndafila të kuq dhe gjipsofilë në mbështjellëse të zezë",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Trëndafila të kuq me gjipsofilë në mbështjellëse të errët në një vazo të zezë",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Pamje nga lart e trëndafilave të kuq me gjipsofilë në mbështjellëse të errët në formë ylli"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbera, trëndafila & zambakë në tone të ngrohta",
+      "shortDescription": "Buqetë e ngrohtë në portokalli, rozë dhe të verdhë.",
+      "description": "Herbstzauber bashkon gerbera, trëndafila dhe zambakë në tone portokalli, rozë dhe të verdhë me gjelbërim të freskët. E lidhur lirshëm, sjell ngjyra të ngrohta në shtëpi, sidomos kur ditët shkurtohen.",
+      "flowers": [
+        "Gerbera",
+        "Trëndafila",
+        "Zambakë"
+      ],
+      "care": [
+        "Mos e vendosni pranë frutave.",
+        "Shtoni rregullisht ujë.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Herbstzauber – buqetë në tone të ngrohta",
+        "description": "Gerbera, trëndafila dhe zambakë në portokalli, rozë dhe të verdhë. Buqetë e ngrohtë vjeshte për ditëlindje ose falënderim – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Buqetë me gerbera portokalli, trëndafila në kajsi e rozë dhe zambakë në një vazo qelqi"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Trëndafila të kuq, gerbera & nuanca jeshile",
+      "shortDescription": "Buqetë e gjallë në të kuqe dhe portokalli me nuanca të freskëta jeshile.",
+      "description": "Blütenfreude bashkon trëndafila të kuq dhe gerbera në të kuqe e portokalli me lule jeshile pompon dhe gjelbërim eukalipti. E fortë në ngjyra, por e rrumbullakët në formë – e bukur për ditëlindje, si falënderim ose thjesht pa arsye.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera"
+      ],
+      "care": [
+        "Hidhni çdo ditë ujë të freskët në vazo.",
+        "Shkurtoni kërcejtë sipas nevojës.",
+        "Hiqni rregullisht lulet e vyshkura."
+      ],
+      "seo": {
+        "title": "Blütenfreude – trëndafila & gerbera të kuqe",
+        "description": "Trëndafila të kuq, gerbera në të kuqe e portokalli dhe nuanca të freskëta jeshile. Buqetë e gjallë për ditëlindje – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Buqetë me trëndafila të kuq, gerbera të kuqe e portokalli dhe lule jeshile pompon në një vazo qelqi",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude në një vazo të bardhë mbi një komo druri"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Trëndafila rozë, zambakë & gjipsofilë",
+      "shortDescription": "Tone të buta rozë me zambakë – e qetë, harmonike dhe e hollë.",
+      "description": "Zartrosa Zauber bashkon trëndafila rozë me zambakë rozë dhe gjipsofilë në një mbështjellëse rozë. Buqeta duket e qetë dhe harmonike, me një notë të hollë romantike.",
+      "flowers": [
+        "Trëndafila",
+        "Zambakë",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Hiqni gjethet që arrijnë në ujë.",
+        "Vendoseni në vend të freskët.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – trëndafila & zambakë rozë",
+        "description": "Trëndafila rozë, zambakë rozë dhe gjipsofilë në mbështjellëse të brishtë. Buqetë e qetë dhe romantike – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Buqetë me trëndafila rozë, zambakë rozë dhe gjipsofilë në mbështjellëse rozë në një vazo të bardhë",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber në mbështjellëse rozë me fjongo të madhe"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbera, zambakë & trëndafila në portokalli dhe të verdhë",
+      "shortDescription": "Portokalli dhe e verdhë e ndritshme për lajme të mira dhe raste me diell.",
+      "description": "Strahlender Tag bashkon gerbera dhe zambakë portokalli me trëndafila të verdhë, karafila të çelët dhe gjipsofilë. Ngjyrat e forta sjellin energji pozitive – buqetë për urime, suksese dhe raste me diell.",
+      "flowers": [
+        "Gerbera",
+        "Zambakë",
+        "Trëndafila",
+        "Karafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Mbrojeni nga rryma e ajrit.",
+        "Ndërroni rregullisht ujin.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – në portokalli & të verdhë",
+        "description": "Gerbera dhe zambakë portokalli me trëndafila të verdhë dhe gjipsofilë. Buqetë e gëzueshme për urime – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Buqetë me gerbera portokalli, trëndafila të verdhë dhe gjipsofilë në mbështjellëse bardh e ar",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Gerbera portokalli, zambakë dhe një trëndafil i verdhë në një vazo të bardhë",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Buqetë e rrumbullakët me gerbera e zambakë portokalli, trëndafila të verdhë dhe karafila të çelët në një vazo qelqi"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Trëndafila në rozë, krem & kajsi",
+      "shortDescription": "Buqetë harmonike trëndafilash, mes bukurisë klasike dhe stilit modern.",
+      "description": "Rosentraum bashkon trëndafila në rozë, krem dhe kajsi me lule vjollcë, degë me kokrra dhe gjelbërim të freskët. Në mbështjellëse rozë të vjetër, buqeta duket e harlisur dhe njëkohësisht moderne.",
+      "flowers": [
+        "Trëndafila"
+      ],
+      "care": [
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Mbajeni vazon të pastër.",
+        "Rinovoni rregullisht ujin."
+      ],
+      "seo": {
+        "title": "Rosentraum – trëndafila në rozë & krem",
+        "description": "Trëndafila në rozë, krem dhe kajsi me nuanca vjollcë në mbështjellëse rozë të vjetër. Buqetë harmonike trëndafilash – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Buqetë e lidhur me trëndafila në rozë, krem dhe kajsi në mbështjellëse rozë të vjetër",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum në mbështjellëse rozë të vjetër në një vazo të bardhë",
+        "/images/products/sortiment/rosentraum-3.jpg": "Pamje nga lart e trëndafilave, luleve vjollcë dhe degëve me kokrra të buqetës"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Trëndafila të bardhë me gjipsofilë",
+      "shortDescription": "Trëndafila të bardhë me gjipsofilë – të brishtë, romantikë dhe të çelët.",
+      "description": "Rosenkuss përbëhet nga trëndafila të bardhë deri ngjyrë krem, të gjallëruar me gjipsofilë të imët dhe në mbështjellëse të bardhë. Buqetë për dashuri, afërsi dhe mesazhe të vogla dashurie.",
+      "flowers": [
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Mos e vendosni në vend shumë të ngrohtë.",
+        "Kontrolloni çdo ditë nivelin e ujit.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Rosenkuss – trëndafila të bardhë",
+        "description": "Trëndafila të bardhë me gjipsofilë në mbështjellëse të bardhë. Buqetë e brishtë dhe romantike trëndafilash – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Rosenkuss, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Rosenkuss, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Rosenkuss, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Buqetë me trëndafila të bardhë me gjipsofilë në mbështjellëse të bardhë në një vazo të bardhë",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Buqetë e madhe me trëndafila të bardhë në mbështjellëse të bardhë në një vazo të bardhë",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Buqetë e shtrirë me trëndafila të bardhë me gjipsofilë mbi një komo druri"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Trëndafila në pastel, pink & bordo",
+      "shortDescription": "Trëndafila në pastel dhe pink, të përzgjedhur me elegancë.",
+      "description": "Rosenglanz bashkon trëndafila në rozë pastel, krem, pink dhe bordo me gjipsofilë në një mbështjellëse rozë. Me pamje të përjetshme, e disponueshme në gjashtë madhësi.",
+      "flowers": [
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Pritini kërcejtë rishtas.",
+        "Shmangni diellin e drejtpërdrejtë.",
+        "Ndërroni rregullisht ujin e luleve."
+      ],
+      "seo": {
+        "title": "Rosenglanz – trëndafila në pastel & pink",
+        "description": "Trëndafila në rozë pastel, pink dhe bordo me gjipsofilë, në gjashtë madhësi. Buqetë elegante trëndafilash – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël",
+          "detailAlt": "Rosenglanz, madhësia e vogël, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "m": {
+          "label": "Mesatare",
+          "detailAlt": "Rosenglanz, madhësia mesatare, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "l": {
+          "label": "E madhe",
+          "detailAlt": "Rosenglanz, madhësia e madhe, në dorë – pas saj një rrugë e Vjenës me tramvaj"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Buqetë me trëndafila në rozë pastel, pink dhe bordo në mbështjellëse rozë në një vazo qelqi",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Buqetë e rrumbullakët trëndafilash me gjipsofilë në mbështjellëse rozë, nga përpara",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Buqetë e shtrirë me trëndafila pastel dhe pink mbi një komo druri"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Trëndafila rozë, gerbera, zambakë & karafila",
+      "shortDescription": "Buqetë ekspresive në rozë dhe pink, që flet pa fjalë.",
+      "description": "Pure Liebe bashkon trëndafila rozë me gerbera pink, zambakë rozë, karafila dhe gjipsofilë. Intensive në tonet rozë dhe pink, e gjallëruar me nuanca të çelëta – buqetë plot ndjenjë.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera",
+        "Zambakë",
+        "Karafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Jepini rregullisht ujë të freskët.",
+        "Mbajeni vazon të pastër.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Pure Liebe – buqetë në rozë & pink",
+        "description": "Trëndafila rozë, gerbera pink, zambakë dhe karafila me gjipsofilë. Buqetë plot ndjenjë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Buqetë me trëndafila rozë, gerbera pink dhe zambakë rozë në një vazo bezhë",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe me zambakë, gerbera dhe karafila në një vazo bezhë",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Buqetë e rrumbullakët me trëndafila rozë, gerbera, karafila dhe gjipsofilë në një vazo qelqi"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Gerbera pink, trëndafila & nuanca vjollcë",
+      "shortDescription": "Tone të forta pink në një buqetë të freskët e moderne.",
+      "description": "Pink Harmony bashkon gerbera pink dhe trëndafila me lule të bardha e ngjyrë jargavani, nuanca vjollcë dhe gjipsofilë. E gjallë dhe e freskët, me shumë hijeshi.",
+      "flowers": [
+        "Gerbera",
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët.",
+        "Hiqni lulet e vyshkura.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbera & trëndafila pink",
+        "description": "Gerbera pink dhe trëndafila me nuanca jargavani dhe vjollcë. Buqetë e freskët dhe moderne – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Buqetë me gerbera pink, trëndafila dhe lule ngjyrë jargavani në një vazo bezhë",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Buqetë e rrumbullakët me gerbera pink, trëndafila dhe nuanca vjollcë"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Buqetë trëndafilash shumëngjyrëshe në rozë, të verdhë, kajsi & lejla",
+      "shortDescription": "Buqetë bujare dhe shumëngjyrëshe trëndafilash për raste të veçanta.",
+      "description": "Love Deluxe është një buqetë trëndafilash në shumë ngjyra: rozë, krem, kajsi, të verdhë dhe lejla, në një mbështjellëse rozë. Për raste të veçanta dhe gjeste të mëdha, e disponueshme në pesë madhësi.",
+      "flowers": [
+        "Trëndafila"
+      ],
+      "care": [
+        "Shkurtoni kërcejtë.",
+        "Ndërroni çdo ditë ujin e luleve.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Love Deluxe – buqetë trëndafilash me ngjyra",
+        "description": "Trëndafila në rozë, krem, kajsi, të verdhë dhe lejla në mbështjellëse rozë, në pesë madhësi. Për gjeste të mëdha – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Buqetë shumëngjyrëshe trëndafilash në rozë, të verdhë, kajsi dhe lejla në mbështjellëse rozë në një vazo të bardhë",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Buqetë e madhe shumëngjyrëshe trëndafilash në mbështjellëse rozë, nga përpara",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Buqetë e shtrirë shumëngjyrëshe trëndafilash në mbështjellëse rozë mbi një komo druri"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Trëndafila të kuq & jeshilë me zambakë",
+      "shortDescription": "Buqetë emocionale në të kuqe, për të thënë „Të dua“.",
+      "description": "Liebeserklärung bashkon trëndafila të kuq me trëndafila jeshilë të çelët, zambakë të bardhë, lule të kuqe theksuese dhe gjipsofilë. E fortë, por e freskët në pamje – buqetë që i bën ndjenjat të dukshme.",
+      "flowers": [
+        "Trëndafila",
+        "Zambakë",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Mbrojeni nga nxehtësia.",
+        "Rinovoni rregullisht ujin.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – trëndafila të kuq & zambakë",
+        "description": "Trëndafila të kuq dhe jeshilë të çelët me zambakë dhe gjipsofilë. Buqetë për të thënë „Të dua“ – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Buqetë me trëndafila të kuq dhe jeshilë të çelët me zambakë dhe gjipsofilë në një vazo qelqi",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung në një vazo të bardhë mbi një komo druri"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Trëndafila & gerbera në rozë me nuanca portokalli",
+      "shortDescription": "Elegante dhe e ekuilibruar – buqetë me përmbajtje stilike.",
+      "description": "Klassische Schönheit bashkon trëndafila në rozë të vjetër dhe të bardhë me gerbera pink, lule të vogla portokalli dhe gjipsofilë. Në mbështjellëse të errët me buzë të artë, buqeta duket e ekuilibruar dhe e përjetshme.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Mos e vendosni drejtpërdrejt pranë kaloriferit.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas.",
+        "Ndërroni rregullisht ujin e luleve."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – trëndafila & gerbera",
+        "description": "Trëndafila në rozë të vjetër dhe të bardhë me gerbera pink në mbështjellëse të errët. Buqetë e ekuilibruar dhe e përjetshme – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Buqetë me trëndafila rozë të vjetër dhe gerbera pink në mbështjellëse të errët me buzë të artë",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit në një vazo të bardhë",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Pamje nga lart e trëndafilave, gerberave dhe gjipsofilës në mbështjellëse të errët"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Trëndafila rozë & gerbera pink",
+      "shortDescription": "Lozonjare dhe e gjallë: trëndafila rozë takojnë gerbera pink.",
+      "description": "Herzklopfen bashkon trëndafila rozë të zbehtë me gerbera pink, lule të vogla bardh e jeshile dhe gjelbërim të imët lejla. E lidhur rrumbullak dhe plot ngjyra – buqetë me shumë ndjenjë.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera"
+      ],
+      "care": [
+        "Jepini çdo ditë ujë të freskët.",
+        "Pritini kërcejtë pjerrtas.",
+        "Vendoseni në vend të freskët, pa diell të drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Herzklopfen – trëndafila rozë & gerbera",
+        "description": "Trëndafila rozë të zbehtë dhe gerbera pink, të lidhura rrumbullak. Buqetë lozonjare plot ndjenjë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Buqetë e rrumbullakët me trëndafila rozë të zbehtë dhe gerbera pink në një vazo të bardhë",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen në një vazo të bardhë, nga anash",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Buqetë me trëndafila rozë dhe gerbera pink në një vazo qelqi"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Miks shumëngjyrësh me trëndafila & gerbera",
+      "shortDescription": "Buqetë shumëngjyrëshe që rrezaton gëzim jete.",
+      "description": "Fröhlicher Blütenmix bashkon trëndafila të kuq, gerbera në të verdhë, rozë dhe të kuqe dhe lule të tjera në të verdhë, portokalli dhe vjollcë. Në mbështjellëse të kuqe – ideale për të dhuruar një buzëqeshje.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët.",
+        "Ndërroni rregullisht ujin.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – buqetë me ngjyra",
+        "description": "Trëndafila të kuq dhe gerbera në të verdhë, rozë dhe të kuqe në mbështjellëse të kuqe. Buqetë plot gëzim jete – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Buqetë shumëngjyrëshe me gerbera dhe trëndafila në mbështjellëse të kuqe mbi një komo druri",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix në mbështjellëse të kuqe në një vazo të bardhë",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Pamje nga lart e trëndafilave të kuq dhe gerberave të verdha e rozë në mbështjellëse të kuqe"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Trëndafila & gerbera në pink me nuanca lejla",
+      "shortDescription": "Miks i gjallë në pink, kajsi dhe lejla.",
+      "description": "Farbtänzer bashkon trëndafila dhe trëndafila degëzues në pink e kajsi me gerbera rozë, lule lejla dhe kokrra të çelëta. E lidhur dendur dhe gjallë – moderne dhe ekspresive.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera"
+      ],
+      "care": [
+        "Hiqni gjethet që arrijnë në ujë.",
+        "Mbajeni vazon të pastër.",
+        "Para se t'i vendosni në vazo, priteni kërcellin pjerrtas."
+      ],
+      "seo": {
+        "title": "Farbtänzer – buqetë në pink & lejla",
+        "description": "Trëndafila dhe gerbera në pink e kajsi me nuanca lejla. Buqetë e gjallë dhe moderne – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Buqetë e shtrirë në pink dhe lejla në mbështjellëse rozë të zbehtë",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Buqetë e rrumbullakët me trëndafila pink, gerbera dhe lule lejla në një vazo ngjyrë krem",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer në një vazo me brinjë, nga përpara"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Kuti lulesh në formë zemre",
+      "tagline": "Trëndafila në një kuti të kuqe në formë zemre",
+      "shortDescription": "Trëndafila në një kuti në formë zemre – një deklaratë dashurie për ta vendosur mbi tavolinë.",
+      "description": "Në kutinë e kuqe në formë zemre janë rregulluar trëndafila në të kuqe, rozë dhe të bardhë me lule të tjera dhe gjipsofilë. Dhuratë për përvjetor, Shën Valentin ose si surprizë plot dashuri.",
+      "flowers": [
+        "Trëndafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Lagini lehtë trëndafilat.",
+        "Vendoseni në vend të freskët.",
+        "Mbrojeni nga dielli i drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Kuti lulesh në formë zemre – trëndafila",
+        "description": "Trëndafila në të kuqe, rozë dhe të bardhë në një kuti të kuqe në formë zemre. Për përvjetor dhe Shën Valentin – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Kuti e kuqe lulesh në formë zemre me trëndafila në të kuqe, rozë dhe të bardhë dhe gjipsofilë"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Kuti lulesh klasike",
+      "tagline": "Trëndafila të kuq në kuti të rrumbullakët",
+      "shortDescription": "Trëndafila klasikë në një kuti të rrumbullakët – të thjeshtë dhe ekspresivë.",
+      "description": "Kutia klasike e luleve mbush një kuti të rrumbullakët me trëndafila të vendosur dendur. Minimaliste dhe e përjetshme, i shkon ditëlindjes, si falënderim ose për momente të veçanta. E disponueshme në të kuqe dhe të bardhë.",
+      "flowers": [
+        "Trëndafila"
+      ],
+      "care": [
+        "Ujitini trëndafilat rregullisht dhe lehtë.",
+        "Vendoseni në vend të freskët.",
+        "Mbrojeni nga dielli i drejtpërdrejtë."
+      ],
+      "seo": {
+        "title": "Kuti lulesh klasike – trëndafila në kuti",
+        "description": "Trëndafila të vendosur dendur në një kuti të rrumbullakët, në të kuqe ose të bardhë. Dhuratë e thjeshtë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Trëndafila të kuq në një kuti të rrumbullakët të bardhë me buzë rozë dhe të artë",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Dy kuti të rrumbullakëta prej kadifeje të kuqe me trëndafila të kuq mbi një piedestal të bardhë"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Anturium rozë në saksi",
+      "tagline": "Anturium me lule rozë",
+      "shortDescription": "Një anturium me lule rozë të zbehtë – elegant dhe i matur.",
+      "description": "Anturiumi rozë, me lulet e tij të brishta dhe gjethet jeshile me shkëlqim, sjell ngjyrë në dhomë pa qenë i zhurmshëm. I shkon si shtëpisë, ashtu edhe zyrës.",
+      "flowers": [
+        "Anturium"
+      ],
+      "care": [
+        "Vendoseni në vend me dritë, pa diell të drejtpërdrejtë.",
+        "Ujiteni rregullisht, por mos lini ujë të ndenjur.",
+        "Herë pas here spërkatni gjethet me ujë."
+      ],
+      "seo": {
+        "title": "Anturium rozë në saksi – bimë shtëpie",
+        "description": "Anturium me lule rozë të zbehtë dhe gjethe me shkëlqim. Bimë elegante shtëpie si dhuratë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Anturium rozë në një saksi qeramike rozë të vjetër mbi një komo druri",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anturium me lule rozë në një saksi ngjyrë malvë pranë qirinjve"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Anturium i kuq në saksi",
+      "tagline": "Anturium me lule të kuqe",
+      "shortDescription": "Një anturium me lule të kuqe të ndritshme dhe pamje moderne.",
+      "description": "Anturiumet e kuqe, me lulet e tyre me shkëlqim, japin theksa të fortë ngjyre. Si bimë dekorative shtëpie ose dhuratë, me kujdes të mirë mbetet i bukur për një kohë të gjatë.",
+      "flowers": [
+        "Anturium"
+      ],
+      "care": [
+        "Vend me dritë, pa diell të drejtpërdrejtë.",
+        "Mbajeni dheun njëtrajtësisht të lagësht.",
+        "Mos lini ujë të ndenjur."
+      ],
+      "seo": {
+        "title": "Anturium i kuq në saksi – bimë shtëpie",
+        "description": "Anturium me lule të kuqe të ndritshme në saksi. Bimë dekorative shtëpie si dhuratë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Anturium i kuq në një saksi qeramike të kuqe mbi një komo druri"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "Anturium i kuq XXL në saksi",
+      "tagline": "Anturium i madh me lule të kuqe",
+      "shortDescription": "Një anturium i madh dhe i harlisur me shumë lule të kuqe.",
+      "description": "Ky anturium i kuq është mbi 80 cm i lartë dhe ka shumë lule të kuqe mbi gjethe të dendura me shkëlqim. Një pikë tërheqëse ekspresive për shtëpinë ose zyrën.",
+      "flowers": [
+        "Anturium"
+      ],
+      "care": [
+        "Vendoseni në vend me dritë, pa diell të drejtpërdrejtë.",
+        "Ujiteni rregullisht, por mos lini ujë të ndenjur.",
+        "Herë pas here fshini pluhurin nga gjethet."
+      ],
+      "seo": {
+        "title": "Anturium i kuq XXL në saksi",
+        "description": "Anturium i madh me shumë lule të kuqe në saksi. Pikë tërheqëse për shtëpinë ose zyrën – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Anturium i madh me shumë lule të kuqe në një saksi të kuqe pranë qirinjve"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelia në saksi",
+      "tagline": "Bromelia me lule të kuqe",
+      "shortDescription": "Një bromelia me lule të kuqe të fortë dhe frymë tropikale.",
+      "description": "Bromelia, me rozetën e saj të kuqe të luleve dhe gjethet e holla jeshile, jep theksa të gjallë. Një bimë dekorative për shtëpinë ose zyrën dhe një dhuratë e veçantë.",
+      "flowers": [
+        "Bromelia"
+      ],
+      "care": [
+        "Vendoseni në vend me dritë, pa diell të drejtpërdrejtë.",
+        "Hidhni rregullisht ujë në hinkën e gjetheve.",
+        "Mbajeni dheun vetëm pak të lagësht."
+      ],
+      "seo": {
+        "title": "Bromelia në saksi – bimë shtëpie",
+        "description": "Bromelia me lule të kuqe në saksi: frymë tropikale për shtëpinë ose zyrën – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelia me lule të kuqe në një saksi të kuqe mbi një komo druri"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Fikus elastik në saksi",
+      "tagline": "Fikus elastik me gjethe jeshile të errëta",
+      "shortDescription": "Një fikus elastik që kërkon pak kujdes, me gjethe jeshile të errëta me shkëlqim.",
+      "description": "Me gjethet e tij të mëdha dhe me shkëlqim, fikusi elastik duket modern dhe i qetë. Kërkon pak kujdes dhe i shkon mirë shtëpisë dhe zyrës.",
+      "flowers": [
+        "Fikus elastik"
+      ],
+      "care": [
+        "Vend me dritë ose në gjysmëhije.",
+        "Ujiteni me masë – i mjafton pak ujë.",
+        "Herë pas here pastroni pluhurin nga gjethet."
+      ],
+      "seo": {
+        "title": "Fikus elastik në saksi – bimë e lehtë",
+        "description": "Fikus elastik me gjethe jeshile të errëta me shkëlqim. Bimë shtëpie që kërkon pak kujdes, për banesë dhe zyrë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Fikus elastik me gjethe jeshile të errëta në një saksi të kuqe mbi një komo druri"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Orkide e bardhë në saksi",
+      "tagline": "Orkide në saksi, në disa ngjyra",
+      "shortDescription": "Një orkide në saksi – e qetë, fisnike dhe e përjetshme.",
+      "description": "Orkideja simbolizon elegancën dhe qetësinë. Me degët e saj të holla me lule, është një zgjedhje me stil për shtëpinë, zyrën ose si dhuratë. E disponueshme në lejla, rozë, të verdhë, të bardhë dhe blu.",
+      "flowers": [
+        "Orkide"
+      ],
+      "care": [
+        "Vendoseni në vend me dritë, pa diell të drejtpërdrejtë.",
+        "Ujiteni me masë dhe mos lini ujë të ndenjur.",
+        "Hiqini degët e lulëzuara vetëm kur të jenë tharë."
+      ],
+      "seo": {
+        "title": "Orkide në saksi – në pesë ngjyra",
+        "description": "Orkide në saksi në të bardhë, rozë, të verdhë, lejla ose blu. Bimë elegante shtëpie si dhuratë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Orkide e bardhë me qendër pink në një saksi qeramike ngjyrë krem",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orkide me lule rozë të zbehtë në një saksi qeramike ngjyrë krem",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Orkide e verdhë në një saksi qeramike ngjyrë krem",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orkide me lule vjollcë në një saksi pink",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orkide me lule blu në një saksi gri pranë qirinjve"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Buqetë mortore e kuqe",
+      "tagline": "Trëndafila të kuq, gerbera & karafila me degë bredhi",
+      "shortDescription": "Buqetë mortore në të kuqe, si shenjë dashurie dhe lidhjeje.",
+      "description": "Buqeta mortore e kuqe bashkon trëndafila të kuq, gerbera dhe karafila me trëndafila të verdhë, gjipsofilë dhe degë bredhi. Një gjest dinjitoz përkujtimi që shpreh në heshtje ndjenja të forta. Përbërja mund të ndryshojë pak sipas stinës.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera",
+        "Karafila",
+        "Gjipsofilë"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët, jo në diell të drejtpërdrejtë ose pranë kaloriferit.",
+        "Te kompozimet, mbajeni sfungjerin lulor të lagësht."
+      ],
+      "seo": {
+        "title": "Buqetë mortore e kuqe – trëndafila & gerbera",
+        "description": "Buqetë mortore në të kuqe me trëndafila, gerbera dhe karafila mbi degë bredhi, në tri madhësi. Lamtumirë dinjitoze – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Buqetë mortore me trëndafila të kuq, gerbera dhe karafila, trëndafila të verdhë dhe degë bredhi mbi një piedestal guri"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Buqetë mortore rozë",
+      "tagline": "Trëndafila rozë & lule vjollcë",
+      "shortDescription": "Buqetë mortore në tone të buta rozë, me pamje ngushëlluese.",
+      "description": "Trëndafila rozë, lule vjollcë e rozë dhe degë bredhi i japin kësaj buqete mortore një pamje të butë e ngushëlluese. Simbolizon mirënjohjen, afërsinë dhe kujtimin plot dashuri – e përshtatshme për një lamtumirë të qetë dhe personale.",
+      "flowers": [
+        "Trëndafila"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët, jo në diell të drejtpërdrejtë ose pranë kaloriferit.",
+        "Te kompozimet, mbajeni sfungjerin lulor të lagësht."
+      ],
+      "seo": {
+        "title": "Buqetë mortore rozë – tone të buta rozë",
+        "description": "Buqetë mortore në tone të buta rozë me trëndafila rozë mbi degë bredhi, në tri madhësi. Për një lamtumirë të qetë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Buqetë mortore me trëndafila rozë dhe lule vjollcë mbi degë bredhi, me fjongo të bardhë, mbi një piedestal guri"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Buqetë mortore pastel",
+      "tagline": "Zambakë, trëndafila & lule blu në pastel",
+      "shortDescription": "Buqetë mortore e qetë në tone të holla pastel.",
+      "description": "Buqeta mortore pastel bashkon zambakë dhe trëndafila rozë me lule blu të çelëta, ngjyrë jargavani dhe të bardha. Shkallëzimet e holla të ngjyrave përcjellin ngushëllim dhe pjesëmarrje në dhimbje. Lulet mund të ndryshojnë sipas stinës.",
+      "flowers": [
+        "Zambakë",
+        "Trëndafila"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët, jo në diell të drejtpërdrejtë ose pranë kaloriferit.",
+        "Te kompozimet, mbajeni sfungjerin lulor të lagësht."
+      ],
+      "seo": {
+        "title": "Buqetë mortore pastel – tone të qeta",
+        "description": "Buqetë mortore pastel me zambakë, trëndafila dhe lule blu të çelëta, në tri madhësi. E matur dhe me stil – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Buqetë mortore pastel me zambakë rozë, trëndafila dhe lule blu të çelëta, me fjongo të zezë, mbi një piedestal guri"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Buqetë mortore portokalli",
+      "tagline": "Trëndafila, gerbera & karafila në portokalli dhe të verdhë",
+      "shortDescription": "Buqetë mortore në tone të ngrohta portokalli, që shpreh vlerësim.",
+      "description": "Trëndafila, gerbera dhe karafila në portokalli, të verdhë dhe kajsi bashkohen me degë bredhi në një buqetë mortore të ngrohtë. Simbolizon mirënjohjen dhe përkujtimin e një jete të plotë dhe i përshtatet ekspozimit të të ndjerit ose ceremonisë përkujtimore.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera",
+        "Karafila"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët, jo në diell të drejtpërdrejtë ose pranë kaloriferit.",
+        "Te kompozimet, mbajeni sfungjerin lulor të lagësht."
+      ],
+      "seo": {
+        "title": "Buqetë mortore portokalli – tone të ngrohta",
+        "description": "Buqetë mortore në portokalli dhe të verdhë me trëndafila, gerbera dhe karafila, në tri madhësi. Për homazh dhe përkujtim – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Buqetë mortore me trëndafila, gerbera dhe karafila në portokalli dhe të verdhë mbi degë bredhi, mbi një piedestal guri"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Buqetë mortore e bardhë",
+      "tagline": "Zambakë të bardhë & krizantema",
+      "shortDescription": "Buqetë mortore klasike në të bardhë – e thjeshtë dhe dinjitoze.",
+      "description": "Zambakë të bardhë, krizantema dhe lule të vogla të bardha mbi degë bredhi e bëjnë këtë buqetë mortore të thjeshtë dhe të përjetshme. E bardha simbolizon paqen dhe lamtumirën – e përshtatshme për ceremoni mortore formale ose si shenjë e heshtur ngushëllimi.",
+      "flowers": [
+        "Zambakë",
+        "Krizantema"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët, jo në diell të drejtpërdrejtë ose pranë kaloriferit.",
+        "Te kompozimet, mbajeni sfungjerin lulor të lagësht."
+      ],
+      "seo": {
+        "title": "Buqetë mortore e bardhë – zambakë & krizantema",
+        "description": "Buqetë mortore klasike në të bardhë me zambakë dhe krizantema, në tri madhësi. E thjeshtë dhe dinjitoze – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Buqetë mortore me zambakë të bardhë, krizantema dhe lule të vogla të bardha mbi degë bredhi, mbi një piedestal guri"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Buqetë mortore e verdhë",
+      "tagline": "Luledielli, trëndafila të verdhë & karafila",
+      "shortDescription": "Buqetë mortore në të verdhë për kujtim, shpresë dhe mirënjohje.",
+      "description": "Luledielli, trëndafila të verdhë dhe karafila ngjyrë kajsi mbi degë bredhi e bëjnë këtë buqetë mortore të çelët dhe të ngrohtë. I përshtatet lamtumirave ku në qendër është jeta. Lulet varen nga stina.",
+      "flowers": [
+        "Luledielli",
+        "Trëndafila",
+        "Karafila"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët, jo në diell të drejtpërdrejtë ose pranë kaloriferit.",
+        "Te kompozimet, mbajeni sfungjerin lulor të lagësht."
+      ],
+      "seo": {
+        "title": "Buqetë mortore e verdhë – luledielli",
+        "description": "Buqetë mortore në të verdhë me luledielli, trëndafila dhe karafila, në tri madhësi. Lamtumirë e çelët – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Buqetë mortore me luledielli, trëndafila të verdhë dhe karafila ngjyrë kajsi mbi degë bredhi, mbi një piedestal guri"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Kurorë mortore shumëngjyrëshe",
+      "tagline": "Gerbera, trëndafila & lule në ngjyra të gjalla",
+      "shortDescription": "Kurorë mortore shumëngjyrëshe për lamtumirën e një njeriu që e donte jetën.",
+      "description": "Kurora mortore shumëngjyrëshe bashkon gerbera, trëndafila dhe lule të tjera në të verdhë, portokalli, rozë dhe të bardhë mbi bazë të gjelbër. Një lamtumirë dinjitoze dhe njëkohësisht plot ngjyra, e lidhur me dorë. Për dëshira rreth kompozimit, mos hezitoni të na kontaktoni.",
+      "flowers": [
+        "Gerbera",
+        "Trëndafila"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët dhe me hije.",
+        "Lageni lehtë sfungjerin lulor sipas nevojës."
+      ],
+      "seo": {
+        "title": "Kurorë mortore shumëngjyrëshe",
+        "description": "Kurorë mortore shumëngjyrëshe me gerbera dhe trëndafila, e lidhur me dorë. Lamtumirë plot ngjyra – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Kurorë mortore shumëngjyrëshe me gerbera, zambakë dhe lule të bardha, me fjongo të zezë, mbi një kavalet druri"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Kurorë mortore pink",
+      "tagline": "Gerbera & trëndafila në pink dhe të kuqe",
+      "shortDescription": "Kurorë mortore në pink dhe të kuqe, si lamtumirë plot dashuri.",
+      "description": "Kurora mortore në pink dhe të kuqe bashkon gerbera pink, trëndafila dhe lule të tjera me nuanca të çelëta dhe gjelbërim të freskët. Shprehje dashurie dhe kujtimi, e lidhur me dorë. Për dëshira rreth kompozimit, mos hezitoni të na kontaktoni.",
+      "flowers": [
+        "Gerbera",
+        "Trëndafila"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët dhe me hije.",
+        "Lageni lehtë sfungjerin lulor sipas nevojës."
+      ],
+      "seo": {
+        "title": "Kurorë mortore pink – pink & e kuqe",
+        "description": "Kurorë mortore në pink dhe të kuqe me gerbera dhe trëndafila, e lidhur me dorë. Lamtumirë plot dashuri – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Kurorë mortore me gerbera pink, trëndafila dhe lule të kuqe, me fjongo ngjyrë bordo, mbi një kavalet druri"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Kurorë mortore e kuqe-e verdhë",
+      "tagline": "Gerbera të kuqe dhe të verdha",
+      "shortDescription": "Kurorë mortore e ndritshme në të kuqe dhe të verdhë.",
+      "description": "Gerbera të kuqe dhe të verdha, të vendosura dendur mbi bazë të gjelbër, e bëjnë këtë kurorë mortore një lamtumirë të ndritshme, plot ngrohtësi, mirënjohje dhe kujtime të bukura. E lidhur me dorë. Për dëshira rreth kompozimit, mos hezitoni të na kontaktoni.",
+      "flowers": [
+        "Gerbera"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët dhe me hije.",
+        "Lageni lehtë sfungjerin lulor sipas nevojës."
+      ],
+      "seo": {
+        "title": "Kurorë mortore e kuqe-e verdhë – gerbera",
+        "description": "Kurorë mortore me gerbera të kuqe dhe të verdha, e lidhur me dorë. Lamtumirë e ngrohtë dhe e ndritshme – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Kurorë mortore me gerbera të kuqe dhe të verdha, me fjongo gri të argjendtë, mbi një kavalet druri"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Kurorë mortore e kuqe",
+      "tagline": "Gerbera të kuqe & trëndafila",
+      "shortDescription": "Kurorë mortore klasike në të kuqe, për dashurinë që mbetet.",
+      "description": "Kurora mortore e kuqe bashkon gerbera të kuqe dhe trëndafila mbi degë bredhi. Një lamtumirë klasike dhe dinjitoze për dashurinë që mbetet edhe përtej ndarjes. E lidhur me dorë. Për dëshira rreth kompozimit, mos hezitoni të na kontaktoni.",
+      "flowers": [
+        "Gerbera",
+        "Trëndafila"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët dhe me hije.",
+        "Lageni lehtë sfungjerin lulor sipas nevojës."
+      ],
+      "seo": {
+        "title": "Kurorë mortore e kuqe – gerbera & trëndafila",
+        "description": "Kurorë mortore në të kuqe me gerbera dhe trëndafila mbi degë bredhi, e lidhur me dorë. Lamtumirë klasike – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Kurorë mortore me gerbera të kuqe dhe trëndafila mbi degë bredhi, me fjongo të zezë, mbi një kavalet druri"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Kurorë mortore e bardhë",
+      "tagline": "Trëndafila të bardhë, gerbera & karafila",
+      "shortDescription": "Kurorë mortore e thjeshtë në të bardhë, për ngushëllim të heshtur.",
+      "description": "Trëndafila të bardhë, gerbera dhe karafila me nuanca jeshile të çelëta dhe gjelbërim e formojnë këtë kurorë të thjeshtë. E bardha simbolizon paqen dhe ngushëllimin e heshtur. E lidhur me dorë. Për dëshira rreth kompozimit, mos hezitoni të na kontaktoni.",
+      "flowers": [
+        "Trëndafila",
+        "Gerbera",
+        "Karafila"
+      ],
+      "care": [
+        "Vendoseni në vend të freskët dhe me hije.",
+        "Lageni lehtë sfungjerin lulor sipas nevojës."
+      ],
+      "seo": {
+        "title": "Kurorë mortore e bardhë – e thjeshtë & dinjitoze",
+        "description": "Kurorë mortore në të bardhë me trëndafila, gerbera dhe karafila, e lidhur me dorë. Lamtumirë e thjeshtë – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standarde"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Kurorë mortore në formë unaze me trëndafila të bardhë, gerbera dhe karafila, me fjongo të bardhë, mbi një kavalet druri"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Kurora Adventi",
+      "tagline": "Degë bredhi me katër qirinj, në shtatë ngjyra",
+      "shortDescription": "Kurorë Adventi e lidhur me dorë, prej degësh bredhi me katër qirinj.",
+      "description": "Kurora e Adventit lidhet me dorë prej degësh aromatike bredhi dhe zbukurohet me katër qirinj, fjongo, topa, boçe pishe dhe detaje të tjera. E disponueshme në të kuqe, gri, lejla, ar, bezhë, të kuqe vere dhe rozë.",
+      "flowers": [],
+      "care": [
+        "Mos i lini kurrë qirinjtë të ndezur pa mbikëqyrje.",
+        "Vendoseni në vend të freskët, jo drejtpërdrejt pranë kaloriferit.",
+        "Herë pas here spërkatni lehtë degët e bredhit me ujë."
+      ],
+      "seo": {
+        "title": "Kurorë Adventi – e lidhur me dorë me qirinj",
+        "description": "Kurorë Adventi e lidhur me dorë prej degësh bredhi me katër qirinj, në shtatë ngjyra dhe katër madhësi – dërgesë lulesh në Vjenë."
+      },
+      "sizes": {
+        "s": {
+          "label": "E vogël"
+        },
+        "m": {
+          "label": "Mesatare"
+        },
+        "l": {
+          "label": "E madhe"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "E kuqe",
+        "grau": "Gri",
+        "lila": "Lejla",
+        "gold": "Ar",
+        "beige": "Bezhë",
+        "weinrot": "E kuqe vere",
+        "rosa": "Rozë"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Kurorë Adventi prej degësh bredhi me katër qirinj të kuq, fjongo të kuqe, topa dhe boçe pishe",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Kurorë Adventi me katër qirinj gri të çelët, fjongo ngjyrë krem dhe feta portokalli",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Kurorë Adventi me qirinj lejla dhe rozë, fjongo vjollcë dhe figurë engjëlli",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Kurorë Adventi me katër qirinj të artë, fjongo të arta, shkopinj kanelle dhe boçe pishe",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Kurorë Adventi me katër qirinj rozë, fjongo ngjyrë bordo dhe figurë engjëlli",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Kurorë Adventi me katër qirinj ngjyrë të kuqe vere, topa dhe fjongo ngjyrë të kuqe vere",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Kurorë Adventi me katër qirinj gri të errët, fjongo ngjyrë krem dhe topa të kuq",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Kurorë Adventi në ar me qirinj dhe fjongo të arta, nga anash",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Kurorë Adventi në rozë me qirinj rozë dhe fjongo ngjyrë bordo, nga anash"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Të gjitha lulet",
+      "headline": "Porositni lule online",
+      "intro": "Buqeta të lidhura me dorë për gjithë Vjenën. Zgjidhni buqetën dhe caktoni datën e dërgesës.",
+      "seo": {
+        "title": "Porositni lule online & dërgesë në Vjenë",
+        "description": "Porositni lule online me dërgesë në Vjenë. Buqeta të lidhura me dorë me datën e dëshiruar – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Trëndafila",
+      "headline": "Buqeta me trëndafila",
+      "intro": "Trëndafila të kuq, rozë ose të bardhë, në disa madhësi. Të lidhur me dorë dhe të dërguar në Vjenë.",
+      "seo": {
+        "title": "Buqeta trëndafilash online – trëndafila për Vjenën",
+        "description": "Të gjitha buqetat me trëndafila: trëndafila të kuq, rozë dhe të bardhë në disa madhësi. Të lidhura me dorë, të dërguara në Vjenë me datën e dëshiruar."
+      }
+    },
+    "saisonal": {
+      "name": "Lule stinore",
+      "headline": "Lule stinore",
+      "intro": "Buqeta që i përshtaten stinës. Zgjedhja ndryshon gjatë vitit.",
+      "seo": {
+        "title": "Buqeta stinore me dërgesë në Vjenë",
+        "description": "Buqeta stinore, të përshtatura me stinën. Të lidhura me dorë dhe të dërguara në Vjenë."
+      }
+    },
+    "pastell": {
+      "name": "Pastel",
+      "headline": "Buqeta pastel",
+      "intro": "Rozë e zbehtë, krem, jargavan: ngjyra të buta për momente të brishta.",
+      "seo": {
+        "title": "Lule pastel me dërgesë në Vjenë",
+        "description": "Buqeta në tone të buta pastel me dërgesë në Vjenë – të lidhura rishtas, me datën e dëshiruar."
+      }
+    },
+    "bunt": {
+      "name": "Shumëngjyrëshe",
+      "headline": "Buqeta shumëngjyrëshe",
+      "intro": "Ngjyra që sjellin gëzim. Për ditëlindje, surpriza dhe humor të mirë.",
+      "seo": {
+        "title": "Buqeta shumëngjyrëshe me dërgesë në Vjenë",
+        "description": "Buqeta shumëngjyrëshe dhe të gëzueshme me dërgesë në Vjenë – të lidhura rishtas, me datën e dëshiruar."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegante & të bardha",
+      "headline": "Elegante & të bardha",
+      "intro": "E bardhë, krem dhe e gjelbër. Buqeta që duken të qeta dhe fisnike në çdo ambient.",
+      "seo": {
+        "title": "Lule të bardha elegante me dërgesë në Vjenë",
+        "description": "Buqeta të bardha dhe ngjyrë krem me dërgesë në Vjenë – elegante, të lidhura rishtas, me datën e dëshiruar."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Buqeta premium",
+      "intro": "Buqeta bujare për momente të veçanta.",
+      "seo": {
+        "title": "Buqeta premium me dërgesë në Vjenë",
+        "description": "Buqeta premium për raste të veçanta me dërgesë në Vjenë – të lidhura me dorë, me datën e dëshiruar."
+      }
+    },
+    "unter-40": {
+      "name": "Nën 40 €",
+      "headline": "Lule nën 40 €",
+      "intro": "Buqeta të vogla me efekt të madh – të gjitha nën 40 euro.",
+      "seo": {
+        "title": "Lule nën 40 € me dërgesë në Vjenë",
+        "description": "Buqeta të lira nën 40 € me dërgesë në Vjenë – të lidhura rishtas, me datën e dëshiruar."
+      }
+    },
+    "bestseller": {
+      "name": "Buqetat e preferuara",
+      "headline": "Buqetat tona të preferuara",
+      "intro": "Buqeta që i rekomandojmë me shumë dëshirë.",
+      "seo": {
+        "title": "Buqetat tona të preferuara – rekomandime për Vjenën",
+        "description": "Buqeta që i rekomandojmë me shumë dëshirë – të lidhura me dorë dhe të dërguara në Vjenë."
+      }
+    },
+    "neu": {
+      "name": "Të reja",
+      "headline": "Të reja te Blumora",
+      "intro": "Sapo në ofertë.",
+      "seo": {
+        "title": "Buqeta të reja për Vjenën",
+        "description": "Buqeta të reja në ofertë – të lidhura rishtas dhe të dërguara në Vjenë."
+      }
+    },
+    "blumenboxen": {
+      "name": "Kuti lulesh",
+      "headline": "Kuti lulesh",
+      "intro": "Trëndafila të rregulluar në një kuti – dhuratë që s'ka nevojë për vazo.",
+      "seo": {
+        "title": "Kuti lulesh me dërgesë në Vjenë",
+        "description": "Trëndafila në kuti lulesh – në formë zemre ose klasike. Dërgesë lulesh në Vjenë me datën e dëshiruar."
+      }
+    },
+    "pflanzen": {
+      "name": "Bimë",
+      "headline": "Bimë në saksi",
+      "intro": "Orkide, anturiume dhe bimë të gjelbra – lule që mbeten.",
+      "seo": {
+        "title": "Bimë në saksi me dërgesë në Vjenë",
+        "description": "Orkide, anturiume dhe bimë shtëpie në saksi si dhuratë. Dërgesë lulesh në Vjenë."
+      }
+    },
+    "trauer": {
+      "name": "Lule mortore",
+      "headline": "Lule mortore",
+      "intro": "Kurora dhe buqeta mortore, të lidhura me dinjitet për përshëndetjen e fundit.",
+      "seo": {
+        "title": "Kurora & buqeta mortore në Vjenë",
+        "description": "Kurora dhe buqeta mortore për varrim dhe ceremoni përkujtimore – me dërgesë në Vjenë."
+      }
+    },
+    "advent": {
+      "name": "Kurora Adventi",
+      "headline": "Kurora Adventi",
+      "intro": "Degë bredhi, qirinj dhe zbukurime – të lidhura me dorë për periudhën e Adventit.",
+      "seo": {
+        "title": "Kurora Adventi me dërgesë në Vjenë",
+        "description": "Kurora Adventi të lidhura me dorë, në disa ngjyra dhe madhësi – me dërgesë në Vjenë."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Ditëlindje",
+      "headline": "Lule për ditëlindje",
+      "intro": "Një buqetë që thotë: të kam menduar. Zgjidhni lulet dhe datën e dëshiruar.",
+      "imageAlt": "Buqetë shumëngjyrëshe me trëndafila të kuq, gerbera dhe lule të verdha në mbështjellëse të kuqe",
+      "seo": {
+        "title": "Lule për ditëlindje – buqeta për Vjenën",
+        "description": "Buqeta për ditëlindje: shumëngjyrëshe, të gëzueshme ose elegante. Të lidhura me dorë dhe të dërguara në Vjenë – me datën e dëshiruar."
+      }
+    },
+    "liebe": {
+      "name": "Dashuri & romancë",
+      "headline": "Lule për dashurinë",
+      "intro": "Trëndafila të kuq ose diçka krejt tjetër: lule që thonë atë që doni të thoni.",
+      "imageAlt": "Buqetë me trëndafila të kuq të thellë në mbështjellëse gri me fjongo të kuqe",
+      "seo": {
+        "title": "Lule romantike me dërgesë në Vjenë",
+        "description": "Trëndafila dhe buqeta romantike me dërgesë në Vjenë – të lidhura rishtas, me datën e dëshiruar."
+      }
+    },
+    "danke": {
+      "name": "Faleminderit",
+      "headline": "Lule për të thënë faleminderit",
+      "intro": "Për ndihmën, për kohën, për gjithçka. Një buqetë e thotë pa shumë fjalë.",
+      "imageAlt": "Buqetë me gerbera të verdha dhe trëndafila të bardhë me fjongo të verdhë",
+      "seo": {
+        "title": "Lule falënderimi me dërgesë në Vjenë",
+        "description": "Thoni faleminderit me lule: buqeta të lidhura rishtas me dërgesë në Vjenë – me datën e dëshiruar."
+      }
+    },
+    "gute-besserung": {
+      "name": "Shërim të shpejtë",
+      "headline": "Lule për shërim",
+      "intro": "Ngjyra të buta, forma të qeta dhe një përshëndetje e vogël që bën mirë.",
+      "imageAlt": "Buqetë me diell në portokalli dhe të verdhë në mbështjellëse të çelët",
+      "seo": {
+        "title": "Lule për shërim të shpejtë në Vjenë",
+        "description": "Lule për shërim me dërgesë në Vjenë – buqeta të buta, të lidhura rishtas, me datën e dëshiruar."
+      }
+    },
+    "jahrestag": {
+      "name": "Përvjetor",
+      "headline": "Lule për përvjetor",
+      "intro": "Për ditën kur filloi gjithçka. Dhe për të gjitha ato që erdhën më pas.",
+      "imageAlt": "Buqetë me trëndafila të kuq dhe të bardhë në mbështjellëse të bardhë",
+      "seo": {
+        "title": "Lule për përvjetor me dërgesë në Vjenë",
+        "description": "Buqeta elegante për përvjetor me dërgesë në Vjenë – të lidhura rishtas, me datën e dëshiruar."
+      }
+    },
+    "geburt": {
+      "name": "Lindje",
+      "headline": "Lule për lindjen e fëmijës",
+      "intro": "Mirë se erdhe, njeri i vogël. Lule të brishta për një moment të madh.",
+      "imageAlt": "Buqetë e brishtë me trëndafila rozë dhe ngjyrë jargavani me gjipsofilë",
+      "seo": {
+        "title": "Lule për lindjen e fëmijës në Vjenë",
+        "description": "Buqeta të brishta pastel për lindjen e fëmijës me dërgesë në Vjenë – të lidhura rishtas, me datën e dëshiruar."
+      }
+    },
+    "hochzeit": {
+      "name": "Dasmë",
+      "headline": "Lule për dasmë",
+      "intro": "Për çiftin e martesës ose thjesht si urim: elegante, të çelëta dhe festive.",
+      "imageAlt": "Buqetë me trëndafila të bardhë në mbështjellëse të bardhë në një vazo",
+      "seo": {
+        "title": "Lule dasme me dërgesë në Vjenë",
+        "description": "Lule elegante për dasmë me dërgesë në Vjenë – si urim ose dhuratë, të lidhura rishtas."
+      }
+    },
+    "einfach-so": {
+      "name": "Pa arsye",
+      "headline": "Lule pa arsye",
+      "intro": "Asnjë rast i veçantë. Vetëm mendimi. Ndonjëherë kjo është arsyeja më e mirë.",
+      "imageAlt": "Tulipanë të verdhë në një vazo qelqi pranë dritares",
+      "seo": {
+        "title": "Dërgoni lule pa arsye – Vjenë",
+        "description": "Dërgoni lule pa ndonjë rast: buqeta të vogla dhe të mëdha me dërgesë në Vjenë – të lidhura rishtas, me datën e dëshiruar."
+      }
+    },
+    "trauer": {
+      "name": "Zi",
+      "headline": "Lule për ngushëllim",
+      "intro": "Ngushëllim në ngjyra të qeta. Kurora, buqeta mortore dhe buqeta, të lidhura me dorë dhe të dërguara në Vjenë.",
+      "imageAlt": "Kurorë mortore e bardhë me fjongo të bardhë mbi një kavalet druri",
+      "seo": {
+        "title": "Lule mortore me dërgesë në Vjenë",
+        "description": "Lule mortore me dërgesë në Vjenë – kurora, buqeta mortore dhe buqeta të qeta, të lidhura me dorë, me datën e dëshiruar."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Qiri aromatik",
+      "description": "Qirinj dekorativë aromatikë në paketim dhuratë, në forma dhe ngjyra të ndryshme.",
+      "imageAlt": "Qirinj aromatikë në formë zemre dhe sfere në kuti transparente dhuratë"
+    },
+    "x-teddy": {
+      "name": "Arush pelushi",
+      "description": "Arush pelushi me zemër të kuqe – plotësimi plot dashuri i buqetës.",
+      "imageAlt": "Arush pelushi ngjyrë kafe të çelët me zemër të kuqe"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Ku dërgoni?",
+      "answer": "Dërgojmë në të 23 rrethet e Vjenës. Sipas rrethit, dërgesa është falas ose kushton 4,90 € ose 7,90 €. Thjesht shkruani kodin postar të adresës së marrësit – shihni menjëherë nëse dhe kur mund të dërgojmë dhe sa kushton dërgesa.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "A mund të dërgoj lule ende sot?",
+      "answer": "Po – nëse porositni nga e hëna deri të shtunën deri në orën 18:30 ose të dielën deri në orën 17:45, dërgojmë po atë ditë në gjithë Vjenën, për sa kohë ka ende një interval kohor të lirë. Terminin më të hershëm për adresën tuaj e shihni sapo të shkruani kodin postar.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "A ka dërgesë ekspres?",
+      "answer": "Po – dërgesë ekspres brenda 1–2 orësh, pa pagesë shtesë. Porositni si zakonisht dhe në arkë zgjidhni intervalin kohor më të hershëm të ditës së sotme – është i shënuar me „Ekspres“. Kjo funksionon nëse porositni nga e hëna deri të shtunën deri në orën 18:30 ose të dielën deri në orën 17:45 dhe për adresën tuaj ka ende një interval kohor të lirë.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "A mund të zgjedh një datë të caktuar dërgese?",
+      "answer": "Po. Në çdo faqe produkti dhe në arkë e zgjidhni datën e dëshiruar në kalendar. Ditët kur nuk dërgojmë janë të çaktivizuara.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "A mund të zgjedh një orë të dëshiruar?",
+      "answer": "Po. Në Vjenë, në arkë zgjidhni një interval kohor njëorësh midis orës 9:00 dhe 22:00 – në të shtatë ditët e javës.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Çfarë ndodh nëse nuk është askush në shtëpi?",
+      "answer": "Korrieri i dorëzon lulet personalisht. Nëse nuk është askush, sipas mundësisë ato lihen te fqinjët. Në arkë mund të shtoni një shënim për dorëzimin, për shembull kodin e derës. Për statusin e porosisë suaj ju informojmë me e-mail.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "A mund të dërgoj lule në mënyrë anonime?",
+      "answer": "Po. Pa kartolinë përshëndetëse emri juaj nuk shfaqet askund te buqeta, dhe fatura shkon vetëm te ju. Kartolinat përshëndetëse me mesazh personal vijnë së shpejti.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "A mund të shtoj një kartolinë përshëndetëse?",
+      "answer": "Jo ende – kartolinat përshëndetëse vijnë së shpejti. Deri atëherë buqeta dërgohet pa kartolinë.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "A duken lulet saktësisht si në foto?",
+      "answer": "Çdo buqetë lidhet individualisht, dhe lulet janë produkte natyrore. Ngjyrat, llojet dhe madhësia e luleve mund të ndryshojnë pak sipas stinës. Stili dhe gama e ngjyrave mbeten të njëjta.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Si mbeten lulet të freskëta?",
+      "answer": "Çdo buqetë lidhet rishtas për porosinë tuaj dhe dorëzohet drejtpërdrejt nga korrieri. Kështu zgjat më shumë: pritini kërcejtë pjerrtas, hidhni ujë të freskët dhe vendoseni buqetën në vend të freskët, pa diell të drejtpërdrejtë.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Cilat mënyra pagese ka?",
+      "answer": "Mënyrat e disponueshme të pagesës i shihni në hapin e fundit të porosisë. Pagesa bëhet në mënyrë të sigurt përmes një ofruesi shërbimesh pagese – të dhënat e kartës suaj nuk vijnë kurrë te ne.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "A mund ta ndryshoj porosinë time?",
+      "answer": "Për sa kohë buqeta nuk është lidhur ende, zakonisht mund ta ndryshojmë datën e dërgesës ose adresën. Na shkruani sa më shpejt me numrin e porosisë suaj.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "A mund të dërgoj lule në firma ose hotele?",
+      "answer": "Po. Në arkë shkruani emrin e firmës ose të hotelit dhe – nëse e dini – departamentin ose numrin e dhomës. Dorëzimi bëhet në recepsion.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Lule për momente të veçanta.",
+      "intro": "Blumora është një shërbim online për dërgesë lulesh nga Vjena. Çdo buqetë lidhet me dorë në një floristeri vjeneze dhe dorëzohet drejtpërdrejt me korrier.",
+      "seo": {
+        "title": "Rreth nesh – dërgesë lulesh nga Vjena",
+        "description": "Blumora është një shërbim online për dërgesë lulesh nga Vjena: buqeta të lidhura me dorë dhe të dërguara me korrier në të 23 rrethet."
+      },
+      "sections": [
+        {
+          "heading": "Si punojmë",
+          "paragraphs": [
+            "Blumora është një shërbim vjenez online për dërgesë lulesh. Buqetën e zgjidhni te ne – e lidh një floristeri në Vjenë, me të cilën bashkëpunojmë në mënyrë të përhershme. Atje çdo buqetë krijohet me dorë dhe për porosinë tuaj.",
+            "Kartolinat përshëndetëse me tekstin tuaj vijnë së shpejti."
+          ],
+          "imageAlt": "Buqetë me trëndafila, dalie, hortensia dhe tulipanë në parvazin e dritares së një ndërtese të vjetër vjeneze, pas saj Katedralja e Shën Stefanit në dritën e mbrëmjes"
+        },
+        {
+          "heading": "Dërgesa",
+          "paragraphs": [
+            "Një korrier e merr buqetën tuaj drejtpërdrejt në floristeri dhe e sjell pa ndalesa te adresa e marrësit. Dërgojmë në të 23 rrethet e Vjenës – në intervalin kohor që zgjidhni: paradite, pasdite ose në mbrëmje deri në orën 22:00."
+          ],
+          "imageAlt": "Buqeta Pure Liebe në një vazo qelqi"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Dërgesa & transporti",
+      "intro": "Dërgojmë në të 23 rrethet e Vjenës. Kostot e dërgesës (falas, 4,90 € ose 7,90 €), ditët e dërgesës dhe intervalet kohore varen nga adresa e marrësit – shkruani kodin postar dhe i shihni të gjitha me një shikim.",
+      "seo": {
+        "title": "Dërgesa & transporti – lule me dërgesë në Vjenë",
+        "description": "Zonat e dërgesës, kostot, ditët e dërgesës dhe intervalet kohore për dërgesat e luleve në Vjenë."
+      },
+      "sections": [
+        {
+          "heading": "Si zhvillohet dërgesa",
+          "paragraphs": [
+            "Buqeta juaj lidhet rishtas për porosinë tuaj. Një korrier e merr drejtpërdrejt në floristeri dhe e sjell pa ndalesa te adresa e marrësit – në intervalin kohor që keni zgjedhur. Nëse nuk është askush, buqeta sipas mundësisë lihet te fqinjët.",
+            "Për çdo porosi merrni një konfirmim me e-mail dhe një link me të cilin mund të ndiqni statusin."
+          ]
+        },
+        {
+          "heading": "Dërgesa në firma, hotele dhe spitale",
+          "paragraphs": [
+            "Në arkë shkruani emrin e firmës ose të hotelit, si dhe departamentin, repartin ose numrin e dhomës. Dorëzojmë në recepsion. Ju lutemi kini parasysh se disa institucione nuk lejojnë lule në reparte."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Kontakt",
+      "intro": "Pyetje për një porosi, një datë dërgese ose një dëshirë të veçantë? Jemi këtu për ju.",
+      "seo": {
+        "title": "Kontakt – Blumora Vjenë",
+        "description": "Kontaktoni Blumora për pyetje rreth porosisë, dërgesës ose dëshirave të veçanta."
+      },
+      "sections": [
+        {
+          "heading": "Si na kontaktoni",
+          "paragraphs": [
+            "[Vendmbajtës: e-mail-i, telefoni dhe orari merren nga cilësimet dhe duhet të plotësohen atje.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Dërgesë lulesh në gjithë Vjenën",
+      "headline": "Lule që thonë më shumë.",
+      "subheadline": "Lule të lidhura rishtas për njerëzit që janë të rëndësishëm për ju. Thjesht zgjidhni, caktoni datën e dëshiruar dhe dërgoni gëzim.",
+      "primaryCta": {
+        "label": "Zbuloni lulet"
+      },
+      "secondaryCta": {
+        "label": "Zgjidhni sipas rastit"
+      },
+      "imageAlt": "Një grua me pallto ngjyrë deveje mban një buqetë të madhe me trëndafila, ranunkula, dalie dhe tulipanë nëpër një rrugë vjeneze me kalldrëm, pas saj kalon një tramvaj",
+      "deliveryCheck": {
+        "title": "Ku t'i dërgojmë?",
+        "placeholder": "Shkruani kodin postar",
+        "button": "Kontrolloni dërgesën"
+      }
+    },
+    "occasions": {
+      "headline": "Lule për çdo moment",
+      "subheadline": "Ndonjëherë nuk duhet ndonjë rast i madh. Vetëm gjesti i duhur."
+    },
+    "bestsellers": {
+      "headline": "Buqetat tona të preferuara",
+      "subheadline": "Një përzgjedhje nga oferta jonë."
+    },
+    "collections": {
+      "headline": "Gjeni buqetën tuaj të përsosur",
+      "subheadline": "Sipas ngjyrës, stilit ose buxhetit."
+    },
+    "howItWorks": {
+      "headline": "Të dhurosh gëzim s'ka qenë kurrë kaq e thjeshtë.",
+      "steps": [
+        {
+          "title": "Zgjidhni buqetën e preferuar",
+          "text": "Zbuloni lule për çdo shije dhe rast."
+        },
+        {
+          "title": "Bëjeni personale",
+          "text": "Zgjidhni madhësinë dhe shtesa të vogla."
+        },
+        {
+          "title": "Zgjidhni datën e dërgesës",
+          "text": "Caktoni kur duhet të mbërrijë surpriza juaj."
+        },
+        {
+          "title": "Dërgoni gëzim",
+          "text": "Për pjesën tjetër kujdesemi ne."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Periudha e Adventit",
+      "headline": "Së shpejti ndizet qiriri i parë.",
+      "text": "Kurora Adventi me degë bredhi, qirinj dhe zbukurime – në disa ngjyra dhe madhësi. Si dhe buqeta në tone të ngrohta vjeshte.",
+      "cta": {
+        "label": "Kurora Adventi"
+      },
+      "imageAlt": "Kurorë Adventi prej degësh bredhi me katër qirinj të kuq mbi një komo druri"
+    },
+    "editorial": {
+      "eyebrow": "Mjeshtëri",
+      "headline": "Nga floristë. Jo nga linja e prodhimit.",
+      "text": "Çdo buqetë lidhet me dorë nga një floristeri vjeneze për porosinë tuaj dhe dorëzohet drejtpërdrejt me korrier – pa kaluar nga ndonjë magazinë.",
+      "cta": {
+        "label": "Si punojmë"
+      },
+      "imageAlt": "Një korrier dorëzon te dera e një ndërtese të vjetër vjeneze një buqetë shumëngjyrëshe me trëndafila, dalie dhe ranunkula"
+    },
+    "extras": {
+      "headline": "Plotësojeni surprizën tuaj.",
+      "subheadline": "Shtesa të vogla që e bëjnë momentin më të madh."
+    },
+    "subscription": {
+      "headline": "Më shumë lule në përditshmëri.",
+      "text": "Buqeta të freskëta stinore – çdo javë, çdo dy javë ose çdo muaj. Për shtëpinë, zyrën, recepsionin ose gastronominë.",
+      "cta": {
+        "label": "Zbuloni abonimin për lule"
+      }
+    },
+    "reviews": {
+      "headline": "Momente që mbërritën.",
+      "subheadline": "Çfarë thonë klientët për porosinë e tyre."
+    },
+    "gallery": {
+      "headline": "Lule për momente të veçanta.",
+      "images": [
+        {
+          "alt": "Buqetë shumëngjyrëshe trëndafilash në të kuqe, rozë, krem dhe kajsi në një vazo të bardhë"
+        },
+        {
+          "alt": "Buqetë me trëndafila blu të ndritshëm në një vazo të bardhë"
+        },
+        {
+          "alt": "Buqetë në tone të forta pink me gerbera në një vazo pranë dritares"
+        },
+        {
+          "alt": "Buqetë ekzotike me lule zog i parajsës, zambakë dhe gerbera"
+        },
+        {
+          "alt": "Kuti e kuqe lulesh në formë zemre me trëndafila mbi një komo"
+        },
+        {
+          "alt": "Buqetë me trëndafila në pastel dhe pink në mbështjellëse rozë"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Mirë ta dini"
+    },
+    "newsletter": {
+      "headline": "Pak më shumë lule në kutinë tuaj postare.",
+      "text": "Risi, koleksione stinore dhe aksione të veçanta.",
+      "placeholder": "Adresa juaj e e-mail-it",
+      "button": "Regjistrohuni",
+      "note": "Mund të çregjistroheni në çdo kohë. Informacion për mbrojtjen e të dhënave gjeni te deklarata e privatësisë."
+    }
+  },
+  "settings": {
+    "claim": "Lule që thonë më shumë.",
+    "seo": {
+      "defaultTitle": "Blumora – dërgesë lulesh në Vjenë",
+      "defaultDescription": "Dërgesë lulesh në gjithë Vjenën: buqeta të lidhura rishtas në të 23 rrethet. Po atë ditë deri në 18:30 (të dielën deri në 17:45), ekspres brenda 1–2 orësh pa pagesë shtesë."
+    },
+    "announcement": {
+      "messages": [
+        "Dërgesë në gjithë Vjenën, në të 23 rrethet",
+        "Ekspres brenda 1–2 orësh – pa pagesë shtesë",
+        "Po atë ditë deri në 18:30, të dielën deri në 17:45",
+        "Të lidhura rishtas, të dërguara me korrier"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Të lidhura rishtas",
+        "text": "Të lidhura me dorë për porosinë tuaj"
+      },
+      {
+        "title": "Dërgesë me korrier",
+        "text": "Në gjithë Vjenën – në të 23 rrethet"
+      },
+      {
+        "title": "Data e dëshiruar",
+        "text": "Ju e caktoni ditën"
+      },
+      {
+        "title": "Ekspres brenda 1–2 orësh",
+        "text": "Pa pagesë shtesë, po atë ditë deri në 18:30"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Porosia u mor",
+        "description": "E kemi marrë porosinë tuaj."
+      },
+      "paid": {
+        "label": "Pagesa u konfirmua",
+        "description": "Pagesa ka mbërritur te ne."
+      },
+      "preparing": {
+        "label": "Në përgatitje",
+        "description": "Po zgjidhen lulet për buqetën tuaj."
+      },
+      "arranging": {
+        "label": "Buqeta po lidhet",
+        "description": "Buqeta juaj po lidhet me dorë."
+      },
+      "ready": {
+        "label": "Gati për dërgesë",
+        "description": "Buqeta është gati dhe do të merret nga korrieri."
+      },
+      "in_transit": {
+        "label": "Në rrugë",
+        "description": "Buqeta juaj është në rrugë."
+      },
+      "delivered": {
+        "label": "U dorëzua",
+        "description": "Lulet kanë mbërritur."
+      },
+      "undeliverable": {
+        "label": "Nuk mund të dorëzohej",
+        "description": "Nuk mundëm ta dorëzonim dhe do t'ju kontaktojmë."
+      },
+      "cancelled": {
+        "label": "U anulua",
+        "description": "Porosia u anulua."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Kartë krediti",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Transfertë bankare online (eps)"
+    },
+    "headerCta": "Dërgoni lule",
+    "address": {
+      "city": "Vjenë",
+      "country": "Austri"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Vjena Zona 1",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Vjena Zona 2",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Vjena Zona 3",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Rrethinat e Vjenës (Austria e Poshtme)",
+      "note": "Dërgesa në rrethinat e Vjenës bëhet të martën, të enjten dhe të shtunën.",
+      "windows": {
+        "day": "9:00–18:00"
+      }
+    }
+  }
+}

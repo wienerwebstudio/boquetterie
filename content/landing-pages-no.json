@@ -1,0 +1,201 @@
+[
+  {
+    "slug": "send-blomster-til-wien",
+    "title": "Send blomster til Wien",
+    "headline": "Send blomster til Wien – bundet for hånd og levert med bud.",
+    "intro": "Blomsterlevering i Wien til alle 23 bydeler, sju dager i uken. Velg bukett, leveringsdato og et tidsvindu på én time – vi tar oss av resten.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "Slik sender du blomster til Wien",
+        "paragraphs": [
+          "Vil du sende blomster til Wien, velger du først buketten og størrelsen, deretter leveringsdato i kalenderen. Så skriver du inn mottakerens adresse og betaler. Du får en bekreftelse per e-post med en lenke der du kan følge statusen på bestillingen.",
+          "Vi leverer til alle 23 bydeler i Wien, mandag til søndag. I kassen velger du et tidsvindu på én time mellom kl. 9:00 og 22:00, slik at blomstene kommer når noen er hjemme."
+        ]
+      },
+      {
+        "heading": "Bundet for hver bestilling",
+        "paragraphs": [
+          "Hver bukett bindes for hånd for din bestilling av en blomsterhandler i Wien som vi har et fast samarbeid med. Et bud henter den hos blomsterhandleren og kjører rett til mottakeren.",
+          "Buketter fås fra 36,90 €. Leveringskostnaden avhenger av bydelen og vises så snart du har skrevet inn postnummeret."
+        ]
+      },
+      {
+        "heading": "Trenger du blomstene i dag?",
+        "paragraphs": [
+          "Levering samme dag i Wien er mulig ved bestilling innen kl. 18:30 (søndag innen kl. 17:45), så lenge det fortsatt er et ledig tidsvindu for adressen. Velger du dagens tidligste tidsvindu, merket «Express», kommer buketten på 1–2 timer – uten tillegg i prisen."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Send blomster til Wien – blomsterlevering i Wien",
+      "description": "Send blomster til Wien: håndbundne buketter levert med bud til alle 23 bydeler, sju dager i uken, med tidsvinduer på én time fra kl. 9 til 22."
+    }
+  },
+  {
+    "slug": "send-blomster-fra-norge-til-wien",
+    "title": "Send blomster fra Norge til Wien",
+    "headline": "Send blomster fra Norge til Wien.",
+    "intro": "Bor du i Oslo, Bergen eller et annet sted i Norge og har noen du er glad i i Wien? Bestill på nett, betal med kortet du pleier å bruke, og få en håndbundet bukett levert på døren.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": { "occasions": ["geburtstag", "liebe", "danke", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Bestilling fra Norge",
+        "paragraphs": [
+          "Nettbutikken, kassen og e-postene om bestillingen er på norsk. Prisene er i euro, og du kan betale med kredittkort eller debetkort, Apple Pay, Google Pay, Klarna eller eps – også norske og andre internasjonale kort fungerer.",
+          "Alt du trenger er mottakerens adresse i Wien. Skriv inn postnummeret (postnumrene i Wien går fra 1010 til 1230), så ser du med en gang hvilke leveringsdager og tidsvinduer som er tilgjengelige, og hva leveringen til den bydelen koster."
+        ]
+      },
+      {
+        "heading": "Samme tid i Oslo og Wien",
+        "paragraphs": [
+          "Norge og Østerrike ligger i samme tidssone, så klokken i Wien er den samme som hjemme. Alle tider på nettsiden er likevel oppgitt i Wien-tid. Velg ønsket dato i kalenderen og et tidsvindu på én time mellom kl. 9:00 og 22:00.",
+          "Skal blomstene fram i dag? Bestiller du innen kl. 18:30 (søndag innen kl. 17:45), er levering samme dag mulig så lenge et tidsvindu er ledig."
+        ]
+      },
+      {
+        "heading": "Fra en blomsterhandler i Wien, ikke en pakke",
+        "paragraphs": [
+          "Buketten bindes for hånd i Wien av en lokal samarbeidspartner og bringes på døren med bud – den reiser ikke over landegrensene i en eske. Er ingen hjemme, prøver budet å levere den til en nabo, og du holdes oppdatert per e-post."
+        ]
+      }
+    ],
+    "faqIds": ["f-payment", "f-date", "f-window", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Send blomster fra Norge til Wien, Østerrike",
+      "description": "Send blomster fra Norge til Wien: bestill på norsk, betal med kort, Apple Pay eller Google Pay. Bundet for hånd i Wien og levert med bud."
+    }
+  },
+  {
+    "slug": "blomsterbutikk-i-wien",
+    "title": "Blomsterbutikk i Wien",
+    "headline": "Blomsterbutikk i Wien – floristhåndverk du bestiller på nett.",
+    "intro": "Blumora er en nettbasert blomsterbutikk i Wien. Buketten bindes for hånd av en blomsterhandler i Wien og leveres med bud i hele byen.",
+    "image": "/images/editorial/florist.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Floristhåndverk, bestilt på nett",
+        "paragraphs": [
+          "Blumora samarbeider fast med en blomsterhandler i Wien. Hver bukett bindes for hånd for bestillingen den hører til – den tas ikke ferdig fra en hylle. Blomster er naturprodukter, så sorter og fargenyanser kan variere litt etter sesong, mens stilen og fargeuttrykket er det samme.",
+          "Har du spesielle ønsker til floristen, for eksempel et oddetall stilker, kan du skrive det i merknadsfeltet når du bestiller. Vi sender ønsket videre, og floristen tar hensyn til det så langt det er mulig."
+        ]
+      },
+      {
+        "heading": "Levert i hele byen",
+        "paragraphs": [
+          "Et bud henter den ferdige buketten og leverer den til alle 23 bydeler i Wien, fra Innere Stadt til Liesing, mandag til søndag. Du velger dato i kalenderen og et tidsvindu på én time mellom kl. 9:00 og 22:00.",
+          "Bestilt innen kl. 18:30 (søndag innen kl. 17:45)? Da er levering samme dag mulig, så lenge et tidsvindu er ledig for adressen."
+        ]
+      },
+      {
+        "heading": "Buketter, planter og begravelsesblomster",
+        "paragraphs": [
+          "I tillegg til buketter til bursdag, kjærlighet og takk finner du potteplanter som orkideer og anthurium, blomsterbokser samt sørgebuketter og sørgekranser. Buketter fås fra 36,90 €."
+        ]
+      }
+    ],
+    "faqIds": ["f-fresh", "f-photo", "f-where", "f-window"],
+    "seo": {
+      "title": "Blomsterbutikk i Wien – buketter bundet for hånd",
+      "description": "Blomsterbutikk i Wien på nett: buketter bundet for hånd av en blomsterhandler i Wien, levert med bud til alle 23 bydeler, sju dager i uken."
+    }
+  },
+  {
+    "slug": "blomster-levert-i-dag-wien",
+    "title": "Blomster levert i dag i Wien",
+    "headline": "Blomster levert i dag i Wien – samme dag og ekspress.",
+    "intro": "Bestill mandag til lørdag innen kl. 18:30 eller søndag innen kl. 17:45, så kan buketten komme fram samme dag – med ekspress på 1–2 timer uten tillegg i prisen.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Bestillingsfrister for levering samme dag",
+        "paragraphs": [
+          "Blomsterlevering samme dag i Wien er mulig ved bestilling mandag til lørdag innen kl. 18:30 og søndag innen kl. 17:45, så lenge et tidsvindu fortsatt er ledig for adressen. Tidsvinduet du velger, slutter minst to timer etter bestillingen, slik at floristen rekker å binde buketten og budet rekker å levere den.",
+          "Jo senere du bestiller, desto færre tidsvinduer gjenstår. Skriv inn postnummeret, så ser du hvilke tidsvinduer som fortsatt er mulige i dag – før du betaler."
+        ]
+      },
+      {
+        "heading": "Ekspress på 1–2 timer",
+        "paragraphs": [
+          "Haster det? Velg dagens tidligste tidsvindu i kassen – det er merket med «Express». Da kommer buketten på 1–2 timer, uten tillegg i prisen. Det forutsetter at du bestiller innenfor fristene ovenfor og at det fortsatt er et ledig tidsvindu for adressen."
+        ]
+      },
+      {
+        "heading": "Fortsatt bundet for hånd",
+        "paragraphs": [
+          "Hver bukett bindes for din bestilling av en blomsterhandler i Wien, også når det haster. Et bud henter den og kjører rett til mottakeren.",
+          "Ikke flere ledige tidsvinduer i dag? Velg i morgen – vi leverer alle sju dager i uken. Alle tider er oppgitt i Wien-tid."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-express", "f-where", "f-window"],
+    "seo": {
+      "title": "Blomster levert i dag i Wien – samme dag og ekspress",
+      "description": "Blomster levert i dag i Wien: bestill innen kl. 18:30 (søndag 17:45). Ekspress på 1–2 timer uten tillegg. Levering til alle 23 bydeler."
+    }
+  },
+  {
+    "slug": "send-roser-i-wien",
+    "title": "Send roser i Wien",
+    "headline": "Send roser i Wien – røde, rosa, hvite eller blå.",
+    "intro": "Rosebuketter i flere farger og størrelser, bundet for hånd og levert med bud til ønsket dato og tidsvindu i hele Wien.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Roser for hver anledning",
+        "paragraphs": [
+          "Mange av rosebukettene våre fås i flere størrelser, noen i hele seks – fra den lille gesten til en stor armfull roser.",
+          "Røde roser er den klassiske kjærlighetserklæringen. Rosa og krem virker mykere og passer til bursdag eller som takk, hvite roser er rolige og elegante, og blå eller svarte roser er for dem som liker noe utenom det vanlige."
+        ]
+      },
+      {
+        "heading": "Dato, tidsvindu og levering",
+        "paragraphs": [
+          "Velg leveringsdato i kalenderen og et tidsvindu på én time mellom kl. 9:00 og 22:00 – til frokost eller til middag. Vi leverer roser til alle 23 bydeler i Wien, mandag til søndag.",
+          "Rosene bindes for hånd av en blomsterhandler i Wien og bringes rett til mottakeren med bud. Leveringskostnaden avhenger av bydelen og vises når du skriver inn postnummeret.",
+          "Ønsker du et oddetall stilker? Skriv det i merknadsfeltet til floristen når du bestiller, så blir ønsket sendt videre."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-anon", "f-photo"],
+    "seo": {
+      "title": "Send roser i Wien – rosebuketter med levering",
+      "description": "Send roser i Wien: røde, rosa, hvite og blå rosebuketter, bundet for hånd og levert med bud til alle 23 bydeler på ønsket dato."
+    }
+  },
+  {
+    "slug": "begravelsesblomster-wien",
+    "title": "Begravelsesblomster i Wien",
+    "headline": "Begravelsesblomster og sørgekranser i Wien.",
+    "intro": "Sørgebuketter og sørgekranser, bundet for hånd av en blomsterhandler i Wien og levert med bud på dagen du velger.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "category": "trauer", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Sørgebukett eller krans",
+        "paragraphs": [
+          "Sørgebukettene ligger på granbar og settes ved kisten eller graven. Kranser er et tradisjonelt minnetegn ved begravelser i Østerrike. Hvite blomster virker stille og rolige, rødt står for kjærlighet, og varme toner eller pastell kan gjenspeile personen du minnes.",
+          "Ønsker du et bånd med en kort tekst på kransen, for eksempel en siste hilsen og navnene deres? Det er mulig på forespørsel – skriv teksten i merknadsfeltet til floristen når du bestiller."
+        ]
+      },
+      {
+        "heading": "Tidspunkt og leveringsadresse",
+        "paragraphs": [
+          "Velg leveringsdato og et tidsvindu på én time god tid før seremonien begynner, og oppgi den fullstendige adressen i Wien. Skriv avdødes navn og tidspunktet for seremonien i beskjeden til budet, slik at blomstene kommer til riktig sted.",
+          "Vi leverer til alle 23 bydeler i Wien, sju dager i uken. Alle tider på nettsiden er oppgitt i Wien-tid."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-photo", "f-change"],
+    "seo": {
+      "title": "Begravelsesblomster i Wien – sørgekranser og buketter",
+      "description": "Begravelsesblomster i Wien: sørgebuketter og sørgekranser, bundet for hånd og levert med bud til alle 23 bydeler. Bånd med tekst på forespørsel."
+    }
+  }
+]

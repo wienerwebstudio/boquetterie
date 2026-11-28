@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Rosa roser, cerise gerbera og hvite liljer",
+      "shortDescription": "En lys, luftig bukett i rosa og hvitt som gir godt humør i ethvert rom.",
+      "description": "Rosé Dream kombinerer rosa roser og cerise gerbera med hvite liljer, fint brudeslør og friskt grønt. Løst bundet og lys i uttrykket passer den til bursdag, som takk eller bare fordi.",
+      "flowers": [
+        "Roser",
+        "Gerbera",
+        "Liljer",
+        "Brudeslør"
+      ],
+      "care": [
+        "Gi friskt vann i vasen hver dag.",
+        "Snitt stilkene på nytt ved behov.",
+        "Fjern visne blomster jevnlig."
+      ],
+      "seo": {
+        "title": "Rosé Dream – bukett i rosa og hvitt",
+        "description": "Rosé Dream: rosa roser, cerise gerbera og hvite liljer, løst bundet. En lys bukett til bursdag og takk – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Bukett av rosa roser, cerise gerbera og hvite liljer i en glassvase på en trekommode"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Gul bukett",
+      "tagline": "Gule gerbera, roser og brudeslør",
+      "shortDescription": "En solfylt bukett i gult og hvitt, bundet med gul sløyfe.",
+      "description": "Lysende gule gerbera møter hvite og gule roser, brudeslør og friskt grønt. Pakket i lys mansjett med gul sløyfe – en bukett til bursdag, som gratulasjon, takk eller god bedring-hilsen.",
+      "flowers": [
+        "Gerbera",
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Ikke sett buketten i stekende sol."
+      ],
+      "seo": {
+        "title": "Gul bukett – gerbera og roser i gult",
+        "description": "Gule gerbera, hvite og gule roser med brudeslør og gul sløyfe. En lys hilsen til bursdag eller god bedring – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Bukett av gule gerbera, hvite og gule roser i lys mansjett med gul sløyfe"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Hvit bukett",
+      "tagline": "Lyse roser, gerbera og liljer",
+      "shortDescription": "En lys, rolig bukett i hvitt og krem med fine rosa innslag.",
+      "description": "Den hvite buketten forener lyse roser, gerbera og liljer med brudeslør til en enkel, tidløs bukett. Fine innslag i rosa og aprikos løsner opp uttrykket. Passer til bryllupsdag eller årsdag, som takk eller en stilfull hilsen.",
+      "flowers": [
+        "Roser",
+        "Gerbera",
+        "Liljer",
+        "Brudeslør"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Fjern pollen fra liljene forsiktig ved behov."
+      ],
+      "seo": {
+        "title": "Hvit bukett – bukett i hvitt og krem",
+        "description": "Lyse roser, gerbera og liljer med brudeslør: en enkel bukett til årsdag, bryllupsdag eller takk – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Lys bukett av kremfargede roser, rosa gerbera, liljer og brudeslør i hvit mansjett"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Blå og hvite roser i blå mansjett",
+      "shortDescription": "Blå og hvite roser i lyseblå mansjett – en bukett som vekker oppmerksomhet.",
+      "description": "Blue Bouquet kombinerer blå og hvite roser med brudeslør, en hvit lilje og friskt grønt. Den lyseblå mansjetten tar opp fargen i blomstene. En uvanlig gave til bursdag, årsdag eller til noen som liker det spesielle.",
+      "flowers": [
+        "Roser",
+        "Liljer",
+        "Brudeslør"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – blå og hvite roser",
+        "description": "Blå og hvite roser med brudeslør i lyseblå mansjett. En uvanlig rosebukett til bursdag eller årsdag – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Bukett av blå og hvite roser med brudeslør i lyseblå mansjett på en trekommode"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Regnbueroser i mange farger",
+      "shortDescription": "En bukett av regnbueroser der hver blomst lyser i flere farger.",
+      "description": "Farbensinfonie består av regnbueroser: Hver blomst viser flere farger side om side, fra rødt og oransje via gult og grønt til blått og lilla. Tett bundet ser buketten ut som en fargerik ball. En glad overraskelse til bursdag eller fest.",
+      "flowers": [
+        "Regnbueroser"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – regnbueroser",
+        "description": "Regnbueroser der hver blomst lyser i flere farger. En glad rosebukett til bursdagen – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Farbensinfonie liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Farbensinfonie middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Farbensinfonie stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Tett bukett av regnbueroser i en kremfarget vase",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Regnbueroser på nært hold, hver blomst i flere farger"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Paradisfugl, liljer og gerbera i oransje og gult",
+      "shortDescription": "En eksotisk bukett i oransje og gult med paradisfuglblomster som blikkfang.",
+      "description": "Sonnenzauber kombinerer iøynefallende paradisfuglblomster med hvite liljer, gule gerbera og friskt grønt. De varme oransje og gule tonene gir buketten en levende, sommerlig utstråling.",
+      "flowers": [
+        "Strelitsia (paradisfuglblomst)",
+        "Liljer",
+        "Gerbera",
+        "Brudeslør"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Hold vasen ren og skift vannet jevnlig.",
+        "Ikke sett buketten i stekende sol."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – paradisfugl og gerbera",
+        "description": "Paradisfuglblomster, liljer og gule gerbera i varmt oransje og gult. En eksotisk bukett som blikkfang – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Eksotisk bukett av paradisfuglblomster, hvite liljer og gule gerbera i klar folie",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Buketten sett ovenfra: paradisfuglblomst, lilje og gule gerbera"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Blomster i cerise og rosa med gerbera og liljer",
+      "shortDescription": "En rund, leken bukett i cerise og rosa med gule innslag.",
+      "description": "Pink Bouquet samler blomster i cerise og rosa, blant annet liljer og gerbera, til en rund, leken bukett. Gule gerbera gir friske innslag, og den rosa mansjetten fullfører helheten. Fin til bursdag, årsdag, morsdag eller bare fordi.",
+      "flowers": [
+        "Liljer",
+        "Gerbera"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Fjern visne blomster jevnlig."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – bukett i cerise og rosa",
+        "description": "En rund bukett i cerise og rosa med liljer og gerbera. Til bursdag, morsdag eller bare fordi – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Rund bukett i cerise og rosa med gule gerbera i rosa mansjett",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Bukett med rosa liljer, gule gerbera og cerise blomster i rosa mansjett med sløyfe"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Roser i oransje og aprikos",
+      "shortDescription": "Roser i oransje og aprikos – en varm bukett som en solnedgang.",
+      "description": "Orange Bouquet består av roser i oransje og aprikos, supplert med fint grønt og pakket i lys mansjett. Varm og glad i uttrykket passer den til bursdag, som takk eller for å lyse opp dagen til noen.",
+      "flowers": [
+        "Roser"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – roser i oransje",
+        "description": "Roser i oransje og aprikos i lys mansjett. En varm rosebukett til bursdag eller som takk – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Orange Bouquet liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Orange Bouquet middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Orange Bouquet stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Bukett av oransje og aprikosfargede roser i lys mansjett på en trekommode"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Dyprøde roser i mørk mansjett",
+      "shortDescription": "En frodig bukett av dyprøde roser med rød satengsløyfe.",
+      "description": "Red Rose Bouquet er en tett bundet bukett av dyprøde roser i mørk mansjett, holdt sammen av en rød satengsløyfe. Den klassiske kjærlighetserklæringen til valentinsdagen, årsdagen eller et frieri.",
+      "flowers": [
+        "Roser"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – røde roser",
+        "description": "Dyprøde roser i mørk mansjett med rød satengsløyfe. Den klassiske rosebuketten til valentinsdag og årsdag – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Red Rose Bouquet liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Red Rose Bouquet middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Red Rose Bouquet stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Bukett av dyprøde roser i mørkegrå mansjett med rød satengsløyfe",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Liggende bukett av røde roser i svart-hvit mansjett ved siden av stearinlys"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Roser og gerbera i rosa, pastell og syrin",
+      "shortDescription": "En myk, romantisk bukett i rosa og pastell.",
+      "description": "Rosa Bouquet kombinerer roser i rosa og pastell med gerbera og syrinfargede blomster. Pakket i hvit mansjett med rosa sløyfe virker den lett og kjærlig. Fin til bursdag, morsdag, fødsel eller som hilsen.",
+      "flowers": [
+        "Roser",
+        "Gerbera"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – roser i rosa og pastell",
+        "description": "Roser og gerbera i rosa, pastell og syrin i hvit mansjett. Til bursdag, morsdag eller fødsel – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Bukett av rosa roser, gerbera og syrinfargede blomster i hvit mansjett med rosa sløyfe"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Svarte roser i mørk mansjett",
+      "shortDescription": "Svarte roser i mørk mansjett – mystisk og uvanlig.",
+      "description": "Blackroses er en bukett av svarte roser, pakket i en mørk, gjennomsiktig mansjett. Et uvanlig statement for dem som setter pris på det spesielle, for eksempel til bursdag eller årsdag.",
+      "flowers": [
+        "Roser"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Blackroses – svarte roser",
+        "description": "Svarte roser i mørk mansjett: en uvanlig rosebukett for dem som liker det spesielle – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Blackroses liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Blackroses middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Blackroses stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Bukett av svarte roser i svart mansjett i en glassvase",
+        "/images/products/sortiment/blackroses-2.jpg": "Svarte roser uten mansjett i en glassvase foran et vindu"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Blå roser med brudeslør",
+      "shortDescription": "Lysende blå roser med brudeslør – sjeldne og et ekte blikkfang.",
+      "description": "Blaue Liebe er en bukett av lysende blå roser, løst opp med fint brudeslør og pakket i en blå mansjett. En spesiell gave til bursdag, årsdag eller som tegn på dyp samhørighet.",
+      "flowers": [
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – blå roser",
+        "description": "Lysende blå roser med brudeslør i blå mansjett. En sjelden rosebukett til spesielle mennesker – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Blaue Liebe liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Blaue Liebe middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Blaue Liebe stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Bukett av blå roser med brudeslør i blå mansjett i en hvit vase",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Blå roser med brudeslør i blå mansjett, sett forfra",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Liggende bukett av blå roser i blå mansjett på en trekommode"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Rosa roser med brudeslør",
+      "shortDescription": "Rosa roser i lys mansjett – kjærlig og elegant.",
+      "description": "Rosalie er en bukett av rosa roser, løst opp med brudeslør og pakket i en lyserosa mansjett. Feminin og rolig i uttrykket passer den til morsdag, bursdag, årsdag eller som takk.",
+      "flowers": [
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Rosalie – rosa roser med brudeslør",
+        "description": "Rosa roser med brudeslør i lyserosa mansjett. Til morsdag, bursdag eller som takk – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Rosalie liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Rosalie middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Rosalie stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Bukett av rosa roser med brudeslør i lyserosa mansjett i en hvit vase",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie i rosa mansjett i en enkel hvit vase",
+        "/images/products/sortiment/rosalie-3.jpg": "Rosa roser med brudeslør i en riflet hvit vase",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie liggende, sett ovenfra med de rosa rosene og brudesløret"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Rød og hvit miks",
+      "tagline": "Røde og hvite roser",
+      "shortDescription": "Røde og hvite roser i en festlig bukett.",
+      "description": "Rød og hvit miks forener røde og hvite roser i hvit mansjett, avhengig av størrelse løst opp med brudeslør. Lidenskap møter ømhet: en bukett til valentinsdag, årsdag, bryllupsdag eller som en elegant gave.",
+      "flowers": [
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Rød og hvit miks – røde og hvite roser",
+        "description": "Røde og hvite roser i festlig mansjett. Til valentinsdag, årsdag eller bryllupsdag, i seks størrelser – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Rød og hvit miks liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Rød og hvit miks middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Rød og hvit miks stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Bukett av røde og hvite roser med brudeslør i hvit mansjett, ved siden av roseblader",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Røde og hvite roser tett bundet i hvit mansjett",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Rød og hvit rosebukett i hvit mansjett på en trekommode",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Liggende bukett av røde og hvite roser, sett ovenfra"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Tulipanbukett",
+      "tagline": "Tulipaner i én farge eller blandet",
+      "shortDescription": "En enkel bukett av tulipaner, ensfarget eller fargerikt blandet.",
+      "description": "Tulipaner bringer vårstemning inn i huset med sine klare farger og slanke form. Buketten bindes kun av tulipaner, enten i én farge eller som fargerik miks. Fås i rødt, gult, lilla, rosa, oransje, hvitt og miks.",
+      "flowers": [
+        "Tulipaner"
+      ],
+      "care": [
+        "Snitt stilkene rett og sett dem i kaldt vann.",
+        "Lite vann holder, men fyll på jevnlig.",
+        "Tulipaner vokser videre i vasen, snitt dem på nytt ved behov."
+      ],
+      "seo": {
+        "title": "Tulipanbukett – tulipaner i mange farger",
+        "description": "En bukett av tulipaner i rødt, gult, lilla, rosa, oransje, hvitt eller blandet. Vårstemning hjemme – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rød",
+        "gelb": "Gul",
+        "lila": "Lilla",
+        "rosa": "Rosa",
+        "orange": "Oransje",
+        "weiss": "Hvit",
+        "mix": "Fargerik miks"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Bukett av gule tulipaner i en glassvase",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Lilla tulipaner i kraftpapir i en glassvase",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Røde tulipaner i en beige vase",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Oransje tulipaner i en glassvase",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Rosa tulipaner i en glassvase på en linduk",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Fargerik tulipanmiks i rødt, gult, rosa, oransje og lilla i en beige vase",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Hvite tulipaner i en hvit vase"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Røde roser med brudeslør",
+      "shortDescription": "En uttrykksfull rosebukett i dyp rødt for store følelser.",
+      "description": "Red Passion samler røde roser i en tett, rund bukett, innrammet av brudeslør og en mørk mansjett. Fås i seks størrelser – for romantiske gester og øyeblikk som skal huskes.",
+      "flowers": [
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Snitt stilkene på nytt.",
+        "Gi friskt vann hver dag.",
+        "Beskytt mot direkte sol."
+      ],
+      "seo": {
+        "title": "Red Passion – rød rosebukett",
+        "description": "Røde roser med brudeslør i mørk mansjett, i seks størrelser. En rosebukett for store følelser – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Red Passion liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Red Passion middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Red Passion stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Liggende bukett av mørkerøde roser med brudeslør i svart og gull mansjett",
+        "/images/products/sortiment/red-passion-2.jpg": "Stor bukett av røde roser med brudeslør i mørk mansjett i en hvit vase",
+        "/images/products/sortiment/red-passion-3.jpg": "Svært stor, rund bukett av røde roser med en krans av brudeslør i mørk mansjett"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Tett bundne røde roser",
+      "shortDescription": "Tett bundne røde roser i mørk mansjett – tidløst og fullt av følelse.",
+      "description": "Klassiker der Liebe består av røde roser, tett bundet i en rund form og pakket i mørk mansjett med svart sløyfe. Rosebuketten til valentinsdag, årsdag, frieri eller enhver kjærlighetserklæring.",
+      "flowers": [
+        "Roser"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – røde roser",
+        "description": "Tett bundne røde roser i mørk mansjett. Den klassiske rosebuketten til valentinsdag, årsdag eller frieri – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Klassiker der Liebe liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Klassiker der Liebe middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Klassiker der Liebe stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Rund bukett av tett bundne røde roser i svart mansjett med sløyfe",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Røde roser i kuleform i mørk mansjett, sett forfra"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Røde roser med brudeslør",
+      "shortDescription": "En frodig rosebukett i seks størrelser.",
+      "description": "Königin der Herzen kombinerer røde roser med fint brudeslør i en mørk, gjennomsiktig mansjett. Fås i seks størrelser – fra den lille gesten til den store opptredenen.",
+      "flowers": [
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Sett buketten kjølig.",
+        "Fjern visne blomster i tide.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – frodig rosebukett",
+        "description": "Røde roser med brudeslør, i seks størrelser. En frodig rosebukett for store øyeblikk – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Königin der Herzen liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Königin der Herzen middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Königin der Herzen stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Bukett av røde roser med brudeslør i mørk mansjett i en hvit vase",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Stor bukett av røde roser og brudeslør i svart mansjett",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Røde roser med brudeslør i mørk mansjett i en svart potte",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Røde roser med brudeslør i stjerneformet mørk mansjett, sett ovenfra"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbera, roser og liljer i varme toner",
+      "shortDescription": "En varm bukett i oransje, rosa og gult.",
+      "description": "Herbstzauber kombinerer gerbera, roser og liljer i oransje, rosa og gule toner med friskt grønt. Løst bundet bringer den varme farger inn i huset, nettopp når dagene blir kortere.",
+      "flowers": [
+        "Gerbera",
+        "Roser",
+        "Liljer"
+      ],
+      "care": [
+        "Ikke sett buketten ved siden av frukt.",
+        "Fyll på vann jevnlig.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Herbstzauber – bukett i varme toner",
+        "description": "Gerbera, roser og liljer i oransje, rosa og gult. En varm høstbukett til bursdag eller som takk – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Bukett av oransje gerbera, roser i aprikos og rosa og liljer i en glassvase"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Røde roser, gerbera og grønne innslag",
+      "shortDescription": "En livlig bukett i rødt og oransje med friske grønne innslag.",
+      "description": "Blütenfreude kombinerer røde roser og gerbera i rødt og oransje med grønne pomponblomster og eukalyptus. Kraftig i fargene, men likevel rund i formen – fin til bursdag, som takk eller bare fordi.",
+      "flowers": [
+        "Roser",
+        "Gerbera"
+      ],
+      "care": [
+        "Gi friskt vann i vasen hver dag.",
+        "Snitt stilkene på nytt ved behov.",
+        "Fjern visne blomster jevnlig."
+      ],
+      "seo": {
+        "title": "Blütenfreude – roser og gerbera i rødt",
+        "description": "Røde roser, gerbera i rødt og oransje og friske grønne innslag. En livlig bukett til bursdagen – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Bukett av røde roser, røde og oransje gerbera og grønne pomponblomster i en glassvase",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude i en hvit vase på en trekommode"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Rosa roser, liljer og brudeslør",
+      "shortDescription": "Myke rosatoner med liljer – rolig, harmonisk og fin.",
+      "description": "Zartrosa Zauber kombinerer rosa roser med rosa liljer og brudeslør i en rosa mansjett. Buketten virker rolig og harmonisk, med et fint, romantisk preg.",
+      "flowers": [
+        "Roser",
+        "Liljer",
+        "Brudeslør"
+      ],
+      "care": [
+        "Fjern blader som når ned i vannet.",
+        "Sett buketten kjølig.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – roser og liljer i rosa",
+        "description": "Rosa roser, rosa liljer og brudeslør i lys mansjett. En rolig, romantisk bukett – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Bukett av rosa roser, rosa liljer og brudeslør i rosa mansjett i en hvit vase",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber i rosa mansjett med stor sløyfe"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbera, liljer og roser i oransje og gult",
+      "shortDescription": "Lysende oransje og gult for gode nyheter og solfylte anledninger.",
+      "description": "Strahlender Tag kombinerer oransje gerbera og liljer med gule roser, lyse nelliker og brudeslør. De kraftige fargene gir positiv energi – en bukett for gratulasjoner, suksesser og solfylte anledninger.",
+      "flowers": [
+        "Gerbera",
+        "Liljer",
+        "Roser",
+        "Nelliker",
+        "Brudeslør"
+      ],
+      "care": [
+        "Beskytt mot trekk.",
+        "Skift vannet jevnlig.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – bukett i oransje og gult",
+        "description": "Oransje gerbera og liljer med gule roser og brudeslør. En glad bukett for gratulasjoner – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Bukett av oransje gerbera, gule roser og brudeslør i hvit og gull mansjett",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Oransje gerbera, liljer og gul rose i en hvit vase",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Rund bukett av oransje gerbera og liljer, gule roser og lyse nelliker i en glassvase"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Roser i rosa, krem og aprikos",
+      "shortDescription": "En harmonisk rosebukett mellom klassisk skjønnhet og moderne stil.",
+      "description": "Rosentraum kombinerer roser i rosa, krem og aprikos med fiolette blomster, bærkvister og friskt grønt. Pakket i en gammelrosa mansjett virker buketten frodig og samtidig moderne.",
+      "flowers": [
+        "Roser"
+      ],
+      "care": [
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Hold vasen ren.",
+        "Bytt vannet jevnlig."
+      ],
+      "seo": {
+        "title": "Rosentraum – roser i rosa og krem",
+        "description": "Roser i rosa, krem og aprikos med fiolette innslag i gammelrosa mansjett. En harmonisk rosebukett – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Bundet bukett av roser i rosa, krem og aprikos i gammelrosa mansjett",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum i gammelrosa mansjett i en hvit vase",
+        "/images/products/sortiment/rosentraum-3.jpg": "Buketten sett ovenfra: roser, fiolette blomster og bærkvister"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Hvite roser med brudeslør",
+      "shortDescription": "Hvite roser med brudeslør – fin, romantisk og lys.",
+      "description": "Rosenkuss består av hvite til kremfargede roser, løst opp med fint brudeslør og pakket i en hvit mansjett. En bukett for hengivenhet, nærhet og små kjærlighetsbudskap.",
+      "flowers": [
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Ikke sett buketten for varmt.",
+        "Sjekk vannstanden hver dag.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Rosenkuss – hvite roser",
+        "description": "Hvite roser med brudeslør i hvit mansjett. En fin, romantisk rosebukett – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Rosenkuss liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Rosenkuss middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Rosenkuss stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Bukett av hvite roser med brudeslør i hvit mansjett i en hvit vase",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Stor bukett av hvite roser i hvit mansjett i en hvit vase",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Liggende bukett av hvite roser med brudeslør på en trekommode"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Roser i pastell, cerise og bordeaux",
+      "shortDescription": "Roser i pastell og cerise, elegant satt sammen.",
+      "description": "Rosenglanz forener roser i pastellrosa, krem, cerise og bordeaux med brudeslør i en rosa mansjett. Tidløs i utstrålingen, fås i seks størrelser.",
+      "flowers": [
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Snitt stilkene på nytt.",
+        "Unngå direkte sol.",
+        "Skift vannet jevnlig."
+      ],
+      "seo": {
+        "title": "Rosenglanz – roser i pastell og cerise",
+        "description": "Roser i pastellrosa, cerise og bordeaux med brudeslør, i seks størrelser. En elegant rosebukett – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten",
+          "detailAlt": "Rosenglanz liten i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "m": {
+          "label": "Middels",
+          "detailAlt": "Rosenglanz middels i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "l": {
+          "label": "Stor",
+          "detailAlt": "Rosenglanz stor i hånden, i bakgrunnen en gate i Wien med trikk"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Bukett av roser i pastellrosa, cerise og bordeaux i rosa mansjett i en glassvase",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Rund rosebukett med brudeslør i rosa mansjett, sett forfra",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Liggende bukett av pastellfargede og cerise roser på en trekommode"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Rosa roser, gerbera, liljer og nelliker",
+      "shortDescription": "En uttrykksfull bukett i rosa og cerise som taler uten ord.",
+      "description": "Pure Liebe kombinerer rosa roser med cerise gerbera, rosa liljer, nelliker og brudeslør. Intens i de rosa og cerise tonene, løst opp med lyse innslag – en bukett full av følelse.",
+      "flowers": [
+        "Roser",
+        "Gerbera",
+        "Liljer",
+        "Nelliker",
+        "Brudeslør"
+      ],
+      "care": [
+        "Gi friskt vann jevnlig.",
+        "Hold vasen ren.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Pure Liebe – bukett i rosa og cerise",
+        "description": "Rosa roser, cerise gerbera, liljer og nelliker med brudeslør. En bukett full av følelse – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Bukett av rosa roser, cerise gerbera og rosa liljer i en beige vase",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe med liljer, gerbera og nelliker i en beige vase",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Rund bukett av rosa roser, gerbera, nelliker og brudeslør i en glassvase"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Cerise gerbera, roser og fiolette innslag",
+      "shortDescription": "Kraftige cerisetoner satt sammen til en frisk, moderne bukett.",
+      "description": "Pink Harmony kombinerer cerise gerbera og roser med hvite og syrinfargede blomster, fiolette innslag og brudeslør. Livlig og frisk, med mye sjarm.",
+      "flowers": [
+        "Gerbera",
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Sett buketten kjølig.",
+        "Fjern visne blomster.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbera og roser i cerise",
+        "description": "Cerise gerbera og roser med syrinfargede og fiolette innslag. En frisk, moderne bukett – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Bukett av cerise gerbera, roser og syrinfargede blomster i en beige vase",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Rund bukett med cerise gerbera, roser og fiolette innslag"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Fargerik rosebukett i rosa, gult, aprikos og lilla",
+      "shortDescription": "En romslig, fargerik rosebukett for spesielle anledninger.",
+      "description": "Love Deluxe er en rosebukett i mange farger: rosa, krem, aprikos, gult og lilla, pakket i en rosa mansjett. For spesielle anledninger og store gester, fås i fem størrelser.",
+      "flowers": [
+        "Roser"
+      ],
+      "care": [
+        "Snitt stilkene på nytt.",
+        "Skift vannet hver dag.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Love Deluxe – fargerik rosebukett",
+        "description": "Roser i rosa, krem, aprikos, gult og lilla i rosa mansjett, i fem størrelser. For store gester – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Fargerik rosebukett i rosa, gult, aprikos og lilla i rosa mansjett i en hvit vase",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Stor fargerik rosebukett i rosa mansjett, sett forfra",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Liggende fargerik rosebukett i rosa mansjett på en trekommode"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Røde og grønne roser med liljer",
+      "shortDescription": "En følelsesladet bukett i rødt for å si «Jeg elsker deg».",
+      "description": "Liebeserklärung kombinerer røde roser med lysegrønne roser, hvite liljer, røde innslag og brudeslør. Kraftig, men likevel frisk i uttrykket – en bukett som gjør følelser synlige.",
+      "flowers": [
+        "Roser",
+        "Liljer",
+        "Brudeslør"
+      ],
+      "care": [
+        "Beskytt mot varme.",
+        "Bytt vannet jevnlig.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – røde roser og liljer",
+        "description": "Røde og lysegrønne roser med liljer og brudeslør. En bukett for å si «Jeg elsker deg» – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Bukett av røde og lysegrønne roser med liljer og brudeslør i en glassvase",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung i en hvit vase på en trekommode"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Roser og gerbera i rosa med oransje innslag",
+      "shortDescription": "Elegant og balansert – en bukett med stilfull tilbakeholdenhet.",
+      "description": "Klassische Schönheit kombinerer roser i gammelrosa og hvitt med cerise gerbera, små oransje blomster og brudeslør. Pakket i en mørk mansjett med gullkant virker buketten balansert og tidløs.",
+      "flowers": [
+        "Roser",
+        "Gerbera",
+        "Brudeslør"
+      ],
+      "care": [
+        "Ikke sett buketten rett ved siden av en varmeovn.",
+        "Snitt stilkene på skrå før du setter dem i vann.",
+        "Skift vannet jevnlig."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – roser og gerbera",
+        "description": "Roser i gammelrosa og hvitt med cerise gerbera i mørk mansjett. En balansert, tidløs bukett – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Bukett av gammelrosa roser og cerise gerbera i mørk mansjett med gullkant",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit i en hvit vase",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Roser, gerbera og brudeslør i mørk mansjett, sett ovenfra"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Rosa roser og cerise gerbera",
+      "shortDescription": "Leken og livlig: rosa roser møter cerise gerbera.",
+      "description": "Herzklopfen kombinerer lyserosa roser med cerise gerbera, små hvite og grønne blomster og fint lilla grønt. Rundt bundet og full av farge – en bukett med mye følelse.",
+      "flowers": [
+        "Roser",
+        "Gerbera"
+      ],
+      "care": [
+        "Gi friskt vann hver dag.",
+        "Snitt stilkene på skrå.",
+        "Sett buketten kjølig og uten direkte sol."
+      ],
+      "seo": {
+        "title": "Herzklopfen – rosa roser og gerbera",
+        "description": "Lyserosa roser og cerise gerbera, rundt bundet. En leken bukett full av følelse – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Rund bukett av lyserosa roser og cerise gerbera i en hvit vase",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen i en hvit vase, fra siden",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Bukett av rosa roser og cerise gerbera i en glassvase"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Fargerik miks med roser og gerbera",
+      "shortDescription": "En fargerik bukett som stråler av livsglede.",
+      "description": "Fröhlicher Blütenmix kombinerer røde roser, gerbera i gult, rosa og rødt og andre blomster i gult, oransje og fiolett. Pakket i en rød mansjett – ideell for å gi bort et smil.",
+      "flowers": [
+        "Roser",
+        "Gerbera"
+      ],
+      "care": [
+        "Sett buketten kjølig.",
+        "Skift vannet jevnlig.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – fargerik bukett",
+        "description": "Røde roser og gerbera i gult, rosa og rødt i rød mansjett. En fargerik bukett full av livsglede – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Fargerik bukett med gerbera og roser i rød mansjett på en trekommode",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix i rød mansjett i en hvit vase",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Røde roser, gule og rosa gerbera i rød mansjett, sett ovenfra"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Roser og gerbera i cerise med lilla innslag",
+      "shortDescription": "En livlig miks i cerise, aprikos og lilla.",
+      "description": "Farbtänzer kombinerer roser og sprayroser i cerise og aprikos med rosa gerbera, lilla blomster og lyse bær. Tett og livlig bundet – moderne og uttrykksfull.",
+      "flowers": [
+        "Roser",
+        "Gerbera"
+      ],
+      "care": [
+        "Fjern blader som når ned i vannet.",
+        "Hold vasen ren.",
+        "Snitt stilkene på skrå før du setter dem i vann."
+      ],
+      "seo": {
+        "title": "Farbtänzer – bukett i cerise og lilla",
+        "description": "Roser og gerbera i cerise og aprikos med lilla innslag. En livlig, moderne bukett – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Liggende bukett i cerise og lilla i lyserosa mansjett",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Rund bukett av cerise roser, gerbera og lilla blomster i en kremfarget vase",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer i en riflet vase, sett forfra"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Hjerteformet blomsterboks",
+      "tagline": "Roser i en rød hjerteboks",
+      "shortDescription": "Roser i en hjerteformet boks – en kjærlighetserklæring å sette fram.",
+      "description": "I den røde, hjerteformede boksen er roser i rødt, rosa og hvitt arrangert med andre blomster og brudeslør. En gave til årsdag, valentinsdag eller som en kjærlig overraskelse.",
+      "flowers": [
+        "Roser",
+        "Brudeslør"
+      ],
+      "care": [
+        "Fukt rosene lett.",
+        "Sett buketten kjølig.",
+        "Beskytt mot direkte sol."
+      ],
+      "seo": {
+        "title": "Hjerteformet blomsterboks – roser i hjerteboks",
+        "description": "Roser i rødt, rosa og hvitt i en rød hjerteboks. Til årsdag og valentinsdag – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Rød hjerteformet blomsterboks med roser i rødt, rosa og hvitt og brudeslør"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Klassisk blomsterboks",
+      "tagline": "Røde roser i rund boks",
+      "shortDescription": "Klassiske roser i en rund boks – enkel og uttrykksfull.",
+      "description": "Den klassiske blomsterboksen fyller en rund boks med tett plasserte roser. Minimalistisk og tidløs passer den til bursdag, som takk eller til spesielle øyeblikk. Fås i rødt og hvitt.",
+      "flowers": [
+        "Roser"
+      ],
+      "care": [
+        "Vann rosene lett og jevnlig.",
+        "Sett buketten kjølig.",
+        "Beskytt mot direkte sol."
+      ],
+      "seo": {
+        "title": "Klassisk blomsterboks – roser i boks",
+        "description": "Tett plasserte roser i en rund boks, fås i rødt og hvitt. En enkel gave – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Røde roser i en rund hvit boks med rosa og gullkant",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "To røde fløyelsbokser med røde roser på en hvit sokkel"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Rosa anthurium i potte",
+      "tagline": "Anthurium med rosa blomster",
+      "shortDescription": "En anthurium med lyserosa blomster – elegant og diskret.",
+      "description": "Den rosa anthuriumen bringer farge inn i rommet med sine fine blomster og blanke grønne blader, uten å virke påtrengende. Den passer like godt i stuen som på kontoret.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Sett planten lyst, uten direkte sol.",
+        "Vann jevnlig, unngå stående vann.",
+        "Spray bladene med vann innimellom."
+      ],
+      "seo": {
+        "title": "Rosa anthurium i potte – stueplante",
+        "description": "Anthurium med lyserosa blomster og blanke blader. En elegant stueplante som gave – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Rosa anthurium i en gammelrosa keramikkpotte på en trekommode",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anthurium med rosa blomster i en mauvefarget potte ved siden av stearinlys"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Rød anthurium i potte",
+      "tagline": "Anthurium med røde blomster",
+      "shortDescription": "En anthurium med lysende røde blomster og moderne utstråling.",
+      "description": "Røde anthurium gir kraftige fargeinnslag med sine blanke blomster. Som dekorativ stueplante eller gave holder den seg fin lenge med riktig stell.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Lyst sted uten direkte sol.",
+        "Hold jorden jevnt fuktig.",
+        "Unngå stående vann."
+      ],
+      "seo": {
+        "title": "Rød anthurium i potte – stueplante",
+        "description": "Anthurium med lysende røde blomster i potte. En dekorativ stueplante som gave – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Rød anthurium i en rød keramikkpotte på en trekommode"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "XXL rød anthurium i potte",
+      "tagline": "Stor anthurium med røde blomster",
+      "shortDescription": "En stor, frodig anthurium med mange røde blomster.",
+      "description": "Denne røde anthuriumen er over 80 cm høy og har mange røde blomster over tett, blankt løv. Et uttrykksfullt blikkfang for stuen eller kontoret.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Sett planten lyst, uten direkte sol.",
+        "Vann jevnlig, unngå stående vann.",
+        "Tørk støv av bladene innimellom."
+      ],
+      "seo": {
+        "title": "XXL rød anthurium i potte",
+        "description": "Stor anthurium med mange røde blomster i potte. Et blikkfang for stuen eller kontoret – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Stor anthurium med mange røde blomster i en rød potte ved siden av stearinlys"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelia i potte",
+      "tagline": "Bromelia med rød blomst",
+      "shortDescription": "En bromelia med kraftig rød blomst og tropisk preg.",
+      "description": "Bromeliaen gir livlige innslag med sin røde blomsterrosett og slanke grønne blader. En dekorativ stueplante for hjem eller arbeidsplass og en spesiell gave.",
+      "flowers": [
+        "Bromelia"
+      ],
+      "care": [
+        "Sett planten lyst, uten direkte sol.",
+        "Gi jevnlig vann i bladrosetten.",
+        "Hold jorden bare lett fuktig."
+      ],
+      "seo": {
+        "title": "Bromelia i potte – stueplante",
+        "description": "Bromelia med rød blomst i potte: tropisk preg i stuen eller på kontoret – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelia med rød blomst i en rød potte på en trekommode"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Gummifiken i potte",
+      "tagline": "Gummifiken med mørkegrønne blader",
+      "shortDescription": "En lettstelt gummifiken med blanke, mørkegrønne blader.",
+      "description": "Gummifiken virker moderne og rolig med sine store, blanke blader. Den er lettstelt og passer godt i både hjem og kontor.",
+      "flowers": [
+        "Gummifiken"
+      ],
+      "care": [
+        "Lyst til halvskyggefullt sted.",
+        "Vann sparsomt, den klarer seg med lite vann.",
+        "Tørk støv av bladene innimellom."
+      ],
+      "seo": {
+        "title": "Gummifiken i potte – lettstelt plante",
+        "description": "Gummifiken med blanke, mørkegrønne blader. En lettstelt stueplante for hjem og kontor – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Gummifiken med mørkegrønne blader i en rød potte på en trekommode"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Hvit orkidé i potte",
+      "tagline": "Orkidé i potte, i flere farger",
+      "shortDescription": "En orkidé i potte – rolig, edel og tidløs.",
+      "description": "Orkideen står for eleganse og ro. Med sine fine blomsterklaser er den et stilfullt valg for hjemmet, kontoret eller som gave. Fås i lilla, rosa, gult, hvitt og blått.",
+      "flowers": [
+        "Orkidé"
+      ],
+      "care": [
+        "Sett planten lyst, uten direkte sol.",
+        "Vann sparsomt, unngå stående vann.",
+        "Fjern avblomstrede blomsterstengler først når de har tørket inn."
+      ],
+      "seo": {
+        "title": "Orkidé i potte – i fem farger",
+        "description": "Orkidé i potte i hvitt, rosa, gult, lilla eller blått. En elegant stueplante som gave – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Hvit orkidé med cerise blomstersvelg i en kremfarget keramikkpotte",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orkidé med lyserosa blomster i en kremfarget keramikkpotte",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Gul orkidé i en kremfarget keramikkpotte",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orkidé med fiolette blomster i en cerise potte",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orkidé med blå blomster i en grå potte ved siden av stearinlys"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Rød sørgebukett",
+      "tagline": "Røde roser, gerbera og nelliker med granbar",
+      "shortDescription": "En sørgebukett i rødt som tegn på kjærlighet og samhørighet.",
+      "description": "Den røde sørgebuketten kombinerer røde roser, gerbera og nelliker med gule roser, brudeslør og granbar. En verdig minnegest som stille uttrykker sterke følelser. Sammensetningen kan variere noe etter sesong.",
+      "flowers": [
+        "Roser",
+        "Gerbera",
+        "Nelliker",
+        "Brudeslør"
+      ],
+      "care": [
+        "Plasser kjølig, ikke i direkte sol eller ved siden av en varmeovn.",
+        "Hold blomstersvampen fuktig i dekorasjoner."
+      ],
+      "seo": {
+        "title": "Rød sørgebukett – roser og gerbera",
+        "description": "Sørgebukett i rødt med roser, gerbera og nelliker på granbar, i tre størrelser. En verdig siste hilsen – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Sørgebukett med røde roser, gerbera og nelliker, gule roser og granbar på en steinsokkel"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Rosa sørgebukett",
+      "tagline": "Rosa roser og fiolette blomster",
+      "shortDescription": "En sørgebukett i myke rosatoner med trøstende utstråling.",
+      "description": "Rosa roser, fiolette og rosa blomster og granbar gir denne sørgebuketten et mykt, trøstende uttrykk. Den står for takknemlighet, nærhet og kjærlig minne – passende for en stille, personlig avskjed.",
+      "flowers": [
+        "Roser"
+      ],
+      "care": [
+        "Plasser kjølig, ikke i direkte sol eller ved siden av en varmeovn.",
+        "Hold blomstersvampen fuktig i dekorasjoner."
+      ],
+      "seo": {
+        "title": "Rosa sørgebukett – myke rosatoner",
+        "description": "Sørgebukett i myke rosatoner med rosa roser på granbar, i tre størrelser. For en stille avskjed – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Sørgebukett med rosa roser og fiolette blomster på granbar, med hvitt bånd, på en steinsokkel"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Sørgebukett i pastell",
+      "tagline": "Liljer, roser og blå blomster i pastell",
+      "shortDescription": "En rolig sørgebukett i fine pasteltoner.",
+      "description": "Sørgebuketten i pastell kombinerer rosa liljer og roser med lyseblå, syrinfargede og hvite blomster. De fine fargenyansene uttrykker trøst og medfølelse. Blomstene kan variere etter sesong.",
+      "flowers": [
+        "Liljer",
+        "Roser"
+      ],
+      "care": [
+        "Plasser kjølig, ikke i direkte sol eller ved siden av en varmeovn.",
+        "Hold blomstersvampen fuktig i dekorasjoner."
+      ],
+      "seo": {
+        "title": "Sørgebukett i pastell – rolige farger",
+        "description": "Sørgebukett i pastell med liljer, roser og lyseblå blomster, i tre størrelser. Diskret og stilfull – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Sørgebukett i pastell med rosa liljer, roser og lyseblå blomster, med svart bånd, på en steinsokkel"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Oransje sørgebukett",
+      "tagline": "Roser, gerbera og nelliker i oransje og gult",
+      "shortDescription": "En sørgebukett i varme oransjetoner som uttrykker verdsettelse.",
+      "description": "Roser, gerbera og nelliker i oransje, gult og aprikos kombineres med granbar til en varm sørgebukett. Den står for takknemlighet og minnet om et rikt liv og passer ved kisten eller til minnestunden.",
+      "flowers": [
+        "Roser",
+        "Gerbera",
+        "Nelliker"
+      ],
+      "care": [
+        "Plasser kjølig, ikke i direkte sol eller ved siden av en varmeovn.",
+        "Hold blomstersvampen fuktig i dekorasjoner."
+      ],
+      "seo": {
+        "title": "Oransje sørgebukett – varme toner",
+        "description": "Sørgebukett i oransje og gult med roser, gerbera og nelliker, i tre størrelser. Til kisten og minnestunden – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Sørgebukett med roser, gerbera og nelliker i oransje og gult på granbar, på en steinsokkel"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Hvit sørgebukett",
+      "tagline": "Hvite liljer og krysantemum",
+      "shortDescription": "En klassisk sørgebukett i hvitt – enkel og verdig.",
+      "description": "Hvite liljer, krysantemum og små hvite blomster på granbar gjør denne sørgebuketten enkel og tidløs. Hvitt står for fred og avskjed – passende til formelle begravelser eller som et stille tegn på medfølelse.",
+      "flowers": [
+        "Liljer",
+        "Krysantemum"
+      ],
+      "care": [
+        "Plasser kjølig, ikke i direkte sol eller ved siden av en varmeovn.",
+        "Hold blomstersvampen fuktig i dekorasjoner."
+      ],
+      "seo": {
+        "title": "Hvit sørgebukett – liljer og krysantemum",
+        "description": "Klassisk sørgebukett i hvitt med liljer og krysantemum, i tre størrelser. Enkel og verdig – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Sørgebukett av hvite liljer, krysantemum og små hvite blomster på granbar, på en steinsokkel"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Gul sørgebukett",
+      "tagline": "Solsikker, gule roser og nelliker",
+      "shortDescription": "En sørgebukett i gult for minne, håp og takknemlighet.",
+      "description": "Solsikker, gule roser og aprikosfargede nelliker på granbar gjør denne sørgebuketten lys og varm. Den passer til avskjeder der livet står i sentrum. Blomstene avhenger av sesongen.",
+      "flowers": [
+        "Solsikker",
+        "Roser",
+        "Nelliker"
+      ],
+      "care": [
+        "Plasser kjølig, ikke i direkte sol eller ved siden av en varmeovn.",
+        "Hold blomstersvampen fuktig i dekorasjoner."
+      ],
+      "seo": {
+        "title": "Gul sørgebukett – solsikker og roser",
+        "description": "Sørgebukett i gult med solsikker, roser og nelliker, i tre størrelser. En lys siste hilsen – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Sørgebukett med solsikker, gule roser og aprikosfargede nelliker på granbar, på en steinsokkel"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Fargerik sørgekrans",
+      "tagline": "Gerbera, roser og blomster i mange farger",
+      "shortDescription": "En fargerik sørgekrans til avskjeden med et livsglad menneske.",
+      "description": "Den fargerike sørgekransen kombinerer gerbera, roser og andre blomster i gult, oransje, rosa og hvitt på grønn bunn. En verdig og samtidig fargerik siste hilsen, bundet for hånd. Har du ønsker til utformingen, er du velkommen til å ta kontakt med oss.",
+      "flowers": [
+        "Gerbera",
+        "Roser"
+      ],
+      "care": [
+        "Plasser kjølig og skyggefullt.",
+        "Fukt blomstersvampen lett ved behov."
+      ],
+      "seo": {
+        "title": "Fargerik sørgekrans – fargerik avskjed",
+        "description": "Fargerik sørgekrans med gerbera og roser, bundet for hånd. En fargerik siste hilsen – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Fargerik sørgekrans med gerbera, liljer og hvite blomster, med svart bånd, på et trestativ"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Rosa sørgekrans",
+      "tagline": "Gerbera og roser i cerise og rødt",
+      "shortDescription": "En sørgekrans i cerise og rødt som en kjærlig siste hilsen.",
+      "description": "Sørgekransen i cerise og rødt kombinerer cerise gerbera, roser og andre blomster med lyse innslag og friskt grønt. Et uttrykk for kjærlighet og minne, bundet for hånd. Har du ønsker til utformingen, er du velkommen til å ta kontakt med oss.",
+      "flowers": [
+        "Gerbera",
+        "Roser"
+      ],
+      "care": [
+        "Plasser kjølig og skyggefullt.",
+        "Fukt blomstersvampen lett ved behov."
+      ],
+      "seo": {
+        "title": "Rosa sørgekrans – cerise og rødt",
+        "description": "Sørgekrans i cerise og rødt med gerbera og roser, bundet for hånd. En kjærlig siste hilsen – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Sørgekrans med cerise gerbera, roser og røde blomster, med bordeauxfarget bånd, på et trestativ"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Rød og gul sørgekrans",
+      "tagline": "Røde og gule gerbera",
+      "shortDescription": "En lysende sørgekrans i rødt og gult.",
+      "description": "Røde og gule gerbera, tett stukket på grønn bunn, gjør denne sørgekransen til en lysende siste hilsen full av varme, takknemlighet og gode minner. Bundet for hånd. Har du ønsker til utformingen, er du velkommen til å ta kontakt med oss.",
+      "flowers": [
+        "Gerbera"
+      ],
+      "care": [
+        "Plasser kjølig og skyggefullt.",
+        "Fukt blomstersvampen lett ved behov."
+      ],
+      "seo": {
+        "title": "Rød og gul sørgekrans – gerbera",
+        "description": "Sørgekrans av røde og gule gerbera, bundet for hånd. En varm, lysende siste hilsen – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Sørgekrans av røde og gule gerbera med sølvgrått bånd på et trestativ"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Rød sørgekrans",
+      "tagline": "Røde gerbera og roser",
+      "shortDescription": "En klassisk sørgekrans i rødt for kjærlighet som består.",
+      "description": "Den røde sørgekransen kombinerer røde gerbera og roser på granbar. En klassisk, verdig siste hilsen for kjærlighet som består utover avskjeden. Bundet for hånd. Har du ønsker til utformingen, er du velkommen til å ta kontakt med oss.",
+      "flowers": [
+        "Gerbera",
+        "Roser"
+      ],
+      "care": [
+        "Plasser kjølig og skyggefullt.",
+        "Fukt blomstersvampen lett ved behov."
+      ],
+      "seo": {
+        "title": "Rød sørgekrans – gerbera og roser",
+        "description": "Sørgekrans i rødt med gerbera og roser på granbar, bundet for hånd. En klassisk siste hilsen – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Sørgekrans av røde gerbera og roser på granbar med svart bånd på et trestativ"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Hvit sørgekrans",
+      "tagline": "Hvite roser, gerbera og nelliker",
+      "shortDescription": "En enkel sørgekrans i hvitt for stille medfølelse.",
+      "description": "Hvite roser, gerbera og nelliker med lysegrønne innslag og grønt danner denne enkle kransen. Hvitt står for fred og stille medfølelse. Bundet for hånd. Har du ønsker til utformingen, er du velkommen til å ta kontakt med oss.",
+      "flowers": [
+        "Roser",
+        "Gerbera",
+        "Nelliker"
+      ],
+      "care": [
+        "Plasser kjølig og skyggefullt.",
+        "Fukt blomstersvampen lett ved behov."
+      ],
+      "seo": {
+        "title": "Hvit sørgekrans – enkel og verdig",
+        "description": "Sørgekrans i hvitt med roser, gerbera og nelliker, bundet for hånd. En enkel siste hilsen – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Ringformet sørgekrans av hvite roser, gerbera og nelliker med hvitt bånd på et trestativ"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Adventskranser",
+      "tagline": "Granbar med fire lys, i sju farger",
+      "shortDescription": "En håndbundet adventskrans av granbar med fire lys.",
+      "description": "Adventskransen bindes for hånd av duftende granbar og pyntes med fire lys, sløyfer, kuler, kongler og andre detaljer. Fås i rødt, grått, lilla, gull, beige, vinrødt og rosa.",
+      "flowers": [],
+      "care": [
+        "La aldri lys brenne uten tilsyn.",
+        "Plasser kjølig, ikke rett ved siden av en varmeovn.",
+        "Spray granbaret lett med vann innimellom."
+      ],
+      "seo": {
+        "title": "Adventskrans – håndbundet med lys",
+        "description": "Håndbundet adventskrans av granbar med fire lys, i sju farger og fire størrelser – blomsterlevering i Wien."
+      },
+      "sizes": {
+        "s": {
+          "label": "Liten"
+        },
+        "m": {
+          "label": "Middels"
+        },
+        "l": {
+          "label": "Stor"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rød",
+        "grau": "Grå",
+        "lila": "Lilla",
+        "gold": "Gull",
+        "beige": "Beige",
+        "weinrot": "Vinrød",
+        "rosa": "Rosa"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Adventskrans av granbar med fire røde lys, røde sløyfer, kuler og kongler",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Adventskrans med fire lysegrå lys, kremfargede sløyfer og appelsinskiver",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Adventskrans med lilla og rosa lys, fiolette sløyfer og en engelfigur",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Adventskrans med fire gylne lys, gylne sløyfer, kanelstenger og kongler",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Adventskrans med fire rosa lys, bordeauxfargede sløyfer og en engelfigur",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Adventskrans med fire vinrøde lys, kuler og vinrøde sløyfer",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Adventskrans med fire mørkegrå lys, kremfargede sløyfer og røde kuler",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Adventskrans i gull med gylne lys og sløyfer, fra siden",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Adventskrans i rosa med rosa lys og bordeauxfargede sløyfer, fra siden"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Alle blomster",
+      "headline": "Bestill blomster på nett",
+      "intro": "Håndbundne buketter til hele Wien. Velg bukett og bestem leveringsdatoen.",
+      "seo": {
+        "title": "Bestill blomster på nett med levering i Wien",
+        "description": "Bestill blomster på nett og få dem levert i Wien. Håndbundne buketter på ønsket dato – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Roser",
+      "headline": "Rosebuketter",
+      "intro": "Roser i rødt, rosa eller hvitt, i flere størrelser. Bundet for hånd og levert i Wien.",
+      "seo": {
+        "title": "Bestill rosebuketter på nett – roser i Wien",
+        "description": "Alle rosebuketter samlet: røde, rosa og hvite roser i flere størrelser. Bundet for hånd, levert i Wien på ønsket dato."
+      }
+    },
+    "saisonal": {
+      "name": "Sesongblomster",
+      "headline": "Sesongblomster",
+      "intro": "Buketter som passer til årstiden. Utvalget skifter gjennom året.",
+      "seo": {
+        "title": "Sesongbuketter med levering i Wien",
+        "description": "Sesongbuketter som passer til årstiden. Bundet for hånd og levert i Wien."
+      }
+    },
+    "pastell": {
+      "name": "Pastell",
+      "headline": "Pastellbuketter",
+      "intro": "Rosé, krem, syrin: myke farger for fine øyeblikk.",
+      "seo": {
+        "title": "Pastellblomster med levering i Wien",
+        "description": "Buketter i myke pasteltoner med levering i Wien – nybundet, på ønsket dato."
+      }
+    },
+    "bunt": {
+      "name": "Fargerike",
+      "headline": "Fargerike buketter",
+      "intro": "Farger som gir glede. Til bursdager, overraskelser og godt humør.",
+      "seo": {
+        "title": "Fargerike blomsterbuketter med levering i Wien",
+        "description": "Fargerike, glade buketter med levering i Wien – nybundet, på ønsket dato."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegant og hvitt",
+      "headline": "Elegant og hvitt",
+      "intro": "Hvitt, krem og grønt. Buketter som virker rolige og edle i ethvert rom.",
+      "seo": {
+        "title": "Elegante hvite blomster med levering i Wien",
+        "description": "Hvite og kremfargede buketter med levering i Wien – elegante, nybundet, på ønsket dato."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Premium-buketter",
+      "intro": "Romslige buketter for spesielle øyeblikk.",
+      "seo": {
+        "title": "Premium-buketter med levering i Wien",
+        "description": "Premium-buketter til spesielle anledninger med levering i Wien – bundet for hånd, på ønsket dato."
+      }
+    },
+    "unter-40": {
+      "name": "Under 40 €",
+      "headline": "Blomster under 40 €",
+      "intro": "Små buketter med stor effekt – alle under 40 euro.",
+      "seo": {
+        "title": "Blomster under 40 € med levering i Wien",
+        "description": "Rimelige blomsterbuketter under 40 € med levering i Wien – nybundet, på ønsket dato."
+      }
+    },
+    "bestseller": {
+      "name": "Favorittbuketter",
+      "headline": "Våre favorittbuketter",
+      "intro": "Buketter vi særlig gjerne anbefaler.",
+      "seo": {
+        "title": "Våre favorittbuketter – anbefalinger for Wien",
+        "description": "Buketter vi særlig gjerne anbefaler – bundet for hånd og levert i Wien."
+      }
+    },
+    "neu": {
+      "name": "Nyheter",
+      "headline": "Nytt hos Blumora",
+      "intro": "Ferskt i utvalget.",
+      "seo": {
+        "title": "Nye blomsterbuketter for Wien",
+        "description": "Nye buketter i utvalget – nybundet og levert i Wien."
+      }
+    },
+    "blumenboxen": {
+      "name": "Blomsterbokser",
+      "headline": "Blomsterbokser",
+      "intro": "Roser arrangert i en boks – en gave som klarer seg uten vase.",
+      "seo": {
+        "title": "Blomsterbokser med levering i Wien",
+        "description": "Roser i blomsterboks – hjerteformet eller klassisk. Blomsterlevering i Wien på ønsket dato."
+      }
+    },
+    "pflanzen": {
+      "name": "Planter",
+      "headline": "Planter i potte",
+      "intro": "Orkideer, anthurium og grønne planter – blomster som blir.",
+      "seo": {
+        "title": "Planter i potte med levering i Wien",
+        "description": "Orkideer, anthurium og stueplanter i potte som gave. Blomsterlevering i Wien."
+      }
+    },
+    "trauer": {
+      "name": "Begravelsesblomster",
+      "headline": "Begravelsesblomster",
+      "intro": "Sørgekranser og sørgebuketter, verdig bundet som en siste hilsen.",
+      "seo": {
+        "title": "Sørgekranser og sørgebuketter i Wien",
+        "description": "Sørgekranser og sørgebuketter til begravelse og minnestund – med levering i Wien."
+      }
+    },
+    "advent": {
+      "name": "Adventskranser",
+      "headline": "Adventskranser",
+      "intro": "Granbar, lys og pynt – bundet for hånd til adventstiden.",
+      "seo": {
+        "title": "Adventskranser med levering i Wien",
+        "description": "Håndbundne adventskranser i flere farger og størrelser – med levering i Wien."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Bursdag",
+      "headline": "Blomster til bursdagen",
+      "intro": "En bukett som sier: Jeg tenkte på deg. Velg blomster og ønsket dato.",
+      "imageAlt": "Fargerik bukett med røde roser, gerbera og gule blomster i rød mansjett",
+      "seo": {
+        "title": "Bursdagsblomster – bursdagsbuketter i Wien",
+        "description": "Buketter til bursdagen: fargerike, glade eller elegante. Bundet for hånd og levert i Wien – på ønsket dato."
+      }
+    },
+    "liebe": {
+      "name": "Kjærlighet og romantikk",
+      "headline": "Blomster for kjærligheten",
+      "intro": "Røde roser eller noe helt annet: blomster som sier det du mener.",
+      "imageAlt": "Bukett av dyprøde roser i grå mansjett med rød sløyfe",
+      "seo": {
+        "title": "Romantiske blomster med levering i Wien",
+        "description": "Roser og romantiske buketter med levering i Wien – nybundet, på ønsket dato."
+      }
+    },
+    "danke": {
+      "name": "Takk",
+      "headline": "Blomster for å si takk",
+      "intro": "For hjelp, for tid, for rett og slett alt. En bukett sier det uten mange ord.",
+      "imageAlt": "Bukett av gule gerbera og hvite roser med gul sløyfe",
+      "seo": {
+        "title": "Takkeblomster med levering i Wien",
+        "description": "Si takk med blomster: nybundne buketter med levering i Wien – på ønsket dato."
+      }
+    },
+    "gute-besserung": {
+      "name": "God bedring",
+      "headline": "Blomster til god bedring",
+      "intro": "Myke farger, rolige former og en liten hilsen som gjør godt.",
+      "imageAlt": "Solfylt bukett i oransje og gult i lys mansjett",
+      "seo": {
+        "title": "God bedring-blomster med levering i Wien",
+        "description": "Blomster for god bedring med levering i Wien – myke buketter, nybundet, på ønsket dato."
+      }
+    },
+    "jahrestag": {
+      "name": "Årsdag",
+      "headline": "Blomster til årsdagen",
+      "intro": "For dagen da alt begynte. Og for alle dagene som kom etter.",
+      "imageAlt": "Bukett av røde og hvite roser i hvit mansjett",
+      "seo": {
+        "title": "Blomster til årsdagen med levering i Wien",
+        "description": "Elegante buketter til årsdagen med levering i Wien – nybundet, på ønsket dato."
+      }
+    },
+    "geburt": {
+      "name": "Fødsel",
+      "headline": "Blomster til fødselen",
+      "intro": "Velkommen, lille menneske. Fine blomster for et stort øyeblikk.",
+      "imageAlt": "Fin bukett av roser i rosa og syrin med brudeslør",
+      "seo": {
+        "title": "Blomster til fødsel med levering i Wien",
+        "description": "Fine pastellbuketter til fødselen med levering i Wien – nybundet, på ønsket dato."
+      }
+    },
+    "hochzeit": {
+      "name": "Bryllup",
+      "headline": "Blomster til bryllupet",
+      "intro": "Til brudeparet eller rett og slett som gratulasjon: elegant, lyst og festlig.",
+      "imageAlt": "Bukett av hvite roser i hvit mansjett i en vase",
+      "seo": {
+        "title": "Bryllupsblomster med levering i Wien",
+        "description": "Elegante blomster til bryllupet med levering i Wien – som gratulasjon eller gave, nybundet."
+      }
+    },
+    "einfach-so": {
+      "name": "Bare fordi",
+      "headline": "Blomster bare fordi",
+      "intro": "Ingen anledning. Bare tanken. Noen ganger er det den beste grunnen.",
+      "imageAlt": "Gule tulipaner i en glassvase i vinduet",
+      "seo": {
+        "title": "Send blomster bare fordi – Wien",
+        "description": "Send blomster uten anledning: små og store buketter med levering i Wien – nybundet, på ønsket dato."
+      }
+    },
+    "trauer": {
+      "name": "Sorg",
+      "headline": "Blomster ved sorg",
+      "intro": "Medfølelse i rolige farger. Kranser, buketter og dekorasjoner, bundet for hånd og levert i Wien.",
+      "imageAlt": "Hvit sørgekrans med hvitt bånd på et trestativ",
+      "seo": {
+        "title": "Begravelsesblomster med levering i Wien",
+        "description": "Begravelsesblomster med levering i Wien – kranser, sørgebuketter og rolige buketter, bundet for hånd, på ønsket dato."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Duftlys",
+      "description": "Dekorative duftlys i gaveinnpakning, i ulike former og farger.",
+      "imageAlt": "Duftlys formet som hjerter og kuler i gjennomsiktige gaveesker"
+    },
+    "x-teddy": {
+      "name": "Teddybjørn",
+      "description": "Kosebjørn med rødt hjerte – det kjærlige tilskuddet til buketten.",
+      "imageAlt": "Lysebrun kosebjørn med rødt hjerte"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Hvor leverer dere?",
+      "answer": "Vi leverer til alle 23 bydeler i Wien. Avhengig av bydel er leveringen gratis eller koster 4,90 € eller 7,90 €. Skriv inn postnummeret til mottakeradressen – da ser du med en gang om og når vi kan levere, og hva leveringen koster.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Kan jeg få blomster levert i dag?",
+      "answer": "Ja – bestiller du mandag til lørdag innen kl. 18:30 eller søndag innen kl. 17:45, leverer vi samme dag i hele Wien, så lenge et tidsvindu er ledig. Det tidligste tidspunktet for adressen din ser du så snart du skriver inn postnummeret.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "Finnes det ekspresslevering?",
+      "answer": "Ja – ekspresslevering på 1–2 timer, uten tillegg i prisen. Bestill som vanlig og velg dagens tidligste tidsvindu i kassen – det er merket med «Express». Det fungerer når du bestiller mandag til lørdag innen kl. 18:30 eller søndag innen kl. 17:45 og det fortsatt er et ledig tidsvindu for adressen din.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Kan jeg velge en bestemt leveringsdato?",
+      "answer": "Ja. På hver produktside og i kassen velger du ønsket dato i kalenderen. Dager vi ikke leverer, er grået ut.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Kan jeg velge et ønsket tidspunkt?",
+      "answer": "Ja. I Wien velger du i kassen et tidsvindu på én time mellom kl. 9 og 22 – alle sju dager i uken.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Hva skjer hvis ingen er hjemme?",
+      "answer": "Budet overleverer blomstene personlig. Er ingen hjemme, leveres de om mulig til en nabo. I kassen kan du legge inn en beskjed til leveringen, for eksempel en dørkode. Vi holder deg oppdatert om statusen på bestillingen din per e-post.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Kan jeg sende blomster anonymt?",
+      "answer": "Ja. Uten hilsenkort står navnet ditt ingen steder på buketten, og fakturaen går bare til deg. Hilsenkort med personlig melding kommer snart.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Kan jeg legge ved et hilsenkort?",
+      "answer": "Ikke ennå – hilsenkort kommer snart. Inntil da leveres buketten uten kort.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "Ser blomstene nøyaktig ut som på bildet?",
+      "answer": "Hver bukett bindes individuelt, og blomster er naturprodukter. Farger, sorter og blomsterstørrelse kan avvike litt etter sesong. Stilen og fargeuttrykket beholdes.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Hvordan holder blomstene seg friske?",
+      "answer": "Hver bukett bindes fersk for bestillingen din og leveres direkte av budet. Slik holder den lengst: Snitt stilkene på skrå, gi friskt vann og sett buketten kjølig og uten direkte sol.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Hvilke betalingsmåter finnes?",
+      "answer": "De tilgjengelige betalingsmåtene ser du i siste steg av bestillingen. Betalingen skjer trygt via en betalingsleverandør – kortopplysningene dine kommer aldri til oss.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Kan jeg endre bestillingen min?",
+      "answer": "Så lenge buketten ikke er bundet ennå, kan vi som regel fortsatt endre leveringsdato eller adresse. Skriv til oss så raskt som mulig med ordrenummeret ditt.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Kan jeg sende blomster til bedrifter eller hoteller?",
+      "answer": "Ja. Oppgi bedrifts- eller hotellnavnet i kassen og – hvis du vet det – avdeling eller romnummer. Leveringen skjer til resepsjonen.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Blomster for spesielle øyeblikk.",
+      "intro": "Blumora er en nettbasert blomsterbutikk i Wien. Hver bukett bindes for hånd hos en blomsterhandler i Wien og leveres direkte med bud.",
+      "seo": {
+        "title": "Om oss – blomsterlevering fra Wien",
+        "description": "Blumora er en nettbasert blomsterbutikk i Wien: buketter bundet for hånd og levert med bud til alle 23 bydeler."
+      },
+      "sections": [
+        {
+          "heading": "Slik jobber vi",
+          "paragraphs": [
+            "Blumora er en nettbasert blomsterbutikk i Wien. Du velger buketten hos oss – den bindes av en blomsterhandler i Wien som vi har et fast samarbeid med. Der lages hver bukett for hånd og for din bestilling.",
+            "Hilsenkort med din egen tekst kommer snart."
+          ],
+          "imageAlt": "Bukett av roser, dahlia, hortensia og tulipaner i vinduskarmen i en gammel bygård i Wien, med Stephansdom i kveldslys i bakgrunnen"
+        },
+        {
+          "heading": "Leveringen",
+          "paragraphs": [
+            "Et bud henter buketten din direkte hos blomsterhandleren og bringer den uten mellomstopp til mottakeradressen. Vi leverer til alle 23 bydeler i Wien – i tidsvinduet du velger: formiddag, ettermiddag eller kveld fram til kl. 22."
+          ],
+          "imageAlt": "Buketten Pure Liebe i en glassvase"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Levering og frakt",
+      "intro": "Vi leverer til alle 23 bydeler i Wien. Leveringskostnad (gratis, 4,90 € eller 7,90 €), leveringsdager og tidsvinduer avhenger av mottakeradressen – skriv inn postnummeret, så ser du alt på et øyeblikk.",
+      "seo": {
+        "title": "Levering og frakt – blomsterlevering i Wien",
+        "description": "Leveringsområder, leveringskostnader, leveringsdager og tidsvinduer for blomsterlevering i Wien."
+      },
+      "sections": [
+        {
+          "heading": "Slik foregår leveringen",
+          "paragraphs": [
+            "Buketten din bindes fersk for bestillingen din. Et bud henter den direkte hos blomsterhandleren og bringer den uten mellomstopp til mottakeradressen – i tidsvinduet du har valgt. Er ingen hjemme, leveres buketten om mulig til en nabo.",
+            "For hver bestilling får du en bekreftelse per e-post og en lenke der du kan følge statusen."
+          ]
+        },
+        {
+          "heading": "Levering til bedrifter, hoteller og sykehus",
+          "paragraphs": [
+            "Oppgi bedrifts- eller hotellnavn og avdeling, post eller romnummer i kassen. Vi leverer til resepsjonen. Merk at noen institusjoner ikke tillater blomster på avdelingene."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Kontakt",
+      "intro": "Spørsmål om en bestilling, en leveringsdato eller et spesielt ønske? Vi er her for deg.",
+      "seo": {
+        "title": "Kontakt – Blumora Wien",
+        "description": "Kontakt Blumora med spørsmål om bestilling, levering eller spesielle ønsker."
+      },
+      "sections": [
+        {
+          "heading": "Slik når du oss",
+          "paragraphs": [
+            "[Plassholder: E-post, telefon og åpningstider hentes fra innstillingene og må fylles inn der.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Blomsterlevering i hele Wien",
+      "headline": "Blomster som sier mer.",
+      "subheadline": "Nybundne blomster til menneskene som betyr noe for deg. Velg, bestem ønsket dato og få gleden levert.",
+      "primaryCta": {
+        "label": "Se blomstene"
+      },
+      "secondaryCta": {
+        "label": "Velg etter anledning"
+      },
+      "imageAlt": "En kvinne i kamelfarget kåpe bærer en stor bukett av roser, ranunkler, dahlia og tulipaner over en brosteinsgate i Wien, mens en trikk kjører forbi i bakgrunnen",
+      "deliveryCheck": {
+        "title": "Hvor skal vi levere?",
+        "placeholder": "Skriv inn postnummer",
+        "button": "Sjekk levering"
+      }
+    },
+    "occasions": {
+      "headline": "Blomster for hvert øyeblikk",
+      "subheadline": "Noen ganger trengs ingen stor anledning. Bare den riktige gesten."
+    },
+    "bestsellers": {
+      "headline": "Våre favorittbuketter",
+      "subheadline": "Et utvalg fra sortimentet vårt."
+    },
+    "collections": {
+      "headline": "Finn din perfekte bukett",
+      "subheadline": "Etter farge, stil eller budsjett."
+    },
+    "howItWorks": {
+      "headline": "Det har aldri vært enklere å gi glede.",
+      "steps": [
+        {
+          "title": "Velg favorittbuketten",
+          "text": "Oppdag blomster for enhver smak og anledning."
+        },
+        {
+          "title": "Gjør den personlig",
+          "text": "Velg størrelse og små ekstra gaver."
+        },
+        {
+          "title": "Velg leveringsdato",
+          "text": "Bestem når overraskelsen din skal komme fram."
+        },
+        {
+          "title": "Få gleden levert",
+          "text": "Vi tar oss av resten."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Adventstid",
+      "headline": "Snart brenner det første lyset.",
+      "text": "Adventskranser med granbar, lys og pynt – i flere farger og størrelser. I tillegg buketter i varme høsttoner.",
+      "cta": {
+        "label": "Adventskranser"
+      },
+      "imageAlt": "Adventskrans av granbar med fire røde lys på en trekommode"
+    },
+    "editorial": {
+      "eyebrow": "Håndverk",
+      "headline": "Fra florister. Ikke fra samlebåndet.",
+      "text": "Hver bukett bindes for hånd av en blomsterhandler i Wien for din bestilling og leveres direkte med bud – uten omvei via et lager.",
+      "cta": {
+        "label": "Slik jobber vi"
+      },
+      "imageAlt": "Et bud overleverer en fargerik bukett av roser, dahlia og ranunkler ved en gammel bygårdsdør i Wien"
+    },
+    "extras": {
+      "headline": "Gjør overraskelsen komplett.",
+      "subheadline": "Små ekstra gaver som gjør øyeblikket større."
+    },
+    "subscription": {
+      "headline": "Mer blomster i hverdagen.",
+      "text": "Ferske sesongbuketter – hver uke, annenhver uke eller hver måned. Til hjemmet, kontoret, resepsjonen eller restauranten.",
+      "cta": {
+        "label": "Se blomsterabonnementet"
+      }
+    },
+    "reviews": {
+      "headline": "Øyeblikk som kom fram.",
+      "subheadline": "Hva kunder sier om bestillingen sin."
+    },
+    "gallery": {
+      "headline": "Blomster for spesielle øyeblikk.",
+      "images": [
+        {
+          "alt": "Fargerik rosebukett i rødt, rosa, krem og aprikos i en hvit vase"
+        },
+        {
+          "alt": "Bukett av knallblå roser i en hvit vase"
+        },
+        {
+          "alt": "Bukett i kraftige cerisetoner med gerbera i en vase i vinduet"
+        },
+        {
+          "alt": "Eksotisk bukett med paradisfuglblomster, liljer og gerbera"
+        },
+        {
+          "alt": "Hjerteformet rød blomsterboks med roser på en kommode"
+        },
+        {
+          "alt": "Bukett av roser i pastell og cerise i rosa mansjett"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Godt å vite"
+    },
+    "newsletter": {
+      "headline": "Litt flere blomster i innboksen.",
+      "text": "Nyheter, sesongkolleksjoner og spesielle kampanjer.",
+      "placeholder": "Din e-postadresse",
+      "button": "Meld deg på",
+      "note": "Du kan melde deg av når som helst. Informasjon om personvern finner du i personvernerklæringen."
+    }
+  },
+  "settings": {
+    "claim": "Blomster som sier mer.",
+    "seo": {
+      "defaultTitle": "Blumora – blomsterlevering i Wien",
+      "defaultDescription": "Blomsterlevering i hele Wien: nybundne buketter til alle 23 bydeler. Samme dag ved bestilling innen 18:30 (søndag 17:45), ekspress på 1–2 timer uten tillegg."
+    },
+    "announcement": {
+      "messages": [
+        "Levering i hele Wien, alle 23 bydeler",
+        "Ekspress på 1–2 timer – uten tillegg",
+        "Samme dag ved bestilling innen 18:30, søndag 17:45",
+        "Nybundet, levert med bud"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Nybundet",
+        "text": "Bundet for hånd for din bestilling"
+      },
+      {
+        "title": "Levering med bud",
+        "text": "I hele Wien – alle 23 bydeler"
+      },
+      {
+        "title": "Velg ønsket dato",
+        "text": "Du bestemmer dagen"
+      },
+      {
+        "title": "Ekspress på 1–2 timer",
+        "text": "Uten tillegg, samme dag innen kl. 18:30"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Bestilling mottatt",
+        "description": "Vi har mottatt bestillingen din."
+      },
+      "paid": {
+        "label": "Betaling bekreftet",
+        "description": "Vi har mottatt betalingen."
+      },
+      "preparing": {
+        "label": "Under forberedelse",
+        "description": "Blomstene til buketten din velges ut."
+      },
+      "arranging": {
+        "label": "Buketten bindes",
+        "description": "Buketten din bindes for hånd."
+      },
+      "ready": {
+        "label": "Klar for levering",
+        "description": "Buketten er ferdig og hentes av budet."
+      },
+      "in_transit": {
+        "label": "Underveis",
+        "description": "Buketten din er på vei."
+      },
+      "delivered": {
+        "label": "Levert",
+        "description": "Blomstene har kommet fram."
+      },
+      "undeliverable": {
+        "label": "Kunne ikke leveres",
+        "description": "Vi kunne ikke levere og tar kontakt med deg."
+      },
+      "cancelled": {
+        "label": "Kansellert",
+        "description": "Bestillingen er kansellert."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Kredittkort",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Nettbankoverføring (eps)"
+    },
+    "headerCta": "Send blomster",
+    "address": {
+      "city": "Wien",
+      "country": "Østerrike"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Wien sone 1",
+      "windows": {
+        "h09": "kl. 9–10",
+        "h10": "kl. 10–11",
+        "h11": "kl. 11–12",
+        "h12": "kl. 12–13",
+        "h13": "kl. 13–14",
+        "h14": "kl. 14–15",
+        "h15": "kl. 15–16",
+        "h16": "kl. 16–17",
+        "h17": "kl. 17–18",
+        "h18": "kl. 18–19",
+        "h19": "kl. 19–20",
+        "h20": "kl. 20–21",
+        "h21": "kl. 21–22"
+      }
+    },
+    "wien-mitte": {
+      "name": "Wien sone 2",
+      "windows": {
+        "h09": "kl. 9–10",
+        "h10": "kl. 10–11",
+        "h11": "kl. 11–12",
+        "h12": "kl. 12–13",
+        "h13": "kl. 13–14",
+        "h14": "kl. 14–15",
+        "h15": "kl. 15–16",
+        "h16": "kl. 16–17",
+        "h17": "kl. 17–18",
+        "h18": "kl. 18–19",
+        "h19": "kl. 19–20",
+        "h20": "kl. 20–21",
+        "h21": "kl. 21–22"
+      }
+    },
+    "wien-fern": {
+      "name": "Wien sone 3",
+      "windows": {
+        "h09": "kl. 9–10",
+        "h10": "kl. 10–11",
+        "h11": "kl. 11–12",
+        "h12": "kl. 12–13",
+        "h13": "kl. 13–14",
+        "h14": "kl. 14–15",
+        "h15": "kl. 15–16",
+        "h16": "kl. 16–17",
+        "h17": "kl. 17–18",
+        "h18": "kl. 18–19",
+        "h19": "kl. 19–20",
+        "h20": "kl. 20–21",
+        "h21": "kl. 21–22"
+      }
+    },
+    "noe-umland": {
+      "name": "Omegnen av Wien (Niederösterreich)",
+      "note": "Levering i omegnen av Wien tirsdag, torsdag og lørdag.",
+      "windows": {
+        "day": "kl. 9–18"
+      }
+    }
+  }
+}

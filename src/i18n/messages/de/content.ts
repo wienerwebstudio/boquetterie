@@ -1,0 +1,198 @@
+/** UI texts – content (German source). Content, service, topic and legal pages. */
+const content = {
+  homeCrumb: "Start",
+  serviceEyebrow: "Service",
+  legalEyebrow: "Rechtliches",
+  placeholderSection: "Dieser Abschnitt wird gerade fertiggestellt.",
+  ready: "Bereit?",
+  discoverFlowers: "Blumen entdecken",
+  contact: "Kontakt",
+  allFaqs: "Alle Fragen & Antworten",
+  faqTitle: "Häufige Fragen",
+  goodToKnow: "Gut zu wissen",
+
+  newsletterAction: {
+    eyebrow: "Newsletter",
+    toFlowers: "Zu den Blumen",
+    incompleteLink: "Dieser Link ist unvollständig. Bitte öffne ihn direkt aus der E-Mail.",
+  },
+
+  /* ---------- Topic pages (/[slug]) ---------- */
+  landing: {
+    deliveryCheckTitle: "Wohin dürfen wir liefern?",
+    productsEyebrow: "Sträuße",
+    sameDayTitle: "Sträuße, die wir heute binden können",
+    selectionTitle: "Unsere Auswahl",
+    sameDayNote: "Ob die Lieferung heute klappt, hängt von Postleitzahl und Uhrzeit ab. Nach der Lieferprüfung siehst du die genaue Bestellfrist für dein Gebiet.",
+    viewAll: "Alle ansehen",
+    placeholder: "[Inhalt folgt]",
+    relatedEyebrow: "Mehr entdecken",
+    relatedTitle: "Weitere Anlässe & Themen",
+    ctaTitle: "Strauß wählen, Datum bestimmen, Freude schicken.",
+  },
+
+  /* ---------- About ---------- */
+  about: {
+    title: "Über uns",
+    placeholder: "Platzhalter – Inhalt folgt",
+    ctaTitle: "Jemandem eine Freude machen.",
+  },
+
+  /* ---------- Delivery ---------- */
+  delivery: {
+    fallbackTitle: "Lieferung & Versand",
+    checkEyebrow: "Lieferprüfung",
+    checkTitle: "Wohin sollen die Blumen?",
+    checkText: "Postleitzahl der Empfängeradresse eingeben – wir zeigen dir Liefertage und Lieferkosten für diesen Bezirk.",
+    checkInputTitle: "Postleitzahl der Empfängeradresse",
+    imageAlt: "Strauß Farbtänzer in einer Vase",
+    summaryTitle: "Das Wichtigste zur Lieferung",
+    feesTitle: "Lieferkosten nach Bezirk",
+    free: "gratis",
+    feeDependsOnDistrict: "Die Liefergebühr hängt vom Bezirk der Empfängeradresse ab: {fees}.",
+    feeIsFree: "Die Lieferung ist gratis.",
+    feeFixed: "Die Lieferung kostet {fee}.",
+    feeIndependentOfOrder: "Die Gebühr gilt unabhängig vom Bestellwert.",
+    feeLevelsBelow: "Welche Stufe für welche Postleitzahl gilt, siehst du unten.",
+    threeWindows: "Drei Zeitfenster",
+    windows: "Zeitfenster",
+    chooseWindow: "Im Checkout wählst du, wann geliefert wird: {windows}.",
+    deliveryDaysNow: "Liefertage sind derzeit {days}.",
+    nobodyHomeTitle: "Wenn niemand zu Hause ist",
+    nobodyHomeText: "Der Kurier bringt den Strauß an die Empfängeradresse. Ist niemand da, wird er nach Möglichkeit bei Nachbar:innen abgegeben. Du bekommst eine E-Mail, sobald der Strauß unterwegs ist, und eine weitere nach der Zustellung.",
+    zonesLabel: "Liefergebiete",
+    zonesEyebrow: "Liefergebiete",
+    zonesTitle: "Liefergebiete und Preisstufen",
+    zonesSubtitle: "Welche Postleitzahl in welcher Preisstufe liegt – mit Liefertagen, Bestellfrist und Zeitfenstern je Gebiet.",
+    noZones: "Derzeit sind keine Liefergebiete hinterlegt.",
+    calendarNote: "Ob eine Lieferung am gewünschten Tag möglich ist, hängt vom Bestellzeitpunkt ab. An einzelnen Tagen liefern wir nicht – der Kalender auf der Produktseite und im Checkout zeigt alle verfügbaren Liefertage.",
+    faqTitle: "Fragen zur Lieferung",
+    moreAnswers: "Mehr Antworten findest du in unseren {faqLink}.",
+    faqLink: "FAQ",
+    or: "oder",
+    weekdays: { mon: "Mo", tue: "Di", wed: "Mi", thu: "Do", fri: "Fr", sat: "Sa", sun: "So" },
+    zone: {
+      sameDayBadge: "Same Day",
+      postalCodes: "PLZ",
+      fee: "Lieferkosten",
+      feeFree: "Gratis",
+      freeFrom: "gratis ab {price}",
+      minOrder: "Mindestbestellwert",
+      days: "Liefertage",
+      sameDay: "Lieferung am selben Tag",
+      sameDayYes: "Ja · {cutoff}",
+      nextDeliveryDay: "Lieferung am nächsten Liefertag",
+      leadDays: "Vorlaufzeit {days} Tage",
+      orderUntil: "Bestellung bis {time} Uhr",
+      windows: "Zeitfenster",
+      included: "inklusive",
+      nextPossibleDay: "Nächster möglicher Liefertag",
+      today: "Heute",
+    },
+  },
+
+  /* ---------- FAQ ---------- */
+  faq: {
+    intro: "Antworten zu Lieferung, Bestellung und Bezahlung sowie zur Pflege deiner Blumen. Falls etwas fehlt: Wir sind nur eine Nachricht entfernt.",
+    metaTitle: "Häufige Fragen – Lieferung, Bestellung & Pflege",
+    metaDescription: "Antworten auf häufige Fragen zu Blumenlieferung in Wien, Lieferzeiten, Zahlung, Grußkarten und Pflege der Blumen.",
+    crumb: "FAQ",
+    groups: {
+      delivery: "Lieferung",
+      order: "Bestellung & Bezahlung",
+      product: "Blumen & Pflege",
+      other: "Weitere Fragen",
+    },
+    empty: "Derzeit sind keine Fragen hinterlegt.",
+    topics: "Themen",
+    ctaEyebrow: "Nicht gefunden?",
+    ctaTitle: "Noch Fragen?",
+    ctaText: "Schreib uns – bei Fragen zu einer Bestellung am besten gleich mit der Bestellnummer. Wir melden uns so schnell wie möglich.",
+    ctaContact: "Kontakt aufnehmen",
+    ctaTracking: "Bestellung verfolgen",
+  },
+
+  /* ---------- Contact page ---------- */
+  contactPage: {
+    detailsEyebrow: "So erreichst du uns",
+    detailsTitle: "Direkt & persönlich",
+    email: "E-Mail",
+    phone: "Telefon",
+    address: "Firmensitz",
+    noShop: "Kein Ladengeschäft – wir liefern per Kurier.",
+    hours: "Erreichbar",
+    quickFaqTitle: "Vielleicht ist die Antwort schon da",
+    allQuestions: "Alle Fragen ansehen",
+    formEyebrow: "Nachricht",
+    formTitle: "Schreib uns",
+    formText: "Bei Fragen zu einer Bestellung hilft uns die Bestellnummer, dir schneller zu antworten.",
+  },
+
+  /* ---------- Business customers ---------- */
+  business: {
+    title: "Firmenkunden",
+    metaTitle: "Blumen für Firmen in Wien – auf Anfrage",
+    metaDescription: "Blumen für Büro und Empfang, Geschenke für Kund:innen und Mitarbeiter:innen oder Blumen für Veranstaltungen in Wien: Schick uns deine Anfrage über das Formular.",
+    headline: "Blumen für dein Unternehmen in Wien.",
+    intro: "Blumen für Büro und Empfang, Geschenke für Kund:innen und Mitarbeiter:innen oder Blumen für eine Veranstaltung: Schreib uns, was du brauchst. Wir prüfen deine Anfrage und melden uns bei dir.",
+    requestsEyebrow: "Auf Anfrage",
+    requestsTitle: "Was du bei uns anfragen kannst.",
+    requests: {
+      office: {
+        title: "Blumen für Büro und Empfang",
+        text: "Regelmäßig frische Blumen für Empfang, Büro oder Besprechungsraum. Ob und in welchem Rhythmus das an deinem Standort möglich ist, klären wir auf Anfrage.",
+      },
+      gifts: {
+        title: "Geschenke für Kund:innen und Mitarbeiter:innen",
+        text: "Sträuße zu Jubiläen, Geburtstagen oder als Danke – für eine Person oder für mehrere Adressen in Wien.",
+      },
+      events: {
+        title: "Blumen für Veranstaltungen",
+        text: "Für Eröffnungen, Feiern oder Konferenzen in Wien. Nenn uns Termin, Ort und ungefähren Umfang – wir melden uns, ob und wie wir das umsetzen können.",
+      },
+    },
+    imageAlt: "Strauß aus Pfingstrosen, Rosen und Dahlien auf einem Marmortisch in einem Wiener Kaffeehaus",
+    factsTitle: "So arbeiten wir.",
+    facts: {
+      delivery: { title: "Lieferung in Wien", text: "Wir liefern in alle 23 Wiener Bezirke, von Montag bis Sonntag." },
+      handTied: { title: "Von Hand gebunden", text: "Die Sträuße bindet eine Wiener Floristik, mit der wir fest zusammenarbeiten – jeweils für die einzelne Bestellung." },
+      courier: { title: "Direkt per Kurier", text: "Ein Kurier holt die Blumen in der Floristik ab und fährt ohne Zwischenstopp zur Empfängeradresse." },
+      single: { title: "Einzelne Sträuße", text: "Einen einzelnen Strauß an eine Firmenadresse bestellst du direkt im Shop. Den Firmennamen gibst du im Checkout an." },
+    },
+    stepsEyebrow: "Ablauf",
+    stepsTitle: "So geht es weiter",
+    steps: {
+      send: { title: "Anfrage schicken", text: "Erzähl uns kurz, worum es geht: Standort, Anlass, gewünschter Umfang oder Rhythmus." },
+      reply: { title: "Rückmeldung", text: "Wir melden uns per E-Mail und klären offene Fragen." },
+      offer: { title: "Angebot", text: "Wenn wir deine Anfrage umsetzen können, bekommst du ein Angebot von uns." },
+    },
+    directEyebrow: "Lieber direkt?",
+    directContactPage: "Alle Kontaktdaten findest du auf der {link}.",
+    directContactPageLink: "Kontaktseite",
+    directEmail: "Schreib uns an {email}.",
+    directEmailPhone: "Schreib uns an {email} oder ruf an: {phone}.",
+    formEyebrow: "Anfrage",
+    formTitle: "Erzähl uns, was du brauchst",
+    formText: "Je konkreter deine Angaben, desto besser können wir deine Anfrage einschätzen.",
+  },
+
+  /* ---------- Legal pages (the legal text itself stays German) ---------- */
+  legal: {
+    imprintTitle: "Impressum",
+    privacyTitle: "Datenschutzerklärung",
+    termsTitle: "Allgemeine Geschäftsbedingungen",
+    withdrawalTitle: "Widerrufsbelehrung",
+    withdrawalTeaser: "Du möchtest einen Kauf widerrufen? Das geht direkt online – mit sofortiger Eingangsbestätigung.",
+    withdrawalLink: "Vertrag hier widerrufen",
+  },
+
+  /* ---------- Withdrawal function (/vertrag-widerrufen) ---------- */
+  withdrawalPage: {
+    title: "Vertrag widerrufen",
+    metaDescription: "Widerruf eines Kaufvertrags bei Blumora online erklären – mit sofortiger Eingangsbestätigung per E-Mail.",
+    intro: "Hier erklärst du den Widerruf eines Kaufvertrags. Du bekommst sofort eine Eingangsbestätigung mit Datum und Uhrzeit per E-Mail.",
+    noRightOfWithdrawal: "Für frische Schnittblumen und Blumensträuße besteht nach § 18 Abs. 1 Z 4 FAGG kein Widerrufsrecht. Für andere Waren, etwa Teddybären, Duftkerzen oder nicht schnell verderbliche Topfpflanzen, kannst du innerhalb von 14 Tagen ab Erhalt widerrufen.",
+    details: "Alle Einzelheiten stehen in der {link}. Du kannst uns deinen Widerruf auch formlos per E-Mail an {email} schicken.",
+  },
+};
+export default content;

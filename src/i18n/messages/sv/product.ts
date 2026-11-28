@@ -1,0 +1,195 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** sv – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Produkten hittades inte",
+  priceFrom: "från",
+
+  size: {
+    title: "Välj storlek",
+    recommended: "Rekommenderad",
+    soldOut: "Slutsåld",
+  },
+
+  color: {
+    title: "Välj färg",
+    required: "(obligatoriskt)",
+    notChosen: "Inte vald än",
+    error: "Välj en färg.",
+  },
+
+  delivery: {
+    title: "När ska blommorna komma fram?",
+    formLabel: "Leveranskontroll",
+    postalCodeLabel: "Mottagarens postnummer",
+    postalCodePlaceholder: "Mottagarens postnummer",
+    check: "Kontrollera",
+    prompt: "Ange postnummer för att välja leveransdatum",
+    notAvailable: "Tyvärr levererar vi inte till {plz} ännu.",
+    notAvailableHint: "Alla aktuella områden hittar du under {link}. För en annan mottagaradress anger du bara ett nytt postnummer.",
+    deliveryLink: "Leverans & frakt",
+    available: "Vi levererar till den här adressen.",
+    fee: "Leverans till {plz} {region}: {fee}",
+    free: "gratis",
+    freeFrom: "gratis från {price}",
+    dateGroup: "Leveransdatum",
+    today: "I dag",
+    orderUntil: "beställ senast kl. {time}",
+    tomorrow: "I morgon",
+    chooseDate: "Välj datum",
+    openCalendar: "Öppna kalendern",
+    deliveryOn: "Leverans den {date}",
+    todaySuffix: "· i dag",
+    noDays: "Inga leveransdagar är tillgängliga för närvarande.",
+  },
+
+  calendar: {
+    previousMonth: "Föregående månad",
+    nextMonth: "Nästa månad",
+    weekdays: {
+      mon: { short: "mån", long: "måndag" },
+      tue: { short: "tis", long: "tisdag" },
+      wed: { short: "ons", long: "onsdag" },
+      thu: { short: "tor", long: "torsdag" },
+      fri: { short: "fre", long: "fredag" },
+      sat: { short: "lör", long: "lördag" },
+      sun: { short: "sön", long: "söndag" },
+    },
+    daySameDay: "{date}, leverans i dag möjlig",
+    dayAvailable: "{date}, leverans möjlig",
+    dayUnavailable: "{date}, ingen leverans",
+    legendSameDay: "Leverans i dag",
+    legendToday: "I dag",
+    legendUnavailable: "Gråmarkerade dagar går inte att välja för leverans.",
+  },
+
+  card: {
+    unavailableTitle: "Personligt hälsningskort",
+    unavailableText: "Din bukett levereras tills vidare utan kort.",
+    comingSoon: "Kommer snart!",
+    addMessage: "Lägg till ett personligt meddelande",
+    included: "Hälsningskort ingår",
+    handwritten: "Handskrivet hälsningskort",
+    saved: "Meddelandet sparat",
+    messageLabel: "Ditt meddelande",
+    messagePlaceholder: "Grattis på födelsedagen …",
+    maxChars: "Högst {max} tecken.",
+    senderGroup: "Avsändare",
+    showSender: "Visa avsändare",
+    anonymous: "Skicka utan namn",
+    senderName: "Ditt namn",
+    optional: "(valfritt)",
+    senderPlaceholder: "t.ex. Anna",
+  },
+
+  extras: {
+    title: "Något mer till?",
+    deliveredTogether: "Levereras tillsammans",
+    addLabel: "Lägg till {name} för {price}",
+    add: "Lägg till",
+    quantity: "Antal {name}",
+    less: "{name}: en färre",
+    more: "{name}: en till",
+  },
+
+  floristNote: {
+    title: "Önskemål till våra florister",
+    optional: "(valfritt)",
+    hint: "Små ändringar av buketten, t.ex. ”vita rosor i stället för gula”. Vi genomför dem om blommorna finns tillgängliga. Instruktioner för leveransen anger du i kassan.",
+    placeholder: "Ditt önskemål till floristen",
+  },
+
+  cta: {
+    total: "Totalt",
+    comingSoon: "Kan snart beställas",
+    unavailable: "Inte tillgänglig för närvarande",
+    addToCart: "Lägg i varukorgen",
+    fresh: "Färskt bunden",
+    cardIncluded: "Hälsningskort ingår",
+    securePayment: "Säker betalning",
+    added: "{name} ({options}) har lagts i varukorgen.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Framsida",
+      detail: "Detalj",
+      size: "Storleksjämförelse",
+      packaging: "Förpackning",
+      lifestyle: "Miljö",
+    },
+    status: "Bild {index} av {total}: {alt}",
+    carousel: "Karusell",
+    imagesOf: "Bilder av {name}",
+    slide: "Bild",
+    slideOf: "{index} av {total}",
+    choose: "Välj bild",
+    show: "Visa {label}",
+    thumb: "{label}: {alt}",
+    previous: "Föregående bild",
+    next: "Nästa bild",
+    colorAlt: "{name} i {color}",
+    colorLabel: "Färg {color}",
+    sizeAlt: "{name} i storlek {size}",
+    sizeDetailAlt: "{name} i storlek {size}, närbild",
+    sizeLabel: "Storlek {size}",
+    sizeDetailLabel: "Storlek {size} · närbild",
+  },
+
+  details: {
+    eyebrow: "Bra att veta",
+    title: "Allt om {name}",
+    description: "Beskrivning",
+    plant: "Växt",
+    flowers: "Blommor i buketten",
+    care: "Skötselråd",
+    delivery: "Leverans",
+    deliveryText: "Dina blommor kommer från en florist i Wien som vi har ett fast samarbete med. Där binds buketterna för hand för din beställning. Ett bud hämtar dem och kör utan mellanstopp till mottagaradressen.",
+    deliveryAreas: "Vi levererar till alla Wiens 23 stadsdelar. Leveransavgiften beror på stadsdelen och visas när du har angett postnumret. Leveransområden, tidsfönster och sista beställningstider hittar du under {link}.",
+    deliveryLink: "Leverans & frakt",
+    looksPlant: "Ser växten ut exakt så här?",
+    looksBouquet: "Ser buketten ut exakt så här?",
+    looksOther: "Ser det ut exakt som på bilden?",
+    naturalPlant: "Nästan. Växter är naturprodukter: växtsätt, storlek och blomning kan avvika från bilden. Även ytterkrukan kan se annorlunda ut beroende på tillgång.",
+    naturalFlowers: "Nästan. Blommor är naturprodukter: beroende på säsong kan en sort eller en färgnyans avvika. Vår partnerflorist ser till att stil och färgvärld bevaras.",
+  },
+
+  pricePending: {
+    status: "Pris kommer",
+    sizes: "Storlekar",
+    sizesLabel: "Tillgängliga storlekar",
+    soonTitle: "Kan snart beställas",
+    soonText: "Vi håller på att fastställa priserna för vårt sortiment. Så snart de är klara kan du beställa den här buketten direkt här.",
+    contact: "Frågor? Skriv till oss",
+  },
+
+  related: {
+    eyebrow: "Fortsätt titta",
+    title: "Det här kanske också faller dig i smaken",
+    allFlowers: "Visa alla blommor",
+  },
+
+  reviews: {
+    eyebrow: "Röster",
+    title: "Omdömen om {name}",
+    demoNote: "Exempelomdömen – riktiga omdömen kommer",
+    quote: "”{text}”",
+    verified: "Verifierat köp",
+    demo: "Exempel",
+  },
+
+  reviewPhotos: {
+    photosOf: "Foton från {author}",
+    enlarge: "{alt} – förstora foto {index} av {total}",
+    dialogTitle: "Kundfoto från {author}",
+    dialogCount: "({index} av {total})",
+    close: "Stäng foto",
+    show: "Visa foto {index}",
+  },
+  reviewVideo: {
+    videoOf: "Video från {author}",
+    caption: "Kundvideo · {duration}",
+  },
+};
+
+export default product;

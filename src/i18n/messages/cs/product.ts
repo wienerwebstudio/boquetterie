@@ -1,0 +1,195 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** cs – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Produkt nebyl nalezen",
+  priceFrom: "od",
+
+  size: {
+    title: "Vyberte velikost",
+    recommended: "Doporučeno",
+    soldOut: "Vyprodáno",
+  },
+
+  color: {
+    title: "Vyberte barvu",
+    required: "(povinné)",
+    notChosen: "Zatím nevybráno",
+    error: "Vyberte prosím barvu.",
+  },
+
+  delivery: {
+    title: "Kdy mají květiny dorazit?",
+    formLabel: "Ověření doručení",
+    postalCodeLabel: "PSČ příjemce",
+    postalCodePlaceholder: "PSČ příjemce",
+    check: "Ověřit",
+    prompt: "Zadejte PSČ a vyberte datum doručení",
+    notAvailable: "Na PSČ {plz} bohužel zatím nedoručujeme.",
+    notAvailableHint: "Všechny aktuální oblasti najdete v části {link}. Pro jinou adresu příjemce stačí zadat nové PSČ.",
+    deliveryLink: "Doručení a doprava",
+    available: "Na tuto adresu doručujeme.",
+    fee: "Doručení na PSČ {plz} {region}: {fee}",
+    free: "zdarma",
+    freeFrom: "zdarma od {price}",
+    dateGroup: "Datum doručení",
+    today: "Dnes",
+    orderUntil: "objednejte do {time}",
+    tomorrow: "Zítra",
+    chooseDate: "Vybrat datum",
+    openCalendar: "Otevřít kalendář",
+    deliveryOn: "Doručení {date}",
+    todaySuffix: "· dnes",
+    noDays: "Momentálně nejsou k dispozici žádné dny doručení.",
+  },
+
+  calendar: {
+    previousMonth: "Předchozí měsíc",
+    nextMonth: "Další měsíc",
+    weekdays: {
+      mon: { short: "Po", long: "Pondělí" },
+      tue: { short: "Út", long: "Úterý" },
+      wed: { short: "St", long: "Středa" },
+      thu: { short: "Čt", long: "Čtvrtek" },
+      fri: { short: "Pá", long: "Pátek" },
+      sat: { short: "So", long: "Sobota" },
+      sun: { short: "Ne", long: "Neděle" },
+    },
+    daySameDay: "{date}, doručení ještě dnes",
+    dayAvailable: "{date}, lze doručit",
+    dayUnavailable: "{date}, nelze doručit",
+    legendSameDay: "Doručení ještě dnes",
+    legendToday: "Dnes",
+    legendUnavailable: "Ve zašedlé dny nelze doručit.",
+  },
+
+  card: {
+    unavailableTitle: "Osobní přání",
+    unavailableText: "Vaše kytice bude prozatím doručena bez přání.",
+    comingSoon: "Již brzy!",
+    addMessage: "Přidat osobní vzkaz",
+    included: "Přání v ceně",
+    handwritten: "Ručně psané přání",
+    saved: "Vzkaz uložen",
+    messageLabel: "Váš vzkaz",
+    messagePlaceholder: "Vše nejlepší k narozeninám …",
+    maxChars: "Nejvýše {max} znaků.",
+    senderGroup: "Odesílatel",
+    showSender: "Uvést odesílatele",
+    anonymous: "Poslat bez jména",
+    senderName: "Vaše jméno",
+    optional: "(nepovinné)",
+    senderPlaceholder: "např. Anna",
+  },
+
+  extras: {
+    title: "Ještě něco navíc?",
+    deliveredTogether: "Doručíme společně",
+    addLabel: "Přidat {name} za {price}",
+    add: "Přidat",
+    quantity: "{name} – počet",
+    less: "{name}: o jeden méně",
+    more: "{name}: o jeden více",
+  },
+
+  floristNote: {
+    title: "Přání pro naše floristy",
+    optional: "(nepovinné)",
+    hint: "Drobné změny kytice, např. „místo žlutých prosím bílé růže“. Provedeme je, pokud budou květiny k dispozici. Pokyny k doručení zadáte v pokladně.",
+    placeholder: "Vaše přání pro květinářství",
+  },
+
+  cta: {
+    total: "Celkem",
+    comingSoon: "Brzy k objednání",
+    unavailable: "Momentálně nedostupné",
+    addToCart: "Do košíku",
+    fresh: "Čerstvě vázané",
+    cardIncluded: "Přání v ceně",
+    securePayment: "Bezpečná platba",
+    added: "{name} ({options}) byl přidán do košíku.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Pohled zepředu",
+      detail: "Detail",
+      size: "Srovnání velikostí",
+      packaging: "Balení",
+      lifestyle: "Atmosféra",
+    },
+    status: "Obrázek {index} z {total}: {alt}",
+    carousel: "Karusel",
+    imagesOf: "Obrázky: {name}",
+    slide: "Obrázek",
+    slideOf: "{index} z {total}",
+    choose: "Vybrat obrázek",
+    show: "Zobrazit {label}",
+    thumb: "{label}: {alt}",
+    previous: "Předchozí obrázek",
+    next: "Další obrázek",
+    colorAlt: "{name} v barvě {color}",
+    colorLabel: "Barva {color}",
+    sizeAlt: "{name} ve velikosti {size}",
+    sizeDetailAlt: "{name} ve velikosti {size}, detail",
+    sizeLabel: "Velikost {size}",
+    sizeDetailLabel: "Velikost {size} · detail",
+  },
+
+  details: {
+    eyebrow: "Dobré vědět",
+    title: "Vše o kytici {name}",
+    description: "Popis",
+    plant: "Rostlina",
+    flowers: "Obsažené květiny",
+    care: "Péče",
+    delivery: "Doručení",
+    deliveryText: "Vaše květiny pocházejí z vídeňského květinářství, se kterým pevně spolupracujeme. Kytice se tam pro vaši objednávku váží ručně. Kurýr je vyzvedne a jede bez zastávky na adresu příjemce.",
+    deliveryAreas: "Doručujeme do všech 23 vídeňských okresů. Poplatek za doručení se řídí okresem a zobrazí se po zadání PSČ. Oblasti doručení, časová okna a termíny pro objednání najdete v části {link}.",
+    deliveryLink: "Doručení a doprava",
+    looksPlant: "Vypadá rostlina přesně takto?",
+    looksBouquet: "Vypadá kytice přesně takto?",
+    looksOther: "Vypadá to přesně jako na fotce?",
+    naturalPlant: "Téměř. Rostliny jsou přírodní produkty: růst, velikost a květy se mohou od fotografie lišit. I obal na květináč může podle dostupnosti vypadat jinak.",
+    naturalFlowers: "Téměř. Květiny jsou přírodní produkty: podle sezóny se může lišit odrůda nebo odstín barvy. Naše partnerské květinářství dbá na to, aby styl a barevnost zůstaly zachovány.",
+  },
+
+  pricePending: {
+    status: "Cena bude doplněna",
+    sizes: "Velikosti",
+    sizesLabel: "Dostupné velikosti",
+    soonTitle: "Brzy k objednání",
+    soonText: "Právě stanovujeme ceny našeho sortimentu. Jakmile budou známé, můžete si tuto kytici objednat přímo zde.",
+    contact: "Dotazy? Napište nám",
+  },
+
+  related: {
+    eyebrow: "Prohlížet dál",
+    title: "Mohlo by se vám líbit také",
+    allFlowers: "Zobrazit všechny květiny",
+  },
+
+  reviews: {
+    eyebrow: "Hodnocení",
+    title: "Hodnocení: {name}",
+    demoNote: "Ukázková hodnocení – skutečná hodnocení budou následovat",
+    quote: "„{text}“",
+    verified: "Ověřený nákup",
+    demo: "Ukázka",
+  },
+
+  reviewPhotos: {
+    photosOf: "Fotky od {author}",
+    enlarge: "{alt} – zvětšit fotku {index} z {total}",
+    dialogTitle: "Fotka zákazníka od {author}",
+    dialogCount: "({index} z {total})",
+    close: "Zavřít fotku",
+    show: "Zobrazit fotku {index}",
+  },
+  reviewVideo: {
+    videoOf: "Video od {author}",
+    caption: "Video zákazníka · {duration}",
+  },
+};
+
+export default product;

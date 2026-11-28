@@ -1,0 +1,115 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** es – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Nombre",
+  email: "Correo electrónico",
+  emailAddress: "Dirección de correo electrónico",
+  message: "Mensaje",
+  orderNumber: "Número de pedido",
+  honeypot: "Sitio web",
+  charCount: "{count}/{max} caracteres",
+  genericError: "Lo sentimos, no ha funcionado. Inténtalo de nuevo más tarde.",
+  invalidEmailEnter: "Introduce una dirección de correo electrónico válida.",
+
+  mailFallback: {
+    title: "El formulario no está disponible en este momento.",
+    text: "Tu mensaje no se ha perdido: envíanoslo directamente por correo electrónico a {email}. El texto ya está insertado.",
+    open: "Abrir correo electrónico",
+  },
+
+  newsletter: {
+    honeypot: "Sitio web (déjalo vacío)",
+    successTitle: "Casi listo: confirma tu suscripción.",
+    successText: "Te hemos enviado un correo electrónico con un enlace de confirmación. Solo después recibirás nuestra newsletter.",
+  },
+
+  contact: {
+    formLabel: "Formulario de contacto",
+    subject: "Asunto",
+    subjects: {
+      order: "Pedido",
+      delivery: "Entrega",
+      business: "Empresas",
+      other: "Otros",
+    },
+    orderNumberHint: "Lo encontrarás en la confirmación de tu pedido.",
+    errors: {
+      name: "Indica tu nombre.",
+      email: "Indica una dirección de correo electrónico válida.",
+      subject: "Elige un asunto.",
+      orderIdTooLong: "El número de pedido es demasiado largo.",
+      messageTooShort: "Describe tu consulta (mínimo 10 caracteres).",
+      messageTooLong: "El mensaje puede tener como máximo 2000 caracteres.",
+    },
+    thanksTitle: "Gracias por tu mensaje.",
+    thanksText: "Hemos recibido tu consulta y te responderemos lo antes posible por correo electrónico a {email}.",
+    sendAnother: "Enviar otro mensaje",
+    failed: "No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbenos directamente por correo electrónico.",
+    consent: "Al enviar el formulario, aceptas que usemos tus datos para tramitar tu consulta. Más detalles en la política de privacidad.",
+    submit: "Enviar mensaje",
+    mailSubject: "Consulta de contacto: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Desistir del contrato",
+    errors: {
+      name: "Indica tu nombre.",
+      email: "Indica una dirección de correo electrónico válida.",
+      orderId: "Indica el número de pedido (p. ej., BQ-7K2M9Q).",
+    },
+    emailHint: "Aquí te enviaremos la confirmación de recepción.",
+    orderNumberHint: "Aparece en la confirmación de tu pedido.",
+    items: "¿De qué productos desistes?",
+    itemsPlaceholder: "p. ej., el osito de peluche; déjalo vacío para todos los productos del pedido sujetos a desistimiento",
+    declaration: "Por la presente desisto del contrato celebrado por mí para la compra de los productos indicados arriba.",
+    receivedTitle: "Hemos recibido tu desistimiento.",
+    receivedText: "Recibido el {receivedAt} para el pedido {orderId}.",
+    receivedTextWithCase: "Recibido el {receivedAt} para el pedido {orderId} (expediente {id}).",
+    confirmationSent: "Hemos enviado la confirmación de recepción a {email}.",
+    confirmationNotSent: "No se ha podido enviar el correo electrónico de confirmación en este momento; confirmaremos la recepción personalmente lo antes posible. Hasta entonces, guarda esta página (p. ej., como captura de pantalla).",
+    failed: "No se ha podido enviar el desistimiento en este momento. Inténtalo de nuevo o envíalo por correo electrónico a {email}.",
+    submit: "Confirmar desistimiento",
+    mailSubject: "Desistimiento – pedido {orderId}",
+    mailDeclaration: "Por la presente desisto del contrato celebrado por mí para la compra de los siguientes productos: {items}",
+    mailAllItems: "todos los productos del pedido sujetos a desistimiento",
+  },
+
+  business: {
+    formLabel: "Solicitud para empresas",
+    company: "Empresa",
+    contact: "Persona de contacto",
+    phone: "Teléfono",
+    location: "Ubicación / código postal",
+    locationPlaceholder: "p. ej., 1070 Viena",
+    need: "Necesidad",
+    pleaseChoose: "Elige una opción",
+    needs: {
+      subscription: "Entrega periódica (suscripción)",
+      oneOff: "Entrega única",
+      event: "Evento",
+      gifts: "Regalos para personal o clientes",
+    },
+    messagePlaceholder: "De qué se trata, para cuándo y en qué volumen, y cualquier otra cosa que sea importante para ti.",
+    consent: "Acepto que mis datos se guarden y se usen para tramitar la solicitud. Más detalles en la {privacyLink}.",
+    privacyLink: "política de privacidad",
+    errors: {
+      company: "Indica el nombre de tu empresa.",
+      contact: "Indica una persona de contacto.",
+      email: "Indica una dirección de correo electrónico válida.",
+      phone: "Revisa el número de teléfono.",
+      location: "Indica la ubicación o el código postal.",
+      need: "Elige lo que necesitas.",
+      message: "Describe brevemente lo que necesitas (mínimo 10 caracteres).",
+      consent: "Confirma que podemos usar tus datos para tramitar la solicitud.",
+    },
+    thanksTitle: "Gracias por tu solicitud.",
+    thanksText: "Lo hemos recibido todo y escribiremos a {contact} por correo electrónico a {email}.",
+    sendAnother: "Enviar otra solicitud",
+    failed: "No se ha podido enviar la solicitud. Inténtalo de nuevo o escríbenos directamente por correo electrónico.",
+    submit: "Enviar solicitud",
+    mailSubject: "Solicitud de empresa: {company}",
+  },
+};
+
+export default forms;

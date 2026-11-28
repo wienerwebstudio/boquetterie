@@ -1,0 +1,115 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** da – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Navn",
+  email: "E-mail",
+  emailAddress: "E-mailadresse",
+  message: "Besked",
+  orderNumber: "Ordrenummer",
+  honeypot: "Website",
+  charCount: "{count}/{max} tegn",
+  genericError: "Det lykkedes desværre ikke. Prøv venligst igen senere.",
+  invalidEmailEnter: "Indtast venligst en gyldig e-mailadresse.",
+
+  mailFallback: {
+    title: "Formularen er ikke tilgængelig lige nu.",
+    text: "Din besked er ikke gået tabt: Send den venligst direkte til os på e-mail til {email}. Teksten er allerede indsat.",
+    open: "Åbn e-mail",
+  },
+
+  newsletter: {
+    honeypot: "Website (lad feltet være tomt)",
+    successTitle: "Næsten færdig – bekræft venligst din tilmelding.",
+    successText: "Vi har sendt dig en e-mail med et bekræftelseslink. Først derefter modtager du vores nyhedsbrev.",
+  },
+
+  contact: {
+    formLabel: "Kontaktformular",
+    subject: "Emne",
+    subjects: {
+      order: "Bestilling",
+      delivery: "Levering",
+      business: "Erhvervskunder",
+      other: "Andet",
+    },
+    orderNumberHint: "Står i din ordrebekræftelse.",
+    errors: {
+      name: "Angiv venligst dit navn.",
+      email: "Angiv venligst en gyldig e-mailadresse.",
+      subject: "Vælg venligst et emne.",
+      orderIdTooLong: "Ordrenummeret er for langt.",
+      messageTooShort: "Beskriv venligst din henvendelse (mindst 10 tegn).",
+      messageTooLong: "Beskeden må højst være 2000 tegn lang.",
+    },
+    thanksTitle: "Tak for din besked.",
+    thanksText: "Vi har modtaget din henvendelse og vender tilbage så hurtigt som muligt på e-mail til {email}.",
+    sendAnother: "Send endnu en besked",
+    failed: "Beskeden kunne ikke sendes. Prøv venligst igen, eller skriv direkte til os på e-mail.",
+    consent: "Ved at sende accepterer du, at vi bruger dine oplysninger til at behandle henvendelsen. Detaljer i privatlivspolitikken.",
+    submit: "Send besked",
+    mailSubject: "Kontakthenvendelse: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Fortryd aftale",
+    errors: {
+      name: "Angiv venligst dit navn.",
+      email: "Angiv venligst en gyldig e-mailadresse.",
+      orderId: "Angiv venligst ordrenummeret (f.eks. BQ-7K2M9Q).",
+    },
+    emailHint: "Hertil sender vi kvitteringen for modtagelse.",
+    orderNumberHint: "Står i din ordrebekræftelse.",
+    items: "Hvilke varer fortryder du købet af?",
+    itemsPlaceholder: "f.eks. bamsen – lad feltet være tomt for alle varer i ordren, der kan fortrydes",
+    declaration: "Jeg meddeler hermed, at jeg fortryder den aftale, jeg har indgået om køb af ovennævnte varer.",
+    receivedTitle: "Din fortrydelse er modtaget.",
+    receivedText: "Modtaget den {receivedAt} for bestilling {orderId}.",
+    receivedTextWithCase: "Modtaget den {receivedAt} for bestilling {orderId} (sag {id}).",
+    confirmationSent: "Vi har sendt kvitteringen for modtagelse til {email}.",
+    confirmationNotSent: "Bekræftelsesmailen kunne ikke sendes lige nu – vi bekræfter modtagelsen personligt så hurtigt som muligt. Gem venligst denne side indtil da (f.eks. som skærmbillede).",
+    failed: "Fortrydelsen kunne ikke sendes lige nu. Prøv venligst igen, eller send den på e-mail til {email}.",
+    submit: "Bekræft fortrydelse",
+    mailSubject: "Fortrydelse – bestilling {orderId}",
+    mailDeclaration: "Jeg meddeler hermed, at jeg fortryder den aftale, jeg har indgået om køb af følgende varer: {items}",
+    mailAllItems: "alle varer i ordren, der kan fortrydes",
+  },
+
+  business: {
+    formLabel: "Forespørgsel for erhvervskunder",
+    company: "Virksomhed",
+    contact: "Kontaktperson",
+    phone: "Telefon",
+    location: "Adresse / postnummer",
+    locationPlaceholder: "f.eks. 1070 Wien",
+    need: "Behov",
+    pleaseChoose: "Vælg venligst",
+    needs: {
+      subscription: "Fast levering (abonnement)",
+      oneOff: "Enkelt levering",
+      event: "Arrangement",
+      gifts: "Gaver til medarbejdere eller kunder",
+    },
+    messagePlaceholder: "Hvad drejer det sig om, til hvornår og i hvilket omfang – og hvad der ellers er vigtigt for dig.",
+    consent: "Jeg accepterer, at mine oplysninger gemmes og bruges til at behandle forespørgslen. Detaljer i {privacyLink}.",
+    privacyLink: "privatlivspolitikken",
+    errors: {
+      company: "Angiv venligst navnet på din virksomhed.",
+      contact: "Angiv venligst en kontaktperson.",
+      email: "Angiv venligst en gyldig e-mailadresse.",
+      phone: "Kontrollér venligst telefonnummeret.",
+      location: "Angiv venligst adresse eller postnummer.",
+      need: "Vælg venligst, hvad du har brug for.",
+      message: "Beskriv venligst kort dit behov (mindst 10 tegn).",
+      consent: "Bekræft venligst, at vi må bruge dine oplysninger til behandlingen.",
+    },
+    thanksTitle: "Tak for din forespørgsel.",
+    thanksText: "Vi har modtaget det hele og vender tilbage til {contact} på e-mail til {email}.",
+    sendAnother: "Send endnu en forespørgsel",
+    failed: "Forespørgslen kunne ikke sendes. Prøv venligst igen, eller skriv direkte til os på e-mail.",
+    submit: "Send forespørgsel",
+    mailSubject: "Erhvervsforespørgsel: {company}",
+  },
+};
+
+export default forms;

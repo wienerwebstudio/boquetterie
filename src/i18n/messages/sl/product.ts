@@ -1,0 +1,195 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** sl – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Izdelek ni najden",
+  priceFrom: "od",
+
+  size: {
+    title: "Izberite velikost",
+    recommended: "Priporočeno",
+    soldOut: "Razprodano",
+  },
+
+  color: {
+    title: "Izberite barvo",
+    required: "(obvezno)",
+    notChosen: "Še ni izbrano",
+    error: "Izberite barvo.",
+  },
+
+  delivery: {
+    title: "Kdaj naj cvetje prispe?",
+    formLabel: "Preverjanje dostave",
+    postalCodeLabel: "Poštna številka prejemnika",
+    postalCodePlaceholder: "Poštna številka prejemnika",
+    check: "Preveri",
+    prompt: "Vnesite poštno številko, da izberete datum dostave",
+    notAvailable: "Na poštno številko {plz} žal še ne dostavljamo.",
+    notAvailableHint: "Vsa trenutna območja najdete pod {link}. Za drug naslov prejemnika preprosto vnesite novo poštno številko.",
+    deliveryLink: "Dostava in pošiljanje",
+    available: "Na ta naslov dostavljamo.",
+    fee: "Dostava v {plz} {region}: {fee}",
+    free: "brezplačno",
+    freeFrom: "brezplačno od {price}",
+    dateGroup: "Datum dostave",
+    today: "Danes",
+    orderUntil: "naročite do {time}",
+    tomorrow: "Jutri",
+    chooseDate: "Izberite datum",
+    openCalendar: "Odpri koledar",
+    deliveryOn: "Dostava dne {date}",
+    todaySuffix: "· danes",
+    noDays: "Trenutno ni na voljo nobenih dni dostave.",
+  },
+
+  calendar: {
+    previousMonth: "Prejšnji mesec",
+    nextMonth: "Naslednji mesec",
+    weekdays: {
+      mon: { short: "pon", long: "ponedeljek" },
+      tue: { short: "tor", long: "torek" },
+      wed: { short: "sre", long: "sreda" },
+      thu: { short: "čet", long: "četrtek" },
+      fri: { short: "pet", long: "petek" },
+      sat: { short: "sob", long: "sobota" },
+      sun: { short: "ned", long: "nedelja" },
+    },
+    daySameDay: "{date}, dostava še danes",
+    dayAvailable: "{date}, dostava mogoča",
+    dayUnavailable: "{date}, dostava ni mogoča",
+    legendSameDay: "Dostava še danes",
+    legendToday: "Danes",
+    legendUnavailable: "Na sivo obarvane dneve dostava ni mogoča.",
+  },
+
+  card: {
+    unavailableTitle: "Osebna voščilnica",
+    unavailableText: "Vaš šopek bo zaenkrat dostavljen brez voščilnice.",
+    comingSoon: "Kmalu na voljo!",
+    addMessage: "Dodajte osebno sporočilo",
+    included: "Voščilnica vključena",
+    handwritten: "Ročno napisana voščilnica",
+    saved: "Sporočilo shranjeno",
+    messageLabel: "Vaše sporočilo",
+    messagePlaceholder: "Vse najboljše za rojstni dan …",
+    maxChars: "Največ {max} znakov.",
+    senderGroup: "Pošiljatelj",
+    showSender: "Prikaži pošiljatelja",
+    anonymous: "Pošlji brez imena",
+    senderName: "Vaše ime",
+    optional: "(neobvezno)",
+    senderPlaceholder: "npr. Ana",
+  },
+
+  extras: {
+    title: "Še kaj zraven?",
+    deliveredTogether: "Dostavljeno skupaj",
+    addLabel: "Dodaj {name} za {price}",
+    add: "Dodaj",
+    quantity: "{name} količina",
+    less: "{name}: eno manj",
+    more: "{name}: eno več",
+  },
+
+  floristNote: {
+    title: "Želje za naše cvetličarje",
+    optional: "(neobvezno)",
+    hint: "Manjše spremembe šopka, npr. »namesto rumenih prosim bele vrtnice«. Upoštevamo jih, če je cvetje na voljo. Navodila za dostavo vnesete v blagajni.",
+    placeholder: "Vaša želja za cvetličarno",
+  },
+
+  cta: {
+    total: "Skupaj",
+    comingSoon: "Kmalu na voljo za naročilo",
+    unavailable: "Trenutno ni na voljo",
+    addToCart: "V košarico",
+    fresh: "Sveže povezano",
+    cardIncluded: "Voščilnica vključena",
+    securePayment: "Varno plačilo",
+    added: "{name} ({options}) je dodan v košarico.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Pogled od spredaj",
+      detail: "Podrobnost",
+      size: "Primerjava velikosti",
+      packaging: "Embalaža",
+      lifestyle: "Vzdušje",
+    },
+    status: "Slika {index} od {total}: {alt}",
+    carousel: "Vrtiljak",
+    imagesOf: "Slike: {name}",
+    slide: "Slika",
+    slideOf: "{index} od {total}",
+    choose: "Izberite sliko",
+    show: "Prikaži: {label}",
+    thumb: "{label}: {alt}",
+    previous: "Prejšnja slika",
+    next: "Naslednja slika",
+    colorAlt: "{name} v barvi {color}",
+    colorLabel: "Barva {color}",
+    sizeAlt: "{name} v velikosti {size}",
+    sizeDetailAlt: "{name} v velikosti {size}, od blizu",
+    sizeLabel: "Velikost {size}",
+    sizeDetailLabel: "Velikost {size} · od blizu",
+  },
+
+  details: {
+    eyebrow: "Dobro je vedeti",
+    title: "Vse o izdelku {name}",
+    description: "Opis",
+    plant: "Rastlina",
+    flowers: "Vsebovano cvetje",
+    care: "Navodila za nego",
+    delivery: "Dostava",
+    deliveryText: "Vaše cvetje prihaja iz dunajske cvetličarne, s katero stalno sodelujemo. Tam šopke za vaše naročilo povežejo ročno. Kurir jih prevzame in se brez vmesnih postankov odpelje na naslov prejemnika.",
+    deliveryAreas: "Dostavljamo v vseh 23 dunajskih okrajev. Strošek dostave je odvisen od okraja in se prikaže po vnosu poštne številke. Območja dostave, časovna okna in roke za naročilo najdete pod {link}.",
+    deliveryLink: "Dostava in pošiljanje",
+    looksPlant: "Ali je rastlina videti točno tako?",
+    looksBouquet: "Ali je šopek videti točno tako?",
+    looksOther: "Ali je videti točno tako kot na fotografiji?",
+    naturalPlant: "Skoraj. Rastline so naravni izdelki: rast, velikost in cvetovi se lahko razlikujejo od fotografije. Tudi okrasni lonec je lahko glede na razpoložljivost videti drugače.",
+    naturalFlowers: "Skoraj. Cvetje je naravni izdelek: glede na sezono se lahko posamezna sorta ali barvni odtenek razlikuje. Naša partnerska cvetličarna pazi, da se slog in barvni svet ohranita.",
+  },
+
+  pricePending: {
+    status: "Cena sledi",
+    sizes: "Velikosti",
+    sizesLabel: "Razpoložljive velikosti",
+    soonTitle: "Kmalu na voljo za naročilo",
+    soonText: "Trenutno določamo cene za našo ponudbo. Ko bodo določene, boste ta šopek lahko naročili neposredno tukaj.",
+    contact: "Vprašanja? Pišite nam",
+  },
+
+  related: {
+    eyebrow: "Brskajte naprej",
+    title: "Morda vam bo všeč tudi",
+    allFlowers: "Oglejte si vse cvetje",
+  },
+
+  reviews: {
+    eyebrow: "Mnenja",
+    title: "Ocene za {name}",
+    demoNote: "Primeri ocen – prave ocene sledijo",
+    quote: "»{text}«",
+    verified: "Preverjen nakup",
+    demo: "Primer",
+  },
+
+  reviewPhotos: {
+    photosOf: "Fotografije: {author}",
+    enlarge: "{alt} – povečaj fotografijo {index} od {total}",
+    dialogTitle: "Fotografija stranke: {author}",
+    dialogCount: "({index} od {total})",
+    close: "Zapri fotografijo",
+    show: "Prikaži fotografijo {index}",
+  },
+  reviewVideo: {
+    videoOf: "Videoposnetek: {author}",
+    caption: "Videoposnetek stranke · {duration}",
+  },
+};
+
+export default product;

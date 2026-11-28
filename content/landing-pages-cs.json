@@ -1,0 +1,196 @@
+[
+  {
+    "slug": "rozvoz-kvetin-viden",
+    "title": "Rozvoz květin Vídeň",
+    "headline": "Rozvoz květin ve Vídni – ručně vázané kytice až ke dveřím.",
+    "intro": "Vyberte kytici, den a časové okno a kurýr ji doveze na adresu příjemce. Doručujeme do všech 23 vídeňských okresů, od pondělí do neděle.",
+    "image": "/images/hero/hero-wide.jpg",
+    "productFilter": { "limit": 8 },
+    "sections": [
+      {
+        "heading": "Jak funguje rozvoz květin ve Vídni",
+        "paragraphs": [
+          "Vyberete si kytici a její velikost, v kalendáři zvolíte datum doručení a hodinové časové okno mezi 9:00 a 22:00. Pak zadáte adresu příjemce a zaplatíte. Potvrzení dostanete e-mailem spolu s odkazem, kde můžete sledovat stav objednávky.",
+          "Cena doručení závisí na okresu, ve kterém je adresa příjemce. Přesnou částku uvidíte hned po zadání PSČ."
+        ]
+      },
+      {
+        "heading": "Ručně vázané pro každou objednávku",
+        "paragraphs": [
+          "Kytice váže vídeňské květinářství, se kterým pevně spolupracujeme – vždy ručně pro konkrétní objednávku, ne do zásoby. Kurýr kytici vyzvedne v květinářství a jede bez zastávek na adresu příjemce. Pokud příjemce není doma, předá kurýr kytici podle možnosti sousedům."
+        ]
+      },
+      {
+        "heading": "Česky od výběru až po e-mail",
+        "paragraphs": [
+          "Stránky, pokladna i e-maily k objednávce jsou v češtině. Zaplatit můžete platební kartou, přes Apple Pay, Google Pay, Klarna nebo eps – fungují i karty vydané mimo Rakousko. Všechny časy jsou uvedeny ve vídeňském čase."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-date", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Rozvoz květin Vídeň – ručně vázané kytice",
+      "description": "Rozvoz květin ve Vídni: ručně vázané kytice s vybraným datem a časovým oknem. Do všech 23 okresů, od pondělí do neděle."
+    }
+  },
+  {
+    "slug": "kvetiny-z-ceska-do-vidne",
+    "title": "Květiny z Česka do Vídně",
+    "headline": "Poslat květiny z Česka do Vídně – snadno a česky.",
+    "intro": "Máte ve Vídni rodinu, přátele nebo kolegy? Objednejte kytici online z Česka a vídeňské květinářství ji ručně uváže a kurýr doručí v den, který si vyberete.",
+    "image": "/images/hero/hero-wien-tram-wide.jpg",
+    "productFilter": { "occasions": ["geburtstag", "danke", "liebe", "einfach-so"], "limit": 8 },
+    "sections": [
+      {
+        "heading": "Květiny do Vídně, i když jste daleko",
+        "paragraphs": [
+          "Narozeniny, svátek, výročí nebo jen pozdrav z domova – kytici do Vídně objednáte z Prahy, Brna i odkudkoli jinde. Vyberete květiny, datum a hodinové časové okno mezi 9:00 a 22:00 a zadáte adresu příjemce ve Vídni. Doručujeme do všech 23 vídeňských okresů, každý den v týdnu.",
+          "Kytici váže vídeňské partnerské květinářství ručně pro vaši objednávku a kurýr ji odveze přímo na adresu příjemce."
+        ]
+      },
+      {
+        "heading": "Platba a čas",
+        "paragraphs": [
+          "Platit můžete platební kartou – i kartou vydanou v Česku –, přes Apple Pay, Google Pay, Klarna nebo eps. Všechny časy doručení jsou ve vídeňském čase, který je stejný jako v Česku.",
+          "Stránky, pokladna i e-maily k objednávce jsou v češtině, takže vše vyřídíte bez překladače."
+        ]
+      },
+      {
+        "heading": "Lichý počet květů",
+        "paragraphs": [
+          "V Česku se k radostným příležitostem tradičně dává lichý počet květů, sudý počet patří k pohřbu. Pokud si přejete lichý počet stonků, napište to při objednávce do poznámky pro květinářství – na přání ho rádi uvážou."
+        ]
+      }
+    ],
+    "faqIds": ["f-payment", "f-date", "f-window", "f-nobody", "f-anon"],
+    "seo": {
+      "title": "Poslat květiny z Česka do Vídně – Blumora",
+      "description": "Pošlete květiny z Česka do Vídně: ručně vázané kytice, doručení do všech 23 okresů, platba kartou, Apple Pay, Google Pay, Klarna nebo eps."
+    }
+  },
+  {
+    "slug": "kvetinarstvi-viden",
+    "title": "Květinářství Vídeň",
+    "headline": "Květinářství ve Vídni online – kytice vázané ručně, ne na lince.",
+    "intro": "Blumora je online květinářství z Vídně. Každou kytici ručně váže vídeňské partnerské květinářství pro vaši objednávku a kurýr ji přiveze přímo k příjemci.",
+    "image": "/images/editorial/strauss-fenster-stephansdom.jpg",
+    "productFilter": { "category": "bunt", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Vídeňské květinářství, objednávka online",
+        "paragraphs": [
+          "Hledáte květinářství ve Vídni, ale nechcete chodit od obchodu k obchodu? U nás si kytici vyberete online – růže, pestré sezónní kytice, pastelové tóny, rostliny v květináči nebo smuteční floristiku. Váže ji květinářství ve Vídni, se kterým pevně spolupracujeme.",
+          "Každá kytice vzniká ručně a až pro vaši objednávku. Květiny jsou přírodní produkt, takže se barvy a druhy mohou podle sezóny mírně lišit – styl a barevné ladění ale zůstávají."
+        ]
+      },
+      {
+        "heading": "Z dílny rovnou k příjemci",
+        "paragraphs": [
+          "Kurýr vyzvedne hotovou kytici přímo v květinářství a doveze ji bez oklik přes sklad na adresu příjemce – do všech 23 vídeňských okresů, v hodinovém časovém okně mezi 9:00 a 22:00, od pondělí do neděle.",
+          "Posíláte květiny do firmy nebo hotelu? Uveďte v pokladně název firmy či hotelu a případně oddělení nebo číslo pokoje – doručujeme na recepci."
+        ]
+      }
+    ],
+    "faqIds": ["f-photo", "f-fresh", "f-where", "f-date"],
+    "seo": {
+      "title": "Květinářství Vídeň – ručně vázané kytice online",
+      "description": "Online květinářství ve Vídni: kytice ručně vázané vídeňským květinářstvím a doručené kurýrem do všech 23 okresů, od pondělí do neděle."
+    }
+  },
+  {
+    "slug": "kvetiny-jeste-dnes-viden",
+    "title": "Květiny ještě dnes ve Vídni",
+    "headline": "Doručení květin ještě dnes ve Vídni – i expresně do 1–2 hodin.",
+    "intro": "Objednejte od pondělí do soboty do 18:30 nebo v neděli do 17:45 a vaše kytice dorazí po celé Vídni ještě týž den, dokud je volné časové okno.",
+    "image": "/images/editorial/kurier-uebergabe-haustuer.jpg",
+    "productFilter": { "sameDayOnly": true, "limit": 8 },
+    "sections": [
+      {
+        "heading": "Doručení týž den",
+        "paragraphs": [
+          "Na květiny jste si vzpomněli na poslední chvíli? Žádný problém. Při objednávce od pondělí do soboty do 18:30 a v neděli do 17:45 doručujeme ještě týž den do všech 23 vídeňských okresů. Můžete si vybrat časová okna, která končí nejdříve dvě hodiny po objednávce.",
+          "Nejbližší možný termín pro adresu příjemce uvidíte, jakmile zadáte PSČ. Všechny časy jsou ve vídeňském čase."
+        ]
+      },
+      {
+        "heading": "Expres do 1–2 hodin bez příplatku",
+        "paragraphs": [
+          "Spěcháte? Objednejte jako obvykle a v pokladně zvolte nejbližší dnešní časové okno – je označené jako „Express“. Kytice pak dorazí do 1–2 hodin, bez příplatku. Funguje to v uvedených časech objednávky, pokud je pro adresu ještě volné časové okno."
+        ]
+      },
+      {
+        "heading": "Rychle, a přesto ručně vázané",
+        "paragraphs": [
+          "I při doručení týž den váže kytici vídeňské květinářství ručně pro vaši objednávku. Kurýr ji pak veze přímo k příjemci. S dotazy vám pomůžeme telefonicky i přes WhatsApp, 24 hodin denně, 7 dní v týdnu."
+        ]
+      }
+    ],
+    "faqIds": ["f-today", "f-express", "f-where", "f-window", "f-nobody"],
+    "seo": {
+      "title": "Květiny ještě dnes Vídeň – expres do 1–2 hodin",
+      "description": "Doručení květin týž den ve Vídni: objednávky Po–So do 18:30, v neděli do 17:45. Expres do 1–2 hodin bez příplatku, do všech 23 okresů."
+    }
+  },
+  {
+    "slug": "doruceni-ruzi-viden",
+    "title": "Doručení růží Vídeň",
+    "headline": "Doručení růží ve Vídni – rudé, růžové, bílé i modré.",
+    "intro": "Kytice růží v několika barvách a velikostech, ručně vázané ve vídeňském květinářství a doručené kurýrem v den a čas, který si vyberete.",
+    "image": "/images/products/sortiment/red-rose-bouquet-1.jpg",
+    "productFilter": { "category": "rosen", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Růže pro každou příležitost",
+        "paragraphs": [
+          "Rudé růže jako vyznání lásky na Valentýna nebo k výročí, růžové na poděkování, bílé ke svatbě nebo jako tichý pozdrav – a pro ty, kdo mají rádi něco neobvyklého, také modré, černé nebo duhové růže. Mnohé kytice jsou k dispozici v několika velikostech, od malého gesta po velkou kytici.",
+          "Na přání vám květinářství uváže lichý počet růží, jak je v Česku zvykem k radostným příležitostem. Stačí to napsat do poznámky při objednávce."
+        ]
+      },
+      {
+        "heading": "Doručení růží po celé Vídni",
+        "paragraphs": [
+          "Růže doručujeme do všech 23 vídeňských okresů, od pondělí do neděle, v hodinovém časovém okně mezi 9:00 a 22:00. Při objednávce od pondělí do soboty do 18:30 nebo v neděli do 17:45 dorazí kytice ještě týž den, dokud je volné časové okno. Kurýr vyzvedne čerstvě uvázanou kytici v květinářství a veze ji přímo k příjemci."
+        ]
+      }
+    ],
+    "faqIds": ["f-where", "f-window", "f-anon", "f-photo"],
+    "seo": {
+      "title": "Doručení růží Vídeň – kytice růží s rozvozem",
+      "description": "Doručení růží ve Vídni: rudé, růžové, bílé i modré růže, ručně vázané a doručené kurýrem do všech 23 okresů, i týž den."
+    }
+  },
+  {
+    "slug": "smutecni-kytice-a-vence-viden",
+    "title": "Smuteční kytice a věnce Vídeň",
+    "headline": "Smuteční kytice a věnce ve Vídni – důstojné poslední rozloučení.",
+    "intro": "Smuteční věnce a smuteční kytice v klidných barvách, ručně vázané vídeňským květinářstvím a doručené na adresu, kterou zadáte.",
+    "image": "/images/products/sortiment/trauerkranz-weiss-1.jpg",
+    "productFilter": { "category": "trauer", "limit": 8 },
+    "sections": [
+      {
+        "heading": "Smuteční floristika na pohřeb a vzpomínkový obřad",
+        "paragraphs": [
+          "Když nemůžete na pohřeb přijet osobně, květiny vyjádří soustrast za vás. Vybrat si můžete smuteční věnce v bílé, červené nebo pestrých barvách a smuteční kytice v několika velikostech – od prosté bílé s liliemi a chryzantémami po teplé tóny se slunečnicemi.",
+          "Každý věnec a každou kytici váže vídeňské partnerské květinářství ručně pro vaši objednávku."
+        ]
+      },
+      {
+        "heading": "Stuha s nápisem a sudý počet květů",
+        "paragraphs": [
+          "Věnec se stuhou s vaším textem vám květinářství připraví na přání – napište text do poznámky pro květinářství při objednávce. Stejně tak můžete požádat o sudý počet květů, který se v Česku ke smutečním příležitostem tradičně dává."
+        ]
+      },
+      {
+        "heading": "Doručení ve správný čas",
+        "paragraphs": [
+          "V kalendáři vyberte den a hodinové časové okno mezi 9:00 a 22:00 – doručujeme do všech 23 vídeňských okresů, od pondělí do neděle. Do poznámky k doručení můžete uvést podrobnosti o místě převzetí. Všechny časy jsou ve vídeňském čase."
+        ]
+      }
+    ],
+    "faqIds": ["f-date", "f-window", "f-change", "f-photo"],
+    "seo": {
+      "title": "Smuteční kytice a věnce Vídeň – doručení",
+      "description": "Smuteční věnce a smuteční kytice ve Vídni: ručně vázané, se stuhou s nápisem na přání, doručené do všech 23 okresů v den podle vašeho výběru."
+    }
+  }
+]

@@ -1,0 +1,30 @@
+import "server-only";
+import { createDecipheriv } from "node:crypto";
+
+/**
+ * Starting values of the florist budgets ("Einkauf Dody (Liste)" from the owners'
+ * price calculation, Nov 2026 – the price the florist binds for; their discount is settled separately), encrypted because this repository is public.
+ * AES-256-GCM, `<iv>.<tag>.<ciphertext>` in base64; the key is the Netlify
+ * secret FLORIST_BUDGET_KEY. Used until budgets are saved in the admin – then the
+ * stored document wins. Without the key the shop simply has no default budgets.
+ */
+const ENCRYPTED_DEFAULT_BUDGETS =
+  "w8VBFIocI2NzeZ9k.qXmQp3dsCnyy5Sm7MoJ2Hg==.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";
+
+export function decryptBudgetBlob(blob: string, keyBase64: string | undefined): unknown | null {
+  if (!keyBase64) return null;
+  try {
+    const key = Buffer.from(keyBase64, "base64");
+    const [iv, tag, data] = blob.split(".").map((p) => Buffer.from(p, "base64"));
+    if (key.length !== 32 || !iv || !tag || !data) return null;
+    const decipher = createDecipheriv("aes-256-gcm", key, iv);
+    decipher.setAuthTag(tag);
+    return JSON.parse(Buffer.concat([decipher.update(data), decipher.final()]).toString("utf8"));
+  } catch {
+    return null;
+  }
+}
+
+export function defaultFloristBudgets(): unknown | null {
+  return decryptBudgetBlob(ENCRYPTED_DEFAULT_BUDGETS, process.env.FLORIST_BUDGET_KEY);
+}

@@ -1,0 +1,195 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** ro – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Produsul nu a fost găsit",
+  priceFrom: "de la",
+
+  size: {
+    title: "Alege mărimea",
+    recommended: "Recomandat",
+    soldOut: "Epuizat",
+  },
+
+  color: {
+    title: "Alege culoarea",
+    required: "(obligatoriu)",
+    notChosen: "Încă nealeasă",
+    error: "Te rugăm să alegi o culoare.",
+  },
+
+  delivery: {
+    title: "Când să ajungă florile?",
+    formLabel: "Verificarea livrării",
+    postalCodeLabel: "Codul poștal al destinatarului",
+    postalCodePlaceholder: "Codul poștal al destinatarului",
+    check: "Verifică",
+    prompt: "Introdu codul poștal ca să alegi data livrării",
+    notAvailable: "Din păcate nu livrăm încă la {plz}.",
+    notAvailableHint: "Toate zonele actuale le găsești la {link}. Pentru o altă adresă a destinatarului, introdu pur și simplu un nou cod poștal.",
+    deliveryLink: "Livrare și expediere",
+    available: "Livrăm la această adresă.",
+    fee: "Livrare la {plz} {region}: {fee}",
+    free: "gratuit",
+    freeFrom: "gratuit de la {price}",
+    dateGroup: "Data livrării",
+    today: "Azi",
+    orderUntil: "comandă până la ora {time}",
+    tomorrow: "Mâine",
+    chooseDate: "Alege data",
+    openCalendar: "Deschide calendarul",
+    deliveryOn: "Livrare pe {date}",
+    todaySuffix: "· azi",
+    noDays: "Momentan nu sunt disponibile zile de livrare.",
+  },
+
+  calendar: {
+    previousMonth: "Luna anterioară",
+    nextMonth: "Luna următoare",
+    weekdays: {
+      mon: { short: "Lu", long: "Luni" },
+      tue: { short: "Ma", long: "Marți" },
+      wed: { short: "Mi", long: "Miercuri" },
+      thu: { short: "Jo", long: "Joi" },
+      fri: { short: "Vi", long: "Vineri" },
+      sat: { short: "Sâ", long: "Sâmbătă" },
+      sun: { short: "Du", long: "Duminică" },
+    },
+    daySameDay: "{date}, livrare azi",
+    dayAvailable: "{date}, se poate livra",
+    dayUnavailable: "{date}, nu se poate livra",
+    legendSameDay: "Livrare azi",
+    legendToday: "Azi",
+    legendUnavailable: "În zilele marcate cu gri nu se poate livra.",
+  },
+
+  card: {
+    unavailableTitle: "Felicitare personală",
+    unavailableText: "Deocamdată buchetul tău va fi livrat fără felicitare.",
+    comingSoon: "În curând!",
+    addMessage: "Adaugă un mesaj personal",
+    included: "Felicitare inclusă",
+    handwritten: "Felicitare scrisă de mână",
+    saved: "Mesaj salvat",
+    messageLabel: "Mesajul tău",
+    messagePlaceholder: "La mulți ani, cu tot dragul …",
+    maxChars: "Maximum {max} caractere.",
+    senderGroup: "Expeditor",
+    showSender: "Afișează expeditorul",
+    anonymous: "Trimite fără nume",
+    senderName: "Numele tău",
+    optional: "(opțional)",
+    senderPlaceholder: "de ex. Ana",
+  },
+
+  extras: {
+    title: "Mai adaugi ceva?",
+    deliveredTogether: "Se livrează împreună",
+    addLabel: "Adaugă {name} pentru {price}",
+    add: "Adaugă",
+    quantity: "Cantitate {name}",
+    less: "{name}: unul mai puțin",
+    more: "{name}: unul în plus",
+  },
+
+  floristNote: {
+    title: "Dorințe pentru floriștii noștri",
+    optional: "(opțional)",
+    hint: "Mici modificări la buchet, de ex. „în loc de trandafiri galbeni, te rog albi”. Le aplicăm dacă florile sunt disponibile. Indicațiile pentru livrare le introduci la finalizarea comenzii.",
+    placeholder: "Dorința ta pentru florărie",
+  },
+
+  cta: {
+    total: "Total",
+    comingSoon: "În curând disponibil pentru comandă",
+    unavailable: "Momentan indisponibil",
+    addToCart: "Adaugă în coș",
+    fresh: "Legat proaspăt",
+    cardIncluded: "Felicitare inclusă",
+    securePayment: "Plată sigură",
+    added: "{name} ({options}) a fost adăugat în coș.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Vedere din față",
+      detail: "Detaliu",
+      size: "Comparație de mărime",
+      packaging: "Ambalaj",
+      lifestyle: "Ambianță",
+    },
+    status: "Imaginea {index} din {total}: {alt}",
+    carousel: "Carusel",
+    imagesOf: "Imagini cu {name}",
+    slide: "Imagine",
+    slideOf: "{index} din {total}",
+    choose: "Alege imaginea",
+    show: "Afișează {label}",
+    thumb: "{label}: {alt}",
+    previous: "Imaginea anterioară",
+    next: "Imaginea următoare",
+    colorAlt: "{name} în culoarea {color}",
+    colorLabel: "Culoare {color}",
+    sizeAlt: "{name} în mărimea {size}",
+    sizeDetailAlt: "{name} în mărimea {size}, prim-plan",
+    sizeLabel: "Mărime {size}",
+    sizeDetailLabel: "Mărime {size} · prim-plan",
+  },
+
+  details: {
+    eyebrow: "Bine de știut",
+    title: "Totul despre {name}",
+    description: "Descriere",
+    plant: "Plantă",
+    flowers: "Flori incluse",
+    care: "Sfaturi de îngrijire",
+    delivery: "Livrare",
+    deliveryText: "Florile tale vin de la o florărie din Viena cu care colaborăm permanent. Acolo, buchetele sunt legate de mână pentru comanda ta. Un curier le ridică și merge fără opriri la adresa destinatarului.",
+    deliveryAreas: "Livrăm în toate cele 23 de districte ale Vienei. Taxa de livrare depinde de district și este afișată după introducerea codului poștal. Zonele de livrare, intervalele orare și termenele de comandă le găsești la {link}.",
+    deliveryLink: "Livrare și expediere",
+    looksPlant: "Planta arată exact așa?",
+    looksBouquet: "Buchetul arată exact așa?",
+    looksOther: "Arată exact ca în fotografie?",
+    naturalPlant: "Aproape. Plantele sunt produse naturale: forma, mărimea și înflorirea pot diferi de fotografie. Și ghiveciul decorativ poate arăta altfel, în funcție de disponibilitate.",
+    naturalFlowers: "Aproape. Florile sunt produse naturale: în funcție de sezon, un soi sau o nuanță de culoare poate diferi. Florăria noastră parteneră are grijă să păstreze stilul și paleta de culori.",
+  },
+
+  pricePending: {
+    status: "Prețul urmează",
+    sizes: "Mărimi",
+    sizesLabel: "Mărimi disponibile",
+    soonTitle: "În curând disponibil pentru comandă",
+    soonText: "Stabilim acum prețurile pentru oferta noastră. Imediat ce sunt fixate, poți comanda acest buchet direct aici.",
+    contact: "Întrebări? Scrie-ne",
+  },
+
+  related: {
+    eyebrow: "Mai răsfoiește",
+    title: "Ți-ar putea plăcea și",
+    allFlowers: "Vezi toate florile",
+  },
+
+  reviews: {
+    eyebrow: "Păreri",
+    title: "Recenzii pentru {name}",
+    demoNote: "Recenzii de exemplu – urmează recenzii reale",
+    quote: "„{text}”",
+    verified: "Cumpărare verificată",
+    demo: "Exemplu",
+  },
+
+  reviewPhotos: {
+    photosOf: "Fotografii de la {author}",
+    enlarge: "Mărește {alt} – fotografia {index} din {total}",
+    dialogTitle: "Fotografie de client de la {author}",
+    dialogCount: "({index} din {total})",
+    close: "Închide fotografia",
+    show: "Afișează fotografia {index}",
+  },
+  reviewVideo: {
+    videoOf: "Videoclip de la {author}",
+    caption: "Videoclip de la client · {duration}",
+  },
+};
+
+export default product;

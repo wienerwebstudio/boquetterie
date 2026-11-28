@@ -1,0 +1,195 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** uk – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Товар не знайдено",
+  priceFrom: "від",
+
+  size: {
+    title: "Оберіть розмір",
+    recommended: "Рекомендовано",
+    soldOut: "Розпродано",
+  },
+
+  color: {
+    title: "Оберіть колір",
+    required: "(обов’язково)",
+    notChosen: "Ще не обрано",
+    error: "Будь ласка, оберіть колір.",
+  },
+
+  delivery: {
+    title: "Коли мають прибути квіти?",
+    formLabel: "Перевірка доставки",
+    postalCodeLabel: "Поштовий індекс отримувача",
+    postalCodePlaceholder: "Індекс отримувача",
+    check: "Перевірити",
+    prompt: "Введіть індекс, щоб обрати дату доставки",
+    notAvailable: "На жаль, до {plz} ми поки що не доставляємо.",
+    notAvailableHint: "Усі актуальні зони ви знайдете в розділі {link}. Для іншої адреси отримувача просто введіть новий індекс.",
+    deliveryLink: "Доставка",
+    available: "Ми доставляємо на цю адресу.",
+    fee: "Доставка до {plz} {region}: {fee}",
+    free: "безкоштовно",
+    freeFrom: "безкоштовно від {price}",
+    dateGroup: "Дата доставки",
+    today: "Сьогодні",
+    orderUntil: "замовте до {time}",
+    tomorrow: "Завтра",
+    chooseDate: "Обрати дату",
+    openCalendar: "Відкрити календар",
+    deliveryOn: "Доставка {date}",
+    todaySuffix: "· сьогодні",
+    noDays: "Наразі немає доступних днів доставки.",
+  },
+
+  calendar: {
+    previousMonth: "Попередній місяць",
+    nextMonth: "Наступний місяць",
+    weekdays: {
+      mon: { short: "Пн", long: "Понеділок" },
+      tue: { short: "Вт", long: "Вівторок" },
+      wed: { short: "Ср", long: "Середа" },
+      thu: { short: "Чт", long: "Четвер" },
+      fri: { short: "Пт", long: "П’ятниця" },
+      sat: { short: "Сб", long: "Субота" },
+      sun: { short: "Нд", long: "Неділя" },
+    },
+    daySameDay: "{date}, доставка сьогодні",
+    dayAvailable: "{date}, доставка можлива",
+    dayUnavailable: "{date}, доставка неможлива",
+    legendSameDay: "Доставка сьогодні",
+    legendToday: "Сьогодні",
+    legendUnavailable: "У сірі дні доставка неможлива.",
+  },
+
+  card: {
+    unavailableTitle: "Особиста вітальна листівка",
+    unavailableText: "Поки що ваш букет буде доставлено без листівки.",
+    comingSoon: "Незабаром!",
+    addMessage: "Додати особисте повідомлення",
+    included: "Вітальна листівка включена",
+    handwritten: "Листівка, підписана від руки",
+    saved: "Повідомлення збережено",
+    messageLabel: "Ваше повідомлення",
+    messagePlaceholder: "Щиро вітаю з днем народження …",
+    maxChars: "Не більше {max} символів.",
+    senderGroup: "Відправник",
+    showSender: "Указати відправника",
+    anonymous: "Надіслати без імені",
+    senderName: "Ваше ім’я",
+    optional: "(необов’язково)",
+    senderPlaceholder: "наприклад, Анна",
+  },
+
+  extras: {
+    title: "Ще щось до букета?",
+    deliveredTogether: "Доставляється разом",
+    addLabel: "Додати {name} за {price}",
+    add: "Додати",
+    quantity: "{name}: кількість",
+    less: "{name}: на одиницю менше",
+    more: "{name}: на одиницю більше",
+  },
+
+  floristNote: {
+    title: "Побажання нашим флористам",
+    optional: "(необов’язково)",
+    hint: "Невеликі зміни в букеті, наприклад: «замість жовтих троянд, будь ласка, білі». Ми врахуємо їх, якщо квіти будуть у наявності. Вказівки щодо доставки ви зазначаєте під час оформлення замовлення.",
+    placeholder: "Ваше побажання флористам",
+  },
+
+  cta: {
+    total: "Разом",
+    comingSoon: "Скоро можна буде замовити",
+    unavailable: "Наразі недоступно",
+    addToCart: "До кошика",
+    fresh: "Свіжозібраний",
+    cardIncluded: "Вітальна листівка включена",
+    securePayment: "Безпечна оплата",
+    added: "{name} ({options}) додано до кошика.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Вигляд спереду",
+      detail: "Деталь",
+      size: "Порівняння розмірів",
+      packaging: "Упаковка",
+      lifestyle: "В інтер’єрі",
+    },
+    status: "Зображення {index} з {total}: {alt}",
+    carousel: "Карусель",
+    imagesOf: "Зображення: {name}",
+    slide: "Зображення",
+    slideOf: "{index} з {total}",
+    choose: "Обрати зображення",
+    show: "Показати: {label}",
+    thumb: "{label}: {alt}",
+    previous: "Попереднє зображення",
+    next: "Наступне зображення",
+    colorAlt: "{name}, колір: {color}",
+    colorLabel: "Колір: {color}",
+    sizeAlt: "{name}, розмір {size}",
+    sizeDetailAlt: "{name}, розмір {size}, крупним планом",
+    sizeLabel: "Розмір {size}",
+    sizeDetailLabel: "Розмір {size} · крупним планом",
+  },
+
+  details: {
+    eyebrow: "Корисно знати",
+    title: "Усе про {name}",
+    description: "Опис",
+    plant: "Рослина",
+    flowers: "Квіти в букеті",
+    care: "Поради з догляду",
+    delivery: "Доставка",
+    deliveryText: "Ваші квіти надходять від віденської флористичної майстерні, з якою ми постійно співпрацюємо. Букети там збирають вручну саме для вашого замовлення. Кур’єр забирає їх і їде без зупинок на адресу отримувача.",
+    deliveryAreas: "Ми доставляємо в усі 23 райони Відня. Вартість доставки залежить від району й відображається після введення поштового індексу. Зони доставки, часові інтервали та кінцевий час замовлення ви знайдете в розділі {link}.",
+    deliveryLink: "Доставка",
+    looksPlant: "Рослина виглядатиме точно так само?",
+    looksBouquet: "Букет виглядатиме точно так само?",
+    looksOther: "Усе виглядатиме точно так, як на фото?",
+    naturalPlant: "Майже. Рослини – це природні продукти: форма, розмір і цвітіння можуть відрізнятися від фото. Кашпо також може виглядати інакше залежно від наявності.",
+    naturalFlowers: "Майже. Квіти – це природні продукти: залежно від сезону сорт або відтінок кольору можуть відрізнятися. Наша партнерська флористична майстерня дбає про те, щоб стиль і кольорова гама залишилися незмінними.",
+  },
+
+  pricePending: {
+    status: "Ціна згодом",
+    sizes: "Розміри",
+    sizesLabel: "Доступні розміри",
+    soonTitle: "Скоро можна буде замовити",
+    soonText: "Зараз ми визначаємо ціни на наш асортимент. Щойно їх буде встановлено, ви зможете замовити цей букет безпосередньо тут.",
+    contact: "Є запитання? Напишіть нам",
+  },
+
+  related: {
+    eyebrow: "Дивитися далі",
+    title: "Вам також може сподобатися",
+    allFlowers: "Переглянути всі квіти",
+  },
+
+  reviews: {
+    eyebrow: "Відгуки",
+    title: "Відгуки про {name}",
+    demoNote: "Приклади відгуків – справжні відгуки з’являться згодом",
+    quote: "«{text}»",
+    verified: "Підтверджена покупка",
+    demo: "Приклад",
+  },
+
+  reviewPhotos: {
+    photosOf: "Фото від {author}",
+    enlarge: "{alt} – збільшити фото {index} з {total}",
+    dialogTitle: "Фото клієнта: {author}",
+    dialogCount: "({index} з {total})",
+    close: "Закрити фото",
+    show: "Показати фото {index}",
+  },
+  reviewVideo: {
+    videoOf: "Відео від {author}",
+    caption: "Відео покупця · {duration}",
+  },
+};
+
+export default product;

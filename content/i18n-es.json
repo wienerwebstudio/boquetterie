@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Rosas rosas, gerberas fucsia y lirios blancos",
+      "shortDescription": "Un ramo luminoso y suelto en rosa y blanco que lleva buen humor a cualquier espacio.",
+      "description": "Rosé Dream combina rosas rosas y gerberas fucsia con lirios blancos, delicada paniculata y verde fresco. Atado de forma suelta y de efecto luminoso, es ideal para un cumpleaños, para dar las gracias o simplemente porque sí.",
+      "flowers": [
+        "Rosas",
+        "Gerberas",
+        "Lirios",
+        "Paniculata"
+      ],
+      "care": [
+        "Pon agua fresca en el jarrón cada día.",
+        "Recorta los tallos cuando haga falta.",
+        "Retira con regularidad las flores marchitas."
+      ],
+      "seo": {
+        "title": "Rosé Dream – ramo en rosa y blanco",
+        "description": "Rosé Dream: rosas rosas, gerberas fucsia y lirios blancos, atados de forma suelta. Un ramo luminoso para cumpleaños y agradecimientos – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Ramo de rosas rosas, gerberas fucsia y lirios blancos en un jarrón de cristal sobre una cómoda de madera"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Ramo amarillo",
+      "tagline": "Gerberas amarillas, rosas y paniculata",
+      "shortDescription": "Un ramo soleado en amarillo y blanco, atado con un lazo amarillo.",
+      "description": "Gerberas de un amarillo intenso se encuentran con rosas blancas y amarillas, paniculata y verde fresco. Con envoltorio claro y lazo amarillo: un ramo para un cumpleaños, una felicitación, para dar las gracias o desear una pronta recuperación.",
+      "flowers": [
+        "Gerberas",
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Evita colocar las flores a pleno sol."
+      ],
+      "seo": {
+        "title": "Ramo amarillo – gerberas y rosas en amarillo",
+        "description": "Gerberas amarillas, rosas blancas y amarillas con paniculata y lazo amarillo. Un saludo luminoso para un cumpleaños o una recuperación – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Ramo de gerberas amarillas y rosas blancas y amarillas con envoltorio claro y lazo amarillo"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Ramo blanco",
+      "tagline": "Rosas claras, gerberas y lirios",
+      "shortDescription": "Un ramo luminoso y sereno en blanco y crema con delicados toques rosas.",
+      "description": "El Ramo blanco combina rosas claras, gerberas y lirios con paniculata en un ramo sencillo y atemporal. Delicados toques en rosa y albaricoque le dan ligereza. Ideal para un aniversario de boda o de pareja, para dar las gracias o como un saludo con estilo.",
+      "flowers": [
+        "Rosas",
+        "Gerberas",
+        "Lirios",
+        "Paniculata"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Si hace falta, retira con cuidado el polen de los lirios."
+      ],
+      "seo": {
+        "title": "Ramo blanco – ramo en blanco y crema",
+        "description": "Rosas claras, gerberas y lirios con paniculata: un ramo sencillo para un aniversario de pareja o de boda o para dar las gracias – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Ramo claro de rosas color crema, gerberas rosas, lirios y paniculata con envoltorio blanco"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Rosas azules y blancas con envoltorio azul",
+      "shortDescription": "Rosas azules y blancas con envoltorio azul claro: un ramo que no pasa desapercibido.",
+      "description": "El Blue Bouquet combina rosas azules y blancas con paniculata, un lirio blanco y verde fresco. El envoltorio azul claro recoge el color de las flores. Un regalo poco habitual para un cumpleaños, un aniversario o para quienes aprecian lo especial.",
+      "flowers": [
+        "Rosas",
+        "Lirios",
+        "Paniculata"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – rosas azules y blancas",
+        "description": "Rosas azules y blancas con paniculata y envoltorio azul claro. Un ramo de rosas poco habitual para un cumpleaños o aniversario – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Ramo de rosas azules y blancas con paniculata y envoltorio azul claro sobre una cómoda de madera"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Rosas arcoíris de muchos colores",
+      "shortDescription": "Un ramo de rosas arcoíris en el que cada flor brilla en varios colores.",
+      "description": "Farbensinfonie está formado por rosas arcoíris: cada flor muestra varios colores a la vez, del rojo y el naranja al amarillo y el verde, hasta el azul y el lila. Atado de forma compacta, el ramo parece una bola de colores. Una sorpresa alegre para un cumpleaños o una celebración.",
+      "flowers": [
+        "Rosas arcoíris"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – rosas arcoíris",
+        "description": "Rosas arcoíris en las que cada flor brilla en varios colores. Un alegre ramo de rosas para un cumpleaños – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Farbensinfonie, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Farbensinfonie, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Farbensinfonie, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Ramo compacto de rosas arcoíris en un jarrón color crema",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Rosas arcoíris en primer plano, cada flor en varios colores"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelitzias, lirios y gerberas en naranja y amarillo",
+      "shortDescription": "Un ramo exótico en naranja y amarillo con aves del paraíso como protagonistas.",
+      "description": "Sonnenzauber combina llamativas aves del paraíso con lirios blancos, gerberas amarillas y verde fresco. Los cálidos tonos naranjas y amarillos dan al ramo un aire vivo y veraniego.",
+      "flowers": [
+        "Strelitzias (aves del paraíso)",
+        "Lirios",
+        "Gerberas",
+        "Paniculata"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Mantén limpio el jarrón y renueva el agua con regularidad.",
+        "Evita colocar las flores a pleno sol."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelitzias y gerberas",
+        "description": "Aves del paraíso, lirios y gerberas amarillas en cálidos tonos naranjas y amarillos. Un ramo exótico que llama la atención – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Ramo exótico de strelitzias, lirios blancos y gerberas amarillas envuelto en celofán transparente",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Vista desde arriba de las strelitzias, el lirio y las gerberas amarillas del ramo"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Flores en fucsia y rosa con gerberas y lirios",
+      "shortDescription": "Un ramo redondo y juguetón en fucsia y rosa con toques amarillos.",
+      "description": "El Pink Bouquet reúne flores en fucsia y rosa, entre ellas lirios y gerberas, en un ramo redondo y juguetón. Las gerberas amarillas aportan toques frescos y el envoltorio rosa completa el conjunto. Precioso para un cumpleaños, un aniversario, el Día de la Madre o simplemente porque sí.",
+      "flowers": [
+        "Lirios",
+        "Gerberas"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Retira con regularidad las flores marchitas."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – ramo en fucsia y rosa",
+        "description": "Un ramo redondo en fucsia y rosa con lirios y gerberas. Para un cumpleaños, el Día de la Madre o simplemente porque sí – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Ramo redondo en fucsia y rosa con gerberas amarillas y envoltorio rosa",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Ramo con lirios rosas, gerberas amarillas y flores fucsia, con envoltorio rosa y lazo"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Rosas en naranja y albaricoque",
+      "shortDescription": "Rosas en naranja y albaricoque: un ramo cálido como una puesta de sol.",
+      "description": "El Orange Bouquet está formado por rosas en naranja y albaricoque, completadas con verde delicado y con envoltorio claro. De efecto cálido y alegre, es ideal para un cumpleaños, para dar las gracias o para alegrarle el día a alguien.",
+      "flowers": [
+        "Rosas"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – rosas en naranja",
+        "description": "Rosas en naranja y albaricoque con envoltorio claro. Un cálido ramo de rosas para un cumpleaños o para dar las gracias – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Orange Bouquet, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Orange Bouquet, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Orange Bouquet, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Ramo de rosas naranjas y color albaricoque con envoltorio claro sobre una cómoda de madera"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Rosas de rojo intenso con envoltorio oscuro",
+      "shortDescription": "Un exuberante ramo de rosas de rojo intenso con lazo de satén rojo.",
+      "description": "El Red Rose Bouquet es un ramo compacto de rosas de rojo intenso con envoltorio oscuro, sujeto con un lazo de satén rojo. La declaración de amor clásica para San Valentín, un aniversario o una pedida de mano.",
+      "flowers": [
+        "Rosas"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – rosas rojas",
+        "description": "Rosas de rojo intenso con envoltorio oscuro y lazo de satén rojo. El ramo de rosas clásico para San Valentín y aniversarios – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Red Rose Bouquet, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Red Rose Bouquet, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Red Rose Bouquet, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Ramo de rosas de rojo intenso con envoltorio gris oscuro y lazo de satén rojo",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Ramo de rosas rojas tumbado, con envoltorio blanco y negro, junto a unas velas"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Ramo rosa",
+      "tagline": "Rosas y gerberas en rosa, pastel y lila",
+      "shortDescription": "Un ramo suave y romántico en rosa y tonos pastel.",
+      "description": "El Ramo rosa combina rosas en rosa y tonos pastel con gerberas y flores color lila. Con envoltorio blanco y lazo rosa, resulta ligero y cariñoso. Precioso para un cumpleaños, el Día de la Madre, un nacimiento o como saludo.",
+      "flowers": [
+        "Rosas",
+        "Gerberas"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Ramo rosa – rosas en rosa y pastel",
+        "description": "Rosas y gerberas en rosa, pastel y lila, con envoltorio blanco. Para un cumpleaños, el Día de la Madre o un nacimiento – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Ramo de rosas rosas, gerberas y flores color lila con envoltorio blanco y lazo rosa"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Rosas negras con envoltorio oscuro",
+      "shortDescription": "Rosas negras con envoltorio oscuro: misteriosas y fuera de lo común.",
+      "description": "Blackroses es un ramo de rosas negras con un envoltorio oscuro y transparente. Una declaración poco habitual para quienes aprecian lo especial, por ejemplo en un cumpleaños o un aniversario.",
+      "flowers": [
+        "Rosas"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Blackroses – rosas negras",
+        "description": "Rosas negras con envoltorio oscuro: un ramo de rosas poco habitual para quienes aprecian lo especial – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Blackroses, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Blackroses, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Blackroses, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Ramo de rosas negras con envoltorio negro en un jarrón de cristal",
+        "/images/products/sortiment/blackroses-2.jpg": "Rosas negras sin envoltorio en un jarrón de cristal delante de una ventana"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Rosas azules con paniculata",
+      "shortDescription": "Rosas de un azul intenso con paniculata: poco comunes y llamativas de verdad.",
+      "description": "Blaue Liebe es un ramo de rosas de un azul intenso, aligerado con fina paniculata y con envoltorio azul. Un regalo especial para un cumpleaños, un aniversario o como muestra de un vínculo profundo.",
+      "flowers": [
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – rosas azules",
+        "description": "Rosas de un azul intenso con paniculata y envoltorio azul. Un ramo de rosas poco común para personas especiales – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Blaue Liebe, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Blaue Liebe, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Blaue Liebe, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Ramo de rosas azules con paniculata y envoltorio azul en un jarrón blanco",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Rosas azules con paniculata y envoltorio azul, vista frontal",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Ramo de rosas azules con envoltorio azul, tumbado sobre una cómoda de madera"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Rosas rosas con paniculata",
+      "shortDescription": "Rosas rosas con un delicado envoltorio: cariñosas y elegantes.",
+      "description": "Rosalie es un ramo de rosas rosas, aligerado con paniculata y con envoltorio rosa pálido. De efecto femenino y sereno, es ideal para el Día de la Madre, un cumpleaños, un aniversario o para dar las gracias.",
+      "flowers": [
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Rosalie – rosas rosas con paniculata",
+        "description": "Rosas rosas con paniculata y envoltorio rosa pálido. Para el Día de la Madre, un cumpleaños o para dar las gracias – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Rosalie, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Rosalie, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Rosalie, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Ramo de rosas rosas con paniculata y envoltorio rosa pálido en un jarrón blanco",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie con envoltorio rosa en un sencillo jarrón blanco",
+        "/images/products/sortiment/rosalie-3.jpg": "Rosas rosas con paniculata en un jarrón blanco acanalado",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie tumbado, vista desde arriba de las rosas rosas y la paniculata"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Mix rojo y blanco",
+      "tagline": "Rosas rojas y blancas",
+      "shortDescription": "Rosas rojas y blancas en un ramo festivo.",
+      "description": "El Mix rojo y blanco reúne rosas rojas y blancas con envoltorio blanco, aligeradas con paniculata según el tamaño. La pasión se encuentra con la ternura: un ramo para San Valentín, un aniversario de pareja o de boda, o como regalo elegante.",
+      "flowers": [
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Mix rojo y blanco – rosas rojas y blancas",
+        "description": "Rosas rojas y blancas con envoltorio festivo. Para San Valentín, un aniversario de pareja o de boda, en seis tamaños – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Mix rojo y blanco, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Mix rojo y blanco, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Mix rojo y blanco, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Ramo de rosas rojas y blancas con paniculata y envoltorio blanco, junto a pétalos de rosa",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Rosas rojas y blancas atadas de forma compacta con envoltorio blanco",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Ramo de rosas rojas y blancas con envoltorio blanco sobre una cómoda de madera",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Ramo de rosas rojas y blancas tumbado, vista desde arriba"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Ramo de tulipanes",
+      "tagline": "Tulipanes de un solo color o mezclados",
+      "shortDescription": "Un ramo sencillo de tulipanes, de un solo color o en una mezcla de colores.",
+      "description": "Con sus colores nítidos y su forma esbelta, los tulipanes llenan la casa de ambiente primaveral. El ramo se ata solo con tulipanes, a elegir de un solo color o como mezcla de colores. Disponible en rojo, amarillo, lila, rosa, naranja, blanco y mezcla.",
+      "flowers": [
+        "Tulipanes"
+      ],
+      "care": [
+        "Corta los tallos en recto y ponlos en agua fría.",
+        "Basta con poca agua, pero rellena con regularidad.",
+        "Los tulipanes siguen creciendo en el jarrón; recórtalos cuando haga falta."
+      ],
+      "seo": {
+        "title": "Ramo de tulipanes – tulipanes de muchos colores",
+        "description": "Un ramo de tulipanes en rojo, amarillo, lila, rosa, naranja, blanco o mezclados. Ambiente primaveral para casa – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rojo",
+        "gelb": "Amarillo",
+        "lila": "Lila",
+        "rosa": "Rosa",
+        "orange": "Naranja",
+        "weiss": "Blanco",
+        "mix": "Mezcla de colores"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Ramo de tulipanes amarillos en un jarrón de cristal",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Tulipanes lilas envueltos en papel kraft en un jarrón de cristal",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Tulipanes rojos en un jarrón beis",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Tulipanes naranjas en un jarrón de cristal",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Tulipanes rosas en un jarrón de cristal sobre un paño de lino",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Mezcla de tulipanes en rojo, amarillo, rosa, naranja y lila en un jarrón beis",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Tulipanes blancos en un jarrón blanco"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Rosas rojas con paniculata",
+      "shortDescription": "Un ramo de rosas expresivo en rojo intenso para grandes sentimientos.",
+      "description": "Red Passion reúne rosas rojas en un ramo compacto y redondo, enmarcado por paniculata y un envoltorio oscuro. Disponible en seis tamaños: para gestos románticos y momentos que deben quedar en el recuerdo.",
+      "flowers": [
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "Haz un corte nuevo en los tallos.",
+        "Pon agua fresca cada día.",
+        "Protege las flores del sol directo."
+      ],
+      "seo": {
+        "title": "Red Passion – ramo de rosas rojas",
+        "description": "Rosas rojas con paniculata y envoltorio oscuro, en seis tamaños. Un ramo de rosas para grandes sentimientos – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Red Passion, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Red Passion, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Red Passion, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Ramo de rosas rojo oscuro con paniculata y envoltorio negro y dorado, tumbado",
+        "/images/products/sortiment/red-passion-2.jpg": "Gran ramo de rosas rojas con paniculata y envoltorio oscuro en un jarrón blanco",
+        "/images/products/sortiment/red-passion-3.jpg": "Ramo redondo muy grande de rosas rojas con paniculata y envoltorio oscuro"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Rosas rojas atadas de forma compacta",
+      "shortDescription": "Rosas rojas atadas de forma compacta con envoltorio oscuro: atemporales y llenas de sentimiento.",
+      "description": "Klassiker der Liebe está formado por rosas rojas atadas de forma compacta en forma redonda, con envoltorio oscuro y lazo negro. El ramo de rosas para San Valentín, un aniversario, una pedida de mano o cualquier declaración de amor.",
+      "flowers": [
+        "Rosas"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – rosas rojas",
+        "description": "Rosas rojas atadas de forma compacta con envoltorio oscuro. El ramo de rosas clásico para San Valentín, un aniversario o una pedida – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Klassiker der Liebe, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Klassiker der Liebe, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Klassiker der Liebe, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Ramo redondo de rosas rojas atadas de forma compacta con envoltorio negro y lazo",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Rosas rojas en forma de bola con envoltorio oscuro, vista frontal"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Rosas rojas con paniculata",
+      "shortDescription": "Un exuberante ramo de rosas en seis tamaños.",
+      "description": "Königin der Herzen combina rosas rojas con fina paniculata en un envoltorio oscuro y transparente. Disponible en seis tamaños: del pequeño detalle a la gran ocasión.",
+      "flowers": [
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "Elige un lugar fresco.",
+        "Retira a tiempo las flores marchitas.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – exuberante ramo de rosas",
+        "description": "Rosas rojas con paniculata, en seis tamaños. Un exuberante ramo de rosas para grandes momentos – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Königin der Herzen, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Königin der Herzen, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Königin der Herzen, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Ramo de rosas rojas con paniculata y envoltorio oscuro en un jarrón blanco",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Gran ramo de rosas rojas y paniculata con envoltorio negro",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Rosas rojas con paniculata y envoltorio oscuro en una maceta negra",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Vista desde arriba de rosas rojas con paniculata en un envoltorio oscuro en forma de estrella"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerberas, rosas y lirios en tonos cálidos",
+      "shortDescription": "Un ramo cálido en naranja, rosa y amarillo.",
+      "description": "Herbstzauber combina gerberas, rosas y lirios en tonos naranjas, rosas y amarillos con verde fresco. Atado de forma suelta, llena la casa de colores cálidos, justo cuando los días se acortan.",
+      "flowers": [
+        "Gerberas",
+        "Rosas",
+        "Lirios"
+      ],
+      "care": [
+        "No coloques las flores junto a la fruta.",
+        "Añade agua con regularidad.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Herbstzauber – ramo en tonos cálidos",
+        "description": "Gerberas, rosas y lirios en naranja, rosa y amarillo. Un cálido ramo otoñal para un cumpleaños o para dar las gracias – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Ramo de gerberas naranjas, rosas en albaricoque y rosa, y lirios en un jarrón de cristal"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Rosas rojas, gerberas y toques verdes",
+      "shortDescription": "Un ramo lleno de vida en rojo y naranja con frescos toques verdes.",
+      "description": "Blütenfreude combina rosas rojas y gerberas en rojo y naranja con flores pompón verdes y hojas de eucalipto. De colores intensos y, aun así, de forma redondeada: precioso para un cumpleaños, para dar las gracias o simplemente porque sí.",
+      "flowers": [
+        "Rosas",
+        "Gerberas"
+      ],
+      "care": [
+        "Pon agua fresca en el jarrón cada día.",
+        "Recorta los tallos cuando haga falta.",
+        "Retira con regularidad las flores marchitas."
+      ],
+      "seo": {
+        "title": "Blütenfreude – rosas y gerberas en rojo",
+        "description": "Rosas rojas, gerberas en rojo y naranja y frescos toques verdes. Un ramo lleno de vida para un cumpleaños – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Ramo de rosas rojas, gerberas rojas y naranjas y flores pompón verdes en un jarrón de cristal",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude en un jarrón blanco sobre una cómoda de madera"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Rosas rosas, lirios y paniculata",
+      "shortDescription": "Suaves tonos rosados con lirios: sereno, armonioso y delicado.",
+      "description": "Zartrosa Zauber combina rosas rosas con lirios rosas y paniculata en un envoltorio rosa. El ramo transmite calma y armonía, con un toque delicado y romántico.",
+      "flowers": [
+        "Rosas",
+        "Lirios",
+        "Paniculata"
+      ],
+      "care": [
+        "Quita las hojas que queden dentro del agua.",
+        "Elige un lugar fresco.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – rosas y lirios en rosa",
+        "description": "Rosas rosas, lirios rosas y paniculata con un delicado envoltorio. Un ramo sereno y romántico – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Ramo de rosas rosas, lirios rosas y paniculata con envoltorio rosa en un jarrón blanco",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber con envoltorio rosa y un gran lazo"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerberas, lirios y rosas en naranja y amarillo",
+      "shortDescription": "Naranja y amarillo luminosos para buenas noticias y ocasiones soleadas.",
+      "description": "Strahlender Tag combina gerberas y lirios naranjas con rosas amarillas, claveles claros y paniculata. Sus colores intensos transmiten energía positiva: un ramo para felicitaciones, éxitos y ocasiones soleadas.",
+      "flowers": [
+        "Gerberas",
+        "Lirios",
+        "Rosas",
+        "Claveles",
+        "Paniculata"
+      ],
+      "care": [
+        "Protege las flores de las corrientes de aire.",
+        "Cambia el agua con regularidad.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – ramo en naranja y amarillo",
+        "description": "Gerberas y lirios naranjas con rosas amarillas y paniculata. Un ramo alegre para felicitar – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Ramo de gerberas naranjas, rosas amarillas y paniculata con envoltorio blanco y dorado",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Gerberas naranjas, lirios y una rosa amarilla en un jarrón blanco",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Ramo redondo de gerberas y lirios naranjas, rosas amarillas y claveles claros en un jarrón de cristal"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Rosas en rosa, crema y albaricoque",
+      "shortDescription": "Un armonioso ramo de rosas entre la belleza clásica y el estilo moderno.",
+      "description": "Rosentraum combina rosas en rosa, crema y albaricoque con flores violetas, ramitas con bayas y verde fresco. Con envoltorio rosa palo, el ramo resulta exuberante y, a la vez, moderno.",
+      "flowers": [
+        "Rosas"
+      ],
+      "care": [
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Mantén limpio el jarrón.",
+        "Renueva el agua con regularidad."
+      ],
+      "seo": {
+        "title": "Rosentraum – rosas en rosa y crema",
+        "description": "Rosas en rosa, crema y albaricoque con toques violetas y envoltorio rosa palo. Un armonioso ramo de rosas – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Ramo atado de rosas en rosa, crema y albaricoque con envoltorio rosa palo",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum con envoltorio rosa palo en un jarrón blanco",
+        "/images/products/sortiment/rosentraum-3.jpg": "Vista desde arriba de las rosas, las flores violetas y las ramitas con bayas del ramo"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Rosas blancas con paniculata",
+      "shortDescription": "Rosas blancas con paniculata: delicadas, románticas y luminosas.",
+      "description": "Rosenkuss está formado por rosas de blancas a color crema, aligeradas con fina paniculata y con envoltorio blanco. Un ramo para el cariño, la cercanía y pequeños mensajes de amor.",
+      "flowers": [
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "No elijas un lugar demasiado cálido.",
+        "Comprueba cada día el nivel del agua.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Rosenkuss – rosas blancas",
+        "description": "Rosas blancas con paniculata y envoltorio blanco. Un ramo de rosas delicado y romántico – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Rosenkuss, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Rosenkuss, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Rosenkuss, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Ramo de rosas blancas con paniculata y envoltorio blanco en un jarrón blanco",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Gran ramo de rosas blancas con envoltorio blanco en un jarrón blanco",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Ramo de rosas blancas con paniculata, tumbado sobre una cómoda de madera"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Rosas en pastel, fucsia y burdeos",
+      "shortDescription": "Rosas en tonos pastel y fucsia, combinadas con elegancia.",
+      "description": "Rosenglanz reúne rosas en rosa pastel, crema, fucsia y burdeos con paniculata en un envoltorio rosa. De aire atemporal, disponible en seis tamaños.",
+      "flowers": [
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "Haz un corte nuevo en los tallos.",
+        "Evita el sol directo.",
+        "Cambia el agua del jarrón con regularidad."
+      ],
+      "seo": {
+        "title": "Rosenglanz – rosas en pastel y fucsia",
+        "description": "Rosas en rosa pastel, fucsia y burdeos con paniculata, en seis tamaños. Un elegante ramo de rosas – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño",
+          "detailAlt": "Rosenglanz, tamaño pequeño, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "m": {
+          "label": "Mediano",
+          "detailAlt": "Rosenglanz, tamaño mediano, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Rosenglanz, tamaño grande, en la mano; detrás, una calle de Viena con un tranvía"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Ramo de rosas en rosa pastel, fucsia y burdeos con envoltorio rosa en un jarrón de cristal",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Ramo redondo de rosas con paniculata y envoltorio rosa, vista frontal",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Ramo de rosas en tonos pastel y fucsia, tumbado sobre una cómoda de madera"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Rosas rosas, gerberas, lirios y claveles",
+      "shortDescription": "Un ramo expresivo en rosa y fucsia que habla sin palabras.",
+      "description": "Pure Liebe combina rosas rosas con gerberas fucsia, lirios rosas, claveles y paniculata. Intenso en sus tonos rosas y fucsia, aligerado con toques claros: un ramo lleno de sentimiento.",
+      "flowers": [
+        "Rosas",
+        "Gerberas",
+        "Lirios",
+        "Claveles",
+        "Paniculata"
+      ],
+      "care": [
+        "Pon agua fresca con regularidad.",
+        "Mantén limpio el jarrón.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Pure Liebe – ramo en rosa y fucsia",
+        "description": "Rosas rosas, gerberas fucsia, lirios y claveles con paniculata. Un ramo lleno de sentimiento – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Ramo de rosas rosas, gerbera fucsia y lirios rosas en un jarrón beis",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe con lirios, gerberas y claveles en un jarrón beis",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Ramo redondo de rosas rosas, gerberas, claveles y paniculata en un jarrón de cristal"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Gerberas fucsia, rosas y toques violetas",
+      "shortDescription": "Intensos tonos fucsia combinados en un ramo fresco y moderno.",
+      "description": "Pink Harmony combina gerberas y rosas fucsia con flores blancas y color lila, toques violetas y paniculata. Vivo y fresco, con mucho encanto.",
+      "flowers": [
+        "Gerberas",
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "Elige un lugar fresco.",
+        "Retira las flores marchitas.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerberas y rosas en fucsia",
+        "description": "Gerberas y rosas fucsia con toques lilas y violetas. Un ramo fresco y moderno – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Ramo de gerberas fucsia, rosas y flores color lila en un jarrón beis",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Ramo redondo con gerberas fucsia, rosas y toques violetas"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Ramo de rosas multicolor en rosa, amarillo, albaricoque y lila",
+      "shortDescription": "Un generoso ramo de rosas multicolor para ocasiones especiales.",
+      "description": "Love Deluxe es un ramo de rosas de muchos colores: rosa, crema, albaricoque, amarillo y lila, con envoltorio rosa. Para ocasiones especiales y grandes gestos, disponible en cinco tamaños.",
+      "flowers": [
+        "Rosas"
+      ],
+      "care": [
+        "Recorta los tallos.",
+        "Cambia el agua del jarrón cada día.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Love Deluxe – ramo de rosas multicolor",
+        "description": "Rosas en rosa, crema, albaricoque, amarillo y lila con envoltorio rosa, en cinco tamaños. Para grandes gestos – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Ramo de rosas multicolor en rosa, amarillo, albaricoque y lila con envoltorio rosa en un jarrón blanco",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Gran ramo de rosas multicolor con envoltorio rosa, vista frontal",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Ramo de rosas multicolor con envoltorio rosa, tumbado sobre una cómoda de madera"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Rosas rojas y verdes con lirios",
+      "shortDescription": "Un ramo emotivo en rojo para decir «te quiero».",
+      "description": "Liebeserklärung combina rosas rojas con rosas verde claro, lirios blancos, flores rojas de acento y paniculata. Intenso y, a la vez, fresco: un ramo que hace visibles los sentimientos.",
+      "flowers": [
+        "Rosas",
+        "Lirios",
+        "Paniculata"
+      ],
+      "care": [
+        "Protege las flores del calor.",
+        "Renueva el agua con regularidad.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – rosas rojas y lirios",
+        "description": "Rosas rojas y verde claro con lirios y paniculata. Un ramo para decir «te quiero» – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Ramo de rosas rojas y verde claro con lirios y paniculata en un jarrón de cristal",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung en un jarrón blanco sobre una cómoda de madera"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Rosas y gerberas en rosa con toques naranjas",
+      "shortDescription": "Elegante y equilibrado: un ramo con una discreción llena de estilo.",
+      "description": "Klassische Schönheit combina rosas en rosa palo y blanco con gerberas fucsia, pequeñas flores naranjas y paniculata. Con un envoltorio oscuro de borde dorado, el ramo resulta equilibrado y atemporal.",
+      "flowers": [
+        "Rosas",
+        "Gerberas",
+        "Paniculata"
+      ],
+      "care": [
+        "No coloques las flores justo al lado de la calefacción.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón.",
+        "Cambia el agua del jarrón con regularidad."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – rosas y gerberas",
+        "description": "Rosas en rosa palo y blanco con gerbera fucsia y envoltorio oscuro. Un ramo equilibrado y atemporal – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Ramo de rosas rosa palo y gerbera fucsia con envoltorio oscuro de borde dorado",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit en un jarrón blanco",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Vista desde arriba de rosas, gerberas y paniculata con envoltorio oscuro"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Rosas rosas y gerberas fucsia",
+      "shortDescription": "Juguetón y lleno de vida: rosas rosas junto a gerberas fucsia.",
+      "description": "Herzklopfen combina rosas rosa pálido con gerberas fucsia, pequeñas flores blancas y verdes y un fino follaje lila. Atado en forma redonda y lleno de color: un ramo con mucho sentimiento.",
+      "flowers": [
+        "Rosas",
+        "Gerberas"
+      ],
+      "care": [
+        "Pon agua fresca cada día.",
+        "Corta los tallos en diagonal.",
+        "Elige un lugar fresco y sin sol directo."
+      ],
+      "seo": {
+        "title": "Herzklopfen – rosas rosas y gerberas",
+        "description": "Rosas rosa pálido y gerberas fucsia, atadas en forma redonda. Un ramo juguetón lleno de sentimiento – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Ramo redondo de rosas rosa pálido y gerbera fucsia en un jarrón blanco",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen en un jarrón blanco, vista lateral",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Ramo de rosas rosas y gerbera fucsia en un jarrón de cristal"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Mezcla multicolor con rosas y gerberas",
+      "shortDescription": "Un ramo multicolor que irradia alegría de vivir.",
+      "description": "El Fröhlicher Blütenmix combina rosas rojas, gerberas en amarillo, rosa y rojo y otras flores en amarillo, naranja y violeta. Con envoltorio rojo: ideal para regalar una sonrisa.",
+      "flowers": [
+        "Rosas",
+        "Gerberas"
+      ],
+      "care": [
+        "Elige un lugar fresco.",
+        "Cambia el agua con regularidad.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – ramo multicolor",
+        "description": "Rosas rojas y gerberas en amarillo, rosa y rojo con envoltorio rojo. Un ramo multicolor lleno de alegría – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Ramo multicolor con gerberas y rosas y envoltorio rojo sobre una cómoda de madera",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix con envoltorio rojo en un jarrón blanco",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Vista desde arriba de rosas rojas y gerberas amarillas y rosas con envoltorio rojo"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Rosas y gerberas en fucsia con toques lilas",
+      "shortDescription": "Una mezcla llena de vida en fucsia, albaricoque y lila.",
+      "description": "Farbtänzer combina rosas y rosas ramificadas en fucsia y albaricoque con gerberas rosas, flores lilas y bayas claras. Atado de forma compacta y llena de vida: moderno y expresivo.",
+      "flowers": [
+        "Rosas",
+        "Gerberas"
+      ],
+      "care": [
+        "Quita las hojas que queden dentro del agua.",
+        "Mantén limpio el jarrón.",
+        "Corta los tallos en diagonal antes de ponerlos en el jarrón."
+      ],
+      "seo": {
+        "title": "Farbtänzer – ramo en fucsia y lila",
+        "description": "Rosas y gerberas en fucsia y albaricoque con toques lilas. Un ramo moderno y lleno de vida – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Ramo en fucsia y lila con envoltorio rosa pálido, tumbado",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Ramo redondo de rosas fucsia, gerberas y flores lilas en un jarrón color crema",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer en un jarrón acanalado, vista frontal"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Caja de flores en forma de corazón",
+      "tagline": "Rosas en una caja roja en forma de corazón",
+      "shortDescription": "Rosas en una caja en forma de corazón: una declaración de amor para colocar en cualquier rincón.",
+      "description": "En la caja roja en forma de corazón se colocan rosas en rojo, rosa y blanco junto con otras flores y paniculata. Un regalo para un aniversario, San Valentín o como sorpresa cariñosa.",
+      "flowers": [
+        "Rosas",
+        "Paniculata"
+      ],
+      "care": [
+        "Humedece ligeramente las rosas.",
+        "Elige un lugar fresco.",
+        "Protege las flores del sol directo."
+      ],
+      "seo": {
+        "title": "Caja de flores en forma de corazón – rosas",
+        "description": "Rosas en rojo, rosa y blanco en una caja roja en forma de corazón. Para aniversarios y San Valentín – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Caja de flores roja en forma de corazón con rosas en rojo, rosa y blanco y paniculata"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Caja de flores clásica",
+      "tagline": "Rosas rojas en una caja redonda",
+      "shortDescription": "Rosas clásicas en una caja redonda: sencilla y expresiva.",
+      "description": "La Caja de flores clásica llena una caja redonda con rosas colocadas muy juntas. Minimalista y atemporal, es ideal para un cumpleaños, para dar las gracias o para momentos especiales. Disponible en rojo y blanco.",
+      "flowers": [
+        "Rosas"
+      ],
+      "care": [
+        "Riega las rosas un poco con regularidad.",
+        "Elige un lugar fresco.",
+        "Protege las flores del sol directo."
+      ],
+      "seo": {
+        "title": "Caja de flores clásica – rosas en caja",
+        "description": "Rosas colocadas muy juntas en una caja redonda, disponible en rojo y blanco. Un regalo sencillo – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Rosas rojas en una caja redonda blanca con borde rosa y dorado",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Dos cajas redondas de terciopelo rojo con rosas rojas sobre un pedestal blanco"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Anturio rosa en maceta",
+      "tagline": "Anturio con flores rosas",
+      "shortDescription": "Un anturio con flores rosa pálido: elegante y discreto.",
+      "description": "Con sus delicadas flores y su follaje verde brillante, el anturio rosa aporta color al espacio sin resultar estridente. Queda bien tanto en casa como en la oficina.",
+      "flowers": [
+        "Anturio"
+      ],
+      "care": [
+        "Elige un lugar luminoso, sin sol directo.",
+        "Riega con regularidad y evita el encharcamiento.",
+        "Pulveriza las hojas con agua de vez en cuando."
+      ],
+      "seo": {
+        "title": "Anturio rosa en maceta – planta de interior",
+        "description": "Anturio con flores rosa pálido y follaje brillante. Una elegante planta de interior para regalar – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Anturio rosa en una maceta de cerámica rosa palo sobre una cómoda de madera",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anturio con flores rosas en una maceta color malva junto a unas velas"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Anturio rojo en maceta",
+      "tagline": "Anturio con flores rojas",
+      "shortDescription": "Un anturio con flores de un rojo intenso y un aire moderno.",
+      "description": "Con sus flores brillantes, los anturios rojos aportan intensos toques de color. Como planta de interior decorativa o como regalo, con buenos cuidados se mantiene bonito durante mucho tiempo.",
+      "flowers": [
+        "Anturio"
+      ],
+      "care": [
+        "Lugar luminoso, sin sol directo.",
+        "Mantén la tierra húmeda de forma uniforme.",
+        "Evita el encharcamiento."
+      ],
+      "seo": {
+        "title": "Anturio rojo en maceta – planta de interior",
+        "description": "Anturio con flores de un rojo intenso en maceta. Una planta de interior decorativa para regalar – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Anturio rojo en una maceta de cerámica roja sobre una cómoda de madera"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "Anturio rojo XXL en maceta",
+      "tagline": "Anturio grande con flores rojas",
+      "shortDescription": "Un anturio grande y exuberante con muchas flores rojas.",
+      "description": "Este anturio rojo mide más de 80 cm y luce numerosas flores rojas sobre un follaje denso y brillante. Una pieza llamativa y expresiva para casa o la oficina.",
+      "flowers": [
+        "Anturio"
+      ],
+      "care": [
+        "Elige un lugar luminoso, sin sol directo.",
+        "Riega con regularidad y evita el encharcamiento.",
+        "Limpia el polvo de las hojas de vez en cuando."
+      ],
+      "seo": {
+        "title": "Anturio rojo XXL en maceta",
+        "description": "Anturio grande con numerosas flores rojas en maceta. Una pieza llamativa para casa o la oficina – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Anturio grande con muchas flores rojas en una maceta roja junto a unas velas"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelia en maceta",
+      "tagline": "Bromelia con flor roja",
+      "shortDescription": "Una bromelia con una flor de un rojo intenso y aire tropical.",
+      "description": "Con su roseta de flores roja y su esbelto follaje verde, la bromelia aporta toques llenos de vida. Una planta de interior decorativa para casa o el lugar de trabajo y un regalo especial.",
+      "flowers": [
+        "Bromelia"
+      ],
+      "care": [
+        "Elige un lugar luminoso, sin sol directo.",
+        "Echa agua con regularidad en la roseta central de hojas.",
+        "Mantén la tierra solo ligeramente húmeda."
+      ],
+      "seo": {
+        "title": "Bromelia en maceta – planta de interior",
+        "description": "Bromelia con flor roja en maceta: aire tropical para casa o la oficina – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelia con flor roja en una maceta roja sobre una cómoda de madera"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Ficus elastica en maceta",
+      "tagline": "Ficus elastica de follaje verde oscuro",
+      "shortDescription": "Un ficus elastica de fácil cuidado con hojas brillantes de color verde oscuro.",
+      "description": "Con sus hojas grandes y brillantes, el ficus elastica (árbol del caucho) resulta moderno y sereno. Es fácil de cuidar y queda bien en casa y en la oficina.",
+      "flowers": [
+        "Ficus elastica (árbol del caucho)"
+      ],
+      "care": [
+        "Lugar luminoso o en semisombra.",
+        "Riega con moderación: se conforma con poca agua.",
+        "Quita el polvo de las hojas de vez en cuando."
+      ],
+      "seo": {
+        "title": "Ficus elastica en maceta – planta fácil de cuidar",
+        "description": "Ficus elastica con hojas brillantes de color verde oscuro. Una planta de interior fácil de cuidar para casa y oficina – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Ficus elastica con hojas verde oscuro en una maceta roja sobre una cómoda de madera"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Orquídea blanca en maceta",
+      "tagline": "Orquídea en maceta, en varios colores",
+      "shortDescription": "Una orquídea en maceta: serena, noble y atemporal.",
+      "description": "La orquídea es sinónimo de elegancia y calma. Con sus finas varas florales, es una opción con estilo para casa, la oficina o como regalo. Disponible en lila, rosa, amarillo, blanco y azul.",
+      "flowers": [
+        "Orquídea"
+      ],
+      "care": [
+        "Elige un lugar luminoso, sin sol directo.",
+        "Riega con moderación y evita el encharcamiento.",
+        "Retira las varas florales marchitas solo cuando se hayan secado."
+      ],
+      "seo": {
+        "title": "Orquídea en maceta – en cinco colores",
+        "description": "Orquídea en maceta en blanco, rosa, amarillo, lila o azul. Una elegante planta de interior para regalar – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Orquídea blanca con el centro de la flor fucsia en una maceta de cerámica color crema",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orquídea con flores rosa pálido en una maceta de cerámica color crema",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Orquídea amarilla en una maceta de cerámica color crema",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orquídea con flores violetas en una maceta fucsia",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orquídea con flores azules en una maceta gris junto a unas velas"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Ramo fúnebre rojo",
+      "tagline": "Rosas rojas, gerberas y claveles con ramas de abeto",
+      "shortDescription": "Un ramo fúnebre en rojo como muestra de amor y vínculo.",
+      "description": "El ramo fúnebre en rojo combina rosas rojas, gerberas y claveles con rosas amarillas, paniculata y ramas de abeto. Un gesto digno de recuerdo que expresa en silencio sentimientos profundos. La composición puede variar ligeramente según la temporada.",
+      "flowers": [
+        "Rosas",
+        "Gerberas",
+        "Claveles",
+        "Paniculata"
+      ],
+      "care": [
+        "Elige un lugar fresco, sin sol directo y lejos de la calefacción.",
+        "En los arreglos con espuma floral, mantén la espuma húmeda."
+      ],
+      "seo": {
+        "title": "Ramo fúnebre rojo – rosas y gerberas",
+        "description": "Ramo fúnebre en rojo con rosas, gerberas y claveles sobre ramas de abeto, en tres tamaños. Una despedida digna – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Ramo fúnebre con rosas, gerberas y claveles rojos, rosas amarillas y ramas de abeto sobre un pedestal de piedra"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Ramo fúnebre rosa",
+      "tagline": "Rosas rosas y flores violetas",
+      "shortDescription": "Un ramo fúnebre en delicados tonos rosados que transmite consuelo.",
+      "description": "Rosas rosas, flores violetas y rosas y ramas de abeto dan a este ramo fúnebre un efecto suave y reconfortante. Simboliza gratitud, cercanía y un recuerdo cariñoso: adecuado para una despedida serena y personal.",
+      "flowers": [
+        "Rosas"
+      ],
+      "care": [
+        "Elige un lugar fresco, sin sol directo y lejos de la calefacción.",
+        "En los arreglos con espuma floral, mantén la espuma húmeda."
+      ],
+      "seo": {
+        "title": "Ramo fúnebre rosa – delicados tonos rosados",
+        "description": "Ramo fúnebre en delicados tonos rosados con rosas rosas sobre ramas de abeto, en tres tamaños. Para una despedida serena – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Ramo fúnebre con rosas rosas y flores violetas sobre ramas de abeto, con lazo blanco, sobre un pedestal de piedra"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Ramo fúnebre pastel",
+      "tagline": "Lirios, rosas y flores azules en tonos pastel",
+      "shortDescription": "Un ramo fúnebre sereno en delicados tonos pastel.",
+      "description": "El ramo fúnebre en pastel combina lirios y rosas rosas con flores azul claro, lilas y blancas. Sus delicados matices transmiten consuelo y condolencia. Las flores pueden variar según la temporada.",
+      "flowers": [
+        "Lirios",
+        "Rosas"
+      ],
+      "care": [
+        "Elige un lugar fresco, sin sol directo y lejos de la calefacción.",
+        "En los arreglos con espuma floral, mantén la espuma húmeda."
+      ],
+      "seo": {
+        "title": "Ramo fúnebre pastel – tonos serenos",
+        "description": "Ramo fúnebre en pastel con lirios, rosas y flores azul claro, en tres tamaños. Discreto y elegante – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Ramo fúnebre en pastel con lirios rosas, rosas y flores azul claro, con lazo negro, sobre un pedestal de piedra"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Ramo fúnebre naranja",
+      "tagline": "Rosas, gerberas y claveles en naranja y amarillo",
+      "shortDescription": "Un ramo fúnebre en cálidos tonos naranjas que expresa aprecio.",
+      "description": "Rosas, gerberas y claveles en naranja, amarillo y albaricoque se unen a las ramas de abeto en un cálido ramo fúnebre. Simboliza la gratitud y el recuerdo de una vida plena, y es adecuado para un velatorio o una ceremonia en memoria.",
+      "flowers": [
+        "Rosas",
+        "Gerberas",
+        "Claveles"
+      ],
+      "care": [
+        "Elige un lugar fresco, sin sol directo y lejos de la calefacción.",
+        "En los arreglos con espuma floral, mantén la espuma húmeda."
+      ],
+      "seo": {
+        "title": "Ramo fúnebre naranja – tonos cálidos",
+        "description": "Ramo fúnebre en naranja y amarillo con rosas, gerberas y claveles, en tres tamaños. Para velatorios y ceremonias en memoria – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Ramo fúnebre con rosas, gerberas y claveles en naranja y amarillo sobre ramas de abeto, sobre un pedestal de piedra"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Ramo fúnebre blanco",
+      "tagline": "Lirios blancos y crisantemos",
+      "shortDescription": "Un ramo fúnebre clásico en blanco: sencillo y digno.",
+      "description": "Lirios blancos, crisantemos y pequeñas flores blancas sobre ramas de abeto hacen que este ramo fúnebre sea sencillo y atemporal. El blanco simboliza la paz y la despedida: adecuado para funerales formales o como muestra silenciosa de condolencia.",
+      "flowers": [
+        "Lirios",
+        "Crisantemos"
+      ],
+      "care": [
+        "Elige un lugar fresco, sin sol directo y lejos de la calefacción.",
+        "En los arreglos con espuma floral, mantén la espuma húmeda."
+      ],
+      "seo": {
+        "title": "Ramo fúnebre blanco – lirios y crisantemos",
+        "description": "Ramo fúnebre clásico en blanco con lirios y crisantemos, en tres tamaños. Sencillo y digno – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Ramo fúnebre de lirios blancos, crisantemos y pequeñas flores blancas sobre ramas de abeto, sobre un pedestal de piedra"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Ramo fúnebre amarillo",
+      "tagline": "Girasoles, rosas amarillas y claveles",
+      "shortDescription": "Un ramo fúnebre en amarillo para el recuerdo, la esperanza y la gratitud.",
+      "description": "Girasoles, rosas amarillas y claveles color albaricoque sobre ramas de abeto hacen que este ramo fúnebre sea luminoso y cálido. Es adecuado para despedidas en las que la vida ocupa el centro. Las flores dependen de la temporada.",
+      "flowers": [
+        "Girasoles",
+        "Rosas",
+        "Claveles"
+      ],
+      "care": [
+        "Elige un lugar fresco, sin sol directo y lejos de la calefacción.",
+        "En los arreglos con espuma floral, mantén la espuma húmeda."
+      ],
+      "seo": {
+        "title": "Ramo fúnebre amarillo – girasoles y rosas",
+        "description": "Ramo fúnebre en amarillo con girasoles, rosas y claveles, en tres tamaños. Una despedida luminosa – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Ramo fúnebre con girasoles, rosas amarillas y claveles color albaricoque sobre ramas de abeto, sobre un pedestal de piedra"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Corona fúnebre multicolor",
+      "tagline": "Gerberas, rosas y flores de colores",
+      "shortDescription": "Una corona fúnebre multicolor para despedir a una persona llena de vida.",
+      "description": "La corona fúnebre multicolor combina gerberas, rosas y otras flores en amarillo, naranja, rosa y blanco sobre una base verde. Una despedida digna y, a la vez, llena de color, hecha a mano. Si tienes algún deseo para el diseño, ponte en contacto con nosotros.",
+      "flowers": [
+        "Gerberas",
+        "Rosas"
+      ],
+      "care": [
+        "Elige un lugar fresco y a la sombra.",
+        "Si hace falta, humedece ligeramente la espuma floral."
+      ],
+      "seo": {
+        "title": "Corona fúnebre multicolor – despedida colorida",
+        "description": "Corona fúnebre multicolor con gerberas y rosas, hecha a mano. Una despedida llena de color – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Corona fúnebre multicolor con gerberas, lirios y flores blancas, con lazo negro, sobre un caballete de madera"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Corona fúnebre fucsia",
+      "tagline": "Gerberas y rosas en fucsia y rojo",
+      "shortDescription": "Una corona fúnebre en fucsia y rojo como despedida cariñosa.",
+      "description": "La corona fúnebre en fucsia y rojo combina gerberas fucsia, rosas y otras flores con toques claros y verde fresco. Expresión de amor y recuerdo, hecha a mano. Si tienes algún deseo para el diseño, ponte en contacto con nosotros.",
+      "flowers": [
+        "Gerberas",
+        "Rosas"
+      ],
+      "care": [
+        "Elige un lugar fresco y a la sombra.",
+        "Si hace falta, humedece ligeramente la espuma floral."
+      ],
+      "seo": {
+        "title": "Corona fúnebre fucsia – fucsia y rojo",
+        "description": "Corona fúnebre en fucsia y rojo con gerberas y rosas, hecha a mano. Una despedida cariñosa – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Corona fúnebre con gerberas fucsia, rosas y flores rojas, con lazo burdeos, sobre un caballete de madera"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Corona fúnebre roja y amarilla",
+      "tagline": "Gerberas rojas y amarillas",
+      "shortDescription": "Una luminosa corona fúnebre en rojo y amarillo.",
+      "description": "Gerberas rojas y amarillas, colocadas muy juntas sobre una base verde, convierten esta corona fúnebre en una luminosa despedida llena de calidez, gratitud y bonitos recuerdos. Hecha a mano. Si tienes algún deseo para el diseño, ponte en contacto con nosotros.",
+      "flowers": [
+        "Gerberas"
+      ],
+      "care": [
+        "Elige un lugar fresco y a la sombra.",
+        "Si hace falta, humedece ligeramente la espuma floral."
+      ],
+      "seo": {
+        "title": "Corona fúnebre roja y amarilla – gerberas",
+        "description": "Corona fúnebre de gerberas rojas y amarillas, hecha a mano. Una despedida cálida y luminosa – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Corona fúnebre de gerberas rojas y amarillas con lazo gris plateado sobre un caballete de madera"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Corona fúnebre roja",
+      "tagline": "Gerberas rojas y rosas",
+      "shortDescription": "Una corona fúnebre clásica en rojo para un amor que permanece.",
+      "description": "La corona fúnebre en rojo combina gerberas rojas y rosas sobre ramas de abeto. Una despedida clásica y digna para un amor que permanece más allá de la despedida. Hecha a mano. Si tienes algún deseo para el diseño, ponte en contacto con nosotros.",
+      "flowers": [
+        "Gerberas",
+        "Rosas"
+      ],
+      "care": [
+        "Elige un lugar fresco y a la sombra.",
+        "Si hace falta, humedece ligeramente la espuma floral."
+      ],
+      "seo": {
+        "title": "Corona fúnebre roja – gerberas y rosas",
+        "description": "Corona fúnebre en rojo con gerberas y rosas sobre ramas de abeto, hecha a mano. Una despedida clásica – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Corona fúnebre de gerberas rojas y rosas sobre ramas de abeto con lazo negro sobre un caballete de madera"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Corona fúnebre blanca",
+      "tagline": "Rosas blancas, gerberas y claveles",
+      "shortDescription": "Una corona fúnebre sencilla en blanco como muestra silenciosa de condolencia.",
+      "description": "Rosas blancas, gerberas y claveles con toques verde claro y follaje forman esta sencilla corona. El blanco simboliza la paz y la condolencia silenciosa. Hecha a mano. Si tienes algún deseo para el diseño, ponte en contacto con nosotros.",
+      "flowers": [
+        "Rosas",
+        "Gerberas",
+        "Claveles"
+      ],
+      "care": [
+        "Elige un lugar fresco y a la sombra.",
+        "Si hace falta, humedece ligeramente la espuma floral."
+      ],
+      "seo": {
+        "title": "Corona fúnebre blanca – sencilla y digna",
+        "description": "Corona fúnebre en blanco con rosas, gerberas y claveles, hecha a mano. Una despedida sencilla – envío de flores en Viena."
+      },
+      "sizes": {
+        "m": {
+          "label": "Estándar"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Corona fúnebre en forma de anillo de rosas blancas, gerberas y claveles con lazo blanco sobre un caballete de madera"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Coronas de Adviento",
+      "tagline": "Ramas de abeto con cuatro velas, en siete colores",
+      "shortDescription": "Una corona de Adviento de ramas de abeto hecha a mano con cuatro velas.",
+      "description": "La corona de Adviento se hace a mano con aromáticas ramas de abeto y se decora con cuatro velas, lazos, bolas, piñas y otros detalles. Disponible en rojo, gris, lila, dorado, beis, granate y rosa.",
+      "flowers": [],
+      "care": [
+        "No dejes nunca las velas encendidas sin vigilancia.",
+        "Elige un lugar fresco, no justo al lado de la calefacción.",
+        "Pulveriza de vez en cuando un poco de agua sobre las ramas de abeto."
+      ],
+      "seo": {
+        "title": "Corona de Adviento – hecha a mano con velas",
+        "description": "Corona de Adviento de ramas de abeto hecha a mano con cuatro velas, en siete colores y cuatro tamaños – envío de flores en Viena."
+      },
+      "sizes": {
+        "s": {
+          "label": "Pequeño"
+        },
+        "m": {
+          "label": "Mediano"
+        },
+        "l": {
+          "label": "Grande"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rojo",
+        "grau": "Gris",
+        "lila": "Lila",
+        "gold": "Dorado",
+        "beige": "Beis",
+        "weinrot": "Granate",
+        "rosa": "Rosa"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Corona de Adviento de ramas de abeto con cuatro velas rojas, lazos rojos, bolas y piñas",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Corona de Adviento con cuatro velas gris claro, lazos color crema y rodajas de naranja",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Corona de Adviento con velas lilas y rosas, lazos violetas y una figura de ángel",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Corona de Adviento con cuatro velas doradas, lazos dorados, ramas de canela y piñas",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Corona de Adviento con cuatro velas rosas, lazos burdeos y una figura de ángel",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Corona de Adviento con cuatro velas granates, bolas y lazos granates",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Corona de Adviento con cuatro velas gris oscuro, lazos color crema y bolas rojas",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Corona de Adviento en dorado con velas y lazos dorados, vista lateral",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Corona de Adviento en rosa con velas rosas y lazos burdeos, vista lateral"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Todas las flores",
+      "headline": "Pedir flores online",
+      "intro": "Ramos atados a mano para toda Viena. Elige tu ramo y decide la fecha de entrega.",
+      "seo": {
+        "title": "Pedir flores online con entrega en Viena",
+        "description": "Pide flores online y recíbelas a domicilio en Viena. Ramos atados a mano en la fecha que elijas – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Rosas",
+      "headline": "Ramos de rosas",
+      "intro": "Rosas en rojo, rosa o blanco, en varios tamaños. Atadas a mano y entregadas en Viena.",
+      "seo": {
+        "title": "Pedir ramos de rosas online – rosas para Viena",
+        "description": "Todos los ramos de rosas de un vistazo: rosas rojas, rosas y blancas en varios tamaños. Atadas a mano y entregadas en Viena en la fecha que elijas."
+      }
+    },
+    "saisonal": {
+      "name": "Flores de temporada",
+      "headline": "Flores de temporada",
+      "intro": "Ramos que acompañan a cada estación. La selección cambia a lo largo del año.",
+      "seo": {
+        "title": "Ramos de flores de temporada con entrega en Viena",
+        "description": "Ramos de temporada, acordes con cada estación. Atados a mano y entregados en Viena."
+      }
+    },
+    "pastell": {
+      "name": "Pastel",
+      "headline": "Ramos en tonos pastel",
+      "intro": "Rosa palo, crema, lila: colores suaves para momentos delicados.",
+      "seo": {
+        "title": "Flores en tonos pastel con entrega en Viena",
+        "description": "Ramos en suaves tonos pastel con entrega en Viena: recién atados, en la fecha que elijas."
+      }
+    },
+    "bunt": {
+      "name": "Multicolor",
+      "headline": "Ramos multicolor",
+      "intro": "Color que da alegría. Para cumpleaños, sorpresas y buen humor.",
+      "seo": {
+        "title": "Ramos de flores multicolor con entrega en Viena",
+        "description": "Ramos alegres y llenos de color con entrega en Viena: recién atados, en la fecha que elijas."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Elegante y blanco",
+      "headline": "Elegante y blanco",
+      "intro": "Blanco, crema y verde. Ramos que aportan calma y distinción a cualquier espacio.",
+      "seo": {
+        "title": "Flores blancas y elegantes con entrega en Viena",
+        "description": "Ramos blancos y color crema con entrega en Viena: elegantes, recién atados, en la fecha que elijas."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Ramos premium",
+      "intro": "Ramos generosos para momentos especiales.",
+      "seo": {
+        "title": "Ramos de flores premium con entrega en Viena",
+        "description": "Ramos premium para ocasiones especiales con entrega en Viena: atados a mano, en la fecha que elijas."
+      }
+    },
+    "unter-40": {
+      "name": "Menos de 40 €",
+      "headline": "Flores por menos de 40 €",
+      "intro": "Ramos pequeños con gran efecto, todos por menos de 40 euros.",
+      "seo": {
+        "title": "Flores por menos de 40 € con entrega en Viena",
+        "description": "Ramos de flores económicos por menos de 40 € con entrega en Viena: recién atados, en la fecha que elijas."
+      }
+    },
+    "bestseller": {
+      "name": "Nuestros favoritos",
+      "headline": "Nuestros ramos favoritos",
+      "intro": "Ramos que recomendamos con especial cariño.",
+      "seo": {
+        "title": "Nuestros ramos favoritos – recomendaciones para Viena",
+        "description": "Ramos que recomendamos con especial cariño: atados a mano y entregados en Viena."
+      }
+    },
+    "neu": {
+      "name": "Novedades",
+      "headline": "Novedades en Blumora",
+      "intro": "Recién llegados a nuestro surtido.",
+      "seo": {
+        "title": "Nuevos ramos de flores para Viena",
+        "description": "Nuevos ramos en nuestro surtido: recién atados y entregados en Viena."
+      }
+    },
+    "blumenboxen": {
+      "name": "Cajas de flores",
+      "headline": "Cajas de flores",
+      "intro": "Rosas colocadas en una caja: un regalo que no necesita jarrón.",
+      "seo": {
+        "title": "Cajas de flores con entrega en Viena",
+        "description": "Rosas en caja de flores, en forma de corazón o clásica. Envío de flores en Viena en la fecha que elijas."
+      }
+    },
+    "pflanzen": {
+      "name": "Plantas",
+      "headline": "Plantas en maceta",
+      "intro": "Orquídeas, anturios y plantas verdes: flores que se quedan.",
+      "seo": {
+        "title": "Plantas en maceta con entrega en Viena",
+        "description": "Orquídeas, anturios y plantas de interior en maceta para regalar. Envío de flores en Viena."
+      }
+    },
+    "trauer": {
+      "name": "Flores fúnebres",
+      "headline": "Flores fúnebres",
+      "intro": "Coronas y ramos fúnebres, atados con dignidad para el último adiós.",
+      "seo": {
+        "title": "Coronas y ramos fúnebres en Viena",
+        "description": "Coronas y ramos fúnebres para entierros y ceremonias en memoria, con entrega en Viena."
+      }
+    },
+    "advent": {
+      "name": "Coronas de Adviento",
+      "headline": "Coronas de Adviento",
+      "intro": "Ramas de abeto, velas y adornos, atados a mano para el Adviento.",
+      "seo": {
+        "title": "Coronas de Adviento con entrega en Viena",
+        "description": "Coronas de Adviento hechas a mano en varios colores y tamaños, con entrega en Viena."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Cumpleaños",
+      "headline": "Flores de cumpleaños",
+      "intro": "Un ramo que dice: he pensado en ti. Elige las flores y la fecha que prefieras.",
+      "imageAlt": "Ramo multicolor con rosas rojas, gerberas y flores amarillas con envoltorio rojo",
+      "seo": {
+        "title": "Flores de cumpleaños – ramos para Viena",
+        "description": "Ramos de cumpleaños: alegres, multicolor o elegantes. Atados a mano y entregados en Viena en la fecha que elijas."
+      }
+    },
+    "liebe": {
+      "name": "Amor y romance",
+      "headline": "Flores para el amor",
+      "intro": "Rosas rojas o algo totalmente distinto: flores que dicen lo que sientes.",
+      "imageAlt": "Ramo de rosas rojo intenso con envoltorio gris y lazo rojo",
+      "seo": {
+        "title": "Flores románticas con entrega en Viena",
+        "description": "Rosas y ramos románticos con entrega en Viena: recién atados, en la fecha que elijas."
+      }
+    },
+    "danke": {
+      "name": "Gracias",
+      "headline": "Flores para dar las gracias",
+      "intro": "Por la ayuda, por el tiempo, por todo. Un ramo lo dice sin muchas palabras.",
+      "imageAlt": "Ramo de gerberas amarillas y rosas blancas con lazo amarillo",
+      "seo": {
+        "title": "Flores para dar las gracias con entrega en Viena",
+        "description": "Da las gracias con flores: ramos recién atados con entrega en Viena, en la fecha que elijas."
+      }
+    },
+    "gute-besserung": {
+      "name": "Que te mejores",
+      "headline": "Flores para una pronta recuperación",
+      "intro": "Colores suaves, formas serenas y un pequeño saludo que sienta bien.",
+      "imageAlt": "Ramo soleado en naranja y amarillo con envoltorio claro",
+      "seo": {
+        "title": "Flores para desear pronta recuperación en Viena",
+        "description": "Flores para una pronta recuperación con entrega en Viena: ramos suaves, recién atados, en la fecha que elijas."
+      }
+    },
+    "jahrestag": {
+      "name": "Aniversario",
+      "headline": "Flores de aniversario",
+      "intro": "Para el día en que todo empezó. Y para todos los que vinieron después.",
+      "imageAlt": "Ramo de rosas rojas y blancas con envoltorio blanco",
+      "seo": {
+        "title": "Flores de aniversario con entrega en Viena",
+        "description": "Ramos elegantes de aniversario con entrega en Viena: recién atados, en la fecha que elijas."
+      }
+    },
+    "geburt": {
+      "name": "Nacimiento",
+      "headline": "Flores para un nacimiento",
+      "intro": "Bienvenido, pequeño ser. Flores delicadas para un gran momento.",
+      "imageAlt": "Delicado ramo de rosas en rosa y lila con paniculata",
+      "seo": {
+        "title": "Flores para un nacimiento con entrega en Viena",
+        "description": "Delicados ramos en tonos pastel para celebrar un nacimiento, con entrega en Viena: recién atados, en la fecha que elijas."
+      }
+    },
+    "hochzeit": {
+      "name": "Boda",
+      "headline": "Flores para una boda",
+      "intro": "Para los novios o simplemente como felicitación: elegantes, luminosas y festivas.",
+      "imageAlt": "Ramo de rosas blancas con envoltorio blanco en un jarrón",
+      "seo": {
+        "title": "Flores de boda con entrega en Viena",
+        "description": "Flores elegantes para una boda con entrega en Viena: como felicitación o regalo, recién atadas."
+      }
+    },
+    "einfach-so": {
+      "name": "Porque sí",
+      "headline": "Flores porque sí",
+      "intro": "Sin motivo. Solo el pensamiento. A veces es la mejor razón.",
+      "imageAlt": "Tulipanes amarillos en un jarrón de cristal junto a la ventana",
+      "seo": {
+        "title": "Enviar flores porque sí – Viena",
+        "description": "Envía flores sin motivo: ramos pequeños y grandes con entrega en Viena, recién atados, en la fecha que elijas."
+      }
+    },
+    "trauer": {
+      "name": "Condolencias",
+      "headline": "Flores de condolencia",
+      "intro": "Condolencias en colores serenos. Coronas, ramos fúnebres y ramos atados a mano y entregados en Viena.",
+      "imageAlt": "Corona fúnebre blanca con lazo blanco sobre un caballete de madera",
+      "seo": {
+        "title": "Flores de condolencia con entrega en Viena",
+        "description": "Flores de condolencia con entrega en Viena: coronas, ramos fúnebres y ramos serenos, atados a mano, en la fecha que elijas."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Vela aromática",
+      "description": "Velas aromáticas decorativas en envoltorio de regalo, en distintas formas y colores.",
+      "imageAlt": "Velas aromáticas en forma de corazón y de bola en cajas de regalo transparentes"
+    },
+    "x-teddy": {
+      "name": "Osito de peluche",
+      "description": "Oso de peluche con corazón rojo: el complemento cariñoso para el ramo.",
+      "imageAlt": "Oso de peluche marrón claro con corazón rojo"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "¿A qué zonas se hacen entregas?",
+      "answer": "Entregamos en los 23 distritos de Viena. Según el distrito, la entrega es gratuita o cuesta 4,90 € o 7,90 €. Solo tienes que introducir el código postal de la dirección del destinatario: verás al momento si podemos entregar, cuándo y cuánto cuesta la entrega.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "¿Puedo enviar flores hoy mismo?",
+      "answer": "Sí: si pides de lunes a sábado hasta las 18:30 o los domingos hasta las 17:45, entregamos el mismo día en toda Viena, siempre que quede una franja horaria libre. Verás la primera fecha posible para tu dirección en cuanto introduzcas el código postal.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "¿Puedo elegir una fecha de entrega concreta?",
+      "answer": "Sí. En cada página de producto y en el proceso de pago eliges la fecha que prefieras en el calendario. Los días en los que no entregamos aparecen en gris.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "¿Puedo elegir una hora de entrega?",
+      "answer": "Sí. En Viena eliges en el proceso de pago una franja horaria de una hora entre las 9:00 y las 22:00, los siete días de la semana.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "¿Qué pasa si no hay nadie en casa?",
+      "answer": "El mensajero entrega las flores en mano. Si no hay nadie, en la medida de lo posible se dejan a algún vecino o vecina. En el proceso de pago puedes añadir una indicación para la entrega, por ejemplo, el código de la puerta. Te informamos por correo electrónico del estado de tu pedido.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "¿Puedo enviar flores de forma anónima?",
+      "answer": "Sí. Sin tarjeta de dedicatoria, tu nombre no aparece en ninguna parte del ramo y la factura solo te llega a ti. Las tarjetas de dedicatoria con un mensaje personal llegarán pronto.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "¿Puedo añadir una tarjeta de dedicatoria?",
+      "answer": "Todavía no: las tarjetas de dedicatoria llegarán pronto. Hasta entonces, el ramo se entrega sin tarjeta.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "¿Las flores son exactamente como en la foto?",
+      "answer": "Cada ramo se ata de forma individual y las flores son productos naturales. Los colores, las variedades y el tamaño de las flores pueden variar ligeramente según la temporada. El estilo y la gama de colores se mantienen.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "¿Cómo se mantienen frescas las flores?",
+      "answer": "Cada ramo se ata fresco para tu pedido y el mensajero lo entrega directamente. Así dura más: corta los tallos en diagonal, ponle agua fresca y coloca el ramo en un lugar fresco y sin sol directo.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "¿Qué formas de pago hay?",
+      "answer": "Verás las formas de pago disponibles en el último paso del pedido. El pago se realiza de forma segura a través de un proveedor de servicios de pago: los datos de tu tarjeta nunca llegan a nosotros.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "¿Puedo modificar mi pedido?",
+      "answer": "Mientras el ramo no esté atado, normalmente todavía podemos cambiar la fecha de entrega o la dirección. Escríbenos lo antes posible indicando tu número de pedido.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "¿Puedo enviar flores a empresas u hoteles?",
+      "answer": "Sí. En el proceso de pago indica el nombre de la empresa o del hotel y, si lo sabes, el departamento o el número de habitación. La entrega se hace en la recepción.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "¿Hay entrega exprés?",
+      "answer": "Sí: entrega exprés en 1–2 horas, sin coste adicional. Pide como siempre y elige en el pago la primera franja horaria de hoy; está marcada como «Exprés». Funciona si pides de lunes a sábado hasta las 18:30 o los domingos hasta las 17:45 y aún queda una franja libre para tu dirección.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Flores para momentos especiales.",
+      "intro": "Blumora es un servicio de envío de flores online de Viena. Cada ramo se ata a mano en una floristería vienesa y un mensajero lo entrega directamente.",
+      "seo": {
+        "title": "Sobre nosotros – envío de flores desde Viena",
+        "description": "Blumora es un servicio de envío de flores online de Viena: ramos atados a mano y entregados por mensajero en los 23 distritos."
+      },
+      "sections": [
+        {
+          "heading": "Cómo trabajamos",
+          "paragraphs": [
+            "Blumora es un servicio vienés de envío de flores online. Tú eliges tu ramo con nosotros y lo ata una floristería de Viena con la que colaboramos de forma estable. Allí, cada ramo se hace a mano y para tu pedido.",
+            "Las tarjetas de dedicatoria con tu texto llegarán pronto."
+          ],
+          "imageAlt": "Ramo de rosas, dalias, hortensias y tulipanes en el alféizar de un edificio antiguo de Viena; al fondo, la catedral de San Esteban con la luz del atardecer"
+        },
+        {
+          "heading": "La entrega",
+          "paragraphs": [
+            "Un mensajero recoge tu ramo directamente en la floristería y lo lleva sin paradas intermedias a la dirección del destinatario. Entregamos en los 23 distritos de Viena, en la franja horaria que elijas: por la mañana, por la tarde o por la noche hasta las 22:00."
+          ],
+          "imageAlt": "Ramo Pure Liebe en un jarrón de cristal"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Entrega y envío",
+      "intro": "Entregamos en los 23 distritos de Viena. Los gastos de entrega (gratis, 4,90 € o 7,90 €), los días de entrega y las franjas horarias dependen de la dirección del destinatario: introduce el código postal y lo verás todo de un vistazo.",
+      "seo": {
+        "title": "Entrega y envío – flores a domicilio en Viena",
+        "description": "Zonas de entrega, gastos de entrega, días de entrega y franjas horarias para el envío de flores en Viena."
+      },
+      "sections": [
+        {
+          "heading": "Así funciona la entrega",
+          "paragraphs": [
+            "Tu ramo se ata fresco para tu pedido. Un mensajero lo recoge directamente en la floristería y lo lleva sin paradas intermedias a la dirección del destinatario, en la franja horaria que hayas elegido. Si no hay nadie, en la medida de lo posible el ramo se deja a algún vecino o vecina.",
+            "Con cada pedido recibes una confirmación por correo electrónico y un enlace para seguir su estado."
+          ]
+        },
+        {
+          "heading": "Entregas a empresas, hoteles y hospitales",
+          "paragraphs": [
+            "En el proceso de pago, indica el nombre de la empresa o del hotel y el departamento, la planta o el número de habitación. Entregamos en la recepción. Ten en cuenta que algunos centros no permiten flores en las plantas."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Contacto",
+      "intro": "¿Tienes preguntas sobre un pedido, una fecha de entrega o un deseo especial? Estamos aquí para ayudarte.",
+      "seo": {
+        "title": "Contacto – Blumora Viena",
+        "description": "Ponte en contacto con Blumora si tienes preguntas sobre tu pedido, la entrega o deseos especiales."
+      },
+      "sections": [
+        {
+          "heading": "Cómo contactarnos",
+          "paragraphs": [
+            "[Marcador de posición: el correo electrónico, el teléfono y el horario se toman de los ajustes y deben completarse allí.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Envío de flores en toda Viena",
+      "headline": "Flores que dicen más.",
+      "subheadline": "Flores recién atadas para las personas que te importan. Solo tienes que elegir, decidir la fecha y dejar que entreguemos la alegría.",
+      "primaryCta": {
+        "label": "Descubrir flores"
+      },
+      "secondaryCta": {
+        "label": "Elegir por ocasión"
+      },
+      "imageAlt": "Una mujer con abrigo de color camel lleva un gran ramo de rosas, ranúnculos, dalias y tulipanes por una calle adoquinada de Viena; detrás pasa un tranvía",
+      "deliveryCheck": {
+        "title": "¿Adónde entregamos?",
+        "placeholder": "Introduce el código postal",
+        "button": "Comprobar entrega"
+      }
+    },
+    "occasions": {
+      "headline": "Flores para cada momento",
+      "subheadline": "A veces no hace falta una gran ocasión. Solo el gesto adecuado."
+    },
+    "bestsellers": {
+      "headline": "Nuestros ramos favoritos",
+      "subheadline": "Una selección de nuestro surtido."
+    },
+    "collections": {
+      "headline": "Encuentra tu ramo perfecto",
+      "subheadline": "Por color, estilo o presupuesto."
+    },
+    "howItWorks": {
+      "headline": "Regalar alegría nunca fue tan fácil.",
+      "steps": [
+        {
+          "title": "Elige tu ramo favorito",
+          "text": "Descubre flores para cada gusto y ocasión."
+        },
+        {
+          "title": "Hazlo personal",
+          "text": "Elige el tamaño y pequeños extras."
+        },
+        {
+          "title": "Elige la fecha de entrega",
+          "text": "Decide cuándo debe llegar tu sorpresa."
+        },
+        {
+          "title": "Deja que entreguemos la alegría",
+          "text": "Nosotros nos encargamos del resto."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Adviento",
+      "headline": "Pronto arderá la primera vela.",
+      "text": "Coronas de Adviento con ramas de abeto, velas y adornos, en varios colores y tamaños. Y además, ramos en cálidos tonos otoñales.",
+      "cta": {
+        "label": "Coronas de Adviento"
+      },
+      "imageAlt": "Corona de Adviento de ramas de abeto con cuatro velas rojas sobre una cómoda de madera"
+    },
+    "editorial": {
+      "eyebrow": "Artesanía",
+      "headline": "Hecho por floristas. No en cadena.",
+      "text": "Cada ramo lo ata a mano una floristería vienesa para tu pedido y un mensajero lo entrega directamente, sin pasar por ningún almacén.",
+      "cta": {
+        "label": "Cómo trabajamos"
+      },
+      "imageAlt": "Un mensajero entrega un ramo multicolor de rosas, dalias y ranúnculos en la puerta de un edificio antiguo de Viena"
+    },
+    "extras": {
+      "headline": "Completa tu sorpresa.",
+      "subheadline": "Pequeños extras que hacen el momento más grande."
+    },
+    "subscription": {
+      "headline": "Más flores en el día a día.",
+      "text": "Ramos frescos de temporada: cada semana, cada dos semanas o cada mes. Para casa, la oficina, la recepción o la hostelería.",
+      "cta": {
+        "label": "Descubrir la suscripción de flores"
+      }
+    },
+    "reviews": {
+      "headline": "Momentos que han llegado.",
+      "subheadline": "Lo que dicen nuestros clientes sobre su pedido."
+    },
+    "gallery": {
+      "headline": "Flores para momentos especiales.",
+      "images": [
+        {
+          "alt": "Ramo de rosas multicolor en rojo, rosa, crema y albaricoque en un jarrón blanco"
+        },
+        {
+          "alt": "Ramo de rosas de un azul intenso en un jarrón blanco"
+        },
+        {
+          "alt": "Ramo en intensos tonos fucsia con gerberas en un jarrón junto a la ventana"
+        },
+        {
+          "alt": "Ramo exótico con aves del paraíso, lirios y gerberas"
+        },
+        {
+          "alt": "Caja de flores roja en forma de corazón con rosas sobre una cómoda"
+        },
+        {
+          "alt": "Ramo de rosas en tonos pastel y fucsia con envoltorio rosa"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Bueno saberlo"
+    },
+    "newsletter": {
+      "headline": "Un poco más de flores en tu bandeja de entrada.",
+      "text": "Novedades, colecciones de temporada y promociones especiales.",
+      "placeholder": "Tu dirección de correo electrónico",
+      "button": "Suscribirme",
+      "note": "Puedes darte de baja en cualquier momento. Encontrarás la información sobre protección de datos en la política de privacidad."
+    }
+  },
+  "settings": {
+    "claim": "Flores que dicen más.",
+    "seo": {
+      "defaultTitle": "Blumora – flores a domicilio en Viena",
+      "defaultDescription": "Entrega de flores en toda Viena: ramos recién atados a los 23 distritos. En el mismo día hasta las 18:30 (domingos hasta las 17:45), exprés en 1–2 horas sin coste adicional."
+    },
+    "announcement": {
+      "messages": [
+        "Entrega en toda Viena – los 23 distritos",
+        "Exprés en 1–2 horas, sin coste adicional",
+        "Mismo día hasta las 18:30, domingos 17:45",
+        "Recién atadas, entregadas por mensajero"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Recién atado",
+        "text": "Atado a mano para tu pedido"
+      },
+      {
+        "title": "Entrega por mensajero",
+        "text": "En toda Viena – los 23 distritos"
+      },
+      {
+        "title": "Fecha a tu elección",
+        "text": "Tú decides el día"
+      },
+      {
+        "title": "Exprés en 1–2 horas",
+        "text": "Sin coste adicional, mismo día hasta las 18:30"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Pedido recibido",
+        "description": "Hemos recibido tu pedido."
+      },
+      "paid": {
+        "label": "Pago confirmado",
+        "description": "Hemos recibido el pago."
+      },
+      "preparing": {
+        "label": "En preparación",
+        "description": "Estamos eligiendo las flores para tu ramo."
+      },
+      "arranging": {
+        "label": "Atando el ramo",
+        "description": "Tu ramo se está atando a mano."
+      },
+      "ready": {
+        "label": "Listo para la entrega",
+        "description": "El ramo está listo y el mensajero lo recogerá."
+      },
+      "in_transit": {
+        "label": "En camino",
+        "description": "Tu ramo está en camino."
+      },
+      "delivered": {
+        "label": "Entregado",
+        "description": "Las flores han llegado."
+      },
+      "undeliverable": {
+        "label": "No se pudo entregar",
+        "description": "No hemos podido realizar la entrega y nos pondremos en contacto contigo."
+      },
+      "cancelled": {
+        "label": "Cancelado",
+        "description": "El pedido se ha cancelado."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Tarjeta de crédito",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Transferencia online (eps)"
+    },
+    "headerCta": "Enviar flores",
+    "address": {
+      "city": "Viena",
+      "country": "Austria"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Viena, zona 1",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Viena, zona 2",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Viena, zona 3",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Alrededores de Viena (Baja Austria)",
+      "note": "Entrega en los alrededores de Viena los martes, jueves y sábados.",
+      "windows": {
+        "day": "9:00–18:00"
+      }
+    }
+  }
+}

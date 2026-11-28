@@ -1,0 +1,195 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** tr – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Ürün bulunamadı",
+  priceFrom: "başlangıç fiyatı",
+
+  size: {
+    title: "Boyut seçin",
+    recommended: "Önerilen",
+    soldOut: "Tükendi",
+  },
+
+  color: {
+    title: "Renk seçin",
+    required: "(zorunlu)",
+    notChosen: "Henüz seçilmedi",
+    error: "Lütfen bir renk seçin.",
+  },
+
+  delivery: {
+    title: "Çiçekler ne zaman ulaşsın?",
+    formLabel: "Teslimat kontrolü",
+    postalCodeLabel: "Alıcının posta kodu",
+    postalCodePlaceholder: "Alıcının posta kodu",
+    check: "Kontrol et",
+    prompt: "Teslimat tarihini seçmek için posta kodunu girin",
+    notAvailable: "Maalesef {plz} için henüz teslimat yapmıyoruz.",
+    notAvailableHint: "Tüm güncel teslimat alanlarını {link} sayfasında bulabilirsiniz. Farklı bir alıcı adresi için yeni bir posta kodu girmeniz yeterli.",
+    deliveryLink: "Teslimat ve gönderim",
+    available: "Bu adrese teslimat yapıyoruz.",
+    fee: "{plz} {region} teslimatı: {fee}",
+    free: "ücretsiz",
+    freeFrom: "{price} ve üzeri ücretsiz",
+    dateGroup: "Teslimat tarihi",
+    today: "Bugün",
+    orderUntil: "{time} saatine kadar sipariş verin",
+    tomorrow: "Yarın",
+    chooseDate: "Tarih seçin",
+    openCalendar: "Takvimi aç",
+    deliveryOn: "Teslimat: {date}",
+    todaySuffix: "· bugün",
+    noDays: "Şu anda uygun teslimat günü yok.",
+  },
+
+  calendar: {
+    previousMonth: "Önceki ay",
+    nextMonth: "Sonraki ay",
+    weekdays: {
+      mon: { short: "Pzt", long: "Pazartesi" },
+      tue: { short: "Sal", long: "Salı" },
+      wed: { short: "Çar", long: "Çarşamba" },
+      thu: { short: "Per", long: "Perşembe" },
+      fri: { short: "Cum", long: "Cuma" },
+      sat: { short: "Cmt", long: "Cumartesi" },
+      sun: { short: "Paz", long: "Pazar" },
+    },
+    daySameDay: "{date}, bugün teslim edilebilir",
+    dayAvailable: "{date}, teslim edilebilir",
+    dayUnavailable: "{date}, teslim edilemez",
+    legendSameDay: "Bugün teslim",
+    legendToday: "Bugün",
+    legendUnavailable: "Gri renkli günlerde teslimat yapılamaz.",
+  },
+
+  card: {
+    unavailableTitle: "Kişisel tebrik kartı",
+    unavailableText: "Buketiniz şimdilik kartsız teslim edilecek.",
+    comingSoon: "Çok yakında!",
+    addMessage: "Kişisel mesaj ekle",
+    included: "Tebrik kartı dahil",
+    handwritten: "El yazısıyla tebrik kartı",
+    saved: "Mesaj kaydedildi",
+    messageLabel: "Mesajınız",
+    messagePlaceholder: "Nice mutlu yıllara …",
+    maxChars: "En fazla {max} karakter.",
+    senderGroup: "Gönderen",
+    showSender: "Göndereni göster",
+    anonymous: "İsimsiz gönder",
+    senderName: "Adınız",
+    optional: "(isteğe bağlı)",
+    senderPlaceholder: "ör. Anna",
+  },
+
+  extras: {
+    title: "Yanına başka bir şey?",
+    deliveredTogether: "Birlikte teslim edilir",
+    addLabel: "{name} ekle ({price})",
+    add: "Ekle",
+    quantity: "{name} adedi",
+    less: "{name}: bir azalt",
+    more: "{name}: bir artır",
+  },
+
+  floristNote: {
+    title: "Çiçekçilerimize istekleriniz",
+    optional: "(isteğe bağlı)",
+    hint: "Bukette küçük değişiklikler, ör. “sarı yerine beyaz gül lütfen”. Çiçekler mevcutsa isteğinizi uygularız. Teslimatla ilgili notları ödeme adımında belirtirsiniz.",
+    placeholder: "Çiçekçiye isteğiniz",
+  },
+
+  cta: {
+    total: "Toplam",
+    comingSoon: "Yakında sipariş verilebilir",
+    unavailable: "Şu anda mevcut değil",
+    addToCart: "Sepete ekle",
+    fresh: "Taze hazırlanır",
+    cardIncluded: "Tebrik kartı dahil",
+    securePayment: "Güvenli ödeme",
+    added: "{name} ({options}) sepete eklendi.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Önden görünüm",
+      detail: "Detay",
+      size: "Boyut karşılaştırması",
+      packaging: "Ambalaj",
+      lifestyle: "Ortam",
+    },
+    status: "Görsel {index} / {total}: {alt}",
+    carousel: "Karusel",
+    imagesOf: "{name} görselleri",
+    slide: "Görsel",
+    slideOf: "{index} / {total}",
+    choose: "Görsel seçin",
+    show: "{label} göster",
+    thumb: "{label}: {alt}",
+    previous: "Önceki görsel",
+    next: "Sonraki görsel",
+    colorAlt: "{color} renkte {name}",
+    colorLabel: "Renk: {color}",
+    sizeAlt: "{size} boyutunda {name}",
+    sizeDetailAlt: "{size} boyutunda {name}, yakın çekim",
+    sizeLabel: "Boyut {size}",
+    sizeDetailLabel: "Boyut {size} · yakın çekim",
+  },
+
+  details: {
+    eyebrow: "Bilmeniz gerekenler",
+    title: "{name} hakkında her şey",
+    description: "Açıklama",
+    plant: "Bitki",
+    flowers: "İçerdiği çiçekler",
+    care: "Bakım önerileri",
+    delivery: "Teslimat",
+    deliveryText: "Çiçekleriniz, sürekli birlikte çalıştığımız Viyanalı bir çiçekçiden gelir. Buketler orada siparişiniz için elde hazırlanır. Bir kurye onları alır ve hiç durmadan alıcı adresine götürür.",
+    deliveryAreas: "Viyana'nın 23 bölgesinin tamamına teslimat yapıyoruz. Teslimat ücreti bölgeye göre belirlenir ve posta kodunu girdikten sonra gösterilir. Teslimat alanlarını, zaman aralıklarını ve son sipariş saatlerini {link} sayfasında bulabilirsiniz.",
+    deliveryLink: "Teslimat ve gönderim",
+    looksPlant: "Bitki tam olarak böyle mi görünüyor?",
+    looksBouquet: "Buket tam olarak böyle mi görünüyor?",
+    looksOther: "Tam olarak fotoğraftaki gibi mi görünüyor?",
+    naturalPlant: "Neredeyse. Bitkiler doğal ürünlerdir: Büyüme şekli, boyut ve çiçeklenme fotoğraftan farklı olabilir. Saksı kabı da stok durumuna göre farklı görünebilir.",
+    naturalFlowers: "Neredeyse. Çiçekler doğal ürünlerdir: Mevsime göre bir tür veya renk tonu farklı olabilir. Partner çiçekçimiz tarzın ve renk dünyasının korunmasına özen gösterir.",
+  },
+
+  pricePending: {
+    status: "Fiyat yakında",
+    sizes: "Boyutlar",
+    sizesLabel: "Mevcut boyutlar",
+    soonTitle: "Yakında sipariş verilebilir",
+    soonText: "Ürünlerimizin fiyatlarını şu anda belirliyoruz. Fiyatlar netleşir netleşmez bu buketi buradan doğrudan sipariş edebilirsiniz.",
+    contact: "Sorunuz mu var? Bize yazın",
+  },
+
+  related: {
+    eyebrow: "Göz atmaya devam edin",
+    title: "Bunlar da hoşunuza gidebilir",
+    allFlowers: "Tüm çiçekleri görüntüle",
+  },
+
+  reviews: {
+    eyebrow: "Yorumlar",
+    title: "{name} hakkında değerlendirmeler",
+    demoNote: "Örnek değerlendirmeler – gerçek değerlendirmeler yakında",
+    quote: "“{text}”",
+    verified: "Doğrulanmış satın alma",
+    demo: "Örnek",
+  },
+
+  reviewPhotos: {
+    photosOf: "Fotoğraflar: {author}",
+    enlarge: "{alt} – fotoğraf {index} / {total}, büyüt",
+    dialogTitle: "Müşteri fotoğrafı: {author}",
+    dialogCount: "({index} / {total})",
+    close: "Fotoğrafı kapat",
+    show: "Fotoğraf {index} göster",
+  },
+  reviewVideo: {
+    videoOf: "{author} tarafından video",
+    caption: "Müşteri videosu · {duration}",
+  },
+};
+
+export default product;

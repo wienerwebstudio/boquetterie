@@ -1,0 +1,176 @@
+import type { Metadata } from "next";
+import Link from "@/components/ui/link";
+import { notFound } from "next/navigation";
+import { Mail, Phone, MapPin, Clock, ArrowRight, PenLine } from "lucide-react";
+import { getFaqs, getPageBySlug, getSettings } from "@/lib/content";
+import { routes } from "@/lib/urls";
+import { breadcrumbLd, JsonLd } from "@/lib/seo";
+import { cn } from "@/lib/format";
+import { PageHeader } from "@/components/content/page-header";
+import { RichSections, cmsMetadata } from "@/components/content/cms-page";
+import { ContactForm } from "@/components/content/contact-form";
+import { getI18n } from "@/i18n/server";
+import { whatsappSupport } from "@/lib/social";
+import { buttonClasses } from "@/components/ui/button";
+import { SocialMark } from "@/components/icons/social";
+
+const SLUG = "kontakt";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const [page, { m }] = await Promise.all([getPageBySlug(SLUG), getI18n()]);
+  return cmsMetadata(page, m.content.contact, routes.contact);
+}
+
+/** Settings values that still need to be filled in start with "[" (see settings.json). */
+const isPlaceholder = (v: string) => v.trim().startsWith("[");
+
+/** Category groups that exist as anchors on the FAQ page. */
+const FAQ_ANCHORS = new Set(["lieferung", "bestellung", "produkt"]);
+const faqHref = (category?: string) => (category && FAQ_ANCHORS.has(category) ? `${routes.faq}#${category}` : routes.faq);
+
+export default async function ContactPage() {
+  const [page, settings, faqs, { m }] = await Promise.all([getPageBySlug(SLUG), getSettings(), getFaqs(), getI18n()]);
+  if (!page) notFound();
+
+  const { brand } = settings;
+  const t = m.content.contactPage;
+  const address = brand.address;
+  const quickFaqs = faqs.slice(0, 4);
+  // Placeholder sections on this page only repeat that details come from settings – the block below already shows them.
+  const extraSections = page.sections.filter((s) => !s.placeholder);
+  const wa = whatsappSupport(settings);
+  const ts = m.layout.social;
+
+  return (
+    <article>
+      <PageHeader eyebrow={m.content.serviceEyebrow} title={page.title} intro={page.intro} crumbs={[{ label: page.title }]} />
+
+      <div className="container-x py-14 sm:py-20 lg:py-24">
+        {wa && (
+          <section aria-labelledby="contact-whatsapp-heading" className="mb-14 flex flex-col items-start gap-5 rounded-md border border-line bg-ivory-100 p-6 sm:mb-20 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+            <div className="flex items-start gap-4">
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-white text-forest" aria-hidden>
+                <SocialMark network="whatsapp" className="size-5" />
+              </span>
+              <div>
+                <h2 id="contact-whatsapp-heading" className="font-serif text-2xl text-ink">{wa.is247 ? ts.whatsappSupport247 : ts.whatsappSupport}</h2>
+                <p className="mt-1 text-[15px] leading-relaxed text-ink-muted">{wa.is247 ? ts.contactText247 : ts.contactText}</p>
+              </div>
+            </div>
+            <a href={wa.href} target="_blank" rel="noopener noreferrer" data-testid="contact-whatsapp" className={buttonClasses({ size: "lg", className: "w-full sm:w-auto" })}>
+              <SocialMark network="whatsapp" className="size-4" />
+              {ts.writeOnWhatsapp}
+              <span className="sr-only"> {ts.newTab}</span>
+            </a>
+          </section>
+        )}
+        <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-20">
+          {/* Contact details */}
+          <div className="space-y-12">
+            <section aria-labelledby="contact-details-heading">
+              <p className="eyebrow mb-3">{t.detailsEyebrow}</p>
+              <h2 id="contact-details-heading" className="display-3 text-ink">{t.detailsTitle}</h2>
+              <address className="mt-8 divide-y divide-line border-y border-line not-italic">
+                <Detail icon={<Mail className="size-4" aria-hidden />} label={t.email}>
+                  <Value value={brand.email} href={isPlaceholder(brand.email) ? undefined : `mailto:${brand.email}`} />
+                </Detail>
+                {/* Rows without real data (operator placeholders, empty lists) are left out entirely. */}
+                {!isPlaceholder(brand.phone) && (
+                  <Detail icon={<Phone className="size-4" aria-hidden />} label={t.phone}>
+                    <Value value={brand.phone} href={`tel:${brand.phone.replace(/[^\d+]/g, "")}`} />
+                  </Detail>
+                )}
+                {!isPlaceholder(address.street) && (
+                  <Detail icon={<MapPin className="size-4" aria-hidden />} label={t.address}>
+                    <Value value={address.street} />
+                    <span className="block text-ink">{address.zip} {address.city}, {address.country}</span>
+                    <span className="mt-1 block text-[13px] text-ink-muted">{t.noShop}</span>
+                  </Detail>
+                )}
+                {brand.openingHours.length > 0 && (
+                  <Detail icon={<Clock className="size-4" aria-hidden />} label={t.hours}>
+                    {brand.openingHours.map((h, i) => <Value key={i} value={h} />)}
+                  </Detail>
+                )}
+              </address>
+            </section>
+
+            <Link href={routes.customRequest} data-testid="contact-custom-request" className="group flex items-center justify-between gap-4 rounded-md border border-forest/25 bg-forest/[0.06] px-5 py-4 text-ink transition-colors hover:bg-forest/10">
+              <span className="flex items-center gap-3">
+                <PenLine className="size-4 shrink-0 text-forest" aria-hidden />
+                <span>
+                  <span className="block text-[15px] font-semibold">{m.layout.header.customRequest}</span>
+                  <span className="block text-[13px] text-ink-muted">{m.layout.header.customRequestHint}</span>
+                </span>
+              </span>
+              <ArrowRight className="size-4 shrink-0 text-stone transition-transform group-hover:translate-x-1 group-hover:text-forest" aria-hidden />
+            </Link>
+
+            {quickFaqs.length > 0 && (
+              <section aria-labelledby="quick-faq-heading" className="rounded-md bg-ivory-100 p-6 sm:p-8">
+                <p className="eyebrow mb-3">{m.content.faqTitle}</p>
+                <h2 id="quick-faq-heading" className="font-serif text-2xl text-ink">{t.quickFaqTitle}</h2>
+                <ul className="mt-5 divide-y divide-line">
+                  {quickFaqs.map((f) => (
+                    <li key={f.id}>
+                      <Link href={faqHref(f.category)} className="group flex items-center justify-between gap-4 py-3 text-[14.5px] text-ink transition-colors hover:text-forest">
+                        {f.question}
+                        <ArrowRight className="size-4 shrink-0 text-stone transition-transform group-hover:translate-x-1 group-hover:text-forest" aria-hidden />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <Link href={routes.faq} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-forest">
+                  {t.allQuestions} <ArrowRight className="size-4" aria-hidden />
+                </Link>
+              </section>
+            )}
+          </div>
+
+          {/* Form */}
+          <section aria-labelledby="contact-form-heading" className="rounded-md border border-line bg-white/70 p-6 shadow-soft sm:p-10">
+            <p className="eyebrow mb-3">{t.formEyebrow}</p>
+            <h2 id="contact-form-heading" className="display-3 text-ink">{t.formTitle}</h2>
+            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
+              {t.formText}
+            </p>
+            <ContactForm className="mt-8" />
+          </section>
+        </div>
+
+        {extraSections.length > 0 && (
+          <div className="mt-20 border-t border-line pt-16 sm:mt-24 sm:pt-20">
+            <RichSections sections={extraSections} />
+          </div>
+        )}
+      </div>
+
+      <JsonLd data={breadcrumbLd([{ name: m.content.homeCrumb, url: "/" }, { name: page.title, url: routes.contact }], settings)} />
+    </article>
+  );
+}
+
+function Detail({ icon, label, children }: { icon: React.ReactNode; label: string; children: React.ReactNode }) {
+  return (
+    <div className="grid grid-cols-[auto_1fr] gap-x-4 py-4">
+      <span className="mt-0.5 inline-flex size-8 items-center justify-center rounded-full bg-ivory-100 text-forest">{icon}</span>
+      <div>
+        <p className="text-[12px] font-semibold uppercase tracking-[0.1em] text-ink-soft">{label}</p>
+        <div className="mt-1 text-[15px] leading-relaxed">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+/** Renders a settings value; placeholders ("[…]") are shown muted and clearly marked, never as real data. */
+function Value({ value, href }: { value: string; href?: string }) {
+  if (isPlaceholder(value)) {
+    return (
+      <span className="block">
+        <span className="rounded-sm border border-dashed border-stone px-1.5 py-0.5 text-[13px] italic text-ink-soft">{value}</span>
+      </span>
+    );
+  }
+  const cls = cn("block text-ink", href && "transition-colors hover:text-forest");
+  return href ? <a href={href} className={cls}>{value}</a> : <span className={cls}>{value}</span>;
+}

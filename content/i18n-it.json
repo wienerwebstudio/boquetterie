@@ -1,0 +1,2526 @@
+{
+  "products": {
+    "p-rose-dream": {
+      "name": "Rosé Dream",
+      "tagline": "Rose rosa, gerbere fucsia e gigli bianchi",
+      "shortDescription": "Un bouquet chiaro e arioso in rosa e bianco, che porta allegria in ogni stanza.",
+      "description": "Rosé Dream unisce rose rosa e gerbere fucsia a gigli bianchi, delicata gypsophila e verde fresco. Composto in modo morbido e luminoso nell'effetto, è perfetto per un compleanno, per dire grazie o semplicemente così.",
+      "flowers": [
+        "Rose",
+        "Gerbere",
+        "Gigli",
+        "Gypsophila"
+      ],
+      "care": [
+        "Aggiungi ogni giorno acqua fresca nel vaso.",
+        "Se necessario, accorcia di nuovo gli steli.",
+        "Rimuovi regolarmente i fiori appassiti."
+      ],
+      "seo": {
+        "title": "Rosé Dream – bouquet in rosa e bianco",
+        "description": "Rosé Dream: rose rosa, gerbere fucsia e gigli bianchi, composti in modo morbido. Un bouquet luminoso per compleanni e ringraziamenti – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rose-dream-1.jpg": "Bouquet di rose rosa, gerbere fucsia e gigli bianchi in un vaso di vetro su una cassettiera di legno"
+      }
+    },
+    "p-gelb-bouquet": {
+      "name": "Bouquet giallo",
+      "tagline": "Gerbere gialle, rose e gypsophila",
+      "shortDescription": "Un bouquet solare in giallo e bianco, chiuso da un nastro giallo.",
+      "description": "Gerbere di un giallo brillante incontrano rose bianche e gialle, gypsophila e verde fresco. In un incarto chiaro con nastro giallo – un bouquet per un compleanno, per fare gli auguri, per dire grazie o per augurare una pronta guarigione.",
+      "flowers": [
+        "Gerbere",
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Non esporlo al sole diretto."
+      ],
+      "seo": {
+        "title": "Bouquet giallo – gerbere e rose in giallo",
+        "description": "Gerbere gialle, rose bianche e gialle con gypsophila e nastro giallo. Un pensiero luminoso per un compleanno o una pronta guarigione – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gelb-bouquet-1.jpg": "Bouquet di gerbere gialle e rose bianche e gialle in un incarto chiaro con nastro giallo"
+      }
+    },
+    "p-weiss-bouquet": {
+      "name": "Bouquet bianco",
+      "tagline": "Rose chiare, gerbere e gigli",
+      "shortDescription": "Un bouquet chiaro e pacato in bianco e crema, con delicati tocchi di rosa.",
+      "description": "Il Bouquet bianco unisce rose chiare, gerbere e gigli con la gypsophila in un bouquet semplice e senza tempo. Delicati accenti rosa e albicocca alleggeriscono l'insieme. Perfetto per un anniversario di matrimonio o un anniversario, per dire grazie o come pensiero raffinato.",
+      "flowers": [
+        "Rose",
+        "Gerbere",
+        "Gigli",
+        "Gypsophila"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Se necessario, rimuovi con cautela il polline dei gigli."
+      ],
+      "seo": {
+        "title": "Bouquet bianco – bouquet in bianco e crema",
+        "description": "Rose chiare, gerbere e gigli con gypsophila: un bouquet semplice per anniversari, anniversari di matrimonio o per dire grazie – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weiss-bouquet-1.jpg": "Bouquet chiaro di rose color crema, gerbere rosa, gigli e gypsophila in un incarto bianco"
+      }
+    },
+    "p-blue-bouquet": {
+      "name": "Blue Bouquet",
+      "tagline": "Rose blu e bianche in un incarto blu",
+      "shortDescription": "Rose blu e bianche in un incarto azzurro – un bouquet che si fa notare.",
+      "description": "Il Blue Bouquet combina rose blu e bianche con gypsophila, un giglio bianco e verde fresco. L'incarto azzurro riprende il colore dei fiori. Un regalo insolito per un compleanno, un anniversario o per chi ama le cose speciali.",
+      "flowers": [
+        "Rose",
+        "Gigli",
+        "Gypsophila"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Blue Bouquet – rose blu e bianche",
+        "description": "Rose blu e bianche con gypsophila in un incarto azzurro. Un bouquet di rose insolito per compleanni o anniversari – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blue-bouquet-1.jpg": "Bouquet di rose blu e bianche con gypsophila in un incarto azzurro su una cassettiera di legno"
+      }
+    },
+    "p-farbensinfonie": {
+      "name": "Farbensinfonie",
+      "tagline": "Rose arcobaleno in tanti colori",
+      "shortDescription": "Un bouquet di rose arcobaleno, in cui ogni fiore brilla di più colori.",
+      "description": "Farbensinfonie è composto da rose arcobaleno: ogni fiore mostra più colori uno accanto all'altro, dal rosso e dall'arancione al giallo e al verde, fino al blu e al viola. Composto in modo fitto, il bouquet sembra una sfera colorata. Una sorpresa allegra per un compleanno o una festa.",
+      "flowers": [
+        "Rose arcobaleno"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Farbensinfonie – rose arcobaleno",
+        "description": "Rose arcobaleno, in cui ogni fiore brilla di più colori. Un allegro bouquet di rose per il compleanno – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Farbensinfonie (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Farbensinfonie (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Farbensinfonie (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbensinfonie-1.jpg": "Bouquet fitto di rose arcobaleno in un vaso color crema",
+        "/images/products/sortiment/farbensinfonie-2.jpg": "Rose arcobaleno in primo piano, ogni fiore in più colori"
+      }
+    },
+    "p-sonnenzauber": {
+      "name": "Sonnenzauber",
+      "tagline": "Strelitzie, gigli e gerbere in arancione e giallo",
+      "shortDescription": "Un bouquet esotico in arancione e giallo, con gli uccelli del paradiso a catturare lo sguardo.",
+      "description": "Sonnenzauber unisce vistosi uccelli del paradiso a gigli bianchi, gerbere gialle e verde fresco. I caldi toni dell'arancione e del giallo danno al bouquet un carattere vivace ed estivo.",
+      "flowers": [
+        "Strelitzie (uccelli del paradiso)",
+        "Gigli",
+        "Gerbere",
+        "Gypsophila"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Tieni pulito il vaso e rinnova regolarmente l'acqua.",
+        "Non esporlo al sole diretto."
+      ],
+      "seo": {
+        "title": "Sonnenzauber – strelitzie e gerbere",
+        "description": "Uccelli del paradiso, gigli e gerbere gialle in caldi toni di arancione e giallo. Un bouquet esotico che cattura lo sguardo – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/sonnenzauber-1.jpg": "Bouquet esotico di strelitzie, gigli bianchi e gerbere gialle in una pellicola trasparente",
+        "/images/products/sortiment/sonnenzauber-2.jpg": "Vista dall'alto su strelitzie, giglio e gerbere gialle del bouquet"
+      }
+    },
+    "p-pink-bouquet": {
+      "name": "Pink Bouquet",
+      "tagline": "Fiori fucsia e rosa con gerbere e gigli",
+      "shortDescription": "Un bouquet tondo e giocoso in fucsia e rosa, con accenti gialli.",
+      "description": "Il Pink Bouquet riunisce fiori fucsia e rosa, tra cui gigli e gerbere, in un bouquet tondo e giocoso. Le gerbere gialle aggiungono tocchi di freschezza e l'incarto rosa completa l'insieme. Bello per un compleanno, un anniversario, la festa della mamma o semplicemente così.",
+      "flowers": [
+        "Gigli",
+        "Gerbere"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Rimuovi regolarmente i fiori appassiti."
+      ],
+      "seo": {
+        "title": "Pink Bouquet – bouquet in fucsia e rosa",
+        "description": "Un bouquet tondo in fucsia e rosa con gigli e gerbere. Per il compleanno, la festa della mamma o semplicemente così – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-bouquet-1.jpg": "Bouquet tondo in fucsia e rosa con gerbere gialle in un incarto rosa",
+        "/images/products/sortiment/pink-bouquet-2.jpg": "Bouquet con gigli rosa, gerbere gialle e fiori fucsia in un incarto rosa con fiocco"
+      }
+    },
+    "p-orange-bouquet": {
+      "name": "Orange Bouquet",
+      "tagline": "Rose arancioni e color albicocca",
+      "shortDescription": "Rose arancioni e color albicocca – un bouquet caldo come un tramonto.",
+      "description": "L'Orange Bouquet è composto da rose arancioni e color albicocca, completate da verde delicato e avvolte in un incarto chiaro. Caldo e allegro nell'effetto, è adatto a un compleanno, per dire grazie o per illuminare la giornata di qualcuno.",
+      "flowers": [
+        "Rose"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Orange Bouquet – rose arancioni",
+        "description": "Rose arancioni e color albicocca in un incarto chiaro. Un caldo bouquet di rose per il compleanno o per dire grazie – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Orange Bouquet (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Orange Bouquet (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Orange Bouquet (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/orange-bouquet-1.jpg": "Bouquet di rose arancioni e color albicocca in un incarto chiaro su una cassettiera di legno"
+      }
+    },
+    "p-red-rose-bouquet": {
+      "name": "Red Rose Bouquet",
+      "tagline": "Rose rosso scuro in un incarto scuro",
+      "shortDescription": "Un ricco bouquet di rose rosso scuro con nastro di raso rosso.",
+      "description": "Il Red Rose Bouquet è un bouquet fitto di rose rosso scuro in un incarto scuro, chiuso da un nastro di raso rosso. La classica dichiarazione d'amore per San Valentino, un anniversario o una proposta di matrimonio.",
+      "flowers": [
+        "Rose"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Red Rose Bouquet – rose rosse",
+        "description": "Rose rosso scuro in un incarto scuro con nastro di raso rosso. Il classico bouquet di rose per San Valentino e anniversari – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Red Rose Bouquet (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Red Rose Bouquet (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Red Rose Bouquet (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-rose-bouquet-1.jpg": "Bouquet di rose rosso scuro in un incarto grigio scuro con nastro di raso rosso",
+        "/images/products/sortiment/red-rose-bouquet-2.jpg": "Bouquet di rose rosse adagiato in un incarto bianco e nero accanto a delle candele"
+      }
+    },
+    "p-rosa-bouquet": {
+      "name": "Rosa Bouquet",
+      "tagline": "Rose e gerbere in rosa, pastello e lilla",
+      "shortDescription": "Un bouquet delicato e romantico in rosa e tonalità pastello.",
+      "description": "Il Rosa Bouquet unisce rose rosa e pastello a gerbere e fiori color lilla. Avvolto in un incarto bianco con fiocco rosa, ha un effetto leggero e affettuoso. Bello per un compleanno, la festa della mamma, una nascita o come pensiero.",
+      "flowers": [
+        "Rose",
+        "Gerbere"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Rosa Bouquet – rose in rosa e pastello",
+        "description": "Rose e gerbere in rosa, pastello e lilla, in un incarto bianco. Per il compleanno, la festa della mamma o una nascita – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-bouquet-1.jpg": "Bouquet di rose rosa, gerbere e fiori color lilla in un incarto bianco con fiocco rosa"
+      }
+    },
+    "p-blackroses": {
+      "name": "Blackroses",
+      "tagline": "Rose nere in un incarto scuro",
+      "shortDescription": "Rose nere in un incarto scuro – misteriose e fuori dal comune.",
+      "description": "Blackroses è un bouquet di rose nere, avvolte in un incarto scuro e trasparente. Un gesto insolito per chi apprezza le cose speciali, per esempio per un compleanno o un anniversario.",
+      "flowers": [
+        "Rose"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Blackroses – rose nere",
+        "description": "Rose nere in un incarto scuro: un bouquet di rose insolito per chi ama le cose speciali – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Blackroses (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Blackroses (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Blackroses (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blackroses-1.jpg": "Bouquet di rose nere in un incarto nero in un vaso di vetro",
+        "/images/products/sortiment/blackroses-2.jpg": "Rose nere senza incarto in un vaso di vetro davanti a una finestra"
+      }
+    },
+    "p-blaueliebe": {
+      "name": "Blaue Liebe",
+      "tagline": "Rose blu con gypsophila",
+      "shortDescription": "Rose di un blu intenso con gypsophila – rare e capaci di catturare lo sguardo.",
+      "description": "Blaue Liebe è un bouquet di rose di un blu intenso, alleggerito da sottile gypsophila e avvolto in un incarto blu. Un regalo speciale per un compleanno, un anniversario o come segno di un legame profondo.",
+      "flowers": [
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Blaue Liebe – rose blu",
+        "description": "Rose di un blu intenso con gypsophila in un incarto blu. Un bouquet di rose raro per persone speciali – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Blaue Liebe (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Blaue Liebe (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Blaue Liebe (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blaueliebe-1.jpg": "Bouquet di rose blu con gypsophila in un incarto blu in un vaso bianco",
+        "/images/products/sortiment/blaueliebe-2.jpg": "Rose blu con gypsophila in un incarto blu, vista frontale",
+        "/images/products/sortiment/blaueliebe-3.jpg": "Bouquet di rose blu in un incarto blu adagiato su una cassettiera di legno"
+      }
+    },
+    "p-rosalie": {
+      "name": "Rosalie",
+      "tagline": "Rose rosa con gypsophila",
+      "shortDescription": "Rose rosa in un incarto delicato – affettuose ed eleganti.",
+      "description": "Rosalie è un bouquet di rose rosa, alleggerito dalla gypsophila e avvolto in un incarto rosa tenue. Femminile e pacato nell'effetto, è adatto alla festa della mamma, a un compleanno, a un anniversario o per dire grazie.",
+      "flowers": [
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Rosalie – rose rosa con gypsophila",
+        "description": "Rose rosa con gypsophila in un incarto rosa tenue. Per la festa della mamma, il compleanno o per dire grazie – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Rosalie (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Rosalie (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Rosalie (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosalie-1.jpg": "Bouquet di rose rosa con gypsophila in un incarto rosa tenue in un vaso bianco",
+        "/images/products/sortiment/rosalie-2.jpg": "Rosalie in un incarto rosa in un semplice vaso bianco",
+        "/images/products/sortiment/rosalie-3.jpg": "Rose rosa con gypsophila in un vaso bianco rigato",
+        "/images/products/sortiment/rosalie-4.jpg": "Rosalie adagiato, vista dall'alto sulle rose rosa e sulla gypsophila"
+      }
+    },
+    "p-rot-und-weiss-mix": {
+      "name": "Mix rosso e bianco",
+      "tagline": "Rose rosse e bianche",
+      "shortDescription": "Rose rosse e bianche in un bouquet festoso.",
+      "description": "Il Mix rosso e bianco riunisce rose rosse e bianche in un incarto bianco, alleggerite dalla gypsophila a seconda della misura. La passione incontra la tenerezza: un bouquet per San Valentino, un anniversario, un anniversario di matrimonio o come regalo elegante.",
+      "flowers": [
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Mix rosso e bianco – rose rosse e bianche",
+        "description": "Rose rosse e bianche in un incarto festoso. Per San Valentino, anniversari o anniversari di matrimonio, in sei misure – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Mix rosso e bianco (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Mix rosso e bianco (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Mix rosso e bianco (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rot-und-weiss-mix-1.jpg": "Bouquet di rose rosse e bianche con gypsophila in un incarto bianco, accanto petali di rosa",
+        "/images/products/sortiment/rot-und-weiss-mix-2.jpg": "Rose rosse e bianche composte in modo fitto in un incarto bianco",
+        "/images/products/sortiment/rot-und-weiss-mix-3.jpg": "Bouquet di rose rosse e bianche in un incarto bianco su una cassettiera di legno",
+        "/images/products/sortiment/rot-und-weiss-mix-4.jpg": "Bouquet di rose rosse e bianche adagiato, vista dall'alto"
+      }
+    },
+    "p-tulpenstrauss": {
+      "name": "Bouquet di tulipani",
+      "tagline": "Tulipani in un solo colore o misti",
+      "shortDescription": "Un semplice bouquet di tulipani, in tinta unita o in un mix colorato.",
+      "description": "Con i loro colori netti e la forma slanciata, i tulipani portano in casa un'atmosfera di primavera. Il bouquet è composto interamente da tulipani, a scelta in un solo colore o in un mix colorato. Disponibile in rosso, giallo, viola, rosa, arancione, bianco e mix.",
+      "flowers": [
+        "Tulipani"
+      ],
+      "care": [
+        "Taglia gli steli dritti e mettili in acqua fredda.",
+        "Basta poca acqua, ma rabboccala regolarmente.",
+        "I tulipani continuano a crescere nel vaso: se necessario, accorcia gli steli."
+      ],
+      "seo": {
+        "title": "Bouquet di tulipani – tulipani in tanti colori",
+        "description": "Un bouquet di tulipani rossi, gialli, viola, rosa, arancioni, bianchi o misti. Un'atmosfera di primavera a casa – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rosso",
+        "gelb": "Giallo",
+        "lila": "Viola",
+        "rosa": "Rosa",
+        "orange": "Arancione",
+        "weiss": "Bianco",
+        "mix": "Mix colorato"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/tulpenstrauss-1.jpg": "Bouquet di tulipani gialli in un vaso di vetro",
+        "/images/products/sortiment/tulpenstrauss-2.jpg": "Tulipani viola in carta kraft in un vaso di vetro",
+        "/images/products/sortiment/tulpenstrauss-3.jpg": "Tulipani rossi in un vaso beige",
+        "/images/products/sortiment/tulpenstrauss-4.jpg": "Tulipani arancioni in un vaso di vetro",
+        "/images/products/sortiment/tulpenstrauss-5.jpg": "Tulipani rosa in un vaso di vetro su un telo di lino",
+        "/images/products/sortiment/tulpenstrauss-6.jpg": "Mix colorato di tulipani rossi, gialli, rosa, arancioni e viola in un vaso beige",
+        "/images/products/sortiment/tulpenstrauss-7.jpg": "Tulipani bianchi in un vaso bianco"
+      }
+    },
+    "p-red-passion": {
+      "name": "Red Passion",
+      "tagline": "Rose rosse con gypsophila",
+      "shortDescription": "Un bouquet di rose espressivo, di un rosso intenso, per i grandi sentimenti.",
+      "description": "Red Passion riunisce rose rosse in un bouquet fitto e tondo, incorniciato dalla gypsophila e da un incarto scuro. Disponibile in sei misure – per gesti romantici e momenti da ricordare.",
+      "flowers": [
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Taglia di fresco gli steli.",
+        "Aggiungi ogni giorno acqua fresca.",
+        "Proteggilo dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Red Passion – bouquet di rose rosse",
+        "description": "Rose rosse con gypsophila in un incarto scuro, in sei misure. Un bouquet di rose per i grandi sentimenti – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Red Passion (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Red Passion (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Red Passion (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/red-passion-1.jpg": "Bouquet di rose rosso scuro con gypsophila adagiato in un incarto nero e oro",
+        "/images/products/sortiment/red-passion-2.jpg": "Grande bouquet di rose rosse con gypsophila in un incarto scuro in un vaso bianco",
+        "/images/products/sortiment/red-passion-3.jpg": "Bouquet tondo molto grande di rose rosse con gypsophila in un incarto scuro"
+      }
+    },
+    "p-klassiker-der-liebe": {
+      "name": "Klassiker der Liebe",
+      "tagline": "Rose rosse composte in modo fitto",
+      "shortDescription": "Rose rosse composte in modo fitto in un incarto scuro – senza tempo e piene di sentimento.",
+      "description": "Klassiker der Liebe è composto da rose rosse, raccolte in modo fitto in una forma tonda e avvolte in un incarto scuro con fiocco nero. Il bouquet di rose per San Valentino, un anniversario, una proposta di matrimonio o qualsiasi dichiarazione d'amore.",
+      "flowers": [
+        "Rose"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Klassiker der Liebe – rose rosse",
+        "description": "Rose rosse composte fitte in un incarto scuro. Il classico bouquet di rose per San Valentino, anniversari o proposte di matrimonio – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Klassiker der Liebe (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Klassiker der Liebe (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Klassiker der Liebe (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassiker-der-liebe-1.jpg": "Bouquet tondo di rose rosse composte in modo fitto in un incarto nero con fiocco",
+        "/images/products/sortiment/klassiker-der-liebe-2.jpg": "Rose rosse a forma di sfera in un incarto scuro, vista frontale"
+      }
+    },
+    "p-koenigin-der-herzen": {
+      "name": "Königin der Herzen",
+      "tagline": "Rose rosse con gypsophila",
+      "shortDescription": "Un ricco bouquet di rose in sei misure.",
+      "description": "Königin der Herzen unisce rose rosse e sottile gypsophila in un incarto scuro e trasparente. Disponibile in sei misure – dal piccolo gesto alla grande sorpresa.",
+      "flowers": [
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Tienilo in un luogo fresco.",
+        "Rimuovi per tempo i fiori appassiti.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Königin der Herzen – ricco bouquet di rose",
+        "description": "Rose rosse con gypsophila, in sei misure. Un ricco bouquet di rose per i grandi momenti – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Königin der Herzen (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Königin der Herzen (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Königin der Herzen (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/koenigin-der-herzen-1.jpg": "Bouquet di rose rosse con gypsophila in un incarto scuro in un vaso bianco",
+        "/images/products/sortiment/koenigin-der-herzen-2.jpg": "Grande bouquet di rose rosse e gypsophila in un incarto nero",
+        "/images/products/sortiment/koenigin-der-herzen-3.jpg": "Rose rosse con gypsophila in un incarto scuro in un vaso nero",
+        "/images/products/sortiment/koenigin-der-herzen-4.jpg": "Vista dall'alto su rose rosse con gypsophila in un incarto scuro a forma di stella"
+      }
+    },
+    "p-herbstzauber": {
+      "name": "Herbstzauber",
+      "tagline": "Gerbere, rose e gigli in tonalità calde",
+      "shortDescription": "Un bouquet caldo in arancione, rosa e giallo.",
+      "description": "Herbstzauber unisce gerbere, rose e gigli in tonalità arancioni, rosa e gialle a verde fresco. Composto in modo morbido, porta in casa colori caldi, proprio quando le giornate si accorciano.",
+      "flowers": [
+        "Gerbere",
+        "Rose",
+        "Gigli"
+      ],
+      "care": [
+        "Non metterlo vicino alla frutta.",
+        "Rabbocca regolarmente l'acqua.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Herbstzauber – bouquet in tonalità calde",
+        "description": "Gerbere, rose e gigli in arancione, rosa e giallo. Un caldo bouquet autunnale per un compleanno o per dire grazie – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herbstzauber-1.jpg": "Bouquet di gerbere arancioni, rose color albicocca e rosa e gigli in un vaso di vetro"
+      }
+    },
+    "p-bluetenfreude": {
+      "name": "Blütenfreude",
+      "tagline": "Rose rosse, gerbere e accenti verdi",
+      "shortDescription": "Un bouquet vivace in rosso e arancione con freschi accenti verdi.",
+      "description": "Blütenfreude unisce rose rosse e gerbere rosse e arancioni a fiori pompon verdi e fronde di eucalipto. Colori intensi e una forma comunque tonda – bello per un compleanno, per dire grazie o semplicemente così.",
+      "flowers": [
+        "Rose",
+        "Gerbere"
+      ],
+      "care": [
+        "Aggiungi ogni giorno acqua fresca nel vaso.",
+        "Se necessario, accorcia di nuovo gli steli.",
+        "Rimuovi regolarmente i fiori appassiti."
+      ],
+      "seo": {
+        "title": "Blütenfreude – rose e gerbere in rosso",
+        "description": "Rose rosse, gerbere rosse e arancioni e freschi accenti verdi. Un bouquet vivace per il compleanno – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bluetenfreude-1.jpg": "Bouquet di rose rosse, gerbere rosse e arancioni e fiori pompon verdi in un vaso di vetro",
+        "/images/products/sortiment/bluetenfreude-2.jpg": "Blütenfreude in un vaso bianco su una cassettiera di legno"
+      }
+    },
+    "p-zartrosa-zauber": {
+      "name": "Zartrosa Zauber",
+      "tagline": "Rose rosa, gigli e gypsophila",
+      "shortDescription": "Delicate tonalità di rosa con gigli – pacato, armonioso e raffinato.",
+      "description": "Zartrosa Zauber unisce rose rosa, gigli rosa e gypsophila in un incarto rosa. Il bouquet ha un effetto pacato e armonioso, con una nota raffinata e romantica.",
+      "flowers": [
+        "Rose",
+        "Gigli",
+        "Gypsophila"
+      ],
+      "care": [
+        "Rimuovi le foglie che finiscono in acqua.",
+        "Tienilo in un luogo fresco.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Zartrosa Zauber – rose e gigli in rosa",
+        "description": "Rose rosa, gigli rosa e gypsophila in un incarto delicato. Un bouquet pacato e romantico – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/zartrosa-zauber-1.jpg": "Bouquet di rose rosa, gigli rosa e gypsophila in un incarto rosa in un vaso bianco",
+        "/images/products/sortiment/zartrosa-zauber-2.jpg": "Zartrosa Zauber in un incarto rosa con un grande fiocco"
+      }
+    },
+    "p-strahlender-tag": {
+      "name": "Strahlender Tag",
+      "tagline": "Gerbere, gigli e rose in arancione e giallo",
+      "shortDescription": "Arancione e giallo luminosi per le belle notizie e le occasioni solari.",
+      "description": "Strahlender Tag unisce gerbere e gigli arancioni a rose gialle, garofani chiari e gypsophila. I colori intensi trasmettono energia positiva – un bouquet per auguri, successi e occasioni solari.",
+      "flowers": [
+        "Gerbere",
+        "Gigli",
+        "Rose",
+        "Garofani",
+        "Gypsophila"
+      ],
+      "care": [
+        "Proteggilo dalle correnti d'aria.",
+        "Cambia regolarmente l'acqua.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Strahlender Tag – bouquet arancione e giallo",
+        "description": "Gerbere e gigli arancioni con rose gialle e gypsophila. Un bouquet allegro per fare gli auguri – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/strahlender-tag-1.jpg": "Bouquet di gerbere arancioni, rose gialle e gypsophila in un incarto bianco e oro",
+        "/images/products/sortiment/strahlender-tag-2.jpg": "Gerbere arancioni, gigli e una rosa gialla in un vaso bianco",
+        "/images/products/sortiment/strahlender-tag-3.jpg": "Bouquet tondo di gerbere e gigli arancioni, rose gialle e garofani chiari in un vaso di vetro"
+      }
+    },
+    "p-rosentraum": {
+      "name": "Rosentraum",
+      "tagline": "Rose in rosa, crema e albicocca",
+      "shortDescription": "Un bouquet di rose armonioso, tra bellezza classica e stile moderno.",
+      "description": "Rosentraum unisce rose rosa, crema e albicocca a fiori viola, rametti di bacche e verde fresco. Avvolto in un incarto rosa antico, il bouquet appare ricco e al tempo stesso moderno.",
+      "flowers": [
+        "Rose"
+      ],
+      "care": [
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Tieni pulito il vaso.",
+        "Rinnova regolarmente l'acqua."
+      ],
+      "seo": {
+        "title": "Rosentraum – rose in rosa e crema",
+        "description": "Rose in rosa, crema e albicocca con accenti viola in un incarto rosa antico. Un bouquet di rose armonioso – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosentraum-1.jpg": "Bouquet composto di rose rosa, crema e albicocca in un incarto rosa antico",
+        "/images/products/sortiment/rosentraum-2.jpg": "Rosentraum in un incarto rosa antico in un vaso bianco",
+        "/images/products/sortiment/rosentraum-3.jpg": "Vista dall'alto su rose, fiori viola e rametti di bacche del bouquet"
+      }
+    },
+    "p-rosenkuss": {
+      "name": "Rosenkuss",
+      "tagline": "Rose bianche con gypsophila",
+      "shortDescription": "Rose bianche con gypsophila – delicate, romantiche e luminose.",
+      "description": "Rosenkuss è composto da rose dal bianco al color crema, alleggerite da sottile gypsophila e avvolte in un incarto bianco. Un bouquet per l'affetto, la vicinanza e piccoli messaggi d'amore.",
+      "flowers": [
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Non tenerlo in un luogo troppo caldo.",
+        "Controlla ogni giorno il livello dell'acqua.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Rosenkuss – rose bianche",
+        "description": "Rose bianche con gypsophila in un incarto bianco. Un bouquet di rose delicato e romantico – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Rosenkuss (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Rosenkuss (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Rosenkuss (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenkuss-1.jpg": "Bouquet di rose bianche con gypsophila in un incarto bianco in un vaso bianco",
+        "/images/products/sortiment/rosenkuss-2.jpg": "Grande bouquet di rose bianche in un incarto bianco in un vaso bianco",
+        "/images/products/sortiment/rosenkuss-3.jpg": "Bouquet di rose bianche con gypsophila adagiato su una cassettiera di legno"
+      }
+    },
+    "p-rosenglanz": {
+      "name": "Rosenglanz",
+      "tagline": "Rose in pastello, fucsia e bordeaux",
+      "shortDescription": "Rose in tonalità pastello e fucsia, abbinate con eleganza.",
+      "description": "Rosenglanz riunisce rose rosa pastello, crema, fucsia e bordeaux con gypsophila in un incarto rosa. Di fascino senza tempo, disponibile in sei misure.",
+      "flowers": [
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Taglia di fresco gli steli.",
+        "Evita la luce diretta del sole.",
+        "Cambia regolarmente l'acqua dei fiori."
+      ],
+      "seo": {
+        "title": "Rosenglanz – rose in pastello e fucsia",
+        "description": "Rose rosa pastello, fucsia e bordeaux con gypsophila, in sei misure. Un elegante bouquet di rose – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo",
+          "detailAlt": "Rosenglanz (Piccolo) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "m": {
+          "label": "Medio",
+          "detailAlt": "Rosenglanz (Medio) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "l": {
+          "label": "Grande",
+          "detailAlt": "Rosenglanz (Grande) in mano, sullo sfondo una strada di Vienna con il tram"
+        },
+        "xl": {
+          "label": "XL"
+        },
+        "xxl": {
+          "label": "XXL"
+        },
+        "xxxl": {
+          "label": "XXXL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosenglanz-1.jpg": "Bouquet di rose rosa pastello, fucsia e bordeaux in un incarto rosa in un vaso di vetro",
+        "/images/products/sortiment/rosenglanz-2.jpg": "Bouquet di rose tondo con gypsophila in un incarto rosa, vista frontale",
+        "/images/products/sortiment/rosenglanz-3.jpg": "Bouquet di rose pastello e fucsia adagiato su una cassettiera di legno"
+      }
+    },
+    "p-pure-liebe": {
+      "name": "Pure Liebe",
+      "tagline": "Rose rosa, gerbere, gigli e garofani",
+      "shortDescription": "Un bouquet espressivo in rosa e fucsia, che parla senza bisogno di parole.",
+      "description": "Pure Liebe unisce rose rosa a gerbere fucsia, gigli rosa, garofani e gypsophila. Intenso nelle tonalità di rosa e fucsia, alleggerito da accenti chiari – un bouquet pieno di sentimento.",
+      "flowers": [
+        "Rose",
+        "Gerbere",
+        "Gigli",
+        "Garofani",
+        "Gypsophila"
+      ],
+      "care": [
+        "Aggiungi regolarmente acqua fresca.",
+        "Tieni pulito il vaso.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Pure Liebe – bouquet in rosa e fucsia",
+        "description": "Rose rosa, gerbere fucsia, gigli e garofani con gypsophila. Un bouquet pieno di sentimento – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pure-liebe-1.jpg": "Bouquet di rose rosa, gerbere fucsia e gigli rosa in un vaso beige",
+        "/images/products/sortiment/pure-liebe-2.jpg": "Pure Liebe con gigli, gerbere e garofani in un vaso beige",
+        "/images/products/sortiment/pure-liebe-3.jpg": "Bouquet tondo di rose rosa, gerbere, garofani e gypsophila in un vaso di vetro"
+      }
+    },
+    "p-pink-harmony": {
+      "name": "Pink Harmony",
+      "tagline": "Gerbere fucsia, rose e accenti viola",
+      "shortDescription": "Intense tonalità di fucsia abbinate in un bouquet fresco e moderno.",
+      "description": "Pink Harmony unisce gerbere e rose fucsia a fiori bianchi e color lilla, accenti viola e gypsophila. Vivace e fresco, con tanto charme.",
+      "flowers": [
+        "Gerbere",
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Tienilo in un luogo fresco.",
+        "Rimuovi i fiori appassiti.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Pink Harmony – gerbere e rose fucsia",
+        "description": "Gerbere e rose fucsia con accenti lilla e viola. Un bouquet fresco e moderno – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/pink-harmony-1.jpg": "Bouquet di gerbere fucsia, rose e fiori color lilla in un vaso beige",
+        "/images/products/sortiment/pink-harmony-2.jpg": "Bouquet tondo con gerbere fucsia, rose e accenti viola"
+      }
+    },
+    "p-love-deluxe": {
+      "name": "Love Deluxe",
+      "tagline": "Bouquet di rose colorato in rosa, giallo, albicocca e lilla",
+      "shortDescription": "Un generoso bouquet di rose colorato per le occasioni speciali.",
+      "description": "Love Deluxe è un bouquet di rose in tanti colori: rosa, crema, albicocca, giallo e lilla, avvolto in un incarto rosa. Per occasioni speciali e grandi gesti, disponibile in cinque misure.",
+      "flowers": [
+        "Rose"
+      ],
+      "care": [
+        "Accorcia di nuovo gli steli.",
+        "Cambia ogni giorno l'acqua dei fiori.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Love Deluxe – bouquet di rose colorato",
+        "description": "Rose in rosa, crema, albicocca, giallo e lilla in un incarto rosa, in cinque misure. Per i grandi gesti – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/love-deluxe-1.jpg": "Bouquet di rose colorato in rosa, giallo, albicocca e lilla in un incarto rosa in un vaso bianco",
+        "/images/products/sortiment/love-deluxe-2.jpg": "Grande bouquet di rose colorato in un incarto rosa, vista frontale",
+        "/images/products/sortiment/love-deluxe-3.jpg": "Bouquet di rose colorato in un incarto rosa adagiato su una cassettiera di legno"
+      }
+    },
+    "p-liebeserklaerung": {
+      "name": "Liebeserklärung",
+      "tagline": "Rose rosse e verdi con gigli",
+      "shortDescription": "Un bouquet emozionante in rosso, per dire «Ti amo».",
+      "description": "Liebeserklärung unisce rose rosse a rose verde chiaro, gigli bianchi, fiori rossi d'accento e gypsophila. Intenso eppure fresco nell'effetto – un bouquet che rende visibili i sentimenti.",
+      "flowers": [
+        "Rose",
+        "Gigli",
+        "Gypsophila"
+      ],
+      "care": [
+        "Proteggilo dal calore.",
+        "Rinnova regolarmente l'acqua.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Liebeserklärung – rose rosse e gigli",
+        "description": "Rose rosse e verde chiaro con gigli e gypsophila. Un bouquet per dire «Ti amo» – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/liebeserklaerung-1.jpg": "Bouquet di rose rosse e verde chiaro con gigli e gypsophila in un vaso di vetro",
+        "/images/products/sortiment/liebeserklaerung-2.jpg": "Liebeserklärung in un vaso bianco su una cassettiera di legno"
+      }
+    },
+    "p-klassische-schoenheit": {
+      "name": "Klassische Schönheit",
+      "tagline": "Rose e gerbere in rosa con accenti arancioni",
+      "shortDescription": "Elegante ed equilibrato – un bouquet di raffinata sobrietà.",
+      "description": "Klassische Schönheit unisce rose rosa antico e bianche a gerbere fucsia, piccoli fiori arancioni e gypsophila. Avvolto in un incarto scuro con bordo dorato, il bouquet appare equilibrato e senza tempo.",
+      "flowers": [
+        "Rose",
+        "Gerbere",
+        "Gypsophila"
+      ],
+      "care": [
+        "Non metterlo direttamente accanto al termosifone.",
+        "Taglia gli steli in obliquo prima di metterli in acqua.",
+        "Cambia regolarmente l'acqua dei fiori."
+      ],
+      "seo": {
+        "title": "Klassische Schönheit – rose e gerbere",
+        "description": "Rose rosa antico e bianche con gerbere fucsia in un incarto scuro. Un bouquet equilibrato e senza tempo – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/klassische-schoenheit-1.jpg": "Bouquet di rose rosa antico e gerbere fucsia in un incarto scuro con bordo dorato",
+        "/images/products/sortiment/klassische-schoenheit-2.jpg": "Klassische Schönheit in un vaso bianco",
+        "/images/products/sortiment/klassische-schoenheit-3.jpg": "Vista dall'alto su rose, gerbere e gypsophila in un incarto scuro"
+      }
+    },
+    "p-herzklopfen": {
+      "name": "Herzklopfen",
+      "tagline": "Rose rosa e gerbere fucsia",
+      "shortDescription": "Giocoso e vivace: rose rosa incontrano gerbere fucsia.",
+      "description": "Herzklopfen unisce rose rosa tenue a gerbere fucsia, piccoli fiori bianchi e verdi e sottili decorazioni lilla. Composto in forma tonda e pieno di colore – un bouquet ricco di sentimento.",
+      "flowers": [
+        "Rose",
+        "Gerbere"
+      ],
+      "care": [
+        "Aggiungi ogni giorno acqua fresca.",
+        "Taglia gli steli in obliquo.",
+        "Tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Herzklopfen – rose rosa e gerbere",
+        "description": "Rose rosa tenue e gerbere fucsia, composte in forma tonda. Un bouquet giocoso e pieno di sentimento – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/herzklopfen-1.jpg": "Bouquet tondo di rose rosa tenue e gerbere fucsia in un vaso bianco",
+        "/images/products/sortiment/herzklopfen-2.jpg": "Herzklopfen in un vaso bianco, vista laterale",
+        "/images/products/sortiment/herzklopfen-3.jpg": "Bouquet di rose rosa e gerbere fucsia in un vaso di vetro"
+      }
+    },
+    "p-froehlicher-bluetenmix": {
+      "name": "Fröhlicher Blütenmix",
+      "tagline": "Mix colorato con rose e gerbere",
+      "shortDescription": "Un bouquet colorato che trasmette gioia di vivere.",
+      "description": "Il Fröhlicher Blütenmix unisce rose rosse, gerbere gialle, rosa e rosse e altri fiori in giallo, arancione e viola. Avvolto in un incarto rosso – ideale per regalare un sorriso.",
+      "flowers": [
+        "Rose",
+        "Gerbere"
+      ],
+      "care": [
+        "Tienilo in un luogo fresco.",
+        "Cambia regolarmente l'acqua.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Fröhlicher Blütenmix – bouquet colorato",
+        "description": "Rose rosse e gerbere gialle, rosa e rosse in un incarto rosso. Un bouquet colorato pieno di gioia di vivere – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/froehlicher-bluetenmix-1.jpg": "Bouquet colorato con gerbere e rose in un incarto rosso su una cassettiera di legno",
+        "/images/products/sortiment/froehlicher-bluetenmix-2.jpg": "Fröhlicher Blütenmix in un incarto rosso in un vaso bianco",
+        "/images/products/sortiment/froehlicher-bluetenmix-3.jpg": "Vista dall'alto su rose rosse e gerbere gialle e rosa in un incarto rosso"
+      }
+    },
+    "p-farbtaenzer": {
+      "name": "Farbtänzer",
+      "tagline": "Rose e gerbere in fucsia con accenti lilla",
+      "shortDescription": "Un mix vivace in fucsia, albicocca e lilla.",
+      "description": "Farbtänzer unisce rose e roselline a mazzetto in fucsia e albicocca a gerbere rosa, fiori lilla e bacche chiare. Composto in modo fitto e vivace – moderno ed espressivo.",
+      "flowers": [
+        "Rose",
+        "Gerbere"
+      ],
+      "care": [
+        "Rimuovi le foglie che finiscono in acqua.",
+        "Tieni pulito il vaso.",
+        "Taglia gli steli in obliquo prima di metterli in acqua."
+      ],
+      "seo": {
+        "title": "Farbtänzer – bouquet in fucsia e lilla",
+        "description": "Rose e gerbere in fucsia e albicocca con accenti lilla. Un bouquet vivace e moderno – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/farbtaenzer-1.jpg": "Bouquet in fucsia e lilla adagiato in un incarto rosa tenue",
+        "/images/products/sortiment/farbtaenzer-2.jpg": "Bouquet tondo di rose fucsia, gerbere e fiori lilla in un vaso color crema",
+        "/images/products/sortiment/farbtaenzer-3.jpg": "Farbtänzer in un vaso rigato, vista frontale"
+      }
+    },
+    "p-blumenbox-herzfoermig": {
+      "name": "Flower box a cuore",
+      "tagline": "Rose in una box rossa a forma di cuore",
+      "shortDescription": "Rose in una box a forma di cuore – una dichiarazione d'amore da mettere in mostra.",
+      "description": "Nella box rossa a forma di cuore sono disposte rose rosse, rosa e bianche con altri fiori e gypsophila. Un regalo per un anniversario, San Valentino o come sorpresa affettuosa.",
+      "flowers": [
+        "Rose",
+        "Gypsophila"
+      ],
+      "care": [
+        "Inumidisci leggermente le rose.",
+        "Tienila in un luogo fresco.",
+        "Proteggila dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Flower box a cuore – rose in una box a cuore",
+        "description": "Rose rosse, rosa e bianche in una box rossa a forma di cuore. Per anniversari e San Valentino – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-herzfoermig-1.jpg": "Flower box rossa a forma di cuore con rose rosse, rosa e bianche e gypsophila"
+      }
+    },
+    "p-blumenbox-standard": {
+      "name": "Flower box classica",
+      "tagline": "Rose rosse in una box rotonda",
+      "shortDescription": "Rose classiche in una box rotonda – semplice ed espressiva.",
+      "description": "La Flower box classica riempie una box rotonda di rose disposte fitte. Minimalista e senza tempo, è adatta a un compleanno, per dire grazie o per i momenti speciali. Disponibile in rosso e bianco.",
+      "flowers": [
+        "Rose"
+      ],
+      "care": [
+        "Annaffia regolarmente le rose con poca acqua.",
+        "Tienila in un luogo fresco.",
+        "Proteggila dalla luce diretta del sole."
+      ],
+      "seo": {
+        "title": "Flower box classica – rose nella box",
+        "description": "Rose disposte fitte in una box rotonda, disponibile in rosso e bianco. Un regalo semplice – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/blumenbox-standard-1.jpg": "Rose rosse in una box rotonda bianca con bordo rosa e dorato",
+        "/images/products/sortiment/blumenbox-standard-2.jpg": "Due box rotonde rosse in velluto con rose rosse su un piedistallo bianco"
+      }
+    },
+    "p-rosa-anthurien-im-topf": {
+      "name": "Anthurium rosa in vaso",
+      "tagline": "Anthurium con fiori rosa",
+      "shortDescription": "Un anthurium con fiori rosa tenue – elegante e discreto.",
+      "description": "L'anthurium rosa, con i suoi fiori delicati e il fogliame verde lucido, porta colore nella stanza senza risultare vistoso. È adatto alla casa come all'ufficio.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Posizionalo in un luogo luminoso, senza sole diretto.",
+        "Annaffia regolarmente, evitando i ristagni d'acqua.",
+        "Di tanto in tanto nebulizza le foglie con acqua."
+      ],
+      "seo": {
+        "title": "Anthurium rosa in vaso – pianta da interno",
+        "description": "Anthurium con fiori rosa tenue e fogliame lucido. Un'elegante pianta da interno da regalare – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rosa-anthurien-im-topf-1.jpg": "Anthurium rosa in un vaso di ceramica rosa antico su una cassettiera di legno",
+        "/images/products/sortiment/rosa-anthurien-im-topf-2.jpg": "Anthurium con fiori rosa in un vaso color malva accanto a delle candele"
+      }
+    },
+    "p-rote-anthurien-im-topf": {
+      "name": "Anthurium rosso in vaso",
+      "tagline": "Anthurium con fiori rossi",
+      "shortDescription": "Un anthurium con fiori di un rosso brillante e un carattere moderno.",
+      "description": "Gli anthurium rossi, con i loro fiori lucidi, danno accenti di colore intensi. Come pianta da interno decorativa o come regalo, con le giuste cure resta bello a lungo.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Posizione luminosa, senza sole diretto.",
+        "Mantieni il terriccio uniformemente umido.",
+        "Evita i ristagni d'acqua."
+      ],
+      "seo": {
+        "title": "Anthurium rosso in vaso – pianta da interno",
+        "description": "Anthurium in vaso con fiori di un rosso brillante. Una pianta da interno decorativa da regalare – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/rote-anthurien-im-topf-1.jpg": "Anthurium rosso in un vaso di ceramica rosso su una cassettiera di legno"
+      }
+    },
+    "p-xxl-rote-anthurien-im-topf": {
+      "name": "Anthurium rosso XXL in vaso",
+      "tagline": "Grande anthurium con fiori rossi",
+      "shortDescription": "Un anthurium grande e rigoglioso con tanti fiori rossi.",
+      "description": "Questo anthurium rosso è alto oltre 80 cm e porta numerosi fiori rossi sopra un fogliame fitto e lucido. Un elemento d'effetto per la casa o l'ufficio.",
+      "flowers": [
+        "Anthurium"
+      ],
+      "care": [
+        "Posizionalo in un luogo luminoso, senza sole diretto.",
+        "Annaffia regolarmente, evitando i ristagni d'acqua.",
+        "Di tanto in tanto togli la polvere dalle foglie."
+      ],
+      "seo": {
+        "title": "Anthurium rosso XXL in vaso",
+        "description": "Grande anthurium in vaso con numerosi fiori rossi. Un elemento d'effetto per la casa o l'ufficio – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/xxl-rote-anthurien-im-topf-1.jpg": "Grande anthurium con tanti fiori rossi in un vaso rosso accanto a delle candele"
+      }
+    },
+    "p-bromelie-im-topf": {
+      "name": "Bromelia in vaso",
+      "tagline": "Bromelia con fiore rosso",
+      "shortDescription": "Una bromelia con un fiore rosso intenso e un tocco tropicale.",
+      "description": "La bromelia, con la sua rosetta di fiori rossa e il fogliame verde e slanciato, dà accenti vivaci. Una pianta da interno decorativa per la casa o l'ufficio e un regalo speciale.",
+      "flowers": [
+        "Bromelia"
+      ],
+      "care": [
+        "Posizionala in un luogo luminoso, senza sole diretto.",
+        "Versa regolarmente l'acqua nell'imbuto formato dalle foglie.",
+        "Mantieni il terriccio solo leggermente umido."
+      ],
+      "seo": {
+        "title": "Bromelia in vaso – pianta da interno",
+        "description": "Bromelia in vaso con fiore rosso: un tocco tropicale per la casa o l'ufficio – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/bromelie-im-topf-1.jpg": "Bromelia con fiore rosso in un vaso rosso su una cassettiera di legno"
+      }
+    },
+    "p-gummibaum-im-topf": {
+      "name": "Ficus elastica in vaso",
+      "tagline": "Ficus elastica con fogliame verde scuro",
+      "shortDescription": "Un ficus elastica facile da curare, con foglie lucide verde scuro.",
+      "description": "Il ficus elastica, con le sue grandi foglie lucide, ha un aspetto moderno e tranquillo. È facile da curare e sta bene in casa come in ufficio.",
+      "flowers": [
+        "Ficus elastica"
+      ],
+      "care": [
+        "Posizione luminosa o di mezz'ombra.",
+        "Annaffia con moderazione: gli basta poca acqua.",
+        "Di tanto in tanto spolvera le foglie."
+      ],
+      "seo": {
+        "title": "Ficus elastica in vaso – pianta facile da curare",
+        "description": "Ficus elastica con foglie lucide verde scuro. Una pianta da interno facile da curare per casa e ufficio – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/gummibaum-im-topf-1.jpg": "Ficus elastica con foglie verde scuro in un vaso rosso su una cassettiera di legno"
+      }
+    },
+    "p-weisse-orchidee-im-topf": {
+      "name": "Orchidea bianca in vaso",
+      "tagline": "Orchidea in vaso, in diversi colori",
+      "shortDescription": "Un'orchidea in vaso – pacata, raffinata e senza tempo.",
+      "description": "L'orchidea è sinonimo di eleganza e tranquillità. Con i suoi delicati steli fioriti è una scelta raffinata per la casa, l'ufficio o come regalo. Disponibile in viola, rosa, giallo, bianco e blu.",
+      "flowers": [
+        "Orchidea"
+      ],
+      "care": [
+        "Posizionala in un luogo luminoso, senza sole diretto.",
+        "Annaffia con moderazione, evitando i ristagni d'acqua.",
+        "Rimuovi gli steli sfioriti solo quando sono secchi."
+      ],
+      "seo": {
+        "title": "Orchidea in vaso – in cinque colori",
+        "description": "Orchidea in vaso in bianco, rosa, giallo, viola o blu. Un'elegante pianta da interno da regalare – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/weisse-orchidee-im-topf-1.jpg": "Orchidea bianca con gola fucsia in un vaso di ceramica color crema",
+        "/images/products/sortiment/weisse-orchidee-im-topf-2.jpg": "Orchidea con fiori rosa tenue in un vaso di ceramica color crema",
+        "/images/products/sortiment/weisse-orchidee-im-topf-3.jpg": "Orchidea gialla in un vaso di ceramica color crema",
+        "/images/products/sortiment/weisse-orchidee-im-topf-4.jpg": "Orchidea con fiori viola in un vaso fucsia",
+        "/images/products/sortiment/weisse-orchidee-im-topf-5.jpg": "Orchidea con fiori blu in un vaso grigio accanto a delle candele"
+      }
+    },
+    "p-trauerbukett-rot": {
+      "name": "Bouquet funebre rosso",
+      "tagline": "Rose rosse, gerbere e garofani con rami di abete",
+      "shortDescription": "Un bouquet funebre in rosso come segno di amore e di legame.",
+      "description": "Il bouquet funebre rosso unisce rose rosse, gerbere e garofani a rose gialle, gypsophila e rami di abete. Un gesto dignitoso di commemorazione, che esprime in silenzio sentimenti profondi. La composizione può variare leggermente a seconda della stagione.",
+      "flowers": [
+        "Rose",
+        "Gerbere",
+        "Garofani",
+        "Gypsophila"
+      ],
+      "care": [
+        "Tienilo in un luogo fresco, lontano dal sole diretto e dal termosifone.",
+        "Nelle composizioni, mantieni umida la spugna floreale."
+      ],
+      "seo": {
+        "title": "Bouquet funebre rosso – rose e gerbere",
+        "description": "Bouquet funebre rosso con rose, gerbere e garofani su rami di abete, in tre misure. Un dignitoso saluto d'addio – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rot-1.jpg": "Bouquet funebre con rose rosse, gerbere e garofani, rose gialle e rami di abete su un piedistallo di pietra"
+      }
+    },
+    "p-trauerbukett-rosa": {
+      "name": "Bouquet funebre rosa",
+      "tagline": "Rose rosa e fiori viola",
+      "shortDescription": "Un bouquet funebre in delicate tonalità di rosa, dall'effetto consolante.",
+      "description": "Rose rosa, fiori viola e rosa e rami di abete danno a questo bouquet funebre un effetto dolce e consolante. Esprime gratitudine, vicinanza e un ricordo affettuoso – adatto a un addio silenzioso e personale.",
+      "flowers": [
+        "Rose"
+      ],
+      "care": [
+        "Tienilo in un luogo fresco, lontano dal sole diretto e dal termosifone.",
+        "Nelle composizioni, mantieni umida la spugna floreale."
+      ],
+      "seo": {
+        "title": "Bouquet funebre rosa – delicati toni di rosa",
+        "description": "Bouquet funebre in delicati toni di rosa con rose rosa su rami di abete, in tre misure. Per un addio silenzioso – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-rosa-1.jpg": "Bouquet funebre con rose rosa e fiori viola su rami di abete, con nastro bianco, su un piedistallo di pietra"
+      }
+    },
+    "p-trauerbukett-pastell": {
+      "name": "Bouquet funebre pastello",
+      "tagline": "Gigli, rose e fiori azzurri in tonalità pastello",
+      "shortDescription": "Un bouquet funebre pacato in delicate tonalità pastello.",
+      "description": "Il bouquet funebre pastello unisce gigli e rose rosa a fiori azzurri, lilla e bianchi. Le delicate sfumature di colore trasmettono conforto e partecipazione. I fiori possono variare a seconda della stagione.",
+      "flowers": [
+        "Gigli",
+        "Rose"
+      ],
+      "care": [
+        "Tienilo in un luogo fresco, lontano dal sole diretto e dal termosifone.",
+        "Nelle composizioni, mantieni umida la spugna floreale."
+      ],
+      "seo": {
+        "title": "Bouquet funebre pastello – toni pacati",
+        "description": "Bouquet funebre pastello con gigli, rose e fiori azzurri, in tre misure. Discreto e raffinato – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-pastell-1.jpg": "Bouquet funebre pastello con gigli rosa, rose e fiori azzurri, con nastro nero, su un piedistallo di pietra"
+      }
+    },
+    "p-trauerbukett-orange": {
+      "name": "Bouquet funebre arancione",
+      "tagline": "Rose, gerbere e garofani in arancione e giallo",
+      "shortDescription": "Un bouquet funebre in calde tonalità di arancione, che esprime stima.",
+      "description": "Rose, gerbere e garofani in arancione, giallo e albicocca si uniscono ai rami di abete in un caldo bouquet funebre. Esprime gratitudine e il ricordo di una vita piena ed è adatto alla camera ardente o a una cerimonia commemorativa.",
+      "flowers": [
+        "Rose",
+        "Gerbere",
+        "Garofani"
+      ],
+      "care": [
+        "Tienilo in un luogo fresco, lontano dal sole diretto e dal termosifone.",
+        "Nelle composizioni, mantieni umida la spugna floreale."
+      ],
+      "seo": {
+        "title": "Bouquet funebre arancione – toni caldi",
+        "description": "Bouquet funebre in arancione e giallo con rose, gerbere e garofani, in tre misure. Per camera ardente e commemorazione – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-orange-1.jpg": "Bouquet funebre con rose, gerbere e garofani in arancione e giallo su rami di abete, su un piedistallo di pietra"
+      }
+    },
+    "p-trauerbukett-weiss": {
+      "name": "Bouquet funebre bianco",
+      "tagline": "Gigli bianchi e crisantemi",
+      "shortDescription": "Un classico bouquet funebre in bianco – semplice e dignitoso.",
+      "description": "Gigli bianchi, crisantemi e piccoli fiori bianchi su rami di abete rendono questo bouquet funebre semplice e senza tempo. Il bianco è simbolo di pace e di addio – adatto a funerali formali o come segno silenzioso di partecipazione.",
+      "flowers": [
+        "Gigli",
+        "Crisantemi"
+      ],
+      "care": [
+        "Tienilo in un luogo fresco, lontano dal sole diretto e dal termosifone.",
+        "Nelle composizioni, mantieni umida la spugna floreale."
+      ],
+      "seo": {
+        "title": "Bouquet funebre bianco – gigli e crisantemi",
+        "description": "Classico bouquet funebre in bianco con gigli e crisantemi, in tre misure. Semplice e dignitoso – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-weiss-1.jpg": "Bouquet funebre di gigli bianchi, crisantemi e piccoli fiori bianchi su rami di abete, su un piedistallo di pietra"
+      }
+    },
+    "p-trauerbukett-gelb": {
+      "name": "Bouquet funebre giallo",
+      "tagline": "Girasoli, rose gialle e garofani",
+      "shortDescription": "Un bouquet funebre in giallo per il ricordo, la speranza e la gratitudine.",
+      "description": "Girasoli, rose gialle e garofani color albicocca su rami di abete rendono questo bouquet funebre luminoso e caldo. È adatto agli addii in cui al centro c'è la vita. I fiori dipendono dalla stagione.",
+      "flowers": [
+        "Girasoli",
+        "Rose",
+        "Garofani"
+      ],
+      "care": [
+        "Tienilo in un luogo fresco, lontano dal sole diretto e dal termosifone.",
+        "Nelle composizioni, mantieni umida la spugna floreale."
+      ],
+      "seo": {
+        "title": "Bouquet funebre giallo – girasoli e rose",
+        "description": "Bouquet funebre in giallo con girasoli, rose e garofani, in tre misure. Un luminoso saluto d'addio – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "60 cm"
+        },
+        "m": {
+          "label": "80 cm"
+        },
+        "l": {
+          "label": "100 cm"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerbukett-gelb-1.jpg": "Bouquet funebre con girasoli, rose gialle e garofani color albicocca su rami di abete, su un piedistallo di pietra"
+      }
+    },
+    "p-trauerkranz-bunt": {
+      "name": "Corona funebre colorata",
+      "tagline": "Gerbere, rose e fiori in tanti colori",
+      "shortDescription": "Una corona funebre colorata per dire addio a una persona piena di vita.",
+      "description": "La corona funebre colorata unisce gerbere, rose e altri fiori in giallo, arancione, rosa e bianco su una base verde. Un saluto d'addio dignitoso e al tempo stesso ricco di colore, composto a mano. Se hai desideri particolari per la composizione, scrivici pure.",
+      "flowers": [
+        "Gerbere",
+        "Rose"
+      ],
+      "care": [
+        "Tienila in un luogo fresco e ombreggiato.",
+        "Se necessario, inumidisci leggermente la spugna floreale."
+      ],
+      "seo": {
+        "title": "Corona funebre colorata – un addio a colori",
+        "description": "Corona funebre colorata con gerbere e rose, composta a mano. Un saluto d'addio ricco di colore – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-bunt-1.jpg": "Corona funebre colorata con gerbere, gigli e fiori bianchi, con nastro nero, su un cavalletto di legno"
+      }
+    },
+    "p-trauerkranz-pink": {
+      "name": "Corona funebre fucsia",
+      "tagline": "Gerbere e rose in fucsia e rosso",
+      "shortDescription": "Una corona funebre in fucsia e rosso come affettuoso saluto d'addio.",
+      "description": "La corona funebre in fucsia e rosso unisce gerbere fucsia, rose e altri fiori ad accenti chiari e verde fresco. Espressione di amore e di ricordo, composta a mano. Se hai desideri particolari per la composizione, scrivici pure.",
+      "flowers": [
+        "Gerbere",
+        "Rose"
+      ],
+      "care": [
+        "Tienila in un luogo fresco e ombreggiato.",
+        "Se necessario, inumidisci leggermente la spugna floreale."
+      ],
+      "seo": {
+        "title": "Corona funebre fucsia – fucsia e rosso",
+        "description": "Corona funebre in fucsia e rosso con gerbere e rose, composta a mano. Un affettuoso saluto d'addio – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-pink-1.jpg": "Corona funebre con gerbere fucsia, rose e fiori rossi, con nastro bordeaux, su un cavalletto di legno"
+      }
+    },
+    "p-trauerkranz-rot-gelb": {
+      "name": "Corona funebre rossa e gialla",
+      "tagline": "Gerbere rosse e gialle",
+      "shortDescription": "Una luminosa corona funebre in rosso e giallo.",
+      "description": "Gerbere rosse e gialle, disposte fitte su una base verde, fanno di questa corona funebre un luminoso saluto d'addio, pieno di calore, gratitudine e bei ricordi. Composta a mano. Se hai desideri particolari per la composizione, scrivici pure.",
+      "flowers": [
+        "Gerbere"
+      ],
+      "care": [
+        "Tienila in un luogo fresco e ombreggiato.",
+        "Se necessario, inumidisci leggermente la spugna floreale."
+      ],
+      "seo": {
+        "title": "Corona funebre rossa e gialla – gerbere",
+        "description": "Corona funebre di gerbere rosse e gialle, composta a mano. Un saluto d'addio caldo e luminoso – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-gelb-1.jpg": "Corona funebre di gerbere rosse e gialle con nastro grigio argento su un cavalletto di legno"
+      }
+    },
+    "p-trauerkranz-rot": {
+      "name": "Corona funebre rossa",
+      "tagline": "Gerbere rosse e rose",
+      "shortDescription": "Una classica corona funebre in rosso, per un amore che resta.",
+      "description": "La corona funebre rossa unisce gerbere rosse e rose su rami di abete. Un saluto d'addio classico e dignitoso, per un amore che resta oltre il distacco. Composta a mano. Se hai desideri particolari per la composizione, scrivici pure.",
+      "flowers": [
+        "Gerbere",
+        "Rose"
+      ],
+      "care": [
+        "Tienila in un luogo fresco e ombreggiato.",
+        "Se necessario, inumidisci leggermente la spugna floreale."
+      ],
+      "seo": {
+        "title": "Corona funebre rossa – gerbere e rose",
+        "description": "Corona funebre rossa con gerbere e rose su rami di abete, composta a mano. Un classico saluto d'addio – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-rot-1.jpg": "Corona funebre di gerbere rosse e rose su rami di abete con nastro nero su un cavalletto di legno"
+      }
+    },
+    "p-trauerkranz-weiss": {
+      "name": "Corona funebre bianca",
+      "tagline": "Rose bianche, gerbere e garofani",
+      "shortDescription": "Una semplice corona funebre in bianco, per una partecipazione silenziosa.",
+      "description": "Rose bianche, gerbere e garofani con accenti verde chiaro e fronde verdi formano questa semplice corona. Il bianco è simbolo di pace e di silenziosa partecipazione. Composta a mano. Se hai desideri particolari per la composizione, scrivici pure.",
+      "flowers": [
+        "Rose",
+        "Gerbere",
+        "Garofani"
+      ],
+      "care": [
+        "Tienila in un luogo fresco e ombreggiato.",
+        "Se necessario, inumidisci leggermente la spugna floreale."
+      ],
+      "seo": {
+        "title": "Corona funebre bianca – semplice e dignitosa",
+        "description": "Corona funebre in bianco con rose, gerbere e garofani, composta a mano. Un semplice saluto d'addio – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "m": {
+          "label": "Standard"
+        }
+      },
+      "imageAlts": {
+        "/images/products/sortiment/trauerkranz-weiss-1.jpg": "Corona funebre ad anello di rose bianche, gerbere e garofani con nastro bianco su un cavalletto di legno"
+      }
+    },
+    "p-adventskraenze": {
+      "name": "Corone dell'Avvento",
+      "tagline": "Rami di abete con quattro candele, in sette colori",
+      "shortDescription": "Una corona dell'Avvento di rami di abete composta a mano, con quattro candele.",
+      "description": "La corona dell'Avvento viene composta a mano con profumati rami di abete e decorata con quattro candele, nastri, palline, pigne e altri dettagli. Disponibile in rosso, grigio, viola, oro, beige, rosso vino e rosa.",
+      "flowers": [],
+      "care": [
+        "Non lasciare mai le candele accese senza sorveglianza.",
+        "Tienila in un luogo fresco, non direttamente accanto al termosifone.",
+        "Di tanto in tanto nebulizza leggermente i rami di abete con acqua."
+      ],
+      "seo": {
+        "title": "Corona dell'Avvento – composta a mano, con candele",
+        "description": "Corona dell'Avvento di rami di abete composta a mano, con quattro candele, in sette colori e quattro misure – consegna fiori a Vienna."
+      },
+      "sizes": {
+        "s": {
+          "label": "Piccolo"
+        },
+        "m": {
+          "label": "Medio"
+        },
+        "l": {
+          "label": "Grande"
+        },
+        "xl": {
+          "label": "XL"
+        }
+      },
+      "colorOptions": {
+        "rot": "Rosso",
+        "grau": "Grigio",
+        "lila": "Viola",
+        "gold": "Oro",
+        "beige": "Beige",
+        "weinrot": "Rosso vino",
+        "rosa": "Rosa"
+      },
+      "imageAlts": {
+        "/images/products/sortiment/adventskraenze-1.jpg": "Corona dell'Avvento di rami di abete con quattro candele rosse, nastri rossi, palline e pigne",
+        "/images/products/sortiment/adventskraenze-beige.jpg": "Corona dell'Avvento con quattro candele grigio chiaro, nastri color crema e fette d'arancia",
+        "/images/products/sortiment/adventskraenze-lila.jpg": "Corona dell'Avvento con candele viola e rosa, nastri viola e una statuina d'angelo",
+        "/images/products/sortiment/adventskraenze-4.jpg": "Corona dell'Avvento con quattro candele dorate, nastri dorati, stecche di cannella e pigne",
+        "/images/products/sortiment/adventskraenze-5.jpg": "Corona dell'Avvento con quattro candele rosa, nastri bordeaux e una statuina d'angelo",
+        "/images/products/sortiment/adventskraenze-6.jpg": "Corona dell'Avvento con quattro candele rosso vino, palline e nastri rosso vino",
+        "/images/products/sortiment/adventskraenze-8.jpg": "Corona dell'Avvento con quattro candele grigio scuro, nastri color crema e palline rosse",
+        "/images/products/sortiment/adventskraenze-9.jpg": "Corona dell'Avvento in oro con candele e nastri dorati, vista laterale",
+        "/images/products/sortiment/adventskraenze-10.jpg": "Corona dell'Avvento in rosa con candele rosa e nastri bordeaux, vista laterale"
+      }
+    }
+  },
+  "categories": {
+    "alle": {
+      "name": "Tutti i fiori",
+      "headline": "Ordina fiori online",
+      "intro": "Bouquet composti a mano per tutta Vienna. Scegli il tuo bouquet e decidi la data di consegna.",
+      "seo": {
+        "title": "Ordinare fiori online con consegna a Vienna",
+        "description": "Ordina fiori online con consegna a Vienna. Bouquet composti a mano, nella data che preferisci – Blumora."
+      }
+    },
+    "rosen": {
+      "name": "Rose",
+      "headline": "Bouquet di rose",
+      "intro": "Rose rosse, rosa o bianche, in diverse misure. Composte a mano e consegnate a Vienna.",
+      "seo": {
+        "title": "Bouquet di rose online – rose per Vienna",
+        "description": "Tutti i bouquet di rose a colpo d'occhio: rose rosse, rosa e bianche in diverse misure. Composti a mano, consegnati a Vienna nella data che preferisci."
+      }
+    },
+    "saisonal": {
+      "name": "Fiori di stagione",
+      "headline": "Fiori di stagione",
+      "intro": "Bouquet in sintonia con la stagione. La selezione cambia nel corso dell'anno.",
+      "seo": {
+        "title": "Bouquet di stagione con consegna a Vienna",
+        "description": "Bouquet di stagione, in sintonia con il periodo dell'anno. Composti a mano e consegnati a Vienna."
+      }
+    },
+    "pastell": {
+      "name": "Pastello",
+      "headline": "Bouquet pastello",
+      "intro": "Rosé, crema, lilla: colori morbidi per momenti delicati.",
+      "seo": {
+        "title": "Fiori pastello con consegna a Vienna",
+        "description": "Bouquet in morbidi toni pastello con consegna a Vienna – composti freschi, nella data che preferisci."
+      }
+    },
+    "bunt": {
+      "name": "Colorati",
+      "headline": "Bouquet colorati",
+      "intro": "Colori che mettono allegria. Per compleanni, sorprese e buonumore.",
+      "seo": {
+        "title": "Bouquet colorati con consegna a Vienna",
+        "description": "Bouquet colorati e allegri con consegna a Vienna – composti freschi, nella data che preferisci."
+      }
+    },
+    "elegant-weiss": {
+      "name": "Eleganti e bianchi",
+      "headline": "Eleganti e bianchi",
+      "intro": "Bianco, crema e verde. Bouquet che in ogni ambiente trasmettono calma e raffinatezza.",
+      "seo": {
+        "title": "Fiori bianchi eleganti con consegna a Vienna",
+        "description": "Bouquet bianchi e color crema con consegna a Vienna – eleganti, composti freschi, nella data che preferisci."
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "headline": "Bouquet premium",
+      "intro": "Bouquet generosi per i momenti speciali.",
+      "seo": {
+        "title": "Bouquet premium con consegna a Vienna",
+        "description": "Bouquet premium per le occasioni speciali con consegna a Vienna – composti a mano, nella data che preferisci."
+      }
+    },
+    "unter-40": {
+      "name": "Sotto i 40 €",
+      "headline": "Fiori sotto i 40 €",
+      "intro": "Piccoli bouquet di grande effetto – tutti sotto i 40 euro.",
+      "seo": {
+        "title": "Fiori sotto i 40 € con consegna a Vienna",
+        "description": "Bouquet economici sotto i 40 € con consegna a Vienna – composti freschi, nella data che preferisci."
+      }
+    },
+    "bestseller": {
+      "name": "I nostri preferiti",
+      "headline": "I nostri bouquet preferiti",
+      "intro": "Bouquet che consigliamo con particolare piacere.",
+      "seo": {
+        "title": "I nostri bouquet preferiti – consigli per Vienna",
+        "description": "Bouquet che consigliamo con particolare piacere – composti a mano e consegnati a Vienna."
+      }
+    },
+    "neu": {
+      "name": "Novità",
+      "headline": "Novità da Blumora",
+      "intro": "Appena arrivati nel nostro assortimento.",
+      "seo": {
+        "title": "Nuovi bouquet per Vienna",
+        "description": "Nuovi bouquet nell'assortimento – composti freschi e consegnati a Vienna."
+      }
+    },
+    "blumenboxen": {
+      "name": "Flower box",
+      "headline": "Flower box",
+      "intro": "Rose disposte in una box – un regalo che non ha bisogno di vaso.",
+      "seo": {
+        "title": "Flower box con consegna a Vienna",
+        "description": "Rose nella flower box – a forma di cuore o classica. Consegna fiori a Vienna nella data che preferisci."
+      }
+    },
+    "pflanzen": {
+      "name": "Piante",
+      "headline": "Piante in vaso",
+      "intro": "Orchidee, anthurium e piante verdi – fiori che restano.",
+      "seo": {
+        "title": "Piante in vaso con consegna a Vienna",
+        "description": "Orchidee, anthurium e piante da interno in vaso da regalare. Consegna fiori a Vienna."
+      }
+    },
+    "trauer": {
+      "name": "Fiori per il lutto",
+      "headline": "Fiori per il lutto",
+      "intro": "Corone e bouquet funebri, composti con dignità per l'ultimo saluto.",
+      "seo": {
+        "title": "Corone e bouquet funebri a Vienna",
+        "description": "Corone e bouquet funebri per funerali e cerimonie commemorative – con consegna a Vienna."
+      }
+    },
+    "advent": {
+      "name": "Corone dell'Avvento",
+      "headline": "Corone dell'Avvento",
+      "intro": "Rami di abete, candele e decorazioni – composte a mano per il periodo dell'Avvento.",
+      "seo": {
+        "title": "Corone dell'Avvento con consegna a Vienna",
+        "description": "Corone dell'Avvento composte a mano in diversi colori e misure – con consegna a Vienna."
+      }
+    }
+  },
+  "occasions": {
+    "geburtstag": {
+      "name": "Compleanno",
+      "headline": "Fiori per il compleanno",
+      "intro": "Un bouquet che dice: ho pensato a te. Scegli i fiori e la data che preferisci.",
+      "imageAlt": "Bouquet colorato con rose rosse, gerbere e fiori gialli in un incarto rosso",
+      "seo": {
+        "title": "Fiori per il compleanno – bouquet a Vienna",
+        "description": "Bouquet per il compleanno: colorati, allegri o eleganti. Composti a mano e consegnati a Vienna – nella data che preferisci."
+      }
+    },
+    "liebe": {
+      "name": "Amore e romanticismo",
+      "headline": "Fiori per l'amore",
+      "intro": "Rose rosse o qualcosa di completamente diverso: fiori che dicono ciò che intendi.",
+      "imageAlt": "Bouquet di rose rosso scuro in un incarto grigio con fiocco rosso",
+      "seo": {
+        "title": "Fiori romantici con consegna a Vienna",
+        "description": "Rose e bouquet romantici con consegna a Vienna – composti freschi, nella data che preferisci."
+      }
+    },
+    "danke": {
+      "name": "Grazie",
+      "headline": "Fiori per dire grazie",
+      "intro": "Per un aiuto, per il tempo dedicato, per tutto. Un bouquet lo dice senza tante parole.",
+      "imageAlt": "Bouquet di gerbere gialle e rose bianche con fiocco giallo",
+      "seo": {
+        "title": "Fiori per ringraziare con consegna a Vienna",
+        "description": "Dire grazie con i fiori: bouquet composti freschi con consegna a Vienna – nella data che preferisci."
+      }
+    },
+    "gute-besserung": {
+      "name": "Pronta guarigione",
+      "headline": "Fiori per la guarigione",
+      "intro": "Colori delicati, forme pacate e un piccolo pensiero che fa bene.",
+      "imageAlt": "Bouquet solare in arancione e giallo in un incarto chiaro",
+      "seo": {
+        "title": "Fiori di pronta guarigione con consegna a Vienna",
+        "description": "Fiori per la guarigione con consegna a Vienna – bouquet delicati, composti freschi, nella data che preferisci."
+      }
+    },
+    "jahrestag": {
+      "name": "Anniversario",
+      "headline": "Fiori per l'anniversario",
+      "intro": "Per il giorno in cui tutto è cominciato. E per tutti quelli che sono venuti dopo.",
+      "imageAlt": "Bouquet di rose rosse e bianche in un incarto bianco",
+      "seo": {
+        "title": "Fiori per l'anniversario con consegna a Vienna",
+        "description": "Bouquet eleganti per l'anniversario con consegna a Vienna – composti freschi, nella data che preferisci."
+      }
+    },
+    "geburt": {
+      "name": "Nascita",
+      "headline": "Fiori per la nascita",
+      "intro": "Benvenuto, piccolo essere umano. Fiori delicati per un grande momento.",
+      "imageAlt": "Bouquet delicato di rose rosa e lilla con gypsophila",
+      "seo": {
+        "title": "Fiori per la nascita con consegna a Vienna",
+        "description": "Delicati bouquet pastello per la nascita con consegna a Vienna – composti freschi, nella data che preferisci."
+      }
+    },
+    "hochzeit": {
+      "name": "Matrimonio",
+      "headline": "Fiori per il matrimonio",
+      "intro": "Per gli sposi o semplicemente per fare gli auguri: eleganti, luminosi e festosi.",
+      "imageAlt": "Bouquet di rose bianche in un incarto bianco in un vaso",
+      "seo": {
+        "title": "Fiori per matrimonio con consegna a Vienna",
+        "description": "Fiori eleganti per il matrimonio con consegna a Vienna – come augurio o regalo, composti freschi."
+      }
+    },
+    "einfach-so": {
+      "name": "Senza motivo",
+      "headline": "Fiori senza motivo",
+      "intro": "Nessuna occasione. Solo il pensiero. A volte è il motivo migliore.",
+      "imageAlt": "Tulipani gialli in un vaso di vetro vicino alla finestra",
+      "seo": {
+        "title": "Inviare fiori senza motivo – Vienna",
+        "description": "Inviare fiori senza un'occasione: bouquet piccoli e grandi con consegna a Vienna – composti freschi, nella data che preferisci."
+      }
+    },
+    "trauer": {
+      "name": "Lutto",
+      "headline": "Fiori per il lutto",
+      "intro": "Partecipazione in colori pacati. Corone, bouquet funebri e mazzi, composti a mano e consegnati a Vienna.",
+      "imageAlt": "Corona funebre bianca con nastro bianco su un cavalletto di legno",
+      "seo": {
+        "title": "Fiori per il lutto con consegna a Vienna",
+        "description": "Fiori per il lutto con consegna a Vienna – corone, bouquet funebri e mazzi pacati, composti a mano, nella data che preferisci."
+      }
+    }
+  },
+  "extras": {
+    "x-candle": {
+      "name": "Candela profumata",
+      "description": "Candele profumate decorative in confezione regalo, in diverse forme e colori.",
+      "imageAlt": "Candele profumate a forma di cuore e di sfera in scatole regalo trasparenti"
+    },
+    "x-teddy": {
+      "name": "Orsetto",
+      "description": "Orsetto di peluche con cuore rosso – il complemento affettuoso al bouquet.",
+      "imageAlt": "Orsetto di peluche marrone chiaro con cuore rosso"
+    }
+  },
+  "faqs": {
+    "f-where": {
+      "question": "Dove consegnate?",
+      "answer": "Consegniamo in tutti i 23 distretti di Vienna. A seconda del distretto, la consegna è gratuita oppure costa 4,90 € o 7,90 €. Inserisci semplicemente il CAP dell'indirizzo del destinatario: vedrai subito se e quando possiamo consegnare e quanto costa la consegna.",
+      "category": "lieferung"
+    },
+    "f-today": {
+      "question": "Posso far consegnare fiori ancora oggi?",
+      "answer": "Sì – se ordini dal lunedì al sabato entro le 18:30 o la domenica entro le 17:45, consegniamo in giornata in tutta Vienna, finché c'è una fascia oraria libera. Vedi la prima data disponibile per il tuo indirizzo non appena inserisci il CAP.",
+      "category": "lieferung"
+    },
+    "f-date": {
+      "question": "Posso scegliere una data di consegna precisa?",
+      "answer": "Sì. Su ogni pagina prodotto e nel checkout scegli la data che preferisci nel calendario. I giorni in cui non consegniamo sono disattivati.",
+      "category": "lieferung"
+    },
+    "f-window": {
+      "question": "Posso scegliere un orario?",
+      "answer": "Sì. A Vienna, nel checkout scegli una fascia oraria di un'ora tra le 9:00 e le 22:00 – tutti i sette giorni della settimana.",
+      "category": "lieferung"
+    },
+    "f-nobody": {
+      "question": "Cosa succede se non c'è nessuno a casa?",
+      "answer": "Il corriere consegna i fiori di persona. Se non c'è nessuno, vengono lasciati, se possibile, a un vicino o a una vicina. Nel checkout puoi lasciare un'indicazione per la consegna, per esempio un codice del portone. Ti informiamo via e-mail sullo stato del tuo ordine.",
+      "category": "lieferung"
+    },
+    "f-anon": {
+      "question": "Posso inviare fiori in forma anonima?",
+      "answer": "Sì. Senza biglietto d'auguri il tuo nome non compare da nessuna parte sul bouquet, e la fattura arriva solo a te. I biglietti d'auguri con messaggio personale arriveranno presto.",
+      "category": "bestellung"
+    },
+    "f-card": {
+      "question": "Posso aggiungere un biglietto d'auguri?",
+      "answer": "Non ancora – i biglietti d'auguri arriveranno presto. Fino ad allora il bouquet viene consegnato senza biglietto.",
+      "category": "bestellung"
+    },
+    "f-photo": {
+      "question": "I fiori sono esattamente come nella foto?",
+      "answer": "Ogni bouquet viene composto singolarmente e i fiori sono prodotti naturali. Colori, varietà e dimensioni dei fiori possono variare leggermente a seconda della stagione. Lo stile e la palette di colori restano gli stessi.",
+      "category": "produkt"
+    },
+    "f-fresh": {
+      "question": "Come si mantengono freschi i fiori?",
+      "answer": "Ogni bouquet viene composto fresco per il tuo ordine e consegnato direttamente dal corriere. Ecco come dura più a lungo: taglia gli steli in obliquo, metti acqua fresca e tieni il bouquet in un luogo fresco, lontano dalla luce diretta del sole.",
+      "category": "produkt"
+    },
+    "f-payment": {
+      "question": "Quali metodi di pagamento ci sono?",
+      "answer": "I metodi di pagamento disponibili li vedi nell'ultimo passaggio dell'ordine. Il pagamento avviene in modo sicuro tramite un fornitore di servizi di pagamento – i dati della tua carta non arrivano mai a noi.",
+      "category": "bestellung"
+    },
+    "f-change": {
+      "question": "Posso modificare il mio ordine?",
+      "answer": "Finché il bouquet non è ancora stato composto, di solito possiamo ancora modificare la data di consegna o l'indirizzo. Scrivici il prima possibile indicando il numero d'ordine.",
+      "category": "bestellung"
+    },
+    "f-business": {
+      "question": "Posso inviare fiori ad aziende o hotel?",
+      "answer": "Sì. Nel checkout indica il nome dell'azienda o dell'hotel e – se lo conosci – il reparto o il numero della camera. La consegna avviene alla reception o all'accoglienza.",
+      "category": "lieferung"
+    },
+    "f-express": {
+      "question": "C'è una consegna express?",
+      "answer": "Sì – consegna express in 1–2 ore, senza sovrapprezzo. Ordina come al solito e al pagamento scegli la prima fascia oraria di oggi – è contrassegnata con «Express». Funziona se ordini dal lunedì al sabato entro le 18:30 o la domenica entro le 17:45 e c'è ancora una fascia libera per il tuo indirizzo.",
+      "category": "lieferung"
+    }
+  },
+  "pages": {
+    "ueber-uns": {
+      "title": "Fiori per momenti speciali.",
+      "intro": "Blumora è un servizio di consegna fiori online di Vienna. Ogni bouquet viene composto a mano da un fiorista viennese e consegnato direttamente tramite corriere.",
+      "seo": {
+        "title": "Chi siamo – consegna fiori da Vienna",
+        "description": "Blumora è un servizio di consegna fiori online di Vienna: bouquet composti a mano e consegnati tramite corriere in tutti i 23 distretti."
+      },
+      "sections": [
+        {
+          "heading": "Come lavoriamo",
+          "paragraphs": [
+            "Blumora è un servizio viennese di consegna fiori online. Scegli il tuo bouquet da noi – a comporlo è un fiorista di Vienna con cui collaboriamo stabilmente. Lì ogni bouquet nasce a mano, appositamente per il tuo ordine.",
+            "I biglietti d'auguri con il tuo testo arriveranno presto."
+          ],
+          "imageAlt": "Bouquet di rose, dalie, ortensie e tulipani sul davanzale di un palazzo d'epoca viennese, sullo sfondo il Duomo di Santo Stefano nella luce della sera"
+        },
+        {
+          "heading": "La consegna",
+          "paragraphs": [
+            "Un corriere ritira il tuo bouquet direttamente dal fiorista e lo porta all'indirizzo del destinatario senza soste intermedie. Consegniamo in tutti i 23 distretti di Vienna – nella fascia oraria che preferisci: di mattina, di pomeriggio o di sera fino alle 22:00."
+          ],
+          "imageAlt": "Bouquet Pure Liebe in un vaso di vetro"
+        }
+      ]
+    },
+    "lieferung": {
+      "title": "Consegna e spedizione",
+      "intro": "Consegniamo in tutti i 23 distretti di Vienna. Costi di consegna (gratuita, 4,90 € o 7,90 €), giorni di consegna e fasce orarie dipendono dall'indirizzo del destinatario – inserisci il CAP e vedrai tutto a colpo d'occhio.",
+      "seo": {
+        "title": "Consegna e spedizione – fiori a domicilio a Vienna",
+        "description": "Zone di consegna, costi di consegna, giorni di consegna e fasce orarie per la consegna di fiori a Vienna."
+      },
+      "sections": [
+        {
+          "heading": "Come funziona la consegna",
+          "paragraphs": [
+            "Il tuo bouquet viene composto fresco per il tuo ordine. Un corriere lo ritira direttamente dal fiorista e lo porta all'indirizzo del destinatario senza soste intermedie – nella fascia oraria che hai scelto. Se non c'è nessuno, il bouquet viene lasciato, se possibile, a un vicino o a una vicina.",
+            "Per ogni ordine ricevi una conferma via e-mail e un link con cui puoi seguirne lo stato."
+          ]
+        },
+        {
+          "heading": "Consegna ad aziende, hotel e ospedali",
+          "paragraphs": [
+            "Nel checkout indica il nome dell'azienda o dell'hotel e il reparto o il numero della camera. Consegniamo alla reception o all'accoglienza. Tieni presente che alcune strutture non consentono fiori nei reparti."
+          ]
+        }
+      ]
+    },
+    "kontakt": {
+      "title": "Contatti",
+      "intro": "Domande su un ordine, una data di consegna o una richiesta particolare? Siamo qui per te.",
+      "seo": {
+        "title": "Contatti – Blumora Vienna",
+        "description": "Contatta Blumora per domande su ordini, consegna o richieste particolari."
+      },
+      "sections": [
+        {
+          "heading": "Come contattarci",
+          "paragraphs": [
+            "[Segnaposto: e-mail, telefono e orari di apertura vengono ripresi dalle impostazioni e vanno completati lì.]"
+          ]
+        }
+      ]
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "Consegna fiori in tutta Vienna",
+      "headline": "Fiori che dicono di più.",
+      "subheadline": "Fiori composti freschi per le persone a cui tieni. Scegli, decidi la data che preferisci e fai consegnare un po' di gioia.",
+      "primaryCta": {
+        "label": "Scopri i fiori"
+      },
+      "secondaryCta": {
+        "label": "Scegli per occasione"
+      },
+      "imageAlt": "Una donna con un cappotto color cammello porta un grande bouquet di rose, ranuncoli, dalie e tulipani lungo una strada lastricata di Vienna, mentre alle sue spalle passa un tram",
+      "deliveryCheck": {
+        "title": "Dove possiamo consegnare?",
+        "placeholder": "Inserisci il CAP",
+        "button": "Verifica la consegna"
+      }
+    },
+    "occasions": {
+      "headline": "Fiori per ogni momento",
+      "subheadline": "A volte non serve una grande occasione. Solo il gesto giusto."
+    },
+    "bestsellers": {
+      "headline": "I nostri bouquet preferiti",
+      "subheadline": "Una selezione dal nostro assortimento."
+    },
+    "collections": {
+      "headline": "Trova il tuo bouquet perfetto",
+      "subheadline": "Per colore, stile o budget."
+    },
+    "howItWorks": {
+      "headline": "Regalare gioia non è mai stato così semplice.",
+      "steps": [
+        {
+          "title": "Scegli il tuo bouquet",
+          "text": "Scopri fiori per ogni gusto e ogni occasione."
+        },
+        {
+          "title": "Rendilo personale",
+          "text": "Scegli la misura e qualche piccolo extra."
+        },
+        {
+          "title": "Scegli la data di consegna",
+          "text": "Decidi quando deve arrivare la tua sorpresa."
+        },
+        {
+          "title": "Fai consegnare gioia",
+          "text": "Al resto pensiamo noi."
+        }
+      ]
+    },
+    "seasonal": {
+      "eyebrow": "Periodo dell'Avvento",
+      "headline": "Presto si accende la prima candela.",
+      "text": "Corone dell'Avvento con rami di abete, candele e decorazioni – in diversi colori e misure. E in più bouquet in calde tonalità autunnali.",
+      "cta": {
+        "label": "Corone dell'Avvento"
+      },
+      "imageAlt": "Corona dell'Avvento di rami di abete con quattro candele rosse su una cassettiera di legno"
+    },
+    "editorial": {
+      "eyebrow": "Artigianato",
+      "headline": "Dai fioristi. Non dalla catena di montaggio.",
+      "text": "Ogni bouquet viene composto a mano da un fiorista viennese per il tuo ordine e consegnato direttamente tramite corriere – senza passare da un magazzino.",
+      "cta": {
+        "label": "Come lavoriamo"
+      },
+      "imageAlt": "Un corriere consegna davanti al portone di un palazzo d'epoca viennese un bouquet colorato di rose, dalie e ranuncoli"
+    },
+    "extras": {
+      "headline": "Completa la tua sorpresa.",
+      "subheadline": "Piccoli extra che rendono il momento più grande."
+    },
+    "subscription": {
+      "headline": "Più fiori nella vita di tutti i giorni.",
+      "text": "Bouquet freschi di stagione – ogni settimana, ogni due settimane o ogni mese. Per la casa, l'ufficio, la reception o la ristorazione.",
+      "cta": {
+        "label": "Scopri l'abbonamento fiori"
+      }
+    },
+    "reviews": {
+      "headline": "Momenti che sono arrivati a destinazione.",
+      "subheadline": "Cosa dicono i clienti del loro ordine."
+    },
+    "gallery": {
+      "headline": "Fiori per momenti speciali.",
+      "images": [
+        {
+          "alt": "Bouquet di rose colorato in rosso, rosa, crema e albicocca in un vaso bianco"
+        },
+        {
+          "alt": "Bouquet di rose di un blu intenso in un vaso bianco"
+        },
+        {
+          "alt": "Bouquet in intense tonalità di fucsia con gerbere in un vaso vicino alla finestra"
+        },
+        {
+          "alt": "Bouquet esotico con uccelli del paradiso, gigli e gerbere"
+        },
+        {
+          "alt": "Flower box rossa a forma di cuore con rose su una cassettiera"
+        },
+        {
+          "alt": "Bouquet di rose in pastello e fucsia in un incarto rosa"
+        }
+      ]
+    },
+    "faq": {
+      "headline": "Buono a sapersi"
+    },
+    "newsletter": {
+      "headline": "Un po' più di fiori nella tua casella di posta.",
+      "text": "Novità, collezioni di stagione e promozioni speciali.",
+      "placeholder": "Il tuo indirizzo e-mail",
+      "button": "Iscriviti",
+      "note": "Puoi annullare l'iscrizione in qualsiasi momento. Trovi le informazioni sulla protezione dei dati nell'informativa sulla privacy."
+    }
+  },
+  "settings": {
+    "claim": "Fiori che dicono di più.",
+    "seo": {
+      "defaultTitle": "Blumora – consegna fiori a domicilio a Vienna",
+      "defaultDescription": "Consegna fiori in tutta Vienna: bouquet composti freschi in tutti i 23 distretti. In giornata entro le 18:30 (domenica entro le 17:45), express in 1–2 ore senza sovrapprezzo."
+    },
+    "announcement": {
+      "messages": [
+        "Consegna in tutta Vienna – 23 distretti",
+        "Express in 1–2 ore – senza sovrapprezzo",
+        "In giornata entro le 18:30, domenica 17:45",
+        "Composti freschi, consegnati tramite corriere"
+      ]
+    },
+    "trust": [
+      {
+        "title": "Composti freschi",
+        "text": "Composti a mano per il tuo ordine"
+      },
+      {
+        "title": "Consegna tramite corriere",
+        "text": "In tutta Vienna – tutti i 23 distretti"
+      },
+      {
+        "title": "Data a scelta",
+        "text": "Decidi tu il giorno"
+      },
+      {
+        "title": "Express in 1–2 ore",
+        "text": "Senza sovrapprezzo, in giornata entro le 18:30"
+      }
+    ],
+    "orderStatuses": {
+      "received": {
+        "label": "Ordine ricevuto",
+        "description": "Abbiamo ricevuto il tuo ordine."
+      },
+      "paid": {
+        "label": "Pagamento confermato",
+        "description": "Abbiamo ricevuto il pagamento."
+      },
+      "preparing": {
+        "label": "In preparazione",
+        "description": "Stiamo scegliendo i fiori per il tuo bouquet."
+      },
+      "arranging": {
+        "label": "Bouquet in composizione",
+        "description": "Il tuo bouquet viene composto a mano."
+      },
+      "ready": {
+        "label": "Pronto per la consegna",
+        "description": "Il bouquet è pronto e sarà ritirato dal corriere."
+      },
+      "in_transit": {
+        "label": "In consegna",
+        "description": "Il tuo bouquet è in viaggio."
+      },
+      "delivered": {
+        "label": "Consegnato",
+        "description": "I fiori sono arrivati."
+      },
+      "undeliverable": {
+        "label": "Non consegnabile",
+        "description": "Non siamo riusciti a consegnare e ti contatteremo."
+      },
+      "cancelled": {
+        "label": "Annullato",
+        "description": "L'ordine è stato annullato."
+      }
+    },
+    "payments": {
+      "apple_pay": "Apple Pay",
+      "google_pay": "Google Pay",
+      "card": "Carta di credito",
+      "paypal": "PayPal",
+      "klarna": "Klarna",
+      "eps": "Bonifico online (eps)"
+    },
+    "headerCta": "Invia fiori",
+    "address": {
+      "city": "Vienna",
+      "country": "Austria"
+    }
+  },
+  "zones": {
+    "wien-nah": {
+      "name": "Vienna zona 1",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-mitte": {
+      "name": "Vienna zona 2",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "wien-fern": {
+      "name": "Vienna zona 3",
+      "windows": {
+        "h09": "9:00–10:00",
+        "h10": "10:00–11:00",
+        "h11": "11:00–12:00",
+        "h12": "12:00–13:00",
+        "h13": "13:00–14:00",
+        "h14": "14:00–15:00",
+        "h15": "15:00–16:00",
+        "h16": "16:00–17:00",
+        "h17": "17:00–18:00",
+        "h18": "18:00–19:00",
+        "h19": "19:00–20:00",
+        "h20": "20:00–21:00",
+        "h21": "21:00–22:00"
+      }
+    },
+    "noe-umland": {
+      "name": "Dintorni di Vienna (Bassa Austria)",
+      "note": "Consegna nei dintorni di Vienna il martedì, il giovedì e il sabato.",
+      "windows": {
+        "day": "9:00–18:00"
+      }
+    }
+  }
+}

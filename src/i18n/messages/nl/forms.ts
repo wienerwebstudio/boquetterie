@@ -1,0 +1,115 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** nl – forms (translated from src/i18n/messages/de/forms.ts). */
+const forms: NonNullable<PartialMessages["forms"]> = {
+  name: "Naam",
+  email: "E-mail",
+  emailAddress: "E-mailadres",
+  message: "Bericht",
+  orderNumber: "Bestelnummer",
+  honeypot: "Website",
+  charCount: "{count}/{max} tekens",
+  genericError: "Dat is helaas niet gelukt. Probeer het later nog een keer.",
+  invalidEmailEnter: "Vul een geldig e-mailadres in.",
+
+  mailFallback: {
+    title: "Het formulier is op dit moment niet bereikbaar.",
+    text: "Je bericht is niet verloren: stuur het ons rechtstreeks per e-mail naar {email}. De tekst is al ingevoegd.",
+    open: "E-mail openen",
+  },
+
+  newsletter: {
+    honeypot: "Website (leeg laten)",
+    successTitle: "Bijna klaar – bevestig je aanmelding.",
+    successText: "We hebben je een e-mail met een bevestigingslink gestuurd. Pas daarna ontvang je onze nieuwsbrief.",
+  },
+
+  contact: {
+    formLabel: "Contactformulier",
+    subject: "Onderwerp",
+    subjects: {
+      order: "Bestelling",
+      delivery: "Bezorging",
+      business: "Zakelijke klanten",
+      other: "Overig",
+    },
+    orderNumberHint: "Staat in je orderbevestiging.",
+    errors: {
+      name: "Vul je naam in.",
+      email: "Vul een geldig e-mailadres in.",
+      subject: "Kies een onderwerp.",
+      orderIdTooLong: "Het bestelnummer is te lang.",
+      messageTooShort: "Beschrijf je vraag (minstens 10 tekens).",
+      messageTooLong: "Het bericht mag maximaal 2000 tekens lang zijn.",
+    },
+    thanksTitle: "Bedankt voor je bericht.",
+    thanksText: "We hebben je vraag ontvangen en nemen zo snel mogelijk per e-mail contact met je op via {email}.",
+    sendAnother: "Nog een bericht versturen",
+    failed: "Het bericht kon niet worden verstuurd. Probeer het nog een keer of mail ons rechtstreeks.",
+    consent: "Door te versturen ga je ermee akkoord dat we je gegevens gebruiken om je vraag te behandelen. Details in de privacyverklaring.",
+    submit: "Bericht versturen",
+    mailSubject: "Contactaanvraag: {subject}",
+  },
+
+  withdrawal: {
+    formLabel: "Overeenkomst herroepen",
+    errors: {
+      name: "Vul je naam in.",
+      email: "Vul een geldig e-mailadres in.",
+      orderId: "Vul het bestelnummer in (bijv. BQ-7K2M9Q).",
+    },
+    emailHint: "Hiernaartoe sturen we de ontvangstbevestiging.",
+    orderNumberHint: "Staat in je orderbevestiging.",
+    items: "Welke producten herroep je?",
+    itemsPlaceholder: "bijv. de teddybeer – leeg laten voor alle herroepbare producten van de bestelling",
+    declaration: "Hierbij herroep ik de door mij gesloten overeenkomst over de aankoop van de hierboven genoemde producten.",
+    receivedTitle: "Je herroeping is ontvangen.",
+    receivedText: "Ontvangen op {receivedAt} voor bestelling {orderId}.",
+    receivedTextWithCase: "Ontvangen op {receivedAt} voor bestelling {orderId} (dossier {id}).",
+    confirmationSent: "De ontvangstbevestiging hebben we naar {email} gestuurd.",
+    confirmationNotSent: "De bevestigingsmail kon op dit moment niet worden verstuurd – we bevestigen de ontvangst zo snel mogelijk persoonlijk. Bewaar deze pagina tot die tijd (bijv. als screenshot).",
+    failed: "De herroeping kon op dit moment niet worden verzonden. Probeer het nog een keer of stuur hem per e-mail naar {email}.",
+    submit: "Herroeping bevestigen",
+    mailSubject: "Herroeping – bestelling {orderId}",
+    mailDeclaration: "Hierbij herroep ik de door mij gesloten overeenkomst over de aankoop van de volgende producten: {items}",
+    mailAllItems: "alle herroepbare producten van de bestelling",
+  },
+
+  business: {
+    formLabel: "Aanvraag voor zakelijke klanten",
+    company: "Bedrijf",
+    contact: "Contactpersoon",
+    phone: "Telefoon",
+    location: "Locatie / postcode",
+    locationPlaceholder: "bijv. 1070 Wenen",
+    need: "Behoefte",
+    pleaseChoose: "Maak een keuze",
+    needs: {
+      subscription: "Regelmatige bezorging (abonnement)",
+      oneOff: "Eenmalige bezorging",
+      event: "Evenement",
+      gifts: "Cadeaus voor medewerkers of klanten",
+    },
+    messagePlaceholder: "Waar gaat het om, voor wanneer en in welke omvang – en wat je verder nog belangrijk vindt.",
+    consent: "Ik ga ermee akkoord dat mijn gegevens worden opgeslagen en gebruikt om de aanvraag te behandelen. Details in de {privacyLink}.",
+    privacyLink: "privacyverklaring",
+    errors: {
+      company: "Vul de naam van je bedrijf in.",
+      contact: "Vul een contactpersoon in.",
+      email: "Vul een geldig e-mailadres in.",
+      phone: "Controleer het telefoonnummer.",
+      location: "Vul de locatie of postcode in.",
+      need: "Kies wat je nodig hebt.",
+      message: "Beschrijf kort wat je nodig hebt (minstens 10 tekens).",
+      consent: "Bevestig dat we je gegevens mogen gebruiken om je aanvraag te behandelen.",
+    },
+    thanksTitle: "Bedankt voor je aanvraag.",
+    thanksText: "We hebben alles ontvangen en nemen contact op met {contact} per e-mail via {email}.",
+    sendAnother: "Nog een aanvraag versturen",
+    failed: "De aanvraag kon niet worden verstuurd. Probeer het nog een keer of mail ons rechtstreeks.",
+    submit: "Aanvraag versturen",
+    mailSubject: "Zakelijke aanvraag: {company}",
+  },
+};
+
+export default forms;

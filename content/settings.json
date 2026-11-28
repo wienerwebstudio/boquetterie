@@ -1,0 +1,186 @@
+{
+  "brand": {
+    "name": "Blumora",
+    "claim": "Blumen, die mehr sagen.",
+    "legalName": "Tunahan Ceylan",
+    "email": "office@blumora.at",
+    "phone": "+43 670 2023515",
+    "address": {
+      "street": "Bachgasse 22/11",
+      "zip": "1160",
+      "city": "Wien",
+      "country": "Österreich"
+    },
+    "openingHours": [],
+    "social": {
+      "whatsapp": "https://wa.me/message/VAQJPN3JVT53A1",
+      "instagram": "https://www.instagram.com/blumora.at/",
+      "x": "https://x.com/blumora_at",
+      "linkedin": "https://at.linkedin.com/in/blumora-at-b98149451",
+      "facebook": "",
+      "pinterest": "",
+      "tiktok": ""
+    }
+  },
+  "whatsappSupport247": true,
+  "announcement": {
+    "enabled": true,
+    "messages": [
+      "Lieferung in ganz Wien, alle 23 Bezirke",
+      "Express in 1–2 Stunden – ohne Aufpreis",
+      "Same Day bis 18:30, sonntags bis 17:45",
+      "Frisch gebunden, per Kurier geliefert"
+    ]
+  },
+  "timezone": "Europe/Vienna",
+  "currency": "EUR",
+  "blackoutDates": [
+    "2026-12-25",
+    "2026-12-26",
+    "2027-01-01"
+  ],
+  "sameDayEnabled": true,
+  "subscriptionEnabled": false,
+  "newsletterEnabled": true,
+  "favoritesEnabled": true,
+  "headerCta": {
+    "enabled": true,
+    "label": "Blumen senden",
+    "href": "/blumen"
+  },
+  "payments": [
+    {
+      "id": "apple_pay",
+      "label": "Apple Pay",
+      "enabled": true,
+      "provider": "mock"
+    },
+    {
+      "id": "google_pay",
+      "label": "Google Pay",
+      "enabled": true,
+      "provider": "mock"
+    },
+    {
+      "id": "card",
+      "label": "Kreditkarte",
+      "enabled": true,
+      "provider": "mock"
+    },
+    {
+      "id": "paypal",
+      "label": "PayPal",
+      "enabled": false,
+      "provider": "paypal"
+    },
+    {
+      "id": "klarna",
+      "label": "Klarna",
+      "enabled": true,
+      "provider": "stripe"
+    },
+    {
+      "id": "eps",
+      "label": "Online-Überweisung (eps)",
+      "enabled": true,
+      "provider": "stripe"
+    }
+  ],
+  "orderStatuses": [
+    {
+      "key": "received",
+      "label": "Bestellung eingegangen",
+      "description": "Wir haben deine Bestellung erhalten.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "paid",
+      "label": "Zahlung bestätigt",
+      "description": "Die Zahlung ist bei uns eingegangen.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "preparing",
+      "label": "In Vorbereitung",
+      "description": "Die Blumen für deinen Strauß werden ausgewählt.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "arranging",
+      "label": "Strauß wird gebunden",
+      "description": "Dein Strauß wird von Hand gebunden.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "ready",
+      "label": "Bereit zur Lieferung",
+      "description": "Der Strauß ist fertig und wird vom Kurier abgeholt.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "in_transit",
+      "label": "Unterwegs",
+      "description": "Dein Strauß ist auf dem Weg.",
+      "customerVisible": true,
+      "terminal": false
+    },
+    {
+      "key": "delivered",
+      "label": "Zugestellt",
+      "description": "Die Blumen sind angekommen.",
+      "customerVisible": true,
+      "terminal": true
+    },
+    {
+      "key": "undeliverable",
+      "label": "Nicht zustellbar",
+      "description": "Wir konnten nicht zustellen und melden uns bei dir.",
+      "customerVisible": true,
+      "terminal": true
+    },
+    {
+      "key": "cancelled",
+      "label": "Storniert",
+      "description": "Die Bestellung wurde storniert.",
+      "customerVisible": true,
+      "terminal": true
+    }
+  ],
+  "seo": {
+    "siteUrl": "https://blumora.at",
+    "defaultTitle": "Blumora – Blumen liefern lassen in Wien",
+    "defaultDescription": "Blumen liefern lassen in ganz Wien: frisch gebundene Sträuße in alle 23 Bezirke. Same Day bis 18:30 Uhr (sonntags bis 17:45), Express in 1–2 Stunden ohne Aufpreis."
+  },
+  "trust": [
+    {
+      "icon": "leaf",
+      "title": "Frisch gebunden",
+      "text": "Für deine Bestellung von Hand gebunden"
+    },
+    {
+      "icon": "truck",
+      "title": "Lieferung per Kurier",
+      "text": "In ganz Wien – alle 23 Bezirke"
+    },
+    {
+      "icon": "calendar",
+      "title": "Wunschdatum wählbar",
+      "text": "Du bestimmst den Tag"
+    },
+    {
+      "icon": "clock",
+      "title": "Express in 1–2 Stunden",
+      "text": "Ohne Aufpreis, Same Day bis 18:30 Uhr"
+    }
+  ],
+  "greetingCard": {
+    "enabled": false,
+    "maxChars": 200,
+    "freeCardIncluded": true
+  }
+}

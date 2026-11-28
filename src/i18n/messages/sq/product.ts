@@ -1,0 +1,195 @@
+import type { PartialMessages } from "@/i18n/messages";
+
+/** sq – product (translated from src/i18n/messages/de/product.ts). */
+const product: NonNullable<PartialMessages["product"]> = {
+  notFound: "Produkti nuk u gjet",
+  priceFrom: "nga",
+
+  size: {
+    title: "Zgjidhni madhësinë",
+    recommended: "E rekomanduar",
+    soldOut: "E shitur",
+  },
+
+  color: {
+    title: "Zgjidhni ngjyrën",
+    required: "(e detyrueshme)",
+    notChosen: "Ende e pazgjedhur",
+    error: "Ju lutemi zgjidhni një ngjyrë.",
+  },
+
+  delivery: {
+    title: "Kur duhet të mbërrijnë lulet?",
+    formLabel: "Kontrolli i dërgesës",
+    postalCodeLabel: "Kodi postar i marrësit",
+    postalCodePlaceholder: "Kodi postar i marrësit",
+    check: "Kontrollo",
+    prompt: "Shkruani kodin postar për të zgjedhur datën e dërgesës",
+    notAvailable: "Fatkeqësisht ende nuk dërgojmë në {plz}.",
+    notAvailableHint: "Të gjitha zonat aktuale i gjeni te {link}. Për një adresë tjetër marrësi, thjesht shkruani një kod postar të ri.",
+    deliveryLink: "Dërgesa dhe transporti",
+    available: "Dërgojmë në këtë adresë.",
+    fee: "Dërgesa në {plz} {region}: {fee}",
+    free: "falas",
+    freeFrom: "falas nga {price}",
+    dateGroup: "Data e dërgesës",
+    today: "Sot",
+    orderUntil: "porositni deri në orën {time}",
+    tomorrow: "Nesër",
+    chooseDate: "Zgjidhni datën",
+    openCalendar: "Hap kalendarin",
+    deliveryOn: "Dërgesa më {date}",
+    todaySuffix: "· sot",
+    noDays: "Aktualisht nuk ka ditë dërgese të disponueshme.",
+  },
+
+  calendar: {
+    previousMonth: "Muaji i mëparshëm",
+    nextMonth: "Muaji i ardhshëm",
+    weekdays: {
+      mon: { short: "Hën", long: "E hënë" },
+      tue: { short: "Mar", long: "E martë" },
+      wed: { short: "Mër", long: "E mërkurë" },
+      thu: { short: "Enj", long: "E enjte" },
+      fri: { short: "Pre", long: "E premte" },
+      sat: { short: "Sht", long: "E shtunë" },
+      sun: { short: "Die", long: "E diel" },
+    },
+    daySameDay: "{date}, dërgohet sot",
+    dayAvailable: "{date}, mund të dërgohet",
+    dayUnavailable: "{date}, nuk mund të dërgohet",
+    legendSameDay: "Dërgohet sot",
+    legendToday: "Sot",
+    legendUnavailable: "Ditët me ngjyrë gri nuk janë të disponueshme për dërgesë.",
+  },
+
+  card: {
+    unavailableTitle: "Kartolinë urimi personale",
+    unavailableText: "Buqeta juaj për momentin dërgohet pa kartolinë.",
+    comingSoon: "Së shpejti!",
+    addMessage: "Shtoni një mesazh personal",
+    included: "Kartolina e urimit e përfshirë",
+    handwritten: "Kartolinë urimi e shkruar me dorë",
+    saved: "Mesazhi u ruajt",
+    messageLabel: "Mesazhi juaj",
+    messagePlaceholder: "Gëzuar ditëlindjen me shumë dashuri …",
+    maxChars: "Maksimumi {max} karaktere.",
+    senderGroup: "Dërguesi",
+    showSender: "Shfaq dërguesin",
+    anonymous: "Dërgo pa emër",
+    senderName: "Emri juaj",
+    optional: "(opsionale)",
+    senderPlaceholder: "p.sh. Ana",
+  },
+
+  extras: {
+    title: "Diçka tjetër bashkë me të?",
+    deliveredTogether: "Dërgohet bashkë",
+    addLabel: "Shtoni {name} për {price}",
+    add: "Shto",
+    quantity: "Sasia e {name}",
+    less: "{name}: një më pak",
+    more: "{name}: një më shumë",
+  },
+
+  floristNote: {
+    title: "Dëshira për luleshitësit tanë",
+    optional: "(opsionale)",
+    hint: "Ndryshime të vogla në buqetë, p.sh. „në vend të trëndafilave të verdhë, të bardhë ju lutem“. I realizojmë nëse lulet janë të disponueshme. Udhëzimet për dërgesën i jepni gjatë përfundimit të porosisë.",
+    placeholder: "Dëshira juaj për luleshitoren",
+  },
+
+  cta: {
+    total: "Gjithsej",
+    comingSoon: "Së shpejti për porosi",
+    unavailable: "Aktualisht jo e disponueshme",
+    addToCart: "Shto në shportë",
+    fresh: "Të sapolidhura",
+    cardIncluded: "Kartolina e urimit e përfshirë",
+    securePayment: "Pagesë e sigurt",
+    added: "{name} ({options}) u shtua në shportë.",
+  },
+
+  gallery: {
+    kinds: {
+      front: "Pamja ballore",
+      detail: "Detaj",
+      size: "Krahasimi i madhësisë",
+      packaging: "Paketimi",
+      lifestyle: "Ambienti",
+    },
+    status: "Fotoja {index} nga {total}: {alt}",
+    carousel: "Karusel",
+    imagesOf: "Fotot e {name}",
+    slide: "Fotoja",
+    slideOf: "{index} nga {total}",
+    choose: "Zgjidhni foton",
+    show: "Shfaq {label}",
+    thumb: "{label}: {alt}",
+    previous: "Fotoja e mëparshme",
+    next: "Fotoja e radhës",
+    colorAlt: "{name} në ngjyrën {color}",
+    colorLabel: "Ngjyra {color}",
+    sizeAlt: "{name} në madhësinë {size}",
+    sizeDetailAlt: "{name} në madhësinë {size}, nga afër",
+    sizeLabel: "Madhësia {size}",
+    sizeDetailLabel: "Madhësia {size} · nga afër",
+  },
+
+  details: {
+    eyebrow: "Mirë të dini",
+    title: "Gjithçka për {name}",
+    description: "Përshkrimi",
+    plant: "Bima",
+    flowers: "Lulet e përfshira",
+    care: "Udhëzime për kujdesin",
+    delivery: "Dërgesa",
+    deliveryText: "Lulet tuaja vijnë nga një luleshitore vjeneze me të cilën bashkëpunojmë në mënyrë të përhershme. Atje buqetat lidhen me dorë për porosinë tuaj. Një korrier i merr dhe shkon pa ndalesë te adresa e marrësit.",
+    deliveryAreas: "Dërgojmë në të 23 rrethet e Vjenës. Tarifa e dërgesës varet nga rrethi dhe shfaqet pasi të shkruani kodin postar. Zonat e dërgesës, intervalet kohore dhe afatet e porosisë i gjeni te {link}.",
+    deliveryLink: "Dërgesa dhe transporti",
+    looksPlant: "A duket bima saktësisht kështu?",
+    looksBouquet: "A duket buqeta saktësisht kështu?",
+    looksOther: "A duket saktësisht si në foto?",
+    naturalPlant: "Pothuajse. Bimët janë produkte natyrore: rritja, madhësia dhe lulëzimi mund të ndryshojnë nga fotoja. Edhe vazoja dekorative mund të duket ndryshe, sipas disponueshmërisë.",
+    naturalFlowers: "Pothuajse. Lulet janë produkte natyrore: sipas stinës, një lloj ose nuancë ngjyre mund të ndryshojë. Luleshitorja jonë partnere kujdeset që stili dhe gama e ngjyrave të ruhen.",
+  },
+
+  pricePending: {
+    status: "Çmimi së shpejti",
+    sizes: "Madhësitë",
+    sizesLabel: "Madhësitë e disponueshme",
+    soonTitle: "Së shpejti për porosi",
+    soonText: "Po caktojmë çmimet për ofertën tonë. Sapo të jenë gati, mund ta porositni këtë buqetë direkt këtu.",
+    contact: "Pyetje? Na shkruani",
+  },
+
+  related: {
+    eyebrow: "Vazhdoni të shfletoni",
+    title: "Mund t'ju pëlqejë edhe kjo",
+    allFlowers: "Shikoni të gjitha lulet",
+  },
+
+  reviews: {
+    eyebrow: "Mendime",
+    title: "Vlerësime për {name}",
+    demoNote: "Vlerësime shembull – vlerësimet e vërteta vijnë së shpejti",
+    quote: "„{text}“",
+    verified: "Blerje e verifikuar",
+    demo: "Shembull",
+  },
+
+  reviewPhotos: {
+    photosOf: "Fotot e {author}",
+    enlarge: "{alt} – zmadhoni foton {index} nga {total}",
+    dialogTitle: "Foto e klientit nga {author}",
+    dialogCount: "({index} nga {total})",
+    close: "Mbyll foton",
+    show: "Shfaq foton {index}",
+  },
+  reviewVideo: {
+    videoOf: "Video nga {author}",
+    caption: "Video e klientit · {duration}",
+  },
+};
+
+export default product;
